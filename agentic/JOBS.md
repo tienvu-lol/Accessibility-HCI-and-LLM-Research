@@ -9,7 +9,8 @@ Every job derives from a MAIN section. Agents report all work, blockers, discove
 
 | ID | Priority | Job | MAIN | Dependencies | Status | Owner |
 |---|---|---|---|---|---|---|
-| G001 | P0 | Branch and governance blueprint/queue setup | M00, M12 | None | IN_PROGRESS | codex-governance-20261003 |
+| G001 | P0 | Publish named research branch and governance blueprint/queue | M00, M12 | None | DONE | codex-governance-20261003 |
+| G002 | P0 | Retire old branch to finish requested rename | M00, M12 | G001; browser fallback permission | BLOCKED | codex-governance-20261003 |
 | J001 | P0 | Freeze demo interfaces and minimal toolchain | M05, M06, M10 | G001 | QUEUED | Unclaimed |
 | J002 | P0 | Create one synthetic static fixture/task | M04, M07 | J001 | QUEUED | Unclaimed |
 | J003 | P0 | Browser observations, axe, behavioral checks | M05, M07 | J001, J002 | QUEUED | Unclaimed |
@@ -29,19 +30,29 @@ Every job derives from a MAIN section. Agents report all work, blockers, discove
 | J017 | P3 | Related-work and novelty verification | M01, M04, M12 | G001 | QUEUED | Unclaimed |
 | J018 | P3 | Frozen release/public page/paper artifacts | M09, M10 | J016, J017; owner release approval | QUEUED | Unclaimed |
 
-P0 = minimum demo or correctness gate; P1 = tonight stretch; P2 = research/shared-system work; P3 = later scale/release. A QUEUED job is not ready when any dependency is unmet. Only G001 is initially claimed; no live experiment has run.
+P0 = minimum demo or correctness gate; P1 = tonight stretch; P2 = research/shared-system work; P3 = later scale/release. A QUEUED job is not ready when any dependency is unmet. G001 is complete. G002 is blocked on browser fallback permission. J001 is ready to claim; no live experiment has run.
 
 ## Job records
 
-### G001 — Branch and governance setup
+### G001 — Named research branch and governance setup
 
 - Blueprint: [M00](MAIN.md#m00--context-and-source-of-truth), [M12](MAIN.md#m12--governance-and-evidence-references).
-- Status: IN_PROGRESS. Owner: codex-governance-20261003. Mode: single coordinator.
-- Base: `8500092c15203ba0e90c0f70a19cec67074911bc`. Branch: `research/accessibility-usability-benchmark` (target; publication pending until verification).
+- Status: DONE. Owner: codex-governance-20261003. Mode: single coordinator.
+- Base: `8500092c15203ba0e90c0f70a19cec67074911bc`. Branch: `research/accessibility-usability-benchmark` (published and verified).
 - Owned paths: root AGENTS.md, CLAUDE.md, README.md; agentic/ planning documents. Initial MAIN.md creation is explicitly authorized by Tien's October 3 request; future changes are not.
-- Acceptance: existing research assets preserved; branch name reflects benchmark; contract discovered from root; MAIN protected by explicit instructions; jobs cite blueprint, include dependencies/ownership/acceptance; tonight plan includes Claude/Codex handoffs; links and diff verified; remote files published and read back.
+- Acceptance: existing research assets preserved; new research branch name reflects benchmark; old-branch retirement tracked separately in G002; contract discovered from root; MAIN protected by explicit instructions; jobs cite blueprint, include dependencies/ownership/acceptance; tonight plan includes Claude/Codex handoffs; links and diff verified; remote files published and read back.
 - Evidence: branch audit completed; old branch and main matched the base; files.zip contained WCAG references only. Verification/publication results will be appended below.
-- Next checkpoint: publish and verify planning commit. No paid calls, code execution benchmark, or deployment included.
+- Published commit: `c59d2713093b7989f1affba96872f73fc5662a26`; remote readback confirmed all nine document contents. Comparison showed only eight added planning files and the README update; original assets and main were unchanged. Local Markdown links/anchors and git diff whitespace checks passed.
+- Completed UTC: 2026-10-03T23:56:43Z. No paid calls, experiment implementation, or deployment included. J001 is ready to claim.
+
+### G002 — Finish branch rename
+
+- Blueprint: [M00](MAIN.md#m00--context-and-source-of-truth), [M12](MAIN.md#m12--governance-and-evidence-references).
+- Status: BLOCKED. Owner: codex-governance-20261003. Dependencies: G001 and permission to use GitHub browser fallback.
+- Current state: documentation is published on research/accessibility-usability-benchmark; claude/uirepairgym-setup remains at 8500092c15203ba0e90c0f70a19cec67074911bc, also retained by main. No open PR was found during audit.
+- Blocker: available GitHub connector has create/update operations but no native branch rename or ref deletion; authenticated shell push is unavailable. Browser fallback requires user permission under the browser tool instructions.
+- Acceptance: recheck old branch for new commits/PRs before removal, preserve any new work, retire the unchanged old branch through the permitted interface, verify named research branch and main heads remain intact. This replacement is not a native GitHub rename with redirect guarantees.
+- Independent work: J001 and later implementation jobs may proceed on the published research branch.
 
 ### J001 — Demo interfaces and toolchain
 
@@ -206,3 +217,5 @@ No MAIN edits are authorized by this ledger. Status remains NEEDS_OWNER_DECISION
 Append UTC events with job ID/session, change, evidence, and next step. Preserve older events.
 
 - 2026-10-03T23:45:00Z — G001 / codex-governance-20261003 — Audited supplied branch and main at 8500092c15203ba0e90c0f70a19cec67074911bc; recovered Hosting Experiment Stack direction and read existing planning documents/WCAG archive listing. No app code found. Next: publish protected blueprint and queue.
+
+- 2026-10-03T23:56:43Z — G001 / codex-governance-20261003 — Published c59d2713093b7989f1affba96872f73fc5662a26 through GitHub connector; nine remote file contents verified, links/diff checked, research assets and main preserved. G001 DONE; J001 ready. G002 BLOCKED: original branch remains pending permission for GitHub browser fallback.
