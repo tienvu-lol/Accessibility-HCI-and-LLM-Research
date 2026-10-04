@@ -50,15 +50,15 @@
     "120 Maple Street."
   ],
   "known_defects": [
-    "html element has no lang attribute",
-    "no landmark regions (header/nav/main/footer) - layout built from div",
-    "heading order: h3 appears before h1, h1 before h2",
-    "hero.svg and logo.svg <img> have no alt attribute",
-    "form inputs #name and #email have placeholder but no associated <label>",
-    "low text contrast: .lead, .muted, .nav a, .btn, .footer",
-    "link text 'click here' is not descriptive",
-    "outline removed on :focus so keyboard focus is not visible",
-    "page has no skip link"
+    "html element has no lang attribute [axe: html-has-lang detected]",
+    "no landmark regions (header/nav/main/footer) - layout built from div [axe: landmark-one-main, region detected]",
+    "heading order: h3 appears before h1, h1 before h2 [NOT detected by axe heading-order; documented only]",
+    "hero.svg and logo.svg <img> have no alt attribute [axe: image-alt detected]",
+    "form inputs #name and #email have placeholder but no associated <label> [NOT detected: axe 4.13 'label' accepts placeholder as name; documented only]",
+    "low text contrast: .lead, .muted, .btn, .footer span, link in events paragraph [axe: color-contrast detected, 5 nodes]",
+    "link text 'click here' is not descriptive [NOT detected by axe link-name; documented only]",
+    "outline removed on :focus so keyboard focus is not visible [no axe rule; evaluator focus_visible check fails 7/7]",
+    "page has no skip link [NOT detected: axe 'bypass' passes; documented only]"
   ],
   "applicable_criteria": [
     "1.1.1",
