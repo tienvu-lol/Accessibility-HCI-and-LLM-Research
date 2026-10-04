@@ -12,14 +12,14 @@ Every job derives from a MAIN section. Agents report all work, blockers, discove
 | G001 | P0 | Publish named research branch and governance blueprint/queue | M00, M12 | None | DONE | codex-governance-20261003 |
 | G002 | P0 | Retire old branch to finish requested rename | M00, M12 | G001; browser fallback permission | BLOCKED | codex-governance-20261003 |
 | J001 | P0 | Freeze demo interfaces and minimal toolchain | M05, M06, M10 | G001 | DONE (self-checked) | claude-ui-20261003-01 |
-| J002 | P0 | Create one synthetic static fixture/task | M04, M07 | J001 | REVIEW | claude-ui-20261003-01 |
-| J003 | P0 | Browser observations, axe, behavioral checks | M05, M07 | J001, J002 | CLAIMED | claude-worker-a-20261003 (planned) |
-| J004 | P0 | Bounded runner and one provider adapter | M03, M05, M06 | J001, J002 | CLAIMED | claude-worker-b-20261003 (planned) |
-| J005 | P0 | Generate evidence-based before/after report | M06, M09 | J001 | CLAIMED | claude-worker-c-20261003 (planned) |
-| J006 | P0 | Integrate and run minimum live demo | M10 | J002–J005 | QUEUED | Unclaimed |
+| J002 | P0 | Create one synthetic static fixture/task | M04, M07 | J001 | DONE (axe-confirmed subset) | claude-ui-20261003-01 |
+| J003 | P0 | Browser observations, axe, behavioral checks | M05, M07 | J001, J002 | INTEGRATED (self-checked) | claude-worker-a-20261003 |
+| J004 | P0 | Bounded runner and one provider adapter | M03, M05, M06 | J001, J002 | INTEGRATED (self-checked; mock only) | claude-worker-b-20261003 |
+| J005 | P0 | Generate evidence-based before/after report | M06, M09 | J001 | INTEGRATED (self-checked) | claude-worker-c-20261003 |
+| J006 | P0 | Integrate and run minimum live demo | M10 | J002–J005 | IN_PROGRESS (mock path done; live gate BLOCKED) | claude-ui-20261003-01 |
 | J007 | P1 | Four arms and provisional Nielsen signal | M02, M03, M07 | J006; owner config decisions | QUEUED | Unclaimed |
-| J008 | P0 | Independent demo/provenance review | M06, M07, M10 | J006 | QUEUED | Unclaimed |
-| J009 | P1 | Host frozen demo report on Railway | M08b, M09 | J006, J008; project access | QUEUED | Unclaimed |
+| J008 | P0 | Independent demo/provenance review | M06, M07, M10 | J006 | IN_PROGRESS (independent reviewer) | claude-reviewer-20261003 |
+| J009 | P1 | Host frozen demo report on Railway | M08b, M09 | J006, J008; project access | REVIEW (package built; deploy BLOCKED on Railway access; docker unverified) | claude-ui-20261003-01 |
 | J010 | P2 | Verify/extract WCAG reference data | M00, M04, M07 | G001 | QUEUED | Unclaimed |
 | J011 | P2 | Licensed corpus and owner-approved pilot config | M03, M04, M11 | J008, J010; owner decisions | QUEUED | Unclaimed |
 | J012 | P2 | Usability rubric and human judge validation | M02, M07, M11 | J008; research-lead procedure | QUEUED | Unclaimed |
@@ -66,7 +66,7 @@ P0 = minimum demo or correctness gate; P1 = tonight stretch; P2 = research/share
 ### J002 — Synthetic fixture
 
 - Blueprint: [M04](MAIN.md#m04--dataset-tasks-and-reset), [M07](MAIN.md#m07--measurement-and-validity).
-- Status: QUEUED. Owner: Unclaimed. Dependencies: J001.
+- Status: DONE (axe-confirmed subset). Owner: claude-ui-20261003-01. Dependencies: J001.
 - Scope/paths: fixtures/demo/ and fixture-specific tests/check definitions.
 - Deliver: one owned HTML/CSS page with known demonstrable defects, content preservation constraints, stable manifest/hash, and a concrete navigation/form/keyboard task.
 - Acceptance: local rendering and assets work; expected defects documented without claiming complete WCAG coverage; reset leaves original hash unchanged; task has an observable success condition; source is approved for demo redistribution.
@@ -74,7 +74,7 @@ P0 = minimum demo or correctness gate; P1 = tonight stretch; P2 = research/share
 ### J003 — Browser and automated evaluation
 
 - Blueprint: [M05](MAIN.md#m05--system-architecture), [M07](MAIN.md#m07--measurement-and-validity).
-- Status: QUEUED. Owner: Unclaimed. Dependencies: J001, J002.
+- Status: INTEGRATED (self-checked). Owner: claude-worker-a-20261003. Dependencies: J001, J002.
 - Scope/paths: src/uirepairgym/browser/, automated src/uirepairgym/evaluators/ modules, corresponding tests; excludes provider/report files and shared manifests.
 - Deliver: pinned Playwright browser configuration, baseline/output screenshots, pinned axe integration/raw report, task/keyboard checks, console/load failures and timeouts.
 - Acceptance: fixture evaluation produces actual screenshot/findings/task evidence under J001 schema; incomplete/missing/error states preserved; counts distinguish rule findings from affected elements; equal configuration used before/after; no model calls hidden in evaluator.
@@ -82,7 +82,7 @@ P0 = minimum demo or correctness gate; P1 = tonight stretch; P2 = research/share
 ### J004 — Runner and provider
 
 - Blueprint: [M03](MAIN.md#m03--conditions-and-comparison-design), [M05](MAIN.md#m05--system-architecture), [M06](MAIN.md#m06--run-and-artifact-contract).
-- Status: QUEUED. Owner: Unclaimed. Dependencies: J001, J002.
+- Status: INTEGRATED (self-checked; mock only). Owner: claude-worker-b-20261003. Dependencies: J001, J002.
 - Scope/paths: src/uirepairgym/runner* and providers/, configs/demo*, corresponding tests; coordinate shared CLI changes with J001 owner.
 - Deliver: run IDs/reset/workspace lifecycle, bounded iterations/timeouts/retries, one explicitly configured provider, marked mock adapter, prompts/responses/diffs/usage artifacts, evaluator interface calls.
 - Acceptance: original fixture immutable; mock and provider failure paths recorded; stopping reasons reliable; missing usage stays unknown; credentials never enter target files/logs; one paid live run waits for explicit user budget and provider access.
@@ -90,7 +90,7 @@ P0 = minimum demo or correctness gate; P1 = tonight stretch; P2 = research/share
 ### J005 — Minimal report
 
 - Blueprint: [M06](MAIN.md#m06--run-and-artifact-contract), [M09](MAIN.md#m09--team-access-presentation-and-paper-artifacts).
-- Status: QUEUED. Owner: Unclaimed. Dependencies: J001.
+- Status: INTEGRATED (self-checked). Owner: claude-worker-c-20261003. Dependencies: J001.
 - Scope/paths: src/uirepairgym/reporting/ and report-specific tests/examples. No full dashboard framework required.
 - Deliver: generated HTML from saved artifacts, before/after screenshots/findings/task outcomes/source diff/provenance/links; explicit live/mock/replay and failed/missing states.
 - Acceptance: report works on shared schema fixture and later real bundle; no random or fabricated metrics; no usability score interpreted as validated; local artifact links resolve; screenshots and text remain readable.
@@ -98,7 +98,7 @@ P0 = minimum demo or correctness gate; P1 = tonight stretch; P2 = research/share
 ### J006 — End-to-end integration
 
 - Blueprint: [M10](MAIN.md#m10--milestones), [M06](MAIN.md#m06--run-and-artifact-contract).
-- Status: QUEUED. Owner: Unclaimed. Dependencies: J002, J003, J004, J005.
+- Status: IN_PROGRESS; mock path done, live gate BLOCKED. Owner: claude-ui-20261003-01. Dependencies: J002, J003, J004, J005.
 - Scope/paths: integration fixes, shared commands/manifests, smoke check, reproduction guide; transfers overlapping ownership before edits.
 - Deliver: clean setup → baseline → one live repair → re-evaluation → persisted report; minimal demo recording/walkthrough and exact commands.
 - Acceptance: actual provider response and raw evidence exist; fixture unchanged; repeated evaluation reads saved output; failure/error paths visible; changes stay within MAIN scope; spending remains within user-approved cap. A mock-only pipeline does not satisfy live acceptance.
@@ -114,14 +114,14 @@ P0 = minimum demo or correctness gate; P1 = tonight stretch; P2 = research/share
 ### J008 — Demo review
 
 - Blueprint: [M06](MAIN.md#m06--run-and-artifact-contract), [M07](MAIN.md#m07--measurement-and-validity), [M10](MAIN.md#m10--milestones).
-- Status: QUEUED. Owner: Unclaimed. Dependencies: J006.
+- Status: IN_PROGRESS. Owner: claude-reviewer-20261003 (independent agent; reviews coordinator integration). Dependencies: J006.
 - Scope: review-only initially; findings and follow-up IDs in this board.
 - Acceptance: reviewer reproduces critical artifact/evaluation path; confirms original fixture hash, model provenance, failure labeling, actual counts, bounded budget, no secrets/public private data, and no unauthorized MAIN diff; records pass/fail evidence and limitations.
 
 ### J009 — Railway frozen demo
 
 - Blueprint: [M08b](MAIN.md#m08b--railway-control-plane), [M09](MAIN.md#m09--team-access-presentation-and-paper-artifacts).
-- Status: QUEUED. Owner: Unclaimed. Dependencies: J006, J008, Railway project access and approved display assets.
+- Status: REVIEW; deploy BLOCKED on Railway access. Owner: claude-ui-20261003-01. Dependencies: J006, J008, Railway project access and approved display assets.
 - Scope/paths: deploy/railway/ and sanitized frozen demo export; no public live-run submission.
 - Deliver: Dockerfile/start command/health route or static serving plan, variables with placeholders, deployment runbook and verified URL if deployment is authorized.
 - Acceptance: read-only report loads, links/screenshots resolve after restart/redeploy, no secrets or unapproved raw artifacts, HTTPS smoke check logged. Lack of access is BLOCKED, not DONE. Do not assume nested Docker capabilities.
@@ -202,6 +202,16 @@ P0 = minimum demo or correctness gate; P1 = tonight stretch; P2 = research/share
   - Budget: owner cap unset (D003). Proposed default in code/config: at most 1 run, ≤3 repair iterations, bounded tokens/timeout; **no live call until Tien supplies provider/model/cap**.
 - **J002 record.** `fixtures/demo/` (index.html, styles.css, hero.svg, logo.svg) + `fixtures/demo.manifest.json` (synthetic, CC0-style, content_hash in manifest). Task: keyboard fill name+email, Enter, `#thanks` (CSS `:target`, no JS) becomes visible. Known intended defects are *documented, not yet confirmed by axe*; status REVIEW until J003 confirms they are detected. Reset = copy directory into per-run workspace. Manifest excluded from the hashed tree.
 
+- **Integration record (claude-ui-20261003-01), head after merge `34c6140`.** Mode: coordinator; workers on separate git worktrees (`agent/claude-worker-{a,b,c}-20261003/J00{3,4,5}`), merged locally, nothing pushed on worker branches. Commits: J003 `8d967cf`, J005 `962a4d9`, J004 `e6a3fc4`; coordinator `f48eb65`, `f9c2ec2`, `34c6140`. `git diff 2369ad3 HEAD -- agentic/MAIN.md` is empty.
+  - **J003** (browser/ + evaluators/): Playwright Chromium 141 (system build via fallback path), pinned axe-core 4.13.0 injected. *Measured* on pristine fixture: 5 violation rules / 18 nodes (color-contrast 5, html-has-lang 1, image-alt 2, landmark-one-main 1, region 9), 0 incomplete, 21 passes; task completes by keyboard; focus-visible check fails 7/7. **Axe did not detect** unlabeled inputs (placeholder accepted), heading order, "click here" link text, missing skip link (manifest annotated; J002 claim about `.nav a` contrast was wrong and corrected). Nielsen = unavailable (reason recorded).
+  - **J004** (runner/ + providers/ + configs/): bounded runner, mock + Anthropic adapters, live mode refuses without explicit model, `budget.max_total_usd` and `ANTHROPIC_API_KEY`. **Live provider path NOT exercised** (no network/model call anywhere). `RunManifest.error` added by coordinator at the worker's request; `.env.example` extended.
+  - **J005** (reporting/): Jinja2 HTML report with prominent MOCK/LIVE/REPLAY banner; Worker C reports zero axe violations on the report at 1280px and 375px (their run; coordinator did not repeat).
+  - **J006 mock run (measured evaluation, scripted repair):** `python -m uirepairgym run --config configs/mock.json` -> run `20261004T003002Z-37b52c`, `mode=mock`, status success, stopping reason `no_change`. Real browser evaluation of both states: baseline 5 rules/18 nodes -> after scripted mock edit 3 rules/17 nodes (serious 6->5, critical 2->0, moderate 10->12); task still completed. The mock edit is deterministic text, **not model output; excluded from empirical comparison.** Iteration 2 produced no change and was not re-evaluated (recorded, not copied as measured).
+  - **LIVE GATE NOT MET.** Needs from Tien (D003): provider, exact model ID, `budget.max_total_usd`, server-side `ANTHROPIC_API_KEY` (and optional pricing + pricing_basis for cost enforcement). Then: `UIREPAIRGYM_MODEL=<id> ANTHROPIC_API_KEY=... python -m uirepairgym run --config configs/demo.json` after setting `budget.max_total_usd` in the config.
+  - **J009 package:** `deploy/railway/{Dockerfile.demo,server.py,RUNBOOK.md}`, `scripts/export_demo_report.py` (explicit `--approve-demo`, refuses non-live without `--allow-mock`, secret scan, EXPORT_MANIFEST hashes), `deploy/railway/demo-report/` (currently the **MOCK** export), `.dockerignore`. Checks: `pytest tests/deploy` pass; direct server smoke: /health 200, / 200, assets 200, POST 405. **`docker build/run` unverified: no Docker daemon in this session.** Not deployed; Railway access required.
+  - Checks (coordinator): `python -m pytest -q` -> 69 passed (at `34c6140` plus schema change).
+  - Follow-ups proposed: J019 events.jsonl schema; J020 `AxeSummary` optional counts when an evaluator fails mid-way; J021 make `region` landmark counts and axe-miss defects (labels via placeholder, heading order, skip link) addressable with supplementary checks.
+
 ## Claim/handoff template
 
 Copy into the relevant record when claiming; never edit MAIN.md to record progress.
@@ -240,3 +250,4 @@ Append UTC events with job ID/session, change, evidence, and next step. Preserve
 
 - 2026-10-04T00:30:00Z — J001,J002 / claude-ui-20261003-01 — Claimed (coordinator mode). Inspected tooling: Python 3.11, Node 22, Playwright 1.63 + system Chromium, no provider credentials in env, Docker CLI present but daemon not verified. Next: schemas/CLI/example bundle, then fixture.
 - 2026-10-04T00:50:00Z — J001 DONE(self-checked), J002 REVIEW / claude-ui-20261003-01 — Schemas, CLI scaffold, example mock bundle, pinned deps, fixture + manifest created; 7 tests pass. Next: push, launch workers A/B/C on worktrees.
+- 2026-10-04T00:55:00Z — J003/J004/J005 INTEGRATED, J006 mock path run, J009 package built / claude-ui-20261003-01 — see Integration record. Independent J008 reviewer launched. Live gate and Railway deploy BLOCKED on owner inputs.
