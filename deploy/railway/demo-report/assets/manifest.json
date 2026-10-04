@@ -1,0 +1,729 @@
+{
+  "contract_version": "0.1.0",
+  "run_id": "20261004T003002Z-37b52c",
+  "mode": "mock",
+  "arm": "accessibility_only",
+  "fixture_id": "demo-library",
+  "fixture_hash": "2732c60634b5a9fdb42b4b67a595b0d54b41e58797936840c2eed55ab07f0cac",
+  "fixture_hash_after": "2732c60634b5a9fdb42b4b67a595b0d54b41e58797936840c2eed55ab07f0cac",
+  "config": {
+    "fixture_manifest": "fixtures/demo.manifest.json",
+    "fixture_dir": null,
+    "arm": "accessibility_only",
+    "mode": "mock",
+    "provider": {
+      "name": "mock",
+      "model": null,
+      "pricing": null,
+      "base_url_overridden": true
+    },
+    "max_iterations": 2,
+    "max_output_tokens": 8000,
+    "timeout_s": 120.0,
+    "retry": {
+      "transport_retries": 0
+    },
+    "budget": {
+      "max_total_usd": null,
+      "max_calls": 3
+    },
+    "browser": {},
+    "runs_dir": "runs",
+    "hard_iteration_cap": 3
+  },
+  "code_commit": "f9e9c7dbb20c4edf95f840ce12ccf7a98ba9750a",
+  "versions": {
+    "python": "3.11.15",
+    "contract": "0.1.0",
+    "pydantic": "2.13.4",
+    "anthropic": "1.11.0",
+    "playwright": "1.63.0"
+  },
+  "started_utc": "2026-10-04T00:30:02Z",
+  "finished_utc": "2026-10-04T00:30:05Z",
+  "status": "success",
+  "stopping_reason": "no_change",
+  "error": null,
+  "iterations": [
+    {
+      "index": 0,
+      "input_dir": "iterations/0/input",
+      "output_dir": null,
+      "evaluation": {
+        "contract_version": "0.1.0",
+        "html_hash": "3ebde981ee2f45d84f17f065c6dfd8101d939d05f2f772d7a624efcee0b86830",
+        "browser": {
+          "browser": "chromium",
+          "browser_version": "141.0.7390.37",
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "timeout_ms": 15000,
+          "axe_version": "4.13.0"
+        },
+        "screenshot_path": "iterations/0/screenshot.png",
+        "axe": {
+          "axe_version": "4.13.0",
+          "summary": {
+            "violation_rules": 5,
+            "violation_nodes": 18,
+            "incomplete_rules": 0,
+            "incomplete_nodes": 0,
+            "passes_rules": 21,
+            "by_impact": {
+              "serious": 6,
+              "critical": 2,
+              "moderate": 10
+            }
+          },
+          "violations": [
+            {
+              "id": "color-contrast",
+              "impact": "serious",
+              "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+              "help": "Elements must meet minimum color contrast ratio thresholds",
+              "tags": [
+                "cat.color",
+                "wcag2aa",
+                "wcag143",
+                "TTv5",
+                "TT13.c",
+                "EN-301-549",
+                "EN-9.1.4.3",
+                "ACT",
+                "RGAAv4",
+                "RGAA-3.2.1"
+              ],
+              "nodes": [
+                {
+                  "target": [
+                    ".lead"
+                  ],
+                  "html": "<p class=\"lead\">Free library cards, weekly story time, and a public computer lab. Everyone in the neighborhood is welcome.</p>",
+                  "failure_summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.01 (foreground color: #8a8a8a, background color: #f4efe6, font size: 13.5pt (18px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                  "target": [
+                    "p > a[href$=\"#events\"]"
+                  ],
+                  "html": "<a href=\"#events\">click here</a>",
+                  "failure_summary": "Fix any of the following:\n  Element has insufficient color contrast of 2.14 (foreground color: #8fb3e8, background color: #ffffff, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                  "target": [
+                    ".muted"
+                  ],
+                  "html": "<p class=\"muted\">Monday to Friday 9:00 to 19:00. Saturday 10:00 to 16:00. Closed Sunday.</p>",
+                  "failure_summary": "Fix any of the following:\n  Element has insufficient color contrast of 2.61 (foreground color: #a0a0a0, background color: #ffffff, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                  "target": [
+                    "button"
+                  ],
+                  "html": "<button type=\"submit\" class=\"btn\">Send me the link</button>",
+                  "failure_summary": "Fix any of the following:\n  Element has insufficient color contrast of 2.52 (foreground color: #ffffff, background color: #6fa8dc, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                  "target": [
+                    "span"
+                  ],
+                  "html": "<span>Maple Street Community Library. 120 Maple Street.</span>",
+                  "failure_summary": "Fix any of the following:\n  Element has insufficient color contrast of 2.45 (foreground color: #999999, background color: #eeeeee, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+                }
+              ]
+            },
+            {
+              "id": "html-has-lang",
+              "impact": "serious",
+              "description": "Ensure every HTML document has a lang attribute",
+              "help": "<html> element must have a lang attribute",
+              "tags": [
+                "cat.language",
+                "wcag2a",
+                "wcag311",
+                "TTv5",
+                "TT11.a",
+                "EN-301-549",
+                "EN-9.3.1.1",
+                "ACT",
+                "RGAAv4",
+                "RGAA-8.3.1"
+              ],
+              "nodes": [
+                {
+                  "target": [
+                    "html"
+                  ],
+                  "html": "<html>",
+                  "failure_summary": "Fix any of the following:\n  The <html> element does not have a lang attribute"
+                }
+              ]
+            },
+            {
+              "id": "image-alt",
+              "impact": "critical",
+              "description": "Ensure <img> elements have alternative text or a role of none or presentation",
+              "help": "Images must have alternative text",
+              "tags": [
+                "cat.text-alternatives",
+                "wcag2a",
+                "wcag111",
+                "section508",
+                "section508.22.a",
+                "TTv5",
+                "TT7.a",
+                "TT7.b",
+                "EN-301-549",
+                "EN-9.1.1.1",
+                "ACT",
+                "RGAAv4",
+                "RGAA-1.1.1"
+              ],
+              "nodes": [
+                {
+                  "target": [
+                    "img[src$=\"hero.svg\"]"
+                  ],
+                  "html": "<img src=\"hero.svg\" width=\"640\" height=\"200\">",
+                  "failure_summary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+                },
+                {
+                  "target": [
+                    "img[src$=\"logo.svg\"]"
+                  ],
+                  "html": "<img src=\"logo.svg\" width=\"48\" height=\"48\">",
+                  "failure_summary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+                }
+              ]
+            },
+            {
+              "id": "landmark-one-main",
+              "impact": "moderate",
+              "description": "Ensure the document has a main landmark",
+              "help": "Document should have one main landmark",
+              "tags": [
+                "cat.semantics",
+                "best-practice"
+              ],
+              "nodes": [
+                {
+                  "target": [
+                    "html"
+                  ],
+                  "html": "<html>",
+                  "failure_summary": "Fix all of the following:\n  Document does not have a main landmark"
+                }
+              ]
+            },
+            {
+              "id": "region",
+              "impact": "moderate",
+              "description": "Ensure all page content is contained by landmarks",
+              "help": "All page content should be contained by landmarks",
+              "tags": [
+                "cat.keyboard",
+                "best-practice",
+                "RGAAv4",
+                "RGAA-9.2.1"
+              ],
+              "nodes": [
+                {
+                  "target": [
+                    ".brand"
+                  ],
+                  "html": "<div class=\"brand\">Maple Street Community Library</div>",
+                  "failure_summary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                  "target": [
+                    ".hero"
+                  ],
+                  "html": "<div class=\"hero\">\n  <img src=\"hero.svg\" width=\"640\" height=\"200\">\n  <h3>Books, quiet rooms, and neighbors</h3>\n  <p class=\"lead\">Free library cards, weekly story time, and a public computer lab. Everyone in the neighborhood is welcome.</p>\n</div>",
+                  "failure_summary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                  "target": [
+                    "#events"
+                  ],
+                  "html": "<div class=\"section\" id=\"events\">",
+                  "failure_summary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                  "target": [
+                    "#hours"
+                  ],
+                  "html": "<div class=\"section\" id=\"hours\">\n  <h2>Opening hours</h2>\n  <p class=\"muted\">Monday to Friday 9:00 to 19:00. Saturday 10:00 to 16:00. Closed Sunday.</p>\n</div>",
+                  "failure_summary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                  "target": [
+                    "#join > h2"
+                  ],
+                  "html": "<h2>Get a library card</h2>",
+                  "failure_summary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                  "target": [
+                    "#join > p"
+                  ],
+                  "html": "<p>Enter your name and email and we will send you a sign-up link.</p>",
+                  "failure_summary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                  "target": [
+                    "#name"
+                  ],
+                  "html": "<input type=\"text\" id=\"name\" name=\"name\" placeholder=\"Your name\" style=\"\">",
+                  "failure_summary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                  "target": [
+                    "#email"
+                  ],
+                  "html": "<input type=\"email\" id=\"email\" name=\"email\" placeholder=\"Email address\" style=\"\">",
+                  "failure_summary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                  "target": [
+                    ".footer"
+                  ],
+                  "html": "<div class=\"footer\">\n  <img src=\"logo.svg\" width=\"48\" height=\"48\">\n  <span>Maple Street Community Library. 120 Maple Street.</span>\n</div>",
+                  "failure_summary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                }
+              ]
+            }
+          ],
+          "incomplete": [],
+          "passes": [
+            "aria-hidden-body",
+            "avoid-inline-spacing",
+            "button-name",
+            "bypass",
+            "color-contrast",
+            "document-title",
+            "empty-heading",
+            "form-field-multiple-labels",
+            "heading-order",
+            "image-redundant-alt",
+            "label-title-only",
+            "label",
+            "link-in-text-block",
+            "link-name",
+            "list",
+            "listitem",
+            "meta-viewport-large",
+            "meta-viewport",
+            "nested-interactive",
+            "page-has-heading-one",
+            "region"
+          ],
+          "raw_path": "iterations/0/axe.json"
+        },
+        "axe_error": null,
+        "task": {
+          "task_id": "join-library",
+          "completed": true,
+          "checks": [
+            {
+              "name": "keyboard_reachable",
+              "status": "pass",
+              "detail": "7/7 interactive elements reached by Tab; unreachable: none"
+            },
+            {
+              "name": "focus_visible",
+              "status": "fail",
+              "detail": "7/7 focused elements show no visible indicator (heuristic). a[Events]: NO visible change; a[Hours]: NO visible change; a[Join]: NO visible change; a[click here]: NO visible change; input#name: NO visible change; input#email: NO visible change; button: NO visible change"
+            },
+            {
+              "name": "task_steps",
+              "status": "pass",
+              "detail": "3 steps executed"
+            },
+            {
+              "name": "success_selector_visible",
+              "status": "pass",
+              "detail": "#thanks"
+            },
+            {
+              "name": "success_text",
+              "status": "pass",
+              "detail": "'Thank you! Check your inbox for the sign-up link.'"
+            },
+            {
+              "name": "external_requests_blocked",
+              "status": "pass",
+              "detail": "blocked: none"
+            },
+            {
+              "name": "preserved_text",
+              "status": "pass",
+              "detail": "missing: none"
+            }
+          ],
+          "preserved_text_missing": [],
+          "console_errors": [],
+          "page_errors": [],
+          "error": null
+        },
+        "nielsen": {
+          "status": "unavailable",
+          "reason": "no usability evaluator implemented",
+          "judge": null,
+          "findings": []
+        },
+        "mode": "live",
+        "started_utc": "2026-10-04T00:30:02Z",
+        "finished_utc": "2026-10-04T00:30:04Z"
+      },
+      "model_call": null,
+      "diff_path": null,
+      "changed": null,
+      "status": "success",
+      "error": null
+    },
+    {
+      "index": 1,
+      "input_dir": "iterations/1/input",
+      "output_dir": "iterations/1/output",
+      "evaluation": {
+        "contract_version": "0.1.0",
+        "html_hash": "df57391e48ce5ac287354c9364d0abda9aeed5e0659fe401622026b6b3817752",
+        "browser": {
+          "browser": "chromium",
+          "browser_version": "141.0.7390.37",
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "timeout_ms": 15000,
+          "axe_version": "4.13.0"
+        },
+        "screenshot_path": "iterations/1/screenshot.png",
+        "axe": {
+          "axe_version": "4.13.0",
+          "summary": {
+            "violation_rules": 3,
+            "violation_nodes": 17,
+            "incomplete_rules": 0,
+            "incomplete_nodes": 0,
+            "passes_rules": 25,
+            "by_impact": {
+              "serious": 5,
+              "moderate": 12
+            }
+          },
+          "violations": [
+            {
+              "id": "color-contrast",
+              "impact": "serious",
+              "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+              "help": "Elements must meet minimum color contrast ratio thresholds",
+              "tags": [
+                "cat.color",
+                "wcag2aa",
+                "wcag143",
+                "TTv5",
+                "TT13.c",
+                "EN-301-549",
+                "EN-9.1.4.3",
+                "ACT",
+                "RGAAv4",
+                "RGAA-3.2.1"
+              ],
+              "nodes": [
+                {
+                  "target": [
+                    ".lead"
+                  ],
+                  "html": "<p class=\"lead\">Free library cards, weekly story time, and a public computer lab. Everyone in the neighborhood is welcome.</p>",
+                  "failure_summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.01 (foreground color: #8a8a8a, background color: #f4efe6, font size: 13.5pt (18px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                  "target": [
+                    "p > a[href$=\"#events\"]"
+                  ],
+                  "html": "<a href=\"#events\">click here</a>",
+                  "failure_summary": "Fix any of the following:\n  Element has insufficient color contrast of 2.14 (foreground color: #8fb3e8, background color: #ffffff, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                  "target": [
+                    ".muted"
+                  ],
+                  "html": "<p class=\"muted\">Monday to Friday 9:00 to 19:00. Saturday 10:00 to 16:00. Closed Sunday.</p>",
+                  "failure_summary": "Fix any of the following:\n  Element has insufficient color contrast of 2.61 (foreground color: #a0a0a0, background color: #ffffff, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                  "target": [
+                    "button"
+                  ],
+                  "html": "<button type=\"submit\" class=\"btn\">Send me the link</button>",
+                  "failure_summary": "Fix any of the following:\n  Element has insufficient color contrast of 2.52 (foreground color: #ffffff, background color: #6fa8dc, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                  "target": [
+                    "span"
+                  ],
+                  "html": "<span>Maple Street Community Library. 120 Maple Street.</span>",
+                  "failure_summary": "Fix any of the following:\n  Element has insufficient color contrast of 2.45 (foreground color: #999999, background color: #eeeeee, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+                }
+              ]
+            },
+            {
+              "id": "landmark-one-main",
+              "impact": "moderate",
+              "description": "Ensure the document has a main landmark",
+              "help": "Document should have one main landmark",
+              "tags": [
+                "cat.semantics",
+                "best-practice"
+              ],
+              "nodes": [
+                {
+                  "target": [
+                    "html"
+                  ],
+                  "html": "<html lang=\"en\">",
+                  "failure_summary": "Fix all of the following:\n  Document does not have a main landmark"
+                }
+              ]
+            },
+            {
+              "id": "region",
+              "impact": "moderate",
+              "description": "Ensure all page content is contained by landmarks",
+              "help": "All page content should be contained by landmarks",
+              "tags": [
+                "cat.keyboard",
+                "best-practice",
+                "RGAAv4",
+                "RGAA-9.2.1"
+              ],
+              "nodes": [
+                {
+                  "target": [
+                    ".brand"
+                  ],
+                  "html": "<div class=\"brand\">Maple Street Community Library</div>",
+                  "failure_summary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                  "target": [
+                    ".hero"
+                  ],
+                  "html": "<div class=\"hero\">\n  <img alt=\"Mock alt text: illustration\" src=\"hero.svg\" width=\"640\" height=\"200\">\n  <h3>Books, quiet rooms, and neighbors</h3>\n  <p class=\"lead\">Free library cards, weekly story time, and a public computer lab. Everyone in the neighborhood is welcome.</p>\n</div>",
+                  "failure_summary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                  "target": [
+                    "#events"
+                  ],
+                  "html": "<div class=\"section\" id=\"events\">",
+                  "failure_summary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                  "target": [
+                    "#hours"
+                  ],
+                  "html": "<div class=\"section\" id=\"hours\">\n  <h2>Opening hours</h2>\n  <p class=\"muted\">Monday to Friday 9:00 to 19:00. Saturday 10:00 to 16:00. Closed Sunday.</p>\n</div>",
+                  "failure_summary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                  "target": [
+                    "#join > h2"
+                  ],
+                  "html": "<h2>Get a library card</h2>",
+                  "failure_summary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                  "target": [
+                    "#join > p"
+                  ],
+                  "html": "<p>Enter your name and email and we will send you a sign-up link.</p>",
+                  "failure_summary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                  "target": [
+                    "label[for=\"name\"]"
+                  ],
+                  "html": "<label for=\"name\">Your name</label>",
+                  "failure_summary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                  "target": [
+                    "#name"
+                  ],
+                  "html": "<input type=\"text\" id=\"name\" name=\"name\" placeholder=\"Your name\" style=\"\">",
+                  "failure_summary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                  "target": [
+                    "label[for=\"email\"]"
+                  ],
+                  "html": "<label for=\"email\">Email address</label>",
+                  "failure_summary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                  "target": [
+                    "#email"
+                  ],
+                  "html": "<input type=\"email\" id=\"email\" name=\"email\" placeholder=\"Email address\" style=\"\">",
+                  "failure_summary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                  "target": [
+                    ".footer"
+                  ],
+                  "html": "<div class=\"footer\">\n  <img alt=\"Mock alt text: logo\" src=\"logo.svg\" width=\"48\" height=\"48\">\n  <span>Maple Street Community Library. 120 Maple Street.</span>\n</div>",
+                  "failure_summary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                }
+              ]
+            }
+          ],
+          "incomplete": [],
+          "passes": [
+            "aria-hidden-body",
+            "avoid-inline-spacing",
+            "button-name",
+            "bypass",
+            "color-contrast",
+            "document-title",
+            "duplicate-id-aria",
+            "empty-heading",
+            "form-field-multiple-labels",
+            "heading-order",
+            "html-has-lang",
+            "html-lang-valid",
+            "image-alt",
+            "image-redundant-alt",
+            "label-title-only",
+            "label",
+            "link-in-text-block",
+            "link-name",
+            "list",
+            "listitem",
+            "meta-viewport-large",
+            "meta-viewport",
+            "nested-interactive",
+            "page-has-heading-one",
+            "region"
+          ],
+          "raw_path": "iterations/1/axe.json"
+        },
+        "axe_error": null,
+        "task": {
+          "task_id": "join-library",
+          "completed": true,
+          "checks": [
+            {
+              "name": "keyboard_reachable",
+              "status": "pass",
+              "detail": "7/7 interactive elements reached by Tab; unreachable: none"
+            },
+            {
+              "name": "focus_visible",
+              "status": "fail",
+              "detail": "7/7 focused elements show no visible indicator (heuristic). a[Events]: NO visible change; a[Hours]: NO visible change; a[Join]: NO visible change; a[click here]: NO visible change; input#name: NO visible change; input#email: NO visible change; button: NO visible change"
+            },
+            {
+              "name": "task_steps",
+              "status": "pass",
+              "detail": "3 steps executed"
+            },
+            {
+              "name": "success_selector_visible",
+              "status": "pass",
+              "detail": "#thanks"
+            },
+            {
+              "name": "success_text",
+              "status": "pass",
+              "detail": "'Thank you! Check your inbox for the sign-up link.'"
+            },
+            {
+              "name": "external_requests_blocked",
+              "status": "pass",
+              "detail": "blocked: none"
+            },
+            {
+              "name": "preserved_text",
+              "status": "pass",
+              "detail": "missing: none"
+            }
+          ],
+          "preserved_text_missing": [],
+          "console_errors": [],
+          "page_errors": [],
+          "error": null
+        },
+        "nielsen": {
+          "status": "unavailable",
+          "reason": "no usability evaluator implemented",
+          "judge": null,
+          "findings": []
+        },
+        "mode": "live",
+        "started_utc": "2026-10-04T00:30:04Z",
+        "finished_utc": "2026-10-04T00:30:05Z"
+      },
+      "model_call": {
+        "provider": "mock",
+        "model": null,
+        "mode": "mock",
+        "request_params": {
+          "deterministic": true,
+          "max_output_tokens": 8000
+        },
+        "prompt_path": "iterations/1/prompt.txt",
+        "response_path": "iterations/1/response.txt",
+        "usage": {
+          "input_tokens": null,
+          "output_tokens": null,
+          "latency_s": 0.000353,
+          "estimated_cost_usd": null,
+          "pricing_basis": null
+        },
+        "attempts": 1,
+        "error": null
+      },
+      "diff_path": "iterations/1/diff.patch",
+      "changed": true,
+      "status": "success",
+      "error": null
+    },
+    {
+      "index": 2,
+      "input_dir": "iterations/2/input",
+      "output_dir": "iterations/2/output",
+      "evaluation": null,
+      "model_call": {
+        "provider": "mock",
+        "model": null,
+        "mode": "mock",
+        "request_params": {
+          "deterministic": true,
+          "max_output_tokens": 8000
+        },
+        "prompt_path": "iterations/2/prompt.txt",
+        "response_path": "iterations/2/response.txt",
+        "usage": {
+          "input_tokens": null,
+          "output_tokens": null,
+          "latency_s": 0.000053,
+          "estimated_cost_usd": null,
+          "pricing_basis": null
+        },
+        "attempts": 1,
+        "error": null
+      },
+      "diff_path": "iterations/2/diff.patch",
+      "changed": false,
+      "status": "success",
+      "error": null
+    }
+  ],
+  "visibility": "private",
+  "notes": [
+    "MOCK RUN: repair text is scripted, not model output; must not enter empirical comparisons."
+  ]
+}
