@@ -825,6 +825,18 @@
       "title": "Contract Version",
       "type": "string"
     },
+    "error": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Error"
+    },
     "finished_utc": {
       "anyOf": [
         {

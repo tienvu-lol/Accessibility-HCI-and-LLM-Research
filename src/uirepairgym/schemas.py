@@ -188,6 +188,7 @@ class RunManifest(_M):
     finished_utc: Optional[str] = None
     status: Status
     stopping_reason: Optional[str] = None
+    error: Optional[str] = None
     iterations: list[Iteration] = []
     visibility: Literal["private", "approved_demo"] = "private"
     notes: list[str] = []

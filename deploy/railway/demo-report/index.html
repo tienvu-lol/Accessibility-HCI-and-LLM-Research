@@ -1,0 +1,547 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UIRepairGym run report 20261004T003002Z-37b52c</title>
+<style>
+:root { color-scheme: light; --fg:#1a1a1a; --bg:#ffffff; --muted:#4a4a4a; --line:#767676; --soft:#f3f4f6; --link:#0b4fb3; --focus:#003ea8; --pass:#0b5d1e; --fail:#a10000; --warn:#7a4b00; }
+* { box-sizing: border-box; }
+html { font-size: 100%; }
+body { margin:0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; line-height:1.5; color:var(--fg); background:var(--bg); }
+header, main, footer { max-width: 72rem; margin: 0 auto; padding: 1rem; }
+header { border-bottom: 2px solid var(--fg); }
+h1 { font-size:1.75rem; margin:.25rem 0; }
+h2 { font-size:1.4rem; margin:2rem 0 .5rem; border-bottom:1px solid var(--line); padding-bottom:.25rem; }
+h3 { font-size:1.2rem; margin:1.5rem 0 .5rem; }
+h4 { font-size:1.05rem; margin:1.25rem 0 .4rem; }
+a { color:var(--link); text-decoration: underline; }
+a:focus-visible, summary:focus-visible, [tabindex]:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+.skip { position:absolute; left:-999px; top:0; background:var(--bg); padding:.5rem 1rem; border:2px solid var(--focus); z-index:10; }
+.skip:focus { left:.5rem; top:.5rem; }
+nav ul { list-style:none; display:flex; flex-wrap:wrap; gap:.25rem 1rem; padding:0; margin:.5rem 0 0; }
+code, pre { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size:.9rem; }
+code { background:var(--soft); padding:0 .25rem; overflow-wrap:anywhere; }
+pre { background:var(--soft); padding:.75rem; margin:0; white-space: pre-wrap; overflow-wrap:anywhere; }
+.scroll { overflow:auto; max-height:28rem; border:1px solid var(--line); }
+.banner { border:4px solid; padding:1rem; margin:1rem 0; }
+.banner h2 { border:0; margin:0 0 .25rem; font-size:1.6rem; padding:0; }
+.banner p { margin:0; font-size:1.1rem; }
+.banner-mock { background:#fff4cc; color:#3d2600; border-color:#7a4b00; }
+.banner-live { background:#e3f4e8; color:#0d3b1e; border-color:#0b5d1e; }
+.banner-replay { background:#e6eefc; color:#10265a; border-color:#10265a; }
+dl.kv { display:grid; grid-template-columns: minmax(10rem, max-content) 1fr; gap:.25rem 1rem; margin:0; }
+dl.kv dt { font-weight:600; }
+dl.kv dd { margin:0; overflow-wrap:anywhere; }
+table { border-collapse:collapse; width:100%; margin:.5rem 0; }
+caption { text-align:left; font-weight:600; padding:.25rem 0; }
+th, td { border:1px solid var(--line); padding:.35rem .5rem; text-align:left; vertical-align:top; overflow-wrap:anywhere; }
+thead th { background:var(--soft); }
+.shots { display:grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap:1rem; }
+figure { margin:0; border:1px solid var(--line); padding:.5rem; }
+figure img { display:block; max-width:100%; height:auto; border:1px solid var(--line); }
+figcaption { font-weight:600; margin-bottom:.4rem; }
+.missing { border:2px dashed var(--warn); color:#3d2600; background:#fff4cc; padding:.5rem; }
+.pass { color:var(--pass); font-weight:600; }
+.fail { color:var(--fail); font-weight:600; }
+.unknown, .skipped, .error { color:var(--warn); font-weight:600; }
+.note { color:var(--muted); }
+.label { display:inline-block; border:2px solid var(--fail); color:var(--fail); font-weight:700; padding:0 .4rem; }
+details { margin:.4rem 0; border:1px solid var(--line); padding:.4rem .6rem; }
+summary { cursor:pointer; font-weight:600; }
+.diff span { display:block; white-space:pre-wrap; overflow-wrap:anywhere; }
+.diff .add { background:#dafbe1; color:#0b3d1a; }
+.diff .del { background:#ffd7d5; color:#6b0f0f; }
+.diff .hunk { background:#ddeaff; color:#10265a; }
+.diff .meta { font-weight:700; }
+section.iteration { border:1px solid var(--line); padding:0 1rem 1rem; margin:1.5rem 0; }
+ul.plain { padding-left:1.25rem; }
+@media (max-width: 40rem) { dl.kv { grid-template-columns: 1fr; } header, main, footer { padding:.75rem; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to report content</a>
+<header>
+  <h1>UIRepairGym run report</h1>
+  <p>Run <code>20261004T003002Z-37b52c</code> on fixture <code>demo-library</code></p>
+  <nav aria-label="Report sections">
+    <ul>
+      <li><a href="#mode">Run mode</a></li>
+      <li><a href="#summary">Run summary</a></li>
+      <li><a href="#iterations">Iterations</a></li>
+      <li><a href="#iteration-0">Iteration 0</a></li>
+      <li><a href="#iteration-1">Iteration 1</a></li>
+      <li><a href="#iteration-2">Iteration 2</a></li>
+      <li><a href="#artifacts">Artifacts</a></li>
+      <li><a href="#caveats">Caveats</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+
+<section id="mode" class="banner banner-mock" aria-labelledby="mode-h">
+  <h2 id="mode-h">Run mode: MOCK</h2>
+  <p>This run used a mock provider on synthetic data. It cannot satisfy the live-demo gate, and its numbers are not measurements.</p>
+</section>
+
+<section id="summary" aria-labelledby="summary-h">
+  <h2 id="summary-h">Run summary</h2>
+  <dl class="kv">
+    <dt>Run id</dt><dd><code>20261004T003002Z-37b52c</code></dd>
+    <dt>Mode</dt><dd>mock</dd>
+    <dt>Arm</dt><dd>accessibility_only</dd>
+    <dt>Status</dt><dd>success</dd>
+    <dt>Stopping reason</dt><dd>no_change</dd>
+    <dt>Fixture id</dt><dd><code>demo-library</code></dd>
+    <dt>Fixture hash (before)</dt><dd><code>2732c60634b5a9fdb42b4b67a595b0d54b41e58797936840c2eed55ab07f0cac</code></dd>
+    <dt>Fixture hash (after)</dt><dd><code>2732c60634b5a9fdb42b4b67a595b0d54b41e58797936840c2eed55ab07f0cac</code></dd>
+    <dt>Fixture immutability</dt><dd><span class="pass">PASS: fixture hash after the run equals the hash before the run.</span></dd>
+    <dt>Code commit</dt><dd><code>f9e9c7dbb20c4edf95f840ce12ccf7a98ba9750a</code></dd>
+    <dt>Started (UTC)</dt><dd>2026-10-04T00:30:02Z</dd>
+    <dt>Finished (UTC)</dt><dd>2026-10-04T00:30:05Z</dd>
+    <dt>Visibility</dt><dd>private</dd>
+    <dt>Contract version</dt><dd>0.1.0</dd>
+  </dl>
+  <table>
+    <caption>Tool versions</caption>
+    <thead><tr><th scope="col">Component</th><th scope="col">Version</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">python</th><td>3.11.15</td></tr>
+      <tr><th scope="row">contract</th><td>0.1.0</td></tr>
+      <tr><th scope="row">pydantic</th><td>2.13.4</td></tr>
+      <tr><th scope="row">anthropic</th><td>1.11.0</td></tr>
+      <tr><th scope="row">playwright</th><td>1.63.0</td></tr>
+    </tbody>
+  </table>
+  <h3>Run notes</h3>
+  <ul class="plain"><li>MOCK RUN: repair text is scripted, not model output; must not enter empirical comparisons.</li></ul>
+  <details>
+    <summary>Run configuration</summary>
+    <div class="scroll" tabindex="0" role="region" aria-label="Run configuration JSON"><pre>{
+  &#34;arm&#34;: &#34;accessibility_only&#34;,
+  &#34;browser&#34;: {},
+  &#34;budget&#34;: {
+    &#34;max_calls&#34;: 3,
+    &#34;max_total_usd&#34;: null
+  },
+  &#34;fixture_dir&#34;: null,
+  &#34;fixture_manifest&#34;: &#34;fixtures/demo.manifest.json&#34;,
+  &#34;hard_iteration_cap&#34;: 3,
+  &#34;max_iterations&#34;: 2,
+  &#34;max_output_tokens&#34;: 8000,
+  &#34;mode&#34;: &#34;mock&#34;,
+  &#34;provider&#34;: {
+    &#34;base_url_overridden&#34;: true,
+    &#34;model&#34;: null,
+    &#34;name&#34;: &#34;mock&#34;,
+    &#34;pricing&#34;: null
+  },
+  &#34;retry&#34;: {
+    &#34;transport_retries&#34;: 0
+  },
+  &#34;runs_dir&#34;: &#34;runs&#34;,
+  &#34;timeout_s&#34;: 120.0
+}</pre></div>
+  </details>
+</section>
+
+<section id="iterations" aria-labelledby="iterations-h">
+  <h2 id="iterations-h">Iterations</h2>
+
+  <section id="iteration-0" class="iteration" aria-labelledby="iteration-0-h">
+    <h3 id="iteration-0-h">Iteration 0 (baseline, no model call)</h3>
+    <dl class="kv">
+      <dt>Status</dt><dd>success</dd>
+      <dt>Changed</dt><dd>not available</dd>
+      <dt>Input directory</dt><dd><code>iterations/0/input</code></dd>
+      <dt>Output directory</dt><dd>none</dd>
+      <dt>Evaluation mode</dt><dd>live (differs from run mode mock)</dd>
+      <dt>Evaluated HTML hash</dt><dd><code>3ebde981ee2f45d84f17f065c6dfd8101d939d05f2f772d7a624efcee0b86830</code></dd>
+      <dt>Browser</dt><dd>chromium 141.0.7390.37, viewport 1280x800</dd>
+    </dl>
+
+    <h4>Screenshots</h4>
+    <div class="shots">
+      <figure>
+        <figcaption>Baseline (iteration 0)</figcaption>
+        <a href="assets/iterations/0/screenshot.png"><img src="assets/iterations/0/screenshot.png" alt="Screenshot of the rendered page, baseline state, iteration 0"></a>
+      </figure>
+    </div>
+
+    <h4>Axe summary</h4>
+      <p>axe-core 4.13.0</p>
+      <table>
+        <caption>Automated axe results, iteration 0</caption>
+        <thead><tr><th scope="col">Result type</th><th scope="col">Rules</th><th scope="col">Affected nodes</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Violations</th><td>5</td><td>18</td></tr>
+          <tr><th scope="row">Incomplete (needs review)</th><td>0</td><td>0</td></tr>
+          <tr><th scope="row">Passes</th><td>21</td><td>not recorded</td></tr>
+        </tbody>
+      </table>
+      <table>
+        <caption>Violation nodes by impact (as recorded in the summary)</caption>
+        <thead><tr><th scope="col">Impact</th><th scope="col">Nodes</th></tr></thead>
+        <tbody><tr><th scope="row">critical</th><td>2</td></tr><tr><th scope="row">serious</th><td>6</td></tr><tr><th scope="row">moderate</th><td>10</td></tr></tbody>
+      </table>
+
+      <details>
+        <summary>Violation rules and node targets (5 rule detail(s) recorded)</summary>
+        <ul class="plain">
+          <li><code>color-contrast</code> impact: serious. Elements must meet minimum color contrast ratio thresholds
+<br><span class="note">Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds</span><br>Tags: cat.color, wcag2aa, wcag143, TTv5, TT13.c, EN-301-549, EN-9.1.4.3, ACT, RGAAv4, RGAA-3.2.1            <ul>              <li>Target: <code>.lead</code><br>HTML: <code>&lt;p class=&#34;lead&#34;&gt;Free library cards, weekly story time, and a public computer lab. Everyone in the neighborhood is welcome.&lt;/p&gt;</code><br>Fix any of the following:
+  Element has insufficient color contrast of 3.01 (foreground color: #8a8a8a, background color: #f4efe6, font size: 13.5pt (18px), font weight: normal). Expected contrast ratio of 4.5:1</li>
+              <li>Target: <code>p &gt; a[href$=&#34;#events&#34;]</code><br>HTML: <code>&lt;a href=&#34;#events&#34;&gt;click here&lt;/a&gt;</code><br>Fix any of the following:
+  Element has insufficient color contrast of 2.14 (foreground color: #8fb3e8, background color: #ffffff, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1</li>
+              <li>Target: <code>.muted</code><br>HTML: <code>&lt;p class=&#34;muted&#34;&gt;Monday to Friday 9:00 to 19:00. Saturday 10:00 to 16:00. Closed Sunday.&lt;/p&gt;</code><br>Fix any of the following:
+  Element has insufficient color contrast of 2.61 (foreground color: #a0a0a0, background color: #ffffff, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1</li>
+              <li>Target: <code>button</code><br>HTML: <code>&lt;button type=&#34;submit&#34; class=&#34;btn&#34;&gt;Send me the link&lt;/button&gt;</code><br>Fix any of the following:
+  Element has insufficient color contrast of 2.52 (foreground color: #ffffff, background color: #6fa8dc, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1</li>
+              <li>Target: <code>span</code><br>HTML: <code>&lt;span&gt;Maple Street Community Library. 120 Maple Street.&lt;/span&gt;</code><br>Fix any of the following:
+  Element has insufficient color contrast of 2.45 (foreground color: #999999, background color: #eeeeee, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1</li>
+</ul>
+          </li>
+          <li><code>html-has-lang</code> impact: serious. &lt;html&gt; element must have a lang attribute
+<br><span class="note">Ensure every HTML document has a lang attribute</span><br>Tags: cat.language, wcag2a, wcag311, TTv5, TT11.a, EN-301-549, EN-9.3.1.1, ACT, RGAAv4, RGAA-8.3.1            <ul>              <li>Target: <code>html</code><br>HTML: <code>&lt;html&gt;</code><br>Fix any of the following:
+  The &lt;html&gt; element does not have a lang attribute</li>
+</ul>
+          </li>
+          <li><code>image-alt</code> impact: critical. Images must have alternative text
+<br><span class="note">Ensure &lt;img&gt; elements have alternative text or a role of none or presentation</span><br>Tags: cat.text-alternatives, wcag2a, wcag111, section508, section508.22.a, TTv5, TT7.a, TT7.b, EN-301-549, EN-9.1.1.1, ACT, RGAAv4, RGAA-1.1.1            <ul>              <li>Target: <code>img[src$=&#34;hero.svg&#34;]</code><br>HTML: <code>&lt;img src=&#34;hero.svg&#34; width=&#34;640&#34; height=&#34;200&#34;&gt;</code><br>Fix any of the following:
+  Element does not have an alt attribute
+  aria-label attribute does not exist or is empty
+  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty
+  Element has no title attribute
+  Element&#39;s default semantics were not overridden with role=&#34;none&#34; or role=&#34;presentation&#34;</li>
+              <li>Target: <code>img[src$=&#34;logo.svg&#34;]</code><br>HTML: <code>&lt;img src=&#34;logo.svg&#34; width=&#34;48&#34; height=&#34;48&#34;&gt;</code><br>Fix any of the following:
+  Element does not have an alt attribute
+  aria-label attribute does not exist or is empty
+  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty
+  Element has no title attribute
+  Element&#39;s default semantics were not overridden with role=&#34;none&#34; or role=&#34;presentation&#34;</li>
+</ul>
+          </li>
+          <li><code>landmark-one-main</code> impact: moderate. Document should have one main landmark
+<br><span class="note">Ensure the document has a main landmark</span><br>Tags: cat.semantics, best-practice            <ul>              <li>Target: <code>html</code><br>HTML: <code>&lt;html&gt;</code><br>Fix all of the following:
+  Document does not have a main landmark</li>
+</ul>
+          </li>
+          <li><code>region</code> impact: moderate. All page content should be contained by landmarks
+<br><span class="note">Ensure all page content is contained by landmarks</span><br>Tags: cat.keyboard, best-practice, RGAAv4, RGAA-9.2.1            <ul>              <li>Target: <code>.brand</code><br>HTML: <code>&lt;div class=&#34;brand&#34;&gt;Maple Street Community Library&lt;/div&gt;</code><br>Fix any of the following:
+  Some page content is not contained by landmarks</li>
+              <li>Target: <code>.hero</code><br>HTML: <code>&lt;div class=&#34;hero&#34;&gt;
+  &lt;img src=&#34;hero.svg&#34; width=&#34;640&#34; height=&#34;200&#34;&gt;
+  &lt;h3&gt;Books, quiet rooms, and neighbors&lt;/h3&gt;
+  &lt;p class=&#34;lead&#34;&gt;Free library cards, weekly story time, and a public computer lab. Everyone in the neighborhood is welcome.&lt;/p&gt;
+&lt;/div&gt;</code><br>Fix any of the following:
+  Some page content is not contained by landmarks</li>
+              <li>Target: <code>#events</code><br>HTML: <code>&lt;div class=&#34;section&#34; id=&#34;events&#34;&gt;</code><br>Fix any of the following:
+  Some page content is not contained by landmarks</li>
+              <li>Target: <code>#hours</code><br>HTML: <code>&lt;div class=&#34;section&#34; id=&#34;hours&#34;&gt;
+  &lt;h2&gt;Opening hours&lt;/h2&gt;
+  &lt;p class=&#34;muted&#34;&gt;Monday to Friday 9:00 to 19:00. Saturday 10:00 to 16:00. Closed Sunday.&lt;/p&gt;
+&lt;/div&gt;</code><br>Fix any of the following:
+  Some page content is not contained by landmarks</li>
+              <li>Target: <code>#join &gt; h2</code><br>HTML: <code>&lt;h2&gt;Get a library card&lt;/h2&gt;</code><br>Fix any of the following:
+  Some page content is not contained by landmarks</li>
+              <li>Target: <code>#join &gt; p</code><br>HTML: <code>&lt;p&gt;Enter your name and email and we will send you a sign-up link.&lt;/p&gt;</code><br>Fix any of the following:
+  Some page content is not contained by landmarks</li>
+              <li>Target: <code>#name</code><br>HTML: <code>&lt;input type=&#34;text&#34; id=&#34;name&#34; name=&#34;name&#34; placeholder=&#34;Your name&#34; style=&#34;&#34;&gt;</code><br>Fix any of the following:
+  Some page content is not contained by landmarks</li>
+              <li>Target: <code>#email</code><br>HTML: <code>&lt;input type=&#34;email&#34; id=&#34;email&#34; name=&#34;email&#34; placeholder=&#34;Email address&#34; style=&#34;&#34;&gt;</code><br>Fix any of the following:
+  Some page content is not contained by landmarks</li>
+              <li>Target: <code>.footer</code><br>HTML: <code>&lt;div class=&#34;footer&#34;&gt;
+  &lt;img src=&#34;logo.svg&#34; width=&#34;48&#34; height=&#34;48&#34;&gt;
+  &lt;span&gt;Maple Street Community Library. 120 Maple Street.&lt;/span&gt;
+&lt;/div&gt;</code><br>Fix any of the following:
+  Some page content is not contained by landmarks</li>
+</ul>
+          </li>
+        </ul>
+      </details>
+      <details>
+        <summary>Incomplete rules (0 rule detail(s) recorded)</summary>
+<p>No incomplete rule details recorded.</p>      </details>
+      <details>
+        <summary>Passing rule ids (21 recorded)</summary>
+<p><code>aria-hidden-body</code> <code>avoid-inline-spacing</code> <code>button-name</code> <code>bypass</code> <code>color-contrast</code> <code>document-title</code> <code>empty-heading</code> <code>form-field-multiple-labels</code> <code>heading-order</code> <code>image-redundant-alt</code> <code>label-title-only</code> <code>label</code> <code>link-in-text-block</code> <code>link-name</code> <code>list</code> <code>listitem</code> <code>meta-viewport-large</code> <code>meta-viewport</code> <code>nested-interactive</code> <code>page-has-heading-one</code> <code>region</code> </p>      </details>
+        <p><a href="assets/iterations/0/axe.json">Raw axe JSON for iteration 0</a></p>
+
+
+    <h4>Task outcome</h4>
+      <p>Task <code>join-library</code>:
+<span class="pass">completed</span></p>
+      <table>
+        <caption>Task checks</caption>
+        <thead><tr><th scope="col">Check</th><th scope="col">Status</th><th scope="col">Detail</th></tr></thead>
+        <tbody><tr><th scope="row">keyboard_reachable</th><td><span class="pass">pass</span></td><td>7/7 interactive elements reached by Tab; unreachable: none</td></tr><tr><th scope="row">focus_visible</th><td><span class="fail">fail</span></td><td>7/7 focused elements show no visible indicator (heuristic). a[Events]: NO visible change; a[Hours]: NO visible change; a[Join]: NO visible change; a[click here]: NO visible change; input#name: NO visible change; input#email: NO visible change; button: NO visible change</td></tr><tr><th scope="row">task_steps</th><td><span class="pass">pass</span></td><td>3 steps executed</td></tr><tr><th scope="row">success_selector_visible</th><td><span class="pass">pass</span></td><td>#thanks</td></tr><tr><th scope="row">success_text</th><td><span class="pass">pass</span></td><td>&#39;Thank you! Check your inbox for the sign-up link.&#39;</td></tr><tr><th scope="row">external_requests_blocked</th><td><span class="pass">pass</span></td><td>blocked: none</td></tr><tr><th scope="row">preserved_text</th><td><span class="pass">pass</span></td><td>missing: none</td></tr></tbody>
+      </table>
+      <p>Preserved text missing:
+none recorded as missing.</p>      <h4>Console and page errors</h4>
+      <p>Console errors:</p>
+<p>None recorded.</p>      <p>Page errors:</p>
+<p>None recorded.</p>
+    <h4>Source diff</h4>
+      <p>Baseline iteration: no repair was applied.</p>
+
+
+    <h4>Nielsen heuristic evaluation</h4>
+      <p>Unavailable: no usability evaluator implemented.</p>
+  </section>
+  <section id="iteration-1" class="iteration" aria-labelledby="iteration-1-h">
+    <h3 id="iteration-1-h">Iteration 1</h3>
+    <dl class="kv">
+      <dt>Status</dt><dd>success</dd>
+      <dt>Changed</dt><dd>yes</dd>
+      <dt>Input directory</dt><dd><code>iterations/1/input</code></dd>
+      <dt>Output directory</dt><dd><code>iterations/1/output</code></dd>
+      <dt>Evaluation mode</dt><dd>live (differs from run mode mock)</dd>
+      <dt>Evaluated HTML hash</dt><dd><code>df57391e48ce5ac287354c9364d0abda9aeed5e0659fe401622026b6b3817752</code></dd>
+      <dt>Browser</dt><dd>chromium 141.0.7390.37, viewport 1280x800</dd>
+    </dl>
+
+    <h4>Screenshots</h4>
+    <div class="shots">
+      <figure>
+        <figcaption>Before (previous iteration)</figcaption>
+        <a href="assets/iterations/0/screenshot.png"><img src="assets/iterations/0/screenshot.png" alt="Screenshot of the rendered page, before state, previous iteration"></a>
+      </figure>
+      <figure>
+        <figcaption>After (iteration 1)</figcaption>
+        <a href="assets/iterations/1/screenshot.png"><img src="assets/iterations/1/screenshot.png" alt="Screenshot of the rendered page, after state, iteration 1"></a>
+      </figure>
+    </div>
+
+    <h4>Axe summary</h4>
+      <p>axe-core 4.13.0</p>
+      <table>
+        <caption>Automated axe results, iteration 1</caption>
+        <thead><tr><th scope="col">Result type</th><th scope="col">Rules</th><th scope="col">Affected nodes</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Violations</th><td>3</td><td>17</td></tr>
+          <tr><th scope="row">Incomplete (needs review)</th><td>0</td><td>0</td></tr>
+          <tr><th scope="row">Passes</th><td>25</td><td>not recorded</td></tr>
+        </tbody>
+      </table>
+      <table>
+        <caption>Violation nodes by impact (as recorded in the summary)</caption>
+        <thead><tr><th scope="col">Impact</th><th scope="col">Nodes</th></tr></thead>
+        <tbody><tr><th scope="row">serious</th><td>5</td></tr><tr><th scope="row">moderate</th><td>12</td></tr></tbody>
+      </table>
+
+      <details>
+        <summary>Violation rules and node targets (3 rule detail(s) recorded)</summary>
+        <ul class="plain">
+          <li><code>color-contrast</code> impact: serious. Elements must meet minimum color contrast ratio thresholds
+<br><span class="note">Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds</span><br>Tags: cat.color, wcag2aa, wcag143, TTv5, TT13.c, EN-301-549, EN-9.1.4.3, ACT, RGAAv4, RGAA-3.2.1            <ul>              <li>Target: <code>.lead</code><br>HTML: <code>&lt;p class=&#34;lead&#34;&gt;Free library cards, weekly story time, and a public computer lab. Everyone in the neighborhood is welcome.&lt;/p&gt;</code><br>Fix any of the following:
+  Element has insufficient color contrast of 3.01 (foreground color: #8a8a8a, background color: #f4efe6, font size: 13.5pt (18px), font weight: normal). Expected contrast ratio of 4.5:1</li>
+              <li>Target: <code>p &gt; a[href$=&#34;#events&#34;]</code><br>HTML: <code>&lt;a href=&#34;#events&#34;&gt;click here&lt;/a&gt;</code><br>Fix any of the following:
+  Element has insufficient color contrast of 2.14 (foreground color: #8fb3e8, background color: #ffffff, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1</li>
+              <li>Target: <code>.muted</code><br>HTML: <code>&lt;p class=&#34;muted&#34;&gt;Monday to Friday 9:00 to 19:00. Saturday 10:00 to 16:00. Closed Sunday.&lt;/p&gt;</code><br>Fix any of the following:
+  Element has insufficient color contrast of 2.61 (foreground color: #a0a0a0, background color: #ffffff, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1</li>
+              <li>Target: <code>button</code><br>HTML: <code>&lt;button type=&#34;submit&#34; class=&#34;btn&#34;&gt;Send me the link&lt;/button&gt;</code><br>Fix any of the following:
+  Element has insufficient color contrast of 2.52 (foreground color: #ffffff, background color: #6fa8dc, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1</li>
+              <li>Target: <code>span</code><br>HTML: <code>&lt;span&gt;Maple Street Community Library. 120 Maple Street.&lt;/span&gt;</code><br>Fix any of the following:
+  Element has insufficient color contrast of 2.45 (foreground color: #999999, background color: #eeeeee, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1</li>
+</ul>
+          </li>
+          <li><code>landmark-one-main</code> impact: moderate. Document should have one main landmark
+<br><span class="note">Ensure the document has a main landmark</span><br>Tags: cat.semantics, best-practice            <ul>              <li>Target: <code>html</code><br>HTML: <code>&lt;html lang=&#34;en&#34;&gt;</code><br>Fix all of the following:
+  Document does not have a main landmark</li>
+</ul>
+          </li>
+          <li><code>region</code> impact: moderate. All page content should be contained by landmarks
+<br><span class="note">Ensure all page content is contained by landmarks</span><br>Tags: cat.keyboard, best-practice, RGAAv4, RGAA-9.2.1            <ul>              <li>Target: <code>.brand</code><br>HTML: <code>&lt;div class=&#34;brand&#34;&gt;Maple Street Community Library&lt;/div&gt;</code><br>Fix any of the following:
+  Some page content is not contained by landmarks</li>
+              <li>Target: <code>.hero</code><br>HTML: <code>&lt;div class=&#34;hero&#34;&gt;
+  &lt;img alt=&#34;Mock alt text: illustration&#34; src=&#34;hero.svg&#34; width=&#34;640&#34; height=&#34;200&#34;&gt;
+  &lt;h3&gt;Books, quiet rooms, and neighbors&lt;/h3&gt;
+  &lt;p class=&#34;lead&#34;&gt;Free library cards, weekly story time, and a public computer lab. Everyone in the neighborhood is welcome.&lt;/p&gt;
+&lt;/div&gt;</code><br>Fix any of the following:
+  Some page content is not contained by landmarks</li>
+              <li>Target: <code>#events</code><br>HTML: <code>&lt;div class=&#34;section&#34; id=&#34;events&#34;&gt;</code><br>Fix any of the following:
+  Some page content is not contained by landmarks</li>
+              <li>Target: <code>#hours</code><br>HTML: <code>&lt;div class=&#34;section&#34; id=&#34;hours&#34;&gt;
+  &lt;h2&gt;Opening hours&lt;/h2&gt;
+  &lt;p class=&#34;muted&#34;&gt;Monday to Friday 9:00 to 19:00. Saturday 10:00 to 16:00. Closed Sunday.&lt;/p&gt;
+&lt;/div&gt;</code><br>Fix any of the following:
+  Some page content is not contained by landmarks</li>
+              <li>Target: <code>#join &gt; h2</code><br>HTML: <code>&lt;h2&gt;Get a library card&lt;/h2&gt;</code><br>Fix any of the following:
+  Some page content is not contained by landmarks</li>
+              <li>Target: <code>#join &gt; p</code><br>HTML: <code>&lt;p&gt;Enter your name and email and we will send you a sign-up link.&lt;/p&gt;</code><br>Fix any of the following:
+  Some page content is not contained by landmarks</li>
+              <li>Target: <code>label[for=&#34;name&#34;]</code><br>HTML: <code>&lt;label for=&#34;name&#34;&gt;Your name&lt;/label&gt;</code><br>Fix any of the following:
+  Some page content is not contained by landmarks</li>
+              <li>Target: <code>#name</code><br>HTML: <code>&lt;input type=&#34;text&#34; id=&#34;name&#34; name=&#34;name&#34; placeholder=&#34;Your name&#34; style=&#34;&#34;&gt;</code><br>Fix any of the following:
+  Some page content is not contained by landmarks</li>
+              <li>Target: <code>label[for=&#34;email&#34;]</code><br>HTML: <code>&lt;label for=&#34;email&#34;&gt;Email address&lt;/label&gt;</code><br>Fix any of the following:
+  Some page content is not contained by landmarks</li>
+              <li>Target: <code>#email</code><br>HTML: <code>&lt;input type=&#34;email&#34; id=&#34;email&#34; name=&#34;email&#34; placeholder=&#34;Email address&#34; style=&#34;&#34;&gt;</code><br>Fix any of the following:
+  Some page content is not contained by landmarks</li>
+              <li>Target: <code>.footer</code><br>HTML: <code>&lt;div class=&#34;footer&#34;&gt;
+  &lt;img alt=&#34;Mock alt text: logo&#34; src=&#34;logo.svg&#34; width=&#34;48&#34; height=&#34;48&#34;&gt;
+  &lt;span&gt;Maple Street Community Library. 120 Maple Street.&lt;/span&gt;
+&lt;/div&gt;</code><br>Fix any of the following:
+  Some page content is not contained by landmarks</li>
+</ul>
+          </li>
+        </ul>
+      </details>
+      <details>
+        <summary>Incomplete rules (0 rule detail(s) recorded)</summary>
+<p>No incomplete rule details recorded.</p>      </details>
+      <details>
+        <summary>Passing rule ids (25 recorded)</summary>
+<p><code>aria-hidden-body</code> <code>avoid-inline-spacing</code> <code>button-name</code> <code>bypass</code> <code>color-contrast</code> <code>document-title</code> <code>duplicate-id-aria</code> <code>empty-heading</code> <code>form-field-multiple-labels</code> <code>heading-order</code> <code>html-has-lang</code> <code>html-lang-valid</code> <code>image-alt</code> <code>image-redundant-alt</code> <code>label-title-only</code> <code>label</code> <code>link-in-text-block</code> <code>link-name</code> <code>list</code> <code>listitem</code> <code>meta-viewport-large</code> <code>meta-viewport</code> <code>nested-interactive</code> <code>page-has-heading-one</code> <code>region</code> </p>      </details>
+        <p><a href="assets/iterations/1/axe.json">Raw axe JSON for iteration 1</a></p>
+
+    <h4>Delta versus previous iteration</h4>
+    <table>
+      <caption>Change in axe counts, iteration 0 to iteration 1 (computed only from recorded numbers)</caption>
+      <thead><tr><th scope="col">Metric</th><th scope="col">Previous</th><th scope="col">Current</th><th scope="col">Change</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Violation rules</th><td>5</td><td>3</td><td>-2</td></tr>
+        <tr><th scope="row">Violation nodes</th><td>18</td><td>17</td><td>-1</td></tr>
+        <tr><th scope="row">Incomplete rules</th><td>0</td><td>0</td><td>no change (0)</td></tr>
+        <tr><th scope="row">Incomplete nodes</th><td>0</td><td>0</td><td>no change (0)</td></tr>
+        <tr><th scope="row">Passing rules</th><td>21</td><td>25</td><td>+4</td></tr>
+      </tbody>
+    </table>
+    <p class="note">A different count is an observation, not proof of better or worse accessibility.</p>
+
+    <h4>Task outcome</h4>
+      <p>Task <code>join-library</code>:
+<span class="pass">completed</span></p>
+      <table>
+        <caption>Task checks</caption>
+        <thead><tr><th scope="col">Check</th><th scope="col">Status</th><th scope="col">Detail</th></tr></thead>
+        <tbody><tr><th scope="row">keyboard_reachable</th><td><span class="pass">pass</span></td><td>7/7 interactive elements reached by Tab; unreachable: none</td></tr><tr><th scope="row">focus_visible</th><td><span class="fail">fail</span></td><td>7/7 focused elements show no visible indicator (heuristic). a[Events]: NO visible change; a[Hours]: NO visible change; a[Join]: NO visible change; a[click here]: NO visible change; input#name: NO visible change; input#email: NO visible change; button: NO visible change</td></tr><tr><th scope="row">task_steps</th><td><span class="pass">pass</span></td><td>3 steps executed</td></tr><tr><th scope="row">success_selector_visible</th><td><span class="pass">pass</span></td><td>#thanks</td></tr><tr><th scope="row">success_text</th><td><span class="pass">pass</span></td><td>&#39;Thank you! Check your inbox for the sign-up link.&#39;</td></tr><tr><th scope="row">external_requests_blocked</th><td><span class="pass">pass</span></td><td>blocked: none</td></tr><tr><th scope="row">preserved_text</th><td><span class="pass">pass</span></td><td>missing: none</td></tr></tbody>
+      </table>
+      <p>Preserved text missing:
+none recorded as missing.</p>      <h4>Console and page errors</h4>
+      <p>Console errors:</p>
+<p>None recorded.</p>      <p>Page errors:</p>
+<p>None recorded.</p>
+    <h4>Source diff</h4>
+      <div class="scroll diff" tabindex="0" role="region" aria-label="Source diff for iteration 1"><pre><span class="meta">--- a/index.html</span><span class="meta">+++ b/index.html</span><span class="hunk">@@ -1,5 +1,5 @@</span><span class="ctx"> &lt;!DOCTYPE html&gt;</span><span class="del">-&lt;html&gt;</span><span class="add">+&lt;html lang=&#34;en&#34;&gt;</span><span class="ctx"> &lt;head&gt;</span><span class="ctx"> &lt;meta charset=&#34;utf-8&#34;&gt;</span><span class="ctx"> &lt;title&gt;Maple Street Community Library&lt;/title&gt;</span><span class="hunk">@@ -17,7 +17,7 @@</span><span class="ctx"> &lt;/div&gt;</span><span class="ctx"> </span><span class="ctx"> &lt;div class=&#34;hero&#34;&gt;</span><span class="del">-  &lt;img src=&#34;hero.svg&#34; width=&#34;640&#34; height=&#34;200&#34;&gt;</span><span class="add">+  &lt;img alt=&#34;Mock alt text: illustration&#34; src=&#34;hero.svg&#34; width=&#34;640&#34; height=&#34;200&#34;&gt;</span><span class="ctx">   &lt;h3&gt;Books, quiet rooms, and neighbors&lt;/h3&gt;</span><span class="ctx">   &lt;p class=&#34;lead&#34;&gt;Free library cards, weekly story time, and a public computer lab. Everyone in the neighborhood is welcome.&lt;/p&gt;</span><span class="ctx"> &lt;/div&gt;</span><span class="hunk">@@ -41,15 +41,15 @@</span><span class="ctx">   &lt;h2&gt;Get a library card&lt;/h2&gt;</span><span class="ctx">   &lt;p&gt;Enter your name and email and we will send you a sign-up link.&lt;/p&gt;</span><span class="ctx">   &lt;form action=&#34;#thanks&#34; method=&#34;get&#34;&gt;</span><span class="del">-    &lt;input type=&#34;text&#34; id=&#34;name&#34; name=&#34;name&#34; placeholder=&#34;Your name&#34;&gt;</span><span class="del">-    &lt;input type=&#34;email&#34; id=&#34;email&#34; name=&#34;email&#34; placeholder=&#34;Email address&#34;&gt;</span><span class="add">+    &lt;label for=&#34;name&#34;&gt;Your name&lt;/label&gt; &lt;input type=&#34;text&#34; id=&#34;name&#34; name=&#34;name&#34; placeholder=&#34;Your name&#34;&gt;</span><span class="add">+    &lt;label for=&#34;email&#34;&gt;Email address&lt;/label&gt; &lt;input type=&#34;email&#34; id=&#34;email&#34; name=&#34;email&#34; placeholder=&#34;Email address&#34;&gt;</span><span class="ctx">     &lt;button type=&#34;submit&#34; class=&#34;btn&#34;&gt;Send me the link&lt;/button&gt;</span><span class="ctx">   &lt;/form&gt;</span><span class="ctx">   &lt;div id=&#34;thanks&#34; class=&#34;thanks&#34;&gt;Thank you! Check your inbox for the sign-up link.&lt;/div&gt;</span><span class="ctx"> &lt;/div&gt;</span><span class="ctx"> </span><span class="ctx"> &lt;div class=&#34;footer&#34;&gt;</span><span class="del">-  &lt;img src=&#34;logo.svg&#34; width=&#34;48&#34; height=&#34;48&#34;&gt;</span><span class="add">+  &lt;img alt=&#34;Mock alt text: logo&#34; src=&#34;logo.svg&#34; width=&#34;48&#34; height=&#34;48&#34;&gt;</span><span class="ctx">   &lt;span&gt;Maple Street Community Library. 120 Maple Street.&lt;/span&gt;</span><span class="ctx"> &lt;/div&gt;</span><span class="ctx"> &lt;/body&gt;</span></pre></div>
+
+    <h4>Model call provenance</h4>
+      <dl class="kv">
+        <dt>Provider</dt><dd>mock</dd>
+        <dt>Model</dt><dd>none (mock)</dd>
+        <dt>Call mode</dt><dd>mock</dd>
+        <dt>Attempts</dt><dd>1</dd>
+        <dt>Input tokens</dt><dd>unknown</dd>
+        <dt>Output tokens</dt><dd>unknown</dd>
+        <dt>Latency</dt><dd>0.000353 s</dd>
+        <dt>Estimated cost</dt><dd>unknown</dd>
+        <dt>Error</dt><dd>none recorded</dd>
+        <dt>Request parameters</dt><dd><div class="scroll" tabindex="0" role="region" aria-label="Request parameters JSON"><pre>{
+  &#34;deterministic&#34;: true,
+  &#34;max_output_tokens&#34;: 8000
+}</pre></div></dd>
+      </dl>
+      <ul class="plain">
+        <li><a href="assets/iterations/1/prompt.txt">Prompt (iteration 1)</a></li>
+        <li><a href="assets/iterations/1/response.txt">Raw model response (iteration 1)</a></li>
+      </ul>
+
+    <h4>Nielsen heuristic evaluation</h4>
+      <p>Unavailable: no usability evaluator implemented.</p>
+  </section>
+  <section id="iteration-2" class="iteration" aria-labelledby="iteration-2-h">
+    <h3 id="iteration-2-h">Iteration 2</h3>
+    <dl class="kv">
+      <dt>Status</dt><dd>success</dd>
+      <dt>Changed</dt><dd>no</dd>
+      <dt>Input directory</dt><dd><code>iterations/2/input</code></dd>
+      <dt>Output directory</dt><dd><code>iterations/2/output</code></dd>
+    </dl>
+<p class="missing">No evaluation was recorded for this iteration.</p>
+    <h4>Screenshots</h4>
+    <div class="shots">
+      <figure>
+        <figcaption>Before (previous iteration)</figcaption>
+        <a href="assets/iterations/1/screenshot.png"><img src="assets/iterations/1/screenshot.png" alt="Screenshot of the rendered page, before state, previous iteration"></a>
+      </figure>
+      <figure>
+        <figcaption>After (iteration 2)</figcaption>
+        <p class="missing">Screenshot missing: no evaluation recorded.</p>
+      </figure>
+    </div>
+
+    <h4>Axe summary</h4>
+      <p class="missing">Axe results are not available: no evaluation recorded.</p>
+
+    <h4>Delta versus previous iteration</h4>
+    <table>
+      <caption>Change in axe counts, iteration 1 to iteration 2 (computed only from recorded numbers)</caption>
+      <thead><tr><th scope="col">Metric</th><th scope="col">Previous</th><th scope="col">Current</th><th scope="col">Change</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Violation rules</th><td>3</td><td>not available</td><td>not available</td></tr>
+        <tr><th scope="row">Violation nodes</th><td>17</td><td>not available</td><td>not available</td></tr>
+        <tr><th scope="row">Incomplete rules</th><td>0</td><td>not available</td><td>not available</td></tr>
+        <tr><th scope="row">Incomplete nodes</th><td>0</td><td>not available</td><td>not available</td></tr>
+        <tr><th scope="row">Passing rules</th><td>25</td><td>not available</td><td>not available</td></tr>
+      </tbody>
+    </table>
+    <p class="note">A different count is an observation, not proof of better or worse accessibility.</p>
+
+    <h4>Task outcome</h4>
+      <p class="missing">Task outcome not available for this iteration.</p>
+      <h4>Console and page errors</h4>
+      <p class="missing">Not available: no task report recorded.</p>
+
+    <h4>Source diff</h4>
+      <div class="scroll diff" tabindex="0" role="region" aria-label="Source diff for iteration 2"><pre></pre></div>
+
+    <h4>Model call provenance</h4>
+      <dl class="kv">
+        <dt>Provider</dt><dd>mock</dd>
+        <dt>Model</dt><dd>none (mock)</dd>
+        <dt>Call mode</dt><dd>mock</dd>
+        <dt>Attempts</dt><dd>1</dd>
+        <dt>Input tokens</dt><dd>unknown</dd>
+        <dt>Output tokens</dt><dd>unknown</dd>
+        <dt>Latency</dt><dd>5.3e-05 s</dd>
+        <dt>Estimated cost</dt><dd>unknown</dd>
+        <dt>Error</dt><dd>none recorded</dd>
+        <dt>Request parameters</dt><dd><div class="scroll" tabindex="0" role="region" aria-label="Request parameters JSON"><pre>{
+  &#34;deterministic&#34;: true,
+  &#34;max_output_tokens&#34;: 8000
+}</pre></div></dd>
+      </dl>
+      <ul class="plain">
+        <li><a href="assets/iterations/2/prompt.txt">Prompt (iteration 2)</a></li>
+        <li><a href="assets/iterations/2/response.txt">Raw model response (iteration 2)</a></li>
+      </ul>
+
+    <h4>Nielsen heuristic evaluation</h4>
+      <p>Unavailable: no evaluation recorded.</p>
+  </section>
+</section>
+
+<section id="artifacts" aria-labelledby="artifacts-h">
+  <h2 id="artifacts-h">Run artifacts</h2>
+  <p>Copies of these files are stored in the <code>assets</code> folder next to this report, so the folder can be moved as a unit.</p>
+  <ul class="plain">
+    <li><a href="assets/manifest.json">Run manifest (manifest.json)</a></li>
+    <li><a href="assets/events.jsonl">Event log (events.jsonl)</a></li>
+  </ul>
+  <p>Per-iteration prompt, response, diff and raw axe files are linked in each iteration above.</p>
+</section>
+
+</main>
+<footer>
+  <section id="caveats" aria-labelledby="caveats-h">
+    <h2 id="caveats-h">Caveats</h2>
+    <ul class="plain">
+      <li>axe-core reports partial automated evidence. It does not establish WCAG conformance, and passing automated checks does not mean a page is accessible.</li>
+      <li>One run is not a benchmark finding. It supports no regression rate, model ranking or general claim.</li>
+      <li>Nielsen heuristic ratings, where shown, are unvalidated LLM output unless human validation is explicitly recorded.</li>
+      <li>Values shown as "not available" or "unknown" were not recorded; they are not zero.</li>
+    </ul>
+  </section>
+</footer>
+</body>
+</html>
