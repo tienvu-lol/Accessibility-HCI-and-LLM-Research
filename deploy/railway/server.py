@@ -27,6 +27,8 @@ def resolve(path: str):
     rel = unquote(urlsplit(path).path).lstrip("/") or "index.html"
     if rel.endswith("/"):
         rel += "index.html"
+    if "\0" in rel:
+        return None
     target = (REPORT_DIR / rel).resolve()
     if REPORT_DIR != target and REPORT_DIR not in target.parents:
         return None

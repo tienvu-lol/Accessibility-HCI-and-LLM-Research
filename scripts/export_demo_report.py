@@ -39,6 +39,8 @@ def main():
                     if pat.search(txt):
                         sys.exit(f"refusing: secret-like pattern in {f.relative_to(stage)}")
         if out.exists():
+            if out.name != "demo-report" or ROOT not in out.parents:
+                sys.exit(f"refusing to delete {out}: --out must be a directory named demo-report inside the repo")
             shutil.rmtree(out)
         shutil.copytree(stage, out)
     listing = {str(p.relative_to(out)): sha(p) for p in sorted(out.rglob("*")) if p.is_file()}

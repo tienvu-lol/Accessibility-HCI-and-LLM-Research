@@ -99,6 +99,9 @@ def preflight(cfg: RunConfig, env: Mapping[str, str]) -> None:
                         "(the runner never guesses a model ID)")
     if cfg.budget.max_total_usd is None:
         problems.append("budget.max_total_usd is not set: the owner must set an explicit spend cap before any live call")
+    if cfg.budget.max_total_usd is not None and cfg.provider.pricing is None:
+        problems.append("budget.max_total_usd needs provider.pricing (with pricing_basis) so the cap can be enforced; "
+                        "otherwise only max_calls bounds spend")
     if cfg.budget.max_calls < 1:
         problems.append("budget.max_calls must be >= 1")
     if not env.get("ANTHROPIC_API_KEY"):

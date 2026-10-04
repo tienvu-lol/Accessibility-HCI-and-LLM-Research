@@ -18,7 +18,7 @@ Every job derives from a MAIN section. Agents report all work, blockers, discove
 | J005 | P0 | Generate evidence-based before/after report | M06, M09 | J001 | INTEGRATED (self-checked) | claude-worker-c-20261003 |
 | J006 | P0 | Integrate and run minimum live demo | M10 | J002–J005 | IN_PROGRESS (mock path done; live gate BLOCKED) | claude-ui-20261003-01 |
 | J007 | P1 | Four arms and provisional Nielsen signal | M02, M03, M07 | J006; owner config decisions | QUEUED | Unclaimed |
-| J008 | P0 | Independent demo/provenance review | M06, M07, M10 | J006 | IN_PROGRESS (independent reviewer) | claude-reviewer-20261003 |
+| J008 | P0 | Independent demo/provenance review | M06, M07, M10 | J006 | REVIEWED: PASS WITH FINDINGS (by independent agent claude-reviewer-20261003; head 34c6140) | claude-reviewer-20261003 |
 | J009 | P1 | Host frozen demo report on Railway | M08b, M09 | J006, J008; project access | REVIEW (package built; deploy BLOCKED on Railway access; docker unverified) | claude-ui-20261003-01 |
 | J010 | P2 | Verify/extract WCAG reference data | M00, M04, M07 | G001 | QUEUED | Unclaimed |
 | J011 | P2 | Licensed corpus and owner-approved pilot config | M03, M04, M11 | J008, J010; owner decisions | QUEUED | Unclaimed |
@@ -114,7 +114,7 @@ P0 = minimum demo or correctness gate; P1 = tonight stretch; P2 = research/share
 ### J008 — Demo review
 
 - Blueprint: [M06](MAIN.md#m06--run-and-artifact-contract), [M07](MAIN.md#m07--measurement-and-validity), [M10](MAIN.md#m10--milestones).
-- Status: IN_PROGRESS. Owner: claude-reviewer-20261003 (independent agent; reviews coordinator integration). Dependencies: J006.
+- Status: REVIEWED, PASS WITH FINDINGS. Owner: claude-reviewer-20261003 (independent agent; reviews coordinator integration). Dependencies: J006.
 - Scope: review-only initially; findings and follow-up IDs in this board.
 - Acceptance: reviewer reproduces critical artifact/evaluation path; confirms original fixture hash, model provenance, failure labeling, actual counts, bounded budget, no secrets/public private data, and no unauthorized MAIN diff; records pass/fail evidence and limitations.
 
@@ -212,6 +212,10 @@ P0 = minimum demo or correctness gate; P1 = tonight stretch; P2 = research/share
   - Checks (coordinator): `python -m pytest -q` -> 69 passed (at `34c6140` plus schema change).
   - Follow-ups proposed: J019 events.jsonl schema; J020 `AxeSummary` optional counts when an evaluator fails mid-way; J021 make `region` landmark counts and axe-miss defects (labels via placeholder, heading order, skip link) addressable with supplementary checks.
 
+- **J008 review result (independent agent `claude-reviewer-20261003`, reviewed head `34c6140` in a `git archive` copy; the agent was launched by the coordinator but did not write the code).** Verdict PASS WITH FINDINGS. Verified: MAIN.md diff empty; 69 tests pass; mock run reproduced (baseline 5 rules/18 nodes → 3/17 after scripted edit); fixture hash unchanged; MOCK labeling honest and live gate not claimed; no secrets; live mode refuses without model/cap/key; server traversal probes all 404. Not verified by reviewer: live Anthropic call, Docker, Railway.
+  - Fixed by coordinator after review: (1) USD cap now requires `provider.pricing` so it is enforceable (test added); (8) server `GET /%00` returns 404 instead of dropping the connection; (6, partly) export `--out` guarded to a `demo-report` dir inside the repo.
+  - Open follow-ups: **J019** provenance gaps (prompt/evaluator version+hash, artifact hashes, per-iteration timestamps, dirty-tree flag, seed, fixture license in manifest); **J020** treat `stop_reason=max_tokens` as failure and enforce "no JS" in parser; **J021** distinguish pipeline `status` from repair outcome and mark unevaluated iterations (a first-iteration `no_change` currently reads `success`; the mock script is idempotent so `no_change` is not evidence of convergence); **J022** `Evaluation.mode` is hardcoded `live` (rename/clarify as measurement mode); extend export secret scan to `EXPORT_MANIFEST`; accept `--no-sandbox` Chromium risk for demo only (MAIN M08a).
+
 ## Claim/handoff template
 
 Copy into the relevant record when claiming; never edit MAIN.md to record progress.
@@ -251,3 +255,4 @@ Append UTC events with job ID/session, change, evidence, and next step. Preserve
 - 2026-10-04T00:30:00Z — J001,J002 / claude-ui-20261003-01 — Claimed (coordinator mode). Inspected tooling: Python 3.11, Node 22, Playwright 1.63 + system Chromium, no provider credentials in env, Docker CLI present but daemon not verified. Next: schemas/CLI/example bundle, then fixture.
 - 2026-10-04T00:50:00Z — J001 DONE(self-checked), J002 REVIEW / claude-ui-20261003-01 — Schemas, CLI scaffold, example mock bundle, pinned deps, fixture + manifest created; 7 tests pass. Next: push, launch workers A/B/C on worktrees.
 - 2026-10-04T00:55:00Z — J003/J004/J005 INTEGRATED, J006 mock path run, J009 package built / claude-ui-20261003-01 — see Integration record. Independent J008 reviewer launched. Live gate and Railway deploy BLOCKED on owner inputs.
+- 2026-10-04T01:10:00Z — J008 / claude-reviewer-20261003 — PASS WITH FINDINGS; coordinator fixed USD-cap enforcement, server null-byte, export path guard; J019–J022 proposed.

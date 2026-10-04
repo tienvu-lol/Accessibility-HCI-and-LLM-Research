@@ -9,6 +9,7 @@ from uirepairgym.paths import tree_hash
 from uirepairgym.providers import MockProvider, ProviderError
 from uirepairgym.runner import ConfigError, load_config, run_experiment
 from uirepairgym.runner import core
+from uirepairgym.runner.config import preflight
 from uirepairgym.schemas import ModelCall, RunManifest
 
 FIXTURE = ROOT / "fixtures/demo"
@@ -240,7 +241,7 @@ def test_demo_config_refuses_as_shipped(capsys, monkeypatch):
 
 
 def test_model_from_env_is_used(make_cfg, evaluate):
-    cfg = make_cfg(**{**LIVE, "provider": {"name": "anthropic"}})
+    cfg = make_cfg(**{**LIVE, "provider": {"name": "anthropic", "pricing": {"input_usd_per_mtok": 1.0, "output_usd_per_mtok": 2.0, "pricing_basis": "test fixture pricing"}}})
 
     class Fake:
         def __init__(self):
@@ -350,3 +351,10 @@ def test_secret_in_unexpected_exception_redacted(make_cfg, evaluate):
             raise RuntimeError(f"oops {FAKE_KEY}")
     d, m = run(make_cfg(max_iterations=1), evaluate, provider=Leak(), env={"ANTHROPIC_API_KEY": FAKE_KEY})
     assert FAKE_KEY not in _all_text(d)
+
+
+def test_usd_cap_without_pricing_is_refused(make_cfg, evaluate):
+    cfg = make_cfg(**{**LIVE, "provider": {"name": "anthropic", "model": "m"}})
+    with pytest.raises(ConfigError) as ei:
+        preflight(cfg, {"ANTHROPIC_API_KEY": FAKE_KEY})
+    assert "needs provider.pricing" in str(ei.value)
