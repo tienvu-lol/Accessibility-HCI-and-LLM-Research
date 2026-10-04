@@ -1,10 +1,10 @@
 """Read-only static server for the frozen demo report (J009). Stdlib only; no model calls, no uploads.
 
-Binds 0.0.0.0:$PORT (default 8080). Serves files under REPORT_DIR (default ./demo-report next to this file).
+Binds :: (dual-stack, also IPv4 0.0.0.0) on $PORT (default 8080); falls back to 0.0.0.0. Serves files under REPORT_DIR (default ./demo-report next to this file).
 Routes: GET/HEAD / -> index.html ; /assets/... ; /EXPORT_MANIFEST.json ; GET /health -> 200 only when index.html exists.
 Every other method -> 405. No request body is ever read.
 """
-import json, mimetypes, os, sys
+import json, mimetypes, os, socket, sys
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
@@ -41,11 +41,11 @@ class Handler(BaseHTTPRequestHandler):
     server_version = "demo-report"
     sys_version = ""
 
-    def _send(self, code, body=b"", ctype="text/plain; charset=utf-8", head=False):
+    def _send(self, code, body=b"", ctype="text/plain; charset=utf-8", head=False, cache=None):
         self.send_response(code)
         self.send_header("Content-Type", ctype)
         self.send_header("Content-Length", str(len(body)))
-        for k, v in HEADERS.items():
+        for k, v in {**HEADERS, **({"Cache-Control": cache} if cache else {})}.items():
             self.send_header(k, v)
         self.end_headers()
         if not head:
@@ -53,10 +53,10 @@ class Handler(BaseHTTPRequestHandler):
 
     def _serve(self, head):
         route = urlsplit(self.path).path
-        if route == "/health":
+        if route.rstrip("/") == "/health":
             ok = ready()
             body = json.dumps({"status": "ok" if ok else "unavailable", "report_ready": ok}).encode()
-            return self._send(200 if ok else 503, body, "application/json", head)
+            return self._send(200 if ok else 503, body, "application/json", head, cache="no-store")
         target = resolve(self.path)
         if target is None:
             return self._send(404, b"not found\n", head=head)
@@ -75,10 +75,23 @@ class Handler(BaseHTTPRequestHandler):
         sys.stderr.write("%s - %s\n" % (self.address_string(), fmt % args))
 
 
+class DualStackServer(ThreadingHTTPServer):
+    """Listen on :: with IPv4-mapped addresses so IPv4 (0.0.0.0) and IPv6 (Railway private network) both work."""
+    address_family = socket.AF_INET6
+
+    def server_bind(self):
+        self.socket.setsockopt(socket.IPPROTO_IPV6, socket.IPV6_V6ONLY, 0)
+        super().server_bind()
+
+
 def main():
     port = int(os.environ.get("PORT", "8080"))
-    print(f"demo-report serving {REPORT_DIR} on 0.0.0.0:{port} ready={ready()}", flush=True)
-    ThreadingHTTPServer(("0.0.0.0", port), Handler).serve_forever()
+    try:
+        srv, host = DualStackServer(("::", port), Handler), "[::] (dual-stack, includes 0.0.0.0)"
+    except OSError:  # IPv6 unavailable in this container
+        srv, host = ThreadingHTTPServer(("0.0.0.0", port), Handler), "0.0.0.0"
+    print(f"demo-report serving {REPORT_DIR} on {host}:{port} ready={ready()}", flush=True)
+    srv.serve_forever()
 
 
 if __name__ == "__main__":

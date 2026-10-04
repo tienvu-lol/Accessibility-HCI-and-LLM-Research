@@ -44,3 +44,18 @@ def test_health_unavailable_without_report(tmp_path):
         s, b, _ = get(18432, "/health"); assert s == 503 and json.loads(b)["report_ready"] is False
     finally:
         p.terminate()
+
+
+def test_health_not_cached_and_trailing_slash(tmp_path):
+    (tmp_path / "index.html").write_text("x")
+    p = start(tmp_path, 18433)
+    try:
+        s, _, h = get(18433, "/health"); assert s == 200 and h["Cache-Control"] == "no-store"
+        assert get(18433, "/health/")[0] == 200
+        import socket
+        try:
+            c = socket.create_connection(("::1", 18433), timeout=2); c.close()
+        except OSError:
+            pytest.skip("IPv6 loopback unavailable")
+    finally:
+        p.terminate()
