@@ -72,7 +72,8 @@ class Handler(BaseHTTPRequestHandler):
     do_POST = do_PUT = do_DELETE = do_PATCH = do_OPTIONS = _deny
 
     def log_message(self, fmt, *args):
-        sys.stderr.write("%s - %s\n" % (self.address_string(), fmt % args))
+        sys.stdout.write("%s - %s\n" % (self.address_string(), fmt % args))
+        sys.stdout.flush()
 
 
 class DualStackServer(ThreadingHTTPServer):
@@ -90,7 +91,7 @@ def main():
         srv, host = DualStackServer(("::", port), Handler), "[::] (dual-stack, includes 0.0.0.0)"
     except OSError:  # IPv6 unavailable in this container
         srv, host = ThreadingHTTPServer(("0.0.0.0", port), Handler), "0.0.0.0"
-    print(f"demo-report serving {REPORT_DIR} on {host}:{port} ready={ready()}", flush=True)
+    print(f"demo-report serving {REPORT_DIR} on {host}:{port} ready={ready()} port_from_env={'PORT' in os.environ}", flush=True)
     srv.serve_forever()
 
 
