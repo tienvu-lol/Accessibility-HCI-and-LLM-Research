@@ -11,11 +11,11 @@ Every job derives from a MAIN section. Agents report all work, blockers, discove
 |---|---|---|---|---|---|---|
 | G001 | P0 | Publish named research branch and governance blueprint/queue | M00, M12 | None | DONE | codex-governance-20261003 |
 | G002 | P0 | Retire old branch to finish requested rename | M00, M12 | G001; browser fallback permission | BLOCKED | codex-governance-20261003 |
-| J001 | P0 | Freeze demo interfaces and minimal toolchain | M05, M06, M10 | G001 | QUEUED | Unclaimed |
-| J002 | P0 | Create one synthetic static fixture/task | M04, M07 | J001 | QUEUED | Unclaimed |
-| J003 | P0 | Browser observations, axe, behavioral checks | M05, M07 | J001, J002 | QUEUED | Unclaimed |
-| J004 | P0 | Bounded runner and one provider adapter | M03, M05, M06 | J001, J002 | QUEUED | Unclaimed |
-| J005 | P0 | Generate evidence-based before/after report | M06, M09 | J001 | QUEUED | Unclaimed |
+| J001 | P0 | Freeze demo interfaces and minimal toolchain | M05, M06, M10 | G001 | IN_PROGRESS | claude-ui-20261003-01 |
+| J002 | P0 | Create one synthetic static fixture/task | M04, M07 | J001 | CLAIMED | claude-ui-20261003-01 |
+| J003 | P0 | Browser observations, axe, behavioral checks | M05, M07 | J001, J002 | CLAIMED | claude-worker-a-20261003 (planned) |
+| J004 | P0 | Bounded runner and one provider adapter | M03, M05, M06 | J001, J002 | CLAIMED | claude-worker-b-20261003 (planned) |
+| J005 | P0 | Generate evidence-based before/after report | M06, M09 | J001 | CLAIMED | claude-worker-c-20261003 (planned) |
 | J006 | P0 | Integrate and run minimum live demo | M10 | J002–J005 | QUEUED | Unclaimed |
 | J007 | P1 | Four arms and provisional Nielsen signal | M02, M03, M07 | J006; owner config decisions | QUEUED | Unclaimed |
 | J008 | P0 | Independent demo/provenance review | M06, M07, M10 | J006 | QUEUED | Unclaimed |
@@ -184,6 +184,17 @@ P0 = minimum demo or correctness gate; P1 = tonight stretch; P2 = research/share
 - Status: QUEUED. Owner: Unclaimed. Dependencies: J016, J017, explicit owner release approval.
 - Acceptance: reviewed figures/tables/methods/limitations, artifact reproduction instructions, immutable approved export with hashes/versions/licenses and appropriate visibility, public site reading only that export, release tag/links verified.
 
+### Tonight's session claims (published before implementation)
+
+- Coordinator/integrator: **claude-ui-20261003-01** (Claude Code web session `session_01N5yCRbGeanbPknecpiWuiF`), coordinator mode, shared checkout `research/accessibility-usability-benchmark`, base SHA `2369ad32d2b61de4f10bb010d36ce88a8cbaa805`. Claimed UTC 2026-10-04T00:30:00Z. Next checkpoint: J001+J002 published.
+- Owner-supplied settings for this launch were **unfilled placeholders** (provider, model ID, spend cap). No live provider call is authorized: D003 remains NEEDS_OWNER_DECISION. Live gate stays unmet until provided; mock mode will be labeled.
+- Coordinator-owned (J001/J002/J006/J009 prep): `pyproject.toml`, `requirements*.txt`/locks, `schemas/`, `src/uirepairgym/{__init__,__main__,cli,schemas,interfaces,paths}.py`, `.gitignore`, `.env.example`, `fixtures/`, `scripts/`, `deploy/railway/`, root README run instructions, `agentic/JOBS.md`.
+- Planned worker scopes (disjoint; each on worktree branch `agent/<session>/<job-id>`; no claim is active until the worker's start event is logged):
+  - J003 Worker A (browser/evaluator): `src/uirepairgym/browser/`, `src/uirepairgym/evaluators/`, `tests/browser/`, vendored `src/uirepairgym/evaluators/vendor/axe.min.js`.
+  - J004 Worker B (runner/provider): `src/uirepairgym/runner/`, `src/uirepairgym/providers/`, `configs/`, `tests/runner/`.
+  - J005 Worker C (report): `src/uirepairgym/reporting/`, `tests/reporting/`.
+- Dependency manifests, lockfiles, schemas, CLI wiring: coordinator only; workers request changes via handoff.
+
 ## Claim/handoff template
 
 Copy into the relevant record when claiming; never edit MAIN.md to record progress.
@@ -219,3 +230,5 @@ Append UTC events with job ID/session, change, evidence, and next step. Preserve
 - 2026-10-03T23:45:00Z — G001 / codex-governance-20261003 — Audited supplied branch and main at 8500092c15203ba0e90c0f70a19cec67074911bc; recovered Hosting Experiment Stack direction and read existing planning documents/WCAG archive listing. No app code found. Next: publish protected blueprint and queue.
 
 - 2026-10-03T23:56:43Z — G001 / codex-governance-20261003 — Published c59d2713093b7989f1affba96872f73fc5662a26 through GitHub connector; nine remote file contents verified, links/diff checked, research assets and main preserved. G001 DONE; J001 ready. G002 BLOCKED: original branch remains pending permission for GitHub browser fallback.
+
+- 2026-10-04T00:30:00Z — J001,J002 / claude-ui-20261003-01 — Claimed (coordinator mode). Inspected tooling: Python 3.11, Node 22, Playwright 1.63 + system Chromium, no provider credentials in env, Docker CLI present but daemon not verified. Next: schemas/CLI/example bundle, then fixture.
