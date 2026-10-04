@@ -1,0 +1,538 @@
+{
+  "$defs": {
+    "AxeNode": {
+      "additionalProperties": false,
+      "properties": {
+        "failure_summary": {
+          "default": "",
+          "title": "Failure Summary",
+          "type": "string"
+        },
+        "html": {
+          "default": "",
+          "title": "Html",
+          "type": "string"
+        },
+        "target": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Target",
+          "type": "array"
+        }
+      },
+      "required": [
+        "target"
+      ],
+      "title": "AxeNode",
+      "type": "object"
+    },
+    "AxeReport": {
+      "additionalProperties": false,
+      "properties": {
+        "axe_version": {
+          "title": "Axe Version",
+          "type": "string"
+        },
+        "incomplete": {
+          "items": {
+            "$ref": "#/$defs/AxeRule"
+          },
+          "title": "Incomplete",
+          "type": "array"
+        },
+        "passes": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Passes",
+          "type": "array"
+        },
+        "raw_path": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Raw Path"
+        },
+        "summary": {
+          "$ref": "#/$defs/AxeSummary"
+        },
+        "violations": {
+          "items": {
+            "$ref": "#/$defs/AxeRule"
+          },
+          "title": "Violations",
+          "type": "array"
+        }
+      },
+      "required": [
+        "axe_version",
+        "summary",
+        "violations",
+        "incomplete",
+        "passes"
+      ],
+      "title": "AxeReport",
+      "type": "object"
+    },
+    "AxeRule": {
+      "additionalProperties": false,
+      "properties": {
+        "description": {
+          "default": "",
+          "title": "Description",
+          "type": "string"
+        },
+        "help": {
+          "default": "",
+          "title": "Help",
+          "type": "string"
+        },
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "impact": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Impact"
+        },
+        "nodes": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/AxeNode"
+          },
+          "title": "Nodes",
+          "type": "array"
+        },
+        "tags": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Tags",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id"
+      ],
+      "title": "AxeRule",
+      "type": "object"
+    },
+    "AxeSummary": {
+      "additionalProperties": false,
+      "properties": {
+        "by_impact": {
+          "additionalProperties": {
+            "type": "integer"
+          },
+          "default": {},
+          "title": "By Impact",
+          "type": "object"
+        },
+        "incomplete_nodes": {
+          "title": "Incomplete Nodes",
+          "type": "integer"
+        },
+        "incomplete_rules": {
+          "title": "Incomplete Rules",
+          "type": "integer"
+        },
+        "passes_rules": {
+          "title": "Passes Rules",
+          "type": "integer"
+        },
+        "violation_nodes": {
+          "title": "Violation Nodes",
+          "type": "integer"
+        },
+        "violation_rules": {
+          "title": "Violation Rules",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "violation_rules",
+        "violation_nodes",
+        "incomplete_rules",
+        "incomplete_nodes",
+        "passes_rules"
+      ],
+      "title": "AxeSummary",
+      "type": "object"
+    },
+    "BrowserConfig": {
+      "additionalProperties": false,
+      "properties": {
+        "axe_version": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Axe Version"
+        },
+        "browser": {
+          "default": "chromium",
+          "title": "Browser",
+          "type": "string"
+        },
+        "browser_version": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Browser Version"
+        },
+        "timeout_ms": {
+          "default": 15000,
+          "title": "Timeout Ms",
+          "type": "integer"
+        },
+        "viewport": {
+          "$ref": "#/$defs/Viewport"
+        }
+      },
+      "title": "BrowserConfig",
+      "type": "object"
+    },
+    "CheckResult": {
+      "additionalProperties": false,
+      "properties": {
+        "detail": {
+          "default": "",
+          "title": "Detail",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "pass",
+            "fail",
+            "error",
+            "skipped"
+          ],
+          "title": "Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "status"
+      ],
+      "title": "CheckResult",
+      "type": "object"
+    },
+    "NielsenFinding": {
+      "additionalProperties": false,
+      "properties": {
+        "applicable": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Applicable"
+        },
+        "evidence": {
+          "default": "",
+          "title": "Evidence",
+          "type": "string"
+        },
+        "heuristic": {
+          "title": "Heuristic",
+          "type": "string"
+        },
+        "severity": {
+          "anyOf": [
+            {
+              "maximum": 4,
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Severity"
+        }
+      },
+      "required": [
+        "heuristic"
+      ],
+      "title": "NielsenFinding",
+      "type": "object"
+    },
+    "NielsenReport": {
+      "additionalProperties": false,
+      "properties": {
+        "findings": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/NielsenFinding"
+          },
+          "title": "Findings",
+          "type": "array"
+        },
+        "judge": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Judge"
+        },
+        "reason": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Reason"
+        },
+        "status": {
+          "default": "unavailable",
+          "enum": [
+            "unavailable",
+            "provisional_unvalidated"
+          ],
+          "title": "Status",
+          "type": "string"
+        }
+      },
+      "title": "NielsenReport",
+      "type": "object"
+    },
+    "TaskReport": {
+      "additionalProperties": false,
+      "properties": {
+        "checks": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/CheckResult"
+          },
+          "title": "Checks",
+          "type": "array"
+        },
+        "completed": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Completed"
+        },
+        "console_errors": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Console Errors",
+          "type": "array"
+        },
+        "error": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Error"
+        },
+        "page_errors": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Page Errors",
+          "type": "array"
+        },
+        "preserved_text_missing": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Preserved Text Missing",
+          "type": "array"
+        },
+        "task_id": {
+          "title": "Task Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "task_id"
+      ],
+      "title": "TaskReport",
+      "type": "object"
+    },
+    "Viewport": {
+      "additionalProperties": false,
+      "properties": {
+        "height": {
+          "default": 800,
+          "title": "Height",
+          "type": "integer"
+        },
+        "width": {
+          "default": 1280,
+          "title": "Width",
+          "type": "integer"
+        }
+      },
+      "title": "Viewport",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "description": "Output of the browser/evaluator component for one rendered website state.",
+  "properties": {
+    "axe": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/AxeReport"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "axe_error": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Axe Error"
+    },
+    "browser": {
+      "$ref": "#/$defs/BrowserConfig"
+    },
+    "contract_version": {
+      "default": "0.1.0",
+      "title": "Contract Version",
+      "type": "string"
+    },
+    "finished_utc": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Finished Utc"
+    },
+    "html_hash": {
+      "title": "Html Hash",
+      "type": "string"
+    },
+    "mode": {
+      "default": "live",
+      "enum": [
+        "live",
+        "mock",
+        "replay"
+      ],
+      "title": "Mode",
+      "type": "string"
+    },
+    "nielsen": {
+      "$ref": "#/$defs/NielsenReport"
+    },
+    "screenshot_path": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Screenshot Path"
+    },
+    "started_utc": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Started Utc"
+    },
+    "task": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/TaskReport"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    }
+  },
+  "required": [
+    "html_hash",
+    "browser"
+  ],
+  "title": "Evaluation",
+  "type": "object"
+}

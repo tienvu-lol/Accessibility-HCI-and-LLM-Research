@@ -1,0 +1,182 @@
+{
+  "contract_version": "0.1.0",
+  "run_id": "example-mock-0001",
+  "mode": "mock",
+  "arm": "accessibility_only",
+  "fixture_id": "demo-library",
+  "fixture_hash": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+  "fixture_hash_after": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+  "config": {
+    "max_iterations": 1
+  },
+  "started_utc": "2026-10-03T00:00:00Z",
+  "finished_utc": "2026-10-03T00:00:01Z",
+  "status": "success",
+  "stopping_reason": "iteration_cap",
+  "iterations": [
+    {
+      "index": 0,
+      "input_dir": "iterations/0/input",
+      "output_dir": null,
+      "status": "success",
+      "changed": null,
+      "evaluation": {
+        "html_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+        "browser": {
+          "browser": "chromium",
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "timeout_ms": 15000,
+          "axe_version": "4.13.0"
+        },
+        "screenshot_path": "iterations/0/screenshot.png",
+        "axe": {
+          "axe_version": "4.13.0",
+          "summary": {
+            "violation_rules": 3,
+            "violation_nodes": 5,
+            "incomplete_rules": 0,
+            "incomplete_nodes": 0,
+            "passes_rules": 10,
+            "by_impact": {
+              "serious": 5
+            }
+          },
+          "violations": [
+            {
+              "id": "image-alt",
+              "impact": "critical",
+              "description": "SYNTHETIC EXAMPLE",
+              "help": "Images must have alternate text",
+              "tags": [
+                "wcag111"
+              ],
+              "nodes": [
+                {
+                  "target": [
+                    "img"
+                  ],
+                  "html": "<img src=x>",
+                  "failure_summary": "example"
+                }
+              ]
+            }
+          ],
+          "incomplete": [],
+          "passes": [
+            "document-title"
+          ],
+          "raw_path": null
+        },
+        "task": {
+          "task_id": "join-library",
+          "completed": false,
+          "checks": [
+            {
+              "name": "keyboard-focus-visible",
+              "status": "fail",
+              "detail": "example"
+            }
+          ],
+          "preserved_text_missing": []
+        },
+        "nielsen": {
+          "status": "unavailable",
+          "reason": "no usability evaluator implemented"
+        },
+        "mode": "mock"
+      }
+    },
+    {
+      "index": 1,
+      "input_dir": "iterations/1/input",
+      "output_dir": "iterations/1/output",
+      "status": "success",
+      "changed": true,
+      "diff_path": "iterations/1/diff.patch",
+      "model_call": {
+        "provider": "mock",
+        "model": null,
+        "mode": "mock",
+        "request_params": {},
+        "prompt_path": "iterations/1/prompt.txt",
+        "response_path": "iterations/1/response.txt",
+        "usage": {},
+        "attempts": 1
+      },
+      "evaluation": {
+        "html_hash": "1111111111111111111111111111111111111111111111111111111111111111",
+        "browser": {
+          "browser": "chromium",
+          "viewport": {
+            "width": 1280,
+            "height": 800
+          },
+          "timeout_ms": 15000,
+          "axe_version": "4.13.0"
+        },
+        "screenshot_path": "iterations/1/screenshot.png",
+        "axe": {
+          "axe_version": "4.13.0",
+          "summary": {
+            "violation_rules": 1,
+            "violation_nodes": 1,
+            "incomplete_rules": 0,
+            "incomplete_nodes": 0,
+            "passes_rules": 10,
+            "by_impact": {
+              "serious": 1
+            }
+          },
+          "violations": [
+            {
+              "id": "image-alt",
+              "impact": "critical",
+              "description": "SYNTHETIC EXAMPLE",
+              "help": "Images must have alternate text",
+              "tags": [
+                "wcag111"
+              ],
+              "nodes": [
+                {
+                  "target": [
+                    "img"
+                  ],
+                  "html": "<img src=x>",
+                  "failure_summary": "example"
+                }
+              ]
+            }
+          ],
+          "incomplete": [],
+          "passes": [
+            "document-title"
+          ],
+          "raw_path": null
+        },
+        "task": {
+          "task_id": "join-library",
+          "completed": true,
+          "checks": [
+            {
+              "name": "keyboard-focus-visible",
+              "status": "pass"
+            }
+          ],
+          "preserved_text_missing": []
+        },
+        "nielsen": {
+          "status": "unavailable",
+          "reason": "no usability evaluator implemented"
+        },
+        "mode": "mock"
+      }
+    }
+  ],
+  "visibility": "private",
+  "notes": [
+    "SYNTHETIC EXAMPLE BUNDLE - mock mode; values are not measurements"
+  ]
+}

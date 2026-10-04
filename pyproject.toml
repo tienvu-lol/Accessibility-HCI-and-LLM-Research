@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "uirepairgym"
+version = "0.1.0"
+description = "UIRepairGym: joint WCAG/Nielsen UI repair environment (demo scaffold)"
+requires-python = ">=3.11"
+dependencies = [
+  "pydantic==2.13.4",
+  "playwright==1.63.0",
+  "Jinja2==3.1.6",
+  "anthropic==1.11.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest==9.1.1", "jsonschema==4.26.0"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+uirepairgym = ["evaluators/vendor/*.js", "reporting/templates/*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -11,8 +11,8 @@ Every job derives from a MAIN section. Agents report all work, blockers, discove
 |---|---|---|---|---|---|---|
 | G001 | P0 | Publish named research branch and governance blueprint/queue | M00, M12 | None | DONE | codex-governance-20261003 |
 | G002 | P0 | Retire old branch to finish requested rename | M00, M12 | G001; browser fallback permission | BLOCKED | codex-governance-20261003 |
-| J001 | P0 | Freeze demo interfaces and minimal toolchain | M05, M06, M10 | G001 | IN_PROGRESS | claude-ui-20261003-01 |
-| J002 | P0 | Create one synthetic static fixture/task | M04, M07 | J001 | CLAIMED | claude-ui-20261003-01 |
+| J001 | P0 | Freeze demo interfaces and minimal toolchain | M05, M06, M10 | G001 | DONE (self-checked) | claude-ui-20261003-01 |
+| J002 | P0 | Create one synthetic static fixture/task | M04, M07 | J001 | REVIEW | claude-ui-20261003-01 |
 | J003 | P0 | Browser observations, axe, behavioral checks | M05, M07 | J001, J002 | CLAIMED | claude-worker-a-20261003 (planned) |
 | J004 | P0 | Bounded runner and one provider adapter | M03, M05, M06 | J001, J002 | CLAIMED | claude-worker-b-20261003 (planned) |
 | J005 | P0 | Generate evidence-based before/after report | M06, M09 | J001 | CLAIMED | claude-worker-c-20261003 (planned) |
@@ -195,6 +195,13 @@ P0 = minimum demo or correctness gate; P1 = tonight stretch; P2 = research/share
   - J005 Worker C (report): `src/uirepairgym/reporting/`, `tests/reporting/`.
 - Dependency manifests, lockfiles, schemas, CLI wiring: coordinator only; workers request changes via handoff.
 
+- **J001 record (claude-ui-20261003-01, coordinator).** Contract version `0.1.0`. Committed paths: `pyproject.toml`, `requirements.lock.txt`, `.gitignore`, `.env.example`, `schemas/{fixture,evaluation,run}.schema.json`, `src/uirepairgym/{__init__,__main__,cli,schemas,interfaces,paths}.py`, `scripts/make_example_bundle.py`, `examples/run-example/` (**synthetic, mode=mock**, not measurements), `tests/test_schemas.py`, vendored `src/uirepairgym/evaluators/vendor/axe.min.js` (axe-core 4.13.0 from npm tarball, MPL-2.0 license file alongside; sha256 `c24f097b…a0c1`).
+  - Decisions: Python package + Playwright (Chromium, via `UIREPAIRGYM_CHROMIUM_PATH` or auto-detected `/opt/pw-browsers/chromium-*/chrome-linux/chrome` because Playwright 1.63's expected build is absent here). **axe path: Python injects the vendored pinned axe.min.js** (no Node evaluator). Runner→evaluator→report boundary = `interfaces.py` + `RunManifest` in `schemas.py`. Run layout: `runs/<run_id>/manifest.json`, `events.jsonl`, `iterations/<n>/{input,output}/`, `screenshot.png`, `axe.json`, `prompt.txt`, `response.txt`, `diff.patch`; manifest paths are relative to the run dir. Iteration 0 = baseline evaluation (no model call).
+  - Commands (actual): `pip install -e '.[dev]'` ; `python -m uirepairgym --help` ; `python -m uirepairgym schema --out schemas` ; `python -m uirepairgym validate {fixture|evaluation|run} <file>` ; `python -m pytest -q`. Design targets wired lazily and **not yet implemented**: `run --config`, `eval <fixture_dir> --out`, `report --run-dir`.
+  - Evidence: `pytest -q` → 7 passed (schemas validate example, fixture hash matches files, mode required, null-not-zero, extra fields rejected, committed schemas current, CLI help). Self-checked by the coordinator: **not an independent review**.
+  - Budget: owner cap unset (D003). Proposed default in code/config: at most 1 run, ≤3 repair iterations, bounded tokens/timeout; **no live call until Tien supplies provider/model/cap**.
+- **J002 record.** `fixtures/demo/` (index.html, styles.css, hero.svg, logo.svg) + `fixtures/demo.manifest.json` (synthetic, CC0-style, content_hash in manifest). Task: keyboard fill name+email, Enter, `#thanks` (CSS `:target`, no JS) becomes visible. Known intended defects are *documented, not yet confirmed by axe*; status REVIEW until J003 confirms they are detected. Reset = copy directory into per-run workspace. Manifest excluded from the hashed tree.
+
 ## Claim/handoff template
 
 Copy into the relevant record when claiming; never edit MAIN.md to record progress.
@@ -232,3 +239,4 @@ Append UTC events with job ID/session, change, evidence, and next step. Preserve
 - 2026-10-03T23:56:43Z — G001 / codex-governance-20261003 — Published c59d2713093b7989f1affba96872f73fc5662a26 through GitHub connector; nine remote file contents verified, links/diff checked, research assets and main preserved. G001 DONE; J001 ready. G002 BLOCKED: original branch remains pending permission for GitHub browser fallback.
 
 - 2026-10-04T00:30:00Z — J001,J002 / claude-ui-20261003-01 — Claimed (coordinator mode). Inspected tooling: Python 3.11, Node 22, Playwright 1.63 + system Chromium, no provider credentials in env, Docker CLI present but daemon not verified. Next: schemas/CLI/example bundle, then fixture.
+- 2026-10-04T00:50:00Z — J001 DONE(self-checked), J002 REVIEW / claude-ui-20261003-01 — Schemas, CLI scaffold, example mock bundle, pinned deps, fixture + manifest created; 7 tests pass. Next: push, launch workers A/B/C on worktrees.
