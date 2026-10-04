@@ -59,3 +59,9 @@ def test_health_not_cached_and_trailing_slash(tmp_path):
             pytest.skip("IPv6 loopback unavailable")
     finally:
         p.terminate()
+
+
+def test_root_dockerfile_matches_demo_dockerfile():
+    root = Path(__file__).resolve().parents[2]
+    strip = lambda t: [l for l in t.splitlines() if not l.startswith("# Fallback so") and not l.startswith("# Keep byte-identical")]
+    assert strip((root / "Dockerfile").read_text()) == strip((root / "deploy/railway/Dockerfile.demo").read_text())

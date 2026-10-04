@@ -16,7 +16,7 @@ Serves one explicitly exported report. **Currently the bundled export is a MOCK 
 | Volumes / database | none |
 | Public networking | generate a Railway domain only after owner approves display of the exported report |
 
-The repo-root `railway.json` (config-as-code) pins the Dockerfile builder, `deploy/railway/Dockerfile.demo`, and the `/health` check, so a service connected to this repo does not fall back to auto-detecting a Python app from `pyproject.toml`. Settings made in the Railway UI are overridden by it.
+The repo-root `railway.json` (config-as-code) pins the Dockerfile builder, `deploy/railway/Dockerfile.demo`, and the `/health` check, so a service connected to this repo does not fall back to auto-detecting a Python app from `pyproject.toml`. Settings made in the Railway UI are overridden by it. A root `Dockerfile` (identical content) is a second safeguard: Railway auto-detects a root `Dockerfile`, whereas a log reading `Railpack ... Detected Python ... No start command detected` means neither file was picked up (typically the service is building a different branch than `research/accessibility-usability-benchmark`, or the service config path points elsewhere).
 
 ## Expected routes
 `GET /health` -> `{"status":"ok","report_ready":true}` ; `GET /` -> report ; `GET /assets/...` -> screenshots, diffs, prompts, responses, axe JSON of the exported run ; `GET /EXPORT_MANIFEST.json` -> file hashes and mode.
