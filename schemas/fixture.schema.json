@@ -1,0 +1,194 @@
+{
+  "$defs": {
+    "TaskSpec": {
+      "additionalProperties": false,
+      "properties": {
+        "description": {
+          "title": "Description",
+          "type": "string"
+        },
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "keyboard_only": {
+          "default": true,
+          "title": "Keyboard Only",
+          "type": "boolean"
+        },
+        "steps": {
+          "items": {
+            "$ref": "#/$defs/TaskStep"
+          },
+          "title": "Steps",
+          "type": "array"
+        },
+        "success_selector": {
+          "title": "Success Selector",
+          "type": "string"
+        },
+        "success_text": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Success Text"
+        }
+      },
+      "required": [
+        "id",
+        "description",
+        "steps",
+        "success_selector"
+      ],
+      "title": "TaskSpec",
+      "type": "object"
+    },
+    "TaskStep": {
+      "additionalProperties": false,
+      "properties": {
+        "action": {
+          "enum": [
+            "fill",
+            "click",
+            "press",
+            "tab",
+            "goto_anchor"
+          ],
+          "title": "Action",
+          "type": "string"
+        },
+        "selector": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Selector"
+        },
+        "value": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Value"
+        }
+      },
+      "required": [
+        "action"
+      ],
+      "title": "TaskStep",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "applicable_criteria": {
+      "default": [],
+      "items": {
+        "type": "string"
+      },
+      "title": "Applicable Criteria",
+      "type": "array"
+    },
+    "assets": {
+      "default": [],
+      "items": {
+        "type": "string"
+      },
+      "title": "Assets",
+      "type": "array"
+    },
+    "baseline_refs": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "default": {},
+      "title": "Baseline Refs",
+      "type": "object"
+    },
+    "content_hash": {
+      "title": "Content Hash",
+      "type": "string"
+    },
+    "contract_version": {
+      "default": "0.1.0",
+      "title": "Contract Version",
+      "type": "string"
+    },
+    "entrypoint": {
+      "title": "Entrypoint",
+      "type": "string"
+    },
+    "id": {
+      "title": "Id",
+      "type": "string"
+    },
+    "known_defects": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Known Defects",
+      "type": "array"
+    },
+    "license": {
+      "title": "License",
+      "type": "string"
+    },
+    "origin": {
+      "title": "Origin",
+      "type": "string"
+    },
+    "preserved_text": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Preserved Text",
+      "type": "array"
+    },
+    "redistributable": {
+      "title": "Redistributable",
+      "type": "boolean"
+    },
+    "reset_procedure": {
+      "default": "copy fixture directory into a fresh per-run workspace",
+      "title": "Reset Procedure",
+      "type": "string"
+    },
+    "task": {
+      "$ref": "#/$defs/TaskSpec"
+    },
+    "version": {
+      "title": "Version",
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "version",
+    "origin",
+    "license",
+    "redistributable",
+    "entrypoint",
+    "content_hash",
+    "task",
+    "preserved_text",
+    "known_defects"
+  ],
+  "title": "FixtureManifest",
+  "type": "object"
+}

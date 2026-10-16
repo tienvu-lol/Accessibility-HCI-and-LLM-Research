@@ -1,0 +1,13 @@
+{
+  "fixture_manifest": "fixtures/demo.manifest.json",
+  "arm": "accessibility_only",
+  "mode": "live",
+  "provider": {"name": "anthropic", "model": null, "pricing": null},
+  "max_iterations": 1,
+  "max_output_tokens": 8000,
+  "timeout_s": 120,
+  "retry": {"transport_retries": 1},
+  "budget": {"max_total_usd": null, "max_calls": 1},
+  "browser": {},
+  "runs_dir": "runs"
+}

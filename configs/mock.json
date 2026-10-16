@@ -1,0 +1,13 @@
+{
+  "fixture_manifest": "fixtures/demo.manifest.json",
+  "arm": "accessibility_only",
+  "mode": "mock",
+  "provider": {"name": "mock", "model": null, "pricing": null},
+  "max_iterations": 2,
+  "max_output_tokens": 8000,
+  "timeout_s": 120,
+  "retry": {"transport_retries": 0},
+  "budget": {"max_total_usd": null, "max_calls": 3},
+  "browser": {},
+  "runs_dir": "runs"
+}

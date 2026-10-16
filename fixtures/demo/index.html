@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Maple Street Community Library</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="top">
+  <div class="brand">Maple Street Community Library</div>
+  <div class="nav">
+    <a href="#events">Events</a>
+    <a href="#hours">Hours</a>
+    <a href="#join">Join</a>
+  </div>
+</div>
+
+<div class="hero">
+  <img src="hero.svg" width="640" height="200">
+  <h3>Books, quiet rooms, and neighbors</h3>
+  <p class="lead">Free library cards, weekly story time, and a public computer lab. Everyone in the neighborhood is welcome.</p>
+</div>
+
+<div class="section" id="events">
+  <h1>Upcoming events</h1>
+  <ul>
+    <li>Story time for children: Saturdays at 10:00</li>
+    <li>Resume help workshop: Wednesdays at 18:30</li>
+    <li>Book club: first Thursday of each month</li>
+  </ul>
+  <p>For the full calendar <a href="#events">click here</a>.</p>
+</div>
+
+<div class="section" id="hours">
+  <h2>Opening hours</h2>
+  <p class="muted">Monday to Friday 9:00 to 19:00. Saturday 10:00 to 16:00. Closed Sunday.</p>
+</div>
+
+<div class="section" id="join">
+  <h2>Get a library card</h2>
+  <p>Enter your name and email and we will send you a sign-up link.</p>
+  <form action="#thanks" method="get">
+    <input type="text" id="name" name="name" placeholder="Your name">
+    <input type="email" id="email" name="email" placeholder="Email address">
+    <button type="submit" class="btn">Send me the link</button>
+  </form>
+  <div id="thanks" class="thanks">Thank you! Check your inbox for the sign-up link.</div>
+</div>
+
+<div class="footer">
+  <img src="logo.svg" width="48" height="48">
+  <span>Maple Street Community Library. 120 Maple Street.</span>
+</div>
+</body>
+</html>

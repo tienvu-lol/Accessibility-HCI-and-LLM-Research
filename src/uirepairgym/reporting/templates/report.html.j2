@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UIRepairGym run report {{ m.run_id }}</title>
+<style>
+:root { color-scheme: light; --fg:#1a1a1a; --bg:#ffffff; --muted:#4a4a4a; --line:#767676; --soft:#f3f4f6; --link:#0b4fb3; --focus:#003ea8; --pass:#0b5d1e; --fail:#a10000; --warn:#7a4b00; }
+* { box-sizing: border-box; }
+html { font-size: 100%; }
+body { margin:0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; line-height:1.5; color:var(--fg); background:var(--bg); }
+header, main, footer { max-width: 72rem; margin: 0 auto; padding: 1rem; }
+header { border-bottom: 2px solid var(--fg); }
+h1 { font-size:1.75rem; margin:.25rem 0; }
+h2 { font-size:1.4rem; margin:2rem 0 .5rem; border-bottom:1px solid var(--line); padding-bottom:.25rem; }
+h3 { font-size:1.2rem; margin:1.5rem 0 .5rem; }
+h4 { font-size:1.05rem; margin:1.25rem 0 .4rem; }
+a { color:var(--link); text-decoration: underline; }
+a:focus-visible, summary:focus-visible, [tabindex]:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+.skip { position:absolute; left:-999px; top:0; background:var(--bg); padding:.5rem 1rem; border:2px solid var(--focus); z-index:10; }
+.skip:focus { left:.5rem; top:.5rem; }
+nav ul { list-style:none; display:flex; flex-wrap:wrap; gap:.25rem 1rem; padding:0; margin:.5rem 0 0; }
+code, pre { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size:.9rem; }
+code { background:var(--soft); padding:0 .25rem; overflow-wrap:anywhere; }
+pre { background:var(--soft); padding:.75rem; margin:0; white-space: pre-wrap; overflow-wrap:anywhere; }
+.scroll { overflow:auto; max-height:28rem; border:1px solid var(--line); }
+.banner { border:4px solid; padding:1rem; margin:1rem 0; }
+.banner h2 { border:0; margin:0 0 .25rem; font-size:1.6rem; padding:0; }
+.banner p { margin:0; font-size:1.1rem; }
+.banner-mock { background:#fff4cc; color:#3d2600; border-color:#7a4b00; }
+.banner-live { background:#e3f4e8; color:#0d3b1e; border-color:#0b5d1e; }
+.banner-replay { background:#e6eefc; color:#10265a; border-color:#10265a; }
+dl.kv { display:grid; grid-template-columns: minmax(10rem, max-content) 1fr; gap:.25rem 1rem; margin:0; }
+dl.kv dt { font-weight:600; }
+dl.kv dd { margin:0; overflow-wrap:anywhere; }
+table { border-collapse:collapse; width:100%; margin:.5rem 0; }
+caption { text-align:left; font-weight:600; padding:.25rem 0; }
+th, td { border:1px solid var(--line); padding:.35rem .5rem; text-align:left; vertical-align:top; overflow-wrap:anywhere; }
+thead th { background:var(--soft); }
+.shots { display:grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap:1rem; }
+figure { margin:0; border:1px solid var(--line); padding:.5rem; }
+figure img { display:block; max-width:100%; height:auto; border:1px solid var(--line); }
+figcaption { font-weight:600; margin-bottom:.4rem; }
+.missing { border:2px dashed var(--warn); color:#3d2600; background:#fff4cc; padding:.5rem; }
+.pass { color:var(--pass); font-weight:600; }
+.fail { color:var(--fail); font-weight:600; }
+.unknown, .skipped, .error { color:var(--warn); font-weight:600; }
+.note { color:var(--muted); }
+.label { display:inline-block; border:2px solid var(--fail); color:var(--fail); font-weight:700; padding:0 .4rem; }
+details { margin:.4rem 0; border:1px solid var(--line); padding:.4rem .6rem; }
+summary { cursor:pointer; font-weight:600; }
+.diff span { display:block; white-space:pre-wrap; overflow-wrap:anywhere; }
+.diff .add { background:#dafbe1; color:#0b3d1a; }
+.diff .del { background:#ffd7d5; color:#6b0f0f; }
+.diff .hunk { background:#ddeaff; color:#10265a; }
+.diff .meta { font-weight:700; }
+section.iteration { border:1px solid var(--line); padding:0 1rem 1rem; margin:1.5rem 0; }
+ul.plain { padding-left:1.25rem; }
+@media (max-width: 40rem) { dl.kv { grid-template-columns: 1fr; } header, main, footer { padding:.75rem; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to report content</a>
+<header>
+  <h1>UIRepairGym run report</h1>
+  <p>Run <code>{{ m.run_id }}</code> on fixture <code>{{ m.fixture_id }}</code></p>
+  <nav aria-label="Report sections">
+    <ul>
+      <li><a href="#mode">Run mode</a></li>
+      <li><a href="#summary">Run summary</a></li>
+      <li><a href="#iterations">Iterations</a></li>
+      {% for r in iterations %}
+      <li><a href="#iteration-{{ r.it.index }}">Iteration {{ r.it.index }}</a></li>
+      {% endfor %}
+      <li><a href="#artifacts">Artifacts</a></li>
+      <li><a href="#caveats">Caveats</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+
+<section id="mode" class="banner banner-{{ m.mode }}" aria-labelledby="mode-h">
+  <h2 id="mode-h">Run mode: {{ mode_label }}</h2>
+  <p>{{ mode_text }}</p>
+</section>
+
+<section id="summary" aria-labelledby="summary-h">
+  <h2 id="summary-h">Run summary</h2>
+  <dl class="kv">
+    <dt>Run id</dt><dd><code>{{ m.run_id }}</code></dd>
+    <dt>Mode</dt><dd>{{ m.mode }}</dd>
+    <dt>Arm</dt><dd>{{ m.arm }}</dd>
+    <dt>Status</dt><dd>{{ m.status }}</dd>
+    <dt>Stopping reason</dt><dd>{{ m.stopping_reason or "not recorded" }}</dd>
+    <dt>Fixture id</dt><dd><code>{{ m.fixture_id }}</code></dd>
+    <dt>Fixture hash (before)</dt><dd><code>{{ m.fixture_hash }}</code></dd>
+    <dt>Fixture hash (after)</dt><dd><code>{{ m.fixture_hash_after or "not recorded" }}</code></dd>
+    <dt>Fixture immutability</dt><dd><span class="{{ immut[0] }}">{{ immut[1] }}</span></dd>
+    <dt>Code commit</dt><dd>{% if m.code_commit %}<code>{{ m.code_commit }}</code>{% else %}not recorded{% endif %}</dd>
+    <dt>Started (UTC)</dt><dd>{{ m.started_utc }}</dd>
+    <dt>Finished (UTC)</dt><dd>{{ m.finished_utc or "not recorded" }}</dd>
+    <dt>Visibility</dt><dd>{{ m.visibility }}</dd>
+    <dt>Contract version</dt><dd>{{ m.contract_version }}</dd>
+  </dl>
+  {% if m.versions %}
+  <table>
+    <caption>Tool versions</caption>
+    <thead><tr><th scope="col">Component</th><th scope="col">Version</th></tr></thead>
+    <tbody>
+    {% for k, v in m.versions.items() %}
+      <tr><th scope="row">{{ k }}</th><td>{{ v }}</td></tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  {% endif %}
+  {% if m.notes %}
+  <h3>Run notes</h3>
+  <ul class="plain">{% for n in m.notes %}<li>{{ n }}</li>{% endfor %}</ul>
+  {% endif %}
+  <details>
+    <summary>Run configuration</summary>
+    <div class="scroll" tabindex="0" role="region" aria-label="Run configuration JSON"><pre>{{ config_json }}</pre></div>
+  </details>
+</section>
+
+<section id="iterations" aria-labelledby="iterations-h">
+  <h2 id="iterations-h">Iterations</h2>
+  {% if not iterations %}<p class="missing">No iterations were recorded in this run.</p>{% endif %}
+
+  {% for r in iterations %}
+  {% set it = r.it %}
+  <section id="iteration-{{ it.index }}" class="iteration" aria-labelledby="iteration-{{ it.index }}-h">
+    <h3 id="iteration-{{ it.index }}-h">Iteration {{ it.index }}{% if it.index == 0 %} (baseline, no model call){% endif %}</h3>
+    <dl class="kv">
+      <dt>Status</dt><dd>{{ it.status }}</dd>
+      <dt>Changed</dt><dd>{% if it.changed is none %}not available{% else %}{{ "yes" if it.changed else "no" }}{% endif %}</dd>
+      <dt>Input directory</dt><dd><code>{{ it.input_dir }}</code></dd>
+      <dt>Output directory</dt><dd>{% if it.output_dir %}<code>{{ it.output_dir }}</code>{% else %}none{% endif %}</dd>
+      {% if r.ev %}
+      <dt>Evaluation mode</dt><dd>{{ r.ev.mode }}{% if r.ev.mode != m.mode %} (differs from run mode {{ m.mode }}){% endif %}</dd>
+      <dt>Evaluated HTML hash</dt><dd><code>{{ r.ev.html_hash }}</code></dd>
+      <dt>Browser</dt><dd>{{ r.ev.browser.browser }} {{ r.ev.browser.browser_version or "(version not recorded)" }}, viewport {{ r.ev.browser.viewport.width }}x{{ r.ev.browser.viewport.height }}</dd>
+      {% endif %}
+      {% if it.error %}<dt>Iteration error</dt><dd class="fail">{{ it.error }}</dd>{% endif %}
+    </dl>
+    {% if not r.ev %}<p class="missing">No evaluation was recorded for this iteration.</p>{% endif %}
+
+    <h4>Screenshots</h4>
+    <div class="shots">
+      {% for s in r.shots %}
+      <figure>
+        <figcaption>{{ s.role }} ({{ s.of }})</figcaption>
+        {% if s.href %}
+        <a href="{{ s.href }}"><img src="{{ s.href }}" alt="Screenshot of the rendered page, {{ s.role | lower }} state, {{ s.of }}"></a>
+        {% else %}
+        <p class="missing">Screenshot missing: {{ s.problem }}{% if s.rel %} (<code>{{ s.rel }}</code>){% endif %}.</p>
+        {% endif %}
+      </figure>
+      {% endfor %}
+    </div>
+
+    <h4>Axe summary</h4>
+    {% if r.axe.state == "ok" %}
+      {% set s = r.axe.summary %}
+      <p>axe-core {{ r.axe.report.axe_version }}</p>
+      <table>
+        <caption>Automated axe results, iteration {{ it.index }}</caption>
+        <thead><tr><th scope="col">Result type</th><th scope="col">Rules</th><th scope="col">Affected nodes</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Violations</th><td>{{ s.violation_rules }}</td><td>{{ s.violation_nodes }}</td></tr>
+          <tr><th scope="row">Incomplete (needs review)</th><td>{{ s.incomplete_rules }}</td><td>{{ s.incomplete_nodes }}</td></tr>
+          <tr><th scope="row">Passes</th><td>{{ s.passes_rules }}</td><td>not recorded</td></tr>
+        </tbody>
+      </table>
+      {% if r.axe.impacts %}
+      <table>
+        <caption>Violation nodes by impact (as recorded in the summary)</caption>
+        <thead><tr><th scope="col">Impact</th><th scope="col">Nodes</th></tr></thead>
+        <tbody>{% for k in r.axe.impacts %}<tr><th scope="row">{{ k }}</th><td>{{ s.by_impact[k] }}</td></tr>{% endfor %}</tbody>
+      </table>
+      {% else %}<p class="note">No by-impact breakdown recorded.</p>{% endif %}
+      {% for n in r.axe.notes %}<p class="note">Consistency note: {{ n }}</p>{% endfor %}
+
+      <details>
+        <summary>Violation rules and node targets ({{ r.axe.report.violations | length }} rule detail(s) recorded)</summary>
+        {% if r.axe.report.violations %}
+        <ul class="plain">
+        {% for rule in r.axe.report.violations %}
+          <li><code>{{ rule.id }}</code> impact: {{ rule.impact or "not recorded" }}. {{ rule.help }}
+            {% if rule.description %}<br><span class="note">{{ rule.description }}</span>{% endif %}
+            {% if rule.tags %}<br>Tags: {{ rule.tags | join(", ") }}{% endif %}
+            <ul>{% for node in rule.nodes %}
+              <li>Target: <code>{{ node.target | join(" ") }}</code>{% if node.html %}<br>HTML: <code>{{ node.html }}</code>{% endif %}{% if node.failure_summary %}<br>{{ node.failure_summary }}{% endif %}</li>
+            {% endfor %}</ul>
+          </li>
+        {% endfor %}
+        </ul>
+        {% else %}<p>No violation rule details recorded.</p>{% endif %}
+      </details>
+      <details>
+        <summary>Incomplete rules ({{ r.axe.report.incomplete | length }} rule detail(s) recorded)</summary>
+        {% if r.axe.report.incomplete %}
+        <ul class="plain">
+        {% for rule in r.axe.report.incomplete %}
+          <li><code>{{ rule.id }}</code> impact: {{ rule.impact or "not recorded" }}. {{ rule.help }}
+            <ul>{% for node in rule.nodes %}<li>Target: <code>{{ node.target | join(" ") }}</code></li>{% endfor %}</ul>
+          </li>
+        {% endfor %}
+        </ul>
+        {% else %}<p>No incomplete rule details recorded.</p>{% endif %}
+      </details>
+      <details>
+        <summary>Passing rule ids ({{ r.axe.report.passes | length }} recorded)</summary>
+        {% if r.axe.report.passes %}<p>{% for p in r.axe.report.passes %}<code>{{ p }}</code> {% endfor %}</p>{% else %}<p>None recorded.</p>{% endif %}
+      </details>
+      {% if r.axe.raw %}
+        <p>{% if r.axe.raw.href %}<a href="{{ r.axe.raw.href }}">Raw axe JSON for iteration {{ it.index }}</a>{% else %}<span class="missing">Raw axe JSON missing: {{ r.axe.raw.problem }} (<code>{{ r.axe.raw.rel }}</code>)</span>{% endif %}</p>
+      {% endif %}
+    {% elif r.axe.state == "no_axe" %}
+      <p class="missing">Axe results are not available for this iteration.{% if r.axe.error %} Error: {{ r.axe.error }}{% endif %}</p>
+    {% else %}
+      <p class="missing">Axe results are not available: no evaluation recorded.</p>
+    {% endif %}
+
+    {% if it.index != 0 %}
+    <h4>Delta versus previous iteration</h4>
+    <table>
+      <caption>Change in axe counts, iteration {{ it.index - 1 }} to iteration {{ it.index }} (computed only from recorded numbers)</caption>
+      <thead><tr><th scope="col">Metric</th><th scope="col">Previous</th><th scope="col">Current</th><th scope="col">Change</th></tr></thead>
+      <tbody>
+      {% for d in r.delta %}
+        <tr><th scope="row">{{ d.label }}</th><td>{{ d.prev | fmt }}</td><td>{{ d.cur | fmt }}</td><td>{{ d.delta }}</td></tr>
+      {% endfor %}
+      </tbody>
+    </table>
+    <p class="note">A different count is an observation, not proof of better or worse accessibility.</p>
+    {% endif %}
+
+    <h4>Task outcome</h4>
+    {% if r.task %}
+      <p>Task <code>{{ r.task.task_id }}</code>:
+      {% if r.task.completed is none %}<span class="unknown">not evaluated</span>{% elif r.task.completed %}<span class="pass">completed</span>{% else %}<span class="fail">not completed</span>{% endif %}
+      {% if r.task.error %} Error: {{ r.task.error }}{% endif %}</p>
+      {% if r.task.checks %}
+      <table>
+        <caption>Task checks</caption>
+        <thead><tr><th scope="col">Check</th><th scope="col">Status</th><th scope="col">Detail</th></tr></thead>
+        <tbody>{% for c in r.task.checks %}<tr><th scope="row">{{ c.name }}</th><td><span class="{{ c.status }}">{{ c.status }}</span></td><td>{{ c.detail or "none" }}</td></tr>{% endfor %}</tbody>
+      </table>
+      {% else %}<p>No individual checks recorded.</p>{% endif %}
+      <p>Preserved text missing:
+      {% if r.task.preserved_text_missing %}</p><ul class="plain">{% for t in r.task.preserved_text_missing %}<li><code>{{ t }}</code></li>{% endfor %}</ul>
+      {% else %}none recorded as missing.</p>{% endif %}
+      <h4>Console and page errors</h4>
+      <p>Console errors:</p>
+      {% if r.task.console_errors %}<ul class="plain">{% for t in r.task.console_errors %}<li>{{ t }}</li>{% endfor %}</ul>{% else %}<p>None recorded.</p>{% endif %}
+      <p>Page errors:</p>
+      {% if r.task.page_errors %}<ul class="plain">{% for t in r.task.page_errors %}<li>{{ t }}</li>{% endfor %}</ul>{% else %}<p>None recorded.</p>{% endif %}
+    {% else %}
+      <p class="missing">Task outcome not available for this iteration.</p>
+      <h4>Console and page errors</h4>
+      <p class="missing">Not available: no task report recorded.</p>
+    {% endif %}
+
+    <h4>Source diff</h4>
+    {% if it.index == 0 %}
+      <p>Baseline iteration: no repair was applied.</p>
+    {% elif r.diff_lines is not none %}
+      <div class="scroll diff" tabindex="0" role="region" aria-label="Source diff for iteration {{ it.index }}"><pre>{% for l in r.diff_lines %}<span class="{{ l.cls }}">{{ l.text }}</span>{% endfor %}</pre></div>
+    {% else %}
+      <p class="missing">Source diff missing{% if it.diff_path %}: {{ r.diff_art.problem or "could not be read" }} (<code>{{ it.diff_path }}</code>){% else %}: no diff path recorded{% endif %}.</p>
+    {% endif %}
+
+    {% if it.index != 0 %}
+    <h4>Model call provenance</h4>
+    {% if r.model %}
+      {% set mc = r.model.call %}
+      <dl class="kv">
+        <dt>Provider</dt><dd>{{ mc.provider }}</dd>
+        <dt>Model</dt><dd>{{ r.model.model }}</dd>
+        <dt>Call mode</dt><dd>{{ mc.mode }}</dd>
+        <dt>Attempts</dt><dd>{{ mc.attempts }}</dd>
+        <dt>Input tokens</dt><dd>{{ r.model.tokens_in }}</dd>
+        <dt>Output tokens</dt><dd>{{ r.model.tokens_out }}</dd>
+        <dt>Latency</dt><dd>{{ r.model.latency }}</dd>
+        <dt>Estimated cost</dt><dd>{{ r.model.cost }}{% if r.model.pricing_basis %} (basis: {{ r.model.pricing_basis }}){% endif %}</dd>
+        <dt>Error</dt><dd>{% if mc.error %}<span class="fail">{{ mc.error }}</span>{% else %}none recorded{% endif %}</dd>
+        <dt>Request parameters</dt><dd>{% if r.model.params %}<div class="scroll" tabindex="0" role="region" aria-label="Request parameters JSON"><pre>{{ r.model.params }}</pre></div>{% else %}none recorded{% endif %}</dd>
+      </dl>
+      <ul class="plain">
+      {% for a in [r.model.prompt, r.model.response] %}
+        <li>{% if a.href %}<a href="{{ a.href }}">{{ a.label }} (iteration {{ it.index }})</a>{% else %}<span class="missing">{{ a.label }} missing: {{ a.problem }}{% if a.rel %} (<code>{{ a.rel }}</code>){% endif %}</span>{% endif %}</li>
+      {% endfor %}
+      </ul>
+    {% else %}
+      <p class="missing">No model call recorded for this iteration.</p>
+    {% endif %}
+    {% endif %}
+
+    <h4>Nielsen heuristic evaluation</h4>
+    {% if r.nielsen and r.nielsen.status == "provisional_unvalidated" %}
+      <p><span class="label">UNVALIDATED LLM RATING</span> These ratings come from an LLM judge{% if r.nielsen.judge %} ({{ r.nielsen.judge }}){% endif %} and have not been compared with human assessment.</p>
+      {% if r.nielsen.reason %}<p>{{ r.nielsen.reason }}</p>{% endif %}
+      {% if r.nielsen.findings %}
+      <table>
+        <caption>Provisional heuristic findings (unvalidated LLM rating)</caption>
+        <thead><tr><th scope="col">Heuristic</th><th scope="col">Applicable</th><th scope="col">Severity (0-4)</th><th scope="col">Evidence</th></tr></thead>
+        <tbody>{% for f in r.nielsen.findings %}
+          <tr><th scope="row">{{ f.heuristic }}</th><td>{% if f.applicable is none %}unknown{% else %}{{ "yes" if f.applicable else "no" }}{% endif %}</td><td>{{ f.severity | fmt }}</td><td>{{ f.evidence or "none recorded" }}</td></tr>
+        {% endfor %}</tbody>
+      </table>
+      {% else %}<p>No findings recorded.</p>{% endif %}
+    {% else %}
+      <p>Unavailable{% if r.nielsen %}: {{ r.nielsen.reason or "no reason recorded" }}{% else %}: no evaluation recorded{% endif %}.</p>
+    {% endif %}
+  </section>
+  {% endfor %}
+</section>
+
+<section id="artifacts" aria-labelledby="artifacts-h">
+  <h2 id="artifacts-h">Run artifacts</h2>
+  <p>Copies of these files are stored in the <code>assets</code> folder next to this report, so the folder can be moved as a unit.</p>
+  <ul class="plain">
+  {% for a in run_artifacts %}
+    <li>{% if a.href %}<a href="{{ a.href }}">{{ a.label }}</a>{% else %}<span class="missing">{{ a.label }} missing: {{ a.problem }}</span>{% endif %}</li>
+  {% endfor %}
+  </ul>
+  <p>Per-iteration prompt, response, diff and raw axe files are linked in each iteration above.</p>
+</section>
+
+</main>
+<footer>
+  <section id="caveats" aria-labelledby="caveats-h">
+    <h2 id="caveats-h">Caveats</h2>
+    <ul class="plain">
+      <li>axe-core reports partial automated evidence. It does not establish WCAG conformance, and passing automated checks does not mean a page is accessible.</li>
+      <li>One run is not a benchmark finding. It supports no regression rate, model ranking or general claim.</li>
+      <li>Nielsen heuristic ratings, where shown, are unvalidated LLM output unless human validation is explicitly recorded.</li>
+      <li>Values shown as "not available" or "unknown" were not recorded; they are not zero.</li>
+    </ul>
+  </section>
+</footer>
+</body>
+</html>
