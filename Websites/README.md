@@ -40,3 +40,7 @@ Categories: university, healthcare, company, e-commerce, news, government, fashi
 ## Status
 
 See `metadata/assignments.csv`. To browse everything that exists, run `python Websites/tools/previewer/build.py`, then `Websites/tools/previewer/dist/ReplicaPreview.exe`. This needs the .NET 10 SDK to build; the exe itself runs anywhere on Windows x64. The gallery lists every slot, including ones not generated yet.
+
+## Codex configuration
+
+The Codex preparation pipeline lives in [pipelines/codex/README.md](pipelines/codex/README.md). It covers slots 04–06 in the ten active categories (30 sites), with validated configuration, per-category source inventories, exact task snapshots and shared-QC evidence capture. Setup does not start generation or confer source approval. Portfolio and the legacy restaurant batch are excluded from the active 100-site allocation. See [source inventory format](metadata/source-inventories/README.md) for coordinated reference records.

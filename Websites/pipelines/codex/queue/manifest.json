@@ -1,0 +1,426 @@
+{
+  "schema_version": "1.0",
+  "execution_mode": "manual handoff; no jobs launched",
+  "tasks": [
+    {
+      "id": "research-UNI",
+      "phase": "research",
+      "category": "university",
+      "target": "UNI",
+      "status": "planned",
+      "depends_on": [],
+      "run_id": null
+    },
+    {
+      "id": "build-UNI-04",
+      "phase": "build",
+      "category": "university",
+      "target": "UNI-04",
+      "status": "planned",
+      "depends_on": [
+        "research-UNI"
+      ],
+      "run_id": null
+    },
+    {
+      "id": "build-UNI-05",
+      "phase": "build",
+      "category": "university",
+      "target": "UNI-05",
+      "status": "planned",
+      "depends_on": [
+        "research-UNI"
+      ],
+      "run_id": null
+    },
+    {
+      "id": "build-UNI-06",
+      "phase": "build",
+      "category": "university",
+      "target": "UNI-06",
+      "status": "planned",
+      "depends_on": [
+        "research-UNI"
+      ],
+      "run_id": null
+    },
+    {
+      "id": "research-HOSP",
+      "phase": "research",
+      "category": "healthcare",
+      "target": "HOSP",
+      "status": "planned",
+      "depends_on": [],
+      "run_id": null
+    },
+    {
+      "id": "build-HOSP-04",
+      "phase": "build",
+      "category": "healthcare",
+      "target": "HOSP-04",
+      "status": "planned",
+      "depends_on": [
+        "research-HOSP"
+      ],
+      "run_id": null
+    },
+    {
+      "id": "build-HOSP-05",
+      "phase": "build",
+      "category": "healthcare",
+      "target": "HOSP-05",
+      "status": "planned",
+      "depends_on": [
+        "research-HOSP"
+      ],
+      "run_id": null
+    },
+    {
+      "id": "build-HOSP-06",
+      "phase": "build",
+      "category": "healthcare",
+      "target": "HOSP-06",
+      "status": "planned",
+      "depends_on": [
+        "research-HOSP"
+      ],
+      "run_id": null
+    },
+    {
+      "id": "research-CORP",
+      "phase": "research",
+      "category": "company",
+      "target": "CORP",
+      "status": "planned",
+      "depends_on": [],
+      "run_id": null
+    },
+    {
+      "id": "build-CORP-04",
+      "phase": "build",
+      "category": "company",
+      "target": "CORP-04",
+      "status": "planned",
+      "depends_on": [
+        "research-CORP"
+      ],
+      "run_id": null
+    },
+    {
+      "id": "build-CORP-05",
+      "phase": "build",
+      "category": "company",
+      "target": "CORP-05",
+      "status": "planned",
+      "depends_on": [
+        "research-CORP"
+      ],
+      "run_id": null
+    },
+    {
+      "id": "build-CORP-06",
+      "phase": "build",
+      "category": "company",
+      "target": "CORP-06",
+      "status": "planned",
+      "depends_on": [
+        "research-CORP"
+      ],
+      "run_id": null
+    },
+    {
+      "id": "research-ECOM",
+      "phase": "research",
+      "category": "e-commerce",
+      "target": "ECOM",
+      "status": "planned",
+      "depends_on": [],
+      "run_id": null
+    },
+    {
+      "id": "build-ECOM-04",
+      "phase": "build",
+      "category": "e-commerce",
+      "target": "ECOM-04",
+      "status": "planned",
+      "depends_on": [
+        "research-ECOM"
+      ],
+      "run_id": null
+    },
+    {
+      "id": "build-ECOM-05",
+      "phase": "build",
+      "category": "e-commerce",
+      "target": "ECOM-05",
+      "status": "planned",
+      "depends_on": [
+        "research-ECOM"
+      ],
+      "run_id": null
+    },
+    {
+      "id": "build-ECOM-06",
+      "phase": "build",
+      "category": "e-commerce",
+      "target": "ECOM-06",
+      "status": "planned",
+      "depends_on": [
+        "research-ECOM"
+      ],
+      "run_id": null
+    },
+    {
+      "id": "research-NEWS",
+      "phase": "research",
+      "category": "news",
+      "target": "NEWS",
+      "status": "planned",
+      "depends_on": [],
+      "run_id": null
+    },
+    {
+      "id": "build-NEWS-04",
+      "phase": "build",
+      "category": "news",
+      "target": "NEWS-04",
+      "status": "planned",
+      "depends_on": [
+        "research-NEWS"
+      ],
+      "run_id": null
+    },
+    {
+      "id": "build-NEWS-05",
+      "phase": "build",
+      "category": "news",
+      "target": "NEWS-05",
+      "status": "planned",
+      "depends_on": [
+        "research-NEWS"
+      ],
+      "run_id": null
+    },
+    {
+      "id": "build-NEWS-06",
+      "phase": "build",
+      "category": "news",
+      "target": "NEWS-06",
+      "status": "planned",
+      "depends_on": [
+        "research-NEWS"
+      ],
+      "run_id": null
+    },
+    {
+      "id": "research-GOV",
+      "phase": "research",
+      "category": "government",
+      "target": "GOV",
+      "status": "planned",
+      "depends_on": [],
+      "run_id": null
+    },
+    {
+      "id": "build-GOV-04",
+      "phase": "build",
+      "category": "government",
+      "target": "GOV-04",
+      "status": "planned",
+      "depends_on": [
+        "research-GOV"
+      ],
+      "run_id": null
+    },
+    {
+      "id": "build-GOV-05",
+      "phase": "build",
+      "category": "government",
+      "target": "GOV-05",
+      "status": "planned",
+      "depends_on": [
+        "research-GOV"
+      ],
+      "run_id": null
+    },
+    {
+      "id": "build-GOV-06",
+      "phase": "build",
+      "category": "government",
+      "target": "GOV-06",
+      "status": "planned",
+      "depends_on": [
+        "research-GOV"
+      ],
+      "run_id": null
+    },
+    {
+      "id": "research-FASH",
+      "phase": "research",
+      "category": "fashion",
+      "target": "FASH",
+      "status": "planned",
+      "depends_on": [],
+      "run_id": null
+    },
+    {
+      "id": "build-FASH-04",
+      "phase": "build",
+      "category": "fashion",
+      "target": "FASH-04",
+      "status": "planned",
+      "depends_on": [
+        "research-FASH"
+      ],
+      "run_id": null
+    },
+    {
+      "id": "build-FASH-05",
+      "phase": "build",
+      "category": "fashion",
+      "target": "FASH-05",
+      "status": "planned",
+      "depends_on": [
+        "research-FASH"
+      ],
+      "run_id": null
+    },
+    {
+      "id": "build-FASH-06",
+      "phase": "build",
+      "category": "fashion",
+      "target": "FASH-06",
+      "status": "planned",
+      "depends_on": [
+        "research-FASH"
+      ],
+      "run_id": null
+    },
+    {
+      "id": "research-WX",
+      "phase": "research",
+      "category": "weather",
+      "target": "WX",
+      "status": "planned",
+      "depends_on": [],
+      "run_id": null
+    },
+    {
+      "id": "build-WX-04",
+      "phase": "build",
+      "category": "weather",
+      "target": "WX-04",
+      "status": "planned",
+      "depends_on": [
+        "research-WX"
+      ],
+      "run_id": null
+    },
+    {
+      "id": "build-WX-05",
+      "phase": "build",
+      "category": "weather",
+      "target": "WX-05",
+      "status": "planned",
+      "depends_on": [
+        "research-WX"
+      ],
+      "run_id": null
+    },
+    {
+      "id": "build-WX-06",
+      "phase": "build",
+      "category": "weather",
+      "target": "WX-06",
+      "status": "planned",
+      "depends_on": [
+        "research-WX"
+      ],
+      "run_id": null
+    },
+    {
+      "id": "research-NPO",
+      "phase": "research",
+      "category": "nonprofit",
+      "target": "NPO",
+      "status": "planned",
+      "depends_on": [],
+      "run_id": null
+    },
+    {
+      "id": "build-NPO-04",
+      "phase": "build",
+      "category": "nonprofit",
+      "target": "NPO-04",
+      "status": "planned",
+      "depends_on": [
+        "research-NPO"
+      ],
+      "run_id": null
+    },
+    {
+      "id": "build-NPO-05",
+      "phase": "build",
+      "category": "nonprofit",
+      "target": "NPO-05",
+      "status": "planned",
+      "depends_on": [
+        "research-NPO"
+      ],
+      "run_id": null
+    },
+    {
+      "id": "build-NPO-06",
+      "phase": "build",
+      "category": "nonprofit",
+      "target": "NPO-06",
+      "status": "planned",
+      "depends_on": [
+        "research-NPO"
+      ],
+      "run_id": null
+    },
+    {
+      "id": "research-CHUR",
+      "phase": "research",
+      "category": "church",
+      "target": "CHUR",
+      "status": "planned",
+      "depends_on": [],
+      "run_id": null
+    },
+    {
+      "id": "build-CHUR-04",
+      "phase": "build",
+      "category": "church",
+      "target": "CHUR-04",
+      "status": "planned",
+      "depends_on": [
+        "research-CHUR"
+      ],
+      "run_id": null
+    },
+    {
+      "id": "build-CHUR-05",
+      "phase": "build",
+      "category": "church",
+      "target": "CHUR-05",
+      "status": "planned",
+      "depends_on": [
+        "research-CHUR"
+      ],
+      "run_id": null
+    },
+    {
+      "id": "build-CHUR-06",
+      "phase": "build",
+      "category": "church",
+      "target": "CHUR-06",
+      "status": "planned",
+      "depends_on": [
+        "research-CHUR"
+      ],
+      "run_id": null
+    }
+  ]
+}
