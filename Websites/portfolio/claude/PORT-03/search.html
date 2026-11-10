@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Search &#8212; Juno Salvi</title>
+<meta name="description" content="Search the pages, projects and notes on this site. Runs entirely in the browser.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="author" content="Juno Salvi (fictional)">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="search">
+<a class="skip-link" href="#main-content" data-component="skip-link">Skip to main content</a>
+<header class="site-header" data-section="header">
+  <div class="shell bar">
+    <a class="wordmark" href="index.html" data-component="logo">
+      Juno Salvi<span class="role">3D &amp; motion designer</span>
+      <span class="visually-hidden">&#8212; home page</span>
+    </a>
+    <div class="header-tools">
+      <nav aria-label="Primary" data-section="primary-nav">
+        <div class="offcanvas-lg offcanvas-end" tabindex="-1" id="primary-menu" aria-labelledby="primary-menu-title" data-component="mobile-nav">
+          <div class="offcanvas-header">
+            <h2 class="offcanvas-title h5" id="primary-menu-title">Menu</h2>
+            <button type="button" class="btn-close" data-ui="panel-close" aria-label="Close menu"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="nav-list" data-component="nav-menu">
+              <li><a href="work.html">Work</a></li>
+              <li><a href="reel.html">Showreel</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="about.html">Studio</a></li>
+              <li><a href="notes.html">Notes</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li class="dropdown" data-component="nav-dropdown">
+                <button class="nav-link dropdown-toggle" type="button" id="nav-more" data-ui="dropdown-toggle" aria-controls="nav-more-menu" aria-expanded="false">More</button>
+                <ul class="dropdown-menu dropdown-menu-end" id="nav-more-menu" aria-labelledby="nav-more">
+                  <li><a class="dropdown-item" href="search.html" aria-current="page">Search</a></li>
+                  <li><a class="dropdown-item" href="colophon.html">Colophon</a></li>
+                  <li><a class="dropdown-item" href="accessibility.html">Accessibility</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <button class="btn-icon" type="button" data-component="motion-toggle" aria-pressed="false">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><rect x="5" y="4" width="4.5" height="16" rx="1"/><rect x="14.5" y="4" width="4.5" height="16" rx="1"/></svg>
+          <span data-motion-label>Motion on</span>
+          <span class="visually-hidden">: pause or play the looping animations on this page</span>
+        </button>
+        <span class="visually-hidden" role="status" aria-live="polite" id="motion-status"></span>
+      <button class="btn-icon d-lg-none" type="button" data-ui="panel-open" aria-controls="primary-menu" data-component="mobile-nav-toggle">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/></svg>
+        Menu<span class="visually-hidden">, open navigation</span>
+      </button>
+    </div>
+  </div>
+</header>
+<main id="main-content" tabindex="-1" data-section="main-content">
+  <div class="shell page-head" data-section="page-header">
+  <nav class="crumbs" aria-label="Breadcrumb" data-component="breadcrumbs">
+    <ol>
+      <li><a href="index.html">Home</a></li>
+      <li aria-current="page">Search</li>
+    </ol>
+  </nav>
+    <h1>Search</h1>
+    <p class="lede">Searches a client-side index of <span data-count="search-entries">17</span> pages, projects and notes. Nothing leaves the browser.</p>
+  </div>
+
+  <div class="shell band" data-section="search-region">
+    <form class="form-stack" role="search" aria-label="Site" action="search.html" method="get" style="max-width:30rem">
+      <div>
+        <label class="form-label" for="site-q">Search this site</label>
+        <input class="form-control" type="search" id="site-q" name="q" autocomplete="off" placeholder="loop, installation, rates&#8230;" data-component="site-search-input">
+      </div>
+      <button class="btn btn-primary" type="submit">Search</button>
+    </form>
+
+    <h2 class="visually-hidden">Results</h2>
+    <p class="count mt-4" role="status" aria-live="polite" data-component="search-summary">Type a word to search.</p>
+    <ul class="note-list" data-component="search-results"></ul>
+
+    <div class="mt-band">
+      <h2>Shortcuts</h2>
+      <ul class="chip-set">
+        <li><a class="chip" href="work.html?kind=loops">loops</a></li>
+        <li><a class="chip" href="work.html?kind=installation">installations</a></li>
+        <li><a class="chip" href="services.html">rates</a></li>
+        <li><a class="chip" href="reel.html">showreel</a></li>
+        <li><a class="chip" href="notes.html">notes</a></li>
+      </ul>
+    </div>
+  </div>
+
+</main>
+<footer class="site-footer" data-section="footer">
+  <div class="shell">
+    <div class="footer-grid">
+      <div data-component="footer-column">
+        <h2>Work</h2>
+        <ul>
+          <li><a href="work.html">All projects</a></li>
+          <li><a href="reel.html">Showreel</a></li>
+          <li><a href="services.html">Services &amp; rates</a></li>
+          <li><a href="search.html">Search</a></li>
+        </ul>
+      </div>
+      <div data-component="footer-column">
+        <h2>Studio</h2>
+        <ul>
+          <li><a href="about.html">About the studio</a></li>
+          <li><a href="notes.html">Notes</a></li>
+          <li><a href="colophon.html">Colophon</a></li>
+          <li><a href="accessibility.html">Accessibility</a></li>
+        </ul>
+      </div>
+      <div data-component="footer-column">
+        <h2>Elsewhere</h2>
+        <ul data-component="social-links">
+          <li><a href="https://vimeo.com/" rel="nofollow noopener">Vimeo <span class="ext-mark" aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens an external site)</span></a></li>
+          <li><a href="https://www.behance.net/" rel="nofollow noopener">Behance <span class="ext-mark" aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens an external site)</span></a></li>
+          <li><a href="https://www.instagram.com/" rel="nofollow noopener">Instagram <span class="ext-mark" aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens an external site)</span></a></li>
+          <li><a href="https://github.com/" rel="nofollow noopener">GitHub <span class="ext-mark" aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens an external site)</span></a></li>
+        </ul>
+      </div>
+      <div data-component="footer-column">
+        <h2>Enquiries</h2>
+        <p class="stack-sm">
+          <a href="mailto:studio@junosalvi.example" data-component="email-link">studio@junosalvi.example</a><br>
+          <span class="text-faint">Stockholm &#183; <span data-component="local-time">local time loading&#8230;</span></span>
+        </p>
+        <p><a class="btn btn-ghost btn-sm" href="contact.html" data-component="cta-button">Start a brief</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&#169; <span data-component="year-stamp">2026</span> Juno Salvi &#183; a fictional studio built as a research baseline. Email uses the reserved <span class="mono">.example</span> domain.</p>
+      <p><a href="#main-content" data-component="to-top">Back to top &#8593;</a></p>
+    </div>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

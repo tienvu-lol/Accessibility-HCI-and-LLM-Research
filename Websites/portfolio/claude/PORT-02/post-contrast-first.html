@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shipping an editor theme contrast-first &#8212; Priya Raman</title>
+<meta name="description" content="I measured every token pair before picking a single hue. The theme got prettier, not uglier, which surprised me.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="author" content="Priya Raman (fictional)">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/styles.css">
+<script>
+/* Applies the saved theme before first paint, so the page never flashes the
+   wrong palette. The toggle itself lives in js/main.js. */
+(function(){try{var t=localStorage.getItem('pr-theme');if(t==='light'||t==='dark'){document.documentElement.setAttribute('data-theme',t);}}catch(e){}}());
+</script>
+</head>
+<body data-page="post-contrast-first">
+<a class="skip-link" href="#main-content" data-component="skip-link">Skip to main content</a>
+<div class="spotlight" data-component="spotlight" aria-hidden="true"></div>
+<header class="topbar" data-section="header">
+  <div class="shell topbar-grid">
+    <a class="brand" href="index.html" data-component="logo">
+      <svg class="brand-mark" width="30" height="30" viewBox="0 0 30 30" aria-hidden="true" focusable="false"><rect x="1.5" y="1.5" width="27" height="27" rx="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M11 21V9h4.2a3.4 3.4 0 0 1 0 6.8H11" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15 15.8 19 21" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+      <span>
+        <span class="brand-name">Priya Raman</span>
+        <span class="brand-role">Senior frontend engineer, accessibility</span>
+      </span>
+      <span class="visually-hidden">&#8212; home page</span>
+    </a>
+    <div class="d-flex align-items-center gap-2">
+      <nav aria-label="Primary" data-section="primary-nav">
+        <div class="offcanvas-lg offcanvas-end" tabindex="-1" id="primary-menu" aria-labelledby="primary-menu-title" data-component="mobile-nav">
+          <div class="offcanvas-header">
+            <h2 class="offcanvas-title h5" id="primary-menu-title">Menu</h2>
+            <button type="button" class="btn-close" data-ui="panel-close" aria-label="Close menu"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="topnav" data-component="nav-menu">
+            <li><a href="archive.html">Archive</a></li>
+            <li><a href="writing.html" aria-current="page">Writing</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="resume.html">Resume</a></li>
+            <li><a href="contact.html">Contact</a></li>
+              <li class="dropdown" data-component="nav-dropdown">
+                <button class="nav-link dropdown-toggle" type="button" id="nav-more" data-ui="dropdown-toggle" aria-controls="nav-more-menu" aria-expanded="false">More</button>
+                <ul class="dropdown-menu dropdown-menu-end" id="nav-more-menu" aria-labelledby="nav-more">
+                <li><a class="dropdown-item" href="uses.html">Uses</a></li>
+                <li><a class="dropdown-item" href="search.html">Search</a></li>
+                <li><a class="dropdown-item" href="colophon.html">Colophon</a></li>
+                <li><a class="dropdown-item" href="accessibility.html">Accessibility</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <button class="theme-toggle" type="button" data-component="theme-toggle" aria-pressed="false">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.5"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.2 5.2l1.4 1.4M17.4 17.4l1.4 1.4M18.8 5.2l-1.4 1.4M6.6 17.4l-1.4 1.4"/></svg>
+          <span data-theme-label>Dark</span><span class="visually-hidden" data-theme-sr> theme</span>
+        </button>
+        <span class="visually-hidden" role="status" aria-live="polite" id="theme-status"></span>
+      <button class="icon-btn d-lg-none" type="button" data-ui="panel-open" aria-controls="primary-menu" data-component="mobile-nav-toggle">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/></svg>
+        Menu<span class="visually-hidden">, open navigation</span>
+      </button>
+    </div>
+  </div>
+</header>
+<main id="main-content" tabindex="-1" data-section="main-content">
+  <div class="shell page-head" data-section="page-header">
+  <nav class="crumbs" aria-label="Breadcrumb" data-component="breadcrumbs">
+    <ol>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="writing.html">Writing</a></li>
+      <li aria-current="page">Shipping an editor theme contrast-first</li>
+    </ol>
+  </nav>
+    <h1>Shipping an editor theme contrast-first</h1>
+    <p class="article-meta" data-component="article-meta">
+      <time datetime="2026-06-18">June 18, 2026</time>
+      <span>10 min read</span>
+      <span>by Priya Raman</span>
+      <span>accessibility &#183; craft</span>
+    </p>
+  </div>
+
+  <div class="shell" style="padding-top:2.5rem;padding-bottom:3rem">
+    <div class="with-sidebar">
+      <article class="prose" data-section="article-body">
+        <figure>
+          <img src="assets/img/post-contrast.svg" alt="Placeholder: stacked bars standing in for colour tokens" width="640" height="400">
+          <figcaption>Placeholder image. Posts on this replica use labelled placeholders.</figcaption>
+        </figure>
+        <p>I have made editor themes the normal way: pick a palette you like, apply it, squint, adjust. The result always has the same flaw. The comments are too dim, because dim comments look restful in a screenshot and are unreadable on a projector, on a cheap panel, or to anyone whose eyes are older than the designer's.</p>
+        <p>So with Umbra I inverted the process. Before choosing a single hue I listed every token pair the grammar can produce &#8212; comment on background, string on background, selected string on selection &#8212; and set a floor: 4.5:1 for text, 3:1 for non-text. Then I picked colours inside what was left.</p>
+        <h2>The measurement comes first</h2>
+        <pre tabindex="0" role="group" aria-label="Code sample" data-component="code-block"><code>pairs = tokens x backgrounds       # 61 real combinations
+floor = { text: 4.5, ui: 3.0 }
+reject(pair) unless ratio(pair) >= floor[kind(pair)]</code></pre>
+        <p>Sixty-one combinations sounds like a lot until you realise a theme has maybe twelve meaningful colours. Most of the work is bookkeeping, and bookkeeping is what scripts are for. The script is published with the theme, so anyone can re-run it and tell me I am wrong in specific terms.</p>
+        <h2>The surprise</h2>
+        <p>I expected the constraint to produce something ugly &#8212; high contrast themes have a reputation for looking like a fire alarm. The opposite happened. Being pushed off the washed-out greys I default to forced actual hue decisions, and the theme has more character than anything I made freehand. Three people have told me it is restful, which is the word I would have bet against.</p>
+        <blockquote data-component="pull-quote">&#8220;Constraints did not flatten the palette. They stopped me hiding behind grey.&#8221;</blockquote>
+        <h2>What I would tell theme authors</h2>
+        <ul>
+          <li>Comments are text. Dimming them is the most common failure and the easiest to fix.</li>
+          <li>Measure against the actual background behind the token, not the editor's average background.</li>
+          <li>Selection and diff states are where themes quietly fall apart; they are pairs too.</li>
+          <li>Publish the measurements. A theme that shows its numbers invites correction instead of argument.</li>
+        </ul>
+        <p>The full write-up, with the token list and both variants, is in the <a href="project-umbra-theme.html">case study</a>.</p>
+        <hr>
+        <div class="d-flex flex-wrap gap-2 align-items-center no-print" data-component="share-row">
+          <button class="btn btn-ghost btn-sm" type="button" data-component="copy-button" data-copy="post-contrast-first.html" data-label="Link to this post" data-status="post-copy-status">Copy link to this post</button>
+          <a class="btn btn-ghost btn-sm" href="mailto:priya@ramanbuilds.example?subject=Re:%20Shipping an editor theme contrast-first" data-component="email-link">Reply by email</a>
+        </div>
+        <p class="status-line" role="status" aria-live="polite" id="post-copy-status" data-component="copy-status"></p>
+      </article>
+
+      <aside class="sidebar" data-section="sidebar" aria-labelledby="post-aside">
+        <h2 id="post-aside" class="visually-hidden">More from this site</h2>
+        <div>
+          <h2>Tags</h2>
+          <ul class="d-flex flex-wrap gap-2 list-unstyled mb-0">
+            <li><a class="chip" href="writing.html?tag=accessibility">accessibility</a></li>
+            <li><a class="chip" href="writing.html?tag=craft">craft</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Related</h2>
+          <ul data-component="related-list">
+            <li><a href="post-tab-order.html">Tab order is a product decision</a></li>
+            <li><a href="post-component-nobody-uses.html">The component nobody uses</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>About the author</h2>
+          <p>Priya Raman builds accessible interfaces and design systems in Boston, Massachusetts.</p>
+          <p><a href="about.html">More &#8594;</a></p>
+        </div>
+      </aside>
+    </div>
+
+    <nav aria-label="Post navigation">
+      <ul class="pager" data-component="pager">
+      <li><a href="post-tab-order.html" rel="next"><span class="dir">Newer post</span>Tab order is a product decision</a></li>
+      <li><a href="post-budgets-beat-opinions.html" rel="prev"><span class="dir">Older post</span>Performance budgets beat opinions</a></li>
+      </ul>
+    </nav>
+  </div>
+
+</main>
+<footer class="site-footer" data-section="footer">
+  <div class="shell">
+    <div class="footer-grid">
+      <div data-component="footer-column">
+        <h2>The work</h2>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="archive.html">Project archive</a></li>
+          <li><a href="writing.html">Writing</a></li>
+          <li><a href="search.html">Search</a></li>
+        </ul>
+      </div>
+      <div data-component="footer-column">
+        <h2>Background</h2>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="uses.html">Uses</a></li>
+          <li><a href="colophon.html">Colophon</a></li>
+          <li><a href="accessibility.html">Accessibility</a></li>
+        </ul>
+      </div>
+      <div data-component="footer-column">
+        <h2>Elsewhere</h2>
+        <ul>
+          <li><a href="https://github.com/" rel="nofollow noopener">GitHub <span class="ext-mark" aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens an external site)</span></a></li>
+          <li><a href="https://codepen.io/" rel="nofollow noopener">CodePen <span class="ext-mark" aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens an external site)</span></a></li>
+          <li><a href="https://bsky.app/" rel="nofollow noopener">Bluesky <span class="ext-mark" aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens an external site)</span></a></li>
+          <li><a href="https://www.linkedin.com/" rel="nofollow noopener">LinkedIn <span class="ext-mark" aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens an external site)</span></a></li>
+        </ul>
+      </div>
+      <div data-component="footer-column">
+        <h2>Get in touch</h2>
+        <p class="stack-sm">
+          <a href="mailto:priya@ramanbuilds.example" data-component="email-link">priya@ramanbuilds.example</a><br>
+          <span class="text-faint">Boston, Massachusetts &#183; <span data-component="local-time">local time loading&#8230;</span></span>
+        </p>
+        <p><a class="btn btn-ghost btn-sm" href="contact.html" data-component="cta-button">Start a conversation</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&#169; <span data-component="year-stamp">2026</span> Priya Raman &#183; a fictional person, built as a research baseline. Email uses the reserved <span class="mono">.example</span> domain.</p>
+      <p><a href="#main-content" data-component="to-top">Back to top &#8593;</a></p>
+    </div>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

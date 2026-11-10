@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A loop is a promise &#8212; Juno Salvi</title>
+<meta name="description" content="The viewer is not watching your animation. They are waiting to catch you at the join.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="author" content="Juno Salvi (fictional)">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="note-a-loop-is-a-promise">
+<a class="skip-link" href="#main-content" data-component="skip-link">Skip to main content</a>
+<header class="site-header" data-section="header">
+  <div class="shell bar">
+    <a class="wordmark" href="index.html" data-component="logo">
+      Juno Salvi<span class="role">3D &amp; motion designer</span>
+      <span class="visually-hidden">&#8212; home page</span>
+    </a>
+    <div class="header-tools">
+      <nav aria-label="Primary" data-section="primary-nav">
+        <div class="offcanvas-lg offcanvas-end" tabindex="-1" id="primary-menu" aria-labelledby="primary-menu-title" data-component="mobile-nav">
+          <div class="offcanvas-header">
+            <h2 class="offcanvas-title h5" id="primary-menu-title">Menu</h2>
+            <button type="button" class="btn-close" data-ui="panel-close" aria-label="Close menu"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="nav-list" data-component="nav-menu">
+              <li><a href="work.html">Work</a></li>
+              <li><a href="reel.html">Showreel</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="about.html">Studio</a></li>
+              <li><a href="notes.html" aria-current="page">Notes</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li class="dropdown" data-component="nav-dropdown">
+                <button class="nav-link dropdown-toggle" type="button" id="nav-more" data-ui="dropdown-toggle" aria-controls="nav-more-menu" aria-expanded="false">More</button>
+                <ul class="dropdown-menu dropdown-menu-end" id="nav-more-menu" aria-labelledby="nav-more">
+                  <li><a class="dropdown-item" href="search.html">Search</a></li>
+                  <li><a class="dropdown-item" href="colophon.html">Colophon</a></li>
+                  <li><a class="dropdown-item" href="accessibility.html">Accessibility</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <button class="btn-icon" type="button" data-component="motion-toggle" aria-pressed="false">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><rect x="5" y="4" width="4.5" height="16" rx="1"/><rect x="14.5" y="4" width="4.5" height="16" rx="1"/></svg>
+          <span data-motion-label>Motion on</span>
+          <span class="visually-hidden">: pause or play the looping animations on this page</span>
+        </button>
+        <span class="visually-hidden" role="status" aria-live="polite" id="motion-status"></span>
+      <button class="btn-icon d-lg-none" type="button" data-ui="panel-open" aria-controls="primary-menu" data-component="mobile-nav-toggle">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/></svg>
+        Menu<span class="visually-hidden">, open navigation</span>
+      </button>
+    </div>
+  </div>
+</header>
+<main id="main-content" tabindex="-1" data-section="main-content">
+  <div class="shell page-head" data-section="page-header">
+  <nav class="crumbs" aria-label="Breadcrumb" data-component="breadcrumbs">
+    <ol>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="notes.html">Notes</a></li>
+      <li aria-current="page">A loop is a promise</li>
+    </ol>
+  </nav>
+    <h1>A loop is a promise</h1>
+    <p class="article-meta" data-component="article-meta">
+      <time datetime="2026-04-02">2 April 2026</time>
+      <span>7 min read</span>
+      <span>Juno Salvi</span>
+    </p>
+  </div>
+
+  <div class="shell band">
+    <div class="with-sidebar">
+      <article class="prose" data-section="article-body">
+        <p>A good loop is a small act of deception, and the viewer is in on it. They are not watching the object. They are waiting to catch you at the join, and the pleasure of the thing is that they cannot.</p>
+        <h2>Where loops break</h2>
+        <ul>
+          <li>Highlights. Specular motion travels faster than the mass it sits on, and the eye tracks it. Match the highlight at the seam separately.</li>
+          <li>Secondary motion. A cloth or a wobble that has not fully settled by the last frame will pop, even if the hero object is perfect.</li>
+          <li>Sound. If there is audio, the join has to work twice: once visually, once in the waveform.</li>
+          <li>Compression. A seam that survives the render can be destroyed by a platform's encoder. Test on the platform, not in your player.</li>
+        </ul>
+        <h2>The quarter-speed test</h2>
+        <p>Play it at 25%. If the join is invisible there, it is invisible everywhere. Most loops that feel &#8220;nearly right&#8221; at full speed fall apart immediately under that test, and the two frames you then fix are usually the entire remaining job.</p>
+        <blockquote data-component="pull-quote">&#8220;Eleven weeks on a three-second loop sounds absurd until you learn that ten of them were two frames.&#8221;</blockquote>
+        <p>The <a href="project-brass-pendulum.html">Brass Pendulum</a> case study has the timing diagram and the frames in question.</p>
+        <hr>
+        <div class="d-flex flex-wrap gap-2 align-items-center no-print" data-component="share-row">
+          <button class="btn btn-ghost btn-sm" type="button" data-component="copy-button" data-copy="note-a-loop-is-a-promise.html" data-label="Link to this note" data-status="note-copy-status">Copy link to this note</button>
+          <a class="btn btn-ghost btn-sm" href="mailto:studio@junosalvi.example?subject=Re:%20A loop is a promise" data-component="email-link">Reply by email</a>
+        </div>
+        <p class="status-line" role="status" aria-live="polite" id="note-copy-status" data-component="copy-status"></p>
+      </article>
+
+      <aside class="sidebar" data-section="sidebar" aria-labelledby="note-aside">
+        <h2 id="note-aside" class="visually-hidden">More from the studio</h2>
+        <div>
+          <h2>Other notes</h2>
+          <ul data-component="related-list">
+            <li><a href="note-half-speed.html">Why I render at half speed</a></li>
+            <li><a href="note-motion-permission.html">Motion that asks permission</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Related work</h2>
+          <ul data-component="related-list">
+            <li><a href="project-brass-pendulum.html">Brass Pendulum</a></li>
+            <li><a href="project-satisfying-objects.html">Satisfying Objects vol. 6</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Studio</h2>
+          <p>Juno Salvi, 3D and motion designer in Stockholm.</p>
+          <p><a href="about.html">About the studio &#8594;</a></p>
+        </div>
+      </aside>
+    </div>
+
+    <nav aria-label="Note navigation">
+      <ul class="pager" data-component="pager">
+      <li><a href="note-half-speed.html" rel="next"><span class="dir">Newer note</span>Why I render at half speed</a></li>
+      <li><a href="note-motion-permission.html" rel="prev"><span class="dir">Older note</span>Motion that asks permission</a></li>
+      </ul>
+    </nav>
+  </div>
+
+</main>
+<footer class="site-footer" data-section="footer">
+  <div class="shell">
+    <div class="footer-grid">
+      <div data-component="footer-column">
+        <h2>Work</h2>
+        <ul>
+          <li><a href="work.html">All projects</a></li>
+          <li><a href="reel.html">Showreel</a></li>
+          <li><a href="services.html">Services &amp; rates</a></li>
+          <li><a href="search.html">Search</a></li>
+        </ul>
+      </div>
+      <div data-component="footer-column">
+        <h2>Studio</h2>
+        <ul>
+          <li><a href="about.html">About the studio</a></li>
+          <li><a href="notes.html">Notes</a></li>
+          <li><a href="colophon.html">Colophon</a></li>
+          <li><a href="accessibility.html">Accessibility</a></li>
+        </ul>
+      </div>
+      <div data-component="footer-column">
+        <h2>Elsewhere</h2>
+        <ul data-component="social-links">
+          <li><a href="https://vimeo.com/" rel="nofollow noopener">Vimeo <span class="ext-mark" aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens an external site)</span></a></li>
+          <li><a href="https://www.behance.net/" rel="nofollow noopener">Behance <span class="ext-mark" aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens an external site)</span></a></li>
+          <li><a href="https://www.instagram.com/" rel="nofollow noopener">Instagram <span class="ext-mark" aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens an external site)</span></a></li>
+          <li><a href="https://github.com/" rel="nofollow noopener">GitHub <span class="ext-mark" aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens an external site)</span></a></li>
+        </ul>
+      </div>
+      <div data-component="footer-column">
+        <h2>Enquiries</h2>
+        <p class="stack-sm">
+          <a href="mailto:studio@junosalvi.example" data-component="email-link">studio@junosalvi.example</a><br>
+          <span class="text-faint">Stockholm &#183; <span data-component="local-time">local time loading&#8230;</span></span>
+        </p>
+        <p><a class="btn btn-ghost btn-sm" href="contact.html" data-component="cta-button">Start a brief</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&#169; <span data-component="year-stamp">2026</span> Juno Salvi &#183; a fictional studio built as a research baseline. Email uses the reserved <span class="mono">.example</span> domain.</p>
+      <p><a href="#main-content" data-component="to-top">Back to top &#8593;</a></p>
+    </div>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

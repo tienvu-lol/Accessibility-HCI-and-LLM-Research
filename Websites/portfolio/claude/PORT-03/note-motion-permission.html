@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Motion that asks permission &#8212; Juno Salvi</title>
+<meta name="description" content="Everything I make moves. That is exactly why every site I build has a way to stop it.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="author" content="Juno Salvi (fictional)">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="note-motion-permission">
+<a class="skip-link" href="#main-content" data-component="skip-link">Skip to main content</a>
+<header class="site-header" data-section="header">
+  <div class="shell bar">
+    <a class="wordmark" href="index.html" data-component="logo">
+      Juno Salvi<span class="role">3D &amp; motion designer</span>
+      <span class="visually-hidden">&#8212; home page</span>
+    </a>
+    <div class="header-tools">
+      <nav aria-label="Primary" data-section="primary-nav">
+        <div class="offcanvas-lg offcanvas-end" tabindex="-1" id="primary-menu" aria-labelledby="primary-menu-title" data-component="mobile-nav">
+          <div class="offcanvas-header">
+            <h2 class="offcanvas-title h5" id="primary-menu-title">Menu</h2>
+            <button type="button" class="btn-close" data-ui="panel-close" aria-label="Close menu"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="nav-list" data-component="nav-menu">
+              <li><a href="work.html">Work</a></li>
+              <li><a href="reel.html">Showreel</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="about.html">Studio</a></li>
+              <li><a href="notes.html" aria-current="page">Notes</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li class="dropdown" data-component="nav-dropdown">
+                <button class="nav-link dropdown-toggle" type="button" id="nav-more" data-ui="dropdown-toggle" aria-controls="nav-more-menu" aria-expanded="false">More</button>
+                <ul class="dropdown-menu dropdown-menu-end" id="nav-more-menu" aria-labelledby="nav-more">
+                  <li><a class="dropdown-item" href="search.html">Search</a></li>
+                  <li><a class="dropdown-item" href="colophon.html">Colophon</a></li>
+                  <li><a class="dropdown-item" href="accessibility.html">Accessibility</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <button class="btn-icon" type="button" data-component="motion-toggle" aria-pressed="false">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><rect x="5" y="4" width="4.5" height="16" rx="1"/><rect x="14.5" y="4" width="4.5" height="16" rx="1"/></svg>
+          <span data-motion-label>Motion on</span>
+          <span class="visually-hidden">: pause or play the looping animations on this page</span>
+        </button>
+        <span class="visually-hidden" role="status" aria-live="polite" id="motion-status"></span>
+      <button class="btn-icon d-lg-none" type="button" data-ui="panel-open" aria-controls="primary-menu" data-component="mobile-nav-toggle">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/></svg>
+        Menu<span class="visually-hidden">, open navigation</span>
+      </button>
+    </div>
+  </div>
+</header>
+<main id="main-content" tabindex="-1" data-section="main-content">
+  <div class="shell page-head" data-section="page-header">
+  <nav class="crumbs" aria-label="Breadcrumb" data-component="breadcrumbs">
+    <ol>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="notes.html">Notes</a></li>
+      <li aria-current="page">Motion that asks permission</li>
+    </ol>
+  </nav>
+    <h1>Motion that asks permission</h1>
+    <p class="article-meta" data-component="article-meta">
+      <time datetime="2025-12-05">5 December 2025</time>
+      <span>8 min read</span>
+      <span>Juno Salvi</span>
+    </p>
+  </div>
+
+  <div class="shell band">
+    <div class="with-sidebar">
+      <article class="prose" data-section="article-body">
+        <p>Everything I make moves. That is the job. It is also exactly why every site this studio builds has a visible control that stops the motion, and why the looping pieces here stay still for anyone whose system asks for reduced motion.</p>
+        <h2>Two different objects</h2>
+        <p>A clip someone chose to open and a loop running on someone's wall are not the same object, even if the file is identical. The first has an implicit yes. The second has to earn its place in a room it was not invited into, and the way it earns it is by being ignorable.</p>
+        <h2>What that means in practice</h2>
+        <ul>
+          <li>Nothing autoplays with sound. Nothing autoplays at all if the system preference says otherwise.</li>
+          <li>A single control, in the same place on every page, that stops every loop at once &#8212; not one pause button per tile.</li>
+          <li>The control states what it will do, and the page announces the change politely rather than silently.</li>
+          <li>Any information carried by motion is also carried by text. If a loop is decoration, it is marked as decoration and hidden from assistive technology.</li>
+        </ul>
+        <blockquote data-component="pull-quote">&#8220;Work that insists on being watched is just a poster that will not sit down.&#8221;</blockquote>
+        <h2>The commercial argument, since there always has to be one</h2>
+        <p>Half the places this work ends up &#8212; trade stands, foyers, waiting rooms, hospital corridors &#8212; have an audience that cannot leave. Motion that respects that is motion that gets installed. The last two installation commissions both asked, in the brief, how the piece behaves for people who find movement difficult. Five years ago neither would have.</p>
+        <hr>
+        <div class="d-flex flex-wrap gap-2 align-items-center no-print" data-component="share-row">
+          <button class="btn btn-ghost btn-sm" type="button" data-component="copy-button" data-copy="note-motion-permission.html" data-label="Link to this note" data-status="note-copy-status">Copy link to this note</button>
+          <a class="btn btn-ghost btn-sm" href="mailto:studio@junosalvi.example?subject=Re:%20Motion that asks permission" data-component="email-link">Reply by email</a>
+        </div>
+        <p class="status-line" role="status" aria-live="polite" id="note-copy-status" data-component="copy-status"></p>
+      </article>
+
+      <aside class="sidebar" data-section="sidebar" aria-labelledby="note-aside">
+        <h2 id="note-aside" class="visually-hidden">More from the studio</h2>
+        <div>
+          <h2>Other notes</h2>
+          <ul data-component="related-list">
+            <li><a href="note-half-speed.html">Why I render at half speed</a></li>
+            <li><a href="note-a-loop-is-a-promise.html">A loop is a promise</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Related work</h2>
+          <ul data-component="related-list">
+            <li><a href="project-brass-pendulum.html">Brass Pendulum</a></li>
+            <li><a href="project-satisfying-objects.html">Satisfying Objects vol. 6</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Studio</h2>
+          <p>Juno Salvi, 3D and motion designer in Stockholm.</p>
+          <p><a href="about.html">About the studio &#8594;</a></p>
+        </div>
+      </aside>
+    </div>
+
+    <nav aria-label="Note navigation">
+      <ul class="pager" data-component="pager">
+      <li><a href="note-a-loop-is-a-promise.html" rel="next"><span class="dir">Newer note</span>A loop is a promise</a></li>
+      </ul>
+    </nav>
+  </div>
+
+</main>
+<footer class="site-footer" data-section="footer">
+  <div class="shell">
+    <div class="footer-grid">
+      <div data-component="footer-column">
+        <h2>Work</h2>
+        <ul>
+          <li><a href="work.html">All projects</a></li>
+          <li><a href="reel.html">Showreel</a></li>
+          <li><a href="services.html">Services &amp; rates</a></li>
+          <li><a href="search.html">Search</a></li>
+        </ul>
+      </div>
+      <div data-component="footer-column">
+        <h2>Studio</h2>
+        <ul>
+          <li><a href="about.html">About the studio</a></li>
+          <li><a href="notes.html">Notes</a></li>
+          <li><a href="colophon.html">Colophon</a></li>
+          <li><a href="accessibility.html">Accessibility</a></li>
+        </ul>
+      </div>
+      <div data-component="footer-column">
+        <h2>Elsewhere</h2>
+        <ul data-component="social-links">
+          <li><a href="https://vimeo.com/" rel="nofollow noopener">Vimeo <span class="ext-mark" aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens an external site)</span></a></li>
+          <li><a href="https://www.behance.net/" rel="nofollow noopener">Behance <span class="ext-mark" aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens an external site)</span></a></li>
+          <li><a href="https://www.instagram.com/" rel="nofollow noopener">Instagram <span class="ext-mark" aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens an external site)</span></a></li>
+          <li><a href="https://github.com/" rel="nofollow noopener">GitHub <span class="ext-mark" aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens an external site)</span></a></li>
+        </ul>
+      </div>
+      <div data-component="footer-column">
+        <h2>Enquiries</h2>
+        <p class="stack-sm">
+          <a href="mailto:studio@junosalvi.example" data-component="email-link">studio@junosalvi.example</a><br>
+          <span class="text-faint">Stockholm &#183; <span data-component="local-time">local time loading&#8230;</span></span>
+        </p>
+        <p><a class="btn btn-ghost btn-sm" href="contact.html" data-component="cta-button">Start a brief</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&#169; <span data-component="year-stamp">2026</span> Juno Salvi &#183; a fictional studio built as a research baseline. Email uses the reserved <span class="mono">.example</span> domain.</p>
+      <p><a href="#main-content" data-component="to-top">Back to top &#8593;</a></p>
+    </div>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

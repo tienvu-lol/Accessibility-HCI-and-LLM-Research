@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tiny Orrery &#8212; Tobias Quill</title>
+<meta name="description" content="Case study: Tiny Orrery. A hand-cranked SVG solar system for a middle-school science unit. Keyboard operable, printable, and legible at 400% zoom.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="author" content="Tobias Quill (fictional)">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="project-tiny-orrery">
+<a class="skip-link" href="#main-content" data-component="skip-link">Skip to main content</a>
+<header class="site-header" data-section="header">
+  <div class="utility-bar" data-section="utility-bar">
+    <div class="shell">
+      <p data-component="availability-strip">
+        <span class="status-dot" data-component="desk-state-dot" aria-hidden="true"></span>
+        <span class="badge-pill" data-component="availability-badge" data-state="open">Available for work</span>
+        <span class="visually-hidden">Studio clock: </span>
+        <span class="mono" data-component="local-time">Local time loading&#8230;</span>
+      </p>
+      <p class="d-flex flex-wrap align-items-center gap-2">
+        <a href="mailto:hello@tquill.example" data-component="email-link">hello@tquill.example</a>
+        <button class="icon-btn btn-sm" type="button" data-component="copy-button" data-copy="hello@tquill.example" data-label="Email address" data-status="utility-copy-status">
+          <svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15 5H6a2 2 0 0 0-2 2v9" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+          Copy
+        </button>
+        <span class="visually-hidden" role="status" aria-live="polite" id="utility-copy-status" data-component="copy-status"></span>
+      </p>
+    </div>
+  </div>
+  <div class="brand-bar" data-section="brand-bar">
+    <div class="shell">
+      <a class="brand" href="index.html" data-component="logo">
+        <svg class="brand-mark" width="34" height="34" viewBox="0 0 34 34" aria-hidden="true" focusable="false"><rect x="1.5" y="1.5" width="31" height="31" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 24c0-8 4-14 9-14s9 6 9 14" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17" cy="9" r="2.6" fill="currentColor"/></svg>
+        <span>
+          <span class="brand-name">Tobias Quill</span>
+          <span class="brand-role">Interactive developer &amp; creative technologist</span>
+        </span>
+        <span class="visually-hidden">&#8212; home page</span>
+      </a>
+      <div class="header-actions">
+        <button class="icon-btn" type="button" data-ui="disclosure" aria-expanded="false" aria-controls="site-search-panel" data-component="search-toggle">
+          <svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15.5 15.5 21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <span class="d-none d-sm-inline">Search</span><span class="visually-hidden"> this site</span>
+        </button>
+        <button class="icon-btn d-lg-none" type="button" data-ui="panel-open" aria-controls="primary-menu" data-component="mobile-nav-toggle">
+          <svg width="19" height="19" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          Menu<span class="visually-hidden">, open navigation</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <nav class="primary-nav" aria-label="Primary" data-section="primary-nav">
+    <div class="shell">
+      <div class="offcanvas-lg offcanvas-end" tabindex="-1" id="primary-menu" aria-labelledby="primary-menu-title" data-component="mobile-nav">
+        <div class="offcanvas-header">
+          <h2 class="offcanvas-title h5" id="primary-menu-title">Menu</h2>
+          <button type="button" class="btn-close" data-ui="panel-close" aria-label="Close menu"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="nav-list" data-component="nav-menu">
+          <li class="nav-item"><a class="nav-link" href="work.html" aria-current="page">Work</a></li>
+          <li class="nav-item"><a class="nav-link" href="writing.html">Writing</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="uses.html">Uses</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            <li class="nav-item dropdown" data-component="nav-dropdown">
+              <button class="nav-link dropdown-toggle" type="button" id="nav-more" data-ui="dropdown-toggle" aria-controls="nav-more-menu" aria-expanded="false">More</button>
+              <ul class="dropdown-menu" id="nav-more-menu" aria-labelledby="nav-more">
+            <li><a class="dropdown-item" href="resume.html">Resume</a></li>
+            <li><a class="dropdown-item" href="talks.html">Talks &amp; podcasts</a></li>
+            <li><a class="dropdown-item" href="colophon.html">Colophon</a></li>
+            <li><a class="dropdown-item" href="accessibility.html">Accessibility</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <a class="btn btn-outline btn-sm nav-cta d-none d-lg-inline-flex" href="contact.html" data-component="cta-button">Start a project</a>
+    </div>
+  </nav>
+  <div class="collapse search-panel" id="site-search-panel" data-component="site-search">
+    <div class="shell py-3">
+      <form action="search.html" method="get" role="search" aria-label="Site" class="search-form">
+        <label class="form-label" for="header-q">Search projects, posts and pages</label>
+        <div class="input-group">
+          <input type="search" class="form-control" id="header-q" name="q" autocomplete="off" placeholder="plotter, focus rings, canvas&#8230;">
+          <button class="btn btn-primary" type="submit">Search</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</header>
+<main id="main-content" tabindex="-1" data-section="main-content">
+  <div class="page-header shell" data-section="page-header">
+  <nav class="breadcrumb-nav" aria-label="Breadcrumb" data-component="breadcrumbs">
+    <ol>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="work.html">Work</a></li>
+      <li aria-current="page">Tiny Orrery</li>
+    </ol>
+  </nav>
+    <span class="eyebrow">Case study &#183; 2025</span>
+    <h1>Tiny Orrery</h1>
+    <p class="lede">A hand-cranked SVG solar system for a middle-school science unit. Keyboard operable, printable, and legible at 400% zoom.</p>
+    <ul class="card-tags mt-3" aria-label="Tags"><li class="tag">svg</li><li class="tag">teaching</li><li class="tag">open-source</li></ul>
+  </div>
+
+  <div class="band shell">
+    <div class="with-sidebar">
+      <article class="prose" data-section="case-body" aria-labelledby="case-overview">
+        <h2 id="case-overview">What it is</h2>
+        <p>Built with a middle-school science teacher over a term.</p>
+        <h2>The problem</h2>
+        <p>The class needed a solar system they could drive, on school laptops from 2016, over a connection that dropped twice an hour. The commercial options were 40&nbsp;MB of WebGL and needed a login.</p>
+        <h2>How I built it</h2>
+        <ul>
+      <li>One inline SVG, no images, no fonts to download: the whole page is 34&nbsp;KB.</li>
+      <li>Crank the model with a slider, the arrow keys, or a page-up jump of one month per press.</li>
+      <li>Every planet is a real element with a real accessible name, so a screen reader can walk the system.</li>
+      <li>A print stylesheet that lays the orbits out as a worksheet, because the laptops were shared and the worksheets were not.</li>
+        </ul>
+    <h2 id="tiny-orrery-gallery">Pictures of it working</h2>
+    <div class="masonry" data-component="gallery">
+          <figure>
+            <button class="shot-btn" type="button" data-component="gallery-shot" data-full="assets/img/shot-bench.svg" data-alt="Dashed placeholder frame labelled workshop bench" data-title="Workshop bench" data-caption="The bench, mid-build, with the first enclosure taped together.">
+              <img src="assets/img/shot-bench.svg" alt="Dashed placeholder frame labelled workshop bench" width="640" height="400" loading="lazy">
+              <span class="shot-cap">Workshop bench &#8212; select to enlarge</span>
+            </button>
+          </figure>
+          <figure>
+            <button class="shot-btn" type="button" data-component="gallery-shot" data-full="assets/img/shot-screen.svg" data-alt="Dashed placeholder frame labelled on screen" data-title="On screen" data-caption="The interface at 1280px, with the debug overlay switched on.">
+              <img src="assets/img/shot-screen.svg" alt="Dashed placeholder frame labelled on screen" width="640" height="400" loading="lazy">
+              <span class="shot-cap">On screen &#8212; select to enlarge</span>
+            </button>
+          </figure>
+          <figure>
+            <button class="shot-btn" type="button" data-component="gallery-shot" data-full="assets/img/shot-detail.svg" data-alt="Dashed placeholder frame labelled detail" data-title="Detail" data-caption="A close detail: the part that took four weekends and one swear jar.">
+              <img src="assets/img/shot-detail.svg" alt="Dashed placeholder frame labelled detail" width="640" height="400" loading="lazy">
+              <span class="shot-cap">Detail &#8212; select to enlarge</span>
+            </button>
+          </figure>
+    </div>
+    <p class="meta">Three placeholder images. On a real case study these would be photographs and screen recordings.</p>
+
+        <h2>Where it got to</h2>
+        <ul>
+      <li>Three classrooms; the teacher reports it survives a 400% zoom and a flaky projector.</li>
+      <li>Keyboard-only operation was not an accessibility afterthought: it is how most of the class uses it, because the trackpads are worn out.</li>
+      <li>Forked eleven times, mostly by other teachers, which is the only metric I check.</li>
+        </ul>
+        <blockquote data-component="pull-quote">&#8220;Every constraint the school gave me made the thing better.&#8221;</blockquote>
+        <h2 id="tiny-orrery-lessons">What I&#8217;d do differently</h2>
+        <div class="accordion" id="tiny-orrery-lessons-acc" data-component="accordion">
+        <div class="accordion-item" data-component="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button" type="button" data-ui="disclosure" aria-expanded="true" aria-controls="tiny-orrery-lesson-1">Design for the worst laptop in the room</button>
+          </h3>
+          <div class="accordion-collapse collapse show" id="tiny-orrery-lesson-1">
+            <div class="accordion-body"><p class="mb-0">Every constraint the school gave me made the thing better. Nothing about this project needed a framework.</p></div>
+          </div>
+        </div>
+        <div class="accordion-item" data-component="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-ui="disclosure" aria-expanded="false" aria-controls="tiny-orrery-lesson-2">Print is an interface</button>
+          </h3>
+          <div class="accordion-collapse collapse" id="tiny-orrery-lesson-2">
+            <div class="accordion-body"><p class="mb-0">The worksheet got more classroom use than the interactive version in the first month.</p></div>
+          </div>
+        </div>
+        <div class="accordion-item" data-component="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-ui="disclosure" aria-expanded="false" aria-controls="tiny-orrery-lesson-3">Teachers are excellent QA</button>
+          </h3>
+          <div class="accordion-collapse collapse" id="tiny-orrery-lesson-3">
+            <div class="accordion-body"><p class="mb-0">Three bugs found in the first lesson, all of them mine, all of them obvious in hindsight.</p></div>
+          </div>
+        </div>
+
+        </div>
+      </article>
+
+      <aside class="sidebar" data-section="sidebar" aria-labelledby="case-facts">
+        <div class="widget">
+          <h2 id="case-facts">Project facts</h2>
+          <dl class="spec-list" data-component="spec-list">
+            <dt>Year</dt><dd>2025</dd>
+            <dt>Role</dt><dd>Design and build</dd>
+            <dt>Stack</dt><dd>Inline SVG, CSS custom properties, 90 lines of JS, printable stylesheet</dd>
+            <dt>Status</dt><dd>Used in three classrooms, open source</dd>
+          </dl>
+        </div>
+        <div>
+          <h2>Other case studies</h2>
+          <ul data-component="related-list">
+            <li><a href="project-cursor-weather.html">Cursor Weather</a></li>
+            <li><a href="project-keyboard-garden.html">Keyboard Garden</a></li>
+            <li><a href="project-paper-plotter.html">Paper Plotter</a></li>
+            <li><a href="project-focus-ring-museum.html">The Focus Ring Museum</a></li>
+          </ul>
+        </div>
+        <div class="widget">
+          <h2>Something similar?</h2>
+          <p>I take on two or three builds like this a year.</p>
+          <p class="mb-0"><a class="btn btn-primary btn-sm" href="contact.html" data-component="cta-button">Start a project</a></p>
+        </div>
+      </aside>
+    </div>
+
+    <nav aria-label="Project navigation">
+      <ul class="pager" data-component="pager">
+      <li><a href="project-keyboard-garden.html" rel="prev"><span class="pager-dir">Previous project</span><span class="pager-title">Keyboard Garden</span></a></li>
+      <li><a href="project-paper-plotter.html" rel="next"><span class="pager-dir">Next project</span><span class="pager-title">Paper Plotter</span></a></li>
+      </ul>
+    </nav>
+  </div>
+
+<dialog class="ui-dialog" id="lightbox" aria-labelledby="lightbox-title" data-component="lightbox">
+  <div class="dlg-head">
+    <h2 id="lightbox-title" class="h5" data-lightbox-title>Image</h2>
+    <button class="btn-close" type="button" data-ui="dialog-close" data-component="lightbox-close" aria-label="Close image"></button>
+  </div>
+  <div class="dlg-body">
+    <img data-lightbox-image src="assets/img/shot-screen.svg" alt="" width="640" height="400">
+    <p class="meta mt-2" data-lightbox-caption></p>
+  </div>
+</dialog>
+
+</main>
+<footer class="site-footer" data-section="footer">
+  <div class="shell">
+    <div class="footer-grid">
+      <div data-component="footer-column">
+        <h2>The site</h2>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="writing.html">Writing</a></li>
+          <li><a href="talks.html">Talks &amp; podcasts</a></li>
+          <li><a href="search.html">Search</a></li>
+        </ul>
+      </div>
+      <div data-component="footer-column">
+        <h2>Background</h2>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="uses.html">Uses</a></li>
+          <li><a href="colophon.html">Colophon</a></li>
+          <li><a href="accessibility.html">Accessibility</a></li>
+        </ul>
+      </div>
+      <div data-component="footer-column">
+        <h2>Elsewhere</h2>
+        <ul data-component="social-links">
+          <li><a href="https://github.com/" rel="nofollow noopener">GitHub <span class="ext-mark" aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens an external site)</span></a></li>
+          <li><a href="https://codepen.io/" rel="nofollow noopener">CodePen <span class="ext-mark" aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens an external site)</span></a></li>
+          <li><a href="https://bsky.app/" rel="nofollow noopener">Bluesky <span class="ext-mark" aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens an external site)</span></a></li>
+          <li><a href="https://www.linkedin.com/" rel="nofollow noopener">LinkedIn <span class="ext-mark" aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens an external site)</span></a></li>
+        </ul>
+      </div>
+      <div data-component="footer-column">
+        <h2>Get in touch</h2>
+        <p class="stack-sm">
+          <a href="mailto:hello@tquill.example" data-component="email-link">hello@tquill.example</a><br>
+          <span class="text-faint">Portland, Oregon &#183; <span data-component="local-time">local time loading&#8230;</span></span>
+        </p>
+        <p><a class="btn btn-outline btn-sm" href="contact.html" data-component="cta-button">Start a project</a></p>
+        <p class="text-faint" style="font-size:.8125rem">Replies within two working days, usually one.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&#169; <span data-component="year-stamp">2026</span> Tobias Quill. A fictional person, built as a research baseline. Phone numbers use the 555 range; email uses the reserved <span class="mono">.example</span> domain.</p>
+      <p><a class="to-top" href="#main-content" data-component="to-top">Back to top &#8593;</a></p>
+    </div>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>
