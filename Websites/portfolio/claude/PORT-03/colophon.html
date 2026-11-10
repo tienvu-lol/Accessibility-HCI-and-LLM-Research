@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Colophon &#8212; Juno Salvi</title>
+<meta name="description" content="How this site is built: one stylesheet, one script, CSS-animated SVG marks and no build step.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="author" content="Juno Salvi (fictional)">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="colophon">
+<a class="skip-link" href="#main-content" data-component="skip-link">Skip to main content</a>
+<header class="site-header" data-section="header">
+  <div class="shell bar">
+    <a class="wordmark" href="index.html" data-component="logo">
+      Juno Salvi<span class="role">3D &amp; motion designer</span>
+      <span class="visually-hidden">&#8212; home page</span>
+    </a>
+    <div class="header-tools">
+      <nav aria-label="Primary" data-section="primary-nav">
+        <div class="offcanvas-lg offcanvas-end" tabindex="-1" id="primary-menu" aria-labelledby="primary-menu-title" data-component="mobile-nav">
+          <div class="offcanvas-header">
+            <h2 class="offcanvas-title h5" id="primary-menu-title">Menu</h2>
+            <button type="button" class="btn-close" data-ui="panel-close" aria-label="Close menu"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="nav-list" data-component="nav-menu">
+              <li><a href="work.html">Work</a></li>
+              <li><a href="reel.html">Showreel</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="about.html">Studio</a></li>
+              <li><a href="notes.html">Notes</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li class="dropdown" data-component="nav-dropdown">
+                <button class="nav-link dropdown-toggle" type="button" id="nav-more" data-ui="dropdown-toggle" aria-controls="nav-more-menu" aria-expanded="false">More</button>
+                <ul class="dropdown-menu dropdown-menu-end" id="nav-more-menu" aria-labelledby="nav-more">
+                  <li><a class="dropdown-item" href="search.html">Search</a></li>
+                  <li><a class="dropdown-item" href="colophon.html" aria-current="page">Colophon</a></li>
+                  <li><a class="dropdown-item" href="accessibility.html">Accessibility</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <button class="btn-icon" type="button" data-component="motion-toggle" aria-pressed="false">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><rect x="5" y="4" width="4.5" height="16" rx="1"/><rect x="14.5" y="4" width="4.5" height="16" rx="1"/></svg>
+          <span data-motion-label>Motion on</span>
+          <span class="visually-hidden">: pause or play the looping animations on this page</span>
+        </button>
+        <span class="visually-hidden" role="status" aria-live="polite" id="motion-status"></span>
+      <button class="btn-icon d-lg-none" type="button" data-ui="panel-open" aria-controls="primary-menu" data-component="mobile-nav-toggle">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/></svg>
+        Menu<span class="visually-hidden">, open navigation</span>
+      </button>
+    </div>
+  </div>
+</header>
+<main id="main-content" tabindex="-1" data-section="main-content">
+  <div class="shell page-head" data-section="page-header">
+  <nav class="crumbs" aria-label="Breadcrumb" data-component="breadcrumbs">
+    <ol>
+      <li><a href="index.html">Home</a></li>
+      <li aria-current="page">Colophon</li>
+    </ol>
+  </nav>
+    <h1>Colophon</h1>
+    <p class="lede">How a motion studio's site gets built without a single video file.</p>
+  </div>
+
+  <div class="shell band">
+    <div class="prose" data-section="colophon-body">
+      <h2>The stack</h2>
+      <table class="spec-table" data-component="stack-table">
+        <caption>Everything this site runs on</caption>
+        <tbody>
+          <tr><th scope="row">Markup</th><td>Hand-written HTML5, 19 pages, each complete on its own.</td></tr>
+          <tr><th scope="row">Styles</th><td>One stylesheet. Light palette first, with a dark palette under <code>prefers-color-scheme</code>.</td></tr>
+          <tr><th scope="row">Script</th><td>One file: site data, then small named features pushed onto a registry. A failing feature is caught and logged rather than taking the page down.</td></tr>
+          <tr><th scope="row">Components</th><td>Bootstrap 5.3.3 for the grid helpers, dropdown and off-canvas menu, stored locally.</td></tr>
+          <tr><th scope="row">jQuery</th><td>3.7.1, stored locally, loaded on every page for tooling. This site's own code never calls it.</td></tr>
+          <tr><th scope="row">Slideshow</th><td>Hand-written, so that it never autoplays, always has a pause control, and announces each slide.</td></tr>
+          <tr><th scope="row">Motion</th><td>CSS animations on inline SVG marks, which is what lets one header control pause every loop at once. An animated file in an <code>&lt;img&gt;</code> could not be paused that way.</td></tr>
+          <tr><th scope="row">Images</th><td>18 labelled SVG placeholders. No raster files, no video, no web fonts.</td></tr>
+          <tr><th scope="row">Build step</th><td>None. The file edited is the file the browser gets.</td></tr>
+        </tbody>
+      </table>
+      <h2>Annotation</h2>
+      <p>Every layout region carries <code>data-section</code> and every repeated or interactive component carries <code>data-component</code>, so any part of a page can be addressed by a stable selector such as <code>[data-component=&quot;motion-toggle&quot;]</code>. The full list is in <code>component-inventory.json</code>.</p>
+      <h2>Deliberately missing</h2>
+      <ul>
+        <li>Video. A studio site would carry it; a research replica that must run offline from a folder cannot ship a reel, so the player is a labelled demo.</li>
+        <li>Analytics, cookies and third-party scripts of any kind.</li>
+        <li>A theme toggle: this site follows the operating system only, which is a deliberate difference from PORT-02 in the same set.</li>
+      </ul>
+      <h2>Credits</h2>
+      <p>Bootstrap and jQuery are MIT licensed; their licences sit beside them in <code>assets/vendor/</code>. Everything else was written for this replica.</p>
+    </div>
+  </div>
+
+</main>
+<footer class="site-footer" data-section="footer">
+  <div class="shell">
+    <div class="footer-grid">
+      <div data-component="footer-column">
+        <h2>Work</h2>
+        <ul>
+          <li><a href="work.html">All projects</a></li>
+          <li><a href="reel.html">Showreel</a></li>
+          <li><a href="services.html">Services &amp; rates</a></li>
+          <li><a href="search.html">Search</a></li>
+        </ul>
+      </div>
+      <div data-component="footer-column">
+        <h2>Studio</h2>
+        <ul>
+          <li><a href="about.html">About the studio</a></li>
+          <li><a href="notes.html">Notes</a></li>
+          <li><a href="colophon.html">Colophon</a></li>
+          <li><a href="accessibility.html">Accessibility</a></li>
+        </ul>
+      </div>
+      <div data-component="footer-column">
+        <h2>Elsewhere</h2>
+        <ul data-component="social-links">
+          <li><a href="https://vimeo.com/" rel="nofollow noopener">Vimeo <span class="ext-mark" aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens an external site)</span></a></li>
+          <li><a href="https://www.behance.net/" rel="nofollow noopener">Behance <span class="ext-mark" aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens an external site)</span></a></li>
+          <li><a href="https://www.instagram.com/" rel="nofollow noopener">Instagram <span class="ext-mark" aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens an external site)</span></a></li>
+          <li><a href="https://github.com/" rel="nofollow noopener">GitHub <span class="ext-mark" aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens an external site)</span></a></li>
+        </ul>
+      </div>
+      <div data-component="footer-column">
+        <h2>Enquiries</h2>
+        <p class="stack-sm">
+          <a href="mailto:studio@junosalvi.example" data-component="email-link">studio@junosalvi.example</a><br>
+          <span class="text-faint">Stockholm &#183; <span data-component="local-time">local time loading&#8230;</span></span>
+        </p>
+        <p><a class="btn btn-ghost btn-sm" href="contact.html" data-component="cta-button">Start a brief</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&#169; <span data-component="year-stamp">2026</span> Juno Salvi &#183; a fictional studio built as a research baseline. Email uses the reserved <span class="mono">.example</span> domain.</p>
+      <p><a href="#main-content" data-component="to-top">Back to top &#8593;</a></p>
+    </div>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,232 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "model_group",
+    "slots",
+    "excluded_categories",
+    "allocation",
+    "model",
+    "execution",
+    "approval",
+    "paths",
+    "research",
+    "qc"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "model_group": {
+      "const": "codex"
+    },
+    "slots": {
+      "type": "array",
+      "const": [
+        4,
+        5,
+        6
+      ]
+    },
+    "excluded_categories": {
+      "type": "array",
+      "const": [
+        "portfolio",
+        "restaurant"
+      ]
+    },
+    "allocation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "claude",
+        "codex",
+        "open-source"
+      ],
+      "properties": {
+        "claude": {
+          "const": 3
+        },
+        "codex": {
+          "const": 3
+        },
+        "open-source": {
+          "const": 4
+        }
+      }
+    },
+    "model": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "version",
+        "runtime",
+        "reasoning_effort",
+        "operator"
+      ],
+      "properties": {
+        "id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "version": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "runtime": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "reasoning_effort": {
+          "enum": [
+            null,
+            "low",
+            "medium",
+            "high",
+            "xhigh",
+            "max",
+            "ultra"
+          ]
+        },
+        "operator": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        }
+      }
+    },
+    "execution": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "mode",
+        "one_replica_per_run",
+        "max_concurrent_builds",
+        "automatic_generation",
+        "automatic_publish"
+      ],
+      "properties": {
+        "mode": {
+          "const": "prepare-and-handoff"
+        },
+        "one_replica_per_run": {
+          "const": true
+        },
+        "max_concurrent_builds": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 3
+        },
+        "automatic_generation": {
+          "const": false
+        },
+        "automatic_publish": {
+          "const": false
+        }
+      }
+    },
+    "approval": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "require_all_ten_sources",
+        "allow_unverified_sources",
+        "inherit_claude_waiver"
+      ],
+      "properties": {
+        "require_all_ten_sources": {
+          "const": true
+        },
+        "allow_unverified_sources": {
+          "const": false
+        },
+        "inherit_claude_waiver": {
+          "const": false
+        }
+      }
+    },
+    "paths": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "rules",
+        "allocation",
+        "assignments",
+        "inventories",
+        "qc"
+      ],
+      "properties": {
+        "rules": {
+          "const": "Rules.md"
+        },
+        "allocation": {
+          "const": "MODEL_ALLOCATION.md"
+        },
+        "assignments": {
+          "const": "metadata/assignments.csv"
+        },
+        "inventories": {
+          "const": "metadata/source-inventories"
+        },
+        "qc": {
+          "const": "tools/qc/qc.js"
+        }
+      }
+    },
+    "research": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "preferred_method",
+        "fallback"
+      ],
+      "properties": {
+        "preferred_method": {
+          "const": "live web search and direct page inspection when available"
+        },
+        "fallback": {
+          "const": "record exact available method and limits; unverified sources block builds"
+        }
+      }
+    },
+    "qc": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "required_exit_code",
+        "required_failures",
+        "interaction_review_required",
+        "manual_review_required_for_acceptance"
+      ],
+      "properties": {
+        "required_exit_code": {
+          "const": 0
+        },
+        "required_failures": {
+          "const": 0
+        },
+        "interaction_review_required": {
+          "const": true
+        },
+        "manual_review_required_for_acceptance": {
+          "const": true
+        }
+      }
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Codex website dataset pipeline configuration"
+}

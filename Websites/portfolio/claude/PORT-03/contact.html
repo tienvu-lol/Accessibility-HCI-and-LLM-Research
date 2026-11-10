@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact &#8212; Juno Salvi</title>
+<meta name="description" content="Start a brief with the Juno Salvi studio (fictional): a validated demo enquiry form, availability and direct email.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="author" content="Juno Salvi (fictional)">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="contact">
+<a class="skip-link" href="#main-content" data-component="skip-link">Skip to main content</a>
+<header class="site-header" data-section="header">
+  <div class="shell bar">
+    <a class="wordmark" href="index.html" data-component="logo">
+      Juno Salvi<span class="role">3D &amp; motion designer</span>
+      <span class="visually-hidden">&#8212; home page</span>
+    </a>
+    <div class="header-tools">
+      <nav aria-label="Primary" data-section="primary-nav">
+        <div class="offcanvas-lg offcanvas-end" tabindex="-1" id="primary-menu" aria-labelledby="primary-menu-title" data-component="mobile-nav">
+          <div class="offcanvas-header">
+            <h2 class="offcanvas-title h5" id="primary-menu-title">Menu</h2>
+            <button type="button" class="btn-close" data-ui="panel-close" aria-label="Close menu"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="nav-list" data-component="nav-menu">
+              <li><a href="work.html">Work</a></li>
+              <li><a href="reel.html">Showreel</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="about.html">Studio</a></li>
+              <li><a href="notes.html">Notes</a></li>
+              <li><a href="contact.html" aria-current="page">Contact</a></li>
+              <li class="dropdown" data-component="nav-dropdown">
+                <button class="nav-link dropdown-toggle" type="button" id="nav-more" data-ui="dropdown-toggle" aria-controls="nav-more-menu" aria-expanded="false">More</button>
+                <ul class="dropdown-menu dropdown-menu-end" id="nav-more-menu" aria-labelledby="nav-more">
+                  <li><a class="dropdown-item" href="search.html">Search</a></li>
+                  <li><a class="dropdown-item" href="colophon.html">Colophon</a></li>
+                  <li><a class="dropdown-item" href="accessibility.html">Accessibility</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <button class="btn-icon" type="button" data-component="motion-toggle" aria-pressed="false">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><rect x="5" y="4" width="4.5" height="16" rx="1"/><rect x="14.5" y="4" width="4.5" height="16" rx="1"/></svg>
+          <span data-motion-label>Motion on</span>
+          <span class="visually-hidden">: pause or play the looping animations on this page</span>
+        </button>
+        <span class="visually-hidden" role="status" aria-live="polite" id="motion-status"></span>
+      <button class="btn-icon d-lg-none" type="button" data-ui="panel-open" aria-controls="primary-menu" data-component="mobile-nav-toggle">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/></svg>
+        Menu<span class="visually-hidden">, open navigation</span>
+      </button>
+    </div>
+  </div>
+</header>
+<main id="main-content" tabindex="-1" data-section="main-content">
+  <div class="shell page-head" data-section="page-header">
+  <nav class="crumbs" aria-label="Breadcrumb" data-component="breadcrumbs">
+    <ol>
+      <li><a href="index.html">Home</a></li>
+      <li aria-current="page">Contact</li>
+    </ol>
+  </nav>
+    <h1>Start a brief</h1>
+    <p class="lede">Tell me what you are making, when it has to exist, and roughly what it is worth to you. I answer every enquiry myself, usually the next working day.</p>
+  </div>
+
+  <div class="shell band">
+    <div class="with-sidebar">
+      <div data-section="contact-form-region">
+        <form class="form-stack" data-form="brief" novalidate data-component="contact-form">
+          <div class="error-summary" role="alert" hidden data-component="error-summary">
+            <h2>There is a problem with this form</h2>
+            <ul></ul>
+          </div>
+          <p class="required-note">Fields marked <span class="req" aria-hidden="true">*</span> are required.</p>
+
+          <div>
+            <label class="form-label" for="c-name">Your name <span class="req" aria-hidden="true">*</span><span class="visually-hidden"> (required)</span></label>
+            <input class="form-control" type="text" id="c-name" name="name" required autocomplete="name" data-label="Your name" aria-describedby="c-name-error">
+            <span class="field-error" id="c-name-error" data-component="field-error"></span>
+          </div>
+
+          <div>
+            <label class="form-label" for="c-email">Email address <span class="req" aria-hidden="true">*</span><span class="visually-hidden"> (required)</span></label>
+            <input class="form-control" type="email" id="c-email" name="email" required autocomplete="email" data-validate="email" data-label="Email address" aria-describedby="c-email-hint c-email-error">
+            <span class="form-hint" id="c-email-hint">Used only to reply to this enquiry.</span>
+            <span class="field-error" id="c-email-error" data-component="field-error"></span>
+          </div>
+
+          <div>
+            <label class="form-label" for="c-org">Company or production</label>
+            <input class="form-control" type="text" id="c-org" name="organisation" autocomplete="organization">
+          </div>
+
+          <div>
+            <label class="form-label" for="c-kind">Kind of project <span class="req" aria-hidden="true">*</span><span class="visually-hidden"> (required)</span></label>
+            <select class="form-select" id="c-kind" name="kind" required data-label="Kind of project" aria-describedby="c-kind-error">
+              <option value="">Choose one&#8230;</option>
+              <option value="loop">Looping animation</option>
+              <option value="product">Product film</option>
+              <option value="installation">Installation</option>
+              <option value="titles">Title sequence</option>
+              <option value="workshop">Workshop or teaching</option>
+              <option value="other">Something else</option>
+            </select>
+            <span class="field-error" id="c-kind-error" data-component="field-error"></span>
+          </div>
+
+          <div>
+            <label class="form-label" for="c-date">Needed by</label>
+            <input class="form-control" type="date" id="c-date" name="needed" aria-describedby="c-date-hint">
+            <span class="form-hint" id="c-date-hint">Optional. Lead time is usually four to six weeks.</span>
+          </div>
+
+          <fieldset data-component="radio-group">
+            <legend>Budget range</legend>
+            <div class="form-check"><input class="form-check-input" type="radio" name="budget" id="b-1" value="under-5"><label class="form-check-label" for="b-1">Under &euro;5,000</label></div>
+            <div class="form-check"><input class="form-check-input" type="radio" name="budget" id="b-2" value="5-15"><label class="form-check-label" for="b-2">&euro;5,000&#8211;&euro;15,000</label></div>
+            <div class="form-check"><input class="form-check-input" type="radio" name="budget" id="b-3" value="15-plus"><label class="form-check-label" for="b-3">&euro;15,000 and up</label></div>
+            <div class="form-check"><input class="form-check-input" type="radio" name="budget" id="b-4" value="unknown" checked><label class="form-check-label" for="b-4">Not decided yet</label></div>
+          </fieldset>
+
+          <div>
+            <label class="form-label" for="c-brief">The brief <span class="req" aria-hidden="true">*</span><span class="visually-hidden"> (required)</span></label>
+            <textarea class="form-control" id="c-brief" name="brief" required data-validate="brief" data-label="The brief" aria-describedby="c-brief-hint c-brief-error"></textarea>
+            <span class="form-hint" id="c-brief-hint">What it is for, where it will be shown, and anything that is already decided.</span>
+            <span class="field-error" id="c-brief-error" data-component="field-error"></span>
+          </div>
+
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="c-consent" name="consent" required data-label="The consent checkbox" aria-describedby="c-consent-error">
+            <label class="form-check-label" for="c-consent">I understand this is a demo form and nothing is sent. <span class="req" aria-hidden="true">*</span></label>
+            <span class="field-error" id="c-consent-error" data-component="field-error"></span>
+          </div>
+
+          <button class="btn btn-primary" type="submit">Send the brief</button>
+          <p class="demo-flag">Demo form &#183; validated in the browser, then shown a success state. Nothing leaves this page.</p>
+        </form>
+
+        <div class="success-panel" hidden data-component="success-panel">
+          <h2>Thank you &#8212; that would have been sent</h2>
+          <p>Reference <strong data-ref>BR-0000</strong>. A real version of this site would email a copy to <strong data-echo>your address</strong> and reply the next working day.</p>
+          <p class="demo-note">Demo only: this is a static research replica with no server, so nothing was transmitted or stored.</p>
+          <p><a class="btn btn-ghost btn-sm" href="index.html" data-component="cta-button">Back to the home page</a></p>
+        </div>
+        <p class="visually-hidden" role="status" aria-live="polite" data-component="form-status"></p>
+      </div>
+
+      <aside class="sidebar" data-section="sidebar" aria-labelledby="contact-aside">
+        <h2 id="contact-aside" class="visually-hidden">Direct contact and availability</h2>
+      <div class="avail-card" data-component="availability-card">
+        <span class="status-badge" data-component="availability-badge" data-state="open">Booking</span>
+        <h2 id="contact-avail-title">Booking from February 2027</h2>
+        <p>Two projects a quarter, kept deliberately small so each one gets the whole studio.</p>
+        <dl>
+          <dt>Lead time</dt><dd>4&#8211;6 weeks</dd>
+          <dt>Good fits</dt><dd>Loops, product films, installations</dd>
+          <dt>Studio clock</dt><dd><span data-component="local-time">loading&#8230;</span></dd>
+          <dt>Right now</dt><dd><span data-component="studio-state">loading&#8230;</span></dd>
+        </dl>
+      </div>
+        <div>
+          <h2>Or just email</h2>
+          <p><a href="mailto:studio@junosalvi.example" data-component="email-link">studio@junosalvi.example</a></p>
+          <p><button class="btn btn-ghost btn-sm" type="button" data-component="copy-button" data-copy="studio@junosalvi.example" data-label="Studio email" data-status="contact-copy-status">Copy address</button></p>
+          <p class="status-line" role="status" aria-live="polite" id="contact-copy-status" data-component="copy-status"></p>
+        </div>
+        <div>
+          <h2>What happens next</h2>
+          <ol style="padding-left:1.1rem">
+            <li>A reply the next working day, with a yes, a no, or a question.</li>
+            <li>A twenty-minute call, no deck.</li>
+            <li>A one-page quote: scope, timing diagram date, delivery list.</li>
+          </ol>
+        </div>
+        <div>
+          <h2>Probably not a fit</h2>
+          <ul>
+            <li>Anything needed inside two weeks</li>
+            <li>Pitches with more than two other studios</li>
+            <li>Work paid in exposure or equity</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+</main>
+<footer class="site-footer" data-section="footer">
+  <div class="shell">
+    <div class="footer-grid">
+      <div data-component="footer-column">
+        <h2>Work</h2>
+        <ul>
+          <li><a href="work.html">All projects</a></li>
+          <li><a href="reel.html">Showreel</a></li>
+          <li><a href="services.html">Services &amp; rates</a></li>
+          <li><a href="search.html">Search</a></li>
+        </ul>
+      </div>
+      <div data-component="footer-column">
+        <h2>Studio</h2>
+        <ul>
+          <li><a href="about.html">About the studio</a></li>
+          <li><a href="notes.html">Notes</a></li>
+          <li><a href="colophon.html">Colophon</a></li>
+          <li><a href="accessibility.html">Accessibility</a></li>
+        </ul>
+      </div>
+      <div data-component="footer-column">
+        <h2>Elsewhere</h2>
+        <ul data-component="social-links">
+          <li><a href="https://vimeo.com/" rel="nofollow noopener">Vimeo <span class="ext-mark" aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens an external site)</span></a></li>
+          <li><a href="https://www.behance.net/" rel="nofollow noopener">Behance <span class="ext-mark" aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens an external site)</span></a></li>
+          <li><a href="https://www.instagram.com/" rel="nofollow noopener">Instagram <span class="ext-mark" aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens an external site)</span></a></li>
+          <li><a href="https://github.com/" rel="nofollow noopener">GitHub <span class="ext-mark" aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens an external site)</span></a></li>
+        </ul>
+      </div>
+      <div data-component="footer-column">
+        <h2>Enquiries</h2>
+        <p class="stack-sm">
+          <a href="mailto:studio@junosalvi.example" data-component="email-link">studio@junosalvi.example</a><br>
+          <span class="text-faint">Stockholm &#183; <span data-component="local-time">local time loading&#8230;</span></span>
+        </p>
+        <p><a class="btn btn-ghost btn-sm" href="contact.html" data-component="cta-button">Start a brief</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&#169; <span data-component="year-stamp">2026</span> Juno Salvi &#183; a fictional studio built as a research baseline. Email uses the reserved <span class="mono">.example</span> domain.</p>
+      <p><a href="#main-content" data-component="to-top">Back to top &#8593;</a></p>
+    </div>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>
