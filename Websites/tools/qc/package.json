@@ -1,0 +1,10 @@
+{
+  "name": "replica-qc",
+  "private": true,
+  "description": "QC for replica sites: static audit plus axe-core and runtime checks at 1280px and 375px. Usage: node qc.js <siteDir> [--json out.json]",
+  "license": "MIT",
+  "dependencies": {
+    "axe-core": "^4.14.0",
+    "playwright": "^1.65.0"
+  }
+}

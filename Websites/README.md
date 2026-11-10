@@ -1,0 +1,42 @@
+# Websites: replica dataset
+
+Static replicas of real websites, built as accessibility and usability test sites. Every category has 10 replicas, split by model group (`MODEL_ALLOCATION.md` §2):
+
+| Slots | Model group | Directory |
+|---|---|---|
+| 01–03 | Claude | `<category>/claude/` |
+| 04–06 | Codex | `<category>/codex/` |
+| 07–10 | Open-source | `<category>/open-source/` |
+
+Read `Rules.md` (generation protocol) and `MODEL_ALLOCATION.md` (allocation and provenance) before generating anything. They govern every model group.
+
+## Layout
+
+```
+Websites/
+├── Rules.md, MODEL_ALLOCATION.md    the two protocols
+├── metadata/
+│   ├── assignments.csv              one row per slot: every category, all 10 slots
+│   ├── change-log.md                assignment, source and model changes
+│   └── source-inventories/          approved references, per category
+├── <category>/<model-group>/<ID>/   one independent site per slot
+├── pipelines/<model-group>/         how each model group generates its slots
+└── tools/                           shared by every model group
+    ├── qc/                          QC every replica must pass
+    └── previewer/                   bundles all replicas into ReplicaPreview.exe
+```
+
+Categories: university, healthcare, company, e-commerce, news, government, fashion, weather, nonprofit, church. Restaurant predates this layout and lives in `../restaurant websites/` as zips.
+
+## For each model group
+
+- Write only to your own `<category>/<your-group>/` slots and to `pipelines/<your-group>/`.
+- Keep any pipeline scripts, queues and research notes in `pipelines/<your-group>/`, so groups don't read or reuse each other's prompts. `pipelines/claude/` is the Claude group's pipeline.
+- Run the same QC before you submit:
+  - **Setup:** `cd Websites/tools/qc && npm ci`
+  - **Run:** `node Websites/tools/qc/qc.js Websites/<category>/<group>/<ID>`. It must print `failures=0`.
+- Update your rows in `metadata/assignments.csv`, and add a line to `metadata/change-log.md`.
+
+## Status
+
+See `metadata/assignments.csv`. To browse everything that exists, run `python Websites/tools/previewer/build.py`, then `Websites/tools/previewer/dist/ReplicaPreview.exe`. This needs the .NET 10 SDK to build; the exe itself runs anywhere on Windows x64. The gallery lists every slot, including ones not generated yet.
