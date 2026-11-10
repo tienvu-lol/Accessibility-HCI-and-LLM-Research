@@ -5,4 +5,3 @@ Read [agentic/MAIN.md](agentic/MAIN.md), then claim work through [agentic/JOBS.m
 
 `agentic/MAIN.md` is owned by Tien Vu. Do not change it without his explicit permission for the specific edit. Implementation progress belongs in JOBS.md.
 
-For the first demo, read [agentic/DEMO_TONIGHT.md](agentic/DEMO_TONIGHT.md). Those assignments are suggestions, not existing claims. Claim and publish ownership before coding.
