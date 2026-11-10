@@ -13,7 +13,6 @@ Read MAIN.md first. This map explains its implementation; it does not introduce 
 | agentic/JOBS.md | Engineering queue, ownership, evidence, proposals | Added |
 | agentic/COORDINATION.md | Concurrent claims, integration, handoffs | Added |
 | agentic/PROJECT_STRUCTURE.md | This implementation map | Added |
-| agentic/DEMO_TONIGHT.md | October 3 demo schedule and Claude/Codex handoffs | Added |
 | Papers/ | Original project proposals and simulation documents | Existing; preserve |
 | Literature/ | Existing papers and review spreadsheet | Existing; preserve |
 | files.zip | WCAG reference archive; requires verification/extraction | Existing; preserve |
@@ -35,7 +34,6 @@ These directories are planned, not claimed to exist. Adopt them through jobs rat
 | src/uirepairgym/reporting/ | Generated HTML report from actual run artifacts | M09 | Report worker |
 | apps/api/ | FastAPI submission/status/artifact access | M05, M08b | Later API job |
 | apps/dashboard/ | Proposed Next.js team interface | M05, M09 | Later UI job |
-| deploy/railway/ | Deployment settings/runbook, secrets placeholders | M08b | Deployment worker |
 | deploy/arc/ | Future Slurm/Apptainer adapter and runbook | M08c | Later ARC job |
 | scripts/ | CLI/check/reproduction entrypoints | M06, M10 | Claimed owner |
 | tests/ | Relevant schema, runner, and browser integration checks | M06, M07 | Component owners by file |
