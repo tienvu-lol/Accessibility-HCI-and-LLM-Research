@@ -1,6 +1,6 @@
 """Bundle every replica under Websites/ (plus the restaurant zips) into ReplicaPreview.exe.
 
-Usage: python Websites/previewer/build.py [--no-exe]   -> Websites/previewer/dist/ReplicaPreview.exe
+Usage: python Websites/tools/previewer/build.py [--no-exe]   -> Websites/tools/previewer/dist/ReplicaPreview.exe
 The gallery lists every slot in Websites/metadata/assignments.csv, so slots that are
 not generated yet show up as such. Needs the .NET 10 SDK; the exe itself is self-contained.
 """
@@ -8,7 +8,7 @@ import csv, html, json, re, shutil, subprocess, sys, zipfile
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
-WEBSITES = HERE.parent
+WEBSITES = HERE.parent.parent
 REPO = WEBSITES.parent
 STAGE = HERE / "obj" / "stage"
 SITES_ZIP = HERE / "obj" / "sites.zip"
@@ -42,7 +42,7 @@ def stage() -> dict:
     # <category>/<model-group>/<ID>/index.html, per MODEL_ALLOCATION.md section 3
     for index in sorted(WEBSITES.glob("*/*/*/index.html")):
         site, group, category = index.parent, index.parent.parent.name, index.parent.parent.parent.name
-        if group not in GROUPS:
+        if group not in GROUPS or category in ("pipelines", "tools"):
             continue
         rel = f"{category}/{group}/{site.name}"
         shutil.copytree(site, STAGE / rel)
