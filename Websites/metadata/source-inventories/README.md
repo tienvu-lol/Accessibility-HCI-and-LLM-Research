@@ -1,6 +1,6 @@
 # Shared source inventories
 
-One CSV per active category, with ten stable slots and a 3 Claude / 3 Codex / 4 open-source allocation. Portfolio and restaurant are outside this 100-site study. The initial files are blank allocation templates, NOT verified sources or approval records. Existing research must be entered with its original evidence; no observations are inferred from an empty cell.
+One CSV per category in `assignments.csv`, with ten stable slots. The ten active categories of the 100-site study carry the 3 Claude / 3 Codex / 4 open-source allocation. Two further categories are registered and have inventories here: `portfolio.csv` follows the same 3/3/4 allocation, and `restaurant.csv` predates the allocation protocol, so its `model_group` column is blank because that batch's model group was never recorded. The initial files are blank allocation templates, NOT verified sources or approval records. Existing research must be entered with its original evidence; no observations are inferred from an empty cell.
 
 All model groups coordinate here to avoid duplicate references. Each group edits its own proposals; the project coordinator reconciles the complete category and records actual approval. Do not overwrite another group's approved source/model/scope. Other-group strata shown in the Codex configuration are proposals until reconciled centrally.
 

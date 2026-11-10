@@ -26,7 +26,9 @@ Websites/
     └── previewer/                   bundles all replicas into ReplicaPreview.exe
 ```
 
-Categories: university, healthcare, company, e-commerce, news, government, fashion, weather, nonprofit, church. Restaurant predates this layout and lives in `../restaurant websites/` as zips.
+Active study categories (10): university, healthcare, company, e-commerce, news, government, fashion, weather, nonprofit, church.
+
+Two further categories are registered in `metadata/assignments.csv`, giving twelve in total. **Portfolio** follows this layout at `portfolio/<model-group>/<ID>/`. **Restaurant** predates the layout, lives in `../restaurant websites/` as zips, and has no recorded model group.
 
 ## For each model group
 
@@ -43,4 +45,4 @@ See `metadata/assignments.csv`. To browse everything that exists, run `python We
 
 ## Codex configuration
 
-The Codex preparation pipeline lives in [pipelines/codex/README.md](pipelines/codex/README.md). It covers slots 04–06 in the ten active categories (30 sites), with validated configuration, per-category source inventories, exact task snapshots and shared-QC evidence capture. Setup does not start generation or confer source approval. Portfolio and the legacy restaurant batch are excluded from the active 100-site allocation. See [source inventory format](metadata/source-inventories/README.md) for coordinated reference records.
+The Codex preparation pipeline lives in [pipelines/codex/README.md](pipelines/codex/README.md). It covers slots 04–06 in the ten active categories (30 sites), with validated configuration, per-category source inventories, exact task snapshots and shared-QC evidence capture. Setup does not start generation or confer source approval. Its 30-site scope is the ten active categories only; the portfolio and restaurant categories are registered separately and are not part of that queue, though Codex has already delivered portfolio slots 04–06. See [source inventory format](metadata/source-inventories/README.md) for coordinated reference records.
