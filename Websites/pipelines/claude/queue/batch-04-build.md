@@ -1,6 +1,6 @@
 # Batch 04: build
 
-**Status:** queued
+**Status:** done 2026-11-10
 **IDs:** HOSP-03, CORP-01, CORP-02, CORP-03, ECOM-01
 
 ## Before launching
