@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>News | Halcyon National Weather Service (fictional sample)</title>
+<meta name="description" content="Sample news items with category filter and search. Fictional replica with sample data.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/styles.css">
+<script src="js/main.js" defer></script>
+</head>
+<body data-page="news">
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<section class="sample-banner" aria-label="Sample data notice" data-section="sample-notice" data-component="notice-banner">
+  <p><strong>Fictional replica.</strong> The Halcyon National Weather Service is invented. All weather data on this site is made-up sample data, not live conditions. Do not use it for real decisions.</p>
+</section>
+<header data-section="global-header" data-component="site-header">
+  <div class="header-top container">
+    <a class="brand" href="index.html"><img src="assets/logo.svg" alt="" width="52" height="52"><span class="brand-text"><span class="brand-name">Halcyon National Weather Service</span><span class="brand-tag">Sample weather for research use</span></span></a>
+    <form class="loc-form" id="loc-form" action="forecast.html" method="get" role="search" aria-label="Find a local forecast" data-section="location-search" data-component="location-search-form" novalidate>
+      <label for="loc-input">Enter town or sample code</label>
+      <div class="loc-row"><input id="loc-input" name="q" type="search" autocomplete="off" aria-describedby="loc-hint loc-error" placeholder="Port Alder or 40101"><button type="submit" class="btn">Get forecast</button></div>
+      <p id="loc-hint" class="hint">Sample locations only. <label class="inline" for="loc-remember"><input type="checkbox" id="loc-remember"> Remember my location (this browser only)</label> <a href="contact.html#help">Search help</a></p>
+      <p id="loc-error" class="field-error" role="alert" hidden></p>
+    </form>
+    <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+  </div>
+  <nav id="primary-nav" class="primary-nav" aria-label="Primary" data-section="global-navigation" data-component="primary-nav">
+    <ul class="topnav container">
+      <li><a href="index.html">Home</a></li>
+      <li class="has-menu" data-component="dropdown-menu"><button type="button" aria-expanded="false" aria-controls="menu-forecast">Forecast</button><ul id="menu-forecast"><li><a href="forecast.html">Local</a></li><li><a href="forecast-maps.html">Graphical</a></li><li><a href="topics.html#aviation">Aviation</a></li><li><a href="topics.html#marine">Marine</a></li><li><a href="topics.html#rivers">Rivers and Lakes</a></li><li><a href="topics.html#hurricanes">Hurricanes</a></li><li><a href="topics.html#severe">Severe Weather</a></li><li><a href="topics.html#fire">Fire Weather</a></li><li><a href="topics.html#sun">Sunrise/Sunset</a></li><li><a href="topics.html#long-range">Long Range Forecasts</a></li><li><a href="topics.html#climate">Climate Prediction</a></li><li><a href="topics.html#space">Space Weather</a></li></ul></li>
+      <li class="has-menu" data-component="dropdown-menu"><button type="button" aria-expanded="false" aria-controls="menu-past">Past Weather</button><ul id="menu-past"><li><a href="topics.html#past-weather">Past Weather</a></li><li><a href="topics.html#astronomical">Astronomical Data</a></li><li><a href="topics.html#certified">Certified Weather Data</a></li></ul></li>
+      <li><a href="safety.html">Safety</a></li>
+      <li class="has-menu" data-component="dropdown-menu"><button type="button" aria-expanded="false" aria-controls="menu-information">Information</button><ul id="menu-information"><li><a href="information.html#wea">Wireless Emergency Alerts</a></li><li><a href="information.html#wrn">Weather-Ready Nation</a></li><li><a href="information.html#brochures">Brochures</a></li><li><a href="information.html#coop">Cooperative Observers</a></li><li><a href="information.html#briefing">Daily Briefing</a></li><li><a href="information.html#statistics">Damage, fatality and injury statistics</a></li><li><a href="information.html#models">Forecast models</a></li><li><a href="information.html#gis">GIS data portal</a></li><li><a href="information.html#radio">Halcyon Weather Radio</a></li><li><a href="information.html#publications">Publications</a></li><li><a href="information.html#skywarn">Storm spotter program</a></li><li><a href="information.html#stormready">StormReady communities</a></li><li><a href="information.html#tsunamiready">TsunamiReady communities</a></li><li><a href="information.html#notices">Service change notices</a></li></ul></li>
+      <li><a href="education.html">Education</a></li>
+      <li class="is-current"><a href="news.html" aria-current="page">News</a></li>
+      <li><button type="button" class="nav-link-button" id="open-search" aria-haspopup="dialog" data-component="search-trigger">Search</button></li>
+      <li class="has-menu" data-component="dropdown-menu"><button type="button" aria-expanded="false" aria-controls="menu-about">About</button><ul id="menu-about"><li><a href="about.html">About HNWS</a></li><li><a href="about.html#organization">Organization</a></li><li><a href="about.html#employees">For employees</a></li><li><a href="about.html#centers">National centers</a></li><li><a href="about.html#careers">Careers</a></li><li><a href="contact.html">Contact us</a></li><li><a href="glossary.html">Glossary</a></li><li><a href="about.html#social">Social media</a></li><li><a href="about.html#transformation">Transformation</a></li></ul></li>
+    </ul>
+  </nav>
+  <nav class="sub-nav" aria-label="Weather tools" data-section="weather-tools-navigation" data-component="secondary-nav">
+    <ul class="container"><li><a href="alerts.html">Active Alerts</a></li><li><a href="current.html">Current</a></li><li><a href="forecast-maps.html">Forecast Maps</a></li><li><a href="satellite.html">Satellite</a></li><li><a href="radar.html">Radar</a></li><li><a href="topics.html#air-quality">Air Quality</a></li><li><a href="topics.html#rivers">Rivers</a></li></ul>
+  </nav>
+</header>
+<main id="main-content" tabindex="-1" data-section="main-content">
+<div class="container">
+<nav class="breadcrumb" aria-label="Breadcrumb" data-section="breadcrumb" data-component="breadcrumb"><ol><li><a href="index.html">Home</a></li><li aria-current="page">News</li></ol></nav>
+
+<h1>News Around the Service</h1>
+<p class="sample-tag">Sample headlines: invented</p>
+<form id="news-filter" class="filter-bar" aria-label="Filter news" data-section="news-filters" data-component="filter-form" novalidate>
+  <div class="field"><label for="n-cat">Category</label><select id="n-cat"><option value="">All categories</option></select></div>
+  <div class="field"><label for="n-text">Search headlines</label><input id="n-text" type="search" autocomplete="off"></div>
+</form>
+<p id="news-status" class="status" role="status"></p>
+<ul class="news-list" id="news-list" data-section="news-results" data-component="article-list"></ul>
+<p><button type="button" class="btn btn-secondary" id="news-more">Show more stories</button></p>
+<div id="news-empty" class="empty" hidden><h2 class="h3">No stories found</h2><p>No sample stories match. Clear the search or choose another category.</p></div>
+</div>
+</main>
+<footer data-section="global-footer" data-component="site-footer">
+  <div class="container footer-grid">
+    <nav aria-label="Required links" data-section="footer-required-links" data-component="footer-links">
+      <h2 class="footer-h">Required links</h2>
+      <ul>
+        <li><a href="about.html#disclaimer">Disclaimer</a></li>
+        <li><a href="about.html#privacy">Privacy policy</a></li>
+        <li><a href="about.html#information-quality">Information quality</a></li>
+        <li><a href="about.html#foia">Records requests</a></li>
+        <li><a href="glossary.html">Glossary</a></li>
+        <li><a href="about.html">About us</a></li>
+        <li><a href="about.html#careers">Career opportunities</a></li>
+        <li><a href="contact.html">Contact us</a></li>
+        <li><a href="contact.html#help">Help</a></li>
+      </ul>
+    </nav>
+    <nav aria-label="Related agencies" data-section="footer-agency-links" data-component="footer-links">
+      <h2 class="footer-h">Fictional parent organizations</h2>
+      <ul>
+        <li><a href="about.html#organization">Halcyon Ministry of Commerce</a></li>
+        <li><a href="about.html#organization">Halcyon Ocean and Air Administration</a></li>
+        <li><a href="about.html#organization">halcyon.example (not a real site)</a></li>
+      </ul>
+    </nav>
+    <section aria-labelledby="footer-social" data-section="footer-social" data-component="social-list">
+      <h2 class="footer-h" id="footer-social">Social channels</h2>
+      <p>Demonstration only: no social accounts exist. <a href="about.html#social">See the note</a>.</p>
+    </section>
+  </div>
+  <p class="container footer-note">Fictional research replica for accessibility and usability study. Not affiliated with any real weather agency. All data are sample data.</p>
+</footer>
+<dialog id="search-dialog" aria-labelledby="search-title" data-section="site-search" data-component="search-dialog">
+  <form method="dialog" id="search-form" novalidate>
+    <h2 id="search-title">Search this site</h2>
+    <p class="hint">Searches an inline list of this replica's pages and glossary terms. Nothing is sent anywhere.</p>
+    <label for="search-q">Search for</label>
+    <input id="search-q" type="search" autocomplete="off" aria-describedby="search-status">
+    <fieldset class="radio-set"><legend>Search in</legend>
+      <label class="inline"><input type="radio" name="scope" value="pages" checked> Pages</label>
+      <label class="inline"><input type="radio" name="scope" value="glossary"> Glossary terms</label>
+    </fieldset>
+    <p id="search-status" class="status" role="status"></p>
+    <ul id="search-results" class="plain-list"></ul>
+    <div class="dialog-actions"><button type="submit" class="btn">Search</button> <button type="button" class="btn btn-secondary" id="close-search">Close</button></div>
+  </form>
+</dialog>
+</body>
+</html>

@@ -1,0 +1,827 @@
+{
+  "protocol_version": "1.0",
+  "replica_id": "WX-01",
+  "category": "weather",
+  "source_url": "https://www.weather.gov/",
+  "components": [
+    {
+      "id": "accordion",
+      "selector": "[data-component='accordion']",
+      "pages": [
+        "safety.html"
+      ],
+      "description": "safety topics with expand-all",
+      "behavior": [
+        "aria-expanded"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean at 1280/375 (qc.js); behavior scripted-checked where interactive; no manual or screen reader test"
+    },
+    {
+      "id": "alert-list",
+      "selector": "[data-component='alert-list']",
+      "pages": [
+        "alerts.html"
+      ],
+      "description": "sample alerts with per-item disclosure buttons",
+      "behavior": [
+        "aria-expanded"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean at 1280/375 (qc.js); behavior scripted-checked where interactive; no manual or screen reader test"
+    },
+    {
+      "id": "article-list",
+      "selector": "[data-component='article-list']",
+      "pages": [
+        "news.html"
+      ],
+      "description": "news list with show-more and category/text filter",
+      "behavior": [
+        "filter",
+        "pagination",
+        "focus to first new item"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean at 1280/375 (qc.js); behavior scripted-checked where interactive; no manual or screen reader test"
+    },
+    {
+      "id": "breadcrumb",
+      "selector": "[data-component='breadcrumb']",
+      "pages": [
+        "about.html",
+        "alerts.html",
+        "contact.html",
+        "current.html",
+        "education.html",
+        "forecast-maps.html",
+        "forecast.html",
+        "glossary.html",
+        "information.html",
+        "news.html",
+        "radar.html",
+        "safety.html",
+        "satellite.html",
+        "topics.html"
+      ],
+      "description": "breadcrumb trail",
+      "behavior": [
+        "links"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean at 1280/375 (qc.js); behavior scripted-checked where interactive; no manual or screen reader test"
+    },
+    {
+      "id": "card-grid",
+      "selector": "[data-component='card-grid']",
+      "pages": [
+        "education.html",
+        "index.html"
+      ],
+      "description": "sample location / education / forecast cards",
+      "behavior": [
+        "grid",
+        "filter (education)"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean at 1280/375 (qc.js); behavior scripted-checked where interactive; no manual or screen reader test"
+    },
+    {
+      "id": "chip-filter",
+      "selector": "[data-component='chip-filter']",
+      "pages": [
+        "education.html"
+      ],
+      "description": "audience filter with aria-pressed",
+      "behavior": [
+        "toggle buttons",
+        "status count"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean at 1280/375 (qc.js); behavior scripted-checked where interactive; no manual or screen reader test"
+    },
+    {
+      "id": "conditions-card",
+      "selector": "[data-component='conditions-card']",
+      "pages": [
+        "forecast.html"
+      ],
+      "description": "current sample conditions",
+      "behavior": [
+        "static after render"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "axe-core clean at 1280/375 (qc.js); behavior scripted-checked where interactive; no manual or screen reader test"
+    },
+    {
+      "id": "contact-form",
+      "selector": "[data-component='contact-form']",
+      "pages": [
+        "contact.html"
+      ],
+      "description": "validated demo contact form; no data sent",
+      "behavior": [
+        "validation",
+        "demo success"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean at 1280/375 (qc.js); behavior scripted-checked where interactive; no manual or screen reader test"
+    },
+    {
+      "id": "data-table",
+      "selector": "[data-component='data-table']",
+      "pages": [
+        "current.html"
+      ],
+      "description": "scrollable station table sorted/filtered locally",
+      "behavior": [
+        "sort",
+        "filter",
+        "empty row"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean at 1280/375 (qc.js); behavior scripted-checked where interactive; no manual or screen reader test"
+    },
+    {
+      "id": "definition-list",
+      "selector": "[data-component='definition-list']",
+      "pages": [
+        "glossary.html"
+      ],
+      "description": "glossary terms filtered by text/letter",
+      "behavior": [
+        "filter",
+        "empty state"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean at 1280/375 (qc.js); behavior scripted-checked where interactive; no manual or screen reader test"
+    },
+    {
+      "id": "dropdown-menu",
+      "selector": "[data-component='dropdown-menu']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "alerts.html",
+        "contact.html",
+        "current.html",
+        "education.html",
+        "forecast-maps.html",
+        "forecast.html",
+        "glossary.html",
+        "index.html",
+        "information.html",
+        "news.html",
+        "radar.html",
+        "safety.html",
+        "satellite.html",
+        "topics.html"
+      ],
+      "description": "button-controlled dropdown submenus (click, Enter/Space, mouse hover >=60em, focus-out and Escape close)",
+      "behavior": [
+        "aria-expanded",
+        "Escape returns focus to button"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean at 1280/375 (qc.js); behavior scripted-checked where interactive; no manual or screen reader test"
+    },
+    {
+      "id": "error-summary",
+      "selector": "[data-component='error-summary']",
+      "pages": [
+        "contact.html"
+      ],
+      "description": "error summary with links that focus fields; receives focus on failed submit",
+      "behavior": [
+        "role=alert"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean at 1280/375 (qc.js); behavior scripted-checked where interactive; no manual or screen reader test"
+    },
+    {
+      "id": "filter-form",
+      "selector": "[data-component='filter-form']",
+      "pages": [
+        "alerts.html",
+        "current.html",
+        "glossary.html",
+        "news.html",
+        "radar.html",
+        "satellite.html"
+      ],
+      "description": "filter bars (alerts, stations, satellite, radar, news, glossary)",
+      "behavior": [
+        "live filter",
+        "reset",
+        "empty states",
+        "status region"
+      ],
+      "keyboard": [
+        "Tab",
+        "Arrow keys on radios and selects",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean at 1280/375 (qc.js); behavior scripted-checked where interactive; no manual or screen reader test"
+    },
+    {
+      "id": "footer-links",
+      "selector": "[data-component='footer-links']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "alerts.html",
+        "contact.html",
+        "current.html",
+        "education.html",
+        "forecast-maps.html",
+        "forecast.html",
+        "glossary.html",
+        "index.html",
+        "information.html",
+        "news.html",
+        "radar.html",
+        "safety.html",
+        "satellite.html",
+        "topics.html"
+      ],
+      "description": "footer link groups",
+      "behavior": [
+        "links"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean at 1280/375 (qc.js); behavior scripted-checked where interactive; no manual or screen reader test"
+    },
+    {
+      "id": "forecast-view",
+      "selector": "[data-component='forecast-view']",
+      "pages": [
+        "forecast.html"
+      ],
+      "description": "local forecast: picker, not-found state, current conditions, 7-day and hourly",
+      "behavior": [
+        "states by query string"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean at 1280/375 (qc.js); behavior scripted-checked where interactive; no manual or screen reader test"
+    },
+    {
+      "id": "help-block",
+      "selector": "[data-component='help-block']",
+      "pages": [
+        "contact.html"
+      ],
+      "description": "forecast search help text",
+      "behavior": [
+        "static"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "axe-core clean at 1280/375 (qc.js); behavior scripted-checked where interactive; no manual or screen reader test"
+    },
+    {
+      "id": "hero-summary",
+      "selector": "[data-component='hero-summary']",
+      "pages": [
+        "index.html"
+      ],
+      "description": "national summary with map placeholder",
+      "behavior": [
+        "static"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean at 1280/375 (qc.js); behavior scripted-checked where interactive; no manual or screen reader test"
+    },
+    {
+      "id": "image-viewer",
+      "selector": "[data-component='image-viewer']",
+      "pages": [
+        "satellite.html"
+      ],
+      "description": "satellite placeholder with caption updated by radios/select",
+      "behavior": [
+        "aria-live caption"
+      ],
+      "keyboard": [
+        "Tab",
+        "Arrow keys",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean at 1280/375 (qc.js); behavior scripted-checked where interactive; no manual or screen reader test"
+    },
+    {
+      "id": "info-card",
+      "selector": "[data-component='info-card']",
+      "pages": [
+        "about.html",
+        "information.html",
+        "topics.html"
+      ],
+      "description": "anchored info/topic/legal sections",
+      "behavior": [
+        "anchor targets"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean at 1280/375 (qc.js); behavior scripted-checked where interactive; no manual or screen reader test"
+    },
+    {
+      "id": "jump-list",
+      "selector": "[data-component='jump-list']",
+      "pages": [
+        "information.html",
+        "topics.html"
+      ],
+      "description": "on-page anchor list",
+      "behavior": [
+        "links"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean at 1280/375 (qc.js); behavior scripted-checked where interactive; no manual or screen reader test"
+    },
+    {
+      "id": "link-list",
+      "selector": "[data-component='link-list']",
+      "pages": [
+        "index.html"
+      ],
+      "description": "alert-type and radar link lists",
+      "behavior": [
+        "links with counts from sample data"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean at 1280/375 (qc.js); behavior scripted-checked where interactive; no manual or screen reader test"
+    },
+    {
+      "id": "location-search-form",
+      "selector": "[data-component='location-search-form']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "alerts.html",
+        "contact.html",
+        "current.html",
+        "education.html",
+        "forecast-maps.html",
+        "forecast.html",
+        "glossary.html",
+        "index.html",
+        "information.html",
+        "news.html",
+        "radar.html",
+        "safety.html",
+        "satellite.html",
+        "topics.html"
+      ],
+      "description": "header location search over 8 inline sample locations; inline error, aria-invalid, focus return; remember checkbox (localStorage)",
+      "behavior": [
+        "validation",
+        "search"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean at 1280/375 (qc.js); behavior scripted-checked where interactive; no manual or screen reader test"
+    },
+    {
+      "id": "notice-banner",
+      "selector": "[data-component='notice-banner']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "alerts.html",
+        "contact.html",
+        "current.html",
+        "education.html",
+        "forecast-maps.html",
+        "forecast.html",
+        "glossary.html",
+        "index.html",
+        "information.html",
+        "news.html",
+        "radar.html",
+        "safety.html",
+        "satellite.html",
+        "topics.html"
+      ],
+      "description": "sample-data notice on every page",
+      "behavior": [
+        "static"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "axe-core clean at 1280/375 (qc.js); behavior scripted-checked where interactive; no manual or screen reader test"
+    },
+    {
+      "id": "primary-nav",
+      "selector": "[data-component='primary-nav']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "alerts.html",
+        "contact.html",
+        "current.html",
+        "education.html",
+        "forecast-maps.html",
+        "forecast.html",
+        "glossary.html",
+        "index.html",
+        "information.html",
+        "news.html",
+        "radar.html",
+        "safety.html",
+        "satellite.html",
+        "topics.html"
+      ],
+      "description": "desktop navigation bar; mobile disclosure via Menu button",
+      "behavior": [
+        "desktop navigation",
+        "mobile disclosure",
+        "Escape closes"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean at 1280/375 (qc.js); behavior scripted-checked where interactive; no manual or screen reader test"
+    },
+    {
+      "id": "radar-viewer",
+      "selector": "[data-component='radar-viewer']",
+      "pages": [
+        "radar.html"
+      ],
+      "description": "inline SVG radar placeholder; enhanced/standard/low-bandwidth text modes; prev/play/next frame",
+      "behavior": [
+        "aria-pressed play",
+        "mode switch"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean at 1280/375 (qc.js); behavior scripted-checked where interactive; no manual or screen reader test"
+    },
+    {
+      "id": "result-list",
+      "selector": "[data-component='result-list']",
+      "pages": [
+        "forecast.html"
+      ],
+      "description": "ambiguous location picker",
+      "behavior": [
+        "links"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean at 1280/375 (qc.js); behavior scripted-checked where interactive; no manual or screen reader test"
+    },
+    {
+      "id": "saved-location",
+      "selector": "[data-component='saved-location']",
+      "pages": [
+        "index.html"
+      ],
+      "description": "shows remembered search from localStorage",
+      "behavior": [
+        "conditional display"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean at 1280/375 (qc.js); behavior scripted-checked where interactive; no manual or screen reader test"
+    },
+    {
+      "id": "search-dialog",
+      "selector": "[data-component='search-dialog']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "alerts.html",
+        "contact.html",
+        "current.html",
+        "education.html",
+        "forecast-maps.html",
+        "forecast.html",
+        "glossary.html",
+        "index.html",
+        "information.html",
+        "news.html",
+        "radar.html",
+        "safety.html",
+        "satellite.html",
+        "topics.html"
+      ],
+      "description": "modal dialog searching local pages or glossary; Escape closes, focus returns to trigger",
+      "behavior": [
+        "modal",
+        "empty state"
+      ],
+      "keyboard": [
+        "Tab",
+        "Escape",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean at 1280/375 (qc.js); behavior scripted-checked where interactive; no manual or screen reader test"
+    },
+    {
+      "id": "search-trigger",
+      "selector": "[data-component='search-trigger']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "alerts.html",
+        "contact.html",
+        "current.html",
+        "education.html",
+        "forecast-maps.html",
+        "forecast.html",
+        "glossary.html",
+        "index.html",
+        "information.html",
+        "news.html",
+        "radar.html",
+        "safety.html",
+        "satellite.html",
+        "topics.html"
+      ],
+      "description": "opens site-search dialog",
+      "behavior": [
+        "dialog trigger"
+      ],
+      "keyboard": [
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean at 1280/375 (qc.js); behavior scripted-checked where interactive; no manual or screen reader test"
+    },
+    {
+      "id": "secondary-nav",
+      "selector": "[data-component='secondary-nav']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "alerts.html",
+        "contact.html",
+        "current.html",
+        "education.html",
+        "forecast-maps.html",
+        "forecast.html",
+        "glossary.html",
+        "index.html",
+        "information.html",
+        "news.html",
+        "radar.html",
+        "safety.html",
+        "satellite.html",
+        "topics.html"
+      ],
+      "description": "weather-tools sub navigation with aria-current",
+      "behavior": [
+        "links"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean at 1280/375 (qc.js); behavior scripted-checked where interactive; no manual or screen reader test"
+    },
+    {
+      "id": "site-footer",
+      "selector": "[data-component='site-footer']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "alerts.html",
+        "contact.html",
+        "current.html",
+        "education.html",
+        "forecast-maps.html",
+        "forecast.html",
+        "glossary.html",
+        "index.html",
+        "information.html",
+        "news.html",
+        "radar.html",
+        "safety.html",
+        "satellite.html",
+        "topics.html"
+      ],
+      "description": "grouped footer links and notes",
+      "behavior": [
+        "links"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean at 1280/375 (qc.js); behavior scripted-checked where interactive; no manual or screen reader test"
+    },
+    {
+      "id": "site-header",
+      "selector": "[data-component='site-header']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "alerts.html",
+        "contact.html",
+        "current.html",
+        "education.html",
+        "forecast-maps.html",
+        "forecast.html",
+        "glossary.html",
+        "index.html",
+        "information.html",
+        "news.html",
+        "radar.html",
+        "safety.html",
+        "satellite.html",
+        "topics.html"
+      ],
+      "description": "header with brand, location search, menu toggle",
+      "behavior": [
+        "landmark"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean at 1280/375 (qc.js); behavior scripted-checked where interactive; no manual or screen reader test"
+    },
+    {
+      "id": "social-list",
+      "selector": "[data-component='social-list']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "alerts.html",
+        "contact.html",
+        "current.html",
+        "education.html",
+        "forecast-maps.html",
+        "forecast.html",
+        "glossary.html",
+        "index.html",
+        "information.html",
+        "news.html",
+        "radar.html",
+        "safety.html",
+        "satellite.html",
+        "topics.html"
+      ],
+      "description": "text note replacing social icons",
+      "behavior": [
+        "static"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "axe-core clean at 1280/375 (qc.js); behavior scripted-checked where interactive; no manual or screen reader test"
+    },
+    {
+      "id": "tabs",
+      "selector": "[data-component='tabs']",
+      "pages": [
+        "forecast-maps.html",
+        "forecast.html"
+      ],
+      "description": "tablist for forecast views and map products",
+      "behavior": [
+        "automatic activation",
+        "roving tabindex"
+      ],
+      "keyboard": [
+        "Tab",
+        "ArrowLeft",
+        "ArrowRight",
+        "Home",
+        "End"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean at 1280/375 (qc.js); behavior scripted-checked where interactive; no manual or screen reader test"
+    },
+    {
+      "id": "text-block",
+      "selector": "[data-component='text-block']",
+      "pages": [
+        "about.html",
+        "forecast-maps.html"
+      ],
+      "description": "static prose blocks",
+      "behavior": [
+        "static"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "axe-core clean at 1280/375 (qc.js); behavior scripted-checked where interactive; no manual or screen reader test"
+    },
+    {
+      "id": "unit-toggle",
+      "selector": "[data-component='unit-toggle']",
+      "pages": [
+        "current.html",
+        "forecast.html"
+      ],
+      "description": "F/C toggle (aria-pressed, saved in localStorage); intentional addition",
+      "behavior": [
+        "toggle"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean at 1280/375 (qc.js); behavior scripted-checked where interactive; no manual or screen reader test"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "allocation_protocol": "WEB-REPLICA-ALLOCATION-V1.0",
+  "generation_protocol": "WEB-REPLICA-V1.0",
+  "category": "weather",
+  "slot": 1,
+  "source_id": "WX-01",
+  "model_group": "claude",
+  "model_id": "claude-sonnet-5-5",
+  "model_version": null,
+  "model_provider_or_runtime": "claude-bridge provider via pi-subagents worker agent; orchestrated by claude-opus-5-5",
+  "generation_mode": "autonomous agent run, one replica per run, no human edits during generation",
+  "operator": "project lead (tienvu-lol) via orchestrator agent",
+  "approved_source_url": "https://www.weather.gov/",
+  "source_verified_at": "2026-11-10",
+  "source_approved_at": "2026-11-10",
+  "generation_started_at": "2026-11-11T05:01:43Z",
+  "generation_completed_at": "2026-11-11T05:16:41Z",
+  "rules_revision": "WEB-REPLICA-V1.0 / WEB-REPLICA-ALLOCATION-V1.0 at commit a07e70e (branch websites/claude-replicas)",
+  "category_prompt_revision": "orchestrator brief 2026-11-10 (no separate category prompt file)",
+  "prompt_or_transcript_reference": "pi-subagents run build-WX-01",
+  "human_edits": [],
+  "validation_summary": {
+    "technology": "pass",
+    "completeness": "pass",
+    "structure": "pass",
+    "interaction": "pass",
+    "accessibility": "partial",
+    "traceability": "pass",
+    "scope": "pass"
+  },
+  "validation_notes": "qc.js 2026-11-11: pages=16 files=26 failures=0 warnings=0 (axe-core WCAG 2.0-2.2 A/AA + best-practice at 1280/375, horizontal scroll, remote requests, JS errors). 38 scripted Playwright interaction assertions passed. Accessibility is partial: no screen reader, zoom, manual keyboard walkthrough or forced-colors testing; no conformance claim. The generation run was interrupted once by a rate limit and resumed by the same worker (reviving the stored session), with no human edits."
+}
