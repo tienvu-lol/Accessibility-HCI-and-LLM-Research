@@ -1,6 +1,6 @@
 # Batch 02: research
 
-**Status:** queued
+**Status:** done 2026-11-10
 **IDs:** GOV, FASH, WX, NPO, CHUR
 
 ## Before launching

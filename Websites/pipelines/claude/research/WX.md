@@ -1,0 +1,162 @@
+The three sources are weather.gov (WX-01), Weather Underground (WX-02) and KING 5 Seattle (WX-03). All were fetched with curl on 2026-11-10 and returned HTTP 200 on their main pages. No files were written. One curl status check wrote to `/tmp/.x_<PID>` and I deleted it straight after; everything else went through pipes or `mktemp -d` directories that I removed.
+
+Every page I replicate must use fictional sample weather data, labeled as such. Nothing here should imply live conditions.
+
+### WX-01
+- **source_id:** WX-01
+- **category/subcategory:** Weather / national weather service (US government meteorological agency)
+- **source_name:** National Weather Service (NOAA)
+- **official_url:** https://www.weather.gov/
+- **verified_at:** 2026-11-10, HTTP GET via curl (`-sSL -A "Mozilla/5.0"`). Result: 200. The home page title is "National Weather Service" (121 KB). The 19 interior pages listed below returned 200 with titles, except Daily Briefing and Information Center. Those two were checked only by title, and I did not capture their status.
+- **source_pages:**
+  - `https://www.weather.gov/` – National Weather Service
+  - `/alerts` – Active Alerts
+  - `/current` – Current Conditions
+  - `/forecastmaps/` – National Forecast Maps
+  - `/satellite` – Satellite Images
+  - `/safety/` – Safety
+  - `/education/` – NWS Education
+  - `/fire/` – Fire Weather
+  - `/marine/` – NOAA NWS Marine Weather Services
+  - `/nwr` – NOAA Weather Radio
+  - `/skywarn/` – SKYWARN
+  - `/news` – News Around NOAA
+  - `/about/` – About the NWS
+  - `/contact` – Contact Us
+  - Also seen: `/help` (Help), `/glossary` (Glossary), `/ncep/` (National Centers for Environmental Prediction), `/stormready` (StormReady).
+- **key_regions** (all observed in the raw HTML):
+  - **Header:**
+    - A "Enter location ..." input (`#myfcst-location-input`) in form `#getForecast` with `#btnSearch`.
+    - A "remember" checkbox (`#myfcst-remember`).
+    - A search form with radio buttons for nws.noaa.gov / noaa.gov.
+    - A forecast-search help link that opens a popup.
+  - **Nav** (`ul#topnav`):
+    - HOME.
+    - FORECAST, with a dropdown: Local, Graphical, Aviation, Marine, Rivers and Lakes, Hurricanes, Severe Weather, Fire Weather, Sunrise/Sunset, Long Range Forecasts, Climate Prediction, Space Weather.
+    - PAST WEATHER, with a dropdown: Past Weather, Astronomical Data, Certified Weather Data.
+    - SAFETY.
+    - INFORMATION, with a dropdown of 14 items: Wireless Emergency Alerts, Weather-Ready Nation, Brochures, Cooperative Observers, Daily Briefing, Damage/Fatality/Injury Statistics, Forecast Models, GIS Data Portal, NOAA Weather Radio, Publications, SKYWARN, StormReady, TsunamiReady, Service Change Notices.
+    - EDUCATION.
+    - NEWS.
+    - SEARCH.
+    - ABOUT, with a dropdown: About NWS, Organization, For NWS Employees, National Centers, Careers, Contact Us, Glossary, Social Media, NWS Transformation.
+    - A second nav, `#subMenuNav`, holds Active Alerts, Current, Forecast Maps, Satellite, Radar, Air Quality and Rivers.
+  - **Hero/body:**
+    - A national headline/summary block with a "Read More >" link to the WPC discussion.
+    - A list of national alert-type links (Flood Warning, Gale Warning, Frost Advisory and similar).
+    - Radar links: Enhanced, Standard, and low-bandwidth.
+    - A regional office link list: Guam, Puerto Rico/Virgin Islands, American Samoa.
+  - **Footer** (`#footer_required_links`, `#footer_legal_info`, `#footer_legal_gov`):
+    - Required links: Disclaimer, Privacy Policy, Information Quality, FOIA, Glossary, About Us, Career Opportunities, Contact Us, Help.
+    - Legal/gov links: US Dept of Commerce, NOAA, usa.gov, Vote.gov.
+    - Social icons: Facebook, X/Twitter, Instagram, YouTube, Bluesky, RSS.
+- **key_interactions:**
+  - **Observed:**
+    - Location search form.
+    - Hover dropdown menus (jquery.hoverIntent is loaded).
+    - Site search with an affiliate radio.
+    - A "remember my location" checkbox.
+    - Links to radar and alerts.
+  - **Inferred:** the location search leads to a local forecast page. For the replica, use fictional sample locations. There is no F/C toggle on the home page.
+- **complexity:** Medium. The nav is wide, with dropdowns of 9 to 14 items. There are many static informational pages. The interactive map and radar apps are outside the replica, so those need placeholders.
+- **stack_clues:** Server-rendered HTML. jQuery 1.12.4, jQuery UI, jquery-migrate and hoverIntent. Federal DAP analytics and gtag.
+- **limitations:**
+  - `/news` is large (262 KB). `/coop/` is 1.3 MB, so avoid it.
+  - Radar, alerts maps and local forecast pages are on other hosts: radar.weather.gov, forecast.weather.gov and other external hosts. I did not verify them.
+  - A MapClick forecast page returned a title ("National Weather Service") but my pipe cut the status, so it is not counted.
+
+### WX-02
+- **source_id:** WX-02
+- **category/subcategory:** Weather / commercial weather portal
+- **source_name:** Weather Underground (The Weather Company / IBM)
+- **official_url:** https://www.wunderground.com/
+- **verified_at:** 2026-11-10, HTTP GET via curl. Result: 200 on the home page and on all 16 pages listed below, with the titles shown. Anonymous requests got a default location of Ashburn, VA (it appeared in the page's h1 and links).
+- **source_pages:**
+  - `https://www.wunderground.com/` – Local Weather Forecast, News and Conditions | Weather Underground
+  - `/weather/us/va/ashburn/39.04,-77.49` – Ashburn, VA Weather Conditions
+  - `/hourly/us/va/ashburn/39.04,-77.49` – Ashburn, VA Hourly Weather Forecast
+  - `/forecast/us/va/ashburn/39.04,-77.49` – Ashburn, VA 10-Day Weather Forecast
+  - `/history` – Historical Weather
+  - `/hurricane` – Hurricane & Tropical Cyclones
+  - `/maps` – Maps Catalog
+  - `/radar/us` – Weather Radar
+  - `/prepare` – Prepare For The Extreme
+  - `/video` – Weather Videos
+  - `/pws/overview` – PWS Network Overview
+  - `/weather-infographics` – Weather Infographics
+  - `/cat6` – Category 6
+  - `/about/our-company` – About Us
+  - `/accessibility-statement` – Accessibility Statement
+  - Also seen: `/weather-posters` (Weather Posters), `/download` (Download).
+- **key_regions:**
+  - **Header** (observed):
+    - A "Search Locations..." input of type search.
+    - A "Get Current Location" button (`#get-location`).
+    - Log In, Mobile Apps, Historical Weather, Favorites and Member Settings links.
+    - A subscribe link (labelled for an ad-free tier).
+  - **Nav:** a `<nav>` menu with these groups. The group headings are not in the raw HTML. The grouping is inferred from link order, and the links themselves were observed.
+    - PWS: Weather Station Network, PWS Buying Guide, Connect a Weather Station, Air Quality Sensors.
+    - Maps: Wundermap, Interactive Radar, Interactive Satellite, Radar Maps, Full Maps Catalog, Hurricane & Tropical Cyclones, Severe Weather, Convective Outlook, Fire.
+    - Plus Preparedness, Category 6, Videos, Weather Infographics, Weather Posters, and mobile app links.
+  - **Hero/body:** h1 is the location name. The page has several h2 sections and a station/forecast block. Location pages show Today / Hourly / Calendar / History / Radar tabs, "Hourly Liquid Precipitation" and "Almanac for November". The home page also has weather.com article teasers.
+  - **Footer** (`<footer-view>`): Our Apps, About Us, Contact, Careers, PWS Network, WunderMap, Feedback & Support, Trust Center, Terms of Use, Privacy Policy, Data Rights, Privacy Settings, Data Vendors, Accessibility Statement, plus brand links (The Weather Company, The Weather Channel, Storm Radar).
+- **key_interactions:**
+  - **Observed:**
+    - Location search input.
+    - Use-my-location button.
+    - Login and favorites.
+    - Page text includes "Imperial" and "Metric" and °F/°C, which suggests a unit setting.
+    - Tab-style links between Today, Hourly, 10-Day, Calendar and History.
+    - Radar and Wundermap links.
+  - **Inferred:** the unit toggle lives in Member Settings or a header control. The exact control was not located.
+- **complexity:** High. The nav is large. There are many page types: conditions, hourly, 10-day, history, maps, hurricane, editorial, PWS and legal. The data tables are dense.
+- **stack_clues:** The `ng-*` strings matched in the HTML hint at Angular, but I did not confirm a framework. Custom `<footer-view>` element. Forecast data (about 48 "°" characters) is present in the server HTML. Pages are about 90 to 220 KB.
+- **limitations:**
+  - The radar and Wundermap apps are client-side maps, so use placeholders.
+  - Weather.com article links point to an external site.
+  - Default location is based on IP.
+
+### WX-03
+- **source_id:** WX-03
+- **category/subcategory:** Weather / local TV station weather section
+- **source_name:** KING 5 Weather (Seattle, WA; TEGNA)
+- **official_url:** https://www.king5.com/weather
+- **verified_at:** 2026-11-10, HTTP GET via curl. Result: 200 on the weather index and the pages listed below. Two guessed URLs returned 404 (`/weather/weather-news`, `/weather/hurricane-center`) and I excluded them. `/forecast` redirects to an article URL (`/article/weather/forecast/7-day/...`) that returned 403 to curl, so I did not use it.
+- **source_pages:**
+  - `https://www.king5.com/weather` – Weather | Seattle, Washington | king5.com
+  - `/weather/alerts` – "Seattle's Leading Local News: Weather, Traffic, Sports and More | Seattle, Washington". This is a generic title that matches the site's home-page title, so check the page body before replicating.
+  - `/radar` – Interactive Weather Radar
+  - `/10-day` – 10-Day Weather Forecast
+  - `/hourly` – Hourly Weather Forecast
+  - `/maps` – Weather Maps
+  - `/traffic` – Traffic
+  - `/webcams` – Webcams
+  - `/closings` – Closings and Delays
+  - `/meet-the-team` – Meet the KING5 Team
+  - `/tv-listings` – TV Listings | Channels 5.1 - 5.5, 16.3 and 16.4
+  - `/closed-captioning` – Closed Captioning | KING | KONG
+  - `/contact-us` – Contact Us
+- **key_regions:**
+  - **Header:**
+    - A "Skip Navigation" link (`#main`).
+    - A main `<nav>` (h2 "Navigation").
+    - Top-level links: Weather, Closings, Advertise With Us, Evening, New Day, Investigators, Immigration in WA, Contests, Environment NW, On The Record, TV Listings, Meet the Team, and a "More" menu.
+  - **Weather sub-nav:** Forecast, Radar, 10-Day, Hourly, Maps, Traffic, Drive Times, Webcams, SchoolNet, Closings & Delays, Jobs. Whether these sit in a dropdown or a sub-bar is inferred.
+  - **Body** (h3 headings on `/weather`): KING 5 Forecast, Western Washington Weather Forecast, Weather News, 10-Day Forecast, Hourly Forecast, Entertainment, plus a "Before You Leave, Check This Out" block.
+  - **Carousel controls:** "Previous" and "Next" buttons.
+  - **Footer:** Terms of Service, Privacy Policy, Ad Choices, EEO Public File Report, FCC Online Public Inspection File, Closed Caption Procedures, Do Not Sell or Share My Personal Information.
+- **key_interactions:**
+  - **Observed:**
+    - Skip link.
+    - Carousel previous/next.
+    - Modal/close button.
+    - An ad-blocker notice (h3 "Something went wrong. Disable your adblocker on KI…"; the rest was cut off in my output) that I'd leave out of the replica.
+  - **Inferred:** the day and hour forecast widgets are client-rendered. No ° appeared in the raw HTML, so replicate them as inline sample tiles. No search or unit toggle was found.
+- **complexity:** Medium. The page chrome is large and repeated, with consistent templates across the weather and utility pages. Many sibling pages share one layout.
+- **stack_clues:** Next.js (`_next` and React strings in the HTML), TEGNA tooling (about 50 "tegna" matches), and a small amount of Vue. Pages are about 130 to 240 KB.
+- **limitations:**
+  - The `/forecast` article URL returns 403 to curl, so I could not verify that page.
+  - Forecast numbers don't appear in the server HTML.
+  - Backup candidate: WRAL (`https://www.wral.com/weather/`). It returned 200 with alerts, hurricanes, closings, almanac, webcams and map-center pages. Its header, footer and conditions are client-rendered custom elements (`<wral-header>`, `<wral-footer>`), so it is a weaker fit.
+
+Not done: I did not run any browser or JavaScript rendering, so all "observed" items come from raw HTML. The sites' wording and widget behaviour after JS runs is unverified. I did not check how any of the pages handle accessibility.
