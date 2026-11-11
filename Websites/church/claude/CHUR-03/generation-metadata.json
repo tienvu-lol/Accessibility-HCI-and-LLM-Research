@@ -1,0 +1,31 @@
+{
+  "allocation_protocol": "WEB-REPLICA-ALLOCATION-V1.0",
+  "generation_protocol": "WEB-REPLICA-V1.0",
+  "category": "church",
+  "slot": 3,
+  "source_id": "CHUR-03",
+  "model_group": "claude",
+  "model_id": "claude-sonnet-5-5",
+  "model_version": null,
+  "model_provider_or_runtime": "claude-bridge provider via pi-subagents worker agent; orchestrated by claude-opus-5-5",
+  "generation_mode": "autonomous agent run, one replica per run, no human edits during generation",
+  "operator": "project lead (tienvu-lol) via orchestrator agent",
+  "approved_source_url": "https://holytrinitychurch.org/",
+  "source_verified_at": "2026-11-10",
+  "source_approved_at": "2026-11-10",
+  "generation_started_at": "2026-11-11T05:19:15Z",
+  "generation_completed_at": "2026-11-11T05:29:24Z",
+  "rules_revision": "WEB-REPLICA-V1.0 / WEB-REPLICA-ALLOCATION-V1.0 at commit a07e70e (branch websites/claude-replicas)",
+  "category_prompt_revision": "orchestrator brief 2026-11-10 (no separate category prompt file)",
+  "prompt_or_transcript_reference": "pi-subagents run build-CHUR-03",
+  "human_edits": [],
+  "validation_summary": {
+    "technology": "pass: qc.js 2026-11-11 (no prohibited files/libs, no remote requests, no network API use)",
+    "completeness": "pass: qc.js pages=15 files=28 failures=0; required files present, JSON valid, 0 broken links/assets",
+    "structure": "pass: qc.js landmarks/skip link/lang/data-section+data-component on all pages; compared with reference heading outline only",
+    "interaction": "pass: 32 scripted Playwright checks (menus, filters, dialog, accordions, two simulated forms); no human walkthrough",
+    "accessibility": "partial: axe-core 0 violations on 15 pages at 1280 and 375px plus 12 interactive states; no screen reader, zoom, forced-colors or manual keyboard testing; no conformance claim",
+    "traceability": "pass: docs written from delivered files; source verification taken from research inventory plus curl re-fetch of 13 URLs on 2026-11-11",
+    "scope": "pass: 13 reference pages + local calendar + 404; additions labeled in fidelity-notes.md"
+  }
+}

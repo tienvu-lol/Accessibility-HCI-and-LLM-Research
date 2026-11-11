@@ -1,0 +1,170 @@
+{
+  "protocol_version": "1.0",
+  "replica_id": "CHUR-03",
+  "category": "church",
+  "source_url": "https://holytrinitychurch.org/",
+  "components": [
+    {
+      "id": "site-header",
+      "selector": "[data-component='site-header']",
+      "pages": ["all 15 pages"],
+      "behavior": ["brand link to home", "utility bar with phone/email/visit links", "hosts primary nav"],
+      "keyboard": ["Tab", "Enter"],
+      "status": "implemented",
+      "validation": "axe-core clean at 1280px and 375px (qc.js); not manually reviewed"
+    },
+    {
+      "id": "primary-nav",
+      "selector": "[data-component='primary-nav']",
+      "pages": ["all 15 pages"],
+      "behavior": ["desktop bar with two dropdown groups (Who We Are, Giving)", "split link + disclosure button per dropdown (aria-expanded)", "hover opens dropdown on pointer devices", "mobile Menu disclosure button with nested submenu toggles", "aria-current on current page"],
+      "keyboard": ["Tab", "Enter", "Space on toggles", "Escape closes open submenu then mobile menu and returns focus"],
+      "status": "implemented",
+      "validation": "scripted Playwright check of keyboard open/Escape at 1280px and 375px passed; axe clean"
+    },
+    {
+      "id": "skip-link",
+      "selector": ".skip-link",
+      "pages": ["all 15 pages"],
+      "behavior": ["first focusable element", "visible on focus", "jumps to main#main-content"],
+      "keyboard": ["Tab", "Enter"],
+      "status": "implemented",
+      "validation": "scripted Playwright check passed"
+    },
+    {
+      "id": "page-hero",
+      "selector": "[data-component='page-hero']",
+      "pages": ["all 15 pages"],
+      "behavior": ["single h1", "lead paragraph"],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "axe clean"
+    },
+    {
+      "id": "hero-banner",
+      "selector": "[data-component='hero-banner']",
+      "pages": ["index.html"],
+      "behavior": ["decorative SVG illustration", "two calls to action"],
+      "keyboard": ["Tab", "Enter"],
+      "status": "implemented",
+      "validation": "axe clean"
+    },
+    {
+      "id": "service-times",
+      "selector": "[data-component='service-times']",
+      "pages": ["index.html"],
+      "behavior": ["static list of weekly service times (fictional)"],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "axe clean"
+    },
+    {
+      "id": "video-placeholder",
+      "selector": "[data-component='video-placeholder']",
+      "pages": ["index.html"],
+      "behavior": ["static poster image standing in for the reference's embedded video; no playback"],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "axe clean"
+    },
+    {
+      "id": "card-grid",
+      "selector": "[data-component='card-grid'], [data-component='people-grid']",
+      "pages": ["index.html", "vestry.html"],
+      "behavior": ["responsive grid of linked cards"],
+      "keyboard": ["Tab", "Enter"],
+      "status": "implemented",
+      "validation": "axe clean"
+    },
+    {
+      "id": "accordion",
+      "selector": "[data-component='accordion']",
+      "pages": ["who-we-are.html", "what-we-believe.html", "special-services.html", "giving.html"],
+      "behavior": ["button triggers with aria-expanded and aria-controls", "Expand all / Collapse all control", "four instances: about sections, foundations, special services, giving FAQ"],
+      "keyboard": ["Tab", "Enter", "Space"],
+      "status": "implemented",
+      "validation": "scripted Playwright check (Space expands, expand all) on special-services.html passed; axe clean on all pages in collapsed state"
+    },
+    {
+      "id": "filter-list",
+      "selector": "[data-component='filter-list']",
+      "pages": ["what-we-do.html", "announcements.html", "calendar.html"],
+      "behavior": ["client-side search and select filters over inline sample data (11 ministries, 6 announcements, 11 events)", "live result count (role=status)", "empty state", "Reset filters button", "INTENTIONAL ADDITION: the reference has no first-party search or filters"],
+      "keyboard": ["Tab", "typing filters as you type", "arrow keys in selects", "Enter on Reset"],
+      "status": "implemented",
+      "validation": "scripted Playwright checks for search, category, month, empty state passed"
+    },
+    {
+      "id": "event-dialog",
+      "selector": "[data-component='event-dialog']",
+      "pages": ["calendar.html"],
+      "behavior": ["native modal dialog opened by a Details button on each event", "closes by Close button, Escape or backdrop click", "returns focus to the opener"],
+      "keyboard": ["Enter/Space opens", "Escape closes", "Tab trapped in modal by the browser"],
+      "status": "implemented",
+      "validation": "scripted Playwright check passed; axe not run with the dialog open"
+    },
+    {
+      "id": "donation-form",
+      "selector": "[data-component='donation-form']",
+      "pages": ["giving.html"],
+      "behavior": ["SIMULATION ONLY: radio amount group plus conditional Other amount, fund and frequency selects, name and email", "inline errors, error summary with links, focus to summary on failure", "demo success message echoing the sample gift; nothing stored or sent", "INTENTIONAL ADDITION replacing the reference's external giving provider"],
+      "keyboard": ["Tab", "Space on radios", "Enter to submit"],
+      "status": "implemented",
+      "validation": "scripted Playwright check of empty submit, Other amount rule and success passed"
+    },
+    {
+      "id": "contact-form",
+      "selector": "[data-component='contact-form']",
+      "pages": ["contact.html"],
+      "behavior": ["SIMULATION ONLY: name, email, topic, message (min 10 chars)", "inline errors, error summary, focus management, demo success state", "INTENTIONAL ADDITION: the reference contact page has no form"],
+      "keyboard": ["Tab", "Enter to submit"],
+      "status": "implemented",
+      "validation": "scripted Playwright check of empty, invalid and valid submissions passed"
+    },
+    {
+      "id": "data-table",
+      "selector": "[data-component='data-table']",
+      "pages": ["vestry.html", "thrift-shop.html"],
+      "behavior": ["captioned tables with column and row headers", "horizontal scroll wrapper"],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "axe clean"
+    },
+    {
+      "id": "timeline",
+      "selector": "[data-component='timeline']",
+      "pages": ["history.html"],
+      "behavior": ["ordered list of dated entries"],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "axe clean"
+    },
+    {
+      "id": "content-blocks",
+      "selector": "[data-component='text-block'], [data-component='info-block'], [data-component='feature-columns'], [data-component='media-text'], [data-component='media-figure'], [data-component='profile'], [data-component='two-lists'], [data-component='contact-list'], [data-component='accordion-section']",
+      "pages": ["index.html", "who-we-are.html", "history.html", "rector.html", "what-we-believe.html", "what-we-do.html", "special-services.html", "education.html", "giving.html", "thrift-shop.html", "contact.html"],
+      "behavior": ["static content bands in the reference's section order"],
+      "keyboard": ["Tab to links"],
+      "status": "implemented",
+      "validation": "axe clean"
+    },
+    {
+      "id": "site-footer",
+      "selector": "[data-component='site-footer']",
+      "pages": ["all 15 pages"],
+      "behavior": ["Mailing Address, Map (SVG sketch), Office Hours / Contact groups, as on every reference page", "fictional-site notice"],
+      "keyboard": ["Tab", "Enter"],
+      "status": "implemented",
+      "validation": "axe clean"
+    },
+    {
+      "id": "error-page",
+      "selector": "[data-component='error-page']",
+      "pages": ["404.html"],
+      "behavior": ["explains the miss and links back to Home, Calendar, Announcements and Contact Us"],
+      "keyboard": ["Tab", "Enter"],
+      "status": "implemented",
+      "validation": "axe clean"
+    }
+  ]
+}

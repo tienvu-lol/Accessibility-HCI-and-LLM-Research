@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Outreach & Community – Saint Aldric’s Church</title>
+<meta name="description" content="How members serve at the altar, in the neighborhood and around the coffee urn.">
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/styles.css">
+<script src="js/main.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header" data-section="global-header" data-component="site-header">
+  <div class="utility-bar" data-section="utility-bar" data-component="utility-bar">
+    <div class="container utility-inner">
+      <a href="tel:+14015550142">401-555-0142</a>
+      <a href="mailto:office@example.org">office@example.org</a>
+      <a href="contact.html">Visit us</a>
+    </div>
+  </div>
+  <div class="container header-main">
+    <a class="brand" href="index.html" data-component="brand-logo"><img src="assets/logo.svg" alt="" width="44" height="44"><span class="brand-text">Saint Aldric&rsquo;s Church<small>Millstone Cove</small></span></a>
+    <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" data-nav-toggle>Menu</button>
+    <nav id="primary-nav" aria-label="Primary" data-section="global-navigation" data-component="primary-nav">
+      <ul class="nav-list" id="primary-nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li class="has-sub"><a href="who-we-are.html">Who We Are</a><button type="button" class="sub-toggle" aria-expanded="false" aria-controls="submenu-1" aria-label="Who We Are submenu"></button><ul class="submenu" id="submenu-1"><li><a href="history.html">History</a></li><li><a href="vestry.html">Staff & Vestry</a></li><li><a href="rector.html">Rector</a></li><li><a href="special-services.html">Special Services</a></li><li><a href="education.html">Adult Formation</a></li></ul></li>
+        <li><a href="what-we-believe.html">What We Believe</a></li>
+        <li class="is-active"><a href="what-we-do.html" aria-current="page">What We Do</a></li>
+        <li class="has-sub"><a href="giving.html">Giving</a><button type="button" class="sub-toggle" aria-expanded="false" aria-controls="submenu-4" aria-label="Giving submenu"></button><ul class="submenu" id="submenu-4"><li><a href="giving.html#give-online">Give online (demo)</a></li><li><a href="giving.html#faq">Pledging FAQ</a></li></ul></li>
+        <li><a href="announcements.html">Announcements</a></li>
+        <li><a href="calendar.html">Calendar</a></li>
+        <li><a href="thrift-shop.html">Thrift Shop</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main id="main-content" data-section="main-content" tabindex="-1">
+  <section class="page-hero" data-section="page-title" data-component="page-hero">
+    <div class="container">
+      <h1>Outreach &amp; Community</h1>
+      <p class="lead">How members serve at the altar, in the neighborhood and around the coffee urn.</p>
+    </div>
+  </section>
+  <div class="container content">
+
+    <section aria-labelledby="lit-title" data-section="liturgical-ministries" data-component="text-block"><h2 id="lit-title">Liturgical Ministries</h2><p>Readers, chalice bearers, altar guild members, acolytes and choir members prepare and lead Sunday worship.</p></section>
+    <section aria-labelledby="out-title" data-section="outreach-ministries" data-component="text-block"><h2 id="out-title">Outreach Ministries</h2><p>A pantry shelf, a coat drive and volunteer shifts at a regional shelter extend our table beyond the walls.</p></section>
+    <section aria-labelledby="thrift-title" data-section="thrift-summary" data-component="text-block"><h2 id="thrift-title">Trinity Trader Thrift Shop</h2><p>Our shop raises money for local causes. See the <a href="thrift-shop.html">Thrift Shop page</a> for hours and donation guidelines.</p></section>
+    <section aria-labelledby="fellow-title" data-section="fellowship" data-component="text-block"><h2 id="fellow-title">Fellowship and Community Life</h2><p>Coffee hour, seasonal fairs and the Wednesday supper keep friendships going throughout the week.</p></section>
+    <section aria-labelledby="support-title" data-section="support-groups" data-component="text-block"><h2 id="support-title">Support Groups and Outreach</h2><p>Grief and recovery groups meet in the parish hall. Everyone is welcome; no membership is required.</p></section>
+
+    <section aria-labelledby="finder-title" class="addition" data-section="ministry-finder" data-component="filter-list" data-instance="ministries">
+      <h2 id="finder-title">Find a ministry <span class="badge">Intentional addition</span></h2>
+      <p>The reference page describes ministries in prose only. This finder is a research addition that filters the sample list below.</p>
+      <form class="filter-bar" role="search" aria-label="Find a ministry" data-filter-form novalidate>
+        <div class="field"><label for="min-q">Search ministries</label><input type="search" id="min-q" name="q" autocomplete="off"></div>
+        <div class="field"><label for="min-cat">Category</label>
+          <select id="min-cat" name="category"><option value="">All categories</option><option>Liturgical</option><option>Outreach</option><option>Fellowship</option><option>Support</option></select></div>
+        <button type="button" class="btn btn-secondary" data-filter-reset>Reset filters</button>
+      </form>
+      <p class="status" role="status" data-filter-status></p>
+      <ul class="card-list" data-filter-results></ul>
+      <p class="empty" data-filter-empty hidden>No ministries match your search. Try a different word or choose &ldquo;All categories&rdquo;.</p>
+    </section>
+  </div>
+</main>
+<footer class="site-footer" data-section="global-footer" data-component="site-footer">
+  <div class="container footer-grid">
+    <section aria-labelledby="ft-address" data-section="footer-address" data-component="footer-address">
+      <h2 id="ft-address">Mailing Address</h2>
+      <address>Saint Aldric&rsquo;s Church<br>118 Chapel Lane<br>Millstone Cove, RI 02800</address>
+    </section>
+    <section aria-labelledby="ft-map" data-section="footer-map" data-component="map-placeholder">
+      <h2 id="ft-map">Map</h2>
+      <img src="assets/map.svg" alt="Sketch map: the church sits at the corner of Harbor Road and Chapel Lane" width="400" height="260" loading="lazy">
+      <p><a href="contact.html#directions">Directions</a></p>
+    </section>
+    <section aria-labelledby="ft-hours" data-section="footer-contact" data-component="office-hours">
+      <h2 id="ft-hours">Office Hours / Contact</h2>
+      <p>Tuesday&ndash;Friday, 9:00 AM &ndash; 1:00 PM</p>
+      <p><a href="tel:+14015550142">401-555-0142</a><br><a href="mailto:office@example.org">office@example.org</a></p>
+    </section>
+  </div>
+  <div class="footer-base" data-section="footer-legal">
+    <div class="container">
+      <p>&copy; 2026 Saint Aldric&rsquo;s Church. A fictional congregation: this site is a static research replica with sample content. Nothing you enter is sent anywhere.</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

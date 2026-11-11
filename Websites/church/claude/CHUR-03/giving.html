@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Giving – Saint Aldric’s Church</title>
+<meta name="description" content="Support the work of the parish. The online form below is a demonstration: no payment is taken.">
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/styles.css">
+<script src="js/main.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header" data-section="global-header" data-component="site-header">
+  <div class="utility-bar" data-section="utility-bar" data-component="utility-bar">
+    <div class="container utility-inner">
+      <a href="tel:+14015550142">401-555-0142</a>
+      <a href="mailto:office@example.org">office@example.org</a>
+      <a href="contact.html">Visit us</a>
+    </div>
+  </div>
+  <div class="container header-main">
+    <a class="brand" href="index.html" data-component="brand-logo"><img src="assets/logo.svg" alt="" width="44" height="44"><span class="brand-text">Saint Aldric&rsquo;s Church<small>Millstone Cove</small></span></a>
+    <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" data-nav-toggle>Menu</button>
+    <nav id="primary-nav" aria-label="Primary" data-section="global-navigation" data-component="primary-nav">
+      <ul class="nav-list" id="primary-nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li class="has-sub"><a href="who-we-are.html">Who We Are</a><button type="button" class="sub-toggle" aria-expanded="false" aria-controls="submenu-1" aria-label="Who We Are submenu"></button><ul class="submenu" id="submenu-1"><li><a href="history.html">History</a></li><li><a href="vestry.html">Staff & Vestry</a></li><li><a href="rector.html">Rector</a></li><li><a href="special-services.html">Special Services</a></li><li><a href="education.html">Adult Formation</a></li></ul></li>
+        <li><a href="what-we-believe.html">What We Believe</a></li>
+        <li><a href="what-we-do.html">What We Do</a></li>
+        <li class="is-active has-sub"><a href="giving.html" aria-current="page">Giving</a><button type="button" class="sub-toggle" aria-expanded="false" aria-controls="submenu-4" aria-label="Giving submenu"></button><ul class="submenu" id="submenu-4"><li><a href="giving.html#give-online">Give online (demo)</a></li><li><a href="giving.html#faq">Pledging FAQ</a></li></ul></li>
+        <li><a href="announcements.html">Announcements</a></li>
+        <li><a href="calendar.html">Calendar</a></li>
+        <li><a href="thrift-shop.html">Thrift Shop</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main id="main-content" data-section="main-content" tabindex="-1">
+  <section class="page-hero" data-section="page-title" data-component="page-hero">
+    <div class="container">
+      <h1>Giving</h1>
+      <p class="lead">Support the work of the parish. The online form below is a demonstration: no payment is taken.</p>
+    </div>
+  </section>
+  <div class="container content">
+
+    <section aria-labelledby="give-online-title" id="give-online" class="addition" data-section="give-online" data-component="donation-form">
+      <h2 id="give-online-title">Invest in Saint Aldric&rsquo;s future by giving online <span class="badge">Demo</span></h2>
+      <p>The reference site hands giving off to an outside provider. In this replica the same step is a local simulation.</p>
+      <p class="demo-note"><strong>Demo only.</strong> No payment is taken and nothing is sent or saved. Use any sample values.</p>
+      <form novalidate data-demo-form data-success-title="Demo gift recorded locally" aria-labelledby="give-online-title">
+        <div class="error-summary" data-error-summary tabindex="-1" hidden></div>
+        <fieldset data-required-group="amount" data-label="a gift amount">
+          <legend>Gift amount</legend>
+          <div class="choice-row">
+            <label class="choice"><input type="radio" name="amount" value="25" required> $25</label>
+            <label class="choice"><input type="radio" name="amount" value="50"> $50</label>
+            <label class="choice"><input type="radio" name="amount" value="100"> $100</label>
+            <label class="choice"><input type="radio" name="amount" value="other"> Other</label>
+          </div>
+          <p class="error" id="amount-error" hidden></p>
+        </fieldset>
+        <div class="field"><label for="give-other">Other amount in US dollars</label><p class="hint" id="give-other-hint">Whole dollars, used only when &ldquo;Other&rdquo; is chosen.</p><input type="number" id="give-other" name="other" min="1" max="100000" step="1" inputmode="numeric" data-label="Other amount" aria-describedby="give-other-hint"><p class="error" id="give-other-error" hidden></p></div>
+        <div class="field"><label for="give-fund">Fund</label><select id="give-fund" name="fund" required data-label="Fund"><option value="">Choose a fund</option><option>Annual pledge</option><option>Outreach and food pantry</option><option>Building and grounds</option><option>Music</option></select><p class="error" id="give-fund-error" hidden></p></div>
+        <div class="field"><label for="give-freq">How often</label><select id="give-freq" name="frequency" required data-label="Frequency"><option value="">Choose how often</option><option>One time</option><option>Monthly</option><option>Weekly</option></select><p class="error" id="give-freq-error" hidden></p></div>
+        <div class="field"><label for="give-name">Your name</label><input type="text" id="give-name" name="name" required autocomplete="name" data-label="Your name"><p class="error" id="give-name-error" hidden></p></div>
+        <div class="field"><label for="give-email">Email for a sample receipt</label><input type="email" id="give-email" name="email" required autocomplete="email" data-label="Email"><p class="error" id="give-email-error" hidden></p></div>
+        <button type="submit" class="btn">Submit demo gift</button>
+        <div class="demo-success" data-success tabindex="-1" role="status" hidden></div>
+      </form>
+    </section>
+    <section aria-labelledby="faq-title" id="faq" data-section="giving-faq" data-component="accordion-section">
+      <h2 id="faq-title">Frequently Asked Questions</h2>
+      <div class="accordion" data-component="accordion" data-instance="giving-faq">
+      <p class="accordion-tools"><button type="button" class="btn btn-secondary" data-accordion-all aria-label="Expand all giving questions">Expand all</button></p>
+      <div class="accordion-item">
+        <h3><button type="button" class="accordion-trigger" aria-expanded="false" aria-controls="acc4-p0" id="acc4-b0">What is pledging?</button></h3>
+        <div class="accordion-panel" id="acc4-p0" hidden><p>A pledge is a member&rsquo;s estimate of what they plan to give in the coming year, shared with the parish so that it can plan a budget.</p></div>
+      </div>
+      <div class="accordion-item">
+        <h3><button type="button" class="accordion-trigger" aria-expanded="false" aria-controls="acc4-p1" id="acc4-b1">What is the pledge campaign?</button></h3>
+        <div class="accordion-panel" id="acc4-p1" hidden><p>Each autumn the vestry invites members to reflect and to fill out a pledge card, with a thanksgiving lunch to mark the end.</p></div>
+      </div>
+      <div class="accordion-item">
+        <h3><button type="button" class="accordion-trigger" aria-expanded="false" aria-controls="acc4-p2" id="acc4-b2">What do pledged dollars pay for?</button></h3>
+        <div class="accordion-panel" id="acc4-p2" hidden><p>Mostly people (clergy, staff and musicians), then building care, outreach and education.</p></div>
+      </div>
+      <div class="accordion-item">
+        <h3><button type="button" class="accordion-trigger" aria-expanded="false" aria-controls="acc4-p3" id="acc4-b3">Why does pledging matter?</button></h3>
+        <div class="accordion-panel" id="acc4-p3" hidden><p>Predictable giving lets the parish commit to its ministries throughout the year.</p></div>
+      </div>
+      <div class="accordion-item">
+        <h3><button type="button" class="accordion-trigger" aria-expanded="false" aria-controls="acc4-p4" id="acc4-b4">How much should I give?</button></h3>
+        <div class="accordion-panel" id="acc4-p4" hidden><p>There is no set amount. Many people think in terms of a percentage of income and increase it a little each year.</p></div>
+      </div>
+      <div class="accordion-item">
+        <h3><button type="button" class="accordion-trigger" aria-expanded="false" aria-controls="acc4-p5" id="acc4-b5">Can I give without pledging?</button></h3>
+        <div class="accordion-panel" id="acc4-p5" hidden><p>Yes. One-time and occasional gifts are gratefully received.</p></div>
+      </div>
+    </div>
+    </section>
+  </div>
+</main>
+<footer class="site-footer" data-section="global-footer" data-component="site-footer">
+  <div class="container footer-grid">
+    <section aria-labelledby="ft-address" data-section="footer-address" data-component="footer-address">
+      <h2 id="ft-address">Mailing Address</h2>
+      <address>Saint Aldric&rsquo;s Church<br>118 Chapel Lane<br>Millstone Cove, RI 02800</address>
+    </section>
+    <section aria-labelledby="ft-map" data-section="footer-map" data-component="map-placeholder">
+      <h2 id="ft-map">Map</h2>
+      <img src="assets/map.svg" alt="Sketch map: the church sits at the corner of Harbor Road and Chapel Lane" width="400" height="260" loading="lazy">
+      <p><a href="contact.html#directions">Directions</a></p>
+    </section>
+    <section aria-labelledby="ft-hours" data-section="footer-contact" data-component="office-hours">
+      <h2 id="ft-hours">Office Hours / Contact</h2>
+      <p>Tuesday&ndash;Friday, 9:00 AM &ndash; 1:00 PM</p>
+      <p><a href="tel:+14015550142">401-555-0142</a><br><a href="mailto:office@example.org">office@example.org</a></p>
+    </section>
+  </div>
+  <div class="footer-base" data-section="footer-legal">
+    <div class="container">
+      <p>&copy; 2026 Saint Aldric&rsquo;s Church. A fictional congregation: this site is a static research replica with sample content. Nothing you enter is sent anywhere.</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
