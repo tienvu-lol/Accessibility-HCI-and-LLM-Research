@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Home - Cathedral of Saint Aurelian</title>
+  <meta name="description" content="Welcome to the Cathedral of Saint Aurelian: hours and admission, Sunday services and what is happening this week.">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header data-section="global-header" data-component="site-header">
+    <div class="utility-bar" data-section="utility-bar">
+      <div class="container">
+        <p>Fictional demo site for accessibility research</p>
+        <nav aria-label="Utility" data-section="utility-navigation" data-component="utility-nav"><ul><li><a href="donate.html#ways">Support Us</a></li><li><a href="donate.html">Donate</a></li><li><a href="search.html">Search</a></li><li><a href="calendar.html">Calendar</a></li><li><a href="watch-listen.html">Watch</a></li></ul></nav>
+      </div>
+    </div>
+    <div class="container header-main">
+      <a class="brand" href="index.html" data-component="site-brand"><img src="assets/logo.svg" alt="" width="48" height="48"><span><strong>Cathedral of Saint Aurelian</strong><span>Harrowmere &middot; Open to all</span></span></a>
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    </div>
+    <nav id="site-nav" class="primary-nav" aria-label="Primary" data-section="global-navigation" data-component="primary-nav">
+      <div class="container">
+        <ul class="nav-list">
+          <li><button type="button" class="nav-button" aria-expanded="false" aria-controls="menu-about">About</button><ul class="dropdown" id="menu-about"><li><a href="about.html">About the Cathedral</a></li><li><a href="leadership.html">Leadership</a></li><li><a href="about.html#rentals">Space rentals</a></li></ul></li>
+          <li><button type="button" class="nav-button" aria-expanded="false" aria-controls="menu-visit">Visit</button><ul class="dropdown" id="menu-visit"><li><a href="visit.html">Plan Your Visit</a></li><li><a href="tours.html">Public Guided Tours</a></li><li><a href="visit.html#access">Accessibility on site</a></li></ul></li>
+          <li><button type="button" class="nav-button" aria-expanded="false" aria-controls="menu-spiritual">Spiritual Life</button><ul class="dropdown" id="menu-spiritual"><li><a href="services.html">Services</a></li><li><a href="dean-clergy.html">Dean &amp; Clergy</a></li><li><a href="services.html#pastoral">Pastoral care</a></li></ul></li>
+          <li><button type="button" class="nav-button" aria-expanded="false" aria-controls="menu-education">Education &amp; Outreach</button><ul class="dropdown" id="menu-education"><li><a href="volunteer.html">Volunteer</a></li><li><a href="tours.html#schools">School and youth programs</a></li></ul></li>
+          <li><button type="button" class="nav-button" aria-expanded="false" aria-controls="menu-music">Music</button><ul class="dropdown" id="menu-music"><li><a href="music.html">Music at the Cathedral</a></li><li><a href="choral-ensembles.html">Choral Ensembles</a></li></ul></li>
+          <li><button type="button" class="nav-button" aria-expanded="false" aria-controls="menu-support">Support</button><ul class="dropdown" id="menu-support"><li><a href="donate.html">Donate</a></li><li><a href="donate.html#ways">Ways to give</a></li><li><a href="donate.html#legacy">Legacy gifts</a></li></ul></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <main id="main-content" data-section="main-content">
+    <section class="hero" aria-labelledby="page-title" data-section="hero" data-component="hero-banner">
+      <div class="container">
+        <p class="today">Today: <time data-today>see the calendar for the date</time></p>
+        <h1 id="page-title">Cathedral of Saint Aurelian</h1>
+        <p>A house of prayer for all people in the heart of Harrowmere: a place of worship, music, art and public conversation.</p>
+        <div class="btn-row"><a class="btn" href="visit.html">Plan your visit</a><a class="btn btn-secondary" href="services.html">Sunday services</a></div>
+      </div>
+    </section>
+    <section id="visit-today" class="section" aria-labelledby="visit-today-title" data-section="visit-today" data-component="info-cards"><div class="container"><h2 id="visit-today-title">Visit and worship</h2><ul class="grid" data-component="card-grid">
+      <li class="card"><h3>Hours &amp; Admission</h3><dl class="hours"><div><dt>Monday to Saturday</dt><dd>9:00 am to 5:00 pm</dd></div><div><dt>Sunday</dt><dd>1:00 pm to 5:00 pm</dd></div><div><dt>Closed</dt><dd>Dec 25 afternoon, Good Friday morning</dd></div></dl><dl class="hours"><div><dt>Adult</dt><dd>$12</dd></div><div><dt>Senior (65+) or student</dt><dd>$10</dd></div><div><dt>Child 12 and under</dt><dd>Free</dd></div><div><dt>Worshippers at a service</dt><dd>Free</dd></div></dl><p><a href="visit.html">Plan your visit</a></p></li>
+      <li class="card"><h3>Sunday Services</h3><dl class="hours"><div><dt>8:00 am</dt><dd>Early Eucharist, Lady Chapel</dd></div><div><dt>11:00 am</dt><dd>Holy Eucharist with choir, Nave</dd></div></dl><p>Weekday services are listed on the services page. Visitors are welcome at worship.</p><p><a href="services.html">All services</a></p></li>
+    </ul></div></section>
+    <section id="live" class="section alt" aria-labelledby="live-title" data-section="live"><div class="container"><h2 id="live-title">Live at the Cathedral</h2><p>The next four kinds of gathering on the demo calendar (sample data).</p><ul class="grid" data-upcoming data-component="event-card-list"></ul><noscript><p>Turn on JavaScript to see the next events, or open the <a href="calendar.html">calendar</a>.</p></noscript><p><a class="btn btn-secondary" href="calendar.html">Full calendar</a></p></div></section>
+    <section id="season-events" class="section" aria-labelledby="season-events-title" data-section="season-events"><div class="container"><h2 id="season-events-title">2026–2027 Events</h2><ul class="grid" data-component="card-grid">
+      <li class="card"><img src="assets/choir.svg" alt="Placeholder illustration of choir stalls" width="320" height="200"><h3>Advent Procession</h3><p>A candlelit procession with readings and choral music, December 6.</p><p><a href="calendar.html">Find it in the calendar</a></p></li>
+      <li class="card"><img src="assets/rose-window.svg" alt="Placeholder illustration of a rose window" width="320" height="200"><h3>Talk: Light in Medieval Glass</h3><p>An art historian reads the stained glass, January 23.</p><p><a href="calendar.html">Find it in the calendar</a></p></li>
+      <li class="card"><img src="assets/organ.svg" alt="Placeholder illustration of organ pipes" width="320" height="200"><h3>Easter Day Festal Eucharist</h3><p>Brass, timpani and full choir, March 28.</p><p><a href="calendar.html">Find it in the calendar</a></p></li>
+    </ul></div></section>
+    <section id="seeking-more" class="section alt" aria-labelledby="seeking-more-title" data-section="seeking-more"><div class="container"><h2 id="seeking-more-title">Seeking more?</h2><ul class="grid" data-component="card-grid">
+      <li class="card"><h3>Livestreams and Recordings</h3><p>Browse the sample archive of sermons, concerts and talks.</p><p><a class="btn" href="watch-listen.html">Watch &amp; Listen</a></p></li>
+      <li class="card"><h3>Support the Cathedral</h3><p>Help care for a very old building and a very young choir.</p><p><a class="btn" href="donate.html">Donate (demo)</a></p></li>
+    </ul></div></section>
+  </main>
+  <footer data-section="global-footer" data-component="site-footer" class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <section aria-labelledby="footer-visit-title" data-section="footer-contact">
+          <h2 id="footer-visit-title">Find us</h2>
+          <address>1 Chapter Close<br>Harrowmere, Northvale 00000<br>Tel. (555) 010-0142<br>info@aurelian.example</address>
+          <p>Fictional place, phone and address used for research.</p>
+        </section>
+        <section aria-labelledby="footer-links-title" data-section="footer-links">
+          <h2 id="footer-links-title">Explore</h2>
+          <ul>
+            <li><a href="visit.html">Plan Your Visit</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="calendar.html">Calendar</a></li>
+            <li><a href="watch-listen.html">Watch &amp; Listen</a></li>
+            <li><a href="volunteer.html">Volunteer</a></li>
+            <li><a href="donate.html">Donate</a></li>
+            <li><a href="visit.html#access">Accessibility on site</a></li>
+            <li><a href="about.html#demo-notice">About this demo site</a></li>
+          </ul>
+        </section>
+        <section aria-labelledby="newsletter-title" data-section="newsletter" class="aside-box">
+          <h2 id="newsletter-title">Stay in Touch</h2>
+          <p class="demo-note">Demo form: nothing is sent or stored.</p>
+          <form id="newsletter-form" data-validate="newsletter" data-component="newsletter-form" novalidate>
+            <div class="field"><label for="nl-first">First name<span class="req"> (required)</span></label><input id="nl-first" name="first" type="text" required autocomplete="given-name"></div>
+            <div class="field"><label for="nl-last">Last name<span class="req"> (required)</span></label><input id="nl-last" name="last" type="text" required autocomplete="family-name"></div>
+            <div class="field"><label for="nl-email">Email address<span class="req"> (required)</span></label><input id="nl-email" name="email" type="email" required autocomplete="email"></div>
+            <button type="submit" class="btn">Subscribe (demo)</button>
+          </form>
+          <div class="form-success" data-form-success role="status" tabindex="-1" hidden><p>Demo only: thank you. No subscription was created.</p></div>
+        </section>
+        <section aria-labelledby="share-title" data-section="share" data-component="share-links">
+          <h2 id="share-title">Share the Cathedral</h2>
+          <p><button type="button" class="btn btn-secondary" data-copy-link>Copy page link</button></p>
+          <p class="status" role="status" data-copy-status></p>
+        </section>
+      </div>
+      <p class="legal">&copy; 2026 Cathedral of Saint Aurelian, a fictional institution invented for an accessibility and usability research dataset. Layout inspired by the information architecture of a real cathedral site; all names, text and graphics are original.</p>
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
+</body>
+</html>

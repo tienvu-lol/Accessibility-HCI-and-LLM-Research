@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Plan Your Visit - Cathedral of Saint Aurelian</title>
+  <meta name="description" content="Hours, admission, getting here, access and a demo of timed ticket booking.">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header data-section="global-header" data-component="site-header">
+    <div class="utility-bar" data-section="utility-bar">
+      <div class="container">
+        <p>Fictional demo site for accessibility research</p>
+        <nav aria-label="Utility" data-section="utility-navigation" data-component="utility-nav"><ul><li><a href="donate.html#ways">Support Us</a></li><li><a href="donate.html">Donate</a></li><li><a href="search.html">Search</a></li><li><a href="calendar.html">Calendar</a></li><li><a href="watch-listen.html">Watch</a></li></ul></nav>
+      </div>
+    </div>
+    <div class="container header-main">
+      <a class="brand" href="index.html" data-component="site-brand"><img src="assets/logo.svg" alt="" width="48" height="48"><span><strong>Cathedral of Saint Aurelian</strong><span>Harrowmere &middot; Open to all</span></span></a>
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    </div>
+    <nav id="site-nav" class="primary-nav" aria-label="Primary" data-section="global-navigation" data-component="primary-nav">
+      <div class="container">
+        <ul class="nav-list">
+          <li><button type="button" class="nav-button" aria-expanded="false" aria-controls="menu-about">About</button><ul class="dropdown" id="menu-about"><li><a href="about.html">About the Cathedral</a></li><li><a href="leadership.html">Leadership</a></li><li><a href="about.html#rentals">Space rentals</a></li></ul></li>
+          <li class="is-current-group"><button type="button" class="nav-button" aria-expanded="false" aria-controls="menu-visit">Visit</button><ul class="dropdown" id="menu-visit"><li><a href="visit.html" aria-current="page">Plan Your Visit</a></li><li><a href="tours.html">Public Guided Tours</a></li><li><a href="visit.html#access">Accessibility on site</a></li></ul></li>
+          <li><button type="button" class="nav-button" aria-expanded="false" aria-controls="menu-spiritual">Spiritual Life</button><ul class="dropdown" id="menu-spiritual"><li><a href="services.html">Services</a></li><li><a href="dean-clergy.html">Dean &amp; Clergy</a></li><li><a href="services.html#pastoral">Pastoral care</a></li></ul></li>
+          <li><button type="button" class="nav-button" aria-expanded="false" aria-controls="menu-education">Education &amp; Outreach</button><ul class="dropdown" id="menu-education"><li><a href="volunteer.html">Volunteer</a></li><li><a href="tours.html#schools">School and youth programs</a></li></ul></li>
+          <li><button type="button" class="nav-button" aria-expanded="false" aria-controls="menu-music">Music</button><ul class="dropdown" id="menu-music"><li><a href="music.html">Music at the Cathedral</a></li><li><a href="choral-ensembles.html">Choral Ensembles</a></li></ul></li>
+          <li><button type="button" class="nav-button" aria-expanded="false" aria-controls="menu-support">Support</button><ul class="dropdown" id="menu-support"><li><a href="donate.html">Donate</a></li><li><a href="donate.html#ways">Ways to give</a></li><li><a href="donate.html#legacy">Legacy gifts</a></li></ul></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <main id="main-content" data-section="main-content">
+    <nav class="breadcrumb" aria-label="Breadcrumb" data-section="breadcrumb" data-component="breadcrumb"><div class="container"><ol><li><a href="index.html">Home</a></li><li><a href="visit.html">Visit</a></li><li><span aria-current="page">Plan Your Visit</span></li></ol></div></nav>
+    <section class="page-title" aria-labelledby="page-title" data-section="page-heading"><div class="container"><h1 id="page-title">Plan Your Visit</h1><p>Hours, admission, getting here, access and a demo of timed ticket booking.</p></div></section>
+    <section id="hours" class="section" aria-labelledby="hours-title" data-section="hours"><div class="container"><h2 id="hours-title">Hours &amp; admission</h2><div class="two-col"><div><p>Walk in during visiting hours or reserve a timed ticket to skip the queue. Entry is free when you come to worship.</p><h3>Visiting hours</h3><dl class="hours"><div><dt>Monday to Saturday</dt><dd>9:00 am to 5:00 pm</dd></div><div><dt>Sunday</dt><dd>1:00 pm to 5:00 pm</dd></div><div><dt>Closed</dt><dd>Dec 25 afternoon, Good Friday morning</dd></div></dl><h3>Admission</h3><dl class="hours"><div><dt>Adult</dt><dd>$12</dd></div><div><dt>Senior (65+) or student</dt><dd>$10</dd></div><div><dt>Child 12 and under</dt><dd>Free</dd></div><div><dt>Worshippers at a service</dt><dd>Free</dd></div></dl></div>
+      <aside class="aside-box" aria-labelledby="getting-here" data-section="getting-here" data-component="info-sidebar"><h2 id="getting-here">Getting here</h2><p>1 Chapter Close, Harrowmere (fictional address).</p><ul><li>Bus routes 4 and 9 stop at Chapter Close.</li><li>No visitor parking; two accessible bays at the south gate.</li><li>Bicycle racks by the masons’ yard.</li></ul></aside></div></div></section>
+    <section id="tickets" class="section alt" aria-labelledby="tickets-title" data-section="tickets" data-component="booking-demo"><div class="container"><h2 id="tickets-title">Timed tickets (demo)</h2><p class="demo-note">Demo: the real timed-ticket booking is run by an external system, so this form is only a simulation. No tickets are issued and nothing is charged.</p>
+      <form id="ticket-form" data-validate="tickets" data-component="ticket-form" novalidate>
+        <div class="field"><label for="t-date">Visit date<span class="req"> (required)</span></label><input id="t-date" name="date" type="date" required></div>
+        <div class="field"><label for="t-slot">Arrival time<span class="req"> (required)</span></label><select id="t-slot" name="slot" required><option value="">Choose…</option><option value="09:00">9:00 am</option><option value="10:00">10:00 am</option><option value="11:00">11:00 am</option><option value="12:00">12:00 pm</option><option value="13:00">1:00 pm</option><option value="14:00">2:00 pm</option><option value="15:00">3:00 pm</option><option value="16:00">4:00 pm</option></select></div>
+        <div class="field"><label for="t-adults">Adults<span class="hint">$12 each</span></label><input id="t-adults" name="adults" type="number" min="0" max="10" value="1" inputmode="numeric"></div>
+        <div class="field"><label for="t-seniors">Seniors (65+) or students<span class="hint">$10 each</span></label><input id="t-seniors" name="seniors" type="number" min="0" max="10" value="0" inputmode="numeric"></div>
+        <div class="field"><label for="t-children">Children (12 and under)<span class="hint">free</span></label><input id="t-children" name="children" type="number" min="0" max="10" value="0" inputmode="numeric"></div>
+        <p class="price-total" data-ticket-total role="status">Estimated total: $12 (demo prices)</p>
+        <button type="submit" class="btn">Reserve (demo)</button>
+      </form><div class="form-success" data-form-success role="status" tabindex="-1" hidden><p><strong>Demo only:</strong> your sample reservation was checked locally and nothing was booked.<span data-success-detail></span></p></div></div></section>
+    <section id="access" class="section" aria-labelledby="access-title" data-section="access"><div class="container"><h2 id="access-title">Accessibility on site</h2><h3 id="access-detail">Getting around</h3><ul><li>Step-free entry at the south gate; level floor through the nave.</li><li>Large-print guides and a tactile model of the cathedral are available at the Welcome Desk.</li><li>An induction loop serves the nave and Lady Chapel.</li><li>Quiet visits can be arranged outside peak hours.</li><li>Assistance dogs are welcome.</li></ul><p>This replica website is a research baseline; it has not been audited, and no claim of accessibility conformance is made.</p>
+      <h2 id="guide">Digital guide</h2><p>A pocket audio guide is planned for the real cathedral; this demo does not include one.</p></div></section>
+    <section id="faq" class="section alt" aria-labelledby="faq-title" data-section="faq"><div class="container"><h2 id="faq-title">Frequently asked questions</h2><div class="accordion" data-component="accordion"><h3><button type="button" aria-expanded="false" aria-controls="faq-0">Do I need a ticket to attend a service?</button></h3><div class="panel" id="faq-0" hidden><p>No. Worshippers enter free during service times, but the nave may be closed to sightseeing during services.</p></div><h3><button type="button" aria-expanded="false" aria-controls="faq-1">Can I take photographs?</button></h3><div class="panel" id="faq-1" hidden><p>Personal photography without flash is welcome except during services.</p></div><h3><button type="button" aria-expanded="false" aria-controls="faq-2">Are there toilets and a café?</button></h3><div class="panel" id="faq-2" hidden><p>Yes, in the Cloister Hall. Step-free toilets are signposted from the nave.</p></div><h3><button type="button" aria-expanded="false" aria-controls="faq-3">Are dogs allowed?</button></h3><div class="panel" id="faq-3" hidden><p>Assistance dogs are welcome. Other dogs may visit the gardens on a lead.</p></div></div></div></section>
+  </main>
+  <footer data-section="global-footer" data-component="site-footer" class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <section aria-labelledby="footer-visit-title" data-section="footer-contact">
+          <h2 id="footer-visit-title">Find us</h2>
+          <address>1 Chapter Close<br>Harrowmere, Northvale 00000<br>Tel. (555) 010-0142<br>info@aurelian.example</address>
+          <p>Fictional place, phone and address used for research.</p>
+        </section>
+        <section aria-labelledby="footer-links-title" data-section="footer-links">
+          <h2 id="footer-links-title">Explore</h2>
+          <ul>
+            <li><a href="visit.html">Plan Your Visit</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="calendar.html">Calendar</a></li>
+            <li><a href="watch-listen.html">Watch &amp; Listen</a></li>
+            <li><a href="volunteer.html">Volunteer</a></li>
+            <li><a href="donate.html">Donate</a></li>
+            <li><a href="visit.html#access">Accessibility on site</a></li>
+            <li><a href="about.html#demo-notice">About this demo site</a></li>
+          </ul>
+        </section>
+        <section aria-labelledby="newsletter-title" data-section="newsletter" class="aside-box">
+          <h2 id="newsletter-title">Stay in Touch</h2>
+          <p class="demo-note">Demo form: nothing is sent or stored.</p>
+          <form id="newsletter-form" data-validate="newsletter" data-component="newsletter-form" novalidate>
+            <div class="field"><label for="nl-first">First name<span class="req"> (required)</span></label><input id="nl-first" name="first" type="text" required autocomplete="given-name"></div>
+            <div class="field"><label for="nl-last">Last name<span class="req"> (required)</span></label><input id="nl-last" name="last" type="text" required autocomplete="family-name"></div>
+            <div class="field"><label for="nl-email">Email address<span class="req"> (required)</span></label><input id="nl-email" name="email" type="email" required autocomplete="email"></div>
+            <button type="submit" class="btn">Subscribe (demo)</button>
+          </form>
+          <div class="form-success" data-form-success role="status" tabindex="-1" hidden><p>Demo only: thank you. No subscription was created.</p></div>
+        </section>
+        <section aria-labelledby="share-title" data-section="share" data-component="share-links">
+          <h2 id="share-title">Share the Cathedral</h2>
+          <p><button type="button" class="btn btn-secondary" data-copy-link>Copy page link</button></p>
+          <p class="status" role="status" data-copy-status></p>
+        </section>
+      </div>
+      <p class="legal">&copy; 2026 Cathedral of Saint Aurelian, a fictional institution invented for an accessibility and usability research dataset. Layout inspired by the information architecture of a real cathedral site; all names, text and graphics are original.</p>
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
+</body>
+</html>
