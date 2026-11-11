@@ -1,0 +1,500 @@
+{
+  "protocol_version": "1.0",
+  "replica_id": "NPO-01",
+  "category": "nonprofit",
+  "source_url": "https://www.unicef.org/",
+  "components": [
+    {
+      "id": "site-header",
+      "selector": "[data-component='site-header']",
+      "pages": [
+        "index.html",
+        "who-we-are.html",
+        "what-we-do.html",
+        "reports.html",
+        "stories.html",
+        "story-detail.html",
+        "where-we-work.html",
+        "take-action.html",
+        "work-with-us.html",
+        "emergency.html",
+        "faq.html",
+        "donate.html",
+        "subscribe.html",
+        "search.html",
+        "404.html"
+      ],
+      "behavior": [
+        "logo",
+        "donate button",
+        "utility bar"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe pass"
+    },
+    {
+      "id": "primary-nav",
+      "selector": "[data-component='primary-nav']",
+      "pages": [
+        "index.html",
+        "who-we-are.html",
+        "what-we-do.html",
+        "reports.html",
+        "stories.html",
+        "story-detail.html",
+        "where-we-work.html",
+        "take-action.html",
+        "work-with-us.html",
+        "emergency.html",
+        "faq.html",
+        "donate.html",
+        "subscribe.html",
+        "search.html",
+        "404.html"
+      ],
+      "behavior": [
+        "desktop disclosure menus (inferred)",
+        "mobile disclosure",
+        "active section indicator"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "Escape closes and returns focus"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe + scripted flows 2026-11-11"
+    },
+    {
+      "id": "mobile-menu-toggle",
+      "selector": "[data-component='mobile-menu-toggle']",
+      "pages": [
+        "index.html",
+        "who-we-are.html",
+        "what-we-do.html",
+        "reports.html",
+        "stories.html",
+        "story-detail.html",
+        "where-we-work.html",
+        "take-action.html",
+        "work-with-us.html",
+        "emergency.html",
+        "faq.html",
+        "donate.html",
+        "subscribe.html",
+        "search.html",
+        "404.html"
+      ],
+      "behavior": [
+        "aria-expanded toggle"
+      ],
+      "keyboard": [
+        "Enter",
+        "Space",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe + scripted flows 2026-11-11"
+    },
+    {
+      "id": "language-switcher",
+      "selector": "[data-component='language-switcher']",
+      "pages": [
+        "index.html",
+        "who-we-are.html",
+        "what-we-do.html",
+        "reports.html",
+        "stories.html",
+        "story-detail.html",
+        "where-we-work.html",
+        "take-action.html",
+        "work-with-us.html",
+        "emergency.html",
+        "faq.html",
+        "donate.html",
+        "subscribe.html",
+        "search.html",
+        "404.html"
+      ],
+      "behavior": [
+        "popover disclosure; translations not provided"
+      ],
+      "keyboard": [
+        "Enter",
+        "Space",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe + scripted flows 2026-11-11"
+    },
+    {
+      "id": "search-form",
+      "selector": "[data-component='search-form']",
+      "pages": [
+        "index.html",
+        "who-we-are.html",
+        "what-we-do.html",
+        "reports.html",
+        "stories.html",
+        "story-detail.html",
+        "where-we-work.html",
+        "take-action.html",
+        "work-with-us.html",
+        "emergency.html",
+        "faq.html",
+        "donate.html",
+        "subscribe.html",
+        "search.html",
+        "404.html"
+      ],
+      "behavior": [
+        "header search to search.html",
+        "client-side site search with empty state"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe + scripted flows 2026-11-11"
+    },
+    {
+      "id": "breadcrumb",
+      "selector": "[data-component='breadcrumb']",
+      "pages": [
+        "who-we-are.html",
+        "what-we-do.html",
+        "reports.html",
+        "stories.html",
+        "story-detail.html",
+        "where-we-work.html",
+        "take-action.html",
+        "work-with-us.html",
+        "emergency.html",
+        "faq.html",
+        "donate.html",
+        "subscribe.html",
+        "search.html"
+      ],
+      "behavior": [
+        "links with aria-current"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe pass"
+    },
+    {
+      "id": "hero-banner",
+      "selector": "[data-component='hero-banner']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "heading, CTAs, illustration"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe pass"
+    },
+    {
+      "id": "alert-banner",
+      "selector": "[data-component='alert-banner']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "emergency teaser link"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe pass"
+    },
+    {
+      "id": "card-grid",
+      "selector": "[data-component='card-grid']",
+      "pages": [
+        "index.html",
+        "take-action.html",
+        "story-detail.html"
+      ],
+      "behavior": [
+        "responsive card grid"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe pass"
+    },
+    {
+      "id": "stats-band",
+      "selector": "[data-component='stats-band']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "sample impact figures"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "qc.js axe pass"
+    },
+    {
+      "id": "filter-form",
+      "selector": "[data-component='filter-form']",
+      "pages": [
+        "reports.html",
+        "stories.html",
+        "where-we-work.html",
+        "work-with-us.html"
+      ],
+      "behavior": [
+        "live filtering over inline data",
+        "query-string presets",
+        "reset",
+        "result count status"
+      ],
+      "keyboard": [
+        "Tab",
+        "typing",
+        "Arrow keys on selects"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe + scripted flows 2026-11-11"
+    },
+    {
+      "id": "results-list",
+      "selector": "[data-component='results-list']",
+      "pages": [
+        "reports.html",
+        "stories.html",
+        "where-we-work.html",
+        "work-with-us.html",
+        "search.html"
+      ],
+      "behavior": [
+        "rendered cards",
+        "empty state"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe + scripted flows 2026-11-11"
+    },
+    {
+      "id": "dialog",
+      "selector": "[data-component='dialog']",
+      "pages": [
+        "reports.html"
+      ],
+      "behavior": [
+        "modal report summary",
+        "focus returns to opener"
+      ],
+      "keyboard": [
+        "Enter",
+        "Escape",
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe + scripted flows 2026-11-11"
+    },
+    {
+      "id": "detail-panel",
+      "selector": "[data-component='detail-panel']",
+      "pages": [
+        "where-we-work.html"
+      ],
+      "behavior": [
+        "country details, focus moves to heading"
+      ],
+      "keyboard": [
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe + scripted flows 2026-11-11"
+    },
+    {
+      "id": "accordion",
+      "selector": "[data-component='accordion']",
+      "pages": [
+        "faq.html"
+      ],
+      "behavior": [
+        "aria-expanded items",
+        "expand all",
+        "hash opens item"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe + scripted flows 2026-11-11"
+    },
+    {
+      "id": "donation-form",
+      "selector": "[data-component='donation-form']",
+      "pages": [
+        "donate.html"
+      ],
+      "behavior": [
+        "amount and frequency selection",
+        "live summary",
+        "validation",
+        "demo success (simulation)"
+      ],
+      "keyboard": [
+        "Tab",
+        "Arrow keys on radios",
+        "Space",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe + scripted flows 2026-11-11"
+    },
+    {
+      "id": "signup-form",
+      "selector": "[data-component='signup-form']",
+      "pages": [
+        "work-with-us.html",
+        "subscribe.html"
+      ],
+      "behavior": [
+        "validation",
+        "error summary",
+        "demo success (intentional addition on work-with-us)"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe + scripted flows 2026-11-11"
+    },
+    {
+      "id": "error-summary",
+      "selector": "[data-component='error-summary']",
+      "pages": [
+        "donate.html",
+        "work-with-us.html",
+        "subscribe.html"
+      ],
+      "behavior": [
+        "focus on submit failure",
+        "links focus fields"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe + scripted flows 2026-11-11"
+    },
+    {
+      "id": "article-body",
+      "selector": "[data-component='article-body']",
+      "pages": [
+        "story-detail.html"
+      ],
+      "behavior": [
+        "story rendered from inline data by ?id="
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe + scripted flows 2026-11-11"
+    },
+    {
+      "id": "page-header",
+      "selector": "[data-component='page-header']",
+      "pages": [
+        "who-we-are.html",
+        "what-we-do.html",
+        "reports.html",
+        "stories.html",
+        "story-detail.html",
+        "where-we-work.html",
+        "take-action.html",
+        "work-with-us.html",
+        "emergency.html",
+        "faq.html",
+        "donate.html",
+        "subscribe.html",
+        "search.html"
+      ],
+      "behavior": [
+        "h1, lead, breadcrumb"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "qc.js axe pass"
+    },
+    {
+      "id": "local-nav",
+      "selector": "[data-component='local-nav']",
+      "pages": [
+        "who-we-are.html",
+        "what-we-do.html"
+      ],
+      "behavior": [
+        "in-page anchors"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe pass"
+    },
+    {
+      "id": "site-footer",
+      "selector": "[data-component='site-footer']",
+      "pages": [
+        "index.html",
+        "who-we-are.html",
+        "what-we-do.html",
+        "reports.html",
+        "stories.html",
+        "story-detail.html",
+        "where-we-work.html",
+        "take-action.html",
+        "work-with-us.html",
+        "emergency.html",
+        "faq.html",
+        "donate.html",
+        "subscribe.html",
+        "search.html",
+        "404.html"
+      ],
+      "behavior": [
+        "grouped links",
+        "legal links",
+        "fictional-site notice"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe pass"
+    }
+  ]
+}
