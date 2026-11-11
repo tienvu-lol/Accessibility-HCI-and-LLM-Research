@@ -1,6 +1,6 @@
 # Batch 08: build
 
-**Status:** queued
+**Status:** done 2026-11-11
 **IDs:** NPO-02, NPO-03, CHUR-01, CHUR-02, CHUR-03
 
 ## Before launching
