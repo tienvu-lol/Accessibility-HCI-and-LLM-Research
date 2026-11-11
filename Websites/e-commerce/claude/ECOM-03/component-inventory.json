@@ -1,0 +1,925 @@
+{
+  "protocol_version": "1.0",
+  "replica_id": "ECOM-03",
+  "category": "e-commerce",
+  "source_url": "https://www.orvis.com/",
+  "components": [
+    {
+      "id": "site-header",
+      "selector": "[data-component='site-header']",
+      "pages": [
+        "404.html",
+        "cart.html",
+        "checkout.html",
+        "customer-care.html",
+        "dog-products.html",
+        "fly-fishing.html",
+        "gift-card.html",
+        "hunt.html",
+        "index.html",
+        "login.html",
+        "men.html",
+        "product.html",
+        "returns-exchanges.html",
+        "search.html",
+        "size-and-fit-guide.html",
+        "waders.html",
+        "women.html"
+      ],
+      "behavior": [
+        "promo bar, brand, search, utility links, cart count badge"
+      ],
+      "keyboard": [
+        "Tab",
+        "Shift+Tab"
+      ],
+      "status": "implemented",
+      "validation": "axe-core via qc.js and scripted Playwright flows only; no manual or assistive-technology testing"
+    },
+    {
+      "id": "promo-bar",
+      "selector": "[data-component='promo-bar']",
+      "pages": [
+        "404.html",
+        "cart.html",
+        "checkout.html",
+        "customer-care.html",
+        "dog-products.html",
+        "fly-fishing.html",
+        "gift-card.html",
+        "hunt.html",
+        "index.html",
+        "login.html",
+        "men.html",
+        "product.html",
+        "returns-exchanges.html",
+        "search.html",
+        "size-and-fit-guide.html",
+        "waders.html",
+        "women.html"
+      ],
+      "behavior": [
+        "free-shipping banner with Details button opening a dialog"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "axe-core via qc.js and scripted Playwright flows only; no manual or assistive-technology testing"
+    },
+    {
+      "id": "primary-nav",
+      "selector": "[data-component='primary-nav']",
+      "pages": [
+        "404.html",
+        "cart.html",
+        "checkout.html",
+        "customer-care.html",
+        "dog-products.html",
+        "fly-fishing.html",
+        "gift-card.html",
+        "hunt.html",
+        "index.html",
+        "login.html",
+        "men.html",
+        "product.html",
+        "returns-exchanges.html",
+        "search.html",
+        "size-and-fit-guide.html",
+        "waders.html",
+        "women.html"
+      ],
+      "behavior": [
+        "desktop top-level nav with dropdown panels",
+        "mobile Menu disclosure with nested panels",
+        "aria-expanded on triggers",
+        "click outside, focus leaving or Escape closes"
+      ],
+      "keyboard": [
+        "Tab",
+        "Shift+Tab",
+        "Enter",
+        "Space",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "axe-core via qc.js and scripted Playwright flows only; no manual or assistive-technology testing"
+    },
+    {
+      "id": "mega-menu",
+      "selector": "[data-component='mega-menu']",
+      "pages": [
+        "404.html",
+        "cart.html",
+        "checkout.html",
+        "customer-care.html",
+        "dog-products.html",
+        "fly-fishing.html",
+        "gift-card.html",
+        "hunt.html",
+        "index.html",
+        "login.html",
+        "men.html",
+        "product.html",
+        "returns-exchanges.html",
+        "search.html",
+        "size-and-fit-guide.html",
+        "waders.html",
+        "women.html"
+      ],
+      "behavior": [
+        "dropdown link panels for departments (click-to-open, not hover)"
+      ],
+      "keyboard": [
+        "Enter",
+        "Space",
+        "Tab",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "axe-core via qc.js and scripted Playwright flows only; no manual or assistive-technology testing"
+    },
+    {
+      "id": "search-form",
+      "selector": "[data-component='search-form']",
+      "pages": [
+        "404.html",
+        "cart.html",
+        "checkout.html",
+        "customer-care.html",
+        "dog-products.html",
+        "fly-fishing.html",
+        "gift-card.html",
+        "hunt.html",
+        "index.html",
+        "login.html",
+        "men.html",
+        "product.html",
+        "returns-exchanges.html",
+        "search.html",
+        "size-and-fit-guide.html",
+        "waders.html",
+        "women.html"
+      ],
+      "behavior": [
+        "header search submits to search.html?q= and filters local data; FAQ filter on customer-care.html"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core via qc.js and scripted Playwright flows only; no manual or assistive-technology testing"
+    },
+    {
+      "id": "utility-nav",
+      "selector": "[data-component='utility-nav']",
+      "pages": [
+        "404.html",
+        "cart.html",
+        "checkout.html",
+        "customer-care.html",
+        "dog-products.html",
+        "fly-fishing.html",
+        "gift-card.html",
+        "hunt.html",
+        "index.html",
+        "login.html",
+        "men.html",
+        "product.html",
+        "returns-exchanges.html",
+        "search.html",
+        "size-and-fit-guide.html",
+        "waders.html",
+        "women.html"
+      ],
+      "behavior": [
+        "stores, account and cart links"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "axe-core via qc.js and scripted Playwright flows only; no manual or assistive-technology testing"
+    },
+    {
+      "id": "skip-links",
+      "selector": ".skip-link",
+      "pages": [
+        "404.html",
+        "cart.html",
+        "checkout.html",
+        "customer-care.html",
+        "dog-products.html",
+        "fly-fishing.html",
+        "gift-card.html",
+        "hunt.html",
+        "index.html",
+        "login.html",
+        "men.html",
+        "product.html",
+        "returns-exchanges.html",
+        "search.html",
+        "size-and-fit-guide.html",
+        "waders.html",
+        "women.html"
+      ],
+      "behavior": [
+        "skip to main content and skip to footer; visible on focus"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core via qc.js and scripted Playwright flows only; no manual or assistive-technology testing"
+    },
+    {
+      "id": "breadcrumb",
+      "selector": "[data-component='breadcrumb']",
+      "pages": [
+        "customer-care.html",
+        "dog-products.html",
+        "fly-fishing.html",
+        "gift-card.html",
+        "hunt.html",
+        "men.html",
+        "product.html",
+        "returns-exchanges.html",
+        "search.html",
+        "size-and-fit-guide.html",
+        "waders.html",
+        "women.html"
+      ],
+      "behavior": [
+        "current page marked with aria-current; product page crumbs filled by JS"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "axe-core via qc.js and scripted Playwright flows only; no manual or assistive-technology testing"
+    },
+    {
+      "id": "hero-banner",
+      "selector": "[data-component='hero-banner']",
+      "pages": [
+        "dog-products.html",
+        "fly-fishing.html",
+        "hunt.html",
+        "index.html",
+        "men.html",
+        "women.html"
+      ],
+      "behavior": [
+        "home hero with two calls to action; department intro banners"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core via qc.js and scripted Playwright flows only; no manual or assistive-technology testing"
+    },
+    {
+      "id": "tile-grid",
+      "selector": "[data-component='tile-grid']",
+      "pages": [
+        "dog-products.html",
+        "fly-fishing.html",
+        "hunt.html",
+        "index.html",
+        "men.html",
+        "women.html"
+      ],
+      "behavior": [
+        "department and category image tiles linking to listings"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core via qc.js and scripted Playwright flows only; no manual or assistive-technology testing"
+    },
+    {
+      "id": "card-grid",
+      "selector": "[data-component='card-grid']",
+      "pages": [
+        "customer-care.html",
+        "dog-products.html",
+        "fly-fishing.html",
+        "hunt.html",
+        "index.html",
+        "men.html",
+        "women.html"
+      ],
+      "behavior": [
+        "info cards and JS-rendered featured product cards (data-featured ids)"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core via qc.js and scripted Playwright flows only; no manual or assistive-technology testing"
+    },
+    {
+      "id": "product-grid",
+      "selector": "[data-component='product-grid']",
+      "pages": [
+        "dog-products.html",
+        "fly-fishing.html",
+        "hunt.html",
+        "men.html",
+        "search.html",
+        "waders.html",
+        "women.html"
+      ],
+      "behavior": [
+        "featured product cards on department pages; listing results"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core via qc.js and scripted Playwright flows only; no manual or assistive-technology testing"
+    },
+    {
+      "id": "product-carousel-grid",
+      "selector": "[data-component='product-carousel-grid']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "new arrivals grid (static grid; the reference carousel is not replicated)"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core via qc.js and scripted Playwright flows only; no manual or assistive-technology testing"
+    },
+    {
+      "id": "product-card",
+      "selector": "[data-component='product-card']",
+      "pages": [
+        "dog-products.html",
+        "fly-fishing.html",
+        "hunt.html",
+        "index.html",
+        "men.html",
+        "product.html",
+        "search.html",
+        "waders.html",
+        "women.html"
+      ],
+      "behavior": [
+        "card with image, name link, price, sale price, rating text, New/Sale badge"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core via qc.js and scripted Playwright flows only; no manual or assistive-technology testing"
+    },
+    {
+      "id": "feature-panel",
+      "selector": "[data-component='feature-panel']",
+      "pages": [
+        "dog-products.html",
+        "fly-fishing.html",
+        "hunt.html",
+        "index.html",
+        "men.html",
+        "women.html"
+      ],
+      "behavior": [
+        "promotional image and text band with CTA"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core via qc.js and scripted Playwright flows only; no manual or assistive-technology testing"
+    },
+    {
+      "id": "icon-list",
+      "selector": "[data-component='icon-list']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "service highlights on home"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "axe-core via qc.js and scripted Playwright flows only; no manual or assistive-technology testing"
+    },
+    {
+      "id": "product-listing",
+      "selector": "[data-component='product-listing']",
+      "pages": [
+        "search.html",
+        "waders.html"
+      ],
+      "behavior": [
+        "search/category/new/sale listing from URL params with filters, sort and empty states"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "Arrow keys in select"
+      ],
+      "status": "implemented",
+      "validation": "axe-core via qc.js and scripted Playwright flows only; no manual or assistive-technology testing"
+    },
+    {
+      "id": "filter-panel",
+      "selector": "[data-component='filter-panel']",
+      "pages": [
+        "search.html",
+        "waders.html"
+      ],
+      "behavior": [
+        "checkbox groups built from the result set (category, size, features, style type, price, deals)",
+        "mobile Filters disclosure with aria-expanded",
+        "clear all filters",
+        "Escape closes mobile panel"
+      ],
+      "keyboard": [
+        "Tab",
+        "Space",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "axe-core via qc.js and scripted Playwright flows only; no manual or assistive-technology testing"
+    },
+    {
+      "id": "empty-state",
+      "selector": "[data-component='empty-state']",
+      "pages": [
+        "search.html",
+        "waders.html"
+      ],
+      "behavior": [
+        "no results, filtered-out and empty cart states"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core via qc.js and scripted Playwright flows only; no manual or assistive-technology testing"
+    },
+    {
+      "id": "product-detail",
+      "selector": "[data-component='product-detail']",
+      "pages": [
+        "product.html"
+      ],
+      "behavior": [
+        "product page rendered from ?id= with not-found state"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "axe-core via qc.js and scripted Playwright flows only; no manual or assistive-technology testing"
+    },
+    {
+      "id": "variant-selector",
+      "selector": "[data-component='variant-selector']",
+      "pages": [
+        "gift-card.html",
+        "product.html"
+      ],
+      "behavior": [
+        "color and size radio chips, sold-out sizes disabled per color, quantity, validation, add to cart; gift card amount chips"
+      ],
+      "keyboard": [
+        "Tab",
+        "Arrow keys",
+        "Space",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core via qc.js and scripted Playwright flows only; no manual or assistive-technology testing"
+    },
+    {
+      "id": "disclosure-list",
+      "selector": "[data-component='disclosure-list']",
+      "pages": [
+        "product.html"
+      ],
+      "behavior": [
+        "native details/summary for product details, shipping, returns"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "axe-core via qc.js and scripted Playwright flows only; no manual or assistive-technology testing"
+    },
+    {
+      "id": "shopping-cart",
+      "selector": "[data-component='shopping-cart']",
+      "pages": [
+        "cart.html"
+      ],
+      "behavior": [
+        "persisted in localStorage; quantity edit, remove, promo code TROUT10, totals, free-shipping note"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "axe-core via qc.js and scripted Playwright flows only; no manual or assistive-technology testing"
+    },
+    {
+      "id": "cart-line-list",
+      "selector": "[data-component='cart-line-list']",
+      "pages": [
+        "cart.html"
+      ],
+      "behavior": [
+        "line items with quantity input and remove button"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core via qc.js and scripted Playwright flows only; no manual or assistive-technology testing"
+    },
+    {
+      "id": "order-summary",
+      "selector": "[data-component='order-summary']",
+      "pages": [
+        "cart.html",
+        "checkout.html"
+      ],
+      "behavior": [
+        "subtotal, discount, shipping, estimated tax, total"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "axe-core via qc.js and scripted Playwright flows only; no manual or assistive-technology testing"
+    },
+    {
+      "id": "promo-form",
+      "selector": "[data-component='promo-form']",
+      "pages": [
+        "cart.html"
+      ],
+      "behavior": [
+        "demo promo code validation with inline error"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core via qc.js and scripted Playwright flows only; no manual or assistive-technology testing"
+    },
+    {
+      "id": "checkout-form",
+      "selector": "[data-component='checkout-form']",
+      "pages": [
+        "checkout.html"
+      ],
+      "behavior": [
+        "simulated checkout with validation, error summary and focus management; demo confirmation"
+      ],
+      "keyboard": [
+        "Tab",
+        "Shift+Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core via qc.js and scripted Playwright flows only; no manual or assistive-technology testing"
+    },
+    {
+      "id": "confirmation-panel",
+      "selector": "[data-component='confirmation-panel']",
+      "pages": [
+        "checkout.html"
+      ],
+      "behavior": [
+        "demo order confirmation; clears cart"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "axe-core via qc.js and scripted Playwright flows only; no manual or assistive-technology testing"
+    },
+    {
+      "id": "auth-form",
+      "selector": "[data-component='auth-form']",
+      "pages": [
+        "login.html"
+      ],
+      "behavior": [
+        "demo sign-in and registration with validation and show-password checkbox"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "axe-core via qc.js and scripted Playwright flows only; no manual or assistive-technology testing"
+    },
+    {
+      "id": "gift-card-form",
+      "selector": "[data-component='gift-card-form']",
+      "pages": [
+        "gift-card.html"
+      ],
+      "behavior": [
+        "amount, recipient and message; adds a gift card line to the cart"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core via qc.js and scripted Playwright flows only; no manual or assistive-technology testing"
+    },
+    {
+      "id": "balance-form",
+      "selector": "[data-component='balance-form']",
+      "pages": [
+        "gift-card.html"
+      ],
+      "behavior": [
+        "demo gift card balance form; no lookup is performed"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core via qc.js and scripted Playwright flows only; no manual or assistive-technology testing"
+    },
+    {
+      "id": "lookup-form",
+      "selector": "[data-component='lookup-form']",
+      "pages": [
+        "customer-care.html",
+        "gift-card.html"
+      ],
+      "behavior": [
+        "demo order status form; no lookup is performed"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core via qc.js and scripted Playwright flows only; no manual or assistive-technology testing"
+    },
+    {
+      "id": "contact-form",
+      "selector": "[data-component='contact-form']",
+      "pages": [
+        "customer-care.html"
+      ],
+      "behavior": [
+        "demo contact form"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core via qc.js and scripted Playwright flows only; no manual or assistive-technology testing"
+    },
+    {
+      "id": "return-form",
+      "selector": "[data-component='return-form']",
+      "pages": [
+        "returns-exchanges.html"
+      ],
+      "behavior": [
+        "demo return request form"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core via qc.js and scripted Playwright flows only; no manual or assistive-technology testing"
+    },
+    {
+      "id": "accordion",
+      "selector": "[data-component='accordion']",
+      "pages": [
+        "customer-care.html"
+      ],
+      "behavior": [
+        "FAQ accordion buttons with aria-expanded and aria-controls; text filter"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "axe-core via qc.js and scripted Playwright flows only; no manual or assistive-technology testing"
+    },
+    {
+      "id": "tabs",
+      "selector": "[data-component='tabs']",
+      "pages": [
+        "size-and-fit-guide.html"
+      ],
+      "behavior": [
+        "size chart tabs with roving tabindex"
+      ],
+      "keyboard": [
+        "Tab",
+        "ArrowLeft",
+        "ArrowRight",
+        "Home",
+        "End"
+      ],
+      "status": "implemented",
+      "validation": "axe-core via qc.js and scripted Playwright flows only; no manual or assistive-technology testing"
+    },
+    {
+      "id": "data-table",
+      "selector": "[data-component='data-table']",
+      "pages": [
+        "customer-care.html",
+        "returns-exchanges.html"
+      ],
+      "behavior": [
+        "captioned tables with scoped headers"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "axe-core via qc.js and scripted Playwright flows only; no manual or assistive-technology testing"
+    },
+    {
+      "id": "steps-list",
+      "selector": "[data-component='steps-list']",
+      "pages": [
+        "returns-exchanges.html"
+      ],
+      "behavior": [
+        "ordered list of return steps"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "axe-core via qc.js and scripted Playwright flows only; no manual or assistive-technology testing"
+    },
+    {
+      "id": "dialog",
+      "selector": "[data-component='dialog']",
+      "pages": [
+        "404.html",
+        "cart.html",
+        "checkout.html",
+        "customer-care.html",
+        "dog-products.html",
+        "fly-fishing.html",
+        "gift-card.html",
+        "hunt.html",
+        "index.html",
+        "login.html",
+        "men.html",
+        "product.html",
+        "returns-exchanges.html",
+        "search.html",
+        "size-and-fit-guide.html",
+        "waders.html",
+        "women.html"
+      ],
+      "behavior": [
+        "native modal dialog for free-shipping details; Escape and Close button; focus returns to opener"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "axe-core via qc.js and scripted Playwright flows only; no manual or assistive-technology testing"
+    },
+    {
+      "id": "text-block",
+      "selector": "[data-component='text-block']",
+      "pages": [
+        "customer-care.html"
+      ],
+      "behavior": [
+        "about and policy summaries"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "axe-core via qc.js and scripted Playwright flows only; no manual or assistive-technology testing"
+    },
+    {
+      "id": "error-page",
+      "selector": "[data-component='error-page']",
+      "pages": [
+        "404.html"
+      ],
+      "behavior": [
+        "404 page with routes home and to the catalogue"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core via qc.js and scripted Playwright flows only; no manual or assistive-technology testing"
+    },
+    {
+      "id": "site-footer",
+      "selector": "[data-component='site-footer']",
+      "pages": [
+        "404.html",
+        "cart.html",
+        "checkout.html",
+        "customer-care.html",
+        "dog-products.html",
+        "fly-fishing.html",
+        "gift-card.html",
+        "hunt.html",
+        "index.html",
+        "login.html",
+        "men.html",
+        "product.html",
+        "returns-exchanges.html",
+        "search.html",
+        "size-and-fit-guide.html",
+        "waders.html",
+        "women.html"
+      ],
+      "behavior": [
+        "grouped links: customer care, company, store finder; demo disclaimer"
+      ],
+      "keyboard": [
+        "Tab",
+        "Shift+Tab"
+      ],
+      "status": "implemented",
+      "validation": "axe-core via qc.js and scripted Playwright flows only; no manual or assistive-technology testing"
+    },
+    {
+      "id": "link-list",
+      "selector": "[data-component='link-list']",
+      "pages": [
+        "404.html",
+        "cart.html",
+        "checkout.html",
+        "customer-care.html",
+        "dog-products.html",
+        "fly-fishing.html",
+        "gift-card.html",
+        "hunt.html",
+        "index.html",
+        "login.html",
+        "men.html",
+        "product.html",
+        "returns-exchanges.html",
+        "search.html",
+        "size-and-fit-guide.html",
+        "waders.html",
+        "women.html"
+      ],
+      "behavior": [
+        "footer link groups"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "axe-core via qc.js and scripted Playwright flows only; no manual or assistive-technology testing"
+    }
+  ]
+}
