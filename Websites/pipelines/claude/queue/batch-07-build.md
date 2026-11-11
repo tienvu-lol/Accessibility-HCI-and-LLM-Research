@@ -1,6 +1,6 @@
 # Batch 07: build
 
-**Status:** queued
+**Status:** done 2026-11-11 (resumed after a rate-limit interruption)
 **IDs:** FASH-03, WX-01, WX-02, WX-03, NPO-01
 
 ## Before launching
