@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Patients &amp; Visitors | Harborlight Health</title>
+<meta name="description" content="Information for patients and visitors of the fictional medical center.">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body id="top">
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header" data-section="global-header" data-component="site-header">
+  <div class="emergency-bar" data-section="emergency-notice" data-component="alert-banner">
+    <div class="container"><p><strong>Medical emergency?</strong> Call 911 or go to the nearest emergency department. This is a fictional demonstration site. <a href="emergency-department.html">Emergency Department information</a></p></div>
+  </div>
+  <div class="utility-bar">
+    <div class="container">
+      <nav aria-label="Utility" data-section="utility-navigation" data-component="utility-nav">
+        <ul>
+          <li><a href="mychart.html">HarborChart patient portal</a></li>
+          <li><a href="request-appointment.html">Request appointment</a></li>
+          <li><a href="patients-visitors.html#refer">Refer a patient</a></li>
+          <li><button type="button" class="search-toggle" aria-expanded="false" aria-controls="site-search">Search</button></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <div id="site-search" class="search-panel" data-section="site-search" data-component="search-panel">
+    <div class="container">
+      <form action="find-a-doctor.html" method="get" role="search" aria-label="Site search">
+        <div class="field"><label for="site-search-input">Search doctors, specialties or conditions</label><input type="search" id="site-search-input" name="q" autocomplete="off"></div>
+        <button class="btn" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+  <div class="container header-main">
+    <a class="brand" href="index.html"><img src="assets/logo.svg" alt="" width="44" height="44"><span>Harborlight Health<small>Fictional academic medical center</small></span></a>
+    <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+    <nav id="primary-nav" class="primary-nav" aria-label="Primary" data-section="global-navigation" data-component="primary-nav">
+      <ul>
+        <li class="has-submenu"><button type="button" aria-expanded="false" aria-controls="submenu-care">Care</button>
+          <ul id="submenu-care" class="submenu" data-component="dropdown-menu"><li><a href="care.html#conditions">Conditions</a></li><li><a href="care.html#treatments">Treatments</a></li><li><a href="care.html#tests">Medical Tests</a></li></ul></li>
+        <li><a href="medical-services.html">Medical Services</a></li>
+        <li><a href="find-a-doctor.html">Find a Doctor</a></li>
+        <li><a href="locations.html">Locations</a></li>
+        <li><a href="patients-visitors.html#virtual-visits">Virtual Visits</a></li>
+        <li><a href="patients-visitors.html#second-opinion">Second Opinion</a></li>
+        <li><a href="about.html#research">Clinical Trials</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main id="main-content" data-section="main-content">
+<nav class="breadcrumb container" aria-label="Breadcrumb" data-section="breadcrumb" data-component="breadcrumb"><ol><li><a href="index.html">Home</a></li><li><span aria-current="page">Patients &amp; Visitors</span></li></ol></nav>
+
+<section class="page-title" data-section="page-title" data-component="page-header">
+  <div class="container"><h1>Patients &amp; visitors</h1><p>Plan a visit, prepare for a stay and find help with billing.</p></div>
+</section>
+
+<div class="container with-aside" data-section="content-with-local-nav">
+<nav class="local-nav" aria-label="Patients and visitors" data-section="local-navigation" data-component="local-nav"><ul><li><a href="patients-visitors.html" aria-current="page">Patients &amp; visitors</a></li><li><a href="request-appointment.html">Request an appointment</a></li><li><a href="your-hospital-stay.html">Your hospital stay</a></li><li><a href="billing-insurance.html">Billing &amp; insurance</a></li><li><a href="help-paying-your-bill.html">Help paying your bill</a></li></ul></nav><div>
+  <section aria-labelledby="pv-hub" data-section="patient-hub" data-component="link-card-group">
+    <h2 id="pv-hub">Plan your care</h2>
+    <ul class="card-list">
+      <li class="card"><h3><a href="request-appointment.html">Request an appointment</a></h3><p>Send a request to a clinic (simulated).</p></li>
+      <li class="card"><h3><a href="your-hospital-stay.html">Your hospital stay</a></h3><p>What to bring, visiting hours and discharge.</p></li>
+      <li class="card"><h3><a href="billing-insurance.html">Billing &amp; insurance</a></h3><p>Plans we accept and ways to pay.</p></li>
+      <li class="card"><h3><a href="help-paying-your-bill.html">Help paying your bill</a></h3><p>Financial assistance and payment plans.</p></li>
+    </ul>
+  </section>
+  <section id="visiting" aria-labelledby="pv-visit" data-section="visitor-information" data-component="info-section">
+    <h2 id="pv-visit">Visitor information</h2>
+    <p>Visiting hours and parking at Harborlight Medical Center (sample information):</p>
+    <div class="table-wrap"><table><caption>Sample visiting hours</caption><thead><tr><th scope="col">Unit</th><th scope="col">Hours</th></tr></thead><tbody><tr><th scope="row">General units</th><td>10 am to 8 pm</td></tr><tr><th scope="row">Intensive care</th><td>Two visitors at a time; check with the unit</td></tr><tr><th scope="row">Children&rsquo;s Hospital</th><td>Parents and guardians at any time</td></tr></tbody></table></div>
+    <p>Visitor parking is in the Example Way garage. Wheelchairs are available at the main entrance.</p>
+  </section>
+  <section id="virtual-visits" aria-labelledby="pv-virtual" data-section="virtual-visits" data-component="info-section">
+    <h2 id="pv-virtual">Virtual visits</h2>
+    <p>Many doctors offer video visits. Use the <a href="find-a-doctor.html">doctor search</a> and choose &ldquo;Offers video visits&rdquo;. Video visits are not available inside this replica.</p>
+  </section>
+  <section id="second-opinion" aria-labelledby="pv-second" data-section="second-opinion" data-component="info-section">
+    <h2 id="pv-second">Second opinion</h2>
+    <p>If you want another expert to review a diagnosis or treatment plan, <a href="request-appointment.html">request an appointment</a> and mention a second opinion in the reason field.</p>
+  </section>
+  <section id="refer" aria-labelledby="pv-refer" data-section="refer-a-patient" data-component="info-section">
+    <h2 id="pv-refer">Refer a patient</h2>
+    <p>Clinicians can call the referral line at (555) 010-0150 (fictional number). No online referral form is included in this replica.</p>
+  </section></div></div>
+</main>
+<footer class="site-footer" data-section="global-footer" data-component="site-footer">
+  <div class="container">
+    <div class="footer-groups">
+      <div class="footer-group" data-component="footer-link-group">
+        <button type="button" aria-expanded="true" aria-controls="fg-quick">Quick links</button>
+        <ul id="fg-quick"><li><a href="find-a-doctor.html">Find a doctor</a></li><li><a href="locations.html">Find a location</a></li><li><a href="care.html">Explore care</a></li><li><a href="patients-visitors.html#refer">Refer a patient</a></li><li><a href="locations.html">Locations &amp; directions</a></li><li><a href="about.html#contact">Contact us</a></li><li><a href="about.html#contact">Patient relations</a></li><li><a href="help-paying-your-bill.html">Help paying your bill</a></li><li><a href="about.html#international">International services</a></li><li><a href="about.html#careers">Join our team</a></li><li><a href="about.html#giving">Donate</a></li></ul>
+      </div>
+      <div class="footer-group" data-component="footer-link-group">
+        <button type="button" aria-expanded="true" aria-controls="fg-more">More information</button>
+        <ul id="fg-more"><li><a href="about.html">About us</a></li><li><a href="about.html#leadership">Leadership</a></li><li><a href="about.html#quality">Quality of patient care</a></li><li><a href="billing-insurance.html#price-transparency">Price transparency</a></li><li><a href="index.html#stories">News &amp; stories</a></li><li><a href="about.html#contact">Media resources</a></li><li><a href="about.html#accessibility">Accessibility resources</a></li><li><a href="about.html#nondiscrimination">Nondiscrimination notice</a></li></ul>
+      </div>
+      <div class="footer-group" data-component="footer-link-group">
+        <button type="button" aria-expanded="true" aria-controls="fg-research">Research &amp; education</button>
+        <ul id="fg-research"><li><a href="about.html#research">Clinical trials</a></li><li><a href="about.html#education">Education and training</a></li></ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p><a href="#top">Back to top</a></p>
+      <p>&copy; Harborlight Health. A fictional organization created for an accessibility and usability research dataset. Nothing here is medical advice, and phone numbers and records are invented.</p>
+    </div>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

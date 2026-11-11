@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Medical Services | Harborlight Health</title>
+<meta name="description" content="Browse sample medical services A to Z.">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body id="top">
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header" data-section="global-header" data-component="site-header">
+  <div class="emergency-bar" data-section="emergency-notice" data-component="alert-banner">
+    <div class="container"><p><strong>Medical emergency?</strong> Call 911 or go to the nearest emergency department. This is a fictional demonstration site. <a href="emergency-department.html">Emergency Department information</a></p></div>
+  </div>
+  <div class="utility-bar">
+    <div class="container">
+      <nav aria-label="Utility" data-section="utility-navigation" data-component="utility-nav">
+        <ul>
+          <li><a href="mychart.html">HarborChart patient portal</a></li>
+          <li><a href="request-appointment.html">Request appointment</a></li>
+          <li><a href="patients-visitors.html#refer">Refer a patient</a></li>
+          <li><button type="button" class="search-toggle" aria-expanded="false" aria-controls="site-search">Search</button></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <div id="site-search" class="search-panel" data-section="site-search" data-component="search-panel">
+    <div class="container">
+      <form action="find-a-doctor.html" method="get" role="search" aria-label="Site search">
+        <div class="field"><label for="site-search-input">Search doctors, specialties or conditions</label><input type="search" id="site-search-input" name="q" autocomplete="off"></div>
+        <button class="btn" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+  <div class="container header-main">
+    <a class="brand" href="index.html"><img src="assets/logo.svg" alt="" width="44" height="44"><span>Harborlight Health<small>Fictional academic medical center</small></span></a>
+    <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+    <nav id="primary-nav" class="primary-nav" aria-label="Primary" data-section="global-navigation" data-component="primary-nav">
+      <ul>
+        <li class="has-submenu"><button type="button" aria-expanded="false" aria-controls="submenu-care">Care</button>
+          <ul id="submenu-care" class="submenu" data-component="dropdown-menu"><li><a href="care.html#conditions">Conditions</a></li><li><a href="care.html#treatments">Treatments</a></li><li><a href="care.html#tests">Medical Tests</a></li></ul></li>
+        <li><a href="medical-services.html" aria-current="page">Medical Services</a></li>
+        <li><a href="find-a-doctor.html">Find a Doctor</a></li>
+        <li><a href="locations.html">Locations</a></li>
+        <li><a href="patients-visitors.html#virtual-visits">Virtual Visits</a></li>
+        <li><a href="patients-visitors.html#second-opinion">Second Opinion</a></li>
+        <li><a href="about.html#research">Clinical Trials</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main id="main-content" data-section="main-content">
+<nav class="breadcrumb container" aria-label="Breadcrumb" data-section="breadcrumb" data-component="breadcrumb"><ol><li><a href="index.html">Home</a></li><li><span aria-current="page">Medical Services</span></li></ol></nav>
+
+<section class="page-title" data-section="page-title" data-component="page-header">
+  <div class="container"><h1>Medical services</h1><p>Browse specialties and services. Choose a service to find doctors or read more.</p></div>
+</section>
+<div class="container">
+  <form id="service-form" class="filter-form" role="search" aria-label="Filter services" data-section="service-filter" data-component="az-filter" novalidate>
+    
+<div class="field"><label for="service-q">Filter services by name</label><input type="search" id="service-q" name="service-q" autocomplete="off"></div>
+    <div role="group" aria-label="Filter by first letter" id="az-filter" class="az"></div>
+  </form>
+  <section aria-labelledby="svc-title" data-section="service-list" data-component="results-list">
+    <h2 id="svc-title">Services</h2>
+    <p id="service-count" class="result-count" role="status"></p>
+    <ul id="service-list" class="card-list"></ul>
+    <div id="service-empty" class="empty-state" hidden><h3>No services match</h3><p>Clear the text filter or choose &ldquo;All&rdquo; letters.</p></div>
+  </section>
+</div>
+</main>
+<footer class="site-footer" data-section="global-footer" data-component="site-footer">
+  <div class="container">
+    <div class="footer-groups">
+      <div class="footer-group" data-component="footer-link-group">
+        <button type="button" aria-expanded="true" aria-controls="fg-quick">Quick links</button>
+        <ul id="fg-quick"><li><a href="find-a-doctor.html">Find a doctor</a></li><li><a href="locations.html">Find a location</a></li><li><a href="care.html">Explore care</a></li><li><a href="patients-visitors.html#refer">Refer a patient</a></li><li><a href="locations.html">Locations &amp; directions</a></li><li><a href="about.html#contact">Contact us</a></li><li><a href="about.html#contact">Patient relations</a></li><li><a href="help-paying-your-bill.html">Help paying your bill</a></li><li><a href="about.html#international">International services</a></li><li><a href="about.html#careers">Join our team</a></li><li><a href="about.html#giving">Donate</a></li></ul>
+      </div>
+      <div class="footer-group" data-component="footer-link-group">
+        <button type="button" aria-expanded="true" aria-controls="fg-more">More information</button>
+        <ul id="fg-more"><li><a href="about.html">About us</a></li><li><a href="about.html#leadership">Leadership</a></li><li><a href="about.html#quality">Quality of patient care</a></li><li><a href="billing-insurance.html#price-transparency">Price transparency</a></li><li><a href="index.html#stories">News &amp; stories</a></li><li><a href="about.html#contact">Media resources</a></li><li><a href="about.html#accessibility">Accessibility resources</a></li><li><a href="about.html#nondiscrimination">Nondiscrimination notice</a></li></ul>
+      </div>
+      <div class="footer-group" data-component="footer-link-group">
+        <button type="button" aria-expanded="true" aria-controls="fg-research">Research &amp; education</button>
+        <ul id="fg-research"><li><a href="about.html#research">Clinical trials</a></li><li><a href="about.html#education">Education and training</a></li></ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p><a href="#top">Back to top</a></p>
+      <p>&copy; Harborlight Health. A fictional organization created for an accessibility and usability research dataset. Nothing here is medical advice, and phone numbers and records are invented.</p>
+    </div>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

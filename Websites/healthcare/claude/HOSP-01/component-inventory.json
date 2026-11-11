@@ -1,0 +1,901 @@
+{
+  "protocol_version": "1.0",
+  "replica_id": "HOSP-01",
+  "category": "healthcare",
+  "source_url": "https://www.ucsfhealth.org/",
+  "components": [
+    {
+      "id": "accordion",
+      "selector": "[data-component='accordion']",
+      "description": "Question/answer accordions",
+      "pages": [
+        "billing-insurance.html",
+        "cancer-care.html",
+        "emergency-department.html",
+        "help-paying-your-bill.html",
+        "your-hospital-stay.html"
+      ],
+      "behavior": [
+        "aria-expanded disclosure buttons"
+      ],
+      "keyboard": [
+        "Tab",
+        "Shift+Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-checks-only"
+    },
+    {
+      "id": "alert-banner",
+      "selector": "[data-component='alert-banner']",
+      "description": "Emergency notices (global bar and Emergency Department alert)",
+      "pages": [
+        "404.html",
+        "about.html",
+        "billing-insurance.html",
+        "cancer-care.html",
+        "care.html",
+        "emergency-department.html",
+        "find-a-doctor.html",
+        "help-paying-your-bill.html",
+        "index.html",
+        "locations.html",
+        "medical-services.html",
+        "mychart.html",
+        "patients-visitors.html",
+        "provider.html",
+        "request-appointment.html",
+        "your-hospital-stay.html"
+      ],
+      "behavior": [
+        "static notice"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-checks-only"
+    },
+    {
+      "id": "appointment-form",
+      "selector": "[data-component='appointment-form']",
+      "description": "Simulated appointment request form",
+      "pages": [
+        "request-appointment.html"
+      ],
+      "behavior": [
+        "required, email, phone, date and consent validation",
+        "error summary with focus",
+        "inline errors",
+        "demo success state"
+      ],
+      "keyboard": [
+        "Tab",
+        "Shift+Tab",
+        "Enter",
+        "Space",
+        "Arrow keys in radio groups"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-checks-only"
+    },
+    {
+      "id": "az-filter",
+      "selector": "[data-component='az-filter']",
+      "description": "Medical services A-Z letter buttons and text filter",
+      "pages": [
+        "medical-services.html"
+      ],
+      "behavior": [
+        "aria-pressed letter buttons",
+        "client-side filtering",
+        "empty state"
+      ],
+      "keyboard": [
+        "Tab",
+        "Shift+Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-checks-only"
+    },
+    {
+      "id": "breadcrumb",
+      "selector": "[data-component='breadcrumb']",
+      "description": "Breadcrumb trail on interior pages",
+      "pages": [
+        "about.html",
+        "billing-insurance.html",
+        "cancer-care.html",
+        "care.html",
+        "emergency-department.html",
+        "find-a-doctor.html",
+        "help-paying-your-bill.html",
+        "locations.html",
+        "medical-services.html",
+        "mychart.html",
+        "patients-visitors.html",
+        "provider.html",
+        "request-appointment.html",
+        "your-hospital-stay.html"
+      ],
+      "behavior": [
+        "links",
+        "aria-current on last item"
+      ],
+      "keyboard": [
+        "Tab",
+        "Shift+Tab"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-checks-only"
+    },
+    {
+      "id": "card-grid",
+      "selector": "[data-component='card-grid']",
+      "description": "News card grid",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "cards"
+      ],
+      "keyboard": [
+        "Tab",
+        "Shift+Tab"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-checks-only"
+    },
+    {
+      "id": "carousel",
+      "selector": "[data-component='carousel']",
+      "description": "Patient stories carousel with previous/next and pause/play",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "previous/next",
+        "pause/play",
+        "autoplay off under reduced motion",
+        "pauses while focus is inside"
+      ],
+      "keyboard": [
+        "Tab",
+        "Shift+Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-checks-only"
+    },
+    {
+      "id": "carousel-section",
+      "selector": "[data-component='carousel-section']",
+      "description": "Carousel section wrapper",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "static"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-checks-only"
+    },
+    {
+      "id": "checklist",
+      "selector": "[data-component='checklist']",
+      "description": "Hospital stay packing checklist with live count",
+      "pages": [
+        "your-hospital-stay.html"
+      ],
+      "behavior": [
+        "checkboxes",
+        "role=status count"
+      ],
+      "keyboard": [
+        "Tab",
+        "Shift+Tab",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-checks-only"
+    },
+    {
+      "id": "chip-list",
+      "selector": "[data-component='chip-list']",
+      "description": "Pill-shaped quick links",
+      "pages": [
+        "cancer-care.html",
+        "index.html"
+      ],
+      "behavior": [
+        "links"
+      ],
+      "keyboard": [
+        "Tab",
+        "Shift+Tab"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-checks-only"
+    },
+    {
+      "id": "demo-notice",
+      "selector": "[data-component='demo-notice']",
+      "description": "Labeled demonstration notice",
+      "pages": [
+        "billing-insurance.html",
+        "help-paying-your-bill.html",
+        "mychart.html",
+        "request-appointment.html"
+      ],
+      "behavior": [
+        "static notice"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-checks-only"
+    },
+    {
+      "id": "dropdown-menu",
+      "selector": "[data-component='dropdown-menu']",
+      "description": "Care submenu (Conditions, Treatments, Medical Tests)",
+      "pages": [
+        "404.html",
+        "about.html",
+        "billing-insurance.html",
+        "cancer-care.html",
+        "care.html",
+        "emergency-department.html",
+        "find-a-doctor.html",
+        "help-paying-your-bill.html",
+        "index.html",
+        "locations.html",
+        "medical-services.html",
+        "mychart.html",
+        "patients-visitors.html",
+        "provider.html",
+        "request-appointment.html",
+        "your-hospital-stay.html"
+      ],
+      "behavior": [
+        "disclosure dropdown",
+        "closes on Escape, outside click, focus leaving"
+      ],
+      "keyboard": [
+        "Tab",
+        "Shift+Tab",
+        "Enter",
+        "Space",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-checks-only"
+    },
+    {
+      "id": "eligibility-estimator",
+      "selector": "[data-component='eligibility-estimator']",
+      "description": "Financial assistance estimator with invented thresholds",
+      "pages": [
+        "help-paying-your-bill.html"
+      ],
+      "behavior": [
+        "validation",
+        "result status"
+      ],
+      "keyboard": [
+        "Tab",
+        "Shift+Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-checks-only"
+    },
+    {
+      "id": "error-page",
+      "selector": "[data-component='error-page']",
+      "description": "404 content with recovery links",
+      "pages": [
+        "404.html"
+      ],
+      "behavior": [
+        "links"
+      ],
+      "keyboard": [
+        "Tab",
+        "Shift+Tab"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-checks-only"
+    },
+    {
+      "id": "footer-link-group",
+      "selector": "[data-component='footer-link-group']",
+      "description": "Collapsible footer group (Quick links, More information, Research & education)",
+      "pages": [
+        "404.html",
+        "about.html",
+        "billing-insurance.html",
+        "cancer-care.html",
+        "care.html",
+        "emergency-department.html",
+        "find-a-doctor.html",
+        "help-paying-your-bill.html",
+        "index.html",
+        "locations.html",
+        "medical-services.html",
+        "mychart.html",
+        "patients-visitors.html",
+        "provider.html",
+        "request-appointment.html",
+        "your-hospital-stay.html"
+      ],
+      "behavior": [
+        "disclosure; open on desktop, collapsed on mobile"
+      ],
+      "keyboard": [
+        "Tab",
+        "Shift+Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-checks-only"
+    },
+    {
+      "id": "hero-search",
+      "selector": "[data-component='hero-search']",
+      "description": "Home hero doctor search with typeahead",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "combobox typeahead",
+        "GET form to find-a-doctor.html"
+      ],
+      "keyboard": [
+        "Tab",
+        "Shift+Tab",
+        "ArrowUp",
+        "ArrowDown",
+        "Enter",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-checks-only"
+    },
+    {
+      "id": "hero-search-banner",
+      "selector": "[data-component='hero-search-banner']",
+      "description": "Home hero with image",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "static"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-checks-only"
+    },
+    {
+      "id": "info-section",
+      "selector": "[data-component='info-section']",
+      "description": "Generic content section",
+      "pages": [
+        "about.html",
+        "billing-insurance.html",
+        "cancer-care.html",
+        "emergency-department.html",
+        "help-paying-your-bill.html",
+        "mychart.html",
+        "patients-visitors.html",
+        "your-hospital-stay.html"
+      ],
+      "behavior": [
+        "static"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-checks-only"
+    },
+    {
+      "id": "insurance-checker",
+      "selector": "[data-component='insurance-checker']",
+      "description": "Sample insurance plan checker",
+      "pages": [
+        "billing-insurance.html"
+      ],
+      "behavior": [
+        "validation",
+        "result status"
+      ],
+      "keyboard": [
+        "Tab",
+        "Shift+Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-checks-only"
+    },
+    {
+      "id": "link-card-group",
+      "selector": "[data-component='link-card-group']",
+      "description": "Cards of links",
+      "pages": [
+        "index.html",
+        "patients-visitors.html"
+      ],
+      "behavior": [
+        "links"
+      ],
+      "keyboard": [
+        "Tab",
+        "Shift+Tab"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-checks-only"
+    },
+    {
+      "id": "local-nav",
+      "selector": "[data-component='local-nav']",
+      "description": "Patients & visitors local navigation",
+      "pages": [
+        "billing-insurance.html",
+        "help-paying-your-bill.html",
+        "patients-visitors.html",
+        "request-appointment.html",
+        "your-hospital-stay.html"
+      ],
+      "behavior": [
+        "links",
+        "aria-current"
+      ],
+      "keyboard": [
+        "Tab",
+        "Shift+Tab"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-checks-only"
+    },
+    {
+      "id": "location-card-list",
+      "selector": "[data-component='location-card-list']",
+      "description": "Location cards (rendered by main.js from inline data)",
+      "pages": [
+        "emergency-department.html",
+        "index.html"
+      ],
+      "behavior": [
+        "cards",
+        "link to doctors at location"
+      ],
+      "keyboard": [
+        "Tab",
+        "Shift+Tab"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-checks-only"
+    },
+    {
+      "id": "location-search",
+      "selector": "[data-component='location-search']",
+      "description": "Location finder: text, type and service filters",
+      "pages": [
+        "locations.html"
+      ],
+      "behavior": [
+        "client-side filtering",
+        "empty state"
+      ],
+      "keyboard": [
+        "Tab",
+        "Shift+Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-checks-only"
+    },
+    {
+      "id": "login-form",
+      "selector": "[data-component='login-form']",
+      "description": "Patient portal login: non-functional demo with validation and show-password",
+      "pages": [
+        "mychart.html"
+      ],
+      "behavior": [
+        "validation",
+        "error summary",
+        "demo success"
+      ],
+      "keyboard": [
+        "Tab",
+        "Shift+Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-checks-only"
+    },
+    {
+      "id": "modal-dialog",
+      "selector": "[data-component='modal-dialog']",
+      "description": "Native dialog for account help demo",
+      "pages": [
+        "mychart.html"
+      ],
+      "behavior": [
+        "showModal",
+        "Escape closes",
+        "focus returns to trigger"
+      ],
+      "keyboard": [
+        "Tab",
+        "Escape",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-checks-only"
+    },
+    {
+      "id": "page-header",
+      "selector": "[data-component='page-header']",
+      "description": "Page title band with intro",
+      "pages": [
+        "about.html",
+        "billing-insurance.html",
+        "cancer-care.html",
+        "care.html",
+        "emergency-department.html",
+        "find-a-doctor.html",
+        "help-paying-your-bill.html",
+        "locations.html",
+        "medical-services.html",
+        "mychart.html",
+        "patients-visitors.html",
+        "request-appointment.html",
+        "your-hospital-stay.html"
+      ],
+      "behavior": [
+        "static"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-checks-only"
+    },
+    {
+      "id": "primary-nav",
+      "selector": "[data-component='primary-nav']",
+      "description": "Primary navigation with mobile disclosure and Care submenu",
+      "pages": [
+        "404.html",
+        "about.html",
+        "billing-insurance.html",
+        "cancer-care.html",
+        "care.html",
+        "emergency-department.html",
+        "find-a-doctor.html",
+        "help-paying-your-bill.html",
+        "index.html",
+        "locations.html",
+        "medical-services.html",
+        "mychart.html",
+        "patients-visitors.html",
+        "provider.html",
+        "request-appointment.html",
+        "your-hospital-stay.html"
+      ],
+      "behavior": [
+        "desktop nav",
+        "mobile menu disclosure",
+        "aria-current"
+      ],
+      "keyboard": [
+        "Tab",
+        "Shift+Tab",
+        "Enter",
+        "Space",
+        "Escape closes menu"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-checks-only"
+    },
+    {
+      "id": "provider-card-list",
+      "selector": "[data-component='provider-card-list']",
+      "description": "Featured doctor cards (rendered by main.js)",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "cards"
+      ],
+      "keyboard": [
+        "Tab",
+        "Shift+Tab"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-checks-only"
+    },
+    {
+      "id": "provider-profile",
+      "selector": "[data-component='provider-profile']",
+      "description": "Doctor profile rendered from the id query parameter",
+      "pages": [
+        "provider.html"
+      ],
+      "behavior": [
+        "inline data render",
+        "not-found state",
+        "link to appointment form"
+      ],
+      "keyboard": [
+        "Tab",
+        "Shift+Tab"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-checks-only"
+    },
+    {
+      "id": "provider-search",
+      "selector": "[data-component='provider-search']",
+      "description": "Doctor search: typeahead, specialty/location/language selects, checkboxes, sort, reset",
+      "pages": [
+        "find-a-doctor.html"
+      ],
+      "behavior": [
+        "combobox typeahead",
+        "client-side filtering",
+        "query-string prefill",
+        "empty state"
+      ],
+      "keyboard": [
+        "Tab",
+        "Shift+Tab",
+        "ArrowUp",
+        "ArrowDown",
+        "Enter",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-checks-only"
+    },
+    {
+      "id": "quick-actions",
+      "selector": "[data-component='quick-actions']",
+      "description": "\"I want to...\" quick action links",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "links"
+      ],
+      "keyboard": [
+        "Tab",
+        "Shift+Tab"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-checks-only"
+    },
+    {
+      "id": "results-list",
+      "selector": "[data-component='results-list']",
+      "description": "Live result list with count status and empty state",
+      "pages": [
+        "find-a-doctor.html",
+        "locations.html",
+        "medical-services.html"
+      ],
+      "behavior": [
+        "filtered list",
+        "role=status count",
+        "empty state"
+      ],
+      "keyboard": [
+        "Tab",
+        "Shift+Tab"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-checks-only"
+    },
+    {
+      "id": "search-panel",
+      "selector": "[data-component='search-panel']",
+      "description": "Disclosure search form that submits to the doctor search",
+      "pages": [
+        "404.html",
+        "about.html",
+        "billing-insurance.html",
+        "cancer-care.html",
+        "care.html",
+        "emergency-department.html",
+        "find-a-doctor.html",
+        "help-paying-your-bill.html",
+        "index.html",
+        "locations.html",
+        "medical-services.html",
+        "mychart.html",
+        "patients-visitors.html",
+        "provider.html",
+        "request-appointment.html",
+        "your-hospital-stay.html"
+      ],
+      "behavior": [
+        "disclosure",
+        "GET form to find-a-doctor.html"
+      ],
+      "keyboard": [
+        "Tab",
+        "Shift+Tab",
+        "Enter",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-checks-only"
+    },
+    {
+      "id": "site-footer",
+      "selector": "[data-component='site-footer']",
+      "description": "Footer with collapsible link groups, back to top and disclaimer",
+      "pages": [
+        "404.html",
+        "about.html",
+        "billing-insurance.html",
+        "cancer-care.html",
+        "care.html",
+        "emergency-department.html",
+        "find-a-doctor.html",
+        "help-paying-your-bill.html",
+        "index.html",
+        "locations.html",
+        "medical-services.html",
+        "mychart.html",
+        "patients-visitors.html",
+        "provider.html",
+        "request-appointment.html",
+        "your-hospital-stay.html"
+      ],
+      "behavior": [
+        "links"
+      ],
+      "keyboard": [
+        "Tab",
+        "Shift+Tab"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-checks-only"
+    },
+    {
+      "id": "site-header",
+      "selector": "[data-component='site-header']",
+      "description": "Header with emergency notice, utility links, brand and navigation",
+      "pages": [
+        "404.html",
+        "about.html",
+        "billing-insurance.html",
+        "cancer-care.html",
+        "care.html",
+        "emergency-department.html",
+        "find-a-doctor.html",
+        "help-paying-your-bill.html",
+        "index.html",
+        "locations.html",
+        "medical-services.html",
+        "mychart.html",
+        "patients-visitors.html",
+        "provider.html",
+        "request-appointment.html",
+        "your-hospital-stay.html"
+      ],
+      "behavior": [
+        "persistent header",
+        "skip link target order"
+      ],
+      "keyboard": [
+        "Tab",
+        "Shift+Tab"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-checks-only"
+    },
+    {
+      "id": "tabs",
+      "selector": "[data-component='tabs']",
+      "description": "Conditions / Treatments / Medical tests tabs with text filter",
+      "pages": [
+        "care.html"
+      ],
+      "behavior": [
+        "ARIA tabs",
+        "roving tabindex",
+        "hash selects tab",
+        "text filter with empty states"
+      ],
+      "keyboard": [
+        "Tab",
+        "ArrowLeft",
+        "ArrowRight",
+        "Home",
+        "End"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-checks-only"
+    },
+    {
+      "id": "utility-nav",
+      "selector": "[data-component='utility-nav']",
+      "description": "Utility links: portal, request appointment, refer a patient, search toggle",
+      "pages": [
+        "404.html",
+        "about.html",
+        "billing-insurance.html",
+        "cancer-care.html",
+        "care.html",
+        "emergency-department.html",
+        "find-a-doctor.html",
+        "help-paying-your-bill.html",
+        "index.html",
+        "locations.html",
+        "medical-services.html",
+        "mychart.html",
+        "patients-visitors.html",
+        "provider.html",
+        "request-appointment.html",
+        "your-hospital-stay.html"
+      ],
+      "behavior": [
+        "links",
+        "search disclosure toggle"
+      ],
+      "keyboard": [
+        "Tab",
+        "Shift+Tab",
+        "Enter",
+        "Space",
+        "Escape closes search"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-checks-only"
+    },
+    {
+      "id": "provider-card",
+      "selector": "[data-component='provider-card']",
+      "description": "Doctor card (created by main.js)",
+      "pages": [
+        "index.html",
+        "find-a-doctor.html"
+      ],
+      "behavior": [
+        "link to profile",
+        "tags"
+      ],
+      "keyboard": [
+        "Tab",
+        "Shift+Tab"
+      ],
+      "status": "implemented",
+      "validation": "scripted-flow-checks-only"
+    },
+    {
+      "id": "location-card",
+      "selector": "[data-component='location-card']",
+      "description": "Location card (created by main.js)",
+      "pages": [
+        "index.html",
+        "locations.html",
+        "provider.html"
+      ],
+      "behavior": [
+        "address, hours, services"
+      ],
+      "keyboard": [
+        "Tab",
+        "Shift+Tab"
+      ],
+      "status": "implemented",
+      "validation": "scripted-flow-checks-only"
+    }
+  ]
+}
