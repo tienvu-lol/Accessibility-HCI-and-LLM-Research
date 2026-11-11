@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admissions & Aid - Wren Hollow University</title>
+<meta name="description" content="Apply, understand the cost and find the support that makes Wren Hollow possible.">
+<link rel="stylesheet" href="css/styles.css">
+<script src="js/main.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header data-section="global-header" data-component="site-header">
+  <div class="utility-bar" data-section="utility-navigation" data-component="utility-nav">
+    <div class="container">
+      <nav aria-label="Utility">
+        <ul class="utility-list">
+          <li><button type="button" data-demo-signin>MyWren</button></li>
+          <li class="tools-wrap"><button type="button" class="tools-toggle" aria-expanded="false" aria-controls="tools-menu">Campus tools</button><ul class="tools-menu" id="tools-menu" hidden></ul></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="news.html#events">Events</a></li>
+          <li><a href="visit.html">Visit</a></li>
+          <li><a href="apply.html">Apply</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <div class="header-main">
+    <a class="brand" href="index.html"><img src="assets/logo.svg" alt="" width="48" height="48"><span>Wren Hollow University<small>A fictional public research university</small></span></a>
+    <form class="site-search" role="search" aria-label="Site" action="search.html" method="get" data-section="site-search" data-component="site-search">
+      <label for="site-q" class="visually-hidden">Search people and pages</label>
+      <input type="search" id="site-q" name="q" placeholder="Search people and pages" autocomplete="off">
+      <button type="submit" class="btn">Search</button>
+    </form>
+    <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="primary-menu">Menu</button>
+  </div>
+  <nav class="primary-nav" aria-label="Primary" data-section="global-navigation" data-component="primary-nav">
+    <ul id="primary-menu">
+      <li><a href="academics.html">Academics</a></li>
+      <li><a href="admissions.html" aria-current="page">Admissions & Aid</a></li>
+      <li><a href="student-life.html">Student Life</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="athletics.html">Athletics</a></li>
+      <li><a href="about.html">About Wren Hollow</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main-content" data-section="main-content">
+<nav class="breadcrumb" aria-label="Breadcrumb" data-section="breadcrumb" data-component="breadcrumb"><ol><li><a href="index.html">Home</a></li><li><span aria-current="page">Admissions & Aid</span></li></ol></nav>
+<section class="page-title" data-section="page-header" data-component="page-title"><div class="container"><h1>Admissions & Aid</h1><p>Apply, understand the cost and find the support that makes Wren Hollow possible.</p></div></section>
+<div class="container section"><div class="split sidebar"><aside class="side-nav" aria-label="Admissions section" data-section="local-navigation" data-component="local-nav"><ul><li><a href="admissions.html" aria-current="page">Admissions & Aid</a></li><li><a href="apply.html">Apply</a></li><li><a href="visit.html">Visit</a></li></ul></aside><div class="page-content"><section aria-labelledby="affording" data-section="affording-college"><h2 id="affording">Affording college</h2>
+<p>Most students combine grants, scholarships, work-study and family contributions. The reference site sends tuition questions to a separate bursar site; the estimator below is an intentional addition.</p>
+<form data-validate novalidate data-handler="estimate" class="form-narrow" data-section="cost-estimator" data-component="cost-estimator" aria-labelledby="est-title">
+<h3 id="est-title">Cost estimator <span class="badge">Demo</span></h3>
+<div class="field"><label for="residency">Residency</label><select id="residency" name="residency" required data-msg-required="Select your residency."><option value="">Select an option</option><option value="resident">State resident</option><option value="nonresident">Non-resident</option></select></div>
+<div class="field"><label for="credits">Credits this semester</label><p class="hint" id="credits-hint">Between 1 and 18.</p><input type="number" id="credits" name="credits" aria-describedby="credits-hint" required min="1" max="18" step="1" inputmode="numeric" data-msg-required="Enter the number of credits." data-msg="Credits must be a whole number from 1 to 18."></div>
+<div class="field"><label for="housing">Housing</label><select id="housing" name="housing" required data-msg-required="Select a housing option."><option value="">Select an option</option><option value="none">Off campus</option><option value="hall">Residence hall</option><option value="apartment">University apartment</option></select></div>
+<div class="field"><label for="income">Household income</label><p class="hint" id="income-hint">Used only to show whether the fictional Wren Promise would apply.</p><select id="income" name="income" aria-describedby="income-hint" required data-msg-required="Select a household income band."><option value="">Select an option</option><option value="1">Up to $30,000</option><option value="2">$30,001 to $60,000</option><option value="3">$60,001 to $120,000</option><option value="4">Above $120,000</option></select></div>
+<button type="submit" class="btn">Estimate cost</button></form>
+<div id="estimate-result" role="status" hidden></div></section>
+<section class="section alt" aria-labelledby="promise-title" data-section="promise" data-component="card-grid"><div class="container"><h2 id="promise-title">Our promise to Wren Hollow students</h2><ul class="card-grid" data-instance="promises"><li><article class="card" data-component="content-card"><div class="card-body"><h3>Wren Tuition Promise</h3><p>Tuition covered for state residents in the lowest two sample income bands.</p></div></article></li><li><article class="card" data-component="content-card"><div class="card-body"><h3>Pell Pathway Grant</h3><p>Added support for students who receive federal need-based grants (fictional program).</p></div></article></li><li><article class="card" data-component="content-card"><div class="card-body"><h3>Lakeshore Nations Scholarship</h3><p>Support for students from tribal nations in the region (fictional program).</p></div></article></li><li><article class="card" data-component="content-card"><div class="card-body"><h3>Heron Guarantee</h3><p>A four-year commitment to advising and course access (fictional program).</p></div></article></li></ul></div></section>
+<section class="section " aria-labelledby="professional-schools-title" data-section="professional-schools"><div class="container"><h2 id="professional-schools-title">Choose from our professional schools</h2><ul class="plain-list"><li><a href="majors.html?q=Business">Hollow School of Business</a></li><li><a href="majors.html?q=Engineering">College of Engineering and Computing</a></li><li><a href="majors.html?q=Nursing">School of Nursing and Public Health</a></li></ul></div></section></div></div></div>
+</main>
+<footer class="site-footer" data-section="global-footer" data-component="site-footer">
+  <div class="container">
+    <p><strong>Wren Hollow University</strong> is a fictional institution created for an accessibility and usability research dataset. It is not a real university.</p>
+    <div class="footer-groups">
+      <section aria-labelledby="ft-popular" data-section="footer-popular" data-component="footer-link-group"><h2 id="ft-popular">Popular</h2><ul>
+        <li><a href="news.html#events">Events calendar</a></li><li><a href="about.html#campus-map">Campus map</a></li><li><a href="directory.html">Directory search</a></li><li><a href="facts.html">Facts and figures</a></li><li><button type="button" class="link-button" data-demo-tool="Jobs">Jobs</button></li><li><a href="majors.html">Majors and certificates</a></li><li><a href="admissions.html#affording">Tuition and fees</a></li></ul></section>
+      <section aria-labelledby="ft-resources" data-section="footer-resources" data-component="footer-link-group"><h2 id="ft-resources">Resources</h2><ul>
+        <li><button type="button" class="link-button" data-demo-tool="Alumni">Alumni</button></li><li><button type="button" class="link-button" data-demo-tool="Business and industry">Business and industry</button></li><li><button type="button" class="link-button" data-demo-tool="Faculty and staff">Faculty and staff</button></li><li><a href="apply.html#international">International</a></li><li><a href="visit.html">Parents and families</a></li><li><a href="research.html">Researchers</a></li><li><a href="student-life.html">Students</a></li></ul></section>
+      <section aria-labelledby="ft-quick" data-section="footer-quick-links" data-component="footer-link-group"><h2 id="ft-quick">Quick links</h2><ul>
+        <li><a href="about.html#accessibility">Accessibility</a></li><li><button type="button" class="link-button" data-demo-tool="Free expression">Free expression</button></li><li><button type="button" class="link-button" data-demo-tool="Governance">Governance</button></li><li><button type="button" class="link-button" data-demo-tool="Policies">Policies</button></li><li><button type="button" class="link-button" data-demo-tool="Campus safety">Campus safety</button></li><li><button type="button" class="link-button" data-demo-tool="Support Wren Hollow">Support Wren Hollow</button></li><li><button type="button" class="link-button" data-demo-tool="Title IX">Title IX</button></li><li><button type="button" class="link-button" data-demo-tool="Privacy notice">Privacy notice</button></li></ul></section>
+    </div>
+    <p class="footer-legal">© 2026 Wren Hollow University (fictional). Content is original sample text. Items shown as buttons open a demo notice; they do not lead to real services.</p>
+  </div>
+</footer>
+</body>
+</html>

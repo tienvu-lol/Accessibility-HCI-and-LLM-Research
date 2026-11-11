@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Apply - Wren Hollow University</title>
+<meta name="description" content="Four steps from interest to enrollment.">
+<link rel="stylesheet" href="css/styles.css">
+<script src="js/main.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header data-section="global-header" data-component="site-header">
+  <div class="utility-bar" data-section="utility-navigation" data-component="utility-nav">
+    <div class="container">
+      <nav aria-label="Utility">
+        <ul class="utility-list">
+          <li><button type="button" data-demo-signin>MyWren</button></li>
+          <li class="tools-wrap"><button type="button" class="tools-toggle" aria-expanded="false" aria-controls="tools-menu">Campus tools</button><ul class="tools-menu" id="tools-menu" hidden></ul></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="news.html#events">Events</a></li>
+          <li><a href="visit.html">Visit</a></li>
+          <li><a href="apply.html">Apply</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <div class="header-main">
+    <a class="brand" href="index.html"><img src="assets/logo.svg" alt="" width="48" height="48"><span>Wren Hollow University<small>A fictional public research university</small></span></a>
+    <form class="site-search" role="search" aria-label="Site" action="search.html" method="get" data-section="site-search" data-component="site-search">
+      <label for="site-q" class="visually-hidden">Search people and pages</label>
+      <input type="search" id="site-q" name="q" placeholder="Search people and pages" autocomplete="off">
+      <button type="submit" class="btn">Search</button>
+    </form>
+    <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="primary-menu">Menu</button>
+  </div>
+  <nav class="primary-nav" aria-label="Primary" data-section="global-navigation" data-component="primary-nav">
+    <ul id="primary-menu">
+      <li><a href="academics.html">Academics</a></li>
+      <li><a href="admissions.html" aria-current="page">Admissions & Aid</a></li>
+      <li><a href="student-life.html">Student Life</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="athletics.html">Athletics</a></li>
+      <li><a href="about.html">About Wren Hollow</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main-content" data-section="main-content">
+<nav class="breadcrumb" aria-label="Breadcrumb" data-section="breadcrumb" data-component="breadcrumb"><ol><li><a href="index.html">Home</a></li><li><a href="admissions.html">Admissions & Aid</a></li><li><span aria-current="page">Apply</span></li></ol></nav>
+<section class="page-title" data-section="page-header" data-component="page-title"><div class="container"><h1>Apply to Wren Hollow</h1><p>Four steps from interest to enrollment.</p></div></section>
+<div class="container section"><div class="split sidebar"><aside class="side-nav" aria-label="Admissions section" data-section="local-navigation" data-component="local-nav"><ul><li><a href="admissions.html">Admissions & Aid</a></li><li><a href="apply.html" aria-current="page">Apply</a></li><li><a href="visit.html">Visit</a></li></ul></aside><div class="page-content"><h2>How to apply</h2><ol class="steps" data-component="step-list"><li><strong>Choose a program.</strong> Browse <a href="majors.html">majors and certificates</a>.</li><li><strong>Gather materials.</strong> Transcripts, a short essay and (for some programs) an audition or portfolio.</li><li><strong>Submit your application.</strong> Use the application portal. This replica offers a demo start page only.</li><li><strong>Watch for your decision.</strong> Decisions are posted to the applicant portal (not available here).</li></ol>
+<h2>Deadlines by applicant type</h2><div class="accordion" data-component="accordion" data-instance="deadlines"><h3><button type="button" data-toggle aria-expanded="false" aria-controls="deadlines-p0">First-year students</button></h3><div class="panel" id="deadlines-p0" hidden><p>Early action: November 15. Regular decision: February 1. (Fictional dates.)</p></div><h3><button type="button" data-toggle aria-expanded="false" aria-controls="deadlines-p1">Transfer students</button></h3><div class="panel" id="deadlines-p1" hidden><p>Fall term: March 15. Spring term: October 15. (Fictional dates.)</p></div><h3 id="international"><button type="button" data-toggle aria-expanded="false" aria-controls="deadlines-p2">International students</button></h3><div class="panel" id="deadlines-p2" hidden><p>Fall term: January 15. Include English proficiency scores and financial documents. (Fictional dates.)</p></div><h3><button type="button" data-toggle aria-expanded="false" aria-controls="deadlines-p3">Graduate students</button></h3><div class="panel" id="deadlines-p3" hidden><p>Deadlines vary by program. Contact the program coordinator listed in the <a href="directory.html">directory</a>.</p></div></div>
+<section aria-labelledby="start-title" data-section="application-start"><h2 id="start-title">Start a demo application</h2><p class="demo-note"><span class="badge">Demo</span> Simulation only. No account is created and nothing is sent. The reference site links to an external application portal.</p>
+<form data-validate novalidate class="form-narrow" data-component="application-start-form" data-success="Your demo application start was recorded only in this browser tab and is not stored. No real application exists.">
+<div class="field"><label for="a-name">Full name</label><input type="text" id="a-name" name="a-name" required autocomplete="name" data-msg-required="Enter your full name."></div>
+<div class="field"><label for="a-email">Email address</label><input type="email" id="a-email" name="a-email" required autocomplete="email" data-msg-required="Enter your email address." data-msg="Enter an email address in the form name@example.org."></div>
+<div class="field"><label for="a-type">Applicant type</label><select id="a-type" name="a-type" required data-msg-required="Select an applicant type."><option value="">Select an option</option><option>First-year</option><option>Transfer</option><option>International</option><option>Graduate</option></select></div>
+<div class="field"><label for="a-term">Start term</label><select id="a-term" name="a-term" required data-msg-required="Select a start term."><option value="">Select an option</option><option>Fall 2027</option><option>Spring 2028</option><option>Fall 2028</option></select></div>
+<button type="submit" class="btn">Start application (demo)</button></form></section></div></div></div>
+</main>
+<footer class="site-footer" data-section="global-footer" data-component="site-footer">
+  <div class="container">
+    <p><strong>Wren Hollow University</strong> is a fictional institution created for an accessibility and usability research dataset. It is not a real university.</p>
+    <div class="footer-groups">
+      <section aria-labelledby="ft-popular" data-section="footer-popular" data-component="footer-link-group"><h2 id="ft-popular">Popular</h2><ul>
+        <li><a href="news.html#events">Events calendar</a></li><li><a href="about.html#campus-map">Campus map</a></li><li><a href="directory.html">Directory search</a></li><li><a href="facts.html">Facts and figures</a></li><li><button type="button" class="link-button" data-demo-tool="Jobs">Jobs</button></li><li><a href="majors.html">Majors and certificates</a></li><li><a href="admissions.html#affording">Tuition and fees</a></li></ul></section>
+      <section aria-labelledby="ft-resources" data-section="footer-resources" data-component="footer-link-group"><h2 id="ft-resources">Resources</h2><ul>
+        <li><button type="button" class="link-button" data-demo-tool="Alumni">Alumni</button></li><li><button type="button" class="link-button" data-demo-tool="Business and industry">Business and industry</button></li><li><button type="button" class="link-button" data-demo-tool="Faculty and staff">Faculty and staff</button></li><li><a href="apply.html#international">International</a></li><li><a href="visit.html">Parents and families</a></li><li><a href="research.html">Researchers</a></li><li><a href="student-life.html">Students</a></li></ul></section>
+      <section aria-labelledby="ft-quick" data-section="footer-quick-links" data-component="footer-link-group"><h2 id="ft-quick">Quick links</h2><ul>
+        <li><a href="about.html#accessibility">Accessibility</a></li><li><button type="button" class="link-button" data-demo-tool="Free expression">Free expression</button></li><li><button type="button" class="link-button" data-demo-tool="Governance">Governance</button></li><li><button type="button" class="link-button" data-demo-tool="Policies">Policies</button></li><li><button type="button" class="link-button" data-demo-tool="Campus safety">Campus safety</button></li><li><button type="button" class="link-button" data-demo-tool="Support Wren Hollow">Support Wren Hollow</button></li><li><button type="button" class="link-button" data-demo-tool="Title IX">Title IX</button></li><li><button type="button" class="link-button" data-demo-tool="Privacy notice">Privacy notice</button></li></ul></section>
+    </div>
+    <p class="footer-legal">© 2026 Wren Hollow University (fictional). Content is original sample text. Items shown as buttons open a demo notice; they do not lead to real services.</p>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Directory Search - Wren Hollow University</title>
+<meta name="description" content="Find faculty and staff by name, title or department.">
+<link rel="stylesheet" href="css/styles.css">
+<script src="js/main.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header data-section="global-header" data-component="site-header">
+  <div class="utility-bar" data-section="utility-navigation" data-component="utility-nav">
+    <div class="container">
+      <nav aria-label="Utility">
+        <ul class="utility-list">
+          <li><button type="button" data-demo-signin>MyWren</button></li>
+          <li class="tools-wrap"><button type="button" class="tools-toggle" aria-expanded="false" aria-controls="tools-menu">Campus tools</button><ul class="tools-menu" id="tools-menu" hidden></ul></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="news.html#events">Events</a></li>
+          <li><a href="visit.html">Visit</a></li>
+          <li><a href="apply.html">Apply</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <div class="header-main">
+    <a class="brand" href="index.html"><img src="assets/logo.svg" alt="" width="48" height="48"><span>Wren Hollow University<small>A fictional public research university</small></span></a>
+    <form class="site-search" role="search" aria-label="Site" action="search.html" method="get" data-section="site-search" data-component="site-search">
+      <label for="site-q" class="visually-hidden">Search people and pages</label>
+      <input type="search" id="site-q" name="q" placeholder="Search people and pages" autocomplete="off">
+      <button type="submit" class="btn">Search</button>
+    </form>
+    <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="primary-menu">Menu</button>
+  </div>
+  <nav class="primary-nav" aria-label="Primary" data-section="global-navigation" data-component="primary-nav">
+    <ul id="primary-menu">
+      <li><a href="academics.html">Academics</a></li>
+      <li><a href="admissions.html">Admissions & Aid</a></li>
+      <li><a href="student-life.html">Student Life</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="athletics.html">Athletics</a></li>
+      <li><a href="about.html">About Wren Hollow</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main-content" data-section="main-content">
+<nav class="breadcrumb" aria-label="Breadcrumb" data-section="breadcrumb" data-component="breadcrumb"><ol><li><a href="index.html">Home</a></li><li><span aria-current="page">Directory search</span></li></ol></nav>
+<section class="page-title" data-section="page-header" data-component="page-title"><div class="container"><h1>Directory Search</h1><p>Find faculty and staff by name, title or department.</p></div></section>
+<div class="container section"><p class="demo-note"><span class="badge">Demo</span> Twelve fictional people only. No real people or contact details appear here.</p>
+<form id="directory-form" class="filter-bar" role="search" aria-label="Directory" data-section="directory-search" data-component="directory-search">
+<div class="field"><label for="dir-q">Name, title or department</label><input type="search" id="dir-q" name="q" autocomplete="off"></div>
+<fieldset><legend>Show</legend><span class="choice"><input type="radio" id="role-all" name="role" value="all" checked><label for="role-all">Everyone</label></span> <span class="choice"><input type="radio" id="role-faculty" name="role" value="Faculty"><label for="role-faculty">Faculty</label></span> <span class="choice"><input type="radio" id="role-staff" name="role" value="Staff"><label for="role-staff">Staff</label></span></fieldset>
+<div class="field"><button type="submit" class="btn">Search directory</button></div></form>
+<h2 class="visually-hidden">Directory results</h2><p class="result-count" id="dir-count" role="status">Enter a search and choose Search directory. Leave it blank to list everyone.</p>
+<ul class="card-grid" id="dir-results" data-component="card-grid"></ul>
+<div class="empty-state" id="dir-empty" hidden><p><strong>No people found.</strong> Check the spelling or search by department.</p></div></div>
+</main>
+<footer class="site-footer" data-section="global-footer" data-component="site-footer">
+  <div class="container">
+    <p><strong>Wren Hollow University</strong> is a fictional institution created for an accessibility and usability research dataset. It is not a real university.</p>
+    <div class="footer-groups">
+      <section aria-labelledby="ft-popular" data-section="footer-popular" data-component="footer-link-group"><h2 id="ft-popular">Popular</h2><ul>
+        <li><a href="news.html#events">Events calendar</a></li><li><a href="about.html#campus-map">Campus map</a></li><li><a href="directory.html">Directory search</a></li><li><a href="facts.html">Facts and figures</a></li><li><button type="button" class="link-button" data-demo-tool="Jobs">Jobs</button></li><li><a href="majors.html">Majors and certificates</a></li><li><a href="admissions.html#affording">Tuition and fees</a></li></ul></section>
+      <section aria-labelledby="ft-resources" data-section="footer-resources" data-component="footer-link-group"><h2 id="ft-resources">Resources</h2><ul>
+        <li><button type="button" class="link-button" data-demo-tool="Alumni">Alumni</button></li><li><button type="button" class="link-button" data-demo-tool="Business and industry">Business and industry</button></li><li><button type="button" class="link-button" data-demo-tool="Faculty and staff">Faculty and staff</button></li><li><a href="apply.html#international">International</a></li><li><a href="visit.html">Parents and families</a></li><li><a href="research.html">Researchers</a></li><li><a href="student-life.html">Students</a></li></ul></section>
+      <section aria-labelledby="ft-quick" data-section="footer-quick-links" data-component="footer-link-group"><h2 id="ft-quick">Quick links</h2><ul>
+        <li><a href="about.html#accessibility">Accessibility</a></li><li><button type="button" class="link-button" data-demo-tool="Free expression">Free expression</button></li><li><button type="button" class="link-button" data-demo-tool="Governance">Governance</button></li><li><button type="button" class="link-button" data-demo-tool="Policies">Policies</button></li><li><button type="button" class="link-button" data-demo-tool="Campus safety">Campus safety</button></li><li><button type="button" class="link-button" data-demo-tool="Support Wren Hollow">Support Wren Hollow</button></li><li><button type="button" class="link-button" data-demo-tool="Title IX">Title IX</button></li><li><button type="button" class="link-button" data-demo-tool="Privacy notice">Privacy notice</button></li></ul></section>
+    </div>
+    <p class="footer-legal">© 2026 Wren Hollow University (fictional). Content is original sample text. Items shown as buttons open a demo notice; they do not lead to real services.</p>
+  </div>
+</footer>
+</body>
+</html>

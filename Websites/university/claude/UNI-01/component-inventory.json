@@ -1,0 +1,287 @@
+{
+  "protocol_version": "1.0",
+  "replica_id": "UNI-01",
+  "category": "university",
+  "source_url": "https://www.wisc.edu/",
+  "components": [
+    {
+      "id": "site-header",
+      "selector": "[data-section='global-header'][data-component='site-header']",
+      "pages": ["all 16 pages incl. 404.html"],
+      "behavior": ["brand link home", "contains utility bar, site search and primary nav"],
+      "keyboard": ["Tab"],
+      "status": "implemented",
+      "validation": "axe pass at 1280/375 (qc.js); scripted flows"
+    },
+    {
+      "id": "utility-nav",
+      "selector": "[data-section='utility-navigation'][data-component='utility-nav']",
+      "pages": ["all 16 pages incl. 404.html"],
+      "behavior": ["MyWren button opens demo sign-in dialog", "Campus tools disclosure lists 8 demo items that open a demo notice dialog", "News, Events, Visit, Apply links"],
+      "keyboard": ["Tab", "Enter", "Space", "Escape closes tools menu and returns focus to its button"],
+      "status": "implemented (approximation: reference utility menu has 14 mostly external links)",
+      "validation": "axe pass; scripted: open menu, open dialog, Escape, focus return"
+    },
+    {
+      "id": "site-search",
+      "selector": "[data-section='site-search'][data-component='site-search']",
+      "pages": ["all 16 pages incl. 404.html"],
+      "behavior": ["GET form to search.html?q=", "look-ahead suggestion list (pages + programs) after 2 characters"],
+      "keyboard": ["Type", "ArrowDown/ArrowUp move through suggestions", "Escape closes list and focuses input", "Enter submits"],
+      "status": "implemented",
+      "validation": "axe pass; scripted look-ahead and submit flows"
+    },
+    {
+      "id": "primary-nav",
+      "selector": "[data-section='global-navigation'][data-component='primary-nav']",
+      "pages": ["all 16 pages incl. 404.html"],
+      "behavior": ["flat 6-item menu as observed on reference", "aria-current on active section", "mobile disclosure button with aria-expanded"],
+      "keyboard": ["Tab", "Enter", "Space on Menu button", "Escape closes mobile menu and refocuses Menu button"],
+      "status": "implemented",
+      "validation": "axe pass; scripted mobile toggle + Escape"
+    },
+    {
+      "id": "breadcrumb",
+      "selector": "[data-section='breadcrumb'][data-component='breadcrumb']",
+      "pages": ["about.html", "academics.html", "admissions.html", "apply.html", "athletics.html", "directory.html", "facts.html", "majors.html", "news.html", "program.html", "research.html", "search.html", "student-life.html", "visit.html"],
+      "behavior": ["ordered list of links with aria-current on the last item"],
+      "keyboard": ["Tab", "Enter"],
+      "status": "implemented",
+      "validation": "axe pass"
+    },
+    {
+      "id": "page-title",
+      "selector": "[data-section='page-header'][data-component='page-title']",
+      "pages": ["all pages except index.html"],
+      "behavior": ["h1 and short introduction"],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "axe pass"
+    },
+    {
+      "id": "local-nav",
+      "selector": "[data-section='local-navigation'][data-component='local-nav']",
+      "pages": ["about.html", "academics.html", "admissions.html", "apply.html", "facts.html", "majors.html", "program.html", "visit.html"],
+      "behavior": ["section sidebar with aria-current (intentional addition; not observed in reference HTML)"],
+      "keyboard": ["Tab", "Enter"],
+      "status": "implemented (intentional addition)",
+      "validation": "axe pass"
+    },
+    {
+      "id": "hero-banner",
+      "selector": "[data-section='hero'][data-component='hero-banner']",
+      "pages": ["index.html"],
+      "behavior": ["h1 with Visit and Apply buttons and a decorative SVG"],
+      "keyboard": ["Tab", "Enter"],
+      "status": "implemented",
+      "validation": "axe pass"
+    },
+    {
+      "id": "card-grid",
+      "selector": "[data-component='card-grid'], ul.card-grid",
+      "pages": ["index.html", "academics.html", "admissions.html", "majors.html", "visit.html", "research.html", "student-life.html", "news.html", "directory.html"],
+      "behavior": ["responsive grid of cards; static on most pages, JS-rendered on majors, directory and news"],
+      "keyboard": ["Tab", "Enter"],
+      "status": "implemented",
+      "validation": "axe pass"
+    },
+    {
+      "id": "content-card",
+      "selector": "[data-component='content-card']",
+      "pages": ["index.html", "academics.html", "admissions.html", "research.html", "student-life.html", "visit.html"],
+      "behavior": ["image (decorative), meta, linked heading, text"],
+      "keyboard": ["Tab", "Enter"],
+      "status": "implemented",
+      "validation": "axe pass"
+    },
+    {
+      "id": "stat-list",
+      "selector": "[data-component='stat-list']",
+      "pages": ["index.html", "research.html", "facts.html"],
+      "behavior": ["fictional headline numbers"],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "axe pass"
+    },
+    {
+      "id": "accordion",
+      "selector": "[data-component='accordion']",
+      "pages": ["academics.html", "apply.html", "research.html", "student-life.html", "visit.html"],
+      "behavior": ["button with aria-expanded/aria-controls inside headings toggles a hidden panel"],
+      "keyboard": ["Tab", "Enter", "Space"],
+      "status": "implemented",
+      "validation": "axe pass; scripted expand on apply.html"
+    },
+    {
+      "id": "program-filter",
+      "selector": "[data-section='program-finder'][data-component='program-filter']",
+      "pages": ["majors.html"],
+      "behavior": ["text search + area + type filters over 15 inline programs", "live result count", "empty state", "Clear filters button", "?q= preload from academics links"],
+      "keyboard": ["Tab", "Type", "Arrow keys in selects", "Enter"],
+      "status": "implemented (intentional addition)",
+      "validation": "axe pass; scripted filter, empty state, clear"
+    },
+    {
+      "id": "program-card",
+      "selector": "[data-component='program-card']",
+      "pages": ["majors.html"],
+      "behavior": ["JS-rendered card linking to program.html?id="],
+      "keyboard": ["Tab", "Enter"],
+      "status": "implemented (intentional addition)",
+      "validation": "axe pass"
+    },
+    {
+      "id": "program-detail",
+      "selector": "[data-section='program-detail'][data-component='program-detail']",
+      "pages": ["program.html"],
+      "behavior": ["reads ?id= from the URL, fills h1 and details; not-found state for unknown id"],
+      "keyboard": ["Tab", "Enter"],
+      "status": "implemented (intentional addition)",
+      "validation": "axe pass; scripted valid and invalid id"
+    },
+    {
+      "id": "cost-estimator",
+      "selector": "[data-section='cost-estimator'][data-component='cost-estimator']",
+      "pages": ["admissions.html"],
+      "behavior": ["validated form (residency, credits, housing, income band); shows demo estimate in a status region; fictional rates"],
+      "keyboard": ["Tab", "Enter", "Arrow keys in selects"],
+      "status": "simulated (intentional addition)",
+      "validation": "axe pass; scripted calculation and invalid credits"
+    },
+    {
+      "id": "application-start-form",
+      "selector": "[data-component='application-start-form']",
+      "pages": ["apply.html"],
+      "behavior": ["client-side validation, error summary, inline errors, demo success panel; nothing stored or sent"],
+      "keyboard": ["Tab", "Enter", "Space"],
+      "status": "simulated (intentional addition)",
+      "validation": "axe pass; shared validation logic exercised on other forms"
+    },
+    {
+      "id": "visit-request-form",
+      "selector": "[data-component='visit-request-form']",
+      "pages": ["visit.html"],
+      "behavior": ["required, email, tel pattern, not-past date, number range, checkbox consent validation; error summary receives focus; links in summary focus the field; demo success with Start over"],
+      "keyboard": ["Tab", "Enter", "Space"],
+      "status": "simulated (intentional addition)",
+      "validation": "axe pass; scripted empty, invalid and valid submissions"
+    },
+    {
+      "id": "login-form",
+      "selector": "[data-component='login-form']",
+      "pages": ["opened from the MyWren button on every page"],
+      "behavior": ["demo sign-in inside a modal dialog; validation and demo success; no session"],
+      "keyboard": ["Tab", "Enter", "Escape closes dialog and returns focus"],
+      "status": "simulated",
+      "validation": "scripted empty and valid submissions (dialog content is created on demand, so axe scans of the static pages do not cover it)"
+    },
+    {
+      "id": "modal-dialog",
+      "selector": "dialog#demo-dialog[data-component='modal-dialog']",
+      "pages": ["created on demand on every page"],
+      "behavior": ["native dialog with showModal, labelled by its title, Close button, focus restored on close"],
+      "keyboard": ["Tab (trapped by browser)", "Escape", "Enter on Close"],
+      "status": "implemented",
+      "validation": "scripted open, Escape, focus return; not axe-scanned while open"
+    },
+    {
+      "id": "directory-search",
+      "selector": "[data-section='directory-search'][data-component='directory-search']",
+      "pages": ["directory.html"],
+      "behavior": ["name/title/department text search plus Everyone/Faculty/Staff radios over 12 fictional people; result count; empty state"],
+      "keyboard": ["Tab", "Enter", "Arrow keys on radios"],
+      "status": "approximated (reference loads a client-rendered LDAP lookup that was not inspected)",
+      "validation": "axe pass; scripted search, empty state, role filter"
+    },
+    {
+      "id": "person-card",
+      "selector": "[data-component='person-card']",
+      "pages": ["directory.html"],
+      "behavior": ["JS-rendered name, title, email, phone and office as a description list"],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "scripted"
+    },
+    {
+      "id": "news-card",
+      "selector": "[data-component='news-card']",
+      "pages": ["news.html"],
+      "behavior": ["JS-rendered story card with Read more disclosure; #story-id hash opens the story; topic toggle buttons use aria-pressed"],
+      "keyboard": ["Tab", "Enter", "Space"],
+      "status": "simulated (reference links to a separate news site)",
+      "validation": "axe pass; scripted hash open and topic filter"
+    },
+    {
+      "id": "event-filter",
+      "selector": "[data-component='event-filter'], [data-component='event-item']",
+      "pages": ["news.html"],
+      "behavior": ["text and category filter over 8 sample events; count; empty state"],
+      "keyboard": ["Tab", "Type", "Arrow keys in select"],
+      "status": "simulated (reference events calendar is a separate site)",
+      "validation": "axe pass; scripted filter and empty state"
+    },
+    {
+      "id": "schedule-table",
+      "selector": "[data-component='schedule-table']",
+      "pages": ["athletics.html"],
+      "behavior": ["captioned table of sample home events"],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "axe pass"
+    },
+    {
+      "id": "data-table",
+      "selector": "[data-component='data-table']",
+      "pages": ["facts.html"],
+      "behavior": ["captioned table with column headers"],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "axe pass"
+    },
+    {
+      "id": "search-form-and-results",
+      "selector": "[data-component='search-form'], [data-component='search-results']",
+      "pages": ["index.html", "search.html"],
+      "behavior": ["GET search form; search.html groups matches into Pages, Programs, News and People; empty state"],
+      "keyboard": ["Tab", "Enter"],
+      "status": "implemented (search.html approximates the reference /search/ page)",
+      "validation": "axe pass; scripted results and empty state"
+    },
+    {
+      "id": "step-list",
+      "selector": "[data-component='step-list']",
+      "pages": ["apply.html"],
+      "behavior": ["ordered application steps"],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "axe pass"
+    },
+    {
+      "id": "values-list",
+      "selector": "[data-component='values-list']",
+      "pages": ["index.html"],
+      "behavior": ["'The Wren Way' value cards"],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "axe pass"
+    },
+    {
+      "id": "cta-band",
+      "selector": "[data-section='call-to-action'][data-component='cta-band']",
+      "pages": ["index.html"],
+      "behavior": ["dark band with Apply and Visit buttons"],
+      "keyboard": ["Tab", "Enter"],
+      "status": "implemented",
+      "validation": "axe pass"
+    },
+    {
+      "id": "site-footer",
+      "selector": "[data-section='global-footer'][data-component='site-footer'], [data-component='footer-link-group']",
+      "pages": ["all 16 pages incl. 404.html"],
+      "behavior": ["three link groups (Popular, Resources, Quick links); items without a local page are buttons that open the demo dialog"],
+      "keyboard": ["Tab", "Enter", "Space", "Escape closes dialog"],
+      "status": "implemented",
+      "validation": "axe pass"
+    }
+  ]
+}
