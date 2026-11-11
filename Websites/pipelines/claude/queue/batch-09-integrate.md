@@ -1,6 +1,6 @@
 # Batch 09: integrate and publish
 
-**Status:** queued (after batches 03–08)
+**Status:** paused 2026-11-11. Steps 1-2 done (33/33 claude sites failures=0; register counts and 30 submitted rows checked). Resume at step 3 (source-inventory claude rows); steps 4 (push + PR, needs project-lead go-ahead) and 5 not started.
 
 1. Run QC on all 30 Claude sites; each must print `failures=0`:
    `for d in Websites/*/claude/*/; do node Websites/tools/qc/qc.js "$d" || echo "FAIL $d"; done`
