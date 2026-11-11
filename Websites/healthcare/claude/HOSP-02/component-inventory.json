@@ -1,0 +1,781 @@
+{
+  "protocol_version": "1.0",
+  "replica_id": "HOSP-02",
+  "category": "healthcare",
+  "source_url": "https://www.hoag.org/",
+  "components": [
+    {
+      "id": "site-header",
+      "description": "Brand, emergency banner, utility nav, primary nav",
+      "selector": "[data-component='site-header']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "billing-help.html",
+        "classes-events.html",
+        "contact.html",
+        "find-care.html",
+        "index.html",
+        "institute-cancer.html",
+        "institute-heart.html",
+        "insurance-accepted.html",
+        "legal.html",
+        "location-harbor-point.html",
+        "locations.html",
+        "patients-visitors.html",
+        "portal-login.html",
+        "specialties-services.html"
+      ],
+      "behavior": [
+        "responsive header"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "automated axe at 1280/375 via qc.js"
+    },
+    {
+      "id": "alert-banner",
+      "description": "Static emergency notice with link to ED information (reference has an emergency-announcement component; text unverified)",
+      "selector": "[data-component='alert-banner']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "billing-help.html",
+        "classes-events.html",
+        "contact.html",
+        "find-care.html",
+        "index.html",
+        "institute-cancer.html",
+        "institute-heart.html",
+        "insurance-accepted.html",
+        "legal.html",
+        "location-harbor-point.html",
+        "locations.html",
+        "patients-visitors.html",
+        "portal-login.html",
+        "specialties-services.html"
+      ],
+      "behavior": [
+        "static notice"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "automated axe at 1280/375 via qc.js"
+    },
+    {
+      "id": "utility-nav",
+      "description": "Utility links: virtual care, pay bill, donate, contact, find care",
+      "selector": "[data-component='utility-nav']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "billing-help.html",
+        "classes-events.html",
+        "contact.html",
+        "find-care.html",
+        "index.html",
+        "institute-cancer.html",
+        "institute-heart.html",
+        "insurance-accepted.html",
+        "legal.html",
+        "location-harbor-point.html",
+        "locations.html",
+        "patients-visitors.html",
+        "portal-login.html",
+        "specialties-services.html"
+      ],
+      "behavior": [
+        "links"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated axe at 1280/375 via qc.js"
+    },
+    {
+      "id": "primary-nav",
+      "description": "Primary navigation with four dropdown groups, Find Care and portal demo links",
+      "selector": "[data-component='primary-nav']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "billing-help.html",
+        "classes-events.html",
+        "contact.html",
+        "find-care.html",
+        "index.html",
+        "institute-cancer.html",
+        "institute-heart.html",
+        "insurance-accepted.html",
+        "legal.html",
+        "location-harbor-point.html",
+        "locations.html",
+        "patients-visitors.html",
+        "portal-login.html",
+        "specialties-services.html"
+      ],
+      "behavior": [
+        "desktop dropdowns",
+        "mobile disclosure",
+        "aria-current"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "Escape closes menu and returns focus"
+      ],
+      "status": "implemented",
+      "validation": "automated axe at 1280/375 via qc.js; scripted Playwright flow run (keyboard-driven where noted); no screen-reader or manual keyboard walkthrough"
+    },
+    {
+      "id": "dropdown-menu",
+      "description": "Disclosure buttons controlling menu panels",
+      "selector": "[data-component='dropdown-menu']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "billing-help.html",
+        "classes-events.html",
+        "contact.html",
+        "find-care.html",
+        "index.html",
+        "institute-cancer.html",
+        "institute-heart.html",
+        "insurance-accepted.html",
+        "legal.html",
+        "location-harbor-point.html",
+        "locations.html",
+        "patients-visitors.html",
+        "portal-login.html",
+        "specialties-services.html"
+      ],
+      "behavior": [
+        "aria-expanded",
+        "one panel open at a time",
+        "closes on outside click and focus leaving nav"
+      ],
+      "keyboard": [
+        "Enter",
+        "Space",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "automated axe at 1280/375 via qc.js; scripted Playwright flow run (keyboard-driven where noted); no screen-reader or manual keyboard walkthrough"
+    },
+    {
+      "id": "mobile-menu-toggle",
+      "description": "Menu button shown under 62rem width",
+      "selector": "[data-component='mobile-menu-toggle']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "billing-help.html",
+        "classes-events.html",
+        "contact.html",
+        "find-care.html",
+        "index.html",
+        "institute-cancer.html",
+        "institute-heart.html",
+        "insurance-accepted.html",
+        "legal.html",
+        "location-harbor-point.html",
+        "locations.html",
+        "patients-visitors.html",
+        "portal-login.html",
+        "specialties-services.html"
+      ],
+      "behavior": [
+        "aria-expanded",
+        "collapses primary nav"
+      ],
+      "keyboard": [
+        "Enter",
+        "Space",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "automated axe at 1280/375 via qc.js; scripted Playwright flow run (keyboard-driven where noted); no screen-reader or manual keyboard walkthrough"
+    },
+    {
+      "id": "breadcrumb",
+      "description": "Breadcrumb trail",
+      "selector": "[data-component='breadcrumb']",
+      "pages": [
+        "about.html",
+        "billing-help.html",
+        "classes-events.html",
+        "contact.html",
+        "find-care.html",
+        "institute-cancer.html",
+        "institute-heart.html",
+        "insurance-accepted.html",
+        "legal.html",
+        "location-harbor-point.html",
+        "locations.html",
+        "patients-visitors.html",
+        "portal-login.html",
+        "specialties-services.html"
+      ],
+      "behavior": [
+        "links",
+        "aria-current on last item"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated axe at 1280/375 via qc.js"
+    },
+    {
+      "id": "page-header",
+      "description": "Interior page h1 and lead text",
+      "selector": "[data-component='page-header']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "billing-help.html",
+        "classes-events.html",
+        "contact.html",
+        "find-care.html",
+        "institute-cancer.html",
+        "institute-heart.html",
+        "insurance-accepted.html",
+        "legal.html",
+        "location-harbor-point.html",
+        "locations.html",
+        "patients-visitors.html",
+        "portal-login.html",
+        "specialties-services.html"
+      ],
+      "behavior": [
+        "static"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "automated axe at 1280/375 via qc.js"
+    },
+    {
+      "id": "hero-search",
+      "description": "Home hero with radio toggle, term and city fields posting to find-care.html by GET",
+      "selector": "[data-component='hero-search']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "query-string handoff"
+      ],
+      "keyboard": [
+        "Tab",
+        "Arrow keys on radios",
+        "Enter submits"
+      ],
+      "status": "implemented",
+      "validation": "automated axe at 1280/375 via qc.js; scripted Playwright flow run (keyboard-driven where noted); no screen-reader or manual keyboard walkthrough"
+    },
+    {
+      "id": "search-form",
+      "description": "Search forms (home hero, find care)",
+      "selector": "[data-component='search-form']",
+      "pages": [
+        "find-care.html",
+        "index.html"
+      ],
+      "behavior": [
+        "radio mode toggle",
+        "local search"
+      ],
+      "keyboard": [
+        "Tab",
+        "Arrow keys",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated axe at 1280/375 via qc.js; scripted Playwright flow run (keyboard-driven where noted); no screen-reader or manual keyboard walkthrough"
+    },
+    {
+      "id": "tile-grid",
+      "description": "Quick Links tiles",
+      "selector": "[data-component='tile-grid']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "links"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated axe at 1280/375 via qc.js"
+    },
+    {
+      "id": "feature-panel",
+      "description": "Two-column text and image bands",
+      "selector": "[data-component='feature-panel']",
+      "pages": [
+        "index.html",
+        "institute-cancer.html",
+        "institute-heart.html"
+      ],
+      "behavior": [
+        "static"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "automated axe at 1280/375 via qc.js"
+    },
+    {
+      "id": "card-grid",
+      "description": "Generic card grids",
+      "selector": "[data-component='card-grid']",
+      "pages": [
+        "index.html",
+        "institute-cancer.html",
+        "institute-heart.html",
+        "patients-visitors.html"
+      ],
+      "behavior": [
+        "static",
+        "links"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated axe at 1280/375 via qc.js"
+    },
+    {
+      "id": "testimonial-carousel",
+      "description": "Patient stories carousel (manual previous/next, no autoplay)",
+      "selector": "[data-component='testimonial-carousel']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "previous/next",
+        "status text"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "automated axe at 1280/375 via qc.js; scripted Playwright flow run (keyboard-driven where noted); no screen-reader or manual keyboard walkthrough"
+    },
+    {
+      "id": "provider-search",
+      "description": "Find care page: mode, keyword, specialty, city, accepting filters over 14 sample providers",
+      "selector": "[data-component='provider-search']",
+      "pages": [
+        "find-care.html"
+      ],
+      "behavior": [
+        "filter",
+        "empty state",
+        "live count",
+        "reset"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Arrow keys on radios"
+      ],
+      "status": "implemented",
+      "validation": "automated axe at 1280/375 via qc.js; scripted Playwright flow run (keyboard-driven where noted); no screen-reader or manual keyboard walkthrough"
+    },
+    {
+      "id": "provider-card",
+      "description": "Provider result card with profile button (JS-rendered on find-care.html)",
+      "selector": "[data-component='provider-card']",
+      "pages": [
+        "find-care.html"
+      ],
+      "behavior": [
+        "opens profile dialog"
+      ],
+      "keyboard": [
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "automated axe at 1280/375 via qc.js; scripted Playwright flow run (keyboard-driven where noted); no screen-reader or manual keyboard walkthrough"
+    },
+    {
+      "id": "modal-dialog",
+      "description": "Native dialog for provider profile and event registration demo",
+      "selector": "[data-component='modal-dialog']",
+      "pages": [
+        "classes-events.html",
+        "find-care.html"
+      ],
+      "behavior": [
+        "showModal",
+        "focus returns to opener",
+        "backdrop click closes"
+      ],
+      "keyboard": [
+        "Tab trapped by browser",
+        "Escape closes"
+      ],
+      "status": "implemented",
+      "validation": "automated axe at 1280/375 via qc.js; scripted Playwright flow run (keyboard-driven where noted); no screen-reader or manual keyboard walkthrough"
+    },
+    {
+      "id": "location-finder",
+      "description": "Locations filter over 9 sample locations",
+      "selector": "[data-component='location-finder']",
+      "pages": [
+        "locations.html"
+      ],
+      "behavior": [
+        "filter by type and text",
+        "empty state",
+        "query-string preset",
+        "hash scroll"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated axe at 1280/375 via qc.js; scripted Playwright flow run (keyboard-driven where noted); no screen-reader or manual keyboard walkthrough"
+    },
+    {
+      "id": "location-card",
+      "description": "Location card (JS-rendered on locations.html)",
+      "selector": "[data-component='location-card']",
+      "pages": [
+        "locations.html"
+      ],
+      "behavior": [
+        "static card"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated axe at 1280/375 via qc.js"
+    },
+    {
+      "id": "location-detail",
+      "description": "Hospital detail page body",
+      "selector": "[data-component='location-detail']",
+      "pages": [
+        "location-harbor-point.html"
+      ],
+      "behavior": [
+        "static",
+        "link to find care"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated axe at 1280/375 via qc.js"
+    },
+    {
+      "id": "emergency-notice",
+      "description": "Emergency department notice on hospital detail",
+      "selector": "[data-component='emergency-notice']",
+      "pages": [
+        "location-harbor-point.html"
+      ],
+      "behavior": [
+        "static"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "automated axe at 1280/375 via qc.js"
+    },
+    {
+      "id": "side-nav",
+      "description": "Patients & visitors local navigation",
+      "selector": "[data-component='side-nav']",
+      "pages": [
+        "billing-help.html",
+        "contact.html",
+        "insurance-accepted.html",
+        "patients-visitors.html"
+      ],
+      "behavior": [
+        "aria-current"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated axe at 1280/375 via qc.js"
+    },
+    {
+      "id": "info-panel",
+      "description": "Informational sections",
+      "selector": "[data-component='info-panel']",
+      "pages": [
+        "billing-help.html",
+        "patients-visitors.html"
+      ],
+      "behavior": [
+        "static"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "automated axe at 1280/375 via qc.js"
+    },
+    {
+      "id": "accordion",
+      "description": "Disclosure accordion",
+      "selector": "[data-component='accordion']",
+      "pages": [
+        "billing-help.html",
+        "patients-visitors.html"
+      ],
+      "behavior": [
+        "aria-expanded",
+        "region panels"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "automated axe at 1280/375 via qc.js; scripted Playwright flow run (keyboard-driven where noted); no screen-reader or manual keyboard walkthrough"
+    },
+    {
+      "id": "accordion-group",
+      "description": "Billing FAQ section wrapper",
+      "selector": "[data-component='accordion-group']",
+      "pages": [
+        "billing-help.html"
+      ],
+      "behavior": [
+        "contains accordion"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "automated axe at 1280/375 via qc.js; scripted Playwright flow run (keyboard-driven where noted); no screen-reader or manual keyboard walkthrough"
+    },
+    {
+      "id": "list-search",
+      "description": "Insurance plan search over 16 sample plans",
+      "selector": "[data-component='list-search']",
+      "pages": [
+        "insurance-accepted.html"
+      ],
+      "behavior": [
+        "text and type filter",
+        "empty state",
+        "reset"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated axe at 1280/375 via qc.js; scripted Playwright flow run (keyboard-driven where noted); no screen-reader or manual keyboard walkthrough"
+    },
+    {
+      "id": "filterable-card-grid",
+      "description": "Specialties & programs grid with text filter over 11 programs",
+      "selector": "[data-component='filterable-card-grid']",
+      "pages": [
+        "specialties-services.html"
+      ],
+      "behavior": [
+        "filter",
+        "empty state",
+        "reset"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated axe at 1280/375 via qc.js; scripted Playwright flow run (keyboard-driven where noted); no screen-reader or manual keyboard walkthrough"
+    },
+    {
+      "id": "event-finder",
+      "description": "Classes & events filter over 12 sample listings with registration demo dialog",
+      "selector": "[data-component='event-finder']",
+      "pages": [
+        "classes-events.html"
+      ],
+      "behavior": [
+        "filter by type, format, keyword",
+        "empty state",
+        "query-string preset"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Escape closes dialog"
+      ],
+      "status": "implemented",
+      "validation": "automated axe at 1280/375 via qc.js; scripted Playwright flow run (keyboard-driven where noted); no screen-reader or manual keyboard walkthrough"
+    },
+    {
+      "id": "contact-form-panel",
+      "description": "Contact page form wrapper",
+      "selector": "[data-component='contact-form-panel']",
+      "pages": [
+        "contact.html"
+      ],
+      "behavior": [
+        "wrapper"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "automated axe at 1280/375 via qc.js"
+    },
+    {
+      "id": "contact-form",
+      "description": "Simulated contact form",
+      "selector": "[data-component='contact-form']",
+      "pages": [
+        "contact.html"
+      ],
+      "behavior": [
+        "required/email/phone/min-length validation",
+        "error summary with focus",
+        "inline errors",
+        "demo success"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter submits",
+        "summary links move focus to fields"
+      ],
+      "status": "implemented",
+      "validation": "automated axe at 1280/375 via qc.js; scripted Playwright flow run (keyboard-driven where noted); no screen-reader or manual keyboard walkthrough"
+    },
+    {
+      "id": "login-panel",
+      "description": "Portal demo wrapper with disclosure note",
+      "selector": "[data-component='login-panel']",
+      "pages": [
+        "portal-login.html"
+      ],
+      "behavior": [
+        "wrapper"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "automated axe at 1280/375 via qc.js"
+    },
+    {
+      "id": "login-form",
+      "description": "Non-functional portal sign-in demo",
+      "selector": "[data-component='login-form']",
+      "pages": [
+        "portal-login.html"
+      ],
+      "behavior": [
+        "validation",
+        "error summary",
+        "demo success; no account accessed"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter submits"
+      ],
+      "status": "implemented",
+      "validation": "automated axe at 1280/375 via qc.js; scripted Playwright flow run (keyboard-driven where noted); no screen-reader or manual keyboard walkthrough"
+    },
+    {
+      "id": "error-page",
+      "description": "404 page with links back to site",
+      "selector": "[data-component='error-page']",
+      "pages": [
+        "404.html"
+      ],
+      "behavior": [
+        "links"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated axe at 1280/375 via qc.js"
+    },
+    {
+      "id": "footer-links",
+      "description": "Legal footer navigation with back-to-top link",
+      "selector": "[data-component='footer-links']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "billing-help.html",
+        "classes-events.html",
+        "contact.html",
+        "find-care.html",
+        "index.html",
+        "institute-cancer.html",
+        "institute-heart.html",
+        "insurance-accepted.html",
+        "legal.html",
+        "location-harbor-point.html",
+        "locations.html",
+        "patients-visitors.html",
+        "portal-login.html",
+        "specialties-services.html"
+      ],
+      "behavior": [
+        "links"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated axe at 1280/375 via qc.js"
+    },
+    {
+      "id": "site-footer",
+      "description": "Thin footer: legal links, fictional phone, disclaimer",
+      "selector": "[data-component='site-footer']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "billing-help.html",
+        "classes-events.html",
+        "contact.html",
+        "find-care.html",
+        "index.html",
+        "institute-cancer.html",
+        "institute-heart.html",
+        "insurance-accepted.html",
+        "legal.html",
+        "location-harbor-point.html",
+        "locations.html",
+        "patients-visitors.html",
+        "portal-login.html",
+        "specialties-services.html"
+      ],
+      "behavior": [
+        "static"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "automated axe at 1280/375 via qc.js"
+    }
+  ]
+}
