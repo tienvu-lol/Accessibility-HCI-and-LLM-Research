@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Newsletter sign-up | Fable &amp; Hem</title>
+<meta name="description" content="Demo newsletter sign-up form for the Fable &amp; Hem replica.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header" data-section="global-header" data-component="site-header">
+<div class="topbar" data-section="utility-bar" data-component="utility-nav"><div class="wrap topbar-inner">
+<div class="editions"><button type="button" class="link-btn" data-toggle data-autoclose aria-expanded="false" aria-controls="editions-list">Other editions</button>
+<div class="editions-list" id="editions-list" hidden><p>Demo only: this replica has a single edition, so these are not links.</p><ul><li>US (this edition)</li><li>UK</li><li>España</li><li>Italia</li><li>Nederland</li><li>Japan</li></ul></div></div>
+<ul class="utility-links"><li><a href="newsletter.html">Newsletter</a></li><li><button type="button" class="link-btn" data-open-dialog="signin-dialog" aria-haspopup="dialog">Sign in</button></li><li><a class="btn-sm" href="newsletter.html">Subscribe</a></li></ul>
+</div></div>
+<div class="wrap brandbar">
+<button type="button" class="menu-btn" data-open-dialog="sidepanel" aria-haspopup="dialog">Menu</button>
+<a class="wordmark" href="index.html">Fable &amp; Hem</a>
+<div class="search-wrap" data-section="header-search" data-component="site-search">
+<button type="button" class="search-toggle" data-toggle data-focus-in aria-expanded="false" aria-controls="header-search-form">Search</button>
+<form class="search-form" id="header-search-form" data-mobile-toggle role="search" action="search.html" method="get"><label class="visually-hidden" for="header-q">Search the magazine</label><input id="header-q" name="q" type="search" placeholder="Search"><button class="btn" type="submit">Search</button></form>
+</div></div>
+<nav class="primary-nav" aria-label="Primary" data-section="global-navigation" data-component="primary-nav"><div class="wrap"><ul>
+<li><a class="top" href="fashion.html">Fashion</a><button type="button" class="sub-toggle" data-toggle data-autoclose aria-expanded="false" aria-controls="sub-fashion"><span class="visually-hidden">Open Fashion submenu</span></button>
+<ul class="submenu" id="sub-fashion" hidden><li><a href="fashion-week.html">Fashion Week</a></li><li><a href="trends.html">Trends</a></li><li><a href="search.html?q=runway">Runway</a></li><li><a href="search.html?q=street">Street style</a></li></ul></li>
+<li><a class="top" href="beauty.html">Beauty</a><button type="button" class="sub-toggle" data-toggle data-autoclose aria-expanded="false" aria-controls="sub-beauty"><span class="visually-hidden">Open Beauty submenu</span></button>
+<ul class="submenu" id="sub-beauty" hidden><li><a href="search.html?q=hair">Hair</a></li><li><a href="search.html?q=skin">Skin</a></li><li><a href="search.html?q=makeup">Makeup</a></li></ul></li>
+<li><a class="top" href="celebrity.html">Celebrity</a><button type="button" class="sub-toggle" data-toggle data-autoclose aria-expanded="false" aria-controls="sub-celebrity"><span class="visually-hidden">Open Celebrity submenu</span></button>
+<ul class="submenu" id="sub-celebrity" hidden><li><a href="cover-stories.html">Cover stories</a></li><li><a href="search.html?q=red%20carpet">Red carpet</a></li></ul></li>
+<li><a class="top" href="culture.html">Culture</a><button type="button" class="sub-toggle" data-toggle data-autoclose aria-expanded="false" aria-controls="sub-culture"><span class="visually-hidden">Open Culture submenu</span></button>
+<ul class="submenu" id="sub-culture" hidden><li><a href="search.html?q=film">Film &amp; TV</a></li><li><a href="search.html?q=books">Books</a></li><li><a href="search.html?q=podcast">Podcast</a></li></ul></li>
+<li><a class="top" href="shopping.html">Shopping</a><button type="button" class="sub-toggle" data-toggle data-autoclose aria-expanded="false" aria-controls="sub-shopping"><span class="visually-hidden">Open Shopping submenu</span></button>
+<ul class="submenu" id="sub-shopping" hidden><li><a href="shopping.html?cat=Dresses">Dresses</a></li><li><a href="shopping.html?cat=Bags">Bags</a></li><li><a href="shopping.html?cat=Shoes">Shoes</a></li></ul></li>
+<li><a class="top" href="weddings.html">Weddings</a><button type="button" class="sub-toggle" data-toggle data-autoclose aria-expanded="false" aria-controls="sub-weddings"><span class="visually-hidden">Open Weddings submenu</span></button>
+<ul class="submenu" id="sub-weddings" hidden><li><a href="search.html?q=bridal">Bridal dresses</a></li><li><a href="search.html?q=guest">Wedding guests</a></li></ul></li>
+<li><button type="button" class="more-btn" data-toggle data-autoclose aria-expanded="false" aria-controls="sub-more">More</button><ul class="submenu" id="sub-more" hidden><li><a href="search.html?q=travel">Travel &amp; Food</a></li><li><a href="sitemap.html">Sitemap</a></li><li><a href="info.html">Company &amp; legal (addition)</a></li></ul></li>
+</ul></div></nav>
+</header>
+<main id="main-content" data-section="main-content">
+<nav class="breadcrumb wrap" aria-label="Breadcrumb" data-section="breadcrumb" data-component="breadcrumb"><ol><li><a href="index.html">Home</a></li><li aria-current="page">Newsletter</li></ol></nav>
+<div class="wrap page-head" data-section="page-header"><h1>Fable &amp; Hem newsletter</h1><p class="dek">Fashion news, runway reports and shopping picks in your inbox. This is a demo: nothing is sent or stored.</p></div>
+<section class="band" aria-labelledby="signup-title" data-section="newsletter-signup" data-component="newsletter-form"><div class="wrap" data-form-wrap>
+<h2 id="signup-title">Sign up</h2>
+<form data-validate data-demo novalidate aria-labelledby="signup-title"><div class="error-summary" data-error-summary tabindex="-1" hidden><h2>There is a problem</h2><ul></ul></div>
+<div class="field">
+<label for="nl-email">Email address</label>
+
+<input id="nl-email" name="nl-email" type="email" required autocomplete="email" data-error-missing="Enter your email address." data-error-invalid="Enter an email address in the format name@example.com." aria-describedby="nl-email-error">
+<p class="field-error" id="nl-email-error" hidden></p></div>
+<div class="field">
+<label for="nl-name">First name (optional)</label>
+
+<input id="nl-name" name="nl-name" type="text" autocomplete="given-name" aria-describedby="nl-name-error">
+<p class="field-error" id="nl-name-error" hidden></p></div>
+<div class="field"><label for="nl-edition">Which newsletter?</label><select id="nl-edition" name="nl-edition" required data-error-missing="Choose a newsletter." aria-describedby="nl-edition-error"><option value="">Choose one</option><option>Daily headlines</option><option>Weekly runway report</option><option>Shopping picks</option></select><p class="field-error" id="nl-edition-error" hidden></p></div>
+<div class="field"><div class="check"><input id="nl-consent" name="nl-consent" type="checkbox" required data-error-missing="Confirm that you understand this is a demo." aria-describedby="nl-consent-error"><label for="nl-consent">I understand this is a demo and no subscription will be created.</label></div><p class="field-error" id="nl-consent-error" hidden></p></div>
+<button class="btn" type="submit">Sign up (demo)</button></form>
+<div class="success" data-success tabindex="-1" hidden><p><strong>Demo complete.</strong> No subscription was created and no email will be sent.</p><button type="button" class="btn" data-reset-form>Use another address</button></div>
+</div></section></main>
+<footer class="site-footer" data-section="global-footer" data-component="site-footer"><div class="wrap">
+<p class="footer-brand">Fable &amp; Hem</p>
+<div class="footer-cols">
+<nav aria-label="Footer sections" data-component="footer-nav"><h2>Sections</h2><ul><li><a href="fashion.html">Fashion</a></li><li><a href="beauty.html">Beauty</a></li><li><a href="celebrity.html">Celebrity</a></li><li><a href="culture.html">Culture</a></li><li><a href="shopping.html">Shopping</a></li><li><a href="weddings.html">Weddings</a></li></ul></nav>
+<nav aria-label="Footer magazine" data-component="footer-nav"><h2>Magazine</h2><ul><li><a href="newsletter.html">Newsletter</a></li><li><a href="cover-stories.html">Cover stories</a></li><li><a href="fashion-week.html">Fashion Week</a></li><li><a href="sitemap.html">Site map</a></li></ul></nav>
+<nav aria-label="Footer company" data-component="footer-nav"><h2>Company</h2><ul><li><a href="info.html#media-kit">Media Kit</a></li><li><a href="info.html#press-room">Press Room</a></li><li><a href="info.html#community-guidelines">Community Guidelines</a></li><li><a href="info.html#advertise">Advertise Online</a></li><li><a href="info.html#customer-service">Customer Service</a></li></ul></nav>
+</div>
+<div class="legal" data-section="legal" data-component="legal-nav"><nav aria-label="Legal"><ul><li><a href="info.html#privacy">Your Privacy Rights</a></li><li><a href="info.html#opt-out">Ad Choices Opt Out</a></li><li><a href="info.html#terms">Terms of Use</a></li><li><a href="sitemap.html">Site Map</a></li></ul></nav>
+<p>Fable &amp; Hem is a fictional publication built as a static research replica. Not affiliated with any real publisher. All images are placeholders and all stories are invented sample copy.</p></div>
+</div></footer>
+<dialog class="sidepanel" id="sidepanel" aria-labelledby="sidepanel-title" data-section="sidepanel" data-component="sidepanel-menu"><div class="dialog-inner">
+<div class="dialog-head"><h2 id="sidepanel-title">Menu</h2><button type="button" class="btn" data-close-dialog>Close<span class="visually-hidden"> menu</span></button></div>
+<nav aria-label="Site sections" class="side-nav"><ul><li><div class="row"><a href="fashion.html">Fashion</a><button type="button" class="sub-toggle" data-toggle aria-expanded="false" aria-controls="side-fashion"><span class="visually-hidden">Open Fashion submenu</span></button></div>
+<ul id="side-fashion" hidden><li><a href="fashion-week.html">Fashion Week</a></li><li><a href="trends.html">Trends</a></li><li><a href="search.html?q=runway">Runway</a></li><li><a href="search.html?q=street">Street style</a></li></ul></li>
+<li><div class="row"><a href="beauty.html">Beauty</a><button type="button" class="sub-toggle" data-toggle aria-expanded="false" aria-controls="side-beauty"><span class="visually-hidden">Open Beauty submenu</span></button></div>
+<ul id="side-beauty" hidden><li><a href="search.html?q=hair">Hair</a></li><li><a href="search.html?q=skin">Skin</a></li><li><a href="search.html?q=makeup">Makeup</a></li></ul></li>
+<li><div class="row"><a href="celebrity.html">Celebrity</a><button type="button" class="sub-toggle" data-toggle aria-expanded="false" aria-controls="side-celebrity"><span class="visually-hidden">Open Celebrity submenu</span></button></div>
+<ul id="side-celebrity" hidden><li><a href="cover-stories.html">Cover stories</a></li><li><a href="search.html?q=red%20carpet">Red carpet</a></li></ul></li>
+<li><div class="row"><a href="culture.html">Culture</a><button type="button" class="sub-toggle" data-toggle aria-expanded="false" aria-controls="side-culture"><span class="visually-hidden">Open Culture submenu</span></button></div>
+<ul id="side-culture" hidden><li><a href="search.html?q=film">Film &amp; TV</a></li><li><a href="search.html?q=books">Books</a></li><li><a href="search.html?q=podcast">Podcast</a></li></ul></li>
+<li><div class="row"><a href="shopping.html">Shopping</a><button type="button" class="sub-toggle" data-toggle aria-expanded="false" aria-controls="side-shopping"><span class="visually-hidden">Open Shopping submenu</span></button></div>
+<ul id="side-shopping" hidden><li><a href="shopping.html?cat=Dresses">Dresses</a></li><li><a href="shopping.html?cat=Bags">Bags</a></li><li><a href="shopping.html?cat=Shoes">Shoes</a></li></ul></li>
+<li><div class="row"><a href="weddings.html">Weddings</a><button type="button" class="sub-toggle" data-toggle aria-expanded="false" aria-controls="side-weddings"><span class="visually-hidden">Open Weddings submenu</span></button></div>
+<ul id="side-weddings" hidden><li><a href="search.html?q=bridal">Bridal dresses</a></li><li><a href="search.html?q=guest">Wedding guests</a></li></ul></li>
+<li><div class="row"><a href="newsletter.html">Newsletter</a></div></li>
+<li><div class="row"><a href="search.html?q=travel">Travel &amp; Food</a></div></li><li><div class="row"><a href="sitemap.html">Sitemap</a></div></li><li><div class="row"><a href="info.html">Company &amp; legal (addition)</a></div></li>
+</ul></nav></div></dialog>
+<dialog class="signin-dialog" id="signin-dialog" aria-labelledby="signin-title" data-section="sign-in" data-component="signin-dialog"><div class="dialog-inner" data-form-wrap>
+<div class="dialog-head"><h2 id="signin-title">Sign in (demo)</h2><button type="button" class="btn" data-close-dialog>Close<span class="visually-hidden"> sign in</span></button></div>
+<p>Demo only: no accounts exist in this replica. Nothing is sent or stored.</p>
+<form data-validate data-demo data-component="signin-form" aria-labelledby="signin-title"><div class="error-summary" data-error-summary tabindex="-1" hidden><h2>There is a problem</h2><ul></ul></div>
+<div class="field">
+<label for="signin-email">Email address</label>
+
+<input id="signin-email" name="signin-email" type="email" required autocomplete="email" data-error-missing="Enter your email address." data-error-invalid="Enter an email address in the format name@example.com." aria-describedby="signin-email-error">
+<p class="field-error" id="signin-email-error" hidden></p></div>
+<div class="field">
+<label for="signin-password">Password</label>
+
+<input id="signin-password" name="signin-password" type="password" required minlength="8" autocomplete="current-password" data-error-missing="Enter your password." data-error-invalid="Your password must be at least 8 characters." aria-describedby="signin-password-error">
+<p class="field-error" id="signin-password-error" hidden></p></div>
+<button class="btn" type="submit">Sign in</button></form>
+<div class="success" data-success tabindex="-1" hidden><p><strong>Demo complete.</strong> No account was created and nothing was sent.</p><button type="button" class="btn" data-reset-form>Try again</button></div>
+</div></dialog>
+<div id="toast" class="toast" role="status" aria-live="polite" data-component="status-toast"></div>
+<script src="js/main.js"></script>
+</body>
+</html>

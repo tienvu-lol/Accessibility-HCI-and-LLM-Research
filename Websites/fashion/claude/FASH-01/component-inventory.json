@@ -1,0 +1,842 @@
+{
+  "protocol_version": "1.0",
+  "replica_id": "FASH-01",
+  "category": "fashion",
+  "source_url": "https://www.harpersbazaar.com/",
+  "components": [
+    {
+      "id": "site-header",
+      "selector": "[data-component='site-header']",
+      "description": "Header: utility bar, wordmark, menu button, search, primary nav",
+      "pages": [
+        "404.html",
+        "article.html",
+        "author.html",
+        "beauty.html",
+        "celebrity.html",
+        "cover-stories.html",
+        "culture.html",
+        "fashion-week.html",
+        "fashion.html",
+        "index.html",
+        "info.html",
+        "newsletter.html",
+        "search.html",
+        "shopping.html",
+        "sitemap.html",
+        "trends.html",
+        "weddings.html"
+      ],
+      "behavior": [
+        "responsive header",
+        "mobile search disclosure"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "tested-automated-flow"
+    },
+    {
+      "id": "utility-nav",
+      "selector": "[data-component='utility-nav']",
+      "description": "Top bar with Other editions disclosure, Newsletter, Sign in, Subscribe",
+      "pages": [
+        "404.html",
+        "article.html",
+        "author.html",
+        "beauty.html",
+        "celebrity.html",
+        "cover-stories.html",
+        "culture.html",
+        "fashion-week.html",
+        "fashion.html",
+        "index.html",
+        "info.html",
+        "newsletter.html",
+        "search.html",
+        "shopping.html",
+        "sitemap.html",
+        "trends.html",
+        "weddings.html"
+      ],
+      "behavior": [
+        "editions disclosure (demo list)",
+        "sign-in dialog opener"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "Escape closes disclosure"
+      ],
+      "status": "implemented",
+      "validation": "tested-automated-flow"
+    },
+    {
+      "id": "primary-nav",
+      "selector": "[data-component='primary-nav']",
+      "description": "Primary navigation with per-section submenu buttons and More menu",
+      "pages": [
+        "404.html",
+        "article.html",
+        "author.html",
+        "beauty.html",
+        "celebrity.html",
+        "cover-stories.html",
+        "culture.html",
+        "fashion-week.html",
+        "fashion.html",
+        "index.html",
+        "info.html",
+        "newsletter.html",
+        "search.html",
+        "shopping.html",
+        "sitemap.html",
+        "trends.html",
+        "weddings.html"
+      ],
+      "behavior": [
+        "click/keyboard dropdowns",
+        "one open at a time",
+        "outside click closes",
+        "active section indicator via aria-current"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "Escape returns focus to the toggle"
+      ],
+      "status": "implemented",
+      "validation": "tested-automated-flow"
+    },
+    {
+      "id": "site-search",
+      "selector": "[data-component='site-search']",
+      "description": "Header search form (collapses behind a Search button below 860px)",
+      "pages": [
+        "404.html",
+        "article.html",
+        "author.html",
+        "beauty.html",
+        "celebrity.html",
+        "cover-stories.html",
+        "culture.html",
+        "fashion-week.html",
+        "fashion.html",
+        "index.html",
+        "info.html",
+        "newsletter.html",
+        "search.html",
+        "shopping.html",
+        "sitemap.html",
+        "trends.html",
+        "weddings.html"
+      ],
+      "behavior": [
+        "GET to search.html",
+        "mobile disclosure with aria-expanded"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "tested-automated-flow"
+    },
+    {
+      "id": "sidepanel-menu",
+      "selector": "[data-component='sidepanel-menu']",
+      "description": "Native dialog side menu with section accordions",
+      "pages": [
+        "404.html",
+        "article.html",
+        "author.html",
+        "beauty.html",
+        "celebrity.html",
+        "cover-stories.html",
+        "culture.html",
+        "fashion-week.html",
+        "fashion.html",
+        "index.html",
+        "info.html",
+        "newsletter.html",
+        "search.html",
+        "shopping.html",
+        "sitemap.html",
+        "trends.html",
+        "weddings.html"
+      ],
+      "behavior": [
+        "modal dialog",
+        "accordion submenus",
+        "backdrop click closes"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "Escape closes and returns focus to Menu"
+      ],
+      "status": "implemented",
+      "validation": "tested-automated-flow"
+    },
+    {
+      "id": "signin-dialog",
+      "selector": "[data-component='signin-dialog']",
+      "description": "Demo sign-in dialog",
+      "pages": [
+        "404.html",
+        "article.html",
+        "author.html",
+        "beauty.html",
+        "celebrity.html",
+        "cover-stories.html",
+        "culture.html",
+        "fashion-week.html",
+        "fashion.html",
+        "index.html",
+        "info.html",
+        "newsletter.html",
+        "search.html",
+        "shopping.html",
+        "sitemap.html",
+        "trends.html",
+        "weddings.html"
+      ],
+      "behavior": [
+        "modal dialog",
+        "demo only, nothing stored"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Escape closes"
+      ],
+      "status": "implemented",
+      "validation": "tested-automated-flow"
+    },
+    {
+      "id": "signin-form",
+      "selector": "[data-component='signin-form']",
+      "description": "Demo sign-in form with validation",
+      "pages": [
+        "404.html",
+        "article.html",
+        "author.html",
+        "beauty.html",
+        "celebrity.html",
+        "cover-stories.html",
+        "culture.html",
+        "fashion-week.html",
+        "fashion.html",
+        "index.html",
+        "info.html",
+        "newsletter.html",
+        "search.html",
+        "shopping.html",
+        "sitemap.html",
+        "trends.html",
+        "weddings.html"
+      ],
+      "behavior": [
+        "inline errors",
+        "error summary with focus",
+        "demo success state"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "tested-automated-flow"
+    },
+    {
+      "id": "status-toast",
+      "selector": "[data-component='status-toast']",
+      "description": "Polite live region for demo actions and sort/copy feedback",
+      "pages": [
+        "404.html",
+        "article.html",
+        "author.html",
+        "beauty.html",
+        "celebrity.html",
+        "cover-stories.html",
+        "culture.html",
+        "fashion-week.html",
+        "fashion.html",
+        "index.html",
+        "info.html",
+        "newsletter.html",
+        "search.html",
+        "shopping.html",
+        "sitemap.html",
+        "trends.html",
+        "weddings.html"
+      ],
+      "behavior": [
+        "role=status message that clears after 9 seconds"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "tested-automated-flow"
+    },
+    {
+      "id": "site-footer",
+      "selector": "[data-component='site-footer']",
+      "description": "Footer with section, magazine and company nav and legal nav",
+      "pages": [
+        "404.html",
+        "article.html",
+        "author.html",
+        "beauty.html",
+        "celebrity.html",
+        "cover-stories.html",
+        "culture.html",
+        "fashion-week.html",
+        "fashion.html",
+        "index.html",
+        "info.html",
+        "newsletter.html",
+        "search.html",
+        "shopping.html",
+        "sitemap.html",
+        "trends.html",
+        "weddings.html"
+      ],
+      "behavior": [
+        "grouped links"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "not-tested"
+    },
+    {
+      "id": "footer-nav",
+      "selector": "[data-component='footer-nav']",
+      "description": "Footer link groups",
+      "pages": [
+        "404.html",
+        "article.html",
+        "author.html",
+        "beauty.html",
+        "celebrity.html",
+        "cover-stories.html",
+        "culture.html",
+        "fashion-week.html",
+        "fashion.html",
+        "index.html",
+        "info.html",
+        "newsletter.html",
+        "search.html",
+        "shopping.html",
+        "sitemap.html",
+        "trends.html",
+        "weddings.html"
+      ],
+      "behavior": [
+        "link groups"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "not-tested"
+    },
+    {
+      "id": "legal-nav",
+      "selector": "[data-component='legal-nav']",
+      "description": "Legal links row and fictional-site disclaimer",
+      "pages": [
+        "404.html",
+        "article.html",
+        "author.html",
+        "beauty.html",
+        "celebrity.html",
+        "cover-stories.html",
+        "culture.html",
+        "fashion-week.html",
+        "fashion.html",
+        "index.html",
+        "info.html",
+        "newsletter.html",
+        "search.html",
+        "shopping.html",
+        "sitemap.html",
+        "trends.html",
+        "weddings.html"
+      ],
+      "behavior": [
+        "links to info.html anchors"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "not-tested"
+    },
+    {
+      "id": "breadcrumb",
+      "selector": "[data-component='breadcrumb']",
+      "description": "Breadcrumb trail",
+      "pages": [
+        "article.html",
+        "author.html",
+        "beauty.html",
+        "celebrity.html",
+        "cover-stories.html",
+        "culture.html",
+        "fashion-week.html",
+        "fashion.html",
+        "info.html",
+        "newsletter.html",
+        "search.html",
+        "shopping.html",
+        "sitemap.html",
+        "trends.html",
+        "weddings.html"
+      ],
+      "behavior": [
+        "links with aria-current on the last item"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "not-tested"
+    },
+    {
+      "id": "hero-feature",
+      "selector": "[data-component='hero-feature']",
+      "description": "Lead story plus side stories",
+      "pages": [
+        "beauty.html",
+        "celebrity.html",
+        "culture.html",
+        "fashion.html",
+        "index.html"
+      ],
+      "behavior": [
+        "responsive 2/1 column grid"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "not-tested"
+    },
+    {
+      "id": "card-grid",
+      "selector": "[data-component='card-grid']",
+      "description": "Section band with a grid of story cards",
+      "pages": [
+        "article.html",
+        "index.html"
+      ],
+      "behavior": [
+        "responsive auto-fill grid"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "not-tested"
+    },
+    {
+      "id": "story-card",
+      "selector": "[data-component='story-card']",
+      "description": "Story card: image, kicker, headline link, summary, byline",
+      "pages": [
+        "article.html",
+        "author.html",
+        "beauty.html",
+        "celebrity.html",
+        "cover-stories.html",
+        "culture.html",
+        "fashion-week.html",
+        "fashion.html",
+        "index.html",
+        "trends.html",
+        "weddings.html"
+      ],
+      "behavior": [
+        "links to article.html?story=ID"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "tested-automated-flow"
+    },
+    {
+      "id": "story-list",
+      "selector": "[data-component='story-list']",
+      "description": "Section containing a paginated list of stories",
+      "pages": [
+        "author.html",
+        "beauty.html",
+        "celebrity.html",
+        "cover-stories.html",
+        "culture.html",
+        "fashion-week.html",
+        "fashion.html",
+        "index.html",
+        "trends.html",
+        "weddings.html"
+      ],
+      "behavior": [
+        "list of cards"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "tested-automated-flow"
+    },
+    {
+      "id": "paginated-list",
+      "selector": "[data-component='paginated-list']",
+      "description": "List with status line, empty state, pagination and optional filter",
+      "pages": [
+        "author.html",
+        "beauty.html",
+        "celebrity.html",
+        "cover-stories.html",
+        "culture.html",
+        "fashion-week.html",
+        "fashion.html",
+        "index.html",
+        "search.html",
+        "shopping.html",
+        "trends.html",
+        "weddings.html"
+      ],
+      "behavior": [
+        "client-side paging",
+        "filter integration",
+        "live status",
+        "empty state"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "tested-automated-flow"
+    },
+    {
+      "id": "pagination",
+      "selector": "[data-component='pagination']",
+      "description": "Pager buttons generated by JS (no static instance in HTML)",
+      "pages": [
+        "author.html",
+        "beauty.html",
+        "celebrity.html",
+        "cover-stories.html",
+        "culture.html",
+        "fashion-week.html",
+        "fashion.html",
+        "index.html",
+        "search.html",
+        "shopping.html",
+        "trends.html",
+        "weddings.html"
+      ],
+      "behavior": [
+        "Previous/Next",
+        "page buttons with aria-current",
+        "moves focus to first story on the new page"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "tested-automated-flow"
+    },
+    {
+      "id": "filter-chips",
+      "selector": "[data-component='filter-chips']",
+      "description": "Single-select toggle buttons (aria-pressed) that filter a list",
+      "pages": [
+        "shopping.html",
+        "trends.html"
+      ],
+      "behavior": [
+        "topic filter",
+        "category filter",
+        "empty state"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "tested-automated-flow"
+    },
+    {
+      "id": "carousel",
+      "selector": "[data-component='carousel']",
+      "description": "Runway lookbook carousel (intentional addition)",
+      "pages": [
+        "fashion-week.html"
+      ],
+      "behavior": [
+        "previous/next",
+        "slide counter",
+        "no autoplay"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "tested-automated-flow"
+    },
+    {
+      "id": "product-grid",
+      "selector": "[data-component='product-grid']",
+      "description": "Shopping product grid (demo)",
+      "pages": [
+        "index.html",
+        "shopping.html"
+      ],
+      "behavior": [
+        "placeholder products",
+        "sort select",
+        "category filter"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "tested-automated-flow"
+    },
+    {
+      "id": "product-card",
+      "selector": "[data-component='product-card']",
+      "description": "Product card with demo retailer button",
+      "pages": [
+        "index.html",
+        "shopping.html"
+      ],
+      "behavior": [
+        "button announces demo message"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "tested-automated-flow"
+    },
+    {
+      "id": "issue-promo",
+      "selector": "[data-component='issue-promo']",
+      "description": "From the Magazine issue promo",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "links to the demo newsletter page"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "not-tested"
+    },
+    {
+      "id": "newsletter-form",
+      "selector": "[data-component='newsletter-form']",
+      "description": "Newsletter sign-up form (inline and full page)",
+      "pages": [
+        "index.html",
+        "newsletter.html"
+      ],
+      "behavior": [
+        "required email, select, consent checkbox",
+        "inline errors",
+        "error summary with focus",
+        "demo success state"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "tested-automated-flow"
+    },
+    {
+      "id": "search-page-form",
+      "selector": "[data-component='search-page-form']",
+      "description": "Search page form: query, section, sort",
+      "pages": [
+        "search.html"
+      ],
+      "behavior": [
+        "required query validation",
+        "GET navigation"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "tested-automated-flow"
+    },
+    {
+      "id": "search-results",
+      "selector": "[data-component='search-results']",
+      "description": "Search results region driven by inline story data",
+      "pages": [
+        "search.html"
+      ],
+      "behavior": [
+        "relevance and newest sort",
+        "section filter",
+        "empty state",
+        "pagination"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "tested-automated-flow"
+    },
+    {
+      "id": "article-page",
+      "selector": "[data-component='article-page']",
+      "description": "Story page; URL parameter ?story= swaps headline, summary, byline and art",
+      "pages": [
+        "article.html"
+      ],
+      "behavior": [
+        "copy link button",
+        "missing-story notice",
+        "related stories"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "tested-automated-flow"
+    },
+    {
+      "id": "shop-list",
+      "selector": "[data-component='shop-list']",
+      "description": "Shop the story box with demo buttons",
+      "pages": [
+        "article.html"
+      ],
+      "behavior": [
+        "demo messages"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "not-tested"
+    },
+    {
+      "id": "author-card",
+      "selector": "[data-component='author-card']",
+      "description": "Author card at the end of a story",
+      "pages": [
+        "article.html"
+      ],
+      "behavior": [
+        "link to author page"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "not-tested"
+    },
+    {
+      "id": "author-header",
+      "selector": "[data-component='author-header']",
+      "description": "Author page header filled from ?id=",
+      "pages": [
+        "author.html"
+      ],
+      "behavior": [
+        "bio",
+        "story list",
+        "contributor list",
+        "empty state for a contributor with no stories"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "tested-automated-flow"
+    },
+    {
+      "id": "link-list",
+      "selector": "[data-component='link-list']",
+      "description": "Plain link lists (sitemap, contributors)",
+      "pages": [
+        "author.html",
+        "sitemap.html"
+      ],
+      "behavior": [
+        "links"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "not-tested"
+    },
+    {
+      "id": "local-nav",
+      "selector": "[data-component='local-nav']",
+      "description": "In-section links on Fashion and Celebrity pages",
+      "pages": [
+        "celebrity.html",
+        "fashion.html"
+      ],
+      "behavior": [
+        "links"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "not-tested"
+    }
+  ]
+}
