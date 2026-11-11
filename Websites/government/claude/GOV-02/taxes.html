@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Taxes | State of Aldermere</title>
+  <meta name="description" content="Topic hub for fictional personal and business taxes.">
+  <link rel="icon" href="assets/emblem.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="topic">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header data-section="global-header" data-component="site-header">
+    <div class="gov-banner" data-section="official-banner" data-component="gov-banner">
+      <div class="container">
+        <p class="gov-banner-line"><img src="assets/emblem.svg" alt="" width="20" height="20"> <span>An official-style demo portal of the fictional State of Aldermere.</span>
+          <button type="button" class="link-button" aria-expanded="false" aria-controls="banner-detail">How you know</button></p>
+        <div class="gov-banner-detail" id="banner-detail" hidden>
+          <p><strong>Official websites use aldermere.example.</strong> In a real state portal this line would explain the official domain. Here it is part of the demonstration.</p>
+          <p><strong>Secure websites use HTTPS.</strong> This replica is a set of local files and makes no network connections.</p>
+        </div>
+      </div>
+    </div>
+    <div class="container header-bar">
+      <a class="brand" href="index.html" data-component="site-brand"><img src="assets/emblem.svg" alt="" width="48" height="48"><span class="brand-text"><strong>Aldermere</strong><span>State Portal</span></span><span class="sr-only"> home</span></a>
+      <div class="header-tools" data-section="header-utilities" data-component="utility-nav">
+        <button type="button" class="tool-button" data-demo data-demo-title="Log in with Aldermere ID (demo)" data-demo-text="Sign-in is not available in this replica. No accounts exist and nothing you type is sent anywhere.">Log in with Aldermere ID</button>
+        <div class="lang" data-component="language-selector">
+          <button type="button" class="tool-button" aria-expanded="false" aria-controls="lang-panel">Language</button>
+          <div class="lang-panel" id="lang-panel" hidden>
+            <p class="lang-note">Demo: the language list is shown for structure only. The replica is English-only.</p>
+            <ul>
+              <li><button type="button" class="lang-option" lang="en" data-lang="en" aria-pressed="true">English</button></li>
+              <li><button type="button" class="lang-option" lang="es" data-lang="es" aria-pressed="false">Español</button></li>
+              <li><button type="button" class="lang-option" lang="zh" data-lang="zh" aria-pressed="false">中文</button></li>
+              <li><button type="button" class="lang-option" lang="ru" data-lang="ru" aria-pressed="false">Русский</button></li>
+              <li><button type="button" class="lang-option" lang="ht" data-lang="ht" aria-pressed="false">Kreyòl Ayisyen</button></li>
+              <li><button type="button" class="lang-option" lang="it" data-lang="it" aria-pressed="false">Italiano</button></li>
+              <li><button type="button" class="lang-option" lang="ko" data-lang="ko" aria-pressed="false">한국어</button></li>
+              <li><button type="button" class="lang-option" lang="bn" data-lang="bn" aria-pressed="false">বাংলা</button></li>
+              <li><button type="button" class="lang-option" lang="ar" data-lang="ar" aria-pressed="false">العربية</button></li>
+              <li><button type="button" class="lang-option" lang="pl" data-lang="pl" aria-pressed="false">Polski</button></li>
+              <li><button type="button" class="lang-option" lang="fr" data-lang="fr" aria-pressed="false">Français</button></li>
+              <li><button type="button" class="lang-option" lang="yi" data-lang="yi" aria-pressed="false">ייִדיש</button></li>
+            </ul>
+            <p class="lang-status" role="status"></p>
+          </div>
+        </div>
+      </div>
+      <form class="site-search" role="search" aria-label="Site" action="search.html" method="get" data-section="site-search" data-component="search-form">
+        <label for="site-search-input" class="sr-only">Search Aldermere</label>
+        <input id="site-search-input" type="search" name="q" placeholder="Search services, agencies, events" autocomplete="off">
+        <button type="button" class="search-clear" hidden>Clear<span class="sr-only"> search input</span></button>
+        <button type="submit" class="search-submit">Search</button>
+      </form>
+    </div>
+    <nav aria-label="Main menu" data-section="global-navigation" data-component="primary-nav">
+      <div class="container nav-wrap">
+        <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="main-menu" data-component="mobile-menu-toggle">Menu</button>
+        <ul class="main-menu" id="main-menu">
+          <li>
+            <button type="button" class="menu-trigger is-current" aria-current="true" aria-expanded="false" aria-controls="menu-services">Services &amp; Benefits</button>
+            <div class="mega" id="menu-services" hidden data-component="mega-menu">
+              <a class="mega-all" href="services-and-benefits.html">All services &amp; benefits</a>
+              <ul>
+                <li><a href="services-and-benefits.html?category=assistance">Assistance Programs and Benefits</a></li>
+                <li><a href="services-and-benefits.html?category=driving">Driving and Vehicles</a></li>
+                <li><a href="services-and-benefits.html?category=education">Education</a></li>
+                <li><a href="services-and-benefits.html?category=environment">Environment and Energy</a></li>
+                <li><a href="services-and-benefits.html?category=family">Family and Children</a></li>
+                <li><a href="services-and-benefits.html?category=health">Health</a></li>
+                <li><a href="services-and-benefits.html?category=housing">Housing and Property</a></li>
+                <li><a href="services-and-benefits.html?category=licenses">Licenses and Permits</a></li>
+                <li><a href="services-and-benefits.html?category=records">Personal Records</a></li>
+                <li><a href="services-and-benefits.html?category=safety">Public Safety and Emergencies</a></li>
+                <li><a href="services-and-benefits.html?category=taxes">Taxes</a></li>
+                <li><a href="services-and-benefits.html?category=veterans">Veterans</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <button type="button" class="menu-trigger" aria-expanded="false" aria-controls="menu-business">Work &amp; Business</button>
+            <div class="mega" id="menu-business" hidden data-component="mega-menu">
+              <ul>
+                <li><a href="start-business.html">Start a Business</a></li>
+                <li><a href="taxes.html#business" aria-current="page">Business Taxes</a></li>
+                <li><a href="services-and-benefits.html?category=business">Business Assistance</a></li>
+                <li><a href="services-and-benefits.html?category=jobs">Jobs and Career Support</a></li>
+                <li><a href="service.html?id=unemployment">Unemployment</a></li>
+                <li><a href="service.html?id=workers-rights">Workers' Rights and Safety</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <button type="button" class="menu-trigger" aria-expanded="false" aria-controls="menu-visit">Visit &amp; Explore</button>
+            <div class="mega" id="menu-visit" hidden data-component="mega-menu">
+              <ul>
+                <li><a href="visit-and-explore.html#arts">Arts and Culture</a></li>
+                <li><a href="visit-and-explore.html#historic">Historic Sites</a></li>
+                <li><a href="visit-and-explore.html#parks">Parks and Recreation</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <button type="button" class="menu-trigger" aria-expanded="false" aria-controls="menu-government">Your Government</button>
+            <div class="mega" id="menu-government" hidden data-component="mega-menu">
+              <ul>
+                <li><a href="counties.html">Counties</a></li>
+                <li><a href="elections-and-voting.html">Elections and Voting</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="agencies.html">State Agencies and Departments</a></li>
+                <li><a href="government.html">State Government</a></li>
+                <li><a href="government.html#holidays">State Holidays</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content" data-section="main-content">
+    <div class="container">
+      <nav class="breadcrumbs" aria-label="Breadcrumb" data-section="breadcrumbs" data-component="breadcrumb"><ol>
+        <li><a href="index.html">Home</a></li>
+        <li aria-current="page">Taxes</li>
+      </ol></nav>
+    </div>
+    <div class="page-head" data-section="page-header"><div class="container"><h1>Taxes</h1><p class="lead">File, pay and learn about state taxes. All links lead to sample content.</p></div></div>
+    <div class="container content">
+      <section aria-labelledby="personal" data-section="topic-personal" data-component="link-list"><h2 id="personal">Personal taxes</h2>
+        <ul class="link-list"><li><a href="service.html?id=file-taxes">File and pay personal income tax</a><p>Deadlines, e-file options and payment plans.</p></li>
+          <li><a href="service.html?id=property-tax">Apply for a property tax exemption</a><p>Exemptions for seniors, veterans and homeowners.</p></li></ul></section>
+      <section aria-labelledby="business" data-section="topic-business" data-component="link-list"><h2 id="business">Business taxes</h2>
+        <ul class="link-list"><li><a href="service.html?id=sales-tax">Register for sales tax</a><p>Collect and remit sales tax for your business.</p></li>
+          <li><a href="start-business.html">Start a Business</a><p>Registration steps, including tax accounts.</p></li></ul></section>
+      <section aria-labelledby="tax-help" data-section="topic-help" data-component="link-list"><h2 id="tax-help">Help</h2>
+        <p>Revenue Department helpline: 555-0177 (fictional). <a href="agencies.html">Find all agencies</a>.</p></section>
+    </div>
+  </main>
+  <footer data-section="global-footer" data-component="site-footer">
+    <div class="container footer-grid">
+      <section aria-labelledby="emergency-title" data-section="emergency-links" data-component="emergency-contacts">
+        <h2 id="emergency-title">Emergency and alerts</h2>
+        <ul class="plain">
+          <li><strong>Aldermere 311</strong> &ndash; non-emergency help, 555-0311 (fictional)</li>
+          <li><strong>Local Alerts</strong> &ndash; sign up for emergency notices (demo)</li>
+          <li><strong>988 Suicide &amp; Crisis Lifeline</strong> &ndash; call or text 988</li>
+          <li><strong>Travel information</strong> &ndash; 555-0511 (fictional)</li>
+        </ul>
+        <p><a href="government.html#alerts-contacts">All alerts and emergency contacts</a></p>
+      </section>
+      <nav aria-labelledby="frequent-title" data-section="footer-frequent" data-component="footer-menu">
+        <h2 id="frequent-title">Frequently Visited</h2>
+        <ul class="plain">
+          <li><a href="services-and-benefits.html">Services &amp; Benefits</a></li>
+          <li><a href="service-vehicle-registration.html">Renew a Vehicle Registration</a></li>
+          <li><a href="service-food-assistance.html">Apply or Recertify for Food Support</a></li>
+          <li><a href="agencies.html">State Agencies and Departments</a></li>
+          <li><a href="counties.html">Counties</a></li>
+          <li><a href="taxes.html">Taxes</a></li>
+        </ul>
+      </nav>
+      <nav aria-labelledby="legal-title" data-section="footer-legal" data-component="footer-menu">
+        <h2 id="legal-title">About this site</h2>
+        <ul class="plain">
+          <li><a href="accessibility.html">Accessibility</a></li>
+          <li><a href="accessibility.html#disclaimer">Disclaimer</a></li>
+          <li><a href="accessibility.html#privacy">Privacy Policy</a></li>
+          <li><a href="events.html">Events</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="container footer-credit"><p>The State of Aldermere is fictional. This site is a static research replica with invented names, data and emblem. It is not a government service.</p></div>
+  </footer>
+  <dialog id="demo-dialog" aria-labelledby="demo-dialog-title" data-component="modal-dialog">
+    <h2 id="demo-dialog-title">Demo</h2>
+    <p id="demo-dialog-text"></p>
+    <button type="button" class="btn" data-dialog-close>Close</button>
+  </dialog>
+  <script src="js/main.js"></script>
+</body>
+</html>
