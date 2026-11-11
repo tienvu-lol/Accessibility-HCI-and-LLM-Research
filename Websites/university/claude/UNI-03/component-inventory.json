@@ -1,0 +1,734 @@
+{
+  "protocol_version": "1.0",
+  "replica_id": "UNI-03",
+  "category": "university",
+  "source_url": "https://www.nvcc.edu/",
+  "components": [
+    {
+      "id": "accordion",
+      "selector": "[data-component='accordion']",
+      "description": "button-driven disclosure panels",
+      "pages": [
+        "financial-aid.html",
+        "index.html"
+      ],
+      "behavior": [
+        "aria-expanded toggle"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js (axe-core at 1280px and 375px, no JS errors) and scripted Playwright flow checks; no screen reader or manual keyboard-only walkthrough"
+    },
+    {
+      "id": "accordion-section",
+      "selector": "[data-component='accordion-section']",
+      "description": "section wrapper around an accordion",
+      "pages": [
+        "financial-aid.html",
+        "index.html"
+      ],
+      "behavior": [
+        "aria-expanded toggle"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js (axe-core at 1280px and 375px, no JS errors) and scripted Playwright flow checks; no screen reader or manual keyboard-only walkthrough"
+    },
+    {
+      "id": "application-form",
+      "selector": "[data-component='application-form']",
+      "description": "practice application section",
+      "pages": [
+        "apply.html"
+      ],
+      "behavior": [
+        "simulation only"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js (axe-core at 1280px and 375px, no JS errors) and scripted Playwright flow checks; no screen reader or manual keyboard-only walkthrough"
+    },
+    {
+      "id": "breadcrumb",
+      "selector": "[data-component='breadcrumb']",
+      "description": "breadcrumb trail",
+      "pages": [
+        "admissions.html",
+        "apply.html",
+        "calendar.html",
+        "directory.html",
+        "financial-aid.html",
+        "locations.html",
+        "news.html",
+        "program-detail.html",
+        "programs.html",
+        "schedule.html",
+        "search.html",
+        "student-life.html",
+        "student-resources.html",
+        "tuition.html",
+        "visit.html"
+      ],
+      "behavior": [
+        "working links",
+        "aria-current"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js (axe-core at 1280px and 375px, no JS errors) and scripted Playwright flow checks; no screen reader or manual keyboard-only walkthrough"
+    },
+    {
+      "id": "calendar-list",
+      "selector": "[data-component='calendar-list']",
+      "description": "term selector over academic calendar dates",
+      "pages": [
+        "calendar.html"
+      ],
+      "behavior": [
+        "select filter"
+      ],
+      "keyboard": [
+        "Tab",
+        "arrow keys"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js (axe-core at 1280px and 375px, no JS errors) and scripted Playwright flow checks; no screen reader or manual keyboard-only walkthrough"
+    },
+    {
+      "id": "card-grid",
+      "selector": "[data-component='card-grid']",
+      "description": "responsive card grid",
+      "pages": [
+        "admissions.html",
+        "index.html",
+        "locations.html",
+        "visit.html"
+      ],
+      "behavior": [
+        "links"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js (axe-core at 1280px and 375px, no JS errors) and scripted Playwright flow checks; no screen reader or manual keyboard-only walkthrough"
+    },
+    {
+      "id": "data-table",
+      "selector": "[data-component='data-table']",
+      "description": "captioned data tables",
+      "pages": [
+        "calendar.html",
+        "schedule.html",
+        "tuition.html"
+      ],
+      "behavior": [
+        "stacked layout at <48em (schedule)"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "automated: qc.js (axe-core at 1280px and 375px, no JS errors) and scripted Playwright flow checks; no screen reader or manual keyboard-only walkthrough"
+    },
+    {
+      "id": "demo-form",
+      "selector": "[data-component='demo-form']",
+      "description": "simulated forms: application, visit request and portal sign-in",
+      "pages": [
+        "404.html",
+        "admissions.html",
+        "apply.html",
+        "calendar.html",
+        "directory.html",
+        "financial-aid.html",
+        "index.html",
+        "locations.html",
+        "news.html",
+        "program-detail.html",
+        "programs.html",
+        "schedule.html",
+        "search.html",
+        "student-life.html",
+        "student-resources.html",
+        "tuition.html",
+        "visit.html"
+      ],
+      "behavior": [
+        "inline errors",
+        "error summary with focus",
+        "demo success state",
+        "start over"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js (axe-core at 1280px and 375px, no JS errors) and scripted Playwright flow checks; no screen reader or manual keyboard-only walkthrough"
+    },
+    {
+      "id": "directory-search",
+      "selector": "[data-component='directory-search']",
+      "description": "people/offices directory search with validation",
+      "pages": [
+        "directory.html"
+      ],
+      "behavior": [
+        "radio choice",
+        "min-length validation",
+        "error summary",
+        "empty state focus"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "arrow keys on radios"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js (axe-core at 1280px and 375px, no JS errors) and scripted Playwright flow checks; no screen reader or manual keyboard-only walkthrough"
+    },
+    {
+      "id": "feature-panel",
+      "selector": "[data-component='feature-panel']",
+      "description": "home advising & support split panel",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js (axe-core at 1280px and 375px, no JS errors) and scripted Playwright flow checks; no screen reader or manual keyboard-only walkthrough"
+    },
+    {
+      "id": "filter-form",
+      "selector": "[data-component='filter-form']",
+      "description": "labelled filter form for the program finder",
+      "pages": [
+        "programs.html"
+      ],
+      "behavior": [
+        "live filter",
+        "reset"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js (axe-core at 1280px and 375px, no JS errors) and scripted Playwright flow checks; no screen reader or manual keyboard-only walkthrough"
+    },
+    {
+      "id": "hero-banner",
+      "selector": "[data-component='hero-banner']",
+      "description": "home hero with heading, copy, three CTAs and SVG illustration",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js (axe-core at 1280px and 375px, no JS errors) and scripted Playwright flow checks; no screen reader or manual keyboard-only walkthrough"
+    },
+    {
+      "id": "info-block",
+      "selector": "[data-component='info-block']",
+      "description": "plain content sections with ids used as anchor targets",
+      "pages": [
+        "admissions.html",
+        "apply.html",
+        "financial-aid.html",
+        "student-life.html",
+        "student-resources.html",
+        "tuition.html"
+      ],
+      "behavior": [
+        "anchor targets"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "automated: qc.js (axe-core at 1280px and 375px, no JS errors) and scripted Playwright flow checks; no screen reader or manual keyboard-only walkthrough"
+    },
+    {
+      "id": "language-menu",
+      "selector": "[data-component='language-menu']",
+      "description": "demo-only language list (no translation)",
+      "pages": [
+        "404.html",
+        "admissions.html",
+        "apply.html",
+        "calendar.html",
+        "directory.html",
+        "financial-aid.html",
+        "index.html",
+        "locations.html",
+        "news.html",
+        "program-detail.html",
+        "programs.html",
+        "schedule.html",
+        "search.html",
+        "student-life.html",
+        "student-resources.html",
+        "tuition.html",
+        "visit.html"
+      ],
+      "behavior": [
+        "disclosure dropdown",
+        "demo status message"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js (axe-core at 1280px and 375px, no JS errors) and scripted Playwright flow checks; no screen reader or manual keyboard-only walkthrough"
+    },
+    {
+      "id": "local-nav",
+      "selector": "[data-component='local-nav']",
+      "description": "Admissions & Aid section sidebar nav",
+      "pages": [
+        "admissions.html",
+        "apply.html",
+        "financial-aid.html",
+        "tuition.html",
+        "visit.html"
+      ],
+      "behavior": [
+        "aria-current page"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js (axe-core at 1280px and 375px, no JS errors) and scripted Playwright flow checks; no screen reader or manual keyboard-only walkthrough"
+    },
+    {
+      "id": "modal-dialog",
+      "selector": "[data-component='modal-dialog']",
+      "description": "native dialog for Service Portal sign-in demo",
+      "pages": [
+        "404.html",
+        "admissions.html",
+        "apply.html",
+        "calendar.html",
+        "directory.html",
+        "financial-aid.html",
+        "index.html",
+        "locations.html",
+        "news.html",
+        "program-detail.html",
+        "programs.html",
+        "schedule.html",
+        "search.html",
+        "student-life.html",
+        "student-resources.html",
+        "tuition.html",
+        "visit.html"
+      ],
+      "behavior": [
+        "showModal",
+        "Escape closes",
+        "focus returns to opener"
+      ],
+      "keyboard": [
+        "Tab",
+        "Shift+Tab",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js (axe-core at 1280px and 375px, no JS errors) and scripted Playwright flow checks; no screen reader or manual keyboard-only walkthrough"
+    },
+    {
+      "id": "news-list",
+      "selector": "[data-component='news-list']",
+      "description": "news search and category filter",
+      "pages": [
+        "news.html"
+      ],
+      "behavior": [
+        "live filter",
+        "empty state"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js (axe-core at 1280px and 375px, no JS errors) and scripted Playwright flow checks; no screen reader or manual keyboard-only walkthrough"
+    },
+    {
+      "id": "page-header",
+      "selector": "[data-component='page-header']",
+      "description": "interior page heading band",
+      "pages": [
+        "404.html",
+        "admissions.html",
+        "apply.html",
+        "calendar.html",
+        "directory.html",
+        "financial-aid.html",
+        "locations.html",
+        "news.html",
+        "program-detail.html",
+        "programs.html",
+        "schedule.html",
+        "search.html",
+        "student-life.html",
+        "student-resources.html",
+        "tuition.html",
+        "visit.html"
+      ],
+      "behavior": [],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "automated: qc.js (axe-core at 1280px and 375px, no JS errors) and scripted Playwright flow checks; no screen reader or manual keyboard-only walkthrough"
+    },
+    {
+      "id": "primary-nav",
+      "selector": "[data-component='primary-nav']",
+      "description": "six-item primary navigation: five disclosure groups plus News",
+      "pages": [
+        "404.html",
+        "admissions.html",
+        "apply.html",
+        "calendar.html",
+        "directory.html",
+        "financial-aid.html",
+        "index.html",
+        "locations.html",
+        "news.html",
+        "program-detail.html",
+        "programs.html",
+        "schedule.html",
+        "search.html",
+        "student-life.html",
+        "student-resources.html",
+        "tuition.html",
+        "visit.html"
+      ],
+      "behavior": [
+        "desktop dropdown disclosure",
+        "mobile menu disclosure",
+        "aria-current page",
+        "Escape closes innermost"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js (axe-core at 1280px and 375px, no JS errors) and scripted Playwright flow checks; no screen reader or manual keyboard-only walkthrough"
+    },
+    {
+      "id": "program-detail",
+      "selector": "[data-component='program-detail']",
+      "description": "program detail rendered from ?id= query on inline data",
+      "pages": [
+        "program-detail.html"
+      ],
+      "behavior": [
+        "query param render",
+        "not-found state"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js (axe-core at 1280px and 375px, no JS errors) and scripted Playwright flow checks; no screen reader or manual keyboard-only walkthrough"
+    },
+    {
+      "id": "program-finder",
+      "selector": "[data-component='program-finder']",
+      "description": "program search with text, degree and interest filters, result count and empty state",
+      "pages": [
+        "programs.html"
+      ],
+      "behavior": [
+        "live filter",
+        "query param prefill",
+        "clear filters",
+        "empty state"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "arrow keys in selects"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js (axe-core at 1280px and 375px, no JS errors) and scripted Playwright flow checks; no screen reader or manual keyboard-only walkthrough"
+    },
+    {
+      "id": "program-quick-search",
+      "selector": "[data-component='program-quick-search']",
+      "description": "home form that opens the program finder with prefilled query/interest",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "GET form submit"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js (axe-core at 1280px and 375px, no JS errors) and scripted Playwright flow checks; no screen reader or manual keyboard-only walkthrough"
+    },
+    {
+      "id": "schedule-search",
+      "selector": "[data-component='schedule-search']",
+      "description": "class section search with campus/format/open-seat filters",
+      "pages": [
+        "schedule.html"
+      ],
+      "behavior": [
+        "live filter",
+        "stacked table at small widths",
+        "empty state"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js (axe-core at 1280px and 375px, no JS errors) and scripted Playwright flow checks; no screen reader or manual keyboard-only walkthrough"
+    },
+    {
+      "id": "site-footer",
+      "selector": "[data-component='site-footer']",
+      "description": "grouped footer links, contact info and fictional-site notice",
+      "pages": [
+        "404.html",
+        "admissions.html",
+        "apply.html",
+        "calendar.html",
+        "directory.html",
+        "financial-aid.html",
+        "index.html",
+        "locations.html",
+        "news.html",
+        "program-detail.html",
+        "programs.html",
+        "schedule.html",
+        "search.html",
+        "student-life.html",
+        "student-resources.html",
+        "tuition.html",
+        "visit.html"
+      ],
+      "behavior": [],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js (axe-core at 1280px and 375px, no JS errors) and scripted Playwright flow checks; no screen reader or manual keyboard-only walkthrough"
+    },
+    {
+      "id": "site-header",
+      "selector": "[data-component='site-header']",
+      "description": "global header with utility bar, brand row and primary nav",
+      "pages": [
+        "404.html",
+        "admissions.html",
+        "apply.html",
+        "calendar.html",
+        "directory.html",
+        "financial-aid.html",
+        "index.html",
+        "locations.html",
+        "news.html",
+        "program-detail.html",
+        "programs.html",
+        "schedule.html",
+        "search.html",
+        "student-life.html",
+        "student-resources.html",
+        "tuition.html",
+        "visit.html"
+      ],
+      "behavior": [],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js (axe-core at 1280px and 375px, no JS errors) and scripted Playwright flow checks; no screen reader or manual keyboard-only walkthrough"
+    },
+    {
+      "id": "site-search",
+      "selector": "[data-component='site-search']",
+      "description": "header site search form posting to search.html",
+      "pages": [
+        "404.html",
+        "admissions.html",
+        "apply.html",
+        "calendar.html",
+        "directory.html",
+        "financial-aid.html",
+        "index.html",
+        "locations.html",
+        "news.html",
+        "program-detail.html",
+        "programs.html",
+        "schedule.html",
+        "search.html",
+        "student-life.html",
+        "student-resources.html",
+        "tuition.html",
+        "visit.html"
+      ],
+      "behavior": [
+        "GET form submit"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js (axe-core at 1280px and 375px, no JS errors) and scripted Playwright flow checks; no screen reader or manual keyboard-only walkthrough"
+    },
+    {
+      "id": "site-search-results",
+      "selector": "[data-component='site-search-results']",
+      "description": "search over a local page and program index",
+      "pages": [
+        "search.html"
+      ],
+      "behavior": [
+        "query param search",
+        "empty state"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js (axe-core at 1280px and 375px, no JS errors) and scripted Playwright flow checks; no screen reader or manual keyboard-only walkthrough"
+    },
+    {
+      "id": "stats-band",
+      "selector": "[data-component='stats-band']",
+      "description": "at-a-glance statistics band",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "automated: qc.js (axe-core at 1280px and 375px, no JS errors) and scripted Playwright flow checks; no screen reader or manual keyboard-only walkthrough"
+    },
+    {
+      "id": "step-list",
+      "selector": "[data-component='step-list']",
+      "description": "numbered process steps",
+      "pages": [
+        "admissions.html",
+        "apply.html"
+      ],
+      "behavior": [],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "automated: qc.js (axe-core at 1280px and 375px, no JS errors) and scripted Playwright flow checks; no screen reader or manual keyboard-only walkthrough"
+    },
+    {
+      "id": "tuition-calculator",
+      "selector": "[data-component='tuition-calculator']",
+      "description": "demo tuition estimator with validation",
+      "pages": [
+        "tuition.html"
+      ],
+      "behavior": [
+        "number validation",
+        "error summary",
+        "status result"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js (axe-core at 1280px and 375px, no JS errors) and scripted Playwright flow checks; no screen reader or manual keyboard-only walkthrough"
+    },
+    {
+      "id": "utility-nav",
+      "selector": "[data-component='utility-nav']",
+      "description": "Quick Links, Info For and Language disclosures plus Apply / Request Info buttons",
+      "pages": [
+        "404.html",
+        "admissions.html",
+        "apply.html",
+        "calendar.html",
+        "directory.html",
+        "financial-aid.html",
+        "index.html",
+        "locations.html",
+        "news.html",
+        "program-detail.html",
+        "programs.html",
+        "schedule.html",
+        "search.html",
+        "student-life.html",
+        "student-resources.html",
+        "tuition.html",
+        "visit.html"
+      ],
+      "behavior": [
+        "disclosure dropdown",
+        "Escape closes"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js (axe-core at 1280px and 375px, no JS errors) and scripted Playwright flow checks; no screen reader or manual keyboard-only walkthrough"
+    },
+    {
+      "id": "visit-request-form",
+      "selector": "[data-component='visit-request-form']",
+      "description": "visit / information request section",
+      "pages": [
+        "visit.html"
+      ],
+      "behavior": [
+        "simulation only"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js (axe-core at 1280px and 375px, no JS errors) and scripted Playwright flow checks; no screen reader or manual keyboard-only walkthrough"
+    }
+  ]
+}

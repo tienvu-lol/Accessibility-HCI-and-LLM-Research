@@ -1,0 +1,33 @@
+{
+  "allocation_protocol": "WEB-REPLICA-ALLOCATION-V1.0",
+  "generation_protocol": "WEB-REPLICA-V1.0",
+  "category": "university",
+  "slot": 3,
+  "source_id": "UNI-03",
+  "model_group": "claude",
+  "model_id": "claude-sonnet-5-5",
+  "model_version": null,
+  "model_provider_or_runtime": "claude-bridge provider via pi-subagents worker agent; orchestrated by claude-opus-5-5",
+  "generation_mode": "autonomous agent run, one replica per run, no human edits during generation",
+  "operator": "project lead (tienvu-lol) via orchestrator agent",
+  "approved_source_url": "https://www.nvcc.edu/",
+  "source_verified_at": "2026-11-10",
+  "source_approved_at": "2026-11-10",
+  "generation_started_at": "2026-11-11T03:53:21Z",
+  "generation_completed_at": "2026-11-11T04:06:30Z",
+  "rules_revision": "WEB-REPLICA-V1.0 / WEB-REPLICA-ALLOCATION-V1.0 at commit a07e70e (branch websites/claude-replicas)",
+  "category_prompt_revision": "orchestrator brief 2026-11-10 (no separate category prompt file)",
+  "prompt_or_transcript_reference": "pi-subagents run build-UNI-03",
+  "human_edits": [],
+  "validation_summary": {
+    "technology": "pass",
+    "completeness": "pass",
+    "structure": "pass",
+    "interaction": "pass",
+    "accessibility": "partially tested: qc.js axe-core 0 violations at 1280px and 375px on 17 pages; no screen reader, manual keyboard walkthrough, zoom or forced-colors testing",
+    "traceability": "pass",
+    "scope": "pass",
+    "qc_run": "node Websites/tools/qc/qc.js Websites/university/claude/UNI-03 -> pages=17 files=29 failures=0 warnings=0 (2026-11-11 UTC)",
+    "scripted_flow_checks": "42 Playwright assertions passed (scratch script, not in repo)"
+  }
+}
