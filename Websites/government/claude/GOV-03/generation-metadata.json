@@ -1,0 +1,31 @@
+{
+  "allocation_protocol": "WEB-REPLICA-ALLOCATION-V1.0",
+  "generation_protocol": "WEB-REPLICA-V1.0",
+  "category": "government",
+  "slot": 3,
+  "source_id": "GOV-03",
+  "model_group": "claude",
+  "model_id": "claude-sonnet-5-5",
+  "model_version": null,
+  "model_provider_or_runtime": "claude-bridge provider via pi-subagents worker agent; orchestrated by claude-opus-5-5",
+  "generation_mode": "autonomous agent run, one replica per run, no human edits during generation",
+  "operator": "project lead (tienvu-lol) via orchestrator agent",
+  "approved_source_url": "https://www.epa.gov/",
+  "source_verified_at": "2026-11-10",
+  "source_approved_at": "2026-11-10",
+  "generation_started_at": "2026-11-11T04:46:40Z",
+  "generation_completed_at": "2026-11-11T04:55:43Z",
+  "rules_revision": "WEB-REPLICA-V1.0 / WEB-REPLICA-ALLOCATION-V1.0 at commit a07e70e (branch websites/claude-replicas)",
+  "category_prompt_revision": "orchestrator brief 2026-11-10 (no separate category prompt file)",
+  "prompt_or_transcript_reference": "pi-subagents run build-GOV-03",
+  "human_edits": [],
+  "validation_summary": {
+    "technology": "pass",
+    "completeness": "pass",
+    "structure": "pass",
+    "interaction": "pass",
+    "accessibility": "partial: qc.js axe-core (WCAG 2.0-2.2 A/AA + best-practice) at 1280px and 375px, no horizontal scroll, 0 failures; scripted Playwright keyboard/focus flows; screen readers, 200% zoom and manual keyboard walkthrough not tested; no conformance claim",
+    "traceability": "pass",
+    "scope": "pass"
+  }
+}

@@ -1,0 +1,506 @@
+{
+  "protocol_version": "1.0",
+  "replica_id": "GOV-03",
+  "category": "government",
+  "source_url": "https://www.epa.gov/",
+  "components": [
+    {
+      "id": "site-header",
+      "selector": "[data-component='site-header']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "accessibility.html",
+        "alerts.html",
+        "contact.html",
+        "drinking-water.html",
+        "environmental-topics.html",
+        "index.html",
+        "laws-regulations.html",
+        "newsroom.html",
+        "radon.html",
+        "regional-offices.html",
+        "report-violation.html",
+        "topic-index.html",
+        "water-topics.html"
+      ],
+      "behavior": [
+        "brand link",
+        "header tools"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe run + scripted Playwright flows; manual keyboard walkthrough and screen readers not tested"
+    },
+    {
+      "id": "gov-banner",
+      "selector": "[data-component='gov-banner']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "accessibility.html",
+        "alerts.html",
+        "contact.html",
+        "drinking-water.html",
+        "environmental-topics.html",
+        "index.html",
+        "laws-regulations.html",
+        "newsroom.html",
+        "radon.html",
+        "regional-offices.html",
+        "report-violation.html",
+        "topic-index.html",
+        "water-topics.html"
+      ],
+      "behavior": [
+        "expandable demo-site notice (replaces official-site banner)"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe run + scripted Playwright flows; manual keyboard walkthrough and screen readers not tested"
+    },
+    {
+      "id": "alert-banner",
+      "selector": "[data-component='alert-banner']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "accessibility.html",
+        "alerts.html",
+        "contact.html",
+        "drinking-water.html",
+        "environmental-topics.html",
+        "index.html",
+        "laws-regulations.html",
+        "newsroom.html",
+        "radon.html",
+        "regional-offices.html",
+        "report-violation.html",
+        "topic-index.html",
+        "water-topics.html"
+      ],
+      "behavior": [
+        "site-wide advisory link to alerts.html",
+        "dismiss button (not persisted)"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe run + scripted Playwright flows; manual keyboard walkthrough and screen readers not tested"
+    },
+    {
+      "id": "search-form",
+      "selector": "[data-component='search-form']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "accessibility.html",
+        "alerts.html",
+        "contact.html",
+        "drinking-water.html",
+        "environmental-topics.html",
+        "index.html",
+        "laws-regulations.html",
+        "newsroom.html",
+        "radon.html",
+        "regional-offices.html",
+        "report-violation.html",
+        "topic-index.html",
+        "water-topics.html"
+      ],
+      "behavior": [
+        "search drawer disclosure",
+        "GET to topic-index.html?q= (local A-Z search)"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "Escape closes drawer"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe run + scripted Playwright flows; manual keyboard walkthrough and screen readers not tested"
+    },
+    {
+      "id": "primary-nav",
+      "selector": "[data-component='primary-nav']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "accessibility.html",
+        "alerts.html",
+        "contact.html",
+        "drinking-water.html",
+        "environmental-topics.html",
+        "index.html",
+        "laws-regulations.html",
+        "newsroom.html",
+        "radon.html",
+        "regional-offices.html",
+        "report-violation.html",
+        "topic-index.html",
+        "water-topics.html"
+      ],
+      "behavior": [
+        "desktop dropdown/mega-menu panels",
+        "mobile Menu disclosure",
+        "active indicator via aria-current / is-active"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "Escape closes innermost open menu and returns focus",
+        "outside click/focus closes dropdowns"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe run + scripted Playwright flows; manual keyboard walkthrough and screen readers not tested"
+    },
+    {
+      "id": "breadcrumb",
+      "selector": "[data-component='breadcrumb']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "accessibility.html",
+        "alerts.html",
+        "contact.html",
+        "drinking-water.html",
+        "environmental-topics.html",
+        "laws-regulations.html",
+        "newsroom.html",
+        "radon.html",
+        "regional-offices.html",
+        "report-violation.html",
+        "topic-index.html",
+        "water-topics.html"
+      ],
+      "behavior": [
+        "breadcrumb trail with aria-current"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe run + scripted Playwright flows; manual keyboard walkthrough and screen readers not tested"
+    },
+    {
+      "id": "hero-banner",
+      "selector": "[data-component='hero-banner']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "intro heading, two calls to action, decorative SVG"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe run + scripted Playwright flows; manual keyboard walkthrough and screen readers not tested"
+    },
+    {
+      "id": "card-grid",
+      "selector": "[data-component='card-grid']",
+      "pages": [
+        "index.html",
+        "environmental-topics.html"
+      ],
+      "behavior": [
+        "responsive auto-fill card grid"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe run + scripted Playwright flows; manual keyboard walkthrough and screen readers not tested"
+    },
+    {
+      "id": "news-list",
+      "selector": "[data-component='news-list']",
+      "pages": [
+        "index.html",
+        "newsroom.html"
+      ],
+      "behavior": [
+        "home: static latest-5 list linking to pre-filtered newsroom",
+        "newsroom: JS-rendered from inline data"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe run + scripted Playwright flows; manual keyboard walkthrough and screen readers not tested"
+    },
+    {
+      "id": "link-blocks",
+      "selector": "[data-component='link-blocks']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "Discover / Connect / Ask / Follow blocks"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe run + scripted Playwright flows; manual keyboard walkthrough and screen readers not tested"
+    },
+    {
+      "id": "language-selector",
+      "selector": "[data-component='language-selector']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "demo buttons that only show a status message (no translated pages)"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented (labeled demo)",
+      "validation": "qc.js axe run + scripted Playwright flows; manual keyboard walkthrough and screen readers not tested"
+    },
+    {
+      "id": "side-nav",
+      "selector": "[data-component='side-nav']",
+      "pages": [
+        "water-topics.html",
+        "drinking-water.html",
+        "radon.html",
+        "laws-regulations.html",
+        "about.html"
+      ],
+      "behavior": [
+        "local section navigation with aria-current"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe run + scripted Playwright flows; manual keyboard walkthrough and screen readers not tested"
+    },
+    {
+      "id": "topic-section",
+      "selector": "[data-component='topic-section']",
+      "pages": [
+        "water-topics.html",
+        "drinking-water.html",
+        "radon.html",
+        "laws-regulations.html",
+        "about.html",
+        "accessibility.html"
+      ],
+      "behavior": [
+        "topic content sections"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe run + scripted Playwright flows; manual keyboard walkthrough and screen readers not tested"
+    },
+    {
+      "id": "accordion",
+      "selector": "[data-component='accordion']",
+      "pages": [
+        "drinking-water.html",
+        "radon.html"
+      ],
+      "behavior": [
+        "aria-expanded disclosure buttons (intentional addition)"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe run + scripted Playwright flows; manual keyboard walkthrough and screen readers not tested"
+    },
+    {
+      "id": "az-index",
+      "selector": "[data-component='az-index']",
+      "pages": [
+        "topic-index.html"
+      ],
+      "behavior": [
+        "text filter",
+        "letter filter toggle buttons (aria-pressed)",
+        "empty state",
+        "live result count",
+        "?q= prefill"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe run + scripted Playwright flows; manual keyboard walkthrough and screen readers not tested"
+    },
+    {
+      "id": "filter-form",
+      "selector": "[data-component='filter-form']",
+      "pages": [
+        "topic-index.html",
+        "newsroom.html",
+        "regional-offices.html"
+      ],
+      "behavior": [
+        "live filtering over inline data",
+        "reset button moves focus to first field",
+        "empty states"
+      ],
+      "keyboard": [
+        "Tab",
+        "type",
+        "Arrow keys in selects"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe run + scripted Playwright flows; manual keyboard walkthrough and screen readers not tested"
+    },
+    {
+      "id": "directory-table",
+      "selector": "[data-component='directory-table']",
+      "pages": [
+        "regional-offices.html"
+      ],
+      "behavior": [
+        "searchable table of 10 fictional offices",
+        "stacks into labeled blocks below 40em"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe run + scripted Playwright flows; manual keyboard walkthrough and screen readers not tested"
+    },
+    {
+      "id": "alert-list",
+      "selector": "[data-component='alert-list']",
+      "pages": [
+        "alerts.html"
+      ],
+      "behavior": [
+        "static sample alerts"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented (sample content)",
+      "validation": "qc.js axe run + scripted Playwright flows; manual keyboard walkthrough and screen readers not tested"
+    },
+    {
+      "id": "report-form",
+      "selector": "[data-component='report-form']",
+      "pages": [
+        "report-violation.html"
+      ],
+      "behavior": [
+        "client-side validation (required, min length, future-date)",
+        "error summary with focus",
+        "simulated success"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented (simulation)",
+      "validation": "qc.js axe run + scripted Playwright flows; manual keyboard walkthrough and screen readers not tested"
+    },
+    {
+      "id": "contact-form",
+      "selector": "[data-component='contact-form']",
+      "pages": [
+        "contact.html"
+      ],
+      "behavior": [
+        "client-side validation (required, email, min length)",
+        "error summary with focus",
+        "simulated success"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented (simulation)",
+      "validation": "qc.js axe run + scripted Playwright flows; manual keyboard walkthrough and screen readers not tested"
+    },
+    {
+      "id": "error-summary",
+      "selector": "[data-component='error-summary']",
+      "pages": [
+        "report-violation.html",
+        "contact.html"
+      ],
+      "behavior": [
+        "focused on failed submit",
+        "links focus the invalid field"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe run + scripted Playwright flows; manual keyboard walkthrough and screen readers not tested"
+    },
+    {
+      "id": "site-footer",
+      "selector": "[data-component='site-footer']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "accessibility.html",
+        "alerts.html",
+        "contact.html",
+        "drinking-water.html",
+        "environmental-topics.html",
+        "index.html",
+        "laws-regulations.html",
+        "newsroom.html",
+        "radon.html",
+        "regional-offices.html",
+        "report-violation.html",
+        "topic-index.html",
+        "water-topics.html"
+      ],
+      "behavior": [
+        "grouped links",
+        "legal/fictional notice",
+        "back-to-top button"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe run + scripted Playwright flows; manual keyboard walkthrough and screen readers not tested"
+    }
+  ]
+}
