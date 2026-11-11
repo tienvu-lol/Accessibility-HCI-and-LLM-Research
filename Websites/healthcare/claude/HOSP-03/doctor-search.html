@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Doctor Search | Larkspur Children's Hospital</title>
+  <meta name="description" content="Filter the sample directory of fictional doctors. (Larkspur Children's Hospital is a fictional hospital used for an accessibility research replica.)">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<div class="notice-bar" role="region" aria-label="Site notice" data-section="global-alert" data-component="alert-banner">
+  <div class="wrap"><p><strong>Emergency?</strong> Call 911 right away. This is a fictional demonstration site: it shows no real wait times, alerts or medical advice.</p>
+  <button type="button" class="notice-dismiss" data-dismiss-notice>Dismiss notice</button></div>
+</div>
+<header data-section="global-header" data-component="site-header">
+  <div class="utility"><div class="wrap">
+    <nav aria-label="Utility" data-section="utility-navigation" data-component="utility-nav"><ul>
+      <li><a href="doctors.html">Find a doctor</a></li>
+      <li><a href="emergency-care.html">Emergency care</a></li>
+      <li><a href="online-bill-pay.html">Pay a bill</a></li>
+      <li><a href="portal-login.html">MyLarkspur Portal (demo)</a></li>
+    </ul></nav>
+  </div></div>
+  <div class="wrap header-main">
+    <a class="brand" href="index.html"><img src="assets/logo.svg" alt="" width="44" height="44"><span>Larkspur Children's Hospital<small>Fictional hospital for research</small></span></a>
+    <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" data-component="mobile-menu-toggle">Menu</button>
+    <nav id="primary-nav" class="primary-nav" aria-label="Primary" data-section="global-navigation" data-component="primary-nav">
+      <ul>
+      <li class="has-menu"><button type="button" class="menu-trigger" aria-expanded="false" aria-controls="menu-get-care" data-component="dropdown-menu">Get Care</button>
+        <div class="menu-panel mega" id="menu-get-care" hidden data-component="mega-menu"><div class="menu-group"><p class="menu-heading">Care options</p><ul><li><a href="get-care.html">See all types of care</a></li><li><a href="appointment-scheduling.html">Schedule an appointment</a></li><li><a href="doctors.html">Find a doctor</a></li><li><a href="conditions.html">Conditions we treat</a></li><li><a href="specialties.html">Specialties</a></li></ul></div><div class="menu-group"><p class="menu-heading">Locations</p><ul><li><a href="locations.html?type=primary">Primary care</a></li><li><a href="locations.html?type=specialty">Specialty care</a></li><li><a href="emergency-care.html">Emergency care</a></li><li><a href="locations.html?type=urgent">Urgent care</a></li><li><a href="locations.html?type=inpatient">Inpatient care for kids</a></li></ul></div></div></li>
+      <li class="has-menu"><button type="button" class="menu-trigger" aria-expanded="false" aria-controls="menu-patients" data-component="dropdown-menu">Patients &amp; Families</button>
+        <div class="menu-panel" id="menu-patients" hidden><div class="menu-group"><ul><li><a href="patients-and-families.html">Resources for families</a></li><li><a href="patients-and-families.html#caring">Caring for your child</a></li><li><a href="patients-and-families.html#records">Medical records</a></li><li><a href="patients-and-families.html#stays">Inpatient stays</a></li><li><a href="patients-and-families.html#forms">Health forms</a></li></ul></div></div></li>
+      <li class="has-menu"><button type="button" class="menu-trigger" aria-expanded="false" aria-controls="menu-billing" data-component="dropdown-menu">Billing &amp; Insurance</button>
+        <div class="menu-panel" id="menu-billing" hidden><div class="menu-group"><ul><li><a href="online-bill-pay.html">Pay a bill</a></li><li><a href="billing-and-insurance.html#insurance">Accepted insurance plans</a></li><li><a href="billing-and-insurance.html#estimate">Cost estimate</a></li><li><a href="billing-and-insurance.html#help">Financial help</a></li></ul></div></div></li>
+      <li><a class="nav-link" href="locations.html">Locations</a></li>
+      <li><a class="nav-link" href="specialties.html">Specialties</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main id="main-content" data-section="main-content">
+<div class="page-title" data-section="page-title" data-component="page-title"><div class="wrap"><nav aria-label="Breadcrumb" data-section="breadcrumbs" data-component="breadcrumbs"><ol><li><a href="index.html">Home</a></li><li><a href="doctors.html">Find a doctor</a></li><li aria-current="page">Doctor search</li></ol></nav><h1>Doctor search</h1><p class="lede">Filter the sample directory of fictional doctors.</p></div></div>
+<div class="wrap block split">
+<aside class="filters" aria-labelledby="filter-title" data-section="doctor-filters" data-component="filter-panel">
+  <h2 id="filter-title">Filter doctors</h2>
+  <form id="doctor-form" action="doctor-search.html" method="get" data-component="doctor-search-form">
+    <div class="field"><label for="q">Name or keyword <span class="optional">(optional)</span></label><input type="search" id="q" name="q" autocomplete="off" aria-describedby="q-error" ><p class="field-error" id="q-error" hidden></p></div>
+    <div class="field"><label for="specialty">Specialty <span class="optional">(optional)</span></label><select id="specialty" name="specialty" aria-describedby="specialty-error" data-options="specialties"></select><p class="field-error" id="specialty-error" hidden></p></div>
+    <div class="field"><label for="location">Location <span class="optional">(optional)</span></label><select id="location" name="location" aria-describedby="location-error" data-options="locations"></select><p class="field-error" id="location-error" hidden></p></div>
+    <div class="field"><label for="language">Language spoken <span class="optional">(optional)</span></label><select id="language" name="language" aria-describedby="language-error" data-options="languages"></select><p class="field-error" id="language-error" hidden></p></div>
+    <fieldset><legend>Availability</legend>
+      <label class="check"><input type="checkbox" name="new" value="1"> Accepting new patients</label>
+      <label class="check"><input type="checkbox" name="tele" value="1"> Offers video visits</label></fieldset>
+    <div class="btn-row"><button class="btn" type="submit">Apply filters</button><button class="btn btn-ghost" type="reset" data-reset-filters>Reset filters</button></div>
+  </form></aside>
+<section aria-labelledby="results-title" data-section="doctor-results" data-component="result-list">
+  <h2 id="results-title">Results</h2>
+  <div class="result-bar"><p id="result-count" role="status" aria-live="polite"></p>
+    <div class="field inline"><label for="sort">Sort by</label><select id="sort" name="sort"><option value="name">Last name A to Z</option><option value="specialty">Specialty</option></select></div></div>
+  <ul class="results" id="doctor-results"></ul>
+  <p><button type="button" class="btn btn-ghost" id="show-more" hidden>Show more doctors</button></p>
+  <div class="empty-state" id="doctor-empty" hidden><h3>No doctors match these filters</h3><p>Try removing a filter or searching a different specialty. Some specialties in this sample have no listed doctors.</p><button type="button" class="btn" data-reset-filters>Reset filters</button></div>
+</section></div>
+</main>
+<footer data-section="global-footer" data-component="site-footer">
+  <div class="wrap footer-grid">
+    <section aria-labelledby="ft-brand"><h2 id="ft-brand">Larkspur Children's Hospital</h2><p>A fictional children's hospital created for an accessibility and usability research dataset. Names, people, numbers and addresses are invented.</p>
+      <p>Main line: <a href="tel:+15550100142">(555) 010-0142</a><br>Appointments: <a href="tel:+15550100143">(555) 010-0143</a><br>Billing: <a href="tel:+15550100144">(555) 010-0144</a></p></section>
+    <nav aria-labelledby="ft-care" data-component="footer-links"><h2 id="ft-care">Get care</h2><ul>
+      <li><a href="doctors.html">Find a doctor</a></li><li><a href="locations.html">Find a location</a></li><li><a href="specialties.html">Find a specialty</a></li><li><a href="conditions.html">Conditions we treat</a></li><li><a href="emergency-care.html">Emergency care for kids</a></li></ul></nav>
+    <nav aria-labelledby="ft-families" data-component="footer-links"><h2 id="ft-families">Patients &amp; families</h2><ul>
+      <li><a href="billing-and-insurance.html">Insurance &amp; billing</a></li><li><a href="online-bill-pay.html">Pay a bill</a></li><li><a href="patients-and-families.html#caring">Caring for your child</a></li><li><a href="portal-login.html">MyLarkspur Portal (demo)</a></li></ul></nav>
+    <section aria-labelledby="ft-lang" data-component="language-assistance"><h2 id="ft-lang">Language assistance</h2><p>Free interpreter and auxiliary aid services are part of the care model this site imitates.</p>
+      <button type="button" class="btn btn-light" data-open-dialog="language-dialog" aria-haspopup="dialog">Language assistance (demo)</button></section>
+  </div>
+  <div class="wrap footer-legal"><p>Fictional organization. Not a real hospital, no real logos or marks. Do not use for medical decisions. In an emergency, call 911.</p></div>
+</footer>
+<dialog id="language-dialog" aria-labelledby="language-dialog-title" data-component="modal-dialog">
+  <h2 id="language-dialog-title">Language assistance (demo)</h2>
+  <p>The reference site lists translated pages in many languages. This replica does not include translations. Interpreter services are described here only to show the dialog pattern.</p>
+  <p lang="en">English, Spanish, Arabic, Chinese, Hindi, Portuguese, Tagalog, Vietnamese</p>
+  <button type="button" class="btn" data-close-dialog>Close</button>
+</dialog>
+</body>
+</html>

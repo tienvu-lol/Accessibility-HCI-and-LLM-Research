@@ -1,0 +1,31 @@
+{
+  "allocation_protocol": "WEB-REPLICA-ALLOCATION-V1.0",
+  "generation_protocol": "WEB-REPLICA-V1.0",
+  "category": "healthcare",
+  "slot": 3,
+  "source_id": "HOSP-03",
+  "model_group": "claude",
+  "model_id": "claude-sonnet-5-5",
+  "model_version": null,
+  "model_provider_or_runtime": "claude-bridge provider via pi-subagents worker agent; orchestrated by claude-opus-5-5",
+  "generation_mode": "autonomous agent run, one replica per run, no human edits during generation",
+  "operator": "project lead (tienvu-lol) via orchestrator agent",
+  "approved_source_url": "https://www.chop.edu/",
+  "source_verified_at": "2026-11-10",
+  "source_approved_at": "2026-11-10",
+  "generation_started_at": "2026-11-11T04:11:06Z",
+  "generation_completed_at": "2026-11-11T04:23:35Z",
+  "rules_revision": "WEB-REPLICA-V1.0 / WEB-REPLICA-ALLOCATION-V1.0 at commit a07e70e (branch websites/claude-replicas)",
+  "category_prompt_revision": "orchestrator brief 2026-11-10 (no separate category prompt file)",
+  "prompt_or_transcript_reference": "pi-subagents run build-HOSP-03",
+  "human_edits": [],
+  "validation_summary": {
+    "technology": "pass: qc.js static checks found no prohibited files, remote dependencies or network APIs",
+    "completeness": "pass: qc.js 2026-11-11 pages=16 files=26 failures=0, all mapped pages and artifacts present",
+    "structure": "pass: landmarks, skip link, main#main-content, data-section/data-component present on all pages (qc.js); region fidelity is approximate, see fidelity-notes.md",
+    "interaction": "pass: 41 scripted Playwright checks of menus, tabs, dialog, filters, empty states, paging, profile, directories, forms; no manual walkthrough",
+    "accessibility": "partial: axe-core 0 violations at 1280px and 375px and no horizontal scroll at 375px via qc.js; screen readers, 200% zoom, manual keyboard walkthrough and contrast audit beyond axe not tested",
+    "traceability": "pass: README, fidelity-notes and component-inventory written from the implemented files",
+    "scope": "pass: 15 pages plus 404; about 14 doctors, 9 locations, 16 specialties, 20 conditions, 8 plans"
+  }
+}

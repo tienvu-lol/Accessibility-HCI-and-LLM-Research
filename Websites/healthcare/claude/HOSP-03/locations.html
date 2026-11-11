@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Locations | Larkspur Children's Hospital</title>
+  <meta name="description" content="Find primary, specialty, urgent, emergency and inpatient care sites. All sites are fictional. (Larkspur Children's Hospital is a fictional hospital used for an accessibility research replica.)">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<div class="notice-bar" role="region" aria-label="Site notice" data-section="global-alert" data-component="alert-banner">
+  <div class="wrap"><p><strong>Emergency?</strong> Call 911 right away. This is a fictional demonstration site: it shows no real wait times, alerts or medical advice.</p>
+  <button type="button" class="notice-dismiss" data-dismiss-notice>Dismiss notice</button></div>
+</div>
+<header data-section="global-header" data-component="site-header">
+  <div class="utility"><div class="wrap">
+    <nav aria-label="Utility" data-section="utility-navigation" data-component="utility-nav"><ul>
+      <li><a href="doctors.html">Find a doctor</a></li>
+      <li><a href="emergency-care.html">Emergency care</a></li>
+      <li><a href="online-bill-pay.html">Pay a bill</a></li>
+      <li><a href="portal-login.html">MyLarkspur Portal (demo)</a></li>
+    </ul></nav>
+  </div></div>
+  <div class="wrap header-main">
+    <a class="brand" href="index.html"><img src="assets/logo.svg" alt="" width="44" height="44"><span>Larkspur Children's Hospital<small>Fictional hospital for research</small></span></a>
+    <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" data-component="mobile-menu-toggle">Menu</button>
+    <nav id="primary-nav" class="primary-nav" aria-label="Primary" data-section="global-navigation" data-component="primary-nav">
+      <ul>
+      <li class="has-menu"><button type="button" class="menu-trigger is-current" aria-expanded="false" aria-controls="menu-get-care" data-component="dropdown-menu">Get Care</button>
+        <div class="menu-panel mega" id="menu-get-care" hidden data-component="mega-menu"><div class="menu-group"><p class="menu-heading">Care options</p><ul><li><a href="get-care.html">See all types of care</a></li><li><a href="appointment-scheduling.html">Schedule an appointment</a></li><li><a href="doctors.html">Find a doctor</a></li><li><a href="conditions.html">Conditions we treat</a></li><li><a href="specialties.html">Specialties</a></li></ul></div><div class="menu-group"><p class="menu-heading">Locations</p><ul><li><a href="locations.html?type=primary">Primary care</a></li><li><a href="locations.html?type=specialty">Specialty care</a></li><li><a href="emergency-care.html">Emergency care</a></li><li><a href="locations.html?type=urgent">Urgent care</a></li><li><a href="locations.html?type=inpatient">Inpatient care for kids</a></li></ul></div></div></li>
+      <li class="has-menu"><button type="button" class="menu-trigger" aria-expanded="false" aria-controls="menu-patients" data-component="dropdown-menu">Patients &amp; Families</button>
+        <div class="menu-panel" id="menu-patients" hidden><div class="menu-group"><ul><li><a href="patients-and-families.html">Resources for families</a></li><li><a href="patients-and-families.html#caring">Caring for your child</a></li><li><a href="patients-and-families.html#records">Medical records</a></li><li><a href="patients-and-families.html#stays">Inpatient stays</a></li><li><a href="patients-and-families.html#forms">Health forms</a></li></ul></div></div></li>
+      <li class="has-menu"><button type="button" class="menu-trigger" aria-expanded="false" aria-controls="menu-billing" data-component="dropdown-menu">Billing &amp; Insurance</button>
+        <div class="menu-panel" id="menu-billing" hidden><div class="menu-group"><ul><li><a href="online-bill-pay.html">Pay a bill</a></li><li><a href="billing-and-insurance.html#insurance">Accepted insurance plans</a></li><li><a href="billing-and-insurance.html#estimate">Cost estimate</a></li><li><a href="billing-and-insurance.html#help">Financial help</a></li></ul></div></div></li>
+      <li><a class="nav-link" href="locations.html" aria-current="page">Locations</a></li>
+      <li><a class="nav-link" href="specialties.html">Specialties</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main id="main-content" data-section="main-content">
+<div class="page-title" data-section="page-title" data-component="page-title"><div class="wrap"><h1>Locations</h1><p class="lede">Find primary, specialty, urgent, emergency and inpatient care sites. All sites are fictional.</p></div></div>
+<div class="wrap block split">
+<aside class="filters" aria-labelledby="loc-filter-title" data-section="location-filters" data-component="filter-panel">
+  <h2 id="loc-filter-title">Find a location</h2>
+  <form id="location-form" action="locations.html" method="get" data-component="location-search-form">
+    <div class="field"><label for="q">City, ZIP code or site name <span class="optional">(optional)</span></label><input type="search" id="q" name="q" autocomplete="off" aria-describedby="q-error" ><p class="field-error" id="q-error" hidden></p></div>
+    <div class="field"><label for="type">Type of care <span class="optional">(optional)</span></label><select id="type" name="type" aria-describedby="type-error" ><option value="">All types</option><option value="primary">Primary care</option><option value="specialty">Specialty care</option><option value="emergency">Emergency care</option><option value="urgent">Urgent care</option><option value="inpatient">Inpatient care</option></select><p class="field-error" id="type-error" hidden></p></div>
+    <div class="btn-row"><button class="btn" type="submit">Search</button><button class="btn btn-ghost" type="reset" data-reset-filters>Reset</button></div>
+  </form>
+  <figure class="map-figure"><img src="assets/map.svg" alt="Placeholder map illustration. No live map is included in this replica." width="320" height="200"><figcaption>Map placeholder. Use the address in each result.</figcaption></figure></aside>
+<section aria-labelledby="loc-results-title" data-section="location-results" data-component="location-list">
+  <h2 id="loc-results-title">Results</h2>
+  <p id="location-count" role="status" aria-live="polite"></p>
+  <ul class="results" id="location-results"></ul>
+  <div class="empty-state" id="location-empty" hidden><h3>No locations match your search</h3><p>Check the spelling, try a city name, or choose all types of care.</p><button type="button" class="btn" data-reset-filters>Reset search</button></div>
+</section></div>
+</main>
+<footer data-section="global-footer" data-component="site-footer">
+  <div class="wrap footer-grid">
+    <section aria-labelledby="ft-brand"><h2 id="ft-brand">Larkspur Children's Hospital</h2><p>A fictional children's hospital created for an accessibility and usability research dataset. Names, people, numbers and addresses are invented.</p>
+      <p>Main line: <a href="tel:+15550100142">(555) 010-0142</a><br>Appointments: <a href="tel:+15550100143">(555) 010-0143</a><br>Billing: <a href="tel:+15550100144">(555) 010-0144</a></p></section>
+    <nav aria-labelledby="ft-care" data-component="footer-links"><h2 id="ft-care">Get care</h2><ul>
+      <li><a href="doctors.html">Find a doctor</a></li><li><a href="locations.html">Find a location</a></li><li><a href="specialties.html">Find a specialty</a></li><li><a href="conditions.html">Conditions we treat</a></li><li><a href="emergency-care.html">Emergency care for kids</a></li></ul></nav>
+    <nav aria-labelledby="ft-families" data-component="footer-links"><h2 id="ft-families">Patients &amp; families</h2><ul>
+      <li><a href="billing-and-insurance.html">Insurance &amp; billing</a></li><li><a href="online-bill-pay.html">Pay a bill</a></li><li><a href="patients-and-families.html#caring">Caring for your child</a></li><li><a href="portal-login.html">MyLarkspur Portal (demo)</a></li></ul></nav>
+    <section aria-labelledby="ft-lang" data-component="language-assistance"><h2 id="ft-lang">Language assistance</h2><p>Free interpreter and auxiliary aid services are part of the care model this site imitates.</p>
+      <button type="button" class="btn btn-light" data-open-dialog="language-dialog" aria-haspopup="dialog">Language assistance (demo)</button></section>
+  </div>
+  <div class="wrap footer-legal"><p>Fictional organization. Not a real hospital, no real logos or marks. Do not use for medical decisions. In an emergency, call 911.</p></div>
+</footer>
+<dialog id="language-dialog" aria-labelledby="language-dialog-title" data-component="modal-dialog">
+  <h2 id="language-dialog-title">Language assistance (demo)</h2>
+  <p>The reference site lists translated pages in many languages. This replica does not include translations. Interpreter services are described here only to show the dialog pattern.</p>
+  <p lang="en">English, Spanish, Arabic, Chinese, Hindi, Portuguese, Tagalog, Vietnamese</p>
+  <button type="button" class="btn" data-close-dialog>Close</button>
+</dialog>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Welcome | Larkspur Children's Hospital</title>
+  <meta name="description" content="Welcome (Larkspur Children's Hospital is a fictional hospital used for an accessibility research replica.)">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<div class="notice-bar" role="region" aria-label="Site notice" data-section="global-alert" data-component="alert-banner">
+  <div class="wrap"><p><strong>Emergency?</strong> Call 911 right away. This is a fictional demonstration site: it shows no real wait times, alerts or medical advice.</p>
+  <button type="button" class="notice-dismiss" data-dismiss-notice>Dismiss notice</button></div>
+</div>
+<header data-section="global-header" data-component="site-header">
+  <div class="utility"><div class="wrap">
+    <nav aria-label="Utility" data-section="utility-navigation" data-component="utility-nav"><ul>
+      <li><a href="doctors.html">Find a doctor</a></li>
+      <li><a href="emergency-care.html">Emergency care</a></li>
+      <li><a href="online-bill-pay.html">Pay a bill</a></li>
+      <li><a href="portal-login.html">MyLarkspur Portal (demo)</a></li>
+    </ul></nav>
+  </div></div>
+  <div class="wrap header-main">
+    <a class="brand" href="index.html"><img src="assets/logo.svg" alt="" width="44" height="44"><span>Larkspur Children's Hospital<small>Fictional hospital for research</small></span></a>
+    <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" data-component="mobile-menu-toggle">Menu</button>
+    <nav id="primary-nav" class="primary-nav" aria-label="Primary" data-section="global-navigation" data-component="primary-nav">
+      <ul>
+      <li class="has-menu"><button type="button" class="menu-trigger" aria-expanded="false" aria-controls="menu-get-care" data-component="dropdown-menu">Get Care</button>
+        <div class="menu-panel mega" id="menu-get-care" hidden data-component="mega-menu"><div class="menu-group"><p class="menu-heading">Care options</p><ul><li><a href="get-care.html">See all types of care</a></li><li><a href="appointment-scheduling.html">Schedule an appointment</a></li><li><a href="doctors.html">Find a doctor</a></li><li><a href="conditions.html">Conditions we treat</a></li><li><a href="specialties.html">Specialties</a></li></ul></div><div class="menu-group"><p class="menu-heading">Locations</p><ul><li><a href="locations.html?type=primary">Primary care</a></li><li><a href="locations.html?type=specialty">Specialty care</a></li><li><a href="emergency-care.html">Emergency care</a></li><li><a href="locations.html?type=urgent">Urgent care</a></li><li><a href="locations.html?type=inpatient">Inpatient care for kids</a></li></ul></div></div></li>
+      <li class="has-menu"><button type="button" class="menu-trigger" aria-expanded="false" aria-controls="menu-patients" data-component="dropdown-menu">Patients &amp; Families</button>
+        <div class="menu-panel" id="menu-patients" hidden><div class="menu-group"><ul><li><a href="patients-and-families.html">Resources for families</a></li><li><a href="patients-and-families.html#caring">Caring for your child</a></li><li><a href="patients-and-families.html#records">Medical records</a></li><li><a href="patients-and-families.html#stays">Inpatient stays</a></li><li><a href="patients-and-families.html#forms">Health forms</a></li></ul></div></div></li>
+      <li class="has-menu"><button type="button" class="menu-trigger" aria-expanded="false" aria-controls="menu-billing" data-component="dropdown-menu">Billing &amp; Insurance</button>
+        <div class="menu-panel" id="menu-billing" hidden><div class="menu-group"><ul><li><a href="online-bill-pay.html">Pay a bill</a></li><li><a href="billing-and-insurance.html#insurance">Accepted insurance plans</a></li><li><a href="billing-and-insurance.html#estimate">Cost estimate</a></li><li><a href="billing-and-insurance.html#help">Financial help</a></li></ul></div></div></li>
+      <li><a class="nav-link" href="locations.html">Locations</a></li>
+      <li><a class="nav-link" href="specialties.html">Specialties</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main id="main-content" data-section="main-content">
+
+<h1 class="visually-hidden">Welcome to Larkspur Children's Hospital</h1>
+<section class="hero" aria-labelledby="hero-title" data-section="hero" data-component="hero-banner"><div class="wrap hero-grid">
+  <div><h2 id="hero-title">Care that grows with your child.</h2><p>Doctors, nurses and therapists who work only with children, across a main campus and neighborhood sites.</p>
+  <p class="btn-row"><a class="btn btn-accent" href="doctors.html">Find a doctor</a><a class="btn btn-light" href="appointment-scheduling.html">Request an appointment</a></p></div>
+  <img src="assets/hero.svg" alt="" width="520" height="340"></div></section>
+<section class="band" aria-labelledby="find-title" data-section="find-care" data-component="tabs"><div class="wrap">
+  <h2 id="find-title">Find care you can count on</h2>
+  <div class="tabs">
+    <div role="tablist" aria-label="Search by">
+      <button role="tab" type="button" id="tab-doctor" aria-selected="true" aria-controls="panel-doctor">Doctor</button>
+      <button role="tab" type="button" id="tab-location" aria-selected="false" aria-controls="panel-location" tabindex="-1">Location</button>
+      <button role="tab" type="button" id="tab-specialty" aria-selected="false" aria-controls="panel-specialty" tabindex="-1">Specialty</button></div>
+    <div role="tabpanel" id="panel-doctor" aria-labelledby="tab-doctor"><form action="doctor-search.html" method="get" class="inline-form" data-component="quick-search-form">
+      <div class="field"><label for="home-doctor-q">Doctor name or keyword</label><input type="search" id="home-doctor-q" name="q" autocomplete="off"></div>
+      <div class="field"><label for="home-doctor-specialty">Specialty</label><select id="home-doctor-specialty" name="specialty" data-options="specialties"></select></div>
+      <button class="btn" type="submit">Search doctors</button></form></div>
+    <div role="tabpanel" id="panel-location" aria-labelledby="tab-location" hidden><form action="locations.html" method="get" class="inline-form" data-component="quick-search-form">
+      <div class="field"><label for="home-loc-q">City, ZIP code or site name</label><input type="search" id="home-loc-q" name="q" autocomplete="off"></div>
+      <div class="field"><label for="home-loc-type">Type of care</label><select id="home-loc-type" name="type"><option value="">All types</option><option value="primary">Primary care</option><option value="specialty">Specialty care</option><option value="emergency">Emergency care</option><option value="urgent">Urgent care</option><option value="inpatient">Inpatient care</option></select></div>
+      <button class="btn" type="submit">Search locations</button></form></div>
+    <div role="tabpanel" id="panel-specialty" aria-labelledby="tab-specialty" hidden><form action="specialties.html" method="get" class="inline-form" data-component="quick-search-form">
+      <div class="field"><label for="home-spec-q">Specialty name</label><input type="search" id="home-spec-q" name="q" autocomplete="off"></div>
+      <button class="btn" type="submit">Search specialties</button></form></div>
+  </div></div></section>
+<section class="wrap block" aria-labelledby="options-title" data-section="care-options" data-component="card-grid">
+  <h2 id="options-title">Explore care options</h2>
+  <ul class="cards">
+  <li class="card"><h3>Primary care</h3><p>Checkups, vaccines and everyday concerns close to home.</p><a class="card-link" href="locations.html?type=primary">Find primary care<span class="visually-hidden">: Primary care</span></a></li>
+  <li class="card"><h3>Specialty care</h3><p>Pediatric specialists for heart, lung, brain, bone and more.</p><a class="card-link" href="locations.html?type=specialty">Find specialty care<span class="visually-hidden">: Specialty care</span></a></li>
+  <li class="card"><h3>Emergency care</h3><p>Round-the-clock emergency departments built for kids.</p><a class="card-link" href="emergency-care.html">Emergency care for kids<span class="visually-hidden">: Emergency care</span></a></li>
+  <li class="card"><h3>Urgent care</h3><p>Same-day care for minor injuries and illnesses.</p><a class="card-link" href="locations.html?type=urgent">Find urgent care<span class="visually-hidden">: Urgent care</span></a></li>
+  <li class="card"><h3>Inpatient care</h3><p>Hospital stays with child life and family support.</p><a class="card-link" href="locations.html?type=inpatient">Find inpatient care<span class="visually-hidden">: Inpatient care</span></a></li>
+  <li class="card"><h3>Conditions we treat</h3><p>Plain-language guides to common childhood conditions.</p><a class="card-link" href="conditions.html">Browse conditions<span class="visually-hidden">: Conditions we treat</span></a></li>
+  </ul></section>
+<section class="band alt" aria-labelledby="glance-title" data-section="at-a-glance" data-component="stat-band"><div class="wrap">
+  <h2 id="glance-title">Our care at a glance</h2><p class="note">Sample figures for demonstration only. They replace the reference site's recognition section and are not real statistics.</p>
+  <dl class="stats"><div><dt>Specialties</dt><dd>16</dd></div><div><dt>Care sites</dt><dd>9</dd></div><div><dt>Languages spoken by our doctors</dt><dd>14</dd></div><div><dt>Emergency departments open all day</dt><dd>2</dd></div></dl></div></section>
+<section class="wrap block" aria-labelledby="home-er-title" data-section="emergency-notice" data-component="emergency-notice">
+  <div class="er-box"><h2 id="home-er-title">Is it an emergency?</h2><p>If your child has trouble breathing, a seizure, severe bleeding or is unresponsive, call 911 now. Do not use this site's forms for urgent problems.</p><a class="btn" href="emergency-care.html">Emergency care for kids</a></div></section>
+
+</main>
+<footer data-section="global-footer" data-component="site-footer">
+  <div class="wrap footer-grid">
+    <section aria-labelledby="ft-brand"><h2 id="ft-brand">Larkspur Children's Hospital</h2><p>A fictional children's hospital created for an accessibility and usability research dataset. Names, people, numbers and addresses are invented.</p>
+      <p>Main line: <a href="tel:+15550100142">(555) 010-0142</a><br>Appointments: <a href="tel:+15550100143">(555) 010-0143</a><br>Billing: <a href="tel:+15550100144">(555) 010-0144</a></p></section>
+    <nav aria-labelledby="ft-care" data-component="footer-links"><h2 id="ft-care">Get care</h2><ul>
+      <li><a href="doctors.html">Find a doctor</a></li><li><a href="locations.html">Find a location</a></li><li><a href="specialties.html">Find a specialty</a></li><li><a href="conditions.html">Conditions we treat</a></li><li><a href="emergency-care.html">Emergency care for kids</a></li></ul></nav>
+    <nav aria-labelledby="ft-families" data-component="footer-links"><h2 id="ft-families">Patients &amp; families</h2><ul>
+      <li><a href="billing-and-insurance.html">Insurance &amp; billing</a></li><li><a href="online-bill-pay.html">Pay a bill</a></li><li><a href="patients-and-families.html#caring">Caring for your child</a></li><li><a href="portal-login.html">MyLarkspur Portal (demo)</a></li></ul></nav>
+    <section aria-labelledby="ft-lang" data-component="language-assistance"><h2 id="ft-lang">Language assistance</h2><p>Free interpreter and auxiliary aid services are part of the care model this site imitates.</p>
+      <button type="button" class="btn btn-light" data-open-dialog="language-dialog" aria-haspopup="dialog">Language assistance (demo)</button></section>
+  </div>
+  <div class="wrap footer-legal"><p>Fictional organization. Not a real hospital, no real logos or marks. Do not use for medical decisions. In an emergency, call 911.</p></div>
+</footer>
+<dialog id="language-dialog" aria-labelledby="language-dialog-title" data-component="modal-dialog">
+  <h2 id="language-dialog-title">Language assistance (demo)</h2>
+  <p>The reference site lists translated pages in many languages. This replica does not include translations. Interpreter services are described here only to show the dialog pattern.</p>
+  <p lang="en">English, Spanish, Arabic, Chinese, Hindi, Portuguese, Tagalog, Vietnamese</p>
+  <button type="button" class="btn" data-close-dialog>Close</button>
+</dialog>
+</body>
+</html>

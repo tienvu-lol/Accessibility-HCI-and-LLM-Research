@@ -1,0 +1,878 @@
+{
+  "protocol_version": "1.0",
+  "replica_id": "HOSP-03",
+  "category": "healthcare",
+  "source_url": "https://www.chop.edu/",
+  "components": [
+    {
+      "id": "site-header",
+      "selector": "[data-component='site-header']",
+      "pages": [
+        "404.html",
+        "appointment-scheduling.html",
+        "billing-and-insurance.html",
+        "condition-asthma.html",
+        "conditions.html",
+        "doctor-search.html",
+        "doctors.html",
+        "emergency-care.html",
+        "get-care.html",
+        "index.html",
+        "locations.html",
+        "online-bill-pay.html",
+        "patients-and-families.html",
+        "portal-login.html",
+        "provider.html",
+        "specialties.html"
+      ],
+      "behavior": [
+        "brand link",
+        "utility links",
+        "primary navigation",
+        "mobile menu button"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean via qc.js; interaction scripted with Playwright; manual/screen-reader not tested"
+    },
+    {
+      "id": "utility-nav",
+      "selector": "[data-component='utility-nav']",
+      "pages": [
+        "404.html",
+        "appointment-scheduling.html",
+        "billing-and-insurance.html",
+        "condition-asthma.html",
+        "conditions.html",
+        "doctor-search.html",
+        "doctors.html",
+        "emergency-care.html",
+        "get-care.html",
+        "index.html",
+        "locations.html",
+        "online-bill-pay.html",
+        "patients-and-families.html",
+        "portal-login.html",
+        "provider.html",
+        "specialties.html"
+      ],
+      "behavior": [
+        "links: find a doctor, emergency care, pay a bill, portal demo"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean via qc.js; interaction scripted with Playwright; manual/screen-reader not tested"
+    },
+    {
+      "id": "primary-nav",
+      "selector": "[data-component='primary-nav']",
+      "pages": [
+        "404.html",
+        "appointment-scheduling.html",
+        "billing-and-insurance.html",
+        "condition-asthma.html",
+        "conditions.html",
+        "doctor-search.html",
+        "doctors.html",
+        "emergency-care.html",
+        "get-care.html",
+        "index.html",
+        "locations.html",
+        "online-bill-pay.html",
+        "patients-and-families.html",
+        "portal-login.html",
+        "provider.html",
+        "specialties.html"
+      ],
+      "behavior": [
+        "desktop navigation",
+        "mobile disclosure",
+        "aria-current on current page"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "Escape closes open menu and returns focus to its trigger"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean via qc.js; interaction scripted with Playwright; manual/screen-reader not tested"
+    },
+    {
+      "id": "mega-menu",
+      "selector": "[data-component='mega-menu']",
+      "pages": [
+        "404.html",
+        "appointment-scheduling.html",
+        "billing-and-insurance.html",
+        "condition-asthma.html",
+        "conditions.html",
+        "doctor-search.html",
+        "doctors.html",
+        "emergency-care.html",
+        "get-care.html",
+        "index.html",
+        "locations.html",
+        "online-bill-pay.html",
+        "patients-and-families.html",
+        "portal-login.html",
+        "provider.html",
+        "specialties.html"
+      ],
+      "behavior": [
+        "Get Care two-group panel opened by a button with aria-expanded"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "Escape closes open menu and returns focus to its trigger"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean via qc.js; interaction scripted with Playwright; manual/screen-reader not tested"
+    },
+    {
+      "id": "dropdown-menu",
+      "selector": "[data-component='dropdown-menu']",
+      "pages": [
+        "404.html",
+        "appointment-scheduling.html",
+        "billing-and-insurance.html",
+        "condition-asthma.html",
+        "conditions.html",
+        "doctor-search.html",
+        "doctors.html",
+        "emergency-care.html",
+        "get-care.html",
+        "index.html",
+        "locations.html",
+        "online-bill-pay.html",
+        "patients-and-families.html",
+        "portal-login.html",
+        "provider.html",
+        "specialties.html"
+      ],
+      "behavior": [
+        "Patients & Families / Billing & Insurance / Get Care disclosure buttons; only one open at a time; closes on outside click, Escape, focus leaving nav"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "Escape closes open menu and returns focus to its trigger"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean via qc.js; interaction scripted with Playwright; manual/screen-reader not tested"
+    },
+    {
+      "id": "mobile-menu-toggle",
+      "selector": "[data-component='mobile-menu-toggle']",
+      "pages": [
+        "404.html",
+        "appointment-scheduling.html",
+        "billing-and-insurance.html",
+        "condition-asthma.html",
+        "conditions.html",
+        "doctor-search.html",
+        "doctors.html",
+        "emergency-care.html",
+        "get-care.html",
+        "index.html",
+        "locations.html",
+        "online-bill-pay.html",
+        "patients-and-families.html",
+        "portal-login.html",
+        "provider.html",
+        "specialties.html"
+      ],
+      "behavior": [
+        "shows/hides primary nav below 61rem; aria-expanded"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean via qc.js; interaction scripted with Playwright; manual/screen-reader not tested"
+    },
+    {
+      "id": "alert-banner",
+      "selector": "[data-component='alert-banner']",
+      "pages": [
+        "404.html",
+        "appointment-scheduling.html",
+        "billing-and-insurance.html",
+        "condition-asthma.html",
+        "conditions.html",
+        "doctor-search.html",
+        "doctors.html",
+        "emergency-care.html",
+        "get-care.html",
+        "index.html",
+        "locations.html",
+        "online-bill-pay.html",
+        "patients-and-families.html",
+        "portal-login.html",
+        "provider.html",
+        "specialties.html"
+      ],
+      "behavior": [
+        "dismissible site notice with emergency reminder"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean via qc.js; interaction scripted with Playwright; manual/screen-reader not tested"
+    },
+    {
+      "id": "breadcrumbs",
+      "selector": "[data-component='breadcrumbs']",
+      "pages": [
+        "appointment-scheduling.html",
+        "condition-asthma.html",
+        "conditions.html",
+        "doctor-search.html",
+        "emergency-care.html",
+        "online-bill-pay.html",
+        "provider.html",
+        "specialties.html"
+      ],
+      "behavior": [
+        "ordered list, aria-current on last item; provider crumb updated by JS"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean via qc.js; interaction scripted with Playwright; manual/screen-reader not tested"
+    },
+    {
+      "id": "page-title",
+      "selector": "[data-component='page-title']",
+      "pages": [
+        "404.html",
+        "appointment-scheduling.html",
+        "billing-and-insurance.html",
+        "condition-asthma.html",
+        "conditions.html",
+        "doctor-search.html",
+        "doctors.html",
+        "emergency-care.html",
+        "get-care.html",
+        "locations.html",
+        "online-bill-pay.html",
+        "patients-and-families.html",
+        "portal-login.html",
+        "provider.html",
+        "specialties.html"
+      ],
+      "behavior": [
+        "single h1 band with optional lede"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "axe-core clean via qc.js; interaction scripted with Playwright; manual/screen-reader not tested"
+    },
+    {
+      "id": "hero-banner",
+      "selector": "[data-component='hero-banner']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "heading, supporting text, two calls to action, decorative SVG"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean via qc.js; interaction scripted with Playwright; manual/screen-reader not tested"
+    },
+    {
+      "id": "tabs",
+      "selector": "[data-component='tabs']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "home finder tabs: doctor / location / specialty; each panel is a GET form"
+      ],
+      "keyboard": [
+        "Tab",
+        "ArrowLeft",
+        "ArrowRight",
+        "Home",
+        "End",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean via qc.js; interaction scripted with Playwright; manual/screen-reader not tested"
+    },
+    {
+      "id": "quick-search-form",
+      "selector": "[data-component='quick-search-form']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "GET forms that open doctor-search, locations and specialties with the query prefilled"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean via qc.js; interaction scripted with Playwright; manual/screen-reader not tested"
+    },
+    {
+      "id": "card-grid",
+      "selector": "[data-component='card-grid']",
+      "pages": [
+        "get-care.html",
+        "index.html",
+        "patients-and-families.html"
+      ],
+      "behavior": [
+        "link cards"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean via qc.js; interaction scripted with Playwright; manual/screen-reader not tested"
+    },
+    {
+      "id": "stat-band",
+      "selector": "[data-component='stat-band']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "definition list of sample figures (labelled sample)"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "axe-core clean via qc.js; interaction scripted with Playwright; manual/screen-reader not tested"
+    },
+    {
+      "id": "emergency-notice",
+      "selector": "[data-component='emergency-notice']",
+      "pages": [
+        "emergency-care.html",
+        "index.html"
+      ],
+      "behavior": [
+        "static ER guidance and 911 reminder"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean via qc.js; interaction scripted with Playwright; manual/screen-reader not tested"
+    },
+    {
+      "id": "search-form",
+      "selector": "[data-component='search-form']",
+      "pages": [
+        "doctors.html"
+      ],
+      "behavior": [
+        "doctor landing search (GET to doctor-search.html)"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean via qc.js; interaction scripted with Playwright; manual/screen-reader not tested"
+    },
+    {
+      "id": "doctor-landing-form",
+      "selector": "[data-component='doctor-landing-form']",
+      "pages": [
+        "doctors.html"
+      ],
+      "behavior": [
+        "GET form with name, specialty and location"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean via qc.js; interaction scripted with Playwright; manual/screen-reader not tested"
+    },
+    {
+      "id": "link-list",
+      "selector": "[data-component='link-list']",
+      "pages": [
+        "doctors.html"
+      ],
+      "behavior": [
+        "specialty chips linking to prefiltered doctor search"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean via qc.js; interaction scripted with Playwright; manual/screen-reader not tested"
+    },
+    {
+      "id": "filter-panel",
+      "selector": "[data-component='filter-panel']",
+      "pages": [
+        "doctor-search.html",
+        "locations.html"
+      ],
+      "behavior": [
+        "aside holding the filter form"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean via qc.js; interaction scripted with Playwright; manual/screen-reader not tested"
+    },
+    {
+      "id": "doctor-search-form",
+      "selector": "[data-component='doctor-search-form']",
+      "pages": [
+        "doctor-search.html"
+      ],
+      "behavior": [
+        "keyword, specialty, location, language, accepting new patients, video visits; live filtering, URL sync, reset"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "Arrow keys in selects"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean via qc.js; interaction scripted with Playwright; manual/screen-reader not tested"
+    },
+    {
+      "id": "result-list",
+      "selector": "[data-component='result-list']",
+      "pages": [
+        "doctor-search.html"
+      ],
+      "behavior": [
+        "sorted results, live count, Show more paging (6 per page), empty state, reset"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean via qc.js; interaction scripted with Playwright; manual/screen-reader not tested"
+    },
+    {
+      "id": "provider-card",
+      "selector": "[data-component='provider-card']",
+      "pages": [
+        "doctor-search.html"
+      ],
+      "behavior": [
+        "JS-rendered result card with profile link"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean via qc.js; interaction scripted with Playwright; manual/screen-reader not tested"
+    },
+    {
+      "id": "provider-profile",
+      "selector": "[data-component='provider-profile']",
+      "pages": [
+        "provider.html"
+      ],
+      "behavior": [
+        "profile rendered from ?id= with locations and appointment link; not-found state"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean via qc.js; interaction scripted with Playwright; manual/screen-reader not tested"
+    },
+    {
+      "id": "location-search-form",
+      "selector": "[data-component='location-search-form']",
+      "pages": [
+        "locations.html"
+      ],
+      "behavior": [
+        "text + type filter, URL sync, reset"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean via qc.js; interaction scripted with Playwright; manual/screen-reader not tested"
+    },
+    {
+      "id": "location-list",
+      "selector": "[data-component='location-list']",
+      "pages": [
+        "emergency-care.html",
+        "locations.html"
+      ],
+      "behavior": [
+        "JS-rendered location cards, live count, empty state; preset emergency list on emergency page"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean via qc.js; interaction scripted with Playwright; manual/screen-reader not tested"
+    },
+    {
+      "id": "location-card",
+      "selector": "[data-component='location-card']",
+      "pages": [
+        "locations.html",
+        "emergency-care.html",
+        "provider.html"
+      ],
+      "behavior": [
+        "address, tel link, sample hours, care-type tag"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean via qc.js; interaction scripted with Playwright; manual/screen-reader not tested"
+    },
+    {
+      "id": "az-directory",
+      "selector": "[data-component='az-directory']",
+      "pages": [
+        "conditions.html",
+        "specialties.html"
+      ],
+      "behavior": [
+        "text search plus A-Z letter buttons (aria-pressed) over specialties or conditions; live count; empty state; prefilled from ?q="
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean via qc.js; interaction scripted with Playwright; manual/screen-reader not tested"
+    },
+    {
+      "id": "accordion",
+      "selector": "[data-component='accordion']",
+      "pages": [
+        "billing-and-insurance.html",
+        "condition-asthma.html",
+        "patients-and-families.html"
+      ],
+      "behavior": [
+        "button + panel disclosures with aria-expanded"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean via qc.js; interaction scripted with Playwright; manual/screen-reader not tested"
+    },
+    {
+      "id": "plan-filter",
+      "selector": "[data-component='plan-filter']",
+      "pages": [
+        "billing-and-insurance.html"
+      ],
+      "behavior": [
+        "text filter over eight sample insurance plans; empty state"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean via qc.js; interaction scripted with Playwright; manual/screen-reader not tested"
+    },
+    {
+      "id": "data-table",
+      "selector": "[data-component='data-table']",
+      "pages": [
+        "get-care.html"
+      ],
+      "behavior": [
+        "scrollable comparison table with caption and scope attributes"
+      ],
+      "keyboard": [
+        "Tab (scroll region focusable)"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean via qc.js; interaction scripted with Playwright; manual/screen-reader not tested"
+    },
+    {
+      "id": "content-section",
+      "selector": "[data-component='content-section']",
+      "pages": [
+        "appointment-scheduling.html",
+        "billing-and-insurance.html",
+        "condition-asthma.html",
+        "emergency-care.html",
+        "patients-and-families.html"
+      ],
+      "behavior": [
+        "plain content section"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "axe-core clean via qc.js; interaction scripted with Playwright; manual/screen-reader not tested"
+    },
+    {
+      "id": "side-panel",
+      "selector": "[data-component='side-panel']",
+      "pages": [
+        "appointment-scheduling.html",
+        "condition-asthma.html",
+        "patients-and-families.html"
+      ],
+      "behavior": [
+        "aside with related links"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean via qc.js; interaction scripted with Playwright; manual/screen-reader not tested"
+    },
+    {
+      "id": "appointment-form",
+      "selector": "[data-component='appointment-form']",
+      "pages": [
+        "appointment-scheduling.html"
+      ],
+      "behavior": [
+        "simulated request: required, email, phone, past-date, radio group, checkbox validation; error summary with focus; demo success"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean via qc.js; interaction scripted with Playwright; manual/screen-reader not tested"
+    },
+    {
+      "id": "bill-pay-form",
+      "selector": "[data-component='bill-pay-form']",
+      "pages": [
+        "online-bill-pay.html"
+      ],
+      "behavior": [
+        "non-functional lookup demo with validation"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean via qc.js; interaction scripted with Playwright; manual/screen-reader not tested"
+    },
+    {
+      "id": "login-form",
+      "selector": "[data-component='login-form']",
+      "pages": [
+        "portal-login.html"
+      ],
+      "behavior": [
+        "non-functional portal sign-in demo with validation"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean via qc.js; interaction scripted with Playwright; manual/screen-reader not tested"
+    },
+    {
+      "id": "error-summary",
+      "selector": "[data-component='error-summary']",
+      "pages": [
+        "appointment-scheduling.html",
+        "online-bill-pay.html",
+        "portal-login.html"
+      ],
+      "behavior": [
+        "role=alert summary with links to invalid fields; receives focus"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean via qc.js; interaction scripted with Playwright; manual/screen-reader not tested"
+    },
+    {
+      "id": "demo-success",
+      "selector": "[data-component='demo-success']",
+      "pages": [
+        "appointment-scheduling.html",
+        "online-bill-pay.html",
+        "portal-login.html"
+      ],
+      "behavior": [
+        "role=status demo confirmation; receives focus; states nothing was sent"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "axe-core clean via qc.js; interaction scripted with Playwright; manual/screen-reader not tested"
+    },
+    {
+      "id": "language-assistance",
+      "selector": "[data-component='language-assistance']",
+      "pages": [
+        "404.html",
+        "appointment-scheduling.html",
+        "billing-and-insurance.html",
+        "condition-asthma.html",
+        "conditions.html",
+        "doctor-search.html",
+        "doctors.html",
+        "emergency-care.html",
+        "get-care.html",
+        "index.html",
+        "locations.html",
+        "online-bill-pay.html",
+        "patients-and-families.html",
+        "portal-login.html",
+        "provider.html",
+        "specialties.html"
+      ],
+      "behavior": [
+        "footer block with a dialog opener"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean via qc.js; interaction scripted with Playwright; manual/screen-reader not tested"
+    },
+    {
+      "id": "modal-dialog",
+      "selector": "[data-component='modal-dialog']",
+      "pages": [
+        "404.html",
+        "appointment-scheduling.html",
+        "billing-and-insurance.html",
+        "condition-asthma.html",
+        "conditions.html",
+        "doctor-search.html",
+        "doctors.html",
+        "emergency-care.html",
+        "get-care.html",
+        "index.html",
+        "locations.html",
+        "online-bill-pay.html",
+        "patients-and-families.html",
+        "portal-login.html",
+        "provider.html",
+        "specialties.html"
+      ],
+      "behavior": [
+        "native dialog; showModal; Escape or Close button or backdrop click closes; focus returns to opener"
+      ],
+      "keyboard": [
+        "Tab",
+        "Shift+Tab",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean via qc.js; interaction scripted with Playwright; manual/screen-reader not tested"
+    },
+    {
+      "id": "footer-links",
+      "selector": "[data-component='footer-links']",
+      "pages": [
+        "404.html",
+        "appointment-scheduling.html",
+        "billing-and-insurance.html",
+        "condition-asthma.html",
+        "conditions.html",
+        "doctor-search.html",
+        "doctors.html",
+        "emergency-care.html",
+        "get-care.html",
+        "index.html",
+        "locations.html",
+        "online-bill-pay.html",
+        "patients-and-families.html",
+        "portal-login.html",
+        "provider.html",
+        "specialties.html"
+      ],
+      "behavior": [
+        "grouped footer navigation"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean via qc.js; interaction scripted with Playwright; manual/screen-reader not tested"
+    },
+    {
+      "id": "site-footer",
+      "selector": "[data-component='site-footer']",
+      "pages": [
+        "404.html",
+        "appointment-scheduling.html",
+        "billing-and-insurance.html",
+        "condition-asthma.html",
+        "conditions.html",
+        "doctor-search.html",
+        "doctors.html",
+        "emergency-care.html",
+        "get-care.html",
+        "index.html",
+        "locations.html",
+        "online-bill-pay.html",
+        "patients-and-families.html",
+        "portal-login.html",
+        "provider.html",
+        "specialties.html"
+      ],
+      "behavior": [
+        "brand/contact block, link groups, language assistance, legal line"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean via qc.js; interaction scripted with Playwright; manual/screen-reader not tested"
+    }
+  ]
+}

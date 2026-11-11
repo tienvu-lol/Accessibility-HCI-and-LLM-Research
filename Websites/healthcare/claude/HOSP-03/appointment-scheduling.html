@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Appointment Scheduling | Larkspur Children's Hospital</title>
+  <meta name="description" content="Ask for an appointment. This demo form sends nothing and books nothing. (Larkspur Children's Hospital is a fictional hospital used for an accessibility research replica.)">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<div class="notice-bar" role="region" aria-label="Site notice" data-section="global-alert" data-component="alert-banner">
+  <div class="wrap"><p><strong>Emergency?</strong> Call 911 right away. This is a fictional demonstration site: it shows no real wait times, alerts or medical advice.</p>
+  <button type="button" class="notice-dismiss" data-dismiss-notice>Dismiss notice</button></div>
+</div>
+<header data-section="global-header" data-component="site-header">
+  <div class="utility"><div class="wrap">
+    <nav aria-label="Utility" data-section="utility-navigation" data-component="utility-nav"><ul>
+      <li><a href="doctors.html">Find a doctor</a></li>
+      <li><a href="emergency-care.html">Emergency care</a></li>
+      <li><a href="online-bill-pay.html">Pay a bill</a></li>
+      <li><a href="portal-login.html">MyLarkspur Portal (demo)</a></li>
+    </ul></nav>
+  </div></div>
+  <div class="wrap header-main">
+    <a class="brand" href="index.html"><img src="assets/logo.svg" alt="" width="44" height="44"><span>Larkspur Children's Hospital<small>Fictional hospital for research</small></span></a>
+    <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" data-component="mobile-menu-toggle">Menu</button>
+    <nav id="primary-nav" class="primary-nav" aria-label="Primary" data-section="global-navigation" data-component="primary-nav">
+      <ul>
+      <li class="has-menu"><button type="button" class="menu-trigger is-current" aria-expanded="false" aria-controls="menu-get-care" data-component="dropdown-menu">Get Care</button>
+        <div class="menu-panel mega" id="menu-get-care" hidden data-component="mega-menu"><div class="menu-group"><p class="menu-heading">Care options</p><ul><li><a href="get-care.html">See all types of care</a></li><li><a href="appointment-scheduling.html" aria-current="page">Schedule an appointment</a></li><li><a href="doctors.html">Find a doctor</a></li><li><a href="conditions.html">Conditions we treat</a></li><li><a href="specialties.html">Specialties</a></li></ul></div><div class="menu-group"><p class="menu-heading">Locations</p><ul><li><a href="locations.html?type=primary">Primary care</a></li><li><a href="locations.html?type=specialty">Specialty care</a></li><li><a href="emergency-care.html">Emergency care</a></li><li><a href="locations.html?type=urgent">Urgent care</a></li><li><a href="locations.html?type=inpatient">Inpatient care for kids</a></li></ul></div></div></li>
+      <li class="has-menu"><button type="button" class="menu-trigger" aria-expanded="false" aria-controls="menu-patients" data-component="dropdown-menu">Patients &amp; Families</button>
+        <div class="menu-panel" id="menu-patients" hidden><div class="menu-group"><ul><li><a href="patients-and-families.html">Resources for families</a></li><li><a href="patients-and-families.html#caring">Caring for your child</a></li><li><a href="patients-and-families.html#records">Medical records</a></li><li><a href="patients-and-families.html#stays">Inpatient stays</a></li><li><a href="patients-and-families.html#forms">Health forms</a></li></ul></div></div></li>
+      <li class="has-menu"><button type="button" class="menu-trigger" aria-expanded="false" aria-controls="menu-billing" data-component="dropdown-menu">Billing &amp; Insurance</button>
+        <div class="menu-panel" id="menu-billing" hidden><div class="menu-group"><ul><li><a href="online-bill-pay.html">Pay a bill</a></li><li><a href="billing-and-insurance.html#insurance">Accepted insurance plans</a></li><li><a href="billing-and-insurance.html#estimate">Cost estimate</a></li><li><a href="billing-and-insurance.html#help">Financial help</a></li></ul></div></div></li>
+      <li><a class="nav-link" href="locations.html">Locations</a></li>
+      <li><a class="nav-link" href="specialties.html">Specialties</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main id="main-content" data-section="main-content">
+<div class="page-title" data-section="page-title" data-component="page-title"><div class="wrap"><nav aria-label="Breadcrumb" data-section="breadcrumbs" data-component="breadcrumbs"><ol><li><a href="index.html">Home</a></li><li><a href="get-care.html">Get care</a></li><li aria-current="page">Appointment scheduling</li></ol></nav><h1>Appointment scheduling</h1><p class="lede">Ask for an appointment. This demo form sends nothing and books nothing.</p></div></div>
+<div class="wrap block split">
+<div>
+<section aria-labelledby="how-title" data-section="how-it-works" data-component="content-section"><h2 id="how-title">How scheduling works</h2>
+  <ol><li>Tell us who the patient is and what you need.</li><li>A scheduler calls within one business day (not in this demo).</li><li>You get confirmation and any forms to complete.</li></ol>
+  <p>Prefer to talk? Call <a href="tel:+15550100143">(555) 010-0143</a>. For emergencies, call 911.</p></section>
+<section aria-labelledby="appt-form-title" data-section="appointment-request" data-component="appointment-form">
+  <h2 id="appt-form-title">Request an appointment (demo)</h2>
+  <p class="demo-note"><strong>Demo form.</strong> No data leaves your browser and no appointment is created.</p>
+  <div class="error-summary" id="appt-summary" role="alert" tabindex="-1" hidden data-component="error-summary"><h2>There is a problem</h2><p>Fix the following before sending the demo form:</p><ul></ul></div>
+  <form id="appt-form" novalidate data-demo-form data-summary="appt-summary" data-success-id="appt-success">
+    <fieldset><legend>Patient</legend>
+      <div class="field"><label for="patient-first">Patient first name</label><input type="text" id="patient-first" name="patient-first" data-required="Enter patient first name." autocomplete="off" aria-describedby="patient-first-error" ><p class="field-error" id="patient-first-error" hidden></p></div>
+      <div class="field"><label for="patient-last">Patient last name</label><input type="text" id="patient-last" name="patient-last" data-required="Enter patient last name." autocomplete="off" aria-describedby="patient-last-error" ><p class="field-error" id="patient-last-error" hidden></p></div>
+      <div class="field"><label for="patient-dob">Patient date of birth</label><p class="hint" id="patient-dob-hint">Use the date picker or type the date.</p><input type="date" id="patient-dob" name="patient-dob" data-required="Enter patient date of birth." data-validate="past-date" aria-describedby="patient-dob-hint patient-dob-error" ><p class="field-error" id="patient-dob-error" hidden></p></div></fieldset>
+    <fieldset><legend>Parent or guardian</legend>
+      <div class="field"><label for="guardian-name">Parent or guardian name</label><input type="text" id="guardian-name" name="guardian-name" data-required="Enter parent or guardian name." autocomplete="name" aria-describedby="guardian-name-error" ><p class="field-error" id="guardian-name-error" hidden></p></div>
+      <div class="field"><label for="guardian-email">Email address</label><input type="email" id="guardian-email" name="guardian-email" data-required="Enter email address." data-validate="email" autocomplete="email" aria-describedby="guardian-email-error" ><p class="field-error" id="guardian-email-error" hidden></p></div>
+      <div class="field"><label for="guardian-phone">Phone number</label><p class="hint" id="guardian-phone-hint">Include the area code.</p><input type="tel" id="guardian-phone" name="guardian-phone" data-required="Enter phone number." data-validate="phone" autocomplete="tel" aria-describedby="guardian-phone-hint guardian-phone-error" ><p class="field-error" id="guardian-phone-error" hidden></p></div>
+      <fieldset class="radio-group" data-required-group="Choose how we should contact you." aria-describedby="contact-method-error"><legend>Preferred contact method</legend>
+        <label class="check"><input type="radio" name="contact-method" value="phone"> Phone call</label><label class="check"><input type="radio" name="contact-method" value="email"> Email</label><label class="check"><input type="radio" name="contact-method" value="text"> Text message</label>
+        <p class="field-error" id="contact-method-error" hidden></p></fieldset></fieldset>
+    <fieldset><legend>Visit</legend>
+      <div class="field"><label for="specialty">Specialty or type of care</label><select id="specialty" name="specialty" data-required="Choose specialty or type of care." aria-describedby="specialty-error" data-options="specialties"></select><p class="field-error" id="specialty-error" hidden></p></div>
+      <div class="field"><label for="location">Preferred location</label><select id="location" name="location" data-required="Choose preferred location." aria-describedby="location-error" data-options="locations"></select><p class="field-error" id="location-error" hidden></p></div>
+      <div class="field"><label for="provider">Preferred doctor <span class="optional">(optional)</span></label><p class="hint" id="provider-hint">Leave blank if you have no preference.</p><input type="text" id="provider" name="provider" aria-describedby="provider-hint provider-error" ><p class="field-error" id="provider-error" hidden></p></div>
+      <div class="field"><label for="reason">Reason for visit</label><p class="hint" id="reason-hint">Briefly describe the concern. Do not include emergencies.</p><textarea id="reason" name="reason" data-required="Enter reason for visit." aria-describedby="reason-hint reason-error"  rows="4"></textarea><p class="field-error" id="reason-error" hidden></p></div></fieldset>
+    <div class="field check-field"><label class="check"><input type="checkbox" id="consent" name="consent" data-required="Check the box to confirm you understand this is a demo." aria-describedby="consent-error"> I understand this is a demonstration and nothing is sent.</label><p class="field-error" id="consent-error" hidden></p></div>
+    <button class="btn" type="submit">Send request (demo)</button>
+  </form>
+  <div class="demo-success" id="appt-success" role="status" tabindex="-1" hidden data-component="demo-success"><h2>Demo submission received</h2><p>Thank you. Your demo request was checked in the browser only. No appointment was requested and no one will call you.</p></div>
+</section></div>
+<aside aria-labelledby="appt-side" data-section="scheduling-help" data-component="side-panel"><h2 id="appt-side">Before you call</h2><ul><li>Have the patient's date of birth ready.</li><li>Bring insurance information to the visit.</li><li>See <a href="patients-and-families.html#forms">health forms</a>.</li><li>Questions about cost? <a href="billing-and-insurance.html#estimate">Cost estimates</a>.</li></ul></aside>
+</div>
+</main>
+<footer data-section="global-footer" data-component="site-footer">
+  <div class="wrap footer-grid">
+    <section aria-labelledby="ft-brand"><h2 id="ft-brand">Larkspur Children's Hospital</h2><p>A fictional children's hospital created for an accessibility and usability research dataset. Names, people, numbers and addresses are invented.</p>
+      <p>Main line: <a href="tel:+15550100142">(555) 010-0142</a><br>Appointments: <a href="tel:+15550100143">(555) 010-0143</a><br>Billing: <a href="tel:+15550100144">(555) 010-0144</a></p></section>
+    <nav aria-labelledby="ft-care" data-component="footer-links"><h2 id="ft-care">Get care</h2><ul>
+      <li><a href="doctors.html">Find a doctor</a></li><li><a href="locations.html">Find a location</a></li><li><a href="specialties.html">Find a specialty</a></li><li><a href="conditions.html">Conditions we treat</a></li><li><a href="emergency-care.html">Emergency care for kids</a></li></ul></nav>
+    <nav aria-labelledby="ft-families" data-component="footer-links"><h2 id="ft-families">Patients &amp; families</h2><ul>
+      <li><a href="billing-and-insurance.html">Insurance &amp; billing</a></li><li><a href="online-bill-pay.html">Pay a bill</a></li><li><a href="patients-and-families.html#caring">Caring for your child</a></li><li><a href="portal-login.html">MyLarkspur Portal (demo)</a></li></ul></nav>
+    <section aria-labelledby="ft-lang" data-component="language-assistance"><h2 id="ft-lang">Language assistance</h2><p>Free interpreter and auxiliary aid services are part of the care model this site imitates.</p>
+      <button type="button" class="btn btn-light" data-open-dialog="language-dialog" aria-haspopup="dialog">Language assistance (demo)</button></section>
+  </div>
+  <div class="wrap footer-legal"><p>Fictional organization. Not a real hospital, no real logos or marks. Do not use for medical decisions. In an emergency, call 911.</p></div>
+</footer>
+<dialog id="language-dialog" aria-labelledby="language-dialog-title" data-component="modal-dialog">
+  <h2 id="language-dialog-title">Language assistance (demo)</h2>
+  <p>The reference site lists translated pages in many languages. This replica does not include translations. Interpreter services are described here only to show the dialog pattern.</p>
+  <p lang="en">English, Spanish, Arabic, Chinese, Hindi, Portuguese, Tagalog, Vietnamese</p>
+  <button type="button" class="btn" data-close-dialog>Close</button>
+</dialog>
+</body>
+</html>
