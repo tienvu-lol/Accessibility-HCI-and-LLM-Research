@@ -1,0 +1,643 @@
+{
+  "protocol_version": "1.0",
+  "replica_id": "NEWS-01",
+  "category": "news",
+  "source_url": "https://www.theguardian.com/us",
+  "components": [
+    {
+      "id": "article",
+      "selector": "[data-component='article']",
+      "pages": [
+        "article.html"
+      ],
+      "behavior": [
+        "Article with byline, dateline, figure, body, topic tags; ?id= re-renders from inline data or shows a not-found state"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "scripted-check+axe"
+    },
+    {
+      "id": "byline",
+      "selector": "[data-component='byline']",
+      "pages": [
+        "article.html"
+      ],
+      "behavior": [
+        "Author link (rel=author), dateline, date, read time, comments anchor"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-only"
+    },
+    {
+      "id": "card-grid",
+      "selector": "[data-component='card-grid']",
+      "pages": [
+        "business.html",
+        "crosswords.html",
+        "culture.html",
+        "lifestyle.html",
+        "opinion.html",
+        "podcasts.html",
+        "sport.html",
+        "technology.html",
+        "us-news.html",
+        "us-politics.html",
+        "world.html"
+      ],
+      "behavior": [
+        "Responsive auto-fit grid of cards, shows or puzzles"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-only"
+    },
+    {
+      "id": "clue-check",
+      "selector": "[data-component='clue-check']",
+      "pages": [
+        "crosswords.html"
+      ],
+      "behavior": [
+        "Clue of the day answer check with inline errors"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "scripted-check+axe"
+    },
+    {
+      "id": "comment-list",
+      "selector": "[data-component='comment-list']",
+      "pages": [
+        "article.html"
+      ],
+      "behavior": [
+        "Read-only sample comments for layout"
+      ],
+      "keyboard": [
+        "Tab to skip target via #comments link"
+      ],
+      "status": "implemented",
+      "validation": "axe-only"
+    },
+    {
+      "id": "content-tabs",
+      "selector": "[data-component='content-tabs']",
+      "pages": [
+        "article.html",
+        "business.html",
+        "culture.html",
+        "index.html",
+        "lifestyle.html",
+        "opinion.html",
+        "sport.html",
+        "technology.html",
+        "us-news.html",
+        "us-politics.html",
+        "world.html"
+      ],
+      "behavior": [
+        "Latest / Most read tabs with roving tabindex"
+      ],
+      "keyboard": [
+        "Tab to selected tab",
+        "ArrowLeft/ArrowRight",
+        "Home",
+        "End"
+      ],
+      "status": "implemented",
+      "validation": "scripted-keyboard-check+axe"
+    },
+    {
+      "id": "contribute-form",
+      "selector": "[data-component='contribute-form']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "Take part form: textarea + consent checkbox group; demo"
+      ],
+      "keyboard": [
+        "Tab",
+        "Space",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "scripted-check+axe"
+    },
+    {
+      "id": "error-page",
+      "selector": "[data-component='error-page']",
+      "pages": [
+        "404.html"
+      ],
+      "behavior": [
+        "404 with routes to front page and search"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-only"
+    },
+    {
+      "id": "front-section",
+      "selector": "[data-component='front-section']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "Home front with View all link and Hide/Show disclosure button"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space toggles"
+      ],
+      "status": "implemented",
+      "validation": "scripted-check+axe"
+    },
+    {
+      "id": "hero-stories",
+      "selector": "[data-component='hero-stories']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "Lead story plus three cards beside the latest/most-read tabs"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-only"
+    },
+    {
+      "id": "mega-menu",
+      "selector": "[data-component='mega-menu']",
+      "pages": [
+        "404.html",
+        "article.html",
+        "business.html",
+        "crosswords.html",
+        "culture.html",
+        "index.html",
+        "lifestyle.html",
+        "newsletters.html",
+        "opinion.html",
+        "podcasts.html",
+        "search.html",
+        "sport.html",
+        "technology.html",
+        "us-news.html",
+        "us-politics.html",
+        "world.html"
+      ],
+      "behavior": [
+        "Expanded five-group menu; desktop shows all groups, mobile (<740px) groups are aria-expanded disclosures; topic links open local search"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space toggles group",
+        "Escape closes menu"
+      ],
+      "status": "implemented",
+      "validation": "scripted-check+axe"
+    },
+    {
+      "id": "modal-dialog",
+      "selector": "[data-component='modal-dialog']",
+      "pages": [
+        "404.html",
+        "article.html",
+        "business.html",
+        "crosswords.html",
+        "culture.html",
+        "index.html",
+        "lifestyle.html",
+        "newsletters.html",
+        "opinion.html",
+        "podcasts.html",
+        "search.html",
+        "sport.html",
+        "technology.html",
+        "us-news.html",
+        "us-politics.html",
+        "world.html"
+      ],
+      "behavior": [
+        "Native <dialog> modals: sign in, support, out-of-scope notice; focus returns to opener"
+      ],
+      "keyboard": [
+        "Tab cycles inside",
+        "Escape closes"
+      ],
+      "status": "implemented",
+      "validation": "scripted-check+axe"
+    },
+    {
+      "id": "newsletter-form",
+      "selector": "[data-component='newsletter-form']",
+      "pages": [
+        "article.html",
+        "business.html",
+        "culture.html",
+        "index.html",
+        "lifestyle.html",
+        "newsletters.html",
+        "opinion.html",
+        "sport.html",
+        "technology.html",
+        "us-news.html",
+        "us-politics.html",
+        "world.html"
+      ],
+      "behavior": [
+        "Email sign-up (mini form in promos; full form with newsletter checkboxes on newsletters.html) with error summary, inline errors and demo success"
+      ],
+      "keyboard": [
+        "Tab",
+        "Space toggles checkbox",
+        "Enter submits"
+      ],
+      "status": "implemented",
+      "validation": "scripted-check+axe"
+    },
+    {
+      "id": "podcast-show",
+      "selector": "[data-component='podcast-show']",
+      "pages": [
+        "podcasts.html"
+      ],
+      "behavior": [
+        "Show with details disclosures for episode notes (no audio)"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space toggles details"
+      ],
+      "status": "implemented",
+      "validation": "axe-only"
+    },
+    {
+      "id": "primary-nav",
+      "selector": "[data-component='primary-nav']",
+      "pages": [
+        "404.html",
+        "article.html",
+        "business.html",
+        "crosswords.html",
+        "culture.html",
+        "index.html",
+        "lifestyle.html",
+        "newsletters.html",
+        "opinion.html",
+        "podcasts.html",
+        "search.html",
+        "sport.html",
+        "technology.html",
+        "us-news.html",
+        "us-politics.html",
+        "world.html"
+      ],
+      "behavior": [
+        "Five pillar links with aria-current; All sections button opens expanded menu"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "Escape closes menu and returns focus to the button"
+      ],
+      "status": "implemented",
+      "validation": "scripted-check+axe"
+    },
+    {
+      "id": "puzzle-card",
+      "selector": "[data-component='puzzle-card']",
+      "pages": [
+        "crosswords.html"
+      ],
+      "behavior": [
+        "Sample puzzle with details disclosures for clues and answers"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space toggles details"
+      ],
+      "status": "implemented",
+      "validation": "axe-only"
+    },
+    {
+      "id": "rich-link-list",
+      "selector": "[data-component='rich-link-list']",
+      "pages": [
+        "article.html"
+      ],
+      "behavior": [
+        "Related stories box"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-only"
+    },
+    {
+      "id": "search-results",
+      "selector": "[data-component='search-results']",
+      "pages": [
+        "search.html"
+      ],
+      "behavior": [
+        "Client-side search over inline sample stories, with status, empty state and no-query state"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "scripted-check+axe"
+    },
+    {
+      "id": "section-subnav",
+      "selector": "[data-component='section-subnav']",
+      "pages": [
+        "article.html",
+        "business.html",
+        "culture.html",
+        "lifestyle.html",
+        "opinion.html",
+        "sport.html",
+        "technology.html",
+        "us-news.html",
+        "us-politics.html",
+        "world.html"
+      ],
+      "behavior": [
+        "Section-level links with aria-current"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-only"
+    },
+    {
+      "id": "signin-form",
+      "selector": "[data-component='signin-form']",
+      "pages": [
+        "404.html",
+        "article.html",
+        "business.html",
+        "crosswords.html",
+        "culture.html",
+        "index.html",
+        "lifestyle.html",
+        "newsletters.html",
+        "opinion.html",
+        "podcasts.html",
+        "search.html",
+        "sport.html",
+        "technology.html",
+        "us-news.html",
+        "us-politics.html",
+        "world.html"
+      ],
+      "behavior": [
+        "Sign-in dialog form; demo, no accounts"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Escape closes"
+      ],
+      "status": "implemented",
+      "validation": "scripted-check+axe"
+    },
+    {
+      "id": "site-footer",
+      "selector": "[data-component='site-footer']",
+      "pages": [
+        "404.html",
+        "article.html",
+        "business.html",
+        "crosswords.html",
+        "culture.html",
+        "index.html",
+        "lifestyle.html",
+        "newsletters.html",
+        "opinion.html",
+        "podcasts.html",
+        "search.html",
+        "sport.html",
+        "technology.html",
+        "us-news.html",
+        "us-politics.html",
+        "world.html"
+      ],
+      "behavior": [
+        "Five section groups, More group, About group of buttons that open an out-of-scope notice dialog"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "Escape closes dialog"
+      ],
+      "status": "implemented",
+      "validation": "axe-only"
+    },
+    {
+      "id": "site-header",
+      "selector": "[data-component='site-header']",
+      "pages": [
+        "404.html",
+        "article.html",
+        "business.html",
+        "crosswords.html",
+        "culture.html",
+        "index.html",
+        "lifestyle.html",
+        "newsletters.html",
+        "opinion.html",
+        "podcasts.html",
+        "search.html",
+        "sport.html",
+        "technology.html",
+        "us-news.html",
+        "us-politics.html",
+        "world.html"
+      ],
+      "behavior": [
+        "Brand, utility bar, search and navigation on every page"
+      ],
+      "keyboard": [
+        "skip link precedes it",
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "axe-only"
+    },
+    {
+      "id": "site-search",
+      "selector": "[data-component='site-search']",
+      "pages": [
+        "404.html",
+        "article.html",
+        "business.html",
+        "crosswords.html",
+        "culture.html",
+        "index.html",
+        "lifestyle.html",
+        "newsletters.html",
+        "opinion.html",
+        "podcasts.html",
+        "search.html",
+        "sport.html",
+        "technology.html",
+        "us-news.html",
+        "us-politics.html",
+        "world.html"
+      ],
+      "behavior": [
+        "GET form to search.html?q=; search page adds section filter and sort"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter submits"
+      ],
+      "status": "implemented",
+      "validation": "scripted-check+axe"
+    },
+    {
+      "id": "story-card",
+      "selector": "[data-component='story-card']",
+      "pages": [
+        "article.html",
+        "business.html",
+        "culture.html",
+        "index.html",
+        "lifestyle.html",
+        "opinion.html",
+        "search.html",
+        "sport.html",
+        "technology.html",
+        "us-news.html",
+        "us-politics.html",
+        "world.html"
+      ],
+      "behavior": [
+        "Image (decorative), kicker, headline link, standfirst, date and read time; links to article.html?id="
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-only"
+    },
+    {
+      "id": "subscription-form",
+      "selector": "[data-component='subscription-form']",
+      "pages": [
+        "404.html",
+        "article.html",
+        "business.html",
+        "crosswords.html",
+        "culture.html",
+        "index.html",
+        "lifestyle.html",
+        "newsletters.html",
+        "opinion.html",
+        "podcasts.html",
+        "search.html",
+        "sport.html",
+        "technology.html",
+        "us-news.html",
+        "us-politics.html",
+        "world.html"
+      ],
+      "behavior": [
+        "Support dialog form: amount radio group + email; simulation only"
+      ],
+      "keyboard": [
+        "Tab",
+        "Arrow keys in radio group",
+        "Enter",
+        "Escape closes"
+      ],
+      "status": "implemented",
+      "validation": "scripted-check+axe"
+    },
+    {
+      "id": "support-prompt",
+      "selector": "[data-component='support-prompt']",
+      "pages": [
+        "article.html"
+      ],
+      "behavior": [
+        "Inline support prompt opening the demo dialog"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "axe-only"
+    },
+    {
+      "id": "utility-nav",
+      "selector": "[data-component='utility-nav']",
+      "pages": [
+        "404.html",
+        "article.html",
+        "business.html",
+        "crosswords.html",
+        "culture.html",
+        "index.html",
+        "lifestyle.html",
+        "newsletters.html",
+        "opinion.html",
+        "podcasts.html",
+        "search.html",
+        "sport.html",
+        "technology.html",
+        "us-news.html",
+        "us-politics.html",
+        "world.html"
+      ],
+      "behavior": [
+        "Print subscriptions (opens demo support dialog), Newsletters link, Sign in (opens demo dialog)"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "axe-only"
+    }
+  ]
+}
