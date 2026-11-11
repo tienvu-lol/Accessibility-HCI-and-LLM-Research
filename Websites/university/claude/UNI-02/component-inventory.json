@@ -1,0 +1,734 @@
+{
+  "protocol_version": "1.0",
+  "replica_id": "UNI-02",
+  "category": "university",
+  "source_url": "https://www.swarthmore.edu/",
+  "components": [
+    {
+      "id": "accessibility-options",
+      "selector": "[data-component='accessibility-options']",
+      "pages": [
+        "404.html",
+        "academic-calendar.html",
+        "academics.html",
+        "admissions.html",
+        "affordability.html",
+        "apply.html",
+        "campus-life.html",
+        "department.html",
+        "design-your-own-major.html",
+        "directory.html",
+        "index.html",
+        "meet.html",
+        "news-events.html",
+        "search.html",
+        "stories.html",
+        "visit.html"
+      ],
+      "behavior": [
+        "animation on/off checkbox persisted in localStorage"
+      ],
+      "keyboard": [
+        "Space toggles",
+        "Escape closes"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-tested; manual-keyboard-and-screen-reader-not-tested"
+    },
+    {
+      "id": "accordion",
+      "selector": "[data-component='accordion']",
+      "pages": [
+        "affordability.html",
+        "apply.html",
+        "design-your-own-major.html"
+      ],
+      "behavior": [
+        "native details/summary disclosures"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-tested; manual-keyboard-and-screen-reader-not-tested"
+    },
+    {
+      "id": "breadcrumb",
+      "selector": "[data-component='breadcrumb']",
+      "pages": [
+        "404.html",
+        "academic-calendar.html",
+        "academics.html",
+        "admissions.html",
+        "affordability.html",
+        "apply.html",
+        "campus-life.html",
+        "department.html",
+        "design-your-own-major.html",
+        "directory.html",
+        "meet.html",
+        "news-events.html",
+        "search.html",
+        "stories.html",
+        "visit.html"
+      ],
+      "behavior": [
+        "ordered list of links, aria-current on last item"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-tested; manual-keyboard-and-screen-reader-not-tested"
+    },
+    {
+      "id": "card-grid",
+      "selector": "[data-component='card-grid']",
+      "pages": [
+        "admissions.html",
+        "index.html",
+        "news-events.html",
+        "visit.html"
+      ],
+      "behavior": [
+        "responsive grid of cards"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-tested; manual-keyboard-and-screen-reader-not-tested"
+    },
+    {
+      "id": "contact-block",
+      "selector": "[data-component='contact-block']",
+      "pages": [
+        "404.html",
+        "academic-calendar.html",
+        "academics.html",
+        "admissions.html",
+        "affordability.html",
+        "apply.html",
+        "campus-life.html",
+        "department.html",
+        "design-your-own-major.html",
+        "directory.html",
+        "index.html",
+        "meet.html",
+        "news-events.html",
+        "search.html",
+        "stories.html",
+        "visit.html"
+      ],
+      "behavior": [
+        "contact text"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-tested; manual-keyboard-and-screen-reader-not-tested"
+    },
+    {
+      "id": "content-block",
+      "selector": "[data-component='content-block']",
+      "pages": [
+        "404.html",
+        "academics.html",
+        "affordability.html",
+        "meet.html",
+        "news-events.html"
+      ],
+      "behavior": [
+        "prose section"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-tested; manual-keyboard-and-screen-reader-not-tested"
+    },
+    {
+      "id": "data-table",
+      "selector": "[data-component='data-table']",
+      "pages": [
+        "academic-calendar.html",
+        "apply.html"
+      ],
+      "behavior": [
+        "calendar table with term/type filters (JS); static deadline table"
+      ],
+      "keyboard": [
+        "Tab",
+        "arrow keys in selects"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-tested; manual-keyboard-and-screen-reader-not-tested"
+    },
+    {
+      "id": "department-detail",
+      "selector": "[data-component='department-detail']",
+      "pages": [
+        "department.html"
+      ],
+      "behavior": [
+        "renders a department from ?dept=slug; not-found state"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-tested; manual-keyboard-and-screen-reader-not-tested"
+    },
+    {
+      "id": "dialog",
+      "selector": "[data-component='dialog']",
+      "pages": [
+        "visit.html"
+      ],
+      "behavior": [
+        "native modal dialog for text virtual tour"
+      ],
+      "keyboard": [
+        "Tab",
+        "Escape closes",
+        "focus returns to opener"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-tested; manual-keyboard-and-screen-reader-not-tested"
+    },
+    {
+      "id": "directory-search",
+      "selector": "[data-component='directory-search']",
+      "pages": [
+        "directory.html"
+      ],
+      "behavior": [
+        "client-side people search over 16 sample entries with role filter, ?q= deep link, empty state"
+      ],
+      "keyboard": [
+        "Tab",
+        "type to filter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-tested; manual-keyboard-and-screen-reader-not-tested"
+    },
+    {
+      "id": "estimator-form",
+      "selector": "[data-component='estimator-form']",
+      "pages": [
+        "affordability.html"
+      ],
+      "behavior": [
+        "demo net price estimator with validation and local calculation"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-tested; manual-keyboard-and-screen-reader-not-tested"
+    },
+    {
+      "id": "feature-panel",
+      "selector": "[data-component='feature-panel']",
+      "pages": [
+        "campus-life.html",
+        "index.html"
+      ],
+      "behavior": [
+        "image plus text block"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-tested; manual-keyboard-and-screen-reader-not-tested"
+    },
+    {
+      "id": "hero-banner",
+      "selector": "[data-component='hero-banner']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "CSS animated background with Pause/Play button; starts paused under prefers-reduced-motion"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-tested; manual-keyboard-and-screen-reader-not-tested"
+    },
+    {
+      "id": "link-list",
+      "selector": "[data-component='link-list']",
+      "pages": [
+        "404.html",
+        "academic-calendar.html",
+        "academics.html",
+        "admissions.html",
+        "affordability.html",
+        "apply.html",
+        "campus-life.html",
+        "department.html",
+        "design-your-own-major.html",
+        "directory.html",
+        "index.html",
+        "meet.html",
+        "news-events.html",
+        "search.html",
+        "stories.html",
+        "visit.html"
+      ],
+      "behavior": [
+        "grouped link buttons"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-tested; manual-keyboard-and-screen-reader-not-tested"
+    },
+    {
+      "id": "local-nav",
+      "selector": "[data-component='local-nav']",
+      "pages": [
+        "affordability.html",
+        "apply.html",
+        "meet.html"
+      ],
+      "behavior": [
+        "in-page anchor links"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-tested; manual-keyboard-and-screen-reader-not-tested"
+    },
+    {
+      "id": "login-form",
+      "selector": "[data-component='login-form']",
+      "pages": [
+        "apply.html"
+      ],
+      "behavior": [
+        "simulated applicant portal sign-in with validation, error summary, demo success"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-tested; manual-keyboard-and-screen-reader-not-tested"
+    },
+    {
+      "id": "media-block",
+      "selector": "[data-component='media-block']",
+      "pages": [
+        "visit.html"
+      ],
+      "behavior": [
+        "campus map SVG with text alternative and route text"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-tested; manual-keyboard-and-screen-reader-not-tested"
+    },
+    {
+      "id": "mega-menu-toggle",
+      "selector": "[data-component='mega-menu-toggle']",
+      "pages": [
+        "404.html",
+        "academic-calendar.html",
+        "academics.html",
+        "admissions.html",
+        "affordability.html",
+        "apply.html",
+        "campus-life.html",
+        "department.html",
+        "design-your-own-major.html",
+        "directory.html",
+        "index.html",
+        "meet.html",
+        "news-events.html",
+        "search.html",
+        "stories.html",
+        "visit.html"
+      ],
+      "behavior": [
+        "button with aria-expanded and aria-controls per group"
+      ],
+      "keyboard": [
+        "Enter",
+        "Space",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-tested; manual-keyboard-and-screen-reader-not-tested"
+    },
+    {
+      "id": "news-list",
+      "selector": "[data-component='news-list']",
+      "pages": [
+        "index.html",
+        "news-events.html"
+      ],
+      "behavior": [
+        "news list; on news-events.html filterable by keyword and category"
+      ],
+      "keyboard": [
+        "Tab",
+        "type to filter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-tested; manual-keyboard-and-screen-reader-not-tested"
+    },
+    {
+      "id": "notice-banner",
+      "selector": "[data-component='notice-banner']",
+      "pages": [
+        "404.html",
+        "academic-calendar.html",
+        "academics.html",
+        "admissions.html",
+        "affordability.html",
+        "apply.html",
+        "campus-life.html",
+        "department.html",
+        "design-your-own-major.html",
+        "directory.html",
+        "index.html",
+        "meet.html",
+        "news-events.html",
+        "search.html",
+        "stories.html",
+        "visit.html"
+      ],
+      "behavior": [
+        "static fictional-site notice"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-tested; manual-keyboard-and-screen-reader-not-tested"
+    },
+    {
+      "id": "page-header",
+      "selector": "[data-component='page-header']",
+      "pages": [
+        "404.html",
+        "academic-calendar.html",
+        "academics.html",
+        "admissions.html",
+        "affordability.html",
+        "apply.html",
+        "campus-life.html",
+        "department.html",
+        "design-your-own-major.html",
+        "directory.html",
+        "meet.html",
+        "news-events.html",
+        "search.html",
+        "stories.html",
+        "visit.html"
+      ],
+      "behavior": [
+        "h1 banner with breadcrumb"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-tested; manual-keyboard-and-screen-reader-not-tested"
+    },
+    {
+      "id": "primary-nav",
+      "selector": "[data-component='primary-nav']",
+      "pages": [
+        "404.html",
+        "academic-calendar.html",
+        "academics.html",
+        "admissions.html",
+        "affordability.html",
+        "apply.html",
+        "campus-life.html",
+        "department.html",
+        "design-your-own-major.html",
+        "directory.html",
+        "index.html",
+        "meet.html",
+        "news-events.html",
+        "search.html",
+        "stories.html",
+        "visit.html"
+      ],
+      "behavior": [
+        "five dropdown groups (mega-menu pattern); hover opens on desktop; mobile disclosure via Menu button"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "Escape closes menu and returns focus"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-tested; manual-keyboard-and-screen-reader-not-tested"
+    },
+    {
+      "id": "program-finder",
+      "selector": "[data-component='program-finder']",
+      "pages": [
+        "academics.html"
+      ],
+      "behavior": [
+        "client-side search, division and offered-as filters over 19 sample programs, live result count, empty state, reset"
+      ],
+      "keyboard": [
+        "Tab",
+        "type to filter",
+        "arrow keys in selects",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-tested; manual-keyboard-and-screen-reader-not-tested"
+    },
+    {
+      "id": "search-flyout",
+      "selector": "[data-component='search-flyout']",
+      "pages": [
+        "404.html",
+        "academic-calendar.html",
+        "academics.html",
+        "admissions.html",
+        "affordability.html",
+        "apply.html",
+        "campus-life.html",
+        "department.html",
+        "design-your-own-major.html",
+        "directory.html",
+        "index.html",
+        "meet.html",
+        "news-events.html",
+        "search.html",
+        "stories.html",
+        "visit.html"
+      ],
+      "behavior": [
+        "GET form to search.html?keys=; focuses the input when opened"
+      ],
+      "keyboard": [
+        "Enter",
+        "Space",
+        "Escape closes and returns focus"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-tested; manual-keyboard-and-screen-reader-not-tested"
+    },
+    {
+      "id": "search-results",
+      "selector": "[data-component='search-results']",
+      "pages": [
+        "search.html"
+      ],
+      "behavior": [
+        "site search over pages, programs and news from ?keys="
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-tested; manual-keyboard-and-screen-reader-not-tested"
+    },
+    {
+      "id": "site-footer",
+      "selector": "[data-component='site-footer']",
+      "pages": [
+        "404.html",
+        "academic-calendar.html",
+        "academics.html",
+        "admissions.html",
+        "affordability.html",
+        "apply.html",
+        "campus-life.html",
+        "department.html",
+        "design-your-own-major.html",
+        "directory.html",
+        "index.html",
+        "meet.html",
+        "news-events.html",
+        "search.html",
+        "stories.html",
+        "visit.html"
+      ],
+      "behavior": [
+        "grouped links and legal notice"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-tested; manual-keyboard-and-screen-reader-not-tested"
+    },
+    {
+      "id": "site-header",
+      "selector": "[data-component='site-header']",
+      "pages": [
+        "404.html",
+        "academic-calendar.html",
+        "academics.html",
+        "admissions.html",
+        "affordability.html",
+        "apply.html",
+        "campus-life.html",
+        "department.html",
+        "design-your-own-major.html",
+        "directory.html",
+        "index.html",
+        "meet.html",
+        "news-events.html",
+        "search.html",
+        "stories.html",
+        "visit.html"
+      ],
+      "behavior": [
+        "brand link",
+        "utility bar",
+        "primary navigation, search and accessibility flyouts"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-tested; manual-keyboard-and-screen-reader-not-tested"
+    },
+    {
+      "id": "skip-link",
+      "selector": "[data-component='skip-link']",
+      "pages": [
+        "404.html",
+        "academic-calendar.html",
+        "academics.html",
+        "admissions.html",
+        "affordability.html",
+        "apply.html",
+        "campus-life.html",
+        "department.html",
+        "design-your-own-major.html",
+        "directory.html",
+        "index.html",
+        "meet.html",
+        "news-events.html",
+        "search.html",
+        "stories.html",
+        "visit.html"
+      ],
+      "behavior": [
+        "skip to main content"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-tested; manual-keyboard-and-screen-reader-not-tested"
+    },
+    {
+      "id": "stat-grid",
+      "selector": "[data-component='stat-grid']",
+      "pages": [
+        "meet.html"
+      ],
+      "behavior": [
+        "figures list"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-tested; manual-keyboard-and-screen-reader-not-tested"
+    },
+    {
+      "id": "steps-list",
+      "selector": "[data-component='steps-list']",
+      "pages": [
+        "design-your-own-major.html"
+      ],
+      "behavior": [
+        "ordered steps"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-tested; manual-keyboard-and-screen-reader-not-tested"
+    },
+    {
+      "id": "story-card",
+      "selector": "[data-component='story-card']",
+      "pages": [
+        "stories.html"
+      ],
+      "behavior": [
+        "feature story article"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-tested; manual-keyboard-and-screen-reader-not-tested"
+    },
+    {
+      "id": "utility-nav",
+      "selector": "[data-component='utility-nav']",
+      "pages": [
+        "404.html",
+        "academic-calendar.html",
+        "academics.html",
+        "admissions.html",
+        "affordability.html",
+        "apply.html",
+        "campus-life.html",
+        "department.html",
+        "design-your-own-major.html",
+        "directory.html",
+        "index.html",
+        "meet.html",
+        "news-events.html",
+        "search.html",
+        "stories.html",
+        "visit.html"
+      ],
+      "behavior": [
+        "links to calendar, directory, map, visit; buttons open the search and accessibility flyouts"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "Escape closes flyout"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-tested; manual-keyboard-and-screen-reader-not-tested"
+    },
+    {
+      "id": "visit-request-form",
+      "selector": "[data-component='visit-request-form']",
+      "pages": [
+        "visit.html"
+      ],
+      "behavior": [
+        "simulated tour request: required, email, date, number, select, checkbox validation; error summary with focus; demo success"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-tested; manual-keyboard-and-screen-reader-not-tested"
+    }
+  ],
+  "notes": "Pages and selectors generated from the delivered HTML. Validation: qc.js (axe-core at 1280 and 375) plus a scripted Playwright flow check; screen readers, manual keyboard walkthrough and 200% zoom were not tested."
+}

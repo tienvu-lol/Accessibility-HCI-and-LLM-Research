@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alderbrook Home :: Alderbrook College</title>
+<meta name="description" content="Alderbrook College is a fictional small liberal arts college used for accessibility research.">
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/styles.css">
+<script src="js/main.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main-content" data-component="skip-link">Skip to main content</a>
+<header class="site-header" data-section="global-header" data-component="site-header">
+  <div class="notice-bar" data-section="demo-notice" data-component="notice-banner">Fictional demonstration college for accessibility research. Not a real institution.</div>
+  <div class="utility-bar" data-section="utility-bar" data-component="utility-nav">
+    <div class="wrap">
+      <p class="utility-phone" style="margin:0">Main office: <a href="tel:+15550100000">(555) 010-0000</a></p>
+      <nav aria-label="Utility" data-section="utility-navigation" data-component="utility-nav">
+        <ul class="utility-list">
+          <li><a href="academic-calendar.html">Calendar</a></li>
+          <li><a href="directory.html">Directory</a></li>
+          <li><a href="visit.html#campus-map">Campus map</a></li>
+          <li><a href="visit.html">Visit Alderbrook</a></li>
+          <li><button type="button" id="search-toggle" aria-expanded="false" aria-controls="search-flyout">Search</button></li>
+          <li><button type="button" id="a11y-toggle" aria-expanded="false" aria-controls="a11y-panel">Accessibility options</button></li>
+        </ul>
+      </nav>
+      <div class="flyout" id="search-flyout" hidden data-section="site-search" data-component="search-flyout">
+        <form action="search.html" method="get" role="search" aria-label="Site search">
+          <div class="field"><label for="header-keys">Search this site</label><input type="search" id="header-keys" name="keys" autocomplete="off"></div>
+          <button class="btn" type="submit">Search</button>
+        </form>
+      </div>
+      <div class="flyout" id="a11y-panel" hidden data-section="accessibility-options" data-component="accessibility-options">
+        <p style="margin:0 0 .5rem"><strong>Accessibility options</strong></p>
+        <div class="checkbox"><input type="checkbox" id="anim-toggle"><label for="anim-toggle">Turn off animation (saved in this browser only)</label></div>
+      </div>
+    </div>
+  </div>
+  <div class="brand-row">
+    <a class="brand" href="index.html"><img src="assets/logo.svg" alt="" width="48" height="48"><span>Alderbrook College<small>Quillfield, Pennsylvania · fictional</small></span></a>
+    <button type="button" class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+  </div>
+  <nav class="primary-nav" id="primary-nav" aria-label="Primary" data-section="global-navigation" data-component="primary-nav">
+    <ul class="nav-list">
+      <li class="nav-item">
+        <button type="button" class="nav-group-toggle" aria-expanded="false" aria-controls="panel-meet" data-component="mega-menu-toggle">Meet Alderbrook</button>
+        <ul class="nav-panel" id="panel-meet">
+          <li class="overview"><a href="meet.html">Meet Alderbrook overview</a></li>
+          <li><a href="meet.html">What’s distinctive</a></li>
+          <li><a href="meet.html#mission">Mission</a></li>
+          <li><a href="meet.html#liberal-arts">Why liberal arts?</a></li>
+          <li><a href="meet.html#history">A brief history</a></li>
+          <li><a href="meet.html#numbers">By the numbers</a></li>
+          <li><a href="meet.html#traditions">Traditions</a></li>
+          <li><a href="meet.html#president">Meet the president</a></li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <button type="button" class="nav-group-toggle" aria-expanded="false" aria-controls="panel-academics" data-component="mega-menu-toggle">Academics</button>
+        <ul class="nav-panel" id="panel-academics">
+          <li class="overview"><a href="academics.html">Academics overview</a></li>
+          <li><a href="academic-calendar.html">Academic calendar</a></li>
+          <li><a href="academics.html#programs">Programs of study</a></li>
+          <li><a href="design-your-own-major.html">Design your own major</a></li>
+          <li><a href="academics.html#first-year">First-year experience</a></li>
+          <li><a href="academics.html#research">Research</a></li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <button type="button" class="nav-group-toggle" aria-expanded="false" aria-controls="panel-life" data-component="mega-menu-toggle">Campus Life</button>
+        <ul class="nav-panel" id="panel-life">
+          <li class="overview"><a href="campus-life.html">Campus Life overview</a></li>
+          <li><a href="campus-life.html#arts">Arts</a></li>
+          <li><a href="campus-life.html#athletics">Athletics & recreation</a></li>
+          <li><a href="campus-life.html#wellbeing">Be well</a></li>
+          <li><a href="campus-life.html#careers">Career services</a></li>
+          <li><a href="campus-life.html#clubs">Clubs & activities</a></li>
+          <li><a href="campus-life.html#living">Living on campus</a></li>
+          <li><a href="campus-life.html#sustainability">Sustainability</a></li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <button type="button" class="nav-group-toggle" aria-expanded="false" aria-controls="panel-admissions" data-component="mega-menu-toggle">Admissions & Aid</button>
+        <ul class="nav-panel" id="panel-admissions">
+          <li class="overview"><a href="admissions.html">Admissions & Aid overview</a></li>
+          <li><a href="affordability.html">Affordability & access</a></li>
+          <li><a href="apply.html">Apply to Alderbrook</a></li>
+          <li><a href="affordability.html#financial-aid">Financial aid & cost</a></li>
+          <li><a href="affordability.html#tuition-guarantee">Tuition guarantee</a></li>
+          <li><a href="visit.html">Campus tours & virtual visits</a></li>
+          <li><a href="stories.html">Alderbrook stories</a></li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <button type="button" class="nav-group-toggle" aria-expanded="false" aria-controls="panel-news" data-component="mega-menu-toggle">News & Events</button>
+        <ul class="nav-panel" id="panel-news">
+          <li class="overview"><a href="news-events.html">News & Events overview</a></li>
+          <li><a href="stories.html">Stories</a></li>
+          <li><a href="news-events.html#news">News</a></li>
+          <li><a href="news-events.html#events">Events</a></li>
+          <li><a href="news-events.html#social">Social media</a></li>
+          <li><a href="academic-calendar.html">Campus calendar</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</header>
+<main id="main-content" data-section="main-content">
+<section class="hero" aria-labelledby="hero-title" data-section="hero" data-component="hero-banner">
+  <div class="hero-art" aria-hidden="true"></div>
+  <div class="wrap">
+    <h1 id="hero-title">Alderbrook is a community where curious people come together to test good ideas</h1>
+    <p>A small liberal arts college in the river town of Quillfield, with seminars of fifteen and a campus that doubles as a living lab.</p>
+    <div class="hero-actions"><a class="btn btn-accent" href="meet.html">Meet Alderbrook</a><a class="btn btn-outline" href="visit.html">Plan a visit</a><button type="button" class="hero-pause" id="hero-pause">Pause background animation</button></div>
+  </div>
+</section>
+<section class="section" aria-labelledby="alumni-title" data-section="alumni-voices" data-component="feature-panel">
+  <div class="wrap feature">
+    <img src="assets/ph-library.svg" alt="" width="600" height="400">
+    <div><h2 id="alumni-title">Alumni voices and sustainability</h2><p>Four graduates describe how a senior capstone on campus energy became careers in clean-energy policy, public health and teaching.</p><p><a class="btn" href="stories.html#story-alumni">Read the alumni story</a></p></div>
+  </div>
+</section>
+<section class="section alt" aria-labelledby="founders-title" data-section="founders-weekend" data-component="feature-panel">
+  <div class="wrap feature flip">
+    <img src="assets/ph-quad.svg" alt="" width="600" height="400">
+    <div><h2 id="founders-title">Founders’ Weekend</h2><p>Come back to the quad for an open house, a lantern-lit concert and a faculty lecture series. Prospective students are welcome at every event.</p><p><a class="btn" href="news-events.html#events">See upcoming events</a></p></div>
+  </div>
+</section>
+<section class="section" aria-labelledby="watch-title" data-section="watch-stories" data-component="card-grid">
+  <div class="wrap">
+    <h2 id="watch-title">Beyond the classroom</h2>
+    <p>Short features from student life. These cards link to text stories; no video is included in this replica.</p>
+    <ul class="grid">
+      <li><div class="card"><img src="assets/ph-lab.svg" alt="" width="600" height="400" loading="lazy"><div class="card-body"><h3><a href="stories.html#story-lab">A semester at the creek lab</a></h3><p>How a first-year seminar became a watershed study.</p></div></div></li>
+      <li><div class="card"><img src="assets/ph-arts.svg" alt="" width="600" height="400" loading="lazy"><div class="card-body"><h3><a href="stories.html#story-dance">Building a dance from scratch</a></h3><p>Student choreographers on the fall concert.</p></div></div></li>
+      <li><div class="card"><img src="assets/ph-city.svg" alt="" width="600" height="400" loading="lazy"><div class="card-body"><h3><a href="stories.html#story-city">Internships in the city</a></h3><p>Where juniors spend their winter term.</p></div></div></li>
+    </ul>
+  </div>
+</section>
+<section class="section alt" aria-labelledby="zero-title" data-section="net-zero" data-component="feature-panel">
+  <div class="wrap feature">
+    <div><h2 id="zero-title">Net zero by 2040</h2><p>Alderbrook has pledged to reach net-zero campus emissions by 2040. Rooftop solar, a geothermal pilot and a student-led energy dashboard track progress.</p><p><a href="campus-life.html#sustainability">Learn about sustainability</a></p></div>
+    <img src="assets/ph-city.svg" alt="" width="600" height="400">
+  </div>
+</section>
+<section class="section" aria-labelledby="guarantee-title" data-section="tuition-guarantee" data-component="feature-panel">
+  <div class="wrap">
+    <h2 id="guarantee-title">The Alderbrook tuition guarantee</h2>
+    <p class="prose">Starting with the class of 2031, tuition stays the same for all four years. <a href="affordability.html#tuition-guarantee">How the guarantee works</a>.</p>
+  </div>
+</section>
+<section class="section alt" aria-labelledby="links-title" data-section="home-link-list" data-component="link-list">
+  <div class="wrap">
+    <h2 id="links-title">Explore</h2>
+    <ul class="link-list"><li><a href="academics.html#programs">Programs of study</a></li><li><a href="apply.html">Apply to Alderbrook</a></li><li><a href="affordability.html">Affordability &amp; access</a></li><li><a href="directory.html">Faculty &amp; staff directory</a></li><li><a href="design-your-own-major.html">Design your own major</a></li><li><a href="academic-calendar.html">Academic calendar</a></li></ul>
+  </div>
+</section>
+<section class="section" aria-labelledby="living-title" data-section="living-on-campus" data-component="card-grid">
+  <div class="wrap">
+    <h2 id="living-title">Living on campus</h2>
+    <ul class="grid">
+      <li><div class="card"><img src="assets/ph-quad.svg" alt="" width="600" height="400" loading="lazy"><div class="card-body"><h3><a href="campus-life.html#living">Residence halls</a></h3><p>Every first-year student lives in a small-community hall near the quad.</p></div></div></li>
+      <li><div class="card"><img src="assets/ph-arts.svg" alt="" width="600" height="400" loading="lazy"><div class="card-body"><h3><a href="campus-life.html#clubs">Arts and clubs</a></h3><p>More than ninety student clubs, from robotics to a cappella.</p></div></div></li>
+    </ul>
+  </div>
+</section>
+<section class="section alt" aria-labelledby="city-title" data-section="opportunities-city" data-component="feature-panel">
+  <div class="wrap feature flip">
+    <img src="assets/ph-city.svg" alt="" width="600" height="400">
+    <div><h2 id="city-title">Opportunities in Quillfield and beyond</h2><p>A commuter-rail line puts museums, hospitals, start-ups and city government within forty minutes of campus.</p><p><a href="campus-life.html#careers">See career resources</a></p></div>
+  </div>
+</section>
+<section class="section" aria-labelledby="news-title" data-section="news-from-alderbrook" data-component="news-list">
+  <div class="wrap">
+    <h2 id="news-title">News from Alderbrook</h2>
+    <ul class="result-list"><li><article><h3>Students map the Wren Creek watershed with new sensor network</h3><p class="meta"><time datetime="2026-11-03">Tue, Nov 3, 2026</time> · <span class="tag">Research</span></p><p>A first-year seminar and a senior capstone team placed twelve low-cost water sensors along the creek that borders campus.</p></article></li><li><article><h3>Alderbrook announces a new tuition guarantee for the class of 2031</h3><p class="meta"><time datetime="2026-10-27">Tue, Oct 27, 2026</time> · <span class="tag">Campus</span></p><p>Families of incoming students will see a fixed tuition rate for all four years of study.</p></article></li><li><article><h3>Herons soccer wins conference title in overtime thriller</h3><p class="meta"><time datetime="2026-10-24">Sat, Oct 24, 2026</time> · <span class="tag">Athletics</span></p><p>A late header sealed the first conference championship for the women’s team since 2019.</p></article></li></ul>
+    <p><a class="btn btn-outline" href="news-events.html">All news and events</a></p>
+  </div>
+</section>
+</main>
+<footer class="site-footer" data-section="global-footer" data-component="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <section aria-labelledby="ft-contact" data-section="footer-contact" data-component="contact-block">
+        <h2 id="ft-contact">Alderbrook College</h2>
+        <address style="font-style:normal">100 College Lane (fictional)<br>Quillfield, PA 00000<br><a href="tel:+15550100000">(555) 010-0000</a></address>
+      </section>
+      <nav aria-labelledby="ft-links" data-section="footer-links" data-component="link-list">
+        <h2 id="ft-links">Helpful links</h2>
+        <ul><li><a href="academic-calendar.html">Academic calendar</a></li><li><a href="directory.html">Directory</a></li><li><a href="apply.html">Application requirements</a></li><li><a href="visit.html#campus-map">Campus map</a></li><li><a href="academics.html#programs">Programs of study</a></li></ul>
+      </nav>
+      <nav aria-labelledby="ft-more" data-section="footer-links-more" data-component="link-list">
+        <h2 id="ft-more">More</h2>
+        <ul><li><a href="affordability.html">Affordability &amp; access</a></li><li><a href="stories.html">Stories</a></li><li><a href="news-events.html#social">Social media (demo)</a></li><li><a href="meet.html#about-demo">Site feedback &amp; accessibility</a></li></ul>
+      </nav>
+    </div>
+    <p class="footer-legal" data-section="footer-legal">© 2026 Alderbrook College — a fictional institution created for accessibility and usability research. All names, people, dates and figures are invented sample data. <a href="meet.html#about-demo">About this demonstration site</a> · <a href="meet.html#about-demo">Privacy &amp; terms (demo)</a></p>
+  </div>
+</footer>
+</body>
+</html>

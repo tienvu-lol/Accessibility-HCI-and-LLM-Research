@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Campus Tours and Virtual Visits :: Admissions &amp; Aid :: Alderbrook College</title>
+<meta name="description" content="Request a campus tour at Alderbrook College (simulated form), take a self-guided walk or a virtual tour.">
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/styles.css">
+<script src="js/main.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main-content" data-component="skip-link">Skip to main content</a>
+<header class="site-header" data-section="global-header" data-component="site-header">
+  <div class="notice-bar" data-section="demo-notice" data-component="notice-banner">Fictional demonstration college for accessibility research. Not a real institution.</div>
+  <div class="utility-bar" data-section="utility-bar" data-component="utility-nav">
+    <div class="wrap">
+      <p class="utility-phone" style="margin:0">Main office: <a href="tel:+15550100000">(555) 010-0000</a></p>
+      <nav aria-label="Utility" data-section="utility-navigation" data-component="utility-nav">
+        <ul class="utility-list">
+          <li><a href="academic-calendar.html">Calendar</a></li>
+          <li><a href="directory.html">Directory</a></li>
+          <li><a href="visit.html#campus-map">Campus map</a></li>
+          <li><a href="visit.html">Visit Alderbrook</a></li>
+          <li><button type="button" id="search-toggle" aria-expanded="false" aria-controls="search-flyout">Search</button></li>
+          <li><button type="button" id="a11y-toggle" aria-expanded="false" aria-controls="a11y-panel">Accessibility options</button></li>
+        </ul>
+      </nav>
+      <div class="flyout" id="search-flyout" hidden data-section="site-search" data-component="search-flyout">
+        <form action="search.html" method="get" role="search" aria-label="Site search">
+          <div class="field"><label for="header-keys">Search this site</label><input type="search" id="header-keys" name="keys" autocomplete="off"></div>
+          <button class="btn" type="submit">Search</button>
+        </form>
+      </div>
+      <div class="flyout" id="a11y-panel" hidden data-section="accessibility-options" data-component="accessibility-options">
+        <p style="margin:0 0 .5rem"><strong>Accessibility options</strong></p>
+        <div class="checkbox"><input type="checkbox" id="anim-toggle"><label for="anim-toggle">Turn off animation (saved in this browser only)</label></div>
+      </div>
+    </div>
+  </div>
+  <div class="brand-row">
+    <a class="brand" href="index.html"><img src="assets/logo.svg" alt="" width="48" height="48"><span>Alderbrook College<small>Quillfield, Pennsylvania · fictional</small></span></a>
+    <button type="button" class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+  </div>
+  <nav class="primary-nav" id="primary-nav" aria-label="Primary" data-section="global-navigation" data-component="primary-nav">
+    <ul class="nav-list">
+      <li class="nav-item">
+        <button type="button" class="nav-group-toggle" aria-expanded="false" aria-controls="panel-meet" data-component="mega-menu-toggle">Meet Alderbrook</button>
+        <ul class="nav-panel" id="panel-meet">
+          <li class="overview"><a href="meet.html">Meet Alderbrook overview</a></li>
+          <li><a href="meet.html">What’s distinctive</a></li>
+          <li><a href="meet.html#mission">Mission</a></li>
+          <li><a href="meet.html#liberal-arts">Why liberal arts?</a></li>
+          <li><a href="meet.html#history">A brief history</a></li>
+          <li><a href="meet.html#numbers">By the numbers</a></li>
+          <li><a href="meet.html#traditions">Traditions</a></li>
+          <li><a href="meet.html#president">Meet the president</a></li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <button type="button" class="nav-group-toggle" aria-expanded="false" aria-controls="panel-academics" data-component="mega-menu-toggle">Academics</button>
+        <ul class="nav-panel" id="panel-academics">
+          <li class="overview"><a href="academics.html">Academics overview</a></li>
+          <li><a href="academic-calendar.html">Academic calendar</a></li>
+          <li><a href="academics.html#programs">Programs of study</a></li>
+          <li><a href="design-your-own-major.html">Design your own major</a></li>
+          <li><a href="academics.html#first-year">First-year experience</a></li>
+          <li><a href="academics.html#research">Research</a></li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <button type="button" class="nav-group-toggle" aria-expanded="false" aria-controls="panel-life" data-component="mega-menu-toggle">Campus Life</button>
+        <ul class="nav-panel" id="panel-life">
+          <li class="overview"><a href="campus-life.html">Campus Life overview</a></li>
+          <li><a href="campus-life.html#arts">Arts</a></li>
+          <li><a href="campus-life.html#athletics">Athletics & recreation</a></li>
+          <li><a href="campus-life.html#wellbeing">Be well</a></li>
+          <li><a href="campus-life.html#careers">Career services</a></li>
+          <li><a href="campus-life.html#clubs">Clubs & activities</a></li>
+          <li><a href="campus-life.html#living">Living on campus</a></li>
+          <li><a href="campus-life.html#sustainability">Sustainability</a></li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <button type="button" class="nav-group-toggle is-current" aria-expanded="false" aria-controls="panel-admissions" data-component="mega-menu-toggle">Admissions & Aid</button>
+        <ul class="nav-panel" id="panel-admissions">
+          <li class="overview"><a href="admissions.html">Admissions & Aid overview</a></li>
+          <li><a href="affordability.html">Affordability & access</a></li>
+          <li><a href="apply.html">Apply to Alderbrook</a></li>
+          <li><a href="affordability.html#financial-aid">Financial aid & cost</a></li>
+          <li><a href="affordability.html#tuition-guarantee">Tuition guarantee</a></li>
+          <li><a href="visit.html" aria-current="page">Campus tours & virtual visits</a></li>
+          <li><a href="stories.html">Alderbrook stories</a></li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <button type="button" class="nav-group-toggle" aria-expanded="false" aria-controls="panel-news" data-component="mega-menu-toggle">News & Events</button>
+        <ul class="nav-panel" id="panel-news">
+          <li class="overview"><a href="news-events.html">News & Events overview</a></li>
+          <li><a href="stories.html">Stories</a></li>
+          <li><a href="news-events.html#news">News</a></li>
+          <li><a href="news-events.html#events">Events</a></li>
+          <li><a href="news-events.html#social">Social media</a></li>
+          <li><a href="academic-calendar.html">Campus calendar</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</header>
+<main id="main-content" data-section="main-content">
+<div class="page-header" data-section="page-header" data-component="page-header"><div class="wrap"><nav class="breadcrumb" aria-label="Breadcrumb" data-section="breadcrumb" data-component="breadcrumb"><ol><li><a href="index.html">Home</a></li><li><a href="admissions.html">Admissions & Aid</a></li><li><span aria-current="page">Campus tours & virtual visits</span></li></ol></nav><h1>Campus tours &amp; virtual visits</h1><p>See the quad, a classroom and a residence hall with a student guide, or on your own.</p></div></div>
+<div class="wrap layout">
+<section aria-labelledby="visit-options" data-section="visit-options" data-component="card-grid"><h2 id="visit-options">Ways to visit</h2><ul class="grid">
+<li><div class="card"><div class="card-body"><h3>Campus tour</h3><p>Sixty minutes with a student guide. Use the request form below.</p><p><a href="#visit-request">Request a tour</a></p></div></div></li>
+<li><div class="card"><div class="card-body"><h3>Self-guided tour</h3><p>Walk the route on the <a href="#campus-map">campus map</a> any day from dawn to dusk.</p></div></div></li>
+<li><div class="card"><div class="card-body"><h3>Virtual tour</h3><p>A text-based walkthrough in a dialog window (no video in this replica).</p><p><button type="button" class="btn btn-outline" id="tour-open">Open virtual tour</button></p></div></div></li></ul></section>
+<section id="visit-request" aria-labelledby="vr-t" data-section="visit-request" data-component="visit-request-form"><h2 id="vr-t">Request a campus tour (demonstration)</h2>
+<p class="demo-note"><strong>Demonstration:</strong> This form is a simulation. Nothing is sent or saved; no tour will be scheduled.</p>
+<div class="form-panel" data-section="visit-form">
+<form id="visit-form" novalidate data-component="visit-request-form">
+<div class="error-summary" role="alert" hidden></div>
+<div class="field"><label for="visit-name">Full name <span class="req" aria-hidden="true">*</span><span class="visually-hidden"> (required)</span></label><input type="text" id="visit-name" name="visit-name" data-label="Full name" required autocomplete="name"><p class="field-error" id="visit-name-error" hidden></p></div><div class="field"><label for="visit-email">Email address <span class="req" aria-hidden="true">*</span><span class="visually-hidden"> (required)</span></label><p class="hint" id="visit-email-hint">We would use this to confirm. Example: name@example.org</p><input type="email" id="visit-email" name="visit-email" data-label="Email address" required aria-describedby="visit-email-hint" autocomplete="email"><p class="field-error" id="visit-email-error" hidden></p></div><div class="field"><label for="visit-date">Preferred date <span class="req" aria-hidden="true">*</span><span class="visually-hidden"> (required)</span></label><p class="hint" id="visit-date-hint">Today or later.</p><input type="date" id="visit-date" name="visit-date" data-label="Preferred date" required aria-describedby="visit-date-hint" ><p class="field-error" id="visit-date-error" hidden></p></div><div class="field"><label for="visit-size">Number of guests <span class="req" aria-hidden="true">*</span><span class="visually-hidden"> (required)</span></label><p class="hint" id="visit-size-hint">Whole number from 1 to 8.</p><input type="number" id="visit-size" name="visit-size" data-label="Number of guests" required aria-describedby="visit-size-hint" min="1" max="8"><p class="field-error" id="visit-size-error" hidden></p></div><div class="field"><label for="visit-type">Type of visit <span class="req" aria-hidden="true">*</span><span class="visually-hidden"> (required)</span></label><select id="visit-type" name="visit-type" data-label="Type of visit" required ><option value="">Choose…</option><option value="campus">Campus tour</option><option value="class">Campus tour with class visit</option><option value="info">Information session only</option></select><p class="field-error" id="visit-type-error" hidden></p></div><div class="field"><label for="visit-needs">Accessibility or access needs (optional)</label><p class="hint" id="visit-needs-hint">For example, step-free routes or an interpreter.</p><textarea id="visit-needs" name="visit-needs" data-label="Accessibility or access needs" aria-describedby="visit-needs-hint" ></textarea><p class="field-error" id="visit-needs-error" hidden></p></div><div class="field"><div class="checkbox"><input type="checkbox" id="visit-consent" name="visit-consent" required data-label="Consent" data-msg="Confirm that you understand this is a demonstration form."><label for="visit-consent">I understand this is a demonstration form and nothing will be sent. <span class="req" aria-hidden="true">*</span></label></div><p class="field-error" id="visit-consent-error" hidden></p></div>
+<button class="btn btn-accent" type="submit">Request tour (demo)</button>
+</form>
+<div class="success-box" tabindex="-1" role="status" hidden><h2>Demo request recorded locally only</h2><p>No message was sent and no tour was scheduled.</p><p class="result"></p></div>
+</div>
+</section>
+<section id="campus-map" aria-labelledby="map-t" data-section="campus-map" data-component="media-block"><h2 id="map-t">Campus map</h2>
+<img src="assets/campus-map.svg" alt="Schematic map of the fictional campus: the quad in the center, Hendry Hall and Fenwick Center to the north, the Gatehouse admissions office at the south entrance, the library to the east and Wren Creek along the west edge." width="800" height="500">
+<p>Self-guided route: Gatehouse (admissions) → Quad → Library → Hendry Hall → Fenwick Center → Wren Creek footbridge.</p></section>
+<dialog id="tour-dialog" aria-labelledby="tour-t" data-section="virtual-tour" data-component="dialog"><h2 id="tour-t">Virtual tour (demonstration)</h2><ol><li>The Gatehouse: where admissions greets visitors.</li><li>The Quad: a lawn ringed by residence halls.</li><li>Hendry Hall: teaching laboratories with creek views.</li><li>The Library: reading rooms and the zine archive.</li></ol><p>Text only; this replica includes no video.</p><button type="button" class="btn" data-close-dialog>Close</button></dialog>
+</div>
+</main>
+<footer class="site-footer" data-section="global-footer" data-component="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <section aria-labelledby="ft-contact" data-section="footer-contact" data-component="contact-block">
+        <h2 id="ft-contact">Alderbrook College</h2>
+        <address style="font-style:normal">100 College Lane (fictional)<br>Quillfield, PA 00000<br><a href="tel:+15550100000">(555) 010-0000</a></address>
+      </section>
+      <nav aria-labelledby="ft-links" data-section="footer-links" data-component="link-list">
+        <h2 id="ft-links">Helpful links</h2>
+        <ul><li><a href="academic-calendar.html">Academic calendar</a></li><li><a href="directory.html">Directory</a></li><li><a href="apply.html">Application requirements</a></li><li><a href="visit.html#campus-map">Campus map</a></li><li><a href="academics.html#programs">Programs of study</a></li></ul>
+      </nav>
+      <nav aria-labelledby="ft-more" data-section="footer-links-more" data-component="link-list">
+        <h2 id="ft-more">More</h2>
+        <ul><li><a href="affordability.html">Affordability &amp; access</a></li><li><a href="stories.html">Stories</a></li><li><a href="news-events.html#social">Social media (demo)</a></li><li><a href="meet.html#about-demo">Site feedback &amp; accessibility</a></li></ul>
+      </nav>
+    </div>
+    <p class="footer-legal" data-section="footer-legal">© 2026 Alderbrook College — a fictional institution created for accessibility and usability research. All names, people, dates and figures are invented sample data. <a href="meet.html#about-demo">About this demonstration site</a> · <a href="meet.html#about-demo">Privacy &amp; terms (demo)</a></p>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Academics :: Alderbrook College</title>
+<meta name="description" content="Programs of study at Alderbrook College with a searchable, filterable list of departments.">
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/styles.css">
+<script src="js/main.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main-content" data-component="skip-link">Skip to main content</a>
+<header class="site-header" data-section="global-header" data-component="site-header">
+  <div class="notice-bar" data-section="demo-notice" data-component="notice-banner">Fictional demonstration college for accessibility research. Not a real institution.</div>
+  <div class="utility-bar" data-section="utility-bar" data-component="utility-nav">
+    <div class="wrap">
+      <p class="utility-phone" style="margin:0">Main office: <a href="tel:+15550100000">(555) 010-0000</a></p>
+      <nav aria-label="Utility" data-section="utility-navigation" data-component="utility-nav">
+        <ul class="utility-list">
+          <li><a href="academic-calendar.html">Calendar</a></li>
+          <li><a href="directory.html">Directory</a></li>
+          <li><a href="visit.html#campus-map">Campus map</a></li>
+          <li><a href="visit.html">Visit Alderbrook</a></li>
+          <li><button type="button" id="search-toggle" aria-expanded="false" aria-controls="search-flyout">Search</button></li>
+          <li><button type="button" id="a11y-toggle" aria-expanded="false" aria-controls="a11y-panel">Accessibility options</button></li>
+        </ul>
+      </nav>
+      <div class="flyout" id="search-flyout" hidden data-section="site-search" data-component="search-flyout">
+        <form action="search.html" method="get" role="search" aria-label="Site search">
+          <div class="field"><label for="header-keys">Search this site</label><input type="search" id="header-keys" name="keys" autocomplete="off"></div>
+          <button class="btn" type="submit">Search</button>
+        </form>
+      </div>
+      <div class="flyout" id="a11y-panel" hidden data-section="accessibility-options" data-component="accessibility-options">
+        <p style="margin:0 0 .5rem"><strong>Accessibility options</strong></p>
+        <div class="checkbox"><input type="checkbox" id="anim-toggle"><label for="anim-toggle">Turn off animation (saved in this browser only)</label></div>
+      </div>
+    </div>
+  </div>
+  <div class="brand-row">
+    <a class="brand" href="index.html"><img src="assets/logo.svg" alt="" width="48" height="48"><span>Alderbrook College<small>Quillfield, Pennsylvania · fictional</small></span></a>
+    <button type="button" class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+  </div>
+  <nav class="primary-nav" id="primary-nav" aria-label="Primary" data-section="global-navigation" data-component="primary-nav">
+    <ul class="nav-list">
+      <li class="nav-item">
+        <button type="button" class="nav-group-toggle" aria-expanded="false" aria-controls="panel-meet" data-component="mega-menu-toggle">Meet Alderbrook</button>
+        <ul class="nav-panel" id="panel-meet">
+          <li class="overview"><a href="meet.html">Meet Alderbrook overview</a></li>
+          <li><a href="meet.html">What’s distinctive</a></li>
+          <li><a href="meet.html#mission">Mission</a></li>
+          <li><a href="meet.html#liberal-arts">Why liberal arts?</a></li>
+          <li><a href="meet.html#history">A brief history</a></li>
+          <li><a href="meet.html#numbers">By the numbers</a></li>
+          <li><a href="meet.html#traditions">Traditions</a></li>
+          <li><a href="meet.html#president">Meet the president</a></li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <button type="button" class="nav-group-toggle is-current" aria-expanded="false" aria-controls="panel-academics" data-component="mega-menu-toggle">Academics</button>
+        <ul class="nav-panel" id="panel-academics">
+          <li class="overview"><a href="academics.html" aria-current="page">Academics overview</a></li>
+          <li><a href="academic-calendar.html">Academic calendar</a></li>
+          <li><a href="academics.html#programs">Programs of study</a></li>
+          <li><a href="design-your-own-major.html">Design your own major</a></li>
+          <li><a href="academics.html#first-year">First-year experience</a></li>
+          <li><a href="academics.html#research">Research</a></li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <button type="button" class="nav-group-toggle" aria-expanded="false" aria-controls="panel-life" data-component="mega-menu-toggle">Campus Life</button>
+        <ul class="nav-panel" id="panel-life">
+          <li class="overview"><a href="campus-life.html">Campus Life overview</a></li>
+          <li><a href="campus-life.html#arts">Arts</a></li>
+          <li><a href="campus-life.html#athletics">Athletics & recreation</a></li>
+          <li><a href="campus-life.html#wellbeing">Be well</a></li>
+          <li><a href="campus-life.html#careers">Career services</a></li>
+          <li><a href="campus-life.html#clubs">Clubs & activities</a></li>
+          <li><a href="campus-life.html#living">Living on campus</a></li>
+          <li><a href="campus-life.html#sustainability">Sustainability</a></li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <button type="button" class="nav-group-toggle" aria-expanded="false" aria-controls="panel-admissions" data-component="mega-menu-toggle">Admissions & Aid</button>
+        <ul class="nav-panel" id="panel-admissions">
+          <li class="overview"><a href="admissions.html">Admissions & Aid overview</a></li>
+          <li><a href="affordability.html">Affordability & access</a></li>
+          <li><a href="apply.html">Apply to Alderbrook</a></li>
+          <li><a href="affordability.html#financial-aid">Financial aid & cost</a></li>
+          <li><a href="affordability.html#tuition-guarantee">Tuition guarantee</a></li>
+          <li><a href="visit.html">Campus tours & virtual visits</a></li>
+          <li><a href="stories.html">Alderbrook stories</a></li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <button type="button" class="nav-group-toggle" aria-expanded="false" aria-controls="panel-news" data-component="mega-menu-toggle">News & Events</button>
+        <ul class="nav-panel" id="panel-news">
+          <li class="overview"><a href="news-events.html">News & Events overview</a></li>
+          <li><a href="stories.html">Stories</a></li>
+          <li><a href="news-events.html#news">News</a></li>
+          <li><a href="news-events.html#events">Events</a></li>
+          <li><a href="news-events.html#social">Social media</a></li>
+          <li><a href="academic-calendar.html">Campus calendar</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</header>
+<main id="main-content" data-section="main-content">
+<div class="page-header" data-section="page-header" data-component="page-header"><div class="wrap"><nav class="breadcrumb" aria-label="Breadcrumb" data-section="breadcrumb" data-component="breadcrumb"><ol><li><a href="index.html">Home</a></li><li><span aria-current="page">Academics</span></li></ol></nav><h1>Academics</h1><p>Small classes, close mentoring and the freedom to combine fields.</p></div></div>
+<div class="wrap layout">
+<section id="programs" aria-labelledby="programs-t" data-section="programs-of-study" data-component="program-finder">
+  <h2 id="programs-t">Programs of study</h2>
+  <p>Filtering the list of programs is an intentional addition; the reference presents a plain list of departments.</p>
+  <form id="program-finder" role="search" aria-label="Find a program" class="form-panel" novalidate>
+    <div class="search-row">
+      <div class="field"><label for="pf-q">Search programs</label><input type="search" id="pf-q" autocomplete="off"></div>
+      <div class="field"><label for="pf-division">Division</label><select id="pf-division"><option value="">All divisions</option><option>Humanities</option><option>Natural Sciences &amp; Engineering</option><option>Social Sciences</option><option>Interdisciplinary</option></select></div>
+      <div class="field"><label for="pf-offers">Offered as</label><select id="pf-offers"><option value="">Major or minor</option><option value="Major">Includes a major</option><option value="Minor">Includes a minor</option></select></div>
+      <button type="button" class="btn btn-outline" id="pf-reset">Reset filters</button>
+    </div>
+  </form>
+  <p class="result-count" id="pf-count" role="status" aria-live="polite"></p>
+  <ul class="grid" id="pf-list"></ul>
+  <div class="empty-state" id="pf-empty" hidden><p><strong>No programs match.</strong> Try fewer words, choose “All divisions”, or use Reset filters.</p></div>
+  <noscript><p>The program list needs JavaScript. Browse the <a href="department.html?dept=biology">Biology sample department page</a>.</p></noscript>
+</section>
+<section id="first-year" aria-labelledby="fy-t" data-section="first-year-experience" data-component="content-block"><h2 id="fy-t">First-year experience</h2><p class="prose">Every first-year student takes a seminar of fifteen or fewer, chosen from topics as varied as “Rivers and Cities” and “Why We Argue”, taught by a faculty member who also serves as their first advisor.</p></section>
+<section id="research" aria-labelledby="res-t" data-section="research" data-component="content-block"><h2 id="res-t">Research</h2><p class="prose">Students can join faculty projects as early as the first year, and summer fellowships fund independent research. Many seniors present at regional conferences.</p><p><a href="design-your-own-major.html">Design your own major</a> · <a href="academic-calendar.html">Academic calendar</a></p></section>
+</div>
+</main>
+<footer class="site-footer" data-section="global-footer" data-component="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <section aria-labelledby="ft-contact" data-section="footer-contact" data-component="contact-block">
+        <h2 id="ft-contact">Alderbrook College</h2>
+        <address style="font-style:normal">100 College Lane (fictional)<br>Quillfield, PA 00000<br><a href="tel:+15550100000">(555) 010-0000</a></address>
+      </section>
+      <nav aria-labelledby="ft-links" data-section="footer-links" data-component="link-list">
+        <h2 id="ft-links">Helpful links</h2>
+        <ul><li><a href="academic-calendar.html">Academic calendar</a></li><li><a href="directory.html">Directory</a></li><li><a href="apply.html">Application requirements</a></li><li><a href="visit.html#campus-map">Campus map</a></li><li><a href="academics.html#programs">Programs of study</a></li></ul>
+      </nav>
+      <nav aria-labelledby="ft-more" data-section="footer-links-more" data-component="link-list">
+        <h2 id="ft-more">More</h2>
+        <ul><li><a href="affordability.html">Affordability &amp; access</a></li><li><a href="stories.html">Stories</a></li><li><a href="news-events.html#social">Social media (demo)</a></li><li><a href="meet.html#about-demo">Site feedback &amp; accessibility</a></li></ul>
+      </nav>
+    </div>
+    <p class="footer-legal" data-section="footer-legal">© 2026 Alderbrook College — a fictional institution created for accessibility and usability research. All names, people, dates and figures are invented sample data. <a href="meet.html#about-demo">About this demonstration site</a> · <a href="meet.html#about-demo">Privacy &amp; terms (demo)</a></p>
+  </div>
+</footer>
+</body>
+</html>
