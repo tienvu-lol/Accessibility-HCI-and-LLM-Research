@@ -1,6 +1,6 @@
 # Batch 03: build
 
-**Status:** queued
+**Status:** done 2026-11-10
 **IDs:** UNI-01, UNI-02, UNI-03, HOSP-01, HOSP-02
 
 ## Before launching
