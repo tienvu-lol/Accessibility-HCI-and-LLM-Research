@@ -1,6 +1,6 @@
 # Batch 06: build
 
-**Status:** queued
+**Status:** done 2026-11-10
 **IDs:** GOV-01, GOV-02, GOV-03, FASH-01, FASH-02
 
 ## Before launching
