@@ -1,0 +1,977 @@
+{
+  "protocol_version": "1.0",
+  "replica_id": "NEWS-03",
+  "category": "news",
+  "source_url": "https://www.npr.org/",
+  "notes": "search-result items are created at runtime by js/main.js (li[data-component=search-result]) and are not in static HTML.",
+  "components": [
+    {
+      "id": "site-header",
+      "selector": "[data-component='site-header']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "article.html",
+        "audio-story.html",
+        "culture.html",
+        "daybreak-edition.html",
+        "health.html",
+        "index.html",
+        "music.html",
+        "national.html",
+        "news.html",
+        "newsletters.html",
+        "podcasts.html",
+        "politics.html",
+        "search.html"
+      ],
+      "behavior": [
+        "logo link, utility bar, search dropdown, primary nav"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js (axe-core 4.14, 1280px and 375px) and scripted Playwright flows; no manual or screen-reader testing"
+    },
+    {
+      "id": "brand-link",
+      "selector": "[data-component='brand-link']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "article.html",
+        "audio-story.html",
+        "culture.html",
+        "daybreak-edition.html",
+        "health.html",
+        "index.html",
+        "music.html",
+        "national.html",
+        "news.html",
+        "newsletters.html",
+        "podcasts.html",
+        "politics.html",
+        "search.html"
+      ],
+      "behavior": [
+        "home link with decorative SVG mark and wordmark text"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js (axe-core 4.14, 1280px and 375px) and scripted Playwright flows; no manual or screen-reader testing"
+    },
+    {
+      "id": "utility-bar",
+      "selector": "[data-component='utility-bar']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "article.html",
+        "audio-story.html",
+        "culture.html",
+        "daybreak-edition.html",
+        "health.html",
+        "index.html",
+        "music.html",
+        "national.html",
+        "news.html",
+        "newsletters.html",
+        "podcasts.html",
+        "politics.html",
+        "search.html"
+      ],
+      "behavior": [
+        "station picker, donate, search and mobile menu buttons"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js (axe-core 4.14, 1280px and 375px) and scripted Playwright flows; no manual or screen-reader testing"
+    },
+    {
+      "id": "station-picker",
+      "selector": "[data-component='station-picker']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "article.html",
+        "audio-story.html",
+        "culture.html",
+        "daybreak-edition.html",
+        "health.html",
+        "index.html",
+        "music.html",
+        "national.html",
+        "news.html",
+        "newsletters.html",
+        "podcasts.html",
+        "politics.html",
+        "search.html"
+      ],
+      "behavior": [
+        "opens station dialog; choice saved to localStorage (demo list of 4 fictional stations)"
+      ],
+      "keyboard": [
+        "Enter",
+        "Space",
+        "Escape closes dialog"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js (axe-core 4.14, 1280px and 375px) and scripted Playwright flows; no manual or screen-reader testing"
+    },
+    {
+      "id": "donate-button",
+      "selector": "[data-component='donate-button']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "article.html",
+        "audio-story.html",
+        "culture.html",
+        "daybreak-edition.html",
+        "health.html",
+        "index.html",
+        "music.html",
+        "national.html",
+        "news.html",
+        "newsletters.html",
+        "podcasts.html",
+        "politics.html",
+        "search.html"
+      ],
+      "behavior": [
+        "opens the support dialog simulation (no payment)"
+      ],
+      "keyboard": [
+        "Enter",
+        "Space",
+        "Escape closes dialog"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js (axe-core 4.14, 1280px and 375px) and scripted Playwright flows; no manual or screen-reader testing"
+    },
+    {
+      "id": "search-toggle",
+      "selector": "[data-component='search-toggle']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "article.html",
+        "audio-story.html",
+        "culture.html",
+        "daybreak-edition.html",
+        "health.html",
+        "index.html",
+        "music.html",
+        "national.html",
+        "news.html",
+        "newsletters.html",
+        "podcasts.html",
+        "politics.html",
+        "search.html"
+      ],
+      "behavior": [
+        "disclosure for header search dropdown, moves focus to the input"
+      ],
+      "keyboard": [
+        "Enter",
+        "Space",
+        "Escape closes and returns focus"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js (axe-core 4.14, 1280px and 375px) and scripted Playwright flows; no manual or screen-reader testing"
+    },
+    {
+      "id": "search-dropdown",
+      "selector": "[data-component='search-dropdown']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "article.html",
+        "audio-story.html",
+        "culture.html",
+        "daybreak-edition.html",
+        "health.html",
+        "index.html",
+        "music.html",
+        "national.html",
+        "news.html",
+        "newsletters.html",
+        "podcasts.html",
+        "politics.html",
+        "search.html"
+      ],
+      "behavior": [
+        "GET form to search.html?q=; native required validation"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js (axe-core 4.14, 1280px and 375px) and scripted Playwright flows; no manual or screen-reader testing"
+    },
+    {
+      "id": "menu-toggle",
+      "selector": "[data-component='menu-toggle']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "article.html",
+        "audio-story.html",
+        "culture.html",
+        "daybreak-edition.html",
+        "health.html",
+        "index.html",
+        "music.html",
+        "national.html",
+        "news.html",
+        "newsletters.html",
+        "podcasts.html",
+        "politics.html",
+        "search.html"
+      ],
+      "behavior": [
+        "mobile disclosure for the primary menu (visible below 900px)"
+      ],
+      "keyboard": [
+        "Enter",
+        "Space",
+        "Escape closes"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js (axe-core 4.14, 1280px and 375px) and scripted Playwright flows; no manual or screen-reader testing"
+    },
+    {
+      "id": "primary-nav",
+      "selector": "[data-component='primary-nav']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "article.html",
+        "audio-story.html",
+        "culture.html",
+        "daybreak-edition.html",
+        "health.html",
+        "index.html",
+        "music.html",
+        "national.html",
+        "news.html",
+        "newsletters.html",
+        "podcasts.html",
+        "politics.html",
+        "search.html"
+      ],
+      "behavior": [
+        "4 submenu disclosures plus Newsletters, About, Press links; aria-current on current page"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "Escape closes submenu then menu"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js (axe-core 4.14, 1280px and 375px) and scripted Playwright flows; no manual or screen-reader testing"
+    },
+    {
+      "id": "submenu",
+      "selector": "[data-component='submenu']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "article.html",
+        "audio-story.html",
+        "culture.html",
+        "daybreak-edition.html",
+        "health.html",
+        "index.html",
+        "music.html",
+        "national.html",
+        "news.html",
+        "newsletters.html",
+        "podcasts.html",
+        "politics.html",
+        "search.html"
+      ],
+      "behavior": [
+        "mega-menu disclosure with featured and directory lists; one open at a time; closes on outside click, focus leaving the nav, Escape"
+      ],
+      "keyboard": [
+        "Enter",
+        "Space",
+        "Escape",
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js (axe-core 4.14, 1280px and 375px) and scripted Playwright flows; no manual or screen-reader testing"
+    },
+    {
+      "id": "breadcrumb",
+      "selector": "[data-component='breadcrumb']",
+      "pages": [
+        "about.html",
+        "article.html",
+        "audio-story.html",
+        "culture.html",
+        "daybreak-edition.html",
+        "health.html",
+        "music.html",
+        "national.html",
+        "news.html",
+        "newsletters.html",
+        "podcasts.html",
+        "politics.html",
+        "search.html"
+      ],
+      "behavior": [
+        "ordered list of links, current page marked aria-current"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js (axe-core 4.14, 1280px and 375px) and scripted Playwright flows; no manual or screen-reader testing"
+    },
+    {
+      "id": "local-nav",
+      "selector": "[data-component='local-nav']",
+      "pages": [
+        "health.html",
+        "national.html",
+        "news.html",
+        "politics.html"
+      ],
+      "behavior": [
+        "section pill links with aria-current"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js (axe-core 4.14, 1280px and 375px) and scripted Playwright flows; no manual or screen-reader testing"
+    },
+    {
+      "id": "story-card",
+      "selector": "[data-component='story-card']",
+      "pages": [
+        "article.html",
+        "audio-story.html",
+        "culture.html",
+        "health.html",
+        "index.html",
+        "music.html",
+        "national.html",
+        "news.html",
+        "politics.html"
+      ],
+      "behavior": [
+        "image, kicker, headline link, dek, dateline, optional demo Listen button"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space on Listen"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js (axe-core 4.14, 1280px and 375px) and scripted Playwright flows; no manual or screen-reader testing"
+    },
+    {
+      "id": "card-grid",
+      "selector": "[data-component='card-grid']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "responsive grid of story cards"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js (axe-core 4.14, 1280px and 375px) and scripted Playwright flows; no manual or screen-reader testing"
+    },
+    {
+      "id": "story-list",
+      "selector": "[data-component='story-list']",
+      "pages": [
+        "culture.html",
+        "health.html",
+        "music.html",
+        "national.html",
+        "news.html",
+        "politics.html"
+      ],
+      "behavior": [
+        "section story grid; extra stories hidden until Show more"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js (axe-core 4.14, 1280px and 375px) and scripted Playwright flows; no manual or screen-reader testing"
+    },
+    {
+      "id": "lead-story",
+      "selector": "[data-component='lead-story']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "lead card beside the video playlist"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js (axe-core 4.14, 1280px and 375px) and scripted Playwright flows; no manual or screen-reader testing"
+    },
+    {
+      "id": "video-playlist",
+      "selector": "[data-component='video-playlist']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "4-item demo video playlist with previous/next buttons and a live status; Watch opens the demo player"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js (axe-core 4.14, 1280px and 375px) and scripted Playwright flows; no manual or screen-reader testing"
+    },
+    {
+      "id": "headline-list",
+      "selector": "[data-component='headline-list']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "linked headline list with dates"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js (axe-core 4.14, 1280px and 375px) and scripted Playwright flows; no manual or screen-reader testing"
+    },
+    {
+      "id": "newsletter-promo",
+      "selector": "[data-component='newsletter-promo']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "promo linking to the newsletters page"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js (axe-core 4.14, 1280px and 375px) and scripted Playwright flows; no manual or screen-reader testing"
+    },
+    {
+      "id": "video-promo",
+      "selector": "[data-component='video-promo']",
+      "pages": [
+        "music.html"
+      ],
+      "behavior": [
+        "featured video promo with demo Watch button"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js (axe-core 4.14, 1280px and 375px) and scripted Playwright flows; no manual or screen-reader testing"
+    },
+    {
+      "id": "filter-form",
+      "selector": "[data-component='filter-form']",
+      "pages": [
+        "podcasts.html"
+      ],
+      "behavior": [
+        "live filter by text and topic over 10 sample shows; status count; empty state"
+      ],
+      "keyboard": [
+        "Tab",
+        "type",
+        "Arrow keys on select"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js (axe-core 4.14, 1280px and 375px) and scripted Playwright flows; no manual or screen-reader testing"
+    },
+    {
+      "id": "podcast-grid",
+      "selector": "[data-component='podcast-grid']",
+      "pages": [
+        "podcasts.html"
+      ],
+      "behavior": [
+        "10 sample show cards, each with a demo latest-episode button"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js (axe-core 4.14, 1280px and 375px) and scripted Playwright flows; no manual or screen-reader testing"
+    },
+    {
+      "id": "program-summary",
+      "selector": "[data-component='program-summary']",
+      "pages": [
+        "daybreak-edition.html"
+      ],
+      "behavior": [
+        "program description, hosts, listen-live demo, station dialog link"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js (axe-core 4.14, 1280px and 375px) and scripted Playwright flows; no manual or screen-reader testing"
+    },
+    {
+      "id": "episode-list",
+      "selector": "[data-component='episode-list']",
+      "pages": [
+        "daybreak-edition.html"
+      ],
+      "behavior": [
+        "5 sample episodes each with demo Listen"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js (axe-core 4.14, 1280px and 375px) and scripted Playwright flows; no manual or screen-reader testing"
+    },
+    {
+      "id": "newsletter-form",
+      "selector": "[data-component='newsletter-form']",
+      "pages": [
+        "newsletters.html"
+      ],
+      "behavior": [
+        "checkbox group + email; client validation, error summary, inline errors, focus management, demo success"
+      ],
+      "keyboard": [
+        "Tab",
+        "Space",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js (axe-core 4.14, 1280px and 375px) and scripted Playwright flows; no manual or screen-reader testing"
+    },
+    {
+      "id": "accordion",
+      "selector": "[data-component='accordion']",
+      "pages": [
+        "about.html"
+      ],
+      "behavior": [
+        "8 disclosure buttons in headings with aria-expanded"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js (axe-core 4.14, 1280px and 375px) and scripted Playwright flows; no manual or screen-reader testing"
+    },
+    {
+      "id": "search-form",
+      "selector": "[data-component='search-form']",
+      "pages": [
+        "404.html",
+        "search.html"
+      ],
+      "behavior": [
+        "query + type + sort; validation with summary on empty query; also 404 search form"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js (axe-core 4.14, 1280px and 375px) and scripted Playwright flows; no manual or screen-reader testing"
+    },
+    {
+      "id": "search-results",
+      "selector": "[data-component='search-results']",
+      "pages": [
+        "search.html"
+      ],
+      "behavior": [
+        "client-side search over 42 inline records; result count status; empty state; type filter; relevance/newest sort"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Arrow keys on select"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js (axe-core 4.14, 1280px and 375px) and scripted Playwright flows; no manual or screen-reader testing"
+    },
+    {
+      "id": "article-page",
+      "selector": "[data-component='article-page']",
+      "pages": [
+        "article.html",
+        "audio-story.html"
+      ],
+      "behavior": [
+        "article wrapper; article.html?story=slug swaps headline/dek/section/date/byline from inline data"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js (axe-core 4.14, 1280px and 375px) and scripted Playwright flows; no manual or screen-reader testing"
+    },
+    {
+      "id": "article",
+      "selector": "[data-component='article']",
+      "pages": [
+        "article.html",
+        "audio-story.html"
+      ],
+      "behavior": [
+        "headline, dek, byline, dateline, caption disclosure, body, topics"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js (axe-core 4.14, 1280px and 375px) and scripted Playwright flows; no manual or screen-reader testing"
+    },
+    {
+      "id": "byline",
+      "selector": "[data-component='byline']",
+      "pages": [
+        "article.html",
+        "audio-story.html"
+      ],
+      "behavior": [
+        "By line with linked author (links to search)"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js (axe-core 4.14, 1280px and 375px) and scripted Playwright flows; no manual or screen-reader testing"
+    },
+    {
+      "id": "share-tools",
+      "selector": "[data-component='share-tools']",
+      "pages": [
+        "article.html"
+      ],
+      "behavior": [
+        "Copy link button using the Clipboard API with a status fallback message"
+      ],
+      "keyboard": [
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js (axe-core 4.14, 1280px and 375px) and scripted Playwright flows; no manual or screen-reader testing"
+    },
+    {
+      "id": "tag-list",
+      "selector": "[data-component='tag-list']",
+      "pages": [
+        "article.html"
+      ],
+      "behavior": [
+        "topic links to search"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js (axe-core 4.14, 1280px and 375px) and scripted Playwright flows; no manual or screen-reader testing"
+    },
+    {
+      "id": "support-prompt",
+      "selector": "[data-component='support-prompt']",
+      "pages": [
+        "article.html"
+      ],
+      "behavior": [
+        "donate prompt simulation opening the support dialog"
+      ],
+      "keyboard": [
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js (axe-core 4.14, 1280px and 375px) and scripted Playwright flows; no manual or screen-reader testing"
+    },
+    {
+      "id": "related-stories",
+      "selector": "[data-component='related-stories']",
+      "pages": [
+        "article.html",
+        "audio-story.html"
+      ],
+      "behavior": [
+        "3 related story cards"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js (axe-core 4.14, 1280px and 375px) and scripted Playwright flows; no manual or screen-reader testing"
+    },
+    {
+      "id": "audio-module",
+      "selector": "[data-component='audio-module']",
+      "pages": [
+        "audio-story.html"
+      ],
+      "behavior": [
+        "audio story Listen button (demo, no audio file)"
+      ],
+      "keyboard": [
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js (axe-core 4.14, 1280px and 375px) and scripted Playwright flows; no manual or screen-reader testing"
+    },
+    {
+      "id": "transcript",
+      "selector": "[data-component='transcript']",
+      "pages": [
+        "audio-story.html"
+      ],
+      "behavior": [
+        "transcript disclosure inside a heading"
+      ],
+      "keyboard": [
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js (axe-core 4.14, 1280px and 375px) and scripted Playwright flows; no manual or screen-reader testing"
+    },
+    {
+      "id": "dialog",
+      "selector": "[data-component='dialog']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "article.html",
+        "audio-story.html",
+        "culture.html",
+        "daybreak-edition.html",
+        "health.html",
+        "index.html",
+        "music.html",
+        "national.html",
+        "news.html",
+        "newsletters.html",
+        "podcasts.html",
+        "politics.html",
+        "search.html"
+      ],
+      "behavior": [
+        "native modal dialog (support, station); Escape and backdrop click close; focus returns to opener"
+      ],
+      "keyboard": [
+        "Escape",
+        "Tab trapped by the browser",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js (axe-core 4.14, 1280px and 375px) and scripted Playwright flows; no manual or screen-reader testing"
+    },
+    {
+      "id": "support-form",
+      "selector": "[data-component='support-form']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "article.html",
+        "audio-story.html",
+        "culture.html",
+        "daybreak-edition.html",
+        "health.html",
+        "index.html",
+        "music.html",
+        "national.html",
+        "news.html",
+        "newsletters.html",
+        "podcasts.html",
+        "politics.html",
+        "search.html"
+      ],
+      "behavior": [
+        "radio group + email validation, summary, demo success"
+      ],
+      "keyboard": [
+        "Tab",
+        "Arrow keys",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js (axe-core 4.14, 1280px and 375px) and scripted Playwright flows; no manual or screen-reader testing"
+    },
+    {
+      "id": "station-form",
+      "selector": "[data-component='station-form']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "article.html",
+        "audio-story.html",
+        "culture.html",
+        "daybreak-edition.html",
+        "health.html",
+        "index.html",
+        "music.html",
+        "national.html",
+        "news.html",
+        "newsletters.html",
+        "podcasts.html",
+        "politics.html",
+        "search.html"
+      ],
+      "behavior": [
+        "required select, validation, saves choice"
+      ],
+      "keyboard": [
+        "Tab",
+        "Arrow keys",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js (axe-core 4.14, 1280px and 375px) and scripted Playwright flows; no manual or screen-reader testing"
+    },
+    {
+      "id": "media-player-shelf",
+      "selector": "[data-component='media-player-shelf']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "article.html",
+        "audio-story.html",
+        "culture.html",
+        "daybreak-edition.html",
+        "health.html",
+        "index.html",
+        "music.html",
+        "national.html",
+        "news.html",
+        "newsletters.html",
+        "podcasts.html",
+        "politics.html",
+        "search.html"
+      ],
+      "behavior": [
+        "fixed demo player bar: play/pause text toggle and close; no audio or video exists"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "Escape closes"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js (axe-core 4.14, 1280px and 375px) and scripted Playwright flows; no manual or screen-reader testing"
+    },
+    {
+      "id": "site-footer",
+      "selector": "[data-component='site-footer']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "article.html",
+        "audio-story.html",
+        "culture.html",
+        "daybreak-edition.html",
+        "health.html",
+        "index.html",
+        "music.html",
+        "national.html",
+        "news.html",
+        "newsletters.html",
+        "podcasts.html",
+        "politics.html",
+        "search.html"
+      ],
+      "behavior": [
+        "four link groups and a legal strip"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js (axe-core 4.14, 1280px and 375px) and scripted Playwright flows; no manual or screen-reader testing"
+    },
+    {
+      "id": "footer-link-group",
+      "selector": "[data-component='footer-link-group']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "article.html",
+        "audio-story.html",
+        "culture.html",
+        "daybreak-edition.html",
+        "health.html",
+        "index.html",
+        "music.html",
+        "national.html",
+        "news.html",
+        "newsletters.html",
+        "podcasts.html",
+        "politics.html",
+        "search.html"
+      ],
+      "behavior": [
+        "headed list of footer links"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js (axe-core 4.14, 1280px and 375px) and scripted Playwright flows; no manual or screen-reader testing"
+    }
+  ]
+}

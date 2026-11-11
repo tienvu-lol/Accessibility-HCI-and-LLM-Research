@@ -1,0 +1,35 @@
+{
+  "allocation_protocol": "WEB-REPLICA-ALLOCATION-V1.0",
+  "generation_protocol": "WEB-REPLICA-V1.0",
+  "category": "news",
+  "slot": 3,
+  "source_id": "NEWS-03",
+  "model_group": "claude",
+  "model_id": "claude-sonnet-5-5",
+  "model_version": null,
+  "model_provider_or_runtime": "claude-bridge provider via pi-subagents worker agent; orchestrated by claude-opus-5-5",
+  "generation_mode": "autonomous agent run, one replica per run, no human edits during generation",
+  "operator": "project lead (tienvu-lol) via orchestrator agent",
+  "approved_source_url": "https://www.npr.org/",
+  "source_verified_at": "2026-11-10",
+  "source_approved_at": "2026-11-10",
+  "generation_started_at": "2026-11-11T04:27:56Z",
+  "generation_completed_at": "2026-11-11T04:38:42Z",
+  "rules_revision": "WEB-REPLICA-V1.0 / WEB-REPLICA-ALLOCATION-V1.0 at commit a07e70e (branch websites/claude-replicas)",
+  "category_prompt_revision": "orchestrator brief 2026-11-10 (no separate category prompt file)",
+  "prompt_or_transcript_reference": "pi-subagents run build-NEWS-03",
+  "human_edits": [],
+  "notes": [
+    "The project lead waived the Phase A approval stop; the reference comes from Websites/pipelines/claude/research/NEWS.md. The source was not re-fetched during generation.",
+    "The HTML pages were emitted by a throwaway Node script kept outside the repo; it is not a build step and is not shipped."
+  ],
+  "validation_summary": {
+    "technology": "pass: no framework, library, backend, build step or remote dependency (qc.js, failures=0)",
+    "completeness": "pass: 14 mapped pages + 404, 28 files, 0 broken links or assets (qc.js)",
+    "structure": "pass (automated): lang, skip link, main#main-content, data-section/data-component on every page (qc.js); landmarks via axe",
+    "interaction": "pass: 41 scripted Playwright checks over file:// with 0 console errors; not a human walkthrough",
+    "accessibility": "pass (automated only): axe-core 4.14 wcag2a/2aa/21a/21aa/22aa + best-practice, 0 violations at 1280px and 375px, no horizontal scroll at 375px. NOT TESTED: screen readers, manual keyboard walkthrough, 200%/400% zoom, forced colors",
+    "traceability": "pass: README.md, fidelity-notes.md and component-inventory.json written from the delivered files; source facts come from the Phase A research file",
+    "scope": "pass with additions: show-more, podcast filter, search filters and related stories are labeled intentional additions in fidelity-notes.md"
+  }
+}
