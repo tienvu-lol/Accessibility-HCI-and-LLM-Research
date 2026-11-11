@@ -1,0 +1,1094 @@
+{
+  "protocol_version": "1.0",
+  "replica_id": "NPO-02",
+  "category": "nonprofit",
+  "source_url": "https://www.capitalareafoodbank.org/",
+  "components": [
+    {
+      "id": "site-header",
+      "selector": "[data-component='site-header']",
+      "pages": [
+        "404.html",
+        "blog.html",
+        "contact.html",
+        "distribution.html",
+        "donate-food.html",
+        "donate.html",
+        "events.html",
+        "get-help.html",
+        "how-to-help.html",
+        "hunger.html",
+        "impact.html",
+        "index.html",
+        "partners.html",
+        "sign-up.html",
+        "volunteer.html",
+        "what-we-do.html"
+      ],
+      "behavior": [
+        "logo/wordmark",
+        "utility bar",
+        "primary navigation",
+        "mobile menu"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe clean at 1280px and 375px (qc.js); not manually tested"
+    },
+    {
+      "id": "utility-bar",
+      "selector": "[data-component='utility-bar']",
+      "pages": [
+        "404.html",
+        "blog.html",
+        "contact.html",
+        "distribution.html",
+        "donate-food.html",
+        "donate.html",
+        "events.html",
+        "get-help.html",
+        "how-to-help.html",
+        "hunger.html",
+        "impact.html",
+        "index.html",
+        "partners.html",
+        "sign-up.html",
+        "volunteer.html",
+        "what-we-do.html"
+      ],
+      "behavior": [
+        "demo-site notice",
+        "search button",
+        "donate button"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "axe clean at 1280px and 375px (qc.js); not manually tested"
+    },
+    {
+      "id": "search-toggle",
+      "selector": "[data-component='search-toggle']",
+      "pages": [
+        "404.html",
+        "blog.html",
+        "contact.html",
+        "distribution.html",
+        "donate-food.html",
+        "donate.html",
+        "events.html",
+        "get-help.html",
+        "how-to-help.html",
+        "hunger.html",
+        "impact.html",
+        "index.html",
+        "partners.html",
+        "sign-up.html",
+        "volunteer.html",
+        "what-we-do.html"
+      ],
+      "behavior": [
+        "opens modal site-search dialog"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "scripted Playwright flow passed 2026-11-11; axe clean at 1280px and 375px"
+    },
+    {
+      "id": "donate-button",
+      "selector": "[data-component='donate-button']",
+      "pages": [
+        "404.html",
+        "blog.html",
+        "contact.html",
+        "distribution.html",
+        "donate-food.html",
+        "donate.html",
+        "events.html",
+        "get-help.html",
+        "how-to-help.html",
+        "hunger.html",
+        "impact.html",
+        "index.html",
+        "partners.html",
+        "sign-up.html",
+        "volunteer.html",
+        "what-we-do.html"
+      ],
+      "behavior": [
+        "link to simulated donate page"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe clean at 1280px and 375px (qc.js); not manually tested"
+    },
+    {
+      "id": "brand",
+      "selector": "[data-component='brand']",
+      "pages": [
+        "404.html",
+        "blog.html",
+        "contact.html",
+        "distribution.html",
+        "donate-food.html",
+        "donate.html",
+        "events.html",
+        "get-help.html",
+        "how-to-help.html",
+        "hunger.html",
+        "impact.html",
+        "index.html",
+        "partners.html",
+        "sign-up.html",
+        "volunteer.html",
+        "what-we-do.html"
+      ],
+      "behavior": [
+        "wordmark link to home"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe clean at 1280px and 375px (qc.js); not manually tested"
+    },
+    {
+      "id": "mobile-menu-toggle",
+      "selector": "[data-component='mobile-menu-toggle']",
+      "pages": [
+        "404.html",
+        "blog.html",
+        "contact.html",
+        "distribution.html",
+        "donate-food.html",
+        "donate.html",
+        "events.html",
+        "get-help.html",
+        "how-to-help.html",
+        "hunger.html",
+        "impact.html",
+        "index.html",
+        "partners.html",
+        "sign-up.html",
+        "volunteer.html",
+        "what-we-do.html"
+      ],
+      "behavior": [
+        "aria-expanded disclosure of primary nav below 1120px",
+        "Escape closes and returns focus"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "scripted Playwright flow passed 2026-11-11; axe clean at 1280px and 375px"
+    },
+    {
+      "id": "primary-nav",
+      "selector": "[data-component='primary-nav']",
+      "pages": [
+        "404.html",
+        "blog.html",
+        "contact.html",
+        "distribution.html",
+        "donate-food.html",
+        "donate.html",
+        "events.html",
+        "get-help.html",
+        "how-to-help.html",
+        "hunger.html",
+        "impact.html",
+        "index.html",
+        "partners.html",
+        "sign-up.html",
+        "volunteer.html",
+        "what-we-do.html"
+      ],
+      "behavior": [
+        "desktop navigation",
+        "mobile disclosure",
+        "aria-current on active page"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "scripted Playwright flow passed 2026-11-11; axe clean at 1280px and 375px"
+    },
+    {
+      "id": "nav-dropdown-toggle",
+      "selector": "[data-component='nav-dropdown-toggle']",
+      "pages": [
+        "404.html",
+        "blog.html",
+        "contact.html",
+        "distribution.html",
+        "donate-food.html",
+        "donate.html",
+        "events.html",
+        "get-help.html",
+        "how-to-help.html",
+        "hunger.html",
+        "impact.html",
+        "index.html",
+        "partners.html",
+        "sign-up.html",
+        "volunteer.html",
+        "what-we-do.html"
+      ],
+      "behavior": [
+        "aria-expanded toggle for What We Do and How To Help submenus",
+        "click/keyboard only, no hover"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "scripted Playwright flow passed 2026-11-11; axe clean at 1280px and 375px"
+    },
+    {
+      "id": "nav-dropdown",
+      "selector": "[data-component='nav-dropdown']",
+      "pages": [
+        "404.html",
+        "blog.html",
+        "contact.html",
+        "distribution.html",
+        "donate-food.html",
+        "donate.html",
+        "events.html",
+        "get-help.html",
+        "how-to-help.html",
+        "hunger.html",
+        "impact.html",
+        "index.html",
+        "partners.html",
+        "sign-up.html",
+        "volunteer.html",
+        "what-we-do.html"
+      ],
+      "behavior": [
+        "submenu list shown when its toggle is expanded",
+        "closes on Escape, outside click, focus leaving the nav"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "scripted Playwright flow passed 2026-11-11; axe clean at 1280px and 375px"
+    },
+    {
+      "id": "error-page",
+      "selector": "[data-component='error-page']",
+      "pages": [
+        "404.html"
+      ],
+      "behavior": [
+        "404 with routes back to home, help finder and search"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe clean at 1280px and 375px (qc.js); not manually tested; 404 render checked in flow script"
+    },
+    {
+      "id": "site-footer",
+      "selector": "[data-component='site-footer']",
+      "pages": [
+        "404.html",
+        "blog.html",
+        "contact.html",
+        "distribution.html",
+        "donate-food.html",
+        "donate.html",
+        "events.html",
+        "get-help.html",
+        "how-to-help.html",
+        "hunger.html",
+        "impact.html",
+        "index.html",
+        "partners.html",
+        "sign-up.html",
+        "volunteer.html",
+        "what-we-do.html"
+      ],
+      "behavior": [
+        "grouped links",
+        "fictional address",
+        "research disclaimer"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe clean at 1280px and 375px (qc.js); not manually tested"
+    },
+    {
+      "id": "footer-nav",
+      "selector": "[data-component='footer-nav']",
+      "pages": [
+        "404.html",
+        "blog.html",
+        "contact.html",
+        "distribution.html",
+        "donate-food.html",
+        "donate.html",
+        "events.html",
+        "get-help.html",
+        "how-to-help.html",
+        "hunger.html",
+        "impact.html",
+        "index.html",
+        "partners.html",
+        "sign-up.html",
+        "volunteer.html",
+        "what-we-do.html"
+      ],
+      "behavior": [
+        "labelled footer link groups"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe clean at 1280px and 375px (qc.js); not manually tested"
+    },
+    {
+      "id": "search-dialog",
+      "selector": "[data-component='search-dialog']",
+      "pages": [
+        "404.html",
+        "blog.html",
+        "contact.html",
+        "distribution.html",
+        "donate-food.html",
+        "donate.html",
+        "events.html",
+        "get-help.html",
+        "how-to-help.html",
+        "hunger.html",
+        "impact.html",
+        "index.html",
+        "partners.html",
+        "sign-up.html",
+        "volunteer.html",
+        "what-we-do.html"
+      ],
+      "behavior": [
+        "native dialog, modal",
+        "live search over an inline 15-page index",
+        "empty state",
+        "single Escape closes and returns focus to opener"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "scripted Playwright flow passed 2026-11-11; axe clean at 1280px and 375px"
+    },
+    {
+      "id": "search-form",
+      "selector": "[data-component='search-form']",
+      "pages": [
+        "404.html",
+        "blog.html",
+        "contact.html",
+        "distribution.html",
+        "donate-food.html",
+        "donate.html",
+        "events.html",
+        "get-help.html",
+        "how-to-help.html",
+        "hunger.html",
+        "impact.html",
+        "index.html",
+        "partners.html",
+        "sign-up.html",
+        "volunteer.html",
+        "what-we-do.html"
+      ],
+      "behavior": [
+        "search input inside the dialog"
+      ],
+      "keyboard": [
+        "Tab",
+        "Shift+Tab",
+        "Enter (submit)",
+        "Space (checkboxes/radios)",
+        "Arrow keys (radio groups)"
+      ],
+      "status": "implemented",
+      "validation": "scripted Playwright flow passed 2026-11-11; axe clean at 1280px and 375px"
+    },
+    {
+      "id": "page-header",
+      "selector": "[data-component='page-header']",
+      "pages": [
+        "blog.html",
+        "contact.html",
+        "distribution.html",
+        "donate-food.html",
+        "donate.html",
+        "events.html",
+        "get-help.html",
+        "how-to-help.html",
+        "hunger.html",
+        "impact.html",
+        "partners.html",
+        "sign-up.html",
+        "volunteer.html",
+        "what-we-do.html"
+      ],
+      "behavior": [
+        "breadcrumb, h1 and lead paragraph for interior pages"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe clean at 1280px and 375px (qc.js); not manually tested"
+    },
+    {
+      "id": "breadcrumb",
+      "selector": "[data-component='breadcrumb']",
+      "pages": [
+        "blog.html",
+        "contact.html",
+        "distribution.html",
+        "donate-food.html",
+        "donate.html",
+        "events.html",
+        "get-help.html",
+        "how-to-help.html",
+        "hunger.html",
+        "impact.html",
+        "partners.html",
+        "sign-up.html",
+        "volunteer.html",
+        "what-we-do.html"
+      ],
+      "behavior": [
+        "ordered list trail; current page marked with aria-current"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe clean at 1280px and 375px (qc.js); not manually tested"
+    },
+    {
+      "id": "filter-list",
+      "selector": "[data-component='filter-list']",
+      "pages": [
+        "blog.html",
+        "donate-food.html",
+        "events.html",
+        "partners.html"
+      ],
+      "behavior": [
+        "text + select filtering of static items",
+        "live result count",
+        "empty state",
+        "clear filters"
+      ],
+      "keyboard": [
+        "Tab",
+        "Shift+Tab",
+        "Enter (submit)",
+        "Space (checkboxes/radios)",
+        "Arrow keys (radio groups)"
+      ],
+      "status": "implemented",
+      "validation": "scripted Playwright flow passed 2026-11-11; axe clean at 1280px and 375px"
+    },
+    {
+      "id": "filter-bar",
+      "selector": "[data-component='filter-bar']",
+      "pages": [
+        "blog.html",
+        "donate-food.html",
+        "events.html",
+        "get-help.html",
+        "partners.html"
+      ],
+      "behavior": [
+        "search input and select controls"
+      ],
+      "keyboard": [
+        "Tab",
+        "Shift+Tab",
+        "Enter (submit)",
+        "Space (checkboxes/radios)",
+        "Arrow keys (radio groups)"
+      ],
+      "status": "implemented",
+      "validation": "scripted Playwright flow passed 2026-11-11; axe clean at 1280px and 375px"
+    },
+    {
+      "id": "empty-state",
+      "selector": "[data-component='empty-state']",
+      "pages": [
+        "blog.html",
+        "donate-food.html",
+        "events.html",
+        "get-help.html",
+        "partners.html"
+      ],
+      "behavior": [
+        "shown when a filter or search has no results"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "scripted Playwright flow passed 2026-11-11; axe clean at 1280px and 375px"
+    },
+    {
+      "id": "card-grid",
+      "selector": "[data-component='card-grid']",
+      "pages": [
+        "blog.html",
+        "donate-food.html",
+        "events.html",
+        "how-to-help.html",
+        "hunger.html",
+        "index.html",
+        "partners.html",
+        "what-we-do.html"
+      ],
+      "behavior": [
+        "responsive grid of cards"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe clean at 1280px and 375px (qc.js); not manually tested"
+    },
+    {
+      "id": "story-card",
+      "selector": "[data-component='story-card']",
+      "pages": [
+        "blog.html",
+        "index.html"
+      ],
+      "behavior": [
+        "client story / news card",
+        "Read more disclosure with aria-expanded",
+        "opens from #story-<id> hash"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "scripted Playwright flow passed 2026-11-11; axe clean at 1280px and 375px"
+    },
+    {
+      "id": "contact-form",
+      "selector": "[data-component='contact-form']",
+      "pages": [
+        "contact.html"
+      ],
+      "behavior": [
+        "client-side validation",
+        "inline errors",
+        "error summary with focus management",
+        "demo success",
+        "topic preselected from ?topic="
+      ],
+      "keyboard": [
+        "Tab",
+        "Shift+Tab",
+        "Enter (submit)",
+        "Space (checkboxes/radios)",
+        "Arrow keys (radio groups)"
+      ],
+      "status": "implemented",
+      "validation": "scripted Playwright flow passed 2026-11-11; axe clean at 1280px and 375px"
+    },
+    {
+      "id": "error-summary",
+      "selector": "[data-component='error-summary']",
+      "pages": [
+        "contact.html",
+        "donate.html",
+        "get-help.html",
+        "sign-up.html",
+        "volunteer.html"
+      ],
+      "behavior": [
+        "focus moves to summary on failed submit",
+        "links focus the invalid field"
+      ],
+      "keyboard": [
+        "Tab",
+        "Shift+Tab",
+        "Enter (submit)",
+        "Space (checkboxes/radios)",
+        "Arrow keys (radio groups)"
+      ],
+      "status": "implemented",
+      "validation": "scripted Playwright flow passed 2026-11-11; axe clean at 1280px and 375px"
+    },
+    {
+      "id": "form-field",
+      "selector": "[data-component='form-field']",
+      "pages": [
+        "contact.html",
+        "donate.html",
+        "get-help.html",
+        "sign-up.html",
+        "volunteer.html"
+      ],
+      "behavior": [
+        "label, optional hint, inline error with aria-invalid and aria-describedby"
+      ],
+      "keyboard": [
+        "Tab",
+        "Shift+Tab",
+        "Enter (submit)",
+        "Space (checkboxes/radios)",
+        "Arrow keys (radio groups)"
+      ],
+      "status": "implemented",
+      "validation": "scripted Playwright flow passed 2026-11-11; axe clean at 1280px and 375px"
+    },
+    {
+      "id": "demo-success",
+      "selector": "[data-component='demo-success']",
+      "pages": [
+        "contact.html",
+        "donate.html",
+        "sign-up.html",
+        "volunteer.html"
+      ],
+      "behavior": [
+        "demo-only confirmation, focus moved on success",
+        "Start over resets the form"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "scripted Playwright flow passed 2026-11-11; axe clean at 1280px and 375px"
+    },
+    {
+      "id": "content-block",
+      "selector": "[data-component='content-block']",
+      "pages": [
+        "contact.html",
+        "donate-food.html",
+        "donate.html",
+        "index.html"
+      ],
+      "behavior": [
+        "plain text block or aside"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "axe clean at 1280px and 375px (qc.js); not manually tested"
+    },
+    {
+      "id": "accordion",
+      "selector": "[data-component='accordion']",
+      "pages": [
+        "distribution.html",
+        "impact.html"
+      ],
+      "behavior": [
+        "disclosure buttons with aria-expanded/aria-controls"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "scripted Playwright flow passed 2026-11-11; axe clean at 1280px and 375px"
+    },
+    {
+      "id": "disclosure-item",
+      "selector": "[data-component='disclosure-item']",
+      "pages": [
+        "distribution.html",
+        "impact.html"
+      ],
+      "behavior": [
+        "single accordion entry"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "scripted Playwright flow passed 2026-11-11; axe clean at 1280px and 375px"
+    },
+    {
+      "id": "cta-band",
+      "selector": "[data-component='cta-band']",
+      "pages": [
+        "distribution.html",
+        "impact.html",
+        "index.html"
+      ],
+      "behavior": [
+        "donate / volunteer / partners calls to action"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe clean at 1280px and 375px (qc.js); not manually tested"
+    },
+    {
+      "id": "location-card",
+      "selector": "[data-component='location-card']",
+      "pages": [
+        "donate-food.html"
+      ],
+      "behavior": [
+        "drop-off site card (static) and food assistance result card (rendered from inline JS data)"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "scripted Playwright flow passed 2026-11-11; axe clean at 1280px and 375px"
+    },
+    {
+      "id": "demo-notice",
+      "selector": "[data-component='demo-notice']",
+      "pages": [
+        "donate.html",
+        "get-help.html",
+        "hunger.html",
+        "impact.html",
+        "volunteer.html"
+      ],
+      "behavior": [
+        "visible statement that content or a flow is simulated or sample data"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "axe clean at 1280px and 375px (qc.js); not manually tested"
+    },
+    {
+      "id": "donation-form",
+      "selector": "[data-component='donation-form']",
+      "pages": [
+        "donate.html"
+      ],
+      "behavior": [
+        "amount radios plus other amount, frequency radios, validation, demo success; no payment fields"
+      ],
+      "keyboard": [
+        "Tab",
+        "Shift+Tab",
+        "Enter (submit)",
+        "Space (checkboxes/radios)",
+        "Arrow keys (radio groups)"
+      ],
+      "status": "implemented",
+      "validation": "scripted Playwright flow passed 2026-11-11; axe clean at 1280px and 375px"
+    },
+    {
+      "id": "radio-group",
+      "selector": "[data-component='radio-group']",
+      "pages": [
+        "donate.html"
+      ],
+      "behavior": [
+        "fieldset/legend radio group with group-level error"
+      ],
+      "keyboard": [
+        "Tab",
+        "Shift+Tab",
+        "Enter (submit)",
+        "Space (checkboxes/radios)",
+        "Arrow keys (radio groups)"
+      ],
+      "status": "implemented",
+      "validation": "scripted Playwright flow passed 2026-11-11; axe clean at 1280px and 375px"
+    },
+    {
+      "id": "live-summary",
+      "selector": "[data-component='live-summary']",
+      "pages": [
+        "donate.html"
+      ],
+      "behavior": [
+        "role=status text updated as amount and frequency change"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "scripted Playwright flow passed 2026-11-11; axe clean at 1280px and 375px"
+    },
+    {
+      "id": "event-card",
+      "selector": "[data-component='event-card']",
+      "pages": [
+        "events.html",
+        "index.html"
+      ],
+      "behavior": [
+        "event card filtered by type and month"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "scripted Playwright flow passed 2026-11-11; axe clean at 1280px and 375px"
+    },
+    {
+      "id": "location-search",
+      "selector": "[data-component='location-search']",
+      "pages": [
+        "get-help.html"
+      ],
+      "behavior": [
+        "optional ZIP validation",
+        "day and type filters",
+        "ZIP-proximity sort over 14 inline sample sites",
+        "empty state"
+      ],
+      "keyboard": [
+        "Tab",
+        "Shift+Tab",
+        "Enter (submit)",
+        "Space (checkboxes/radios)",
+        "Arrow keys (radio groups)"
+      ],
+      "status": "implemented",
+      "validation": "scripted Playwright flow passed 2026-11-11; axe clean at 1280px and 375px"
+    },
+    {
+      "id": "results-list",
+      "selector": "[data-component='results-list']",
+      "pages": [
+        "get-help.html"
+      ],
+      "behavior": [
+        "JS-rendered list of sample food assistance locations"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "scripted Playwright flow passed 2026-11-11; axe clean at 1280px and 375px"
+    },
+    {
+      "id": "ways-card",
+      "selector": "[data-component='ways-card']",
+      "pages": [
+        "how-to-help.html"
+      ],
+      "behavior": [
+        "ways-to-give card"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe clean at 1280px and 375px (qc.js); not manually tested"
+    },
+    {
+      "id": "stats-band",
+      "selector": "[data-component='stats-band']",
+      "pages": [
+        "hunger.html",
+        "impact.html"
+      ],
+      "behavior": [
+        "stat figures; impact page figures change with fiscal year select"
+      ],
+      "keyboard": [
+        "Tab",
+        "Shift+Tab",
+        "Enter (submit)",
+        "Space (checkboxes/radios)",
+        "Arrow keys (radio groups)"
+      ],
+      "status": "implemented",
+      "validation": "scripted Playwright flow passed 2026-11-11; axe clean at 1280px and 375px"
+    },
+    {
+      "id": "sortable-table",
+      "selector": "[data-component='sortable-table']",
+      "pages": [
+        "hunger.html"
+      ],
+      "behavior": [
+        "column sort buttons with aria-sort and live status"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "scripted Playwright flow passed 2026-11-11; axe clean at 1280px and 375px"
+    },
+    {
+      "id": "fact-card",
+      "selector": "[data-component='fact-card']",
+      "pages": [
+        "hunger.html"
+      ],
+      "behavior": [
+        "text card"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "axe clean at 1280px and 375px (qc.js); not manually tested"
+    },
+    {
+      "id": "hero-banner",
+      "selector": "[data-component='hero-banner']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "h1, tagline, two calls to action, decorative SVG"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe clean at 1280px and 375px (qc.js); not manually tested"
+    },
+    {
+      "id": "partner-card",
+      "selector": "[data-component='partner-card']",
+      "pages": [
+        "index.html",
+        "partners.html"
+      ],
+      "behavior": [
+        "partner card; filtered by type on partners page"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "scripted Playwright flow passed 2026-11-11; axe clean at 1280px and 375px"
+    },
+    {
+      "id": "program-card",
+      "selector": "[data-component='program-card']",
+      "pages": [
+        "index.html",
+        "what-we-do.html"
+      ],
+      "behavior": [
+        "program summary card with link"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe clean at 1280px and 375px (qc.js); not manually tested"
+    },
+    {
+      "id": "signup-form",
+      "selector": "[data-component='signup-form']",
+      "pages": [
+        "sign-up.html"
+      ],
+      "behavior": [
+        "email required, optional ZIP pattern, optional interest checkboxes, demo success"
+      ],
+      "keyboard": [
+        "Tab",
+        "Shift+Tab",
+        "Enter (submit)",
+        "Space (checkboxes/radios)",
+        "Arrow keys (radio groups)"
+      ],
+      "status": "implemented",
+      "validation": "scripted Playwright flow passed 2026-11-11; axe clean at 1280px and 375px"
+    },
+    {
+      "id": "checkbox-group",
+      "selector": "[data-component='checkbox-group']",
+      "pages": [
+        "sign-up.html",
+        "volunteer.html"
+      ],
+      "behavior": [
+        "fieldset/legend checkbox group; volunteer shifts require at least one"
+      ],
+      "keyboard": [
+        "Tab",
+        "Shift+Tab",
+        "Enter (submit)",
+        "Space (checkboxes/radios)",
+        "Arrow keys (radio groups)"
+      ],
+      "status": "implemented",
+      "validation": "scripted Playwright flow passed 2026-11-11; axe clean at 1280px and 375px"
+    },
+    {
+      "id": "volunteer-form",
+      "selector": "[data-component='volunteer-form']",
+      "pages": [
+        "volunteer.html"
+      ],
+      "behavior": [
+        "shift checkboxes (at least one), name, email, group size, age confirmation, demo success"
+      ],
+      "keyboard": [
+        "Tab",
+        "Shift+Tab",
+        "Enter (submit)",
+        "Space (checkboxes/radios)",
+        "Arrow keys (radio groups)"
+      ],
+      "status": "implemented",
+      "validation": "scripted Playwright flow passed 2026-11-11; axe clean at 1280px and 375px"
+    }
+  ]
+}

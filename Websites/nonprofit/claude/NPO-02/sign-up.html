@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Email Sign Up (Demo) | Larkfield Region Food Bank</title>
+<meta name="description" content="Demo email sign-up form for the fictional Larkfield Region Food Bank.">
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header" data-section="global-header" data-component="site-header">
+<div class="utility-bar" data-section="utility-bar" data-component="utility-bar"><div class="wrap">
+<p>Fictional demo site for accessibility research</p>
+<div class="actions"><button type="button" class="link-button" data-open-search aria-haspopup="dialog" data-component="search-toggle">Search</button>
+<a class="btn btn-donate" href="donate.html" data-component="donate-button">Donate</a></div></div></div>
+<div class="wrap header-main">
+<a class="brand" href="index.html" data-component="brand"><img src="assets/logo.svg" alt="" width="48" height="48"><span>Larkfield Region Food Bank</span></a>
+<button type="button" class="menu-toggle" aria-expanded="false" aria-controls="primary-nav" data-component="mobile-menu-toggle">Menu</button>
+<nav aria-label="Primary" id="primary-nav" data-section="global-navigation" data-component="primary-nav"><ul class="nav-list">
+<li><a href="hunger.html">Hunger in Our Region</a></li>
+<li><a href="what-we-do.html">What We Do</a><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="sub-what" aria-label="What We Do submenu" data-component="nav-dropdown-toggle"></button>
+<ul class="subnav" id="sub-what" hidden data-component="nav-dropdown"><li><a href="what-we-do.html">Overview</a></li><li><a href="distribution.html">Direct Food Distribution</a></li><li><a href="what-we-do.html#partnerships">Food+ Partnerships</a></li><li><a href="what-we-do.html#advocacy">Advocacy & Public Policy</a></li><li><a href="what-we-do.html#nutrition">Nutrition & Wellness</a></li><li><a href="what-we-do.html#gardens">Farms & Gardening</a></li></ul></li>
+<li><a href="impact.html">Impact</a></li>
+<li><a href="how-to-help.html">How To Help</a><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="sub-help" aria-label="How To Help submenu" data-component="nav-dropdown-toggle"></button>
+<ul class="subnav" id="sub-help" hidden data-component="nav-dropdown"><li><a href="how-to-help.html">Ways to Give</a></li><li><a href="donate-food.html">Donate Food</a></li><li><a href="volunteer.html">Volunteer</a></li><li><a href="how-to-help.html#fundraise">Virtual Fundraising</a></li><li><a href="how-to-help.html#corporate">Corporate Engagement</a></li><li><a href="how-to-help.html#workplace">Workplace Giving</a></li></ul></li>
+<li><a href="events.html">Events &amp; Campaigns</a></li>
+<li><a href="blog.html">Blog</a></li>
+<li><a href="partners.html">Partners</a></li>
+<li><a href="get-help.html" class="nav-help">Get Help</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul></nav></div></header>
+<main id="main-content" data-section="main-content">
+
+<section class="page-header" data-section="page-header" data-component="page-header"><div class="wrap"><nav class="breadcrumb" aria-label="Breadcrumb" data-section="breadcrumb" data-component="breadcrumb"><ol><li><a href="index.html">Home</a></li><li aria-current="page">Email Sign Up</li></ol></nav><h1>Email sign up</h1><p class="lead">One short note a month. This form is a demonstration; no email list exists.</p></div></section>
+<section class="band " aria-label="Email sign up" data-section="newsletter-signup"><div class="wrap"><form id="signup-form" novalidate data-validate data-success-id="signup-form-success" data-section="newsletter-signup" data-component="signup-form">
+<div class="error-summary" tabindex="-1" hidden data-component="error-summary"><h2>There is a problem</h2><ul></ul></div>
+
+<div class="field" data-component="form-field"><label for="signup-email">Email address</label><input id="signup-email" name="signup-email" type="email" required data-label="Email address" autocomplete="email" data-msg-missing="Enter your email address." data-msg-invalid="Enter an email address like name@example.org."><p class="field-error" id="signup-email-error" hidden></p></div>
+<div class="field" data-component="form-field"><label for="signup-zip">ZIP code (optional)</label><p class="hint" id="signup-zip-hint">Helps us send nearby events. 5 digits.</p><input id="signup-zip" name="signup-zip" type="text" data-label="ZIP code" inputmode="numeric" autocomplete="postal-code" pattern="\d{5}" maxlength="5" data-msg-invalid="Enter a 5-digit ZIP code, for example 20104." aria-describedby="signup-zip-hint"><p class="field-error" id="signup-zip-error" hidden></p></div>
+<fieldset data-component="checkbox-group"><legend>Interests (optional)</legend><div class="choice"><input type="checkbox" id="int-events" name="interest" value="events"><label for="int-events">Events and drives</label></div><div class="choice"><input type="checkbox" id="int-advocacy" name="interest" value="advocacy"><label for="int-advocacy">Advocacy alerts</label></div><div class="choice"><input type="checkbox" id="int-recipes" name="interest" value="recipes"><label for="int-recipes">Recipes and nutrition</label></div><p class="field-error" id="interest-error" hidden></p></fieldset>
+<button class="btn" type="submit">Sign up (demo)</button>
+</form>
+<div class="demo-success" id="signup-form-success" tabindex="-1" hidden data-component="demo-success"><h2>Demo only: you are not subscribed</h2><p>Thanks for trying the sign-up flow. No address was saved.</p><button type="button" class="btn btn-outline" data-demo-reset>Start over</button></div></div></section>
+
+</main>
+<footer class="site-footer" data-section="global-footer" data-component="site-footer"><div class="wrap">
+<div class="footer-grid">
+<div data-section="footer-about"><h2>Larkfield Region Food Bank</h2><p>1200 Granary Way<br>Millbrook, LF 20100<br>Sample phone: 555-0142</p><p>Serving six fictional counties in the Tri-River region.</p></div>
+<nav aria-label="Footer: get involved" data-section="footer-involved" data-component="footer-nav"><h2>Get involved</h2><ul><li><a href="donate.html">Donate</a></li><li><a href="donate-food.html">Donate food</a></li><li><a href="volunteer.html">Volunteer</a></li><li><a href="events.html">Events &amp; campaigns</a></li></ul></nav>
+<nav aria-label="Footer: about us" data-section="footer-about-links" data-component="footer-nav"><h2>About us</h2><ul><li><a href="hunger.html">Hunger in our region</a></li><li><a href="what-we-do.html">What we do</a></li><li><a href="impact.html">Impact</a></li><li><a href="partners.html">Partners</a></li><li><a href="blog.html">Blog</a></li></ul></nav>
+<nav aria-label="Footer: help and contact" data-section="footer-help" data-component="footer-nav"><h2>Need help?</h2><ul><li><a href="get-help.html">Find food assistance</a></li><li><a href="contact.html">Contact</a></li><li><a href="sign-up.html">Email sign up</a></li></ul></nav>
+</div>
+<p class="footer-legal">&copy; 2026 Larkfield Region Food Bank, a fictional organization created for an accessibility and usability research dataset. Names, figures, addresses and stories are invented samples. No real donations, volunteer sign-ups or food services are offered here.</p>
+</div></footer>
+<dialog id="site-search" aria-labelledby="site-search-title" data-section="site-search" data-component="search-dialog">
+<div class="dialog-head"><h2 id="site-search-title">Search this site</h2><button type="button" class="btn btn-outline" data-close-dialog>Close</button></div>
+<form role="search" data-component="search-form"><div class="field"><label for="site-search-input">Search pages</label><input type="search" id="site-search-input" autocomplete="off"></div></form>
+<p role="status" class="live-status"></p><ul class="search-results"></ul>
+</dialog>
+<script src="js/main.js"></script>
+</body>
+</html>

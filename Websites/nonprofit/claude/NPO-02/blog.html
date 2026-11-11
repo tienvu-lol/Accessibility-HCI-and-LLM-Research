@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blog | Larkfield Region Food Bank</title>
+<meta name="description" content="Sample neighbor stories and news posts for the fictional Larkfield Region Food Bank.">
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header" data-section="global-header" data-component="site-header">
+<div class="utility-bar" data-section="utility-bar" data-component="utility-bar"><div class="wrap">
+<p>Fictional demo site for accessibility research</p>
+<div class="actions"><button type="button" class="link-button" data-open-search aria-haspopup="dialog" data-component="search-toggle">Search</button>
+<a class="btn btn-donate" href="donate.html" data-component="donate-button">Donate</a></div></div></div>
+<div class="wrap header-main">
+<a class="brand" href="index.html" data-component="brand"><img src="assets/logo.svg" alt="" width="48" height="48"><span>Larkfield Region Food Bank</span></a>
+<button type="button" class="menu-toggle" aria-expanded="false" aria-controls="primary-nav" data-component="mobile-menu-toggle">Menu</button>
+<nav aria-label="Primary" id="primary-nav" data-section="global-navigation" data-component="primary-nav"><ul class="nav-list">
+<li><a href="hunger.html">Hunger in Our Region</a></li>
+<li><a href="what-we-do.html">What We Do</a><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="sub-what" aria-label="What We Do submenu" data-component="nav-dropdown-toggle"></button>
+<ul class="subnav" id="sub-what" hidden data-component="nav-dropdown"><li><a href="what-we-do.html">Overview</a></li><li><a href="distribution.html">Direct Food Distribution</a></li><li><a href="what-we-do.html#partnerships">Food+ Partnerships</a></li><li><a href="what-we-do.html#advocacy">Advocacy & Public Policy</a></li><li><a href="what-we-do.html#nutrition">Nutrition & Wellness</a></li><li><a href="what-we-do.html#gardens">Farms & Gardening</a></li></ul></li>
+<li><a href="impact.html">Impact</a></li>
+<li><a href="how-to-help.html">How To Help</a><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="sub-help" aria-label="How To Help submenu" data-component="nav-dropdown-toggle"></button>
+<ul class="subnav" id="sub-help" hidden data-component="nav-dropdown"><li><a href="how-to-help.html">Ways to Give</a></li><li><a href="donate-food.html">Donate Food</a></li><li><a href="volunteer.html">Volunteer</a></li><li><a href="how-to-help.html#fundraise">Virtual Fundraising</a></li><li><a href="how-to-help.html#corporate">Corporate Engagement</a></li><li><a href="how-to-help.html#workplace">Workplace Giving</a></li></ul></li>
+<li><a href="events.html">Events &amp; Campaigns</a></li>
+<li><a href="blog.html" aria-current="page">Blog</a></li>
+<li><a href="partners.html">Partners</a></li>
+<li><a href="get-help.html" class="nav-help">Get Help</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul></nav></div></header>
+<main id="main-content" data-section="main-content">
+
+<section class="page-header" data-section="page-header" data-component="page-header"><div class="wrap"><nav class="breadcrumb" aria-label="Breadcrumb" data-section="breadcrumb" data-component="breadcrumb"><ol><li><a href="index.html">Home</a></li><li aria-current="page">Blog</li></ol></nav><h1>Blog</h1><p class="lead">Neighbor stories, news and tips. Stories are fictional and written for this demo.</p></div></section>
+<section class="band " aria-labelledby="posts-title" data-section="blog-posts"><div class="wrap"><h2 id="posts-title">Latest posts</h2><div data-filter-list data-filter-noun="posts" data-component="filter-list">
+<div class="filter-bar" data-component="filter-bar">
+<div class="field"><label for="bl-text">Search posts</label><input type="search" id="bl-text" data-filter-text autocomplete="off"></div>
+<div class="field"><label for="bl-cat">Category</label><select id="bl-cat" data-filter-attr="cat"><option value="">All</option><option value="neighbor">Neighbor stories</option><option value="news">News</option><option value="tips">Tips</option></select></div>
+<div class="field"><button type="button" class="btn btn-outline" data-filter-reset>Clear filters</button></div></div>
+<p class="result-count" role="status" data-filter-count></p>
+<div class="empty-state" data-filter-empty hidden data-component="empty-state"><p><strong>No posts match.</strong></p><p>Try a different word or clear the filters.</p></div>
+<ul class="card-grid" data-component="card-grid"><li class="card" id="story-imani" data-filter-item data-cat="neighbor" data-component="story-card"><img src="assets/story-1.svg" alt="" width="320" height="180"><span class="tag">Neighbor story</span><h3>Nights, weekends and a market box</h3><p class="meta">Nov 3, 2026</p><p>Imani works nights at a clinic and sleeps while the stores are open.</p><div id="more-imani" hidden><p>A Saturday market near her building gives her time back. She picks up greens, eggs and rice, then spends the afternoon cooking for the week. &ldquo;I can plan again,&rdquo; she says. (Fictional story for this demo.)</p></div><p class="push"><button type="button" class="link-button" aria-expanded="false" aria-controls="more-imani" data-toggle="more-imani" data-label-open="Show less" data-label-closed="Read more">Read more</button></p></li><li class="card" id="story-rosa" data-filter-item data-cat="neighbor" data-component="story-card"><img src="assets/story-2.svg" alt="" width="320" height="180"><span class="tag">Neighbor story</span><h3>A senior box and a Tuesday bingo</h3><p class="meta">Oct 27, 2026</p><p>Rosa taught fourth grade for thirty years.</p><div id="more-rosa" hidden><p>Now she collects a monthly box at the Westmere senior pickup, where volunteers hold a bingo game while boxes are packed. The friendships matter as much as the food. (Fictional story.)</p></div><p class="push"><button type="button" class="link-button" aria-expanded="false" aria-controls="more-rosa" data-toggle="more-rosa" data-label-open="Show less" data-label-closed="Read more">Read more</button></p></li><li class="card" id="story-daniel" data-filter-item data-cat="neighbor" data-component="story-card"><img src="assets/story-3.svg" alt="" width="320" height="180"><span class="tag">Neighbor story</span><h3>Between classes at the campus pantry</h3><p class="meta">Oct 20, 2026</p><p>Daniel was skipping lunch to cover textbooks.</p><div id="more-daniel" hidden><p>The pantry in the student center takes no questions and no swipes. He grabs oats, peanut butter and fruit on the way to lab. (Fictional story.)</p></div><p class="push"><button type="button" class="link-button" aria-expanded="false" aria-controls="more-daniel" data-toggle="more-daniel" data-label-open="Show less" data-label-closed="Read more">Read more</button></p></li><li class="card" id="story-priya" data-filter-item data-cat="neighbor" data-component="story-card"><img src="assets/story-4.svg" alt="" width="320" height="180"><span class="tag">Neighbor story</span><h3>Cooking with what is on the shelf</h3><p class="meta">Oct 13, 2026</p><p>Priya feeds three kids on a tight budget.</p><div id="more-priya" hidden><p>A cooking class taught her to turn beans, rice and frozen vegetables into five different dinners. Her youngest asks for the lentil soup. (Fictional story.)</p></div><p class="push"><button type="button" class="link-button" aria-expanded="false" aria-controls="more-priya" data-toggle="more-priya" data-label-open="Show less" data-label-closed="Read more">Read more</button></p></li><li class="card" id="story-news-1" data-filter-item data-cat="news" data-component="story-card"><img src="assets/story-1.svg" alt="" width="320" height="180"><span class="tag">News</span><h3>Pantry hours extended for the holidays</h3><p class="meta">Nov 5, 2026</p><p>Eight partner pantries will open one extra evening a week through January.</p><div id="more-news-1" hidden><p>Check the Get Help page for updated sample hours. Volunteers are needed on Tuesday evenings.</p></div><p class="push"><button type="button" class="link-button" aria-expanded="false" aria-controls="more-news-1" data-toggle="more-news-1" data-label-open="Show less" data-label-closed="Read more">Read more</button></p></li><li class="card" id="story-news-2" data-filter-item data-cat="news" data-component="story-card"><img src="assets/story-3.svg" alt="" width="320" height="180"><span class="tag">News</span><h3>New refrigerated truck joins the mobile market fleet</h3><p class="meta">Oct 30, 2026</p><p>The truck adds two stops in Cedar Hollow.</p><div id="more-news-2" hidden><p>Funding came from a community fundraiser last spring. Stops begin the first Saturday of December. (Sample news item.)</p></div><p class="push"><button type="button" class="link-button" aria-expanded="false" aria-controls="more-news-2" data-toggle="more-news-2" data-label-open="Show less" data-label-closed="Read more">Read more</button></p></li><li class="card" id="story-tips-1" data-filter-item data-cat="tips" data-component="story-card"><img src="assets/story-2.svg" alt="" width="320" height="180"><span class="tag">Tips</span><h3>Five ways to stretch a bag of rice</h3><p class="meta">Oct 6, 2026</p><p>Rice is a pantry hero. Here is how to keep it interesting.</p><div id="more-tips-1" hidden><p>Try a veggie fried rice, a rice pudding, stuffed peppers, a pot of rice and beans, or breakfast congee. Recipe cards are free at every mobile market. (Sample tip.)</p></div><p class="push"><button type="button" class="link-button" aria-expanded="false" aria-controls="more-tips-1" data-toggle="more-tips-1" data-label-open="Show less" data-label-closed="Read more">Read more</button></p></li></ul></div></div></section>
+
+</main>
+<footer class="site-footer" data-section="global-footer" data-component="site-footer"><div class="wrap">
+<div class="footer-grid">
+<div data-section="footer-about"><h2>Larkfield Region Food Bank</h2><p>1200 Granary Way<br>Millbrook, LF 20100<br>Sample phone: 555-0142</p><p>Serving six fictional counties in the Tri-River region.</p></div>
+<nav aria-label="Footer: get involved" data-section="footer-involved" data-component="footer-nav"><h2>Get involved</h2><ul><li><a href="donate.html">Donate</a></li><li><a href="donate-food.html">Donate food</a></li><li><a href="volunteer.html">Volunteer</a></li><li><a href="events.html">Events &amp; campaigns</a></li></ul></nav>
+<nav aria-label="Footer: about us" data-section="footer-about-links" data-component="footer-nav"><h2>About us</h2><ul><li><a href="hunger.html">Hunger in our region</a></li><li><a href="what-we-do.html">What we do</a></li><li><a href="impact.html">Impact</a></li><li><a href="partners.html">Partners</a></li><li><a href="blog.html">Blog</a></li></ul></nav>
+<nav aria-label="Footer: help and contact" data-section="footer-help" data-component="footer-nav"><h2>Need help?</h2><ul><li><a href="get-help.html">Find food assistance</a></li><li><a href="contact.html">Contact</a></li><li><a href="sign-up.html">Email sign up</a></li></ul></nav>
+</div>
+<p class="footer-legal">&copy; 2026 Larkfield Region Food Bank, a fictional organization created for an accessibility and usability research dataset. Names, figures, addresses and stories are invented samples. No real donations, volunteer sign-ups or food services are offered here.</p>
+</div></footer>
+<dialog id="site-search" aria-labelledby="site-search-title" data-section="site-search" data-component="search-dialog">
+<div class="dialog-head"><h2 id="site-search-title">Search this site</h2><button type="button" class="btn btn-outline" data-close-dialog>Close</button></div>
+<form role="search" data-component="search-form"><div class="field"><label for="site-search-input">Search pages</label><input type="search" id="site-search-input" autocomplete="off"></div></form>
+<p role="status" class="live-status"></p><ul class="search-results"></ul>
+</dialog>
+<script src="js/main.js"></script>
+</body>
+</html>
