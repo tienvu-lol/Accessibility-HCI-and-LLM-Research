@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact us - Lindora Home</title>
+<meta name="description" content="Contact the Lindora Home demo support team.">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main-content" data-component="skip-link">Skip to main content</a>
+<header class="site-header" data-section="global-header" data-component="site-header">
+  <div class="promo-strip" data-section="promo-strip" data-component="promo-banner"><p>Demo storefront: browse the <a href="new.html">newest designs</a>. Nothing here can be bought for real.</p></div>
+  <div class="header-top">
+    <a class="brand" href="index.html" aria-label="Lindora Home, home page"><img src="assets/logo.svg" alt="" width="36" height="36"><span>Lindora Home</span></a>
+    <form class="search-form" role="search" action="search.html" method="get" data-section="site-search" data-component="search-form">
+      <label for="site-search" class="visually-hidden">Search products</label>
+      <input id="site-search" type="search" name="q" placeholder="What are you looking for?" autocomplete="off">
+      <button type="submit">Search</button>
+    </form>
+    <nav class="utility-nav" aria-label="Shopping links" data-section="utility-navigation" data-component="utility-nav">
+      <a href="login.html" data-account-link>Log in or sign up</a>
+      <a href="cart.html" data-bag-link aria-label="Shopping bag, 0 items">Bag <span class="bag-count" data-bag-count aria-hidden="true">0</span></a>
+    </nav>
+  </div>
+  <nav class="primary-nav" aria-label="Primary" data-section="global-navigation" data-component="primary-nav">
+    <ul>
+      <li class="has-menu"><button type="button" class="menu-toggle" aria-expanded="false" aria-controls="mega-menu" data-menu-toggle>Products</button>
+        <div id="mega-menu" class="mega-menu" hidden data-section="product-menu" data-component="mega-menu">
+          <div class="mega-grid">
+        <div><p class="mega-heading"><a href="furniture.html">Furniture</a></p>
+          <ul><li><a href="sofas.html?type=Sofas">Sofas</a></li><li><a href="sofas.html?type=Sectionals">Sectionals</a></li><li><a href="sofas.html?type=Armchairs">Armchairs</a></li><li><a href="sofas.html?type=Sleeper%20sofas">Sleeper sofas</a></li></ul></div>
+        <div><p class="mega-heading"><a href="beds.html">Beds &amp; mattresses</a></p>
+          <ul><li><a href="beds.html?type=Bed%20frames">Bed frames</a></li><li><a href="beds.html?type=Mattresses">Mattresses</a></li><li><a href="beds.html?type=Nightstands">Nightstands</a></li></ul></div>
+        <div><p class="mega-heading"><a href="lighting.html">Lighting</a></p>
+          <ul><li><a href="lighting.html?type=Floor%20lamps">Floor lamps</a></li><li><a href="lighting.html?type=Table%20lamps">Table lamps</a></li><li><a href="lighting.html?type=Pendant%20lights">Pendant lights</a></li><li><a href="lighting.html?type=Wall%20lights">Wall lights</a></li></ul></div>
+        <div><p class="mega-heading"><a href="rooms.html">Discover</a></p>
+          <ul><li><a href="rooms.html">Shop by room</a></li><li><a href="new.html">New designs</a></li><li><a href="customer-service.html#delivery">Delivery options</a></li><li><a href="returns.html">Return policy</a></li></ul></div>
+          </div>
+        </div>
+      </li>
+      <li><a href="rooms.html">Rooms</a></li>
+      <li><a href="new.html">New</a></li>
+      <li><a href="customer-service.html">Customer service</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main-content" data-section="main-content"><div class="page">
+  <nav class="breadcrumb" aria-label="Breadcrumb" data-section="breadcrumb" data-component="breadcrumb"><ol><li><a href="index.html">Home</a></li><li><a href="customer-service.html">Customer service</a></li><li><span aria-current="page">Contact us</span></li></ol></nav>
+  <h1>Contact us</h1><p class="demo-note" role="note"><strong>Demo form.</strong> Your message is not sent or stored, and there are no real contact channels.</p>
+  <form style="max-width:36rem" data-demo-form="Thanks, your message was received" data-section="contact" data-component="contact-form" novalidate><div hidden tabindex="-1" class="error-summary" data-error-summary></div>
+    <p>Fields marked <span aria-hidden="true">*</span><span class="visually-hidden">with an asterisk</span> are required.</p>
+    <div class="field"><label for="c-name">Your name <span aria-hidden="true">*</span></label><input id="c-name" name="name" type="text" required autocomplete="name"></div>
+    <div class="field"><label for="c-email">Email address <span aria-hidden="true">*</span></label><input id="c-email" name="email" type="email" required autocomplete="email"></div>
+    <div class="field"><label for="c-topic">Topic <span aria-hidden="true">*</span></label><select id="c-topic" name="topic" required><option value="">Choose a topic</option><option>Delivery</option><option>Returns</option><option>Product question</option><option>Something else</option></select></div>
+    <div class="field"><label for="c-order">Order number (optional)</label><input id="c-order" name="order" type="text"></div>
+    <div class="field"><label for="c-message">Message <span aria-hidden="true">*</span></label><textarea id="c-message" name="message" required minlength="10"></textarea></div>
+    <button type="submit" class="btn">Send message</button><p class="status" role="status" data-form-status></p>
+  </form>
+</div></main>
+<footer class="site-footer" data-section="global-footer" data-component="site-footer">
+  <div class="footer-join" data-section="newsletter-signup">
+    <div class="wrap">
+      <div><h2>Join Lindora Family</h2><p>Get demo offers and design ideas. This is a simulation: your address is not saved or sent anywhere.</p></div>
+      <form data-demo-form="Thanks for joining Lindora Family" data-component="newsletter-form" novalidate>
+        <div hidden tabindex="-1" class="error-summary" data-error-summary></div>
+        <div class="field"><label for="footer-email">Email address</label><input id="footer-email" name="email" type="email" autocomplete="email" required></div>
+        <button type="submit" class="btn">Sign me up</button>
+        <p class="status" role="status" data-form-status></p>
+      </form>
+    </div>
+  </div>
+  <div class="footer-cols">
+    <div><h2>Customer service</h2><ul><li><a href="faq.html">FAQ</a></li><li><a href="contact.html">Contact us</a></li><li><a href="returns.html">Return policy</a></li><li><a href="customer-service.html#delivery">Delivery options</a></li><li><a href="login.html">Log in</a></li></ul></div>
+    <div><h2>Shop</h2><ul><li><a href="furniture.html">Furniture</a></li><li><a href="sofas.html">Sofas &amp; armchairs</a></li><li><a href="beds.html">Beds &amp; mattresses</a></li><li><a href="lighting.html">Lighting</a></li><li><a href="rooms.html">Rooms</a></li><li><a href="new.html">New designs</a></li></ul></div>
+    <div><h2>About this demo</h2><p>Lindora Home is a fictional retailer built for an accessibility and usability study. Products, prices, reviews and policies are invented.</p></div>
+  </div>
+  <div class="legal"><p>&copy; Fictional demo site. No real store, brand or transactions.</p></div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

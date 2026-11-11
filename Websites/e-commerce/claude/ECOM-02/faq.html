@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FAQ - Lindora Home</title>
+<meta name="description" content="Frequently asked questions for the Lindora Home demo.">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main-content" data-component="skip-link">Skip to main content</a>
+<header class="site-header" data-section="global-header" data-component="site-header">
+  <div class="promo-strip" data-section="promo-strip" data-component="promo-banner"><p>Demo storefront: browse the <a href="new.html">newest designs</a>. Nothing here can be bought for real.</p></div>
+  <div class="header-top">
+    <a class="brand" href="index.html" aria-label="Lindora Home, home page"><img src="assets/logo.svg" alt="" width="36" height="36"><span>Lindora Home</span></a>
+    <form class="search-form" role="search" action="search.html" method="get" data-section="site-search" data-component="search-form">
+      <label for="site-search" class="visually-hidden">Search products</label>
+      <input id="site-search" type="search" name="q" placeholder="What are you looking for?" autocomplete="off">
+      <button type="submit">Search</button>
+    </form>
+    <nav class="utility-nav" aria-label="Shopping links" data-section="utility-navigation" data-component="utility-nav">
+      <a href="login.html" data-account-link>Log in or sign up</a>
+      <a href="cart.html" data-bag-link aria-label="Shopping bag, 0 items">Bag <span class="bag-count" data-bag-count aria-hidden="true">0</span></a>
+    </nav>
+  </div>
+  <nav class="primary-nav" aria-label="Primary" data-section="global-navigation" data-component="primary-nav">
+    <ul>
+      <li class="has-menu"><button type="button" class="menu-toggle" aria-expanded="false" aria-controls="mega-menu" data-menu-toggle>Products</button>
+        <div id="mega-menu" class="mega-menu" hidden data-section="product-menu" data-component="mega-menu">
+          <div class="mega-grid">
+        <div><p class="mega-heading"><a href="furniture.html">Furniture</a></p>
+          <ul><li><a href="sofas.html?type=Sofas">Sofas</a></li><li><a href="sofas.html?type=Sectionals">Sectionals</a></li><li><a href="sofas.html?type=Armchairs">Armchairs</a></li><li><a href="sofas.html?type=Sleeper%20sofas">Sleeper sofas</a></li></ul></div>
+        <div><p class="mega-heading"><a href="beds.html">Beds &amp; mattresses</a></p>
+          <ul><li><a href="beds.html?type=Bed%20frames">Bed frames</a></li><li><a href="beds.html?type=Mattresses">Mattresses</a></li><li><a href="beds.html?type=Nightstands">Nightstands</a></li></ul></div>
+        <div><p class="mega-heading"><a href="lighting.html">Lighting</a></p>
+          <ul><li><a href="lighting.html?type=Floor%20lamps">Floor lamps</a></li><li><a href="lighting.html?type=Table%20lamps">Table lamps</a></li><li><a href="lighting.html?type=Pendant%20lights">Pendant lights</a></li><li><a href="lighting.html?type=Wall%20lights">Wall lights</a></li></ul></div>
+        <div><p class="mega-heading"><a href="rooms.html">Discover</a></p>
+          <ul><li><a href="rooms.html">Shop by room</a></li><li><a href="new.html">New designs</a></li><li><a href="customer-service.html#delivery">Delivery options</a></li><li><a href="returns.html">Return policy</a></li></ul></div>
+          </div>
+        </div>
+      </li>
+      <li><a href="rooms.html">Rooms</a></li>
+      <li><a href="new.html">New</a></li>
+      <li><a href="customer-service.html">Customer service</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main-content" data-section="main-content"><div class="page" data-faq>
+  <nav class="breadcrumb" aria-label="Breadcrumb" data-section="breadcrumb" data-component="breadcrumb"><ol><li><a href="index.html">Home</a></li><li><a href="customer-service.html">Customer service</a></li><li><span aria-current="page">FAQ</span></li></ol></nav>
+  <h1>Frequently asked questions</h1>
+  <form style="max-width:32rem" data-component="faq-search" novalidate><div class="field"><label for="faq-q">Search questions</label><input id="faq-q" type="search" data-faq-search autocomplete="off"></div></form>
+  <p role="status" data-faq-status></p>
+  <div data-section="faq-list" data-component="accordion"><details class="acc"><summary>How long does delivery take?</summary><p>Standard delivery takes 5-8 business days and express takes 2-3 business days. Both are demo estimates.</p></details>
+  <details class="acc"><summary>Is delivery free?</summary><p>Delivery is free when your bag total after discounts is $500 or more. Otherwise standard delivery costs $29.</p></details>
+  <details class="acc"><summary>How do I use a promo code?</summary><p>Enter the demo code FAMILY10 in your bag. It takes 10% off the subtotal.</p></details>
+  <details class="acc"><summary>Can I change my bag?</summary><p>Yes. Open the bag to change quantities or remove items. Your bag is saved in this browser only.</p></details>
+  <details class="acc"><summary>What if my item arrives damaged?</summary><p>In a real store you would contact support with photos. In this demo, use the contact form to see how that flow works.</p></details>
+  <details class="acc"><summary>Do you offer assembly?</summary><p>Assembly is not part of this demo. Product pages list the dimensions you would need to plan.</p></details>
+  <details class="acc"><summary>Which payment methods can I use?</summary><p>None. Checkout is a simulation and accepts any well-formed test card number without charging it.</p></details>
+  <details class="acc"><summary>Is this a real store?</summary><p>No. Lindora Home is a fictional site made for an accessibility and usability study.</p></details></div>
+  <div class="empty-state" data-empty hidden data-component="empty-state"><h2>No questions match</h2><p>Try a different word, or <a href="contact.html">contact us</a>.</p></div>
+</div></main>
+<footer class="site-footer" data-section="global-footer" data-component="site-footer">
+  <div class="footer-join" data-section="newsletter-signup">
+    <div class="wrap">
+      <div><h2>Join Lindora Family</h2><p>Get demo offers and design ideas. This is a simulation: your address is not saved or sent anywhere.</p></div>
+      <form data-demo-form="Thanks for joining Lindora Family" data-component="newsletter-form" novalidate>
+        <div hidden tabindex="-1" class="error-summary" data-error-summary></div>
+        <div class="field"><label for="footer-email">Email address</label><input id="footer-email" name="email" type="email" autocomplete="email" required></div>
+        <button type="submit" class="btn">Sign me up</button>
+        <p class="status" role="status" data-form-status></p>
+      </form>
+    </div>
+  </div>
+  <div class="footer-cols">
+    <div><h2>Customer service</h2><ul><li><a href="faq.html">FAQ</a></li><li><a href="contact.html">Contact us</a></li><li><a href="returns.html">Return policy</a></li><li><a href="customer-service.html#delivery">Delivery options</a></li><li><a href="login.html">Log in</a></li></ul></div>
+    <div><h2>Shop</h2><ul><li><a href="furniture.html">Furniture</a></li><li><a href="sofas.html">Sofas &amp; armchairs</a></li><li><a href="beds.html">Beds &amp; mattresses</a></li><li><a href="lighting.html">Lighting</a></li><li><a href="rooms.html">Rooms</a></li><li><a href="new.html">New designs</a></li></ul></div>
+    <div><h2>About this demo</h2><p>Lindora Home is a fictional retailer built for an accessibility and usability study. Products, prices, reviews and policies are invented.</p></div>
+  </div>
+  <div class="legal"><p>&copy; Fictional demo site. No real store, brand or transactions.</p></div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

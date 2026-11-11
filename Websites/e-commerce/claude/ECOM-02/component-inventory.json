@@ -1,0 +1,849 @@
+{
+  "protocol_version": "1.0",
+  "replica_id": "ECOM-02",
+  "category": "e-commerce",
+  "source_url": "https://www.ikea.com/us/en/",
+  "components": [
+    {
+      "id": "accordion",
+      "selector": "[data-component='accordion']",
+      "pages": [
+        "faq.html",
+        "product.html"
+      ],
+      "behavior": [
+        "native details/summary disclosures",
+        "FAQ list is filtered by the FAQ search"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js axe scan; scripted Playwright flow; manual keyboard and screen reader not tested"
+    },
+    {
+      "id": "bag-lines",
+      "selector": "[data-component='bag-lines']",
+      "pages": [
+        "cart.html"
+      ],
+      "behavior": [
+        "line items with quantity select and remove button persisted in localStorage",
+        "status messages, focus to heading after removal"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "arrow keys in selects"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js axe scan; scripted Playwright flow; manual keyboard and screen reader not tested"
+    },
+    {
+      "id": "breadcrumb",
+      "selector": "[data-component='breadcrumb']",
+      "pages": [
+        "beds.html",
+        "cart.html",
+        "checkout.html",
+        "contact.html",
+        "customer-service.html",
+        "faq.html",
+        "furniture.html",
+        "lighting.html",
+        "login.html",
+        "new.html",
+        "product.html",
+        "returns.html",
+        "rooms.html",
+        "search.html",
+        "sofas.html"
+      ],
+      "behavior": [
+        "trail with aria-current on the current page",
+        "product crumbs filled by JS"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js axe scan only"
+    },
+    {
+      "id": "card-grid",
+      "selector": "[data-component='card-grid']",
+      "pages": [
+        "beds.html",
+        "furniture.html",
+        "index.html",
+        "lighting.html",
+        "new.html",
+        "product.html",
+        "search.html",
+        "sofas.html"
+      ],
+      "behavior": [
+        "responsive list of product cards",
+        "data-product-feed variants: sale, new"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js axe scan; scripted Playwright flow; manual keyboard and screen reader not tested"
+    },
+    {
+      "id": "category-tile",
+      "selector": "[data-component='category-tile']",
+      "pages": [
+        "customer-service.html",
+        "furniture.html",
+        "index.html",
+        "rooms.html"
+      ],
+      "behavior": [
+        "single stretched link per tile (heading link)"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js axe scan only"
+    },
+    {
+      "id": "checkout-form",
+      "selector": "[data-component='checkout-form']",
+      "pages": [
+        "checkout.html"
+      ],
+      "behavior": [
+        "simulated checkout: contact, address, delivery method, demo payment",
+        "pattern validation, error summary, focus management",
+        "demo confirmation clears the bag"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "arrow keys on radios"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js axe scan; scripted Playwright flow; manual keyboard and screen reader not tested"
+    },
+    {
+      "id": "confirmation-dialog",
+      "selector": "[data-component='confirmation-dialog']",
+      "pages": [
+        "product.html"
+      ],
+      "behavior": [
+        "native dialog opened with showModal after add to bag",
+        "Escape closes; focus returns to the trigger",
+        "links to the bag"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js axe scan; scripted Playwright flow; manual keyboard and screen reader not tested"
+    },
+    {
+      "id": "confirmation-panel",
+      "selector": "[data-component='confirmation-panel']",
+      "pages": [
+        "checkout.html"
+      ],
+      "behavior": [
+        "clearly labeled demo order confirmation with generated DEMO- reference"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js axe scan; scripted Playwright flow; manual keyboard and screen reader not tested"
+    },
+    {
+      "id": "contact-form",
+      "selector": "[data-component='contact-form']",
+      "pages": [
+        "contact.html"
+      ],
+      "behavior": [
+        "validated contact form with demo success status"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js axe scan; scripted Playwright flow; manual keyboard and screen reader not tested"
+    },
+    {
+      "id": "data-table",
+      "selector": "[data-component='data-table']",
+      "pages": [
+        "customer-service.html",
+        "returns.html"
+      ],
+      "behavior": [
+        "semantic table with caption and header cells"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "automated: qc.js axe scan only"
+    },
+    {
+      "id": "demo-notice",
+      "selector": "[data-component='demo-notice']",
+      "pages": [
+        "checkout.html",
+        "login.html"
+      ],
+      "behavior": [
+        "visible note that the flow is a simulation"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "automated: qc.js axe scan only"
+    },
+    {
+      "id": "empty-state",
+      "selector": "[data-component='empty-state']",
+      "pages": [
+        "404.html",
+        "beds.html",
+        "cart.html",
+        "checkout.html",
+        "faq.html",
+        "lighting.html",
+        "search.html",
+        "sofas.html"
+      ],
+      "behavior": [
+        "message with a way back (clear filters, browse, start shopping)"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js axe scan; scripted Playwright flow; manual keyboard and screen reader not tested"
+    },
+    {
+      "id": "faq-search",
+      "selector": "[data-component='faq-search']",
+      "pages": [
+        "faq.html"
+      ],
+      "behavior": [
+        "live filter of FAQ items with count status and empty state"
+      ],
+      "keyboard": [
+        "Tab",
+        "type"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js axe scan; scripted Playwright flow; manual keyboard and screen reader not tested"
+    },
+    {
+      "id": "filter-chips",
+      "selector": "[data-component='filter-chips']",
+      "pages": [
+        "beds.html",
+        "lighting.html",
+        "sofas.html"
+      ],
+      "behavior": [
+        "one removable chip per active filter",
+        "focus moves to results heading after removal"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js axe scan; scripted Playwright flow; manual keyboard and screen reader not tested"
+    },
+    {
+      "id": "filter-panel",
+      "selector": "[data-component='filter-panel']",
+      "pages": [
+        "beds.html",
+        "lighting.html",
+        "sofas.html"
+      ],
+      "behavior": [
+        "checkbox groups, price and rating selects, highlights",
+        "collapsed behind a Filters button under 900px (aria-expanded); Escape closes"
+      ],
+      "keyboard": [
+        "Tab",
+        "Space",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js axe scan; scripted Playwright flow; manual keyboard and screen reader not tested"
+    },
+    {
+      "id": "hero-banner",
+      "selector": "[data-component='hero-banner']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "heading, supporting copy and two calls to action"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js axe scan only"
+    },
+    {
+      "id": "mega-menu",
+      "selector": "[data-component='mega-menu']",
+      "pages": [
+        "404.html",
+        "beds.html",
+        "cart.html",
+        "checkout.html",
+        "contact.html",
+        "customer-service.html",
+        "faq.html",
+        "furniture.html",
+        "index.html",
+        "lighting.html",
+        "login.html",
+        "new.html",
+        "product.html",
+        "returns.html",
+        "rooms.html",
+        "search.html",
+        "sofas.html"
+      ],
+      "behavior": [
+        "product menu disclosure with aria-expanded",
+        "closes on Escape (focus returns to button), outside click and focus leaving the panel",
+        "columns reflow to 2/1 on small screens"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js axe scan; scripted Playwright flow; manual keyboard and screen reader not tested"
+    },
+    {
+      "id": "newsletter-form",
+      "selector": "[data-component='newsletter-form']",
+      "pages": [
+        "404.html",
+        "beds.html",
+        "cart.html",
+        "checkout.html",
+        "contact.html",
+        "customer-service.html",
+        "faq.html",
+        "furniture.html",
+        "index.html",
+        "lighting.html",
+        "login.html",
+        "new.html",
+        "product.html",
+        "returns.html",
+        "rooms.html",
+        "search.html",
+        "sofas.html"
+      ],
+      "behavior": [
+        "footer sign-up with email validation and demo status"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js axe scan; scripted Playwright flow; manual keyboard and screen reader not tested"
+    },
+    {
+      "id": "order-summary",
+      "selector": "[data-component='order-summary']",
+      "pages": [
+        "cart.html",
+        "checkout.html"
+      ],
+      "behavior": [
+        "subtotal, promo discount, delivery (free over $500), estimated total"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js axe scan; scripted Playwright flow; manual keyboard and screen reader not tested"
+    },
+    {
+      "id": "pagination",
+      "selector": "[data-component='pagination']",
+      "pages": [
+        "beds.html",
+        "lighting.html",
+        "sofas.html"
+      ],
+      "behavior": [
+        "6 products per page; previous, next, numbered buttons with aria-current",
+        "focus moves to results heading"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js axe scan; scripted Playwright flow; manual keyboard and screen reader not tested"
+    },
+    {
+      "id": "primary-nav",
+      "selector": "[data-component='primary-nav']",
+      "pages": [
+        "404.html",
+        "beds.html",
+        "cart.html",
+        "checkout.html",
+        "contact.html",
+        "customer-service.html",
+        "faq.html",
+        "furniture.html",
+        "index.html",
+        "lighting.html",
+        "login.html",
+        "new.html",
+        "product.html",
+        "returns.html",
+        "rooms.html",
+        "search.html",
+        "sofas.html"
+      ],
+      "behavior": [
+        "disclosure button plus links",
+        "active page via aria-current"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js axe scan; scripted Playwright flow; manual keyboard and screen reader not tested"
+    },
+    {
+      "id": "product-card",
+      "selector": "[data-component='product-card']",
+      "pages": [
+        "beds.html",
+        "furniture.html",
+        "index.html",
+        "lighting.html",
+        "new.html",
+        "product.html",
+        "search.html",
+        "sofas.html"
+      ],
+      "behavior": [
+        "image, badges (text), price with sale price, rating text, one link on the title"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js axe scan; scripted Playwright flow; manual keyboard and screen reader not tested"
+    },
+    {
+      "id": "product-detail",
+      "selector": "[data-component='product-detail']",
+      "pages": [
+        "product.html"
+      ],
+      "behavior": [
+        "rendered by JS from ?id=",
+        "unknown id shows not-found message",
+        "breadcrumb and title updated"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js axe scan; scripted Playwright flow; manual keyboard and screen reader not tested"
+    },
+    {
+      "id": "product-gallery",
+      "selector": "[data-component='product-gallery']",
+      "pages": [
+        "product.html"
+      ],
+      "behavior": [
+        "three thumbnails switching the main image (aria-pressed)",
+        "swatch colour tints the image background"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js axe scan; scripted Playwright flow; manual keyboard and screen reader not tested"
+    },
+    {
+      "id": "product-listing",
+      "selector": "[data-component='product-listing']",
+      "pages": [
+        "beds.html",
+        "lighting.html",
+        "sofas.html"
+      ],
+      "behavior": [
+        "client-side filter, sort, pagination over inline data",
+        "preset type filter from ?type=",
+        "result count status"
+      ],
+      "keyboard": [
+        "Tab",
+        "Space",
+        "Enter",
+        "arrow keys in selects"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js axe scan; scripted Playwright flow; manual keyboard and screen reader not tested"
+    },
+    {
+      "id": "promo-banner",
+      "selector": "[data-component='promo-banner']",
+      "pages": [
+        "404.html",
+        "beds.html",
+        "cart.html",
+        "checkout.html",
+        "contact.html",
+        "customer-service.html",
+        "faq.html",
+        "furniture.html",
+        "index.html",
+        "lighting.html",
+        "login.html",
+        "new.html",
+        "product.html",
+        "returns.html",
+        "rooms.html",
+        "search.html",
+        "sofas.html"
+      ],
+      "behavior": [
+        "static promo strip linking to new designs"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js axe scan only"
+    },
+    {
+      "id": "promo-code-form",
+      "selector": "[data-component='promo-code-form']",
+      "pages": [
+        "cart.html"
+      ],
+      "behavior": [
+        "validates a demo code FAMILY10 (10% off)",
+        "inline error and summary for invalid codes"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js axe scan; scripted Playwright flow; manual keyboard and screen reader not tested"
+    },
+    {
+      "id": "return-check-form",
+      "selector": "[data-component='return-check-form']",
+      "pages": [
+        "returns.html"
+      ],
+      "behavior": [
+        "date and item type; computes the end of the demo return window"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js axe scan; scripted Playwright flow; manual keyboard and screen reader not tested"
+    },
+    {
+      "id": "search-form",
+      "selector": "[data-component='search-form']",
+      "pages": [
+        "404.html",
+        "beds.html",
+        "cart.html",
+        "checkout.html",
+        "contact.html",
+        "customer-service.html",
+        "faq.html",
+        "furniture.html",
+        "index.html",
+        "lighting.html",
+        "login.html",
+        "new.html",
+        "product.html",
+        "returns.html",
+        "rooms.html",
+        "search.html",
+        "sofas.html"
+      ],
+      "behavior": [
+        "site search submitting to search.html?q=",
+        "search over inline demo products"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js axe scan; scripted Playwright flow; manual keyboard and screen reader not tested"
+    },
+    {
+      "id": "search-results",
+      "selector": "[data-component='search-results']",
+      "pages": [
+        "search.html"
+      ],
+      "behavior": [
+        "query from URL, result count status, empty state with suggestions"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js axe scan; scripted Playwright flow; manual keyboard and screen reader not tested"
+    },
+    {
+      "id": "signin-form",
+      "selector": "[data-component='signin-form']",
+      "pages": [
+        "login.html"
+      ],
+      "behavior": [
+        "demo sign-in: validates email and 8+ character password",
+        "stores a display name in sessionStorage only"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js axe scan; scripted Playwright flow; manual keyboard and screen reader not tested"
+    },
+    {
+      "id": "signup-form",
+      "selector": "[data-component='signup-form']",
+      "pages": [
+        "login.html"
+      ],
+      "behavior": [
+        "demo account creation with the same validation"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js axe scan; scripted Playwright flow; manual keyboard and screen reader not tested"
+    },
+    {
+      "id": "site-footer",
+      "selector": "[data-component='site-footer']",
+      "pages": [
+        "404.html",
+        "beds.html",
+        "cart.html",
+        "checkout.html",
+        "contact.html",
+        "customer-service.html",
+        "faq.html",
+        "furniture.html",
+        "index.html",
+        "lighting.html",
+        "login.html",
+        "new.html",
+        "product.html",
+        "returns.html",
+        "rooms.html",
+        "search.html",
+        "sofas.html"
+      ],
+      "behavior": [
+        "link groups, demo disclosure, newsletter block"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js axe scan only"
+    },
+    {
+      "id": "site-header",
+      "selector": "[data-component='site-header']",
+      "pages": [
+        "404.html",
+        "beds.html",
+        "cart.html",
+        "checkout.html",
+        "contact.html",
+        "customer-service.html",
+        "faq.html",
+        "furniture.html",
+        "index.html",
+        "lighting.html",
+        "login.html",
+        "new.html",
+        "product.html",
+        "returns.html",
+        "rooms.html",
+        "search.html",
+        "sofas.html"
+      ],
+      "behavior": [
+        "brand link",
+        "search, utility links and primary navigation"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js axe scan; scripted Playwright flow; manual keyboard and screen reader not tested"
+    },
+    {
+      "id": "skip-link",
+      "selector": "[data-component='skip-link']",
+      "pages": [
+        "404.html",
+        "beds.html",
+        "cart.html",
+        "checkout.html",
+        "contact.html",
+        "customer-service.html",
+        "faq.html",
+        "furniture.html",
+        "index.html",
+        "lighting.html",
+        "login.html",
+        "new.html",
+        "product.html",
+        "returns.html",
+        "rooms.html",
+        "search.html",
+        "sofas.html"
+      ],
+      "behavior": [
+        "skip to main content"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js axe scan; scripted Playwright flow; manual keyboard and screen reader not tested"
+    },
+    {
+      "id": "sort-select",
+      "selector": "[data-component='sort-select']",
+      "pages": [
+        "beds.html",
+        "lighting.html",
+        "sofas.html"
+      ],
+      "behavior": [
+        "native select: most reviewed, price asc/desc, rating, name"
+      ],
+      "keyboard": [
+        "Tab",
+        "arrow keys"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js axe scan; scripted Playwright flow; manual keyboard and screen reader not tested"
+    },
+    {
+      "id": "utility-nav",
+      "selector": "[data-component='utility-nav']",
+      "pages": [
+        "404.html",
+        "beds.html",
+        "cart.html",
+        "checkout.html",
+        "contact.html",
+        "customer-service.html",
+        "faq.html",
+        "furniture.html",
+        "index.html",
+        "lighting.html",
+        "login.html",
+        "new.html",
+        "product.html",
+        "returns.html",
+        "rooms.html",
+        "search.html",
+        "sofas.html"
+      ],
+      "behavior": [
+        "log in link updated after demo sign-in",
+        "bag link with live item count in aria-label"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js axe scan; scripted Playwright flow; manual keyboard and screen reader not tested"
+    },
+    {
+      "id": "variant-form",
+      "selector": "[data-component='variant-form']",
+      "pages": [
+        "product.html"
+      ],
+      "behavior": [
+        "required cover/finish radios and option select, quantity",
+        "error summary, inline errors, focus on summary",
+        "add to bag saves to localStorage",
+        "price updates with option"
+      ],
+      "keyboard": [
+        "Tab",
+        "arrow keys on radios",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js axe scan; scripted Playwright flow; manual keyboard and screen reader not tested"
+    }
+  ]
+}

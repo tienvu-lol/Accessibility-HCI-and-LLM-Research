@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Checkout - Lindora Home</title>
+<meta name="description" content="Simulated checkout for the Lindora Home demo.">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main-content" data-component="skip-link">Skip to main content</a>
+<header class="site-header" data-section="global-header" data-component="site-header">
+  <div class="promo-strip" data-section="promo-strip" data-component="promo-banner"><p>Demo storefront: browse the <a href="new.html">newest designs</a>. Nothing here can be bought for real.</p></div>
+  <div class="header-top">
+    <a class="brand" href="index.html" aria-label="Lindora Home, home page"><img src="assets/logo.svg" alt="" width="36" height="36"><span>Lindora Home</span></a>
+    <form class="search-form" role="search" action="search.html" method="get" data-section="site-search" data-component="search-form">
+      <label for="site-search" class="visually-hidden">Search products</label>
+      <input id="site-search" type="search" name="q" placeholder="What are you looking for?" autocomplete="off">
+      <button type="submit">Search</button>
+    </form>
+    <nav class="utility-nav" aria-label="Shopping links" data-section="utility-navigation" data-component="utility-nav">
+      <a href="login.html" data-account-link>Log in or sign up</a>
+      <a href="cart.html" data-bag-link aria-label="Shopping bag, 0 items">Bag <span class="bag-count" data-bag-count aria-hidden="true">0</span></a>
+    </nav>
+  </div>
+  <nav class="primary-nav" aria-label="Primary" data-section="global-navigation" data-component="primary-nav">
+    <ul>
+      <li class="has-menu"><button type="button" class="menu-toggle" aria-expanded="false" aria-controls="mega-menu" data-menu-toggle>Products</button>
+        <div id="mega-menu" class="mega-menu" hidden data-section="product-menu" data-component="mega-menu">
+          <div class="mega-grid">
+        <div><p class="mega-heading"><a href="furniture.html">Furniture</a></p>
+          <ul><li><a href="sofas.html?type=Sofas">Sofas</a></li><li><a href="sofas.html?type=Sectionals">Sectionals</a></li><li><a href="sofas.html?type=Armchairs">Armchairs</a></li><li><a href="sofas.html?type=Sleeper%20sofas">Sleeper sofas</a></li></ul></div>
+        <div><p class="mega-heading"><a href="beds.html">Beds &amp; mattresses</a></p>
+          <ul><li><a href="beds.html?type=Bed%20frames">Bed frames</a></li><li><a href="beds.html?type=Mattresses">Mattresses</a></li><li><a href="beds.html?type=Nightstands">Nightstands</a></li></ul></div>
+        <div><p class="mega-heading"><a href="lighting.html">Lighting</a></p>
+          <ul><li><a href="lighting.html?type=Floor%20lamps">Floor lamps</a></li><li><a href="lighting.html?type=Table%20lamps">Table lamps</a></li><li><a href="lighting.html?type=Pendant%20lights">Pendant lights</a></li><li><a href="lighting.html?type=Wall%20lights">Wall lights</a></li></ul></div>
+        <div><p class="mega-heading"><a href="rooms.html">Discover</a></p>
+          <ul><li><a href="rooms.html">Shop by room</a></li><li><a href="new.html">New designs</a></li><li><a href="customer-service.html#delivery">Delivery options</a></li><li><a href="returns.html">Return policy</a></li></ul></div>
+          </div>
+        </div>
+      </li>
+      <li><a href="rooms.html">Rooms</a></li>
+      <li><a href="new.html">New</a></li>
+      <li><a href="customer-service.html">Customer service</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main-content" data-section="main-content"><div class="page" data-checkout-page data-section="checkout">
+  <nav class="breadcrumb" aria-label="Breadcrumb" data-section="breadcrumb" data-component="breadcrumb"><ol><li><a href="index.html">Home</a></li><li><a href="cart.html">Shopping bag</a></li><li><span aria-current="page">Checkout</span></li></ol></nav>
+  <h1 data-checkout-heading>Checkout</h1>
+  <p class="demo-note" role="note" data-component="demo-notice"><strong>Demo checkout.</strong> This is an intentional addition to the replica. No payment is taken, no card details are stored or sent, and nothing will ship.</p>
+  <div class="empty-state" data-cart-empty hidden data-component="empty-state"><h2>Your bag is empty</h2><p>Add an item before checking out.</p><a class="btn" href="furniture.html">Start shopping</a></div>
+  <div class="cart-layout" data-checkout-layout>
+    <form data-checkout-form data-component="checkout-form" novalidate>
+      <div hidden tabindex="-1" class="error-summary" data-error-summary></div>
+      <p>Fields marked <span aria-hidden="true">*</span><span class="visually-hidden">with an asterisk</span> are required.</p>
+      <h2>Contact</h2>
+      <div class="field"><label for="email">Email address <span aria-hidden="true">*</span></label><input id="email" name="email" type="email" required autocomplete="email"></div>
+      <h2>Delivery address</h2>
+      <div class="form-grid">
+        <div class="field"><label for="first-name">First name <span aria-hidden="true">*</span></label><input id="first-name" name="firstName" type="text" required autocomplete="given-name"></div>
+        <div class="field"><label for="last-name">Last name <span aria-hidden="true">*</span></label><input id="last-name" name="lastName" type="text" required autocomplete="family-name"></div>
+      </div>
+      <div class="field"><label for="address">Street address <span aria-hidden="true">*</span></label><input id="address" name="address" type="text" required autocomplete="address-line1"></div>
+      <div class="form-grid">
+        <div class="field"><label for="city">City <span aria-hidden="true">*</span></label><input id="city" name="city" type="text" required autocomplete="address-level2"></div>
+        <div class="field"><label for="state">State <span aria-hidden="true">*</span></label><select id="state" name="state" required autocomplete="address-level1"><option value="">Choose a state</option><option value="California">California</option><option value="Illinois">Illinois</option><option value="New York">New York</option><option value="Texas">Texas</option><option value="Washington">Washington</option></select></div>
+        <div class="field"><label for="zip">ZIP code <span aria-hidden="true">*</span></label><span class="hint" id="zip-hint">5 digits</span><input id="zip" name="zip" type="text" required autocomplete="postal-code" data-pattern="^\d{5}$" data-error-pattern="ZIP code must be 5 digits, for example 94105" aria-describedby="zip-hint"></div>
+      </div>
+      <fieldset class="field"><legend>Delivery method</legend>
+        <label class="check"><input type="radio" id="delivery-standard" name="delivery" value="standard"> Standard, 5-8 business days ($29, free over $500)</label>
+        <label class="check"><input type="radio" id="delivery-express" name="delivery" value="express"> Express, 2-3 business days ($59, free over $500)</label>
+      </fieldset>
+      <h2>Payment (demo)</h2>
+      <p class="demo-note">Do not enter real card details. Any 16 digits work, for example 4242 4242 4242 4242.</p>
+      <div class="field"><label for="card-name">Name on card <span aria-hidden="true">*</span></label><input id="card-name" name="cardName" type="text" required autocomplete="cc-name"></div>
+      <div class="field"><label for="card-number">Card number <span aria-hidden="true">*</span></label><input id="card-number" name="cardNumber" type="text" required autocomplete="cc-number" data-pattern="^\d{4} ?\d{4} ?\d{4} ?\d{4}$" data-error-pattern="Card number must be 16 digits"></div>
+      <div class="form-grid">
+        <div class="field"><label for="card-expiry">Expiry (MM/YY) <span aria-hidden="true">*</span></label><input id="card-expiry" name="cardExpiry" type="text" required autocomplete="cc-exp" data-pattern="^(0[1-9]|1[0-2])\/\d{2}$" data-error-pattern="Expiry must look like 08/29"></div>
+        <div class="field"><label for="card-cvc">Security code <span aria-hidden="true">*</span></label><input id="card-cvc" name="cardCvc" type="text" required autocomplete="cc-csc" data-pattern="^\d{3,4}$" data-error-pattern="Security code must be 3 or 4 digits"></div>
+      </div>
+      <button type="submit" class="btn">Place demo order</button>
+    </form>
+    <section class="card-box summary" aria-labelledby="os-title" data-section="order-summary" data-component="order-summary"><h2 id="os-title">Your order</h2><ul class="lines" data-order-lines></ul><dl data-summary></dl></section>
+  </div>
+  <section data-confirmation hidden aria-labelledby="conf-title" data-section="order-confirmation" data-component="confirmation-panel">
+    <h1 id="conf-title" tabindex="-1">Demo order placed</h1>
+    <p class="demo-note" role="note"><strong>This was a simulation.</strong> No payment was taken, no order exists and nothing will ship.</p>
+    <p>Reference number: <strong data-order-number></strong>. A confirmation would have gone to <span data-confirm-email></span>.</p>
+    <h2>Items in this demo order</h2>
+    <ul class="lines" data-confirm-lines></ul>
+    <p>Estimated total: <strong data-confirm-total></strong></p>
+    <p><a class="btn" href="index.html">Back to the home page</a></p>
+  </section>
+</div></main>
+<footer class="site-footer" data-section="global-footer" data-component="site-footer">
+  <div class="footer-join" data-section="newsletter-signup">
+    <div class="wrap">
+      <div><h2>Join Lindora Family</h2><p>Get demo offers and design ideas. This is a simulation: your address is not saved or sent anywhere.</p></div>
+      <form data-demo-form="Thanks for joining Lindora Family" data-component="newsletter-form" novalidate>
+        <div hidden tabindex="-1" class="error-summary" data-error-summary></div>
+        <div class="field"><label for="footer-email">Email address</label><input id="footer-email" name="email" type="email" autocomplete="email" required></div>
+        <button type="submit" class="btn">Sign me up</button>
+        <p class="status" role="status" data-form-status></p>
+      </form>
+    </div>
+  </div>
+  <div class="footer-cols">
+    <div><h2>Customer service</h2><ul><li><a href="faq.html">FAQ</a></li><li><a href="contact.html">Contact us</a></li><li><a href="returns.html">Return policy</a></li><li><a href="customer-service.html#delivery">Delivery options</a></li><li><a href="login.html">Log in</a></li></ul></div>
+    <div><h2>Shop</h2><ul><li><a href="furniture.html">Furniture</a></li><li><a href="sofas.html">Sofas &amp; armchairs</a></li><li><a href="beds.html">Beds &amp; mattresses</a></li><li><a href="lighting.html">Lighting</a></li><li><a href="rooms.html">Rooms</a></li><li><a href="new.html">New designs</a></li></ul></div>
+    <div><h2>About this demo</h2><p>Lindora Home is a fictional retailer built for an accessibility and usability study. Products, prices, reviews and policies are invented.</p></div>
+  </div>
+  <div class="legal"><p>&copy; Fictional demo site. No real store, brand or transactions.</p></div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>
