@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About Us | Driftwell Weather (demo)</title>
+<meta name="description" content="About the fictional Driftwell Weather, apps, membership, contact form and policy placeholders.">
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="about">
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header" data-section="global-header" data-component="site-header">
+  <div class="header-bar">
+    <a class="brand" href="index.html"><img src="assets/logo.svg" alt="" width="36" height="36"><span class="brand-text">Driftwell <span class="brand-sub">Weather</span></span></a>
+    <button type="button" class="disclosure menu-toggle" aria-expanded="false" aria-controls="site-menu">Menu</button>
+    <form class="loc-search" role="search" data-section="location-search" data-component="location-search" novalidate>
+      <label for="loc-q" class="visually-hidden">Search sample locations</label>
+      <input id="loc-q" name="q" type="search" placeholder="Search locations, e.g. Fairhaven" autocomplete="off" aria-describedby="loc-q-error">
+      <button type="submit" class="btn">Search</button>
+      <p class="field-error loc-error" id="loc-q-error" hidden></p>
+      <div id="loc-q-results" class="panel search-results" hidden><p id="loc-q-status" role="status"></p><ul></ul></div>
+    </form>
+  </div>
+  <div id="site-menu" class="site-menu">
+    <nav aria-label="Utility" class="utility-nav" data-section="utility-navigation" data-component="utility-nav">
+      <ul>
+        <li><div role="group" aria-label="Units" class="unit-toggle" data-component="unit-toggle"><button type="button" data-unit="imperial" aria-pressed="true">°F / mph</button><button type="button" data-unit="metric" aria-pressed="false">°C / km/h</button></div></li>
+        <li><button type="button" class="link-btn" id="get-location">Get current location (demo)</button></li>
+        <li class="nav-item"><button type="button" class="disclosure link-btn" data-panel aria-expanded="false" aria-controls="favorites-panel">Favorites</button><div class="panel nav-panel" id="favorites-panel" hidden><ul id="favorites-list"></ul></div></li>
+        <li><button type="button" class="link-btn" id="login-open">Log in (demo)</button></li>
+        <li><a href="about.html#apps">Mobile apps</a></li>
+        <li><a href="history.html">Historical weather</a></li>
+        <li><a href="about.html#membership">Go ad-free (demo)</a></li>
+      </ul>
+    </nav>
+    <nav aria-label="Primary" data-section="global-navigation" data-component="primary-nav">
+      <ul class="primary-list"><li class="nav-item"><button type="button" class="disclosure nav-toggle" data-panel aria-expanded="false" aria-controls="m-weather">Weather</button><ul class="panel nav-panel" id="m-weather" hidden><li><a href="conditions.html">Current conditions</a></li><li><a href="hourly.html">Hourly forecast</a></li><li><a href="forecast.html">10-day forecast</a></li><li><a href="history.html">Historical weather</a></li></ul></li><li class="nav-item"><button type="button" class="disclosure nav-toggle" data-panel aria-expanded="false" aria-controls="m-maps">Maps</button><ul class="panel nav-panel" id="m-maps" hidden><li><a href="radar.html">Weather map viewer</a></li><li><a href="radar.html?layer=radar">Interactive radar</a></li><li><a href="radar.html?layer=satellite">Interactive satellite</a></li><li><a href="maps.html">Full maps catalog</a></li><li><a href="maps.html?cat=severe">Severe weather maps</a></li><li><a href="maps.html?cat=fire">Fire weather maps</a></li></ul></li><li class="nav-item"><button type="button" class="disclosure nav-toggle" data-panel aria-expanded="false" aria-controls="m-pws">Stations</button><ul class="panel nav-panel" id="m-pws" hidden><li><a href="stations.html">Station network overview</a></li><li><a href="stations.html#connect">Connect a station</a></li></ul></li><li class="nav-item"><a href="hurricane.html">Hurricanes</a></li><li class="nav-item"><a href="prepare.html">Prepare</a></li><li class="nav-item"><a href="blog.html">Eyewall Journal</a></li><li class="nav-item"><a href="video.html">Videos</a></li></ul>
+    </nav>
+  </div>
+  <p class="sample-banner" data-component="sample-data-notice">Demo site: all weather values, alerts, storms and stations are fictional sample data, not live conditions. <span id="global-status" role="status"></span></p>
+</header>
+<main id="main-content" data-section="main-content">
+<div class="wrap"><nav aria-label="Breadcrumb" class="breadcrumb" data-section="breadcrumb" data-component="breadcrumb"><ol><li><a href="index.html">Home</a></li><li aria-current="page">About</li></ol></nav><div class="page-head"><h1>About Driftwell Weather</h1></div>
+<section aria-labelledby="ab-h" data-section="about-company" data-component="content-panel"><h2 id="ab-h">Who we are</h2><p>Driftwell Weather is a fictional weather portal built for an accessibility and usability research dataset. It imitates the structure of a commercial forecast site with invented data.</p></section>
+<section id="apps" aria-labelledby="ap-h" data-section="apps" data-component="content-panel"><h2 id="ap-h">Mobile apps</h2><p>There are no Driftwell apps. This section exists because the reference site links to app downloads.</p></section>
+<section id="membership" aria-labelledby="mb-h" data-section="membership" data-component="content-panel"><h2 id="mb-h">Ad-free membership</h2><p>No membership or payment exists in this demo. The reference site offers an ad-free subscription; here the link only leads to this note.</p></section>
+<section id="contact" aria-labelledby="ct-h" data-section="contact" data-component="contact-form"><h2 id="ct-h">Contact and feedback (demo)</h2><p class="demo-note">Simulation only: your message is not sent.</p>
+<form id="feedback-form" novalidate>
+  <div class="field"><label for="fb-name">Your name</label><input id="fb-name" name="name" type="text" autocomplete="name"></div>
+  <div class="field"><label for="fb-email">Email address</label><input id="fb-email" name="email" type="email" autocomplete="email"></div>
+  <div class="field"><label for="fb-topic">Topic</label><select id="fb-topic" name="topic"><option value="">Select a topic</option><option>Forecast question</option><option>Website feedback</option><option>Accessibility</option></select></div>
+  <div class="field"><label for="fb-msg">Message</label><textarea id="fb-msg" name="message" rows="4"></textarea></div>
+  <button type="submit" class="btn">Send (demo)</button>
+</form></section>
+<section aria-labelledby="lg-h" data-section="legal" data-component="content-panel"><h2 id="lg-h">Careers and policies (placeholders)</h2>
+<p>The reference site links to the pages below. Each is a short placeholder here with no legal effect.</p>
+<h3 id="careers">Careers</h3><p>No jobs exist. Placeholder.</p>
+<h3 id="terms">Terms of use</h3><p>Placeholder terms: this demo is provided as is for research.</p>
+<h3 id="privacy">Privacy policy</h3><p>This demo collects nothing. Preferences (units, favorites, checklist) stay in your browser storage.</p>
+<h3 id="data-rights">Data rights</h3><p>Nothing is collected, so there is nothing to request. Placeholder.</p>
+<h3 id="privacy-settings">Privacy settings</h3><p>No cookies are used for tracking. Clear site data in your browser to remove saved preferences.</p>
+<h3 id="trust">Trust center</h3><p>Placeholder page.</p>
+<h3 id="vendors">Data vendors</h3><p>None. All weather values are generated in the browser from sample parameters.</p></section></div>
+</main>
+<footer class="site-footer" data-section="global-footer" data-component="site-footer">
+  <div class="footer-grid"><div><h2>Explore</h2><ul><li><a href="conditions.html">Current conditions</a></li><li><a href="hourly.html">Hourly forecast</a></li><li><a href="forecast.html">10-day forecast</a></li><li><a href="history.html">Historical weather</a></li><li><a href="maps.html">Weather maps</a></li><li><a href="hurricane.html">Hurricane tracker</a></li></ul></div><div><h2>Community</h2><ul><li><a href="stations.html">Station network</a></li><li><a href="blog.html">Eyewall Journal</a></li><li><a href="video.html">Videos</a></li><li><a href="prepare.html">Prepare</a></li></ul></div><div><h2>Company</h2><ul><li><a href="about.html">About us</a></li><li><a href="about.html#apps">Our apps</a></li><li><a href="about.html#contact">Contact and feedback</a></li><li><a href="about.html#careers">Careers</a></li><li><a href="accessibility.html">Accessibility statement</a></li></ul></div><div><h2>Legal</h2><ul><li><a href="about.html#terms">Terms of use</a></li><li><a href="about.html#privacy">Privacy policy</a></li><li><a href="about.html#data-rights">Data rights</a></li><li><a href="about.html#privacy-settings">Privacy settings</a></li><li><a href="about.html#trust">Trust center</a></li><li><a href="about.html#vendors">Data vendors</a></li></ul></div></div>
+  <p class="footer-note">Driftwell Weather is a fictional brand created for an accessibility research dataset. Layout inspired by a commercial weather portal; no real data, logos or text are reproduced.</p>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

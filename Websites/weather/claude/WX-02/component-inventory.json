@@ -1,0 +1,768 @@
+{
+  "protocol_version": "1.0",
+  "replica_id": "WX-02",
+  "category": "weather",
+  "source_url": "https://www.wunderground.com/",
+  "components": [
+    {
+      "id": "accordion",
+      "selector": "[data-component='accordion']",
+      "pages": [
+        "forecast.html"
+      ],
+      "behavior": [
+        "10-day accordion with Expand all, aria-expanded"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "scripted-check-and-axe-initial-state"
+    },
+    {
+      "id": "alert-list",
+      "selector": "[data-component='alert-list']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "expandable sample alerts, empty state"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "scripted-check-and-axe-initial-state"
+    },
+    {
+      "id": "article-card",
+      "selector": "[data-component='article-card']",
+      "pages": [
+        "blog.html (created by js)"
+      ],
+      "behavior": [
+        "expandable article body (aria-expanded), hash targets expand"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "scripted-check-and-axe-initial-state"
+    },
+    {
+      "id": "article-list",
+      "selector": "[data-component='article-list']",
+      "pages": [
+        "blog.html"
+      ],
+      "behavior": [
+        "category chips (aria-pressed)"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "scripted-check-and-axe-initial-state"
+    },
+    {
+      "id": "breadcrumb",
+      "selector": "[data-component='breadcrumb']",
+      "pages": [
+        "about.html",
+        "accessibility.html",
+        "blog.html",
+        "conditions.html",
+        "forecast.html",
+        "history.html",
+        "hourly.html",
+        "hurricane.html",
+        "maps.html",
+        "prepare.html",
+        "radar.html",
+        "stations.html",
+        "video.html"
+      ],
+      "behavior": [
+        "breadcrumb trail"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-initial-state-only"
+    },
+    {
+      "id": "card-grid",
+      "selector": "[data-component='card-grid']",
+      "pages": [
+        "index.html",
+        "maps.html",
+        "video.html"
+      ],
+      "behavior": [
+        "linked cards"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "scripted-check-and-axe-initial-state"
+    },
+    {
+      "id": "checklist",
+      "selector": "[data-component='checklist']",
+      "pages": [
+        "prepare.html"
+      ],
+      "behavior": [
+        "saved checklist with progress"
+      ],
+      "keyboard": [
+        "Tab",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "axe-initial-state-only"
+    },
+    {
+      "id": "contact-form",
+      "selector": "[data-component='contact-form']",
+      "pages": [
+        "about.html"
+      ],
+      "behavior": [
+        "simulated feedback form with validation"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-initial-state-only"
+    },
+    {
+      "id": "content-panel",
+      "selector": "[data-component='content-panel']",
+      "pages": [
+        "about.html",
+        "accessibility.html",
+        "hurricane.html"
+      ],
+      "behavior": [
+        "static content sections"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "axe-initial-state-only"
+    },
+    {
+      "id": "current-conditions-card",
+      "selector": "[data-component='current-conditions-card']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "sample current conditions, favorite toggle on conditions page"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "axe-initial-state-only"
+    },
+    {
+      "id": "data-table",
+      "selector": "[data-component='data-table']",
+      "pages": [
+        "history.html"
+      ],
+      "behavior": [
+        "history results table"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "axe-initial-state-only"
+    },
+    {
+      "id": "error-page",
+      "selector": "[data-component='error-page']",
+      "pages": [
+        "404.html"
+      ],
+      "behavior": [
+        "404 with route back"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-initial-state-only"
+    },
+    {
+      "id": "error-summary",
+      "selector": "[data-component='error-summary']",
+      "pages": [
+        "(created by js on forms: history.html, stations.html, about.html, dialog login)"
+      ],
+      "behavior": [
+        "generated on invalid submit, focused, links to fields"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "scripted-check-and-axe-initial-state"
+    },
+    {
+      "id": "filter-bar",
+      "selector": "[data-component='filter-bar']",
+      "pages": [
+        "hourly.html",
+        "hurricane.html",
+        "maps.html",
+        "stations.html",
+        "video.html"
+      ],
+      "behavior": [
+        "filters apply on change; Enter does not reload"
+      ],
+      "keyboard": [
+        "Tab",
+        "arrow keys",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "axe-initial-state-only"
+    },
+    {
+      "id": "filter-chips",
+      "selector": "[data-component='filter-chips']",
+      "pages": [
+        "blog.html"
+      ],
+      "behavior": [
+        "toggle chips"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "axe-initial-state-only"
+    },
+    {
+      "id": "forecast-cards",
+      "selector": "[data-component='forecast-cards']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "5-day cards"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "axe-initial-state-only"
+    },
+    {
+      "id": "forecast-table",
+      "selector": "[data-component='forecast-table']",
+      "pages": [
+        "hourly.html"
+      ],
+      "behavior": [
+        "hourly table with day select and precipitation filter, empty state"
+      ],
+      "keyboard": [
+        "Tab",
+        "arrow keys in select",
+        "Space on checkbox"
+      ],
+      "status": "implemented",
+      "validation": "scripted-check-and-axe-initial-state"
+    },
+    {
+      "id": "hero-banner",
+      "selector": "[data-component='hero-banner']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "h1, intro, sample location chips"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-initial-state-only"
+    },
+    {
+      "id": "history-form",
+      "selector": "[data-component='history-form']",
+      "pages": [
+        "history.html"
+      ],
+      "behavior": [
+        "location/date/month form with validation, error summary and focus management"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "scripted-check-and-axe-initial-state"
+    },
+    {
+      "id": "location-search",
+      "selector": "[data-component='location-search']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "accessibility.html",
+        "blog.html",
+        "conditions.html",
+        "forecast.html",
+        "history.html",
+        "hourly.html",
+        "hurricane.html",
+        "index.html",
+        "maps.html",
+        "prepare.html",
+        "radar.html",
+        "stations.html",
+        "video.html"
+      ],
+      "behavior": [
+        "filters 10 sample locations as you type",
+        "inline error + empty-state message",
+        "single match navigates"
+      ],
+      "keyboard": [
+        "Type",
+        "Enter",
+        "Tab to results",
+        "Escape closes results"
+      ],
+      "status": "implemented",
+      "validation": "scripted-check-and-axe-initial-state"
+    },
+    {
+      "id": "location-tabs",
+      "selector": "[data-component='location-tabs']",
+      "pages": [
+        "conditions.html",
+        "forecast.html",
+        "history.html",
+        "hourly.html",
+        "radar.html"
+      ],
+      "behavior": [
+        "Today/Hourly/10-Day/History/Radar links keep the chosen location"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "scripted-check-and-axe-initial-state"
+    },
+    {
+      "id": "login-dialog",
+      "selector": "[data-component='login-dialog']",
+      "pages": [
+        "(created by js/main.js on every page)"
+      ],
+      "behavior": [
+        "demo login dialog"
+      ],
+      "keyboard": [
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "scripted-check-and-axe-initial-state"
+    },
+    {
+      "id": "login-form",
+      "selector": "[data-component='login-form']",
+      "pages": [
+        "(created by js/main.js on every page)"
+      ],
+      "behavior": [
+        "demo login form in dialog"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "scripted-check-and-axe-initial-state"
+    },
+    {
+      "id": "map-controls",
+      "selector": "[data-component='map-controls']",
+      "pages": [
+        "radar.html"
+      ],
+      "behavior": [
+        "layer radios, range, play button"
+      ],
+      "keyboard": [
+        "Tab",
+        "arrow keys",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "axe-initial-state-only"
+    },
+    {
+      "id": "map-viewer",
+      "selector": "[data-component='map-viewer']",
+      "pages": [
+        "radar.html"
+      ],
+      "behavior": [
+        "placeholder map with layer radios, frame slider, play/pause"
+      ],
+      "keyboard": [
+        "Tab",
+        "arrow keys",
+        "Space",
+        "Escape pauses loop"
+      ],
+      "status": "implemented",
+      "validation": "scripted-check-and-axe-initial-state"
+    },
+    {
+      "id": "modal-dialog",
+      "selector": "[data-component='modal-dialog']",
+      "pages": [
+        "(created by js)"
+      ],
+      "behavior": [
+        "generic dialog builder"
+      ],
+      "keyboard": [
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "axe-initial-state-only"
+    },
+    {
+      "id": "primary-nav",
+      "selector": "[data-component='primary-nav']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "accessibility.html",
+        "blog.html",
+        "conditions.html",
+        "forecast.html",
+        "history.html",
+        "hourly.html",
+        "hurricane.html",
+        "index.html",
+        "maps.html",
+        "prepare.html",
+        "radar.html",
+        "stations.html",
+        "video.html"
+      ],
+      "behavior": [
+        "desktop dropdowns",
+        "mobile disclosure",
+        "aria-current on active link"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "Escape closes menus"
+      ],
+      "status": "implemented",
+      "validation": "scripted-check-and-axe-initial-state"
+    },
+    {
+      "id": "promo-banner",
+      "selector": "[data-component='promo-banner']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "teaser panels with links"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-initial-state-only"
+    },
+    {
+      "id": "registration-form",
+      "selector": "[data-component='registration-form']",
+      "pages": [
+        "stations.html"
+      ],
+      "behavior": [
+        "simulated station registration with validation"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "scripted-check-and-axe-initial-state"
+    },
+    {
+      "id": "sample-data-notice",
+      "selector": "[data-component='sample-data-notice']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "accessibility.html",
+        "blog.html",
+        "conditions.html",
+        "forecast.html",
+        "history.html",
+        "hourly.html",
+        "hurricane.html",
+        "index.html",
+        "maps.html",
+        "prepare.html",
+        "radar.html",
+        "stations.html",
+        "video.html"
+      ],
+      "behavior": [
+        "banner stating all data is fictional; hosts a polite status region"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "axe-initial-state-only"
+    },
+    {
+      "id": "site-footer",
+      "selector": "[data-component='site-footer']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "accessibility.html",
+        "blog.html",
+        "conditions.html",
+        "forecast.html",
+        "history.html",
+        "hourly.html",
+        "hurricane.html",
+        "index.html",
+        "maps.html",
+        "prepare.html",
+        "radar.html",
+        "stations.html",
+        "video.html"
+      ],
+      "behavior": [
+        "grouped links",
+        "fictional-brand note"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-initial-state-only"
+    },
+    {
+      "id": "site-header",
+      "selector": "[data-component='site-header']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "accessibility.html",
+        "blog.html",
+        "conditions.html",
+        "forecast.html",
+        "history.html",
+        "hourly.html",
+        "hurricane.html",
+        "index.html",
+        "maps.html",
+        "prepare.html",
+        "radar.html",
+        "stations.html",
+        "video.html"
+      ],
+      "behavior": [
+        "header with brand, search, menu button, utility and primary nav"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "scripted-check-and-axe-initial-state"
+    },
+    {
+      "id": "station-table",
+      "selector": "[data-component='station-table']",
+      "pages": [
+        "stations.html"
+      ],
+      "behavior": [
+        "nearby/community stations; filter, sort, empty state"
+      ],
+      "keyboard": [
+        "Tab",
+        "arrow keys in selects"
+      ],
+      "status": "implemented",
+      "validation": "axe-initial-state-only"
+    },
+    {
+      "id": "storm-dialog",
+      "selector": "[data-component='storm-dialog']",
+      "pages": [
+        "hurricane.html (created by js)"
+      ],
+      "behavior": [
+        "native dialog with placeholder track"
+      ],
+      "keyboard": [
+        "Escape",
+        "Tab trapped by dialog"
+      ],
+      "status": "implemented",
+      "validation": "scripted-check-and-axe-initial-state"
+    },
+    {
+      "id": "storm-table",
+      "selector": "[data-component='storm-table']",
+      "pages": [
+        "hurricane.html"
+      ],
+      "behavior": [
+        "storm table with filters, empty state, track dialog"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Escape closes dialog"
+      ],
+      "status": "implemented",
+      "validation": "scripted-check-and-axe-initial-state"
+    },
+    {
+      "id": "tips-selector",
+      "selector": "[data-component='tips-selector']",
+      "pages": [
+        "prepare.html"
+      ],
+      "behavior": [
+        "hazard select shows tips"
+      ],
+      "keyboard": [
+        "Tab",
+        "arrow keys"
+      ],
+      "status": "implemented",
+      "validation": "axe-initial-state-only"
+    },
+    {
+      "id": "unit-toggle",
+      "selector": "[data-component='unit-toggle']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "accessibility.html",
+        "blog.html",
+        "conditions.html",
+        "forecast.html",
+        "history.html",
+        "hourly.html",
+        "hurricane.html",
+        "index.html",
+        "maps.html",
+        "prepare.html",
+        "radar.html",
+        "stations.html",
+        "video.html"
+      ],
+      "behavior": [
+        "imperial/metric, saved in localStorage"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "scripted-check-and-axe-initial-state"
+    },
+    {
+      "id": "utility-nav",
+      "selector": "[data-component='utility-nav']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "accessibility.html",
+        "blog.html",
+        "conditions.html",
+        "forecast.html",
+        "history.html",
+        "hourly.html",
+        "hurricane.html",
+        "index.html",
+        "maps.html",
+        "prepare.html",
+        "radar.html",
+        "stations.html",
+        "video.html"
+      ],
+      "behavior": [
+        "unit toggle (aria-pressed)",
+        "demo geolocation button",
+        "favorites disclosure",
+        "demo login dialog"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "scripted-check-and-axe-initial-state"
+    },
+    {
+      "id": "video-dialog",
+      "selector": "[data-component='video-dialog']",
+      "pages": [
+        "video.html (created by js)"
+      ],
+      "behavior": [
+        "demo dialog"
+      ],
+      "keyboard": [
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "axe-initial-state-only"
+    }
+  ],
+  "notes": "pages lists files whose static HTML contains the component; sections rendered by js/main.js (e.g. current-conditions-card, alert-list, station-table, almanac-table, forecast-cards on conditions.html; tables on hourly/history/hurricane/stations) are created at runtime with the same data-section/data-component attributes. validation values reflect only the 2026-11-11 qc.js axe scan of initial page state plus the scripted flow check named in README.md."
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Local Weather Forecast, News and Conditions | Driftwell Weather (demo)</title>
+<meta name="description" content="Fictional demo weather portal with sample forecasts, maps and stations.">
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="home">
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header" data-section="global-header" data-component="site-header">
+  <div class="header-bar">
+    <a class="brand" href="index.html"><img src="assets/logo.svg" alt="" width="36" height="36"><span class="brand-text">Driftwell <span class="brand-sub">Weather</span></span></a>
+    <button type="button" class="disclosure menu-toggle" aria-expanded="false" aria-controls="site-menu">Menu</button>
+    <form class="loc-search" role="search" data-section="location-search" data-component="location-search" novalidate>
+      <label for="loc-q" class="visually-hidden">Search sample locations</label>
+      <input id="loc-q" name="q" type="search" placeholder="Search locations, e.g. Fairhaven" autocomplete="off" aria-describedby="loc-q-error">
+      <button type="submit" class="btn">Search</button>
+      <p class="field-error loc-error" id="loc-q-error" hidden></p>
+      <div id="loc-q-results" class="panel search-results" hidden><p id="loc-q-status" role="status"></p><ul></ul></div>
+    </form>
+  </div>
+  <div id="site-menu" class="site-menu">
+    <nav aria-label="Utility" class="utility-nav" data-section="utility-navigation" data-component="utility-nav">
+      <ul>
+        <li><div role="group" aria-label="Units" class="unit-toggle" data-component="unit-toggle"><button type="button" data-unit="imperial" aria-pressed="true">°F / mph</button><button type="button" data-unit="metric" aria-pressed="false">°C / km/h</button></div></li>
+        <li><button type="button" class="link-btn" id="get-location">Get current location (demo)</button></li>
+        <li class="nav-item"><button type="button" class="disclosure link-btn" data-panel aria-expanded="false" aria-controls="favorites-panel">Favorites</button><div class="panel nav-panel" id="favorites-panel" hidden><ul id="favorites-list"></ul></div></li>
+        <li><button type="button" class="link-btn" id="login-open">Log in (demo)</button></li>
+        <li><a href="about.html#apps">Mobile apps</a></li>
+        <li><a href="history.html">Historical weather</a></li>
+        <li><a href="about.html#membership">Go ad-free (demo)</a></li>
+      </ul>
+    </nav>
+    <nav aria-label="Primary" data-section="global-navigation" data-component="primary-nav">
+      <ul class="primary-list"><li class="nav-item"><button type="button" class="disclosure nav-toggle" data-panel aria-expanded="false" aria-controls="m-weather">Weather</button><ul class="panel nav-panel" id="m-weather" hidden><li><a href="conditions.html">Current conditions</a></li><li><a href="hourly.html">Hourly forecast</a></li><li><a href="forecast.html">10-day forecast</a></li><li><a href="history.html">Historical weather</a></li></ul></li><li class="nav-item"><button type="button" class="disclosure nav-toggle" data-panel aria-expanded="false" aria-controls="m-maps">Maps</button><ul class="panel nav-panel" id="m-maps" hidden><li><a href="radar.html">Weather map viewer</a></li><li><a href="radar.html?layer=radar">Interactive radar</a></li><li><a href="radar.html?layer=satellite">Interactive satellite</a></li><li><a href="maps.html">Full maps catalog</a></li><li><a href="maps.html?cat=severe">Severe weather maps</a></li><li><a href="maps.html?cat=fire">Fire weather maps</a></li></ul></li><li class="nav-item"><button type="button" class="disclosure nav-toggle" data-panel aria-expanded="false" aria-controls="m-pws">Stations</button><ul class="panel nav-panel" id="m-pws" hidden><li><a href="stations.html">Station network overview</a></li><li><a href="stations.html#connect">Connect a station</a></li></ul></li><li class="nav-item"><a href="hurricane.html">Hurricanes</a></li><li class="nav-item"><a href="prepare.html">Prepare</a></li><li class="nav-item"><a href="blog.html">Eyewall Journal</a></li><li class="nav-item"><a href="video.html">Videos</a></li></ul>
+    </nav>
+  </div>
+  <p class="sample-banner" data-component="sample-data-notice">Demo site: all weather values, alerts, storms and stations are fictional sample data, not live conditions. <span id="global-status" role="status"></span></p>
+</header>
+<main id="main-content" data-section="main-content">
+
+<section class="hero" aria-labelledby="hero-title" data-section="hero" data-component="hero-banner">
+  <div class="hero-text">
+    <h1 id="hero-title">Local weather forecast, news and conditions</h1>
+    <p>Search the sample locations in the header, or pick one below. Every number on this site is invented for a research demo.</p>
+    <ul class="chip-list" id="home-picks" aria-label="Sample locations"></ul>
+  </div>
+  <img src="assets/hero.svg" alt="" width="520" height="260">
+</section>
+<div class="wrap">
+<section aria-labelledby="home-current-h" data-section="home-current" data-component="current-conditions-card"><h2 id="home-current-h">Your sample location</h2><div id="home-current"></div></section>
+<section aria-labelledby="home-alerts-h" data-section="weather-alerts" data-component="alert-list"><h2 id="home-alerts-h">Sample alerts</h2><div id="home-alerts"></div></section>
+<section aria-labelledby="home-days-h" data-section="five-day" data-component="forecast-cards"><h2 id="home-days-h">Next 5 days</h2><ul class="day-row" id="home-days"></ul></section>
+<section aria-labelledby="home-maps-h" data-section="featured-maps" data-component="card-grid"><h2 id="home-maps-h">Maps and radar</h2>
+  <ul class="card-grid">
+    <li class="card"><img src="assets/map-1.svg" alt="" width="320" height="180" loading="lazy"><h3><a href="radar.html?layer=radar">Interactive radar</a></h3><p>A placeholder viewer with layers and a six-frame sample loop.</p></li>
+    <li class="card"><img src="assets/map-2.svg" alt="" width="320" height="180" loading="lazy"><h3><a href="radar.html?layer=satellite">Interactive satellite</a></h3><p>Placeholder cloud imagery, clearly labeled as sample content.</p></li>
+    <li class="card"><img src="assets/map-3.svg" alt="" width="320" height="180" loading="lazy"><h3><a href="maps.html">Full maps catalog</a></h3><p>Filter nine placeholder map types by category or keyword.</p></li>
+  </ul></section>
+<section aria-labelledby="home-storm-h" data-section="storm-teaser" data-component="promo-banner"><h2 id="home-storm-h">Hurricanes and tropical cyclones</h2><p>Six fictional storms across three basins. Filter by basin or status and open a placeholder track.</p><p><a class="btn" href="hurricane.html">Open the tracker</a></p></section>
+<section aria-labelledby="home-news-h" data-section="news-teasers" data-component="card-grid"><h2 id="home-news-h">From the Eyewall Journal</h2>
+  <ul class="card-grid">
+    <li class="card"><img src="assets/article-1.svg" alt="" width="320" height="180" loading="lazy"><h3><a href="blog.html#a-fog-nights">Why fog loves a clear November night</a></h3><p>Sample article about radiation fog.</p></li>
+    <li class="card"><img src="assets/article-2.svg" alt="" width="320" height="180" loading="lazy"><h3><a href="blog.html#a-wet-northwest">A wet week sets up in the sample Northwest</a></h3><p>Sample forecast discussion with invented totals.</p></li>
+    <li class="card"><img src="assets/article-3.svg" alt="" width="320" height="180" loading="lazy"><h3><a href="blog.html#a-season-recap">Season recap: two sample hurricanes</a></h3><p>How the demo labels each storm status.</p></li>
+  </ul></section>
+<section aria-labelledby="home-pws-h" data-section="station-promo" data-component="promo-banner"><h2 id="home-pws-h">Community weather stations</h2><p>Browse eight fictional stations and try the simulated registration form.</p><p><a class="btn" href="stations.html">Explore the network</a> <a class="btn btn-quiet" href="prepare.html">Preparedness checklist</a></p></section>
+</div>
+</main>
+<footer class="site-footer" data-section="global-footer" data-component="site-footer">
+  <div class="footer-grid"><div><h2>Explore</h2><ul><li><a href="conditions.html">Current conditions</a></li><li><a href="hourly.html">Hourly forecast</a></li><li><a href="forecast.html">10-day forecast</a></li><li><a href="history.html">Historical weather</a></li><li><a href="maps.html">Weather maps</a></li><li><a href="hurricane.html">Hurricane tracker</a></li></ul></div><div><h2>Community</h2><ul><li><a href="stations.html">Station network</a></li><li><a href="blog.html">Eyewall Journal</a></li><li><a href="video.html">Videos</a></li><li><a href="prepare.html">Prepare</a></li></ul></div><div><h2>Company</h2><ul><li><a href="about.html">About us</a></li><li><a href="about.html#apps">Our apps</a></li><li><a href="about.html#contact">Contact and feedback</a></li><li><a href="about.html#careers">Careers</a></li><li><a href="accessibility.html">Accessibility statement</a></li></ul></div><div><h2>Legal</h2><ul><li><a href="about.html#terms">Terms of use</a></li><li><a href="about.html#privacy">Privacy policy</a></li><li><a href="about.html#data-rights">Data rights</a></li><li><a href="about.html#privacy-settings">Privacy settings</a></li><li><a href="about.html#trust">Trust center</a></li><li><a href="about.html#vendors">Data vendors</a></li></ul></div></div>
+  <p class="footer-note">Driftwell Weather is a fictional brand created for an accessibility research dataset. Layout inspired by a commercial weather portal; no real data, logos or text are reproduced.</p>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>
