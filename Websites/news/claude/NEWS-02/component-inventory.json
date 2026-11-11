@@ -1,0 +1,900 @@
+{
+  "protocol_version": "1.0",
+  "replica_id": "NEWS-02",
+  "category": "news",
+  "source_url": "https://www.chicagotribune.com/",
+  "components": [
+    {
+      "id": "site-header",
+      "selector": "[data-component='site-header']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "article.html",
+        "business.html",
+        "index.html",
+        "latest-headlines.html",
+        "local-news.html",
+        "news.html",
+        "obituaries.html",
+        "opinion.html",
+        "search.html",
+        "sports.html",
+        "subscribe.html",
+        "suburbs.html",
+        "things-to-do.html",
+        "weather.html"
+      ],
+      "behavior": [
+        "banner landmark with demo notice, utility bar, nameplate, primary nav, mega menu"
+      ],
+      "keyboard": [
+        "Tab order follows DOM"
+      ],
+      "status": "implemented",
+      "validation": "axe-0-violations-1280-375"
+    },
+    {
+      "id": "demo-banner",
+      "selector": "[data-component='demo-banner']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "article.html",
+        "business.html",
+        "index.html",
+        "latest-headlines.html",
+        "local-news.html",
+        "news.html",
+        "obituaries.html",
+        "opinion.html",
+        "search.html",
+        "sports.html",
+        "subscribe.html",
+        "suburbs.html",
+        "things-to-do.html",
+        "weather.html"
+      ],
+      "behavior": [
+        "static notice that the site is a fictional research replica (intentional addition)"
+      ],
+      "keyboard": [],
+      "status": "intentional-addition",
+      "validation": "axe-0-violations-1280-375"
+    },
+    {
+      "id": "utility-bar",
+      "selector": "[data-component='utility-bar']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "article.html",
+        "business.html",
+        "index.html",
+        "latest-headlines.html",
+        "local-news.html",
+        "news.html",
+        "obituaries.html",
+        "opinion.html",
+        "search.html",
+        "sports.html",
+        "subscribe.html",
+        "suburbs.html",
+        "things-to-do.html",
+        "weather.html"
+      ],
+      "behavior": [
+        "menu toggle, search toggle, sample weather link, e-edition link, services dropdown, Subscribe button"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "axe-0-violations-1280-375+scripted-flow-pass"
+    },
+    {
+      "id": "menu-toggle",
+      "selector": "[data-component='menu-toggle']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "article.html",
+        "business.html",
+        "index.html",
+        "latest-headlines.html",
+        "local-news.html",
+        "news.html",
+        "obituaries.html",
+        "opinion.html",
+        "search.html",
+        "sports.html",
+        "subscribe.html",
+        "suburbs.html",
+        "things-to-do.html",
+        "weather.html"
+      ],
+      "behavior": [
+        "disclosure button (aria-expanded) that opens the all-sections mega menu; only way to reach sections on mobile"
+      ],
+      "keyboard": [
+        "Enter/Space toggle",
+        "Escape closes and returns focus"
+      ],
+      "status": "implemented",
+      "validation": "axe-0-violations-1280-375+scripted-flow-pass"
+    },
+    {
+      "id": "search-toggle",
+      "selector": "[data-component='search-toggle']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "article.html",
+        "business.html",
+        "index.html",
+        "latest-headlines.html",
+        "local-news.html",
+        "news.html",
+        "obituaries.html",
+        "opinion.html",
+        "search.html",
+        "sports.html",
+        "subscribe.html",
+        "suburbs.html",
+        "things-to-do.html",
+        "weather.html"
+      ],
+      "behavior": [
+        "disclosure that reveals the search form and focuses the input"
+      ],
+      "keyboard": [
+        "Enter/Space toggle",
+        "Escape closes and returns focus"
+      ],
+      "status": "implemented",
+      "validation": "axe-0-violations-1280-375+scripted-flow-pass"
+    },
+    {
+      "id": "search-form",
+      "selector": "[data-component='search-form']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "article.html",
+        "business.html",
+        "index.html",
+        "latest-headlines.html",
+        "local-news.html",
+        "news.html",
+        "obituaries.html",
+        "opinion.html",
+        "search.html",
+        "sports.html",
+        "subscribe.html",
+        "suburbs.html",
+        "things-to-do.html",
+        "weather.html"
+      ],
+      "behavior": [
+        "GET form to search.html?s=; header instance on every page, plus the search-page instance with section/sort filters and validation"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter submits"
+      ],
+      "status": "implemented",
+      "validation": "axe-0-violations-1280-375+scripted-flow-pass"
+    },
+    {
+      "id": "weather-link",
+      "selector": "[data-component='weather-link']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "article.html",
+        "business.html",
+        "index.html",
+        "latest-headlines.html",
+        "local-news.html",
+        "news.html",
+        "obituaries.html",
+        "opinion.html",
+        "search.html",
+        "sports.html",
+        "subscribe.html",
+        "suburbs.html",
+        "things-to-do.html",
+        "weather.html"
+      ],
+      "behavior": [
+        "link to weather.html showing labeled static sample temperature"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "simulated",
+      "validation": "axe-0-violations-1280-375"
+    },
+    {
+      "id": "services-dropdown",
+      "selector": "[data-component='services-dropdown']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "article.html",
+        "business.html",
+        "index.html",
+        "latest-headlines.html",
+        "local-news.html",
+        "news.html",
+        "obituaries.html",
+        "opinion.html",
+        "search.html",
+        "sports.html",
+        "subscribe.html",
+        "suburbs.html",
+        "things-to-do.html",
+        "weather.html"
+      ],
+      "behavior": [
+        "Subscriber services disclosure with four links to subscribe.html?topic=...#services; click outside closes"
+      ],
+      "keyboard": [
+        "Enter/Space toggle",
+        "Escape closes and returns focus"
+      ],
+      "status": "implemented",
+      "validation": "axe-0-violations-1280-375+scripted-flow-pass"
+    },
+    {
+      "id": "brand",
+      "selector": "[data-component='brand']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "article.html",
+        "business.html",
+        "index.html",
+        "latest-headlines.html",
+        "local-news.html",
+        "news.html",
+        "obituaries.html",
+        "opinion.html",
+        "search.html",
+        "sports.html",
+        "subscribe.html",
+        "suburbs.html",
+        "things-to-do.html",
+        "weather.html"
+      ],
+      "behavior": [
+        "wordmark link to index.html with decorative SVG mark"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-0-violations-1280-375"
+    },
+    {
+      "id": "primary-nav",
+      "selector": "[data-component='primary-nav']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "article.html",
+        "business.html",
+        "index.html",
+        "latest-headlines.html",
+        "local-news.html",
+        "news.html",
+        "obituaries.html",
+        "opinion.html",
+        "search.html",
+        "sports.html",
+        "subscribe.html",
+        "suburbs.html",
+        "things-to-do.html",
+        "weather.html"
+      ],
+      "behavior": [
+        "desktop section bar (>=900px) with per-section dropdown disclosure buttons (aria-expanded); hidden below 900px where the mega menu serves as navigation; aria-current on active section"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter/Space opens submenu",
+        "Escape closes and returns focus"
+      ],
+      "status": "implemented",
+      "validation": "axe-0-violations-1280-375+scripted-flow-pass"
+    },
+    {
+      "id": "mega-menu",
+      "selector": "[data-component='mega-menu']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "article.html",
+        "business.html",
+        "index.html",
+        "latest-headlines.html",
+        "local-news.html",
+        "news.html",
+        "obituaries.html",
+        "opinion.html",
+        "search.html",
+        "sports.html",
+        "subscribe.html",
+        "suburbs.html",
+        "things-to-do.html",
+        "weather.html"
+      ],
+      "behavior": [
+        "push-nav style panel listing every section and topic link, toggled by menu-toggle"
+      ],
+      "keyboard": [
+        "Tab through links",
+        "Escape closes"
+      ],
+      "status": "implemented",
+      "validation": "axe-0-violations-1280-375+scripted-flow-pass"
+    },
+    {
+      "id": "breadcrumbs",
+      "selector": "[data-component='breadcrumbs']",
+      "pages": [
+        "about.html",
+        "article.html",
+        "business.html",
+        "latest-headlines.html",
+        "local-news.html",
+        "news.html",
+        "obituaries.html",
+        "opinion.html",
+        "search.html",
+        "sports.html",
+        "subscribe.html",
+        "suburbs.html",
+        "things-to-do.html",
+        "weather.html"
+      ],
+      "behavior": [
+        "ordered-list breadcrumb trail with aria-current; article page updates it at runtime from ?id="
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-0-violations-1280-375+scripted-flow-pass"
+    },
+    {
+      "id": "trending-bar",
+      "selector": "[data-component='trending-bar']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "five trending-story links on the home page"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-0-violations-1280-375"
+    },
+    {
+      "id": "card-grid",
+      "selector": "[data-component='card-grid']",
+      "pages": [
+        "index.html",
+        "suburbs.html"
+      ],
+      "behavior": [
+        "featured stories grid (home) and community paper cards (suburbs)"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-0-violations-1280-375"
+    },
+    {
+      "id": "story-block",
+      "selector": "[data-component='story-block']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "section story band with heading and More link, 3 story cards"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-0-violations-1280-375"
+    },
+    {
+      "id": "story-card",
+      "selector": "[data-component='story-card']",
+      "pages": [
+        "business.html",
+        "index.html",
+        "latest-headlines.html",
+        "local-news.html",
+        "news.html",
+        "opinion.html",
+        "sports.html",
+        "suburbs.html",
+        "things-to-do.html",
+        "search.html"
+      ],
+      "behavior": [
+        "headline link, kicker, dek, byline and time; decorative placeholder image"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-0-violations-1280-375+scripted-flow-pass"
+    },
+    {
+      "id": "story-list",
+      "selector": "[data-component='story-list']",
+      "pages": [
+        "business.html",
+        "local-news.html",
+        "news.html",
+        "opinion.html",
+        "sports.html",
+        "suburbs.html",
+        "things-to-do.html"
+      ],
+      "behavior": [
+        "section-front list of story cards with topic filter, live status and empty state"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-0-violations-1280-375+scripted-flow-pass"
+    },
+    {
+      "id": "topic-filter",
+      "selector": "[data-component='topic-filter']",
+      "pages": [
+        "business.html",
+        "latest-headlines.html",
+        "local-news.html",
+        "news.html",
+        "obituaries.html",
+        "opinion.html",
+        "sports.html",
+        "suburbs.html",
+        "things-to-do.html"
+      ],
+      "behavior": [
+        "select (topic, section, town, or keyword input) filtering a list client-side; ?topic= preselects; reset button; role=status count"
+      ],
+      "keyboard": [
+        "Tab",
+        "Arrow keys / typing in controls",
+        "Enter/Space on Reset"
+      ],
+      "status": "implemented",
+      "validation": "axe-0-violations-1280-375+scripted-flow-pass"
+    },
+    {
+      "id": "most-popular-list",
+      "selector": "[data-component='most-popular-list']",
+      "pages": [
+        "article.html",
+        "business.html",
+        "index.html",
+        "local-news.html",
+        "news.html",
+        "opinion.html",
+        "sports.html",
+        "subscribe.html",
+        "suburbs.html",
+        "things-to-do.html",
+        "weather.html"
+      ],
+      "behavior": [
+        "ordered list of ten static sample most-popular stories"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "simulated",
+      "validation": "axe-0-violations-1280-375"
+    },
+    {
+      "id": "suburb-links",
+      "selector": "[data-component='suburb-links']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "chip links to the six community-paper filters on suburbs.html"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-0-violations-1280-375"
+    },
+    {
+      "id": "newsletter-signup",
+      "selector": "[data-component='newsletter-signup']",
+      "pages": [
+        "article.html",
+        "index.html"
+      ],
+      "behavior": [
+        "simulated newsletter form: email + at least one list; inline errors, summary, demo-only success"
+      ],
+      "keyboard": [
+        "Tab",
+        "Space toggles checkboxes",
+        "Enter submits"
+      ],
+      "status": "simulated",
+      "validation": "axe-0-violations-1280-375+scripted-flow-pass"
+    },
+    {
+      "id": "tabs",
+      "selector": "[data-component='tabs']",
+      "pages": [
+        "latest-headlines.html"
+      ],
+      "behavior": [
+        "WAI-ARIA tabs: Latest and Most read panels"
+      ],
+      "keyboard": [
+        "Left/Right Arrow",
+        "Home",
+        "End",
+        "Tab into panel"
+      ],
+      "status": "implemented (tab pattern inferred, not observed on the reference)",
+      "validation": "axe-0-violations-1280-375+scripted-flow-pass"
+    },
+    {
+      "id": "data-table",
+      "selector": "[data-component='data-table']",
+      "pages": [
+        "business.html",
+        "sports.html"
+      ],
+      "behavior": [
+        "labeled static sample tables (market snapshot, scoreboard) with captions and row headers"
+      ],
+      "keyboard": [
+        "Tab to scroll region if overflowing"
+      ],
+      "status": "simulated",
+      "validation": "axe-0-violations-1280-375"
+    },
+    {
+      "id": "event-list",
+      "selector": "[data-component='event-list']",
+      "pages": [
+        "things-to-do.html"
+      ],
+      "behavior": [
+        "sample events with type filter, status and empty state"
+      ],
+      "keyboard": [
+        "Tab",
+        "Arrow keys on select"
+      ],
+      "status": "intentional-addition",
+      "validation": "axe-0-violations-1280-375+scripted-flow-pass"
+    },
+    {
+      "id": "event-card",
+      "selector": "[data-component='event-card']",
+      "pages": [
+        "things-to-do.html"
+      ],
+      "behavior": [
+        "single event entry (title, date, venue, cost)"
+      ],
+      "keyboard": [],
+      "status": "intentional-addition",
+      "validation": "axe-0-violations-1280-375"
+    },
+    {
+      "id": "obituary-list",
+      "selector": "[data-component='obituary-list']",
+      "pages": [
+        "obituaries.html"
+      ],
+      "behavior": [
+        "sample notices with keyword and town filters and empty state"
+      ],
+      "keyboard": [
+        "Tab",
+        "typing in search box"
+      ],
+      "status": "implemented",
+      "validation": "axe-0-violations-1280-375+scripted-flow-pass"
+    },
+    {
+      "id": "obituary-card",
+      "selector": "[data-component='obituary-card']",
+      "pages": [
+        "obituaries.html"
+      ],
+      "behavior": [
+        "single sample notice"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "axe-0-violations-1280-375"
+    },
+    {
+      "id": "article-body",
+      "selector": "[data-component='article-body']",
+      "pages": [
+        "article.html"
+      ],
+      "behavior": [
+        "article header, placeholder figure, body; rendered by JS from inline data when ?id= is present (default story is static HTML)"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "axe-0-violations-1280-375+scripted-flow-pass"
+    },
+    {
+      "id": "byline",
+      "selector": "[data-component='byline']",
+      "pages": [
+        "article.html"
+      ],
+      "behavior": [
+        "author line with org and dateline with time element"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "axe-0-violations-1280-375"
+    },
+    {
+      "id": "share-tools",
+      "selector": "[data-component='share-tools']",
+      "pages": [
+        "article.html"
+      ],
+      "behavior": [
+        "Copy link (Clipboard API with status message), Email (mailto), Print (window.print); X/Facebook/Bluesky buttons of the reference omitted"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter/Space"
+      ],
+      "status": "implemented",
+      "validation": "axe-0-violations-1280-375+scripted-flow-pass"
+    },
+    {
+      "id": "related-stories",
+      "selector": "[data-component='related-stories']",
+      "pages": [
+        "article.html"
+      ],
+      "behavior": [
+        "links to three more stories in the same section"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-0-violations-1280-375"
+    },
+    {
+      "id": "subscription-prompt",
+      "selector": "[data-component='subscription-prompt']",
+      "pages": [
+        "article.html"
+      ],
+      "behavior": [
+        "simulated subscribe prompt card that opens the demo dialog (intentional addition)"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter/Space"
+      ],
+      "status": "intentional-addition",
+      "validation": "axe-0-violations-1280-375+scripted-flow-pass"
+    },
+    {
+      "id": "modal-dialog",
+      "selector": "[data-component='modal-dialog']",
+      "pages": [
+        "article.html"
+      ],
+      "behavior": [
+        "native <dialog> opened with showModal: demo trial form; closes on Escape, Close button or backdrop click; focus returns to opener"
+      ],
+      "keyboard": [
+        "Tab trapped by native modal",
+        "Escape closes"
+      ],
+      "status": "simulated",
+      "validation": "axe-0-violations-1280-375+scripted-flow-pass"
+    },
+    {
+      "id": "subscription-form",
+      "selector": "[data-component='subscription-form']",
+      "pages": [
+        "subscribe.html"
+      ],
+      "behavior": [
+        "plan radio group, name, email, ZIP with validation; demo success"
+      ],
+      "keyboard": [
+        "Tab",
+        "Arrow keys in radio group",
+        "Enter submits"
+      ],
+      "status": "simulated",
+      "validation": "axe-0-violations-1280-375+scripted-flow-pass"
+    },
+    {
+      "id": "service-request-form",
+      "selector": "[data-component='service-request-form']",
+      "pages": [
+        "subscribe.html"
+      ],
+      "behavior": [
+        "subscriber-services form: request type, 6-digit account number, email, notes; ?topic= preselects the type"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter submits"
+      ],
+      "status": "simulated",
+      "validation": "axe-0-violations-1280-375+scripted-flow-pass"
+    },
+    {
+      "id": "form-error-summary",
+      "selector": "[data-component='form-error-summary']",
+      "pages": [
+        "article.html",
+        "index.html",
+        "search.html",
+        "subscribe.html"
+      ],
+      "behavior": [
+        "role=alert summary listing errors as links to fields; receives focus on failed submit"
+      ],
+      "keyboard": [
+        "Enter on a link moves focus to its field"
+      ],
+      "status": "implemented",
+      "validation": "axe-0-violations-1280-375+scripted-flow-pass"
+    },
+    {
+      "id": "demo-success-message",
+      "selector": "[data-component='demo-success-message']",
+      "pages": [
+        "article.html",
+        "index.html",
+        "subscribe.html"
+      ],
+      "behavior": [
+        "role=status message that states nothing was sent; receives focus on successful submit"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "axe-0-violations-1280-375+scripted-flow-pass"
+    },
+    {
+      "id": "weather-widget",
+      "selector": "[data-component='weather-widget']",
+      "pages": [
+        "weather.html"
+      ],
+      "behavior": [
+        "location select and F/C radios re-render a labeled static sample forecast table in an aria-live region"
+      ],
+      "keyboard": [
+        "Tab",
+        "Arrow keys on select/radios"
+      ],
+      "status": "simulated",
+      "validation": "axe-0-violations-1280-375+scripted-flow-pass"
+    },
+    {
+      "id": "info-panel",
+      "selector": "[data-component='info-panel']",
+      "pages": [
+        "about.html",
+        "subscribe.html"
+      ],
+      "behavior": [
+        "text sections on about.html and the e-edition explainer on subscribe.html"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "axe-0-violations-1280-375"
+    },
+    {
+      "id": "error-help",
+      "selector": "[data-component='error-help']",
+      "pages": [
+        "404.html"
+      ],
+      "behavior": [
+        "404 recovery links and search form"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-0-violations-1280-375"
+    },
+    {
+      "id": "search-results",
+      "selector": "[data-component='search-results']",
+      "pages": [
+        "search.html"
+      ],
+      "behavior": [
+        "query-string driven results from inline data with relevance/newest sort, section filter, count status and empty state"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-0-violations-1280-375+scripted-flow-pass"
+    },
+    {
+      "id": "site-footer",
+      "selector": "[data-component='site-footer']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "article.html",
+        "business.html",
+        "index.html",
+        "latest-headlines.html",
+        "local-news.html",
+        "news.html",
+        "obituaries.html",
+        "opinion.html",
+        "search.html",
+        "sports.html",
+        "subscribe.html",
+        "suburbs.html",
+        "things-to-do.html",
+        "weather.html"
+      ],
+      "behavior": [
+        "grouped links (sections, fictional sister papers as plain text, company info, legal) and disclaimer"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-0-violations-1280-375"
+    }
+  ]
+}
