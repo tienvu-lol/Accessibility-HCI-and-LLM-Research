@@ -1,0 +1,559 @@
+{
+  "protocol_version": "1.0",
+  "replica_id": "FASH-02",
+  "category": "fashion",
+  "source_url": "https://www.toryburch.com/en-us/",
+  "components": [
+    {
+      "id": "article-body",
+      "selector": "[data-component='article-body']",
+      "pages": [
+        "article.html",
+        "campaign.html"
+      ],
+      "behavior": [
+        "static default story, swapped client-side by ?bpid= over inline data",
+        "not-found state for unknown ids"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean at 1280px and 375px (qc.js); scripted Playwright flow check passed; not-tested: screen readers, 200% zoom, manual keyboard walkthrough"
+    },
+    {
+      "id": "breadcrumb",
+      "selector": "[data-component='breadcrumb']",
+      "pages": [
+        "article.html",
+        "campaign.html",
+        "runway-show.html"
+      ],
+      "behavior": [
+        "ordered list breadcrumb with aria-current on the last item"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean at 1280px and 375px (qc.js); not-tested: screen readers, 200% zoom, manual keyboard walkthrough"
+    },
+    {
+      "id": "card-grid",
+      "selector": "[data-component='card-grid']",
+      "pages": [
+        "about.html",
+        "article.html",
+        "campaign.html",
+        "index.html",
+        "journal-archive.html",
+        "journal-culture.html",
+        "journal-issues.html",
+        "journal-style.html",
+        "journal-travel.html",
+        "journal.html",
+        "runway.html",
+        "search.html"
+      ],
+      "behavior": [
+        "responsive grid of story or info cards",
+        "load more (journal), sort (category pages), filters (archive), search results"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space on buttons"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean at 1280px and 375px (qc.js); scripted Playwright flow check passed; not-tested: screen readers, 200% zoom, manual keyboard walkthrough"
+    },
+    {
+      "id": "category-tiles",
+      "selector": "[data-component='category-tiles']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "six shop tiles that open the demo notice page"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean at 1280px and 375px (qc.js); not-tested: screen readers, 200% zoom, manual keyboard walkthrough"
+    },
+    {
+      "id": "definition-list",
+      "selector": "[data-component='definition-list']",
+      "pages": [
+        "campaign.html"
+      ],
+      "behavior": [
+        "campaign credits as a dl"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "axe-core clean at 1280px and 375px (qc.js); not-tested: screen readers, 200% zoom, manual keyboard walkthrough"
+    },
+    {
+      "id": "feature-panel",
+      "selector": "[data-component='feature-panel']",
+      "pages": [
+        "index.html",
+        "runway-show.html",
+        "runway.html"
+      ],
+      "behavior": [
+        "image and text split panel with calls to action"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean at 1280px and 375px (qc.js); not-tested: screen readers, 200% zoom, manual keyboard walkthrough"
+    },
+    {
+      "id": "filter-bar",
+      "selector": "[data-component='filter-bar']",
+      "pages": [
+        "journal-archive.html"
+      ],
+      "behavior": [
+        "keyword, section, year and sort controls filter inline data live",
+        "reset button and empty-state reset",
+        "status text announces result count"
+      ],
+      "keyboard": [
+        "Tab",
+        "Arrow keys in selects",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean at 1280px and 375px (qc.js); scripted Playwright flow check passed; not-tested: screen readers, 200% zoom, manual keyboard walkthrough"
+    },
+    {
+      "id": "hero-banner",
+      "selector": "[data-component='hero-banner']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "heading, supporting copy and two calls to action beside a decorative placeholder"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean at 1280px and 375px (qc.js); not-tested: screen readers, 200% zoom, manual keyboard walkthrough"
+    },
+    {
+      "id": "image-gallery",
+      "selector": "[data-component='image-gallery']",
+      "pages": [
+        "runway-show.html"
+      ],
+      "behavior": [
+        "12 placeholder looks",
+        "filter chips with aria-pressed",
+        "look button opens a modal viewer with previous/next"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean at 1280px and 375px (qc.js); scripted Playwright flow check passed; not-tested: screen readers, 200% zoom, manual keyboard walkthrough"
+    },
+    {
+      "id": "info-card",
+      "selector": "[data-component='info-card']",
+      "pages": [
+        "about.html"
+      ],
+      "behavior": [
+        "three principle cards"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "axe-core clean at 1280px and 375px (qc.js); not-tested: screen readers, 200% zoom, manual keyboard walkthrough"
+    },
+    {
+      "id": "lookbook-carousel",
+      "selector": "[data-component='lookbook-carousel']",
+      "pages": [
+        "campaign.html"
+      ],
+      "behavior": [
+        "previous/next buttons, frame buttons with aria-current, count status",
+        "no autoplay; wraps around; ArrowLeft/ArrowRight while focus is inside"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "ArrowLeft",
+        "ArrowRight"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean at 1280px and 375px (qc.js); scripted Playwright flow check passed; not-tested: screen readers, 200% zoom, manual keyboard walkthrough"
+    },
+    {
+      "id": "mega-menu",
+      "selector": "[data-component='mega-menu']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "article.html",
+        "campaign.html",
+        "demo.html",
+        "index.html",
+        "journal-archive.html",
+        "journal-culture.html",
+        "journal-issues.html",
+        "journal-style.html",
+        "journal-travel.html",
+        "journal.html",
+        "runway-show.html",
+        "runway.html",
+        "search.html",
+        "sitemap.html"
+      ],
+      "behavior": [
+        "click and hover open (hover only with a fine pointer at desktop widths)",
+        "aria-expanded on each trigger",
+        "closes on Escape, outside click, or focus leaving the nav",
+        "links open a labelled demo page"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean at 1280px and 375px (qc.js); scripted Playwright flow check passed; not-tested: screen readers, 200% zoom, manual keyboard walkthrough"
+    },
+    {
+      "id": "modal-dialog",
+      "selector": "[data-component='modal-dialog']",
+      "pages": [
+        "runway-show.html"
+      ],
+      "behavior": [
+        "native dialog elements for the demo stream notice and the look viewer",
+        "Escape and backdrop click close; focus returns to the opener"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean at 1280px and 375px (qc.js); scripted Playwright flow check passed; not-tested: screen readers, 200% zoom, manual keyboard walkthrough"
+    },
+    {
+      "id": "newsletter-form",
+      "selector": "[data-component='newsletter-form']",
+      "pages": [
+        "article.html",
+        "campaign.html",
+        "index.html",
+        "journal.html"
+      ],
+      "behavior": [
+        "labelled email and consent fields",
+        "inline errors, error summary with focus, links back to fields",
+        "clearly labelled demo success state; nothing is sent"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space on checkbox"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean at 1280px and 375px (qc.js); scripted Playwright flow check passed; not-tested: screen readers, 200% zoom, manual keyboard walkthrough"
+    },
+    {
+      "id": "notice",
+      "selector": "[data-component='notice']",
+      "pages": [
+        "404.html",
+        "demo.html"
+      ],
+      "behavior": [
+        "demo notice and 404 routes back to the site; demo.html reads ?topic= and writes it with textContent"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean at 1280px and 375px (qc.js); scripted Playwright flow check passed; not-tested: screen readers, 200% zoom, manual keyboard walkthrough"
+    },
+    {
+      "id": "primary-nav",
+      "selector": "[data-component='primary-nav']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "article.html",
+        "campaign.html",
+        "demo.html",
+        "index.html",
+        "journal-archive.html",
+        "journal-culture.html",
+        "journal-issues.html",
+        "journal-style.html",
+        "journal-travel.html",
+        "journal.html",
+        "runway-show.html",
+        "runway.html",
+        "search.html",
+        "sitemap.html"
+      ],
+      "behavior": [
+        "desktop top-level links and mega-menu buttons",
+        "mobile Menu disclosure with nested accordion panels",
+        "aria-current on Vesper Notes and Runway"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "Escape closes panel/menu and returns focus"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean at 1280px and 375px (qc.js); scripted Playwright flow check passed; not-tested: screen readers, 200% zoom, manual keyboard walkthrough"
+    },
+    {
+      "id": "search-form",
+      "selector": "[data-component='search-form']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "article.html",
+        "campaign.html",
+        "demo.html",
+        "index.html",
+        "journal-archive.html",
+        "journal-culture.html",
+        "journal-issues.html",
+        "journal-style.html",
+        "journal-travel.html",
+        "journal.html",
+        "runway-show.html",
+        "runway.html",
+        "search.html",
+        "sitemap.html"
+      ],
+      "behavior": [
+        "header search disclosure (aria-expanded, focuses the input)",
+        "Vesper Notes search forms submit GET to search.html",
+        "client-side search over inline demo data"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Escape closes header search"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean at 1280px and 375px (qc.js); scripted Playwright flow check passed; not-tested: screen readers, 200% zoom, manual keyboard walkthrough"
+    },
+    {
+      "id": "season-card",
+      "selector": "[data-component='season-card']",
+      "pages": [
+        "runway.html"
+      ],
+      "behavior": [
+        "season list; only Spring/Summer 2027 is linked"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean at 1280px and 375px (qc.js); not-tested: screen readers, 200% zoom, manual keyboard walkthrough"
+    },
+    {
+      "id": "section-subnav",
+      "selector": "[data-component='section-subnav']",
+      "pages": [
+        "article.html",
+        "campaign.html",
+        "journal-archive.html",
+        "journal-culture.html",
+        "journal-issues.html",
+        "journal-style.html",
+        "journal-travel.html",
+        "journal.html",
+        "search.html"
+      ],
+      "behavior": [
+        "Vesper Notes section links with aria-current",
+        "sections without their own page link to the archive with a category filter"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean at 1280px and 375px (qc.js); scripted Playwright flow check passed; not-tested: screen readers, 200% zoom, manual keyboard walkthrough"
+    },
+    {
+      "id": "share-links",
+      "selector": "[data-component='share-links']",
+      "pages": [
+        "article.html",
+        "campaign.html"
+      ],
+      "behavior": [
+        "Copy link button with status message and fallback text",
+        "mailto link"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean at 1280px and 375px (qc.js); not-tested: screen readers, 200% zoom, manual keyboard walkthrough"
+    },
+    {
+      "id": "site-footer",
+      "selector": "[data-component='site-footer']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "article.html",
+        "campaign.html",
+        "demo.html",
+        "index.html",
+        "journal-archive.html",
+        "journal-culture.html",
+        "journal-issues.html",
+        "journal-style.html",
+        "journal-travel.html",
+        "journal.html",
+        "runway-show.html",
+        "runway.html",
+        "search.html",
+        "sitemap.html"
+      ],
+      "behavior": [
+        "four link groups, fictional-brand disclosure, legal links"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean at 1280px and 375px (qc.js); not-tested: screen readers, 200% zoom, manual keyboard walkthrough"
+    },
+    {
+      "id": "site-header",
+      "selector": "[data-component='site-header']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "article.html",
+        "campaign.html",
+        "demo.html",
+        "index.html",
+        "journal-archive.html",
+        "journal-culture.html",
+        "journal-issues.html",
+        "journal-style.html",
+        "journal-travel.html",
+        "journal.html",
+        "runway-show.html",
+        "runway.html",
+        "search.html",
+        "sitemap.html"
+      ],
+      "behavior": [
+        "banner with wordmark, utility tools, search disclosure, primary nav"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean at 1280px and 375px (qc.js); not-tested: screen readers, 200% zoom, manual keyboard walkthrough"
+    },
+    {
+      "id": "sitemap-list",
+      "selector": "[data-component='sitemap-list']",
+      "pages": [
+        "sitemap.html"
+      ],
+      "behavior": [
+        "nested list of every page"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean at 1280px and 375px (qc.js); not-tested: screen readers, 200% zoom, manual keyboard walkthrough"
+    },
+    {
+      "id": "story-card",
+      "selector": "[data-component='story-card']",
+      "pages": [
+        "article.html",
+        "campaign.html",
+        "index.html",
+        "journal-archive.html",
+        "journal-culture.html",
+        "journal-issues.html",
+        "journal-style.html",
+        "journal-travel.html",
+        "journal.html"
+      ],
+      "behavior": [
+        "pre-rendered in HTML and re-rendered by JS from inline POSTS data",
+        "title link plus Read More link with descriptive aria-label"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean at 1280px and 375px (qc.js); scripted Playwright flow check passed; not-tested: screen readers, 200% zoom, manual keyboard walkthrough"
+    },
+    {
+      "id": "text-block",
+      "selector": "[data-component='text-block']",
+      "pages": [
+        "about.html"
+      ],
+      "behavior": [
+        "brand story copy"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "axe-core clean at 1280px and 375px (qc.js); not-tested: screen readers, 200% zoom, manual keyboard walkthrough"
+    },
+    {
+      "id": "timeline",
+      "selector": "[data-component='timeline']",
+      "pages": [
+        "about.html"
+      ],
+      "behavior": [
+        "ordered list timeline"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "axe-core clean at 1280px and 375px (qc.js); not-tested: screen readers, 200% zoom, manual keyboard walkthrough"
+    }
+  ]
+}

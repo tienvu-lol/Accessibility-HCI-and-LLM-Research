@@ -1,0 +1,31 @@
+{
+  "allocation_protocol": "WEB-REPLICA-ALLOCATION-V1.0",
+  "generation_protocol": "WEB-REPLICA-V1.0",
+  "category": "fashion",
+  "slot": 2,
+  "source_id": "FASH-02",
+  "model_group": "claude",
+  "model_id": "claude-sonnet-5-5",
+  "model_version": null,
+  "model_provider_or_runtime": "claude-bridge provider via pi-subagents worker agent; orchestrated by claude-opus-5-5",
+  "generation_mode": "autonomous agent run, one replica per run, no human edits during generation",
+  "operator": "project lead (tienvu-lol) via orchestrator agent",
+  "approved_source_url": "https://www.toryburch.com/en-us/",
+  "source_verified_at": "2026-11-10",
+  "source_approved_at": "2026-11-10",
+  "generation_started_at": "2026-11-11T04:48:34Z",
+  "generation_completed_at": "2026-11-11T04:58:24Z",
+  "rules_revision": "WEB-REPLICA-V1.0 / WEB-REPLICA-ALLOCATION-V1.0 at commit a07e70e (branch websites/claude-replicas)",
+  "category_prompt_revision": "orchestrator brief 2026-11-10 (no separate category prompt file)",
+  "prompt_or_transcript_reference": "pi-subagents run build-FASH-02",
+  "human_edits": [],
+  "validation_summary": {
+    "technology": "pass",
+    "completeness": "pass",
+    "structure": "pass (landmarks/metadata via qc.js; section order from Phase A notes, no live re-inspection)",
+    "interaction": "pass (44 scripted Playwright assertions, Chromium)",
+    "accessibility": "partial (axe-core clean at 1280px and 375px via qc.js; no screen reader, zoom or manual keyboard audit)",
+    "traceability": "pass",
+    "scope": "pass"
+  }
+}
