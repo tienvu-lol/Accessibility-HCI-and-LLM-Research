@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Certificate accounts | Fernhollow Credit Union (demo)</title>
+<meta name="description" content="Fictional certificate terms and sample APYs.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header" data-section="global-header" data-component="site-header">
+<div class="demo-banner" data-section="demo-notice" data-component="notice-banner"><div class="container"><p><strong>Demonstration replica.</strong> Fernhollow Credit Union is fictional and built for accessibility research. Rates, locations and forms are sample data only.</p></div></div>
+<div class="utility-bar" data-section="utility-bar" data-component="utility-nav"><div class="container">
+<nav aria-label="Utility"><ul><li><a href="branches.html">Branches &amp; ATMs</a></li><li><a href="membership.html">Join Fernhollow</a></li></ul></nav>
+<div class="utility-actions"><button type="button" class="btn btn-small" aria-expanded="false" aria-controls="login-panel" data-login-toggle>Log in</button><button type="button" class="btn btn-accent btn-small" data-demo="Pay my loan">Pay my loan</button></div>
+</div></div>
+<div class="login-panel" id="login-panel" hidden data-section="login-panel" data-component="login-panel"><div class="container">
+<form data-form="login" novalidate aria-label="Online banking log in (demo)">
+<p class="panel-title">Online banking log in <span>(demo only, nothing is sent)</span></p>
+<div data-error-summary class="error-summary" role="alert" tabindex="-1" hidden style="grid-column:1/-1"><h2>There is a problem</h2><ul></ul></div>
+<div data-demo-success class="demo-success" role="status" tabindex="-1" hidden style="grid-column:1/-1"><p></p></div>
+<div class="field"><label for="login-user">Username</label><input id="login-user" name="user" type="text" required autocomplete="username" data-label="your username" aria-describedby="login-user-error"><p class="error" id="login-user-error" hidden></p></div>
+<div class="field"><label for="login-pass">Password</label><input id="login-pass" name="pass" type="password" required autocomplete="current-password" data-label="your password" aria-describedby="login-pass-error"><p class="error" id="login-pass-error" hidden></p></div>
+<div class="login-actions"><button type="submit" class="btn">Log in (demo)</button><button type="button" class="link-button" data-demo="Forgot username or password">Forgot username or password?</button></div>
+</form></div></div>
+<div class="container brand-row">
+<a class="brand" href="index.html"><img src="assets/logo.svg" alt="" width="40" height="40"><span>Fernhollow Credit Union</span></a>
+<form class="site-search" role="search" data-section="site-search" data-component="search-form" aria-label="Site search"><label class="visually-hidden" for="site-search-input">Search this site</label><input id="site-search-input" type="search" placeholder="What are you looking for?" autocomplete="off"><button type="submit" class="btn">Search</button></form>
+<button type="button" class="btn btn-secondary menu-toggle" aria-expanded="false" aria-controls="primary-nav" data-menu-toggle>Menu</button>
+</div>
+<div id="search-results" class="search-results" hidden tabindex="-1" data-section="search-results" data-component="search-results"></div>
+<nav id="primary-nav" class="primary-nav" aria-label="Primary" data-section="global-navigation" data-component="primary-nav"><div class="container"><ul>
+<li class="has-sub"><button type="button" class="nav-button is-current" aria-expanded="false" aria-controls="sub-bank">Bank</button><ul class="submenu" id="sub-bank" hidden data-component="dropdown-menu"><li><a href="checking.html">Checking accounts</a></li><li><a href="savings.html">Savings accounts</a></li><li><a href="certificates.html" aria-current="page">Certificate accounts</a></li></ul></li>
+<li class="has-sub"><button type="button" class="nav-button" aria-expanded="false" aria-controls="sub-borrow">Borrow</button><ul class="submenu" id="sub-borrow" hidden data-component="dropdown-menu"><li><a href="auto-loans.html">Auto loans</a></li><li><a href="mortgage.html">Home mortgage loans</a></li><li><a href="credit-cards.html">Credit cards</a></li></ul></li>
+<li><a class="nav-link" href="education.html">Learn</a></li>
+<li class="has-sub"><button type="button" class="nav-button" aria-expanded="false" aria-controls="sub-about">About</button><ul class="submenu" id="sub-about" hidden data-component="dropdown-menu"><li><a href="rates.html">Rates</a></li><li><a href="careers.html">Careers</a></li><li><a href="accessibility.html">Accessibility</a></li></ul></li>
+<li class="has-sub"><button type="button" class="nav-button" aria-expanded="false" aria-controls="sub-support">Support</button><ul class="submenu" id="sub-support" hidden data-component="dropdown-menu"><li><a href="support.html">Support center</a></li><li><a href="branches.html">Branches &amp; ATMs</a></li><li><a href="contact.html">Contact us</a></li></ul></li>
+<li><a class="nav-link" href="membership.html">Membership</a></li>
+</ul></div></nav>
+</header>
+<nav class="breadcrumbs" aria-label="Breadcrumb" data-section="breadcrumbs" data-component="breadcrumbs"><div class="container"><ol><li><a href="index.html">Home</a></li><li>Bank</li><li><span aria-current="page">Certificate accounts</span></li></ol></div></nav>
+<main id="main-content" data-section="main-content">
+<section class="page-hero" data-section="page-hero" data-component="hero-banner"><div class="container"><div><h1>Certificates with fixed rates</h1><p class="lead">Choose a term and lock in a sample rate.</p></div><img src="assets/hero-rates.svg" alt="" width="200" height="133"></div></section><section class="band " aria-labelledby="cert-rates-h" data-section="certificate-rates" data-component="content-band"><div class="container"><h2 id="cert-rates-h">Sample certificate rates</h2><div class="table-wrap" role="region" aria-label="Sample certificate rates by term (scrollable)" tabindex="0"><table class="rates-table" data-component="data-table"><caption>Sample certificate rates by term</caption><thead><tr><th scope="col">Term</th><th scope="col">Minimum deposit</th><th scope="col">APY</th></tr></thead><tbody><tr data-rate="3.6"><th scope="row">6 months</th><td>$500</td><td>3.60%</td></tr><tr data-rate="3.85"><th scope="row">12 months</th><td>$500</td><td>3.85%</td></tr><tr data-rate="3.7"><th scope="row">18 months</th><td>$500</td><td>3.70%</td></tr><tr data-rate="3.55"><th scope="row">24 months</th><td>$500</td><td>3.55%</td></tr><tr data-rate="3.4"><th scope="row">36 months</th><td>$500</td><td>3.40%</td></tr><tr data-rate="3.3"><th scope="row">60 months</th><td>$500</td><td>3.30%</td></tr></tbody></table></div><p class="hint">Demo rates only. <a href="rates.html">All sample rates</a></p></div></section><section class="band alt" aria-labelledby="cert-faq-h" data-section="certificate-faq" data-component="content-band"><div class="container"><h2 id="cert-faq-h">Certificate questions</h2><div class="accordion" data-component="accordion"><h3><button type="button" class="accordion-trigger" aria-expanded="false" aria-controls="cert-faq-0">What happens if I withdraw early?</button></h3><div class="accordion-panel" id="cert-faq-0" hidden><p>A sample penalty of 90 days of dividends applies for terms up to 12 months, and 180 days for longer terms.</p></div><h3><button type="button" class="accordion-trigger" aria-expanded="false" aria-controls="cert-faq-1">What happens at maturity?</button></h3><div class="accordion-panel" id="cert-faq-1" hidden><p>You get a grace period to renew, change terms or withdraw. (Sample policy.)</p></div><h3><button type="button" class="accordion-trigger" aria-expanded="false" aria-controls="cert-faq-2">Can I add money later?</button></h3><div class="accordion-panel" id="cert-faq-2" hidden><p>No. Open a second certificate instead.</p></div></div></div></section><section class="band dark" aria-labelledby="join-cta-h" data-section="join-cta" data-component="content-band"><div class="container"><h2 id="join-cta-h">Ready to join?</h2><p>Check who can join and start a (demo) membership request.</p><div class="cta-row"><a class="btn" href="membership.html">Become a member</a><a class="btn btn-secondary" href="branches.html">Find a branch or ATM</a></div></div></section>
+</main>
+<footer class="site-footer" data-section="global-footer" data-component="site-footer"><div class="container">
+<div class="footer-groups">
+<nav aria-labelledby="ft-bank" data-section="footer-bank"><h2 id="ft-bank">Bank</h2><ul><li><a href="checking.html">Checking</a></li><li><a href="savings.html">Savings</a></li><li><a href="certificates.html">Certificates</a></li></ul></nav>
+<nav aria-labelledby="ft-borrow" data-section="footer-borrow"><h2 id="ft-borrow">Borrow</h2><ul><li><a href="auto-loans.html">Auto loans</a></li><li><a href="mortgage.html">Home mortgage loans</a></li><li><a href="credit-cards.html">Credit cards</a></li></ul></nav>
+<nav aria-labelledby="ft-about" data-section="footer-about"><h2 id="ft-about">About</h2><ul><li><a href="rates.html">Rates</a></li><li><a href="education.html">Financial education</a></li><li><a href="careers.html">Careers</a></li><li><a href="accessibility.html">Accessibility</a></li></ul></nav>
+<nav aria-labelledby="ft-support" data-section="footer-support"><h2 id="ft-support">Support</h2><ul><li><a href="support.html">Support center</a></li><li><a href="branches.html">Branches &amp; ATMs</a></li><li><a href="contact.html">Contact us</a></li><li><a href="membership.html">Become a member</a></li></ul></nav>
+</div>
+<div class="footer-legal" data-section="footer-legal"><p><strong>Fernhollow Credit Union is a fictional institution.</strong> This site is a research replica: it is not a financial institution, is not federally insured, and offers no real accounts, loans or rates.</p><p>Privacy, security and terms pages from the reference site are intentionally omitted. Sample phone numbers use the reserved 555-01xx range.</p><p>&copy; 2026 Research replica CORP-02.</p></div>
+</div></footer>
+<dialog id="demo-dialog" aria-labelledby="demo-dialog-title" data-section="demo-dialog" data-component="modal-dialog"><h2 id="demo-dialog-title">Demo</h2><p id="demo-dialog-text"></p><button type="button" class="btn" data-dialog-close>Close</button></dialog>
+<script src="js/main.js"></script>
+</body>
+</html>

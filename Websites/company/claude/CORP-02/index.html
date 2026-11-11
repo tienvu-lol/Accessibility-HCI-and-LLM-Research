@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Credit union for everyday banking | Fernhollow Credit Union (demo)</title>
+<meta name="description" content="Fictional member-owned credit union demo: accounts, loans, rates and branch finder.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header" data-section="global-header" data-component="site-header">
+<div class="demo-banner" data-section="demo-notice" data-component="notice-banner"><div class="container"><p><strong>Demonstration replica.</strong> Fernhollow Credit Union is fictional and built for accessibility research. Rates, locations and forms are sample data only.</p></div></div>
+<div class="utility-bar" data-section="utility-bar" data-component="utility-nav"><div class="container">
+<nav aria-label="Utility"><ul><li><a href="branches.html">Branches &amp; ATMs</a></li><li><a href="membership.html">Join Fernhollow</a></li></ul></nav>
+<div class="utility-actions"><button type="button" class="btn btn-small" aria-expanded="false" aria-controls="login-panel" data-login-toggle>Log in</button><button type="button" class="btn btn-accent btn-small" data-demo="Pay my loan">Pay my loan</button></div>
+</div></div>
+<div class="login-panel" id="login-panel" hidden data-section="login-panel" data-component="login-panel"><div class="container">
+<form data-form="login" novalidate aria-label="Online banking log in (demo)">
+<p class="panel-title">Online banking log in <span>(demo only, nothing is sent)</span></p>
+<div data-error-summary class="error-summary" role="alert" tabindex="-1" hidden style="grid-column:1/-1"><h2>There is a problem</h2><ul></ul></div>
+<div data-demo-success class="demo-success" role="status" tabindex="-1" hidden style="grid-column:1/-1"><p></p></div>
+<div class="field"><label for="login-user">Username</label><input id="login-user" name="user" type="text" required autocomplete="username" data-label="your username" aria-describedby="login-user-error"><p class="error" id="login-user-error" hidden></p></div>
+<div class="field"><label for="login-pass">Password</label><input id="login-pass" name="pass" type="password" required autocomplete="current-password" data-label="your password" aria-describedby="login-pass-error"><p class="error" id="login-pass-error" hidden></p></div>
+<div class="login-actions"><button type="submit" class="btn">Log in (demo)</button><button type="button" class="link-button" data-demo="Forgot username or password">Forgot username or password?</button></div>
+</form></div></div>
+<div class="container brand-row">
+<a class="brand" href="index.html"><img src="assets/logo.svg" alt="" width="40" height="40"><span>Fernhollow Credit Union</span></a>
+<form class="site-search" role="search" data-section="site-search" data-component="search-form" aria-label="Site search"><label class="visually-hidden" for="site-search-input">Search this site</label><input id="site-search-input" type="search" placeholder="What are you looking for?" autocomplete="off"><button type="submit" class="btn">Search</button></form>
+<button type="button" class="btn btn-secondary menu-toggle" aria-expanded="false" aria-controls="primary-nav" data-menu-toggle>Menu</button>
+</div>
+<div id="search-results" class="search-results" hidden tabindex="-1" data-section="search-results" data-component="search-results"></div>
+<nav id="primary-nav" class="primary-nav" aria-label="Primary" data-section="global-navigation" data-component="primary-nav"><div class="container"><ul>
+<li class="has-sub"><button type="button" class="nav-button" aria-expanded="false" aria-controls="sub-bank">Bank</button><ul class="submenu" id="sub-bank" hidden data-component="dropdown-menu"><li><a href="checking.html">Checking accounts</a></li><li><a href="savings.html">Savings accounts</a></li><li><a href="certificates.html">Certificate accounts</a></li></ul></li>
+<li class="has-sub"><button type="button" class="nav-button" aria-expanded="false" aria-controls="sub-borrow">Borrow</button><ul class="submenu" id="sub-borrow" hidden data-component="dropdown-menu"><li><a href="auto-loans.html">Auto loans</a></li><li><a href="mortgage.html">Home mortgage loans</a></li><li><a href="credit-cards.html">Credit cards</a></li></ul></li>
+<li><a class="nav-link" href="education.html">Learn</a></li>
+<li class="has-sub"><button type="button" class="nav-button" aria-expanded="false" aria-controls="sub-about">About</button><ul class="submenu" id="sub-about" hidden data-component="dropdown-menu"><li><a href="rates.html">Rates</a></li><li><a href="careers.html">Careers</a></li><li><a href="accessibility.html">Accessibility</a></li></ul></li>
+<li class="has-sub"><button type="button" class="nav-button" aria-expanded="false" aria-controls="sub-support">Support</button><ul class="submenu" id="sub-support" hidden data-component="dropdown-menu"><li><a href="support.html">Support center</a></li><li><a href="branches.html">Branches &amp; ATMs</a></li><li><a href="contact.html">Contact us</a></li></ul></li>
+<li><a class="nav-link" href="membership.html">Membership</a></li>
+</ul></div></nav>
+</header>
+<main id="main-content" data-section="main-content">
+<section class="hero" data-section="hero" data-component="hero-banner"><div class="container"><div>
+<h1>Banking owned by the people it serves</h1>
+<p class="lead">Fernhollow Credit Union is a make-believe, member-owned credit union. Explore accounts, loans and tools in this research replica.</p>
+<div class="cta-row"><a class="btn" href="membership.html">Become a member</a><a class="btn btn-secondary" href="rates.html">See sample rates</a></div>
+<ul class="quick-links" aria-label="Quick links" data-section="quick-links" data-component="quick-links"><li><a href="support.html">Support center</a></li><li><button type="button" data-demo="Membership application status">Membership application status</button></li><li><button type="button" data-demo="Loan payments">Loan payments</button></li><li><button type="button" data-demo="Schedule an appointment">Schedule an appointment</button></li></ul>
+</div><img src="assets/hero-home.svg" alt="" width="480" height="320"></div></section>
+<section class="band " aria-labelledby="offers-h" data-section="benefits-offers" data-component="content-band"><div class="container"><h2 id="offers-h">Member benefits &amp; offers</h2><ul class="card-grid" data-component="card-grid"><li><div class="card"><img src="assets/card-everyday.svg" alt="Fictional Everyday debit card, teal" width="220" height="140"><p class="tag">Checking</p><h3>No-fee Everyday Checking</h3><p>A sample account with no monthly fee, no minimum balance and a free debit card.</p><a class="btn btn-secondary" href="checking.html">Learn about checking<span class="visually-hidden"> No-fee Everyday Checking</span></a></div></li><li><div class="card"><img src="assets/hero-loans.svg" alt="" width="220" height="140"><p class="tag">Auto loans</p><h3>Sample auto rates from 5.49% APR</h3><p>Fictional new and used vehicle rates with an estimator you can try.</p><a class="btn btn-secondary" href="auto-loans.html">Explore auto loans<span class="visually-hidden"> Sample auto rates from 5.49% APR</span></a></div></li><li><div class="card"><img src="assets/hero-rates.svg" alt="" width="220" height="140"><p class="tag">Certificates</p><h3>12-month certificate at 3.85% APY</h3><p>Lock in a sample fixed rate for the term you choose. Demo numbers only.</p><a class="btn btn-secondary" href="certificates.html">See certificates<span class="visually-hidden"> 12-month certificate at 3.85% APY</span></a></div></li></ul></div></section>
+<section class="band alt" aria-labelledby="different-h" data-section="differentiators" data-component="content-band"><div class="container"><h2 id="different-h">What makes Fernhollow different?</h2><ul class="card-grid" data-component="card-grid"><li><div class="card"><p class="stat">$0</p><h3>Monthly fees on checking</h3><p>Sample promise: everyday accounts stay free.</p></div></li><li><div class="card"><p class="stat">10</p><h3>Branches and ATMs</h3><p>Fictional locations in two states, plus shared ATMs.</p></div></li><li><div class="card"><p class="stat">100%</p><h3>Member owned</h3><p>Surplus goes back to members as better rates and fewer fees.</p></div></li></ul></div></section>
+<section class="band " aria-labelledby="voices-h" data-section="testimonials" data-component="content-band"><div class="container"><h2 id="voices-h">What our members are saying</h2><ul class="card-grid" data-component="testimonial-list"><li><figure class="quote"><blockquote><p>The checking account was set up in one visit, and I never worry about fees.</p></blockquote><footer>Sample member A, fictional</footer></figure></li><li><figure class="quote"><blockquote><p>Our auto loan estimator made the monthly payment easy to plan around.</p></blockquote><footer>Sample member B, fictional</footer></figure></li><li><figure class="quote"><blockquote><p>The help center answered my question faster than a phone call would have.</p></blockquote><footer>Sample member C, fictional</footer></figure></li></ul></div></section>
+<section class="band alt" aria-labelledby="community-h" data-section="community" data-component="content-band"><div class="container"><h2 id="community-h">Fernhollow in the community</h2><div class="two-col"><div><p>Fictional volunteer days, a scholarship fund and free workshops are shown here to mirror the reference site's community band.</p><a class="btn btn-secondary" href="education.html">Browse financial education</a></div><img src="assets/hero-people.svg" alt="" width="240" height="160"></div></div></section>
+<section class="band " aria-labelledby="anywhere-h" data-section="mobile-banking" data-component="content-band"><div class="container"><h2 id="anywhere-h">Bank with us from anywhere</h2><div class="two-col"><div><ul class="checklist"><li>Check balances and move money (demo concept only).</li><li>Deposit checks with your phone camera (not available in this replica).</li><li>Find a branch or shared ATM near you with the <a href="branches.html">locator</a>.</li></ul><button type="button" class="btn" data-demo="Mobile app download">Get the app (demo)</button></div><img src="assets/app-phone.svg" alt="Illustration of a phone showing a banking screen" width="200" height="300" style="max-width:160px"></div></div></section>
+</main>
+<footer class="site-footer" data-section="global-footer" data-component="site-footer"><div class="container">
+<div class="footer-groups">
+<nav aria-labelledby="ft-bank" data-section="footer-bank"><h2 id="ft-bank">Bank</h2><ul><li><a href="checking.html">Checking</a></li><li><a href="savings.html">Savings</a></li><li><a href="certificates.html">Certificates</a></li></ul></nav>
+<nav aria-labelledby="ft-borrow" data-section="footer-borrow"><h2 id="ft-borrow">Borrow</h2><ul><li><a href="auto-loans.html">Auto loans</a></li><li><a href="mortgage.html">Home mortgage loans</a></li><li><a href="credit-cards.html">Credit cards</a></li></ul></nav>
+<nav aria-labelledby="ft-about" data-section="footer-about"><h2 id="ft-about">About</h2><ul><li><a href="rates.html">Rates</a></li><li><a href="education.html">Financial education</a></li><li><a href="careers.html">Careers</a></li><li><a href="accessibility.html">Accessibility</a></li></ul></nav>
+<nav aria-labelledby="ft-support" data-section="footer-support"><h2 id="ft-support">Support</h2><ul><li><a href="support.html">Support center</a></li><li><a href="branches.html">Branches &amp; ATMs</a></li><li><a href="contact.html">Contact us</a></li><li><a href="membership.html">Become a member</a></li></ul></nav>
+</div>
+<div class="footer-legal" data-section="footer-legal"><p><strong>Fernhollow Credit Union is a fictional institution.</strong> This site is a research replica: it is not a financial institution, is not federally insured, and offers no real accounts, loans or rates.</p><p>Privacy, security and terms pages from the reference site are intentionally omitted. Sample phone numbers use the reserved 555-01xx range.</p><p>&copy; 2026 Research replica CORP-02.</p></div>
+</div></footer>
+<dialog id="demo-dialog" aria-labelledby="demo-dialog-title" data-section="demo-dialog" data-component="modal-dialog"><h2 id="demo-dialog-title">Demo</h2><p id="demo-dialog-text"></p><button type="button" class="btn" data-dialog-close>Close</button></dialog>
+<script src="js/main.js"></script>
+</body>
+</html>
