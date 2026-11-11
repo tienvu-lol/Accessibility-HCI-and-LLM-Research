@@ -1,6 +1,6 @@
 # Batch 05: build
 
-**Status:** queued
+**Status:** done 2026-11-10
 **IDs:** ECOM-02, ECOM-03, NEWS-01, NEWS-02, NEWS-03
 
 ## Before launching
