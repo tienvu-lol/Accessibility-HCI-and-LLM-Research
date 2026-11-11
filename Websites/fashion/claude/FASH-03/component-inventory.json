@@ -1,0 +1,559 @@
+{
+  "protocol_version": "1.0",
+  "replica_id": "FASH-03",
+  "category": "fashion",
+  "source_url": "https://fashionbombdaily.com/",
+  "components": [
+    {
+      "id": "site-header",
+      "selector": "[data-component='site-header']",
+      "pages": [
+        "index.html",
+        "fashion.html",
+        "street-style.html",
+        "trend.html",
+        "celebrity-style.html",
+        "runway.html",
+        "designers.html",
+        "what-to-wear.html",
+        "beauty.html",
+        "article.html",
+        "author.html",
+        "search.html",
+        "about.html",
+        "contact.html",
+        "404.html"
+      ],
+      "behavior": [
+        "brand link",
+        "demo shop buttons",
+        "search form",
+        "mobile Menu button"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean at 1280px and 375px (qc.js 2026-11-11, 15 pages, failures=0); scripted Playwright flow check passed; not-tested: screen readers, 200% zoom, manual keyboard walkthrough"
+    },
+    {
+      "id": "primary-nav",
+      "selector": "[data-component='primary-nav']",
+      "pages": [
+        "index.html",
+        "fashion.html",
+        "street-style.html",
+        "trend.html",
+        "celebrity-style.html",
+        "runway.html",
+        "designers.html",
+        "what-to-wear.html",
+        "beauty.html",
+        "article.html",
+        "author.html",
+        "search.html",
+        "about.html",
+        "contact.html",
+        "404.html"
+      ],
+      "behavior": [
+        "desktop bar with click-to-open dropdowns",
+        "mobile disclosure menu",
+        "aria-current on the active page link"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "Escape closes the open dropdown, then the mobile menu"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean at 1280px and 375px (qc.js 2026-11-11, 15 pages, failures=0); scripted Playwright flow check passed; not-tested: screen readers, 200% zoom, manual keyboard walkthrough"
+    },
+    {
+      "id": "nav-dropdown",
+      "selector": "[data-component='nav-dropdown']",
+      "pages": [
+        "index.html",
+        "fashion.html",
+        "street-style.html",
+        "trend.html",
+        "celebrity-style.html",
+        "runway.html",
+        "designers.html",
+        "what-to-wear.html",
+        "beauty.html",
+        "article.html",
+        "author.html",
+        "search.html",
+        "about.html",
+        "contact.html",
+        "404.html"
+      ],
+      "behavior": [
+        "button with aria-expanded and aria-controls toggles a sub-menu list",
+        "opening one closes the others",
+        "closes on outside click and when focus leaves the nav"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "Escape returns focus to the toggle"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean at 1280px and 375px (qc.js 2026-11-11, 15 pages, failures=0); scripted Playwright flow check passed; not-tested: screen readers, 200% zoom, manual keyboard walkthrough",
+      "notes": "Dropdown behavior is inferred in the source inventory (12 .sub-menu elements, not interaction-tested), so click-to-open is an approximation."
+    },
+    {
+      "id": "search-form",
+      "selector": "[data-component='search-form']",
+      "pages": [
+        "index.html",
+        "fashion.html",
+        "street-style.html",
+        "trend.html",
+        "celebrity-style.html",
+        "runway.html",
+        "designers.html",
+        "what-to-wear.html",
+        "beauty.html",
+        "article.html",
+        "author.html",
+        "search.html",
+        "about.html",
+        "contact.html",
+        "404.html"
+      ],
+      "behavior": [
+        "GET form to search.html?s=",
+        "search.html filters inline stories by every word in the query"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean at 1280px and 375px (qc.js 2026-11-11, 15 pages, failures=0); scripted Playwright flow check passed; not-tested: screen readers, 200% zoom, manual keyboard walkthrough"
+    },
+    {
+      "id": "story-card",
+      "selector": "[data-component='story-card']",
+      "pages": [
+        "index.html",
+        "fashion.html",
+        "street-style.html",
+        "trend.html",
+        "celebrity-style.html",
+        "runway.html",
+        "designers.html",
+        "what-to-wear.html",
+        "beauty.html",
+        "author.html",
+        "search.html",
+        "article.html"
+      ],
+      "behavior": [
+        "whole card clickable through the title link",
+        "placeholder SVG thumbnail"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean at 1280px and 375px (qc.js 2026-11-11, 15 pages, failures=0); scripted Playwright flow check passed; not-tested: screen readers, 200% zoom, manual keyboard walkthrough",
+      "notes": "Static markup on index.html; built by main.js on every other page."
+    },
+    {
+      "id": "card-list",
+      "selector": "[data-component='card-list']",
+      "pages": [
+        "index.html",
+        "fashion.html",
+        "street-style.html",
+        "trend.html",
+        "celebrity-style.html",
+        "runway.html",
+        "designers.html",
+        "what-to-wear.html",
+        "beauty.html",
+        "author.html",
+        "search.html",
+        "article.html"
+      ],
+      "behavior": [
+        "two-column list (home latest/designers), three related stories on articles"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean at 1280px and 375px (qc.js 2026-11-11, 15 pages, failures=0); scripted Playwright flow check passed; not-tested: screen readers, 200% zoom, manual keyboard walkthrough"
+    },
+    {
+      "id": "sort-control",
+      "selector": "[data-component='sort-control']",
+      "pages": [
+        "fashion.html",
+        "street-style.html",
+        "trend.html",
+        "celebrity-style.html",
+        "runway.html",
+        "designers.html",
+        "what-to-wear.html",
+        "beauty.html",
+        "author.html",
+        "search.html"
+      ],
+      "behavior": [
+        "sort select (newest/popular)",
+        "section filter select on author and search pages",
+        "live status line",
+        "Load more button (6 per page) that moves focus to the first new story"
+      ],
+      "keyboard": [
+        "Tab",
+        "Arrow keys in select",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean at 1280px and 375px (qc.js 2026-11-11, 15 pages, failures=0); scripted Playwright flow check passed; not-tested: screen readers, 200% zoom, manual keyboard walkthrough",
+      "notes": "Intentional addition: the reference lists stories in date order with no sort or filter."
+    },
+    {
+      "id": "empty-state",
+      "selector": "[data-component='empty-state']",
+      "pages": [
+        "fashion.html",
+        "street-style.html",
+        "trend.html",
+        "celebrity-style.html",
+        "runway.html",
+        "designers.html",
+        "what-to-wear.html",
+        "beauty.html",
+        "author.html",
+        "search.html",
+        "article.html"
+      ],
+      "behavior": [
+        "search with no matches shows suggestions",
+        "unknown story id shows not-found state"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean at 1280px and 375px (qc.js 2026-11-11, 15 pages, failures=0); scripted Playwright flow check passed; not-tested: screen readers, 200% zoom, manual keyboard walkthrough"
+    },
+    {
+      "id": "breadcrumb",
+      "selector": "[data-component='breadcrumb']",
+      "pages": [
+        "about.html",
+        "article.html",
+        "author.html",
+        "contact.html",
+        "search.html",
+        "fashion.html",
+        "street-style.html",
+        "trend.html",
+        "celebrity-style.html",
+        "runway.html",
+        "designers.html",
+        "what-to-wear.html",
+        "beauty.html"
+      ],
+      "behavior": [
+        "ordered list with aria-current on the last item"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean at 1280px and 375px (qc.js 2026-11-11, 15 pages, failures=0); scripted Playwright flow check passed; not-tested: screen readers, 200% zoom, manual keyboard walkthrough"
+    },
+    {
+      "id": "article-body",
+      "selector": "[data-component='article-body']",
+      "pages": [
+        "article.html"
+      ],
+      "behavior": [
+        "story chosen by ?id= from inline data, defaults to story 1",
+        "document title updated",
+        "not-found state for unknown ids",
+        "needs JavaScript (noscript message)"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean at 1280px and 375px (qc.js 2026-11-11, 15 pages, failures=0); scripted Playwright flow check passed; not-tested: screen readers, 200% zoom, manual keyboard walkthrough"
+    },
+    {
+      "id": "author-card",
+      "selector": "[data-component='author-card']",
+      "pages": [
+        "article.html",
+        "author.html"
+      ],
+      "behavior": [
+        "avatar placeholder and byline link to the staff page"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean at 1280px and 375px (qc.js 2026-11-11, 15 pages, failures=0); scripted Playwright flow check passed; not-tested: screen readers, 200% zoom, manual keyboard walkthrough"
+    },
+    {
+      "id": "share-buttons",
+      "selector": "[data-component='share-buttons']",
+      "pages": [
+        "article.html"
+      ],
+      "behavior": [
+        "Copy link uses the Clipboard API with a status message fallback",
+        "social share buttons open a labeled demo dialog"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean at 1280px and 375px (qc.js 2026-11-11, 15 pages, failures=0); scripted Playwright flow check passed; not-tested: screen readers, 200% zoom, manual keyboard walkthrough"
+    },
+    {
+      "id": "slideshow",
+      "selector": "[data-component='slideshow']",
+      "pages": [
+        "article.html"
+      ],
+      "behavior": [
+        "previous/next buttons wrap around",
+        "numbered slide buttons with aria-current",
+        "live \"Slide X of 4\" status",
+        "no autoplay"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "ArrowLeft",
+        "ArrowRight"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean at 1280px and 375px (qc.js 2026-11-11, 15 pages, failures=0); scripted Playwright flow check passed; not-tested: screen readers, 200% zoom, manual keyboard walkthrough",
+      "notes": "Inferred from theiaPostSlider classes in the source inventory; not confirmed by interaction."
+    },
+    {
+      "id": "promo-widget",
+      "selector": "[data-component='promo-widget']",
+      "pages": [
+        "article.html"
+      ],
+      "behavior": [
+        "designer resource link and a demo shop promo button"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean at 1280px and 375px (qc.js 2026-11-11, 15 pages, failures=0); scripted Playwright flow check passed; not-tested: screen readers, 200% zoom, manual keyboard walkthrough"
+    },
+    {
+      "id": "media-grid",
+      "selector": "[data-component='media-grid']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "three placeholder video tiles whose play buttons open a demo dialog; no media is played"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean at 1280px and 375px (qc.js 2026-11-11, 15 pages, failures=0); scripted Playwright flow check passed; not-tested: screen readers, 200% zoom, manual keyboard walkthrough"
+    },
+    {
+      "id": "ranked-list",
+      "selector": "[data-component='ranked-list']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "ordered Popular posts list from the inline popularity score"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean at 1280px and 375px (qc.js 2026-11-11, 15 pages, failures=0); scripted Playwright flow check passed; not-tested: screen readers, 200% zoom, manual keyboard walkthrough"
+    },
+    {
+      "id": "social-links",
+      "selector": "[data-component='social-links']",
+      "pages": [
+        "index.html",
+        "fashion.html",
+        "street-style.html",
+        "trend.html",
+        "celebrity-style.html",
+        "runway.html",
+        "designers.html",
+        "what-to-wear.html",
+        "beauty.html",
+        "article.html",
+        "author.html",
+        "search.html",
+        "about.html",
+        "contact.html",
+        "404.html"
+      ],
+      "behavior": [
+        "demo buttons in the footer; each opens the demo dialog"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean at 1280px and 375px (qc.js 2026-11-11, 15 pages, failures=0); scripted Playwright flow check passed; not-tested: screen readers, 200% zoom, manual keyboard walkthrough"
+    },
+    {
+      "id": "demo-dialog",
+      "selector": "[data-component='demo-dialog']",
+      "pages": [
+        "index.html",
+        "fashion.html",
+        "street-style.html",
+        "trend.html",
+        "celebrity-style.html",
+        "runway.html",
+        "designers.html",
+        "what-to-wear.html",
+        "beauty.html",
+        "article.html",
+        "author.html",
+        "search.html",
+        "about.html",
+        "contact.html",
+        "404.html"
+      ],
+      "behavior": [
+        "native dialog opened with showModal",
+        "Close button, backdrop click and Escape close it",
+        "focus returns to the trigger"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean at 1280px and 375px (qc.js 2026-11-11, 15 pages, failures=0); scripted Playwright flow check passed; not-tested: screen readers, 200% zoom, manual keyboard walkthrough"
+    },
+    {
+      "id": "contact-form",
+      "selector": "[data-component='contact-form']",
+      "pages": [
+        "contact.html"
+      ],
+      "behavior": [
+        "client-side validation of name, email format, topic, message length",
+        "inline errors with aria-invalid and aria-describedby",
+        "labeled demo success state; nothing is sent"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean at 1280px and 375px (qc.js 2026-11-11, 15 pages, failures=0); scripted Playwright flow check passed; not-tested: screen readers, 200% zoom, manual keyboard walkthrough"
+    },
+    {
+      "id": "error-summary",
+      "selector": "[data-component='error-summary']",
+      "pages": [
+        "contact.html"
+      ],
+      "behavior": [
+        "receives focus on a failed submit",
+        "links move focus to the offending field"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean at 1280px and 375px (qc.js 2026-11-11, 15 pages, failures=0); scripted Playwright flow check passed; not-tested: screen readers, 200% zoom, manual keyboard walkthrough"
+    },
+    {
+      "id": "demo-success",
+      "selector": "[data-component='demo-success']",
+      "pages": [
+        "contact.html"
+      ],
+      "behavior": [
+        "status region with a \"Try again\" button that resets the form and refocuses the first field"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean at 1280px and 375px (qc.js 2026-11-11, 15 pages, failures=0); scripted Playwright flow check passed; not-tested: screen readers, 200% zoom, manual keyboard walkthrough"
+    },
+    {
+      "id": "site-footer",
+      "selector": "[data-component='site-footer']",
+      "pages": [
+        "index.html",
+        "fashion.html",
+        "street-style.html",
+        "trend.html",
+        "celebrity-style.html",
+        "runway.html",
+        "designers.html",
+        "what-to-wear.html",
+        "beauty.html",
+        "article.html",
+        "author.html",
+        "search.html",
+        "about.html",
+        "contact.html",
+        "404.html"
+      ],
+      "behavior": [
+        "section links",
+        "site links including condensed legal anchors on about.html",
+        "demo social buttons"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean at 1280px and 375px (qc.js 2026-11-11, 15 pages, failures=0); scripted Playwright flow check passed; not-tested: screen readers, 200% zoom, manual keyboard walkthrough"
+    }
+  ]
+}

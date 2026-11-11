@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stitch &amp; Strut Daily - Fashion, Beauty &amp; Street Style (fictional demo)</title>
+<meta name="description" content="Stitch &amp; Strut Daily is a fictional fashion blog built for an accessibility research dataset.">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="home">
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header" data-section="global-header" data-component="site-header">
+<div class="container header-top">
+<a class="brand" href="index.html"><img src="assets/mark.svg" alt="" width="40" height="40"><span>Stitch &amp; Strut Daily</span></a>
+<div class="utility" data-section="utility-navigation">
+<button type="button" class="link-button" data-demo="The shop link">Shop (demo)</button>
+<button type="button" class="link-button" data-demo="The shop-our-feed link">Shop Our Feed (demo)</button>
+<form class="search-form" role="search" action="search.html" method="get" data-section="site-search" data-component="search-form">
+<label class="sr-only" for="site-search-input">Search stories</label>
+<input type="search" id="site-search-input" name="s" autocomplete="off">
+<button type="submit" class="btn">Search</button></form>
+<button type="button" class="btn btn--ghost menu-toggle" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+</div></div>
+<nav class="site-nav" id="primary-nav" aria-label="Primary" data-section="global-navigation" data-component="primary-nav">
+<div class="container"><ul class="nav-list">
+<li><a href="fashion.html">Fashion</a></li>
+<li data-component="nav-dropdown"><button type="button" class="nav-sub-toggle" aria-expanded="false" aria-controls="menu-style">Style</button>
+<ul class="sub-menu" id="menu-style"><li><a href="what-to-wear.html">What to Wear</a></li><li><a href="street-style.html">Street Style</a></li><li><a href="trend.html">Trend</a></li><li><a href="celebrity-style.html">Celebrity Style</a></li></ul></li>
+<li data-component="nav-dropdown"><button type="button" class="nav-sub-toggle" aria-expanded="false" aria-controls="menu-runway">Runway &amp; Designers</button>
+<ul class="sub-menu" id="menu-runway"><li><a href="runway.html">Runway</a></li><li><a href="designers.html">Black Designers</a></li></ul></li>
+<li><a href="beauty.html">Beauty</a></li>
+<li data-component="nav-dropdown"><button type="button" class="nav-sub-toggle" aria-expanded="false" aria-controls="menu-about">About</button>
+<ul class="sub-menu" id="menu-about"><li><a href="about.html">About Us</a></li><li><a href="author.html">The Staff</a></li><li><a href="contact.html">Contact Us</a></li></ul></li>
+</ul></div></nav>
+</header>
+<main id="main-content" tabindex="-1" data-section="main-content">
+<div class="container">
+<section class="intro" aria-labelledby="page-title" data-section="home-intro"><h1 id="page-title">Today in fashion, beauty and street style</h1>
+<p class="lede">Daily stories from the Stitch &amp; Strut desk: red carpets, runways, real-life outfits and the designers worth knowing. A fictional demo publication.</p></section>
+<section class="section" aria-labelledby="latest-title" data-section="featured-stories" data-component="card-list"><h2 class="section__title" id="latest-title">The latest</h2>
+<div class="card-list"><article class="card" data-component="story-card">
+<img src="assets/look-2.svg" alt="" width="160" height="200" loading="lazy">
+<div class="card__body"><p class="kicker">Celebrity Style</p>
+<h3><a href="article.html?id=1">Lumen Art + Film Gala Best Dressed: Velvet Capes, Liquid Silver and One Very Brave Feather</a></h3>
+<p>Our desk ranks the red-carpet looks that earned a second glance at this year's invented-for-the-occasion gala.</p>
+<p class="meta"><time datetime="2026-11-08">November 8, 2026</time></p></div></article>
+<article class="card" data-component="story-card">
+<img src="assets/look-3.svg" alt="" width="160" height="200" loading="lazy">
+<div class="card__body"><p class="kicker">Street Style</p>
+<h3><a href="article.html?id=2">Street Style Report: Rain-Ready Layers Take Over the Crosswalk</a></h3>
+<p>Waxed jackets, bright umbrellas and boots with real tread: the wet-weather uniform has finally become fashionable.</p>
+<p class="meta"><time datetime="2026-11-07">November 7, 2026</time></p></div></article>
+<article class="card" data-component="story-card">
+<img src="assets/look-4.svg" alt="" width="160" height="200" loading="lazy">
+<div class="card__body"><p class="kicker">Trend</p>
+<h3><a href="article.html?id=3">Trend Watch: The Return of the Sculpted Shoulder</a></h3>
+<p>Structured shoulders are back on blazers, knits and even evening dresses. Here is how to wear them without looking like a costume.</p>
+<p class="meta"><time datetime="2026-11-06">November 6, 2026</time></p></div></article>
+<article class="card" data-component="story-card">
+<img src="assets/look-5.svg" alt="" width="160" height="200" loading="lazy">
+<div class="card__body"><p class="kicker">Runway</p>
+<h3><a href="article.html?id=4">Runway Recap: Atelier Nonpareil Opens the Season With Midnight Blues</a></h3>
+<p>A single color story, forty looks and a soundtrack of rain: the show was a lesson in restraint.</p>
+<p class="meta"><time datetime="2026-11-05">November 5, 2026</time></p></div></article>
+<article class="card" data-component="story-card">
+<img src="assets/look-6.svg" alt="" width="160" height="200" loading="lazy">
+<div class="card__body"><p class="kicker">Black Designers</p>
+<h3><a href="article.html?id=5">Designer Spotlight: Adaeze Folarin Builds a Label From Deadstock Silk</a></h3>
+<p>The young designer turns leftover fabric into limited drops and keeps her studio small on purpose.</p>
+<p class="meta"><time datetime="2026-11-04">November 4, 2026</time></p></div></article>
+<article class="card" data-component="story-card">
+<img src="assets/look-1.svg" alt="" width="160" height="200" loading="lazy">
+<div class="card__body"><p class="kicker">What to Wear</p>
+<h3><a href="article.html?id=6">What to Wear to a Winter Wedding Without Freezing</a></h3>
+<p>Warm layers that still photograph beautifully, from velvet wraps to thermal tights nobody will notice.</p>
+<p class="meta"><time datetime="2026-11-03">November 3, 2026</time></p></div></article>
+<article class="card" data-component="story-card">
+<img src="assets/look-2.svg" alt="" width="160" height="200" loading="lazy">
+<div class="card__body"><p class="kicker">Beauty</p>
+<h3><a href="article.html?id=7">Beauty Notes: Glass Skin Meets Matte Lip</a></h3>
+<p>Dewy complexion plus a velvet-matte color is the contrast of the season. We break down the routine.</p>
+<p class="meta"><time datetime="2026-11-02">November 2, 2026</time></p></div></article>
+<article class="card" data-component="story-card">
+<img src="assets/look-3.svg" alt="" width="160" height="200" loading="lazy">
+<div class="card__body"><p class="kicker">Celebrity Style</p>
+<h3><a href="article.html?id=8">Celebrity Style: Marisol Vance's Airport Looks, Ranked</a></h3>
+<p>Travel dressing is a sport, and these five arrivals show the range from sweatsuit to full tailoring.</p>
+<p class="meta"><time datetime="2026-11-01">November 1, 2026</time></p></div></article></div>
+<p class="more"><a class="btn btn--ghost" href="fashion.html">All fashion stories</a></p></section>
+<section class="section" aria-labelledby="tv-title" data-section="video-reel" data-component="media-grid"><h2 class="section__title" id="tv-title">Stitch TV (demo)</h2>
+<p>Video is not included. Each button below is a labeled demonstration.</p>
+<ul class="reel"><li><figure><img src="assets/wide-1.svg" alt="" width="320" height="180" loading="lazy"><figcaption><strong>Season opener: midnight blues, in motion</strong><br><button type="button" class="btn btn--small" data-demo="Video playback">Play video (demo)</button></figcaption></figure></li><li><figure><img src="assets/wide-2.svg" alt="" width="320" height="180" loading="lazy"><figcaption><strong>Backstage with the parking-garage show</strong><br><button type="button" class="btn btn--small" data-demo="Video playback">Play video (demo)</button></figcaption></figure></li><li><figure><img src="assets/wide-3.svg" alt="" width="320" height="180" loading="lazy"><figcaption><strong>Three ways to wear a sculpted shoulder</strong><br><button type="button" class="btn btn--small" data-demo="Video playback">Play video (demo)</button></figcaption></figure></li></ul></section>
+<section class="section" aria-labelledby="designers-title" data-section="black-designers" data-component="card-list"><h2 class="section__title" id="designers-title">Black designers</h2>
+<div class="card-list"><article class="card" data-component="story-card">
+<img src="assets/look-6.svg" alt="" width="160" height="200" loading="lazy">
+<div class="card__body"><p class="kicker">Black Designers</p>
+<h3><a href="article.html?id=5">Designer Spotlight: Adaeze Folarin Builds a Label From Deadstock Silk</a></h3>
+<p>The young designer turns leftover fabric into limited drops and keeps her studio small on purpose.</p>
+<p class="meta"><time datetime="2026-11-04">November 4, 2026</time></p></div></article>
+<article class="card" data-component="story-card">
+<img src="assets/look-1.svg" alt="" width="160" height="200" loading="lazy">
+<div class="card__body"><p class="kicker">Black Designers</p>
+<h3><a href="article.html?id=12">Black Designers to Know: Five Labels Reinventing Outerwear</a></h3>
+<p>From hand-quilted puffers to reversible capes, these independent studios are changing how winter looks.</p>
+<p class="meta"><time datetime="2026-10-24">October 24, 2026</time></p></div></article>
+<article class="card" data-component="story-card">
+<img src="assets/look-1.svg" alt="" width="160" height="200" loading="lazy">
+<div class="card__body"><p class="kicker">Black Designers</p>
+<h3><a href="article.html?id=18">Designer Spotlight: Teodora Marsh on Tailoring for Every Body</a></h3>
+<p>An inclusive pattern library and made-to-measure pricing without the premium: a studio visit.</p>
+<p class="meta"><time datetime="2026-10-12">October 12, 2026</time></p></div></article></div>
+<p class="more"><a class="btn btn--ghost" href="designers.html">More from Black Designers</a></p></section>
+<section class="section" aria-labelledby="popular-title" data-section="popular-posts" data-component="ranked-list"><h2 class="section__title" id="popular-title">Popular posts</h2>
+<ol class="ranked"><li><a href="article.html?id=1">Lumen Art + Film Gala Best Dressed: Velvet Capes, Liquid Silver and One Very Brave Feather</a></li><li><a href="article.html?id=3">Trend Watch: The Return of the Sculpted Shoulder</a></li><li><a href="article.html?id=2">Street Style Report: Rain-Ready Layers Take Over the Crosswalk</a></li><li><a href="article.html?id=6">What to Wear to a Winter Wedding Without Freezing</a></li><li><a href="article.html?id=12">Black Designers to Know: Five Labels Reinventing Outerwear</a></li></ol></section>
+</div>
+</main>
+<footer class="site-footer" data-section="global-footer" data-component="site-footer">
+<div class="container"><div class="footer-grid">
+<nav aria-label="Footer sections" data-section="footer-sections"><h2>Sections</h2><ul><li><a href="fashion.html">Fashion</a></li><li><a href="street-style.html">Street Style</a></li><li><a href="trend.html">Trend</a></li><li><a href="celebrity-style.html">Celebrity Style</a></li><li><a href="runway.html">Runway</a></li><li><a href="designers.html">Black Designers</a></li><li><a href="what-to-wear.html">What to Wear</a></li><li><a href="beauty.html">Beauty</a></li></ul></nav>
+<nav aria-label="Footer site links" data-section="footer-site"><h2>The site</h2><ul>
+<li><a href="contact.html">Contact Us</a></li><li><a href="about.html">About</a></li><li><a href="author.html">The Staff</a></li>
+<li><a href="about.html#advertising">Advertising</a></li><li><a href="about.html#press">Press &amp; Features</a></li>
+<li><a href="about.html#privacy">Privacy Policy</a></li><li><a href="about.html#terms">Terms of Use</a></li></ul></nav>
+<section aria-labelledby="stay-connected" data-section="stay-connected" data-component="social-links"><h2 id="stay-connected">Stay connected</h2>
+<p>Social links are demos in this replica.</p><div class="social">
+<button type="button" class="btn btn--ghost" data-demo="The Chirp link">Chirp (demo)</button>
+<button type="button" class="btn btn--ghost" data-demo="The Pinboard link">Pinboard (demo)</button>
+<button type="button" class="btn btn--ghost" data-demo="The Reelshow link">Reelshow (demo)</button></div></section>
+</div>
+<p class="footer-note">Stitch &amp; Strut Daily is a fictional site made for an accessibility and usability research dataset. Names, stories and people are invented; images are placeholders.</p>
+</div></footer>
+<dialog id="demo-dialog" aria-labelledby="demo-dialog-title" data-component="demo-dialog">
+<h2 id="demo-dialog-title"><span class="demo-badge">Demo</span> Demonstration only</h2>
+<p id="demo-dialog-text"></p>
+<button type="button" class="btn" data-close-dialog>Close</button></dialog>
+<script src="js/main.js"></script>
+</body>
+</html>

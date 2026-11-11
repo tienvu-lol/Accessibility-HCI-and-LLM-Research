@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fashion Archives - Stitch &amp; Strut Daily</title>
+<meta name="description" content="Everything on the daily fashion beat: collections, wardrobe notes and the pieces people keep asking about.">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="category">
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header" data-section="global-header" data-component="site-header">
+<div class="container header-top">
+<a class="brand" href="index.html"><img src="assets/mark.svg" alt="" width="40" height="40"><span>Stitch &amp; Strut Daily</span></a>
+<div class="utility" data-section="utility-navigation">
+<button type="button" class="link-button" data-demo="The shop link">Shop (demo)</button>
+<button type="button" class="link-button" data-demo="The shop-our-feed link">Shop Our Feed (demo)</button>
+<form class="search-form" role="search" action="search.html" method="get" data-section="site-search" data-component="search-form">
+<label class="sr-only" for="site-search-input">Search stories</label>
+<input type="search" id="site-search-input" name="s" autocomplete="off">
+<button type="submit" class="btn">Search</button></form>
+<button type="button" class="btn btn--ghost menu-toggle" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+</div></div>
+<nav class="site-nav" id="primary-nav" aria-label="Primary" data-section="global-navigation" data-component="primary-nav">
+<div class="container"><ul class="nav-list">
+<li><a href="fashion.html" aria-current="page">Fashion</a></li>
+<li data-component="nav-dropdown"><button type="button" class="nav-sub-toggle" aria-expanded="false" aria-controls="menu-style">Style</button>
+<ul class="sub-menu" id="menu-style"><li><a href="what-to-wear.html">What to Wear</a></li><li><a href="street-style.html">Street Style</a></li><li><a href="trend.html">Trend</a></li><li><a href="celebrity-style.html">Celebrity Style</a></li></ul></li>
+<li data-component="nav-dropdown"><button type="button" class="nav-sub-toggle" aria-expanded="false" aria-controls="menu-runway">Runway &amp; Designers</button>
+<ul class="sub-menu" id="menu-runway"><li><a href="runway.html">Runway</a></li><li><a href="designers.html">Black Designers</a></li></ul></li>
+<li><a href="beauty.html">Beauty</a></li>
+<li data-component="nav-dropdown"><button type="button" class="nav-sub-toggle" aria-expanded="false" aria-controls="menu-about">About</button>
+<ul class="sub-menu" id="menu-about"><li><a href="about.html">About Us</a></li><li><a href="author.html">The Staff</a></li><li><a href="contact.html">Contact Us</a></li></ul></li>
+</ul></div></nav>
+</header>
+<main id="main-content" tabindex="-1" data-section="main-content" data-category="fashion">
+<div class="container">
+<nav class="breadcrumb" aria-label="Breadcrumb" data-section="breadcrumb" data-component="breadcrumb"><ol><li><a href="index.html">Home</a></li><li><a href="fashion.html" aria-current="page">Fashion</a></li></ol></nav>
+<h1 id="page-title">Fashion</h1><p class="lede">Everything on the daily fashion beat: collections, wardrobe notes and the pieces people keep asking about.</p>
+<div class="list-controls" data-section="list-controls" data-component="sort-control">
+
+<div><label for="sort-order">Sort by</label><select id="sort-order"><option value="newest">Newest first</option><option value="popular">Most popular</option></select></div>
+<p class="meta">Sorting and the section filter are intentional additions; the reference lists stories in date order.</p></div>
+<h2 class="sr-only">Stories</h2>
+<p class="list-status" id="list-status" role="status"></p>
+<div class="card-list" id="story-list" data-section="story-list" data-component="card-list"></div>
+<div class="empty" id="empty-state" hidden data-section="empty-state" data-component="empty-state"><h2>No stories here yet</h2><p>This section has no stories in the demo data. Try <a href="index.html">the home page</a> or <a href="search.html">search</a>.</p></div>
+<div class="more"><button type="button" class="btn btn--ghost" id="load-more" hidden>Load more stories</button></div>
+<noscript><p class="notice">The story list is drawn by JavaScript from inline demo data. Please enable JavaScript to see it.</p></noscript>
+</div>
+</main>
+<footer class="site-footer" data-section="global-footer" data-component="site-footer">
+<div class="container"><div class="footer-grid">
+<nav aria-label="Footer sections" data-section="footer-sections"><h2>Sections</h2><ul><li><a href="fashion.html">Fashion</a></li><li><a href="street-style.html">Street Style</a></li><li><a href="trend.html">Trend</a></li><li><a href="celebrity-style.html">Celebrity Style</a></li><li><a href="runway.html">Runway</a></li><li><a href="designers.html">Black Designers</a></li><li><a href="what-to-wear.html">What to Wear</a></li><li><a href="beauty.html">Beauty</a></li></ul></nav>
+<nav aria-label="Footer site links" data-section="footer-site"><h2>The site</h2><ul>
+<li><a href="contact.html">Contact Us</a></li><li><a href="about.html">About</a></li><li><a href="author.html">The Staff</a></li>
+<li><a href="about.html#advertising">Advertising</a></li><li><a href="about.html#press">Press &amp; Features</a></li>
+<li><a href="about.html#privacy">Privacy Policy</a></li><li><a href="about.html#terms">Terms of Use</a></li></ul></nav>
+<section aria-labelledby="stay-connected" data-section="stay-connected" data-component="social-links"><h2 id="stay-connected">Stay connected</h2>
+<p>Social links are demos in this replica.</p><div class="social">
+<button type="button" class="btn btn--ghost" data-demo="The Chirp link">Chirp (demo)</button>
+<button type="button" class="btn btn--ghost" data-demo="The Pinboard link">Pinboard (demo)</button>
+<button type="button" class="btn btn--ghost" data-demo="The Reelshow link">Reelshow (demo)</button></div></section>
+</div>
+<p class="footer-note">Stitch &amp; Strut Daily is a fictional site made for an accessibility and usability research dataset. Names, stories and people are invented; images are placeholders.</p>
+</div></footer>
+<dialog id="demo-dialog" aria-labelledby="demo-dialog-title" data-component="demo-dialog">
+<h2 id="demo-dialog-title"><span class="demo-badge">Demo</span> Demonstration only</h2>
+<p id="demo-dialog-text"></p>
+<button type="button" class="btn" data-close-dialog>Close</button></dialog>
+<script src="js/main.js"></script>
+</body>
+</html>
