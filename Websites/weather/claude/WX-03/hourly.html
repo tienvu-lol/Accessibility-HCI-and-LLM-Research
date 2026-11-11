@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hourly Weather Forecast | Harbor 9 Weather (fictional demo)</title>
+  <meta name="description" content="Sample hourly forecast table with hour count and precipitation filters.">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body data-page="hourly">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <aside class="sample-banner" aria-label="Sample data notice" data-section="sample-data-notice" data-component="notice-banner"><div class="wrap"><p><strong>Demo site with fictional sample data.</strong> Harbor 9 is not a real station. Conditions, alerts, closings and traffic are invented and are never live.</p></div></aside>
+  <header class="site-header" data-section="global-header" data-component="site-header">
+    <div class="wrap header-top">
+      <a class="brand" href="index.html"><img src="assets/logo.svg" alt="" width="40" height="40"><span>Harbor 9 Weather</span></a>
+      <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+    </div>
+    <div class="wrap">
+      <nav class="primary-nav" id="primary-nav" aria-label="Primary" data-section="global-navigation" data-component="primary-nav">
+        <ul>
+          <li class="has-sub"><button type="button" class="submenu-toggle is-current-section" aria-expanded="false" aria-controls="weather-menu">Weather</button>
+            <ul class="submenu" id="weather-menu" data-component="dropdown-menu"><li><a href="index.html">Forecast</a></li><li><a href="alerts.html">Alerts</a></li><li><a href="radar.html">Radar</a></li><li><a href="ten-day.html">10-Day</a></li><li><a href="hourly.html" aria-current="page">Hourly</a></li><li><a href="maps.html">Maps</a></li><li><a href="traffic.html">Traffic</a></li><li><a href="traffic.html#drive-times">Drive Times</a></li><li><a href="webcams.html">Webcams</a></li><li><a href="closings.html">Closings &amp; Delays</a></li></ul></li>
+          <li><a href="closings.html">Closings</a></li>
+          <li><a href="tv-listings.html">TV Listings</a></li>
+          <li><a href="meet-the-team.html">Meet the Team</a></li>
+          <li class="has-sub"><button type="button" class="submenu-toggle" aria-expanded="false" aria-controls="more-menu">More</button>
+            <ul class="submenu" id="more-menu" data-component="dropdown-menu"><li><a href="closed-captioning.html">Closed Captioning</a></li><li><a href="contact-us.html">Contact Us</a></li><li><a href="contact-us.html?topic=advertising">Advertise With Us</a></li><li><a href="legal.html">Legal and Policies</a></li></ul></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <nav class="weather-subnav" aria-label="Weather sections" data-section="weather-subnav" data-component="local-nav"><div class="wrap"><ul><li><a href="index.html">Forecast</a></li><li><a href="alerts.html">Alerts</a></li><li><a href="radar.html">Radar</a></li><li><a href="ten-day.html">10-Day</a></li><li><a href="hourly.html" aria-current="page">Hourly</a></li><li><a href="maps.html">Maps</a></li><li><a href="traffic.html">Traffic</a></li><li><a href="traffic.html#drive-times">Drive Times</a></li><li><a href="webcams.html">Webcams</a></li><li><a href="closings.html">Closings &amp; Delays</a></li></ul></div></nav>
+  <main id="main-content" data-section="main-content">
+    <div class="wrap">
+      <div class="page-title" data-section="page-title" data-component="page-heading"><h1>Hourly Weather Forecast</h1><p>A day of invented hourly values, starting at 9:00 AM on a sample day.</p></div>
+      <div class="tools-bar" data-section="forecast-tools" data-component="forecast-tools">
+        <div data-component="location-search">
+          <h2 id="loc-h">Sample location <span class="muted">(intentional addition)</span></h2>
+          <p>Showing sample data for: <strong id="loc-current" tabindex="-1"></strong></p>
+          <form id="loc-form" novalidate data-section="location-search" data-component="search-form">
+            <div class="field"><label for="loc-input">Search sample locations</label>
+              <p class="hint" id="loc-hint">Place name, county or ZIP, for example Marlow Bay, Ridge or 98004.</p>
+              <input type="search" id="loc-input" name="q" autocomplete="off" aria-describedby="loc-hint loc-error">
+              <p id="loc-error" class="error" hidden></p></div>
+            <button type="submit" class="btn">Search</button>
+          </form>
+          <div id="loc-results"></div>
+        </div>
+        <div role="group" aria-labelledby="unit-h" data-component="unit-toggle">
+          <h2 id="unit-h">Units</h2>
+          <div class="btn-row"><button type="button" class="btn btn-secondary" data-unit="F" aria-pressed="true">Fahrenheit (°F)</button><button type="button" class="btn btn-secondary" data-unit="C" aria-pressed="false">Celsius (°C)</button></div>
+          <p class="hint">Intentional addition: the reference showed no unit toggle.</p>
+        </div>
+      </div>
+      <section aria-labelledby="hourly-title" data-section="hourly-forecast" data-component="forecast-table">
+        <div class="section-head"><h2 id="hourly-title">Hourly outlook for <span id="hourly-title-loc"></span></h2></div>
+        <form class="inline-form" data-section="hourly-filters" data-component="filter-bar">
+          <div class="field"><label for="hours-count">Hours to show</label><select id="hours-count"><option value="6">Next 6 hours</option><option value="12">Next 12 hours</option><option value="24" selected>Next 24 hours</option></select></div>
+          <div class="field"><input type="checkbox" id="wet-only"><label for="wet-only" style="display:inline">Only hours with a 40% or higher chance of precipitation</label></div>
+        </form>
+        <p id="hourly-count" class="muted" role="status"></p>
+        <div class="table-wrap" tabindex="0" role="region" aria-label="Hourly sample forecast (scrollable)"><table id="hourly-table"><caption>Hourly sample forecast</caption><thead><tr><th scope="col">Time</th><th scope="col">Temperature</th><th scope="col">Conditions</th><th scope="col">Precip. chance</th><th scope="col">Wind</th></tr></thead><tbody id="hourly-body"></tbody></table></div>
+        <p id="hourly-empty" class="empty" hidden>No hours match. Clear the precipitation filter or show more hours.</p>
+        <noscript><p class="empty">This page needs JavaScript to show its sample data.</p></noscript>
+      </section>
+    </div>
+    <div id="live-status" class="visually-hidden" role="status" aria-live="polite"></div>
+  </main>
+  <footer class="site-footer" data-section="global-footer" data-component="site-footer">
+    <div class="wrap">
+      <div class="footer-cols">
+        <nav aria-labelledby="foot-legal" data-section="footer-legal" data-component="footer-links"><h2 id="foot-legal">Legal</h2><ul>
+          <li><a href="legal.html#terms">Terms of Service</a></li><li><a href="legal.html#privacy">Privacy Policy</a></li><li><a href="legal.html#ad-choices">Ad Choices</a></li>
+          <li><a href="legal.html#eeo">EEO Public File Report</a></li><li><a href="legal.html#fcc-file">FCC Online Public Inspection File</a></li>
+          <li><a href="closed-captioning.html">Closed Caption Procedures</a></li><li><a href="legal.html#do-not-sell">Do Not Sell or Share My Personal Information</a></li></ul></nav>
+        <nav aria-labelledby="foot-weather" data-section="footer-weather" data-component="footer-links"><h2 id="foot-weather">Weather</h2><ul>
+          <li><a href="index.html">Forecast</a></li><li><a href="radar.html">Radar</a></li><li><a href="ten-day.html">10-Day</a></li><li><a href="hourly.html">Hourly</a></li><li><a href="alerts.html">Alerts</a></li></ul></nav>
+        <nav aria-labelledby="foot-station" data-section="footer-station" data-component="footer-links"><h2 id="foot-station">Station</h2><ul>
+          <li><a href="tv-listings.html">TV Listings</a></li><li><a href="meet-the-team.html">Meet the Team</a></li><li><a href="contact-us.html">Contact Us</a></li></ul></nav>
+      </div>
+      <p class="fine-print">Harbor 9 Weather is a fictional station created for an accessibility research dataset. Its logo, people, places and weather data are invented. Layout inspired by a local TV station weather section.</p>
+    </div>
+  </footer>
+</body>
+</html>

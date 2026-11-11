@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Weather Maps | Harbor 9 Weather (fictional demo)</title>
+  <meta name="description" content="Tabbed placeholder weather maps for temperature, precipitation, wind and satellite views.">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body data-page="maps">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <aside class="sample-banner" aria-label="Sample data notice" data-section="sample-data-notice" data-component="notice-banner"><div class="wrap"><p><strong>Demo site with fictional sample data.</strong> Harbor 9 is not a real station. Conditions, alerts, closings and traffic are invented and are never live.</p></div></aside>
+  <header class="site-header" data-section="global-header" data-component="site-header">
+    <div class="wrap header-top">
+      <a class="brand" href="index.html"><img src="assets/logo.svg" alt="" width="40" height="40"><span>Harbor 9 Weather</span></a>
+      <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+    </div>
+    <div class="wrap">
+      <nav class="primary-nav" id="primary-nav" aria-label="Primary" data-section="global-navigation" data-component="primary-nav">
+        <ul>
+          <li class="has-sub"><button type="button" class="submenu-toggle is-current-section" aria-expanded="false" aria-controls="weather-menu">Weather</button>
+            <ul class="submenu" id="weather-menu" data-component="dropdown-menu"><li><a href="index.html">Forecast</a></li><li><a href="alerts.html">Alerts</a></li><li><a href="radar.html">Radar</a></li><li><a href="ten-day.html">10-Day</a></li><li><a href="hourly.html">Hourly</a></li><li><a href="maps.html" aria-current="page">Maps</a></li><li><a href="traffic.html">Traffic</a></li><li><a href="traffic.html#drive-times">Drive Times</a></li><li><a href="webcams.html">Webcams</a></li><li><a href="closings.html">Closings &amp; Delays</a></li></ul></li>
+          <li><a href="closings.html">Closings</a></li>
+          <li><a href="tv-listings.html">TV Listings</a></li>
+          <li><a href="meet-the-team.html">Meet the Team</a></li>
+          <li class="has-sub"><button type="button" class="submenu-toggle" aria-expanded="false" aria-controls="more-menu">More</button>
+            <ul class="submenu" id="more-menu" data-component="dropdown-menu"><li><a href="closed-captioning.html">Closed Captioning</a></li><li><a href="contact-us.html">Contact Us</a></li><li><a href="contact-us.html?topic=advertising">Advertise With Us</a></li><li><a href="legal.html">Legal and Policies</a></li></ul></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <nav class="weather-subnav" aria-label="Weather sections" data-section="weather-subnav" data-component="local-nav"><div class="wrap"><ul><li><a href="index.html">Forecast</a></li><li><a href="alerts.html">Alerts</a></li><li><a href="radar.html">Radar</a></li><li><a href="ten-day.html">10-Day</a></li><li><a href="hourly.html">Hourly</a></li><li><a href="maps.html" aria-current="page">Maps</a></li><li><a href="traffic.html">Traffic</a></li><li><a href="traffic.html#drive-times">Drive Times</a></li><li><a href="webcams.html">Webcams</a></li><li><a href="closings.html">Closings &amp; Delays</a></li></ul></div></nav>
+  <main id="main-content" data-section="main-content">
+    <div class="wrap">
+      <div class="page-title" data-section="page-title" data-component="page-heading"><h1>Weather Maps</h1><p>Four placeholder maps of the fictional region. They are illustrations, not data.</p></div>
+      <section aria-labelledby="maps-title" data-section="map-gallery" data-component="tabs">
+        <h2 id="maps-title">Choose a map</h2>
+        <div role="tablist" aria-label="Weather map types">
+          <button type="button" role="tab" class="tab" id="tab-temperature" aria-selected="true" aria-controls="panel-temperature" tabindex="0">Temperature</button>
+          <button type="button" role="tab" class="tab" id="tab-precipitation" aria-selected="false" aria-controls="panel-precipitation" tabindex="-1">Precipitation</button>
+          <button type="button" role="tab" class="tab" id="tab-wind" aria-selected="false" aria-controls="panel-wind" tabindex="-1">Wind</button>
+          <button type="button" role="tab" class="tab" id="tab-satellite" aria-selected="false" aria-controls="panel-satellite" tabindex="-1">Satellite</button>
+        </div>
+        <div role="tabpanel" id="panel-temperature" aria-labelledby="tab-temperature" tabindex="0">
+          <figure><img src="assets/map-temperature.svg" alt="Placeholder temperature map of the fictional region. Warmer tones near the water, cooler tones over the ridge." width="800" height="500"><figcaption>Sample temperature map (illustration only). Warmer tones near the water, cooler tones over the ridge.</figcaption></figure>
+          <ul class="legend"><li>Below 40°F</li><li>40 to 50°F</li><li>Above 50°F</li></ul>
+        </div>
+        <div role="tabpanel" id="panel-precipitation" aria-labelledby="tab-precipitation" tabindex="0" hidden>
+          <figure><img src="assets/map-precipitation.svg" alt="Placeholder precipitation map of the fictional region. Totals favor the coast and the ridge slopes over the next 24 hours." width="800" height="500"><figcaption>Sample precipitation map (illustration only). Totals favor the coast and the ridge slopes over the next 24 hours.</figcaption></figure>
+          <ul class="legend"><li>Under 0.25 in</li><li>0.25 to 1 in</li><li>Over 1 in</li></ul>
+        </div>
+        <div role="tabpanel" id="panel-wind" aria-labelledby="tab-wind" tabindex="0" hidden>
+          <figure><img src="assets/map-wind.svg" alt="Placeholder wind map of the fictional region. Stronger southerly winds over the Islands, lighter winds inland." width="800" height="500"><figcaption>Sample wind map (illustration only). Stronger southerly winds over the Islands, lighter winds inland.</figcaption></figure>
+          <ul class="legend"><li>Under 10 mph</li><li>10 to 25 mph</li><li>Over 25 mph</li></ul>
+        </div>
+        <div role="tabpanel" id="panel-satellite" aria-labelledby="tab-satellite" tabindex="0" hidden>
+          <figure><img src="assets/map-satellite.svg" alt="Placeholder satellite map of the fictional region. A band of cloud moves in from the west with clearing behind it." width="800" height="500"><figcaption>Sample satellite map (illustration only). A band of cloud moves in from the west with clearing behind it.</figcaption></figure>
+          <ul class="legend"><li>Clear</li><li>Thin cloud</li><li>Thick cloud</li></ul>
+        </div>
+      </section>
+    </div>
+    <div id="live-status" class="visually-hidden" role="status" aria-live="polite"></div>
+  </main>
+  <footer class="site-footer" data-section="global-footer" data-component="site-footer">
+    <div class="wrap">
+      <div class="footer-cols">
+        <nav aria-labelledby="foot-legal" data-section="footer-legal" data-component="footer-links"><h2 id="foot-legal">Legal</h2><ul>
+          <li><a href="legal.html#terms">Terms of Service</a></li><li><a href="legal.html#privacy">Privacy Policy</a></li><li><a href="legal.html#ad-choices">Ad Choices</a></li>
+          <li><a href="legal.html#eeo">EEO Public File Report</a></li><li><a href="legal.html#fcc-file">FCC Online Public Inspection File</a></li>
+          <li><a href="closed-captioning.html">Closed Caption Procedures</a></li><li><a href="legal.html#do-not-sell">Do Not Sell or Share My Personal Information</a></li></ul></nav>
+        <nav aria-labelledby="foot-weather" data-section="footer-weather" data-component="footer-links"><h2 id="foot-weather">Weather</h2><ul>
+          <li><a href="index.html">Forecast</a></li><li><a href="radar.html">Radar</a></li><li><a href="ten-day.html">10-Day</a></li><li><a href="hourly.html">Hourly</a></li><li><a href="alerts.html">Alerts</a></li></ul></nav>
+        <nav aria-labelledby="foot-station" data-section="footer-station" data-component="footer-links"><h2 id="foot-station">Station</h2><ul>
+          <li><a href="tv-listings.html">TV Listings</a></li><li><a href="meet-the-team.html">Meet the Team</a></li><li><a href="contact-us.html">Contact Us</a></li></ul></nav>
+      </div>
+      <p class="fine-print">Harbor 9 Weather is a fictional station created for an accessibility research dataset. Its logo, people, places and weather data are invented. Layout inspired by a local TV station weather section.</p>
+    </div>
+  </footer>
+</body>
+</html>

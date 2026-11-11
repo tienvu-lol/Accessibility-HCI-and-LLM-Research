@@ -1,0 +1,31 @@
+{
+  "allocation_protocol": "WEB-REPLICA-ALLOCATION-V1.0",
+  "generation_protocol": "WEB-REPLICA-V1.0",
+  "category": "weather",
+  "slot": 3,
+  "source_id": "WX-03",
+  "model_group": "claude",
+  "model_id": "claude-sonnet-5-5",
+  "model_version": null,
+  "model_provider_or_runtime": "claude-bridge provider via pi-subagents worker agent; orchestrated by claude-opus-5-5",
+  "generation_mode": "autonomous agent run, one replica per run, no human edits during generation",
+  "operator": "project lead (tienvu-lol) via orchestrator agent",
+  "approved_source_url": "https://www.king5.com/weather",
+  "source_verified_at": "2026-11-10",
+  "source_approved_at": "2026-11-10",
+  "generation_started_at": "2026-11-11T05:01:46Z",
+  "generation_completed_at": "2026-11-11T05:16:38Z",
+  "rules_revision": "WEB-REPLICA-V1.0 / WEB-REPLICA-ALLOCATION-V1.0 at commit a07e70e (branch websites/claude-replicas)",
+  "category_prompt_revision": "orchestrator brief 2026-11-10 (no separate category prompt file)",
+  "prompt_or_transcript_reference": "pi-subagents run build-WX-03",
+  "human_edits": [],
+  "validation_summary": {
+    "technology": "pass (qc.js: no prohibited files or libraries, no remote requests)",
+    "completeness": "pass (qc.js: pages=15, required files present, links and assets resolve)",
+    "structure": "pass (qc.js: landmarks, skip link, data-section/data-component present); fidelity to the reference is partial, see fidelity-notes.md",
+    "interaction": "pass (scripted Playwright flows, 28 checks, 0 failures; not a full manual test)",
+    "accessibility": "partial (axe-core WCAG 2.0-2.2 A/AA + best-practice at 1280px and 375px: failures=0; no screen reader, 200% zoom or manual keyboard walkthrough testing)",
+    "traceability": "pass (README, fidelity notes and inventory written against the implemented files)",
+    "scope": "pass (14 mapped pages plus 404; additions labeled as intentional additions)"
+  }
+}

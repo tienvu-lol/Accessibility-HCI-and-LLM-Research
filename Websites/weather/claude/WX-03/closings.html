@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Closings and Delays | Harbor 9 Weather (fictional demo)</title>
+  <meta name="description" content="Searchable sample list of fictional closings and delays.">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body data-page="closings">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <aside class="sample-banner" aria-label="Sample data notice" data-section="sample-data-notice" data-component="notice-banner"><div class="wrap"><p><strong>Demo site with fictional sample data.</strong> Harbor 9 is not a real station. Conditions, alerts, closings and traffic are invented and are never live.</p></div></aside>
+  <header class="site-header" data-section="global-header" data-component="site-header">
+    <div class="wrap header-top">
+      <a class="brand" href="index.html"><img src="assets/logo.svg" alt="" width="40" height="40"><span>Harbor 9 Weather</span></a>
+      <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+    </div>
+    <div class="wrap">
+      <nav class="primary-nav" id="primary-nav" aria-label="Primary" data-section="global-navigation" data-component="primary-nav">
+        <ul>
+          <li class="has-sub"><button type="button" class="submenu-toggle is-current-section" aria-expanded="false" aria-controls="weather-menu">Weather</button>
+            <ul class="submenu" id="weather-menu" data-component="dropdown-menu"><li><a href="index.html">Forecast</a></li><li><a href="alerts.html">Alerts</a></li><li><a href="radar.html">Radar</a></li><li><a href="ten-day.html">10-Day</a></li><li><a href="hourly.html">Hourly</a></li><li><a href="maps.html">Maps</a></li><li><a href="traffic.html">Traffic</a></li><li><a href="traffic.html#drive-times">Drive Times</a></li><li><a href="webcams.html">Webcams</a></li><li><a href="closings.html" aria-current="page">Closings &amp; Delays</a></li></ul></li>
+          <li><a href="closings.html" aria-current="page">Closings</a></li>
+          <li><a href="tv-listings.html">TV Listings</a></li>
+          <li><a href="meet-the-team.html">Meet the Team</a></li>
+          <li class="has-sub"><button type="button" class="submenu-toggle" aria-expanded="false" aria-controls="more-menu">More</button>
+            <ul class="submenu" id="more-menu" data-component="dropdown-menu"><li><a href="closed-captioning.html">Closed Captioning</a></li><li><a href="contact-us.html">Contact Us</a></li><li><a href="contact-us.html?topic=advertising">Advertise With Us</a></li><li><a href="legal.html">Legal and Policies</a></li></ul></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <nav class="weather-subnav" aria-label="Weather sections" data-section="weather-subnav" data-component="local-nav"><div class="wrap"><ul><li><a href="index.html">Forecast</a></li><li><a href="alerts.html">Alerts</a></li><li><a href="radar.html">Radar</a></li><li><a href="ten-day.html">10-Day</a></li><li><a href="hourly.html">Hourly</a></li><li><a href="maps.html">Maps</a></li><li><a href="traffic.html">Traffic</a></li><li><a href="traffic.html#drive-times">Drive Times</a></li><li><a href="webcams.html">Webcams</a></li><li><a href="closings.html" aria-current="page">Closings &amp; Delays</a></li></ul></div></nav>
+  <main id="main-content" data-section="main-content">
+    <div class="wrap">
+      <div class="page-title" data-section="page-title" data-component="page-heading"><h1>Closings and Delays</h1><p>An invented list for the demo. Real closings are never shown here.</p></div>
+      <section aria-labelledby="closing-title" data-section="closings-list" data-component="filterable-table">
+        <h2 id="closing-title">Search closings</h2>
+        <form class="inline-form" id="closing-form" role="search" aria-label="Closings">
+          <div class="field"><label for="closing-q">Organization or type</label><input type="search" id="closing-q" autocomplete="off"></div>
+          <div class="field"><label for="closing-status">Status</label><select id="closing-status"><option value="">Any status</option><option>Closed</option><option>Delayed 2 hours</option><option>Remote classes</option><option>Open, modified schedule</option><option>Open</option></select></div>
+          <button type="button" class="btn btn-secondary" id="closing-reset">Clear filters</button>
+        </form>
+        <p id="closing-count" class="muted" role="status"></p>
+        <div class="table-wrap" tabindex="0" role="region" aria-label="Sample closings and delays (scrollable)"><table id="closing-table"><caption>Sample closings and delays</caption><thead><tr><th scope="col">Organization</th><th scope="col">Type</th><th scope="col">Status</th><th scope="col">Note</th></tr></thead><tbody id="closing-body"></tbody></table></div>
+        <p id="closing-empty" class="empty" hidden>No sample listings match. Clear the filters or try a shorter search.</p>
+      </section>
+    </div>
+    <div id="live-status" class="visually-hidden" role="status" aria-live="polite"></div>
+  </main>
+  <footer class="site-footer" data-section="global-footer" data-component="site-footer">
+    <div class="wrap">
+      <div class="footer-cols">
+        <nav aria-labelledby="foot-legal" data-section="footer-legal" data-component="footer-links"><h2 id="foot-legal">Legal</h2><ul>
+          <li><a href="legal.html#terms">Terms of Service</a></li><li><a href="legal.html#privacy">Privacy Policy</a></li><li><a href="legal.html#ad-choices">Ad Choices</a></li>
+          <li><a href="legal.html#eeo">EEO Public File Report</a></li><li><a href="legal.html#fcc-file">FCC Online Public Inspection File</a></li>
+          <li><a href="closed-captioning.html">Closed Caption Procedures</a></li><li><a href="legal.html#do-not-sell">Do Not Sell or Share My Personal Information</a></li></ul></nav>
+        <nav aria-labelledby="foot-weather" data-section="footer-weather" data-component="footer-links"><h2 id="foot-weather">Weather</h2><ul>
+          <li><a href="index.html">Forecast</a></li><li><a href="radar.html">Radar</a></li><li><a href="ten-day.html">10-Day</a></li><li><a href="hourly.html">Hourly</a></li><li><a href="alerts.html">Alerts</a></li></ul></nav>
+        <nav aria-labelledby="foot-station" data-section="footer-station" data-component="footer-links"><h2 id="foot-station">Station</h2><ul>
+          <li><a href="tv-listings.html">TV Listings</a></li><li><a href="meet-the-team.html">Meet the Team</a></li><li><a href="contact-us.html">Contact Us</a></li></ul></nav>
+      </div>
+      <p class="fine-print">Harbor 9 Weather is a fictional station created for an accessibility research dataset. Its logo, people, places and weather data are invented. Layout inspired by a local TV station weather section.</p>
+    </div>
+  </footer>
+</body>
+</html>

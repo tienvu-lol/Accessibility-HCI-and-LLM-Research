@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Weather | Harbor 9 Weather (fictional demo)</title>
+  <meta name="description" content="Fictional sample weather desk: forecast, news, 10-day and hourly outlook for the made-up Harbor 9 region.">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body data-page="home">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <aside class="sample-banner" aria-label="Sample data notice" data-section="sample-data-notice" data-component="notice-banner"><div class="wrap"><p><strong>Demo site with fictional sample data.</strong> Harbor 9 is not a real station. Conditions, alerts, closings and traffic are invented and are never live.</p></div></aside>
+  <header class="site-header" data-section="global-header" data-component="site-header">
+    <div class="wrap header-top">
+      <a class="brand" href="index.html"><img src="assets/logo.svg" alt="" width="40" height="40"><span>Harbor 9 Weather</span></a>
+      <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+    </div>
+    <div class="wrap">
+      <nav class="primary-nav" id="primary-nav" aria-label="Primary" data-section="global-navigation" data-component="primary-nav">
+        <ul>
+          <li class="has-sub"><button type="button" class="submenu-toggle is-current-section" aria-expanded="false" aria-controls="weather-menu">Weather</button>
+            <ul class="submenu" id="weather-menu" data-component="dropdown-menu"><li><a href="index.html" aria-current="page">Forecast</a></li><li><a href="alerts.html">Alerts</a></li><li><a href="radar.html">Radar</a></li><li><a href="ten-day.html">10-Day</a></li><li><a href="hourly.html">Hourly</a></li><li><a href="maps.html">Maps</a></li><li><a href="traffic.html">Traffic</a></li><li><a href="traffic.html#drive-times">Drive Times</a></li><li><a href="webcams.html">Webcams</a></li><li><a href="closings.html">Closings &amp; Delays</a></li></ul></li>
+          <li><a href="closings.html">Closings</a></li>
+          <li><a href="tv-listings.html">TV Listings</a></li>
+          <li><a href="meet-the-team.html">Meet the Team</a></li>
+          <li class="has-sub"><button type="button" class="submenu-toggle" aria-expanded="false" aria-controls="more-menu">More</button>
+            <ul class="submenu" id="more-menu" data-component="dropdown-menu"><li><a href="closed-captioning.html">Closed Captioning</a></li><li><a href="contact-us.html">Contact Us</a></li><li><a href="contact-us.html?topic=advertising">Advertise With Us</a></li><li><a href="legal.html">Legal and Policies</a></li></ul></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <nav class="weather-subnav" aria-label="Weather sections" data-section="weather-subnav" data-component="local-nav"><div class="wrap"><ul><li><a href="index.html" aria-current="page">Forecast</a></li><li><a href="alerts.html">Alerts</a></li><li><a href="radar.html">Radar</a></li><li><a href="ten-day.html">10-Day</a></li><li><a href="hourly.html">Hourly</a></li><li><a href="maps.html">Maps</a></li><li><a href="traffic.html">Traffic</a></li><li><a href="traffic.html#drive-times">Drive Times</a></li><li><a href="webcams.html">Webcams</a></li><li><a href="closings.html">Closings &amp; Delays</a></li></ul></div></nav>
+  <main id="main-content" data-section="main-content">
+    <div class="wrap">
+      <div class="page-title" data-section="page-title" data-component="page-heading"><h1>Weather</h1><p>Sample forecast desk for the fictional Harbor 9 station. Every number on this site is invented for a research demo; it is not a real forecast.</p></div>
+      <div class="tools-bar" data-section="forecast-tools" data-component="forecast-tools">
+        <div data-component="location-search">
+          <h2 id="loc-h">Sample location <span class="muted">(intentional addition)</span></h2>
+          <p>Showing sample data for: <strong id="loc-current" tabindex="-1"></strong></p>
+          <form id="loc-form" novalidate data-section="location-search" data-component="search-form">
+            <div class="field"><label for="loc-input">Search sample locations</label>
+              <p class="hint" id="loc-hint">Place name, county or ZIP, for example Marlow Bay, Ridge or 98004.</p>
+              <input type="search" id="loc-input" name="q" autocomplete="off" aria-describedby="loc-hint loc-error">
+              <p id="loc-error" class="error" hidden></p></div>
+            <button type="submit" class="btn">Search</button>
+          </form>
+          <div id="loc-results"></div>
+        </div>
+        <div role="group" aria-labelledby="unit-h" data-component="unit-toggle">
+          <h2 id="unit-h">Units</h2>
+          <div class="btn-row"><button type="button" class="btn btn-secondary" data-unit="F" aria-pressed="true">Fahrenheit (°F)</button><button type="button" class="btn btn-secondary" data-unit="C" aria-pressed="false">Celsius (°C)</button></div>
+          <p class="hint">Intentional addition: the reference showed no unit toggle.</p>
+        </div>
+      </div>
+      <section aria-labelledby="forecast-title" data-section="station-forecast" data-component="forecast-feature">
+        <div class="section-head"><h2 id="forecast-title">Harbor 9 Forecast</h2></div>
+        <div class="grid-2">
+          <div>
+            <figure><img src="assets/forecast-poster.svg" alt="Placeholder poster for the forecast video: a studio weather wall showing a map. No video is included." width="640" height="360"><figcaption class="muted">Forecast video placeholder. This demo has no video.</figcaption></figure>
+            <button type="button" class="btn btn-secondary" data-disclosure aria-expanded="false" aria-controls="script-box">Read today's forecast script</button>
+            <div id="script-box" class="panel" hidden><p id="script-text"></p></div>
+          </div>
+          <div class="panel" data-section="current-conditions" data-component="current-conditions"><h3>Current conditions (sample data)</h3><div id="current-conditions"><noscript><p class="empty">This page needs JavaScript to show its sample data.</p></noscript></div></div>
+        </div>
+      </section>
+      <section aria-labelledby="region-title" data-section="regional-forecast" data-component="regional-forecast">
+        <div class="section-head"><h2 id="region-title">Western Region Weather Forecast</h2></div>
+        <p>A sample front moves across the region today. Expect showers along the water and heavier rain over the Ridge, with a drier stretch arriving by the weekend. This text is invented for the demo.</p>
+        <div class="table-wrap" tabindex="0" role="region" aria-label="Today in eight sample locations (scrollable)"><table><caption>Today in eight sample locations</caption><thead><tr><th scope="col">Location</th><th scope="col">County</th><th scope="col">Conditions</th><th scope="col">High / low</th></tr></thead><tbody id="region-table"></tbody></table></div>
+      </section>
+      <section aria-labelledby="news-title" data-section="weather-news" data-component="carousel">
+        <div class="section-head"><h2 id="news-title">Weather News</h2><div class="btn-row"><button type="button" class="btn btn-secondary" data-carousel-prev>Previous stories</button><button type="button" class="btn btn-secondary" data-carousel-next>Next stories</button></div></div>
+        <p id="carousel-status" class="muted" role="status"></p>
+        <ul class="card-grid" id="news-list">
+          <li class="story"><h3>Why the valley fog lingers on calm mornings</h3><button type="button" class="btn btn-link" data-disclosure aria-expanded="false" aria-controls="news-0">Read summary<span class="visually-hidden"> of Why the valley fog lingers on calm mornings</span></button><p id="news-0" hidden>Cold air pools in low ground when the wind drops. This sample story explains how a clear night and a damp surface set the stage for dense fog in the Valley.</p></li>
+          <li class="story"><h3>What a flood watch means for creek-side neighbors</h3><button type="button" class="btn btn-link" data-disclosure aria-expanded="false" aria-controls="news-1">Read summary<span class="visually-hidden"> of What a flood watch means for creek-side neighbors</span></button><p id="news-1" hidden>A watch means conditions could lead to flooding, not that it is happening. The story lists simple steps: know your route, move valuables up, and sign up for alerts.</p></li>
+          <li class="story"><h3>Season outlook: a wetter-than-usual winter for the Ridge</h3><button type="button" class="btn btn-link" data-disclosure aria-expanded="false" aria-controls="news-2">Read summary<span class="visually-hidden"> of Season outlook: a wetter-than-usual winter for the Ridge</span></button><p id="news-2" hidden>Our fictional outlook leans wet for the mountains, with snow levels bouncing up and down. It is an outlook, not a day-by-day forecast.</p></li>
+          <li class="story"><h3>Wind explained: gusts, sustained speeds and advisories</h3><button type="button" class="btn btn-link" data-disclosure aria-expanded="false" aria-controls="news-3">Read summary<span class="visually-hidden"> of Wind explained: gusts, sustained speeds and advisories</span></button><p id="news-3" hidden>A short explainer on how the team decides between a wind advisory and a high wind watch, and what the numbers mean for driving and ferry runs.</p></li>
+          <li class="story"><h3>Packing a winter car kit in ten minutes</h3><button type="button" class="btn btn-link" data-disclosure aria-expanded="false" aria-controls="news-4">Read summary<span class="visually-hidden"> of Packing a winter car kit in ten minutes</span></button><p id="news-4" hidden>Blanket, flashlight, water, a phone cable and a scraper. This sample piece shows a checklist you can finish in one coffee break.</p></li>
+          <li class="story"><h3>How radar sees rain, and what it misses</h3><button type="button" class="btn btn-link" data-disclosure aria-expanded="false" aria-controls="news-5">Read summary<span class="visually-hidden"> of How radar sees rain, and what it misses</span></button><p id="news-5" hidden>Radar beams overshoot low drizzle in the hills. Learn why a quiet map can still mean a damp commute near the coast.</p></li>
+        </ul>
+      </section>
+      <section aria-labelledby="tenday-title" data-section="ten-day-preview" data-component="forecast-list">
+        <div class="section-head"><h2 id="tenday-title">10-Day Forecast</h2><a href="ten-day.html">See the full 10-day forecast</a></div>
+        <ul class="day-list" id="tenday-strip"><noscript><p class="empty">This page needs JavaScript to show its sample data.</p></noscript></ul>
+      </section>
+      <section aria-labelledby="hourly-title" data-section="hourly-preview" data-component="forecast-strip">
+        <div class="section-head"><h2 id="hourly-title">Hourly Forecast</h2><a href="hourly.html">See the full hourly forecast</a></div>
+        <ul class="hour-strip" id="hourly-strip"><noscript><p class="empty">This page needs JavaScript to show its sample data.</p></noscript></ul>
+      </section>
+      <section aria-labelledby="ent-title" data-section="entertainment" data-component="card-grid">
+        <div class="section-head"><h2 id="ent-title">Entertainment</h2></div>
+        <ul class="card-grid">
+          <li class="story"><h3>Lantern walk returns to Marlow Bay pier</h3><button type="button" class="btn btn-link" data-disclosure aria-expanded="false" aria-controls="ent-0">Read summary<span class="visually-hidden"> of Lantern walk returns to Marlow Bay pier</span></button><p id="ent-0" hidden>A sample listing: an evening walk with paper lanterns, hot cider and a short talk about tides. Dress for drizzle.</p></li>
+          <li class="story"><h3>Alder Falls film night: three short documentaries</h3><button type="button" class="btn btn-link" data-disclosure aria-expanded="false" aria-controls="ent-1">Read summary<span class="visually-hidden"> of Alder Falls film night: three short documentaries</span></button><p id="ent-1" hidden>A sample community screening of short films about local rivers. Doors open at six; seating is first come, first served.</p></li>
+          <li class="story"><h3>Ferngrove holiday market previews its maker booths</h3><button type="button" class="btn btn-link" data-disclosure aria-expanded="false" aria-controls="ent-2">Read summary<span class="visually-hidden"> of Ferngrove holiday market previews its maker booths</span></button><p id="ent-2" hidden>A sample preview of the island market, with handmade candles, wool hats and a soup stand.</p></li>
+        </ul>
+      </section>
+      <section aria-labelledby="leave-title" data-section="before-you-leave" data-component="promo-links">
+        <div class="section-head"><h2 id="leave-title">Before You Leave, Check This Out</h2></div>
+        <ul class="grid-3">
+          <li class="link-card"><h3><a href="closings.html">Closings and delays</a></h3><p>Search sample school and business closings.</p></li>
+          <li class="link-card"><h3><a href="traffic.html">Traffic and drive times</a></h3><p>See sample incidents and commute times.</p></li>
+          <li class="link-card"><h3><a href="webcams.html">Webcams</a></h3><p>Browse placeholder views around the region.</p></li>
+        </ul>
+      </section>
+    </div>
+    <div id="live-status" class="visually-hidden" role="status" aria-live="polite"></div>
+  </main>
+  <footer class="site-footer" data-section="global-footer" data-component="site-footer">
+    <div class="wrap">
+      <div class="footer-cols">
+        <nav aria-labelledby="foot-legal" data-section="footer-legal" data-component="footer-links"><h2 id="foot-legal">Legal</h2><ul>
+          <li><a href="legal.html#terms">Terms of Service</a></li><li><a href="legal.html#privacy">Privacy Policy</a></li><li><a href="legal.html#ad-choices">Ad Choices</a></li>
+          <li><a href="legal.html#eeo">EEO Public File Report</a></li><li><a href="legal.html#fcc-file">FCC Online Public Inspection File</a></li>
+          <li><a href="closed-captioning.html">Closed Caption Procedures</a></li><li><a href="legal.html#do-not-sell">Do Not Sell or Share My Personal Information</a></li></ul></nav>
+        <nav aria-labelledby="foot-weather" data-section="footer-weather" data-component="footer-links"><h2 id="foot-weather">Weather</h2><ul>
+          <li><a href="index.html">Forecast</a></li><li><a href="radar.html">Radar</a></li><li><a href="ten-day.html">10-Day</a></li><li><a href="hourly.html">Hourly</a></li><li><a href="alerts.html">Alerts</a></li></ul></nav>
+        <nav aria-labelledby="foot-station" data-section="footer-station" data-component="footer-links"><h2 id="foot-station">Station</h2><ul>
+          <li><a href="tv-listings.html">TV Listings</a></li><li><a href="meet-the-team.html">Meet the Team</a></li><li><a href="contact-us.html">Contact Us</a></li></ul></nav>
+      </div>
+      <p class="fine-print">Harbor 9 Weather is a fictional station created for an accessibility research dataset. Its logo, people, places and weather data are invented. Layout inspired by a local TV station weather section.</p>
+    </div>
+  </footer>
+</body>
+</html>

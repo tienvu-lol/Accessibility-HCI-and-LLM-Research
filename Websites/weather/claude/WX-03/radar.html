@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Interactive Weather Radar | Harbor 9 Weather (fictional demo)</title>
+  <meta name="description" content="A placeholder radar viewer with layer, frame and zoom controls, using fictional sample imagery.">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body data-page="radar">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <aside class="sample-banner" aria-label="Sample data notice" data-section="sample-data-notice" data-component="notice-banner"><div class="wrap"><p><strong>Demo site with fictional sample data.</strong> Harbor 9 is not a real station. Conditions, alerts, closings and traffic are invented and are never live.</p></div></aside>
+  <header class="site-header" data-section="global-header" data-component="site-header">
+    <div class="wrap header-top">
+      <a class="brand" href="index.html"><img src="assets/logo.svg" alt="" width="40" height="40"><span>Harbor 9 Weather</span></a>
+      <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+    </div>
+    <div class="wrap">
+      <nav class="primary-nav" id="primary-nav" aria-label="Primary" data-section="global-navigation" data-component="primary-nav">
+        <ul>
+          <li class="has-sub"><button type="button" class="submenu-toggle is-current-section" aria-expanded="false" aria-controls="weather-menu">Weather</button>
+            <ul class="submenu" id="weather-menu" data-component="dropdown-menu"><li><a href="index.html">Forecast</a></li><li><a href="alerts.html">Alerts</a></li><li><a href="radar.html" aria-current="page">Radar</a></li><li><a href="ten-day.html">10-Day</a></li><li><a href="hourly.html">Hourly</a></li><li><a href="maps.html">Maps</a></li><li><a href="traffic.html">Traffic</a></li><li><a href="traffic.html#drive-times">Drive Times</a></li><li><a href="webcams.html">Webcams</a></li><li><a href="closings.html">Closings &amp; Delays</a></li></ul></li>
+          <li><a href="closings.html">Closings</a></li>
+          <li><a href="tv-listings.html">TV Listings</a></li>
+          <li><a href="meet-the-team.html">Meet the Team</a></li>
+          <li class="has-sub"><button type="button" class="submenu-toggle" aria-expanded="false" aria-controls="more-menu">More</button>
+            <ul class="submenu" id="more-menu" data-component="dropdown-menu"><li><a href="closed-captioning.html">Closed Captioning</a></li><li><a href="contact-us.html">Contact Us</a></li><li><a href="contact-us.html?topic=advertising">Advertise With Us</a></li><li><a href="legal.html">Legal and Policies</a></li></ul></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <nav class="weather-subnav" aria-label="Weather sections" data-section="weather-subnav" data-component="local-nav"><div class="wrap"><ul><li><a href="index.html">Forecast</a></li><li><a href="alerts.html">Alerts</a></li><li><a href="radar.html" aria-current="page">Radar</a></li><li><a href="ten-day.html">10-Day</a></li><li><a href="hourly.html">Hourly</a></li><li><a href="maps.html">Maps</a></li><li><a href="traffic.html">Traffic</a></li><li><a href="traffic.html#drive-times">Drive Times</a></li><li><a href="webcams.html">Webcams</a></li><li><a href="closings.html">Closings &amp; Delays</a></li></ul></div></nav>
+  <main id="main-content" data-section="main-content">
+    <div class="wrap">
+      <div class="page-title" data-section="page-title" data-component="page-heading"><h1>Interactive Weather Radar</h1><p>A demo radar viewer. The map is a placeholder graphic, so what you see is not current weather.</p></div>
+      <div class="tools-bar" data-section="forecast-tools" data-component="forecast-tools">
+        <div data-component="location-search">
+          <h2 id="loc-h">Sample location <span class="muted">(intentional addition)</span></h2>
+          <p>Showing sample data for: <strong id="loc-current" tabindex="-1"></strong></p>
+          <form id="loc-form" novalidate data-section="location-search" data-component="search-form">
+            <div class="field"><label for="loc-input">Search sample locations</label>
+              <p class="hint" id="loc-hint">Place name, county or ZIP, for example Marlow Bay, Ridge or 98004.</p>
+              <input type="search" id="loc-input" name="q" autocomplete="off" aria-describedby="loc-hint loc-error">
+              <p id="loc-error" class="error" hidden></p></div>
+            <button type="submit" class="btn">Search</button>
+          </form>
+          <div id="loc-results"></div>
+        </div>
+        <div role="group" aria-labelledby="unit-h" data-component="unit-toggle">
+          <h2 id="unit-h">Units</h2>
+          <div class="btn-row"><button type="button" class="btn btn-secondary" data-unit="F" aria-pressed="true">Fahrenheit (°F)</button><button type="button" class="btn btn-secondary" data-unit="C" aria-pressed="false">Celsius (°C)</button></div>
+          <p class="hint">Intentional addition: the reference showed no unit toggle.</p>
+        </div>
+      </div>
+      <section aria-labelledby="radar-title" data-section="radar-viewer" data-component="radar-map">
+        <div class="section-head"><h2 id="radar-title">Sample radar near <span id="radar-loc"></span></h2></div>
+        <p class="callout">Demo: this is a static placeholder image with a moving overlay. It is not live radar.</p>
+        <div class="grid-2">
+          <div>
+            <div class="map-box" role="img" aria-label="Placeholder radar map of a fictional coastline with green, yellow and red rain areas moving north-east across the sample frames">
+              <div class="zoom-layer" id="radar-zoom"><img src="assets/map-base.svg" alt="" width="800" height="500"><img id="radar-echo" class="radar-echo layer-rain" src="assets/radar-echo.svg" alt="" width="800" height="500"></div>
+            </div>
+            <p id="radar-frame-label" class="muted"></p>
+          </div>
+          <div>
+            <fieldset><legend>Map layer</legend>
+              <p><input type="radio" id="layer-rain" name="radar-layer" value="rain" data-name="Rain and snow" checked><label for="layer-rain">Rain and snow</label></p>
+              <p><input type="radio" id="layer-clouds" name="radar-layer" value="clouds" data-name="Clouds"><label for="layer-clouds">Clouds</label></p>
+              <p><input type="radio" id="layer-temp" name="radar-layer" value="temperature" data-name="Temperature"><label for="layer-temp">Temperature</label></p>
+            </fieldset>
+            <div class="field"><label for="radar-frame">Animation frame</label><input type="range" id="radar-frame" min="0" max="5" step="1" value="0"></div>
+            <div class="btn-row" role="group" aria-label="Animation controls">
+              <button type="button" class="btn btn-secondary" id="radar-prev">Previous frame</button>
+              <button type="button" class="btn" id="radar-play" aria-pressed="false">Play</button>
+              <button type="button" class="btn btn-secondary" id="radar-next">Next frame</button>
+            </div>
+            <div class="btn-row" role="group" aria-label="Zoom controls" style="margin-top:.75rem">
+              <button type="button" class="btn btn-secondary" id="radar-zoom-out">Zoom out</button>
+              <button type="button" class="btn btn-secondary" id="radar-zoom-in">Zoom in</button>
+              <button type="button" class="btn btn-secondary" id="radar-zoom-reset">Reset zoom</button>
+              <span id="radar-zoom-label" class="muted"></span>
+            </div>
+            <h3 style="margin-top:1rem">Legend</h3>
+            <ul class="legend"><li>Light rain</li><li>Moderate rain</li><li>Heavy rain</li></ul>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div id="live-status" class="visually-hidden" role="status" aria-live="polite"></div>
+  </main>
+  <footer class="site-footer" data-section="global-footer" data-component="site-footer">
+    <div class="wrap">
+      <div class="footer-cols">
+        <nav aria-labelledby="foot-legal" data-section="footer-legal" data-component="footer-links"><h2 id="foot-legal">Legal</h2><ul>
+          <li><a href="legal.html#terms">Terms of Service</a></li><li><a href="legal.html#privacy">Privacy Policy</a></li><li><a href="legal.html#ad-choices">Ad Choices</a></li>
+          <li><a href="legal.html#eeo">EEO Public File Report</a></li><li><a href="legal.html#fcc-file">FCC Online Public Inspection File</a></li>
+          <li><a href="closed-captioning.html">Closed Caption Procedures</a></li><li><a href="legal.html#do-not-sell">Do Not Sell or Share My Personal Information</a></li></ul></nav>
+        <nav aria-labelledby="foot-weather" data-section="footer-weather" data-component="footer-links"><h2 id="foot-weather">Weather</h2><ul>
+          <li><a href="index.html">Forecast</a></li><li><a href="radar.html">Radar</a></li><li><a href="ten-day.html">10-Day</a></li><li><a href="hourly.html">Hourly</a></li><li><a href="alerts.html">Alerts</a></li></ul></nav>
+        <nav aria-labelledby="foot-station" data-section="footer-station" data-component="footer-links"><h2 id="foot-station">Station</h2><ul>
+          <li><a href="tv-listings.html">TV Listings</a></li><li><a href="meet-the-team.html">Meet the Team</a></li><li><a href="contact-us.html">Contact Us</a></li></ul></nav>
+      </div>
+      <p class="fine-print">Harbor 9 Weather is a fictional station created for an accessibility research dataset. Its logo, people, places and weather data are invented. Layout inspired by a local TV station weather section.</p>
+    </div>
+  </footer>
+</body>
+</html>
