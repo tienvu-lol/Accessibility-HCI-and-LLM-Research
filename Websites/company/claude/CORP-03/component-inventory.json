@@ -1,0 +1,744 @@
+{
+  "protocol_version": "1.0",
+  "replica_id": "CORP-03",
+  "category": "company",
+  "source_url": "https://about.gitlab.com/",
+  "components": [
+    {
+      "id": "site-header",
+      "selector": "[data-component='site-header']",
+      "pages": [
+        "404.html",
+        "blog-post.html",
+        "blog.html",
+        "careers-all.html",
+        "careers.html",
+        "company.html",
+        "contact-sales.html",
+        "customer-story.html",
+        "customers.html",
+        "index.html",
+        "platform.html",
+        "pricing-premium.html",
+        "pricing.html",
+        "request-demo.html",
+        "solutions-ci-cd.html",
+        "solutions.html"
+      ],
+      "behavior": [
+        "sticky header with brand, search trigger, primary nav, header actions"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-playwright-flow-checked; manual-keyboard-and-screen-reader-not-tested"
+    },
+    {
+      "id": "primary-nav",
+      "selector": "[data-component='primary-nav']",
+      "pages": [
+        "404.html",
+        "blog-post.html",
+        "blog.html",
+        "careers-all.html",
+        "careers.html",
+        "company.html",
+        "contact-sales.html",
+        "customer-story.html",
+        "customers.html",
+        "index.html",
+        "platform.html",
+        "pricing-premium.html",
+        "pricing.html",
+        "request-demo.html",
+        "solutions-ci-cd.html",
+        "solutions.html"
+      ],
+      "behavior": [
+        "desktop nav bar",
+        "mobile disclosure under 62.5em",
+        "aria-current on current page"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter/Space on buttons",
+        "Escape closes mobile nav"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-playwright-flow-checked; manual-keyboard-and-screen-reader-not-tested"
+    },
+    {
+      "id": "mobile-nav-toggle",
+      "selector": "[data-component='mobile-nav-toggle']",
+      "pages": [
+        "404.html",
+        "blog-post.html",
+        "blog.html",
+        "careers-all.html",
+        "careers.html",
+        "company.html",
+        "contact-sales.html",
+        "customer-story.html",
+        "customers.html",
+        "index.html",
+        "platform.html",
+        "pricing-premium.html",
+        "pricing.html",
+        "request-demo.html",
+        "solutions-ci-cd.html",
+        "solutions.html"
+      ],
+      "behavior": [
+        "Menu button, aria-expanded, aria-controls=primary-nav"
+      ],
+      "keyboard": [
+        "Enter",
+        "Space",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-playwright-flow-checked; manual-keyboard-and-screen-reader-not-tested"
+    },
+    {
+      "id": "mega-menu",
+      "selector": "[data-component='mega-menu']",
+      "pages": [
+        "404.html",
+        "blog-post.html",
+        "blog.html",
+        "careers-all.html",
+        "careers.html",
+        "company.html",
+        "contact-sales.html",
+        "customer-story.html",
+        "customers.html",
+        "index.html",
+        "platform.html",
+        "pricing-premium.html",
+        "pricing.html",
+        "request-demo.html",
+        "solutions-ci-cd.html",
+        "solutions.html"
+      ],
+      "behavior": [
+        "click-toggled grouped panels (Platform, Solutions, Resources, Company); one open at a time; closes on outside click, focus leaving the menu and Escape"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter/Space to toggle",
+        "Escape closes and returns focus to trigger"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-playwright-flow-checked; manual-keyboard-and-screen-reader-not-tested"
+    },
+    {
+      "id": "search-trigger",
+      "selector": "[data-component='search-trigger']",
+      "pages": [
+        "404.html",
+        "blog-post.html",
+        "blog.html",
+        "careers-all.html",
+        "careers.html",
+        "company.html",
+        "contact-sales.html",
+        "customer-story.html",
+        "customers.html",
+        "index.html",
+        "platform.html",
+        "pricing-premium.html",
+        "pricing.html",
+        "request-demo.html",
+        "solutions-ci-cd.html",
+        "solutions.html"
+      ],
+      "behavior": [
+        "opens the site search dialog"
+      ],
+      "keyboard": [
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-playwright-flow-checked; manual-keyboard-and-screen-reader-not-tested"
+    },
+    {
+      "id": "search-dialog",
+      "selector": "[data-component='search-dialog']",
+      "pages": [
+        "404.html",
+        "blog-post.html",
+        "blog.html",
+        "careers-all.html",
+        "careers.html",
+        "company.html",
+        "contact-sales.html",
+        "customer-story.html",
+        "customers.html",
+        "index.html",
+        "platform.html",
+        "pricing-premium.html",
+        "pricing.html",
+        "request-demo.html",
+        "solutions-ci-cd.html",
+        "solutions.html"
+      ],
+      "behavior": [
+        "native modal dialog, inline 59-entry index, multi-word AND match, live result count, empty state"
+      ],
+      "keyboard": [
+        "Type to filter",
+        "Tab cycles inside dialog",
+        "Escape closes and returns focus"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-playwright-flow-checked; manual-keyboard-and-screen-reader-not-tested"
+    },
+    {
+      "id": "breadcrumb",
+      "selector": "[data-component='breadcrumb']",
+      "pages": [
+        "blog-post.html",
+        "careers-all.html",
+        "customer-story.html",
+        "pricing-premium.html",
+        "solutions-ci-cd.html"
+      ],
+      "behavior": [
+        "breadcrumb trail with aria-current"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter (links)"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-playwright-flow-checked; manual-keyboard-and-screen-reader-not-tested"
+    },
+    {
+      "id": "hero",
+      "selector": "[data-component='hero']",
+      "pages": [
+        "careers.html",
+        "index.html",
+        "solutions-ci-cd.html"
+      ],
+      "behavior": [
+        "h1, lead, CTAs, decorative or described SVG"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter (links)"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-playwright-flow-checked; manual-keyboard-and-screen-reader-not-tested"
+    },
+    {
+      "id": "page-header",
+      "selector": "[data-component='page-header']",
+      "pages": [
+        "blog.html",
+        "careers-all.html",
+        "company.html",
+        "contact-sales.html",
+        "customer-story.html",
+        "customers.html",
+        "platform.html",
+        "pricing-premium.html",
+        "pricing.html",
+        "request-demo.html",
+        "solutions.html"
+      ],
+      "behavior": [
+        "h1 and lead band for interior pages"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter (links)"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-playwright-flow-checked; manual-keyboard-and-screen-reader-not-tested"
+    },
+    {
+      "id": "card-grid",
+      "selector": "[data-component='card-grid']",
+      "pages": [
+        "careers.html",
+        "company.html",
+        "customer-story.html",
+        "index.html",
+        "platform.html",
+        "pricing-premium.html",
+        "solutions-ci-cd.html",
+        "solutions.html"
+      ],
+      "behavior": [
+        "responsive grid of cards or links"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter (links)"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-playwright-flow-checked; manual-keyboard-and-screen-reader-not-tested"
+    },
+    {
+      "id": "feature-card",
+      "selector": "[data-component='feature-card']",
+      "pages": [
+        "careers.html",
+        "customer-story.html",
+        "index.html",
+        "platform.html",
+        "pricing-premium.html",
+        "solutions-ci-cd.html",
+        "solutions.html"
+      ],
+      "behavior": [
+        "article card with heading, text and optional link"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter (links)"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-playwright-flow-checked; manual-keyboard-and-screen-reader-not-tested"
+    },
+    {
+      "id": "blog-card",
+      "selector": "[data-component='blog-card']",
+      "pages": [
+        "blog.html",
+        "index.html"
+      ],
+      "behavior": [
+        "dated post card linking to blog-post.html?post=slug"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter (links)"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-playwright-flow-checked; manual-keyboard-and-screen-reader-not-tested"
+    },
+    {
+      "id": "customer-card",
+      "selector": "[data-component='customer-card']",
+      "pages": [
+        "customers.html"
+      ],
+      "behavior": [
+        "customer story card; one links to customer-story.html"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter (links)"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-playwright-flow-checked; manual-keyboard-and-screen-reader-not-tested"
+    },
+    {
+      "id": "pricing-cards",
+      "selector": "[data-component='pricing-cards']",
+      "pages": [
+        "pricing.html"
+      ],
+      "behavior": [
+        "three-plan section (Free, Premium, Ultimate); no billing toggle, matching the reference"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter (links)"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-playwright-flow-checked; manual-keyboard-and-screen-reader-not-tested"
+    },
+    {
+      "id": "pricing-card",
+      "selector": "[data-component='pricing-card']",
+      "pages": [
+        "pricing.html"
+      ],
+      "behavior": [
+        "plan card with price, note and CTA"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter (links)"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-playwright-flow-checked; manual-keyboard-and-screen-reader-not-tested"
+    },
+    {
+      "id": "comparison-table",
+      "selector": "[data-component='comparison-table']",
+      "pages": [
+        "pricing-premium.html"
+      ],
+      "behavior": [
+        "scrollable region with a captioned table"
+      ],
+      "keyboard": [
+        "Tab to focus scroll region",
+        "Arrow keys scroll"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-playwright-flow-checked; manual-keyboard-and-screen-reader-not-tested"
+    },
+    {
+      "id": "accordion",
+      "selector": "[data-component='accordion']",
+      "pages": [
+        "careers-all.html",
+        "pricing.html",
+        "solutions-ci-cd.html"
+      ],
+      "behavior": [
+        "aria-expanded disclosure buttons controlling panels (pricing comparison/FAQ, CI/CD FAQ, job list)"
+      ],
+      "keyboard": [
+        "Enter",
+        "Space",
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-playwright-flow-checked; manual-keyboard-and-screen-reader-not-tested"
+    },
+    {
+      "id": "tabs",
+      "selector": "[data-component='tabs']",
+      "pages": [
+        "customers.html"
+      ],
+      "behavior": [
+        "role=tablist with roving tabindex; selecting filters customer cards via a shared tabpanel; live status"
+      ],
+      "keyboard": [
+        "ArrowLeft/ArrowRight",
+        "Home",
+        "End",
+        "Tab into panel"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-playwright-flow-checked; manual-keyboard-and-screen-reader-not-tested"
+    },
+    {
+      "id": "filter-list",
+      "selector": "[data-component='filter-list']",
+      "pages": [
+        "blog.html",
+        "careers-all.html"
+      ],
+      "behavior": [
+        "section wrapper for a filterable list"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter (links)"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-playwright-flow-checked; manual-keyboard-and-screen-reader-not-tested"
+    },
+    {
+      "id": "filter-bar",
+      "selector": "[data-component='filter-bar']",
+      "pages": [
+        "blog.html",
+        "careers-all.html"
+      ],
+      "behavior": [
+        "text search plus selects over data-* attributes; live count; Clear filters (type=reset)"
+      ],
+      "keyboard": [
+        "Type",
+        "Arrow keys on selects",
+        "Enter submits harmlessly"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-playwright-flow-checked; manual-keyboard-and-screen-reader-not-tested"
+    },
+    {
+      "id": "empty-state",
+      "selector": "[data-component='empty-state']",
+      "pages": [
+        "blog.html",
+        "careers-all.html"
+      ],
+      "behavior": [
+        "shown when filters match nothing; has a Clear filters button"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-playwright-flow-checked; manual-keyboard-and-screen-reader-not-tested"
+    },
+    {
+      "id": "form-section",
+      "selector": "[data-component='form-section']",
+      "pages": [
+        "contact-sales.html",
+        "request-demo.html"
+      ],
+      "behavior": [
+        "two-column intro plus form card"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter (links)"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-playwright-flow-checked; manual-keyboard-and-screen-reader-not-tested"
+    },
+    {
+      "id": "demo-form",
+      "selector": "[data-component='demo-form']",
+      "pages": [
+        "contact-sales.html",
+        "request-demo.html"
+      ],
+      "behavior": [
+        "novalidate form; required/email/min-length validation; inline errors with aria-invalid and aria-describedby; labeled demo"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter submits"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-playwright-flow-checked; manual-keyboard-and-screen-reader-not-tested"
+    },
+    {
+      "id": "error-summary",
+      "selector": "[data-component='error-summary']",
+      "pages": [
+        "contact-sales.html",
+        "request-demo.html"
+      ],
+      "behavior": [
+        "focused heading list of errors; each entry focuses its field"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter on links"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-playwright-flow-checked; manual-keyboard-and-screen-reader-not-tested"
+    },
+    {
+      "id": "demo-success",
+      "selector": "[data-component='demo-success']",
+      "pages": [
+        "contact-sales.html",
+        "request-demo.html"
+      ],
+      "behavior": [
+        "focused local confirmation that states nothing was sent"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter (links)"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-playwright-flow-checked; manual-keyboard-and-screen-reader-not-tested"
+    },
+    {
+      "id": "cta-band",
+      "selector": "[data-component='cta-band']",
+      "pages": [
+        "customer-story.html",
+        "customers.html",
+        "index.html",
+        "platform.html",
+        "pricing-premium.html",
+        "pricing.html",
+        "solutions-ci-cd.html",
+        "solutions.html"
+      ],
+      "behavior": [
+        "closing call-to-action band with two links"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter (links)"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-playwright-flow-checked; manual-keyboard-and-screen-reader-not-tested"
+    },
+    {
+      "id": "step-list",
+      "selector": "[data-component='step-list']",
+      "pages": [
+        "solutions-ci-cd.html"
+      ],
+      "behavior": [
+        "ordered list of process steps"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter (links)"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-playwright-flow-checked; manual-keyboard-and-screen-reader-not-tested"
+    },
+    {
+      "id": "fact-list",
+      "selector": "[data-component='fact-list']",
+      "pages": [
+        "customer-story.html"
+      ],
+      "behavior": [
+        "definition list of customer facts"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter (links)"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-playwright-flow-checked; manual-keyboard-and-screen-reader-not-tested"
+    },
+    {
+      "id": "article-section",
+      "selector": "[data-component='article-section']",
+      "pages": [
+        "company.html",
+        "customer-story.html"
+      ],
+      "behavior": [
+        "plain content section"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter (links)"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-playwright-flow-checked; manual-keyboard-and-screen-reader-not-tested"
+    },
+    {
+      "id": "article",
+      "selector": "[data-component='article']",
+      "pages": [
+        "blog-post.html"
+      ],
+      "behavior": [
+        "blog article rendered from inline data by ?post= (not-found state included)"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter (links)"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-playwright-flow-checked; manual-keyboard-and-screen-reader-not-tested"
+    },
+    {
+      "id": "link-list",
+      "selector": "[data-component='link-list']",
+      "pages": [
+        "careers.html"
+      ],
+      "behavior": [
+        "department list linking to open roles"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter (links)"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-playwright-flow-checked; manual-keyboard-and-screen-reader-not-tested"
+    },
+    {
+      "id": "people-list",
+      "selector": "[data-component='people-list']",
+      "pages": [
+        "company.html"
+      ],
+      "behavior": [
+        "fictional leadership cards (name and title only)"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter (links)"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-playwright-flow-checked; manual-keyboard-and-screen-reader-not-tested"
+    },
+    {
+      "id": "error-page",
+      "selector": "[data-component='error-page']",
+      "pages": [
+        "404.html"
+      ],
+      "behavior": [
+        "404 page with routes home and to the platform"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter (links)"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-playwright-flow-checked; manual-keyboard-and-screen-reader-not-tested"
+    },
+    {
+      "id": "footer-nav",
+      "selector": "[data-component='footer-nav']",
+      "pages": [
+        "404.html",
+        "blog-post.html",
+        "blog.html",
+        "careers-all.html",
+        "careers.html",
+        "company.html",
+        "contact-sales.html",
+        "customer-story.html",
+        "customers.html",
+        "index.html",
+        "platform.html",
+        "pricing-premium.html",
+        "pricing.html",
+        "request-demo.html",
+        "solutions-ci-cd.html",
+        "solutions.html"
+      ],
+      "behavior": [
+        "five grouped link columns"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter (links)"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-playwright-flow-checked; manual-keyboard-and-screen-reader-not-tested"
+    },
+    {
+      "id": "site-footer",
+      "selector": "[data-component='site-footer']",
+      "pages": [
+        "404.html",
+        "blog-post.html",
+        "blog.html",
+        "careers-all.html",
+        "careers.html",
+        "company.html",
+        "contact-sales.html",
+        "customer-story.html",
+        "customers.html",
+        "index.html",
+        "platform.html",
+        "pricing-premium.html",
+        "pricing.html",
+        "request-demo.html",
+        "solutions-ci-cd.html",
+        "solutions.html"
+      ],
+      "behavior": [
+        "footer with grouped links, fictional-company note, legal and accessibility links"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter (links)"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-playwright-flow-checked; manual-keyboard-and-screen-reader-not-tested"
+    }
+  ]
+}
