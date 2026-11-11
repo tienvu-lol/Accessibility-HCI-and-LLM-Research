@@ -1,0 +1,31 @@
+{
+  "allocation_protocol": "WEB-REPLICA-ALLOCATION-V1.0",
+  "generation_protocol": "WEB-REPLICA-V1.0",
+  "category": "church",
+  "slot": 1,
+  "source_id": "CHUR-01",
+  "model_group": "claude",
+  "model_id": "claude-sonnet-5-5",
+  "model_version": null,
+  "model_provider_or_runtime": "claude-bridge provider via pi-subagents worker agent; orchestrated by claude-opus-5-5",
+  "generation_mode": "autonomous agent run, one replica per run, no human edits during generation",
+  "operator": "project lead (tienvu-lol) via orchestrator agent",
+  "approved_source_url": "https://saddleback.com/",
+  "source_verified_at": "2026-11-10",
+  "source_approved_at": "2026-11-10",
+  "generation_started_at": "2026-11-11T05:19:15Z",
+  "generation_completed_at": "2026-11-11T05:31:42Z",
+  "rules_revision": "WEB-REPLICA-V1.0 / WEB-REPLICA-ALLOCATION-V1.0 at commit a07e70e (branch websites/claude-replicas)",
+  "category_prompt_revision": "orchestrator brief 2026-11-10 (no separate category prompt file)",
+  "prompt_or_transcript_reference": "pi-subagents run build-CHUR-01",
+  "human_edits": [],
+  "validation_summary": {
+    "technology": "pass: qc.js found no prohibited files, libraries, or remote requests (2026-11-11)",
+    "completeness": "pass: qc.js required files, JSON validity, and 0 broken links/assets (2026-11-11)",
+    "structure": "pass: skip link, main#main-content, lang, data-section/data-component present on all 16 pages (qc.js); region order compared to research notes only, not to a live crawl",
+    "interaction": "pass: scripted Playwright flows (menus, dialog, filters, forms, query-string prefill) passed; no manual testing",
+    "accessibility": "partial: axe-core WCAG 2.0-2.2 A/AA + best-practice at 1280px and 375px had 0 violations on all pages; no screen reader, 200% zoom, or manual keyboard walkthrough; no conformance claim",
+    "traceability": "pass: README, fidelity-notes, and component-inventory written against the generated files; source verification is the 2026-11-10 research record, not re-checked in this run",
+    "scope": "pass: 14 reference pages plus a consolidated legal page and 404; project lead waived the Phase A approval stop"
+  }
+}

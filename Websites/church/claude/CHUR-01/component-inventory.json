@@ -1,0 +1,765 @@
+{
+  "protocol_version": "1.0",
+  "replica_id": "CHUR-01",
+  "category": "church",
+  "source_url": "https://saddleback.com/",
+  "components": [
+    {
+      "id": "site-header",
+      "selector": "[data-component='site-header']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "care.html",
+        "careers.html",
+        "contact.html",
+        "events.html",
+        "giving.html",
+        "index.html",
+        "legal.html",
+        "locations.html",
+        "podcasts.html",
+        "prayer.html",
+        "recovery.html",
+        "serve.html",
+        "small-groups.html",
+        "watch.html"
+      ],
+      "behavior": [
+        "brand link",
+        "utility bar with demo notice",
+        "language menu",
+        "sign-in button",
+        "watch-now link"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js static + axe-core at 1280px and 375px passed (initial state only)"
+    },
+    {
+      "id": "utility-nav",
+      "selector": "[data-component='utility-nav']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "care.html",
+        "careers.html",
+        "contact.html",
+        "events.html",
+        "giving.html",
+        "index.html",
+        "legal.html",
+        "locations.html",
+        "podcasts.html",
+        "prayer.html",
+        "recovery.html",
+        "serve.html",
+        "small-groups.html",
+        "watch.html"
+      ],
+      "behavior": [
+        "language dropdown",
+        "sign-in dialog trigger",
+        "watch link"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js static + axe-core at 1280px and 375px passed (initial state only)"
+    },
+    {
+      "id": "language-menu",
+      "selector": "[data-component='language-menu']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "care.html",
+        "careers.html",
+        "contact.html",
+        "events.html",
+        "giving.html",
+        "index.html",
+        "legal.html",
+        "locations.html",
+        "podcasts.html",
+        "prayer.html",
+        "recovery.html",
+        "serve.html",
+        "small-groups.html",
+        "watch.html"
+      ],
+      "behavior": [
+        "disclosure with aria-expanded",
+        "selecting a non-English language shows a demo-only status message"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "Escape closes and returns focus"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js static + axe-core at 1280px and 375px passed (initial state only); scripted Playwright flow passed (see README)"
+    },
+    {
+      "id": "primary-nav",
+      "selector": "[data-component='primary-nav']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "care.html",
+        "careers.html",
+        "contact.html",
+        "events.html",
+        "giving.html",
+        "index.html",
+        "legal.html",
+        "locations.html",
+        "podcasts.html",
+        "prayer.html",
+        "recovery.html",
+        "serve.html",
+        "small-groups.html",
+        "watch.html"
+      ],
+      "behavior": [
+        "desktop link row with aria-current",
+        "mobile Menu disclosure (aria-expanded) below 900px"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "Escape closes menu"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js static + axe-core at 1280px and 375px passed (initial state only); scripted Playwright flow passed (see README)"
+    },
+    {
+      "id": "mega-menu",
+      "selector": "[data-component='mega-menu']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "care.html",
+        "careers.html",
+        "contact.html",
+        "events.html",
+        "giving.html",
+        "index.html",
+        "legal.html",
+        "locations.html",
+        "podcasts.html",
+        "prayer.html",
+        "recovery.html",
+        "serve.html",
+        "small-groups.html",
+        "watch.html"
+      ],
+      "behavior": [
+        "desktop panel from the \"More ways to connect\" button",
+        "four link groups",
+        "always expanded inside the mobile menu panel"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "Escape closes and returns focus",
+        "closes when focus leaves"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js static + axe-core at 1280px and 375px passed (initial state only); scripted Playwright flow passed (see README)"
+    },
+    {
+      "id": "modal-dialog",
+      "selector": "[data-component='modal-dialog']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "care.html",
+        "careers.html",
+        "contact.html",
+        "events.html",
+        "giving.html",
+        "index.html",
+        "legal.html",
+        "locations.html",
+        "podcasts.html",
+        "prayer.html",
+        "recovery.html",
+        "serve.html",
+        "small-groups.html",
+        "watch.html"
+      ],
+      "behavior": [
+        "native dialog opened with showModal",
+        "sign-in demo form",
+        "close button and backdrop click"
+      ],
+      "keyboard": [
+        "Tab (trapped by dialog)",
+        "Escape closes",
+        "focus returns to Sign in button"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js static + axe-core at 1280px and 375px passed (initial state only); scripted Playwright flow passed (see README)"
+    },
+    {
+      "id": "signin-form",
+      "selector": "[data-component='signin-form']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "care.html",
+        "careers.html",
+        "contact.html",
+        "events.html",
+        "giving.html",
+        "index.html",
+        "legal.html",
+        "locations.html",
+        "podcasts.html",
+        "prayer.html",
+        "recovery.html",
+        "serve.html",
+        "small-groups.html",
+        "watch.html"
+      ],
+      "behavior": [
+        "required email/password validation",
+        "error summary",
+        "demo success message"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter submits"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js static + axe-core at 1280px and 375px passed (initial state only); scripted Playwright flow passed (see README)"
+    },
+    {
+      "id": "breadcrumb",
+      "selector": "[data-component='breadcrumb']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "care.html",
+        "careers.html",
+        "contact.html",
+        "events.html",
+        "giving.html",
+        "legal.html",
+        "locations.html",
+        "podcasts.html",
+        "prayer.html",
+        "recovery.html",
+        "serve.html",
+        "small-groups.html",
+        "watch.html"
+      ],
+      "behavior": [
+        "ordered list breadcrumb with aria-current on last item"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js static + axe-core at 1280px and 375px passed (initial state only)"
+    },
+    {
+      "id": "page-hero",
+      "selector": "[data-component='page-hero']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "care.html",
+        "careers.html",
+        "contact.html",
+        "events.html",
+        "giving.html",
+        "legal.html",
+        "locations.html",
+        "podcasts.html",
+        "prayer.html",
+        "recovery.html",
+        "serve.html",
+        "small-groups.html",
+        "watch.html"
+      ],
+      "behavior": [
+        "interior page title band with breadcrumb and lead"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "automated: qc.js static + axe-core at 1280px and 375px passed (initial state only)"
+    },
+    {
+      "id": "hero",
+      "selector": "[data-component='hero']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "home hero with headline, two calls to action, SVG illustration"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js static + axe-core at 1280px and 375px passed (initial state only)"
+    },
+    {
+      "id": "card-grid",
+      "selector": "[data-component='card-grid']",
+      "pages": [
+        "about.html",
+        "care.html",
+        "index.html",
+        "podcasts.html"
+      ],
+      "behavior": [
+        "responsive grid of cards"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js static + axe-core at 1280px and 375px passed (initial state only)"
+    },
+    {
+      "id": "campus-card",
+      "selector": "[data-component='campus-card']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "static home campus cards linking to filtered locations page"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js static + axe-core at 1280px and 375px passed (initial state only)"
+    },
+    {
+      "id": "step-card",
+      "selector": "[data-component='step-card']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "first-step cards with links"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js static + axe-core at 1280px and 375px passed (initial state only)"
+    },
+    {
+      "id": "care-card",
+      "selector": "[data-component='care-card']",
+      "pages": [
+        "care.html"
+      ],
+      "behavior": [
+        "care option cards with links (some prefill contact topic or group type via query string)"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js static + axe-core at 1280px and 375px passed (initial state only)"
+    },
+    {
+      "id": "staff-card",
+      "selector": "[data-component='staff-card']",
+      "pages": [
+        "about.html"
+      ],
+      "behavior": [
+        "leadership cards with decorative avatar"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "automated: qc.js static + axe-core at 1280px and 375px passed (initial state only)"
+    },
+    {
+      "id": "podcast-card",
+      "selector": "[data-component='podcast-card']",
+      "pages": [
+        "podcasts.html"
+      ],
+      "behavior": [
+        "show cards with native details for recent episodes (no audio)"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js static + axe-core at 1280px and 375px passed (initial state only)"
+    },
+    {
+      "id": "promo-band",
+      "selector": "[data-component='promo-band']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "app promo band with illustration"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js static + axe-core at 1280px and 375px passed (initial state only)"
+    },
+    {
+      "id": "newsletter-band",
+      "selector": "[data-component='newsletter-band']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "band wrapping the demo newsletter form"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "automated: qc.js static + axe-core at 1280px and 375px passed (initial state only)"
+    },
+    {
+      "id": "newsletter-form",
+      "selector": "[data-component='newsletter-form']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "single-field demo sign-up with validation and demo success"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter submits"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js static + axe-core at 1280px and 375px passed (initial state only); scripted Playwright flow passed (see README)"
+    },
+    {
+      "id": "accordion",
+      "selector": "[data-component='accordion']",
+      "pages": [
+        "about.html",
+        "giving.html",
+        "recovery.html"
+      ],
+      "behavior": [
+        "native details/summary disclosure"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js static + axe-core at 1280px and 375px passed (initial state only)"
+    },
+    {
+      "id": "testimonial",
+      "selector": "[data-component='testimonial']",
+      "pages": [
+        "about.html"
+      ],
+      "behavior": [
+        "sample quote figures"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "automated: qc.js static + axe-core at 1280px and 375px passed (initial state only)"
+    },
+    {
+      "id": "content-section",
+      "selector": "[data-component='content-section']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "giving.html",
+        "legal.html",
+        "prayer.html",
+        "recovery.html"
+      ],
+      "behavior": [
+        "generic labelled content band"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "automated: qc.js static + axe-core at 1280px and 375px passed (initial state only)"
+    },
+    {
+      "id": "video-feature",
+      "selector": "[data-component='video-feature']",
+      "pages": [
+        "watch.html"
+      ],
+      "behavior": [
+        "video poster placeholder with caption stating no video is included, online service times table"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "automated: qc.js static + axe-core at 1280px and 375px passed (initial state only)"
+    },
+    {
+      "id": "media-archive",
+      "selector": "[data-component='media-archive']",
+      "pages": [
+        "watch.html"
+      ],
+      "behavior": [
+        "sermon archive wrapper: search, series, topic, sort",
+        "native details summary per message"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js static + axe-core at 1280px and 375px passed (initial state only); scripted Playwright flow passed (see README)"
+    },
+    {
+      "id": "filter-form",
+      "selector": "[data-component='filter-form']",
+      "pages": [
+        "careers.html",
+        "events.html",
+        "locations.html",
+        "serve.html",
+        "small-groups.html",
+        "watch.html"
+      ],
+      "behavior": [
+        "live client-side filter over inline data",
+        "query-string prefill",
+        "Clear filters reset",
+        "result count in a polite status region"
+      ],
+      "keyboard": [
+        "Tab",
+        "type to filter",
+        "arrow keys on selects",
+        "Enter does not reload"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js static + axe-core at 1280px and 375px passed (initial state only); scripted Playwright flow passed (see README)"
+    },
+    {
+      "id": "results-list",
+      "selector": "[data-component='results-list']",
+      "pages": [
+        "careers.html",
+        "events.html",
+        "locations.html",
+        "serve.html",
+        "small-groups.html",
+        "watch.html"
+      ],
+      "behavior": [
+        "rendered results or empty state with Clear filters button"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js static + axe-core at 1280px and 375px passed (initial state only); scripted Playwright flow passed (see README)"
+    },
+    {
+      "id": "finder",
+      "selector": "[data-component='finder']",
+      "pages": [
+        "careers.html",
+        "events.html",
+        "locations.html",
+        "serve.html",
+        "small-groups.html"
+      ],
+      "behavior": [
+        "filter-form plus results band"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js static + axe-core at 1280px and 375px passed (initial state only); scripted Playwright flow passed (see README)"
+    },
+    {
+      "id": "schedule-table",
+      "selector": "[data-component='schedule-table']",
+      "pages": [
+        "recovery.html"
+      ],
+      "behavior": [
+        "data table with caption and row headers"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "automated: qc.js static + axe-core at 1280px and 375px passed (initial state only)"
+    },
+    {
+      "id": "form-panel",
+      "selector": "[data-component='form-panel']",
+      "pages": [
+        "contact.html",
+        "prayer.html"
+      ],
+      "behavior": [
+        "band wrapping a demo form and demo banner"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "automated: qc.js static + axe-core at 1280px and 375px passed (initial state only)"
+    },
+    {
+      "id": "giving-panel",
+      "selector": "[data-component='giving-panel']",
+      "pages": [
+        "giving.html"
+      ],
+      "behavior": [
+        "band wrapping the demo giving form"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "automated: qc.js static + axe-core at 1280px and 375px passed (initial state only)"
+    },
+    {
+      "id": "giving-form",
+      "selector": "[data-component='giving-form']",
+      "pages": [
+        "giving.html"
+      ],
+      "behavior": [
+        "campus select, fund radio group, preset amount buttons, amount number, frequency, email",
+        "validation, error summary, demo success that echoes selection, no payment"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "arrow keys on radios"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js static + axe-core at 1280px and 375px passed (initial state only); scripted Playwright flow passed (see README)"
+    },
+    {
+      "id": "prayer-form",
+      "selector": "[data-component='prayer-form']",
+      "pages": [
+        "prayer.html"
+      ],
+      "behavior": [
+        "topic, request (min 10 chars), visibility radios, optional name and email",
+        "demo success only"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js static + axe-core at 1280px and 375px passed (initial state only); scripted Playwright flow passed (see README)"
+    },
+    {
+      "id": "contact-form",
+      "selector": "[data-component='contact-form']",
+      "pages": [
+        "contact.html"
+      ],
+      "behavior": [
+        "name, email, topic (prefilled from query string), message",
+        "demo success only"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js static + axe-core at 1280px and 375px passed (initial state only); scripted Playwright flow passed (see README)"
+    },
+    {
+      "id": "site-footer",
+      "selector": "[data-component='site-footer']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "care.html",
+        "careers.html",
+        "contact.html",
+        "events.html",
+        "giving.html",
+        "index.html",
+        "legal.html",
+        "locations.html",
+        "podcasts.html",
+        "prayer.html",
+        "recovery.html",
+        "serve.html",
+        "small-groups.html",
+        "watch.html"
+      ],
+      "behavior": [
+        "grouped footer navs, fictional notice, legal links"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js static + axe-core at 1280px and 375px passed (initial state only)"
+    },
+    {
+      "id": "footer-nav",
+      "selector": "[data-component='footer-nav']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "care.html",
+        "careers.html",
+        "contact.html",
+        "events.html",
+        "giving.html",
+        "index.html",
+        "legal.html",
+        "locations.html",
+        "podcasts.html",
+        "prayer.html",
+        "recovery.html",
+        "serve.html",
+        "small-groups.html",
+        "watch.html"
+      ],
+      "behavior": [
+        "labelled footer link groups"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated: qc.js static + axe-core at 1280px and 375px passed (initial state only)"
+    }
+  ]
+}

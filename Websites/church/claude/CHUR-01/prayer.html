@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Prayer | Harbor Ridge Church</title>
+  <meta name="description" content="Demo prayer request form for the fictional Harbor Ridge Church.">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header" data-section="global-header" data-component="site-header">
+  <div class="utility-bar" data-section="utility-bar" data-component="utility-nav">
+    <div class="container utility-inner">
+      <p class="demo-note">Fictional demo site for accessibility research. Not a real church.</p>
+      <ul class="utility-list">
+        <li class="menu-wrap" data-component="language-menu">
+          <button type="button" class="util-btn" id="lang-toggle" data-toggle="lang-list" aria-expanded="false" aria-controls="lang-list">Language: English</button>
+          <ul class="menu-list" id="lang-list">
+            <li><button type="button" data-lang="English">English</button></li>
+            <li><button type="button" data-lang="Español">Español</button></li>
+            <li><button type="button" data-lang="Filipino">Filipino</button></li>
+            <li><button type="button" data-lang="简体中文" lang="zh-Hans">简体中文</button></li>
+            <li><button type="button" data-lang="繁體中文" lang="zh-Hant">繁體中文</button></li>
+          </ul>
+          <p class="sr-only" id="lang-status" role="status"></p>
+        </li>
+        <li><button type="button" class="util-btn" data-open-dialog="signin-dialog">Sign in</button></li>
+        <li><a class="util-btn" href="watch.html">Watch now</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="container header-main">
+    <a class="brand" href="index.html"><img src="assets/logo.svg" alt="" width="40" height="40"><span>Harbor Ridge Church</span></a>
+    <nav aria-label="Primary" class="site-nav" data-section="global-navigation" data-component="primary-nav">
+      <button type="button" class="menu-toggle" id="menu-toggle" data-toggle="nav-panel" aria-expanded="false" aria-controls="nav-panel">Menu</button>
+      <div class="nav-panel" id="nav-panel">
+        <ul class="primary-links">
+          <li><a href="locations.html">Locations</a></li>
+          <li><a href="watch.html">Watch</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="care.html">Care</a></li>
+          <li><a href="giving.html">Giving</a></li>
+          <li class="mega-item"><button type="button" class="mega-toggle" id="mega-toggle" data-toggle="mega-menu" aria-expanded="false" aria-controls="mega-menu">More ways to connect</button></li>
+        </ul>
+        <div class="mega-menu" id="mega-menu" data-section="mega-menu" data-component="mega-menu">
+          <div class="mega-group"><p class="mega-title" id="mega-g0">Get involved</p><ul aria-labelledby="mega-g0"><li><a href="small-groups.html">Small groups</a></li><li><a href="serve.html">Serve</a></li><li><a href="events.html">Events</a></li><li><a href="locations.html">Find a campus</a></li></ul></div>
+          <div class="mega-group"><p class="mega-title" id="mega-g1">Care</p><ul aria-labelledby="mega-g1"><li><a href="prayer.html" aria-current="page">Prayer</a></li><li><a href="recovery.html">Celebrate Recovery</a></li><li><a href="contact.html?topic=counseling">Counseling</a></li><li><a href="small-groups.html?type=Support">Support groups</a></li></ul></div>
+          <div class="mega-group"><p class="mega-title" id="mega-g2">Growth</p><ul aria-labelledby="mega-g2"><li><a href="watch.html#archive">Message archive</a></li><li><a href="podcasts.html">Podcasts</a></li><li><a href="index.html#app">Church app</a></li><li><a href="giving.html">Giving</a></li></ul></div>
+          <div class="mega-group"><p class="mega-title" id="mega-g3">More</p><ul aria-labelledby="mega-g3"><li><a href="about.html">About us</a></li><li><a href="careers.html">Careers</a></li><li><a href="contact.html">Contact us</a></li><li><a href="legal.html">Privacy and terms</a></li></ul></div>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+<main id="main-content" data-section="main-content">
+<section class="page-hero" data-section="page-hero" data-component="page-hero"><div class="container"><nav aria-label="Breadcrumb" class="breadcrumb" data-section="breadcrumb" data-component="breadcrumb"><ol><li><a href="index.html">Home</a></li><li><a href="care.html">Care</a></li><li><span aria-current="page">Prayer</span></li></ol></nav><h1>Prayer</h1><p class="lead">You do not have to carry it alone. Tell us what you need and our prayer team will pray.</p></div></section>
+<section class="band " aria-labelledby="prayer-request-section-title" data-section="prayer-request-section" data-component="form-panel"><div class="container"><h2 id="prayer-request-section-title">Send a prayer request (demo)</h2><p class="demo-banner">Demo only: nothing you type here is sent, saved, or read by anyone.</p><form id="prayer-form" class="form" novalidate data-validate data-section="prayer-request" data-component="prayer-form" data-success="Demo only: your request was not sent or saved. In a real church, a prayer team member would receive it." aria-label="Prayer request (demo)">
+    <div class="error-summary" role="alert" tabindex="-1" hidden><p class="summary-title">There is a problem</p><ul></ul></div>
+    <div class="field"><label for="prayer-name">Name</label><p class="hint" id="prayer-name-hint">Optional. Leave blank to stay anonymous.</p><input type="text" id="prayer-name" name="name" aria-describedby="prayer-name-hint prayer-name-error" autocomplete="name"><p class="field-error" id="prayer-name-error" hidden></p></div><div class="field"><label for="prayer-email">Email</label><p class="hint" id="prayer-email-hint">Optional. Only if you would like a reply.</p><input type="email" id="prayer-email" name="email" aria-describedby="prayer-email-hint prayer-email-error" autocomplete="email"><p class="field-error" id="prayer-email-error" hidden></p></div><div class="field"><label for="prayer-topic">Topic <span class="req">(required)</span></label><select id="prayer-topic" name="topic" aria-describedby="prayer-topic-error" required><option value="">Choose a topic</option><option value="Health">Health</option><option value="Family">Family</option><option value="Grief">Grief</option><option value="Work or finances">Work or finances</option><option value="Faith questions">Faith questions</option><option value="Other">Other</option></select><p class="field-error" id="prayer-topic-error" hidden></p></div><div class="field"><label for="prayer-text">Your request <span class="req">(required)</span></label><p class="hint" id="prayer-text-hint">At least 10 characters.</p><textarea id="prayer-text" name="request" aria-describedby="prayer-text-hint prayer-text-error" required minlength="10" rows="5"></textarea><p class="field-error" id="prayer-text-error" hidden></p></div><fieldset class="field" id="prayer-share" data-required><legend>Who may see this request? <span class="req">(required)</span></legend><label class="choice"><input type="radio" name="visibility" value="Prayer team only"> Prayer team only</label><label class="choice"><input type="radio" name="visibility" value="Pastors only"> Pastors only</label><label class="choice"><input type="radio" name="visibility" value="Share with my campus prayer chain"> Share with my campus prayer chain</label><p class="field-error" id="prayer-share-error" hidden></p></fieldset>
+    <div class="form-actions"><button type="submit" class="btn">Send request (demo)</button></div>
+    <div class="form-success" role="status" tabindex="-1" hidden></div>
+  </form></div></section><section class="band band-alt" aria-labelledby="prayer-team-title" data-section="prayer-team" data-component="content-section"><div class="container"><h2 id="prayer-team-title">What happens next</h2><p>In a live church, requests would go to a small trained team. Here, the form only demonstrates validation and error handling. Looking for ongoing support? See <a href="recovery.html">Celebrate Recovery</a> or <a href="small-groups.html?type=Support">support groups</a>.</p></div></section>
+</main>
+<footer class="site-footer" data-section="global-footer" data-component="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <p class="footer-brand">Harbor Ridge Church</p>
+      <p>A fictional multi-campus church created for accessibility and usability research. All names, places, people, and times are invented.</p>
+    </div>
+    <nav aria-label="Footer: campuses and visiting" data-section="footer-visit" data-component="footer-nav">
+      <h2 class="footer-title">Visit</h2>
+      <ul><li><a href="locations.html">Locations</a></li><li><a href="watch.html">Watch online</a></li><li><a href="events.html">Events</a></li><li><a href="contact.html">Contact us</a></li></ul>
+    </nav>
+    <nav aria-label="Footer: get involved" data-section="footer-involved" data-component="footer-nav">
+      <h2 class="footer-title">Get involved</h2>
+      <ul><li><a href="small-groups.html">Small groups</a></li><li><a href="serve.html">Serve</a></li><li><a href="prayer.html">Prayer</a></li><li><a href="giving.html">Giving</a></li></ul>
+    </nav>
+    <nav aria-label="Footer: about" data-section="footer-about" data-component="footer-nav">
+      <h2 class="footer-title">About</h2>
+      <ul><li><a href="about.html">About us</a></li><li><a href="podcasts.html">Podcasts</a></li><li><a href="careers.html">Careers</a></li><li><a href="legal.html#privacy">Privacy</a></li><li><a href="legal.html#terms">Terms of use</a></li></ul>
+    </nav>
+  </div>
+  <div class="container footer-base"><p>&copy; 2026 Harbor Ridge Church (fictional). Demonstration only; no forms send data anywhere.</p></div>
+</footer>
+<dialog id="signin-dialog" class="dialog" aria-labelledby="signin-title" data-section="signin-dialog" data-component="modal-dialog">
+  <div class="dialog-head"><h2 id="signin-title">Sign in (demo)</h2><button type="button" class="icon-btn" data-close-dialog aria-label="Close sign in dialog">&times;</button></div>
+  <p class="demo-banner">Demo only: there is no account system. Nothing you type is stored or sent.</p>
+  <form id="signin-form" class="form" novalidate data-validate data-section="signin" data-component="signin-form" data-success="Demo only: no account was checked and no one was signed in. Close this dialog to keep browsing.">
+    <div class="error-summary" role="alert" tabindex="-1" hidden><p class="summary-title">There is a problem</p><ul></ul></div>
+    <div class="field"><label for="signin-email">Email address <span class="req">(required)</span></label><input type="email" id="signin-email" name="signin-email" aria-describedby="signin-email-error" required autocomplete="email"><p class="field-error" id="signin-email-error" hidden></p></div><div class="field"><label for="signin-password">Password <span class="req">(required)</span></label><input type="password" id="signin-password" name="signin-password" aria-describedby="signin-password-error" required autocomplete="current-password" minlength="6"><p class="field-error" id="signin-password-error" hidden></p></div>
+    <div class="form-actions"><button type="submit" class="btn">Sign in</button></div>
+    <div class="form-success" role="status" tabindex="-1" hidden></div>
+  </form>
+</dialog>
+</body>
+</html>

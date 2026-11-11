@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Harbor Ridge Church | Find your people and take a next step</title>
+  <meta name="description" content="Fictional multi-campus church demo site: campuses, online services, small groups, serving, care, and giving.">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header" data-section="global-header" data-component="site-header">
+  <div class="utility-bar" data-section="utility-bar" data-component="utility-nav">
+    <div class="container utility-inner">
+      <p class="demo-note">Fictional demo site for accessibility research. Not a real church.</p>
+      <ul class="utility-list">
+        <li class="menu-wrap" data-component="language-menu">
+          <button type="button" class="util-btn" id="lang-toggle" data-toggle="lang-list" aria-expanded="false" aria-controls="lang-list">Language: English</button>
+          <ul class="menu-list" id="lang-list">
+            <li><button type="button" data-lang="English">English</button></li>
+            <li><button type="button" data-lang="Español">Español</button></li>
+            <li><button type="button" data-lang="Filipino">Filipino</button></li>
+            <li><button type="button" data-lang="简体中文" lang="zh-Hans">简体中文</button></li>
+            <li><button type="button" data-lang="繁體中文" lang="zh-Hant">繁體中文</button></li>
+          </ul>
+          <p class="sr-only" id="lang-status" role="status"></p>
+        </li>
+        <li><button type="button" class="util-btn" data-open-dialog="signin-dialog">Sign in</button></li>
+        <li><a class="util-btn" href="watch.html">Watch now</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="container header-main">
+    <a class="brand" href="index.html"><img src="assets/logo.svg" alt="" width="40" height="40"><span>Harbor Ridge Church</span></a>
+    <nav aria-label="Primary" class="site-nav" data-section="global-navigation" data-component="primary-nav">
+      <button type="button" class="menu-toggle" id="menu-toggle" data-toggle="nav-panel" aria-expanded="false" aria-controls="nav-panel">Menu</button>
+      <div class="nav-panel" id="nav-panel">
+        <ul class="primary-links">
+          <li><a href="locations.html">Locations</a></li>
+          <li><a href="watch.html">Watch</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="care.html">Care</a></li>
+          <li><a href="giving.html">Giving</a></li>
+          <li class="mega-item"><button type="button" class="mega-toggle" id="mega-toggle" data-toggle="mega-menu" aria-expanded="false" aria-controls="mega-menu">More ways to connect</button></li>
+        </ul>
+        <div class="mega-menu" id="mega-menu" data-section="mega-menu" data-component="mega-menu">
+          <div class="mega-group"><p class="mega-title" id="mega-g0">Get involved</p><ul aria-labelledby="mega-g0"><li><a href="small-groups.html">Small groups</a></li><li><a href="serve.html">Serve</a></li><li><a href="events.html">Events</a></li><li><a href="locations.html">Find a campus</a></li></ul></div>
+          <div class="mega-group"><p class="mega-title" id="mega-g1">Care</p><ul aria-labelledby="mega-g1"><li><a href="prayer.html">Prayer</a></li><li><a href="recovery.html">Celebrate Recovery</a></li><li><a href="contact.html?topic=counseling">Counseling</a></li><li><a href="small-groups.html?type=Support">Support groups</a></li></ul></div>
+          <div class="mega-group"><p class="mega-title" id="mega-g2">Growth</p><ul aria-labelledby="mega-g2"><li><a href="watch.html#archive">Message archive</a></li><li><a href="podcasts.html">Podcasts</a></li><li><a href="index.html#app">Church app</a></li><li><a href="giving.html">Giving</a></li></ul></div>
+          <div class="mega-group"><p class="mega-title" id="mega-g3">More</p><ul aria-labelledby="mega-g3"><li><a href="about.html">About us</a></li><li><a href="careers.html">Careers</a></li><li><a href="contact.html">Contact us</a></li><li><a href="legal.html">Privacy and terms</a></li></ul></div>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+<main id="main-content" data-section="main-content">
+<section class="hero" aria-labelledby="hero-title" data-section="home-hero" data-component="hero"><div class="container hero-grid"><div><p class="eyebrow">First things first</p><h1 id="hero-title">Find your people. Take a next step.</h1><p class="lead">Harbor Ridge Church meets at seven campuses and online. Come as you are, and we will help you find where to begin.</p><p class="hero-actions"><a class="btn" href="locations.html">Find a campus</a> <a class="btn btn-secondary" href="watch.html">Watch online</a></p></div><img src="assets/hero-home.svg" alt="" width="560" height="360"></div></section>
+<section class="band " aria-labelledby="home-locations-title" data-section="home-locations" data-component="card-grid"><div class="container"><h2 id="home-locations-title">Our campuses</h2><p>Pick the campus closest to you. Every campus shares one message and has its own team and kids programs.</p><ul class="cards"><li class="card" data-component="campus-card"><img src="assets/campus.svg" alt="" width="320" height="140" loading="lazy"><div class="card-body"><h3>Bayfront</h3><p>2210 Lantern Way, Bayfront</p><p><strong>Services:</strong> Sat 5:00 PM; Sun 8:30 AM, 10:30 AM</p><a class="card-link" href="locations.html?q=Bayfront">Campus details<span class="sr-only"> for Bayfront</span></a></div></li><li class="card" data-component="campus-card"><img src="assets/campus.svg" alt="" width="320" height="140" loading="lazy"><div class="card-body"><h3>Cedar Hollow</h3><p>48 Millrace Road, Cedar Hollow</p><p><strong>Services:</strong> Sun 9:00 AM, 11:00 AM</p><a class="card-link" href="locations.html?q=Cedar%20Hollow">Campus details<span class="sr-only"> for Cedar Hollow</span></a></div></li><li class="card" data-component="campus-card"><img src="assets/campus.svg" alt="" width="320" height="140" loading="lazy"><div class="card-body"><h3>North Pines</h3><p>915 Alder Court, North Pines</p><p><strong>Services:</strong> Sun 10:00 AM</p><a class="card-link" href="locations.html?q=North%20Pines">Campus details<span class="sr-only"> for North Pines</span></a></div></li><li class="card" data-component="campus-card"><img src="assets/campus.svg" alt="" width="320" height="140" loading="lazy"><div class="card-body"><h3>Stonebridge</h3><p>7 Quarry Street, Stonebridge</p><p><strong>Services:</strong> Sat 6:00 PM; Sun 10:00 AM</p><a class="card-link" href="locations.html?q=Stonebridge">Campus details<span class="sr-only"> for Stonebridge</span></a></div></li><li class="card" data-component="campus-card"><img src="assets/campus.svg" alt="" width="320" height="140" loading="lazy"><div class="card-body"><h3>Lakeview</h3><p>3300 Heron Drive, Lakeview</p><p><strong>Services:</strong> Sun 9:30 AM, 11:15 AM</p><a class="card-link" href="locations.html?q=Lakeview">Campus details<span class="sr-only"> for Lakeview</span></a></div></li><li class="card" data-component="campus-card"><img src="assets/campus.svg" alt="" width="320" height="140" loading="lazy"><div class="card-body"><h3>Riverbend</h3><p>120 Ferry Landing Road, Riverbend</p><p><strong>Services:</strong> Sun 10:30 AM</p><a class="card-link" href="locations.html?q=Riverbend">Campus details<span class="sr-only"> for Riverbend</span></a></div></li></ul><p class="section-cta"><a class="btn btn-secondary" href="locations.html">See all campuses</a></p></div></section>
+<section class="band band-alt" aria-labelledby="first-step-title" data-section="first-step" data-component="card-grid"><div class="container"><h2 id="first-step-title">Your first step starts here</h2><ul class="cards cards-4">
+      <li class="card card-text" data-component="step-card"><div class="card-body"><h3>Plan your first Sunday</h3><p>See service times, parking, and what to expect with kids.</p><a class="card-link" href="locations.html">Choose a campus</a></div></li>
+      <li class="card card-text" data-component="step-card"><div class="card-body"><h3>Join a small group</h3><p>Find a table to share a meal, a study, or a hard season.</p><a class="card-link" href="small-groups.html">Browse groups</a></div></li>
+      <li class="card card-text" data-component="step-card"><div class="card-body"><h3>Serve your neighbors</h3><p>Use what you are good at on a team that fits your schedule.</p><a class="card-link" href="serve.html">See teams</a></div></li>
+      <li class="card card-text" data-component="step-card"><div class="card-body"><h3>Ask for prayer</h3><p>Share a need with our prayer team, privately if you prefer.</p><a class="card-link" href="prayer.html">Send a request</a></div></li></ul></div></section>
+<section class="band" id="app" aria-labelledby="app-title" data-section="church-app" data-component="promo-band"><div class="container split"><div><h2 id="app-title">The Harbor Ridge Church app</h2><p>Watch messages, check in to events, and read the daily devotion in one place. The app is a fictional product in this demo, so there is nothing to download.</p><a class="btn btn-secondary" href="contact.html?topic=app">Ask about the app</a></div><img src="assets/app.svg" alt="Simple drawing of a phone showing a message player and an events list" width="240" height="320" loading="lazy"></div></section>
+<section class="band band-alt" aria-labelledby="stay-connected-title" data-section="stay-connected" data-component="newsletter-band"><div class="container"><h2 id="stay-connected-title">Stay connected</h2><p>Get one short email each week with upcoming events and the latest message. This is a demo form; no email is sent or stored.</p><form id="newsletter-form" class="form" novalidate data-validate data-section="newsletter" data-component="newsletter-form" data-success="Demo only: thank you. No email address was saved and no message will be sent." aria-label="Weekly email sign-up (demo)">
+    <div class="error-summary" role="alert" tabindex="-1" hidden><p class="summary-title">There is a problem</p><ul></ul></div>
+    <div class="field"><label for="news-email">Email address <span class="req">(required)</span></label><input type="email" id="news-email" name="email" aria-describedby="news-email-error" required autocomplete="email"><p class="field-error" id="news-email-error" hidden></p></div>
+    <div class="form-actions"><button type="submit" class="btn">Sign up</button></div>
+    <div class="form-success" role="status" tabindex="-1" hidden></div>
+  </form></div></section>
+</main>
+<footer class="site-footer" data-section="global-footer" data-component="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <p class="footer-brand">Harbor Ridge Church</p>
+      <p>A fictional multi-campus church created for accessibility and usability research. All names, places, people, and times are invented.</p>
+    </div>
+    <nav aria-label="Footer: campuses and visiting" data-section="footer-visit" data-component="footer-nav">
+      <h2 class="footer-title">Visit</h2>
+      <ul><li><a href="locations.html">Locations</a></li><li><a href="watch.html">Watch online</a></li><li><a href="events.html">Events</a></li><li><a href="contact.html">Contact us</a></li></ul>
+    </nav>
+    <nav aria-label="Footer: get involved" data-section="footer-involved" data-component="footer-nav">
+      <h2 class="footer-title">Get involved</h2>
+      <ul><li><a href="small-groups.html">Small groups</a></li><li><a href="serve.html">Serve</a></li><li><a href="prayer.html">Prayer</a></li><li><a href="giving.html">Giving</a></li></ul>
+    </nav>
+    <nav aria-label="Footer: about" data-section="footer-about" data-component="footer-nav">
+      <h2 class="footer-title">About</h2>
+      <ul><li><a href="about.html">About us</a></li><li><a href="podcasts.html">Podcasts</a></li><li><a href="careers.html">Careers</a></li><li><a href="legal.html#privacy">Privacy</a></li><li><a href="legal.html#terms">Terms of use</a></li></ul>
+    </nav>
+  </div>
+  <div class="container footer-base"><p>&copy; 2026 Harbor Ridge Church (fictional). Demonstration only; no forms send data anywhere.</p></div>
+</footer>
+<dialog id="signin-dialog" class="dialog" aria-labelledby="signin-title" data-section="signin-dialog" data-component="modal-dialog">
+  <div class="dialog-head"><h2 id="signin-title">Sign in (demo)</h2><button type="button" class="icon-btn" data-close-dialog aria-label="Close sign in dialog">&times;</button></div>
+  <p class="demo-banner">Demo only: there is no account system. Nothing you type is stored or sent.</p>
+  <form id="signin-form" class="form" novalidate data-validate data-section="signin" data-component="signin-form" data-success="Demo only: no account was checked and no one was signed in. Close this dialog to keep browsing.">
+    <div class="error-summary" role="alert" tabindex="-1" hidden><p class="summary-title">There is a problem</p><ul></ul></div>
+    <div class="field"><label for="signin-email">Email address <span class="req">(required)</span></label><input type="email" id="signin-email" name="signin-email" aria-describedby="signin-email-error" required autocomplete="email"><p class="field-error" id="signin-email-error" hidden></p></div><div class="field"><label for="signin-password">Password <span class="req">(required)</span></label><input type="password" id="signin-password" name="signin-password" aria-describedby="signin-password-error" required autocomplete="current-password" minlength="6"><p class="field-error" id="signin-password-error" hidden></p></div>
+    <div class="form-actions"><button type="submit" class="btn">Sign in</button></div>
+    <div class="form-success" role="status" tabindex="-1" hidden></div>
+  </form>
+</dialog>
+</body>
+</html>
