@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>City news | Port Alder</title>
+<meta name="description" content="City news - City of Port Alder, a fictional city website used as a static research replica.">
+<link rel="icon" href="assets/emblem.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<section class="site-banner" aria-label="Site alert (sample)" data-section="alert-banner" data-component="alert-banner">
+  <div class="container banner-row">
+    <p><strong>Sample alert:</strong> Trash and recycling pickup is delayed by one day during Thanksgiving week. <button type="button" class="link-button" data-toggle aria-expanded="false" aria-controls="banner-details">More details<span class="sr-only"> about the alert</span></button></p>
+    <button type="button" class="btn btn-small btn-light" data-banner-dismiss>Dismiss alert</button>
+  </div>
+  <div id="banner-details" class="container banner-details" hidden><p>This alert is invented demo content for the replica and does not describe real service changes. Check your own city's official notices for real schedules.</p></div>
+</section>
+<header data-section="global-header" data-component="site-header">
+  <div class="container header-top">
+    <a class="brand" href="index.html"><img src="assets/emblem.svg" alt="" width="44" height="44"><span>City of Port Alder<span class="sr-only"> home</span></span></a>
+    <div class="header-tools">
+      <button type="button" class="tool-btn" data-open-dialog="language-dialog" data-component="language-selector">Translate (demo)</button>
+      <div data-menu-scope class="search-scope">
+        <button type="button" class="tool-btn" data-toggle data-menu aria-expanded="false" aria-controls="header-search" data-focus="header-q">Search</button>
+        <div id="header-search" class="search-panel" hidden data-section="header-search" data-component="site-search">
+          <form action="services.html" method="get" role="search" data-header-search aria-label="Site search">
+            <div class="field"><label for="header-type">Search in</label>
+              <select id="header-type"><option value="services.html">Services and permits</option><option value="departments.html">Departments</option><option value="events.html">Events</option><option value="news.html">City news</option><option value="public-notices.html">Public notices</option></select></div>
+            <div class="field"><label for="header-q">Search term</label><input id="header-q" name="q" type="search"></div>
+            <button class="btn" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+      <button type="button" class="tool-btn nav-toggle" data-nav-toggle aria-expanded="false" aria-controls="primary-nav">Menu</button>
+    </div>
+  </div>
+  <nav id="primary-nav" class="primary-nav" aria-label="Primary" data-section="global-navigation" data-component="primary-nav">
+    <ul class="container nav-list">
+      <li><a href="department-311.html">Help / 311</a></li>
+      <li><a href="departments.html">Departments</a></li>
+      <li><a href="public-notices.html">Public notices</a></li>
+      <li><a href="services.html">Pay and apply</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="news.html" aria-current="page">City news</a></li>
+      <li data-menu-scope class="has-menu">
+        <button type="button" data-toggle data-menu aria-expanded="false" aria-controls="menu-places" data-component="mega-menu-trigger">Places</button>
+        <ul id="menu-places" class="menu-panel" hidden>
+          <li><a href="neighborhoods.html">Neighborhoods</a></li>
+          <li><a href="neighborhoods.html#parks">Parks and playgrounds</a></li>
+          <li><a href="neighborhoods.html#libraries">Libraries and community centers</a></li>
+        </ul>
+      </li>
+      <li data-menu-scope class="has-menu">
+        <button type="button" data-toggle data-menu aria-expanded="false" aria-controls="menu-government" data-component="mega-menu-trigger">Government</button>
+        <ul id="menu-government" class="menu-panel" hidden>
+          <li><a href="city-clerk.html">City Clerk</a></li>
+          <li><a href="city-council.html">City Council</a></li>
+          <li><a href="departments.html?q=elections">Elections</a></li>
+          <li><a href="departments.html?q=boards">Boards and commissions</a></li>
+          <li><a href="departments.html">City government overview</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</header>
+<dialog id="language-dialog" aria-labelledby="language-title" data-section="language-dialog" data-component="modal-dialog">
+  <h2 id="language-title">Translate this site (demo)</h2>
+  <form data-language-form>
+    <p>This is a demonstration control. No translated pages exist in this replica.</p>
+    <div class="field"><label for="language-select">Language</label>
+      <select id="language-select"><option value="en">English</option><option value="es">Spanish</option><option value="pt">Portuguese</option><option value="vi">Vietnamese</option><option value="zh">Chinese (Simplified)</option></select></div>
+    <p data-language-status role="status"></p>
+    <p><button class="btn" type="submit">Apply language</button> <button class="btn btn-secondary" type="button" data-close-dialog>Close</button></p>
+  </form>
+</dialog>
+<main id="main-content" data-section="main-content">
+<nav class="container breadcrumbs" aria-label="Breadcrumb" data-section="breadcrumbs" data-component="breadcrumbs"><ol><li><a href="index.html">Home</a></li><li aria-current="page">City news</li></ol></nav>
+<div class="container page-head"><h1>Latest City of Port Alder news</h1><p class="lead">Eight sample news items. Full articles are not part of this replica.</p></div>
+<section class="container list-section" aria-labelledby="news-title" data-section="news-directory" data-component="search-filter-list" data-list="news">
+  <h2 id="news-title" class="sr-only">Search and filter</h2>
+  <form class="filters" role="search" aria-label="Filter news">
+    <div class="field"><label for="f-q">Search news</label><input id="f-q" type="search" data-filter-q></div><div class="field"><label for="f-cat">Topic</label><select id="f-cat" data-filter="cat"><option value="">All topics</option></select></div>
+    <button type="button" class="btn btn-secondary" data-reset>Reset filters</button>
+  </form>
+  
+  <p class="result-count" role="status" data-count></p>
+  <ul class="result-list" data-results></ul>
+  <p class="empty-state" data-empty hidden>No matches. Try a different word or press Reset filters to see everything.</p>
+  <noscript><p class="empty-state">This list needs JavaScript, which is turned off in your browser.</p></noscript>
+</section>
+</main>
+<footer data-section="global-footer" data-component="site-footer">
+  <div class="container footer-grid">
+    <section class="footer-311" aria-labelledby="footer-311-title" data-section="footer-311">
+      <h2 id="footer-311-title">Port Alder 311</h2>
+      <p>Questions, requests and problems: call <strong>311</strong> (demo number 555-0100), any hour.</p>
+      <p><a href="report-problem.html">Report a problem online (demo)</a></p>
+    </section>
+    <nav aria-label="Footer" data-section="footer-links" data-component="footer-links">
+      <h2>City links</h2>
+      <ul>
+        <li><a href="contact.html">Contact City Hall</a></li>
+        <li><a href="feedback.html">Website feedback</a></li>
+        <li><a href="city-clerk.html">Public records</a></li>
+        <li><a href="city-council.html">City Council</a></li>
+        <li><a href="contact.html#accessibility">Accessibility</a></li>
+        <li><a href="contact.html#privacy">Privacy policy</a></li>
+      </ul>
+    </nav>
+    <section aria-labelledby="footer-note-title" data-section="footer-note">
+      <h2 id="footer-note-title">About this site</h2>
+      <p>Port Alder is a fictional city. This is a static research replica with invented data. It is not a real government site and cannot be used to complete real transactions.</p>
+    </section>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

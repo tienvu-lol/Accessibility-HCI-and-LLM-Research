@@ -1,0 +1,618 @@
+{
+  "protocol_version": "1.0",
+  "replica_id": "GOV-01",
+  "category": "government",
+  "source_url": "https://www.boston.gov/",
+  "components": [
+    {
+      "id": "skip-link",
+      "selector": "a.skip-link[href='#main-content']",
+      "pages": [
+        "404.html",
+        "city-clerk.html",
+        "city-council.html",
+        "contact.html",
+        "department-311.html",
+        "departments.html",
+        "events.html",
+        "feedback.html",
+        "index.html",
+        "neighborhoods.html",
+        "news.html",
+        "public-notices.html",
+        "report-problem.html",
+        "service-parking-permit.html",
+        "services.html"
+      ],
+      "behavior": [
+        "visible on focus",
+        "jumps to main"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core via qc.js (1280px and 375px); interaction scripted check where listed in README"
+    },
+    {
+      "id": "alert-banner",
+      "selector": "[data-component='alert-banner']",
+      "pages": [
+        "404.html",
+        "city-clerk.html",
+        "city-council.html",
+        "contact.html",
+        "department-311.html",
+        "departments.html",
+        "events.html",
+        "feedback.html",
+        "index.html",
+        "neighborhoods.html",
+        "news.html",
+        "public-notices.html",
+        "report-problem.html",
+        "service-parking-permit.html",
+        "services.html"
+      ],
+      "behavior": [
+        "expandable details (aria-expanded)",
+        "dismiss"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "axe-core via qc.js (1280px and 375px); interaction scripted check where listed in README"
+    },
+    {
+      "id": "site-header",
+      "selector": "[data-component='site-header']",
+      "pages": [
+        "404.html",
+        "city-clerk.html",
+        "city-council.html",
+        "contact.html",
+        "department-311.html",
+        "departments.html",
+        "events.html",
+        "feedback.html",
+        "index.html",
+        "neighborhoods.html",
+        "news.html",
+        "public-notices.html",
+        "report-problem.html",
+        "service-parking-permit.html",
+        "services.html"
+      ],
+      "behavior": [
+        "brand link",
+        "utility tools"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "axe-core via qc.js (1280px and 375px); interaction scripted check where listed in README"
+    },
+    {
+      "id": "primary-nav",
+      "selector": "[data-component='primary-nav']",
+      "pages": [
+        "404.html",
+        "city-clerk.html",
+        "city-council.html",
+        "contact.html",
+        "department-311.html",
+        "departments.html",
+        "events.html",
+        "feedback.html",
+        "index.html",
+        "neighborhoods.html",
+        "news.html",
+        "public-notices.html",
+        "report-problem.html",
+        "service-parking-permit.html",
+        "services.html"
+      ],
+      "behavior": [
+        "desktop navigation",
+        "mobile disclosure (Menu button)",
+        "active link via aria-current"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "Escape closes mobile menu"
+      ],
+      "status": "implemented",
+      "validation": "axe-core via qc.js (1280px and 375px); interaction scripted check where listed in README"
+    },
+    {
+      "id": "mega-menu-trigger",
+      "selector": "[data-component='mega-menu-trigger']",
+      "pages": [
+        "404.html",
+        "city-clerk.html",
+        "city-council.html",
+        "contact.html",
+        "department-311.html",
+        "departments.html",
+        "events.html",
+        "feedback.html",
+        "index.html",
+        "neighborhoods.html",
+        "news.html",
+        "public-notices.html",
+        "report-problem.html",
+        "service-parking-permit.html",
+        "services.html"
+      ],
+      "behavior": [
+        "two dropdown disclosures (Places, Government)",
+        "one open at a time",
+        "closes on outside click and focus leaving"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "Escape returns focus to trigger"
+      ],
+      "status": "implemented",
+      "validation": "axe-core via qc.js (1280px and 375px); interaction scripted check where listed in README"
+    },
+    {
+      "id": "site-search",
+      "selector": "[data-component='site-search']",
+      "pages": [
+        "404.html",
+        "city-clerk.html",
+        "city-council.html",
+        "contact.html",
+        "department-311.html",
+        "departments.html",
+        "events.html",
+        "feedback.html",
+        "index.html",
+        "neighborhoods.html",
+        "news.html",
+        "public-notices.html",
+        "report-problem.html",
+        "service-parking-permit.html",
+        "services.html"
+      ],
+      "behavior": [
+        "search-type select routes to a local page with ?q=",
+        "panel disclosure"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "axe-core via qc.js (1280px and 375px); interaction scripted check where listed in README"
+    },
+    {
+      "id": "language-selector",
+      "selector": "[data-component='language-selector']",
+      "pages": [
+        "404.html",
+        "city-clerk.html",
+        "city-council.html",
+        "contact.html",
+        "department-311.html",
+        "departments.html",
+        "events.html",
+        "feedback.html",
+        "index.html",
+        "neighborhoods.html",
+        "news.html",
+        "public-notices.html",
+        "report-problem.html",
+        "service-parking-permit.html",
+        "services.html"
+      ],
+      "behavior": [
+        "opens modal dialog; demo only, no translation"
+      ],
+      "keyboard": [
+        "Enter",
+        "Space",
+        "Escape",
+        "Tab stays in dialog"
+      ],
+      "status": "implemented",
+      "validation": "axe-core via qc.js (1280px and 375px); interaction scripted check where listed in README"
+    },
+    {
+      "id": "modal-dialog",
+      "selector": "dialog[data-component='modal-dialog']",
+      "pages": [
+        "index.html",
+        "404.html",
+        "city-clerk.html",
+        "city-council.html",
+        "contact.html",
+        "department-311.html",
+        "departments.html",
+        "events.html",
+        "feedback.html",
+        "neighborhoods.html",
+        "news.html",
+        "public-notices.html",
+        "report-problem.html",
+        "service-parking-permit.html",
+        "services.html"
+      ],
+      "behavior": [
+        "native dialog showModal",
+        "backdrop click closes",
+        "focus returns to opener"
+      ],
+      "keyboard": [
+        "Escape",
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "axe-core via qc.js (1280px and 375px); interaction scripted check where listed in README"
+    },
+    {
+      "id": "breadcrumbs",
+      "selector": "[data-component='breadcrumbs']",
+      "pages": [
+        "city-clerk.html",
+        "city-council.html",
+        "contact.html",
+        "department-311.html",
+        "departments.html",
+        "events.html",
+        "feedback.html",
+        "neighborhoods.html",
+        "news.html",
+        "public-notices.html",
+        "report-problem.html",
+        "service-parking-permit.html",
+        "services.html"
+      ],
+      "behavior": [
+        "links back through site tree",
+        "aria-current on last item"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core via qc.js (1280px and 375px); interaction scripted check where listed in README"
+    },
+    {
+      "id": "hero",
+      "selector": "[data-component='hero']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "heading + illustration"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "axe-core via qc.js (1280px and 375px); interaction scripted check where listed in README"
+    },
+    {
+      "id": "hero-search",
+      "selector": "[data-component='hero-search']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "GET form to services.html?q="
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core via qc.js (1280px and 375px); interaction scripted check where listed in README"
+    },
+    {
+      "id": "info-panel",
+      "selector": "[data-component='info-panel']",
+      "pages": [
+        "city-clerk.html",
+        "contact.html",
+        "department-311.html",
+        "index.html",
+        "neighborhoods.html",
+        "service-parking-permit.html"
+      ],
+      "behavior": [
+        "static information blocks"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "axe-core via qc.js (1280px and 375px); interaction scripted check where listed in README"
+    },
+    {
+      "id": "card-grid",
+      "selector": "[data-component='card-grid']",
+      "pages": [
+        "index.html",
+        "city-council.html"
+      ],
+      "behavior": [
+        "responsive auto-fill grid of linked cards"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core via qc.js (1280px and 375px); interaction scripted check where listed in README"
+    },
+    {
+      "id": "newsletter-form",
+      "selector": "[data-component='newsletter-form']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "client-side validation",
+        "error summary + inline errors",
+        "demo success"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core via qc.js (1280px and 375px); interaction scripted check where listed in README",
+      "note": "demo only"
+    },
+    {
+      "id": "profile-card",
+      "selector": "[data-component='profile-card']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "fictional leader cards"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core via qc.js (1280px and 375px); interaction scripted check where listed in README"
+    },
+    {
+      "id": "search-filter-list",
+      "selector": "[data-component='search-filter-list']",
+      "pages": [
+        "services.html",
+        "departments.html",
+        "events.html",
+        "news.html",
+        "public-notices.html",
+        "neighborhoods.html"
+      ],
+      "behavior": [
+        "keyword search over inline data",
+        "select filters",
+        "reset button restores focus to search",
+        "live result count",
+        "empty state"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Arrow keys inside selects"
+      ],
+      "status": "implemented",
+      "validation": "axe-core via qc.js (1280px and 375px); interaction scripted check where listed in README",
+      "instances": {
+        "services-directory": "services.html",
+        "departments-directory": "departments.html",
+        "events-list": "events.html",
+        "news-list": "news.html",
+        "notices-list": "public-notices.html",
+        "neighborhoods-list": "neighborhoods.html"
+      }
+    },
+    {
+      "id": "department-letter-filter",
+      "selector": "[data-letters]",
+      "pages": [
+        "departments.html"
+      ],
+      "behavior": [
+        "A-Z buttons with aria-pressed"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "axe-core via qc.js (1280px and 375px); interaction scripted check where listed in README"
+    },
+    {
+      "id": "service-item",
+      "selector": "[data-component='service-item']",
+      "pages": [
+        "services.html"
+      ],
+      "behavior": [
+        "per-item disclosure (aria-expanded) with requirements"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "axe-core via qc.js (1280px and 375px); interaction scripted check where listed in README"
+    },
+    {
+      "id": "how-to-article",
+      "selector": "[data-component='how-to-article']",
+      "pages": [
+        "service-parking-permit.html"
+      ],
+      "behavior": [
+        "headings, steps list, native details FAQ"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "axe-core via qc.js (1280px and 375px); interaction scripted check where listed in README"
+    },
+    {
+      "id": "department-overview",
+      "selector": "[data-component='department-overview']",
+      "pages": [
+        "department-311.html",
+        "city-clerk.html"
+      ],
+      "behavior": [
+        "overview + link list + contact sidebar"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core via qc.js (1280px and 375px); interaction scripted check where listed in README"
+    },
+    {
+      "id": "meeting-schedule",
+      "selector": "[data-component='meeting-schedule']",
+      "pages": [
+        "city-council.html"
+      ],
+      "behavior": [
+        "data table with per-row agenda details",
+        "scroll region at narrow widths"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "axe-core via qc.js (1280px and 375px); interaction scripted check where listed in README",
+      "note": "intentional addition"
+    },
+    {
+      "id": "feedback-form",
+      "selector": "[data-component='feedback-form']",
+      "pages": [
+        "feedback.html"
+      ],
+      "behavior": [
+        "client-side validation",
+        "error summary focus",
+        "inline errors",
+        "demo success"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core via qc.js (1280px and 375px); interaction scripted check where listed in README",
+      "note": "simulated"
+    },
+    {
+      "id": "report-form",
+      "selector": "[data-component='report-form']",
+      "pages": [
+        "report-problem.html"
+      ],
+      "behavior": [
+        "client-side validation",
+        "error summary focus",
+        "inline errors",
+        "demo reference number"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core via qc.js (1280px and 375px); interaction scripted check where listed in README",
+      "note": "intentional addition, simulated"
+    },
+    {
+      "id": "contact-info",
+      "selector": "[data-component='contact-info']",
+      "pages": [
+        "contact.html"
+      ],
+      "behavior": [
+        "address, phones, accessibility and privacy anchors"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core via qc.js (1280px and 375px); interaction scripted check where listed in README"
+    },
+    {
+      "id": "site-footer",
+      "selector": "[data-component='site-footer']",
+      "pages": [
+        "404.html",
+        "city-clerk.html",
+        "city-council.html",
+        "contact.html",
+        "department-311.html",
+        "departments.html",
+        "events.html",
+        "feedback.html",
+        "index.html",
+        "neighborhoods.html",
+        "news.html",
+        "public-notices.html",
+        "report-problem.html",
+        "service-parking-permit.html",
+        "services.html"
+      ],
+      "behavior": [
+        "311 block",
+        "footer links",
+        "about note"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core via qc.js (1280px and 375px); interaction scripted check where listed in README"
+    },
+    {
+      "id": "error-page",
+      "selector": "[data-component='error-page']",
+      "pages": [
+        "404.html"
+      ],
+      "behavior": [
+        "route back to home, services, departments"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core via qc.js (1280px and 375px); interaction scripted check where listed in README"
+    }
+  ]
+}
