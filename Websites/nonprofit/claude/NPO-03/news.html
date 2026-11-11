@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>News | Hollowbrook Animal Alliance</title>
+  <meta name="description" content="Filter and search sample news stories from the fictional Hollowbrook Animal Alliance.">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header" data-section="global-header" data-component="site-header">
+  <div class="utility-bar" data-section="utility-bar" data-component="utility-nav"><div class="wrap">
+    <a href="adopt.html">Adopt</a><a href="local-initiative.html">Local initiatives</a><a href="news.html">News</a>
+  </div></div>
+  <div class="header-main">
+    <a class="brand" href="index.html" data-component="brand"><img src="assets/logo.svg" alt="" width="44" height="44"><span>Hollowbrook Animal Alliance<small>Kindness, rescue and a voice for animals</small></span></a>
+    <div class="header-actions">
+      <a class="btn btn-donate" href="donate.html" data-component="donate-button">Donate</a>
+      <button type="button" id="menu-toggle" class="menu-toggle" aria-expanded="false" aria-controls="site-menu" data-component="mobile-menu-toggle">Menu</button>
+    </div>
+    <div id="site-menu" class="site-menu">
+      <nav aria-label="Primary" data-section="global-navigation" data-component="primary-nav">
+        <ul class="nav-list">
+          <li data-popover-item>
+            <button type="button" class="nav-link" aria-expanded="false" aria-controls="mega-work" data-popover data-component="mega-menu-toggle">Our work<span class="chev" aria-hidden="true"></span></button>
+            <div id="mega-work" class="mega" data-component="mega-menu"><ul><li><a href="helping-shelters.html">Helping shelters, people and pets</a></li><li><a href="investigations-rescue.html">Investigations and rescue</a></li><li><a href="animal-care-recovery.html">Animal care and recovery</a></li><li><a href="improving-laws.html">Improving laws for animals</a></li><li><a href="helping-shelters.html#grants">Grants and scholarships</a></li></ul></div>
+          </li>
+          <li data-popover-item>
+            <button type="button" class="nav-link" aria-expanded="false" aria-controls="mega-loc" data-popover data-component="mega-menu-toggle">Locations<span class="chev" aria-hidden="true"></span></button>
+            <div id="mega-loc" class="mega" data-component="mega-menu"><ul><li><a href="local-initiative.html?city=port-larkin">Port Larkin</a></li><li><a href="local-initiative.html?city=sunvale">Sunvale</a></li><li><a href="local-initiative.html?city=cedar-reach">Cedar Reach</a></li><li><a href="local-initiative.html?city=ashgrove">Ashgrove</a></li><li><a href="local-initiative.html?city=prairie-fork">Prairie Fork</a></li></ul></div>
+          </li>
+          <li data-popover-item>
+            <button type="button" class="nav-link" aria-expanded="false" aria-controls="mega-involved" data-popover data-component="mega-menu-toggle">Get involved<span class="chev" aria-hidden="true"></span></button>
+            <div id="mega-involved" class="mega" data-component="mega-menu"><ul><li><a href="get-involved.html">Ways to get involved</a></li><li><a href="ways-to-give.html">Ways to give</a></li><li><a href="advocacy.html">Advocate for animals</a></li><li><a href="index.html#email-updates">Receive email updates</a></li></ul></div>
+          </li>
+          <li><a class="nav-link" href="adopt.html">Adopt a pet</a></li>
+          <li><a class="nav-link" href="pet-care.html">Pet care</a></li>
+          <li><a class="nav-link is-current" href="news.html" aria-current="page">News</a></li>
+        </ul>
+      </nav>
+      <form class="site-search" role="search" aria-label="Site search" action="search.html" method="get" data-section="site-search" data-component="search-form">
+        <label for="header-q" class="sr-only">Search the site</label>
+        <input id="header-q" type="search" name="q" placeholder="Search" autocomplete="off">
+        <button type="submit" class="btn btn-secondary">Search</button>
+      </form>
+    </div>
+  </div>
+</header>
+<main id="main-content" data-section="main-content">
+
+<div class="page-title" data-section="page-title" data-component="page-title"><div class="wrap"><nav class="breadcrumb" aria-label="Breadcrumb" data-section="breadcrumb" data-component="breadcrumb"><ol><li><a href="index.html">Home</a></li><li><span aria-current="page">News</span></li></ol></nav><h1>News</h1><p>Stories and updates from our field teams, clinics and advocates. All stories are invented samples.</p></div></div>
+<section class="band" aria-labelledby="stories-title" data-section="news-list" data-component="news-listing"><div class="wrap">
+  <h2 id="stories-title">Latest stories</h2>
+  <form class="filter-bar" data-component="news-filter" role="search" aria-label="News stories">
+    <div class="field"><label for="news-q">Search stories</label><input id="news-q" name="q" type="search" autocomplete="off"></div>
+    <div class="field"><label for="news-topic">Topic</label><select id="news-topic" name="topic"><option value="">All topics</option><option>Rescue</option><option>Policy</option><option>Shelters</option><option>Pet care</option><option>Community</option></select></div>
+    <div class="field"><button type="reset" class="btn btn-secondary">Reset filters</button></div>
+  </form>
+  <p id="news-status" role="status" class="meta"></p>
+  <ul id="news-list" class="cards"></ul>
+  <div id="news-empty" class="empty-state" hidden><h3>No stories match</h3><p>Try a different topic or search term.</p><button type="button" id="news-empty-reset" class="btn">Clear filters</button></div>
+  <p><button type="button" id="news-more" class="btn btn-secondary" hidden>Show more stories</button></p>
+</div></section>
+</main>
+<footer class="site-footer" data-section="global-footer" data-component="site-footer"><div class="wrap">
+  <nav aria-label="Footer" data-section="footer-navigation" data-component="footer-nav"><div class="footer-grid">
+    <div><h2>Our work</h2><ul><li><a href="helping-shelters.html">Helping shelters, people and pets</a></li><li><a href="investigations-rescue.html">Investigations and rescue</a></li><li><a href="animal-care-recovery.html">Animal care and recovery</a></li><li><a href="improving-laws.html">Improving laws for animals</a></li></ul></div>
+    <div><h2>Get involved</h2><ul><li><a href="donate.html">Donate</a></li><li><a href="ways-to-give.html">Ways to give</a></li><li><a href="advocacy.html">Advocacy center</a></li><li><a href="get-involved.html">All ways to help</a></li></ul></div>
+    <div><h2>Pets and people</h2><ul><li><a href="adopt.html">Adopt a pet</a></li><li><a href="pet-care.html">Pet care</a></li><li><a href="local-initiative.html">Local initiatives</a></li><li><a href="news.html">News</a></li></ul></div>
+    <div><h2>About</h2><ul><li><a href="about.html">About us</a></li><li><a href="about.html#leadership">Leadership</a></li><li><a href="search.html">Search</a></li></ul></div>
+  </div></nav>
+  <div class="footer-legal">
+    <p>Hollowbrook Animal Alliance is a fictional organization created for an accessibility research dataset. No real animals, donations or services are offered.</p>
+    <ul><li><a href="about.html#terms">Terms and conditions</a></li><li><a href="about.html#privacy">Privacy policy</a></li><li><a href="about.html#accessibility">Accessibility statement</a></li><li><button type="button" class="link-button" data-open-dialog="cookie-dialog">Cookie preferences</button></li></ul>
+  </div>
+</div></footer>
+<dialog id="cookie-dialog" aria-labelledby="cookie-title" data-section="cookie-preferences" data-component="cookie-dialog">
+  <form id="cookie-form" method="dialog">
+    <h2 id="cookie-title">Cookie preferences (demo)</h2>
+    <p>This demo site sets no cookies and loads no trackers. The controls below only illustrate a consent dialog and store nothing.</p>
+    <label class="check"><input type="checkbox" checked disabled> Strictly necessary (always on)</label>
+    <label class="check"><input type="checkbox" name="analytics"> Analytics (demo, not used)</label>
+    <p id="cookie-status" role="status"></p>
+    <div class="btn-row"><button type="button" class="btn btn-secondary" data-close-dialog>Close</button><button type="submit" class="btn">Save preferences</button></div>
+  </form>
+</dialog>
+<script src="js/main.js"></script>
+</body>
+</html>

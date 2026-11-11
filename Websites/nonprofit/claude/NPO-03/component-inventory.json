@@ -1,0 +1,994 @@
+{
+  "protocol_version": "1.0",
+  "replica_id": "NPO-03",
+  "category": "nonprofit",
+  "source_url": "https://www.aspca.org/",
+  "components": [
+    {
+      "id": "accordion",
+      "selector": "[data-component='accordion']",
+      "pages": [
+        "animal-care-recovery.html",
+        "helping-shelters.html",
+        "improving-laws.html",
+        "investigations-rescue.html",
+        "ways-to-give.html"
+      ],
+      "behavior": [
+        "native details/summary"
+      ],
+      "keyboard": [
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "tested: qc.js axe-core only; no manual review"
+    },
+    {
+      "id": "adoption-search",
+      "selector": "[data-component='adoption-search']",
+      "pages": [
+        "adopt.html"
+      ],
+      "behavior": [
+        "text search",
+        "species/age/sort selects",
+        "good-with-children checkbox",
+        "reset",
+        "empty state",
+        "live status"
+      ],
+      "keyboard": [
+        "Tab",
+        "arrow keys on selects",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "tested: scripted Playwright flow (not shipped) + qc.js axe-core"
+    },
+    {
+      "id": "adoption-search-section",
+      "selector": "[data-component='adoption-search-section']",
+      "pages": [
+        "adopt.html"
+      ],
+      "behavior": [
+        "static content region"
+      ],
+      "keyboard": [
+        "Tab to links"
+      ],
+      "status": "implemented",
+      "validation": "tested: qc.js axe-core only; no manual review"
+    },
+    {
+      "id": "advocacy-form",
+      "selector": "[data-component='advocacy-form']",
+      "pages": [
+        "advocacy.html"
+      ],
+      "behavior": [
+        "client-side validation",
+        "error summary",
+        "inline errors",
+        "demo success"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "tested: scripted Playwright flow (not shipped) + qc.js axe-core"
+    },
+    {
+      "id": "alert-banner",
+      "selector": "[data-component='alert-banner']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "seasonal appeal with progress element (sample figures)"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "tested: qc.js axe-core only; no manual review"
+    },
+    {
+      "id": "animal-card",
+      "selector": "[data-component='animal-card']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "opens detail dialog (adopt page) or links to filtered adopt page (home)"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "tested: scripted Playwright flow (not shipped) + qc.js axe-core"
+    },
+    {
+      "id": "appeal-panel",
+      "selector": "[data-component='appeal-panel']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "static content region"
+      ],
+      "keyboard": [
+        "Tab to links"
+      ],
+      "status": "implemented",
+      "validation": "tested: qc.js axe-core only; no manual review"
+    },
+    {
+      "id": "brand",
+      "selector": "[data-component='brand']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "adopt.html",
+        "advocacy.html",
+        "animal-care-recovery.html",
+        "donate.html",
+        "get-involved.html",
+        "helping-shelters.html",
+        "improving-laws.html",
+        "index.html",
+        "investigations-rescue.html",
+        "local-initiative.html",
+        "news.html",
+        "pet-care.html",
+        "search.html",
+        "ways-to-give.html"
+      ],
+      "behavior": [
+        "static content region"
+      ],
+      "keyboard": [
+        "Tab to links"
+      ],
+      "status": "implemented",
+      "validation": "tested: qc.js axe-core only; no manual review"
+    },
+    {
+      "id": "breadcrumb",
+      "selector": "[data-component='breadcrumb']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "adopt.html",
+        "advocacy.html",
+        "animal-care-recovery.html",
+        "donate.html",
+        "get-involved.html",
+        "helping-shelters.html",
+        "improving-laws.html",
+        "investigations-rescue.html",
+        "local-initiative.html",
+        "news.html",
+        "pet-care.html",
+        "search.html",
+        "ways-to-give.html"
+      ],
+      "behavior": [
+        "breadcrumb list with aria-current"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "tested: qc.js axe-core only; no manual review"
+    },
+    {
+      "id": "campaign-list",
+      "selector": "[data-component='campaign-list']",
+      "pages": [
+        "advocacy.html"
+      ],
+      "behavior": [
+        "region filter",
+        "take-action button preselects form campaign and moves focus"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "tested: scripted Playwright flow (not shipped) + qc.js axe-core"
+    },
+    {
+      "id": "card-grid",
+      "selector": "[data-component='card-grid']",
+      "pages": [
+        "about.html",
+        "adopt.html",
+        "get-involved.html",
+        "helping-shelters.html",
+        "index.html",
+        "ways-to-give.html"
+      ],
+      "behavior": [
+        "static content region"
+      ],
+      "keyboard": [
+        "Tab to links"
+      ],
+      "status": "implemented",
+      "validation": "tested: qc.js axe-core only; no manual review"
+    },
+    {
+      "id": "content-block",
+      "selector": "[data-component='content-block']",
+      "pages": [
+        "about.html",
+        "animal-care-recovery.html",
+        "improving-laws.html",
+        "investigations-rescue.html"
+      ],
+      "behavior": [
+        "static content region"
+      ],
+      "keyboard": [
+        "Tab to links"
+      ],
+      "status": "implemented",
+      "validation": "tested: qc.js axe-core only; no manual review"
+    },
+    {
+      "id": "cookie-dialog",
+      "selector": "[data-component='cookie-dialog']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "adopt.html",
+        "advocacy.html",
+        "animal-care-recovery.html",
+        "donate.html",
+        "get-involved.html",
+        "helping-shelters.html",
+        "improving-laws.html",
+        "index.html",
+        "investigations-rescue.html",
+        "local-initiative.html",
+        "news.html",
+        "pet-care.html",
+        "search.html",
+        "ways-to-give.html"
+      ],
+      "behavior": [
+        "native dialog demo consent controls",
+        "stores nothing"
+      ],
+      "keyboard": [
+        "Tab",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "tested: scripted Playwright flow (not shipped) + qc.js axe-core"
+    },
+    {
+      "id": "cta-band",
+      "selector": "[data-component='cta-band']",
+      "pages": [
+        "about.html",
+        "animal-care-recovery.html",
+        "helping-shelters.html",
+        "improving-laws.html",
+        "investigations-rescue.html",
+        "pet-care.html"
+      ],
+      "behavior": [
+        "static content region"
+      ],
+      "keyboard": [
+        "Tab to links"
+      ],
+      "status": "implemented",
+      "validation": "tested: qc.js axe-core only; no manual review"
+    },
+    {
+      "id": "data-table",
+      "selector": "[data-component='data-table']",
+      "pages": [
+        "helping-shelters.html"
+      ],
+      "behavior": [
+        "simple table with scoped headers"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "tested: qc.js axe-core only; no manual review"
+    },
+    {
+      "id": "detail-dialog",
+      "selector": "[data-component='detail-dialog']",
+      "pages": [
+        "adopt.html"
+      ],
+      "behavior": [
+        "native dialog showModal",
+        "Escape and Close button",
+        "backdrop click closes",
+        "focus returns to opener"
+      ],
+      "keyboard": [
+        "Tab",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "tested: scripted Playwright flow (not shipped) + qc.js axe-core"
+    },
+    {
+      "id": "donate-button",
+      "selector": "[data-component='donate-button']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "adopt.html",
+        "advocacy.html",
+        "animal-care-recovery.html",
+        "donate.html",
+        "get-involved.html",
+        "helping-shelters.html",
+        "improving-laws.html",
+        "index.html",
+        "investigations-rescue.html",
+        "local-initiative.html",
+        "news.html",
+        "pet-care.html",
+        "search.html",
+        "ways-to-give.html"
+      ],
+      "behavior": [
+        "static content region"
+      ],
+      "keyboard": [
+        "Tab to links"
+      ],
+      "status": "implemented",
+      "validation": "tested: qc.js axe-core only; no manual review"
+    },
+    {
+      "id": "donation-form",
+      "selector": "[data-component='donation-form']",
+      "pages": [
+        "donate.html"
+      ],
+      "behavior": [
+        "frequency radios",
+        "amount radios + other amount",
+        "dynamic submit label and sample impact line",
+        "validation with error summary",
+        "query-string preselect",
+        "demo success; no payment"
+      ],
+      "keyboard": [
+        "Tab",
+        "arrow keys on radio groups",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "tested: scripted Playwright flow (not shipped) + qc.js axe-core"
+    },
+    {
+      "id": "error-page",
+      "selector": "[data-component='error-page']",
+      "pages": [
+        "404.html"
+      ],
+      "behavior": [
+        "static content region"
+      ],
+      "keyboard": [
+        "Tab to links"
+      ],
+      "status": "implemented",
+      "validation": "tested: qc.js axe-core only; no manual review"
+    },
+    {
+      "id": "footer-nav",
+      "selector": "[data-component='footer-nav']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "adopt.html",
+        "advocacy.html",
+        "animal-care-recovery.html",
+        "donate.html",
+        "get-involved.html",
+        "helping-shelters.html",
+        "improving-laws.html",
+        "index.html",
+        "investigations-rescue.html",
+        "local-initiative.html",
+        "news.html",
+        "pet-care.html",
+        "search.html",
+        "ways-to-give.html"
+      ],
+      "behavior": [
+        "static content region"
+      ],
+      "keyboard": [
+        "Tab to links"
+      ],
+      "status": "implemented",
+      "validation": "tested: qc.js axe-core only; no manual review"
+    },
+    {
+      "id": "hazard-lookup",
+      "selector": "[data-component='hazard-lookup']",
+      "pages": [
+        "pet-care.html"
+      ],
+      "behavior": [
+        "text search",
+        "animal select",
+        "reset",
+        "empty state"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "tested: scripted Playwright flow (not shipped) + qc.js axe-core"
+    },
+    {
+      "id": "hero-banner",
+      "selector": "[data-component='hero-banner']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "static content region"
+      ],
+      "keyboard": [
+        "Tab to links"
+      ],
+      "status": "implemented",
+      "validation": "tested: qc.js axe-core only; no manual review"
+    },
+    {
+      "id": "info-panel",
+      "selector": "[data-component='info-panel']",
+      "pages": [
+        "donate.html"
+      ],
+      "behavior": [
+        "static content region"
+      ],
+      "keyboard": [
+        "Tab to links"
+      ],
+      "status": "implemented",
+      "validation": "tested: qc.js axe-core only; no manual review"
+    },
+    {
+      "id": "legal-block",
+      "selector": "[data-component='legal-block']",
+      "pages": [
+        "about.html"
+      ],
+      "behavior": [
+        "static content region"
+      ],
+      "keyboard": [
+        "Tab to links"
+      ],
+      "status": "implemented",
+      "validation": "tested: qc.js axe-core only; no manual review"
+    },
+    {
+      "id": "location-detail",
+      "selector": "[data-component='location-detail']",
+      "pages": [
+        "local-initiative.html"
+      ],
+      "behavior": [
+        "renders hub data from inline array using ?city=",
+        "unknown-city message"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "tested: scripted Playwright flow (not shipped) + qc.js axe-core"
+    },
+    {
+      "id": "location-picker",
+      "selector": "[data-component='location-picker']",
+      "pages": [
+        "get-involved.html",
+        "local-initiative.html"
+      ],
+      "behavior": [
+        "GET form to local-initiative.html"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "tested: scripted Playwright flow (not shipped) + qc.js axe-core"
+    },
+    {
+      "id": "mega-menu",
+      "selector": "[data-component='mega-menu']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "adopt.html",
+        "advocacy.html",
+        "animal-care-recovery.html",
+        "donate.html",
+        "get-involved.html",
+        "helping-shelters.html",
+        "improving-laws.html",
+        "index.html",
+        "investigations-rescue.html",
+        "local-initiative.html",
+        "news.html",
+        "pet-care.html",
+        "search.html",
+        "ways-to-give.html"
+      ],
+      "behavior": [
+        "link panel controlled by toggle"
+      ],
+      "keyboard": [
+        "Tab through links",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "tested: scripted Playwright flow (not shipped) + qc.js axe-core"
+    },
+    {
+      "id": "mega-menu-toggle",
+      "selector": "[data-component='mega-menu-toggle']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "adopt.html",
+        "advocacy.html",
+        "animal-care-recovery.html",
+        "donate.html",
+        "get-involved.html",
+        "helping-shelters.html",
+        "improving-laws.html",
+        "index.html",
+        "investigations-rescue.html",
+        "local-initiative.html",
+        "news.html",
+        "pet-care.html",
+        "search.html",
+        "ways-to-give.html"
+      ],
+      "behavior": [
+        "button toggles aria-expanded",
+        "closes other open menus",
+        "outside click closes"
+      ],
+      "keyboard": [
+        "Enter",
+        "Space",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "tested: scripted Playwright flow (not shipped) + qc.js axe-core"
+    },
+    {
+      "id": "mobile-menu-toggle",
+      "selector": "[data-component='mobile-menu-toggle']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "adopt.html",
+        "advocacy.html",
+        "animal-care-recovery.html",
+        "donate.html",
+        "get-involved.html",
+        "helping-shelters.html",
+        "improving-laws.html",
+        "index.html",
+        "investigations-rescue.html",
+        "local-initiative.html",
+        "news.html",
+        "pet-care.html",
+        "search.html",
+        "ways-to-give.html"
+      ],
+      "behavior": [
+        "toggles site menu below 62em",
+        "aria-expanded"
+      ],
+      "keyboard": [
+        "Enter",
+        "Space",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "tested: scripted Playwright flow (not shipped) + qc.js axe-core"
+    },
+    {
+      "id": "news-filter",
+      "selector": "[data-component='news-filter']",
+      "pages": [
+        "news.html"
+      ],
+      "behavior": [
+        "text search",
+        "topic select",
+        "reset",
+        "empty state"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "tested: scripted Playwright flow (not shipped) + qc.js axe-core"
+    },
+    {
+      "id": "news-listing",
+      "selector": "[data-component='news-listing']",
+      "pages": [
+        "news.html"
+      ],
+      "behavior": [
+        "static content region"
+      ],
+      "keyboard": [
+        "Tab to links"
+      ],
+      "status": "implemented",
+      "validation": "tested: qc.js axe-core only; no manual review"
+    },
+    {
+      "id": "newsletter-form",
+      "selector": "[data-component='newsletter-form']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "client-side validation",
+        "demo success; stores nothing"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "tested: scripted Playwright flow (not shipped) + qc.js axe-core"
+    },
+    {
+      "id": "page-title",
+      "selector": "[data-component='page-title']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "adopt.html",
+        "advocacy.html",
+        "animal-care-recovery.html",
+        "donate.html",
+        "get-involved.html",
+        "helping-shelters.html",
+        "improving-laws.html",
+        "investigations-rescue.html",
+        "local-initiative.html",
+        "news.html",
+        "pet-care.html",
+        "search.html",
+        "ways-to-give.html"
+      ],
+      "behavior": [
+        "static content region"
+      ],
+      "keyboard": [
+        "Tab to links"
+      ],
+      "status": "implemented",
+      "validation": "tested: qc.js axe-core only; no manual review"
+    },
+    {
+      "id": "primary-nav",
+      "selector": "[data-component='primary-nav']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "adopt.html",
+        "advocacy.html",
+        "animal-care-recovery.html",
+        "donate.html",
+        "get-involved.html",
+        "helping-shelters.html",
+        "improving-laws.html",
+        "index.html",
+        "investigations-rescue.html",
+        "local-initiative.html",
+        "news.html",
+        "pet-care.html",
+        "search.html",
+        "ways-to-give.html"
+      ],
+      "behavior": [
+        "desktop dropdown disclosures",
+        "mobile disclosure inside menu panel",
+        "aria-current on current page"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "Escape closes and returns focus"
+      ],
+      "status": "implemented",
+      "validation": "tested: scripted Playwright flow (not shipped) + qc.js axe-core"
+    },
+    {
+      "id": "program-card",
+      "selector": "[data-component='program-card']",
+      "pages": [
+        "get-involved.html",
+        "index.html",
+        "ways-to-give.html"
+      ],
+      "behavior": [
+        "static content region"
+      ],
+      "keyboard": [
+        "Tab to links"
+      ],
+      "status": "implemented",
+      "validation": "tested: qc.js axe-core only; no manual review"
+    },
+    {
+      "id": "search-form",
+      "selector": "[data-component='search-form']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "adopt.html",
+        "advocacy.html",
+        "animal-care-recovery.html",
+        "donate.html",
+        "get-involved.html",
+        "helping-shelters.html",
+        "improving-laws.html",
+        "index.html",
+        "investigations-rescue.html",
+        "local-initiative.html",
+        "news.html",
+        "pet-care.html",
+        "search.html",
+        "ways-to-give.html"
+      ],
+      "behavior": [
+        "GET form to search.html"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "tested: scripted Playwright flow (not shipped) + qc.js axe-core"
+    },
+    {
+      "id": "search-results",
+      "selector": "[data-component='search-results']",
+      "pages": [
+        "search.html"
+      ],
+      "behavior": [
+        "searches inline page/news/animal index",
+        "empty state",
+        "status message"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "tested: scripted Playwright flow (not shipped) + qc.js axe-core"
+    },
+    {
+      "id": "search-section",
+      "selector": "[data-component='search-section']",
+      "pages": [
+        "search.html"
+      ],
+      "behavior": [
+        "static content region"
+      ],
+      "keyboard": [
+        "Tab to links"
+      ],
+      "status": "implemented",
+      "validation": "tested: qc.js axe-core only; no manual review"
+    },
+    {
+      "id": "site-footer",
+      "selector": "[data-component='site-footer']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "adopt.html",
+        "advocacy.html",
+        "animal-care-recovery.html",
+        "donate.html",
+        "get-involved.html",
+        "helping-shelters.html",
+        "improving-laws.html",
+        "index.html",
+        "investigations-rescue.html",
+        "local-initiative.html",
+        "news.html",
+        "pet-care.html",
+        "search.html",
+        "ways-to-give.html"
+      ],
+      "behavior": [
+        "grouped links, legal links, cookie preferences button"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "tested: qc.js axe-core only; no manual review"
+    },
+    {
+      "id": "site-header",
+      "selector": "[data-component='site-header']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "adopt.html",
+        "advocacy.html",
+        "animal-care-recovery.html",
+        "donate.html",
+        "get-involved.html",
+        "helping-shelters.html",
+        "improving-laws.html",
+        "index.html",
+        "investigations-rescue.html",
+        "local-initiative.html",
+        "news.html",
+        "pet-care.html",
+        "search.html",
+        "ways-to-give.html"
+      ],
+      "behavior": [
+        "banner landmark with utility bar, brand, donate button, nav, search"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "tested: qc.js axe-core only; no manual review"
+    },
+    {
+      "id": "social-block",
+      "selector": "[data-component='social-block']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "static content region"
+      ],
+      "keyboard": [
+        "Tab to links"
+      ],
+      "status": "implemented",
+      "validation": "tested: qc.js axe-core only; no manual review"
+    },
+    {
+      "id": "stat-band",
+      "selector": "[data-component='stat-band']",
+      "pages": [
+        "about.html"
+      ],
+      "behavior": [
+        "static content region"
+      ],
+      "keyboard": [
+        "Tab to links"
+      ],
+      "status": "implemented",
+      "validation": "tested: qc.js axe-core only; no manual review"
+    },
+    {
+      "id": "step-list",
+      "selector": "[data-component='step-list']",
+      "pages": [
+        "animal-care-recovery.html",
+        "improving-laws.html",
+        "investigations-rescue.html"
+      ],
+      "behavior": [
+        "static content region"
+      ],
+      "keyboard": [
+        "Tab to links"
+      ],
+      "status": "implemented",
+      "validation": "tested: qc.js axe-core only; no manual review"
+    },
+    {
+      "id": "tabs",
+      "selector": "[data-component='tabs']",
+      "pages": [
+        "pet-care.html"
+      ],
+      "behavior": [
+        "WAI-ARIA tabs pattern, roving tabindex",
+        "hash selects tab"
+      ],
+      "keyboard": [
+        "Tab",
+        "ArrowLeft",
+        "ArrowRight",
+        "Home",
+        "End"
+      ],
+      "status": "implemented",
+      "validation": "tested: scripted Playwright flow (not shipped) + qc.js axe-core"
+    },
+    {
+      "id": "timeline",
+      "selector": "[data-component='timeline']",
+      "pages": [
+        "about.html"
+      ],
+      "behavior": [
+        "static content region"
+      ],
+      "keyboard": [
+        "Tab to links"
+      ],
+      "status": "implemented",
+      "validation": "tested: qc.js axe-core only; no manual review"
+    },
+    {
+      "id": "utility-nav",
+      "selector": "[data-component='utility-nav']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "adopt.html",
+        "advocacy.html",
+        "animal-care-recovery.html",
+        "donate.html",
+        "get-involved.html",
+        "helping-shelters.html",
+        "improving-laws.html",
+        "index.html",
+        "investigations-rescue.html",
+        "local-initiative.html",
+        "news.html",
+        "pet-care.html",
+        "search.html",
+        "ways-to-give.html"
+      ],
+      "behavior": [
+        "static content region"
+      ],
+      "keyboard": [
+        "Tab to links"
+      ],
+      "status": "implemented",
+      "validation": "tested: qc.js axe-core only; no manual review"
+    }
+  ]
+}
