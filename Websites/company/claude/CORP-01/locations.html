@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Locations and ATMs | Harborline Bank (fictional demo)</title>
+<meta name="description" content="Fictional branch and ATM locator on inline sample data.">
+<link rel="icon" href="assets/logo-mark.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header" data-section="global-header" data-component="site-header">
+<div class="utility-bar" data-section="utility-navigation" data-component="utility-nav"><div class="wrap"><nav aria-label="Utility"><ul><li><a href="locations.html" aria-current="page">Locations</a></li><li><a href="customer-service.html">Customer service</a></li><li><a href="online-banking.html#enroll">Enroll in online banking</a></li></ul></nav></div></div>
+<div class="wrap header-main">
+<a class="brand" href="index.html"><img src="assets/logo-mark.svg" alt="" width="40" height="40"><span>Harborline Bank</span></a>
+<a class="btn btn-secondary login-link" href="login.html">Log in</a>
+<button type="button" class="menu-toggle" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+<nav id="primary-nav" class="primary-nav" aria-label="Primary" data-section="global-navigation" data-component="primary-nav"><ul><li><button type="button" class="nav-trigger" aria-expanded="false" aria-controls="mega-0" data-component="mega-menu-trigger">Checking &amp; savings</button><div id="mega-0" class="mega" hidden data-component="mega-menu"><ul><li><a href="checking.html">Checking accounts</a></li><li><a href="checking.html#youth">Student &amp; teen checking</a></li><li><a href="checking.html#overdraft">Overdraft services</a></li><li><a href="savings.html">Savings accounts</a></li><li><a href="savings.html#money-market">Money market</a></li><li><a href="cds.html">CD accounts</a></li><li><a href="online-banking.html">Mobile &amp; online banking</a></li></ul></div></li><li><button type="button" class="nav-trigger" aria-expanded="false" aria-controls="mega-1" data-component="mega-menu-trigger">Credit cards</button><div id="mega-1" class="mega" hidden data-component="mega-menu"><ul><li><a href="credit-cards.html">All credit cards</a></li><li><a href="credit-cards.html?cat=cash-back">Cash back</a></li><li><a href="credit-cards.html?cat=travel">Travel rewards</a></li><li><a href="credit-cards.html?cat=low-intro">Low intro rate</a></li><li><a href="credit-cards.html?cat=credit-building">Credit-building</a></li><li><a href="credit-cards.html?cat=business">Business cards</a></li></ul></div></li><li><button type="button" class="nav-trigger" aria-expanded="false" aria-controls="mega-2" data-component="mega-menu-trigger">Investing &amp; retirement</button><div id="mega-2" class="mega" hidden data-component="mega-menu"><ul><li><a href="financial-education.html?topic=investing">Investing basics</a></li><li><a href="financial-education.html?topic=retirement">Retirement planning</a></li></ul></div></li><li><button type="button" class="nav-trigger" aria-expanded="false" aria-controls="mega-3" data-component="mega-menu-trigger">Home loans</button><div id="mega-3" class="mega" hidden data-component="mega-menu"><ul><li><a href="mortgage.html">Mortgage overview</a></li><li><a href="mortgage-rates.html">Mortgage rates</a></li><li><a href="mortgage-calculator.html">Mortgage calculators</a></li><li><a href="mortgage.html#refinance">Refinance</a></li><li><a href="mortgage.html#home-equity">Home equity</a></li></ul></div></li><li><button type="button" class="nav-trigger" aria-expanded="false" aria-controls="mega-4" data-component="mega-menu-trigger">Loans &amp; credit lines</button><div id="mega-4" class="mega" hidden data-component="mega-menu"><ul><li><a href="personal-loan-calculator.html#personal-loans">Personal loans</a></li><li><a href="personal-loan-calculator.html">Personal loan calculator</a></li><li><a href="personal-loan-calculator.html#debt-consolidation">Debt consolidation</a></li></ul></div></li><li><button type="button" class="nav-trigger is-current" aria-expanded="false" aria-controls="mega-5" data-component="mega-menu-trigger">Learn &amp; support</button><div id="mega-5" class="mega" hidden data-component="mega-menu"><ul><li><a href="financial-education.html">Financial education</a></li><li><a href="customer-service.html">Customer service</a></li><li><a href="locations.html" aria-current="page">Locations &amp; ATMs</a></li><li><a href="accessibility.html">Accessibility services</a></li></ul></div></li></ul></nav>
+<form class="header-search" role="search" aria-label="Site search" action="customer-service.html" method="get" data-section="global-search" data-component="site-search"><label class="visually-hidden" for="global-q">Search help topics</label><input id="global-q" name="q" type="search" placeholder="Search help" autocomplete="off"><button type="submit">Search</button></form>
+</div></header>
+<nav class="breadcrumbs" aria-label="Breadcrumb" data-section="breadcrumbs" data-component="breadcrumbs"><div class="wrap"><ol><li><a href="index.html">Personal banking</a></li><li aria-current="page">Locations and ATMs</li></ol></div></nav>
+<main id="main-content" data-section="main-content">
+
+<section class="hero hero-plain" aria-labelledby="page-title" data-section="page-hero" data-component="hero"><div class="wrap"><h1 id="page-title">Branch and ATM locator</h1><p class="lead">Search twelve invented sample locations. This is a demonstration; no real locations or hours are shown.</p></div></section>
+<section id="locator" class="block " aria-labelledby="locator-title" data-section="locator" data-component="locator"><div class="wrap"><div class="split"><div><h2 id="locator-title">Find a location</h2>
+<form id="loc-form" role="search" aria-label="Locations" data-list="branches" data-component="locator-form" data-section="locator-form"><div class="form-grid two"><div class="field"><label for="loc-q">City, ZIP or street</label><p class="hint" id="loc-q-hint">For example: Cedar Falls or 90310. Leave blank to show all.</p><input id="loc-q" name="q" type="search" autocomplete="off" aria-describedby="loc-q-hint"></div><div class="field"><label for="loc-type">Location type</label><select id="loc-type" name="type" aria-describedby="loc-type-error"><option value="all">Branches and ATMs</option><option value="branch">Branches only</option><option value="atm">ATMs only</option></select><p class="error" id="loc-type-error" hidden></p></div></div>
+<fieldset class="fieldset"><legend>Features</legend><div class="check"><input type="checkbox" id="feat-drive" name="feat" value="drive-up"><label for="feat-drive">Drive-up</label></div><div class="check"><input type="checkbox" id="feat-sat" name="feat" value="saturday"><label for="feat-sat">Saturday hours</label></div><div class="check"><input type="checkbox" id="feat-atm" name="feat" value="atm-24"><label for="feat-atm">24-hour ATM</label></div></fieldset>
+<div class="btn-row"><button type="submit" class="btn">Search</button><button type="button" class="btn btn-secondary" id="loc-reset">Reset</button></div></form>
+<p class="results-status" id="loc-status" role="status"></p>
+<div class="empty-state" id="loc-empty" hidden><h3>No locations found</h3><p>Try a nearby city, remove a feature, or choose Branches and ATMs.</p></div>
+<ul class="result-list" id="loc-list"></ul></div>
+<div><img src="assets/map-placeholder.svg" alt="" width="560" height="280"><p class="small muted">Schematic placeholder; no live map is available.</p></div></div></div></section>
+
+</main>
+<footer class="site-footer" data-section="global-footer" data-component="site-footer"><div class="wrap">
+<div class="footer-cols">
+<div><h2>Products</h2><ul><li><a href="checking.html">Checking</a></li><li><a href="savings.html">Savings</a></li><li><a href="cds.html">CD rates</a></li><li><a href="credit-cards.html">Credit cards</a></li><li><a href="mortgage.html">Mortgage</a></li><li><a href="personal-loan-calculator.html">Personal loans</a></li></ul></div>
+<div><h2>Support</h2><ul><li><a href="customer-service.html">Customer service</a></li><li><a href="locations.html">Locations &amp; ATMs</a></li><li><a href="online-banking.html">Mobile &amp; online banking</a></li><li><a href="customer-service.html#security">Security</a></li><li><a href="accessibility.html">Accessibility</a></li></ul></div>
+<div><h2>Learn</h2><ul><li><a href="financial-education.html">Financial education</a></li><li><a href="mortgage-rates.html">Mortgage rates</a></li><li><a href="mortgage-calculator.html">Calculators</a></li></ul></div>
+<div><h2>Legal</h2><ul><li><a href="customer-service.html#legal">Privacy</a></li><li><a href="customer-service.html#legal">Your privacy choices</a></li><li><a href="customer-service.html#legal">Terms of use</a></li></ul></div>
+</div>
+<p class="legal"><strong>Harborline Bank is a fictional institution</strong> created for an accessibility and usability research dataset. It holds no deposits, makes no loans and offers no real products. All rates, fees, locations and phone numbers are invented illustrations. Not affiliated with any real bank.</p>
+</div></footer>
+<dialog id="demo-dialog" aria-labelledby="demo-dialog-title" data-section="demo-dialog" data-component="modal-dialog"><h2 id="demo-dialog-title">Demonstration only</h2><p id="demo-dialog-text"></p><form method="dialog"><button class="btn" autofocus>Close</button></form></dialog>
+<script src="js/main.js"></script>
+</body>
+</html>

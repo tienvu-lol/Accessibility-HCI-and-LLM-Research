@@ -1,0 +1,738 @@
+{
+  "protocol_version": "1.0",
+  "replica_id": "CORP-01",
+  "category": "company",
+  "source_url": "https://www.usbank.com/",
+  "components": [
+    {
+      "id": "accordion",
+      "selector": "[data-component='accordion']",
+      "pages": [
+        "accessibility.html",
+        "checking.html",
+        "customer-service.html",
+        "mortgage.html",
+        "savings.html"
+      ],
+      "behavior": [
+        "accordion of help answers rendered from inline data"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe scan at 1280px and 375px; scripted Playwright flow check for interactive components; no manual keyboard or screen-reader testing"
+    },
+    {
+      "id": "breadcrumbs",
+      "selector": "[data-component='breadcrumbs']",
+      "pages": [
+        "accessibility.html",
+        "cds.html",
+        "checking.html",
+        "credit-cards.html",
+        "customer-service.html",
+        "financial-education.html",
+        "locations.html",
+        "login.html",
+        "mortgage-calculator.html",
+        "mortgage-rates.html",
+        "mortgage.html",
+        "online-banking.html",
+        "personal-loan-calculator.html",
+        "savings.html"
+      ],
+      "behavior": [
+        "ordered list trail with aria-current on the current page"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe scan at 1280px and 375px; scripted Playwright flow check for interactive components; no manual keyboard or screen-reader testing"
+    },
+    {
+      "id": "calculator",
+      "selector": "[data-component='calculator']",
+      "pages": [
+        "cds.html",
+        "personal-loan-calculator.html"
+      ],
+      "behavior": [
+        "wrapper section for a calculator form"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe scan at 1280px and 375px; scripted Playwright flow check for interactive components; no manual keyboard or screen-reader testing"
+    },
+    {
+      "id": "calculator-form",
+      "selector": "[data-component='calculator-form']",
+      "pages": [
+        "cds.html",
+        "mortgage-calculator.html",
+        "personal-loan-calculator.html"
+      ],
+      "behavior": [
+        "validated numeric form; result in aria-live region; mortgage, 15-vs-30, affordability, CD earnings and personal loan calculators"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe scan at 1280px and 375px; scripted Playwright flow check for interactive components; no manual keyboard or screen-reader testing"
+    },
+    {
+      "id": "card-grid",
+      "selector": "[data-component='card-grid']",
+      "pages": [
+        "accessibility.html",
+        "checking.html",
+        "index.html",
+        "mortgage.html",
+        "online-banking.html"
+      ],
+      "behavior": [
+        "responsive 2-4 column card grid"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe scan at 1280px and 375px; scripted Playwright flow check for interactive components; no manual keyboard or screen-reader testing"
+    },
+    {
+      "id": "comparison-table",
+      "selector": "[data-component='comparison-table']",
+      "pages": [
+        "accessibility.html",
+        "checking.html",
+        "savings.html"
+      ],
+      "behavior": [
+        "data table with caption and scoped headers"
+      ],
+      "keyboard": [
+        "Tab (to links only)"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe scan at 1280px and 375px; scripted Playwright flow check for interactive components; no manual keyboard or screen-reader testing"
+    },
+    {
+      "id": "contact-form",
+      "selector": "[data-component='contact-form']",
+      "pages": [
+        "customer-service.html"
+      ],
+      "behavior": [
+        "labeled fields, inline errors, error summary with focus, demo success"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe scan at 1280px and 375px; scripted Playwright flow check for interactive components; no manual keyboard or screen-reader testing"
+    },
+    {
+      "id": "enrollment-form",
+      "selector": "[data-component='enrollment-form']",
+      "pages": [
+        "online-banking.html"
+      ],
+      "behavior": [
+        "labeled fields, pattern validation, error summary, demo success"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe scan at 1280px and 375px; scripted Playwright flow check for interactive components; no manual keyboard or screen-reader testing"
+    },
+    {
+      "id": "error-page",
+      "selector": "[data-component='error-page']",
+      "pages": [
+        "404.html"
+      ],
+      "behavior": [
+        "404 message with routes back to the site"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe scan at 1280px and 375px; scripted Playwright flow check for interactive components; no manual keyboard or screen-reader testing"
+    },
+    {
+      "id": "faq-accordion",
+      "selector": "[data-component='faq-accordion']",
+      "pages": [
+        "accessibility.html",
+        "checking.html",
+        "mortgage.html",
+        "savings.html"
+      ],
+      "behavior": [
+        "static accordion, aria-expanded toggles panel hidden state"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe scan at 1280px and 375px; scripted Playwright flow check for interactive components; no manual keyboard or screen-reader testing"
+    },
+    {
+      "id": "faq-search",
+      "selector": "[data-component='faq-search']",
+      "pages": [
+        "customer-service.html"
+      ],
+      "behavior": [
+        "wrapper for the help search section"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe scan at 1280px and 375px; scripted Playwright flow check for interactive components; no manual keyboard or screen-reader testing"
+    },
+    {
+      "id": "feature-split",
+      "selector": "[data-component='feature-split']",
+      "pages": [
+        "index.html",
+        "mortgage.html",
+        "personal-loan-calculator.html",
+        "savings.html"
+      ],
+      "behavior": [
+        "text block with optional decorative image and calls to action"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe scan at 1280px and 375px; scripted Playwright flow check for interactive components; no manual keyboard or screen-reader testing"
+    },
+    {
+      "id": "filterable-list",
+      "selector": "[data-component='filterable-list']",
+      "pages": [
+        "credit-cards.html",
+        "financial-education.html"
+      ],
+      "behavior": [
+        "credit card finder (type select, no-fee checkbox, sort) with empty state and reset"
+      ],
+      "keyboard": [
+        "Tab",
+        "Space",
+        "Arrow keys in selects",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe scan at 1280px and 375px; scripted Playwright flow check for interactive components; no manual keyboard or screen-reader testing"
+    },
+    {
+      "id": "hero",
+      "selector": "[data-component='hero']",
+      "pages": [
+        "accessibility.html",
+        "cds.html",
+        "checking.html",
+        "credit-cards.html",
+        "customer-service.html",
+        "financial-education.html",
+        "index.html",
+        "locations.html",
+        "mortgage-calculator.html",
+        "mortgage-rates.html",
+        "mortgage.html",
+        "online-banking.html",
+        "personal-loan-calculator.html",
+        "savings.html"
+      ],
+      "behavior": [
+        "page heading, lead text, calls to action",
+        "decorative SVG on home and online banking"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe scan at 1280px and 375px; scripted Playwright flow check for interactive components; no manual keyboard or screen-reader testing"
+    },
+    {
+      "id": "info-panel",
+      "selector": "[data-component='info-panel']",
+      "pages": [
+        "customer-service.html"
+      ],
+      "behavior": [
+        "static information section"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "qc.js axe scan at 1280px and 375px; scripted Playwright flow check for interactive components; no manual keyboard or screen-reader testing"
+    },
+    {
+      "id": "locator",
+      "selector": "[data-component='locator']",
+      "pages": [
+        "locations.html"
+      ],
+      "behavior": [
+        "branch/ATM locator over 12 sample records: text search, type select, feature checkboxes, empty state"
+      ],
+      "keyboard": [
+        "Tab",
+        "Space",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe scan at 1280px and 375px; scripted Playwright flow check for interactive components; no manual keyboard or screen-reader testing"
+    },
+    {
+      "id": "locator-form",
+      "selector": "[data-component='locator-form']",
+      "pages": [
+        "locations.html"
+      ],
+      "behavior": [
+        "search form for the locator"
+      ],
+      "keyboard": [
+        "Tab",
+        "Space",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe scan at 1280px and 375px; scripted Playwright flow check for interactive components; no manual keyboard or screen-reader testing"
+    },
+    {
+      "id": "login-form",
+      "selector": "[data-component='login-form']",
+      "pages": [
+        "login.html"
+      ],
+      "behavior": [
+        "demo login: required fields, show-password checkbox, error summary, demo success"
+      ],
+      "keyboard": [
+        "Tab",
+        "Space",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe scan at 1280px and 375px; scripted Playwright flow check for interactive components; no manual keyboard or screen-reader testing"
+    },
+    {
+      "id": "mega-menu",
+      "selector": "[data-component='mega-menu']",
+      "pages": [
+        "404.html",
+        "accessibility.html",
+        "cds.html",
+        "checking.html",
+        "credit-cards.html",
+        "customer-service.html",
+        "financial-education.html",
+        "index.html",
+        "locations.html",
+        "login.html",
+        "mortgage-calculator.html",
+        "mortgage-rates.html",
+        "mortgage.html",
+        "online-banking.html",
+        "personal-loan-calculator.html",
+        "savings.html"
+      ],
+      "behavior": [
+        "panel of links under a trigger",
+        "aria-current on the current page link"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe scan at 1280px and 375px; scripted Playwright flow check for interactive components; no manual keyboard or screen-reader testing"
+    },
+    {
+      "id": "mega-menu-trigger",
+      "selector": "[data-component='mega-menu-trigger']",
+      "pages": [
+        "404.html",
+        "accessibility.html",
+        "cds.html",
+        "checking.html",
+        "credit-cards.html",
+        "customer-service.html",
+        "financial-education.html",
+        "index.html",
+        "locations.html",
+        "login.html",
+        "mortgage-calculator.html",
+        "mortgage-rates.html",
+        "mortgage.html",
+        "online-banking.html",
+        "personal-loan-calculator.html",
+        "savings.html"
+      ],
+      "behavior": [
+        "button toggling a link panel",
+        "aria-expanded and aria-controls",
+        "current-section indicator"
+      ],
+      "keyboard": [
+        "Tab",
+        "Shift+Tab",
+        "Enter",
+        "Space",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe scan at 1280px and 375px; scripted Playwright flow check for interactive components; no manual keyboard or screen-reader testing"
+    },
+    {
+      "id": "modal-dialog",
+      "selector": "[data-component='modal-dialog']",
+      "pages": [
+        "404.html",
+        "accessibility.html",
+        "cds.html",
+        "checking.html",
+        "credit-cards.html",
+        "customer-service.html",
+        "financial-education.html",
+        "index.html",
+        "locations.html",
+        "login.html",
+        "mortgage-calculator.html",
+        "mortgage-rates.html",
+        "mortgage.html",
+        "online-banking.html",
+        "personal-loan-calculator.html",
+        "savings.html"
+      ],
+      "behavior": [
+        "native dialog opened by Apply/Open (demo) buttons; focus returns to opener on close"
+      ],
+      "keyboard": [
+        "Enter",
+        "Space",
+        "Escape",
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe scan at 1280px and 375px; scripted Playwright flow check for interactive components; no manual keyboard or screen-reader testing"
+    },
+    {
+      "id": "overdraft-options",
+      "selector": "[data-component='overdraft-options']",
+      "pages": [
+        "checking.html"
+      ],
+      "behavior": [
+        "static list"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "qc.js axe scan at 1280px and 375px; scripted Playwright flow check for interactive components; no manual keyboard or screen-reader testing"
+    },
+    {
+      "id": "primary-nav",
+      "selector": "[data-component='primary-nav']",
+      "pages": [
+        "404.html",
+        "accessibility.html",
+        "cds.html",
+        "checking.html",
+        "credit-cards.html",
+        "customer-service.html",
+        "financial-education.html",
+        "index.html",
+        "locations.html",
+        "login.html",
+        "mortgage-calculator.html",
+        "mortgage-rates.html",
+        "mortgage.html",
+        "online-banking.html",
+        "personal-loan-calculator.html",
+        "savings.html"
+      ],
+      "behavior": [
+        "desktop bar of six disclosure groups",
+        "mobile Menu toggle with aria-expanded",
+        "groups become stacked accordions on mobile",
+        "closes on Escape, outside click or focus leaving the nav"
+      ],
+      "keyboard": [
+        "Tab",
+        "Shift+Tab",
+        "Enter",
+        "Space",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe scan at 1280px and 375px; scripted Playwright flow check for interactive components; no manual keyboard or screen-reader testing"
+    },
+    {
+      "id": "promo-band",
+      "selector": "[data-component='promo-band']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "full-width call-to-action band"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe scan at 1280px and 375px; scripted Playwright flow check for interactive components; no manual keyboard or screen-reader testing"
+    },
+    {
+      "id": "rate-form",
+      "selector": "[data-component='rate-form']",
+      "pages": [
+        "mortgage-rates.html"
+      ],
+      "behavior": [
+        "validated sample-rate form with ZIP pattern and cross-field check"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe scan at 1280px and 375px; scripted Playwright flow check for interactive components; no manual keyboard or screen-reader testing"
+    },
+    {
+      "id": "rate-table",
+      "selector": "[data-component='rate-table']",
+      "pages": [
+        "cds.html"
+      ],
+      "behavior": [
+        "CD rate table rebuilt from three selects (term group, deposit tier, sort); live result count"
+      ],
+      "keyboard": [
+        "Tab",
+        "Arrow keys in selects"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe scan at 1280px and 375px; scripted Playwright flow check for interactive components; no manual keyboard or screen-reader testing"
+    },
+    {
+      "id": "search-form",
+      "selector": "[data-component='search-form']",
+      "pages": [
+        "customer-service.html",
+        "financial-education.html"
+      ],
+      "behavior": [
+        "help search and guide search over inline data with empty state, chips, reset, ?q= and ?topic= parameters"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe scan at 1280px and 375px; scripted Playwright flow check for interactive components; no manual keyboard or screen-reader testing"
+    },
+    {
+      "id": "site-footer",
+      "selector": "[data-component='site-footer']",
+      "pages": [
+        "404.html",
+        "accessibility.html",
+        "cds.html",
+        "checking.html",
+        "credit-cards.html",
+        "customer-service.html",
+        "financial-education.html",
+        "index.html",
+        "locations.html",
+        "login.html",
+        "mortgage-calculator.html",
+        "mortgage-rates.html",
+        "mortgage.html",
+        "online-banking.html",
+        "personal-loan-calculator.html",
+        "savings.html"
+      ],
+      "behavior": [
+        "four link columns and fictional-institution disclaimer"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe scan at 1280px and 375px; scripted Playwright flow check for interactive components; no manual keyboard or screen-reader testing"
+    },
+    {
+      "id": "site-header",
+      "selector": "[data-component='site-header']",
+      "pages": [
+        "404.html",
+        "accessibility.html",
+        "cds.html",
+        "checking.html",
+        "credit-cards.html",
+        "customer-service.html",
+        "financial-education.html",
+        "index.html",
+        "locations.html",
+        "login.html",
+        "mortgage-calculator.html",
+        "mortgage-rates.html",
+        "mortgage.html",
+        "online-banking.html",
+        "personal-loan-calculator.html",
+        "savings.html"
+      ],
+      "behavior": [
+        "brand link",
+        "utility row",
+        "primary navigation",
+        "header search"
+      ],
+      "keyboard": [
+        "Tab",
+        "Shift+Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe scan at 1280px and 375px; scripted Playwright flow check for interactive components; no manual keyboard or screen-reader testing"
+    },
+    {
+      "id": "site-search",
+      "selector": "[data-component='site-search']",
+      "pages": [
+        "404.html",
+        "accessibility.html",
+        "cds.html",
+        "checking.html",
+        "credit-cards.html",
+        "customer-service.html",
+        "financial-education.html",
+        "index.html",
+        "locations.html",
+        "login.html",
+        "mortgage-calculator.html",
+        "mortgage-rates.html",
+        "mortgage.html",
+        "online-banking.html",
+        "personal-loan-calculator.html",
+        "savings.html"
+      ],
+      "behavior": [
+        "GET form to customer-service.html?q=; results rendered by the help search"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe scan at 1280px and 375px; scripted Playwright flow check for interactive components; no manual keyboard or screen-reader testing"
+    },
+    {
+      "id": "stat-grid",
+      "selector": "[data-component='stat-grid']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "three stat cards"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "qc.js axe scan at 1280px and 375px; scripted Playwright flow check for interactive components; no manual keyboard or screen-reader testing"
+    },
+    {
+      "id": "steps",
+      "selector": "[data-component='steps']",
+      "pages": [
+        "index.html",
+        "mortgage.html"
+      ],
+      "behavior": [
+        "numbered step list"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "qc.js axe scan at 1280px and 375px; scripted Playwright flow check for interactive components; no manual keyboard or screen-reader testing"
+    },
+    {
+      "id": "tabs",
+      "selector": "[data-component='tabs']",
+      "pages": [
+        "index.html",
+        "mortgage-calculator.html"
+      ],
+      "behavior": [
+        "ARIA tablist with roving tabindex",
+        "ArrowLeft/ArrowRight/Home/End",
+        "one visible tabpanel"
+      ],
+      "keyboard": [
+        "Tab",
+        "ArrowLeft",
+        "ArrowRight",
+        "Home",
+        "End"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe scan at 1280px and 375px; scripted Playwright flow check for interactive components; no manual keyboard or screen-reader testing"
+    },
+    {
+      "id": "utility-nav",
+      "selector": "[data-component='utility-nav']",
+      "pages": [
+        "404.html",
+        "accessibility.html",
+        "cds.html",
+        "checking.html",
+        "credit-cards.html",
+        "customer-service.html",
+        "financial-education.html",
+        "index.html",
+        "locations.html",
+        "login.html",
+        "mortgage-calculator.html",
+        "mortgage-rates.html",
+        "mortgage.html",
+        "online-banking.html",
+        "personal-loan-calculator.html",
+        "savings.html"
+      ],
+      "behavior": [
+        "locations / customer service / enroll links"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe scan at 1280px and 375px; scripted Playwright flow check for interactive components; no manual keyboard or screen-reader testing"
+    }
+  ]
+}
