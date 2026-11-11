@@ -1,0 +1,796 @@
+{
+  "protocol_version": "1.0",
+  "replica_id": "ECOM-01",
+  "category": "e-commerce",
+  "source_url": "https://www.glossier.com/",
+  "components": [
+    {
+      "id": "site-header",
+      "selector": "[data-component='site-header']",
+      "description": "Banner with utility bar, brand, primary nav, search, account link, bag button",
+      "pages": [
+        "404.html",
+        "account.html",
+        "cart.html",
+        "checkout.html",
+        "gift-guide.html",
+        "help.html",
+        "index.html",
+        "locations.html",
+        "order-confirmation.html",
+        "product.html",
+        "returns.html",
+        "search.html",
+        "shop.html"
+      ],
+      "behavior": [
+        "static landmark",
+        "bag count updates from cart"
+      ],
+      "keyboard": [
+        "Tab",
+        "Shift+Tab"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-checks-only"
+    },
+    {
+      "id": "utility-bar",
+      "selector": "[data-component='utility-bar']",
+      "description": "Demo-store notice plus region selector strip",
+      "pages": [
+        "404.html",
+        "account.html",
+        "cart.html",
+        "checkout.html",
+        "gift-guide.html",
+        "help.html",
+        "index.html",
+        "locations.html",
+        "order-confirmation.html",
+        "product.html",
+        "returns.html",
+        "search.html",
+        "shop.html"
+      ],
+      "behavior": [
+        "informational text"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-checks-only"
+    },
+    {
+      "id": "region-selector",
+      "selector": "[data-component='region-selector']",
+      "description": "Country select (demo; prices stay USD); choice kept in sessionStorage",
+      "pages": [
+        "404.html",
+        "account.html",
+        "cart.html",
+        "checkout.html",
+        "gift-guide.html",
+        "help.html",
+        "index.html",
+        "locations.html",
+        "order-confirmation.html",
+        "product.html",
+        "returns.html",
+        "search.html",
+        "shop.html"
+      ],
+      "behavior": [
+        "select region",
+        "live announcement"
+      ],
+      "keyboard": [
+        "Tab",
+        "Arrow keys",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-checks-only"
+    },
+    {
+      "id": "primary-nav",
+      "selector": "[data-component='primary-nav']",
+      "description": "Shop / Gift guide / Fragrance / Makeup / Skincare with dropdown submenus",
+      "pages": [
+        "404.html",
+        "account.html",
+        "cart.html",
+        "checkout.html",
+        "gift-guide.html",
+        "help.html",
+        "index.html",
+        "locations.html",
+        "order-confirmation.html",
+        "product.html",
+        "returns.html",
+        "search.html",
+        "shop.html"
+      ],
+      "behavior": [
+        "desktop click-to-open dropdown menus",
+        "mobile Menu disclosure",
+        "aria-current on active link"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "Escape closes submenu and returns focus to its button"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-checks-only"
+    },
+    {
+      "id": "site-search",
+      "selector": "[data-component='site-search']",
+      "description": "Header search form and in-page search form (GET to search.html)",
+      "pages": [
+        "404.html",
+        "account.html",
+        "cart.html",
+        "checkout.html",
+        "gift-guide.html",
+        "help.html",
+        "index.html",
+        "locations.html",
+        "order-confirmation.html",
+        "product.html",
+        "returns.html",
+        "search.html",
+        "shop.html"
+      ],
+      "behavior": [
+        "submit navigates to search.html?q=",
+        "local inline-data search"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-checks-only"
+    },
+    {
+      "id": "cart-drawer",
+      "selector": "[data-component='cart-drawer']",
+      "description": "Native dialog bag drawer: line items, quantity, remove, subtotal, links",
+      "pages": [
+        "404.html",
+        "account.html",
+        "cart.html",
+        "checkout.html",
+        "gift-guide.html",
+        "help.html",
+        "index.html",
+        "locations.html",
+        "order-confirmation.html",
+        "product.html",
+        "returns.html",
+        "search.html",
+        "shop.html"
+      ],
+      "behavior": [
+        "showModal drawer",
+        "qty +/- and remove with focus restoration",
+        "closes on Escape, Close button or backdrop click"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-checks-only"
+    },
+    {
+      "id": "modal-dialog",
+      "selector": "[data-component='modal-dialog']",
+      "description": "Cookie and storage settings dialog (demo)",
+      "pages": [
+        "404.html",
+        "account.html",
+        "cart.html",
+        "checkout.html",
+        "gift-guide.html",
+        "help.html",
+        "index.html",
+        "locations.html",
+        "order-confirmation.html",
+        "product.html",
+        "returns.html",
+        "search.html",
+        "shop.html"
+      ],
+      "behavior": [
+        "native modal dialog"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-checks-only"
+    },
+    {
+      "id": "site-footer",
+      "selector": "[data-component='site-footer']",
+      "description": "Footer with brand blurb, help/shop/account link groups, legal row and cookie settings button",
+      "pages": [
+        "404.html",
+        "account.html",
+        "cart.html",
+        "checkout.html",
+        "gift-guide.html",
+        "help.html",
+        "index.html",
+        "locations.html",
+        "order-confirmation.html",
+        "product.html",
+        "returns.html",
+        "search.html",
+        "shop.html"
+      ],
+      "behavior": [
+        "links",
+        "opens cookie dialog"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-checks-only"
+    },
+    {
+      "id": "footer-links",
+      "selector": "[data-component='footer-links']",
+      "description": "Labelled footer navigation groups",
+      "pages": [
+        "404.html",
+        "account.html",
+        "cart.html",
+        "checkout.html",
+        "gift-guide.html",
+        "help.html",
+        "index.html",
+        "locations.html",
+        "order-confirmation.html",
+        "product.html",
+        "returns.html",
+        "search.html",
+        "shop.html"
+      ],
+      "behavior": [
+        "links"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-checks-only"
+    },
+    {
+      "id": "breadcrumb",
+      "selector": "[data-component='breadcrumb']",
+      "description": "Breadcrumb trail with aria-current on the current page",
+      "pages": [
+        "account.html",
+        "cart.html",
+        "checkout.html",
+        "gift-guide.html",
+        "help.html",
+        "locations.html",
+        "product.html",
+        "returns.html",
+        "shop.html"
+      ],
+      "behavior": [
+        "links"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-checks-only"
+    },
+    {
+      "id": "hero-banner",
+      "selector": "[data-component='hero-banner']",
+      "description": "Hero with h1, copy, calls to action and SVG illustration",
+      "pages": [
+        "gift-guide.html",
+        "index.html"
+      ],
+      "behavior": [
+        "links"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-checks-only"
+    },
+    {
+      "id": "promo-banner",
+      "selector": "[data-component='promo-banner']",
+      "description": "Gift guide promotional band",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "link"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-checks-only"
+    },
+    {
+      "id": "category-tiles",
+      "selector": "[data-component='category-tiles']",
+      "description": "Three category image tiles",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "links"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-checks-only"
+    },
+    {
+      "id": "card-grid",
+      "selector": "[data-component='card-grid']",
+      "description": "Responsive product grid sections (home best-sellers, gift guide, related products)",
+      "pages": [
+        "gift-guide.html",
+        "index.html",
+        "product.html"
+      ],
+      "behavior": [
+        "rendered from inline data"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-checks-only"
+    },
+    {
+      "id": "product-card",
+      "selector": "[data-component='product-card']",
+      "description": "Product tile: image, badge, name link, type, price, Add to bag / Choose options / Sold out",
+      "pages": [
+        "gift-guide.html",
+        "index.html",
+        "product.html",
+        "search.html",
+        "shop.html"
+      ],
+      "behavior": [
+        "quick add for single-variant items",
+        "opens drawer"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-checks-only"
+    },
+    {
+      "id": "collection-nav",
+      "selector": "[data-component='collection-nav']",
+      "description": "Collection links (All, Best-sellers, Skincare, Makeup, Fragrance) with aria-current",
+      "pages": [
+        "shop.html"
+      ],
+      "behavior": [
+        "links"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-checks-only"
+    },
+    {
+      "id": "filter-panel",
+      "selector": "[data-component='filter-panel']",
+      "description": "Product type, price and in-stock filters generated from the collection data",
+      "pages": [
+        "shop.html"
+      ],
+      "behavior": [
+        "checkbox filters",
+        "clear filters",
+        "mobile Filters disclosure (aria-expanded)",
+        "type preset from URL"
+      ],
+      "keyboard": [
+        "Tab",
+        "Space",
+        "Enter",
+        "Escape closes mobile panel"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-checks-only"
+    },
+    {
+      "id": "sort-toolbar",
+      "selector": "[data-component='sort-toolbar']",
+      "description": "Result count live region and sort select",
+      "pages": [
+        "shop.html"
+      ],
+      "behavior": [
+        "sort featured/price/name",
+        "aria-live count"
+      ],
+      "keyboard": [
+        "Tab",
+        "Arrow keys"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-checks-only"
+    },
+    {
+      "id": "product-listing",
+      "selector": "[data-component='product-listing']",
+      "description": "Listing region wrapping toolbar, grid and empty state",
+      "pages": [
+        "shop.html"
+      ],
+      "behavior": [
+        "filter/sort results"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-checks-only"
+    },
+    {
+      "id": "empty-state",
+      "selector": "[data-component='empty-state']",
+      "description": "Empty-state messages (no filter matches, no search results, empty bag, missing product, no demo order, 404)",
+      "pages": [
+        "404.html",
+        "cart.html",
+        "checkout.html",
+        "order-confirmation.html",
+        "product.html",
+        "search.html",
+        "shop.html"
+      ],
+      "behavior": [
+        "clear filters button or recovery links"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-checks-only"
+    },
+    {
+      "id": "product-gallery",
+      "selector": "[data-component='product-gallery']",
+      "description": "Main image with three thumbnail buttons",
+      "pages": [
+        "product.html"
+      ],
+      "behavior": [
+        "thumbnail swaps image and alt",
+        "aria-pressed"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-checks-only"
+    },
+    {
+      "id": "variant-selector",
+      "selector": "[data-component='variant-selector']",
+      "description": "Radio group for shade/size/scent; sold-out options disabled; price updates",
+      "pages": [
+        "product.html"
+      ],
+      "behavior": [
+        "radio selection",
+        "price update"
+      ],
+      "keyboard": [
+        "Tab",
+        "Arrow keys"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-checks-only"
+    },
+    {
+      "id": "product-form",
+      "selector": "[data-component='product-form']",
+      "description": "Add-to-bag form with quantity stepper, error summary and inline errors",
+      "pages": [
+        "product.html"
+      ],
+      "behavior": [
+        "validation",
+        "adds to localStorage cart",
+        "opens drawer"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-checks-only"
+    },
+    {
+      "id": "sticky-add-to-bag",
+      "selector": "[data-component='sticky-add-to-bag']",
+      "description": "Fixed bottom add-to-bag bar shown after the main button scrolls out of view",
+      "pages": [
+        "product.html"
+      ],
+      "behavior": [
+        "submits the product form"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-checks-only"
+    },
+    {
+      "id": "accordion",
+      "selector": "[data-component='accordion']",
+      "description": "Button + region disclosures (product details, refund policy, FAQ)",
+      "pages": [
+        "help.html",
+        "product.html",
+        "returns.html"
+      ],
+      "behavior": [
+        "aria-expanded disclosure"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-checks-only"
+    },
+    {
+      "id": "cart-line-list",
+      "selector": "[data-component='cart-line-list']",
+      "description": "Bag page item list",
+      "pages": [
+        "cart.html"
+      ],
+      "behavior": [
+        "qty +/- and remove",
+        "persisted in localStorage"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-checks-only"
+    },
+    {
+      "id": "cart-line",
+      "selector": "[data-component='cart-line']",
+      "description": "Single bag line (JS-rendered in drawer, bag page and checkout summary)",
+      "pages": [
+        "cart.html",
+        "checkout.html",
+        "order-confirmation.html"
+      ],
+      "behavior": [
+        "qty +/- and remove"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-checks-only"
+    },
+    {
+      "id": "order-summary",
+      "selector": "[data-component='order-summary']",
+      "description": "Totals summary (bag page, checkout, demo confirmation)",
+      "pages": [
+        "cart.html",
+        "checkout.html",
+        "order-confirmation.html"
+      ],
+      "behavior": [
+        "computed subtotal, shipping, total"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-checks-only"
+    },
+    {
+      "id": "checkout-form",
+      "selector": "[data-component='checkout-form']",
+      "description": "Simulated checkout: contact, address, shipping method, demo card fields",
+      "pages": [
+        "checkout.html"
+      ],
+      "behavior": [
+        "validation incl. Luhn and expiry",
+        "error summary with focus management",
+        "writes demo order to sessionStorage and redirects"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "Arrow keys"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-checks-only"
+    },
+    {
+      "id": "login-form",
+      "selector": "[data-component='login-form']",
+      "description": "Demo sign-in form",
+      "pages": [
+        "account.html"
+      ],
+      "behavior": [
+        "validation",
+        "demo status message only"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-checks-only"
+    },
+    {
+      "id": "reset-form",
+      "selector": "[data-component='reset-form']",
+      "description": "Demo password reset form revealed by a disclosure button",
+      "pages": [
+        "account.html"
+      ],
+      "behavior": [
+        "aria-expanded toggle",
+        "validation"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-checks-only"
+    },
+    {
+      "id": "newsletter-form",
+      "selector": "[data-component='newsletter-form']",
+      "description": "Demo newsletter sign-up",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "validation",
+        "demo status message"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-checks-only"
+    },
+    {
+      "id": "contact-form",
+      "selector": "[data-component='contact-form']",
+      "description": "Demo contact form with select and textarea",
+      "pages": [
+        "help.html"
+      ],
+      "behavior": [
+        "validation",
+        "demo status message"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-checks-only"
+    },
+    {
+      "id": "faq-search",
+      "selector": "[data-component='faq-search']",
+      "description": "FAQ text filter over accordion items",
+      "pages": [
+        "help.html"
+      ],
+      "behavior": [
+        "live filtering",
+        "empty state",
+        "result count"
+      ],
+      "keyboard": [
+        "Tab",
+        "Type"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-checks-only"
+    },
+    {
+      "id": "store-locator",
+      "selector": "[data-component='store-locator']",
+      "description": "Store search by city/state/ZIP plus Sundays checkbox over inline data",
+      "pages": [
+        "locations.html"
+      ],
+      "behavior": [
+        "live filtering",
+        "empty state"
+      ],
+      "keyboard": [
+        "Tab",
+        "Space",
+        "Type"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-checks-only"
+    },
+    {
+      "id": "store-card",
+      "selector": "[data-component='store-card']",
+      "description": "Store entry (JS-rendered)",
+      "pages": [
+        "locations.html"
+      ],
+      "behavior": [
+        "informational"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-checks-only"
+    }
+  ]
+}

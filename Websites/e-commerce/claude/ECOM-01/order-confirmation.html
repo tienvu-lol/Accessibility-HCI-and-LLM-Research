@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Demo order confirmation - Softbloom</title>
+<meta name="description" content="Simulated order confirmation. Nothing was purchased.">
+<link rel="stylesheet" href="css/styles.css">
+<script src="js/main.js" defer></script>
+</head>
+<body data-page="confirmation">
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header" data-section="global-header" data-component="site-header">
+  <div class="utility-bar" data-section="utility-bar" data-component="utility-bar">
+    <p>Softbloom is a fictional demo store built for accessibility research. Nothing here is real.</p>
+    <div class="region-form" data-component="region-selector">
+      <label for="region-select">Shopping in</label>
+      <select id="region-select"><option>United States</option><option>Canada</option><option>United Kingdom</option></select>
+      <span id="region-note" class="muted"></span>
+    </div>
+  </div>
+  <div class="header-main">
+    <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+    <a class="brand" href="index.html"><img src="assets/logo.svg" alt="" width="36" height="36"><span>Softbloom</span></a>
+    <nav id="primary-nav" class="primary-nav" aria-label="Primary" data-section="global-navigation" data-component="primary-nav">
+      <ul>
+        <li class="has-submenu"><button type="button" class="submenu-toggle" aria-expanded="false" aria-controls="menu-shop">Shop</button>
+        <ul class="submenu" id="menu-shop" hidden><li><a href="shop.html?collection=all">All products</a></li><li><a href="shop.html?collection=best-sellers">Best-sellers</a></li></ul></li>
+        <li><a href="gift-guide.html">Gift guide</a></li>
+        <li class="has-submenu"><button type="button" class="submenu-toggle" aria-expanded="false" aria-controls="menu-fragrance">Fragrance</button>
+        <ul class="submenu" id="menu-fragrance" hidden><li><a href="product.html?id=dusk-fern-parfum">Dusk Fern</a></li><li><a href="product.html?id=warm-linen-parfum">Warm Linen</a></li><li><a href="product.html?id=pear-salt-mist">Pear Salt Mist</a></li><li><a href="shop.html?collection=fragrance">All fragrance</a></li></ul></li>
+        <li class="has-submenu"><button type="button" class="submenu-toggle" aria-expanded="false" aria-controls="menu-makeup">Makeup</button>
+        <ul class="submenu" id="menu-makeup" hidden><li><a href="shop.html?collection=makeup&type=Face">Face</a></li><li><a href="shop.html?collection=makeup&type=Lip">Lip</a></li><li><a href="shop.html?collection=makeup&type=Brow">Brow</a></li><li><a href="shop.html?collection=makeup&type=Eye">Eye</a></li><li><a href="shop.html?collection=makeup&type=Cheek">Cheek</a></li><li><a href="shop.html?collection=makeup&type=Sets">Save with sets</a></li><li><a href="shop.html?collection=makeup">All makeup</a></li></ul></li>
+        <li class="has-submenu"><button type="button" class="submenu-toggle" aria-expanded="false" aria-controls="menu-skincare">Skincare</button>
+        <ul class="submenu" id="menu-skincare" hidden><li><a href="shop.html?collection=skincare&type=Moisturizers">Moisturizers</a></li><li><a href="shop.html?collection=skincare&type=Cleansers">Cleansers</a></li><li><a href="shop.html?collection=skincare&type=Treatments">Treatments</a></li><li><a href="shop.html?collection=skincare&type=Sunscreen">Sunscreen</a></li><li><a href="shop.html?collection=skincare&type=Sets">Save with sets</a></li><li><a href="shop.html?collection=skincare">All skincare</a></li></ul></li>
+      </ul>
+    </nav>
+    <form class="site-search" role="search" aria-label="Site search" action="search.html" method="get" data-section="site-search" data-component="site-search">
+      <label for="site-search-input" class="vh">Search the store</label>
+      <input id="site-search-input" type="search" name="q" autocomplete="off">
+      <button type="submit" class="icon-btn" aria-label="Search"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="6" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15 15l6 6" stroke="currentColor" stroke-width="2"/></svg></button>
+    </form>
+    <div class="header-actions">
+      <a class="icon-link" href="account.html"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7" fill="none" stroke="currentColor" stroke-width="2"/></svg><span class="action-label">Account</span></a>
+      <button type="button" class="icon-link" id="bag-button" aria-haspopup="dialog"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M5 8h14l-1 13H6zM9 8V6a3 3 0 016 0v2" fill="none" stroke="currentColor" stroke-width="2"/></svg><span class="action-label">Bag</span> (<span class="bag-count">0</span><span class="vh"> items</span>)</button>
+    </div>
+  </div>
+</header>
+<main id="main-content" data-section="main-content">
+<div class="page-heading"><h1>Order confirmation (demo)</h1><p class="notice"><strong>Demo only.</strong> This page simulates a confirmation. No payment was taken and nothing will ship.</p></div>
+<div id="order-root"></div>
+</main>
+<footer class="site-footer" data-section="global-footer" data-component="site-footer">
+  <div class="footer-grid">
+    <div data-section="footer-brand">
+      <p class="footer-brand">Softbloom</p>
+      <p>Gentle skincare, easy makeup and soft scents. A fictional brand for a demo store.</p>
+    </div>
+    <nav aria-label="Help" data-section="footer-help" data-component="footer-links">
+      <h2>How can we help?</h2>
+      <ul><li><a href="help.html#contact">Contact us</a></li><li><a href="returns.html">Returns and exchanges</a></li><li><a href="help.html">Help and FAQ</a></li><li><a href="locations.html">Find a store</a></li></ul>
+    </nav>
+    <nav aria-label="Shop" data-section="footer-shop" data-component="footer-links">
+      <h2>Shop</h2>
+      <ul><li><a href="shop.html?collection=skincare">Skincare</a></li><li><a href="shop.html?collection=makeup">Makeup</a></li><li><a href="shop.html?collection=fragrance">Fragrance</a></li><li><a href="gift-guide.html">Gift guide</a></li></ul>
+    </nav>
+    <nav aria-label="Account" data-section="footer-account" data-component="footer-links">
+      <h2>Your account</h2>
+      <ul><li><a href="account.html">Sign in (demo)</a></li><li><a href="cart.html">Your bag</a></li></ul>
+    </nav>
+  </div>
+  <p class="footer-legal">&copy; 2026 Softbloom (fictional). Demo site for research. <a href="returns.html">Refund policy</a> <button type="button" class="link-button" id="cookie-button">Cookie settings</button></p>
+</footer>
+<dialog id="cart-drawer" class="drawer" aria-labelledby="drawer-title" data-cart-scope="drawer" data-section="cart-drawer" data-component="cart-drawer">
+  <div class="drawer-head"><h2 id="drawer-title" class="cart-focus" tabindex="-1">Your bag</h2><button type="button" class="btn btn-small btn-secondary" data-close-dialog>Close<span class="vh"> bag</span></button></div>
+  <div id="drawer-body"></div>
+  <div class="drawer-foot" id="drawer-foot"></div>
+</dialog>
+<dialog id="cookie-dialog" class="modal" aria-labelledby="cookie-title" data-section="cookie-settings" data-component="modal-dialog">
+  <h2 id="cookie-title">Cookie and storage settings (demo)</h2>
+  <p>This demo store sets no cookies and loads no trackers. Your bag is kept in this browser's local storage and your last demo order in session storage. Nothing leaves your device.</p>
+  <button type="button" class="btn" data-close-dialog>Close</button>
+</dialog>
+<div id="live-region" class="vh" role="status" aria-live="polite"></div>
+</body>
+</html>
