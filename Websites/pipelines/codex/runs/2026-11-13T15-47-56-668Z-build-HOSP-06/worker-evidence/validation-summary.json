@@ -1,0 +1,30 @@
+{
+  "completed_at": "2026-11-13T15:54:28.582284+00:00",
+  "validation_summary": {
+    "technology": "pass",
+    "completeness": "pass",
+    "structure": "pass",
+    "interaction": "not-tested",
+    "accessibility": "not-tested",
+    "traceability": "pass",
+    "scope": "pass"
+  },
+  "details": {
+    "technology": "Source inspection: HTML/CSS/vanilla JS; local references; no runtime dependencies.",
+    "completeness": "11 mapped-plus-error HTML pages; 21 total files, four original SVGs; source-tests.json.",
+    "structure": "Source-only landmark, one h1, labels, local link/fragment and exact inventory audit passed. Source hierarchy compared against approved HTTP notes; rendered fidelity unverified.",
+    "interaction": "10 actual exported helper logic assertions passed, node syntax passed. DOM/browser state, sort rendering, reset, validation focus, menus and modal runtime not-tested. No mocks used.",
+    "accessibility": "Shared QC exit 2 Chromium launch failure; no axe report generated. Keyboard/screen-reader/contrast/reflow/zoom not-tested.",
+    "traceability": "Source mapping, 159 inventory instances, approval reference and supplied SHA snapshots retained; no CLI 0.167 claim.",
+    "scope": "Single approved HOSP-06 only. Appointment form and billing samples explicitly labeled original research additions."
+  },
+  "files": 21,
+  "pages": 11,
+  "inventory_instances": 159,
+  "js_helper_assertions": 10,
+  "qc_exit_code": 2,
+  "axe": "not-tested",
+  "browser_interactions": "not-tested",
+  "source_tests": "pass",
+  "syntax": "pass"
+}

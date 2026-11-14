@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Report an Issue | City of Quillhaven (fictional)</title>
+<meta name="description" content="Simulated report-an-issue form; sends nothing.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="assets/emblem.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/styles.css">
+<script src="js/main.js" defer></script>
+</head>
+<body data-page="report-an-issue.html">
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header" data-section="global-header" data-component="site-header">
+<div class="fiction-banner" role="note" aria-label="Fictional site notice" data-section="fictional-notice" data-component="fictional-notice"><p><strong>Fictional city government.</strong> This site is invented sample content for an accessibility research dataset. It is not a real government, and nothing here is official information or civic guidance.</p></div>
+<div class="header-bar" data-section="header-bar">
+<a class="brand" href="index.html" data-component="brand-wordmark"><img src="assets/emblem.svg" alt="" width="44" height="44"><span class="brand-text"><span class="brand-name">City of Quillhaven</span><span class="brand-sub">Fictional city, Tarnmere County, Republic of Ostrelle</span></span></a>
+<div class="utility" data-section="utility-navigation">
+<div class="lang-demo" data-component="language-selector-demo"><button type="button" class="btn-link" aria-expanded="false" aria-controls="lang-panel" id="lang-toggle">Language: English (demo)</button>
+<div id="lang-panel" class="lang-panel" hidden><p>Language selector demo only. It does not translate anything, and no machine-translated text is included in this replica.</p></div></div>
+<form class="site-search" role="search" aria-label="Site search" action="services.html" method="get" data-section="site-search" data-component="site-search"><label for="site-q" class="sr-only">Search services</label><input id="site-q" name="q" type="search" placeholder="Search services" autocomplete="off"><button type="submit">Search</button></form>
+<button type="button" class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="primary-nav" data-component="mobile-menu-toggle">Menu</button>
+</div></div>
+<nav id="primary-nav" class="primary-nav" aria-label="Primary" data-section="global-navigation" data-component="primary-nav">
+<ul class="nav-list">
+<li class="nav-item has-panel"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="panel-residents" data-component="nav-dropdown-toggle">Residents<span class="caret" aria-hidden="true"></span></button>
+<ul id="panel-residents" class="nav-panel" hidden data-component="nav-dropdown-panel"><li><a href="residents.html" class="see-all">See all Residents</a></li><li><a href="trash-and-recycling.html">Trash and Recycling</a></li><li><a href="services.html">Services directory</a></li></ul></li>
+<li class="nav-item"><a class="nav-link" href="visitors.html">Visitors</a></li>
+<li class="nav-item has-panel"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="panel-business" data-component="nav-dropdown-toggle">Business<span class="caret" aria-hidden="true"></span></button>
+<ul id="panel-business" class="nav-panel" hidden data-component="nav-dropdown-panel"><li><a href="business.html" class="see-all">See all Business</a></li><li><a href="permits.html">Permits</a></li></ul></li>
+<li class="nav-item has-panel"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="panel-government" data-component="nav-dropdown-toggle">Government<span class="caret" aria-hidden="true"></span></button>
+<ul id="panel-government" class="nav-panel" hidden data-component="nav-dropdown-panel"><li><a href="government.html" class="see-all">See all Government</a></li><li><a href="executive-office.html">Executive Office</a></li><li><a href="city-council.html">City Council</a></li><li><a href="boards-and-commissions.html">Boards and Commissions</a></li><li><a href="public-meetings.html">Public Meetings</a></li><li><a href="report-an-issue.html" aria-current="page">Report an Issue</a></li></ul></li>
+<li class="nav-item"><a class="nav-link" href="departments.html">Departments &amp; Programs</a></li>
+</ul></nav>
+</header>
+<main id="main-content" data-section="main-content" tabindex="-1">
+<nav class="breadcrumb" aria-label="Breadcrumb" data-section="breadcrumb" data-component="breadcrumb"><ol><li><a href="index.html">Home</a></li><li><a href="government.html">Government</a></li><li aria-current="page">Report an Issue</li></ol></nav>
+
+<h1>Report an Issue</h1>
+<p class="lead">A simulated form for studying accessible form design.</p>
+<aside class="demo-note strong" aria-label="Demo only" data-section="sample-content-note" data-component="demo-note"><p><strong>Demo only. Nothing is sent, stored or received.</strong> This form is not connected to anything, and no one will read what is typed. Do not enter real personal details. It is not for emergencies; a real resident should consult their actual local government.</p></aside>
+<section aria-labelledby="rep-title" data-section="report-form" data-component="report-form">
+<h2 id="rep-title">Sample report form</h2>
+<div id="rep-summary" class="error-summary" role="alert" tabindex="-1" hidden data-component="error-summary"><h3 id="rep-summary-title">There is a problem</h3><ul id="rep-summary-list"></ul></div>
+<form id="rep-form" novalidate data-component="simulated-form">
+<p class="hint">Fields marked required must be completed.</p>
+<div class="field"><label for="rep-type">Type of issue <span class="req">(required)</span></label>
+<select id="rep-type" name="type" required aria-describedby="rep-type-err"><option value="">Choose a sample type</option><option>Lantern lamp flickering (invented)</option><option>Overgrown hedge (invented)</option><option>Wobbly bench (invented)</option><option>Puddle with ambitions (invented)</option><option>Other invented issue</option></select><p class="err" id="rep-type-err" hidden></p></div>
+<div class="field"><label for="rep-loc">Invented location <span class="req">(required)</span></label>
+<input id="rep-loc" name="loc" type="text" required aria-describedby="rep-loc-hint rep-loc-err" autocomplete="off"><span class="hint" id="rep-loc-hint">For example: the bench at the imaginary corner of Fennick Street and Alder Lane.</span><p class="err" id="rep-loc-err" hidden></p></div>
+<div class="field"><label for="rep-desc">Describe the sample issue <span class="req">(required, at least 10 characters)</span></label>
+<textarea id="rep-desc" name="desc" rows="5" required aria-describedby="rep-desc-err"></textarea><p class="err" id="rep-desc-err" hidden></p></div>
+<div class="field"><label for="rep-nick">Nickname <span class="opt">(optional)</span></label><input id="rep-nick" name="nick" type="text" autocomplete="off"></div>
+<div class="field"><label for="rep-mail">Made-up email address <span class="opt">(optional)</span></label>
+<input id="rep-mail" name="mail" type="email" autocomplete="off" aria-describedby="rep-mail-hint rep-mail-err"><span class="hint" id="rep-mail-hint">Use an invented address such as name@quillhaven.example.</span><p class="err" id="rep-mail-err" hidden></p></div>
+<div class="field check"><input id="rep-ack" name="ack" type="checkbox" required aria-describedby="rep-ack-err"><label for="rep-ack">I understand this is a demo and nothing will be sent <span class="req">(required)</span></label><p class="err" id="rep-ack-err" hidden></p></div>
+<div class="actions"><button type="submit">Run the demo</button><button type="reset" id="rep-reset">Clear form</button></div>
+</form>
+<div id="rep-outcome" class="outcome" role="status" tabindex="-1" hidden data-component="demo-outcome"><h3>Demo finished. Nothing was sent.</h3><p>The form passed its checks, but this is a simulation. No report was created, submitted, stored or received, and no one will act on it.</p></div>
+</section>
+
+</main>
+<footer class="site-footer" data-section="global-footer" data-component="site-footer">
+<div class="footer-grid">
+<section aria-labelledby="f-about" data-section="footer-about"><h2 id="f-about">City of Quillhaven (fictional)</h2><p>An invented city for research purposes. Address (invented): 100 Lantern Row, Quillhaven, Tarnmere County, Republic of Ostrelle. Telephone (invented): 555-0100. Domain (invented, fictional): quillhaven.example.</p></section>
+<nav aria-labelledby="f-links" data-section="footer-links" data-component="footer-link-group"><h2 id="f-links">Explore</h2><ul><li><a href="residents.html">Residents</a></li><li><a href="visitors.html">Visitors</a></li><li><a href="business.html">Business</a></li><li><a href="government.html">Government</a></li><li><a href="departments.html">Departments &amp; Programs</a></li></ul></nav>
+<nav aria-labelledby="f-more" data-section="footer-more" data-component="footer-link-group"><h2 id="f-more">Sample tools</h2><ul><li><a href="services.html">Services directory</a></li><li><a href="public-meetings.html">Public Meetings</a></li><li><a href="report-an-issue.html">Report an Issue (demo)</a></li><li><a href="permits.html">Permits (sample)</a></li></ul></nav>
+</div>
+<p class="footer-legal" data-section="footer-disclaimer">Fictional city government. This site is invented sample content for an accessibility research dataset. It is not a real government, and nothing here is official information or civic guidance. Anyone needing real local information should contact their actual local government.</p>
+</footer>
+</body>
+</html>

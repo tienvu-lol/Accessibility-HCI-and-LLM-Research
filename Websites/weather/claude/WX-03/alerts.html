@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Weather Alerts | Meridian 12 Weather (sample data)</title>
+<meta name="description" content="Sample alerts, watches and advisories (invented).">
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="alerts">
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header" data-section="global-header" data-component="site-header">
+<div class="wrap header-row">
+<a class="brand" href="index.html" data-component="brand-logo"><img src="assets/logo.svg" alt="" width="48" height="48"><span class="brand-text"><span class="brand-name">Meridian 12 Weather</span><span class="brand-sub">Fictional station &middot; Cedar Basin (invented)</span></span></a>
+<div class="header-tools">
+
+<button type="button" class="menu-toggle" aria-expanded="false" aria-controls="section-nav" hidden data-component="menu-toggle">Menu</button>
+</div></div>
+<nav id="section-nav" class="site-nav" aria-label="Weather sections" data-section="global-navigation" data-component="primary-nav"><div class="wrap"><ul><li><a href="index.html#7-day">7 Day</a></li><li><a href="index.html#hourly">Hourly</a></li><li><a href="index.html#weekend">Weekend</a></li><li><a href="alerts.html" aria-current="page">Weather Alerts</a></li><li><a href="almanac.html">Almanac</a></li><li><a href="closings.html">Closings</a></li><li><a href="hurricanes.html">Hurricanes</a></li><li><a href="map-center.html">Map Center</a></li><li><a href="webcams.html">Webcams</a></li><li><a href="resources.html">Resources</a></li><li><a href="news.html">View more top stories</a></li></ul></div></nav>
+</header>
+<main id="main-content" data-section="main-content">
+<div class="sample-banner" role="note" data-section="sample-data-notice" data-component="sample-data-banner"><p><strong>SAMPLE DATA ONLY.</strong> Every temperature, forecast, alert, almanac figure, closing and time on this page is invented for a research replica. It is not a real forecast, it does not describe current conditions, and nothing here should be used to plan anything. Meridian 12 Weather is a fictional station.</p></div>
+
+<div class="page-title"><h1>Weather Alerts <span class="badge-sample">Sample</span></h1>
+<p class="lead">Five invented alerts for a fictional four-county area. These are not real warnings. Each level is spelled out in text.</p></div>
+<section class="card js-only" aria-labelledby="alf-title" data-section="alert-filters" data-component="filter-form"><h2 id="alf-title">Filter sample alerts</h2>
+<form id="alerts-form"><div class="field-row">
+<div class="field"><label for="al-level">Level</label><select id="al-level"><option value="all">All levels</option><option>Warning</option><option>Watch</option><option>Advisory</option><option>Statement</option></select></div>
+<div class="field"><label for="al-county">County (fictional)</label><select id="al-county"><option value="all">All counties</option><option>Ashford County</option><option>Marlow County</option><option>Eastbrook County</option><option>Tern County</option></select></div></div></form>
+<p id="alerts-count" class="hint" role="status">5 of 5 sample alerts shown.</p></section>
+<section aria-labelledby="all-title" data-section="alert-list" data-component="alert-list"><h2 id="all-title">Active sample alerts</h2>
+<div id="alerts-list"><details class="alert-card lv-watch" data-level="Watch" data-id="a1"><summary><span class="lvl">WATCH</span> <span class="alert-title">Freeze Watch</span> <span class="badge-sample">Sample</span></summary><div class="alert-body"><p><strong>Areas (fictional):</strong> Marlow County, Ashford County</p><p><strong>Sample window: Friday night into Saturday morning</strong></p><p>Sample scenario: temperatures could drop to or below freezing for several hours. Fictional guidance: protect pipes, tender plants and pets.</p></div></details><details class="alert-card lv-warning" data-level="Warning" data-id="a2"><summary><span class="lvl">WARNING</span> <span class="alert-title">Flood Warning</span> <span class="badge-sample">Sample</span></summary><div class="alert-body"><p><strong>Areas (fictional):</strong> Eastbrook County</p><p><strong>Sample window: Thursday afternoon to Friday morning</strong></p><p>Sample scenario: low-lying roads near the invented Copper Creek may flood after heavy rain. This is not a real warning and names no real place.</p></div></details><details class="alert-card lv-advisory" data-level="Advisory" data-id="a3"><summary><span class="lvl">ADVISORY</span> <span class="alert-title">Wind Advisory</span> <span class="badge-sample">Sample</span></summary><div class="alert-body"><p><strong>Areas (fictional):</strong> Tern County, Eastbrook County</p><p><strong>Sample window: Friday daytime</strong></p><p>Sample scenario: gusts to 45 mph with the invented cold front. Secure loose outdoor items in this fictional exercise.</p></div></details><details class="alert-card lv-advisory" data-level="Advisory" data-id="a4"><summary><span class="lvl">ADVISORY</span> <span class="alert-title">Dense Fog Advisory</span> <span class="badge-sample">Sample</span></summary><div class="alert-body"><p><strong>Areas (fictional):</strong> Tern County</p><p><strong>Sample window: Wednesday early morning</strong></p><p>Sample scenario: visibility below one quarter mile near the invented harbor. Fictional guidance: slow down and use low beams.</p></div></details><details class="alert-card lv-statement" data-level="Statement" data-id="a5"><summary><span class="lvl">STATEMENT</span> <span class="alert-title">Special Weather Statement</span> <span class="badge-sample">Sample</span></summary><div class="alert-body"><p><strong>Areas (fictional):</strong> Ashford County, Marlow County, Eastbrook County, Tern County</p><p><strong>Sample window: Thursday</strong></p><p>Sample scenario: a strong line of invented thunderstorms may bring brief heavy rain and gusty winds to the whole sample region.</p></div></details></div>
+<p id="alerts-empty" class="empty" hidden>No sample alerts match those filters. Clear a filter to see all five.</p></section>
+</main>
+<footer class="site-footer" data-section="global-footer" data-component="site-footer"><div class="wrap">
+<div class="foot-grid">
+<section aria-labelledby="f1"><h2 id="f1">Forecasts</h2><ul><li><a href="index.html#7-day">7 Day</a></li><li><a href="index.html#hourly">Hourly</a></li><li><a href="index.html#weekend">Weekend</a></li><li><a href="forecast.html">Forecast discussion</a></li><li><a href="radar-video.html">Radar player (placeholder)</a></li></ul></section>
+<section aria-labelledby="f2"><h2 id="f2">Alerts and local</h2><ul><li><a href="alerts.html">Weather Alerts</a></li><li><a href="closings.html">Closings</a></li><li><a href="hurricanes.html">Hurricanes</a></li><li><a href="webcams.html">Webcams</a></li></ul></section>
+<section aria-labelledby="f3"><h2 id="f3">Learn more</h2><ul><li><a href="almanac.html">Almanac</a></li><li><a href="map-center.html">Map Center</a></li><li><a href="resources.html">Resources</a></li><li><a href="news.html">Weather news</a></li></ul></section>
+</div>
+<p class="foot-note"><strong>Research replica.</strong> Meridian 12 Weather is a fictional station and not affiliated with any real broadcaster. All weather data, alerts, closings and timestamps are invented sample data. No ads, tracking or third-party scripts. Footer grouping is inferred, not observed.</p>
+</div></footer>
+<script src="js/main.js" defer></script>
+</body>
+</html>

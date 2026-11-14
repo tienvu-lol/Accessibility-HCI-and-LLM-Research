@@ -1,0 +1,131 @@
+{
+  "allocation_protocol": "WEB-REPLICA-ALLOCATION-V1.0",
+  "generation_protocol": "WEB-REPLICA-V1.0",
+  "category": "company",
+  "slot": 5,
+  "source_id": "CORP-05",
+  "model_group": "codex",
+  "model_id": "gpt-6.1-sol",
+  "model_version": null,
+  "model_provider_or_runtime": "OpenAI collaboration worker (gpt-6.1-sol), orchestrated in Codex",
+  "generation_mode": "single-agent local-only static generation in isolated filesystem snapshot",
+  "operator": "Samhith Varma",
+  "approved_source_url": "https://www.becu.org/",
+  "source_verified_at": "2026-11-12T00:52:00.021127+00:00",
+  "source_verification_method": "HTTP-only Python urllib GET with redirects; live web search/text extraction; browser unavailable; no interactions executed",
+  "source_approved_at": "2026-11-12",
+  "approval_reference": "metadata/change-log.md \u00a7 2026-11-12 \u2014 Codex Phase A approval (slots 04\u201306)",
+  "generation_started_at": "2026-11-13T16:00:43.743806+00:00",
+  "generation_completed_at": "2026-11-13T16:03:08.449320+00:00",
+  "rules_revision": "04b1c3e38b76f2aff3aef869d67370bb4532cd8f9ab5e22ac8276f26cbb859bf",
+  "category_prompt_revision": "843ea7d8d1cc7d01385643f848408dea32997985422496d98e8f108bbc09a333",
+  "protocol_snapshots": [
+    {
+      "path": "Rules.md",
+      "sha256": "04b1c3e38b76f2aff3aef869d67370bb4532cd8f9ab5e22ac8276f26cbb859bf"
+    },
+    {
+      "path": "MODEL_ALLOCATION.md",
+      "sha256": "dba261a89763c22a6c41fc6b066593345aef7871121cef52ff7b73ff88cce3cd"
+    },
+    {
+      "path": "pipelines/codex/config.json",
+      "sha256": "b16751854f14ec50f9e8e8726e4ab0c064503f1ebdea6d71ba7e1faf85ed6d95"
+    },
+    {
+      "path": "pipelines/codex/categories.json",
+      "sha256": "843ea7d8d1cc7d01385643f848408dea32997985422496d98e8f108bbc09a333"
+    },
+    {
+      "path": "pipelines/codex/prompts/build.md",
+      "sha256": "37567f6a4198f7539b11964980cf814a7b8c0732f926dfe9aa6f86849dd2277c"
+    },
+    {
+      "path": "metadata/source-inventories/company.csv",
+      "sha256": "d087271d4832758ac3a205668caff1fbb2fa55977aaa8e0a1d07e8256e51813e"
+    },
+    {
+      "path": "metadata/assignments.csv",
+      "sha256": "bc8e14f82d9f9c61d39c7a52d10ecf2a4ca582e409bcafc54094f8235bfa6e30"
+    }
+  ],
+  "prompt_or_transcript_reference": "Websites/pipelines/codex/runs/2026-11-13T15-55-36-598Z-build-CORP-05/task.md",
+  "task_sha256": "30d23ebde373857cb402ba7a50f1ceb288e03530793283b3217cc936b74486d1",
+  "human_edits": [],
+  "cross_model_edits": [],
+  "active_allocation": {
+    "active_slots": [
+      "01",
+      "02",
+      "03",
+      "04",
+      "05",
+      "06"
+    ],
+    "deferred_slots": [
+      "07",
+      "08",
+      "09",
+      "10"
+    ]
+  },
+  "tool_access": [
+    "filesystem shell",
+    "Python generation helper (not website runtime)",
+    "Node source/logic checks",
+    "shared QC attempted separately"
+  ],
+  "generation_budget": null,
+  "retries": [
+    {
+      "at": "2026-11-13T16:01:23.518629+00:00",
+      "reason": "Coordinator clarified rates scope; initial numeric tables removed in favor of observed category hub. Initial artifact preserved before correction.",
+      "files": [
+        "rates.html",
+        "checking.html",
+        "index.html",
+        "everyday-banking.html",
+        "README.md",
+        "fidelity-notes.md",
+        "component-inventory.json",
+        "generation-metadata.json"
+      ]
+    }
+  ],
+  "validation_summary": {
+    "technology": "pass",
+    "completeness": "pass",
+    "structure": "pass",
+    "interaction": "not-tested",
+    "accessibility": "not-tested",
+    "traceability": "pass",
+    "scope": "pass"
+  },
+  "validation_details": {
+    "technology": "Source scan: local semantic HTML/CSS/vanilla JS; no network/storage APIs, remote assets, prohibited files or runtime dependencies.",
+    "completeness": "9 HTML pages (8 approved plus required 404), 17 site files; relative references and fragments verified.",
+    "structure": "Source-level landmarks, one h1, unique IDs, both metadata attributes on meaningful regions; source-informed hierarchy. Rendered fidelity not tested.",
+    "interaction": "Actual filter function tests and mock DOM event tests passed; real browser interaction not tested due Chromium launch block. Native disclosure and modal behavior not verified.",
+    "accessibility": "Browser/axe/keyboard/screen reader/zoom/reflow/contrast review not tested. Static semantics, labels, alt, focus CSS and reduced-motion source inspected. No conformance claim.",
+    "traceability": "Actual 199 metadata instances inventoried; map/docs/source evidence and durable task/protocol hashes recorded. Initial output archive retained and same-worker scope correction logged.",
+    "scope": "Final rates hub has four groups/eight category descriptions, no numeric rates/tables/calculator. No inquiry form/credentials/accounts. Locator inferred and disclosed."
+  },
+  "research_additions": [
+    "notice-only sign-in dialog"
+  ],
+  "limitations": [
+    "Source verification availability/text only, not rendered or interaction fidelity",
+    "Shared browser QC blocked; axe and browser interaction not tested",
+    "No actual financial functions, inquiry submission, credentials or account opening",
+    "Local locator filtering approximates an unverified live widget"
+  ],
+  "qc_evidence": {
+    "run_directory": "Websites/pipelines/codex/runs/2026-11-13T15-55-36-598Z-build-CORP-05",
+    "shared_qc_exit_code": 2,
+    "shared_qc_report": null,
+    "log": "qc-initial.log",
+    "outcome_wrapper": "qc-outcome.json",
+    "static_checks": "static-checks.json",
+    "logic_and_mock_tests": "interaction-checks.json"
+  }
+}

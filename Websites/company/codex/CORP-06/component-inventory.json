@@ -1,0 +1,826 @@
+{
+  "protocol_version": "1.0",
+  "replica_id": "CORP-06",
+  "category": "company",
+  "source_url": "https://www.atlassian.com/",
+  "components": [
+    {
+      "id": "site-header",
+      "selector": "[data-component=\"site-header\"]",
+      "pages": [
+        "index.html",
+        "products.html",
+        "jira.html",
+        "about.html",
+        "careers.html",
+        "contact.html",
+        "help.html",
+        "404.html"
+      ],
+      "instances": [
+        {
+          "page": "index.html",
+          "selector": "header[data-section=\"global-header\"][data-component=\"site-header\"]"
+        },
+        {
+          "page": "products.html",
+          "selector": "header[data-section=\"global-header\"][data-component=\"site-header\"]"
+        },
+        {
+          "page": "jira.html",
+          "selector": "header[data-section=\"global-header\"][data-component=\"site-header\"]"
+        },
+        {
+          "page": "about.html",
+          "selector": "header[data-section=\"global-header\"][data-component=\"site-header\"]"
+        },
+        {
+          "page": "careers.html",
+          "selector": "header[data-section=\"global-header\"][data-component=\"site-header\"]"
+        },
+        {
+          "page": "contact.html",
+          "selector": "header[data-section=\"global-header\"][data-component=\"site-header\"]"
+        },
+        {
+          "page": "help.html",
+          "selector": "header[data-section=\"global-header\"][data-component=\"site-header\"]"
+        },
+        {
+          "page": "404.html",
+          "selector": "header[data-section=\"global-header\"][data-component=\"site-header\"]"
+        }
+      ],
+      "behavior": [
+        "Semantic static content or local navigation"
+      ],
+      "keyboard": [
+        "Tab; Enter for links; Enter/Space for native buttons and summaries"
+      ],
+      "status": "implemented",
+      "validation": "not-tested"
+    },
+    {
+      "id": "primary-nav",
+      "selector": "[data-component=\"primary-nav\"]",
+      "pages": [
+        "index.html",
+        "products.html",
+        "jira.html",
+        "about.html",
+        "careers.html",
+        "contact.html",
+        "help.html",
+        "404.html"
+      ],
+      "instances": [
+        {
+          "page": "index.html",
+          "selector": "nav[data-section=\"global-navigation\"][data-component=\"primary-nav\"]"
+        },
+        {
+          "page": "products.html",
+          "selector": "nav[data-section=\"global-navigation\"][data-component=\"primary-nav\"]"
+        },
+        {
+          "page": "jira.html",
+          "selector": "nav[data-section=\"global-navigation\"][data-component=\"primary-nav\"]"
+        },
+        {
+          "page": "about.html",
+          "selector": "nav[data-section=\"global-navigation\"][data-component=\"primary-nav\"]"
+        },
+        {
+          "page": "careers.html",
+          "selector": "nav[data-section=\"global-navigation\"][data-component=\"primary-nav\"]"
+        },
+        {
+          "page": "contact.html",
+          "selector": "nav[data-section=\"global-navigation\"][data-component=\"primary-nav\"]"
+        },
+        {
+          "page": "help.html",
+          "selector": "nav[data-section=\"global-navigation\"][data-component=\"primary-nav\"]"
+        },
+        {
+          "page": "404.html",
+          "selector": "nav[data-section=\"global-navigation\"][data-component=\"primary-nav\"]"
+        }
+      ],
+      "behavior": [
+        "Relative page links; responsive disclosure and Escape"
+      ],
+      "keyboard": [
+        "Tab; Enter for links; Enter/Space for native buttons and summaries"
+      ],
+      "status": "implemented",
+      "validation": "not-tested"
+    },
+    {
+      "id": "mega-menu",
+      "selector": "[data-component=\"mega-menu\"]",
+      "pages": [
+        "index.html",
+        "products.html",
+        "jira.html",
+        "about.html",
+        "careers.html",
+        "contact.html",
+        "help.html",
+        "404.html"
+      ],
+      "instances": [
+        {
+          "page": "index.html",
+          "selector": "div[data-section=\"product-navigation\"][data-component=\"mega-menu\"]"
+        },
+        {
+          "page": "products.html",
+          "selector": "div[data-section=\"product-navigation\"][data-component=\"mega-menu\"]"
+        },
+        {
+          "page": "jira.html",
+          "selector": "div[data-section=\"product-navigation\"][data-component=\"mega-menu\"]"
+        },
+        {
+          "page": "about.html",
+          "selector": "div[data-section=\"product-navigation\"][data-component=\"mega-menu\"]"
+        },
+        {
+          "page": "careers.html",
+          "selector": "div[data-section=\"product-navigation\"][data-component=\"mega-menu\"]"
+        },
+        {
+          "page": "contact.html",
+          "selector": "div[data-section=\"product-navigation\"][data-component=\"mega-menu\"]"
+        },
+        {
+          "page": "help.html",
+          "selector": "div[data-section=\"product-navigation\"][data-component=\"mega-menu\"]"
+        },
+        {
+          "page": "404.html",
+          "selector": "div[data-section=\"product-navigation\"][data-component=\"mega-menu\"]"
+        }
+      ],
+      "behavior": [
+        "Suite disclosure; Escape returns focus to trigger"
+      ],
+      "keyboard": [
+        "Tab; Enter for links; Enter/Space for native buttons and summaries"
+      ],
+      "status": "implemented",
+      "validation": "not-tested"
+    },
+    {
+      "id": "page-main",
+      "selector": "[data-component=\"page-main\"]",
+      "pages": [
+        "index.html",
+        "products.html",
+        "jira.html",
+        "about.html",
+        "careers.html",
+        "contact.html",
+        "help.html",
+        "404.html"
+      ],
+      "instances": [
+        {
+          "page": "index.html",
+          "selector": "main[data-section=\"main-content\"][data-component=\"page-main\"]"
+        },
+        {
+          "page": "products.html",
+          "selector": "main[data-section=\"main-content\"][data-component=\"page-main\"]"
+        },
+        {
+          "page": "jira.html",
+          "selector": "main[data-section=\"main-content\"][data-component=\"page-main\"]"
+        },
+        {
+          "page": "about.html",
+          "selector": "main[data-section=\"main-content\"][data-component=\"page-main\"]"
+        },
+        {
+          "page": "careers.html",
+          "selector": "main[data-section=\"main-content\"][data-component=\"page-main\"]"
+        },
+        {
+          "page": "contact.html",
+          "selector": "main[data-section=\"main-content\"][data-component=\"page-main\"]"
+        },
+        {
+          "page": "help.html",
+          "selector": "main[data-section=\"main-content\"][data-component=\"page-main\"]"
+        },
+        {
+          "page": "404.html",
+          "selector": "main[data-section=\"main-content\"][data-component=\"page-main\"]"
+        }
+      ],
+      "behavior": [
+        "Semantic static content or local navigation"
+      ],
+      "keyboard": [
+        "Tab; Enter for links; Enter/Space for native buttons and summaries"
+      ],
+      "status": "implemented",
+      "validation": "not-tested"
+    },
+    {
+      "id": "hero",
+      "selector": "[data-component=\"hero\"]",
+      "pages": [
+        "index.html",
+        "products.html",
+        "jira.html",
+        "about.html",
+        "careers.html",
+        "contact.html",
+        "help.html",
+        "404.html"
+      ],
+      "instances": [
+        {
+          "page": "index.html",
+          "selector": "section[data-section=\"page-hero\"][data-component=\"hero\"]"
+        },
+        {
+          "page": "products.html",
+          "selector": "section[data-section=\"page-hero\"][data-component=\"hero\"]"
+        },
+        {
+          "page": "jira.html",
+          "selector": "section[data-section=\"page-hero\"][data-component=\"hero\"]"
+        },
+        {
+          "page": "about.html",
+          "selector": "section[data-section=\"page-hero\"][data-component=\"hero\"]"
+        },
+        {
+          "page": "careers.html",
+          "selector": "section[data-section=\"page-hero\"][data-component=\"hero\"]"
+        },
+        {
+          "page": "contact.html",
+          "selector": "section[data-section=\"page-hero\"][data-component=\"hero\"]"
+        },
+        {
+          "page": "help.html",
+          "selector": "section[data-section=\"support-hero\"][data-component=\"hero\"]"
+        },
+        {
+          "page": "404.html",
+          "selector": "section[data-section=\"page-hero\"][data-component=\"hero\"]"
+        }
+      ],
+      "behavior": [
+        "Semantic static content or local navigation"
+      ],
+      "keyboard": [
+        "Tab; Enter for links; Enter/Space for native buttons and summaries"
+      ],
+      "status": "implemented",
+      "validation": "not-tested"
+    },
+    {
+      "id": "content-band",
+      "selector": "[data-component=\"content-band\"]",
+      "pages": [
+        "index.html",
+        "products.html",
+        "jira.html",
+        "about.html",
+        "careers.html",
+        "contact.html",
+        "help.html",
+        "404.html"
+      ],
+      "instances": [
+        {
+          "page": "index.html",
+          "selector": "section[data-section=\"connected-work\"][data-component=\"content-band\"]"
+        },
+        {
+          "page": "index.html",
+          "selector": "section[data-section=\"team-context\"][data-component=\"content-band\"]"
+        },
+        {
+          "page": "index.html",
+          "selector": "section[data-section=\"teams\"][data-component=\"content-band\"]"
+        },
+        {
+          "page": "index.html",
+          "selector": "section[data-section=\"company-callout\"][data-component=\"content-band\"]"
+        },
+        {
+          "page": "products.html",
+          "selector": "section[data-section=\"product-collections\"][data-component=\"content-band\"]"
+        },
+        {
+          "page": "products.html",
+          "selector": "section[data-section=\"product-catalog\"][data-component=\"content-band\"]"
+        },
+        {
+          "page": "jira.html",
+          "selector": "section[data-section=\"product-views\"][data-component=\"content-band\"]"
+        },
+        {
+          "page": "jira.html",
+          "selector": "section[data-section=\"product-benefits\"][data-component=\"content-band\"]"
+        },
+        {
+          "page": "jira.html",
+          "selector": "section[data-section=\"product-questions\"][data-component=\"content-band\"]"
+        },
+        {
+          "page": "about.html",
+          "selector": "section[data-section=\"company-story\"][data-component=\"content-band\"]"
+        },
+        {
+          "page": "about.html",
+          "selector": "section[data-section=\"company-values\"][data-component=\"content-band\"]"
+        },
+        {
+          "page": "about.html",
+          "selector": "section[data-section=\"company-careers\"][data-component=\"content-band\"]"
+        },
+        {
+          "page": "careers.html",
+          "selector": "section[data-section=\"career-culture\"][data-component=\"content-band\"]"
+        },
+        {
+          "page": "careers.html",
+          "selector": "section[data-section=\"career-opportunities\"][data-component=\"content-band\"]"
+        },
+        {
+          "page": "contact.html",
+          "selector": "section[data-section=\"contact-routing\"][data-component=\"content-band\"]"
+        },
+        {
+          "page": "contact.html",
+          "selector": "section[data-section=\"contact-offices\"][data-component=\"content-band\"]"
+        },
+        {
+          "page": "help.html",
+          "selector": "section[data-section=\"help-browse\"][data-component=\"content-band\"]"
+        },
+        {
+          "page": "help.html",
+          "selector": "section[data-section=\"help-next\"][data-component=\"content-band\"]"
+        },
+        {
+          "page": "404.html",
+          "selector": "section[data-section=\"error-routes\"][data-component=\"content-band\"]"
+        }
+      ],
+      "behavior": [
+        "Semantic static content or local navigation"
+      ],
+      "keyboard": [
+        "Tab; Enter for links; Enter/Space for native buttons and summaries"
+      ],
+      "status": "implemented",
+      "validation": "not-tested"
+    },
+    {
+      "id": "feature-card",
+      "selector": "[data-component=\"feature-card\"]",
+      "pages": [
+        "index.html",
+        "products.html",
+        "jira.html",
+        "about.html",
+        "careers.html",
+        "contact.html",
+        "help.html",
+        "404.html"
+      ],
+      "instances": [
+        {
+          "page": "index.html",
+          "selector": "article[data-section=\"feature-plan-with-stride\"][data-component=\"feature-card\"]"
+        },
+        {
+          "page": "index.html",
+          "selector": "article[data-section=\"feature-know-with-folio\"][data-component=\"feature-card\"]"
+        },
+        {
+          "page": "index.html",
+          "selector": "article[data-section=\"feature-help-with-relay\"][data-component=\"feature-card\"]"
+        },
+        {
+          "page": "index.html",
+          "selector": "article[data-section=\"feature-software-teams\"][data-component=\"feature-card\"]"
+        },
+        {
+          "page": "index.html",
+          "selector": "article[data-section=\"feature-service-teams\"][data-component=\"feature-card\"]"
+        },
+        {
+          "page": "index.html",
+          "selector": "article[data-section=\"feature-business-teams\"][data-component=\"feature-card\"]"
+        },
+        {
+          "page": "products.html",
+          "selector": "article[data-section=\"feature-teamwork-collection\"][data-component=\"feature-card\"]"
+        },
+        {
+          "page": "products.html",
+          "selector": "article[data-section=\"feature-service-collection\"][data-component=\"feature-card\"]"
+        },
+        {
+          "page": "products.html",
+          "selector": "article[data-section=\"feature-strategy-collection\"][data-component=\"feature-card\"]"
+        },
+        {
+          "page": "jira.html",
+          "selector": "article[data-section=\"feature-start-with-the-why\"][data-component=\"feature-card\"]"
+        },
+        {
+          "page": "jira.html",
+          "selector": "article[data-section=\"feature-see-the-next-move\"][data-component=\"feature-card\"]"
+        },
+        {
+          "page": "jira.html",
+          "selector": "article[data-section=\"feature-stay-open-to-change\"][data-component=\"feature-card\"]"
+        },
+        {
+          "page": "about.html",
+          "selector": "article[data-section=\"feature-clarity-is-a-kindness\"][data-component=\"feature-card\"]"
+        },
+        {
+          "page": "about.html",
+          "selector": "article[data-section=\"feature-make-space-for-questions\"][data-component=\"feature-card\"]"
+        },
+        {
+          "page": "about.html",
+          "selector": "article[data-section=\"feature-build-with-care\"][data-component=\"feature-card\"]"
+        },
+        {
+          "page": "careers.html",
+          "selector": "article[data-section=\"feature-work-with-intention\"][data-component=\"feature-card\"]"
+        },
+        {
+          "page": "careers.html",
+          "selector": "article[data-section=\"feature-learn-in-the-open\"][data-component=\"feature-card\"]"
+        },
+        {
+          "page": "careers.html",
+          "selector": "article[data-section=\"feature-care-for-the-team\"][data-component=\"feature-card\"]"
+        },
+        {
+          "page": "contact.html",
+          "selector": "article[data-section=\"feature-product-guidance\"][data-component=\"feature-card\"]"
+        },
+        {
+          "page": "contact.html",
+          "selector": "article[data-section=\"feature-technical-help\"][data-component=\"feature-card\"]"
+        },
+        {
+          "page": "contact.html",
+          "selector": "article[data-section=\"feature-careers-questions\"][data-component=\"feature-card\"]"
+        },
+        {
+          "page": "help.html",
+          "selector": "article[data-section=\"feature-explore-the-suite\"][data-component=\"feature-card\"]"
+        },
+        {
+          "page": "help.html",
+          "selector": "article[data-section=\"feature-find-the-right-team\"][data-component=\"feature-card\"]"
+        },
+        {
+          "page": "404.html",
+          "selector": "article[data-section=\"feature-products\"][data-component=\"feature-card\"]"
+        },
+        {
+          "page": "404.html",
+          "selector": "article[data-section=\"feature-help\"][data-component=\"feature-card\"]"
+        }
+      ],
+      "behavior": [
+        "Semantic static content or local navigation"
+      ],
+      "keyboard": [
+        "Tab; Enter for links; Enter/Space for native buttons and summaries"
+      ],
+      "status": "implemented",
+      "validation": "not-tested"
+    },
+    {
+      "id": "site-footer",
+      "selector": "[data-component=\"site-footer\"]",
+      "pages": [
+        "index.html",
+        "products.html",
+        "jira.html",
+        "about.html",
+        "careers.html",
+        "contact.html",
+        "help.html",
+        "404.html"
+      ],
+      "instances": [
+        {
+          "page": "index.html",
+          "selector": "footer[data-section=\"global-footer\"][data-component=\"site-footer\"]"
+        },
+        {
+          "page": "products.html",
+          "selector": "footer[data-section=\"global-footer\"][data-component=\"site-footer\"]"
+        },
+        {
+          "page": "jira.html",
+          "selector": "footer[data-section=\"global-footer\"][data-component=\"site-footer\"]"
+        },
+        {
+          "page": "about.html",
+          "selector": "footer[data-section=\"global-footer\"][data-component=\"site-footer\"]"
+        },
+        {
+          "page": "careers.html",
+          "selector": "footer[data-section=\"global-footer\"][data-component=\"site-footer\"]"
+        },
+        {
+          "page": "contact.html",
+          "selector": "footer[data-section=\"global-footer\"][data-component=\"site-footer\"]"
+        },
+        {
+          "page": "help.html",
+          "selector": "footer[data-section=\"global-footer\"][data-component=\"site-footer\"]"
+        },
+        {
+          "page": "404.html",
+          "selector": "footer[data-section=\"global-footer\"][data-component=\"site-footer\"]"
+        }
+      ],
+      "behavior": [
+        "Semantic static content or local navigation"
+      ],
+      "keyboard": [
+        "Tab; Enter for links; Enter/Space for native buttons and summaries"
+      ],
+      "status": "implemented",
+      "validation": "not-tested"
+    },
+    {
+      "id": "product-row",
+      "selector": "[data-component=\"product-row\"]",
+      "pages": [
+        "products.html"
+      ],
+      "instances": [
+        {
+          "page": "products.html",
+          "selector": "article[data-section=\"stride-product\"][data-component=\"product-row\"]"
+        },
+        {
+          "page": "products.html",
+          "selector": "article[data-section=\"folio-product\"][data-component=\"product-row\"]"
+        },
+        {
+          "page": "products.html",
+          "selector": "article[data-section=\"relay-product\"][data-component=\"product-row\"]"
+        },
+        {
+          "page": "products.html",
+          "selector": "article[data-section=\"north-product\"][data-component=\"product-row\"]"
+        }
+      ],
+      "behavior": [
+        "Semantic static content or local navigation"
+      ],
+      "keyboard": [
+        "Tab; Enter for links; Enter/Space for native buttons and summaries"
+      ],
+      "status": "implemented",
+      "validation": "not-tested"
+    },
+    {
+      "id": "view-switcher",
+      "selector": "[data-component=\"view-switcher\"]",
+      "pages": [
+        "jira.html"
+      ],
+      "instances": [
+        {
+          "page": "jira.html",
+          "selector": "div[data-section=\"sample-board\"][data-component=\"view-switcher\"]"
+        }
+      ],
+      "behavior": [
+        "Three project representations; aria-pressed state"
+      ],
+      "keyboard": [
+        "Tab; Enter for links; Enter/Space for native buttons and summaries"
+      ],
+      "status": "implemented",
+      "validation": "not-tested"
+    },
+    {
+      "id": "accordion",
+      "selector": "[data-component=\"accordion\"]",
+      "pages": [
+        "jira.html"
+      ],
+      "instances": [
+        {
+          "page": "jira.html",
+          "selector": "details[data-section=\"product-faq\"][data-component=\"accordion\"]"
+        },
+        {
+          "page": "jira.html",
+          "selector": "details[data-section=\"product-faq\"][data-component=\"accordion\"]"
+        }
+      ],
+      "behavior": [
+        "Native details disclosure"
+      ],
+      "keyboard": [
+        "Tab; Enter for links; Enter/Space for native buttons and summaries"
+      ],
+      "status": "implemented",
+      "validation": "not-tested"
+    },
+    {
+      "id": "results-list",
+      "selector": "[data-component=\"results-list\"]",
+      "pages": [
+        "help.html"
+      ],
+      "instances": [
+        {
+          "page": "help.html",
+          "selector": "div[data-section=\"support-results\"][data-component=\"results-list\"]"
+        }
+      ],
+      "behavior": [
+        "Semantic static content or local navigation"
+      ],
+      "keyboard": [
+        "Tab; Enter for links; Enter/Space for native buttons and summaries"
+      ],
+      "status": "implemented",
+      "validation": "not-tested"
+    },
+    {
+      "id": "search-form",
+      "selector": "[data-component=\"search-form\"]",
+      "pages": [
+        "help.html"
+      ],
+      "instances": [
+        {
+          "page": "help.html",
+          "selector": "form[data-section=\"support-search\"][data-component=\"search-form\"]"
+        }
+      ],
+      "behavior": [
+        "Local case-insensitive help search plus product filter"
+      ],
+      "keyboard": [
+        "Tab; Enter for links; Enter/Space for native buttons and summaries"
+      ],
+      "status": "implemented",
+      "validation": "not-tested"
+    },
+    {
+      "id": "help-article",
+      "selector": "[data-component=\"help-article\"]",
+      "pages": [
+        "help.html"
+      ],
+      "instances": [
+        {
+          "page": "help.html",
+          "selector": "details[data-section=\"help-topic\"][data-component=\"help-article\"]"
+        },
+        {
+          "page": "help.html",
+          "selector": "details[data-section=\"help-topic\"][data-component=\"help-article\"]"
+        },
+        {
+          "page": "help.html",
+          "selector": "details[data-section=\"help-topic\"][data-component=\"help-article\"]"
+        },
+        {
+          "page": "help.html",
+          "selector": "details[data-section=\"help-topic\"][data-component=\"help-article\"]"
+        },
+        {
+          "page": "help.html",
+          "selector": "details[data-section=\"help-topic\"][data-component=\"help-article\"]"
+        },
+        {
+          "page": "help.html",
+          "selector": "details[data-section=\"help-topic\"][data-component=\"help-article\"]"
+        }
+      ],
+      "behavior": [
+        "Native details disclosure; filtered locally"
+      ],
+      "keyboard": [
+        "Tab; Enter for links; Enter/Space for native buttons and summaries"
+      ],
+      "status": "implemented",
+      "validation": "not-tested"
+    },
+    {
+      "id": "task-card",
+      "selector": "[data-component=\"task-card\"]",
+      "pages": [
+        "jira.html"
+      ],
+      "instances": [
+        {
+          "page": "jira.html",
+          "selector": "[data-component=\"task-card\"]",
+          "generated_by": "js/main.js",
+          "count": 3
+        }
+      ],
+      "behavior": [
+        "Rendered from fixed inline data"
+      ],
+      "keyboard": [
+        "No custom keyboard interaction"
+      ],
+      "status": "implemented",
+      "validation": "not-tested"
+    },
+    {
+      "id": "task-row",
+      "selector": "[data-component=\"task-row\"]",
+      "pages": [
+        "jira.html"
+      ],
+      "instances": [
+        {
+          "page": "jira.html",
+          "selector": "[data-component=\"task-row\"]",
+          "generated_by": "js/main.js",
+          "count": 3
+        }
+      ],
+      "behavior": [
+        "Rendered from fixed inline data"
+      ],
+      "keyboard": [
+        "No custom keyboard interaction"
+      ],
+      "status": "implemented",
+      "validation": "not-tested"
+    },
+    {
+      "id": "job-card",
+      "selector": "[data-component=\"job-card\"]",
+      "pages": [
+        "careers.html"
+      ],
+      "instances": [
+        {
+          "page": "careers.html",
+          "selector": "[data-section=\"sample-role-engineering\"][data-component=\"job-card\"]"
+        },
+        {
+          "page": "careers.html",
+          "selector": "[data-section=\"sample-role-design\"][data-component=\"job-card\"]"
+        },
+        {
+          "page": "careers.html",
+          "selector": "[data-section=\"sample-role-support\"][data-component=\"job-card\"]"
+        }
+      ],
+      "behavior": [
+        "Static illustrative team content"
+      ],
+      "keyboard": [
+        "None; static content"
+      ],
+      "status": "implemented",
+      "validation": "not-tested"
+    },
+    {
+      "id": "opportunities-list",
+      "selector": "[data-component=\"opportunities-list\"]",
+      "pages": [
+        "careers.html"
+      ],
+      "instances": [
+        {
+          "page": "careers.html",
+          "selector": "[data-section=\"career-opportunities-list\"][data-component=\"opportunities-list\"]"
+        }
+      ],
+      "behavior": [
+        "Static team descriptions"
+      ],
+      "keyboard": [
+        "None; static content"
+      ],
+      "status": "implemented",
+      "validation": "not-tested"
+    }
+  ]
+}

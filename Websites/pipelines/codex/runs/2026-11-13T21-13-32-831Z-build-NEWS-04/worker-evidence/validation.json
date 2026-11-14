@@ -1,0 +1,37 @@
+{
+  "completed_at": "2026-11-13T21:18:41.032521+00:00",
+  "gates": {
+    "technology": "pass",
+    "completeness": "pass",
+    "structure": "pass",
+    "interaction": "not-tested",
+    "accessibility": "not-tested",
+    "traceability": "pass",
+    "scope": "pass"
+  },
+  "static": "Python HTMLParser audit passed on final revision: 6 HTML pages, 16 files, no detected structural/link/instrumentation errors. JS node --check passed.",
+  "interaction": "Five mock DOM cases passed: menu open/Escape close/focus call; blank email; malformed email; absent edition; multiple choices success/error clearing/status focus call. These are logic tests only, not browser interaction acceptance.",
+  "shared_qc": {
+    "attempts": 1,
+    "exit_code": 2,
+    "result": "browser launch unavailable",
+    "error": "bootstrap_check_in Chromium MachPortRendezvousServer Permission denied (1100)",
+    "json_report_created": false,
+    "log": "qc.log",
+    "axe": "not-tested",
+    "browser_reflow": "not-tested"
+  },
+  "not_tested": [
+    "real keyboard walkthrough",
+    "screen reader",
+    "zoom 200%/400%",
+    "contrast audit",
+    "real DOM focus behavior",
+    "touch",
+    "forced colors",
+    "cross-browser",
+    "rendered source fidelity"
+  ],
+  "revisions": "Initial generation archived before validation; one source-fidelity correction in corrections.json; static audit rerun after revision; no browser QC retry.",
+  "human_edits": []
+}

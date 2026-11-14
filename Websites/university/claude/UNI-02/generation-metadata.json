@@ -1,0 +1,31 @@
+{
+  "allocation_protocol": "WEB-REPLICA-ALLOCATION-V1.0",
+  "generation_protocol": "WEB-REPLICA-V1.0",
+  "category": "university",
+  "slot": 2,
+  "source_id": "UNI-02",
+  "model_group": "claude",
+  "model_id": "claude-sonnet-5-5",
+  "model_version": null,
+  "model_provider_or_runtime": "Claude Code Agent tool subagent (claude-sonnet-5-5); orchestrated by claude-opus-5",
+  "generation_mode": "autonomous agent run, one replica per run, no human edits during generation",
+  "operator": "project lead (Samhith Varma) via orchestrator agent",
+  "approved_source_url": "https://www.swarthmore.edu/",
+  "source_verified_at": "2026-11-10",
+  "source_approved_at": "2026-11-13",
+  "generation_started_at": "2026-11-13T15:39:38Z",
+  "generation_completed_at": "2026-11-13T15:48:28Z",
+  "rules_revision": "WEB-REPLICA-V1.0 / WEB-REPLICA-ALLOCATION-V1.0 at commit f7189ed plus the uncommitted active-allocation amendment of 2026-11-13 (see Websites/metadata/change-log.md)",
+  "category_prompt_revision": "orchestrator brief 2026-11-13 (no separate category prompt file for university)",
+  "prompt_or_transcript_reference": "Claude Code orchestrator session 2026-11-13, build UNI-02",
+  "human_edits": [],
+  "validation_summary": {
+    "technology": "pass (qc.js: pages=19 files=32 failures=0 warnings=0, 2026-11-13)",
+    "completeness": "pass (qc.js required files, link and asset checks)",
+    "structure": "pass (qc.js landmark/skip-link/metadata checks); visual fidelity to reference not tested",
+    "interaction": "pass (scripted Playwright flows: mega-menu keyboard, search flyout, Escape, site search, directory filter/empty state, form errors/summary/success, mobile menu)",
+    "accessibility": "partial (axe-core WCAG2.0-2.2 A/AA + best-practice clean at 1280px and 375px, no horizontal scroll at 375px; screen readers, 200%/400% zoom, full manual keyboard walkthrough not tested)",
+    "traceability": "pass (builder review of README, fidelity notes and inventory against files)",
+    "scope": "pass (builder review; additions labeled)"
+  }
+}

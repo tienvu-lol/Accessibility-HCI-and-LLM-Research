@@ -1,0 +1,68 @@
+{
+  "schema_version": "1.0",
+  "declared_at": "2026-11-13T00:00:00Z",
+  "declared_by": "REPLACE_WITH_PROJECT_LEAD",
+  "note": "Example only. Copy to models.json with actual values, or generate it with scripts/declare-models.mjs. Never put an API key in this file: api_key_env names an environment variable.",
+  "slots": {
+    "7": {
+      "model_id": "REPLACE/Example-Model-A",
+      "model_version": null,
+      "weights_url": "https://huggingface.co/REPLACE/Example-Model-A",
+      "license": "apache-2.0",
+      "open_weights": true,
+      "eligibility_note": "Downloadable weights under a documented license; confirmed against the study's open-weight definition on REPLACE_DATE by REPLACE_PERSON.",
+      "provider": "example-host",
+      "base_url": "https://api.example-host.ai/v1",
+      "api_key_env": "OS_SLOT_07_API_KEY",
+      "params": {
+        "temperature": 0.3,
+        "max_tokens": 16000
+      }
+    },
+    "8": {
+      "model_id": "REPLACE/Example-Model-B",
+      "model_version": null,
+      "weights_url": "https://huggingface.co/REPLACE/Example-Model-B",
+      "license": "apache-2.0",
+      "open_weights": true,
+      "eligibility_note": "REPLACE with the actual confirmation record.",
+      "provider": "example-host",
+      "base_url": "https://api.example-host.ai/v1",
+      "api_key_env": "OS_SLOT_08_API_KEY",
+      "params": {
+        "temperature": 0.3,
+        "max_tokens": 16000
+      }
+    },
+    "9": {
+      "model_id": "REPLACE/Example-Model-C",
+      "model_version": null,
+      "weights_url": "https://huggingface.co/REPLACE/Example-Model-C",
+      "license": "mit",
+      "open_weights": true,
+      "eligibility_note": "REPLACE with the actual confirmation record.",
+      "provider": "example-host",
+      "base_url": "https://api.example-host.ai/v1",
+      "api_key_env": "OS_SLOT_09_API_KEY",
+      "params": {
+        "temperature": 0.3,
+        "max_tokens": 16000
+      }
+    },
+    "10": {
+      "model_id": "REPLACE/Example-Model-D",
+      "model_version": null,
+      "weights_url": "https://huggingface.co/REPLACE/Example-Model-D",
+      "license": "apache-2.0",
+      "open_weights": true,
+      "eligibility_note": "REPLACE with the actual confirmation record.",
+      "provider": "example-host",
+      "base_url": "https://api.example-host.ai/v1",
+      "api_key_env": "OS_SLOT_10_API_KEY",
+      "params": {
+        "temperature": 0.3,
+        "max_tokens": 16000
+      }
+    }
+  }
+}

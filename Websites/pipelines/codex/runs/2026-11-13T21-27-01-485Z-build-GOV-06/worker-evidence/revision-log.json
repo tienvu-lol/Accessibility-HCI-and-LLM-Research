@@ -1,0 +1,22 @@
+[
+  {
+    "revision": "initial-generated-artifact",
+    "at": "2026-11-13T21:32:27.423002+00:00",
+    "changes": "First complete six-page implementation and research documents preserved before audits or corrections.",
+    "hashes": "initial-hashes.json"
+  },
+  {
+    "revision": "validation-documentation",
+    "at": "2026-11-13T21:34:46.761654+00:00",
+    "changes": "Updated README, metadata and inventory with actual tests; no HTML/CSS/JS/assets changed",
+    "test_retry": [
+      {
+        "type": "test harness",
+        "initial": "interaction-tests-initial-harness-error.log",
+        "reason": "Harness site path traversed one directory too far; ENOENT before executing replica JavaScript",
+        "correction": "Changed test-only relative path from five parent levels to four",
+        "result": "67 assertions pass; no replica-code correction"
+      }
+    ]
+  }
+]

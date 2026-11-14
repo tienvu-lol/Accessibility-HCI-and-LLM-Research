@@ -1,0 +1,846 @@
+{
+  "protocol_version": "1.0",
+  "replica_id": "GOV-03",
+  "category": "government",
+  "source_url": "https://www.nps.gov/",
+  "components": [
+    {
+      "id": "accordion",
+      "selector": "[data-component='accordion']",
+      "pages": [
+        "plan-your-visit.html"
+      ],
+      "behavior": [
+        "Disclosure accordion (aria-expanded)"
+      ],
+      "keyboard": [
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "axe-and-scripted-checks-only"
+    },
+    {
+      "id": "active-filters",
+      "selector": "[data-component='active-filters']",
+      "pages": [
+        "find-a-site.html"
+      ],
+      "behavior": [
+        "Text chips listing active filters"
+      ],
+      "keyboard": [
+        "static"
+      ],
+      "status": "implemented",
+      "validation": "axe-and-scripted-checks-only"
+    },
+    {
+      "id": "brand",
+      "selector": "[data-component='brand']",
+      "pages": [
+        "404.html",
+        "contact.html",
+        "find-a-site.html",
+        "get-involved.html",
+        "index.html",
+        "learn-and-explore.html",
+        "news.html",
+        "plan-your-visit.html",
+        "site-plan.html",
+        "site.html",
+        "topic.html",
+        "what-we-do.html"
+      ],
+      "behavior": [
+        "Invented wordmark and plain stylised emblem linking home"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-and-scripted-checks-only"
+    },
+    {
+      "id": "breadcrumb",
+      "selector": "[data-component='breadcrumb']",
+      "pages": [
+        "contact.html",
+        "find-a-site.html",
+        "get-involved.html",
+        "learn-and-explore.html",
+        "news.html",
+        "plan-your-visit.html",
+        "site-plan.html",
+        "site.html",
+        "topic.html",
+        "what-we-do.html"
+      ],
+      "behavior": [
+        "Breadcrumb trail"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-and-scripted-checks-only"
+    },
+    {
+      "id": "card-grid",
+      "selector": "[data-component='card-grid']",
+      "pages": [
+        "index.html",
+        "what-we-do.html"
+      ],
+      "behavior": [
+        "Grid of cards"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-and-scripted-checks-only"
+    },
+    {
+      "id": "contact-form",
+      "selector": "[data-component='contact-form']",
+      "pages": [
+        "contact.html"
+      ],
+      "behavior": [
+        "Simulated contact form with validation"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter submits",
+        "Shift+Tab"
+      ],
+      "status": "implemented",
+      "validation": "axe-and-scripted-checks-only"
+    },
+    {
+      "id": "content-band",
+      "selector": "[data-component='content-band']",
+      "pages": [
+        "get-involved.html",
+        "learn-and-explore.html",
+        "plan-your-visit.html",
+        "what-we-do.html"
+      ],
+      "behavior": [
+        "Generic content band"
+      ],
+      "keyboard": [
+        "static"
+      ],
+      "status": "implemented",
+      "validation": "axe-and-scripted-checks-only"
+    },
+    {
+      "id": "demo-note",
+      "selector": "[data-component='demo-note']",
+      "pages": [
+        "contact.html",
+        "get-involved.html",
+        "index.html",
+        "news.html",
+        "plan-your-visit.html",
+        "site-plan.html",
+        "site.html",
+        "topic.html"
+      ],
+      "behavior": [
+        "Visible not-real-guidance note box"
+      ],
+      "keyboard": [
+        "static"
+      ],
+      "status": "implemented",
+      "validation": "axe-and-scripted-checks-only"
+    },
+    {
+      "id": "demo-result",
+      "selector": "[data-component='demo-result']",
+      "pages": [
+        "contact.html"
+      ],
+      "behavior": [
+        "Demo-only outcome that states nothing was sent"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "axe-and-scripted-checks-only"
+    },
+    {
+      "id": "empty-state",
+      "selector": "[data-component='empty-state']",
+      "pages": [
+        "find-a-site.html"
+      ],
+      "behavior": [
+        "No-results state with reset button"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-and-scripted-checks-only"
+    },
+    {
+      "id": "error-summary",
+      "selector": "[data-component='error-summary']",
+      "pages": [
+        "contact.html"
+      ],
+      "behavior": [
+        "Error summary receiving focus on failed submit"
+      ],
+      "keyboard": [
+        "Enter on links moves focus to field"
+      ],
+      "status": "implemented",
+      "validation": "axe-and-scripted-checks-only"
+    },
+    {
+      "id": "fictional-notice",
+      "selector": "[data-component='fictional-notice']",
+      "pages": [
+        "404.html",
+        "contact.html",
+        "find-a-site.html",
+        "get-involved.html",
+        "index.html",
+        "learn-and-explore.html",
+        "news.html",
+        "plan-your-visit.html",
+        "site-plan.html",
+        "site.html",
+        "topic.html",
+        "what-we-do.html"
+      ],
+      "behavior": [
+        "Persistent fictional-government notice at top of every page"
+      ],
+      "keyboard": [
+        "static text, always visible"
+      ],
+      "status": "implemented",
+      "validation": "axe-and-scripted-checks-only"
+    },
+    {
+      "id": "filter-form",
+      "selector": "[data-component='filter-form']",
+      "pages": [
+        "find-a-site.html",
+        "news.html"
+      ],
+      "behavior": [
+        "Filter controls (search, region, type checkboxes, sort)"
+      ],
+      "keyboard": [
+        "Tab",
+        "Space",
+        "Arrow keys in selects",
+        "live update"
+      ],
+      "status": "implemented",
+      "validation": "axe-and-scripted-checks-only"
+    },
+    {
+      "id": "footer-nav",
+      "selector": "[data-component='footer-nav']",
+      "pages": [
+        "404.html",
+        "contact.html",
+        "find-a-site.html",
+        "get-involved.html",
+        "index.html",
+        "learn-and-explore.html",
+        "news.html",
+        "plan-your-visit.html",
+        "site-plan.html",
+        "site.html",
+        "topic.html",
+        "what-we-do.html"
+      ],
+      "behavior": [
+        "Footer link groups"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-and-scripted-checks-only"
+    },
+    {
+      "id": "footer-note",
+      "selector": "[data-component='footer-note']",
+      "pages": [
+        "404.html",
+        "contact.html",
+        "find-a-site.html",
+        "get-involved.html",
+        "index.html",
+        "learn-and-explore.html",
+        "news.html",
+        "plan-your-visit.html",
+        "site-plan.html",
+        "site.html",
+        "topic.html",
+        "what-we-do.html"
+      ],
+      "behavior": [
+        "Footer fictional note"
+      ],
+      "keyboard": [
+        "static"
+      ],
+      "status": "implemented",
+      "validation": "axe-and-scripted-checks-only"
+    },
+    {
+      "id": "header-search",
+      "selector": "[data-component='header-search']",
+      "pages": [
+        "404.html",
+        "contact.html",
+        "find-a-site.html",
+        "get-involved.html",
+        "index.html",
+        "learn-and-explore.html",
+        "news.html",
+        "plan-your-visit.html",
+        "site-plan.html",
+        "site.html",
+        "topic.html",
+        "what-we-do.html"
+      ],
+      "behavior": [
+        "Site-wide search form that opens the local directory with the query"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-and-scripted-checks-only"
+    },
+    {
+      "id": "hero",
+      "selector": "[data-component='hero']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "Home hero band"
+      ],
+      "keyboard": [
+        "static"
+      ],
+      "status": "implemented",
+      "validation": "axe-and-scripted-checks-only"
+    },
+    {
+      "id": "hero-block",
+      "selector": "[data-component='hero-block']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "Hero card (Find a Site, topic links)"
+      ],
+      "keyboard": [
+        "static"
+      ],
+      "status": "implemented",
+      "validation": "axe-and-scripted-checks-only"
+    },
+    {
+      "id": "hero-search",
+      "selector": "[data-component='hero-search']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "Hero search form to local directory"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-and-scripted-checks-only"
+    },
+    {
+      "id": "identifier",
+      "selector": "[data-component='identifier']",
+      "pages": [
+        "404.html",
+        "contact.html",
+        "find-a-site.html",
+        "get-involved.html",
+        "index.html",
+        "learn-and-explore.html",
+        "news.html",
+        "plan-your-visit.html",
+        "site-plan.html",
+        "site.html",
+        "topic.html",
+        "what-we-do.html"
+      ],
+      "behavior": [
+        "Fictional identifier band (not an official identifier)"
+      ],
+      "keyboard": [
+        "static"
+      ],
+      "status": "implemented",
+      "validation": "axe-and-scripted-checks-only"
+    },
+    {
+      "id": "info-card",
+      "selector": "[data-component='info-card']",
+      "pages": [
+        "get-involved.html",
+        "what-we-do.html"
+      ],
+      "behavior": [
+        "Informational card (non-interactive)"
+      ],
+      "keyboard": [
+        "static"
+      ],
+      "status": "implemented",
+      "validation": "axe-and-scripted-checks-only"
+    },
+    {
+      "id": "live-region",
+      "selector": "[data-component='live-region']",
+      "pages": [
+        "find-a-site.html",
+        "news.html"
+      ],
+      "behavior": [
+        "Polite live region announcing counts"
+      ],
+      "keyboard": [
+        "screen reader announcement"
+      ],
+      "status": "implemented",
+      "validation": "axe-and-scripted-checks-only"
+    },
+    {
+      "id": "local-nav",
+      "selector": "[data-component='local-nav']",
+      "pages": [
+        "plan-your-visit.html",
+        "site-plan.html",
+        "site.html"
+      ],
+      "behavior": [
+        "Local navigation (site tabs or section list)"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-and-scripted-checks-only"
+    },
+    {
+      "id": "masthead",
+      "selector": "[data-component='masthead']",
+      "pages": [
+        "404.html",
+        "contact.html",
+        "find-a-site.html",
+        "get-involved.html",
+        "index.html",
+        "learn-and-explore.html",
+        "news.html",
+        "plan-your-visit.html",
+        "site-plan.html",
+        "site.html",
+        "topic.html",
+        "what-we-do.html"
+      ],
+      "behavior": [
+        "Brand row with search and menu toggle"
+      ],
+      "keyboard": [
+        "responsive wrap"
+      ],
+      "status": "implemented",
+      "validation": "axe-and-scripted-checks-only"
+    },
+    {
+      "id": "menu-toggle",
+      "selector": "[data-component='menu-toggle']",
+      "pages": [
+        "404.html",
+        "contact.html",
+        "find-a-site.html",
+        "get-involved.html",
+        "index.html",
+        "learn-and-explore.html",
+        "news.html",
+        "plan-your-visit.html",
+        "site-plan.html",
+        "site.html",
+        "topic.html",
+        "what-we-do.html"
+      ],
+      "behavior": [
+        "Mobile disclosure for primary navigation (aria-expanded)"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "Escape closes"
+      ],
+      "status": "implemented",
+      "validation": "axe-and-scripted-checks-only"
+    },
+    {
+      "id": "nav-dropdown",
+      "selector": "[data-component='nav-dropdown']",
+      "pages": [
+        "404.html",
+        "contact.html",
+        "find-a-site.html",
+        "get-involved.html",
+        "index.html",
+        "learn-and-explore.html",
+        "news.html",
+        "plan-your-visit.html",
+        "site-plan.html",
+        "site.html",
+        "topic.html",
+        "what-we-do.html"
+      ],
+      "behavior": [
+        "Top-level dropdown disclosure button"
+      ],
+      "keyboard": [
+        "Enter",
+        "Space",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "axe-and-scripted-checks-only"
+    },
+    {
+      "id": "nav-submenu",
+      "selector": "[data-component='nav-submenu']",
+      "pages": [
+        "404.html",
+        "contact.html",
+        "find-a-site.html",
+        "get-involved.html",
+        "index.html",
+        "learn-and-explore.html",
+        "news.html",
+        "plan-your-visit.html",
+        "site-plan.html",
+        "site.html",
+        "topic.html",
+        "what-we-do.html"
+      ],
+      "behavior": [
+        "Second-level disclosure inside Learn & Explore"
+      ],
+      "keyboard": [
+        "Enter",
+        "Space",
+        "Escape closes this level first"
+      ],
+      "status": "implemented",
+      "validation": "axe-and-scripted-checks-only"
+    },
+    {
+      "id": "news-item",
+      "selector": "[data-component='news-item']",
+      "pages": [
+        "news.html"
+      ],
+      "behavior": [
+        "News entry"
+      ],
+      "keyboard": [
+        "static"
+      ],
+      "status": "implemented",
+      "validation": "axe-and-scripted-checks-only"
+    },
+    {
+      "id": "news-list",
+      "selector": "[data-component='news-list']",
+      "pages": [
+        "news.html"
+      ],
+      "behavior": [
+        "Filtered news list"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "axe-and-scripted-checks-only"
+    },
+    {
+      "id": "news-teaser",
+      "selector": "[data-component='news-teaser']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "Home news teaser"
+      ],
+      "keyboard": [
+        "static"
+      ],
+      "status": "implemented",
+      "validation": "axe-and-scripted-checks-only"
+    },
+    {
+      "id": "primary-nav",
+      "selector": "[data-component='primary-nav']",
+      "pages": [
+        "404.html",
+        "contact.html",
+        "find-a-site.html",
+        "get-involved.html",
+        "index.html",
+        "learn-and-explore.html",
+        "news.html",
+        "plan-your-visit.html",
+        "site-plan.html",
+        "site.html",
+        "topic.html",
+        "what-we-do.html"
+      ],
+      "behavior": [
+        "Global navigation with two-level dropdowns (inferred labels, own contents)"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "Escape closes innermost open level"
+      ],
+      "status": "implemented",
+      "validation": "axe-and-scripted-checks-only"
+    },
+    {
+      "id": "promo-band",
+      "selector": "[data-component='promo-band']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "Get involved teaser band"
+      ],
+      "keyboard": [
+        "static"
+      ],
+      "status": "implemented",
+      "validation": "axe-and-scripted-checks-only"
+    },
+    {
+      "id": "results-list",
+      "selector": "[data-component='results-list']",
+      "pages": [
+        "find-a-site.html"
+      ],
+      "behavior": [
+        "Site results region"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-and-scripted-checks-only"
+    },
+    {
+      "id": "site-card",
+      "selector": "[data-component='site-card']",
+      "pages": [
+        "find-a-site.html",
+        "index.html",
+        "topic.html"
+      ],
+      "behavior": [
+        "Site card rendered from inline data"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-and-scripted-checks-only"
+    },
+    {
+      "id": "site-detail",
+      "selector": "[data-component='site-detail']",
+      "pages": [
+        "site-plan.html",
+        "site.html"
+      ],
+      "behavior": [
+        "Site detail or sample plan body rendered from inline data"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-and-scripted-checks-only"
+    },
+    {
+      "id": "site-footer",
+      "selector": "[data-component='site-footer']",
+      "pages": [
+        "404.html",
+        "contact.html",
+        "find-a-site.html",
+        "get-involved.html",
+        "index.html",
+        "learn-and-explore.html",
+        "news.html",
+        "plan-your-visit.html",
+        "site-plan.html",
+        "site.html",
+        "topic.html",
+        "what-we-do.html"
+      ],
+      "behavior": [
+        "Global footer"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-and-scripted-checks-only"
+    },
+    {
+      "id": "site-header",
+      "selector": "[data-component='site-header']",
+      "pages": [
+        "404.html",
+        "contact.html",
+        "find-a-site.html",
+        "get-involved.html",
+        "index.html",
+        "learn-and-explore.html",
+        "news.html",
+        "plan-your-visit.html",
+        "site-plan.html",
+        "site.html",
+        "topic.html",
+        "what-we-do.html"
+      ],
+      "behavior": [
+        "Global header wrapper"
+      ],
+      "keyboard": [
+        "persistent fictional notice",
+        "masthead",
+        "nav"
+      ],
+      "status": "implemented",
+      "validation": "axe-and-scripted-checks-only"
+    },
+    {
+      "id": "topic-card",
+      "selector": "[data-component='topic-card']",
+      "pages": [
+        "index.html",
+        "learn-and-explore.html"
+      ],
+      "behavior": [
+        "Topic card"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-and-scripted-checks-only"
+    },
+    {
+      "id": "topic-detail",
+      "selector": "[data-component='topic-detail']",
+      "pages": [
+        "topic.html"
+      ],
+      "behavior": [
+        "Topic index or detail body"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-and-scripted-checks-only"
+    },
+    {
+      "id": "topic-grid",
+      "selector": "[data-component='topic-grid']",
+      "pages": [
+        "index.html",
+        "learn-and-explore.html"
+      ],
+      "behavior": [
+        "Grid of topic cards"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-and-scripted-checks-only"
+    },
+    {
+      "id": "topic-links",
+      "selector": "[data-component='topic-links']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "Pill links to topics"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-and-scripted-checks-only"
+    },
+    {
+      "id": "topic-list",
+      "selector": "[data-component='topic-list']",
+      "pages": [
+        "topic.html"
+      ],
+      "behavior": [
+        "Topic groups on topic index"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-and-scripted-checks-only"
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Find a Site - Kelmoran Landmarks Service (fictional)</title>
+<meta name="description" content="Fictional sample page for an accessibility research dataset. Not a real agency.">
+<link rel="icon" href="assets/emblem.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="finder">
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header data-section="global-header" data-component="site-header">
+<div class="fiction-notice" role="note" data-section="fictional-notice" data-component="fictional-notice"><div class="wrap"><p style="margin:0"><strong>Fictional government agency.</strong> This site is invented sample content for an accessibility research dataset. The Kelmoran Landmarks Service and the Republic of Kelmora do not exist. Nothing here is official information, guidance or advice.</p></div></div>
+<div class="masthead" data-section="masthead" data-component="masthead"><div class="wrap">
+<a class="brand" href="index.html" data-component="brand"><img src="assets/emblem.svg" alt="" width="48" height="48"><span>Kelmoran Landmarks Service<small>Invented sample agency, Republic of Kelmora</small></span></a>
+<form class="header-search" action="find-a-site.html" method="get" role="search" aria-label="Site-wide search" data-section="site-search" data-component="header-search"><label for="hs-q" class="visually-hidden">Search sample sites</label><input type="search" id="hs-q" name="q" placeholder="Search sample sites"><button type="submit" class="btn">Search</button></form>
+<button type="button" class="btn menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="primary-menu" data-component="menu-toggle">Menu</button>
+</div></div>
+<nav class="primary-nav" id="primary-nav" aria-label="Primary" data-section="global-navigation" data-component="primary-nav">
+<ul class="nav-list" id="primary-menu">
+<li class="nav-item is-current"><button type="button" class="nav-btn" aria-expanded="false" aria-controls="menu-find" data-component="nav-dropdown">Find a Site</button>
+<div class="nav-panel" id="menu-find" hidden><ul><li><a href="find-a-site.html" aria-current="page">Site directory and search</a></li><li><a href="site.html?id=heron-glass-reach">Featured sample site</a></li></ul></div></li>
+<li class="nav-item"><button type="button" class="nav-btn" aria-expanded="false" aria-controls="menu-plan" data-component="nav-dropdown">Plan Your Visit</button>
+<div class="nav-panel" id="menu-plan" hidden><ul><li><a href="plan-your-visit.html">Planning overview (sample)</a></li><li><a href="site-plan.html?id=heron-glass-reach">Sample site visit page</a></li></ul></div></li>
+<li class="nav-item"><button type="button" class="nav-btn" aria-expanded="false" aria-controls="menu-learn" data-component="nav-dropdown">Learn &amp; Explore</button>
+<div class="nav-panel" id="menu-learn" hidden><ul><li><a href="learn-and-explore.html">Learn and explore overview</a></li><li><a href="topic.html">All topics</a></li><li><button type="button" class="sub-btn" aria-expanded="false" aria-controls="sub-topics" data-component="nav-submenu">Topics A to Z</button>
+<div class="sub-panel" id="sub-topics" hidden><ul><li><a href="topic.html?t=basalt-terraces">Basalt Terraces</a></li><li><a href="topic.html?t=brassline-industry">Brassline Industry</a></li><li><a href="topic.html?t=candlestone-masons">Candlestone Masons</a></li><li><a href="topic.html?t=lantern-moths">Lantern Moths</a></li><li><a href="topic.html?t=mere-reeds">Mere Reeds</a></li><li><a href="topic.html?t=singing-dunes">Singing Dunes</a></li><li><a href="topic.html?t=tide-glass-foxes">Tide-glass Foxes</a></li><li><a href="topic.html?t=whisperferns">Whisperferns</a></li></ul></div></li></ul></div></li>
+<li class="nav-item"><a href="get-involved.html">Get Involved</a></li>
+<li class="nav-item"><button type="button" class="nav-btn" aria-expanded="false" aria-controls="menu-what" data-component="nav-dropdown">What We Do</button>
+<div class="nav-panel" id="menu-what" hidden><ul><li><a href="what-we-do.html">About the agency (fictional)</a></li><li><a href="news.html">News (sample)</a></li><li><a href="contact.html">Contact form demo</a></li></ul></div></li>
+</ul></nav>
+</header>
+<main id="main-content" data-section="main-content" tabindex="-1">
+
+<div class="wrap"><nav class="breadcrumb" aria-label="Breadcrumb" data-section="breadcrumb" data-component="breadcrumb"><ol><li><a href="index.html">Home</a></li><li><span aria-current="page">Find a Site</span></li></ol></nav>
+<h1>Find a Site</h1><p>Search and filter thirty invented sites. All data is local sample content.</p>
+<div class="finder"><form id="finder-form" class="filters" role="search" aria-label="Site filters" data-section="site-filters" data-component="filter-form">
+<div class="field"><label for="q">Search by name, region or description</label><input type="search" id="q" name="q" autocomplete="off"></div>
+<div class="field"><label for="region">Region</label><select id="region" name="region"><option value="">All regions</option></select></div>
+<fieldset><legend>Site type</legend><div id="type-boxes"></div><p class="hint">Select none to see every type.</p></fieldset>
+<div class="field"><label for="sort">Sort by</label><select id="sort" name="sort"><option value="az">Name, A to Z</option><option value="za">Name, Z to A</option></select></div>
+<button type="button" class="btn secondary" id="reset-filters">Reset filters</button><noscript><p>Filtering needs JavaScript. The full list is not shown without it.</p></noscript></form>
+<section aria-labelledby="results-title" data-section="site-results" data-component="results-list"><h2 id="results-title">Results</h2>
+<p id="result-count" class="result-count" role="status" aria-live="polite" data-component="live-region">Loading results.</p>
+<div id="active-filters" data-component="active-filters"></div>
+<div id="empty-state" class="empty" hidden data-component="empty-state"><h3>No sites match your search</h3><p>Try fewer filters or a shorter search term. These are invented sites, so only the names shown in this demo will match.</p><button type="button" class="btn" id="empty-reset">Clear all filters</button></div>
+<ul class="grid" id="results"></ul></section></div></div>
+</main>
+<footer class="site-footer" data-section="global-footer" data-component="site-footer"><div class="wrap">
+<div class="footer-cols">
+<nav aria-label="Explore" data-section="footer-explore" data-component="footer-nav"><h2>Explore</h2><ul><li><a href="find-a-site.html">Find a Site</a></li><li><a href="plan-your-visit.html">Plan Your Visit</a></li><li><a href="learn-and-explore.html">Learn &amp; Explore</a></li><li><a href="topic.html">Topics</a></li></ul></nav>
+<nav aria-label="About" data-section="footer-about" data-component="footer-nav"><h2>About</h2><ul><li><a href="get-involved.html">Get Involved</a></li><li><a href="what-we-do.html">What We Do</a></li><li><a href="news.html">News</a></li><li><a href="contact.html">Contact form demo</a></li></ul></nav>
+<div data-section="footer-notice" data-component="footer-note"><h2>About this sample</h2><p>Every site, region and person on this website is invented. It is a research prototype, not a public service.</p></div>
+</div></div>
+<div class="identifier" data-section="identifier" data-component="identifier"><div class="wrap"><p><strong>Kelmoran Landmarks Service</strong> is a fictional agency of the imaginary Republic of Kelmora.</p><p>The domain kelmoran-landmarks.example is a reserved example name and is not a real website. This is not an official site of any government.</p></div></div></footer>
+<script src="js/main.js"></script>
+</body>
+</html>

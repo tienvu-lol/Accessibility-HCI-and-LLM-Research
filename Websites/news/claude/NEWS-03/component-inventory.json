@@ -1,0 +1,1000 @@
+{
+  "protocol_version": "1.0",
+  "replica_id": "NEWS-03",
+  "category": "news",
+  "source_url": "https://www.npr.org/",
+  "components": [
+    {
+      "id": "article",
+      "selector": "[data-component='article']",
+      "pages": [
+        "audio-story.html",
+        "story.html"
+      ],
+      "behavior": [
+        "Story article with fictional notice, byline, dateline, tags"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-checks-only"
+    },
+    {
+      "id": "audio-module-shelf",
+      "selector": "[data-component='audio-module-shelf']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "Shelf of stories that open the silent demo player page"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-checks-only"
+    },
+    {
+      "id": "audio-player-demo",
+      "selector": "[data-component='audio-player-demo']",
+      "pages": [
+        "audio-story.html"
+      ],
+      "behavior": [
+        "Silent demo player: play/pause, +/-15 s, speed, seek slider; no audio, no autoplay"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "Arrow keys on slider"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-checks-only"
+    },
+    {
+      "id": "brand-wordmark",
+      "selector": "[data-component='brand-wordmark']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "audio-story.html",
+        "culture.html",
+        "donate.html",
+        "index.html",
+        "land-sea.html",
+        "music.html",
+        "news.html",
+        "newsletters.html",
+        "program.html",
+        "search.html",
+        "shows.html",
+        "stations.html",
+        "story.html"
+      ],
+      "behavior": [
+        "Link home"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-checks-only"
+    },
+    {
+      "id": "breadcrumb",
+      "selector": "[data-component='breadcrumb']",
+      "pages": [
+        "about.html",
+        "audio-story.html",
+        "culture.html",
+        "donate.html",
+        "land-sea.html",
+        "music.html",
+        "news.html",
+        "newsletters.html",
+        "program.html",
+        "search.html",
+        "shows.html",
+        "stations.html",
+        "story.html"
+      ],
+      "behavior": [
+        "Breadcrumb trail"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-checks-only"
+    },
+    {
+      "id": "byline",
+      "selector": "[data-component='byline']",
+      "pages": [
+        "audio-story.html",
+        "story.html"
+      ],
+      "behavior": [
+        "Invented reporter byline"
+      ],
+      "keyboard": [
+        "none"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-checks-only"
+    },
+    {
+      "id": "card-grid",
+      "selector": "[data-component='card-grid']",
+      "pages": [
+        "culture.html",
+        "land-sea.html",
+        "music.html",
+        "news.html",
+        "shows.html"
+      ],
+      "behavior": [
+        "Responsive grid of cards"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-checks-only"
+    },
+    {
+      "id": "content-block",
+      "selector": "[data-component='content-block']",
+      "pages": [
+        "about.html"
+      ],
+      "behavior": [
+        "Prose section"
+      ],
+      "keyboard": [
+        "none"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-checks-only"
+    },
+    {
+      "id": "dateline",
+      "selector": "[data-component='dateline']",
+      "pages": [
+        "audio-story.html",
+        "story.html"
+      ],
+      "behavior": [
+        "Fictional dateline with sample date"
+      ],
+      "keyboard": [
+        "none"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-checks-only"
+    },
+    {
+      "id": "demo-success",
+      "selector": "[data-component='demo-success']",
+      "pages": [
+        "donate.html",
+        "newsletters.html"
+      ],
+      "behavior": [
+        "Focused status message disclosing simulation"
+      ],
+      "keyboard": [
+        "none"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-checks-only"
+    },
+    {
+      "id": "donate-button",
+      "selector": "[data-component='donate-button']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "audio-story.html",
+        "culture.html",
+        "donate.html",
+        "index.html",
+        "land-sea.html",
+        "music.html",
+        "news.html",
+        "newsletters.html",
+        "program.html",
+        "search.html",
+        "shows.html",
+        "stations.html",
+        "story.html"
+      ],
+      "behavior": [
+        "Link to simulated support form"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-checks-only"
+    },
+    {
+      "id": "donate-form",
+      "selector": "[data-component='donate-form']",
+      "pages": [
+        "donate.html"
+      ],
+      "behavior": [
+        "Simulated gift form with validation; no payment"
+      ],
+      "keyboard": [
+        "Tab",
+        "Arrow keys on radios",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-checks-only"
+    },
+    {
+      "id": "donate-prompt",
+      "selector": "[data-component='donate-prompt']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "Labeled simulation-only support prompt"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-checks-only"
+    },
+    {
+      "id": "episode-list",
+      "selector": "[data-component='episode-list']",
+      "pages": [
+        "program.html"
+      ],
+      "behavior": [
+        "Demo episode list linking to silent player pages"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-checks-only"
+    },
+    {
+      "id": "error-summary",
+      "selector": "[data-component='error-summary']",
+      "pages": [
+        "donate.html",
+        "newsletters.html"
+      ],
+      "behavior": [
+        "Focusable alert summary linking to invalid fields"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-checks-only"
+    },
+    {
+      "id": "fictional-notice",
+      "selector": "[data-component='fictional-notice']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "audio-story.html",
+        "culture.html",
+        "donate.html",
+        "index.html",
+        "land-sea.html",
+        "music.html",
+        "news.html",
+        "newsletters.html",
+        "program.html",
+        "search.html",
+        "shows.html",
+        "stations.html",
+        "story.html"
+      ],
+      "behavior": [
+        "Persistent fictional-publication notice in masthead; repeated above story headline on story, audio-story and program pages"
+      ],
+      "keyboard": [
+        "none (static text)"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-checks-only"
+    },
+    {
+      "id": "footer-link-group",
+      "selector": "[data-component='footer-link-group']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "audio-story.html",
+        "culture.html",
+        "donate.html",
+        "index.html",
+        "land-sea.html",
+        "music.html",
+        "news.html",
+        "newsletters.html",
+        "program.html",
+        "search.html",
+        "shows.html",
+        "stations.html",
+        "story.html"
+      ],
+      "behavior": [
+        "Footer nav module"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-checks-only"
+    },
+    {
+      "id": "header-search",
+      "selector": "[data-component='header-search']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "audio-story.html",
+        "culture.html",
+        "donate.html",
+        "index.html",
+        "land-sea.html",
+        "music.html",
+        "news.html",
+        "newsletters.html",
+        "program.html",
+        "search.html",
+        "shows.html",
+        "stations.html",
+        "story.html"
+      ],
+      "behavior": [
+        "Search form posting to search.html via GET"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Escape closes"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-checks-only"
+    },
+    {
+      "id": "lead-story",
+      "selector": "[data-component='lead-story']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "Lead story card"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-checks-only"
+    },
+    {
+      "id": "lead-story-grid",
+      "selector": "[data-component='lead-story-grid']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "Home lead plus side stories"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-checks-only"
+    },
+    {
+      "id": "mobile-menu-toggle",
+      "selector": "[data-component='mobile-menu-toggle']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "audio-story.html",
+        "culture.html",
+        "donate.html",
+        "index.html",
+        "land-sea.html",
+        "music.html",
+        "news.html",
+        "newsletters.html",
+        "program.html",
+        "search.html",
+        "shows.html",
+        "stations.html",
+        "story.html"
+      ],
+      "behavior": [
+        "Mobile disclosure for primary nav"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "Escape closes"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-checks-only"
+    },
+    {
+      "id": "newsletter-form",
+      "selector": "[data-component='newsletter-form']",
+      "pages": [
+        "newsletters.html"
+      ],
+      "behavior": [
+        "Simulated newsletter signup with validation"
+      ],
+      "keyboard": [
+        "Tab",
+        "Space",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-checks-only"
+    },
+    {
+      "id": "newsletter-promo",
+      "selector": "[data-component='newsletter-promo']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "Promo linking to simulated newsletter page"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-checks-only"
+    },
+    {
+      "id": "primary-nav",
+      "selector": "[data-component='primary-nav']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "audio-story.html",
+        "culture.html",
+        "donate.html",
+        "index.html",
+        "land-sea.html",
+        "music.html",
+        "news.html",
+        "newsletters.html",
+        "program.html",
+        "search.html",
+        "shows.html",
+        "stations.html",
+        "story.html"
+      ],
+      "behavior": [
+        "Primary navigation with four submenu disclosures"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "Escape closes submenu"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-checks-only"
+    },
+    {
+      "id": "program-card",
+      "selector": "[data-component='program-card']",
+      "pages": [
+        "shows.html"
+      ],
+      "behavior": [
+        "Programme card"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-checks-only"
+    },
+    {
+      "id": "program-filter",
+      "selector": "[data-component='program-filter']",
+      "pages": [
+        "shows.html"
+      ],
+      "behavior": [
+        "Programme name and schedule filter"
+      ],
+      "keyboard": [
+        "Tab",
+        "type"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-checks-only"
+    },
+    {
+      "id": "program-header",
+      "selector": "[data-component='program-header']",
+      "pages": [
+        "program.html"
+      ],
+      "behavior": [
+        "Programme heading block"
+      ],
+      "keyboard": [
+        "none"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-checks-only"
+    },
+    {
+      "id": "related-items",
+      "selector": "[data-component='related-items']",
+      "pages": [
+        "audio-story.html",
+        "story.html"
+      ],
+      "behavior": [
+        "Related stories aside"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-checks-only"
+    },
+    {
+      "id": "search-form",
+      "selector": "[data-component='search-form']",
+      "pages": [
+        "search.html"
+      ],
+      "behavior": [
+        "Search page query and scope form"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-checks-only"
+    },
+    {
+      "id": "search-results",
+      "selector": "[data-component='search-results']",
+      "pages": [
+        "search.html"
+      ],
+      "behavior": [
+        "Results list with live status and empty state"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-checks-only"
+    },
+    {
+      "id": "search-toggle",
+      "selector": "[data-component='search-toggle']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "audio-story.html",
+        "culture.html",
+        "donate.html",
+        "index.html",
+        "land-sea.html",
+        "music.html",
+        "news.html",
+        "newsletters.html",
+        "program.html",
+        "search.html",
+        "shows.html",
+        "stations.html",
+        "story.html"
+      ],
+      "behavior": [
+        "Disclosure revealing header search form"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "Escape closes"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-checks-only"
+    },
+    {
+      "id": "section-block",
+      "selector": "[data-component='section-block']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "Home section band"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-checks-only"
+    },
+    {
+      "id": "share-tools",
+      "selector": "[data-component='share-tools']",
+      "pages": [
+        "audio-story.html",
+        "story.html"
+      ],
+      "behavior": [
+        "Non-functional share demo"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-checks-only"
+    },
+    {
+      "id": "site-footer",
+      "selector": "[data-component='site-footer']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "audio-story.html",
+        "culture.html",
+        "donate.html",
+        "index.html",
+        "land-sea.html",
+        "music.html",
+        "news.html",
+        "newsletters.html",
+        "program.html",
+        "search.html",
+        "shows.html",
+        "stations.html",
+        "story.html"
+      ],
+      "behavior": [
+        "Four link groups, fictional notice and legal strip"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-checks-only"
+    },
+    {
+      "id": "site-header",
+      "selector": "[data-component='site-header']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "audio-story.html",
+        "culture.html",
+        "donate.html",
+        "index.html",
+        "land-sea.html",
+        "music.html",
+        "news.html",
+        "newsletters.html",
+        "program.html",
+        "search.html",
+        "shows.html",
+        "stations.html",
+        "story.html"
+      ],
+      "behavior": [
+        "Masthead with fictional notice, brand, utilities and navigation"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-checks-only"
+    },
+    {
+      "id": "station-finder",
+      "selector": "[data-component='station-finder']",
+      "pages": [
+        "stations.html"
+      ],
+      "behavior": [
+        "Search over 8 invented stations"
+      ],
+      "keyboard": [
+        "Tab",
+        "type"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-checks-only"
+    },
+    {
+      "id": "station-item",
+      "selector": "[data-component='station-item']",
+      "pages": [
+        "stations.html"
+      ],
+      "behavior": [
+        "Station row with set-as-my-station demo button"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-checks-only"
+    },
+    {
+      "id": "station-picker",
+      "selector": "[data-component='station-picker']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "audio-story.html",
+        "culture.html",
+        "donate.html",
+        "index.html",
+        "land-sea.html",
+        "music.html",
+        "news.html",
+        "newsletters.html",
+        "program.html",
+        "search.html",
+        "shows.html",
+        "stations.html",
+        "story.html"
+      ],
+      "behavior": [
+        "Link to station finder; label shows demo station chosen in-page"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-checks-only"
+    },
+    {
+      "id": "story-card",
+      "selector": "[data-component='story-card']",
+      "pages": [
+        "culture.html",
+        "index.html",
+        "land-sea.html",
+        "music.html",
+        "news.html"
+      ],
+      "behavior": [
+        "Story card with section kicker and meta"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-checks-only"
+    },
+    {
+      "id": "story-filter",
+      "selector": "[data-component='story-filter']",
+      "pages": [
+        "culture.html",
+        "land-sea.html",
+        "music.html",
+        "news.html"
+      ],
+      "behavior": [
+        "Text and topic filter with polite status and empty state"
+      ],
+      "keyboard": [
+        "Tab",
+        "type",
+        "Arrow keys on select"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-checks-only"
+    },
+    {
+      "id": "story-list-item",
+      "selector": "[data-component='story-list-item']",
+      "pages": [
+        "audio-story.html",
+        "index.html",
+        "story.html"
+      ],
+      "behavior": [
+        "Compact story link row"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-checks-only"
+    },
+    {
+      "id": "submenu",
+      "selector": "[data-component='submenu']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "audio-story.html",
+        "culture.html",
+        "donate.html",
+        "index.html",
+        "land-sea.html",
+        "music.html",
+        "news.html",
+        "newsletters.html",
+        "program.html",
+        "search.html",
+        "shows.html",
+        "stations.html",
+        "story.html"
+      ],
+      "behavior": [
+        "Dropdown list of local pages only"
+      ],
+      "keyboard": [
+        "Tab",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-checks-only"
+    },
+    {
+      "id": "submenu-toggle",
+      "selector": "[data-component='submenu-toggle']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "audio-story.html",
+        "culture.html",
+        "donate.html",
+        "index.html",
+        "land-sea.html",
+        "music.html",
+        "news.html",
+        "newsletters.html",
+        "program.html",
+        "search.html",
+        "shows.html",
+        "stations.html",
+        "story.html"
+      ],
+      "behavior": [
+        "Button with aria-expanded controlling a submenu"
+      ],
+      "keyboard": [
+        "Enter",
+        "Space",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-checks-only"
+    },
+    {
+      "id": "tab-list",
+      "selector": "[data-component='tab-list']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "WAI-ARIA tablist with roving tabindex"
+      ],
+      "keyboard": [
+        "ArrowLeft",
+        "ArrowRight",
+        "Home",
+        "End",
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-checks-only"
+    },
+    {
+      "id": "tab-panel",
+      "selector": "[data-component='tab-panel']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "Focusable tabpanel"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-checks-only"
+    },
+    {
+      "id": "tabbed-story-lists",
+      "selector": "[data-component='tabbed-story-lists']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "Latest / Most read tab container"
+      ],
+      "keyboard": [
+        "Arrow keys",
+        "Home",
+        "End"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-checks-only"
+    },
+    {
+      "id": "topic-tags",
+      "selector": "[data-component='topic-tags']",
+      "pages": [
+        "audio-story.html",
+        "story.html"
+      ],
+      "behavior": [
+        "Topic link"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-checks-only"
+    },
+    {
+      "id": "transcript-block",
+      "selector": "[data-component='transcript-block']",
+      "pages": [
+        "audio-story.html"
+      ],
+      "behavior": [
+        "Invented transcript carrying fictional notice"
+      ],
+      "keyboard": [
+        "none"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-checks-only"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0",
+  "declared_at": "2026-11-14T05:34:50.453Z",
+  "declared_by": "Samhith Varma Yallamraju",
+  "slots": {
+    "7": {
+      "model_id": "unsloth/Qwen3.5-35B-A3B-GGUF",
+      "model_version": "MXFP4_MOE",
+      "weights_url": "https://huggingface.co/unsloth/Qwen3.5-35B-A3B-GGUF",
+      "license": "apache-2.0",
+      "open_weights": true,
+      "eligibility_note": "Open weights; license apache-2.0 as published on huggingface.co/unsloth/Qwen3.5-35B-A3B-GGUF and on the Qwen/Qwen3.5-35B-A3B base model card, both read 2026-11-14 by the orchestrator. Served self-hosted via llama.cpp OpenAI-compatible endpoint on the VT ARC Falcon cluster (OnDemand LLM session, node fal049); no third-party inference provider. Apache-2.0 is an OSI-approved licence, so this slot qualifies as open-source as well as open-weight.",
+      "provider": "vt-arc-falcon-llamacpp",
+      "base_url": "http://localhost:8080/v1",
+      "api_key_env": "OS_SLOT_07_API_KEY",
+      "params": {
+        "temperature": 0.3,
+        "max_tokens": 16000
+      }
+    }
+  },
+  "note": "Operator declaration of the open-weight model used for each slot. Keys live in the environment variables named by api_key_env and are never stored here."
+}

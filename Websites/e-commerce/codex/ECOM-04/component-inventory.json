@@ -1,0 +1,785 @@
+{
+  "protocol_version": "1.0",
+  "replica_id": "ECOM-04",
+  "category": "e-commerce",
+  "source_url": "https://www.allbirds.com/",
+  "components": [
+    {
+      "id": "site-header",
+      "selector": "[data-component=\"site-header\"]",
+      "pages": [
+        "404.html",
+        "cart.html",
+        "index.html",
+        "mens.html",
+        "returns.html",
+        "search.html",
+        "tree-runner.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "section": "global-header",
+          "tag": "header"
+        },
+        {
+          "page": "cart.html",
+          "section": "global-header",
+          "tag": "header"
+        },
+        {
+          "page": "index.html",
+          "section": "global-header",
+          "tag": "header"
+        },
+        {
+          "page": "mens.html",
+          "section": "global-header",
+          "tag": "header"
+        },
+        {
+          "page": "returns.html",
+          "section": "global-header",
+          "tag": "header"
+        },
+        {
+          "page": "search.html",
+          "section": "global-header",
+          "tag": "header"
+        },
+        {
+          "page": "tree-runner.html",
+          "section": "global-header",
+          "tag": "header"
+        }
+      ],
+      "behavior": [
+        "Semantic content/navigation; native controls where present"
+      ],
+      "keyboard": [
+        "Tab / Shift+Tab for links and controls",
+        "Enter to activate; Space for native buttons",
+        "Escape closes mobile navigation"
+      ],
+      "status": "implemented",
+      "validation": "not-tested"
+    },
+    {
+      "id": "primary-nav",
+      "selector": "[data-component=\"primary-nav\"]",
+      "pages": [
+        "404.html",
+        "cart.html",
+        "index.html",
+        "mens.html",
+        "returns.html",
+        "search.html",
+        "tree-runner.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "section": "global-navigation",
+          "tag": "nav"
+        },
+        {
+          "page": "cart.html",
+          "section": "global-navigation",
+          "tag": "nav"
+        },
+        {
+          "page": "index.html",
+          "section": "global-navigation",
+          "tag": "nav"
+        },
+        {
+          "page": "mens.html",
+          "section": "global-navigation",
+          "tag": "nav"
+        },
+        {
+          "page": "returns.html",
+          "section": "global-navigation",
+          "tag": "nav"
+        },
+        {
+          "page": "search.html",
+          "section": "global-navigation",
+          "tag": "nav"
+        },
+        {
+          "page": "tree-runner.html",
+          "section": "global-navigation",
+          "tag": "nav"
+        }
+      ],
+      "behavior": [
+        "Semantic content/navigation; native controls where present"
+      ],
+      "keyboard": [
+        "Tab / Shift+Tab for links and controls",
+        "Enter to activate; Space for native buttons",
+        "Escape closes mobile navigation"
+      ],
+      "status": "implemented",
+      "validation": "not-tested"
+    },
+    {
+      "id": "page-content",
+      "selector": "[data-component=\"page-content\"]",
+      "pages": [
+        "404.html",
+        "cart.html",
+        "index.html",
+        "mens.html",
+        "returns.html",
+        "search.html",
+        "tree-runner.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "section": "main-content",
+          "tag": "main"
+        },
+        {
+          "page": "cart.html",
+          "section": "main-content",
+          "tag": "main"
+        },
+        {
+          "page": "index.html",
+          "section": "main-content",
+          "tag": "main"
+        },
+        {
+          "page": "mens.html",
+          "section": "main-content",
+          "tag": "main"
+        },
+        {
+          "page": "returns.html",
+          "section": "main-content",
+          "tag": "main"
+        },
+        {
+          "page": "search.html",
+          "section": "main-content",
+          "tag": "main"
+        },
+        {
+          "page": "tree-runner.html",
+          "section": "main-content",
+          "tag": "main"
+        }
+      ],
+      "behavior": [
+        "Semantic content/navigation; native controls where present"
+      ],
+      "keyboard": [
+        "Tab / Shift+Tab for links and controls",
+        "Enter to activate; Space for native buttons",
+        "Escape closes mobile navigation"
+      ],
+      "status": "implemented",
+      "validation": "not-tested"
+    },
+    {
+      "id": "site-footer",
+      "selector": "[data-component=\"site-footer\"]",
+      "pages": [
+        "404.html",
+        "cart.html",
+        "index.html",
+        "mens.html",
+        "returns.html",
+        "search.html",
+        "tree-runner.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "section": "global-footer",
+          "tag": "footer"
+        },
+        {
+          "page": "cart.html",
+          "section": "global-footer",
+          "tag": "footer"
+        },
+        {
+          "page": "index.html",
+          "section": "global-footer",
+          "tag": "footer"
+        },
+        {
+          "page": "mens.html",
+          "section": "global-footer",
+          "tag": "footer"
+        },
+        {
+          "page": "returns.html",
+          "section": "global-footer",
+          "tag": "footer"
+        },
+        {
+          "page": "search.html",
+          "section": "global-footer",
+          "tag": "footer"
+        },
+        {
+          "page": "tree-runner.html",
+          "section": "global-footer",
+          "tag": "footer"
+        }
+      ],
+      "behavior": [
+        "Semantic content/navigation; native controls where present"
+      ],
+      "keyboard": [
+        "Tab / Shift+Tab for links and controls",
+        "Enter to activate; Space for native buttons",
+        "Escape closes mobile navigation"
+      ],
+      "status": "implemented",
+      "validation": "not-tested"
+    },
+    {
+      "id": "newsletter-demo",
+      "selector": "[data-component=\"newsletter-demo\"]",
+      "pages": [
+        "404.html",
+        "cart.html",
+        "index.html",
+        "mens.html",
+        "returns.html",
+        "search.html",
+        "tree-runner.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "section": "newsletter",
+          "tag": "section"
+        },
+        {
+          "page": "cart.html",
+          "section": "newsletter",
+          "tag": "section"
+        },
+        {
+          "page": "index.html",
+          "section": "newsletter",
+          "tag": "section"
+        },
+        {
+          "page": "mens.html",
+          "section": "newsletter",
+          "tag": "section"
+        },
+        {
+          "page": "returns.html",
+          "section": "newsletter",
+          "tag": "section"
+        },
+        {
+          "page": "search.html",
+          "section": "newsletter",
+          "tag": "section"
+        },
+        {
+          "page": "tree-runner.html",
+          "section": "newsletter",
+          "tag": "section"
+        }
+      ],
+      "behavior": [
+        "Semantic content/navigation; native controls where present"
+      ],
+      "keyboard": [
+        "Tab / Shift+Tab for links and controls",
+        "Enter to activate; Space for native buttons",
+        "Escape closes mobile navigation"
+      ],
+      "status": "implemented",
+      "validation": "not-tested"
+    },
+    {
+      "id": "cart-layout",
+      "selector": "[data-component=\"cart-layout\"]",
+      "pages": [
+        "cart.html"
+      ],
+      "instances": [
+        {
+          "page": "cart.html",
+          "section": "cart-content",
+          "tag": "section"
+        }
+      ],
+      "behavior": [
+        "Semantic content/navigation; native controls where present"
+      ],
+      "keyboard": [
+        "Tab / Shift+Tab for links and controls",
+        "Enter to activate; Space for native buttons",
+        "Escape closes mobile navigation"
+      ],
+      "status": "implemented",
+      "validation": "not-tested"
+    },
+    {
+      "id": "order-summary",
+      "selector": "[data-component=\"order-summary\"]",
+      "pages": [
+        "cart.html"
+      ],
+      "instances": [
+        {
+          "page": "cart.html",
+          "section": "cart-summary",
+          "tag": "aside"
+        }
+      ],
+      "behavior": [
+        "Semantic content/navigation; native controls where present"
+      ],
+      "keyboard": [
+        "Tab / Shift+Tab for links and controls",
+        "Enter to activate; Space for native buttons",
+        "Escape closes mobile navigation"
+      ],
+      "status": "implemented",
+      "validation": "not-tested"
+    },
+    {
+      "id": "editorial-hero",
+      "selector": "[data-component=\"editorial-hero\"]",
+      "pages": [
+        "index.html"
+      ],
+      "instances": [
+        {
+          "page": "index.html",
+          "section": "home-hero",
+          "tag": "section"
+        }
+      ],
+      "behavior": [
+        "Semantic content/navigation; native controls where present"
+      ],
+      "keyboard": [
+        "Tab / Shift+Tab for links and controls",
+        "Enter to activate; Space for native buttons",
+        "Escape closes mobile navigation"
+      ],
+      "status": "implemented",
+      "validation": "not-tested"
+    },
+    {
+      "id": "merchandise-grid",
+      "selector": "[data-component=\"merchandise-grid\"]",
+      "pages": [
+        "index.html"
+      ],
+      "instances": [
+        {
+          "page": "index.html",
+          "section": "new-arrivals",
+          "tag": "section"
+        },
+        {
+          "page": "index.html",
+          "section": "best-sellers",
+          "tag": "section"
+        }
+      ],
+      "behavior": [
+        "Semantic content/navigation; native controls where present"
+      ],
+      "keyboard": [
+        "Tab / Shift+Tab for links and controls",
+        "Enter to activate; Space for native buttons",
+        "Escape closes mobile navigation"
+      ],
+      "status": "implemented",
+      "validation": "not-tested"
+    },
+    {
+      "id": "product-card",
+      "selector": "[data-component=\"product-card\"]",
+      "pages": [
+        "index.html",
+        "mens.html",
+        "search.html"
+      ],
+      "instances": [
+        {
+          "page": "index.html",
+          "section": "product-selection",
+          "tag": "article"
+        },
+        {
+          "page": "index.html",
+          "section": "product-selection",
+          "tag": "article"
+        },
+        {
+          "page": "index.html",
+          "section": "product-selection",
+          "tag": "article"
+        },
+        {
+          "page": "index.html",
+          "section": "product-selection",
+          "tag": "article"
+        },
+        {
+          "page": "index.html",
+          "section": "product-selection",
+          "tag": "article"
+        },
+        {
+          "page": "index.html",
+          "section": "product-selection",
+          "tag": "article"
+        },
+        {
+          "page": "index.html",
+          "section": "product-selection",
+          "tag": "article"
+        },
+        {
+          "page": "mens.html",
+          "section": "product-selection",
+          "tag": "article"
+        },
+        {
+          "page": "mens.html",
+          "section": "product-selection",
+          "tag": "article"
+        },
+        {
+          "page": "mens.html",
+          "section": "product-selection",
+          "tag": "article"
+        },
+        {
+          "page": "mens.html",
+          "section": "product-selection",
+          "tag": "article"
+        },
+        {
+          "page": "search.html",
+          "section": "product-selection",
+          "tag": "article"
+        },
+        {
+          "page": "search.html",
+          "section": "product-selection",
+          "tag": "article"
+        },
+        {
+          "page": "search.html",
+          "section": "product-selection",
+          "tag": "article"
+        },
+        {
+          "page": "search.html",
+          "section": "product-selection",
+          "tag": "article"
+        }
+      ],
+      "behavior": [
+        "Semantic content/navigation; native controls where present"
+      ],
+      "keyboard": [
+        "Tab / Shift+Tab for links and controls",
+        "Enter to activate; Space for native buttons",
+        "Escape closes mobile navigation"
+      ],
+      "status": "implemented",
+      "validation": "not-tested",
+      "dynamic_instances": "mens.html and search.html results: 0\u20134 cards rendered from local four-record dataset; home has 7 static card instances."
+    },
+    {
+      "id": "editorial-pair",
+      "selector": "[data-component=\"editorial-pair\"]",
+      "pages": [
+        "index.html"
+      ],
+      "instances": [
+        {
+          "page": "index.html",
+          "section": "gender-edit",
+          "tag": "section"
+        }
+      ],
+      "behavior": [
+        "Semantic content/navigation; native controls where present"
+      ],
+      "keyboard": [
+        "Tab / Shift+Tab for links and controls",
+        "Enter to activate; Space for native buttons",
+        "Escape closes mobile navigation"
+      ],
+      "status": "implemented",
+      "validation": "not-tested"
+    },
+    {
+      "id": "material-band",
+      "selector": "[data-component=\"material-band\"]",
+      "pages": [
+        "index.html"
+      ],
+      "instances": [
+        {
+          "page": "index.html",
+          "section": "material-story",
+          "tag": "section"
+        }
+      ],
+      "behavior": [
+        "Semantic content/navigation; native controls where present"
+      ],
+      "keyboard": [
+        "Tab / Shift+Tab for links and controls",
+        "Enter to activate; Space for native buttons",
+        "Escape closes mobile navigation"
+      ],
+      "status": "implemented",
+      "validation": "not-tested"
+    },
+    {
+      "id": "catalog-layout",
+      "selector": "[data-component=\"catalog-layout\"]",
+      "pages": [
+        "mens.html",
+        "search.html"
+      ],
+      "instances": [
+        {
+          "page": "mens.html",
+          "section": "collection-results",
+          "tag": "section"
+        },
+        {
+          "page": "search.html",
+          "section": "collection-results",
+          "tag": "section"
+        }
+      ],
+      "behavior": [
+        "Semantic content/navigation; native controls where present"
+      ],
+      "keyboard": [
+        "Tab / Shift+Tab for links and controls",
+        "Enter to activate; Space for native buttons",
+        "Escape closes mobile navigation"
+      ],
+      "status": "implemented",
+      "validation": "not-tested"
+    },
+    {
+      "id": "filter-form",
+      "selector": "[data-component=\"filter-form\"]",
+      "pages": [
+        "mens.html",
+        "search.html"
+      ],
+      "instances": [
+        {
+          "page": "mens.html",
+          "section": "product-filters",
+          "tag": "form"
+        },
+        {
+          "page": "search.html",
+          "section": "product-filters",
+          "tag": "form"
+        }
+      ],
+      "behavior": [
+        "Semantic content/navigation; native controls where present"
+      ],
+      "keyboard": [
+        "Tab / Shift+Tab for links and controls",
+        "Enter to activate; Space for native buttons",
+        "Escape closes mobile navigation"
+      ],
+      "status": "implemented",
+      "validation": "not-tested"
+    },
+    {
+      "id": "help-accordions",
+      "selector": "[data-component=\"help-accordions\"]",
+      "pages": [
+        "returns.html"
+      ],
+      "instances": [
+        {
+          "page": "returns.html",
+          "section": "returns-help",
+          "tag": "section"
+        }
+      ],
+      "behavior": [
+        "Semantic content/navigation; native controls where present"
+      ],
+      "keyboard": [
+        "Tab / Shift+Tab for links and controls",
+        "Enter to activate; Space for native buttons",
+        "Escape closes mobile navigation"
+      ],
+      "status": "implemented",
+      "validation": "not-tested"
+    },
+    {
+      "id": "product-detail",
+      "selector": "[data-component=\"product-detail\"]",
+      "pages": [
+        "tree-runner.html"
+      ],
+      "instances": [
+        {
+          "page": "tree-runner.html",
+          "section": "product-purchase",
+          "tag": "section"
+        }
+      ],
+      "behavior": [
+        "Semantic content/navigation; native controls where present"
+      ],
+      "keyboard": [
+        "Tab / Shift+Tab for links and controls",
+        "Enter to activate; Space for native buttons",
+        "Escape closes mobile navigation"
+      ],
+      "status": "implemented",
+      "validation": "not-tested"
+    },
+    {
+      "id": "product-form",
+      "selector": "[data-component=\"product-form\"]",
+      "pages": [
+        "tree-runner.html"
+      ],
+      "instances": [
+        {
+          "page": "tree-runner.html",
+          "section": "size-selection",
+          "tag": "form"
+        }
+      ],
+      "behavior": [
+        "Semantic content/navigation; native controls where present"
+      ],
+      "keyboard": [
+        "Tab / Shift+Tab for links and controls",
+        "Enter to activate; Space for native buttons",
+        "Escape closes mobile navigation"
+      ],
+      "status": "implemented",
+      "validation": "not-tested"
+    },
+    {
+      "id": "product-accordions",
+      "selector": "[data-component=\"product-accordions\"]",
+      "pages": [
+        "tree-runner.html"
+      ],
+      "instances": [
+        {
+          "page": "tree-runner.html",
+          "section": "product-information",
+          "tag": "section"
+        }
+      ],
+      "behavior": [
+        "Semantic content/navigation; native controls where present"
+      ],
+      "keyboard": [
+        "Tab / Shift+Tab for links and controls",
+        "Enter to activate; Space for native buttons",
+        "Escape closes mobile navigation"
+      ],
+      "status": "implemented",
+      "validation": "not-tested"
+    },
+    {
+      "id": "cart-item",
+      "selector": "[data-component=\"cart-item\"]",
+      "pages": [
+        "cart.html"
+      ],
+      "instances": [
+        {
+          "page": "cart.html",
+          "section": "bag-items",
+          "dynamic": "one per local cart row; initially zero"
+        }
+      ],
+      "behavior": [
+        "Quantity 1\u201320 and removal; local nonpersonal bag persistence with fallback"
+      ],
+      "keyboard": [
+        "Tab, Enter, native number-input arrows"
+      ],
+      "status": "implemented",
+      "validation": "not-tested"
+    },
+    {
+      "id": "accordion",
+      "selector": "[data-component=\"accordion\"]",
+      "pages": [
+        "returns.html",
+        "tree-runner.html"
+      ],
+      "instances": [
+        {
+          "page": "tree-runner.html",
+          "section": "supporting-information",
+          "tag": "details"
+        },
+        {
+          "page": "tree-runner.html",
+          "section": "supporting-information",
+          "tag": "details"
+        },
+        {
+          "page": "tree-runner.html",
+          "section": "supporting-information",
+          "tag": "details"
+        },
+        {
+          "page": "returns.html",
+          "section": "supporting-information",
+          "tag": "details"
+        },
+        {
+          "page": "returns.html",
+          "section": "supporting-information",
+          "tag": "details"
+        },
+        {
+          "page": "returns.html",
+          "section": "supporting-information",
+          "tag": "details"
+        },
+        {
+          "page": "returns.html",
+          "section": "supporting-information",
+          "tag": "details"
+        }
+      ],
+      "behavior": [
+        "Native details/summary expands supporting information"
+      ],
+      "keyboard": [
+        "Tab to summary; Enter/Space toggles"
+      ],
+      "status": "implemented",
+      "validation": "not-tested"
+    }
+  ]
+}

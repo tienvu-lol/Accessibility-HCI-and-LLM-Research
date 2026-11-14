@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Subscribe (demo) | The Alderny Daily Lantern (Fictional)</title>
+<meta name="description" content="Simulated subscription and newsletter page. Fictional publication: invented sample content for an accessibility research dataset.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/styles.css">
+<script src="js/main.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header" data-section="global-header" data-component="site-header">
+<div class="fiction-notice" role="note" aria-label="Fictional publication notice" data-section="fictional-notice" data-component="fictional-notice"><p><strong>Fictional publication.</strong> Every article, byline and quote on this site is invented sample content for an accessibility research dataset. Nothing here is real news.</p></div>
+<div class="header-top" data-section="header-utility" data-component="utility-bar">
+<div class="wrap header-row">
+<button type="button" class="menu-toggle" aria-expanded="false" aria-controls="menu-panel" data-component="menu-toggle"><span class="menu-icon" aria-hidden="true"></span>Menu</button>
+<a class="brand" href="index.html" data-component="site-brand"><img src="assets/logo.svg" alt="" width="44" height="44"><span class="brand-text"><span class="brand-name">The Alderny Daily Lantern</span><span class="brand-sub">Fictional metro daily of Port Alderny, Tessaly County, Calvern</span></span></a>
+<div class="utility" data-component="utility-links">
+<a class="btn btn-primary" id="subscribe-button" href="subscribe.html">Subscribe (demo)</a>
+<div class="dropdown" data-component="subscriber-services">
+<button type="button" class="btn" aria-expanded="false" aria-controls="services-menu">Subscriber services</button>
+<ul id="services-menu" hidden>
+<li><a href="subscribe.html#plans">Plans (demo)</a></li>
+<li><a href="subscribe.html#newsletters">Newsletters (demo)</a></li>
+<li><a href="subscribe.html#e-edition">E-edition (demo notice)</a></li>
+</ul></div>
+</div>
+<form class="search-form" role="search" action="search.html" method="get" data-section="site-search" data-component="search-form">
+<label for="site-search-input" class="sr-only">Search The Alderny Daily Lantern</label>
+<input id="site-search-input" name="s" type="search" placeholder="Search sample articles" autocomplete="off">
+<button type="submit" class="btn">Search</button>
+</form>
+</div></div>
+<nav class="primary-nav" aria-label="Primary" data-section="global-navigation" data-component="primary-nav"><div class="wrap"><ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="news.html">News</a></li>
+<li><a href="business.html">Business</a></li>
+<li><a href="sports.html">Sports</a></li>
+<li><a href="opinion.html">Opinion</a></li>
+<li><a href="things-to-do.html">Things to do</a></li>
+<li><a href="suburbs.html">Suburbs</a></li>
+</ul></div></nav>
+<div id="menu-panel" class="menu-panel" hidden data-section="menu-panel" data-component="push-menu"><div class="wrap">
+<nav aria-label="All sections"><div class="menu-groups">
+<div><h2>News</h2><ul><li><a href="news.html">News front</a></li><li><a href="latest-headlines.html">Latest headlines</a></li><li><a href="local-news.html">Local news</a></li></ul></div>
+<div><h2>Business</h2><ul><li><a href="business.html">Business front</a></li></ul></div>
+<div><h2>Sports</h2><ul><li><a href="sports.html">Sports front</a></li></ul></div>
+<div><h2>Opinion</h2><ul><li><a href="opinion.html">Editorials, commentary, letters</a></li></ul></div>
+<div><h2>Things to do</h2><ul><li><a href="things-to-do.html">Arts, museums, recipes</a></li></ul></div>
+<div><h2>Suburbs</h2><ul><li><a href="suburbs.html">Suburban coverage</a></li></ul></div>
+<div><h2>More</h2><ul><li><a href="subscribe.html">Subscribe and newsletters (demo)</a></li><li><a href="about.html">About this fictional site</a></li></ul></div>
+</div></nav></div></div>
+</header>
+<main id="main-content" data-section="main-content">
+<div class="wrap">
+<nav class="breadcrumbs" aria-label="Breadcrumb" data-section="breadcrumbs" data-component="breadcrumbs"><ol><li><a href="index.html">Home</a></li><li aria-current="page">Subscribe (demo)</li></ol></nav>
+
+<h1 class="page-title">Subscribe (simulation)</h1>
+<p class="banner" role="note" data-component="demo-banner"><strong>Demo only.</strong> This page simulates a subscription flow for a fictional paper. Nothing is charged, no account is created, and no email is stored or sent. The real reference's paywall behavior was not verified.</p>
+<section id="plans" aria-labelledby="plans-h" data-section="subscription-plans" data-component="plan-form"><h2 id="plans-h">Choose a sample plan</h2>
+<form novalidate data-component="subscribe-form" data-instance="subscribe-1">
+<div class="error-summary" tabindex="-1" role="alert" hidden><h3>Please fix the following</h3><ul></ul></div>
+<fieldset data-required-choice="plan" data-label="Plan"><legend>Plan</legend>
+<label class="choice"><input type="radio" name="plan" value="digital"> Digital sample plan (invented price: 0 coins)</label>
+<label class="choice"><input type="radio" name="plan" value="weekend"> Weekend sample plan (invented price: 0 coins)</label>
+<p class="field-error" hidden></p></fieldset>
+<div class="field"><label for="sub-name">Name</label><input id="sub-name" name="name" required autocomplete="name" data-label="Name"><p class="field-error" hidden></p></div>
+<div class="field"><label for="sub-email">Email address</label><input id="sub-email" name="email" type="email" required autocomplete="email" data-label="Email address" aria-describedby="sub-email-hint"><p class="hint" id="sub-email-hint">Example: reader@example.invalid</p><p class="field-error" hidden></p></div>
+<button class="btn btn-primary" type="submit">Start demo subscription</button>
+<p class="form-status" role="status" aria-live="polite"></p></form></section>
+<section id="newsletters" aria-labelledby="nls-h" data-section="newsletter-choices" data-component="newsletter-form-block"><h2 id="nls-h">Sample newsletters</h2>
+<form novalidate data-component="newsletter-form" data-instance="newsletter-sub">
+<div class="error-summary" tabindex="-1" role="alert" hidden><h3>Please fix the following</h3><ul></ul></div>
+<fieldset data-required-choice="list" data-label="Newsletter"><legend>Pick at least one</legend>
+<label class="choice"><input type="checkbox" name="list" value="morning"> Morning Lantern (invented daily digest)</label>
+<label class="choice"><input type="checkbox" name="list" value="weekend"> Weekend Porch (invented things to do)</label>
+<label class="choice"><input type="checkbox" name="list" value="suburbs"> Suburb Notes (invented neighborhood roundup)</label>
+<p class="field-error" hidden></p></fieldset>
+<div class="field"><label for="nls-email">Email address</label><input id="nls-email" name="email" type="email" required autocomplete="email" data-label="Email address"><p class="field-error" hidden></p></div>
+<button class="btn btn-primary" type="submit">Sign up (demo)</button><p class="form-status" role="status" aria-live="polite"></p></form></section>
+<section id="e-edition" aria-labelledby="ee-h" data-section="e-edition" data-component="info-block"><h2 id="ee-h">E-edition</h2><p>The reference offers a digital e-edition link. This replica does not include one; it would be a simulation, so it is omitted from the demo.</p></section>
+</div></main>
+<footer class="site-footer" data-section="global-footer" data-component="site-footer"><div class="wrap">
+<p class="fiction-notice-foot" data-component="fictional-notice-footer"><strong>Fictional publication.</strong> Every article, byline and quote on this site is invented sample content for an accessibility research dataset. Nothing here is real news. Phone numbers use 555 exchanges; all names, places and organizations are invented.</p>
+<div class="footer-groups">
+<nav aria-label="Footer sections" data-component="footer-nav"><h2>Sections</h2><ul><li><a href="news.html">News</a></li><li><a href="business.html">Business</a></li><li><a href="sports.html">Sports</a></li><li><a href="opinion.html">Opinion</a></li><li><a href="things-to-do.html">Things to do</a></li><li><a href="suburbs.html">Suburbs</a></li><li><a href="latest-headlines.html">Latest headlines</a></li></ul></nav>
+<nav aria-label="Company info" data-component="footer-nav"><h2>Company info</h2><ul><li><a href="about.html">About this fictional site</a></li><li><a href="about.html#sitemap">Site map</a></li><li><a href="about.html#accessibility">Accessibility statement (sample)</a></li><li><a href="subscribe.html">Subscribe (demo)</a></li></ul></nav>
+<div><h2>Contact (fictional)</h2><p>The Alderny Daily Lantern<br>100 Sample Street, Port Alderny, Calvern<br>Newsroom: 555-0142<br>news@example.invalid</p></div>
+</div>
+<p class="legal">Sample site generated for a research dataset. Not a real newspaper. No subscription, payment or newsletter on this site is real.</p>
+</div></footer>
+<div class="sr-only" id="live-region" role="status" aria-live="polite" data-component="live-region"></div>
+</body>
+</html>

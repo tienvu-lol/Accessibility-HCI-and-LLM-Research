@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact and visit | Vane &amp; Alder</title>
+<meta name="description" content="Address, hours and a demo contact form.">
+<link rel="icon" href="assets/plate.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header" data-section="global-header" data-component="site-header">
+<p class="demo-banner" data-component="demo-banner">Fictional restaurant. Research replica: nothing here is real, bookable or purchasable.</p>
+<div class="header-inner">
+<a class="brand" href="index.html" data-component="brand-wordmark">Vane &amp; Alder</a>
+<button type="button" class="menu-toggle" aria-expanded="false" aria-controls="nav-wrap" data-component="mobile-menu-toggle">Menu</button>
+<div class="nav-wrap" id="nav-wrap">
+<nav aria-label="Primary" data-section="global-navigation" data-component="primary-nav"><ul class="nav-list">
+<li class=""><button type="button" class="sub-toggle" aria-expanded="false" aria-controls="sub-about">About</button><ul class="sub-list" id="sub-about"><li><a href="about.html">Our restaurant</a></li><li><a href="team.html">Team</a></li><li><a href="lantern-fields.html">Lantern Fields</a></li><li><a href="press.html">Press and accolades</a></li><li><a href="careers.html">Careers</a></li><li><a href="faq.html">FAQs</a></li></ul></li>
+<li><a href="menu.html">Menu</a></li><li><a href="events.html">Events</a></li><li><a href="stories.html">Stories</a></li>
+<li class=""><button type="button" class="sub-toggle" aria-expanded="false" aria-controls="sub-shop">Shop</button><ul class="sub-list" id="sub-shop"><li><a href="gift-cards.html">Gift cards</a></li></ul></li>
+<li><a href="contact.html" aria-current="page">Contact</a></li>
+</ul></nav>
+<nav aria-label="Utility" class="utility-nav" data-section="utility-navigation" data-component="utility-nav"><ul>
+<li><a class="cart-link" href="gift-cards.html#cart-heading" data-component="cart-link">Cart (<span data-cart-count>0</span><span class="sr-only"> items, demo</span>)</a></li>
+<li><a class="btn" href="reservations.html">Reserve</a></li>
+</ul></nav>
+</div></div></header>
+<main id="main-content" data-section="main-content">
+<div class="wrap"><nav class="breadcrumb" aria-label="Breadcrumb" data-component="breadcrumb"><ol><li><a href="index.html">Home</a></li><li aria-current="page">Contact and visit</li></ol></nav></div>
+
+<div class="wrap narrow page-head"><p class="eyebrow">Contact us</p><h1>Contact and visit</h1></div>
+<div class="wrap"><div class="two-col"><section aria-labelledby="ct-visit" data-section="visit" data-component="visit-info"><h2 id="ct-visit">Find us</h2>
+<img src="assets/map.svg" alt="Placeholder street map with a marker for the fictional restaurant" width="800" height="400">
+<p>14 Lantern Court<br>Harrowgate, Fictional State 00000<br>Phone: 555-0100 (fictional)<br>Email: hello@example.test</p>
+<div class="table-scroll" tabindex="0" role="region" aria-label="Dinner hours table"><table><caption>Dinner hours</caption><thead><tr><th scope="col">Day</th><th scope="col">Hours</th></tr></thead><tbody>
+<tr><th scope="row">Sunday to Tuesday</th><td>Closed</td></tr><tr><th scope="row">Wednesday to Thursday</th><td>5:30 to 9:30 pm</td></tr><tr><th scope="row">Friday to Saturday</th><td>5:30 to 10:00 pm</td></tr></tbody></table></div></section>
+<section aria-labelledby="ct-form" data-section="contact" data-component="contact-form"><h2 id="ct-form">Send a message</h2><p class="form-note" data-component="simulation-notice"><strong>Simulation.</strong> Nothing is sent.</p>
+<form data-demo-form aria-labelledby="ct-form"><div class="error-summary" tabindex="-1" hidden></div>
+<div class="field"><label for="ct-name">Name <span>(required)</span></label><input id="ct-name" name="ct-name" type="text" autocomplete="name" aria-describedby="ct-name-error" data-required><p class="error" id="ct-name-error" hidden></p></div>
+<div class="field"><label for="ct-email">Email <span>(required)</span></label><input id="ct-email" name="ct-email" type="email" autocomplete="email" aria-describedby="ct-email-error" data-required><p class="error" id="ct-email-error" hidden></p></div>
+<div class="field"><label for="ct-topic">Topic <span>(required)</span></label><select id="ct-topic" name="ct-topic" aria-describedby="ct-topic-error" data-required><option value="">Choose...</option><option value="Reservations">Reservations</option><option value="Dietary needs">Dietary needs</option><option value="Press">Press</option><option value="Other">Other</option></select><p class="error" id="ct-topic-error" hidden></p></div>
+<div class="field"><label for="ct-msg">Message <span>(required)</span></label><span class="hint" id="ct-msg-hint">At least 10 characters.</span><textarea id="ct-msg" name="ct-msg" aria-describedby="ct-msg-hint ct-msg-error" data-required data-minlength="10"></textarea><p class="error" id="ct-msg-error" hidden></p></div>
+<button class="btn" type="submit">Send message (demo)</button>
+<div class="demo-success" tabindex="-1" hidden><h2>Demo only: request received</h2><p class="demo-success-text" data-text="This is a demonstration. No message was sent."></p></div></form></section></div></div>
+</main>
+<footer class="site-footer" data-section="global-footer" data-component="site-footer"><div class="wrap">
+<div class="footer-grid">
+<section aria-labelledby="ft-visit"><h2 id="ft-visit">Address and hours</h2><p>14 Lantern Court<br>Harrowgate, Fictional State 00000<br>Wednesday to Saturday, 5:30 to 10:00 pm</p><p><a href="contact.html">Contact and hours</a></p></section>
+<nav aria-label="Footer" data-section="footer-navigation" data-component="footer-nav"><h2>Explore</h2><ul>
+<li><a href="faq.html">FAQs</a></li><li><a href="press.html">Press and accolades</a></li><li><a href="careers.html">Careers</a></li><li><a href="contact.html">Contact us</a></li><li><a href="accessibility.html">Accessibility statement</a></li></ul></nav>
+<section aria-labelledby="ft-news" data-section="newsletter" ><h2 id="ft-news">Newsletter (demo)</h2>
+<form data-demo-form data-component="newsletter-form" aria-labelledby="ft-news">
+<div class="error-summary" tabindex="-1" hidden></div>
+<div class="field"><label for="nl-given">First name <span>(required)</span></label><input id="nl-given" name="nl-given" type="text" autocomplete="given-name" aria-describedby="nl-given-error" data-required><p class="error" id="nl-given-error" hidden></p></div>
+<div class="field"><label for="nl-surname">Last name <span>(required)</span></label><input id="nl-surname" name="nl-surname" type="text" autocomplete="family-name" aria-describedby="nl-surname-error" data-required><p class="error" id="nl-surname-error" hidden></p></div>
+<div class="field"><label for="nl-email">Email <span>(required)</span></label><input id="nl-email" name="nl-email" type="email" autocomplete="email" aria-describedby="nl-email-error" data-required><p class="error" id="nl-email-error" hidden></p></div>
+<button type="submit" class="btn">Subscribe (demo)</button>
+<div class="demo-success" tabindex="-1" hidden><h3>Demo subscription received</h3><p class="demo-success-text" data-text="This is a demonstration. Nothing was sent or stored, and no email will arrive."></p></div>
+</form></section></div>
+<p class="fine">Vane &amp; Alder is a fictional restaurant invented for a research dataset. Layout inspired by the information architecture of a public restaurant website; no real branding or copy is reproduced.</p>
+</div></footer>
+<script src="js/main.js"></script>
+</body>
+</html>

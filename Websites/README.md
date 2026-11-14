@@ -28,7 +28,7 @@ Websites/
 
 Active study categories (10): university, healthcare, company, e-commerce, news, government, fashion, weather, nonprofit, church.
 
-Two further categories are registered in `metadata/assignments.csv`, giving twelve in total. **Portfolio** follows this layout at `portfolio/<model-group>/<ID>/`. **Restaurant** predates the layout, lives in `../restaurant websites/` as zips, and has no recorded model group.
+Two further categories are registered in `metadata/assignments.csv`, giving twelve in total. **Portfolio** follows this layout at `portfolio/<model-group>/<ID>/`. **Restaurant** predates the layout, lives in `restaurant/` as zips (moved from `../restaurant websites/`), and has no recorded model group. Its ten `relative_path` values in `metadata/assignments.csv` still point at the old location and are stale.
 
 ## For each model group
 
@@ -43,6 +43,12 @@ Two further categories are registered in `metadata/assignments.csv`, giving twel
 
 See `metadata/assignments.csv`. To browse everything that exists, run `python Websites/tools/previewer/build.py`, then `Websites/tools/previewer/dist/ReplicaPreview.exe`. This needs the .NET 10 SDK to build; the exe itself runs anywhere on Windows x64. The gallery lists every slot, including ones not generated yet.
 
+## Open-source configuration
+
+The open-source pipeline lives in [pipelines/open-source/README.md](pipelines/open-source/README.md). It covers slots 07–10 in all twelve categories (48 sites). Unlike the other two, it executes: it calls open-weight models over an OpenAI-compatible API, writes the files they emit into one slot directory at a time, runs the shared QC, and records real HTTP verification, transcripts, token budgets and QC reports. One API key per slot is read from the environment; keys are never stored in the repository.
+
+The slot-to-model mapping must be declared before generation (`scripts/declare-models.mjs`), since `MODEL_ALLOCATION.md` §2 permits one or several open-source models but no assumed mapping. Setup and research confer no source approval, and the Claude group's Phase A waiver does not extend to this group.
+
 ## Codex configuration
 
-The Codex preparation pipeline lives in [pipelines/codex/README.md](pipelines/codex/README.md). It covers slots 04–06 in the ten active categories (30 sites), with validated configuration, per-category source inventories, exact task snapshots and shared-QC evidence capture. Setup does not start generation or confer source approval. Its 30-site scope is the ten active categories only; the portfolio and restaurant categories are registered separately and are not part of that queue, though Codex has already delivered portfolio slots 04–06. See [source inventory format](metadata/source-inventories/README.md) for coordinated reference records.
+The Codex preparation pipeline lives in [pipelines/codex/README.md](pipelines/codex/README.md). It covers slots 04–06 in all twelve categories (36 sites), with validated configuration, per-category source inventories, exact task snapshots and shared-QC evidence capture. Setup does not start generation or confer source approval. Portfolio and restaurant were added to its queue on 2026-11-13. Portfolio slots 04–06 were already delivered and their directories were renamed that day to `PORT-04`/`PORT-05`/`PORT-06` for `MODEL_ALLOCATION.md` §5; restaurant slots 04–06 are unbuilt and unapproved. See [source inventory format](metadata/source-inventories/README.md) for coordinated reference records.

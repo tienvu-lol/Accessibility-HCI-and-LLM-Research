@@ -1,0 +1,445 @@
+# Phase B — One Codex replica
+
+Read the shared `Websites/Rules.md` and `Websites/MODEL_ALLOCATION.md` completely. Build exactly the single source in the exact task context. The selected source, approved page map, model, category, and output directory are fixed. Missing, changed, or unverifiable approval/source evidence must stop this task; do not substitute another source or inherit Claude's waiver.
+
+## Scope and boundaries
+
+Write website files only inside the assigned `Websites/<category>/codex/<ID>/`. Keep run evidence in this task's `pipelines/codex/runs/<run-id>/` directory. Do not touch another model group's files or prompts, the shared rules/QC, or unrelated websites. Use an isolated checkout for concurrent work; pipeline task preparation does not itself create worktrees or launch agents. Do not commit, push, publish, or send messages. One replica is one run and one delivery. Do not start another site automatically.
+
+Confirm that the actual model/runtime matches the declared assignment before generation. If the underlying model cannot be identified, report that fact rather than invent an exact model name. Record start/completion timestamps from the real clock, available tools, generation budget if known, retries, and all human or cross-model changes. Preparation timestamps are not generation timestamps. Preserve the exact prompt and protocol snapshots.
+
+## Implementation
+
+Use semantic HTML5, CSS3, and vanilla JavaScript only. Follow the approved page map and observed information architecture, navigation, hero/above-the-fold hierarchy, content bands, sidebar where present, footer, and source-specific detail pages. The category checklist is conditional; omit nonexistent features or explicitly document approved research additions. Do not impose a universal homepage or arbitrary page-count quota.
+
+Each site works independently through ordinary file:// navigation with relative paths, local placeholder artwork, and inline demo data. Default shared files within the site: css/styles.css and js/main.js. Repeat critical navigation HTML consistently. No frameworks, jQuery, Bootstrap, external UI libraries/fonts/CDNs, runtime package installation, templating, PHP, backend, database, external widgets, accounts, API calls, or build step. The shared external QC dependencies are permitted evaluation tools and must never be copied into the site.
+
+Use fictional names, original prose, and original placeholder assets. No copied logos, seals, real testimonials, proprietary media, or claims of measured outcomes. Every visible control must work on meaningful local samples or be clearly identified as a nonfunctional demo. Forms validate with intelligible errors and useful focus/status feedback; payments, applications, appointments, subscriptions, portals, giving, and logins never perform real transactions. Follow the task's category-specific simulation restrictions.
+
+Target the shared WCAG 2.2 AA baseline: landmarks, logical heading hierarchy, one H1, visible-on-focus skip link to main id="main-content", native controls, labels, descriptive feedback, visible focus, keyboard operation and Escape dismissal, dialog focus handling, readable contrast, responsive reflow, reduced motion, and useful image alternatives. Do not claim conformance or inject intentional defects. Instrument meaningful regions and reusable components with stable descriptive kebab-case data-section/data-component values; do not indiscriminately label incidental spans.
+
+## Required output and provenance
+
+Include all approved mapped pages, index.html, 404.html, css/styles.css, js/main.js, local assets, README.md, fidelity-notes.md, component-inventory.json, and generation-metadata.json. Use the schemas in the shared protocols. README includes source ID, actual verification method/date, complete sitemap and source mapping, sample dataset counts, interaction/simulation notes, run instructions, QC evidence, and limitations. Fidelity notes distinguish replicated, approximated, simulated, added, omitted, and unverified elements. Component inventory lists actual locations/selectors, behavior, keyboard expectations, and test status.
+
+generation-metadata.json must accurately identify the category, numeric slot, stable source ID, model_group codex, actual declared model/version/runtime, operator, source URL/verification/approval evidence, real generation timestamps, durable protocol/prompt revisions, generation mode, human edits, and the seven validation gates. Use supplied SHA-256 snapshots as durable revisions; include additional commit references when known. Do not copy hardcoded Claude dates/model IDs or label unknown fields as verified. A changed model or scope requires a documented reassignment.
+
+## Validation and handoff
+
+Run the same shared QC as the other arms. If needed, install its locked dependencies from Websites/tools/qc using npm ci, outside the replica. Execute shared qc.js against this one output and retain the JSON/log evidence in this run directory; record-qc.mjs provides that wrapper. Report inability to execute browser tests as not-tested/blocked, never as failures=0. Do not weaken or edit the QC to pass.
+
+Exercise the implemented interaction states separately: menus and keyboard dismissal, local search/filter/sort and empty results, validation and demo success, tabs/accordions, dialogs/focus return, and category-specific flows. Initial-page axe scans do not test these states. Record exact tests performed and untested screen-reader/zoom/browser/fidelity checks. Preserve the first QC report and log every correction/retry; distinguish the initial generated artifact from any repaired revision for study analysis.
+
+Finish with complete files, a concise page/file count, source and verification status, actual QC outcome and evidence location, interactions tested, deviations, and remaining limits. Update run evidence; the coordinator updates only this Codex assignment row and change log after reviewing actual delivery. Prepared != generating, submitted != accepted, and successful automated QC != human acceptance. Stop after this site.
+
+
+## Exact task context
+
+```json
+{
+  "phase": "build",
+  "target": "FASH-06",
+  "category": "fashion",
+  "category_requirements": {
+    "category": "fashion",
+    "prefix": "FASH",
+    "name": "Fashion editorial",
+    "sampling_strata": [
+      {
+        "slot": 1,
+        "source_id": "FASH-01",
+        "model_group": "claude",
+        "stratum": "fashion magazine",
+        "authority": "coordination proposal; reconcile with shared inventory"
+      },
+      {
+        "slot": 2,
+        "source_id": "FASH-02",
+        "model_group": "claude",
+        "stratum": "brand editorial/lookbook",
+        "authority": "coordination proposal; reconcile with shared inventory"
+      },
+      {
+        "slot": 3,
+        "source_id": "FASH-03",
+        "model_group": "claude",
+        "stratum": "fashion blog or trend publication",
+        "authority": "coordination proposal; reconcile with shared inventory"
+      },
+      {
+        "slot": 4,
+        "source_id": "FASH-04",
+        "model_group": "codex",
+        "stratum": "fashion magazine",
+        "authority": "codex assignment"
+      },
+      {
+        "slot": 5,
+        "source_id": "FASH-05",
+        "model_group": "codex",
+        "stratum": "brand editorial/lookbook",
+        "authority": "codex assignment"
+      },
+      {
+        "slot": 6,
+        "source_id": "FASH-06",
+        "model_group": "codex",
+        "stratum": "fashion blog or trend publication",
+        "authority": "codex assignment"
+      },
+      {
+        "slot": 7,
+        "source_id": "FASH-07",
+        "model_group": "open-source",
+        "stratum": "fashion magazine",
+        "authority": "coordination proposal; reconcile with shared inventory"
+      },
+      {
+        "slot": 8,
+        "source_id": "FASH-08",
+        "model_group": "open-source",
+        "stratum": "brand editorial/lookbook",
+        "authority": "coordination proposal; reconcile with shared inventory"
+      },
+      {
+        "slot": 9,
+        "source_id": "FASH-09",
+        "model_group": "open-source",
+        "stratum": "fashion blog or trend publication",
+        "authority": "coordination proposal; reconcile with shared inventory"
+      },
+      {
+        "slot": 10,
+        "source_id": "FASH-10",
+        "model_group": "open-source",
+        "stratum": "additional distinct fashion magazine (complexity-matched reserve)",
+        "authority": "coordination proposal; reconcile with shared inventory"
+      }
+    ],
+    "representative_pages": [
+      "home",
+      "category/trend",
+      "story",
+      "lookbook/gallery",
+      "author when present",
+      "search",
+      "newsletter",
+      "404"
+    ],
+    "conditional_interactions": [
+      "editorial navigation",
+      "gallery/lightbox or carousel",
+      "article search",
+      "newsletter simulation"
+    ],
+    "simulation_notes": "Original placeholder imagery; no real purchases, copyrighted photographs, external embeds, or invented endorsement.",
+    "scope_rule": "Use only observed source pages/features; label inferred behavior and intentional additions. Page count follows approved scope, not a fixed quota."
+  },
+  "model": {
+    "id": "gpt-6.1-sol",
+    "version": null,
+    "runtime": "OpenAI collaboration worker (gpt-6.1-sol), orchestrated in Codex",
+    "reasoning_effort": null,
+    "operator": "Samhith Varma"
+  },
+  "output_relative_to_Websites": "fashion/codex/FASH-06",
+  "selected_source": {
+    "category": "fashion",
+    "slot": "06",
+    "source_id": "FASH-06",
+    "model_group": "codex",
+    "model_id": "gpt-6.1-sol",
+    "model_version": "",
+    "subcategory": "fashion blog or trend publication",
+    "source_name": "Who What Wear",
+    "source_url": "https://www.whowhatwear.com/",
+    "verified_at": "2026-11-13",
+    "verification_method": "Connected web search and page-open text retrieval; accepted by project lead with disclosed cache/origin/browser limitations",
+    "verification_result": "verified",
+    "evidence_reference": "pipelines/codex/research/replacement-proposals-2026-11-13.md; pipelines/codex/research/evidence/replacement-proposals-2026-11-13.json; pipelines/codex/research/evidence/replacement-approval-2026-11-13.json",
+    "source_pages": "[{\"url\": \"https://www.whowhatwear.com/\", \"title\": \"Celebrity Style and Fashion Trend Coverage | Who What Wear\", \"local_file\": \"index.html\", \"retrieval\": \"readable text/html extraction\"}, {\"url\": \"https://www.whowhatwear.com/fashion/trends\", \"title\": \"The Latest Fashion and Style Trends for 2026 | Who What Wear\", \"local_file\": \"trends.html\", \"retrieval\": \"readable text/html extraction\"}, {\"url\": \"https://www.whowhatwear.com/fashion\", \"title\": \"All Things Fashion, According to the Experts | Who What Wear\", \"local_file\": \"fashion.html\", \"retrieval\": \"readable text/html extraction\"}, {\"url\": \"https://www.whowhatwear.com/buying-guides\", \"title\": \"Shopping Guides to the Latest Fashion Trends | Who What Wear\", \"local_file\": \"guides.html\", \"retrieval\": \"readable text/html extraction\"}, {\"url\": \"https://www.whowhatwear.com/fashion/trends/most-iconic-fashion-trends-last-20-years\", \"title\": \"20 Trends That Defined the Past 20 Years of Fashion | Who What Wear\", \"local_file\": \"article.html\", \"retrieval\": \"readable text/html extraction\"}]",
+    "key_regions": "[\"Edition controls and search\", \"Topic/subtopic navigation\", \"Editorial card collections\", \"Article image and section-jump list\", \"Share affordances\"]",
+    "key_interactions": "[{\"name\": \"Search button/input\", \"evidence\": \"observed\", \"notes\": \"Affordance present in retrieved text only; behavior not executed.\"}, {\"name\": \"Subnavigation toggles indicated by extracted controls\", \"evidence\": \"observed\", \"notes\": \"Affordance present in retrieved text only; behavior not executed.\"}, {\"name\": \"Article jump links and sharing affordances\", \"evidence\": \"observed\", \"notes\": \"Affordance present in retrieved text only; behavior not executed.\"}]",
+    "complexity": "high",
+    "stack_clues": "unknown; no rendered browser or raw-origin stack audit",
+    "limitations": "Verification is limited to readable connected-web text, potentially cached/indexed; no fresh origin HTTP response and no rendered or interaction verification was obtained (origin_http_status: none). Approved verification_interpretation: verified denotes the connected-web text-retrieval method only. Source-specific: No proprietary photos, editorial copy, affiliate products or endorsements will be reused; Sharing and commercial links will be labeled simulations; More complex than the original medium-rated Fashionista proposal; complexity matching should be rechecked [limitations text reconstructed 2026-11-12 from pipelines/codex/research/evidence/replacement-proposals-2026-11-13.json after an erroneous edit by the Claude session; the original prose wording was not recoverable.]",
+    "approved_at": "2026-11-13T00:11:23.688078+00:00",
+    "approved_by": "Samhith Varma",
+    "approval_reference": "pipelines/codex/research/evidence/replacement-approval-2026-11-13.json"
+  },
+  "category_inventory": [
+    {
+      "category": "fashion",
+      "slot": "01",
+      "source_id": "FASH-01",
+      "model_group": "claude",
+      "model_id": "claude-sonnet-5-5",
+      "model_version": "",
+      "subcategory": "editorial publisher",
+      "source_name": "W Magazine",
+      "source_url": "https://www.wmagazine.com/",
+      "verified_at": "2026-11-12",
+      "verification_method": "HTTP GET via curl (no browser rendering)",
+      "verification_result": "verified",
+      "evidence_reference": "pipelines/claude/research/FASH.md#fash-01",
+      "source_pages": "[{\"url\": \"https://www.wmagazine.com/\", \"title\": \"W Magazine\", \"local_file\": \"index.html\"}, {\"url\": \"https://www.wmagazine.com/fashion\", \"title\": \"Fashion\", \"local_file\": \"fashion.html\"}, {\"url\": \"https://www.wmagazine.com/beauty\", \"title\": \"Beauty\", \"local_file\": \"beauty.html\"}, {\"url\": \"https://www.wmagazine.com/culture\", \"title\": \"Culture\", \"local_file\": \"culture.html\"}, {\"url\": \"https://www.wmagazine.com/travel\", \"title\": \"Travel\", \"local_file\": \"travel.html\"}, {\"url\": \"https://www.wmagazine.com/video\", \"title\": \"Video\", \"local_file\": \"video.html\"}, {\"url\": \"https://www.wmagazine.com/latest\", \"title\": \"title not captured (HTTP 200, about 266 KB)\", \"local_file\": \"latest.html\"}, {\"url\": \"https://www.wmagazine.com/wyouth\", \"title\": \"WYouth\", \"local_file\": \"wyouth.html\"}, {\"url\": \"https://www.wmagazine.com/originals-issue-2026\", \"title\": \"The New Originals Issue 2026\", \"local_file\": \"originals-issue-2026.html\"}, {\"url\": \"https://www.wmagazine.com/newsletter\", \"title\": \"Subscribe To W's Newsletters\", \"local_file\": \"newsletter.html\"}, {\"url\": \"https://www.wmagazine.com/fashion/lea-seydoux-french-girl-style-gentle-monster\", \"title\": \"Léa Seydoux Brings Her Expert French Girl Fashion to New York's Streets\", \"local_file\": \"lea-seydoux-french-girl-style-gentle-monster.html\"}, {\"url\": \"https://www.wmagazine.com/search?q=chanel\", \"title\": \"Search - chanel\", \"local_file\": \"search.html\"}]",
+      "key_regions": "[\"Header: logo plus a primary nav of Fashion, Beauty, Culture, Travel, Video and WYouth.\", \"The nav also has The Originals Issue, Latest and Newsletter links, plus a Subscribe link to an external dragonforms.com page.\", \"The nav has no dropdown items in the raw HTML (observed).\", \"There is a search form with `action=\\\"/search\\\"`, `type=\\\"search\\\"` and `aria-label=\\\"Search W Magazine\\\"`.\", \"Hero: a lead story on the home page, observed only as links and headings. Layout details are inferred.\", \"Body: story card grids per section, showing headline links. The section pages list article links under `/fashion/<slug>`.\", \"A special-issue landing page exists (`/originals-issue-2026`).\", \"Footer: legal and corporate links (Advertise, DMCA, Privacy, Terms, California Privacy Notice) go to bdg.com, plus a Subscribe link.\"]",
+      "key_interactions": "[{\"name\": \"search form submitting to `/search`; a newsletter sign-up page; catego\", \"evidence\": \"observed\", \"notes\": \"search form submitting to `/search`; a newsletter sign-up page; category navigation; article pages.\"}, {\"name\": \"no `/author` or contributor link was found in the article HTML, so a r\", \"evidence\": \"inferred\", \"notes\": \"no `/author` or contributor link was found in the article HTML, so a real author page was not confirmed.\"}, {\"name\": \"the lead story or gallery may rotate or carousel; this is not confirme\", \"evidence\": \"inferred\", \"notes\": \"the lead story or gallery may rotate or carousel; this is not confirmed.\"}]",
+      "complexity": "medium",
+      "stack_clues": "no `/_next/`, `__NEXT_DATA__` or `wp-content` strings found in the article HTML. CSS class names look obfuscated or hashed (for example `Ag6 Ui6`). The stack is otherwise unknown.",
+      "limitations": "the author page was not found. `/latest` title was not captured. Article imagery is third-party editorial photography, so the replica must use placeholders. The header and nav structure were read from raw HTML only and no browser rendering was done.",
+      "approved_at": "2026-11-13",
+      "approved_by": "Samhith Varma",
+      "approval_reference": "pipelines/claude/research/approval-2026-11-13.md"
+    },
+    {
+      "category": "fashion",
+      "slot": "02",
+      "source_id": "FASH-02",
+      "model_group": "claude",
+      "model_id": "claude-sonnet-5-5",
+      "model_version": "",
+      "subcategory": "fashion brand editorial or lookbook site",
+      "source_name": "Margaret Howell (UK site)",
+      "source_url": "https://www.margarethowell.co.uk/",
+      "verified_at": "2026-11-12",
+      "verification_method": "HTTP GET via curl (no browser rendering)",
+      "verification_result": "verified",
+      "evidence_reference": "pipelines/claude/research/FASH.md#fash-02",
+      "source_pages": "[{\"url\": \"https://www.margarethowell.co.uk/\", \"title\": \"title empty (200, about 672 KB)\", \"local_file\": \"index.html\"}, {\"url\": \"https://www.margarethowell.co.uk/pages/news\", \"title\": \"heading \\\"News\\\" (200, about 800 KB)\", \"local_file\": \"news.html\"}, {\"url\": \"https://www.margarethowell.co.uk/pages/margaret\", \"title\": \"howell-aw26-lookbook , lookbook (200, about 889 KB)\", \"local_file\": \"margaret.html\"}, {\"url\": \"https://www.margarethowell.co.uk/pages/mhl\", \"title\": \"by-margaret-howell-aw26-lookbook , lookbook (200, about 909 KB)\", \"local_file\": \"pages-mhl.html\"}, {\"url\": \"https://www.margarethowell.co.uk/pages/autumn\", \"title\": \"winter-2026-campaign , campaign (200)\", \"local_file\": \"autumn.html\"}, {\"url\": \"https://www.margarethowell.co.uk/pages/photographs\", \"title\": \"by-margaret-howell , photography (200)\", \"local_file\": \"photographs.html\"}, {\"url\": \"https://www.margarethowell.co.uk/pages/about\", \"title\": \"margaret-howell , about (200)\", \"local_file\": \"about.html\"}, {\"url\": \"https://www.margarethowell.co.uk/pages/sustainability\", \"title\": \"sustainability (200)\", \"local_file\": \"sustainability.html\"}, {\"url\": \"https://www.margarethowell.co.uk/pages/accessibility\", \"title\": \"accessibility statement (200)\", \"local_file\": \"accessibility.html\"}, {\"url\": \"https://www.margarethowell.co.uk/pages/shops\", \"title\": \"margaret-howell , store finder (200)\", \"local_file\": \"shops.html\"}, {\"url\": \"https://www.margarethowell.co.uk/pages/care\", \"title\": \"repair , care and repair (200)\", \"local_file\": \"care.html\"}, {\"url\": \"https://www.margarethowell.co.uk/pages/contact\", \"title\": \"contact (200)\", \"local_file\": \"contact.html\"}]",
+      "key_regions": "[\"Header: logo plus a mega-nav that links collections for Men, Women, MHL (the second line) and Home.\", \"Collection links seen: jackets and coats, shirts, knitwear, trousers, shoes, accessories (bags, belts, gloves, hats, socks, ties and scarves), and home (ceramics, kitchenware, homeware, books and stationery, calendar-202\", \"Utility links: account/login, wishlist, minicart and a skip-to-main link.\", \"Hero: campaign and lookbook entry (AW26 campaign), with \\\"READ MORE\\\" and \\\"SHOP\\\" calls to action seen on the home page.\", \"Body: lookbook pages, editorial \\\"news\\\" pages (exhibitions, collaborations, craft stories) and a Photographs by Margaret Howell page.\", \"Footer: customer service, care and repair, contact, corporate, sustainability, accessibility, terms, privacy and cookies, shops and careers, plus Instagram and Pinterest. A mailing list sign-up also appears.\"]",
+      "key_interactions": "[{\"name\": \"a news index linking many editorial story pages (for example `/pages/c\", \"evidence\": \"observed\", \"notes\": \"a news index linking many editorial story pages (for example `/pages/consistency-in-authenticity`, `/pages/kenji-umeda-a-journey`, `/pages/held-by-light`); lookbook pages; a newsletter prompt; a store locator page; a minicart.\"}, {\"name\": \"lookbook image galleries or carousels.\", \"evidence\": \"inferred\", \"notes\": \"lookbook image galleries or carousels.\"}, {\"name\": \"Shopping links should be treated as labeled demos.\", \"evidence\": \"inferred\", \"notes\": \"Shopping links should be treated as labeled demos.\"}]",
+      "complexity": "medium",
+      "stack_clues": "Shopify (the string appears 103 times, with `cdn.shopify` asset URLs). It also uses `/pages/` and `/collections/` URL patterns, which are consistent with a Shopify theme.",
+      "limitations": "titles were not extractable from raw HTML. The site rate limits (429) on repeated requests. The product and collection depth is large and should be treated as a demo. Imagery is photography that must be replaced with placeholders.",
+      "approved_at": "2026-11-13",
+      "approved_by": "Samhith Varma",
+      "approval_reference": "pipelines/claude/research/approval-2026-11-13.md"
+    },
+    {
+      "category": "fashion",
+      "slot": "03",
+      "source_id": "FASH-03",
+      "model_group": "claude",
+      "model_id": "claude-sonnet-5-5",
+      "model_version": "",
+      "subcategory": "fashion blog, trend and street-style content site",
+      "source_name": "Hypebeast",
+      "source_url": "https://hypebeast.com/",
+      "verified_at": "2026-11-12",
+      "verification_method": "HTTP GET via curl (no browser rendering)",
+      "verification_result": "verified",
+      "evidence_reference": "pipelines/claude/research/FASH.md#fash-03",
+      "source_pages": "[{\"url\": \"https://hypebeast.com/\", \"title\": \"Hypebeast - Fashion, Sneakers, Art, Design & Culture\", \"local_file\": \"index.html\"}, {\"url\": \"https://hypebeast.com/fashion\", \"title\": \"Fashion News | Hypebeast - Fashion, Sneakers, Art, Design & Culture\", \"local_file\": \"fashion.html\"}, {\"url\": \"https://hypebeast.com/footwear\", \"title\": \"Footwear News | Hypebeast - Fashion, Sneakers, Art, Design & Culture\", \"local_file\": \"footwear.html\"}, {\"url\": \"https://hypebeast.com/art\", \"title\": \"Art News | Hypebeast - Fashion, Sneakers, Art, Design & Culture\", \"local_file\": \"art.html\"}, {\"url\": \"https://hypebeast.com/design\", \"title\": \"Design News | Hypebeast - Fashion, Sneakers, Art, Design & Culture\", \"local_file\": \"design.html\"}, {\"url\": \"https://hypebeast.com/lifestyle\", \"title\": \"Lifestyle | Hypebeast - Fashion, Sneakers, Art, Design & Culture\", \"local_file\": \"lifestyle.html\"}, {\"url\": \"https://hypebeast.com/music\", \"title\": \"Music News | Hypebeast - Fashion, Sneakers, Art, Design & Culture\", \"local_file\": \"music.html\"}, {\"url\": \"https://hypebeast.com/magazine\", \"title\": \"Magazine | Hypebeast\", \"local_file\": \"magazine.html\"}, {\"url\": \"https://hypebeast.com/videos\", \"title\": \"Latest Videos | Hypebeast - Fashion, Sneakers, Art, Design & Culture\", \"local_file\": \"videos.html\"}, {\"url\": \"https://hypebeast.com/brands/ranking\", \"title\": \"Brand Rankings | Hypebeast - Fashion, Sneakers, Art, Design & Culture\", \"local_file\": \"ranking.html\"}, {\"url\": \"https://hypebeast.com/directory\", \"title\": \"Brands | Hypebeast - Fashion, Sneakers, Art, Design & Culture\", \"local_file\": \"directory.html\"}, {\"url\": \"https://hypebeast.com/author/joyceli\", \"title\": \"Stories by Joyce Li | Hypebeast - Fashion, Sneakers, Art, Design & Culture\", \"local_file\": \"joyceli.html\"}, {\"url\": \"https://hypebeast.com/hb100\", \"title\": \"Hypebeast100 2025 | Hypebeast\", \"local_file\": \"hb100.html\"}, {\"url\": \"https://hypebeast.com/search?s=nike\", \"title\": \"nike | Search | Hypebeast\", \"local_file\": \"search.html\"}]",
+      "key_regions": "[\"Header: primary nav of Fashion, Footwear, Art, Design, Lifestyle, Music, Magazine, Videos, Brands and Hypebeast100.\", \"Utility items: Account, English language switcher, More, and a Store link to hbx.com.\", \"A language menu offers many locales (observed in the HTML).\", \"Hero: a lead story with a card grid beneath it (inferred from the headline-link pattern).\", \"Body: dated story card lists. Article URLs follow `/YYYY/MM/slug`. Author links go to `/author/<name>`.\", \"Footer: Privacy Policy, Terms and Conditions, Contact, Advertise, Newsroom, Investor, Group and Legal, plus Careers on Lever.\"]",
+      "key_interactions": "[{\"name\": \"search (`/search?s=`); author pages; language switcher links; category\", \"evidence\": \"observed\", \"notes\": \"search (`/search?s=`); author pages; language switcher links; category navigation; sister-site links (Hypebae, HBX, Hypemaps).\"}, {\"name\": \"newsletter sign-up, infinite scroll or \\\"load more\\\", and gallery or car\", \"evidence\": \"inferred\", \"notes\": \"newsletter sign-up, infinite scroll or \\\"load more\\\", and gallery or carousel behavior; none confirmed in the HTML.\"}, {\"name\": \"Shopping and HBX links should be treated as labeled demos.\", \"evidence\": \"inferred\", \"notes\": \"Shopping and HBX links should be treated as labeled demos.\"}]",
+      "complexity": "high",
+      "stack_clues": "the article page has a canonical link and one JSON-LD (`ld+json`) block. No `/_next/` or `wp-content` strings were found. The stack is otherwise unknown.",
+      "limitations": "the home and section pages are very heavy and can change by the hour. The content leans streetwear, sneakers and culture more than traditional fashion. A fixed subset of about 8 pages is enough to replicate. Photography must be replaced with placeholders.",
+      "approved_at": "2026-11-13",
+      "approved_by": "Samhith Varma",
+      "approval_reference": "pipelines/claude/research/approval-2026-11-13.md"
+    },
+    {
+      "category": "fashion",
+      "slot": "04",
+      "source_id": "FASH-04",
+      "model_group": "codex",
+      "model_id": "gpt-6.1-sol",
+      "model_version": "",
+      "subcategory": "fashion magazine",
+      "source_name": "AnOther",
+      "source_url": "https://www.anothermag.com/",
+      "verified_at": "2026-11-12",
+      "verification_method": "HTTP-only: live web search/text extraction + Python urllib GET; no rendered browser",
+      "verification_result": "verified",
+      "evidence_reference": "pipelines/codex/research/FASH.md#fash-04--another",
+      "source_pages": "[{\"url\": \"https://www.anothermag.com/\", \"title\": \"AnOther Magazine | Fashion & Culture | AnOther\", \"local_file\": \"index.html\"}, {\"url\": \"https://www.anothermag.com/fashion-beauty\", \"title\": \"Fashion & Beauty | AnOther\", \"local_file\": \"fashion-beauty.html\"}, {\"url\": \"https://www.anothermag.com/fashion-beauty/17634/our-legacy-tokyo-store-daikanyama\", \"title\": \"AnOther World: Our Legacy’s Hidden Tokyo Store Is Full of Surprises | AnOther\", \"local_file\": \"story.html\"}, {\"url\": \"https://www.anothermag.com/fashion-beauty/gallery/14921/our-legacy-tokyo/0\", \"title\": \"Our Legacy Tokyo | AnOther\", \"local_file\": \"gallery.html\"}, {\"url\": \"https://www.anothermag.com/user/GeorgePistachio\", \"title\": \"George Pistachio | AnOther\", \"local_file\": \"author.html\"}, {\"url\": \"https://www.anothermag.com/search\", \"title\": \"Search | AnOther\", \"local_file\": \"search.html\"}]",
+      "key_regions": "[\"Section navigation and search link\", \"Homepage feature and editorial story lists\", \"Story title, date, byline, image captions and sectioned body\", \"Gallery image links and related items\", \"Author archive\", \"Newsletter form on story; utility footer\"]",
+      "key_interactions": "[{\"name\": \"Editorial navigation\", \"evidence\": \"observed\", \"notes\": \"HTTP anchors identify section and story destinations; rendered menu behavior untested.\"}, {\"name\": \"Gallery navigation\", \"evidence\": \"inferred\", \"notes\": \"HTTP gallery exposes numbered destinations 0\\u201315 and buttons; transitions, lightbox and keyboard behavior untested.\"}, {\"name\": \"Article search\", \"evidence\": \"inferred\", \"notes\": \"Search route returns title and heading; query controls/results not exposed in inspected HTML.\"}, {\"name\": \"Newsletter simulation\", \"evidence\": \"inferred\", \"notes\": \"Story HTML contains email input and external subscription POST action; no submission performed.\"}]",
+      "complexity": "medium",
+      "stack_clues": "unknown CMS/framework; external list-manage.com newsletter action and images-prod.anothermag.com image host observed",
+      "limitations": "PROVISIONAL; coordinator reservation and full ten-source approval pending. HTTP-only. No rendered layout, responsiveness or interaction tests. Search results unknown. Web tool gallery fetch failed with cache miss, but direct HTTP returned 200.",
+      "approved_at": "2026-11-12",
+      "approved_by": "Samhith Varma",
+      "approval_reference": "metadata/change-log.md § 2026-11-12 — Codex Phase A approval (slots 04–06)"
+    },
+    {
+      "category": "fashion",
+      "slot": "05",
+      "source_id": "FASH-05",
+      "model_group": "codex",
+      "model_id": "gpt-6.1-sol",
+      "model_version": "",
+      "subcategory": "brand editorial/lookbook",
+      "source_name": "TOAST",
+      "source_url": "https://www.toa.st/",
+      "verified_at": "2026-11-12",
+      "verification_method": "HTTP-only: live web search/text extraction + Python urllib GET; no rendered browser",
+      "verification_result": "verified",
+      "evidence_reference": "pipelines/codex/research/FASH.md#fash-05--toast",
+      "source_pages": "[{\"url\": \"https://www.toa.st/\", \"title\": \"TOAST | Womenswear, Menswear and Functional HomewareTOAST\", \"local_file\": \"index.html\"}, {\"url\": \"https://www.toa.st/blogs/magazine\", \"title\": \"TOAST Magazine | Insightful articles on a range of topicsTOAST\", \"local_file\": \"magazine.html\"}, {\"url\": \"https://www.toa.st/blogs/magazine/garments-to-live-in\", \"title\": \"Garments to Live In | TOAST MagazineTOAST\", \"local_file\": \"story.html\"}, {\"url\": \"https://www.toa.st/pages/autumn-winter-2026-marking-the-turn\", \"title\": \"TOAST Autumn Winter 2026 Collection Concept | TOASTTOAST\", \"local_file\": \"seasonal-concept.html\"}, {\"url\": \"https://www.toa.st/search?q=garments\", \"title\": \"Search | TOASTTOAST\", \"local_file\": \"search.html\"}]",
+      "key_regions": "[\"Delivery and country utility strip; nested retail/community navigation\", \"Homepage collection and magazine entry points\", \"Magazine introduction and categorized story list\", \"Story body and comment form\", \"Seasonal concept imagery, quotation and related craft features\", \"Search form; newsletter email form; grouped footer\"]",
+      "key_interactions": "[{\"name\": \"Editorial navigation\", \"evidence\": \"observed\", \"notes\": \"HTTP links connect Community/Magazine, seasonal concept and stories; menu activation untested.\"}, {\"name\": \"Search\", \"evidence\": \"inferred\", \"notes\": \"GET /search forms with q field and search page retrieved; live result updates not tested. Article-only local search would be an intentional scope reduction.\"}, {\"name\": \"Newsletter simulation\", \"evidence\": \"inferred\", \"notes\": \"NewsletterCallout and NewsletterModal forms POST to /contact; validation/success behavior untested.\"}, {\"name\": \"Comment simulation\", \"evidence\": \"inferred\", \"notes\": \"Story has comment form POST endpoint; no submission made.\"}]",
+      "complexity": "medium",
+      "stack_clues": "Shopify/shopify strings in HTML; /blogs, /pages and contact-form endpoints consistent with Shopify. Theme/version unknown.",
+      "limitations": "PROVISIONAL; coordinator reservation and full ten-source approval pending. HTTP-only. Retail/account/bag/checkout not proposed. Seasonal concept is an observed visual editorial page, not proof of an interactive lookbook. Video is indicated but not played. No separate author archive established.",
+      "approved_at": "2026-11-12",
+      "approved_by": "Samhith Varma",
+      "approval_reference": "metadata/change-log.md § 2026-11-12 — Codex Phase A approval (slots 04–06)"
+    },
+    {
+      "category": "fashion",
+      "slot": "06",
+      "source_id": "FASH-06",
+      "model_group": "codex",
+      "model_id": "gpt-6.1-sol",
+      "model_version": "",
+      "subcategory": "fashion blog or trend publication",
+      "source_name": "Who What Wear",
+      "source_url": "https://www.whowhatwear.com/",
+      "verified_at": "2026-11-13",
+      "verification_method": "Connected web search and page-open text retrieval; accepted by project lead with disclosed cache/origin/browser limitations",
+      "verification_result": "verified",
+      "evidence_reference": "pipelines/codex/research/replacement-proposals-2026-11-13.md; pipelines/codex/research/evidence/replacement-proposals-2026-11-13.json; pipelines/codex/research/evidence/replacement-approval-2026-11-13.json",
+      "source_pages": "[{\"url\": \"https://www.whowhatwear.com/\", \"title\": \"Celebrity Style and Fashion Trend Coverage | Who What Wear\", \"local_file\": \"index.html\", \"retrieval\": \"readable text/html extraction\"}, {\"url\": \"https://www.whowhatwear.com/fashion/trends\", \"title\": \"The Latest Fashion and Style Trends for 2026 | Who What Wear\", \"local_file\": \"trends.html\", \"retrieval\": \"readable text/html extraction\"}, {\"url\": \"https://www.whowhatwear.com/fashion\", \"title\": \"All Things Fashion, According to the Experts | Who What Wear\", \"local_file\": \"fashion.html\", \"retrieval\": \"readable text/html extraction\"}, {\"url\": \"https://www.whowhatwear.com/buying-guides\", \"title\": \"Shopping Guides to the Latest Fashion Trends | Who What Wear\", \"local_file\": \"guides.html\", \"retrieval\": \"readable text/html extraction\"}, {\"url\": \"https://www.whowhatwear.com/fashion/trends/most-iconic-fashion-trends-last-20-years\", \"title\": \"20 Trends That Defined the Past 20 Years of Fashion | Who What Wear\", \"local_file\": \"article.html\", \"retrieval\": \"readable text/html extraction\"}]",
+      "key_regions": "[\"Edition controls and search\", \"Topic/subtopic navigation\", \"Editorial card collections\", \"Article image and section-jump list\", \"Share affordances\"]",
+      "key_interactions": "[{\"name\": \"Search button/input\", \"evidence\": \"observed\", \"notes\": \"Affordance present in retrieved text only; behavior not executed.\"}, {\"name\": \"Subnavigation toggles indicated by extracted controls\", \"evidence\": \"observed\", \"notes\": \"Affordance present in retrieved text only; behavior not executed.\"}, {\"name\": \"Article jump links and sharing affordances\", \"evidence\": \"observed\", \"notes\": \"Affordance present in retrieved text only; behavior not executed.\"}]",
+      "complexity": "high",
+      "stack_clues": "unknown; no rendered browser or raw-origin stack audit",
+      "limitations": "Verification is limited to readable connected-web text, potentially cached/indexed; no fresh origin HTTP response and no rendered or interaction verification was obtained (origin_http_status: none). Approved verification_interpretation: verified denotes the connected-web text-retrieval method only. Source-specific: No proprietary photos, editorial copy, affiliate products or endorsements will be reused; Sharing and commercial links will be labeled simulations; More complex than the original medium-rated Fashionista proposal; complexity matching should be rechecked [limitations text reconstructed 2026-11-12 from pipelines/codex/research/evidence/replacement-proposals-2026-11-13.json after an erroneous edit by the Claude session; the original prose wording was not recoverable.]",
+      "approved_at": "2026-11-13T00:11:23.688078+00:00",
+      "approved_by": "Samhith Varma",
+      "approval_reference": "pipelines/codex/research/evidence/replacement-approval-2026-11-13.json"
+    },
+    {
+      "category": "fashion",
+      "slot": "07",
+      "source_id": "FASH-07",
+      "model_group": "open-source",
+      "model_id": "",
+      "model_version": "",
+      "subcategory": "",
+      "source_name": "",
+      "source_url": "",
+      "verified_at": "",
+      "verification_method": "",
+      "verification_result": "",
+      "evidence_reference": "",
+      "source_pages": "",
+      "key_regions": "",
+      "key_interactions": "",
+      "complexity": "",
+      "stack_clues": "",
+      "limitations": "",
+      "approved_at": "",
+      "approved_by": "",
+      "approval_reference": ""
+    },
+    {
+      "category": "fashion",
+      "slot": "08",
+      "source_id": "FASH-08",
+      "model_group": "open-source",
+      "model_id": "",
+      "model_version": "",
+      "subcategory": "",
+      "source_name": "",
+      "source_url": "",
+      "verified_at": "",
+      "verification_method": "",
+      "verification_result": "",
+      "evidence_reference": "",
+      "source_pages": "",
+      "key_regions": "",
+      "key_interactions": "",
+      "complexity": "",
+      "stack_clues": "",
+      "limitations": "",
+      "approved_at": "",
+      "approved_by": "",
+      "approval_reference": ""
+    },
+    {
+      "category": "fashion",
+      "slot": "09",
+      "source_id": "FASH-09",
+      "model_group": "open-source",
+      "model_id": "",
+      "model_version": "",
+      "subcategory": "",
+      "source_name": "",
+      "source_url": "",
+      "verified_at": "",
+      "verification_method": "",
+      "verification_result": "",
+      "evidence_reference": "",
+      "source_pages": "",
+      "key_regions": "",
+      "key_interactions": "",
+      "complexity": "",
+      "stack_clues": "",
+      "limitations": "",
+      "approved_at": "",
+      "approved_by": "",
+      "approval_reference": ""
+    },
+    {
+      "category": "fashion",
+      "slot": "10",
+      "source_id": "FASH-10",
+      "model_group": "open-source",
+      "model_id": "",
+      "model_version": "",
+      "subcategory": "",
+      "source_name": "",
+      "source_url": "",
+      "verified_at": "",
+      "verification_method": "",
+      "verification_result": "",
+      "evidence_reference": "",
+      "source_pages": "",
+      "key_regions": "",
+      "key_interactions": "",
+      "complexity": "",
+      "stack_clues": "",
+      "limitations": "",
+      "approved_at": "",
+      "approved_by": "",
+      "approval_reference": ""
+    }
+  ],
+  "protocol_snapshots": [
+    {
+      "path": "Rules.md",
+      "sha256": "04b1c3e38b76f2aff3aef869d67370bb4532cd8f9ab5e22ac8276f26cbb859bf"
+    },
+    {
+      "path": "MODEL_ALLOCATION.md",
+      "sha256": "81f3a5dc01cd370643ad84f39989a2625a03611ab5f5a34b10de5494d9e61a9b"
+    },
+    {
+      "path": "pipelines/codex/config.json",
+      "sha256": "b16751854f14ec50f9e8e8726e4ab0c064503f1ebdea6d71ba7e1faf85ed6d95"
+    },
+    {
+      "path": "pipelines/codex/categories.json",
+      "sha256": "843ea7d8d1cc7d01385643f848408dea32997985422496d98e8f108bbc09a333"
+    },
+    {
+      "path": "pipelines/codex/prompts/build.md",
+      "sha256": "37567f6a4198f7539b11964980cf814a7b8c0732f926dfe9aa6f86849dd2277c"
+    },
+    {
+      "path": "metadata/source-inventories/fashion.csv",
+      "sha256": "90471a4bdc55f04c3d61b22aeb8e3895cbb22985fe040058998067a3f6b76e9c"
+    },
+    {
+      "path": "metadata/assignments.csv",
+      "sha256": "2659587ae054d3738b8fc412c83d368e8d577b8b610cfabb655e8effc606a934"
+    }
+  ],
+  "prepared_at": "2026-11-13T21:37:53.916Z",
+  "task_is_execution": false
+}
+```

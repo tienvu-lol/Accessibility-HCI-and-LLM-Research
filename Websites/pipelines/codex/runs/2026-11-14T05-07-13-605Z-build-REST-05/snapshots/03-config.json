@@ -1,0 +1,51 @@
+{
+  "schema_version": "1.0",
+  "model_group": "codex",
+  "slots": [
+    4,
+    5,
+    6
+  ],
+  "excluded_categories": [],
+  "allocation": {
+    "claude": 3,
+    "codex": 3,
+    "open-source": 4
+  },
+  "model": {
+    "id": null,
+    "version": null,
+    "runtime": null,
+    "reasoning_effort": null,
+    "operator": null
+  },
+  "execution": {
+    "mode": "prepare-and-handoff",
+    "one_replica_per_run": true,
+    "max_concurrent_builds": 3,
+    "automatic_generation": false,
+    "automatic_publish": false
+  },
+  "approval": {
+    "require_all_ten_sources": true,
+    "allow_unverified_sources": false,
+    "inherit_claude_waiver": false
+  },
+  "paths": {
+    "rules": "Rules.md",
+    "allocation": "MODEL_ALLOCATION.md",
+    "assignments": "metadata/assignments.csv",
+    "inventories": "metadata/source-inventories",
+    "qc": "tools/qc/qc.js"
+  },
+  "research": {
+    "preferred_method": "live web search and direct page inspection when available",
+    "fallback": "record exact available method and limits; unverified sources block builds"
+  },
+  "qc": {
+    "required_exit_code": 0,
+    "required_failures": 0,
+    "interaction_review_required": true,
+    "manual_review_required_for_acceptance": true
+  }
+}

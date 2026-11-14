@@ -1,0 +1,1113 @@
+{
+  "protocol_version": "1.0",
+  "replica_id": "CORP-03",
+  "category": "company",
+  "source_url": "https://about.gitlab.com/",
+  "fictional_brand": "Northcairn (Cairn platform)",
+  "components": [
+    {
+      "id": "accordion",
+      "selector": "[data-component='accordion']",
+      "pages": [
+        "get-started.html",
+        "jobs.html",
+        "pricing.html",
+        "security.html"
+      ],
+      "behavior": [
+        "aria-expanded disclosure list (FAQ, job rows)"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-playwright-checks-only; manual keyboard and screen reader testing not performed"
+    },
+    {
+      "id": "article-body",
+      "selector": "[data-component='article-body']",
+      "pages": [
+        "customer-story.html"
+      ],
+      "behavior": [
+        "page region or content pattern"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-playwright-checks-only; manual keyboard and screen reader testing not performed"
+    },
+    {
+      "id": "benefit-cards",
+      "selector": "[data-component='benefit-cards']",
+      "pages": [
+        "pricing-plus.html",
+        "solutions-pipelines.html"
+      ],
+      "behavior": [
+        "page region or content pattern"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-playwright-checks-only; manual keyboard and screen reader testing not performed"
+    },
+    {
+      "id": "blog-list",
+      "selector": "[data-component='blog-list']",
+      "pages": [
+        "blog.html"
+      ],
+      "behavior": [
+        "page region or content pattern"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-playwright-checks-only; manual keyboard and screen reader testing not performed"
+    },
+    {
+      "id": "blog-teasers",
+      "selector": "[data-component='blog-teasers']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "page region or content pattern"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-playwright-checks-only; manual keyboard and screen reader testing not performed"
+    },
+    {
+      "id": "brand-link",
+      "selector": "[data-component='brand-link']",
+      "pages": [
+        "404.html",
+        "blog.html",
+        "company.html",
+        "customer-story.html",
+        "customers.html",
+        "demo.html",
+        "get-started.html",
+        "index.html",
+        "jobs.html",
+        "platform.html",
+        "pricing-plus.html",
+        "pricing.html",
+        "sales.html",
+        "security.html",
+        "solutions-pipelines.html",
+        "solutions.html"
+      ],
+      "behavior": [
+        "link to home"
+      ],
+      "keyboard": [
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-playwright-checks-only; manual keyboard and screen reader testing not performed"
+    },
+    {
+      "id": "breadcrumb",
+      "selector": "[data-component='breadcrumb']",
+      "pages": [
+        "blog.html",
+        "company.html",
+        "customer-story.html",
+        "customers.html",
+        "demo.html",
+        "get-started.html",
+        "jobs.html",
+        "platform.html",
+        "pricing-plus.html",
+        "pricing.html",
+        "sales.html",
+        "security.html",
+        "solutions-pipelines.html",
+        "solutions.html"
+      ],
+      "behavior": [
+        "trail with aria-current"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-playwright-checks-only; manual keyboard and screen reader testing not performed"
+    },
+    {
+      "id": "capability-list",
+      "selector": "[data-component='capability-list']",
+      "pages": [
+        "platform.html"
+      ],
+      "behavior": [
+        "page region or content pattern"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-playwright-checks-only; manual keyboard and screen reader testing not performed"
+    },
+    {
+      "id": "card-grid",
+      "selector": "[data-component='card-grid']",
+      "pages": [
+        "company.html",
+        "index.html",
+        "jobs.html",
+        "platform.html",
+        "pricing-plus.html",
+        "security.html",
+        "solutions-pipelines.html",
+        "solutions.html"
+      ],
+      "behavior": [
+        "responsive grid of cards"
+      ],
+      "keyboard": [
+        "none required (static)"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-playwright-checks-only; manual keyboard and screen reader testing not performed"
+    },
+    {
+      "id": "comparison-table",
+      "selector": "[data-component='comparison-table']",
+      "pages": [
+        "pricing.html"
+      ],
+      "behavior": [
+        "table with caption, th scope, text Included/Not included"
+      ],
+      "keyboard": [
+        "Tab to scroll region"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-playwright-checks-only; manual keyboard and screen reader testing not performed"
+    },
+    {
+      "id": "contact-form",
+      "selector": "[data-component='contact-form']",
+      "pages": [
+        "sales.html"
+      ],
+      "behavior": [
+        "simulated contact-sales form with validation, error summary, focus, demo success"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space on checkbox"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-playwright-checks-only; manual keyboard and screen reader testing not performed"
+    },
+    {
+      "id": "contact-sales",
+      "selector": "[data-component='contact-sales']",
+      "pages": [
+        "sales.html"
+      ],
+      "behavior": [
+        "page region or content pattern"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-playwright-checks-only; manual keyboard and screen reader testing not performed"
+    },
+    {
+      "id": "cta-band",
+      "selector": "[data-component='cta-band']",
+      "pages": [
+        "index.html",
+        "platform.html",
+        "pricing-plus.html",
+        "solutions-pipelines.html"
+      ],
+      "behavior": [
+        "page region or content pattern"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-playwright-checks-only; manual keyboard and screen reader testing not performed"
+    },
+    {
+      "id": "culture-cards",
+      "selector": "[data-component='culture-cards']",
+      "pages": [
+        "jobs.html"
+      ],
+      "behavior": [
+        "page region or content pattern"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-playwright-checks-only; manual keyboard and screen reader testing not performed"
+    },
+    {
+      "id": "customer-logos",
+      "selector": "[data-component='customer-logos']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "page region or content pattern"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-playwright-checks-only; manual keyboard and screen reader testing not performed"
+    },
+    {
+      "id": "demo-banner",
+      "selector": "[data-component='demo-banner']",
+      "pages": [
+        "404.html",
+        "blog.html",
+        "company.html",
+        "customer-story.html",
+        "customers.html",
+        "demo.html",
+        "get-started.html",
+        "index.html",
+        "jobs.html",
+        "platform.html",
+        "pricing-plus.html",
+        "pricing.html",
+        "sales.html",
+        "security.html",
+        "solutions-pipelines.html",
+        "solutions.html"
+      ],
+      "behavior": [
+        "fictional-site notice"
+      ],
+      "keyboard": [
+        "none required (static)"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-playwright-checks-only; manual keyboard and screen reader testing not performed"
+    },
+    {
+      "id": "demo-form",
+      "selector": "[data-component='demo-form']",
+      "pages": [
+        "demo.html"
+      ],
+      "behavior": [
+        "simulated demo request form"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-playwright-checks-only; manual keyboard and screen reader testing not performed"
+    },
+    {
+      "id": "demo-request",
+      "selector": "[data-component='demo-request']",
+      "pages": [
+        "demo.html"
+      ],
+      "behavior": [
+        "page region or content pattern"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-playwright-checks-only; manual keyboard and screen reader testing not performed"
+    },
+    {
+      "id": "demo-success",
+      "selector": "[data-component='demo-success']",
+      "pages": [
+        "demo.html",
+        "sales.html"
+      ],
+      "behavior": [
+        "demonstration confirmation, receives focus"
+      ],
+      "keyboard": [
+        "none required (static)"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-playwright-checks-only; manual keyboard and screen reader testing not performed"
+    },
+    {
+      "id": "empty-state",
+      "selector": "[data-component='empty-state']",
+      "pages": [
+        "blog.html",
+        "jobs.html"
+      ],
+      "behavior": [
+        "message with reset when filters match nothing"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-playwright-checks-only; manual keyboard and screen reader testing not performed"
+    },
+    {
+      "id": "error-summary",
+      "selector": "[data-component='error-summary']",
+      "pages": [
+        "demo.html",
+        "sales.html"
+      ],
+      "behavior": [
+        "role=alert list of links to invalid fields, receives focus"
+      ],
+      "keyboard": [
+        "Enter on links"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-playwright-checks-only; manual keyboard and screen reader testing not performed"
+    },
+    {
+      "id": "faq-accordion",
+      "selector": "[data-component='faq-accordion']",
+      "pages": [
+        "get-started.html",
+        "pricing.html",
+        "security.html"
+      ],
+      "behavior": [
+        "page region or content pattern"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-playwright-checks-only; manual keyboard and screen reader testing not performed"
+    },
+    {
+      "id": "feature-card",
+      "selector": "[data-component='feature-card']",
+      "pages": [
+        "company.html",
+        "index.html",
+        "jobs.html",
+        "platform.html",
+        "pricing-plus.html",
+        "security.html",
+        "solutions-pipelines.html",
+        "solutions.html"
+      ],
+      "behavior": [
+        "card with optional link"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-playwright-checks-only; manual keyboard and screen reader testing not performed"
+    },
+    {
+      "id": "feature-panels",
+      "selector": "[data-component='feature-panels']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "page region or content pattern"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-playwright-checks-only; manual keyboard and screen reader testing not performed"
+    },
+    {
+      "id": "fiction-notice",
+      "selector": "[data-component='fiction-notice']",
+      "pages": [
+        "pricing.html"
+      ],
+      "behavior": [
+        "visible notice that prices are fictional"
+      ],
+      "keyboard": [
+        "none required (static)"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-playwright-checks-only; manual keyboard and screen reader testing not performed"
+    },
+    {
+      "id": "filter-bar",
+      "selector": "[data-component='filter-bar']",
+      "pages": [
+        "blog.html",
+        "jobs.html"
+      ],
+      "behavior": [
+        "search and select filters over inline data with empty state and reset"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Arrow keys on selects"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-playwright-checks-only; manual keyboard and screen reader testing not performed"
+    },
+    {
+      "id": "footer-column",
+      "selector": "[data-component='footer-column']",
+      "pages": [
+        "404.html",
+        "blog.html",
+        "company.html",
+        "customer-story.html",
+        "customers.html",
+        "demo.html",
+        "get-started.html",
+        "index.html",
+        "jobs.html",
+        "platform.html",
+        "pricing-plus.html",
+        "pricing.html",
+        "sales.html",
+        "security.html",
+        "solutions-pipelines.html",
+        "solutions.html"
+      ],
+      "behavior": [
+        "link group"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-playwright-checks-only; manual keyboard and screen reader testing not performed"
+    },
+    {
+      "id": "form-card",
+      "selector": "[data-component='form-card']",
+      "pages": [
+        "demo.html",
+        "sales.html"
+      ],
+      "behavior": [
+        "container for simulated form, error summary and success"
+      ],
+      "keyboard": [
+        "none required (static)"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-playwright-checks-only; manual keyboard and screen reader testing not performed"
+    },
+    {
+      "id": "hero",
+      "selector": "[data-component='hero']",
+      "pages": [
+        "404.html",
+        "blog.html",
+        "company.html",
+        "customer-story.html",
+        "customers.html",
+        "demo.html",
+        "get-started.html",
+        "index.html",
+        "jobs.html",
+        "platform.html",
+        "pricing-plus.html",
+        "pricing.html",
+        "sales.html",
+        "security.html",
+        "solutions-pipelines.html",
+        "solutions.html"
+      ],
+      "behavior": [
+        "page hero with heading, lede, calls to action"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-playwright-checks-only; manual keyboard and screen reader testing not performed"
+    },
+    {
+      "id": "industry-cards",
+      "selector": "[data-component='industry-cards']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "page region or content pattern"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-playwright-checks-only; manual keyboard and screen reader testing not performed"
+    },
+    {
+      "id": "info-aside",
+      "selector": "[data-component='info-aside']",
+      "pages": [
+        "sales.html"
+      ],
+      "behavior": [
+        "complementary links"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-playwright-checks-only; manual keyboard and screen reader testing not performed"
+    },
+    {
+      "id": "job-list",
+      "selector": "[data-component='job-list']",
+      "pages": [
+        "jobs.html"
+      ],
+      "behavior": [
+        "page region or content pattern"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-playwright-checks-only; manual keyboard and screen reader testing not performed"
+    },
+    {
+      "id": "mega-menu",
+      "selector": "[data-component='mega-menu']",
+      "pages": [
+        "404.html",
+        "blog.html",
+        "company.html",
+        "customer-story.html",
+        "customers.html",
+        "demo.html",
+        "get-started.html",
+        "index.html",
+        "jobs.html",
+        "platform.html",
+        "pricing-plus.html",
+        "pricing.html",
+        "sales.html",
+        "security.html",
+        "solutions-pipelines.html",
+        "solutions.html"
+      ],
+      "behavior": [
+        "panel of grouped local links toggled by aria-expanded"
+      ],
+      "keyboard": [
+        "Tab",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-playwright-checks-only; manual keyboard and screen reader testing not performed"
+    },
+    {
+      "id": "mission-block",
+      "selector": "[data-component='mission-block']",
+      "pages": [
+        "company.html"
+      ],
+      "behavior": [
+        "page region or content pattern"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-playwright-checks-only; manual keyboard and screen reader testing not performed"
+    },
+    {
+      "id": "mobile-menu-toggle",
+      "selector": "[data-component='mobile-menu-toggle']",
+      "pages": [
+        "404.html",
+        "blog.html",
+        "company.html",
+        "customer-story.html",
+        "customers.html",
+        "demo.html",
+        "get-started.html",
+        "index.html",
+        "jobs.html",
+        "platform.html",
+        "pricing-plus.html",
+        "pricing.html",
+        "sales.html",
+        "security.html",
+        "solutions-pipelines.html",
+        "solutions.html"
+      ],
+      "behavior": [
+        "shows/hides navigation below 980px"
+      ],
+      "keyboard": [
+        "Enter",
+        "Space",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-playwright-checks-only; manual keyboard and screen reader testing not performed"
+    },
+    {
+      "id": "people-cards",
+      "selector": "[data-component='people-cards']",
+      "pages": [
+        "company.html"
+      ],
+      "behavior": [
+        "page region or content pattern"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-playwright-checks-only; manual keyboard and screen reader testing not performed"
+    },
+    {
+      "id": "person-card",
+      "selector": "[data-component='person-card']",
+      "pages": [
+        "company.html"
+      ],
+      "behavior": [
+        "invented leadership entry"
+      ],
+      "keyboard": [
+        "none required (static)"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-playwright-checks-only; manual keyboard and screen reader testing not performed"
+    },
+    {
+      "id": "practice-cards",
+      "selector": "[data-component='practice-cards']",
+      "pages": [
+        "security.html"
+      ],
+      "behavior": [
+        "page region or content pattern"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-playwright-checks-only; manual keyboard and screen reader testing not performed"
+    },
+    {
+      "id": "pricing-tier",
+      "selector": "[data-component='pricing-tier']",
+      "pages": [
+        "pricing.html"
+      ],
+      "behavior": [
+        "static plan card; no billing toggle"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-playwright-checks-only; manual keyboard and screen reader testing not performed"
+    },
+    {
+      "id": "pricing-tiers",
+      "selector": "[data-component='pricing-tiers']",
+      "pages": [
+        "pricing.html"
+      ],
+      "behavior": [
+        "page region or content pattern"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-playwright-checks-only; manual keyboard and screen reader testing not performed"
+    },
+    {
+      "id": "primary-nav",
+      "selector": "[data-component='primary-nav']",
+      "pages": [
+        "404.html",
+        "blog.html",
+        "company.html",
+        "customer-story.html",
+        "customers.html",
+        "demo.html",
+        "get-started.html",
+        "index.html",
+        "jobs.html",
+        "platform.html",
+        "pricing-plus.html",
+        "pricing.html",
+        "sales.html",
+        "security.html",
+        "solutions-pipelines.html",
+        "solutions.html"
+      ],
+      "behavior": [
+        "desktop mega-menu disclosure buttons",
+        "mobile disclosure via Menu button",
+        "aria-current on current page"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "Escape closes and returns focus"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-playwright-checks-only; manual keyboard and screen reader testing not performed"
+    },
+    {
+      "id": "process-steps",
+      "selector": "[data-component='process-steps']",
+      "pages": [
+        "get-started.html",
+        "solutions-pipelines.html"
+      ],
+      "behavior": [
+        "page region or content pattern"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-playwright-checks-only; manual keyboard and screen reader testing not performed"
+    },
+    {
+      "id": "quote-block",
+      "selector": "[data-component='quote-block']",
+      "pages": [
+        "customer-story.html"
+      ],
+      "behavior": [
+        "fictional testimonial"
+      ],
+      "keyboard": [
+        "none required (static)"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-playwright-checks-only; manual keyboard and screen reader testing not performed"
+    },
+    {
+      "id": "search-dialog",
+      "selector": "[data-component='search-dialog']",
+      "pages": [
+        "404.html",
+        "blog.html",
+        "company.html",
+        "customer-story.html",
+        "customers.html",
+        "demo.html",
+        "get-started.html",
+        "index.html",
+        "jobs.html",
+        "platform.html",
+        "pricing-plus.html",
+        "pricing.html",
+        "sales.html",
+        "security.html",
+        "solutions-pipelines.html",
+        "solutions.html"
+      ],
+      "behavior": [
+        "modal dialog searching an inline 15-page index with empty state"
+      ],
+      "keyboard": [
+        "Type",
+        "Escape closes",
+        "focus returns to trigger"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-playwright-checks-only; manual keyboard and screen reader testing not performed"
+    },
+    {
+      "id": "search-trigger",
+      "selector": "[data-component='search-trigger']",
+      "pages": [
+        "404.html",
+        "blog.html",
+        "company.html",
+        "customer-story.html",
+        "customers.html",
+        "demo.html",
+        "get-started.html",
+        "index.html",
+        "jobs.html",
+        "platform.html",
+        "pricing-plus.html",
+        "pricing.html",
+        "sales.html",
+        "security.html",
+        "solutions-pipelines.html",
+        "solutions.html"
+      ],
+      "behavior": [
+        "opens site search dialog"
+      ],
+      "keyboard": [
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-playwright-checks-only; manual keyboard and screen reader testing not performed"
+    },
+    {
+      "id": "site-footer",
+      "selector": "[data-component='site-footer']",
+      "pages": [
+        "404.html",
+        "blog.html",
+        "company.html",
+        "customer-story.html",
+        "customers.html",
+        "demo.html",
+        "get-started.html",
+        "index.html",
+        "jobs.html",
+        "platform.html",
+        "pricing-plus.html",
+        "pricing.html",
+        "sales.html",
+        "security.html",
+        "solutions-pipelines.html",
+        "solutions.html"
+      ],
+      "behavior": [
+        "grouped local links, fictional-site disclosures"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-playwright-checks-only; manual keyboard and screen reader testing not performed"
+    },
+    {
+      "id": "site-header",
+      "selector": "[data-component='site-header']",
+      "pages": [
+        "404.html",
+        "blog.html",
+        "company.html",
+        "customer-story.html",
+        "customers.html",
+        "demo.html",
+        "get-started.html",
+        "index.html",
+        "jobs.html",
+        "platform.html",
+        "pricing-plus.html",
+        "pricing.html",
+        "sales.html",
+        "security.html",
+        "solutions-pipelines.html",
+        "solutions.html"
+      ],
+      "behavior": [
+        "global header with brand, nav, utility links"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-playwright-checks-only; manual keyboard and screen reader testing not performed"
+    },
+    {
+      "id": "solution-cards",
+      "selector": "[data-component='solution-cards']",
+      "pages": [
+        "solutions.html"
+      ],
+      "behavior": [
+        "page region or content pattern"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-playwright-checks-only; manual keyboard and screen reader testing not performed"
+    },
+    {
+      "id": "stat-band",
+      "selector": "[data-component='stat-band']",
+      "pages": [
+        "customer-story.html"
+      ],
+      "behavior": [
+        "page region or content pattern"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-playwright-checks-only; manual keyboard and screen reader testing not performed"
+    },
+    {
+      "id": "stat-card",
+      "selector": "[data-component='stat-card']",
+      "pages": [
+        "customer-story.html"
+      ],
+      "behavior": [
+        "sample statistic"
+      ],
+      "keyboard": [
+        "none required (static)"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-playwright-checks-only; manual keyboard and screen reader testing not performed"
+    },
+    {
+      "id": "tabbed-stories",
+      "selector": "[data-component='tabbed-stories']",
+      "pages": [
+        "customers.html"
+      ],
+      "behavior": [
+        "page region or content pattern"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-playwright-checks-only; manual keyboard and screen reader testing not performed"
+    },
+    {
+      "id": "tabs",
+      "selector": "[data-component='tabs']",
+      "pages": [
+        "customers.html"
+      ],
+      "behavior": [
+        "role=tablist industry filter for stories"
+      ],
+      "keyboard": [
+        "Arrow keys",
+        "Home",
+        "End",
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-playwright-checks-only; manual keyboard and screen reader testing not performed"
+    },
+    {
+      "id": "utility-nav",
+      "selector": "[data-component='utility-nav']",
+      "pages": [
+        "404.html",
+        "blog.html",
+        "company.html",
+        "customer-story.html",
+        "customers.html",
+        "demo.html",
+        "get-started.html",
+        "index.html",
+        "jobs.html",
+        "platform.html",
+        "pricing-plus.html",
+        "pricing.html",
+        "sales.html",
+        "security.html",
+        "solutions-pipelines.html",
+        "solutions.html"
+      ],
+      "behavior": [
+        "talk to sales, request demo, free trial, search"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-playwright-checks-only; manual keyboard and screen reader testing not performed"
+    },
+    {
+      "id": "value-cards",
+      "selector": "[data-component='value-cards']",
+      "pages": [
+        "company.html"
+      ],
+      "behavior": [
+        "page region or content pattern"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-playwright-checks-only; manual keyboard and screen reader testing not performed"
+    }
+  ],
+  "data_sections_used": [
+    "assist-capabilities",
+    "blog-browser",
+    "by-industry",
+    "by-size",
+    "closing-cta",
+    "contact",
+    "culture",
+    "customer-proof",
+    "demo-form-area",
+    "demo-notice",
+    "demo-request-form",
+    "devops-capabilities",
+    "global-footer",
+    "global-header",
+    "global-navigation",
+    "header-utility",
+    "industries",
+    "job-browser",
+    "latest-posts",
+    "leadership",
+    "main-content",
+    "mission",
+    "one-workspace",
+    "outcomes",
+    "page-hero",
+    "pipeline-benefits",
+    "pipeline-cta",
+    "pipeline-steps",
+    "plan-comparison",
+    "plan-tiers",
+    "platform-cta",
+    "plus-benefits",
+    "plus-next",
+    "pricing-faq",
+    "sales-aside",
+    "sales-form-area",
+    "security-capabilities",
+    "security-faq",
+    "security-practices",
+    "site-search",
+    "start-faq",
+    "start-paths",
+    "story-body",
+    "story-browser",
+    "story-results",
+    "values"
+  ]
+}

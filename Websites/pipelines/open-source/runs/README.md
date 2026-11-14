@@ -1,0 +1,1 @@
+Run evidence is written here, one directory per run. Kept: task context, run.json, snapshots, transcript.json, the preserved initial artifact and QC JSON reports. Ignored by git: logs, screenshots and scratch files (see ../.gitignore).

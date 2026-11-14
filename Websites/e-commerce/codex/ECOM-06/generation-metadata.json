@@ -1,0 +1,122 @@
+{
+  "allocation_protocol": "WEB-REPLICA-ALLOCATION-V1.0",
+  "generation_protocol": "WEB-REPLICA-V1.0",
+  "category": "e-commerce",
+  "slot": 6,
+  "source_id": "ECOM-06",
+  "model_group": "codex",
+  "model_id": "gpt-6.1-sol",
+  "model_version": null,
+  "model_provider_or_runtime": "OpenAI collaboration worker (gpt-6.1-sol), orchestrated in Codex; not historical research CLI",
+  "generation_mode": "single-model local static generation in isolated snapshot",
+  "operator": "Samhith Varma",
+  "approved_source_url": "https://www.adafruit.com/",
+  "source_verified_at": "2026-11-12T00:52:39.545675+00:00",
+  "source_verification_method": "Live search + web text extraction of home; HTTP GET urllib for page scope; HTTP-only, no rendering/JS",
+  "source_approved_at": "2026-11-12",
+  "approval_reference": "metadata/change-log.md \u00a7 2026-11-12 \u2014 Codex Phase A approval (slots 04\u201306)",
+  "generation_started_at": "2026-11-13T21:03:42.429319+00:00",
+  "generation_completed_at": "2026-11-13T21:11:09.323960+00:00",
+  "rules_revision": {
+    "path": "Rules.md",
+    "sha256": "04b1c3e38b76f2aff3aef869d67370bb4532cd8f9ab5e22ac8276f26cbb859bf"
+  },
+  "category_prompt_revision": {
+    "path": "pipelines/codex/categories.json",
+    "sha256": "843ea7d8d1cc7d01385643f848408dea32997985422496d98e8f108bbc09a333"
+  },
+  "protocol_snapshots": [
+    {
+      "path": "Rules.md",
+      "sha256": "04b1c3e38b76f2aff3aef869d67370bb4532cd8f9ab5e22ac8276f26cbb859bf"
+    },
+    {
+      "path": "MODEL_ALLOCATION.md",
+      "sha256": "dba261a89763c22a6c41fc6b066593345aef7871121cef52ff7b73ff88cce3cd"
+    },
+    {
+      "path": "pipelines/codex/config.json",
+      "sha256": "b16751854f14ec50f9e8e8726e4ab0c064503f1ebdea6d71ba7e1faf85ed6d95"
+    },
+    {
+      "path": "pipelines/codex/categories.json",
+      "sha256": "843ea7d8d1cc7d01385643f848408dea32997985422496d98e8f108bbc09a333"
+    },
+    {
+      "path": "pipelines/codex/prompts/build.md",
+      "sha256": "37567f6a4198f7539b11964980cf814a7b8c0732f926dfe9aa6f86849dd2277c"
+    },
+    {
+      "path": "metadata/source-inventories/e-commerce.csv",
+      "sha256": "92c04a7ae1f63822938936f19d915135bfd90238df7a5d7c4845321fa22db520"
+    },
+    {
+      "path": "metadata/assignments.csv",
+      "sha256": "f1022dd15c076a2bbe4d8e86883174a4f2318bc6133ea120ff6dca2aa8101b74"
+    }
+  ],
+  "prompt_or_transcript_reference": "Websites/pipelines/codex/runs/2026-11-13T21-01-56-049Z-build-ECOM-06/task.md",
+  "prompt_sha256": "7073f57ad753ad37bad769ca57e4e3641634263cb50303e0e53bdb8174e9f5a4",
+  "human_edits": [],
+  "cross_model_edits": [],
+  "generation_budget": null,
+  "active_allocation": {
+    "active": [
+      "01",
+      "02",
+      "03",
+      "04",
+      "05",
+      "06"
+    ],
+    "deferred": [
+      "07",
+      "08",
+      "09",
+      "10"
+    ]
+  },
+  "isolation": "Snapshot copy; actual repo remains untouched by worker",
+  "validation_summary": {
+    "technology": "pass",
+    "completeness": "pass",
+    "structure": "pass",
+    "interaction": "not-tested",
+    "accessibility": "not-tested",
+    "traceability": "pass",
+    "scope": "pass"
+  },
+  "validation_evidence": "Websites/pipelines/codex/runs/2026-11-13T21-01-56-049Z-build-ECOM-06",
+  "limitations": [
+    "HTTP-only source research; no rendered fidelity confirmation",
+    "Chromium launch permission-blocked; browser/axe/keyboard/zoom/screen-reader/reflow checks not-tested",
+    "File-origin storage behavior browser-dependent; blocked storage visibly falls back to temporary page memory"
+  ],
+  "validation_details": {
+    "technology": "Source and file scan: HTML/CSS/vanilla JS, no remote runtime dependencies",
+    "completeness": "Seven mapped/addition HTML pages and all required artifacts/relative references verified",
+    "structure": "Static landmarks/H1/instrumentation and HTTP-observed architecture inspected; rendered fidelity unverified",
+    "interaction": "Browser interactions not-tested. Ten actual-JS tests passed under Node VM with explicit DOM/storage mocks; does not substitute for browser testing",
+    "accessibility": "Static semantics/labels/focus CSS inspected; browser keyboard, screen reader, zoom, contrast and reflow not-tested",
+    "traceability": "Docs, source page map, inventory and metadata checked against delivered files",
+    "scope": "Six source pages plus required 404; no extra screen/account/checkout/backend"
+  },
+  "qc": {
+    "status": "blocked",
+    "attempts": 1,
+    "method": "Unmodified shared qc.js invoked against absolute assigned site path",
+    "shared_script": "/Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/tools/qc/qc.js",
+    "expected_exit_code": 2,
+    "exit_code_evidence": "QC crashed log and shared qc.js catch explicitly calls process.exit(2). Shell wrapper then errored assigning zsh read-only variable status, so direct shell status capture unavailable.",
+    "wrapper_error": "zsh: read-only variable: status",
+    "raw_log": "qc-initial.log",
+    "native_json_report": null,
+    "reason": "Chromium launch permission failure; SIGTRAP/EPERM / bootstrap permission errors in raw log",
+    "browser": "not-tested",
+    "axe": "not-tested",
+    "browser_interactions": "not-tested",
+    "static": "See independent static-tests.json; shared scanner did not emit summary before launch crash",
+    "retries": [],
+    "no_reinstall_or_bypass": true
+  }
+}

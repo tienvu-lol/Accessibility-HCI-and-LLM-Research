@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Catering and Private Events | Cinder Ridge Smokehouse</title>
+<meta name="description" content="Catering packages for offices, weddings and holidays, with a demo inquiry form.">
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<div class="announce" data-section="announcement-bar" data-component="announcement-bar" role="region" aria-label="Announcement">
+  <div class="wrap"><p>Holiday party and catering dates are filling up. <a href="private-events.html">Send a demo inquiry for a December date.</a></p><button type="button" aria-label="Dismiss announcement"><span aria-hidden="true">&times;</span></button></div>
+</div>
+<header class="site-header" data-section="global-header" data-component="site-header">
+  <div class="wrap bar">
+    <a class="brand" href="index.html"><img src="assets/logo.svg" alt="" width="44" height="44"><span>Cinder Ridge Smokehouse</span></a>
+    <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="nav-wrap">Menu</button>
+    <div class="nav-wrap" id="nav-wrap">
+      <nav aria-label="Primary" class="primary-nav" data-section="global-navigation" data-component="primary-nav"><ul><li><a href="visit-us.html">Visit Us</a></li><li><a href="menu.html">Menu</a></li><li><a href="sauces-rubs.html">Sauces & Rubs</a></li><li><a href="about.html">About</a></li><li><a href="gift-cards.html">Gift Cards</a></li><li><a href="private-events.html" aria-current="page">Private Events</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
+      <nav aria-label="Cart" class="utility-nav" data-section="utility-navigation" data-component="utility-nav"><ul><li><a href="cart.html">Cart (<span data-cart-count>0</span><span class="visually-hidden"> items</span>)</a></li></ul></nav>
+    </div>
+  </div>
+  <div class="status-strip" data-section="open-status" data-component="open-status-indicator"><div class="wrap">
+    <span class="chip" data-status-chip data-state="closed"><span class="dot" aria-hidden="true"></span><span class="chip-text">Checking hours</span></span>
+    <small data-status-sub></small>
+  </div></div>
+</header>
+<div id="live-region" class="visually-hidden" role="status" aria-live="polite"></div>
+<main id="main-content" data-section="main-content">
+<div class="page-hero" data-section="page-hero" data-component="page-hero"><div class="wrap"><nav class="crumbs" aria-label="Breadcrumb" data-section="breadcrumbs" data-component="breadcrumb"><ol><li><a href="index.html">Home</a></li><li aria-current="page">Private Events</li></ol></nav><h1>Catering and Private Events</h1><p>Feed an office, a wedding or a whole neighborhood.</p></div></div>
+
+<section class="band" aria-labelledby="cat-title" data-section="catering-packages" data-component="card-grid"><div class="wrap">
+  <h2 id="cat-title">Catering packages</h2>
+  <div class="grid cols-3">
+    <article class="card"><img src="assets/brisket.svg" alt="" width="400" height="300"><h3>Drop-off lunch</h3><p>Sliced meats, sides and sauce for 10 to 50. $24 per guest (demo price).</p></article>
+    <article class="card"><img src="assets/ribs.svg" alt="" width="400" height="300"><h3>Full-service</h3><p>Our crew serves from chafing dishes, and cleans up. $38 per guest (demo price).</p></article>
+    <article class="card"><img src="assets/hero-smoker.svg" alt="" width="400" height="300"><h3>Pit on site</h3><p>We bring the smoker to your event for 100 or more guests. Quote on request.</p></article>
+  </div>
+  <p>Looking for a venue? See our <a href="backyard-party.html">backyard party space</a>. Hosting at home? Ask about smoker drop-off.</p>
+</div></section>
+<section class="band alt" aria-labelledby="inq-title" data-section="inquiry" data-component="inquiry-section"><div class="wrap">
+  <h2 id="inq-title">Send an inquiry</h2>
+  <form data-validate data-hook="inquiry" data-section="catering-inquiry" data-component="inquiry-form" aria-label="Catering and event inquiry">
+  <div class="demo-note">Simulation only. This form does not send anything.</div><p class="hint">Fields marked <span class="req" aria-hidden="true">*</span><span class="visually-hidden">with an asterisk</span> are required.</p>
+  <div class="field"><label for="catering-name">Your name <span class="req" aria-hidden="true">*</span></label><input id="catering-name" name="catering-name" type="text" autocomplete="name" required></div>
+  <div class="field"><label for="catering-email">Email <span class="req" aria-hidden="true">*</span></label><input id="catering-email" name="catering-email" type="email" autocomplete="email" required></div>
+  <div class="field"><label for="catering-phone">Phone <span class="hint">(optional)</span></label><input id="catering-phone" name="catering-phone" type="tel" autocomplete="tel"></div>
+  <div class="field"><label for="catering-date">Event date <span class="req" aria-hidden="true">*</span></label><input id="catering-date" name="catering-date" type="date" data-min-today required></div>
+  <div class="field"><label for="catering-guests">Guest count <span class="req" aria-hidden="true">*</span></label><p class="hint" id="catering-guests-hint">Between 10 and 500 guests.</p><input id="catering-guests" name="catering-guests" type="number" aria-describedby="catering-guests-hint" data-desc="catering-guests-hint" min="10" max="500" required></div>
+  <div class="field"><label for="catering-type">Event type <span class="req" aria-hidden="true">*</span></label><select id="catering-type" name="catering-type" required><option value="">Choose an event type</option><option value="office">Office or corporate lunch</option><option value="wedding">Wedding or rehearsal dinner</option><option value="holiday">Holiday party</option><option value="family">Family gathering</option></select></div>
+  <div class="field"><label for="catering-notes">Anything else we should know <span class="hint">(optional)</span></label><textarea id="catering-notes" name="catering-notes" rows="4" ></textarea></div>
+  <button type="submit" class="btn">Send demo inquiry</button>
+  <div class="success" data-success hidden role="status"><h3>Demo inquiry received</h3><p data-success-detail></p></div>
+</form>
+</div></section>
+</main>
+<footer class="site-footer" data-section="global-footer" data-component="site-footer">
+  <div class="wrap">
+    <div class="grid cols-3">
+      <div><h2>Cinder Ridge Smokehouse</h2><address style="font-style:normal">1480 Mesquite Row<br>Juniper Falls, TX 78999<br><a href="tel:+15550100142">(555) 010-0142</a><br><a href="mailto:hello@cinderridge.example">hello@cinderridge.example</a></address></div>
+      <div><h2>Lunch hours</h2><p>Tuesday to Sunday, 11 am until sold out (about 3 pm). Closed Monday.</p></div>
+      <nav aria-label="Footer" class="footer-nav" data-section="footer-navigation" data-component="footer-nav"><h2>Explore</h2><ul><li><a href="visit-us.html">Visit Us</a></li><li><a href="menu.html">Menu</a></li><li><a href="sauces-rubs.html">Sauces & Rubs</a></li><li><a href="about.html">About</a></li><li><a href="gift-cards.html">Gift Cards</a></li><li><a href="private-events.html">Private Events</a></li><li><a href="contact.html">Contact</a></li><li><a href="cart.html">Cart</a></li></ul></nav>
+    </div>
+    <p class="legal">Cinder Ridge Smokehouse is a fictional restaurant created for an accessibility and usability research dataset. Names, address, prices, hours and events are invented. Ordering, gift cards and forms are local demonstrations only.</p>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

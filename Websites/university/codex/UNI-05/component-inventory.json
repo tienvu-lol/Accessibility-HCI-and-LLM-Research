@@ -1,0 +1,1335 @@
+{
+  "protocol_version": "1.0",
+  "replica_id": "UNI-05",
+  "category": "university",
+  "source_url": "https://www.dickinson.edu/",
+  "components": [
+    {
+      "id": "aid-guidance",
+      "selector": "[data-component=\"aid-guidance\"]",
+      "pages": [
+        "tuition-aid.html"
+      ],
+      "behavior": [
+        "semantic presentation and local navigation as applicable"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space for buttons and summaries",
+        "Escape for mobile navigation"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser not-tested",
+      "instances": [
+        {
+          "page": "tuition-aid.html",
+          "section": "cost-guidance",
+          "instance": "tuition-aid-aid-guidance-1",
+          "selector": "[data-component=\"aid-guidance\"][data-instance=\"tuition-aid-aid-guidance-1\"]"
+        }
+      ]
+    },
+    {
+      "id": "breadcrumbs",
+      "selector": "[data-component=\"breadcrumbs\"]",
+      "pages": [
+        "404.html",
+        "admissions.html",
+        "apply.html",
+        "biology.html",
+        "news.html",
+        "programs.html",
+        "tuition-aid.html",
+        "visit.html"
+      ],
+      "behavior": [
+        "semantic presentation and local navigation as applicable"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space for buttons and summaries",
+        "Escape for mobile navigation"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser not-tested",
+      "instances": [
+        {
+          "page": "404.html",
+          "section": "breadcrumb-navigation",
+          "instance": "404-breadcrumbs-1",
+          "selector": "[data-component=\"breadcrumbs\"][data-instance=\"404-breadcrumbs-1\"]"
+        },
+        {
+          "page": "admissions.html",
+          "section": "breadcrumb-navigation",
+          "instance": "admissions-breadcrumbs-1",
+          "selector": "[data-component=\"breadcrumbs\"][data-instance=\"admissions-breadcrumbs-1\"]"
+        },
+        {
+          "page": "apply.html",
+          "section": "breadcrumb-navigation",
+          "instance": "apply-breadcrumbs-1",
+          "selector": "[data-component=\"breadcrumbs\"][data-instance=\"apply-breadcrumbs-1\"]"
+        },
+        {
+          "page": "biology.html",
+          "section": "breadcrumb-navigation",
+          "instance": "biology-breadcrumbs-1",
+          "selector": "[data-component=\"breadcrumbs\"][data-instance=\"biology-breadcrumbs-1\"]"
+        },
+        {
+          "page": "news.html",
+          "section": "breadcrumb-navigation",
+          "instance": "news-breadcrumbs-1",
+          "selector": "[data-component=\"breadcrumbs\"][data-instance=\"news-breadcrumbs-1\"]"
+        },
+        {
+          "page": "programs.html",
+          "section": "breadcrumb-navigation",
+          "instance": "programs-breadcrumbs-1",
+          "selector": "[data-component=\"breadcrumbs\"][data-instance=\"programs-breadcrumbs-1\"]"
+        },
+        {
+          "page": "tuition-aid.html",
+          "section": "breadcrumb-navigation",
+          "instance": "tuition-aid-breadcrumbs-1",
+          "selector": "[data-component=\"breadcrumbs\"][data-instance=\"tuition-aid-breadcrumbs-1\"]"
+        },
+        {
+          "page": "visit.html",
+          "section": "breadcrumb-navigation",
+          "instance": "visit-breadcrumbs-1",
+          "selector": "[data-component=\"breadcrumbs\"][data-instance=\"visit-breadcrumbs-1\"]"
+        }
+      ]
+    },
+    {
+      "id": "card-grid",
+      "selector": "[data-component=\"card-grid\"]",
+      "pages": [
+        "admissions.html",
+        "index.html"
+      ],
+      "behavior": [
+        "semantic presentation and local navigation as applicable"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space for buttons and summaries",
+        "Escape for mobile navigation"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser not-tested",
+      "instances": [
+        {
+          "page": "admissions.html",
+          "section": "admissions-routes",
+          "instance": "admissions-card-grid-1",
+          "selector": "[data-component=\"card-grid\"][data-instance=\"admissions-card-grid-1\"]"
+        },
+        {
+          "page": "index.html",
+          "section": "featured-news",
+          "instance": "index-card-grid-1",
+          "selector": "[data-component=\"card-grid\"][data-instance=\"index-card-grid-1\"]"
+        }
+      ]
+    },
+    {
+      "id": "content-section",
+      "behavior": [
+        "semantic content region; local navigation where present"
+      ],
+      "keyboard": [
+        "Tab to descendant controls; Enter to follow links"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser not-tested",
+      "selector": "[data-component=\"content-section\"]",
+      "pages": [
+        "404.html",
+        "admissions.html",
+        "apply.html",
+        "biology.html",
+        "index.html",
+        "news.html",
+        "programs.html",
+        "tuition-aid.html",
+        "visit.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "section": "not-found",
+          "instance": "404-content-section-1",
+          "selector": "[data-component=\"content-section\"][data-instance=\"404-content-section-1\"]"
+        },
+        {
+          "page": "admissions.html",
+          "section": "admissions-routes",
+          "instance": "admissions-content-section-1",
+          "selector": "[data-component=\"content-section\"][data-instance=\"admissions-content-section-1\"]"
+        },
+        {
+          "page": "admissions.html",
+          "section": "why-redbrook",
+          "instance": "admissions-content-section-2",
+          "selector": "[data-component=\"content-section\"][data-instance=\"admissions-content-section-2\"]"
+        },
+        {
+          "page": "admissions.html",
+          "section": "information-inquiry",
+          "instance": "admissions-content-section-3",
+          "selector": "[data-component=\"content-section\"][data-instance=\"admissions-content-section-3\"]"
+        },
+        {
+          "page": "apply.html",
+          "section": "application-overview",
+          "instance": "apply-content-section-1",
+          "selector": "[data-component=\"content-section\"][data-instance=\"apply-content-section-1\"]"
+        },
+        {
+          "page": "apply.html",
+          "section": "application-timing",
+          "instance": "apply-content-section-2",
+          "selector": "[data-component=\"content-section\"][data-instance=\"apply-content-section-2\"]"
+        },
+        {
+          "page": "biology.html",
+          "section": "department-features",
+          "instance": "biology-content-section-1",
+          "selector": "[data-component=\"content-section\"][data-instance=\"biology-content-section-1\"]"
+        },
+        {
+          "page": "biology.html",
+          "section": "student-outcomes",
+          "instance": "biology-content-section-2",
+          "selector": "[data-component=\"content-section\"][data-instance=\"biology-content-section-2\"]"
+        },
+        {
+          "page": "biology.html",
+          "section": "student-perspectives",
+          "instance": "biology-content-section-3",
+          "selector": "[data-component=\"content-section\"][data-instance=\"biology-content-section-3\"]"
+        },
+        {
+          "page": "index.html",
+          "section": "institutional-introduction",
+          "instance": "index-content-section-1",
+          "selector": "[data-component=\"content-section\"][data-instance=\"index-content-section-1\"]"
+        },
+        {
+          "page": "index.html",
+          "section": "mentoring-feature",
+          "instance": "index-content-section-2",
+          "selector": "[data-component=\"content-section\"][data-instance=\"index-content-section-2\"]"
+        },
+        {
+          "page": "index.html",
+          "section": "place-feature",
+          "instance": "index-content-section-3",
+          "selector": "[data-component=\"content-section\"][data-instance=\"index-content-section-3\"]"
+        },
+        {
+          "page": "index.html",
+          "section": "featured-news",
+          "instance": "index-content-section-4",
+          "selector": "[data-component=\"content-section\"][data-instance=\"index-content-section-4\"]"
+        },
+        {
+          "page": "index.html",
+          "section": "inclusion-feature",
+          "instance": "index-content-section-5",
+          "selector": "[data-component=\"content-section\"][data-instance=\"index-content-section-5\"]"
+        },
+        {
+          "page": "news.html",
+          "section": "news-search",
+          "instance": "news-content-section-1",
+          "selector": "[data-component=\"content-section\"][data-instance=\"news-content-section-1\"]"
+        },
+        {
+          "page": "programs.html",
+          "section": "program-search",
+          "instance": "programs-content-section-1",
+          "selector": "[data-component=\"content-section\"][data-instance=\"programs-content-section-1\"]"
+        },
+        {
+          "page": "tuition-aid.html",
+          "section": "aid-overview",
+          "instance": "tuition-aid-content-section-1",
+          "selector": "[data-component=\"content-section\"][data-instance=\"tuition-aid-content-section-1\"]"
+        },
+        {
+          "page": "tuition-aid.html",
+          "section": "financial-assistance",
+          "instance": "tuition-aid-content-section-2",
+          "selector": "[data-component=\"content-section\"][data-instance=\"tuition-aid-content-section-2\"]"
+        },
+        {
+          "page": "visit.html",
+          "section": "visit-opportunities",
+          "instance": "visit-content-section-1",
+          "selector": "[data-component=\"content-section\"][data-instance=\"visit-content-section-1\"]"
+        },
+        {
+          "page": "visit.html",
+          "section": "visit-preparation",
+          "instance": "visit-content-section-2",
+          "selector": "[data-component=\"content-section\"][data-instance=\"visit-content-section-2\"]"
+        }
+      ]
+    },
+    {
+      "id": "cost-table",
+      "selector": "[data-component=\"cost-table\"]",
+      "pages": [
+        "tuition-aid.html"
+      ],
+      "behavior": [
+        "semantic presentation and local navigation as applicable"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space for buttons and summaries",
+        "Escape for mobile navigation"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser not-tested",
+      "instances": [
+        {
+          "page": "tuition-aid.html",
+          "section": "cost-overview",
+          "instance": "tuition-aid-cost-table-1",
+          "selector": "[data-component=\"cost-table\"][data-instance=\"tuition-aid-cost-table-1\"]"
+        }
+      ]
+    },
+    {
+      "id": "department-sidebar",
+      "selector": "[data-component=\"department-sidebar\"]",
+      "pages": [
+        "biology.html"
+      ],
+      "behavior": [
+        "semantic presentation and local navigation as applicable"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space for buttons and summaries",
+        "Escape for mobile navigation"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser not-tested",
+      "instances": [
+        {
+          "page": "biology.html",
+          "section": "department-contact",
+          "instance": "biology-department-sidebar-1",
+          "selector": "[data-component=\"department-sidebar\"][data-instance=\"biology-department-sidebar-1\"]"
+        }
+      ]
+    },
+    {
+      "id": "feature-card",
+      "selector": "[data-component=\"feature-card\"]",
+      "pages": [
+        "admissions.html",
+        "index.html"
+      ],
+      "behavior": [
+        "semantic presentation and local navigation as applicable"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space for buttons and summaries",
+        "Escape for mobile navigation"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser not-tested",
+      "instances": [
+        {
+          "page": "admissions.html",
+          "section": "admissions-routes",
+          "instance": "admissions-feature-card-1",
+          "selector": "[data-component=\"feature-card\"][data-instance=\"admissions-feature-card-1\"]"
+        },
+        {
+          "page": "admissions.html",
+          "section": "admissions-routes",
+          "instance": "admissions-feature-card-2",
+          "selector": "[data-component=\"feature-card\"][data-instance=\"admissions-feature-card-2\"]"
+        },
+        {
+          "page": "admissions.html",
+          "section": "admissions-routes",
+          "instance": "admissions-feature-card-3",
+          "selector": "[data-component=\"feature-card\"][data-instance=\"admissions-feature-card-3\"]"
+        },
+        {
+          "page": "index.html",
+          "section": "featured-news",
+          "instance": "index-feature-card-1",
+          "selector": "[data-component=\"feature-card\"][data-instance=\"index-feature-card-1\"]"
+        },
+        {
+          "page": "index.html",
+          "section": "featured-news",
+          "instance": "index-feature-card-2",
+          "selector": "[data-component=\"feature-card\"][data-instance=\"index-feature-card-2\"]"
+        },
+        {
+          "page": "index.html",
+          "section": "featured-news",
+          "instance": "index-feature-card-3",
+          "selector": "[data-component=\"feature-card\"][data-instance=\"index-feature-card-3\"]"
+        }
+      ]
+    },
+    {
+      "id": "inquiry-form",
+      "selector": "[data-component=\"inquiry-form\"]",
+      "pages": [
+        "admissions.html"
+      ],
+      "behavior": [
+        "local validation and explicit simulated success"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space for buttons and summaries",
+        "Escape for mobile navigation"
+      ],
+      "status": "implemented",
+      "validation": "logic-tested with DOM stubs; browser not-tested",
+      "instances": [
+        {
+          "page": "admissions.html",
+          "section": "inquiry-form",
+          "instance": "admissions-inquiry-form-1",
+          "selector": "[data-component=\"inquiry-form\"][data-instance=\"admissions-inquiry-form-1\"]"
+        }
+      ]
+    },
+    {
+      "id": "main-content",
+      "behavior": [
+        "semantic content region; local navigation where present"
+      ],
+      "keyboard": [
+        "Tab to descendant controls; Enter to follow links"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser not-tested",
+      "selector": "[data-component=\"main-content\"]",
+      "pages": [
+        "404.html",
+        "admissions.html",
+        "apply.html",
+        "biology.html",
+        "index.html",
+        "news.html",
+        "programs.html",
+        "tuition-aid.html",
+        "visit.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "section": "main-content",
+          "instance": "404-main-content-1",
+          "selector": "[data-component=\"main-content\"][data-instance=\"404-main-content-1\"]"
+        },
+        {
+          "page": "admissions.html",
+          "section": "main-content",
+          "instance": "admissions-main-content-1",
+          "selector": "[data-component=\"main-content\"][data-instance=\"admissions-main-content-1\"]"
+        },
+        {
+          "page": "apply.html",
+          "section": "main-content",
+          "instance": "apply-main-content-1",
+          "selector": "[data-component=\"main-content\"][data-instance=\"apply-main-content-1\"]"
+        },
+        {
+          "page": "biology.html",
+          "section": "main-content",
+          "instance": "biology-main-content-1",
+          "selector": "[data-component=\"main-content\"][data-instance=\"biology-main-content-1\"]"
+        },
+        {
+          "page": "index.html",
+          "section": "main-content",
+          "instance": "index-main-content-1",
+          "selector": "[data-component=\"main-content\"][data-instance=\"index-main-content-1\"]"
+        },
+        {
+          "page": "news.html",
+          "section": "main-content",
+          "instance": "news-main-content-1",
+          "selector": "[data-component=\"main-content\"][data-instance=\"news-main-content-1\"]"
+        },
+        {
+          "page": "programs.html",
+          "section": "main-content",
+          "instance": "programs-main-content-1",
+          "selector": "[data-component=\"main-content\"][data-instance=\"programs-main-content-1\"]"
+        },
+        {
+          "page": "tuition-aid.html",
+          "section": "main-content",
+          "instance": "tuition-aid-main-content-1",
+          "selector": "[data-component=\"main-content\"][data-instance=\"tuition-aid-main-content-1\"]"
+        },
+        {
+          "page": "visit.html",
+          "section": "main-content",
+          "instance": "visit-main-content-1",
+          "selector": "[data-component=\"main-content\"][data-instance=\"visit-main-content-1\"]"
+        }
+      ]
+    },
+    {
+      "id": "news-item",
+      "selector": "[data-component=\"news-item\"]",
+      "pages": [
+        "news.html"
+      ],
+      "behavior": [
+        "semantic presentation and local navigation as applicable"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space for buttons and summaries",
+        "Escape for mobile navigation"
+      ],
+      "status": "implemented",
+      "validation": "logic-tested with DOM stubs; browser not-tested",
+      "instances": [
+        {
+          "page": "news.html",
+          "section": "news-results",
+          "instance": "news-news-item-1",
+          "selector": "[data-component=\"news-item\"][data-instance=\"news-news-item-1\"]"
+        },
+        {
+          "page": "news.html",
+          "section": "news-results",
+          "instance": "news-news-item-2",
+          "selector": "[data-component=\"news-item\"][data-instance=\"news-news-item-2\"]"
+        },
+        {
+          "page": "news.html",
+          "section": "news-results",
+          "instance": "news-news-item-3",
+          "selector": "[data-component=\"news-item\"][data-instance=\"news-news-item-3\"]"
+        },
+        {
+          "page": "news.html",
+          "section": "news-results",
+          "instance": "news-news-item-4",
+          "selector": "[data-component=\"news-item\"][data-instance=\"news-news-item-4\"]"
+        }
+      ]
+    },
+    {
+      "id": "page-hero",
+      "selector": "[data-component=\"page-hero\"]",
+      "pages": [
+        "404.html",
+        "admissions.html",
+        "apply.html",
+        "biology.html",
+        "index.html",
+        "news.html",
+        "programs.html",
+        "tuition-aid.html",
+        "visit.html"
+      ],
+      "behavior": [
+        "semantic presentation and local navigation as applicable"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space for buttons and summaries",
+        "Escape for mobile navigation"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser not-tested",
+      "instances": [
+        {
+          "page": "404.html",
+          "section": "page-hero",
+          "instance": "404-page-hero-1",
+          "selector": "[data-component=\"page-hero\"][data-instance=\"404-page-hero-1\"]"
+        },
+        {
+          "page": "admissions.html",
+          "section": "page-hero",
+          "instance": "admissions-page-hero-1",
+          "selector": "[data-component=\"page-hero\"][data-instance=\"admissions-page-hero-1\"]"
+        },
+        {
+          "page": "apply.html",
+          "section": "page-hero",
+          "instance": "apply-page-hero-1",
+          "selector": "[data-component=\"page-hero\"][data-instance=\"apply-page-hero-1\"]"
+        },
+        {
+          "page": "biology.html",
+          "section": "page-hero",
+          "instance": "biology-page-hero-1",
+          "selector": "[data-component=\"page-hero\"][data-instance=\"biology-page-hero-1\"]"
+        },
+        {
+          "page": "index.html",
+          "section": "page-hero",
+          "instance": "index-page-hero-1",
+          "selector": "[data-component=\"page-hero\"][data-instance=\"index-page-hero-1\"]"
+        },
+        {
+          "page": "news.html",
+          "section": "page-hero",
+          "instance": "news-page-hero-1",
+          "selector": "[data-component=\"page-hero\"][data-instance=\"news-page-hero-1\"]"
+        },
+        {
+          "page": "programs.html",
+          "section": "page-hero",
+          "instance": "programs-page-hero-1",
+          "selector": "[data-component=\"page-hero\"][data-instance=\"programs-page-hero-1\"]"
+        },
+        {
+          "page": "tuition-aid.html",
+          "section": "page-hero",
+          "instance": "tuition-aid-page-hero-1",
+          "selector": "[data-component=\"page-hero\"][data-instance=\"tuition-aid-page-hero-1\"]"
+        },
+        {
+          "page": "visit.html",
+          "section": "page-hero",
+          "instance": "visit-page-hero-1",
+          "selector": "[data-component=\"page-hero\"][data-instance=\"visit-page-hero-1\"]"
+        }
+      ]
+    },
+    {
+      "id": "policy-disclosure",
+      "selector": "[data-component=\"policy-disclosure\"]",
+      "pages": [
+        "apply.html"
+      ],
+      "behavior": [
+        "native disclosure"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space for buttons and summaries",
+        "Escape for mobile navigation"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser not-tested",
+      "instances": [
+        {
+          "page": "apply.html",
+          "section": "application-policies",
+          "instance": "apply-policy-disclosure-1",
+          "selector": "[data-component=\"policy-disclosure\"][data-instance=\"apply-policy-disclosure-1\"]"
+        },
+        {
+          "page": "apply.html",
+          "section": "application-policies",
+          "instance": "apply-policy-disclosure-2",
+          "selector": "[data-component=\"policy-disclosure\"][data-instance=\"apply-policy-disclosure-2\"]"
+        }
+      ]
+    },
+    {
+      "id": "primary-nav",
+      "selector": "[data-component=\"primary-nav\"]",
+      "pages": [
+        "404.html",
+        "admissions.html",
+        "apply.html",
+        "biology.html",
+        "index.html",
+        "news.html",
+        "programs.html",
+        "tuition-aid.html",
+        "visit.html"
+      ],
+      "behavior": [
+        "responsive disclosure and Escape dismissal"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space for buttons and summaries",
+        "Escape for mobile navigation"
+      ],
+      "status": "implemented",
+      "validation": "logic-tested with DOM stubs; browser not-tested",
+      "instances": [
+        {
+          "page": "404.html",
+          "section": "global-navigation",
+          "instance": "404-primary-nav-1",
+          "selector": "[data-component=\"primary-nav\"][data-instance=\"404-primary-nav-1\"]"
+        },
+        {
+          "page": "admissions.html",
+          "section": "global-navigation",
+          "instance": "admissions-primary-nav-1",
+          "selector": "[data-component=\"primary-nav\"][data-instance=\"admissions-primary-nav-1\"]"
+        },
+        {
+          "page": "apply.html",
+          "section": "global-navigation",
+          "instance": "apply-primary-nav-1",
+          "selector": "[data-component=\"primary-nav\"][data-instance=\"apply-primary-nav-1\"]"
+        },
+        {
+          "page": "biology.html",
+          "section": "global-navigation",
+          "instance": "biology-primary-nav-1",
+          "selector": "[data-component=\"primary-nav\"][data-instance=\"biology-primary-nav-1\"]"
+        },
+        {
+          "page": "index.html",
+          "section": "global-navigation",
+          "instance": "index-primary-nav-1",
+          "selector": "[data-component=\"primary-nav\"][data-instance=\"index-primary-nav-1\"]"
+        },
+        {
+          "page": "news.html",
+          "section": "global-navigation",
+          "instance": "news-primary-nav-1",
+          "selector": "[data-component=\"primary-nav\"][data-instance=\"news-primary-nav-1\"]"
+        },
+        {
+          "page": "programs.html",
+          "section": "global-navigation",
+          "instance": "programs-primary-nav-1",
+          "selector": "[data-component=\"primary-nav\"][data-instance=\"programs-primary-nav-1\"]"
+        },
+        {
+          "page": "tuition-aid.html",
+          "section": "global-navigation",
+          "instance": "tuition-aid-primary-nav-1",
+          "selector": "[data-component=\"primary-nav\"][data-instance=\"tuition-aid-primary-nav-1\"]"
+        },
+        {
+          "page": "visit.html",
+          "section": "global-navigation",
+          "instance": "visit-primary-nav-1",
+          "selector": "[data-component=\"primary-nav\"][data-instance=\"visit-primary-nav-1\"]"
+        }
+      ]
+    },
+    {
+      "id": "program-card",
+      "selector": "[data-component=\"program-card\"]",
+      "pages": [
+        "programs.html"
+      ],
+      "behavior": [
+        "semantic presentation and local navigation as applicable"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space for buttons and summaries",
+        "Escape for mobile navigation"
+      ],
+      "status": "implemented",
+      "validation": "logic-tested with DOM stubs; browser not-tested",
+      "instances": [
+        {
+          "page": "programs.html",
+          "section": "program-results",
+          "instance": "programs-program-card-1",
+          "selector": "[data-component=\"program-card\"][data-instance=\"programs-program-card-1\"]"
+        },
+        {
+          "page": "programs.html",
+          "section": "program-results",
+          "instance": "programs-program-card-2",
+          "selector": "[data-component=\"program-card\"][data-instance=\"programs-program-card-2\"]"
+        },
+        {
+          "page": "programs.html",
+          "section": "program-results",
+          "instance": "programs-program-card-3",
+          "selector": "[data-component=\"program-card\"][data-instance=\"programs-program-card-3\"]"
+        },
+        {
+          "page": "programs.html",
+          "section": "program-results",
+          "instance": "programs-program-card-4",
+          "selector": "[data-component=\"program-card\"][data-instance=\"programs-program-card-4\"]"
+        },
+        {
+          "page": "programs.html",
+          "section": "program-results",
+          "instance": "programs-program-card-5",
+          "selector": "[data-component=\"program-card\"][data-instance=\"programs-program-card-5\"]"
+        },
+        {
+          "page": "programs.html",
+          "section": "program-results",
+          "instance": "programs-program-card-6",
+          "selector": "[data-component=\"program-card\"][data-instance=\"programs-program-card-6\"]"
+        },
+        {
+          "page": "programs.html",
+          "section": "program-results",
+          "instance": "programs-program-card-7",
+          "selector": "[data-component=\"program-card\"][data-instance=\"programs-program-card-7\"]"
+        },
+        {
+          "page": "programs.html",
+          "section": "program-results",
+          "instance": "programs-program-card-8",
+          "selector": "[data-component=\"program-card\"][data-instance=\"programs-program-card-8\"]"
+        }
+      ]
+    },
+    {
+      "id": "secondary-nav",
+      "behavior": [
+        "semantic content region; local navigation where present"
+      ],
+      "keyboard": [
+        "Tab to descendant controls; Enter to follow links"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser not-tested",
+      "selector": "[data-component=\"secondary-nav\"]",
+      "pages": [
+        "404.html",
+        "admissions.html",
+        "apply.html",
+        "biology.html",
+        "index.html",
+        "news.html",
+        "programs.html",
+        "tuition-aid.html",
+        "visit.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "section": "footer-explore",
+          "instance": "404-secondary-nav-1",
+          "selector": "[data-component=\"secondary-nav\"][data-instance=\"404-secondary-nav-1\"]"
+        },
+        {
+          "page": "404.html",
+          "section": "footer-get-started",
+          "instance": "404-secondary-nav-2",
+          "selector": "[data-component=\"secondary-nav\"][data-instance=\"404-secondary-nav-2\"]"
+        },
+        {
+          "page": "admissions.html",
+          "section": "footer-explore",
+          "instance": "admissions-secondary-nav-1",
+          "selector": "[data-component=\"secondary-nav\"][data-instance=\"admissions-secondary-nav-1\"]"
+        },
+        {
+          "page": "admissions.html",
+          "section": "footer-get-started",
+          "instance": "admissions-secondary-nav-2",
+          "selector": "[data-component=\"secondary-nav\"][data-instance=\"admissions-secondary-nav-2\"]"
+        },
+        {
+          "page": "apply.html",
+          "section": "footer-explore",
+          "instance": "apply-secondary-nav-1",
+          "selector": "[data-component=\"secondary-nav\"][data-instance=\"apply-secondary-nav-1\"]"
+        },
+        {
+          "page": "apply.html",
+          "section": "footer-get-started",
+          "instance": "apply-secondary-nav-2",
+          "selector": "[data-component=\"secondary-nav\"][data-instance=\"apply-secondary-nav-2\"]"
+        },
+        {
+          "page": "biology.html",
+          "section": "footer-explore",
+          "instance": "biology-secondary-nav-1",
+          "selector": "[data-component=\"secondary-nav\"][data-instance=\"biology-secondary-nav-1\"]"
+        },
+        {
+          "page": "biology.html",
+          "section": "footer-get-started",
+          "instance": "biology-secondary-nav-2",
+          "selector": "[data-component=\"secondary-nav\"][data-instance=\"biology-secondary-nav-2\"]"
+        },
+        {
+          "page": "index.html",
+          "section": "footer-explore",
+          "instance": "index-secondary-nav-1",
+          "selector": "[data-component=\"secondary-nav\"][data-instance=\"index-secondary-nav-1\"]"
+        },
+        {
+          "page": "index.html",
+          "section": "footer-get-started",
+          "instance": "index-secondary-nav-2",
+          "selector": "[data-component=\"secondary-nav\"][data-instance=\"index-secondary-nav-2\"]"
+        },
+        {
+          "page": "news.html",
+          "section": "footer-explore",
+          "instance": "news-secondary-nav-1",
+          "selector": "[data-component=\"secondary-nav\"][data-instance=\"news-secondary-nav-1\"]"
+        },
+        {
+          "page": "news.html",
+          "section": "footer-get-started",
+          "instance": "news-secondary-nav-2",
+          "selector": "[data-component=\"secondary-nav\"][data-instance=\"news-secondary-nav-2\"]"
+        },
+        {
+          "page": "programs.html",
+          "section": "footer-explore",
+          "instance": "programs-secondary-nav-1",
+          "selector": "[data-component=\"secondary-nav\"][data-instance=\"programs-secondary-nav-1\"]"
+        },
+        {
+          "page": "programs.html",
+          "section": "footer-get-started",
+          "instance": "programs-secondary-nav-2",
+          "selector": "[data-component=\"secondary-nav\"][data-instance=\"programs-secondary-nav-2\"]"
+        },
+        {
+          "page": "tuition-aid.html",
+          "section": "footer-explore",
+          "instance": "tuition-aid-secondary-nav-1",
+          "selector": "[data-component=\"secondary-nav\"][data-instance=\"tuition-aid-secondary-nav-1\"]"
+        },
+        {
+          "page": "tuition-aid.html",
+          "section": "footer-get-started",
+          "instance": "tuition-aid-secondary-nav-2",
+          "selector": "[data-component=\"secondary-nav\"][data-instance=\"tuition-aid-secondary-nav-2\"]"
+        },
+        {
+          "page": "visit.html",
+          "section": "footer-explore",
+          "instance": "visit-secondary-nav-1",
+          "selector": "[data-component=\"secondary-nav\"][data-instance=\"visit-secondary-nav-1\"]"
+        },
+        {
+          "page": "visit.html",
+          "section": "footer-get-started",
+          "instance": "visit-secondary-nav-2",
+          "selector": "[data-component=\"secondary-nav\"][data-instance=\"visit-secondary-nav-2\"]"
+        }
+      ]
+    },
+    {
+      "id": "site-footer",
+      "selector": "[data-component=\"site-footer\"]",
+      "pages": [
+        "404.html",
+        "admissions.html",
+        "apply.html",
+        "biology.html",
+        "index.html",
+        "news.html",
+        "programs.html",
+        "tuition-aid.html",
+        "visit.html"
+      ],
+      "behavior": [
+        "semantic presentation and local navigation as applicable"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space for buttons and summaries",
+        "Escape for mobile navigation"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser not-tested",
+      "instances": [
+        {
+          "page": "404.html",
+          "section": "global-footer",
+          "instance": "404-site-footer-1",
+          "selector": "[data-component=\"site-footer\"][data-instance=\"404-site-footer-1\"]"
+        },
+        {
+          "page": "admissions.html",
+          "section": "global-footer",
+          "instance": "admissions-site-footer-1",
+          "selector": "[data-component=\"site-footer\"][data-instance=\"admissions-site-footer-1\"]"
+        },
+        {
+          "page": "apply.html",
+          "section": "global-footer",
+          "instance": "apply-site-footer-1",
+          "selector": "[data-component=\"site-footer\"][data-instance=\"apply-site-footer-1\"]"
+        },
+        {
+          "page": "biology.html",
+          "section": "global-footer",
+          "instance": "biology-site-footer-1",
+          "selector": "[data-component=\"site-footer\"][data-instance=\"biology-site-footer-1\"]"
+        },
+        {
+          "page": "index.html",
+          "section": "global-footer",
+          "instance": "index-site-footer-1",
+          "selector": "[data-component=\"site-footer\"][data-instance=\"index-site-footer-1\"]"
+        },
+        {
+          "page": "news.html",
+          "section": "global-footer",
+          "instance": "news-site-footer-1",
+          "selector": "[data-component=\"site-footer\"][data-instance=\"news-site-footer-1\"]"
+        },
+        {
+          "page": "programs.html",
+          "section": "global-footer",
+          "instance": "programs-site-footer-1",
+          "selector": "[data-component=\"site-footer\"][data-instance=\"programs-site-footer-1\"]"
+        },
+        {
+          "page": "tuition-aid.html",
+          "section": "global-footer",
+          "instance": "tuition-aid-site-footer-1",
+          "selector": "[data-component=\"site-footer\"][data-instance=\"tuition-aid-site-footer-1\"]"
+        },
+        {
+          "page": "visit.html",
+          "section": "global-footer",
+          "instance": "visit-site-footer-1",
+          "selector": "[data-component=\"site-footer\"][data-instance=\"visit-site-footer-1\"]"
+        }
+      ]
+    },
+    {
+      "id": "site-header",
+      "selector": "[data-component=\"site-header\"]",
+      "pages": [
+        "404.html",
+        "admissions.html",
+        "apply.html",
+        "biology.html",
+        "index.html",
+        "news.html",
+        "programs.html",
+        "tuition-aid.html",
+        "visit.html"
+      ],
+      "behavior": [
+        "semantic presentation and local navigation as applicable"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space for buttons and summaries",
+        "Escape for mobile navigation"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser not-tested",
+      "instances": [
+        {
+          "page": "404.html",
+          "section": "global-header",
+          "instance": "404-site-header-1",
+          "selector": "[data-component=\"site-header\"][data-instance=\"404-site-header-1\"]"
+        },
+        {
+          "page": "admissions.html",
+          "section": "global-header",
+          "instance": "admissions-site-header-1",
+          "selector": "[data-component=\"site-header\"][data-instance=\"admissions-site-header-1\"]"
+        },
+        {
+          "page": "apply.html",
+          "section": "global-header",
+          "instance": "apply-site-header-1",
+          "selector": "[data-component=\"site-header\"][data-instance=\"apply-site-header-1\"]"
+        },
+        {
+          "page": "biology.html",
+          "section": "global-header",
+          "instance": "biology-site-header-1",
+          "selector": "[data-component=\"site-header\"][data-instance=\"biology-site-header-1\"]"
+        },
+        {
+          "page": "index.html",
+          "section": "global-header",
+          "instance": "index-site-header-1",
+          "selector": "[data-component=\"site-header\"][data-instance=\"index-site-header-1\"]"
+        },
+        {
+          "page": "news.html",
+          "section": "global-header",
+          "instance": "news-site-header-1",
+          "selector": "[data-component=\"site-header\"][data-instance=\"news-site-header-1\"]"
+        },
+        {
+          "page": "programs.html",
+          "section": "global-header",
+          "instance": "programs-site-header-1",
+          "selector": "[data-component=\"site-header\"][data-instance=\"programs-site-header-1\"]"
+        },
+        {
+          "page": "tuition-aid.html",
+          "section": "global-header",
+          "instance": "tuition-aid-site-header-1",
+          "selector": "[data-component=\"site-header\"][data-instance=\"tuition-aid-site-header-1\"]"
+        },
+        {
+          "page": "visit.html",
+          "section": "global-header",
+          "instance": "visit-site-header-1",
+          "selector": "[data-component=\"site-header\"][data-instance=\"visit-site-header-1\"]"
+        }
+      ]
+    },
+    {
+      "id": "site-search",
+      "selector": "[data-component=\"site-search\"]",
+      "pages": [
+        "404.html",
+        "admissions.html",
+        "apply.html",
+        "biology.html",
+        "index.html",
+        "news.html",
+        "programs.html",
+        "tuition-aid.html",
+        "visit.html"
+      ],
+      "behavior": [
+        "local search of 8 page titles and empty state"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space for buttons and summaries",
+        "Escape for mobile navigation"
+      ],
+      "status": "implemented",
+      "validation": "logic-tested with DOM stubs; browser not-tested",
+      "instances": [
+        {
+          "page": "404.html",
+          "section": "site-search",
+          "instance": "404-site-search-1",
+          "selector": "[data-component=\"site-search\"][data-instance=\"404-site-search-1\"]"
+        },
+        {
+          "page": "admissions.html",
+          "section": "site-search",
+          "instance": "admissions-site-search-1",
+          "selector": "[data-component=\"site-search\"][data-instance=\"admissions-site-search-1\"]"
+        },
+        {
+          "page": "apply.html",
+          "section": "site-search",
+          "instance": "apply-site-search-1",
+          "selector": "[data-component=\"site-search\"][data-instance=\"apply-site-search-1\"]"
+        },
+        {
+          "page": "biology.html",
+          "section": "site-search",
+          "instance": "biology-site-search-1",
+          "selector": "[data-component=\"site-search\"][data-instance=\"biology-site-search-1\"]"
+        },
+        {
+          "page": "index.html",
+          "section": "site-search",
+          "instance": "index-site-search-1",
+          "selector": "[data-component=\"site-search\"][data-instance=\"index-site-search-1\"]"
+        },
+        {
+          "page": "news.html",
+          "section": "site-search",
+          "instance": "news-site-search-1",
+          "selector": "[data-component=\"site-search\"][data-instance=\"news-site-search-1\"]"
+        },
+        {
+          "page": "programs.html",
+          "section": "site-search",
+          "instance": "programs-site-search-1",
+          "selector": "[data-component=\"site-search\"][data-instance=\"programs-site-search-1\"]"
+        },
+        {
+          "page": "tuition-aid.html",
+          "section": "site-search",
+          "instance": "tuition-aid-site-search-1",
+          "selector": "[data-component=\"site-search\"][data-instance=\"tuition-aid-site-search-1\"]"
+        },
+        {
+          "page": "visit.html",
+          "section": "site-search",
+          "instance": "visit-site-search-1",
+          "selector": "[data-component=\"site-search\"][data-instance=\"visit-site-search-1\"]"
+        }
+      ]
+    },
+    {
+      "id": "utility-nav",
+      "selector": "[data-component=\"utility-nav\"]",
+      "pages": [
+        "404.html",
+        "admissions.html",
+        "apply.html",
+        "biology.html",
+        "index.html",
+        "news.html",
+        "programs.html",
+        "tuition-aid.html",
+        "visit.html"
+      ],
+      "behavior": [
+        "semantic presentation and local navigation as applicable"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space for buttons and summaries",
+        "Escape for mobile navigation"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser not-tested",
+      "instances": [
+        {
+          "page": "404.html",
+          "section": "recruitment-navigation",
+          "instance": "404-utility-nav-1",
+          "selector": "[data-component=\"utility-nav\"][data-instance=\"404-utility-nav-1\"]"
+        },
+        {
+          "page": "admissions.html",
+          "section": "recruitment-navigation",
+          "instance": "admissions-utility-nav-1",
+          "selector": "[data-component=\"utility-nav\"][data-instance=\"admissions-utility-nav-1\"]"
+        },
+        {
+          "page": "apply.html",
+          "section": "recruitment-navigation",
+          "instance": "apply-utility-nav-1",
+          "selector": "[data-component=\"utility-nav\"][data-instance=\"apply-utility-nav-1\"]"
+        },
+        {
+          "page": "biology.html",
+          "section": "recruitment-navigation",
+          "instance": "biology-utility-nav-1",
+          "selector": "[data-component=\"utility-nav\"][data-instance=\"biology-utility-nav-1\"]"
+        },
+        {
+          "page": "index.html",
+          "section": "recruitment-navigation",
+          "instance": "index-utility-nav-1",
+          "selector": "[data-component=\"utility-nav\"][data-instance=\"index-utility-nav-1\"]"
+        },
+        {
+          "page": "news.html",
+          "section": "recruitment-navigation",
+          "instance": "news-utility-nav-1",
+          "selector": "[data-component=\"utility-nav\"][data-instance=\"news-utility-nav-1\"]"
+        },
+        {
+          "page": "programs.html",
+          "section": "recruitment-navigation",
+          "instance": "programs-utility-nav-1",
+          "selector": "[data-component=\"utility-nav\"][data-instance=\"programs-utility-nav-1\"]"
+        },
+        {
+          "page": "tuition-aid.html",
+          "section": "recruitment-navigation",
+          "instance": "tuition-aid-utility-nav-1",
+          "selector": "[data-component=\"utility-nav\"][data-instance=\"tuition-aid-utility-nav-1\"]"
+        },
+        {
+          "page": "visit.html",
+          "section": "recruitment-navigation",
+          "instance": "visit-utility-nav-1",
+          "selector": "[data-component=\"utility-nav\"][data-instance=\"visit-utility-nav-1\"]"
+        }
+      ]
+    },
+    {
+      "id": "visit-question",
+      "selector": "[data-component=\"visit-question\"]",
+      "pages": [
+        "visit.html"
+      ],
+      "behavior": [
+        "native disclosure"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space for buttons and summaries",
+        "Escape for mobile navigation"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser not-tested",
+      "instances": [
+        {
+          "page": "visit.html",
+          "section": "visit-preparation",
+          "instance": "visit-visit-question-1",
+          "selector": "[data-component=\"visit-question\"][data-instance=\"visit-visit-question-1\"]"
+        },
+        {
+          "page": "visit.html",
+          "section": "visit-preparation",
+          "instance": "visit-visit-question-2",
+          "selector": "[data-component=\"visit-question\"][data-instance=\"visit-visit-question-2\"]"
+        },
+        {
+          "page": "visit.html",
+          "section": "visit-preparation",
+          "instance": "visit-visit-question-3",
+          "selector": "[data-component=\"visit-question\"][data-instance=\"visit-visit-question-3\"]"
+        }
+      ]
+    },
+    {
+      "id": "visit-slideshow",
+      "selector": "[data-component=\"visit-slideshow\"]",
+      "pages": [
+        "visit.html"
+      ],
+      "behavior": [
+        "manual previous/next and wrapping"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space for buttons and summaries",
+        "Escape for mobile navigation"
+      ],
+      "status": "implemented",
+      "validation": "logic-tested with DOM stubs; browser not-tested",
+      "instances": [
+        {
+          "page": "visit.html",
+          "section": "campus-scenes",
+          "instance": "visit-visit-slideshow-1",
+          "selector": "[data-component=\"visit-slideshow\"][data-instance=\"visit-visit-slideshow-1\"]"
+        }
+      ]
+    }
+  ],
+  "inventory_note": "Every semantic region and existing component container has both attributes and a unique page-scoped data-instance. Instances reflect final corrected HTML."
+}

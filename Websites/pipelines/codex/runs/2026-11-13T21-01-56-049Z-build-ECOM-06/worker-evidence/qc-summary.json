@@ -1,0 +1,18 @@
+{
+  "status": "blocked",
+  "attempts": 1,
+  "method": "Unmodified shared qc.js invoked against absolute assigned site path",
+  "shared_script": "/Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/tools/qc/qc.js",
+  "expected_exit_code": 2,
+  "exit_code_evidence": "QC crashed log and shared qc.js catch explicitly calls process.exit(2). Shell wrapper then errored assigning zsh read-only variable status, so direct shell status capture unavailable.",
+  "wrapper_error": "zsh: read-only variable: status",
+  "raw_log": "qc-initial.log",
+  "native_json_report": null,
+  "reason": "Chromium launch permission failure; SIGTRAP/EPERM / bootstrap permission errors in raw log",
+  "browser": "not-tested",
+  "axe": "not-tested",
+  "browser_interactions": "not-tested",
+  "static": "See independent static-tests.json; shared scanner did not emit summary before launch crash",
+  "retries": [],
+  "no_reinstall_or_bypass": true
+}

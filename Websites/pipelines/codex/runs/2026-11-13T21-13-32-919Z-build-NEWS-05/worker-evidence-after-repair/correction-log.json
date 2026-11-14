@@ -1,0 +1,41 @@
+{
+  "initial_preserved_at": "2026-11-13T21:18:01.237428+00:00",
+  "corrections": [
+    {
+      "timestamp": "2026-11-13T21:19:24.803540+00:00",
+      "type": "documentation-only",
+      "files": [
+        "README.md",
+        "generation-metadata.json",
+        "component-inventory.json"
+      ],
+      "reason": "Record actual checks and blocked browser scope; implementation unchanged"
+    },
+    {
+      "timestamp": "2026-11-13T21:20:22.723770+00:00",
+      "type": "same-worker coordinator-prompted correction",
+      "prompt_source": "Parent independent source review; coordinator-source-review-initial.json retained by parent in actual run",
+      "finding": "18 static article cards had data-component but lacked data-section; dynamic search-result article also lacked data-section. Original checker accepted either attribute and missed this.",
+      "files": [
+        "index.html",
+        "politics.html",
+        "article.html",
+        "js/main.js",
+        "component-inventory.json",
+        "README.md",
+        "fidelity-notes.md",
+        "generation-metadata.json"
+      ],
+      "change": "Added data-section=story-preview to 18 story cards; search-result-item to dynamic result articles. Tightened static checker to require data-section on every meaningful semantic region; added explicit dynamic metadata VM assertions.",
+      "validation": "Stricter static checker passes 952 element checks; node --check passes; 9 delivered-JS VM tests pass with mocks; no browser QC repeat."
+    }
+  ],
+  "qc_attempts": [
+    {
+      "attempt": 1,
+      "exit_code": 2,
+      "log": "qc-initial.log",
+      "outcome": "browser launch permission denied; not-tested"
+    }
+  ]
+}

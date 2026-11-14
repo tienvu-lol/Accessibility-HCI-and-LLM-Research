@@ -1,0 +1,835 @@
+{
+  "protocol_version": "1.0",
+  "replica_id": "FASH-02",
+  "category": "fashion",
+  "source_url": "https://www.margarethowell.co.uk/",
+  "components": [
+    {
+      "id": "article-body",
+      "selector": "[data-component='article-body']",
+      "pages": [
+        "article.html"
+      ],
+      "behavior": [
+        "article rendered from inline data by slug"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core and scripted Playwright checks only; no assistive-technology testing"
+    },
+    {
+      "id": "brand-wordmark",
+      "selector": "[data-component='brand-wordmark']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "accessibility.html",
+        "article.html",
+        "campaign.html",
+        "care.html",
+        "collections.html",
+        "contact.html",
+        "garment.html",
+        "index.html",
+        "journal.html",
+        "lookbook-field.html",
+        "lookbook.html",
+        "materials.html",
+        "plates.html",
+        "search.html",
+        "stockists.html"
+      ],
+      "behavior": [
+        "text wordmark link home"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core and scripted Playwright checks only; no assistive-technology testing"
+    },
+    {
+      "id": "breadcrumb",
+      "selector": "[data-component='breadcrumb']",
+      "pages": [
+        "about.html",
+        "accessibility.html",
+        "article.html",
+        "campaign.html",
+        "care.html",
+        "collections.html",
+        "contact.html",
+        "garment.html",
+        "journal.html",
+        "lookbook-field.html",
+        "lookbook.html",
+        "materials.html",
+        "plates.html",
+        "search.html",
+        "stockists.html"
+      ],
+      "behavior": [
+        "location trail with aria-current"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core and scripted Playwright checks only; no assistive-technology testing"
+    },
+    {
+      "id": "card-grid",
+      "selector": "[data-component='card-grid']",
+      "pages": [
+        "collections.html",
+        "index.html",
+        "journal.html"
+      ],
+      "behavior": [
+        "list of cards with real list semantics"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core and scripted Playwright checks only; no assistive-technology testing"
+    },
+    {
+      "id": "category-tiles",
+      "selector": "[data-component='category-tiles']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "links into filtered collection"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core and scripted Playwright checks only; no assistive-technology testing"
+    },
+    {
+      "id": "contact-details",
+      "selector": "[data-component='contact-details']",
+      "pages": [
+        "contact.html"
+      ],
+      "behavior": [
+        "invented studio details"
+      ],
+      "keyboard": [
+        "none"
+      ],
+      "status": "implemented",
+      "validation": "axe-core and scripted Playwright checks only; no assistive-technology testing"
+    },
+    {
+      "id": "contact-form",
+      "selector": "[data-component='contact-form']",
+      "pages": [
+        "contact.html"
+      ],
+      "behavior": [
+        "validated simulated form with error summary, inline errors, focus management"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "axe-core and scripted Playwright checks only; no assistive-technology testing"
+    },
+    {
+      "id": "demo-notice",
+      "selector": "[data-component='demo-notice']",
+      "pages": [
+        "garment.html"
+      ],
+      "behavior": [
+        "states catalogue only: no cart, price or checkout"
+      ],
+      "keyboard": [
+        "none"
+      ],
+      "status": "implemented",
+      "validation": "axe-core and scripted Playwright checks only; no assistive-technology testing"
+    },
+    {
+      "id": "editorial-text",
+      "selector": "[data-component='editorial-text']",
+      "pages": [
+        "about.html",
+        "accessibility.html",
+        "campaign.html",
+        "care.html",
+        "materials.html"
+      ],
+      "behavior": [
+        "prose section"
+      ],
+      "keyboard": [
+        "none"
+      ],
+      "status": "implemented",
+      "validation": "axe-core and scripted Playwright checks only; no assistive-technology testing"
+    },
+    {
+      "id": "empty-state",
+      "selector": "[data-component='empty-state']",
+      "pages": [
+        "collections.html",
+        "journal.html",
+        "search.html",
+        "stockists.html"
+      ],
+      "behavior": [
+        "shown when no results; reset control"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core and scripted Playwright checks only; no assistive-technology testing"
+    },
+    {
+      "id": "error-page",
+      "selector": "[data-component='error-page']",
+      "pages": [
+        "404.html"
+      ],
+      "behavior": [
+        "404 with routes home and to search"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core and scripted Playwright checks only; no assistive-technology testing"
+    },
+    {
+      "id": "feature-panel",
+      "selector": "[data-component='feature-panel']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "text panel with call to action"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core and scripted Playwright checks only; no assistive-technology testing"
+    },
+    {
+      "id": "fictional-notice",
+      "selector": "[data-component='fictional-notice']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "accessibility.html",
+        "article.html",
+        "campaign.html",
+        "care.html",
+        "collections.html",
+        "contact.html",
+        "garment.html",
+        "index.html",
+        "journal.html",
+        "lookbook-field.html",
+        "lookbook.html",
+        "materials.html",
+        "plates.html",
+        "search.html",
+        "stockists.html"
+      ],
+      "behavior": [
+        "visible fictional-house note in masthead of every page"
+      ],
+      "keyboard": [
+        "none (static text)"
+      ],
+      "status": "implemented",
+      "validation": "axe-core and scripted Playwright checks only; no assistive-technology testing"
+    },
+    {
+      "id": "filter-panel",
+      "selector": "[data-component='filter-panel']",
+      "pages": [
+        "collections.html",
+        "journal.html",
+        "stockists.html"
+      ],
+      "behavior": [
+        "live filtering of inline data by checkbox, radio, text, select; reset"
+      ],
+      "keyboard": [
+        "Tab",
+        "Space",
+        "Arrow keys on radios",
+        "Type"
+      ],
+      "status": "implemented",
+      "validation": "axe-core and scripted Playwright checks only; no assistive-technology testing"
+    },
+    {
+      "id": "footer-link-group",
+      "selector": "[data-component='footer-link-group']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "accessibility.html",
+        "article.html",
+        "campaign.html",
+        "care.html",
+        "collections.html",
+        "contact.html",
+        "garment.html",
+        "index.html",
+        "journal.html",
+        "lookbook-field.html",
+        "lookbook.html",
+        "materials.html",
+        "plates.html",
+        "search.html",
+        "stockists.html"
+      ],
+      "behavior": [
+        "footer nav group"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core and scripted Playwright checks only; no assistive-technology testing"
+    },
+    {
+      "id": "garment-card",
+      "selector": "[data-component='garment-card']",
+      "pages": [
+        "collections.html",
+        "garment.html",
+        "index.html"
+      ],
+      "behavior": [
+        "card rendered from inline data; heading link"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core and scripted Playwright checks only; no assistive-technology testing"
+    },
+    {
+      "id": "hero-banner",
+      "selector": "[data-component='hero-banner']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "abstract image, h1, two links"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core and scripted Playwright checks only; no assistive-technology testing"
+    },
+    {
+      "id": "image-grid",
+      "selector": "[data-component='image-grid']",
+      "pages": [
+        "plates.html"
+      ],
+      "behavior": [
+        "list of enlargeable abstract plates"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "Escape in lightbox"
+      ],
+      "status": "implemented",
+      "validation": "axe-core and scripted Playwright checks only; no assistive-technology testing"
+    },
+    {
+      "id": "lightbox",
+      "selector": "[data-component='lightbox']",
+      "pages": [
+        "lookbook-field.html",
+        "lookbook.html",
+        "plates.html"
+      ],
+      "behavior": [
+        "native dialog modal; Escape closes; focus returns to opener"
+      ],
+      "keyboard": [
+        "Tab (trapped by dialog)",
+        "Enter",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "axe-core and scripted Playwright checks only; no assistive-technology testing"
+    },
+    {
+      "id": "link-list",
+      "selector": "[data-component='link-list']",
+      "pages": [
+        "lookbook-field.html",
+        "lookbook.html"
+      ],
+      "behavior": [
+        "list of links"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core and scripted Playwright checks only; no assistive-technology testing"
+    },
+    {
+      "id": "lookbook-carousel",
+      "selector": "[data-component='lookbook-carousel']",
+      "pages": [
+        "lookbook-field.html",
+        "lookbook.html"
+      ],
+      "behavior": [
+        "one plate at a time, prev/next, polite status, no autoplay, enlarge"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "ArrowLeft",
+        "ArrowRight"
+      ],
+      "status": "implemented",
+      "validation": "axe-core and scripted Playwright checks only; no assistive-technology testing"
+    },
+    {
+      "id": "menu-toggle",
+      "selector": "[data-component='menu-toggle']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "accessibility.html",
+        "article.html",
+        "campaign.html",
+        "care.html",
+        "collections.html",
+        "contact.html",
+        "garment.html",
+        "index.html",
+        "journal.html",
+        "lookbook-field.html",
+        "lookbook.html",
+        "materials.html",
+        "plates.html",
+        "search.html",
+        "stockists.html"
+      ],
+      "behavior": [
+        "mobile disclosure of the menu panel; hidden at 900px and wider"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "Escape closes and returns focus"
+      ],
+      "status": "implemented",
+      "validation": "axe-core and scripted Playwright checks only; no assistive-technology testing"
+    },
+    {
+      "id": "nav-dropdown",
+      "selector": "[data-component='nav-dropdown']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "accessibility.html",
+        "article.html",
+        "campaign.html",
+        "care.html",
+        "collections.html",
+        "contact.html",
+        "garment.html",
+        "index.html",
+        "journal.html",
+        "lookbook-field.html",
+        "lookbook.html",
+        "materials.html",
+        "plates.html",
+        "search.html",
+        "stockists.html"
+      ],
+      "behavior": [
+        "button toggles aria-expanded; closes on outside click, focus leaving, Escape"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "axe-core and scripted Playwright checks only; no assistive-technology testing"
+    },
+    {
+      "id": "newsletter-form",
+      "selector": "[data-component='newsletter-form']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "accessibility.html",
+        "article.html",
+        "campaign.html",
+        "care.html",
+        "collections.html",
+        "contact.html",
+        "garment.html",
+        "index.html",
+        "journal.html",
+        "lookbook-field.html",
+        "lookbook.html",
+        "materials.html",
+        "plates.html",
+        "search.html",
+        "stockists.html"
+      ],
+      "behavior": [
+        "simulated mailing list sign up, never stores or sends"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core and scripted Playwright checks only; no assistive-technology testing"
+    },
+    {
+      "id": "primary-nav",
+      "selector": "[data-component='primary-nav']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "accessibility.html",
+        "article.html",
+        "campaign.html",
+        "care.html",
+        "collections.html",
+        "contact.html",
+        "garment.html",
+        "index.html",
+        "journal.html",
+        "lookbook-field.html",
+        "lookbook.html",
+        "materials.html",
+        "plates.html",
+        "search.html",
+        "stockists.html"
+      ],
+      "behavior": [
+        "desktop bar with dropdown groups",
+        "mobile disclosure",
+        "aria-current on active link"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "axe-core and scripted Playwright checks only; no assistive-technology testing"
+    },
+    {
+      "id": "product-info",
+      "selector": "[data-component='product-info']",
+      "pages": [
+        "garment.html"
+      ],
+      "behavior": [
+        "garment copy, colourway, details"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "axe-core and scripted Playwright checks only; no assistive-technology testing"
+    },
+    {
+      "id": "product-visual",
+      "selector": "[data-component='product-visual']",
+      "pages": [
+        "garment.html"
+      ],
+      "behavior": [
+        "abstract silhouette svg with text alternative"
+      ],
+      "keyboard": [
+        "none"
+      ],
+      "status": "implemented",
+      "validation": "axe-core and scripted Playwright checks only; no assistive-technology testing"
+    },
+    {
+      "id": "result-item",
+      "selector": "[data-component='result-item']",
+      "pages": [
+        "search.html"
+      ],
+      "behavior": [
+        "single result"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core and scripted Playwright checks only; no assistive-technology testing"
+    },
+    {
+      "id": "search-form",
+      "selector": "[data-component='search-form']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "accessibility.html",
+        "article.html",
+        "campaign.html",
+        "care.html",
+        "collections.html",
+        "contact.html",
+        "garment.html",
+        "index.html",
+        "journal.html",
+        "lookbook-field.html",
+        "lookbook.html",
+        "materials.html",
+        "plates.html",
+        "search.html",
+        "stockists.html"
+      ],
+      "behavior": [
+        "GET form to search.html; results over inline data"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core and scripted Playwright checks only; no assistive-technology testing"
+    },
+    {
+      "id": "search-results",
+      "selector": "[data-component='search-results']",
+      "pages": [
+        "search.html"
+      ],
+      "behavior": [
+        "results list over garments, journal, stockists, pages"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core and scripted Playwright checks only; no assistive-technology testing"
+    },
+    {
+      "id": "site-footer",
+      "selector": "[data-component='site-footer']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "accessibility.html",
+        "article.html",
+        "campaign.html",
+        "care.html",
+        "collections.html",
+        "contact.html",
+        "garment.html",
+        "index.html",
+        "journal.html",
+        "lookbook-field.html",
+        "lookbook.html",
+        "materials.html",
+        "plates.html",
+        "search.html",
+        "stockists.html"
+      ],
+      "behavior": [
+        "grouped links, newsletter, disclaimer"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core and scripted Playwright checks only; no assistive-technology testing"
+    },
+    {
+      "id": "site-header",
+      "selector": "[data-component='site-header']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "accessibility.html",
+        "article.html",
+        "campaign.html",
+        "care.html",
+        "collections.html",
+        "contact.html",
+        "garment.html",
+        "index.html",
+        "journal.html",
+        "lookbook-field.html",
+        "lookbook.html",
+        "materials.html",
+        "plates.html",
+        "search.html",
+        "stockists.html"
+      ],
+      "behavior": [
+        "masthead with wordmark, menu toggle, primary nav, search"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "axe-core and scripted Playwright checks only; no assistive-technology testing"
+    },
+    {
+      "id": "size-table",
+      "selector": "[data-component='size-table']",
+      "pages": [
+        "garment.html"
+      ],
+      "behavior": [
+        "fictional flat dimension table in scrollable region"
+      ],
+      "keyboard": [
+        "Tab to scroll region",
+        "Arrow keys scroll"
+      ],
+      "status": "implemented",
+      "validation": "axe-core and scripted Playwright checks only; no assistive-technology testing"
+    },
+    {
+      "id": "store-card",
+      "selector": "[data-component='store-card']",
+      "pages": [
+        "stockists.html"
+      ],
+      "behavior": [
+        "stockist entry from inline data"
+      ],
+      "keyboard": [
+        "none"
+      ],
+      "status": "implemented",
+      "validation": "axe-core and scripted Playwright checks only; no assistive-technology testing"
+    },
+    {
+      "id": "store-list",
+      "selector": "[data-component='store-list']",
+      "pages": [
+        "stockists.html"
+      ],
+      "behavior": [
+        "list of invented stockists, filterable"
+      ],
+      "keyboard": [
+        "Tab",
+        "Type"
+      ],
+      "status": "implemented",
+      "validation": "axe-core and scripted Playwright checks only; no assistive-technology testing"
+    },
+    {
+      "id": "story-card",
+      "selector": "[data-component='story-card']",
+      "pages": [
+        "index.html",
+        "journal.html"
+      ],
+      "behavior": [
+        "journal teaser card"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core and scripted Playwright checks only; no assistive-technology testing"
+    },
+    {
+      "id": "swatch-list",
+      "selector": "[data-component='swatch-list']",
+      "pages": [
+        "campaign.html"
+      ],
+      "behavior": [
+        "named colour chips with text names"
+      ],
+      "keyboard": [
+        "none"
+      ],
+      "status": "implemented",
+      "validation": "axe-core and scripted Playwright checks only; no assistive-technology testing"
+    },
+    {
+      "id": "swatch-picker",
+      "selector": "[data-component='swatch-picker']",
+      "pages": [
+        "garment.html"
+      ],
+      "behavior": [
+        "radio group; each swatch has visible text name; swaps silhouette"
+      ],
+      "keyboard": [
+        "Tab",
+        "Arrow keys",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "axe-core and scripted Playwright checks only; no assistive-technology testing"
+    },
+    {
+      "id": "thumbnail-list",
+      "selector": "[data-component='thumbnail-list']",
+      "pages": [
+        "lookbook-field.html",
+        "lookbook.html"
+      ],
+      "behavior": [
+        "buttons jump to a plate; aria-current marks the current one"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "axe-core and scripted Playwright checks only; no assistive-technology testing"
+    }
+  ]
+}

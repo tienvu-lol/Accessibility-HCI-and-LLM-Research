@@ -1,0 +1,119 @@
+{
+  "allocation_protocol": "WEB-REPLICA-ALLOCATION-V1.0",
+  "generation_protocol": "WEB-REPLICA-V1.0",
+  "category": "fashion",
+  "slot": 6,
+  "source_id": "FASH-06",
+  "model_group": "codex",
+  "model_id": "gpt-6.1-sol",
+  "model_version": null,
+  "model_provider_or_runtime": "OpenAI collaboration worker (gpt-6.1-sol), orchestrated in Codex",
+  "model_identification_basis": "Declared task model and parent worker assignment; exact underlying version/build not exposed.",
+  "generation_mode": "isolated snapshot, one source, local-only, vanilla HTML/CSS/JS",
+  "operator": "Samhith Varma",
+  "approved_source_url": "https://www.whowhatwear.com/",
+  "source_name": "Who What Wear",
+  "source_verified_at": "2026-11-13",
+  "source_verification_method": "Connected web search and page-open text retrieval; approved with disclosed cache/origin/browser limitations",
+  "source_verification_limitations": "Potentially cached/indexed readable extraction only; no fresh origin HTTP status or rendered/executed source verification.",
+  "source_approved_at": "2026-11-13T00:11:23.688078+00:00",
+  "source_approval_reference": "pipelines/codex/research/evidence/replacement-approval-2026-11-13.json",
+  "generation_started_at": "2026-11-13T21:38:56Z",
+  "generation_completed_at": "2026-11-13T21:45:39.875828Z",
+  "rules_revision": "sha256:04b1c3e38b76f2aff3aef869d67370bb4532cd8f9ab5e22ac8276f26cbb859bf",
+  "allocation_revision": "sha256:81f3a5dc01cd370643ad84f39989a2625a03611ab5f5a34b10de5494d9e61a9b",
+  "category_prompt_revision": "sha256:843ea7d8d1cc7d01385643f848408dea32997985422496d98e8f108bbc09a333",
+  "build_prompt_revision": "sha256:37567f6a4198f7539b11964980cf814a7b8c0732f926dfe9aa6f86849dd2277c",
+  "prompt_or_transcript_reference": "pipelines/codex/runs/2026-11-13T21-37-53-917Z-build-FASH-06/task.md",
+  "task_sha256": "aa1c351b238b4cb903f2680fa2fd19ce2d4d0349504a4b9e39e6657441aa8fc3",
+  "protocol_snapshots": "Websites/pipelines/codex/runs/2026-11-13T21-37-53-917Z-build-FASH-06/snapshots",
+  "generation_budget": null,
+  "available_tools": [
+    "exec_command",
+    "clock",
+    "shared QC Node/Playwright tooling; browser launch may be blocked"
+  ],
+  "human_edits": [],
+  "cross_model_changes": [],
+  "retries": [
+    {
+      "kind": "post-review-clarity-correction",
+      "at": "2026-11-13T21:45:39.875828Z",
+      "qc_retry": false,
+      "tests": "static audit + node --check + 17 actual-JS DOM-mock tests passed"
+    }
+  ],
+  "validation_summary": {
+    "technology": "pass",
+    "completeness": "pass",
+    "structure": "pass",
+    "interaction": "pass",
+    "accessibility": "not-tested",
+    "traceability": "pass",
+    "scope": "pass"
+  },
+  "validation_limits": {
+    "technology": "Static inspection: local HTML/CSS/vanilla JS and six original SVGs; no runtime package/build/network APIs.",
+    "completeness": "Six approved/protocol HTML pages, all required artifacts; 165 relative references and fragments audited.",
+    "structure": "Static semantic/instrumentation inventory audit passed; source exact rendered hierarchy remains unverified.",
+    "interaction": "17 tests execute actual main.js with explicit DOM mocks; native browser activation/focus/rendering not tested.",
+    "accessibility": "Static labels/alternatives/headings/skip links/metadata checked; CSS focus/reflow/reduced-motion implementation inspected. Browser/axe/native keyboard/screen reader/zoom/contrast measurement not tested.",
+    "traceability": "Source map, actual instance inventory, snapshots and initial artifact hashes preserved.",
+    "scope": "Five approved mappings plus required 404 only; no gallery, author, newsletter or search screen."
+  },
+  "qc_evidence": "Websites/pipelines/codex/runs/2026-11-13T21-37-53-917Z-build-FASH-06/qc-outcome.json",
+  "evidence_directory": "Websites/pipelines/codex/runs/2026-11-13T21-37-53-917Z-build-FASH-06",
+  "generation_revisions": [
+    {
+      "revision": "initial",
+      "preserved": "initial-artifact.tar.gz",
+      "hashes": "initial-hashes.json"
+    },
+    {
+      "revision": "validation-documentation",
+      "at": "2026-11-13T21:44:39.189089Z",
+      "changes": "Final metadata, component validation descriptions, README QC outcome and run evidence only. No HTML/CSS/JS corrections."
+    },
+    {
+      "revision": "representative-link-clarity",
+      "at": "2026-11-13T21:45:39.875828Z",
+      "changes": "Following coordinator review instruction, made all card/search sample titles unlinked summary-only text, with separately labeled links naming the representative article; aligned lead headline with article H1. Same assigned worker implemented; no extra screens. Updated inventory and reran static audit, node syntax and all 17 actual-JS DOM-mock tests."
+    }
+  ],
+  "qc_attempts": 1,
+  "snapshot_git_revision": null,
+  "snapshot_git_revision_note": "Isolated directory snapshot has no .git; durable SHA-256 protocol/task/source evidence used.",
+  "protocol_snapshot_revisions": [
+    {
+      "path": "Rules.md",
+      "sha256": "04b1c3e38b76f2aff3aef869d67370bb4532cd8f9ab5e22ac8276f26cbb859bf"
+    },
+    {
+      "path": "MODEL_ALLOCATION.md",
+      "sha256": "81f3a5dc01cd370643ad84f39989a2625a03611ab5f5a34b10de5494d9e61a9b"
+    },
+    {
+      "path": "pipelines/codex/config.json",
+      "sha256": "b16751854f14ec50f9e8e8726e4ab0c064503f1ebdea6d71ba7e1faf85ed6d95"
+    },
+    {
+      "path": "pipelines/codex/categories.json",
+      "sha256": "843ea7d8d1cc7d01385643f848408dea32997985422496d98e8f108bbc09a333"
+    },
+    {
+      "path": "pipelines/codex/prompts/build.md",
+      "sha256": "37567f6a4198f7539b11964980cf814a7b8c0732f926dfe9aa6f86849dd2277c"
+    },
+    {
+      "path": "metadata/source-inventories/fashion.csv",
+      "sha256": "90471a4bdc55f04c3d61b22aeb8e3895cbb22985fe040058998067a3f6b76e9c"
+    },
+    {
+      "path": "metadata/assignments.csv",
+      "sha256": "2659587ae054d3738b8fc412c83d368e8d577b8b610cfabb655e8effc606a934"
+    }
+  ],
+  "approval_snapshot_sha256": "07b75a370da6e1ccb63e1a94a0aba4dafe443495eef452b4ed3ca0f3c2853215",
+  "proposal_snapshot_sha256": "7903d1da0d43f9139fce819470a905268ac27fefc9546e3f01fb1cab172eb10f",
+  "coordinator_review_input": "Coordinator requested explicit summary-only sample treatment to prevent teaser/detail mismatch, implemented by original worker. Coordinator model is not identified in this worker context; no coordinator-authored code was copied."
+}

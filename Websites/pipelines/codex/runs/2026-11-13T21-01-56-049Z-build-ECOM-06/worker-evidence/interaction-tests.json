@@ -1,0 +1,47 @@
+{
+  "method": "Actual delivered JavaScript executed in Node VM; DOM and localStorage are hand-written mocks, not a browser. No keyboard/rendering/axe claim.",
+  "tests": [
+    {
+      "name": "Actual quantity validator accepts only integers 1–99 or cart 0–99",
+      "result": "pass"
+    },
+    {
+      "name": "Actual filters combine query, availability and price; recent order is deterministic",
+      "result": "pass"
+    },
+    {
+      "name": "Actual add rejects preview-only, invalid and over-limit; integer-cent totals",
+      "result": "pass"
+    },
+    {
+      "name": "Actual coupon submit reports error then applies BENCH10 with rounded totals",
+      "result": "pass"
+    },
+    {
+      "name": "Actual cart update handler validates atomically, focuses error, then removes quantity zero",
+      "result": "pass"
+    },
+    {
+      "name": "Actual checkout explanatory handler remains local",
+      "result": "pass"
+    },
+    {
+      "name": "Actual Empty cart handler clears selections, coupon and totals; empty coupon rejected",
+      "result": "pass"
+    },
+    {
+      "name": "Actual stored cart sanitizer rejects unknown, preview and fractional values",
+      "result": "pass"
+    },
+    {
+      "name": "Actual blocked storage handling retains temporary state and discloses reset",
+      "result": "pass"
+    },
+    {
+      "name": "Actual product submit rejects invalid quantity and adds encoder plus optional knob atomically",
+      "result": "pass"
+    }
+  ],
+  "passed": 10,
+  "failed": 0
+}

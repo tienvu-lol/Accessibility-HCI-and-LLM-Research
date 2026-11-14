@@ -1,0 +1,761 @@
+{
+  "protocol_version": "1.0",
+  "replica_id": "FASH-03",
+  "category": "fashion",
+  "source_url": "https://hypebeast.com/",
+  "components": [
+    {
+      "id": "article-body",
+      "selector": "[data-component='article-body']",
+      "pages": [
+        "article.html"
+      ],
+      "behavior": [
+        "story page rendered from inline data by ?id="
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe (qc.js) clean at 1280 and 375 px; interaction scripted check where interactive; no manual screen-reader test"
+    },
+    {
+      "id": "author-header",
+      "selector": "[data-component='author-header']",
+      "pages": [
+        "author.html"
+      ],
+      "behavior": [
+        "writer profile header"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe (qc.js) clean at 1280 and 375 px; interaction scripted check where interactive; no manual screen-reader test"
+    },
+    {
+      "id": "author-switcher",
+      "selector": "[data-component='author-switcher']",
+      "pages": [
+        "author.html"
+      ],
+      "behavior": [
+        "links to switch fictional writer"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe (qc.js) clean at 1280 and 375 px; interaction scripted check where interactive; no manual screen-reader test"
+    },
+    {
+      "id": "breadcrumbs",
+      "selector": "[data-component='breadcrumbs']",
+      "pages": [
+        "about.html",
+        "article.html",
+        "author.html",
+        "brands.html",
+        "calendar.html",
+        "culture.html",
+        "fashion.html",
+        "footwear.html",
+        "magazine.html"
+      ],
+      "behavior": [
+        "breadcrumb trail"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe (qc.js) clean at 1280 and 375 px; interaction scripted check where interactive; no manual screen-reader test"
+    },
+    {
+      "id": "calendar-filter",
+      "selector": "[data-component='calendar-filter']",
+      "pages": [
+        "calendar.html"
+      ],
+      "behavior": [
+        "type, month and marked-only filters"
+      ],
+      "keyboard": [
+        "Tab",
+        "Space",
+        "arrow keys"
+      ],
+      "status": "implemented",
+      "validation": "axe (qc.js) clean at 1280 and 375 px; interaction scripted check where interactive; no manual screen-reader test"
+    },
+    {
+      "id": "card-grid",
+      "selector": "[data-component='card-grid']",
+      "pages": [
+        "article.html",
+        "author.html",
+        "index.html",
+        "magazine.html"
+      ],
+      "behavior": [
+        "list of story cards with real list semantics"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe (qc.js) clean at 1280 and 375 px; interaction scripted check where interactive; no manual screen-reader test"
+    },
+    {
+      "id": "directory-filter",
+      "selector": "[data-component='directory-filter']",
+      "pages": [
+        "brands.html"
+      ],
+      "behavior": [
+        "directory filter form"
+      ],
+      "keyboard": [
+        "Tab",
+        "typing",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe (qc.js) clean at 1280 and 375 px; interaction scripted check where interactive; no manual screen-reader test"
+    },
+    {
+      "id": "dropdown-menu",
+      "selector": "[data-component='dropdown-menu']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "article.html",
+        "author.html",
+        "brands.html",
+        "calendar.html",
+        "culture.html",
+        "fashion.html",
+        "footwear.html",
+        "index.html",
+        "magazine.html",
+        "newsletter.html",
+        "search.html"
+      ],
+      "behavior": [
+        "Culture and More dropdown disclosures, aria-expanded"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "Escape closes and returns focus"
+      ],
+      "status": "implemented",
+      "validation": "axe (qc.js) clean at 1280 and 375 px; interaction scripted check where interactive; no manual screen-reader test"
+    },
+    {
+      "id": "empty-state",
+      "selector": "[data-component='empty-state']",
+      "pages": [
+        "brands.html",
+        "calendar.html",
+        "culture.html",
+        "fashion.html",
+        "footwear.html",
+        "search.html"
+      ],
+      "behavior": [
+        "meaningful no-results message"
+      ],
+      "keyboard": [
+        "Tab (links and buttons inside)"
+      ],
+      "status": "implemented",
+      "validation": "axe (qc.js) clean at 1280 and 375 px; interaction scripted check where interactive; no manual screen-reader test"
+    },
+    {
+      "id": "error-page",
+      "selector": "[data-component='error-page']",
+      "pages": [
+        "404.html"
+      ],
+      "behavior": [
+        "404 content with routes back"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe (qc.js) clean at 1280 and 375 px; interaction scripted check where interactive; no manual screen-reader test"
+    },
+    {
+      "id": "fictional-notice",
+      "selector": "[data-component='fictional-notice']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "article.html",
+        "author.html",
+        "brands.html",
+        "calendar.html",
+        "culture.html",
+        "fashion.html",
+        "footwear.html",
+        "index.html",
+        "magazine.html",
+        "newsletter.html",
+        "search.html"
+      ],
+      "behavior": [
+        "visible fictional-publication note in masthead and footer"
+      ],
+      "keyboard": [
+        "none (static text)"
+      ],
+      "status": "implemented",
+      "validation": "axe (qc.js) clean at 1280 and 375 px; interaction scripted check where interactive; no manual screen-reader test"
+    },
+    {
+      "id": "filterable-card-list",
+      "selector": "[data-component='filterable-card-list']",
+      "pages": [
+        "culture.html",
+        "fashion.html",
+        "footwear.html"
+      ],
+      "behavior": [
+        "section story list with topic chips and sort"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "axe (qc.js) clean at 1280 and 375 px; interaction scripted check where interactive; no manual screen-reader test"
+    },
+    {
+      "id": "filterable-directory",
+      "selector": "[data-component='filterable-directory']",
+      "pages": [
+        "brands.html"
+      ],
+      "behavior": [
+        "brand directory with text and type filters"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "typing"
+      ],
+      "status": "implemented",
+      "validation": "axe (qc.js) clean at 1280 and 375 px; interaction scripted check where interactive; no manual screen-reader test"
+    },
+    {
+      "id": "footer-links",
+      "selector": "[data-component='footer-links']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "article.html",
+        "author.html",
+        "brands.html",
+        "calendar.html",
+        "culture.html",
+        "fashion.html",
+        "footwear.html",
+        "index.html",
+        "magazine.html",
+        "newsletter.html",
+        "search.html"
+      ],
+      "behavior": [
+        "footer link groups"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe (qc.js) clean at 1280 and 375 px; interaction scripted check where interactive; no manual screen-reader test"
+    },
+    {
+      "id": "headline-list",
+      "selector": "[data-component='headline-list']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "ordered list of headlines"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe (qc.js) clean at 1280 and 375 px; interaction scripted check where interactive; no manual screen-reader test"
+    },
+    {
+      "id": "hero-story",
+      "selector": "[data-component='hero-story']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "lead story with image and headline list"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe (qc.js) clean at 1280 and 375 px; interaction scripted check where interactive; no manual screen-reader test"
+    },
+    {
+      "id": "image-carousel",
+      "selector": "[data-component='image-carousel']",
+      "pages": [
+        "magazine.html"
+      ],
+      "behavior": [
+        "plate gallery with labelled prev/next, thumbs, polite indicator, no autoplay"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "ArrowLeft",
+        "ArrowRight"
+      ],
+      "status": "implemented",
+      "validation": "axe (qc.js) clean at 1280 and 375 px; interaction scripted check where interactive; no manual screen-reader test"
+    },
+    {
+      "id": "lightbox",
+      "selector": "[data-component='lightbox']",
+      "pages": [
+        "magazine.html"
+      ],
+      "behavior": [
+        "modal dialog for enlarged plate; Escape closes; focus returns to opener"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Escape",
+        "ArrowLeft",
+        "ArrowRight"
+      ],
+      "status": "implemented",
+      "validation": "axe (qc.js) clean at 1280 and 375 px; interaction scripted check where interactive; no manual screen-reader test"
+    },
+    {
+      "id": "load-more",
+      "selector": "[data-component='load-more']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "reveals six more sample stories, announces count, moves focus to first new item"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "axe (qc.js) clean at 1280 and 375 px; interaction scripted check where interactive; no manual screen-reader test"
+    },
+    {
+      "id": "masthead",
+      "selector": "[data-component='masthead']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "article.html",
+        "author.html",
+        "brands.html",
+        "calendar.html",
+        "culture.html",
+        "fashion.html",
+        "footwear.html",
+        "index.html",
+        "magazine.html",
+        "newsletter.html",
+        "search.html"
+      ],
+      "behavior": [
+        "logo, header search, mobile menu toggle"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe (qc.js) clean at 1280 and 375 px; interaction scripted check where interactive; no manual screen-reader test"
+    },
+    {
+      "id": "menu-toggle",
+      "selector": "[data-component='menu-toggle']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "article.html",
+        "author.html",
+        "brands.html",
+        "calendar.html",
+        "culture.html",
+        "fashion.html",
+        "footwear.html",
+        "index.html",
+        "magazine.html",
+        "newsletter.html",
+        "search.html"
+      ],
+      "behavior": [
+        "mobile disclosure button with aria-expanded"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "Escape closes"
+      ],
+      "status": "implemented",
+      "validation": "axe (qc.js) clean at 1280 and 375 px; interaction scripted check where interactive; no manual screen-reader test"
+    },
+    {
+      "id": "mini-calendar",
+      "selector": "[data-component='mini-calendar']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "sidebar teaser of sample release entries"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe (qc.js) clean at 1280 and 375 px; interaction scripted check where interactive; no manual screen-reader test"
+    },
+    {
+      "id": "newsletter-form",
+      "selector": "[data-component='newsletter-form']",
+      "pages": [
+        "newsletter.html"
+      ],
+      "behavior": [
+        "simulated sign-up with error summary, inline errors and focus management"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "axe (qc.js) clean at 1280 and 375 px; interaction scripted check where interactive; no manual screen-reader test"
+    },
+    {
+      "id": "newsletter-teaser",
+      "selector": "[data-component='newsletter-teaser']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "link band to demo sign-up"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe (qc.js) clean at 1280 and 375 px; interaction scripted check where interactive; no manual screen-reader test"
+    },
+    {
+      "id": "primary-nav",
+      "selector": "[data-component='primary-nav']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "article.html",
+        "author.html",
+        "brands.html",
+        "calendar.html",
+        "culture.html",
+        "fashion.html",
+        "footwear.html",
+        "index.html",
+        "magazine.html",
+        "newsletter.html",
+        "search.html"
+      ],
+      "behavior": [
+        "primary navigation with aria-current"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe (qc.js) clean at 1280 and 375 px; interaction scripted check where interactive; no manual screen-reader test"
+    },
+    {
+      "id": "release-calendar",
+      "selector": "[data-component='release-calendar']",
+      "pages": [
+        "calendar.html"
+      ],
+      "behavior": [
+        "sample-data release table with filters and local Mark toggle"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "arrow keys in selects"
+      ],
+      "status": "implemented",
+      "validation": "axe (qc.js) clean at 1280 and 375 px; interaction scripted check where interactive; no manual screen-reader test"
+    },
+    {
+      "id": "sample-data-notice",
+      "selector": "[data-component='sample-data-notice']",
+      "pages": [
+        "calendar.html"
+      ],
+      "behavior": [
+        "unmissable sample-data label on calendar"
+      ],
+      "keyboard": [
+        "none (static text)"
+      ],
+      "status": "implemented",
+      "validation": "axe (qc.js) clean at 1280 and 375 px; interaction scripted check where interactive; no manual screen-reader test"
+    },
+    {
+      "id": "search-form",
+      "selector": "[data-component='search-form']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "article.html",
+        "author.html",
+        "brands.html",
+        "calendar.html",
+        "culture.html",
+        "fashion.html",
+        "footwear.html",
+        "index.html",
+        "magazine.html",
+        "newsletter.html",
+        "search.html"
+      ],
+      "behavior": [
+        "header search and search-page form submit to search.html?q=; client-side results"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe (qc.js) clean at 1280 and 375 px; interaction scripted check where interactive; no manual screen-reader test"
+    },
+    {
+      "id": "search-results",
+      "selector": "[data-component='search-results']",
+      "pages": [
+        "search.html"
+      ],
+      "behavior": [
+        "grouped story and brand results filtered client-side"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe (qc.js) clean at 1280 and 375 px; interaction scripted check where interactive; no manual screen-reader test"
+    },
+    {
+      "id": "search-suggestions",
+      "selector": "[data-component='search-suggestions']",
+      "pages": [
+        "search.html"
+      ],
+      "behavior": [
+        "sample search links"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe (qc.js) clean at 1280 and 375 px; interaction scripted check where interactive; no manual screen-reader test"
+    },
+    {
+      "id": "site-footer",
+      "selector": "[data-component='site-footer']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "article.html",
+        "author.html",
+        "brands.html",
+        "calendar.html",
+        "culture.html",
+        "fashion.html",
+        "footwear.html",
+        "index.html",
+        "magazine.html",
+        "newsletter.html",
+        "search.html"
+      ],
+      "behavior": [
+        "grouped footer links and repeated fictional note"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe (qc.js) clean at 1280 and 375 px; interaction scripted check where interactive; no manual screen-reader test"
+    },
+    {
+      "id": "site-header",
+      "selector": "[data-component='site-header']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "article.html",
+        "author.html",
+        "brands.html",
+        "calendar.html",
+        "culture.html",
+        "fashion.html",
+        "footwear.html",
+        "index.html",
+        "magazine.html",
+        "newsletter.html",
+        "search.html"
+      ],
+      "behavior": [
+        "global header with fictional notice, masthead, search and nav"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "axe (qc.js) clean at 1280 and 375 px; interaction scripted check where interactive; no manual screen-reader test"
+    },
+    {
+      "id": "site-logo",
+      "selector": "[data-component='site-logo']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "article.html",
+        "author.html",
+        "brands.html",
+        "calendar.html",
+        "culture.html",
+        "fashion.html",
+        "footwear.html",
+        "index.html",
+        "magazine.html",
+        "newsletter.html",
+        "search.html"
+      ],
+      "behavior": [
+        "home link"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe (qc.js) clean at 1280 and 375 px; interaction scripted check where interactive; no manual screen-reader test"
+    },
+    {
+      "id": "story-card",
+      "selector": "[data-component='story-card']",
+      "pages": [
+        "article.html",
+        "author.html",
+        "culture.html",
+        "fashion.html",
+        "footwear.html",
+        "index.html",
+        "magazine.html",
+        "search.html"
+      ],
+      "behavior": [
+        "story card, headline link stretched over card; decorative thumbnail"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe (qc.js) clean at 1280 and 375 px; interaction scripted check where interactive; no manual screen-reader test"
+    },
+    {
+      "id": "story-feed",
+      "selector": "[data-component='story-feed']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "latest stories feed with load-more"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe (qc.js) clean at 1280 and 375 px; interaction scripted check where interactive; no manual screen-reader test"
+    },
+    {
+      "id": "tag-filter",
+      "selector": "[data-component='tag-filter']",
+      "pages": [
+        "culture.html",
+        "fashion.html",
+        "footwear.html"
+      ],
+      "behavior": [
+        "toggle chips (aria-pressed) with announced result count"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "axe (qc.js) clean at 1280 and 375 px; interaction scripted check where interactive; no manual screen-reader test"
+    },
+    {
+      "id": "text-block",
+      "selector": "[data-component='text-block']",
+      "pages": [
+        "about.html"
+      ],
+      "behavior": [
+        "prose block"
+      ],
+      "keyboard": [
+        "none"
+      ],
+      "status": "implemented",
+      "validation": "axe (qc.js) clean at 1280 and 375 px; interaction scripted check where interactive; no manual screen-reader test"
+    }
+  ]
+}

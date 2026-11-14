@@ -1,0 +1,1263 @@
+{
+  "protocol_version": "1.0",
+  "replica_id": "GOV-06",
+  "category": "government",
+  "source_url": "https://www.epa.gov/",
+  "components": [
+    {
+      "id": "demo-notice",
+      "selector": "[data-component=\"demo-notice\"]",
+      "pages": [
+        "404.html",
+        "about.html",
+        "contact-enforcement.html",
+        "index.html",
+        "news.html",
+        "topics.html"
+      ],
+      "instances": [
+        {
+          "page": "index.html",
+          "element": "div",
+          "section": "research-notice",
+          "selector": "[data-component=\"demo-notice\"][data-section=\"research-notice\"]"
+        },
+        {
+          "page": "topics.html",
+          "element": "div",
+          "section": "research-notice",
+          "selector": "[data-component=\"demo-notice\"][data-section=\"research-notice\"]"
+        },
+        {
+          "page": "about.html",
+          "element": "div",
+          "section": "research-notice",
+          "selector": "[data-component=\"demo-notice\"][data-section=\"research-notice\"]"
+        },
+        {
+          "page": "news.html",
+          "element": "div",
+          "section": "research-notice",
+          "selector": "[data-component=\"demo-notice\"][data-section=\"research-notice\"]"
+        },
+        {
+          "page": "contact-enforcement.html",
+          "element": "div",
+          "section": "research-notice",
+          "selector": "[data-component=\"demo-notice\"][data-section=\"research-notice\"]"
+        },
+        {
+          "page": "404.html",
+          "element": "div",
+          "section": "research-notice",
+          "selector": "[data-component=\"demo-notice\"][data-section=\"research-notice\"]"
+        }
+      ],
+      "behavior": [
+        "Semantic content or local navigation"
+      ],
+      "keyboard": [
+        "Tab and Shift+Tab for links/controls",
+        "Enter for links; Enter/Space for buttons",
+        "Native select navigation where applicable",
+        "Escape for disclosures only"
+      ],
+      "status": "implemented",
+      "validation": "static locations/selectors audited; native browser/accessibility behavior not-tested"
+    },
+    {
+      "id": "site-header",
+      "selector": "[data-component=\"site-header\"]",
+      "pages": [
+        "404.html",
+        "about.html",
+        "contact-enforcement.html",
+        "index.html",
+        "news.html",
+        "topics.html"
+      ],
+      "instances": [
+        {
+          "page": "index.html",
+          "element": "header",
+          "section": "global-header",
+          "selector": "[data-component=\"site-header\"][data-section=\"global-header\"]"
+        },
+        {
+          "page": "topics.html",
+          "element": "header",
+          "section": "global-header",
+          "selector": "[data-component=\"site-header\"][data-section=\"global-header\"]"
+        },
+        {
+          "page": "about.html",
+          "element": "header",
+          "section": "global-header",
+          "selector": "[data-component=\"site-header\"][data-section=\"global-header\"]"
+        },
+        {
+          "page": "news.html",
+          "element": "header",
+          "section": "global-header",
+          "selector": "[data-component=\"site-header\"][data-section=\"global-header\"]"
+        },
+        {
+          "page": "contact-enforcement.html",
+          "element": "header",
+          "section": "global-header",
+          "selector": "[data-component=\"site-header\"][data-section=\"global-header\"]"
+        },
+        {
+          "page": "404.html",
+          "element": "header",
+          "section": "global-header",
+          "selector": "[data-component=\"site-header\"][data-section=\"global-header\"]"
+        }
+      ],
+      "behavior": [
+        "Brand navigation and disclosure buttons"
+      ],
+      "keyboard": [
+        "Tab and Shift+Tab for links/controls",
+        "Enter for links; Enter/Space for buttons",
+        "Native select navigation where applicable",
+        "Escape for disclosures only"
+      ],
+      "status": "implemented",
+      "validation": "static locations/selectors audited; actual JavaScript handler states passed in labeled node DOM mocks; native browser/accessibility behavior not-tested"
+    },
+    {
+      "id": "primary-nav",
+      "selector": "[data-component=\"primary-nav\"]",
+      "pages": [
+        "404.html",
+        "about.html",
+        "contact-enforcement.html",
+        "index.html",
+        "news.html",
+        "topics.html"
+      ],
+      "instances": [
+        {
+          "page": "index.html",
+          "element": "nav",
+          "section": "global-navigation",
+          "selector": "[data-component=\"primary-nav\"][data-section=\"global-navigation\"]"
+        },
+        {
+          "page": "topics.html",
+          "element": "nav",
+          "section": "global-navigation",
+          "selector": "[data-component=\"primary-nav\"][data-section=\"global-navigation\"]"
+        },
+        {
+          "page": "about.html",
+          "element": "nav",
+          "section": "global-navigation",
+          "selector": "[data-component=\"primary-nav\"][data-section=\"global-navigation\"]"
+        },
+        {
+          "page": "news.html",
+          "element": "nav",
+          "section": "global-navigation",
+          "selector": "[data-component=\"primary-nav\"][data-section=\"global-navigation\"]"
+        },
+        {
+          "page": "contact-enforcement.html",
+          "element": "nav",
+          "section": "global-navigation",
+          "selector": "[data-component=\"primary-nav\"][data-section=\"global-navigation\"]"
+        },
+        {
+          "page": "404.html",
+          "element": "nav",
+          "section": "global-navigation",
+          "selector": "[data-component=\"primary-nav\"][data-section=\"global-navigation\"]"
+        }
+      ],
+      "behavior": [
+        "Relative page navigation, current-page indication; menu disclosure"
+      ],
+      "keyboard": [
+        "Tab and Shift+Tab for links/controls",
+        "Enter for links; Enter/Space for buttons",
+        "Native select navigation where applicable",
+        "Escape for disclosures only"
+      ],
+      "status": "implemented",
+      "validation": "static locations/selectors audited; actual JavaScript handler states passed in labeled node DOM mocks; native browser/accessibility behavior not-tested"
+    },
+    {
+      "id": "search-drawer",
+      "selector": "[data-component=\"search-drawer\"]",
+      "pages": [
+        "404.html",
+        "about.html",
+        "contact-enforcement.html",
+        "index.html",
+        "news.html",
+        "topics.html"
+      ],
+      "instances": [
+        {
+          "page": "index.html",
+          "element": "section",
+          "section": "site-search",
+          "selector": "[data-component=\"search-drawer\"][data-section=\"site-search\"]"
+        },
+        {
+          "page": "topics.html",
+          "element": "section",
+          "section": "site-search",
+          "selector": "[data-component=\"search-drawer\"][data-section=\"site-search\"]"
+        },
+        {
+          "page": "about.html",
+          "element": "section",
+          "section": "site-search",
+          "selector": "[data-component=\"search-drawer\"][data-section=\"site-search\"]"
+        },
+        {
+          "page": "news.html",
+          "element": "section",
+          "section": "site-search",
+          "selector": "[data-component=\"search-drawer\"][data-section=\"site-search\"]"
+        },
+        {
+          "page": "contact-enforcement.html",
+          "element": "section",
+          "section": "site-search",
+          "selector": "[data-component=\"search-drawer\"][data-section=\"site-search\"]"
+        },
+        {
+          "page": "404.html",
+          "element": "section",
+          "section": "site-search",
+          "selector": "[data-component=\"search-drawer\"][data-section=\"site-search\"]"
+        }
+      ],
+      "behavior": [
+        "Inline disclosure with query input focused on open; Escape restores trigger focus"
+      ],
+      "keyboard": [
+        "Tab and Shift+Tab for links/controls",
+        "Enter for links; Enter/Space for buttons",
+        "Native select navigation where applicable",
+        "Escape for disclosures only"
+      ],
+      "status": "implemented",
+      "validation": "static locations/selectors audited; actual JavaScript handler states passed in labeled node DOM mocks; native browser/accessibility behavior not-tested"
+    },
+    {
+      "id": "search-form",
+      "selector": "[data-component=\"search-form\"]",
+      "pages": [
+        "404.html",
+        "about.html",
+        "contact-enforcement.html",
+        "index.html",
+        "news.html",
+        "topics.html"
+      ],
+      "instances": [
+        {
+          "page": "index.html",
+          "element": "form",
+          "section": "site-search",
+          "selector": "[data-component=\"search-form\"][data-section=\"site-search\"]"
+        },
+        {
+          "page": "topics.html",
+          "element": "form",
+          "section": "site-search",
+          "selector": "[data-component=\"search-form\"][data-section=\"site-search\"]"
+        },
+        {
+          "page": "about.html",
+          "element": "form",
+          "section": "site-search",
+          "selector": "[data-component=\"search-form\"][data-section=\"site-search\"]"
+        },
+        {
+          "page": "news.html",
+          "element": "form",
+          "section": "site-search",
+          "selector": "[data-component=\"search-form\"][data-section=\"site-search\"]"
+        },
+        {
+          "page": "contact-enforcement.html",
+          "element": "form",
+          "section": "site-search",
+          "selector": "[data-component=\"search-form\"][data-section=\"site-search\"]"
+        },
+        {
+          "page": "404.html",
+          "element": "form",
+          "section": "site-search",
+          "selector": "[data-component=\"search-form\"][data-section=\"site-search\"]"
+        }
+      ],
+      "behavior": [
+        "Client-side all-words lookup over five page records; empty-query and no-match statuses"
+      ],
+      "keyboard": [
+        "Tab and Shift+Tab for links/controls",
+        "Enter for links; Enter/Space for buttons",
+        "Native select navigation where applicable",
+        "Escape for disclosures only"
+      ],
+      "status": "implemented",
+      "validation": "static locations/selectors audited; actual JavaScript handler states passed in labeled node DOM mocks; native browser/accessibility behavior not-tested"
+    },
+    {
+      "id": "result-list",
+      "selector": "[data-component=\"result-list\"]",
+      "pages": [
+        "404.html",
+        "about.html",
+        "contact-enforcement.html",
+        "index.html",
+        "news.html",
+        "topics.html"
+      ],
+      "instances": [
+        {
+          "page": "index.html",
+          "element": "ul",
+          "section": "site-search-results",
+          "selector": "[data-component=\"result-list\"][data-section=\"site-search-results\"]"
+        },
+        {
+          "page": "topics.html",
+          "element": "ul",
+          "section": "site-search-results",
+          "selector": "[data-component=\"result-list\"][data-section=\"site-search-results\"]"
+        },
+        {
+          "page": "about.html",
+          "element": "ul",
+          "section": "site-search-results",
+          "selector": "[data-component=\"result-list\"][data-section=\"site-search-results\"]"
+        },
+        {
+          "page": "news.html",
+          "element": "ul",
+          "section": "site-search-results",
+          "selector": "[data-component=\"result-list\"][data-section=\"site-search-results\"]"
+        },
+        {
+          "page": "contact-enforcement.html",
+          "element": "ul",
+          "section": "site-search-results",
+          "selector": "[data-component=\"result-list\"][data-section=\"site-search-results\"]"
+        },
+        {
+          "page": "404.html",
+          "element": "ul",
+          "section": "site-search-results",
+          "selector": "[data-component=\"result-list\"][data-section=\"site-search-results\"]"
+        }
+      ],
+      "behavior": [
+        "Semantic content or local navigation"
+      ],
+      "keyboard": [
+        "Tab and Shift+Tab for links/controls",
+        "Enter for links; Enter/Space for buttons",
+        "Native select navigation where applicable",
+        "Escape for disclosures only"
+      ],
+      "status": "implemented",
+      "validation": "static locations/selectors audited; actual JavaScript handler states passed in labeled node DOM mocks; native browser/accessibility behavior not-tested"
+    },
+    {
+      "id": "page-content",
+      "selector": "[data-component=\"page-content\"]",
+      "pages": [
+        "404.html",
+        "about.html",
+        "contact-enforcement.html",
+        "index.html",
+        "news.html",
+        "topics.html"
+      ],
+      "instances": [
+        {
+          "page": "index.html",
+          "element": "main",
+          "section": "main-content",
+          "selector": "[data-component=\"page-content\"][data-section=\"main-content\"]"
+        },
+        {
+          "page": "topics.html",
+          "element": "main",
+          "section": "main-content",
+          "selector": "[data-component=\"page-content\"][data-section=\"main-content\"]"
+        },
+        {
+          "page": "about.html",
+          "element": "main",
+          "section": "main-content",
+          "selector": "[data-component=\"page-content\"][data-section=\"main-content\"]"
+        },
+        {
+          "page": "news.html",
+          "element": "main",
+          "section": "main-content",
+          "selector": "[data-component=\"page-content\"][data-section=\"main-content\"]"
+        },
+        {
+          "page": "contact-enforcement.html",
+          "element": "main",
+          "section": "main-content",
+          "selector": "[data-component=\"page-content\"][data-section=\"main-content\"]"
+        },
+        {
+          "page": "404.html",
+          "element": "main",
+          "section": "main-content",
+          "selector": "[data-component=\"page-content\"][data-section=\"main-content\"]"
+        }
+      ],
+      "behavior": [
+        "Semantic content or local navigation"
+      ],
+      "keyboard": [
+        "Tab and Shift+Tab for links/controls",
+        "Enter for links; Enter/Space for buttons",
+        "Native select navigation where applicable",
+        "Escape for disclosures only"
+      ],
+      "status": "implemented",
+      "validation": "static locations/selectors audited; native browser/accessibility behavior not-tested"
+    },
+    {
+      "id": "feature-slideshow",
+      "selector": "[data-component=\"feature-slideshow\"]",
+      "pages": [
+        "index.html"
+      ],
+      "instances": [
+        {
+          "page": "index.html",
+          "element": "section",
+          "section": "home-feature",
+          "selector": "[data-component=\"feature-slideshow\"][data-section=\"home-feature\"]"
+        }
+      ],
+      "behavior": [
+        "Manual previous/next cycling of three features; no automatic motion or timer"
+      ],
+      "keyboard": [
+        "Tab and Shift+Tab for links/controls",
+        "Enter for links; Enter/Space for buttons",
+        "Native select navigation where applicable",
+        "Escape for disclosures only"
+      ],
+      "status": "implemented",
+      "validation": "static locations/selectors audited; actual JavaScript handler states passed in labeled node DOM mocks; native browser/accessibility behavior not-tested"
+    },
+    {
+      "id": "content-section",
+      "selector": "[data-component=\"content-section\"]",
+      "pages": [
+        "404.html",
+        "about.html",
+        "contact-enforcement.html",
+        "index.html",
+        "topics.html"
+      ],
+      "instances": [
+        {
+          "page": "index.html",
+          "element": "section",
+          "section": "resources",
+          "selector": "[data-component=\"content-section\"][data-section=\"resources\"]"
+        },
+        {
+          "page": "index.html",
+          "element": "section",
+          "section": "home-news",
+          "selector": "[data-component=\"content-section\"][data-section=\"home-news\"]"
+        },
+        {
+          "page": "topics.html",
+          "element": "section",
+          "section": "air",
+          "selector": "[data-component=\"content-section\"][data-section=\"air\"]"
+        },
+        {
+          "page": "topics.html",
+          "element": "section",
+          "section": "chemicals",
+          "selector": "[data-component=\"content-section\"][data-section=\"chemicals\"]"
+        },
+        {
+          "page": "topics.html",
+          "element": "section",
+          "section": "location",
+          "selector": "[data-component=\"content-section\"][data-section=\"location\"]"
+        },
+        {
+          "page": "topics.html",
+          "element": "section",
+          "section": "living",
+          "selector": "[data-component=\"content-section\"][data-section=\"living\"]"
+        },
+        {
+          "page": "topics.html",
+          "element": "section",
+          "section": "health",
+          "selector": "[data-component=\"content-section\"][data-section=\"health\"]"
+        },
+        {
+          "page": "topics.html",
+          "element": "section",
+          "section": "land",
+          "selector": "[data-component=\"content-section\"][data-section=\"land\"]"
+        },
+        {
+          "page": "topics.html",
+          "element": "section",
+          "section": "science",
+          "selector": "[data-component=\"content-section\"][data-section=\"science\"]"
+        },
+        {
+          "page": "topics.html",
+          "element": "section",
+          "section": "water",
+          "selector": "[data-component=\"content-section\"][data-section=\"water\"]"
+        },
+        {
+          "page": "topics.html",
+          "element": "section",
+          "section": "more-topics",
+          "selector": "[data-component=\"content-section\"][data-section=\"more-topics\"]"
+        },
+        {
+          "page": "about.html",
+          "element": "section",
+          "section": "headquarters",
+          "selector": "[data-component=\"content-section\"][data-section=\"headquarters\"]"
+        },
+        {
+          "page": "about.html",
+          "element": "section",
+          "section": "regions",
+          "selector": "[data-component=\"content-section\"][data-section=\"regions\"]"
+        },
+        {
+          "page": "about.html",
+          "element": "section",
+          "section": "offices",
+          "selector": "[data-component=\"content-section\"][data-section=\"offices\"]"
+        },
+        {
+          "page": "about.html",
+          "element": "section",
+          "section": "careers",
+          "selector": "[data-component=\"content-section\"][data-section=\"careers\"]"
+        },
+        {
+          "page": "about.html",
+          "element": "section",
+          "section": "grants",
+          "selector": "[data-component=\"content-section\"][data-section=\"grants\"]"
+        },
+        {
+          "page": "about.html",
+          "element": "section",
+          "section": "demo-accessibility",
+          "selector": "[data-component=\"content-section\"][data-section=\"demo-accessibility\"]"
+        },
+        {
+          "page": "contact-enforcement.html",
+          "element": "section",
+          "section": "guidance",
+          "selector": "[data-component=\"content-section\"][data-section=\"guidance\"]"
+        },
+        {
+          "page": "contact-enforcement.html",
+          "element": "section",
+          "section": "questions",
+          "selector": "[data-component=\"content-section\"][data-section=\"questions\"]"
+        },
+        {
+          "page": "contact-enforcement.html",
+          "element": "section",
+          "section": "reporting",
+          "selector": "[data-component=\"content-section\"][data-section=\"reporting\"]"
+        },
+        {
+          "page": "contact-enforcement.html",
+          "element": "section",
+          "section": "form-heading",
+          "selector": "[data-component=\"content-section\"][data-section=\"form-heading\"]"
+        },
+        {
+          "page": "404.html",
+          "element": "section",
+          "section": "find-page",
+          "selector": "[data-component=\"content-section\"][data-section=\"find-page\"]"
+        }
+      ],
+      "behavior": [
+        "Semantic content or local navigation"
+      ],
+      "keyboard": [
+        "Tab and Shift+Tab for links/controls",
+        "Enter for links; Enter/Space for buttons",
+        "Native select navigation where applicable",
+        "Escape for disclosures only"
+      ],
+      "status": "implemented",
+      "validation": "static locations/selectors audited; native browser/accessibility behavior not-tested"
+    },
+    {
+      "id": "resource-card",
+      "selector": "[data-component=\"resource-card\"]",
+      "pages": [
+        "about.html",
+        "index.html"
+      ],
+      "instances": [
+        {
+          "page": "index.html",
+          "element": "article",
+          "section": "resource-cards",
+          "selector": "[data-component=\"resource-card\"][data-section=\"resource-cards\"]"
+        },
+        {
+          "page": "index.html",
+          "element": "article",
+          "section": "resource-cards",
+          "selector": "[data-component=\"resource-card\"][data-section=\"resource-cards\"]"
+        },
+        {
+          "page": "index.html",
+          "element": "article",
+          "section": "resource-cards",
+          "selector": "[data-component=\"resource-card\"][data-section=\"resource-cards\"]"
+        },
+        {
+          "page": "index.html",
+          "element": "article",
+          "section": "resource-cards",
+          "selector": "[data-component=\"resource-card\"][data-section=\"resource-cards\"]"
+        },
+        {
+          "page": "index.html",
+          "element": "article",
+          "section": "resource-cards",
+          "selector": "[data-component=\"resource-card\"][data-section=\"resource-cards\"]"
+        },
+        {
+          "page": "index.html",
+          "element": "article",
+          "section": "resource-cards",
+          "selector": "[data-component=\"resource-card\"][data-section=\"resource-cards\"]"
+        },
+        {
+          "page": "about.html",
+          "element": "article",
+          "section": "resource-cards",
+          "selector": "[data-component=\"resource-card\"][data-section=\"resource-cards\"]"
+        },
+        {
+          "page": "about.html",
+          "element": "article",
+          "section": "resource-cards",
+          "selector": "[data-component=\"resource-card\"][data-section=\"resource-cards\"]"
+        },
+        {
+          "page": "about.html",
+          "element": "article",
+          "section": "resource-cards",
+          "selector": "[data-component=\"resource-card\"][data-section=\"resource-cards\"]"
+        }
+      ],
+      "behavior": [
+        "Semantic content or local navigation"
+      ],
+      "keyboard": [
+        "Tab and Shift+Tab for links/controls",
+        "Enter for links; Enter/Space for buttons",
+        "Native select navigation where applicable",
+        "Escape for disclosures only"
+      ],
+      "status": "implemented",
+      "validation": "static locations/selectors audited; native browser/accessibility behavior not-tested"
+    },
+    {
+      "id": "site-footer",
+      "selector": "[data-component=\"site-footer\"]",
+      "pages": [
+        "404.html",
+        "about.html",
+        "contact-enforcement.html",
+        "index.html",
+        "news.html",
+        "topics.html"
+      ],
+      "instances": [
+        {
+          "page": "index.html",
+          "element": "footer",
+          "section": "global-footer",
+          "selector": "[data-component=\"site-footer\"][data-section=\"global-footer\"]"
+        },
+        {
+          "page": "topics.html",
+          "element": "footer",
+          "section": "global-footer",
+          "selector": "[data-component=\"site-footer\"][data-section=\"global-footer\"]"
+        },
+        {
+          "page": "about.html",
+          "element": "footer",
+          "section": "global-footer",
+          "selector": "[data-component=\"site-footer\"][data-section=\"global-footer\"]"
+        },
+        {
+          "page": "news.html",
+          "element": "footer",
+          "section": "global-footer",
+          "selector": "[data-component=\"site-footer\"][data-section=\"global-footer\"]"
+        },
+        {
+          "page": "contact-enforcement.html",
+          "element": "footer",
+          "section": "global-footer",
+          "selector": "[data-component=\"site-footer\"][data-section=\"global-footer\"]"
+        },
+        {
+          "page": "404.html",
+          "element": "footer",
+          "section": "global-footer",
+          "selector": "[data-component=\"site-footer\"][data-section=\"global-footer\"]"
+        }
+      ],
+      "behavior": [
+        "Semantic content or local navigation"
+      ],
+      "keyboard": [
+        "Tab and Shift+Tab for links/controls",
+        "Enter for links; Enter/Space for buttons",
+        "Native select navigation where applicable",
+        "Escape for disclosures only"
+      ],
+      "status": "implemented",
+      "validation": "static locations/selectors audited; native browser/accessibility behavior not-tested"
+    },
+    {
+      "id": "footer-link-group",
+      "selector": "[data-component=\"footer-link-group\"]",
+      "pages": [
+        "404.html",
+        "about.html",
+        "contact-enforcement.html",
+        "index.html",
+        "news.html",
+        "topics.html"
+      ],
+      "instances": [
+        {
+          "page": "index.html",
+          "element": "nav",
+          "section": "footer-discover",
+          "selector": "[data-component=\"footer-link-group\"][data-section=\"footer-discover\"]"
+        },
+        {
+          "page": "index.html",
+          "element": "nav",
+          "section": "footer-connect",
+          "selector": "[data-component=\"footer-link-group\"][data-section=\"footer-connect\"]"
+        },
+        {
+          "page": "index.html",
+          "element": "nav",
+          "section": "footer-ask",
+          "selector": "[data-component=\"footer-link-group\"][data-section=\"footer-ask\"]"
+        },
+        {
+          "page": "index.html",
+          "element": "nav",
+          "section": "footer-follow",
+          "selector": "[data-component=\"footer-link-group\"][data-section=\"footer-follow\"]"
+        },
+        {
+          "page": "topics.html",
+          "element": "nav",
+          "section": "footer-discover",
+          "selector": "[data-component=\"footer-link-group\"][data-section=\"footer-discover\"]"
+        },
+        {
+          "page": "topics.html",
+          "element": "nav",
+          "section": "footer-connect",
+          "selector": "[data-component=\"footer-link-group\"][data-section=\"footer-connect\"]"
+        },
+        {
+          "page": "topics.html",
+          "element": "nav",
+          "section": "footer-ask",
+          "selector": "[data-component=\"footer-link-group\"][data-section=\"footer-ask\"]"
+        },
+        {
+          "page": "topics.html",
+          "element": "nav",
+          "section": "footer-follow",
+          "selector": "[data-component=\"footer-link-group\"][data-section=\"footer-follow\"]"
+        },
+        {
+          "page": "about.html",
+          "element": "nav",
+          "section": "footer-discover",
+          "selector": "[data-component=\"footer-link-group\"][data-section=\"footer-discover\"]"
+        },
+        {
+          "page": "about.html",
+          "element": "nav",
+          "section": "footer-connect",
+          "selector": "[data-component=\"footer-link-group\"][data-section=\"footer-connect\"]"
+        },
+        {
+          "page": "about.html",
+          "element": "nav",
+          "section": "footer-ask",
+          "selector": "[data-component=\"footer-link-group\"][data-section=\"footer-ask\"]"
+        },
+        {
+          "page": "about.html",
+          "element": "nav",
+          "section": "footer-follow",
+          "selector": "[data-component=\"footer-link-group\"][data-section=\"footer-follow\"]"
+        },
+        {
+          "page": "news.html",
+          "element": "nav",
+          "section": "footer-discover",
+          "selector": "[data-component=\"footer-link-group\"][data-section=\"footer-discover\"]"
+        },
+        {
+          "page": "news.html",
+          "element": "nav",
+          "section": "footer-connect",
+          "selector": "[data-component=\"footer-link-group\"][data-section=\"footer-connect\"]"
+        },
+        {
+          "page": "news.html",
+          "element": "nav",
+          "section": "footer-ask",
+          "selector": "[data-component=\"footer-link-group\"][data-section=\"footer-ask\"]"
+        },
+        {
+          "page": "news.html",
+          "element": "nav",
+          "section": "footer-follow",
+          "selector": "[data-component=\"footer-link-group\"][data-section=\"footer-follow\"]"
+        },
+        {
+          "page": "contact-enforcement.html",
+          "element": "nav",
+          "section": "footer-discover",
+          "selector": "[data-component=\"footer-link-group\"][data-section=\"footer-discover\"]"
+        },
+        {
+          "page": "contact-enforcement.html",
+          "element": "nav",
+          "section": "footer-connect",
+          "selector": "[data-component=\"footer-link-group\"][data-section=\"footer-connect\"]"
+        },
+        {
+          "page": "contact-enforcement.html",
+          "element": "nav",
+          "section": "footer-ask",
+          "selector": "[data-component=\"footer-link-group\"][data-section=\"footer-ask\"]"
+        },
+        {
+          "page": "contact-enforcement.html",
+          "element": "nav",
+          "section": "footer-follow",
+          "selector": "[data-component=\"footer-link-group\"][data-section=\"footer-follow\"]"
+        },
+        {
+          "page": "404.html",
+          "element": "nav",
+          "section": "footer-discover",
+          "selector": "[data-component=\"footer-link-group\"][data-section=\"footer-discover\"]"
+        },
+        {
+          "page": "404.html",
+          "element": "nav",
+          "section": "footer-connect",
+          "selector": "[data-component=\"footer-link-group\"][data-section=\"footer-connect\"]"
+        },
+        {
+          "page": "404.html",
+          "element": "nav",
+          "section": "footer-ask",
+          "selector": "[data-component=\"footer-link-group\"][data-section=\"footer-ask\"]"
+        },
+        {
+          "page": "404.html",
+          "element": "nav",
+          "section": "footer-follow",
+          "selector": "[data-component=\"footer-link-group\"][data-section=\"footer-follow\"]"
+        }
+      ],
+      "behavior": [
+        "Semantic content or local navigation"
+      ],
+      "keyboard": [
+        "Tab and Shift+Tab for links/controls",
+        "Enter for links; Enter/Space for buttons",
+        "Native select navigation where applicable",
+        "Escape for disclosures only"
+      ],
+      "status": "implemented",
+      "validation": "static locations/selectors audited; native browser/accessibility behavior not-tested"
+    },
+    {
+      "id": "breadcrumb",
+      "selector": "[data-component=\"breadcrumb\"]",
+      "pages": [
+        "404.html",
+        "about.html",
+        "contact-enforcement.html",
+        "news.html",
+        "topics.html"
+      ],
+      "instances": [
+        {
+          "page": "topics.html",
+          "element": "nav",
+          "section": "breadcrumbs",
+          "selector": "[data-component=\"breadcrumb\"][data-section=\"breadcrumbs\"]"
+        },
+        {
+          "page": "about.html",
+          "element": "nav",
+          "section": "breadcrumbs",
+          "selector": "[data-component=\"breadcrumb\"][data-section=\"breadcrumbs\"]"
+        },
+        {
+          "page": "news.html",
+          "element": "nav",
+          "section": "breadcrumbs",
+          "selector": "[data-component=\"breadcrumb\"][data-section=\"breadcrumbs\"]"
+        },
+        {
+          "page": "contact-enforcement.html",
+          "element": "nav",
+          "section": "breadcrumbs",
+          "selector": "[data-component=\"breadcrumb\"][data-section=\"breadcrumbs\"]"
+        },
+        {
+          "page": "404.html",
+          "element": "nav",
+          "section": "breadcrumbs",
+          "selector": "[data-component=\"breadcrumb\"][data-section=\"breadcrumbs\"]"
+        }
+      ],
+      "behavior": [
+        "Semantic content or local navigation"
+      ],
+      "keyboard": [
+        "Tab and Shift+Tab for links/controls",
+        "Enter for links; Enter/Space for buttons",
+        "Native select navigation where applicable",
+        "Escape for disclosures only"
+      ],
+      "status": "implemented",
+      "validation": "static locations/selectors audited; native browser/accessibility behavior not-tested"
+    },
+    {
+      "id": "side-navigation",
+      "selector": "[data-component=\"side-navigation\"]",
+      "pages": [
+        "contact-enforcement.html",
+        "news.html"
+      ],
+      "instances": [
+        {
+          "page": "news.html",
+          "element": "aside",
+          "section": "local-navigation",
+          "selector": "[data-component=\"side-navigation\"][data-section=\"local-navigation\"]"
+        },
+        {
+          "page": "contact-enforcement.html",
+          "element": "aside",
+          "section": "local-navigation",
+          "selector": "[data-component=\"side-navigation\"][data-section=\"local-navigation\"]"
+        }
+      ],
+      "behavior": [
+        "Section navigation disclosure; Escape restores trigger focus"
+      ],
+      "keyboard": [
+        "Tab and Shift+Tab for links/controls",
+        "Enter for links; Enter/Space for buttons",
+        "Native select navigation where applicable",
+        "Escape for disclosures only"
+      ],
+      "status": "implemented",
+      "validation": "static locations/selectors audited; actual JavaScript handler states passed in labeled node DOM mocks; native browser/accessibility behavior not-tested"
+    },
+    {
+      "id": "section-nav",
+      "selector": "[data-component=\"section-nav\"]",
+      "pages": [
+        "contact-enforcement.html",
+        "news.html"
+      ],
+      "instances": [
+        {
+          "page": "news.html",
+          "element": "nav",
+          "section": "local-links",
+          "selector": "[data-component=\"section-nav\"][data-section=\"local-links\"]"
+        },
+        {
+          "page": "contact-enforcement.html",
+          "element": "nav",
+          "section": "local-links",
+          "selector": "[data-component=\"section-nav\"][data-section=\"local-links\"]"
+        }
+      ],
+      "behavior": [
+        "Semantic content or local navigation"
+      ],
+      "keyboard": [
+        "Tab and Shift+Tab for links/controls",
+        "Enter for links; Enter/Space for buttons",
+        "Native select navigation where applicable",
+        "Escape for disclosures only"
+      ],
+      "status": "implemented",
+      "validation": "static locations/selectors audited; actual JavaScript handler states passed in labeled node DOM mocks; native browser/accessibility behavior not-tested"
+    },
+    {
+      "id": "news-filter-form",
+      "selector": "[data-component=\"news-filter-form\"]",
+      "pages": [
+        "news.html"
+      ],
+      "instances": [
+        {
+          "page": "news.html",
+          "element": "form",
+          "section": "news-browse",
+          "selector": "[data-component=\"news-filter-form\"][data-section=\"news-browse\"]"
+        }
+      ],
+      "behavior": [
+        "Intersection of subject/date/office/region/language criteria, explicit Go and reset"
+      ],
+      "keyboard": [
+        "Tab and Shift+Tab for links/controls",
+        "Enter for links; Enter/Space for buttons",
+        "Native select navigation where applicable",
+        "Escape for disclosures only"
+      ],
+      "status": "implemented",
+      "validation": "static locations/selectors audited; actual JavaScript handler states passed in labeled node DOM mocks; native browser/accessibility behavior not-tested"
+    },
+    {
+      "id": "news-list",
+      "selector": "[data-component=\"news-list\"]",
+      "pages": [
+        "news.html"
+      ],
+      "instances": [
+        {
+          "page": "news.html",
+          "element": "section",
+          "section": "news-results",
+          "selector": "[data-component=\"news-list\"][data-section=\"news-results\"]"
+        }
+      ],
+      "behavior": [
+        "Semantic content or local navigation"
+      ],
+      "keyboard": [
+        "Tab and Shift+Tab for links/controls",
+        "Enter for links; Enter/Space for buttons",
+        "Native select navigation where applicable",
+        "Escape for disclosures only"
+      ],
+      "status": "implemented",
+      "validation": "static locations/selectors audited; actual JavaScript handler states passed in labeled node DOM mocks; native browser/accessibility behavior not-tested"
+    },
+    {
+      "id": "news-card",
+      "selector": "[data-component=\"news-card\"]",
+      "pages": [
+        "news.html"
+      ],
+      "instances": [
+        {
+          "page": "news.html",
+          "element": "article",
+          "section": "news-releases",
+          "selector": "[data-component=\"news-card\"][data-section=\"news-releases\"]"
+        },
+        {
+          "page": "news.html",
+          "element": "article",
+          "section": "news-releases",
+          "selector": "[data-component=\"news-card\"][data-section=\"news-releases\"]"
+        },
+        {
+          "page": "news.html",
+          "element": "article",
+          "section": "news-releases",
+          "selector": "[data-component=\"news-card\"][data-section=\"news-releases\"]"
+        },
+        {
+          "page": "news.html",
+          "element": "article",
+          "section": "news-releases",
+          "selector": "[data-component=\"news-card\"][data-section=\"news-releases\"]"
+        },
+        {
+          "page": "news.html",
+          "element": "article",
+          "section": "news-releases",
+          "selector": "[data-component=\"news-card\"][data-section=\"news-releases\"]"
+        }
+      ],
+      "behavior": [
+        "Semantic content or local navigation"
+      ],
+      "keyboard": [
+        "Tab and Shift+Tab for links/controls",
+        "Enter for links; Enter/Space for buttons",
+        "Native select navigation where applicable",
+        "Escape for disclosures only"
+      ],
+      "status": "implemented",
+      "validation": "static locations/selectors audited; actual JavaScript handler states passed in labeled node DOM mocks; native browser/accessibility behavior not-tested"
+    },
+    {
+      "id": "guidance-note",
+      "selector": "[data-component=\"guidance-note\"]",
+      "pages": [
+        "contact-enforcement.html"
+      ],
+      "instances": [
+        {
+          "page": "contact-enforcement.html",
+          "element": "div",
+          "section": "contact-guidance",
+          "selector": "[data-component=\"guidance-note\"][data-section=\"contact-guidance\"]"
+        }
+      ],
+      "behavior": [
+        "Semantic content or local navigation"
+      ],
+      "keyboard": [
+        "Tab and Shift+Tab for links/controls",
+        "Enter for links; Enter/Space for buttons",
+        "Native select navigation where applicable",
+        "Escape for disclosures only"
+      ],
+      "status": "implemented",
+      "validation": "static locations/selectors audited; native browser/accessibility behavior not-tested"
+    },
+    {
+      "id": "contact-form",
+      "selector": "[data-component=\"contact-form\"]",
+      "pages": [
+        "contact-enforcement.html"
+      ],
+      "instances": [
+        {
+          "page": "contact-enforcement.html",
+          "element": "form",
+          "section": "enforcement-question",
+          "selector": "[data-component=\"contact-form\"][data-section=\"enforcement-question\"]"
+        }
+      ],
+      "behavior": [
+        "Optional email validation, required topic and question, first-error focus, local demo confirmation focus"
+      ],
+      "keyboard": [
+        "Tab and Shift+Tab for links/controls",
+        "Enter for links; Enter/Space for buttons",
+        "Native select navigation where applicable",
+        "Escape for disclosures only"
+      ],
+      "status": "implemented",
+      "validation": "static locations/selectors audited; actual JavaScript handler states passed in labeled node DOM mocks; native browser/accessibility behavior not-tested"
+    },
+    {
+      "id": "search-result",
+      "selector": "[data-component=\"search-result\"]",
+      "pages": [
+        "404.html",
+        "about.html",
+        "contact-enforcement.html",
+        "index.html",
+        "news.html",
+        "topics.html"
+      ],
+      "instances": [
+        {
+          "page": "index.html",
+          "element": "li",
+          "section": "site-search-results",
+          "selector": "#search-results [data-component=\"search-result\"]",
+          "generated_by": "js/main.js on search submit"
+        },
+        {
+          "page": "topics.html",
+          "element": "li",
+          "section": "site-search-results",
+          "selector": "#search-results [data-component=\"search-result\"]",
+          "generated_by": "js/main.js on search submit"
+        },
+        {
+          "page": "about.html",
+          "element": "li",
+          "section": "site-search-results",
+          "selector": "#search-results [data-component=\"search-result\"]",
+          "generated_by": "js/main.js on search submit"
+        },
+        {
+          "page": "news.html",
+          "element": "li",
+          "section": "site-search-results",
+          "selector": "#search-results [data-component=\"search-result\"]",
+          "generated_by": "js/main.js on search submit"
+        },
+        {
+          "page": "contact-enforcement.html",
+          "element": "li",
+          "section": "site-search-results",
+          "selector": "#search-results [data-component=\"search-result\"]",
+          "generated_by": "js/main.js on search submit"
+        },
+        {
+          "page": "404.html",
+          "element": "li",
+          "section": "site-search-results",
+          "selector": "#search-results [data-component=\"search-result\"]",
+          "generated_by": "js/main.js on search submit"
+        }
+      ],
+      "behavior": [
+        "Semantic content or local navigation"
+      ],
+      "keyboard": [
+        "Tab and Shift+Tab for links/controls",
+        "Enter for links; Enter/Space for buttons",
+        "Native select navigation where applicable",
+        "Escape for disclosures only"
+      ],
+      "status": "implemented",
+      "validation": "static locations/selectors audited; actual JavaScript handler states passed in labeled node DOM mocks; native browser/accessibility behavior not-tested"
+    }
+  ]
+}

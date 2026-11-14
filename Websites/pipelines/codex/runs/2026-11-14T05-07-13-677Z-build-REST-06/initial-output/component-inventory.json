@@ -1,0 +1,654 @@
+{
+  "protocol_version": "1.0",
+  "replica_id": "REST-06",
+  "category": "restaurant",
+  "source_url": "https://www.pizzeriabianco.com/",
+  "components": [
+    {
+      "id": "breadcrumb",
+      "selector": "[data-component='breadcrumb']",
+      "pages": [
+        "404.html",
+        "heritage-menu.html",
+        "heritage-square.html",
+        "los-angeles.html",
+        "town-country.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "section": "breadcrumb"
+        },
+        {
+          "page": "heritage-menu.html",
+          "section": "breadcrumb"
+        },
+        {
+          "page": "heritage-square.html",
+          "section": "breadcrumb"
+        },
+        {
+          "page": "los-angeles.html",
+          "section": "breadcrumb"
+        },
+        {
+          "page": "town-country.html",
+          "section": "breadcrumb"
+        }
+      ],
+      "behavior": [
+        "Static semantic content; relative links where present."
+      ],
+      "keyboard": [
+        "Tab/Enter for links where present"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; static audit pending; browser not tested"
+    },
+    {
+      "id": "call-to-action",
+      "selector": "[data-component='call-to-action']",
+      "pages": [
+        "404.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "section": "recovery-links"
+        }
+      ],
+      "behavior": [
+        "Static semantic content; relative links where present."
+      ],
+      "keyboard": [
+        "Tab/Enter for links where present"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; static audit pending; browser not tested"
+    },
+    {
+      "id": "demo-notice",
+      "selector": "[data-component='demo-notice']",
+      "pages": [
+        "404.html",
+        "heritage-menu.html",
+        "heritage-square.html",
+        "index.html",
+        "los-angeles.html",
+        "town-country.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "section": "research-notice"
+        },
+        {
+          "page": "heritage-menu.html",
+          "section": "research-notice"
+        },
+        {
+          "page": "heritage-square.html",
+          "section": "research-notice"
+        },
+        {
+          "page": "index.html",
+          "section": "research-notice"
+        },
+        {
+          "page": "los-angeles.html",
+          "section": "research-notice"
+        },
+        {
+          "page": "town-country.html",
+          "section": "research-notice"
+        }
+      ],
+      "behavior": [
+        "Static semantic content; relative links where present."
+      ],
+      "keyboard": [
+        "Tab/Enter for links where present"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; static audit pending; browser not tested"
+    },
+    {
+      "id": "dialog",
+      "selector": "[data-component='dialog']",
+      "pages": [
+        "town-country.html"
+      ],
+      "instances": [
+        {
+          "page": "town-country.html",
+          "section": "reservation-dialog"
+        }
+      ],
+      "behavior": [
+        "Native modal, explicit close and Escape, focus return to opener."
+      ],
+      "keyboard": [
+        "Tab/Shift+Tab within modal",
+        "Escape",
+        "Enter/Space closes"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; static audit pending; browser not tested"
+    },
+    {
+      "id": "editorial-content",
+      "selector": "[data-component='editorial-content']",
+      "pages": [
+        "heritage-square.html",
+        "town-country.html"
+      ],
+      "instances": [
+        {
+          "page": "heritage-square.html",
+          "section": "location-story"
+        },
+        {
+          "page": "town-country.html",
+          "section": "menu-scope"
+        }
+      ],
+      "behavior": [
+        "Static semantic content; relative links where present."
+      ],
+      "keyboard": [
+        "Tab/Enter for links where present"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; static audit pending; browser not tested"
+    },
+    {
+      "id": "gallery",
+      "selector": "[data-component='gallery']",
+      "pages": [
+        "los-angeles.html"
+      ],
+      "instances": [
+        {
+          "page": "los-angeles.html",
+          "section": "location-gallery"
+        }
+      ],
+      "behavior": [
+        "Two local images, manual previous/next wraparound, polite image count."
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter/Space activates previous/next"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; static audit pending; browser not tested"
+    },
+    {
+      "id": "location-card",
+      "selector": "[data-component='location-card']",
+      "pages": [
+        "index.html"
+      ],
+      "instances": [
+        {
+          "page": "index.html",
+          "section": "heritage-square-location"
+        },
+        {
+          "page": "index.html",
+          "section": "town-country-location"
+        },
+        {
+          "page": "index.html",
+          "section": "los-angeles-location"
+        }
+      ],
+      "behavior": [
+        "Static semantic content; relative links where present."
+      ],
+      "keyboard": [
+        "Tab/Enter for links where present"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; static audit pending; browser not tested"
+    },
+    {
+      "id": "location-detail",
+      "selector": "[data-component='location-detail']",
+      "pages": [
+        "heritage-square.html",
+        "los-angeles.html",
+        "town-country.html"
+      ],
+      "instances": [
+        {
+          "page": "heritage-square.html",
+          "section": "location-visit"
+        },
+        {
+          "page": "los-angeles.html",
+          "section": "location-visit"
+        },
+        {
+          "page": "town-country.html",
+          "section": "location-visit"
+        }
+      ],
+      "behavior": [
+        "Static semantic content; relative links where present."
+      ],
+      "keyboard": [
+        "Tab/Enter for links where present"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; static audit pending; browser not tested"
+    },
+    {
+      "id": "location-directory",
+      "selector": "[data-component='location-directory']",
+      "pages": [
+        "index.html"
+      ],
+      "instances": [
+        {
+          "page": "index.html",
+          "section": "location-directory"
+        }
+      ],
+      "behavior": [
+        "Static semantic content; relative links where present."
+      ],
+      "keyboard": [
+        "Tab/Enter for links where present"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; static audit pending; browser not tested"
+    },
+    {
+      "id": "menu-category",
+      "selector": "[data-component='menu-category']",
+      "pages": [
+        "heritage-menu.html"
+      ],
+      "instances": [
+        {
+          "page": "heritage-menu.html",
+          "section": "to-start"
+        },
+        {
+          "page": "heritage-menu.html",
+          "section": "pizza"
+        },
+        {
+          "page": "heritage-menu.html",
+          "section": "to-finish"
+        }
+      ],
+      "behavior": [
+        "Static semantic content; relative links where present."
+      ],
+      "keyboard": [
+        "Tab/Enter for links where present"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; static audit pending; browser not tested"
+    },
+    {
+      "id": "menu-item",
+      "selector": "[data-component='menu-item']",
+      "pages": [
+        "heritage-menu.html"
+      ],
+      "instances": [
+        {
+          "page": "heritage-menu.html",
+          "section": "to-start-dish"
+        },
+        {
+          "page": "heritage-menu.html",
+          "section": "to-start-dish"
+        },
+        {
+          "page": "heritage-menu.html",
+          "section": "pizza-dish"
+        },
+        {
+          "page": "heritage-menu.html",
+          "section": "pizza-dish"
+        },
+        {
+          "page": "heritage-menu.html",
+          "section": "pizza-dish"
+        },
+        {
+          "page": "heritage-menu.html",
+          "section": "to-finish-dish"
+        }
+      ],
+      "behavior": [
+        "Static semantic content; relative links where present."
+      ],
+      "keyboard": [
+        "Tab/Enter for links where present"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; static audit pending; browser not tested"
+    },
+    {
+      "id": "nav-disclosure",
+      "selector": "[data-component='nav-disclosure']",
+      "pages": [
+        "404.html",
+        "heritage-menu.html",
+        "heritage-square.html",
+        "index.html",
+        "los-angeles.html",
+        "town-country.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "section": "location-navigation"
+        },
+        {
+          "page": "heritage-menu.html",
+          "section": "location-navigation"
+        },
+        {
+          "page": "heritage-square.html",
+          "section": "location-navigation"
+        },
+        {
+          "page": "index.html",
+          "section": "location-navigation"
+        },
+        {
+          "page": "los-angeles.html",
+          "section": "location-navigation"
+        },
+        {
+          "page": "town-country.html",
+          "section": "location-navigation"
+        }
+      ],
+      "behavior": [
+        "Native location disclosure."
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter/Space toggles",
+        "Escape closes and focuses summary"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; static audit pending; browser not tested"
+    },
+    {
+      "id": "page-heading",
+      "selector": "[data-component='page-heading']",
+      "pages": [
+        "404.html",
+        "heritage-menu.html",
+        "heritage-square.html",
+        "los-angeles.html",
+        "town-country.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "section": "page-introduction"
+        },
+        {
+          "page": "heritage-menu.html",
+          "section": "page-introduction"
+        },
+        {
+          "page": "heritage-square.html",
+          "section": "page-introduction"
+        },
+        {
+          "page": "los-angeles.html",
+          "section": "page-introduction"
+        },
+        {
+          "page": "town-country.html",
+          "section": "page-introduction"
+        }
+      ],
+      "behavior": [
+        "Static semantic content; relative links where present."
+      ],
+      "keyboard": [
+        "Tab/Enter for links where present"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; static audit pending; browser not tested"
+    },
+    {
+      "id": "policy-notice",
+      "selector": "[data-component='policy-notice']",
+      "pages": [
+        "heritage-square.html"
+      ],
+      "instances": [
+        {
+          "page": "heritage-square.html",
+          "section": "location-policies"
+        }
+      ],
+      "behavior": [
+        "Static semantic content; relative links where present."
+      ],
+      "keyboard": [
+        "Tab/Enter for links where present"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; static audit pending; browser not tested"
+    },
+    {
+      "id": "primary-nav",
+      "selector": "[data-component='primary-nav']",
+      "pages": [
+        "404.html",
+        "heritage-menu.html",
+        "heritage-square.html",
+        "index.html",
+        "los-angeles.html",
+        "town-country.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "section": "global-navigation"
+        },
+        {
+          "page": "heritage-menu.html",
+          "section": "global-navigation"
+        },
+        {
+          "page": "heritage-square.html",
+          "section": "global-navigation"
+        },
+        {
+          "page": "index.html",
+          "section": "global-navigation"
+        },
+        {
+          "page": "los-angeles.html",
+          "section": "global-navigation"
+        },
+        {
+          "page": "town-country.html",
+          "section": "global-navigation"
+        }
+      ],
+      "behavior": [
+        "Responsive relative links and current-page indicators; mobile expanded state/Escape."
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space for menu button",
+        "Escape closes menu and returns focus"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; static audit pending; browser not tested"
+    },
+    {
+      "id": "reservation-demo",
+      "selector": "[data-component='reservation-demo']",
+      "pages": [
+        "town-country.html"
+      ],
+      "instances": [
+        {
+          "page": "town-country.html",
+          "section": "reservation-handoff"
+        }
+      ],
+      "behavior": [
+        "Explanatory local modal handoff; no booking or details collected."
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter/Space opens modal"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; static audit pending; browser not tested"
+    },
+    {
+      "id": "section-nav",
+      "selector": "[data-component='section-nav']",
+      "pages": [
+        "heritage-menu.html"
+      ],
+      "instances": [
+        {
+          "page": "heritage-menu.html",
+          "section": "menu-navigation"
+        }
+      ],
+      "behavior": [
+        "Menu section anchor links."
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter follows fragment"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; static audit pending; browser not tested"
+    },
+    {
+      "id": "site-footer",
+      "selector": "[data-component='site-footer']",
+      "pages": [
+        "404.html",
+        "heritage-menu.html",
+        "heritage-square.html",
+        "index.html",
+        "los-angeles.html",
+        "town-country.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "section": "global-footer"
+        },
+        {
+          "page": "heritage-menu.html",
+          "section": "global-footer"
+        },
+        {
+          "page": "heritage-square.html",
+          "section": "global-footer"
+        },
+        {
+          "page": "index.html",
+          "section": "global-footer"
+        },
+        {
+          "page": "los-angeles.html",
+          "section": "global-footer"
+        },
+        {
+          "page": "town-country.html",
+          "section": "global-footer"
+        }
+      ],
+      "behavior": [
+        "Static semantic content; relative links where present."
+      ],
+      "keyboard": [
+        "Tab/Enter for links where present"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; static audit pending; browser not tested"
+    },
+    {
+      "id": "site-header",
+      "selector": "[data-component='site-header']",
+      "pages": [
+        "404.html",
+        "heritage-menu.html",
+        "heritage-square.html",
+        "index.html",
+        "los-angeles.html",
+        "town-country.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "section": "global-header"
+        },
+        {
+          "page": "heritage-menu.html",
+          "section": "global-header"
+        },
+        {
+          "page": "heritage-square.html",
+          "section": "global-header"
+        },
+        {
+          "page": "index.html",
+          "section": "global-header"
+        },
+        {
+          "page": "los-angeles.html",
+          "section": "global-header"
+        },
+        {
+          "page": "town-country.html",
+          "section": "global-header"
+        }
+      ],
+      "behavior": [
+        "Static semantic content; relative links where present."
+      ],
+      "keyboard": [
+        "Tab/Enter for links where present"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; static audit pending; browser not tested"
+    },
+    {
+      "id": "split-hero",
+      "selector": "[data-component='split-hero']",
+      "pages": [
+        "index.html"
+      ],
+      "instances": [
+        {
+          "page": "index.html",
+          "section": "pizzeria-introduction"
+        }
+      ],
+      "behavior": [
+        "Static semantic content; relative links where present."
+      ],
+      "keyboard": [
+        "Tab/Enter for links where present"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; static audit pending; browser not tested"
+    }
+  ]
+}

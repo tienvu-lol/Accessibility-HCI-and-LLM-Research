@@ -1,0 +1,705 @@
+{
+  "protocol_version": "1.0",
+  "replica_id": "REST-04",
+  "category": "restaurant",
+  "source_url": "https://www.crossroadskitchen.com/",
+  "components": [
+    {
+      "id": "breadcrumb",
+      "selector": "[data-component='breadcrumb']",
+      "pages": [
+        "404.html",
+        "dinner-menu.html",
+        "los-angeles.html",
+        "our-story.html",
+        "private-dining.html",
+        "reservations.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "section": "breadcrumb"
+        },
+        {
+          "page": "dinner-menu.html",
+          "section": "breadcrumb"
+        },
+        {
+          "page": "los-angeles.html",
+          "section": "breadcrumb"
+        },
+        {
+          "page": "our-story.html",
+          "section": "breadcrumb"
+        },
+        {
+          "page": "private-dining.html",
+          "section": "breadcrumb"
+        },
+        {
+          "page": "reservations.html",
+          "section": "breadcrumb"
+        }
+      ],
+      "behavior": [
+        "Static semantic content and relative links where present."
+      ],
+      "keyboard": [
+        "Tab and Enter for links; Enter/Space for native controls where present"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution pending"
+    },
+    {
+      "id": "call-to-action",
+      "selector": "[data-component='call-to-action']",
+      "pages": [
+        "los-angeles.html"
+      ],
+      "instances": [
+        {
+          "page": "los-angeles.html",
+          "section": "private-dining-preview"
+        }
+      ],
+      "behavior": [
+        "Static semantic content and relative links where present."
+      ],
+      "keyboard": [
+        "Tab and Enter for links; Enter/Space for native controls where present"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution pending"
+    },
+    {
+      "id": "demo-notice",
+      "selector": "[data-component='demo-notice']",
+      "pages": [
+        "404.html",
+        "dinner-menu.html",
+        "index.html",
+        "los-angeles.html",
+        "our-story.html",
+        "private-dining.html",
+        "reservations.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "section": "research-notice"
+        },
+        {
+          "page": "dinner-menu.html",
+          "section": "research-notice"
+        },
+        {
+          "page": "index.html",
+          "section": "research-notice"
+        },
+        {
+          "page": "los-angeles.html",
+          "section": "research-notice"
+        },
+        {
+          "page": "our-story.html",
+          "section": "research-notice"
+        },
+        {
+          "page": "private-dining.html",
+          "section": "research-notice"
+        },
+        {
+          "page": "reservations.html",
+          "section": "research-notice"
+        }
+      ],
+      "behavior": [
+        "Static semantic content and relative links where present."
+      ],
+      "keyboard": [
+        "Tab and Enter for links; Enter/Space for native controls where present"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution pending"
+    },
+    {
+      "id": "dialog",
+      "selector": "[data-component='dialog']",
+      "pages": [
+        "reservations.html"
+      ],
+      "instances": [
+        {
+          "page": "reservations.html",
+          "section": "reservation-dialog"
+        }
+      ],
+      "behavior": [
+        "Native showModal; close or Escape returns focus to opener."
+      ],
+      "keyboard": [
+        "Tab and Enter for links; Enter/Space for native controls where present"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution pending"
+    },
+    {
+      "id": "editorial-content",
+      "selector": "[data-component='editorial-content']",
+      "pages": [
+        "private-dining.html"
+      ],
+      "instances": [
+        {
+          "page": "private-dining.html",
+          "section": "private-dining-details"
+        }
+      ],
+      "behavior": [
+        "Static semantic content and relative links where present."
+      ],
+      "keyboard": [
+        "Tab and Enter for links; Enter/Space for native controls where present"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution pending"
+    },
+    {
+      "id": "editorial-feature",
+      "selector": "[data-component='editorial-feature']",
+      "pages": [
+        "our-story.html"
+      ],
+      "instances": [
+        {
+          "page": "our-story.html",
+          "section": "restaurant-story"
+        }
+      ],
+      "behavior": [
+        "Static semantic content and relative links where present."
+      ],
+      "keyboard": [
+        "Tab and Enter for links; Enter/Space for native controls where present"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution pending"
+    },
+    {
+      "id": "feature-grid",
+      "selector": "[data-component='feature-grid']",
+      "pages": [
+        "index.html"
+      ],
+      "instances": [
+        {
+          "page": "index.html",
+          "section": "dining-highlights"
+        }
+      ],
+      "behavior": [
+        "Static semantic content and relative links where present."
+      ],
+      "keyboard": [
+        "Tab and Enter for links; Enter/Space for native controls where present"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution pending"
+    },
+    {
+      "id": "gallery",
+      "selector": "[data-component='gallery']",
+      "pages": [
+        "private-dining.html"
+      ],
+      "instances": [
+        {
+          "page": "private-dining.html",
+          "section": "private-dining-gallery"
+        }
+      ],
+      "behavior": [
+        "Previous/next cycle two local scenes; polite image count status."
+      ],
+      "keyboard": [
+        "Tab and Enter for links; Enter/Space for native controls where present"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution pending"
+    },
+    {
+      "id": "location-card",
+      "selector": "[data-component='location-card']",
+      "pages": [
+        "index.html"
+      ],
+      "instances": [
+        {
+          "page": "index.html",
+          "section": "location-chooser"
+        }
+      ],
+      "behavior": [
+        "Static semantic content and relative links where present."
+      ],
+      "keyboard": [
+        "Tab and Enter for links; Enter/Space for native controls where present"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution pending"
+    },
+    {
+      "id": "location-detail",
+      "selector": "[data-component='location-detail']",
+      "pages": [
+        "los-angeles.html"
+      ],
+      "instances": [
+        {
+          "page": "los-angeles.html",
+          "section": "visit-details"
+        }
+      ],
+      "behavior": [
+        "Static semantic content and relative links where present."
+      ],
+      "keyboard": [
+        "Tab and Enter for links; Enter/Space for native controls where present"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution pending"
+    },
+    {
+      "id": "menu-category",
+      "selector": "[data-component='menu-category']",
+      "pages": [
+        "dinner-menu.html"
+      ],
+      "instances": [
+        {
+          "page": "dinner-menu.html",
+          "section": "to-start"
+        },
+        {
+          "page": "dinner-menu.html",
+          "section": "main-plates"
+        },
+        {
+          "page": "dinner-menu.html",
+          "section": "something-sweet"
+        }
+      ],
+      "behavior": [
+        "Static semantic content and relative links where present."
+      ],
+      "keyboard": [
+        "Tab and Enter for links; Enter/Space for native controls where present"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution pending"
+    },
+    {
+      "id": "menu-item",
+      "selector": "[data-component='menu-item']",
+      "pages": [
+        "dinner-menu.html"
+      ],
+      "instances": [
+        {
+          "page": "dinner-menu.html",
+          "section": "to-start-dish"
+        },
+        {
+          "page": "dinner-menu.html",
+          "section": "to-start-dish"
+        },
+        {
+          "page": "dinner-menu.html",
+          "section": "main-plates-dish"
+        },
+        {
+          "page": "dinner-menu.html",
+          "section": "main-plates-dish"
+        },
+        {
+          "page": "dinner-menu.html",
+          "section": "something-sweet-dish"
+        },
+        {
+          "page": "dinner-menu.html",
+          "section": "something-sweet-dish"
+        }
+      ],
+      "behavior": [
+        "Static semantic content and relative links where present."
+      ],
+      "keyboard": [
+        "Tab and Enter for links; Enter/Space for native controls where present"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution pending"
+    },
+    {
+      "id": "nav-disclosure",
+      "selector": "[data-component='nav-disclosure']",
+      "pages": [
+        "404.html",
+        "dinner-menu.html",
+        "index.html",
+        "los-angeles.html",
+        "our-story.html",
+        "private-dining.html",
+        "reservations.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "section": "restaurant-navigation"
+        },
+        {
+          "page": "404.html",
+          "section": "menu-navigation"
+        },
+        {
+          "page": "dinner-menu.html",
+          "section": "restaurant-navigation"
+        },
+        {
+          "page": "dinner-menu.html",
+          "section": "menu-navigation"
+        },
+        {
+          "page": "index.html",
+          "section": "restaurant-navigation"
+        },
+        {
+          "page": "index.html",
+          "section": "menu-navigation"
+        },
+        {
+          "page": "los-angeles.html",
+          "section": "restaurant-navigation"
+        },
+        {
+          "page": "los-angeles.html",
+          "section": "menu-navigation"
+        },
+        {
+          "page": "our-story.html",
+          "section": "restaurant-navigation"
+        },
+        {
+          "page": "our-story.html",
+          "section": "menu-navigation"
+        },
+        {
+          "page": "private-dining.html",
+          "section": "restaurant-navigation"
+        },
+        {
+          "page": "private-dining.html",
+          "section": "menu-navigation"
+        },
+        {
+          "page": "reservations.html",
+          "section": "restaurant-navigation"
+        },
+        {
+          "page": "reservations.html",
+          "section": "menu-navigation"
+        }
+      ],
+      "behavior": [
+        "Native disclosure: Enter/Space toggles, Escape closes and focuses summary."
+      ],
+      "keyboard": [
+        "Tab and Enter for links; Enter/Space for native controls where present"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution pending"
+    },
+    {
+      "id": "page-heading",
+      "selector": "[data-component='page-heading']",
+      "pages": [
+        "404.html",
+        "dinner-menu.html",
+        "los-angeles.html",
+        "our-story.html",
+        "private-dining.html",
+        "reservations.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "section": "page-introduction"
+        },
+        {
+          "page": "dinner-menu.html",
+          "section": "page-introduction"
+        },
+        {
+          "page": "los-angeles.html",
+          "section": "page-introduction"
+        },
+        {
+          "page": "our-story.html",
+          "section": "page-introduction"
+        },
+        {
+          "page": "private-dining.html",
+          "section": "page-introduction"
+        },
+        {
+          "page": "reservations.html",
+          "section": "page-introduction"
+        }
+      ],
+      "behavior": [
+        "Static semantic content and relative links where present."
+      ],
+      "keyboard": [
+        "Tab and Enter for links; Enter/Space for native controls where present"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution pending"
+    },
+    {
+      "id": "primary-nav",
+      "selector": "[data-component='primary-nav']",
+      "pages": [
+        "404.html",
+        "dinner-menu.html",
+        "index.html",
+        "los-angeles.html",
+        "our-story.html",
+        "private-dining.html",
+        "reservations.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "section": "global-navigation"
+        },
+        {
+          "page": "dinner-menu.html",
+          "section": "global-navigation"
+        },
+        {
+          "page": "index.html",
+          "section": "global-navigation"
+        },
+        {
+          "page": "los-angeles.html",
+          "section": "global-navigation"
+        },
+        {
+          "page": "our-story.html",
+          "section": "global-navigation"
+        },
+        {
+          "page": "private-dining.html",
+          "section": "global-navigation"
+        },
+        {
+          "page": "reservations.html",
+          "section": "global-navigation"
+        }
+      ],
+      "behavior": [
+        "Relative links; mobile button toggles, Escape closes and returns focus."
+      ],
+      "keyboard": [
+        "Tab and Enter for links; Enter/Space for native controls where present"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution pending"
+    },
+    {
+      "id": "reservation-demo",
+      "selector": "[data-component='reservation-demo']",
+      "pages": [
+        "reservations.html"
+      ],
+      "instances": [
+        {
+          "page": "reservations.html",
+          "section": "reservation-handoff"
+        }
+      ],
+      "behavior": [
+        "Explanatory modal handoff; no reservation, input or network."
+      ],
+      "keyboard": [
+        "Tab and Enter for links; Enter/Space for native controls where present"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution pending"
+    },
+    {
+      "id": "section-nav",
+      "selector": "[data-component='section-nav']",
+      "pages": [
+        "dinner-menu.html"
+      ],
+      "instances": [
+        {
+          "page": "dinner-menu.html",
+          "section": "menu-navigation"
+        }
+      ],
+      "behavior": [
+        "Dinner anchor links to category headings."
+      ],
+      "keyboard": [
+        "Tab and Enter for links; Enter/Space for native controls where present"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution pending"
+    },
+    {
+      "id": "site-footer",
+      "selector": "[data-component='site-footer']",
+      "pages": [
+        "404.html",
+        "dinner-menu.html",
+        "index.html",
+        "los-angeles.html",
+        "our-story.html",
+        "private-dining.html",
+        "reservations.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "section": "global-footer"
+        },
+        {
+          "page": "dinner-menu.html",
+          "section": "global-footer"
+        },
+        {
+          "page": "index.html",
+          "section": "global-footer"
+        },
+        {
+          "page": "los-angeles.html",
+          "section": "global-footer"
+        },
+        {
+          "page": "our-story.html",
+          "section": "global-footer"
+        },
+        {
+          "page": "private-dining.html",
+          "section": "global-footer"
+        },
+        {
+          "page": "reservations.html",
+          "section": "global-footer"
+        }
+      ],
+      "behavior": [
+        "Static semantic content and relative links where present."
+      ],
+      "keyboard": [
+        "Tab and Enter for links; Enter/Space for native controls where present"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution pending"
+    },
+    {
+      "id": "site-header",
+      "selector": "[data-component='site-header']",
+      "pages": [
+        "404.html",
+        "dinner-menu.html",
+        "index.html",
+        "los-angeles.html",
+        "our-story.html",
+        "private-dining.html",
+        "reservations.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "section": "global-header"
+        },
+        {
+          "page": "dinner-menu.html",
+          "section": "global-header"
+        },
+        {
+          "page": "index.html",
+          "section": "global-header"
+        },
+        {
+          "page": "los-angeles.html",
+          "section": "global-header"
+        },
+        {
+          "page": "our-story.html",
+          "section": "global-header"
+        },
+        {
+          "page": "private-dining.html",
+          "section": "global-header"
+        },
+        {
+          "page": "reservations.html",
+          "section": "global-header"
+        }
+      ],
+      "behavior": [
+        "Static semantic content and relative links where present."
+      ],
+      "keyboard": [
+        "Tab and Enter for links; Enter/Space for native controls where present"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution pending"
+    },
+    {
+      "id": "split-hero",
+      "selector": "[data-component='split-hero']",
+      "pages": [
+        "index.html"
+      ],
+      "instances": [
+        {
+          "page": "index.html",
+          "section": "restaurant-introduction"
+        }
+      ],
+      "behavior": [
+        "Static semantic content and relative links where present."
+      ],
+      "keyboard": [
+        "Tab and Enter for links; Enter/Space for native controls where present"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution pending"
+    },
+    {
+      "id": "tasting-menu",
+      "selector": "[data-component='tasting-menu']",
+      "pages": [
+        "dinner-menu.html"
+      ],
+      "instances": [
+        {
+          "page": "dinner-menu.html",
+          "section": "tasting-menu"
+        }
+      ],
+      "behavior": [
+        "Static semantic content and relative links where present."
+      ],
+      "keyboard": [
+        "Tab and Enter for links; Enter/Space for native controls where present"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution pending"
+    }
+  ]
+}

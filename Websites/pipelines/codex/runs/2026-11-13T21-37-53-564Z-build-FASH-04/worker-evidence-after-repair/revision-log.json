@@ -1,0 +1,15 @@
+[
+  {
+    "revision": 1,
+    "at": "2026-11-13T21:41:46.434969+00:00",
+    "changes": "Documentation/provenance finalized after tests; no HTML/CSS/JS repairs. Initial artifact preserved before validation.",
+    "tests": "node --check passed; explicit DOM mocked delivered-JS tests passed; static audit passed; shared QC launch blocked"
+  },
+  {
+    "revision": 2,
+    "at": "2026-11-13T21:43:06.277791+00:00",
+    "requested_by": "coordinator independent functional review",
+    "changes": "Corrected misleading links: three nonfeatured editorial records are now visibly labeled unlinked summary-only samples in cards and static/dynamic search. Featured full story remains linked. No pages added. Same worker correction.",
+    "tests": "node --check pass; revised delivered-JS DOM mocks pass (summary no-link and featured-link assertions); static audit revision 2 pass. Shared QC not retried per coordinator request; initial blocked evidence retained."
+  }
+]

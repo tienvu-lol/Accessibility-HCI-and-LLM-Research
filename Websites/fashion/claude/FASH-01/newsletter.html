@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Newsletter | The Weft Review</title>
+<meta name="description" content="The Weft Review: an invented fashion and textile magazine, built as a static research replica.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/styles.css">
+<script src="js/main.js" defer></script>
+</head>
+<body data-page="newsletter.html">
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header" data-section="global-header" data-component="site-header">
+ <div class="fiction-note" role="note" data-section="fictional-note" data-component="fictional-publication-note"><p><strong>Invented magazine.</strong> The Weft Review is an invented magazine for a research replica. None of its stories, bylines, brands, events or places are real, and all dates are sample data.</p></div>
+ <div class="masthead">
+  <a class="wordmark" href="index.html" data-component="wordmark"><span class="wordmark-main">The Weft</span> <span class="wordmark-sub">Review</span></a>
+  <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="site-menu" data-component="menu-toggle">Menu</button>
+  <div class="menu-wrap" id="site-menu" data-section="header-menu" data-component="header-menu">
+   <nav aria-label="Primary" data-section="global-navigation" data-component="primary-nav"><ul><li><a href="fashion.html">Fashion</a></li><li><a href="culture.html">Culture</a></li><li><a href="travel.html">Travel</a></li><li><a href="video.html">Video</a></li><li><a href="nextwave.html">Next Wave</a></li><li><a href="issue.html">The Makers Issue</a></li><li><a href="latest.html">Latest</a></li><li><a href="newsletter.html" aria-current="page">Newsletter</a></li></ul></nav>
+   <form class="site-search" role="search" aria-label="Site search" action="search.html" method="get" data-section="header-search" data-component="site-search">
+    <label for="site-q" class="vh">Search The Weft Review</label>
+    <input id="site-q" name="q" type="search" placeholder="Search stories" autocomplete="off">
+    <button type="submit">Search</button>
+   </form>
+  </div>
+ </div>
+</header>
+<main id="main-content" data-section="main-content">
+
+<div class="wrap narrow">
+<nav class="breadcrumb" aria-label="Breadcrumb" data-component="breadcrumb"><ol><li><a href="index.html">Home</a></li><li aria-current="page">Newsletter</li></ol></nav>
+<h1>Subscribe to our newsletters</h1>
+<p class="lede">Choose a list and a day. This is a <strong>simulation</strong>: nothing you type is stored or sent, and no message will arrive.</p>
+<div id="error-summary" class="error-summary" role="alert" tabindex="-1" hidden data-component="error-summary"><h2>There is a problem</h2><ul></ul></div>
+<form id="nl-form" novalidate data-section="newsletter-signup" data-component="newsletter-form">
+ <div class="field"><label for="nl-name">First name <span class="opt">(optional)</span></label><input id="nl-name" name="name" type="text" autocomplete="given-name"></div>
+ <div class="field"><label for="nl-email">Email address</label><p class="hint" id="nl-email-hint">Use an invented address such as reader@example.invalid.</p><input id="nl-email" name="email" type="email" autocomplete="email" required aria-describedby="nl-email-hint nl-email-err"><p class="field-error" id="nl-email-err" hidden></p></div>
+ <fieldset aria-describedby="nl-lists-hint"><legend>Lists</legend><p class="hint" id="nl-lists-hint">Optional. Pick any that interest you.</p>
+  <label class="check"><input type="checkbox" name="list" value="weekly"> The Weekly Edit: one story per section</label>
+  <label class="check"><input type="checkbox" name="list" value="issue"> Issue Notes: news of new special issues</label>
+  <label class="check"><input type="checkbox" name="list" value="nextwave"> Next Wave Letters: workshops and showcases</label></fieldset>
+ <fieldset aria-describedby="nl-day-err" id="nl-day-set"><legend>Preferred delivery day</legend>
+  <label class="check"><input type="radio" name="day" value="mon"> Monday</label>
+  <label class="check"><input type="radio" name="day" value="thu"> Thursday</label>
+  <label class="check"><input type="radio" name="day" value="sat"> Saturday</label>
+  <p class="field-error" id="nl-day-err" hidden></p></fieldset>
+ <button type="submit" class="btn">Sign up (simulation)</button>
+</form>
+<div id="nl-success" class="success" role="status" tabindex="-1" hidden data-component="demo-success"><h2>Simulated sign-up complete</h2><p></p><p>This was a demonstration. Nothing was stored and nothing will be sent.</p></div>
+</div>
+</main>
+<footer class="site-footer" data-section="global-footer" data-component="site-footer">
+ <div class="footer-grid">
+  <div><p class="footer-brand">The Weft Review</p><p>An invented magazine about cloth, craft and the rooms where garments are made. Research replica: nothing here is a real publication.</p></div>
+  <nav aria-label="Footer sections" data-component="footer-nav"><h2>Sections</h2><ul><li><a href="fashion.html">Fashion</a></li><li><a href="culture.html">Culture</a></li><li><a href="travel.html">Travel</a></li><li><a href="video.html">Video</a></li><li><a href="nextwave.html">Next Wave</a></li></ul></nav>
+  <nav aria-label="Footer more" data-component="footer-nav"><h2>More</h2><ul><li><a href="latest.html">Latest</a></li><li><a href="issue.html">The Makers Issue</a></li><li><a href="newsletter.html">Newsletter</a></li><li><a href="search.html">Search</a></li></ul></nav>
+ </div>
+ <p class="footer-legal">Sample content for accessibility research. Stories, people, brands, events and places are invented; dates are sample data.</p>
+</footer>
+</body>
+</html>

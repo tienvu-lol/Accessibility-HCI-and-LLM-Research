@@ -1,0 +1,149 @@
+{
+  "checked_at": "2026-11-12T23:06:41.599064+00:00",
+  "target": "HOSP-04",
+  "generation_started_at": null,
+  "generation_completed_at": null,
+  "status": "blocked-before-generation",
+  "runtime": {
+    "model": "gpt-6.1-sol",
+    "model_version": null,
+    "cli_version": "0.167.0",
+    "provider": "openai",
+    "evidence": "Active session rollout session_meta and turn_context; session 01a1d202-8c54-78f3-9ed2-b18b4f026f6f",
+    "assignment_matches": true
+  },
+  "snapshot_checks": [
+    {
+      "path": "Rules.md",
+      "sha256": "25346e70e74aa099fc309b98c6caf6485b63ddc088d3807a5f2f1bfdc5d4c3a9",
+      "actual_sha256": "25346e70e74aa099fc309b98c6caf6485b63ddc088d3807a5f2f1bfdc5d4c3a9",
+      "matches": true
+    },
+    {
+      "path": "MODEL_ALLOCATION.md",
+      "sha256": "bcae68164c9d9195833a48bd77729f005dea56dca98f32d53f646c623cb771cf",
+      "actual_sha256": "bcae68164c9d9195833a48bd77729f005dea56dca98f32d53f646c623cb771cf",
+      "matches": true
+    },
+    {
+      "path": "pipelines/codex/config.json",
+      "sha256": "1a27e2e5aa4410c1a23833d46764407b649c638362021a0176313bb425b1a823",
+      "actual_sha256": "1a27e2e5aa4410c1a23833d46764407b649c638362021a0176313bb425b1a823",
+      "matches": true
+    },
+    {
+      "path": "pipelines/codex/categories.json",
+      "sha256": "843ea7d8d1cc7d01385643f848408dea32997985422496d98e8f108bbc09a333",
+      "actual_sha256": "843ea7d8d1cc7d01385643f848408dea32997985422496d98e8f108bbc09a333",
+      "matches": true
+    },
+    {
+      "path": "pipelines/codex/prompts/build.md",
+      "sha256": "37567f6a4198f7539b11964980cf814a7b8c0732f926dfe9aa6f86849dd2277c",
+      "actual_sha256": "37567f6a4198f7539b11964980cf814a7b8c0732f926dfe9aa6f86849dd2277c",
+      "matches": true
+    },
+    {
+      "path": "metadata/source-inventories/healthcare.csv",
+      "sha256": "8450e9dd1729c994050155f92b26c025c20c8f223526d16b30e5f55b16b18e29",
+      "actual_sha256": "8450e9dd1729c994050155f92b26c025c20c8f223526d16b30e5f55b16b18e29",
+      "matches": true
+    },
+    {
+      "path": "metadata/assignments.csv",
+      "sha256": "04b65118d208e5a6b3b895562f083c9629cf07bdff3fa714fbb5e7baa332602c",
+      "actual_sha256": "04b65118d208e5a6b3b895562f083c9629cf07bdff3fa714fbb5e7baa332602c",
+      "matches": true
+    }
+  ],
+  "approval_rows": [
+    {
+      "source_id": "HOSP-01",
+      "model_group": "claude",
+      "approved_at": "",
+      "approved_by": "",
+      "approval_reference": ""
+    },
+    {
+      "source_id": "HOSP-02",
+      "model_group": "claude",
+      "approved_at": "",
+      "approved_by": "",
+      "approval_reference": ""
+    },
+    {
+      "source_id": "HOSP-03",
+      "model_group": "claude",
+      "approved_at": "",
+      "approved_by": "",
+      "approval_reference": ""
+    },
+    {
+      "source_id": "HOSP-04",
+      "model_group": "codex",
+      "approved_at": "2026-11-12",
+      "approved_by": "Samhith Varma",
+      "approval_reference": "metadata/change-log.md \u00a7 2026-11-12 \u2014 Codex Phase A approval (slots 04\u201306)"
+    },
+    {
+      "source_id": "HOSP-05",
+      "model_group": "codex",
+      "approved_at": "2026-11-12",
+      "approved_by": "Samhith Varma",
+      "approval_reference": "metadata/change-log.md \u00a7 2026-11-12 \u2014 Codex Phase A approval (slots 04\u201306)"
+    },
+    {
+      "source_id": "HOSP-06",
+      "model_group": "codex",
+      "approved_at": "2026-11-12",
+      "approved_by": "Samhith Varma",
+      "approval_reference": "metadata/change-log.md \u00a7 2026-11-12 \u2014 Codex Phase A approval (slots 04\u201306)"
+    },
+    {
+      "source_id": "HOSP-07",
+      "model_group": "open-source",
+      "approved_at": "",
+      "approved_by": "",
+      "approval_reference": ""
+    },
+    {
+      "source_id": "HOSP-08",
+      "model_group": "open-source",
+      "approved_at": "",
+      "approved_by": "",
+      "approval_reference": ""
+    },
+    {
+      "source_id": "HOSP-09",
+      "model_group": "open-source",
+      "approved_at": "",
+      "approved_by": "",
+      "approval_reference": ""
+    },
+    {
+      "source_id": "HOSP-10",
+      "model_group": "open-source",
+      "approved_at": "",
+      "approved_by": "",
+      "approval_reference": ""
+    }
+  ],
+  "blocker": "Rules.md section 3 requires all ten sources and scope approved; MODEL_ALLOCATION.md section 4 item 2 requires all ten references, representative scope, and allocation approval. Change log 2026-11-12 changes pipeline readiness only and states complete ten-source coordination remains a requirement. Seven non-Codex healthcare rows lack approval evidence. Protocol conflict must be resolved before generation.",
+  "qc": "not-tested; no artifact generated",
+  "interactions": "not-tested; no artifact generated",
+  "website_files_written": 0,
+  "website_pages_written": 0,
+  "retries": [],
+  "human_edits": [],
+  "cross_model_changes": [],
+  "budget": null,
+  "available_tools": [
+    "shell/filesystem",
+    "web",
+    "image generation",
+    "computer use",
+    "connected app tools",
+    "collaboration tools (not used)"
+  ],
+  "git_head": "f7189ed804e7648ce84b4a2b2417b11850af8169"
+}

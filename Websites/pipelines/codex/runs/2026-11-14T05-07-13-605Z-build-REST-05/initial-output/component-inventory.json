@@ -1,0 +1,589 @@
+{
+  "protocol_version": "1.0",
+  "replica_id": "REST-05",
+  "category": "restaurant",
+  "source_url": "https://www.hogsalt.com/",
+  "components": [
+    {
+      "id": "breadcrumb",
+      "selector": "[data-component='breadcrumb']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "private-events.html",
+        "restaurant-detail.html",
+        "restaurants.html"
+      ],
+      "instances": [
+        {
+          "page": "restaurants.html",
+          "section": "breadcrumb"
+        },
+        {
+          "page": "about.html",
+          "section": "breadcrumb"
+        },
+        {
+          "page": "404.html",
+          "section": "breadcrumb"
+        },
+        {
+          "page": "restaurant-detail.html",
+          "section": "breadcrumb"
+        },
+        {
+          "page": "private-events.html",
+          "section": "breadcrumb"
+        }
+      ],
+      "behavior": [
+        "Static semantic content; relative links where present."
+      ],
+      "keyboard": [
+        "Tab/Enter for links; Enter/Space for buttons or summary; Escape on mobile navigation"
+      ],
+      "status": "implemented",
+      "validation": "pending static check; browser not tested"
+    },
+    {
+      "id": "call-to-action",
+      "selector": "[data-component='call-to-action']",
+      "pages": [
+        "404.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "section": "recovery-links"
+        }
+      ],
+      "behavior": [
+        "Static semantic content; relative links where present."
+      ],
+      "keyboard": [
+        "Tab/Enter for links; Enter/Space for buttons or summary; Escape on mobile navigation"
+      ],
+      "status": "implemented",
+      "validation": "pending static check; browser not tested"
+    },
+    {
+      "id": "card-grid",
+      "selector": "[data-component='card-grid']",
+      "pages": [
+        "private-events.html",
+        "restaurants.html"
+      ],
+      "instances": [
+        {
+          "page": "restaurants.html",
+          "section": "restaurant-directory"
+        },
+        {
+          "page": "private-events.html",
+          "section": "private-events-directory"
+        }
+      ],
+      "behavior": [
+        "Static semantic content; relative links where present."
+      ],
+      "keyboard": [
+        "Tab/Enter for links; Enter/Space for buttons or summary; Escape on mobile navigation"
+      ],
+      "status": "implemented",
+      "validation": "pending static check; browser not tested"
+    },
+    {
+      "id": "carousel",
+      "selector": "[data-component='carousel']",
+      "pages": [
+        "index.html"
+      ],
+      "instances": [
+        {
+          "page": "index.html",
+          "section": "homepage-gallery"
+        }
+      ],
+      "behavior": [
+        "Manual previous/next wraparound across three local slides; polite status; no autoplay."
+      ],
+      "keyboard": [
+        "Tab/Enter for links; Enter/Space for buttons or summary; Escape on mobile navigation"
+      ],
+      "status": "implemented",
+      "validation": "pending static check; browser not tested"
+    },
+    {
+      "id": "demo-notice",
+      "selector": "[data-component='demo-notice']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "index.html",
+        "private-events.html",
+        "restaurant-detail.html",
+        "restaurants.html"
+      ],
+      "instances": [
+        {
+          "page": "restaurants.html",
+          "section": "research-notice"
+        },
+        {
+          "page": "index.html",
+          "section": "research-notice"
+        },
+        {
+          "page": "about.html",
+          "section": "research-notice"
+        },
+        {
+          "page": "404.html",
+          "section": "research-notice"
+        },
+        {
+          "page": "restaurant-detail.html",
+          "section": "research-notice"
+        },
+        {
+          "page": "private-events.html",
+          "section": "research-notice"
+        },
+        {
+          "page": "private-events.html",
+          "section": "event-demo-notice"
+        }
+      ],
+      "behavior": [
+        "Static semantic content; relative links where present."
+      ],
+      "keyboard": [
+        "Tab/Enter for links; Enter/Space for buttons or summary; Escape on mobile navigation"
+      ],
+      "status": "implemented",
+      "validation": "pending static check; browser not tested"
+    },
+    {
+      "id": "disclosure",
+      "selector": "[data-component='disclosure']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "index.html",
+        "private-events.html",
+        "restaurant-detail.html",
+        "restaurants.html"
+      ],
+      "instances": [
+        {
+          "page": "restaurants.html",
+          "section": "mailing-list-demo"
+        },
+        {
+          "page": "index.html",
+          "section": "mailing-list-demo"
+        },
+        {
+          "page": "about.html",
+          "section": "mailing-list-demo"
+        },
+        {
+          "page": "404.html",
+          "section": "mailing-list-demo"
+        },
+        {
+          "page": "restaurant-detail.html",
+          "section": "mailing-list-demo"
+        },
+        {
+          "page": "private-events.html",
+          "section": "mailing-list-demo"
+        }
+      ],
+      "behavior": [
+        "Native mailing-list explanation disclosure, no submission."
+      ],
+      "keyboard": [
+        "Tab/Enter for links; Enter/Space for buttons or summary; Escape on mobile navigation"
+      ],
+      "status": "implemented",
+      "validation": "pending static check; browser not tested"
+    },
+    {
+      "id": "editorial-content",
+      "selector": "[data-component='editorial-content']",
+      "pages": [
+        "about.html",
+        "index.html"
+      ],
+      "instances": [
+        {
+          "page": "index.html",
+          "section": "collection-story"
+        },
+        {
+          "page": "about.html",
+          "section": "group-story"
+        }
+      ],
+      "behavior": [
+        "Static semantic content; relative links where present."
+      ],
+      "keyboard": [
+        "Tab/Enter for links; Enter/Space for buttons or summary; Escape on mobile navigation"
+      ],
+      "status": "implemented",
+      "validation": "pending static check; browser not tested"
+    },
+    {
+      "id": "editorial-hero",
+      "selector": "[data-component='editorial-hero']",
+      "pages": [
+        "index.html"
+      ],
+      "instances": [
+        {
+          "page": "index.html",
+          "section": "homepage-introduction"
+        }
+      ],
+      "behavior": [
+        "Static semantic content; relative links where present."
+      ],
+      "keyboard": [
+        "Tab/Enter for links; Enter/Space for buttons or summary; Escape on mobile navigation"
+      ],
+      "status": "implemented",
+      "validation": "pending static check; browser not tested"
+    },
+    {
+      "id": "event-venue-card",
+      "selector": "[data-component='event-venue-card']",
+      "pages": [
+        "private-events.html"
+      ],
+      "instances": [
+        {
+          "page": "private-events.html",
+          "section": "amber-event-entry"
+        },
+        {
+          "page": "private-events.html",
+          "section": "cedar-event-entry"
+        },
+        {
+          "page": "private-events.html",
+          "section": "harbor-event-entry"
+        }
+      ],
+      "behavior": [
+        "Static semantic content; relative links where present."
+      ],
+      "keyboard": [
+        "Tab/Enter for links; Enter/Space for buttons or summary; Escape on mobile navigation"
+      ],
+      "status": "implemented",
+      "validation": "pending static check; browser not tested"
+    },
+    {
+      "id": "gallery-slide",
+      "selector": "[data-component='gallery-slide']",
+      "pages": [
+        "index.html"
+      ],
+      "instances": [
+        {
+          "page": "index.html",
+          "section": "amber-slide"
+        },
+        {
+          "page": "index.html",
+          "section": "cedar-slide"
+        },
+        {
+          "page": "index.html",
+          "section": "harbor-slide"
+        }
+      ],
+      "behavior": [
+        "Static semantic content; relative links where present."
+      ],
+      "keyboard": [
+        "Tab/Enter for links; Enter/Space for buttons or summary; Escape on mobile navigation"
+      ],
+      "status": "implemented",
+      "validation": "pending static check; browser not tested"
+    },
+    {
+      "id": "image-group",
+      "selector": "[data-component='image-group']",
+      "pages": [
+        "about.html"
+      ],
+      "instances": [
+        {
+          "page": "about.html",
+          "section": "story-image-sequence"
+        }
+      ],
+      "behavior": [
+        "Static semantic content; relative links where present."
+      ],
+      "keyboard": [
+        "Tab/Enter for links; Enter/Space for buttons or summary; Escape on mobile navigation"
+      ],
+      "status": "implemented",
+      "validation": "pending static check; browser not tested"
+    },
+    {
+      "id": "next-item-link",
+      "selector": "[data-component='next-item-link']",
+      "pages": [
+        "restaurant-detail.html"
+      ],
+      "instances": [
+        {
+          "page": "restaurant-detail.html",
+          "section": "next-restaurant"
+        }
+      ],
+      "behavior": [
+        "Routes to next directory entry; no extra detail page."
+      ],
+      "keyboard": [
+        "Tab/Enter for links; Enter/Space for buttons or summary; Escape on mobile navigation"
+      ],
+      "status": "implemented",
+      "validation": "pending static check; browser not tested"
+    },
+    {
+      "id": "page-heading",
+      "selector": "[data-component='page-heading']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "private-events.html",
+        "restaurant-detail.html",
+        "restaurants.html"
+      ],
+      "instances": [
+        {
+          "page": "restaurants.html",
+          "section": "page-introduction"
+        },
+        {
+          "page": "about.html",
+          "section": "page-introduction"
+        },
+        {
+          "page": "404.html",
+          "section": "page-introduction"
+        },
+        {
+          "page": "restaurant-detail.html",
+          "section": "page-introduction"
+        },
+        {
+          "page": "private-events.html",
+          "section": "page-introduction"
+        }
+      ],
+      "behavior": [
+        "Static semantic content; relative links where present."
+      ],
+      "keyboard": [
+        "Tab/Enter for links; Enter/Space for buttons or summary; Escape on mobile navigation"
+      ],
+      "status": "implemented",
+      "validation": "pending static check; browser not tested"
+    },
+    {
+      "id": "primary-nav",
+      "selector": "[data-component='primary-nav']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "index.html",
+        "private-events.html",
+        "restaurant-detail.html",
+        "restaurants.html"
+      ],
+      "instances": [
+        {
+          "page": "restaurants.html",
+          "section": "global-navigation"
+        },
+        {
+          "page": "index.html",
+          "section": "global-navigation"
+        },
+        {
+          "page": "about.html",
+          "section": "global-navigation"
+        },
+        {
+          "page": "404.html",
+          "section": "global-navigation"
+        },
+        {
+          "page": "restaurant-detail.html",
+          "section": "global-navigation"
+        },
+        {
+          "page": "private-events.html",
+          "section": "global-navigation"
+        }
+      ],
+      "behavior": [
+        "Relative links; mobile expanded state; Escape closes and returns focus."
+      ],
+      "keyboard": [
+        "Tab/Enter for links; Enter/Space for buttons or summary; Escape on mobile navigation"
+      ],
+      "status": "implemented",
+      "validation": "pending static check; browser not tested"
+    },
+    {
+      "id": "restaurant-card",
+      "selector": "[data-component='restaurant-card']",
+      "pages": [
+        "restaurants.html"
+      ],
+      "instances": [
+        {
+          "page": "restaurants.html",
+          "section": "amber-directory-entry"
+        },
+        {
+          "page": "restaurants.html",
+          "section": "cedar-directory-entry"
+        },
+        {
+          "page": "restaurants.html",
+          "section": "harbor-directory-entry"
+        }
+      ],
+      "behavior": [
+        "Static semantic content; relative links where present."
+      ],
+      "keyboard": [
+        "Tab/Enter for links; Enter/Space for buttons or summary; Escape on mobile navigation"
+      ],
+      "status": "implemented",
+      "validation": "pending static check; browser not tested"
+    },
+    {
+      "id": "restaurant-detail",
+      "selector": "[data-component='restaurant-detail']",
+      "pages": [
+        "restaurant-detail.html"
+      ],
+      "instances": [
+        {
+          "page": "restaurant-detail.html",
+          "section": "restaurant-profile"
+        }
+      ],
+      "behavior": [
+        "Static semantic content; relative links where present."
+      ],
+      "keyboard": [
+        "Tab/Enter for links; Enter/Space for buttons or summary; Escape on mobile navigation"
+      ],
+      "status": "implemented",
+      "validation": "pending static check; browser not tested"
+    },
+    {
+      "id": "site-footer",
+      "selector": "[data-component='site-footer']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "index.html",
+        "private-events.html",
+        "restaurant-detail.html",
+        "restaurants.html"
+      ],
+      "instances": [
+        {
+          "page": "restaurants.html",
+          "section": "global-footer"
+        },
+        {
+          "page": "index.html",
+          "section": "global-footer"
+        },
+        {
+          "page": "about.html",
+          "section": "global-footer"
+        },
+        {
+          "page": "404.html",
+          "section": "global-footer"
+        },
+        {
+          "page": "restaurant-detail.html",
+          "section": "global-footer"
+        },
+        {
+          "page": "private-events.html",
+          "section": "global-footer"
+        }
+      ],
+      "behavior": [
+        "Static semantic content; relative links where present."
+      ],
+      "keyboard": [
+        "Tab/Enter for links; Enter/Space for buttons or summary; Escape on mobile navigation"
+      ],
+      "status": "implemented",
+      "validation": "pending static check; browser not tested"
+    },
+    {
+      "id": "site-header",
+      "selector": "[data-component='site-header']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "index.html",
+        "private-events.html",
+        "restaurant-detail.html",
+        "restaurants.html"
+      ],
+      "instances": [
+        {
+          "page": "restaurants.html",
+          "section": "global-header"
+        },
+        {
+          "page": "index.html",
+          "section": "global-header"
+        },
+        {
+          "page": "about.html",
+          "section": "global-header"
+        },
+        {
+          "page": "404.html",
+          "section": "global-header"
+        },
+        {
+          "page": "restaurant-detail.html",
+          "section": "global-header"
+        },
+        {
+          "page": "private-events.html",
+          "section": "global-header"
+        }
+      ],
+      "behavior": [
+        "Static semantic content; relative links where present."
+      ],
+      "keyboard": [
+        "Tab/Enter for links; Enter/Space for buttons or summary; Escape on mobile navigation"
+      ],
+      "status": "implemented",
+      "validation": "pending static check; browser not tested"
+    }
+  ]
+}

@@ -1,0 +1,1744 @@
+{
+  "protocol_version": "1.0",
+  "replica_id": "NEWS-06",
+  "category": "news",
+  "source_url": "https://www.propublica.org/",
+  "components": [
+    {
+      "id": "about-latest",
+      "selector": "[data-component=\"about-latest\"]",
+      "behavior": [
+        "Semantic content region; local links where present"
+      ],
+      "keyboard": [
+        "Native link/control keyboard behavior where applicable"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser-not-tested",
+      "pages": [
+        "about.html"
+      ],
+      "instances": [
+        {
+          "page": "about.html",
+          "section": "about-latest",
+          "selector": "[data-component=\"about-latest\"][data-section=\"about-latest\"]"
+        }
+      ]
+    },
+    {
+      "id": "article-detail",
+      "selector": "[data-component=\"article-detail\"]",
+      "pages": [
+        "article.html"
+      ],
+      "behavior": [
+        "Semantic local content and working navigation where linked"
+      ],
+      "keyboard": [
+        "Tab; Enter for links; native Space for buttons/checkboxes; Escape for dialogs where applicable"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser-not-tested",
+      "instances": [
+        {
+          "page": "article.html",
+          "section": "article",
+          "selector": "[data-component=\"article-detail\"][data-section=\"article\"]"
+        }
+      ]
+    },
+    {
+      "id": "article-figure",
+      "selector": "[data-component=\"article-figure\"]",
+      "pages": [
+        "article.html"
+      ],
+      "behavior": [
+        "Semantic local content and working navigation where linked"
+      ],
+      "keyboard": [
+        "Tab; Enter for links; native Space for buttons/checkboxes; Escape for dialogs where applicable"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser-not-tested",
+      "instances": [
+        {
+          "page": "article.html",
+          "section": "article-artwork",
+          "selector": "[data-component=\"article-figure\"][data-section=\"article-artwork\"]"
+        }
+      ]
+    },
+    {
+      "id": "article-follow-up",
+      "selector": "[data-component=\"article-follow-up\"]",
+      "behavior": [
+        "Semantic content region; local links where present"
+      ],
+      "keyboard": [
+        "Native link/control keyboard behavior where applicable"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser-not-tested",
+      "pages": [
+        "article.html"
+      ],
+      "instances": [
+        {
+          "page": "article.html",
+          "section": "article-follow-up",
+          "selector": "[data-component=\"article-follow-up\"][data-section=\"article-follow-up\"]"
+        }
+      ]
+    },
+    {
+      "id": "article-header",
+      "selector": "[data-component=\"article-header\"]",
+      "behavior": [
+        "Semantic content region; local links where present"
+      ],
+      "keyboard": [
+        "Native link/control keyboard behavior where applicable"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser-not-tested",
+      "pages": [
+        "article.html"
+      ],
+      "instances": [
+        {
+          "page": "article.html",
+          "section": "article-header",
+          "selector": "[data-component=\"article-header\"][data-section=\"article-header\"]"
+        }
+      ]
+    },
+    {
+      "id": "biggest-stories",
+      "selector": "[data-component=\"biggest-stories\"]",
+      "behavior": [
+        "Semantic content region; local links where present"
+      ],
+      "keyboard": [
+        "Native link/control keyboard behavior where applicable"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser-not-tested",
+      "pages": [
+        "index.html"
+      ],
+      "instances": [
+        {
+          "page": "index.html",
+          "section": "biggest-stories",
+          "selector": "[data-component=\"biggest-stories\"][data-section=\"biggest-stories\"]"
+        }
+      ]
+    },
+    {
+      "id": "browse-topics",
+      "selector": "[data-component=\"browse-topics\"]",
+      "behavior": [
+        "Semantic content region; local links where present"
+      ],
+      "keyboard": [
+        "Native link/control keyboard behavior where applicable"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser-not-tested",
+      "pages": [
+        "index.html"
+      ],
+      "instances": [
+        {
+          "page": "index.html",
+          "section": "browse-topics",
+          "selector": "[data-component=\"browse-topics\"][data-section=\"browse-topics\"]"
+        }
+      ]
+    },
+    {
+      "id": "contact-information",
+      "selector": "[data-component=\"contact-information\"]",
+      "behavior": [
+        "Semantic content region; local links where present"
+      ],
+      "keyboard": [
+        "Native link/control keyboard behavior where applicable"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser-not-tested",
+      "pages": [
+        "about.html"
+      ],
+      "instances": [
+        {
+          "page": "about.html",
+          "section": "contact-information",
+          "selector": "[data-component=\"contact-information\"][data-section=\"contact-information\"]"
+        }
+      ]
+    },
+    {
+      "id": "contributor-list",
+      "selector": "[data-component=\"contributor-list\"]",
+      "pages": [
+        "article.html"
+      ],
+      "behavior": [
+        "Semantic local content and working navigation where linked"
+      ],
+      "keyboard": [
+        "Tab; Enter for links; native Space for buttons/checkboxes; Escape for dialogs where applicable"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser-not-tested",
+      "instances": [
+        {
+          "page": "article.html",
+          "section": "contributors",
+          "selector": "[data-component=\"contributor-list\"][data-section=\"contributors\"]"
+        }
+      ]
+    },
+    {
+      "id": "editorial-standards",
+      "selector": "[data-component=\"editorial-standards\"]",
+      "behavior": [
+        "Semantic content region; local links where present"
+      ],
+      "keyboard": [
+        "Native link/control keyboard behavior where applicable"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser-not-tested",
+      "pages": [
+        "about.html"
+      ],
+      "instances": [
+        {
+          "page": "about.html",
+          "section": "editorial-standards",
+          "selector": "[data-component=\"editorial-standards\"][data-section=\"editorial-standards\"]"
+        }
+      ]
+    },
+    {
+      "id": "error-page",
+      "selector": "[data-component=\"error-page\"]",
+      "pages": [
+        "404.html"
+      ],
+      "behavior": [
+        "Semantic local content and working navigation where linked"
+      ],
+      "keyboard": [
+        "Tab; Enter for links; native Space for buttons/checkboxes; Escape for dialogs where applicable"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser-not-tested",
+      "instances": [
+        {
+          "page": "404.html",
+          "section": "not-found",
+          "selector": "[data-component=\"error-page\"][data-section=\"not-found\"]"
+        }
+      ]
+    },
+    {
+      "id": "featured-stories",
+      "selector": "[data-component=\"featured-stories\"]",
+      "behavior": [
+        "Semantic content region; local links where present"
+      ],
+      "keyboard": [
+        "Native link/control keyboard behavior where applicable"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser-not-tested",
+      "pages": [
+        "democracy.html"
+      ],
+      "instances": [
+        {
+          "page": "democracy.html",
+          "section": "featured-stories",
+          "selector": "[data-component=\"featured-stories\"][data-section=\"featured-stories\"]"
+        }
+      ]
+    },
+    {
+      "id": "footer-contact",
+      "selector": "[data-component=\"footer-contact\"]",
+      "behavior": [
+        "Semantic content region; local links where present"
+      ],
+      "keyboard": [
+        "Native link/control keyboard behavior where applicable"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser-not-tested",
+      "pages": [
+        "404.html",
+        "about.html",
+        "article.html",
+        "democracy.html",
+        "index.html",
+        "newsletters.html",
+        "search.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "section": "footer-contact",
+          "selector": "[data-component=\"footer-contact\"][data-section=\"footer-contact\"]"
+        },
+        {
+          "page": "about.html",
+          "section": "footer-contact",
+          "selector": "[data-component=\"footer-contact\"][data-section=\"footer-contact\"]"
+        },
+        {
+          "page": "article.html",
+          "section": "footer-contact",
+          "selector": "[data-component=\"footer-contact\"][data-section=\"footer-contact\"]"
+        },
+        {
+          "page": "democracy.html",
+          "section": "footer-contact",
+          "selector": "[data-component=\"footer-contact\"][data-section=\"footer-contact\"]"
+        },
+        {
+          "page": "index.html",
+          "section": "footer-contact",
+          "selector": "[data-component=\"footer-contact\"][data-section=\"footer-contact\"]"
+        },
+        {
+          "page": "newsletters.html",
+          "section": "footer-contact",
+          "selector": "[data-component=\"footer-contact\"][data-section=\"footer-contact\"]"
+        },
+        {
+          "page": "search.html",
+          "section": "footer-contact",
+          "selector": "[data-component=\"footer-contact\"][data-section=\"footer-contact\"]"
+        }
+      ]
+    },
+    {
+      "id": "footer-coverage",
+      "selector": "[data-component=\"footer-coverage\"]",
+      "behavior": [
+        "Semantic content region; local links where present"
+      ],
+      "keyboard": [
+        "Native link/control keyboard behavior where applicable"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser-not-tested",
+      "pages": [
+        "404.html",
+        "about.html",
+        "article.html",
+        "democracy.html",
+        "index.html",
+        "newsletters.html",
+        "search.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "section": "footer-coverage",
+          "selector": "[data-component=\"footer-coverage\"][data-section=\"footer-coverage\"]"
+        },
+        {
+          "page": "about.html",
+          "section": "footer-coverage",
+          "selector": "[data-component=\"footer-coverage\"][data-section=\"footer-coverage\"]"
+        },
+        {
+          "page": "article.html",
+          "section": "footer-coverage",
+          "selector": "[data-component=\"footer-coverage\"][data-section=\"footer-coverage\"]"
+        },
+        {
+          "page": "democracy.html",
+          "section": "footer-coverage",
+          "selector": "[data-component=\"footer-coverage\"][data-section=\"footer-coverage\"]"
+        },
+        {
+          "page": "index.html",
+          "section": "footer-coverage",
+          "selector": "[data-component=\"footer-coverage\"][data-section=\"footer-coverage\"]"
+        },
+        {
+          "page": "newsletters.html",
+          "section": "footer-coverage",
+          "selector": "[data-component=\"footer-coverage\"][data-section=\"footer-coverage\"]"
+        },
+        {
+          "page": "search.html",
+          "section": "footer-coverage",
+          "selector": "[data-component=\"footer-coverage\"][data-section=\"footer-coverage\"]"
+        }
+      ]
+    },
+    {
+      "id": "footer-information",
+      "selector": "[data-component=\"footer-information\"]",
+      "behavior": [
+        "Semantic content region; local links where present"
+      ],
+      "keyboard": [
+        "Native link/control keyboard behavior where applicable"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser-not-tested",
+      "pages": [
+        "404.html",
+        "about.html",
+        "article.html",
+        "democracy.html",
+        "index.html",
+        "newsletters.html",
+        "search.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "section": "footer-information",
+          "selector": "[data-component=\"footer-information\"][data-section=\"footer-information\"]"
+        },
+        {
+          "page": "about.html",
+          "section": "footer-information",
+          "selector": "[data-component=\"footer-information\"][data-section=\"footer-information\"]"
+        },
+        {
+          "page": "article.html",
+          "section": "footer-information",
+          "selector": "[data-component=\"footer-information\"][data-section=\"footer-information\"]"
+        },
+        {
+          "page": "democracy.html",
+          "section": "footer-information",
+          "selector": "[data-component=\"footer-information\"][data-section=\"footer-information\"]"
+        },
+        {
+          "page": "index.html",
+          "section": "footer-information",
+          "selector": "[data-component=\"footer-information\"][data-section=\"footer-information\"]"
+        },
+        {
+          "page": "newsletters.html",
+          "section": "footer-information",
+          "selector": "[data-component=\"footer-information\"][data-section=\"footer-information\"]"
+        },
+        {
+          "page": "search.html",
+          "section": "footer-information",
+          "selector": "[data-component=\"footer-information\"][data-section=\"footer-information\"]"
+        }
+      ]
+    },
+    {
+      "id": "footer-local",
+      "selector": "[data-component=\"footer-local\"]",
+      "behavior": [
+        "Semantic content region; local links where present"
+      ],
+      "keyboard": [
+        "Native link/control keyboard behavior where applicable"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser-not-tested",
+      "pages": [
+        "404.html",
+        "about.html",
+        "article.html",
+        "democracy.html",
+        "index.html",
+        "newsletters.html",
+        "search.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "section": "footer-local",
+          "selector": "[data-component=\"footer-local\"][data-section=\"footer-local\"]"
+        },
+        {
+          "page": "about.html",
+          "section": "footer-local",
+          "selector": "[data-component=\"footer-local\"][data-section=\"footer-local\"]"
+        },
+        {
+          "page": "article.html",
+          "section": "footer-local",
+          "selector": "[data-component=\"footer-local\"][data-section=\"footer-local\"]"
+        },
+        {
+          "page": "democracy.html",
+          "section": "footer-local",
+          "selector": "[data-component=\"footer-local\"][data-section=\"footer-local\"]"
+        },
+        {
+          "page": "index.html",
+          "section": "footer-local",
+          "selector": "[data-component=\"footer-local\"][data-section=\"footer-local\"]"
+        },
+        {
+          "page": "newsletters.html",
+          "section": "footer-local",
+          "selector": "[data-component=\"footer-local\"][data-section=\"footer-local\"]"
+        },
+        {
+          "page": "search.html",
+          "section": "footer-local",
+          "selector": "[data-component=\"footer-local\"][data-section=\"footer-local\"]"
+        }
+      ]
+    },
+    {
+      "id": "footer-support",
+      "selector": "[data-component=\"footer-support\"]",
+      "behavior": [
+        "Semantic content region; local links where present"
+      ],
+      "keyboard": [
+        "Native link/control keyboard behavior where applicable"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser-not-tested",
+      "pages": [
+        "404.html",
+        "about.html",
+        "article.html",
+        "democracy.html",
+        "index.html",
+        "newsletters.html",
+        "search.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "section": "footer-support",
+          "selector": "[data-component=\"footer-support\"][data-section=\"footer-support\"]"
+        },
+        {
+          "page": "about.html",
+          "section": "footer-support",
+          "selector": "[data-component=\"footer-support\"][data-section=\"footer-support\"]"
+        },
+        {
+          "page": "article.html",
+          "section": "footer-support",
+          "selector": "[data-component=\"footer-support\"][data-section=\"footer-support\"]"
+        },
+        {
+          "page": "democracy.html",
+          "section": "footer-support",
+          "selector": "[data-component=\"footer-support\"][data-section=\"footer-support\"]"
+        },
+        {
+          "page": "index.html",
+          "section": "footer-support",
+          "selector": "[data-component=\"footer-support\"][data-section=\"footer-support\"]"
+        },
+        {
+          "page": "newsletters.html",
+          "section": "footer-support",
+          "selector": "[data-component=\"footer-support\"][data-section=\"footer-support\"]"
+        },
+        {
+          "page": "search.html",
+          "section": "footer-support",
+          "selector": "[data-component=\"footer-support\"][data-section=\"footer-support\"]"
+        }
+      ]
+    },
+    {
+      "id": "homepage-series",
+      "selector": "[data-component=\"homepage-series\"]",
+      "behavior": [
+        "Semantic content region; local links where present"
+      ],
+      "keyboard": [
+        "Native link/control keyboard behavior where applicable"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser-not-tested",
+      "pages": [
+        "index.html"
+      ],
+      "instances": [
+        {
+          "page": "index.html",
+          "section": "homepage-series",
+          "selector": "[data-component=\"homepage-series\"][data-section=\"homepage-series\"]"
+        }
+      ]
+    },
+    {
+      "id": "lead-grid",
+      "selector": "[data-component=\"lead-grid\"]",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "Semantic local content and working navigation where linked"
+      ],
+      "keyboard": [
+        "Tab; Enter for links; native Space for buttons/checkboxes; Escape for dialogs where applicable"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser-not-tested",
+      "instances": [
+        {
+          "page": "index.html",
+          "section": "lead-investigations",
+          "selector": "[data-component=\"lead-grid\"][data-section=\"lead-investigations\"]"
+        }
+      ]
+    },
+    {
+      "id": "local-reporting",
+      "selector": "[data-component=\"local-reporting\"]",
+      "behavior": [
+        "Semantic content region; local links where present"
+      ],
+      "keyboard": [
+        "Native link/control keyboard behavior where applicable"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser-not-tested",
+      "pages": [
+        "about.html"
+      ],
+      "instances": [
+        {
+          "page": "about.html",
+          "section": "local-reporting",
+          "selector": "[data-component=\"local-reporting\"][data-section=\"local-reporting\"]"
+        }
+      ]
+    },
+    {
+      "id": "main-content",
+      "selector": "[data-component=\"main-content\"]",
+      "behavior": [
+        "Semantic content region; local links where present"
+      ],
+      "keyboard": [
+        "Native link/control keyboard behavior where applicable"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser-not-tested",
+      "pages": [
+        "404.html",
+        "about.html",
+        "article.html",
+        "democracy.html",
+        "index.html",
+        "newsletters.html",
+        "search.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "section": "main-content",
+          "selector": "[data-component=\"main-content\"][data-section=\"main-content\"]"
+        },
+        {
+          "page": "about.html",
+          "section": "main-content",
+          "selector": "[data-component=\"main-content\"][data-section=\"main-content\"]"
+        },
+        {
+          "page": "article.html",
+          "section": "main-content",
+          "selector": "[data-component=\"main-content\"][data-section=\"main-content\"]"
+        },
+        {
+          "page": "democracy.html",
+          "section": "main-content",
+          "selector": "[data-component=\"main-content\"][data-section=\"main-content\"]"
+        },
+        {
+          "page": "index.html",
+          "section": "main-content",
+          "selector": "[data-component=\"main-content\"][data-section=\"main-content\"]"
+        },
+        {
+          "page": "newsletters.html",
+          "section": "main-content",
+          "selector": "[data-component=\"main-content\"][data-section=\"main-content\"]"
+        },
+        {
+          "page": "search.html",
+          "section": "main-content",
+          "selector": "[data-component=\"main-content\"][data-section=\"main-content\"]"
+        }
+      ]
+    },
+    {
+      "id": "most-read-list",
+      "selector": "[data-component=\"most-read-list\"]",
+      "pages": [
+        "article.html"
+      ],
+      "behavior": [
+        "Semantic local content and working navigation where linked"
+      ],
+      "keyboard": [
+        "Tab; Enter for links; native Space for buttons/checkboxes; Escape for dialogs where applicable"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser-not-tested",
+      "instances": [
+        {
+          "page": "article.html",
+          "section": "most-read",
+          "selector": "[data-component=\"most-read-list\"][data-section=\"most-read\"]"
+        }
+      ]
+    },
+    {
+      "id": "navigation-dialog",
+      "selector": "[data-component=\"navigation-dialog\"]",
+      "pages": [
+        "404.html",
+        "about.html",
+        "article.html",
+        "democracy.html",
+        "index.html",
+        "newsletters.html",
+        "search.html"
+      ],
+      "behavior": [
+        "Native modal topic/series directory; close and Escape; return focus"
+      ],
+      "keyboard": [
+        "Tab; Enter for links; native Space for buttons/checkboxes; Escape for dialogs where applicable"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser-not-tested",
+      "instances": [
+        {
+          "page": "404.html",
+          "section": "navigation-overlay",
+          "selector": "[data-component=\"navigation-dialog\"][data-section=\"navigation-overlay\"]"
+        },
+        {
+          "page": "about.html",
+          "section": "navigation-overlay",
+          "selector": "[data-component=\"navigation-dialog\"][data-section=\"navigation-overlay\"]"
+        },
+        {
+          "page": "article.html",
+          "section": "navigation-overlay",
+          "selector": "[data-component=\"navigation-dialog\"][data-section=\"navigation-overlay\"]"
+        },
+        {
+          "page": "democracy.html",
+          "section": "navigation-overlay",
+          "selector": "[data-component=\"navigation-dialog\"][data-section=\"navigation-overlay\"]"
+        },
+        {
+          "page": "index.html",
+          "section": "navigation-overlay",
+          "selector": "[data-component=\"navigation-dialog\"][data-section=\"navigation-overlay\"]"
+        },
+        {
+          "page": "newsletters.html",
+          "section": "navigation-overlay",
+          "selector": "[data-component=\"navigation-dialog\"][data-section=\"navigation-overlay\"]"
+        },
+        {
+          "page": "search.html",
+          "section": "navigation-overlay",
+          "selector": "[data-component=\"navigation-dialog\"][data-section=\"navigation-overlay\"]"
+        }
+      ]
+    },
+    {
+      "id": "newsletter-callout",
+      "selector": "[data-component=\"newsletter-callout\"]",
+      "pages": [
+        "404.html",
+        "about.html",
+        "article.html",
+        "democracy.html",
+        "index.html",
+        "newsletters.html",
+        "search.html"
+      ],
+      "behavior": [
+        "Semantic local content and working navigation where linked"
+      ],
+      "keyboard": [
+        "Tab; Enter for links; native Space for buttons/checkboxes; Escape for dialogs where applicable"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser-not-tested",
+      "instances": [
+        {
+          "page": "404.html",
+          "section": "newsletter-callout",
+          "selector": "[data-component=\"newsletter-callout\"][data-section=\"newsletter-callout\"]"
+        },
+        {
+          "page": "about.html",
+          "section": "newsletter-callout",
+          "selector": "[data-component=\"newsletter-callout\"][data-section=\"newsletter-callout\"]"
+        },
+        {
+          "page": "article.html",
+          "section": "newsletter-callout",
+          "selector": "[data-component=\"newsletter-callout\"][data-section=\"newsletter-callout\"]"
+        },
+        {
+          "page": "democracy.html",
+          "section": "newsletter-callout",
+          "selector": "[data-component=\"newsletter-callout\"][data-section=\"newsletter-callout\"]"
+        },
+        {
+          "page": "index.html",
+          "section": "newsletter-callout",
+          "selector": "[data-component=\"newsletter-callout\"][data-section=\"newsletter-callout\"]"
+        },
+        {
+          "page": "newsletters.html",
+          "section": "newsletter-callout",
+          "selector": "[data-component=\"newsletter-callout\"][data-section=\"newsletter-callout\"]"
+        },
+        {
+          "page": "search.html",
+          "section": "newsletter-callout",
+          "selector": "[data-component=\"newsletter-callout\"][data-section=\"newsletter-callout\"]"
+        }
+      ]
+    },
+    {
+      "id": "newsletter-choice",
+      "selector": "[data-component=\"newsletter-choice\"]",
+      "pages": [
+        "newsletters.html"
+      ],
+      "behavior": [
+        "Native labeled checkbox"
+      ],
+      "keyboard": [
+        "Tab; Enter for links; native Space for buttons/checkboxes; Escape for dialogs where applicable"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser-not-tested",
+      "instances": [
+        {
+          "page": "newsletters.html",
+          "section": "newsletter-0",
+          "selector": "[data-component=\"newsletter-choice\"][data-section=\"newsletter-0\"]"
+        },
+        {
+          "page": "newsletters.html",
+          "section": "newsletter-1",
+          "selector": "[data-component=\"newsletter-choice\"][data-section=\"newsletter-1\"]"
+        },
+        {
+          "page": "newsletters.html",
+          "section": "newsletter-2",
+          "selector": "[data-component=\"newsletter-choice\"][data-section=\"newsletter-2\"]"
+        },
+        {
+          "page": "newsletters.html",
+          "section": "newsletter-3",
+          "selector": "[data-component=\"newsletter-choice\"][data-section=\"newsletter-3\"]"
+        },
+        {
+          "page": "newsletters.html",
+          "section": "newsletter-4",
+          "selector": "[data-component=\"newsletter-choice\"][data-section=\"newsletter-4\"]"
+        },
+        {
+          "page": "newsletters.html",
+          "section": "newsletter-5",
+          "selector": "[data-component=\"newsletter-choice\"][data-section=\"newsletter-5\"]"
+        }
+      ]
+    },
+    {
+      "id": "newsletter-form",
+      "selector": "[data-component=\"newsletter-form\"]",
+      "pages": [
+        "newsletters.html"
+      ],
+      "behavior": [
+        "Email/list validation and demo success; no storage/network"
+      ],
+      "keyboard": [
+        "Tab; Enter for links; native Space for buttons/checkboxes; Escape for dialogs where applicable"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser-not-tested",
+      "instances": [
+        {
+          "page": "newsletters.html",
+          "section": "newsletter-signup",
+          "selector": "[data-component=\"newsletter-form\"][data-section=\"newsletter-signup\"]"
+        }
+      ]
+    },
+    {
+      "id": "newsletter-latest",
+      "selector": "[data-component=\"newsletter-latest\"]",
+      "behavior": [
+        "Semantic content region; local links where present"
+      ],
+      "keyboard": [
+        "Native link/control keyboard behavior where applicable"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser-not-tested",
+      "pages": [
+        "newsletters.html"
+      ],
+      "instances": [
+        {
+          "page": "newsletters.html",
+          "section": "newsletter-latest",
+          "selector": "[data-component=\"newsletter-latest\"][data-section=\"newsletter-latest\"]"
+        }
+      ]
+    },
+    {
+      "id": "primary-nav",
+      "selector": "[data-component=\"primary-nav\"]",
+      "pages": [
+        "404.html",
+        "about.html",
+        "article.html",
+        "democracy.html",
+        "index.html",
+        "newsletters.html",
+        "search.html"
+      ],
+      "behavior": [
+        "Semantic local content and working navigation where linked"
+      ],
+      "keyboard": [
+        "Tab; Enter for links; native Space for buttons/checkboxes; Escape for dialogs where applicable"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser-not-tested",
+      "instances": [
+        {
+          "page": "404.html",
+          "section": "global-navigation",
+          "selector": "[data-component=\"primary-nav\"][data-section=\"global-navigation\"]"
+        },
+        {
+          "page": "about.html",
+          "section": "global-navigation",
+          "selector": "[data-component=\"primary-nav\"][data-section=\"global-navigation\"]"
+        },
+        {
+          "page": "article.html",
+          "section": "global-navigation",
+          "selector": "[data-component=\"primary-nav\"][data-section=\"global-navigation\"]"
+        },
+        {
+          "page": "democracy.html",
+          "section": "global-navigation",
+          "selector": "[data-component=\"primary-nav\"][data-section=\"global-navigation\"]"
+        },
+        {
+          "page": "index.html",
+          "section": "global-navigation",
+          "selector": "[data-component=\"primary-nav\"][data-section=\"global-navigation\"]"
+        },
+        {
+          "page": "newsletters.html",
+          "section": "global-navigation",
+          "selector": "[data-component=\"primary-nav\"][data-section=\"global-navigation\"]"
+        },
+        {
+          "page": "search.html",
+          "section": "global-navigation",
+          "selector": "[data-component=\"primary-nav\"][data-section=\"global-navigation\"]"
+        }
+      ]
+    },
+    {
+      "id": "related-reporting",
+      "selector": "[data-component=\"related-reporting\"]",
+      "behavior": [
+        "Semantic content region; local links where present"
+      ],
+      "keyboard": [
+        "Native link/control keyboard behavior where applicable"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser-not-tested",
+      "pages": [
+        "article.html"
+      ],
+      "instances": [
+        {
+          "page": "article.html",
+          "section": "related-reporting",
+          "selector": "[data-component=\"related-reporting\"][data-section=\"related-reporting\"]"
+        }
+      ]
+    },
+    {
+      "id": "reporting-impact",
+      "selector": "[data-component=\"reporting-impact\"]",
+      "behavior": [
+        "Semantic content region; local links where present"
+      ],
+      "keyboard": [
+        "Native link/control keyboard behavior where applicable"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser-not-tested",
+      "pages": [
+        "democracy.html"
+      ],
+      "instances": [
+        {
+          "page": "democracy.html",
+          "section": "reporting-impact",
+          "selector": "[data-component=\"reporting-impact\"][data-section=\"reporting-impact\"]"
+        }
+      ]
+    },
+    {
+      "id": "republish-dialog",
+      "selector": "[data-component=\"republish-dialog\"]",
+      "pages": [
+        "article.html"
+      ],
+      "behavior": [
+        "Native modal selectable excerpt; close/Escape; return focus"
+      ],
+      "keyboard": [
+        "Tab; Enter for links; native Space for buttons/checkboxes; Escape for dialogs where applicable"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser-not-tested",
+      "instances": [
+        {
+          "page": "article.html",
+          "section": "republishing-dialog",
+          "selector": "[data-component=\"republish-dialog\"][data-section=\"republishing-dialog\"]"
+        }
+      ]
+    },
+    {
+      "id": "republishing",
+      "selector": "[data-component=\"republishing\"]",
+      "behavior": [
+        "Semantic content region; local links where present"
+      ],
+      "keyboard": [
+        "Native link/control keyboard behavior where applicable"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser-not-tested",
+      "pages": [
+        "article.html"
+      ],
+      "instances": [
+        {
+          "page": "article.html",
+          "section": "republishing",
+          "selector": "[data-component=\"republishing\"][data-section=\"republishing\"]"
+        }
+      ]
+    },
+    {
+      "id": "search-dialog",
+      "selector": "[data-component=\"search-dialog\"]",
+      "pages": [
+        "404.html",
+        "about.html",
+        "article.html",
+        "democracy.html",
+        "index.html",
+        "newsletters.html",
+        "search.html"
+      ],
+      "behavior": [
+        "Native modal GET search form; close and Escape; return focus"
+      ],
+      "keyboard": [
+        "Tab; Enter for links; native Space for buttons/checkboxes; Escape for dialogs where applicable"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser-not-tested",
+      "instances": [
+        {
+          "page": "404.html",
+          "section": "search-overlay",
+          "selector": "[data-component=\"search-dialog\"][data-section=\"search-overlay\"]"
+        },
+        {
+          "page": "about.html",
+          "section": "search-overlay",
+          "selector": "[data-component=\"search-dialog\"][data-section=\"search-overlay\"]"
+        },
+        {
+          "page": "article.html",
+          "section": "search-overlay",
+          "selector": "[data-component=\"search-dialog\"][data-section=\"search-overlay\"]"
+        },
+        {
+          "page": "democracy.html",
+          "section": "search-overlay",
+          "selector": "[data-component=\"search-dialog\"][data-section=\"search-overlay\"]"
+        },
+        {
+          "page": "index.html",
+          "section": "search-overlay",
+          "selector": "[data-component=\"search-dialog\"][data-section=\"search-overlay\"]"
+        },
+        {
+          "page": "newsletters.html",
+          "section": "search-overlay",
+          "selector": "[data-component=\"search-dialog\"][data-section=\"search-overlay\"]"
+        },
+        {
+          "page": "search.html",
+          "section": "search-overlay",
+          "selector": "[data-component=\"search-dialog\"][data-section=\"search-overlay\"]"
+        }
+      ]
+    },
+    {
+      "id": "search-form",
+      "selector": "[data-component=\"search-form\"]",
+      "pages": [
+        "404.html",
+        "about.html",
+        "article.html",
+        "democracy.html",
+        "index.html",
+        "newsletters.html",
+        "search.html"
+      ],
+      "behavior": [
+        "Native GET navigation or local text/topic filtering"
+      ],
+      "keyboard": [
+        "Tab; Enter for links; native Space for buttons/checkboxes; Escape for dialogs where applicable"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser-not-tested",
+      "instances": [
+        {
+          "page": "404.html",
+          "section": "overlay-search",
+          "selector": "[data-component=\"search-form\"][data-section=\"overlay-search\"]"
+        },
+        {
+          "page": "about.html",
+          "section": "overlay-search",
+          "selector": "[data-component=\"search-form\"][data-section=\"overlay-search\"]"
+        },
+        {
+          "page": "article.html",
+          "section": "overlay-search",
+          "selector": "[data-component=\"search-form\"][data-section=\"overlay-search\"]"
+        },
+        {
+          "page": "democracy.html",
+          "section": "overlay-search",
+          "selector": "[data-component=\"search-form\"][data-section=\"overlay-search\"]"
+        },
+        {
+          "page": "index.html",
+          "section": "overlay-search",
+          "selector": "[data-component=\"search-form\"][data-section=\"overlay-search\"]"
+        },
+        {
+          "page": "newsletters.html",
+          "section": "overlay-search",
+          "selector": "[data-component=\"search-form\"][data-section=\"overlay-search\"]"
+        },
+        {
+          "page": "search.html",
+          "section": "overlay-search",
+          "selector": "[data-component=\"search-form\"][data-section=\"overlay-search\"]"
+        },
+        {
+          "page": "search.html",
+          "section": "search-filters",
+          "selector": "[data-component=\"search-form\"][data-section=\"search-filters\"]"
+        }
+      ]
+    },
+    {
+      "id": "search-results",
+      "selector": "[data-component=\"search-results\"]",
+      "pages": [
+        "search.html"
+      ],
+      "behavior": [
+        "Six-record inline search and empty/status feedback"
+      ],
+      "keyboard": [
+        "Tab; Enter for links; native Space for buttons/checkboxes; Escape for dialogs where applicable"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser-not-tested",
+      "instances": [
+        {
+          "page": "search.html",
+          "section": "search-results",
+          "selector": "[data-component=\"search-results\"][data-section=\"search-results\"]"
+        }
+      ]
+    },
+    {
+      "id": "series-card",
+      "selector": "[data-component=\"series-card\"]",
+      "pages": [
+        "democracy.html"
+      ],
+      "behavior": [
+        "Semantic local content and working navigation where linked"
+      ],
+      "keyboard": [
+        "Tab; Enter for links; native Space for buttons/checkboxes; Escape for dialogs where applicable"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser-not-tested",
+      "instances": [
+        {
+          "page": "democracy.html",
+          "section": "public-record-series",
+          "selector": "[data-component=\"series-card\"][data-section=\"public-record-series\"]"
+        },
+        {
+          "page": "democracy.html",
+          "section": "open-doors-series",
+          "selector": "[data-component=\"series-card\"][data-section=\"open-doors-series\"]"
+        }
+      ]
+    },
+    {
+      "id": "series-directory",
+      "selector": "[data-component=\"series-directory\"]",
+      "behavior": [
+        "Semantic content region; local links where present"
+      ],
+      "keyboard": [
+        "Native link/control keyboard behavior where applicable"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser-not-tested",
+      "pages": [
+        "404.html",
+        "about.html",
+        "article.html",
+        "democracy.html",
+        "index.html",
+        "newsletters.html",
+        "search.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "section": "series-directory",
+          "selector": "[data-component=\"series-directory\"][data-section=\"series-directory\"]"
+        },
+        {
+          "page": "about.html",
+          "section": "series-directory",
+          "selector": "[data-component=\"series-directory\"][data-section=\"series-directory\"]"
+        },
+        {
+          "page": "article.html",
+          "section": "series-directory",
+          "selector": "[data-component=\"series-directory\"][data-section=\"series-directory\"]"
+        },
+        {
+          "page": "democracy.html",
+          "section": "series-directory",
+          "selector": "[data-component=\"series-directory\"][data-section=\"series-directory\"]"
+        },
+        {
+          "page": "index.html",
+          "section": "series-directory",
+          "selector": "[data-component=\"series-directory\"][data-section=\"series-directory\"]"
+        },
+        {
+          "page": "newsletters.html",
+          "section": "series-directory",
+          "selector": "[data-component=\"series-directory\"][data-section=\"series-directory\"]"
+        },
+        {
+          "page": "search.html",
+          "section": "series-directory",
+          "selector": "[data-component=\"series-directory\"][data-section=\"series-directory\"]"
+        }
+      ]
+    },
+    {
+      "id": "series-nav",
+      "selector": "[data-component=\"series-nav\"]",
+      "pages": [
+        "404.html",
+        "about.html",
+        "article.html",
+        "democracy.html",
+        "index.html",
+        "newsletters.html",
+        "search.html"
+      ],
+      "behavior": [
+        "Local topic or series navigation within menu dialog"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser-not-tested",
+      "instances": [
+        {
+          "page": "404.html",
+          "section": "overlay-series",
+          "selector": "[data-component=\"series-nav\"][data-section=\"overlay-series\"]"
+        },
+        {
+          "page": "about.html",
+          "section": "overlay-series",
+          "selector": "[data-component=\"series-nav\"][data-section=\"overlay-series\"]"
+        },
+        {
+          "page": "article.html",
+          "section": "overlay-series",
+          "selector": "[data-component=\"series-nav\"][data-section=\"overlay-series\"]"
+        },
+        {
+          "page": "democracy.html",
+          "section": "overlay-series",
+          "selector": "[data-component=\"series-nav\"][data-section=\"overlay-series\"]"
+        },
+        {
+          "page": "index.html",
+          "section": "overlay-series",
+          "selector": "[data-component=\"series-nav\"][data-section=\"overlay-series\"]"
+        },
+        {
+          "page": "newsletters.html",
+          "section": "overlay-series",
+          "selector": "[data-component=\"series-nav\"][data-section=\"overlay-series\"]"
+        },
+        {
+          "page": "search.html",
+          "section": "overlay-series",
+          "selector": "[data-component=\"series-nav\"][data-section=\"overlay-series\"]"
+        }
+      ]
+    },
+    {
+      "id": "site-footer",
+      "selector": "[data-component=\"site-footer\"]",
+      "pages": [
+        "404.html",
+        "about.html",
+        "article.html",
+        "democracy.html",
+        "index.html",
+        "newsletters.html",
+        "search.html"
+      ],
+      "behavior": [
+        "Semantic local content and working navigation where linked"
+      ],
+      "keyboard": [
+        "Tab; Enter for links; native Space for buttons/checkboxes; Escape for dialogs where applicable"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser-not-tested",
+      "instances": [
+        {
+          "page": "404.html",
+          "section": "global-footer",
+          "selector": "[data-component=\"site-footer\"][data-section=\"global-footer\"]"
+        },
+        {
+          "page": "about.html",
+          "section": "global-footer",
+          "selector": "[data-component=\"site-footer\"][data-section=\"global-footer\"]"
+        },
+        {
+          "page": "article.html",
+          "section": "global-footer",
+          "selector": "[data-component=\"site-footer\"][data-section=\"global-footer\"]"
+        },
+        {
+          "page": "democracy.html",
+          "section": "global-footer",
+          "selector": "[data-component=\"site-footer\"][data-section=\"global-footer\"]"
+        },
+        {
+          "page": "index.html",
+          "section": "global-footer",
+          "selector": "[data-component=\"site-footer\"][data-section=\"global-footer\"]"
+        },
+        {
+          "page": "newsletters.html",
+          "section": "global-footer",
+          "selector": "[data-component=\"site-footer\"][data-section=\"global-footer\"]"
+        },
+        {
+          "page": "search.html",
+          "section": "global-footer",
+          "selector": "[data-component=\"site-footer\"][data-section=\"global-footer\"]"
+        }
+      ]
+    },
+    {
+      "id": "site-header",
+      "selector": "[data-component=\"site-header\"]",
+      "pages": [
+        "404.html",
+        "about.html",
+        "article.html",
+        "democracy.html",
+        "index.html",
+        "newsletters.html",
+        "search.html"
+      ],
+      "behavior": [
+        "Semantic local content and working navigation where linked"
+      ],
+      "keyboard": [
+        "Tab; Enter for links; native Space for buttons/checkboxes; Escape for dialogs where applicable"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser-not-tested",
+      "instances": [
+        {
+          "page": "404.html",
+          "section": "global-header",
+          "selector": "[data-component=\"site-header\"][data-section=\"global-header\"]"
+        },
+        {
+          "page": "about.html",
+          "section": "global-header",
+          "selector": "[data-component=\"site-header\"][data-section=\"global-header\"]"
+        },
+        {
+          "page": "article.html",
+          "section": "global-header",
+          "selector": "[data-component=\"site-header\"][data-section=\"global-header\"]"
+        },
+        {
+          "page": "democracy.html",
+          "section": "global-header",
+          "selector": "[data-component=\"site-header\"][data-section=\"global-header\"]"
+        },
+        {
+          "page": "index.html",
+          "section": "global-header",
+          "selector": "[data-component=\"site-header\"][data-section=\"global-header\"]"
+        },
+        {
+          "page": "newsletters.html",
+          "section": "global-header",
+          "selector": "[data-component=\"site-header\"][data-section=\"global-header\"]"
+        },
+        {
+          "page": "search.html",
+          "section": "global-header",
+          "selector": "[data-component=\"site-header\"][data-section=\"global-header\"]"
+        }
+      ]
+    },
+    {
+      "id": "story-card",
+      "selector": "[data-component=\"story-card\"]",
+      "pages": [
+        "about.html",
+        "article.html",
+        "democracy.html",
+        "index.html",
+        "newsletters.html"
+      ],
+      "behavior": [
+        "Semantic local content and working navigation where linked"
+      ],
+      "keyboard": [
+        "Tab; Enter for links; native Space for buttons/checkboxes; Escape for dialogs where applicable"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser-not-tested",
+      "instances": [
+        {
+          "page": "about.html",
+          "section": "story-1",
+          "selector": "[data-component=\"story-card\"][data-section=\"story-1\"]"
+        },
+        {
+          "page": "about.html",
+          "section": "story-3",
+          "selector": "[data-component=\"story-card\"][data-section=\"story-3\"]"
+        },
+        {
+          "page": "article.html",
+          "section": "story-4",
+          "selector": "[data-component=\"story-card\"][data-section=\"story-4\"]"
+        },
+        {
+          "page": "democracy.html",
+          "section": "story-1",
+          "selector": "[data-component=\"story-card\"][data-section=\"story-1\"]"
+        },
+        {
+          "page": "democracy.html",
+          "section": "story-4",
+          "selector": "[data-component=\"story-card\"][data-section=\"story-4\"]"
+        },
+        {
+          "page": "index.html",
+          "section": "lead-story",
+          "selector": "[data-component=\"story-card\"][data-section=\"lead-story\"]"
+        },
+        {
+          "page": "index.html",
+          "section": "story-2",
+          "selector": "[data-component=\"story-card\"][data-section=\"story-2\"]"
+        },
+        {
+          "page": "index.html",
+          "section": "story-3",
+          "selector": "[data-component=\"story-card\"][data-section=\"story-3\"]"
+        },
+        {
+          "page": "index.html",
+          "section": "story-4",
+          "selector": "[data-component=\"story-card\"][data-section=\"story-4\"]"
+        },
+        {
+          "page": "index.html",
+          "section": "story-5",
+          "selector": "[data-component=\"story-card\"][data-section=\"story-5\"]"
+        },
+        {
+          "page": "index.html",
+          "section": "story-6",
+          "selector": "[data-component=\"story-card\"][data-section=\"story-6\"]"
+        },
+        {
+          "page": "index.html",
+          "section": "story-1",
+          "selector": "[data-component=\"story-card\"][data-section=\"story-1\"]"
+        },
+        {
+          "page": "index.html",
+          "section": "story-4",
+          "selector": "[data-component=\"story-card\"][data-section=\"story-4\"]"
+        },
+        {
+          "page": "newsletters.html",
+          "section": "story-1",
+          "selector": "[data-component=\"story-card\"][data-section=\"story-1\"]"
+        },
+        {
+          "page": "newsletters.html",
+          "section": "story-2",
+          "selector": "[data-component=\"story-card\"][data-section=\"story-2\"]"
+        }
+      ]
+    },
+    {
+      "id": "support-information",
+      "selector": "[data-component=\"support-information\"]",
+      "behavior": [
+        "Semantic content region; local links where present"
+      ],
+      "keyboard": [
+        "Native link/control keyboard behavior where applicable"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser-not-tested",
+      "pages": [
+        "about.html"
+      ],
+      "instances": [
+        {
+          "page": "about.html",
+          "section": "support-information",
+          "selector": "[data-component=\"support-information\"][data-section=\"support-information\"]"
+        }
+      ]
+    },
+    {
+      "id": "topic-directory",
+      "selector": "[data-component=\"topic-directory\"]",
+      "behavior": [
+        "Semantic content region; local links where present"
+      ],
+      "keyboard": [
+        "Native link/control keyboard behavior where applicable"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser-not-tested",
+      "pages": [
+        "404.html",
+        "about.html",
+        "article.html",
+        "democracy.html",
+        "index.html",
+        "newsletters.html",
+        "search.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "section": "topic-directory",
+          "selector": "[data-component=\"topic-directory\"][data-section=\"topic-directory\"]"
+        },
+        {
+          "page": "about.html",
+          "section": "topic-directory",
+          "selector": "[data-component=\"topic-directory\"][data-section=\"topic-directory\"]"
+        },
+        {
+          "page": "article.html",
+          "section": "topic-directory",
+          "selector": "[data-component=\"topic-directory\"][data-section=\"topic-directory\"]"
+        },
+        {
+          "page": "democracy.html",
+          "section": "topic-directory",
+          "selector": "[data-component=\"topic-directory\"][data-section=\"topic-directory\"]"
+        },
+        {
+          "page": "index.html",
+          "section": "topic-directory",
+          "selector": "[data-component=\"topic-directory\"][data-section=\"topic-directory\"]"
+        },
+        {
+          "page": "newsletters.html",
+          "section": "topic-directory",
+          "selector": "[data-component=\"topic-directory\"][data-section=\"topic-directory\"]"
+        },
+        {
+          "page": "search.html",
+          "section": "topic-directory",
+          "selector": "[data-component=\"topic-directory\"][data-section=\"topic-directory\"]"
+        }
+      ]
+    },
+    {
+      "id": "topic-nav",
+      "selector": "[data-component=\"topic-nav\"]",
+      "pages": [
+        "404.html",
+        "about.html",
+        "article.html",
+        "democracy.html",
+        "index.html",
+        "newsletters.html",
+        "search.html"
+      ],
+      "behavior": [
+        "Local topic or series navigation within menu dialog"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser-not-tested",
+      "instances": [
+        {
+          "page": "404.html",
+          "section": "overlay-topics",
+          "selector": "[data-component=\"topic-nav\"][data-section=\"overlay-topics\"]"
+        },
+        {
+          "page": "about.html",
+          "section": "overlay-topics",
+          "selector": "[data-component=\"topic-nav\"][data-section=\"overlay-topics\"]"
+        },
+        {
+          "page": "article.html",
+          "section": "overlay-topics",
+          "selector": "[data-component=\"topic-nav\"][data-section=\"overlay-topics\"]"
+        },
+        {
+          "page": "democracy.html",
+          "section": "overlay-topics",
+          "selector": "[data-component=\"topic-nav\"][data-section=\"overlay-topics\"]"
+        },
+        {
+          "page": "index.html",
+          "section": "overlay-topics",
+          "selector": "[data-component=\"topic-nav\"][data-section=\"overlay-topics\"]"
+        },
+        {
+          "page": "newsletters.html",
+          "section": "overlay-topics",
+          "selector": "[data-component=\"topic-nav\"][data-section=\"overlay-topics\"]"
+        },
+        {
+          "page": "search.html",
+          "section": "overlay-topics",
+          "selector": "[data-component=\"topic-nav\"][data-section=\"overlay-topics\"]"
+        }
+      ]
+    },
+    {
+      "id": "topic-series",
+      "selector": "[data-component=\"topic-series\"]",
+      "behavior": [
+        "Semantic content region; local links where present"
+      ],
+      "keyboard": [
+        "Native link/control keyboard behavior where applicable"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser-not-tested",
+      "pages": [
+        "democracy.html"
+      ],
+      "instances": [
+        {
+          "page": "democracy.html",
+          "section": "topic-series",
+          "selector": "[data-component=\"topic-series\"][data-section=\"topic-series\"]"
+        }
+      ]
+    },
+    {
+      "id": "search-result",
+      "selector": "[data-component=\"search-result\"]",
+      "pages": [
+        "search.html"
+      ],
+      "behavior": [
+        "Dynamic summary; only featured sample links to full detail"
+      ],
+      "keyboard": [
+        "Tab; Enter for links; native Space for buttons/checkboxes; Escape for dialogs where applicable"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser-not-tested",
+      "instances": [
+        {
+          "page": "search.html",
+          "section": "result-0 through result-5 (filtered subset)",
+          "selector": "#results [data-component=\"search-result\"]",
+          "generated_by": "js/main.js render()"
+        }
+      ]
+    }
+  ]
+}

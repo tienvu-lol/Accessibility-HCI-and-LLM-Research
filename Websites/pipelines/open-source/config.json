@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.0",
+  "model_group": "open-source",
+  "slots": [
+    7,
+    8,
+    9,
+    10
+  ],
+  "excluded_categories": [],
+  "allocation": {
+    "claude": 3,
+    "codex": 3,
+    "open-source": 4
+  },
+  "models_file": "models.json",
+  "execution": {
+    "mode": "orchestrated-api-execution",
+    "one_replica_per_run": true,
+    "max_concurrent_builds": 2,
+    "automatic_generation": true,
+    "automatic_publish": false,
+    "automatic_commit": false,
+    "max_build_turns": 28,
+    "max_repair_rounds": 3,
+    "preserve_initial_artifact": true
+  },
+  "approval": {
+    "require_all_ten_sources": true,
+    "allow_unverified_sources": false,
+    "inherit_claude_waiver": false,
+    "require_open_weight_confirmation": true
+  },
+  "paths": {
+    "rules": "Rules.md",
+    "allocation": "MODEL_ALLOCATION.md",
+    "assignments": "metadata/assignments.csv",
+    "inventories": "metadata/source-inventories",
+    "qc": "tools/qc/qc.js",
+    "change_log": "metadata/change-log.md"
+  },
+  "research": {
+    "preferred_method": "orchestrator HTTP GET of the canonical homepage and proposed interior pages, interpreted by the assigned open-weight model",
+    "fallback": "record the exact method and limits; an unverified source blocks its build",
+    "http_timeout_ms": 25000,
+    "http_user_agent": "Mozilla/5.0 (compatible; accessibility-research-replica-study/1.0)",
+    "max_pages_per_source": 16,
+    "min_pages_per_source": 6
+  },
+  "qc": {
+    "required_exit_code": 0,
+    "required_failures": 0,
+    "interaction_review_required": true,
+    "manual_review_required_for_acceptance": true
+  },
+  "api": {
+    "protocol": "openai-chat-completions",
+    "timeout_ms": 600000,
+    "max_retries": 4,
+    "retry_backoff_ms": 2000,
+    "key_source": "environment variables only; keys are never written to this repository or to run evidence"
+  }
+}

@@ -8,7 +8,17 @@
 
 This document **supplements, but does not replace, `RULES.md`**. All website-generation tasks must comply with its source verification and approval gate, implementation restrictions, accessibility baseline, HTML instrumentation, required artifacts, quality-control checks, and one-replica-per-delivery workflow. If an allocation or repository convention conflicts with `RULES.md`, stop and escalate the conflict rather than silently relaxing either document.
 
-The allocation is **per category**, not an overall quota across the dataset. Every category must contain exactly **10 distinct approved reference websites and 10 corresponding replicas**.
+The allocation is **per category**, not an overall quota across the dataset. The full dataset target for every category is **10 distinct approved reference websites and 10 corresponding replicas**.
+
+### Active allocation
+
+A category's **active allocation** is the subset of its 10 slots whose model group has an operating generation pipeline. Slots outside it stay registered in `metadata/assignments.csv` with status `planned`; they are deferred, not cancelled, and are not dropped from the dataset design.
+
+As of 2026-11-13 the active allocation is **all ten slots** (Claude 01–03, Codex 04–06, open-source 07–10). Slots 07–10 were deferred from 2026-11-12 while no open-source pipeline existed; that pipeline now exists at `pipelines/open-source/`, so they are restored to the active allocation under the clause below rather than by a protocol amendment. Authorized by Samhith Varma on behalf of the project team; see `metadata/change-log.md`.
+
+Restoring slots to the active allocation does not approve any source or confer any waiver. Each group still passes its own approval gate over its own slots, and replicas built earlier under the reduced active allocation keep the record that they were generated at a different time, as required below.
+
+A category is **deliverable at its active scope** when every slot in its active allocation is approved. Replicas built under a reduced active allocation must record that fact, because slots activated later are generated at a different time and under a possibly later protocol revision.
 
 ## 2. Mandatory generation allocation
 
@@ -104,7 +114,7 @@ REST-01/
 ## 4. Source selection and approval workflow
 
 1. **Phase A:** Assemble and verify the 10 unique references per category following `RULES.md`. Include the model-group assignment and intended precise model/version (or explicitly mark `TBD`, which must be resolved before Phase B) in the approval inventory.
-2. **Approval gate:** Obtain approval for all 10 references, representative page scope, and the 3/3/4 allocation. Stop before code generation.
+2. **Approval gate:** Obtain approval for the references and representative page scope of the category's **active allocation**, and for the slot assignment of each active group. Approval is granted per model group over its own slots: a group may proceed once its own slots are approved and need not wait for a group whose pipeline does not yet exist. Deferred slots require no approval while inactive. Stop before code generation.
 3. **Phase B:** Deliver one approved replica at a time. The assigned model must produce the site under its designated directory using the same baseline protocol and category prompt.
 4. **Record provenance:** Fill in `generation-metadata.json` and update the central assignment register when the replica is delivered.
 5. **Validate:** Apply all `RULES.md` QC checks, report pass/fail/not-tested truthfully, and do not treat the existence of a file or an LLM's claim as evidence that testing occurred.

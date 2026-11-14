@@ -27,3 +27,5 @@ How the Claude model group generates its 3 replicas per category. Other model gr
 | WX | weather | national weather service / commercial portal / local TV or specialized |
 | NPO | nonprofit | international charity / local community nonprofit / cause-focused charity |
 | CHUR | church | large or multi-site / historic cathedral or parish / small congregation |
+| PORT | portfolio | minimal one-page / software developer / motion or 3D designer |
+| REST | restaurant | small local independent / BBQ or smokehouse / fine dining |

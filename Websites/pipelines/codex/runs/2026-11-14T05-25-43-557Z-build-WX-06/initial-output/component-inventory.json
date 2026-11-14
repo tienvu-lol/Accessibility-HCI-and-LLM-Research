@@ -1,0 +1,690 @@
+{
+  "protocol_version": "1.0",
+  "replica_id": "WX-06",
+  "category": "weather",
+  "source_url": "https://www.mountain-forecast.com/",
+  "components": [
+    {
+      "id": "accordion",
+      "selector": "[data-component='accordion']",
+      "pages": [
+        "summit-forecast.html"
+      ],
+      "instances": [
+        {
+          "page": "summit-forecast.html",
+          "section": "elevation-explanation"
+        },
+        {
+          "page": "summit-forecast.html",
+          "section": "precipitation-explanation"
+        }
+      ],
+      "behavior": [
+        "Native metric explanation disclosures."
+      ],
+      "keyboard": [
+        "Tab/Enter for links; native controls use Enter/Space and arrow keys where applicable"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution not-tested"
+    },
+    {
+      "id": "breadcrumb",
+      "selector": "[data-component='breadcrumb']",
+      "pages": [
+        "404.html",
+        "mountain-info.html",
+        "summit-forecast.html",
+        "weather-map.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "section": "breadcrumb"
+        },
+        {
+          "page": "mountain-info.html",
+          "section": "breadcrumb"
+        },
+        {
+          "page": "summit-forecast.html",
+          "section": "breadcrumb"
+        },
+        {
+          "page": "weather-map.html",
+          "section": "breadcrumb"
+        }
+      ],
+      "behavior": [
+        "Semantic static content and relative navigation where applicable."
+      ],
+      "keyboard": [
+        "Tab/Enter for links; native controls use Enter/Space and arrow keys where applicable"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution not-tested"
+    },
+    {
+      "id": "community-note",
+      "selector": "[data-component='community-note']",
+      "pages": [
+        "mountain-info.html"
+      ],
+      "instances": [
+        {
+          "page": "mountain-info.html",
+          "section": "community-notes"
+        }
+      ],
+      "behavior": [
+        "Semantic static content and relative navigation where applicable."
+      ],
+      "keyboard": [
+        "Tab/Enter for links; native controls use Enter/Space and arrow keys where applicable"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution not-tested"
+    },
+    {
+      "id": "demo-notice",
+      "selector": "[data-component='demo-notice']",
+      "pages": [
+        "404.html",
+        "index.html",
+        "mountain-info.html",
+        "summit-forecast.html",
+        "weather-map.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "section": "sample-disclosure"
+        },
+        {
+          "page": "index.html",
+          "section": "sample-disclosure"
+        },
+        {
+          "page": "mountain-info.html",
+          "section": "sample-disclosure"
+        },
+        {
+          "page": "summit-forecast.html",
+          "section": "sample-disclosure"
+        },
+        {
+          "page": "weather-map.html",
+          "section": "sample-disclosure"
+        }
+      ],
+      "behavior": [
+        "Semantic static content and relative navigation where applicable."
+      ],
+      "keyboard": [
+        "Tab/Enter for links; native controls use Enter/Space and arrow keys where applicable"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution not-tested"
+    },
+    {
+      "id": "editorial-content",
+      "selector": "[data-component='editorial-content']",
+      "pages": [
+        "index.html",
+        "weather-map.html"
+      ],
+      "instances": [
+        {
+          "page": "index.html",
+          "section": "mountain-features"
+        },
+        {
+          "page": "weather-map.html",
+          "section": "map-context"
+        }
+      ],
+      "behavior": [
+        "Semantic static content and relative navigation where applicable."
+      ],
+      "keyboard": [
+        "Tab/Enter for links; native controls use Enter/Space and arrow keys where applicable"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution not-tested"
+    },
+    {
+      "id": "elevation-selector",
+      "selector": "[data-component='elevation-selector']",
+      "pages": [
+        "summit-forecast.html"
+      ],
+      "instances": [
+        {
+          "page": "summit-forecast.html",
+          "section": "elevation-forecast"
+        }
+      ],
+      "behavior": [
+        "Select elevation, sample range and unit; redraw nine periods with status and headers."
+      ],
+      "keyboard": [
+        "Tab/Enter for links; native controls use Enter/Space and arrow keys where applicable"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution not-tested"
+    },
+    {
+      "id": "explanation-grid",
+      "selector": "[data-component='explanation-grid']",
+      "pages": [
+        "summit-forecast.html"
+      ],
+      "instances": [
+        {
+          "page": "summit-forecast.html",
+          "section": "forecast-explanations"
+        }
+      ],
+      "behavior": [
+        "Semantic static content and relative navigation where applicable."
+      ],
+      "keyboard": [
+        "Tab/Enter for links; native controls use Enter/Space and arrow keys where applicable"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution not-tested"
+    },
+    {
+      "id": "feature-grid",
+      "selector": "[data-component='feature-grid']",
+      "pages": [
+        "index.html"
+      ],
+      "instances": [
+        {
+          "page": "index.html",
+          "section": "mountain-discovery"
+        }
+      ],
+      "behavior": [
+        "Semantic static content and relative navigation where applicable."
+      ],
+      "keyboard": [
+        "Tab/Enter for links; native controls use Enter/Space and arrow keys where applicable"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution not-tested"
+    },
+    {
+      "id": "forecast-matrix",
+      "selector": "[data-component='forecast-matrix']",
+      "pages": [
+        "summit-forecast.html"
+      ],
+      "instances": [
+        {
+          "page": "summit-forecast.html",
+          "section": "mountain-matrix"
+        }
+      ],
+      "behavior": [
+        "Nine period columns with metric rows inside a labelled scrollable region."
+      ],
+      "keyboard": [
+        "Tab/Enter for links; native controls use Enter/Space and arrow keys where applicable"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution not-tested"
+    },
+    {
+      "id": "forecast-table",
+      "selector": "[data-component='forecast-table']",
+      "pages": [
+        "summit-forecast.html"
+      ],
+      "instances": [
+        {
+          "page": "summit-forecast.html",
+          "section": "forecast-data"
+        }
+      ],
+      "behavior": [
+        "Semantic static content and relative navigation where applicable."
+      ],
+      "keyboard": [
+        "Tab/Enter for links; native controls use Enter/Space and arrow keys where applicable"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution not-tested"
+    },
+    {
+      "id": "gallery",
+      "selector": "[data-component='gallery']",
+      "pages": [
+        "mountain-info.html"
+      ],
+      "instances": [
+        {
+          "page": "mountain-info.html",
+          "section": "mountain-gallery"
+        }
+      ],
+      "behavior": [
+        "Manual previous/next two-scene wraparound and status."
+      ],
+      "keyboard": [
+        "Tab/Enter for links; native controls use Enter/Space and arrow keys where applicable"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution not-tested"
+    },
+    {
+      "id": "main-content",
+      "selector": "[data-component='main-content']",
+      "pages": [
+        "404.html",
+        "index.html",
+        "mountain-info.html",
+        "summit-forecast.html",
+        "weather-map.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "section": "main-content"
+        },
+        {
+          "page": "index.html",
+          "section": "main-content"
+        },
+        {
+          "page": "mountain-info.html",
+          "section": "main-content"
+        },
+        {
+          "page": "summit-forecast.html",
+          "section": "main-content"
+        },
+        {
+          "page": "weather-map.html",
+          "section": "main-content"
+        }
+      ],
+      "behavior": [
+        "Semantic static content and relative navigation where applicable."
+      ],
+      "keyboard": [
+        "Tab/Enter for links; native controls use Enter/Space and arrow keys where applicable"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution not-tested"
+    },
+    {
+      "id": "map-demo",
+      "selector": "[data-component='map-demo']",
+      "pages": [
+        "weather-map.html"
+      ],
+      "instances": [
+        {
+          "page": "weather-map.html",
+          "section": "regional-map"
+        }
+      ],
+      "behavior": [
+        "Toggle original contour/road layers and highlight one of three sample peak markers."
+      ],
+      "keyboard": [
+        "Tab/Enter for links; native controls use Enter/Space and arrow keys where applicable"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution not-tested"
+    },
+    {
+      "id": "mountain-card",
+      "selector": "[data-component='mountain-card']",
+      "pages": [
+        "index.html"
+      ],
+      "instances": [
+        {
+          "page": "index.html",
+          "section": "sample-peak-grey"
+        },
+        {
+          "page": "index.html",
+          "section": "sample-peak-ash"
+        },
+        {
+          "page": "index.html",
+          "section": "sample-peak-cedar"
+        }
+      ],
+      "behavior": [
+        "Semantic static content and relative navigation where applicable."
+      ],
+      "keyboard": [
+        "Tab/Enter for links; native controls use Enter/Space and arrow keys where applicable"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution not-tested"
+    },
+    {
+      "id": "mountain-detail",
+      "selector": "[data-component='mountain-detail']",
+      "pages": [
+        "mountain-info.html"
+      ],
+      "instances": [
+        {
+          "page": "mountain-info.html",
+          "section": "mountain-guide"
+        }
+      ],
+      "behavior": [
+        "Semantic static content and relative navigation where applicable."
+      ],
+      "keyboard": [
+        "Tab/Enter for links; native controls use Enter/Space and arrow keys where applicable"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution not-tested"
+    },
+    {
+      "id": "mountain-directory",
+      "selector": "[data-component='mountain-directory']",
+      "pages": [
+        "index.html"
+      ],
+      "instances": [
+        {
+          "page": "index.html",
+          "section": "popular-peaks"
+        }
+      ],
+      "behavior": [
+        "Semantic static content and relative navigation where applicable."
+      ],
+      "keyboard": [
+        "Tab/Enter for links; native controls use Enter/Space and arrow keys where applicable"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution not-tested"
+    },
+    {
+      "id": "nearby-list",
+      "selector": "[data-component='nearby-list']",
+      "pages": [
+        "mountain-info.html"
+      ],
+      "instances": [
+        {
+          "page": "mountain-info.html",
+          "section": "nearby-peaks"
+        }
+      ],
+      "behavior": [
+        "Semantic static content and relative navigation where applicable."
+      ],
+      "keyboard": [
+        "Tab/Enter for links; native controls use Enter/Space and arrow keys where applicable"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution not-tested"
+    },
+    {
+      "id": "page-heading",
+      "selector": "[data-component='page-heading']",
+      "pages": [
+        "404.html",
+        "mountain-info.html",
+        "summit-forecast.html",
+        "weather-map.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "section": "page-introduction"
+        },
+        {
+          "page": "mountain-info.html",
+          "section": "page-introduction"
+        },
+        {
+          "page": "summit-forecast.html",
+          "section": "page-introduction"
+        },
+        {
+          "page": "weather-map.html",
+          "section": "page-introduction"
+        }
+      ],
+      "behavior": [
+        "Semantic static content and relative navigation where applicable."
+      ],
+      "keyboard": [
+        "Tab/Enter for links; native controls use Enter/Space and arrow keys where applicable"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution not-tested"
+    },
+    {
+      "id": "primary-nav",
+      "selector": "[data-component='primary-nav']",
+      "pages": [
+        "404.html",
+        "index.html",
+        "mountain-info.html",
+        "summit-forecast.html",
+        "weather-map.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "section": "global-navigation"
+        },
+        {
+          "page": "index.html",
+          "section": "global-navigation"
+        },
+        {
+          "page": "mountain-info.html",
+          "section": "global-navigation"
+        },
+        {
+          "page": "summit-forecast.html",
+          "section": "global-navigation"
+        },
+        {
+          "page": "weather-map.html",
+          "section": "global-navigation"
+        }
+      ],
+      "behavior": [
+        "Semantic static content and relative navigation where applicable."
+      ],
+      "keyboard": [
+        "Tab/Enter for links; native controls use Enter/Space and arrow keys where applicable"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution not-tested"
+    },
+    {
+      "id": "search-form",
+      "selector": "[data-component='search-form']",
+      "pages": [
+        "index.html"
+      ],
+      "instances": [
+        {
+          "page": "index.html",
+          "section": "local-search-form"
+        }
+      ],
+      "behavior": [
+        "Filters three inline peaks, supports blank/empty/match states and local query links."
+      ],
+      "keyboard": [
+        "Tab/Enter for links; native controls use Enter/Space and arrow keys where applicable"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution not-tested"
+    },
+    {
+      "id": "search-panel",
+      "selector": "[data-component='search-panel']",
+      "pages": [
+        "index.html"
+      ],
+      "instances": [
+        {
+          "page": "index.html",
+          "section": "local-search"
+        }
+      ],
+      "behavior": [
+        "Semantic static content and relative navigation where applicable."
+      ],
+      "keyboard": [
+        "Tab/Enter for links; native controls use Enter/Space and arrow keys where applicable"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution not-tested"
+    },
+    {
+      "id": "section-nav",
+      "selector": "[data-component='section-nav']",
+      "pages": [
+        "mountain-info.html",
+        "summit-forecast.html",
+        "weather-map.html"
+      ],
+      "instances": [
+        {
+          "page": "mountain-info.html",
+          "section": "mountain-sections"
+        },
+        {
+          "page": "summit-forecast.html",
+          "section": "mountain-sections"
+        },
+        {
+          "page": "weather-map.html",
+          "section": "mountain-sections"
+        }
+      ],
+      "behavior": [
+        "Separate approved routes plus notes/gallery anchors."
+      ],
+      "keyboard": [
+        "Tab/Enter for links; native controls use Enter/Space and arrow keys where applicable"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution not-tested"
+    },
+    {
+      "id": "site-footer",
+      "selector": "[data-component='site-footer']",
+      "pages": [
+        "404.html",
+        "index.html",
+        "mountain-info.html",
+        "summit-forecast.html",
+        "weather-map.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "section": "global-footer"
+        },
+        {
+          "page": "index.html",
+          "section": "global-footer"
+        },
+        {
+          "page": "mountain-info.html",
+          "section": "global-footer"
+        },
+        {
+          "page": "summit-forecast.html",
+          "section": "global-footer"
+        },
+        {
+          "page": "weather-map.html",
+          "section": "global-footer"
+        }
+      ],
+      "behavior": [
+        "Semantic static content and relative navigation where applicable."
+      ],
+      "keyboard": [
+        "Tab/Enter for links; native controls use Enter/Space and arrow keys where applicable"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution not-tested"
+    },
+    {
+      "id": "site-header",
+      "selector": "[data-component='site-header']",
+      "pages": [
+        "404.html",
+        "index.html",
+        "mountain-info.html",
+        "summit-forecast.html",
+        "weather-map.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "section": "global-header"
+        },
+        {
+          "page": "index.html",
+          "section": "global-header"
+        },
+        {
+          "page": "mountain-info.html",
+          "section": "global-header"
+        },
+        {
+          "page": "summit-forecast.html",
+          "section": "global-header"
+        },
+        {
+          "page": "weather-map.html",
+          "section": "global-header"
+        }
+      ],
+      "behavior": [
+        "Semantic static content and relative navigation where applicable."
+      ],
+      "keyboard": [
+        "Tab/Enter for links; native controls use Enter/Space and arrow keys where applicable"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution not-tested"
+    },
+    {
+      "id": "split-hero",
+      "selector": "[data-component='split-hero']",
+      "pages": [
+        "index.html"
+      ],
+      "instances": [
+        {
+          "page": "index.html",
+          "section": "mountain-introduction"
+        }
+      ],
+      "behavior": [
+        "Semantic static content and relative navigation where applicable."
+      ],
+      "keyboard": [
+        "Tab/Enter for links; native controls use Enter/Space and arrow keys where applicable"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution not-tested"
+    }
+  ]
+}

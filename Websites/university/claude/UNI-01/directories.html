@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Directory search - Cedar Lake State University</title>
+<meta name="description" content="Search a sample directory of fictional people and offices at Cedar Lake State University.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="directories">
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header on-dark" data-section="global-header" data-component="site-header">
+<div class="wrap header-main">
+<a class="brand" href="index.html" data-component="site-logo"><img src="assets/logo.svg" alt="" width="44" height="44"><span>Cedar Lake State University<small>A fictional public research university</small></span></a>
+<button type="button" class="menu-toggle" aria-expanded="false" aria-controls="primary-nav utility-nav" data-component="mobile-menu-toggle">Menu</button>
+<form class="search-form" role="search" action="search.html" method="get" aria-label="Site" data-section="header-search" data-component="site-search-form"><label class="visually-hidden" for="site-q">Search people and pages</label><input type="search" id="site-q" name="q" placeholder="Search people and pages" autocomplete="off"><button type="submit">Search</button></form>
+</div>
+<nav id="utility-nav" class="utility nav-collapsible" aria-label="Utility" data-section="utility-navigation" data-component="utility-nav"><div class="wrap"><ul><li><a href="services.html#myclsu">MyCLSU</a></li><li><a href="services.html#email">Email/calendar</a></li><li><a href="services.html#canvas">Courses</a></li><li><a href="services.html#box">File storage</a></li><li><a href="services.html#suite">Productivity suite</a></li><li><a href="services.html#video">Video meetings</a></li><li><a href="services.html#libraries">Libraries</a></li><li><a href="visit.html#map">Map</a></li><li><a href="news.html">News</a></li><li><a href="events.html">Events</a></li><li><a href="visit.html">Visit</a></li><li><a href="apply.html">Apply</a></li><li><a href="services.html#jobs">Jobs</a></li><li><a href="services.html#give">Give</a></li></ul></div></nav>
+<nav id="primary-nav" class="primary-nav nav-collapsible" aria-label="Primary" data-section="global-navigation" data-component="primary-nav"><ul><li><a href="academics.html">Academics</a></li><li><a href="admissions.html">Admissions &amp; Aid</a></li><li><a href="student-life.html">Student Life</a></li><li><a href="research.html">Research</a></li><li><a href="athletics.html">Athletics</a></li><li><a href="about.html">About CLSU</a></li></ul></nav>
+</header>
+<nav class="crumbs" aria-label="Breadcrumb" data-section="breadcrumbs" data-component="breadcrumbs"><ol><li><a href="index.html">Home</a></li><li aria-current="page">Directory Search</li></ol></nav>
+<main id="main-content" data-section="main-content">
+<section class="page-title on-dark" aria-labelledby="page-heading" data-section="page-title" data-component="page-title-band"><div class="wrap"><h1 id="page-heading">Directory Search</h1><p>Find a person or office. All entries are fictional.</p></div></section>
+<section class="band" aria-labelledby="dir-h" data-section="directory-search" data-component="people-search"><div class="wrap">
+<p class="notice" data-component="notice">Sample data: 30 invented people and offices. The reference directory loads live data with JavaScript; this is a local stand-in.</p>
+<h2 id="dir-h">Search the directory</h2>
+<form id="people-form" role="search" aria-labelledby="dir-h" class="filter-bar" novalidate data-component="validated-form"><div class="error-summary-host" style="grid-column:1/-1"></div>
+<div class="field"><label for="people-q">Name, department or email</label><p class="hint">At least 2 characters.</p><input type="search" id="people-q" name="q" required data-minlength="2" data-noun="a name, department or email" autocomplete="off"></div>
+<div class="field"><label for="people-type">Search in</label><select id="people-type"><option value="all">Everything</option><option value="name">Names only</option><option value="dept">Departments and roles</option></select></div>
+<div><button type="submit" class="btn">Search directory</button></div></form>
+<p id="people-status" class="result-status" role="status" aria-live="polite"></p>
+<ul id="people-results" class="results" data-component="result-list"></ul>
+<div id="people-empty" class="empty-state" hidden data-component="empty-state"><h3>No matches</h3><p>Check spelling or try a department name such as "Biology".</p></div>
+</div></section>
+</main>
+<footer class="site-footer" data-section="global-footer" data-component="site-footer"><div class="wrap">
+<div class="footer-grid">
+<nav aria-label="Popular links" data-section="footer-popular" data-component="footer-link-group"><h2>Popular</h2><ul><li><a href="events.html">Academic calendar</a></li><li><a href="visit.html#map">Campus map</a></li><li><a href="directories.html">Directory search</a></li><li><a href="facts.html">Facts and figures</a></li><li><a href="services.html#jobs">Jobs</a></li><li><a href="majors.html">Majors and certificates</a></li><li><a href="admissions.html#tuition">Tuition and fees</a></li></ul></nav>
+<nav aria-label="Resources by audience" data-section="footer-resources" data-component="footer-link-group"><h2>Resources</h2><ul><li><a href="services.html#alumni">Alumni</a></li><li><a href="services.html#business">Business and industry</a></li><li><a href="services.html#faculty">Faculty and staff</a></li><li><a href="services.html#international">International</a></li><li><a href="services.html#parents">Parents</a></li><li><a href="services.html#researchers">Researchers</a></li><li><a href="services.html#students">Students</a></li></ul></nav>
+<nav aria-label="Quick links" data-section="footer-quick-links" data-component="footer-link-group"><h2>Quick links</h2><ul><li><a href="services.html#accessibility">Accessibility</a></li><li><a href="services.html#expression">Free expression</a></li><li><a href="services.html#governance">Governance</a></li><li><a href="services.html#policies">Policies</a></li><li><a href="services.html#safety">Safety</a></li><li><a href="services.html#give">Support CLSU</a></li><li><a href="services.html#titleix">Title IX</a></li><li><a href="services.html#privacy">Privacy notice</a></li></ul></nav>
+<section aria-labelledby="foot-contact" data-section="footer-contact" data-component="contact-block"><h2 id="foot-contact">Cedar Lake State University</h2><p>1 Heron Way, Cedar Lake<br>Fictional address for a research demonstration.</p></section>
+</div>
+<p class="fine">This is a fictional website created for an accessibility research dataset. It is not a real institution; names, people, numbers and policies are invented. No form on this site sends data.</p>
+</div></footer>
+<script src="js/main.js"></script>
+</body>
+</html>

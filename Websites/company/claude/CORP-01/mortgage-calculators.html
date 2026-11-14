@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mortgage calculators | Corvane Bank (fictional)</title>
+<meta name="description" content="Mortgage payment and 15 versus 30 year comparison calculators using fictional inputs.">
+<link rel="stylesheet" href="css/styles.css">
+<noscript><style>.site-menu{display:flex!important}.mega[hidden]{display:grid!important;position:static}.menu-toggle{display:none!important}</style></noscript>
+</head>
+<body data-page="mortgage-calculators" >
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header" data-section="global-header" data-component="site-header">
+<div class="utility" data-section="utility-bar" data-component="utility-nav"><div class="wrap"><span class="audience">Personal banking</span>
+<nav aria-label="Utility"><ul><li><a href="locations.html">Locations</a></li><li><a href="customer-service.html">Customer service</a></li></ul></nav></div></div>
+<div class="header-main"><a class="brand" href="index.html" aria-label="Corvane Bank (fictional), home"><img src="assets/logo.svg" alt="Corvane Bank logo, fictional" width="190" height="42"></a>
+<div class="header-actions" data-component="header-actions"><button type="button" class="btn" data-open-login>Log in (demo)</button><a class="btn secondary" href="online-banking.html#enroll">Enroll (demo)</a>
+<button type="button" class="btn secondary menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="site-menu">Menu</button></div></div>
+<div class="nav-wrap" data-section="global-navigation"><div class="site-menu" id="site-menu">
+<nav id="global-navigation-menubar" class="primary-nav" aria-label="Main" data-component="primary-nav"><ul><li class="" data-component="nav-dropdown"><button type="button" class="nav-trigger" aria-expanded="false" aria-controls="mega-cs">Checking &amp; savings<span class="chev" aria-hidden="true"></span></button>
+<div class="mega" id="mega-cs" hidden><div><p class="group-title">Accounts</p><ul><li><a href="checking.html">Checking accounts</a></li><li><a href="savings.html">Savings accounts</a></li><li><a href="cds.html">Certificates of deposit</a></li></ul></div><div><p class="group-title">Tools</p><ul><li><a href="online-banking.html">Mobile &amp; online banking</a></li><li><a href="locations.html">Branch &amp; ATM locator</a></li></ul></div><div><button type="button" class="btn secondary small back" data-close-mega>Return to main menu</button></div></div></li><li><a href="credit-cards.html">Credit cards</a></li><li class="is-current" data-component="nav-dropdown"><button type="button" class="nav-trigger" aria-expanded="false" aria-controls="mega-hl">Home loans<span class="chev" aria-hidden="true"></span></button>
+<div class="mega" id="mega-hl" hidden><div><p class="group-title">Mortgage</p><ul><li><a href="mortgage.html">Mortgage overview</a></li><li><a href="mortgage-rates.html">Sample mortgage rates</a></li><li><a href="mortgage-calculators.html" aria-current="page">Mortgage calculators</a></li></ul></div><div><button type="button" class="btn secondary small back" data-close-mega>Return to main menu</button></div></div></li><li><a href="personal-loan-calculator.html">Loans</a></li><li class="" data-component="nav-dropdown"><button type="button" class="nav-trigger" aria-expanded="false" aria-controls="mega-ls">Learn &amp; support<span class="chev" aria-hidden="true"></span></button>
+<div class="mega" id="mega-ls" hidden><div><p class="group-title">Learn</p><ul><li><a href="financial-education.html">Financial education</a></li></ul></div><div><p class="group-title">Support</p><ul><li><a href="customer-service.html">Customer service</a></li><li><a href="accessibility.html">Accessibility services</a></li><li><a href="search.html">Site search</a></li></ul></div><div><button type="button" class="btn secondary small back" data-close-mega>Return to main menu</button></div></div></li></ul></nav>
+<form class="site-search" role="search" action="search.html" method="get" data-section="global-search" data-component="site-search"><label class="vh" for="gs-q">Search Corvane Bank</label><input id="gs-q" name="q" type="search" placeholder="Search this site" autocomplete="off"><button class="btn small" type="submit">Search</button></form>
+</div></div></header>
+<main id="main-content" data-section="main-content">
+<nav class="crumbs wrap" aria-label="Breadcrumb" data-section="breadcrumbs" data-component="breadcrumb"><ol><li><a href="index.html">Home</a></li><li><a href="mortgage.html">Mortgage loans</a></li><li><span aria-current="page">Mortgage calculators</span></li></ol></nav>
+
+<section class="hero" data-section="calc-hero" data-component="hero-banner" aria-labelledby="hero-title"><div class="wrap"><div><p class="eyebrow">Corvane Bank (fictional)</p><h1 id="hero-title">Mortgage calculators</h1><p>Two tools that run in your browser on the numbers you enter.</p></div><img src="assets/hero-home.svg" alt="" width="640" height="360"></div></section>
+<section class="band" aria-labelledby="mc-title" data-section="calculator-hub" data-component="calculator-hub"><div class="wrap"><p class="notice" role="note" data-component="sample-data-notice"><strong>Fictional sample data.</strong> Figures on this page are invented for a design study. They are not an offer, quote or financial advice, and do not reflect any real bank's rates. Results are estimates of principal and interest only.</p>
+<h2 id="mc-title">Calculators</h2>
+<ul><li><a href="#pay-title">Monthly payment and yearly breakdown</a></li><li><a href="#cmp-title">15-year versus 30-year comparison</a></li><li><a href="personal-loan-calculator.html">Personal loan calculator (separate page)</a></li></ul></div></section>
+<section class="band alt" aria-labelledby="pay-title" data-section="payment-calculator" data-component="calculator"><div class="wrap"><h2 id="pay-title">Monthly payment</h2><div class="panel">
+<div class="error-summary" data-error-summary hidden tabindex="-1" aria-labelledby="mp-err-t"><h3 id="mp-err-t">Please fix the following</h3><ul></ul></div>
+<form id="mort-form" novalidate data-component="calculator-form"><div class="form-grid">
+<div class="field" data-component="form-field"><label for="mp-price">Home price ($)</label><span class="hint" id="mp-price-hint">Example: 300,000</span><input id="mp-price" name="mp-price" type="text" inputmode="decimal" value="300,000" autocomplete="off" aria-describedby="mp-price-hint" required><span class="error" id="mp-price-error" hidden></span></div>
+<div class="field" data-component="form-field"><label for="mp-down">Down payment ($)</label><span class="hint" id="mp-down-hint">Less than the home price</span><input id="mp-down" name="mp-down" type="text" inputmode="decimal" value="60,000" autocomplete="off" aria-describedby="mp-down-hint" required><span class="error" id="mp-down-error" hidden></span></div>
+<div class="field" data-component="form-field"><label for="mp-rate">Sample interest rate (%)</label><span class="hint" id="mp-rate-hint">0 to 25. Example: 4.25</span><input id="mp-rate" name="mp-rate" type="text" inputmode="decimal" value="4.25" autocomplete="off" aria-describedby="mp-rate-hint" required><span class="error" id="mp-rate-error" hidden></span></div>
+<div class="field" data-component="form-field"><label for="mp-term">Term</label><select id="mp-term" name="mp-term"><option value="30" selected>30 years</option><option value="20">20 years</option><option value="15">15 years</option></select><span class="error" id="mp-term-error" hidden></span></div></div>
+<button class="btn" type="submit">Calculate</button> <button class="btn secondary" type="reset" id="mp-reset">Reset</button></form>
+<div class="result" id="mp-result" hidden aria-live="polite" tabindex="-1"></div></div></div></section>
+<section class="band" aria-labelledby="cmp-title" data-section="term-comparison" data-component="calculator"><div class="wrap"><h2 id="cmp-title">15-year versus 30-year</h2><div class="panel">
+<div class="error-summary" data-error-summary hidden tabindex="-1" aria-labelledby="cp-err-t"><h3 id="cp-err-t">Please fix the following</h3><ul></ul></div>
+<form id="cmp-form" novalidate data-component="calculator-form"><div class="form-grid">
+<div class="field" data-component="form-field"><label for="cp-amount">Loan amount ($)</label><span class="hint" id="cp-amount-hint">Example: 240,000</span><input id="cp-amount" name="cp-amount" type="text" inputmode="decimal" value="240,000" autocomplete="off" aria-describedby="cp-amount-hint" required><span class="error" id="cp-amount-error" hidden></span></div>
+<div class="field" data-component="form-field"><label for="cp-r30">30-year sample rate (%)</label><input id="cp-r30" name="cp-r30" type="text" inputmode="decimal" value="4.25" autocomplete="off" required><span class="error" id="cp-r30-error" hidden></span></div>
+<div class="field" data-component="form-field"><label for="cp-r15">15-year sample rate (%)</label><input id="cp-r15" name="cp-r15" type="text" inputmode="decimal" value="3.50" autocomplete="off" required><span class="error" id="cp-r15-error" hidden></span></div></div>
+<button class="btn" type="submit">Compare</button></form>
+<div class="result" id="cp-result" hidden aria-live="polite" tabindex="-1"></div></div></div></section>
+
+</main>
+<footer class="site-footer" data-section="global-footer" data-component="site-footer"><div class="wrap">
+<div class="footer-cols">
+<nav aria-labelledby="fn1" data-component="footer-nav"><h2 id="fn1">Bank</h2><ul><li><a href="checking.html">Checking accounts</a></li><li><a href="savings.html">Savings accounts</a></li><li><a href="cds.html">Certificates of deposit</a></li><li><a href="credit-cards.html">Credit cards</a></li></ul></nav>
+<nav aria-labelledby="fn2" data-component="footer-nav"><h2 id="fn2">Borrow</h2><ul><li><a href="mortgage.html">Mortgage overview</a></li><li><a href="mortgage-rates.html">Sample mortgage rates</a></li><li><a href="mortgage-calculators.html">Mortgage calculators</a></li><li><a href="personal-loan-calculator.html">Personal loan calculator</a></li></ul></nav>
+<nav aria-labelledby="fn3" data-component="footer-nav"><h2 id="fn3">Support</h2><ul><li><a href="customer-service.html">Customer service</a></li><li><a href="accessibility.html">Accessibility services</a></li><li><a href="locations.html">Branch &amp; ATM locator</a></li><li><a href="online-banking.html">Mobile &amp; online banking</a></li><li><a href="financial-education.html">Financial education</a></li><li><a href="search.html">Site search</a></li></ul></nav>
+</div>
+<div class="legal" data-component="fictional-disclosure"><img src="assets/regulator-badge.svg" alt="Fictional badge, not a real regulator" width="72" height="72">
+<div><p><strong>Corvane Bank is a fictional bank</strong> invented for an accessibility and usability research study. It is not a real financial institution and offers no real products.</p>
+<p>Accounts shown are not insured or overseen by any real agency. The badge is a made-up placeholder for the fictional "Northmark Banking Standards Board", which does not exist.</p>
+<p>All rates, fees, balances and branch details are fictional sample data. Nothing here is an offer, quote or financial advice. Phone numbers use the 555 exchange.</p></div></div>
+</div></footer>
+<dialog id="login-dialog" aria-labelledby="login-title" data-section="login-demo" data-component="login-dialog"><div class="dlg">
+<div class="dlg-head"><h2 id="login-title">Log in (non-functional demo)</h2><button type="button" class="btn secondary small" data-close-login aria-label="Close log in demo">Close</button></div>
+<p class="notice" role="note"><strong>Demo only.</strong> This is a design-study mock-up. It does not connect to any bank, starts no session, and sends or stores nothing. Do not type real credentials; any made-up text works.</p>
+<div data-login-body><div class="error-summary" data-error-summary hidden tabindex="-1" aria-labelledby="login-err-t"><h3 id="login-err-t">Please fix the following</h3><ul></ul></div>
+<form id="login-form" novalidate data-component="login-form">
+<div class="field"><label for="login-user">Demo user name</label><span class="hint" id="login-user-hint">Made-up text such as demo-user. Never a real ID.</span><input id="login-user" name="user" type="text" autocomplete="off" aria-describedby="login-user-hint" required><span class="error" id="login-user-error" hidden></span></div>
+<div class="field"><label for="login-pass">Demo passcode</label><span class="hint" id="login-pass-hint">At least 4 characters of made-up text. Not stored.</span><input id="login-pass" name="pass" type="password" autocomplete="off" aria-describedby="login-pass-hint" required><span class="error" id="login-pass-error" hidden></span></div>
+<button class="btn" type="submit">Run demo log in</button></form></div>
+<div data-login-done hidden tabindex="-1"><p role="status"><strong>Demo complete.</strong> No account was accessed and no session exists. Nothing you typed was sent or kept.</p><button type="button" class="btn" data-close-login>Close</button></div>
+</div></dialog>
+<script src="js/main.js"></script>
+</body>
+</html>

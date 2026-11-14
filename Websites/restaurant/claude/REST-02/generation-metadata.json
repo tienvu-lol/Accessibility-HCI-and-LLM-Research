@@ -1,0 +1,31 @@
+{
+  "allocation_protocol": "WEB-REPLICA-ALLOCATION-V1.0",
+  "generation_protocol": "WEB-REPLICA-V1.0",
+  "category": "restaurant",
+  "slot": 2,
+  "source_id": "REST-02",
+  "model_group": "claude",
+  "model_id": "claude-sonnet-5-5",
+  "model_version": null,
+  "model_provider_or_runtime": "Claude Code Agent tool builder (claude-sonnet-5-5); orchestrated by claude-opus-5",
+  "generation_mode": "autonomous agent run, one replica per run, no human edits during generation",
+  "operator": "project lead (Samhith Varma) via orchestrator agent",
+  "approved_source_url": "https://franklinbbq.com/",
+  "source_verified_at": "2026-11-14",
+  "source_approved_at": "2026-11-14",
+  "generation_started_at": "2026-11-14T05:13:52Z",
+  "generation_completed_at": "2026-11-14T05:19:19Z",
+  "rules_revision": "WEB-REPLICA-V1.0 / WEB-REPLICA-ALLOCATION-V1.0, working tree as of 2026-11-14 (uncommitted modifications to Rules.md and MODEL_ALLOCATION.md on top of commit a07e70e, branch websites/portfolio-claude-01-03)",
+  "category_prompt_revision": "orchestrator brief 2026-11-14 (no separate category prompt file)",
+  "prompt_or_transcript_reference": "Claude Code orchestrator session, round 11 restaurant build",
+  "human_edits": [],
+  "validation_summary": {
+    "technology": "pass (qc.js 2026-11-14, failures=0)",
+    "completeness": "pass (qc.js 2026-11-14, failures=0)",
+    "structure": "pass for landmarks and instrumentation (qc.js); section-order match by self-review only",
+    "interaction": "pass (29 scripted Playwright flow checks, Chromium)",
+    "accessibility": "partial: axe-core clean at 1280px and 375px; manual keyboard walkthrough, 200% zoom and screen readers not tested; no conformance claimed",
+    "traceability": "pass (self-review)",
+    "scope": "pass (self-review)"
+  }
+}

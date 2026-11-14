@@ -6,7 +6,7 @@ try {
   if (flags.ready && !errors.length) errors.push(...buildReadiness(setup,flags.ready,{...setup.config.model,id:flags.model || setup.config.model.id,runtime:flags.runtime || setup.config.model.runtime,operator:flags.operator || setup.config.model.operator,version:flags['model-version'] || setup.config.model.version}));
   if (errors.length) {for (const e of errors) console.error('FAIL',e);process.exitCode=1;}
   else {
-    console.log(flags.ready ? `READY ${flags.ready}: approval and provenance prerequisites passed; no generation launched.` : 'PASS: 10 categories, 30 Codex build slots, 10 research tasks, 3/3/4 allocation, and shared paths verified.');
+    console.log(flags.ready ? `READY ${flags.ready}: approval and provenance prerequisites passed; no generation launched.` : `PASS: ${setup.categories.length} categories, ${setup.queue.tasks.filter(t=>t.phase==='build').length} Codex build slots, ${setup.queue.tasks.filter(t=>t.phase==='research').length} research tasks, 3/3/4 allocation, and shared paths verified.`);
     if (!flags.ready) console.log('Configuration validation does not imply source approval or build readiness. Model selection and source inventories are intentionally unresolved.');
   }
 } catch(e) {console.error('ERROR',e.message);process.exitCode=1;}

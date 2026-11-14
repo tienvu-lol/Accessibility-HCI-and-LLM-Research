@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BayPortal (demo) | Meridian Bay Health</title>
+<meta name="description" content="Non-functional patient portal login demonstration.">
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header" id="page-top" data-section="global-header" data-component="site-header">
+<div class="emergency-bar" data-section="emergency-notice" data-component="emergency-notice"><div class="wrap"><p><strong>Emergency?</strong> Call your local emergency number. This site is a fictional demonstration and cannot take emergency requests. <a href="emergency-department.html">Emergency Department information</a></p></div></div>
+ <div class="utility" data-section="utility-navigation"><nav class="wrap" aria-label="Utility" data-component="utility-nav"><a href="patient-portal.html" aria-current="page">BayPortal (demo)</a><a href="appointments.html">Request an appointment</a></nav></div>
+ <div class="header-main"><a class="brand" href="index.html" data-component="brand-logo"><img src="assets/logo.svg" alt="" width="44" height="44"><span>Meridian Bay Health<small>Fictional academic medical center</small></span></a>
+ <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="primary-nav" data-component="mobile-menu-toggle">Menu</button>
+ <nav id="primary-nav" class="primary-nav" aria-label="Primary" data-section="global-navigation" data-component="primary-nav"><ul><li class="has-sub" data-component="dropdown-menu"><button type="button" class="nav-btn" aria-expanded="false" aria-controls="sub-care">Care<span class="caret" aria-hidden="true"></span></button><ul id="sub-care" class="sub-menu"><li><a href="care.html">Conditions and Care</a></li><li><a href="emergency-department.html">Emergency Department</a></li><li><a href="cancer-care.html">Cancer Care</a></li></ul></li><li><a href="medical-services.html">Medical Services</a></li><li><a href="find-a-doctor.html">Find a Doctor</a></li><li><a href="locations.html">Locations</a></li></ul></nav></div>
+</header>
+<nav class="breadcrumbs" aria-label="Breadcrumb" data-section="breadcrumbs" data-component="breadcrumbs"><ol><li><a href="index.html">Home</a></li><li><span aria-current="page">BayPortal</span></li></ol></nav>
+<main id="main-content" data-section="main-content">
+
+<section class="page-hero" aria-labelledby="page-title" data-section="page-hero" data-component="page-hero"><div class="wrap"><h1 id="page-title">BayPortal (demo)</h1><p>A non-functional demonstration of a patient portal login.</p></div></section>
+<div class="band"><div class="wrap" style="max-width:760px"><div class="demo-note"><span class="demo-badge">Non-functional demo</span> There is no portal, account or data behind this page. Do not enter real credentials.</div>
+<section aria-labelledby="mc1" data-section="portal-overview" data-component="info-card"><h2 id="mc1">What a portal typically offers</h2><ul><li>View sample appointments</li><li>Message a care team (not available here)</li><li>View sample bills</li></ul><button type="button" class="btn" data-open-portal>Log in (demo)</button></section></div></div>
+</main>
+<footer class="site-footer" data-section="global-footer" data-component="site-footer"><div class="wrap"><div class="footer-groups">
+<div data-open="true" data-component="footer-link-group"><h2><button type="button" aria-expanded="true" aria-controls="fg-quick"><span>Quick links</span><span class="caret" aria-hidden="true"></span></button></h2><ul id="fg-quick"><li><a href="find-a-doctor.html">Find a doctor</a></li><li><a href="locations.html">Find a location</a></li><li><a href="care.html">Explore care</a></li><li><a href="appointments.html">Request an appointment</a></li><li><a href="help-paying-your-bill.html">Help paying your bill</a></li></ul></div>
+<div data-open="true" data-component="footer-link-group"><h2><button type="button" aria-expanded="true" aria-controls="fg-more"><span>More information</span><span class="caret" aria-hidden="true"></span></button></h2><ul id="fg-more"><li><a href="about.html">About us</a></li><li><a href="patients-visitors.html">Patients &amp; visitors</a></li><li><a href="billing-insurance.html">Billing &amp; insurance</a></li><li><a href="your-hospital-stay.html">Your hospital stay</a></li><li><a href="emergency-department.html">Emergency department</a></li><li><a href="patient-portal.html">BayPortal (demo)</a></li></ul></div>
+</div><div class="footer-bottom"><div><p><strong>Meridian Bay Health</strong> is a fictional organization created for an accessibility and usability research dataset. Names, phone numbers (555 exchange), addresses and doctors are invented.</p><p>Not a real hospital. Nothing here is medical advice. In an emergency call your local emergency number.</p></div><p><a href="#page-top">Back to top</a></p></div></div></footer>
+<dialog id="portal-dialog" aria-labelledby="pd-title" data-section="portal-login" data-component="modal-dialog"><h2 id="pd-title">Log in to BayPortal (demo)</h2><p><span class="demo-badge">Non-functional demo</span> Any username and a password of 6 or more characters will show a demo screen. Nothing is checked or sent.</p>
+<div id="portal-errors" class="error-summary" role="alert" tabindex="-1" hidden><h2></h2><ul></ul></div>
+<div id="portal-done" class="success" tabindex="-1" hidden><h2>Demo only</h2><p>You would now see your portal. This replica has no portal, so nothing further happens.</p><button type="button" class="btn" data-close-portal>Close</button></div>
+<form id="portal-form" novalidate><div class="field"><label for="pt-user">Username</label><input id="pt-user" type="text" autocomplete="off"></div><div class="field"><label for="pt-pass">Password</label><input id="pt-pass" type="password" autocomplete="off"></div>
+<div class="btn-row"><button class="btn" type="submit">Log in (demo)</button><button type="button" class="btn secondary" data-close-portal>Cancel</button></div></form></dialog>
+<script src="js/main.js"></script>
+</body>
+</html>

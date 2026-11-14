@@ -1,0 +1,30 @@
+{
+  "protocol_version": "1.0",
+  "replica_id": "HOSP-02",
+  "category": "healthcare",
+  "source_url": "https://www.hoag.org/",
+  "components": [
+    {"id":"site-header","selector":"[data-component='site-header']","pages":["all"],"behavior":["brand link","utility nav","primary nav"],"keyboard":["Tab"],"status":"implemented","validation":"axe-automated"},
+    {"id":"emergency-banner","selector":"[data-component='emergency-banner']","pages":["all"],"behavior":["static emergency notice, calls local emergency services"],"keyboard":[],"status":"implemented","validation":"axe-automated"},
+    {"id":"utility-nav","selector":"[data-component='utility-nav']","pages":["all"],"behavior":["links","Pay Your Bill opens portal demo"],"keyboard":["Tab","Enter"],"status":"implemented","validation":"scripted-playwright"},
+    {"id":"primary-nav","selector":"[data-component='primary-nav']","pages":["all"],"behavior":["desktop dropdown disclosure","mobile menu disclosure","active indicator"],"keyboard":["Tab","Enter","Space","Escape"],"status":"implemented","validation":"scripted-playwright"},
+    {"id":"breadcrumbs","selector":"[data-component='breadcrumbs']","pages":["all except index.html, 404.html"],"behavior":["breadcrumb links"],"keyboard":["Tab"],"status":"implemented","validation":"axe-automated"},
+    {"id":"hero-banner","selector":"[data-component='hero-banner']","pages":["index.html"],"behavior":["h1/h2 hero"],"keyboard":[],"status":"implemented","validation":"axe-automated"},
+    {"id":"find-care-search","selector":"[data-component='find-care-search']","pages":["index.html","find-care.html"],"behavior":["specialty/physician radio","term and location search","filters and sort","empty state","query hand-off"],"keyboard":["Tab","Arrow keys on radios","Enter"],"status":"implemented","validation":"scripted-playwright"},
+    {"id":"quick-link-tiles","selector":"[data-component='quick-link-tiles']","pages":["index.html"],"behavior":["links","portal demo button"],"keyboard":["Tab","Enter"],"status":"implemented","validation":"scripted-playwright"},
+    {"id":"card-grid","selector":"[data-component='card-grid']","pages":["index.html","patients-visitors.html"],"behavior":["card links"],"keyboard":["Tab"],"status":"implemented","validation":"axe-automated"},
+    {"id":"testimonial-carousel","selector":"[data-component='testimonial-carousel']","pages":["index.html"],"behavior":["previous/next, no autoplay"],"keyboard":["Tab","Enter","Space"],"status":"implemented","validation":"scripted-playwright"},
+    {"id":"results-list","selector":"[data-component='results-list'], #find-results, #location-results, #event-results, #insurance-results, #service-list","pages":["find-care.html","locations.html","classes-events.html","insurance-accepted.html","specialties-services.html"],"behavior":["local-data results","live status count"],"keyboard":["Tab"],"status":"implemented","validation":"scripted-playwright"},
+    {"id":"empty-state","selector":"[data-component='empty-state']","pages":["find-care.html","locations.html","classes-events.html","insurance-accepted.html","specialties-services.html"],"behavior":["no-match message"],"keyboard":[],"status":"implemented","validation":"scripted-playwright"},
+    {"id":"location-finder","selector":"[data-component='location-finder']","pages":["locations.html"],"behavior":["text + type filter","reset"],"keyboard":["Tab","Enter"],"status":"implemented","validation":"scripted-playwright"},
+    {"id":"location-detail","selector":"[data-component='location-detail']","pages":["hospital-bayfront.html"],"behavior":["static detail, hours table, map placeholder"],"keyboard":["Tab"],"status":"implemented","validation":"axe-automated"},
+    {"id":"event-filter","selector":"[data-component='event-filter']","pages":["classes-events.html"],"behavior":["keyword, category and month filter"],"keyboard":["Tab","Enter"],"status":"implemented","validation":"scripted-playwright"},
+    {"id":"insurance-filter","selector":"[data-component='insurance-filter']","pages":["insurance-accepted.html"],"behavior":["name and type filter"],"keyboard":["Tab","Enter"],"status":"implemented","validation":"scripted-playwright"},
+    {"id":"service-directory","selector":"[data-component='service-directory']","pages":["specialties-services.html"],"behavior":["program search"],"keyboard":["Tab"],"status":"implemented","validation":"scripted-playwright"},
+    {"id":"accordion","selector":"[data-component='accordion']","pages":["patients-visitors.html","infection-prevention.html","billing-help.html","cancer-institute.html","heart-vascular-institute.html"],"behavior":["aria-expanded disclosure"],"keyboard":["Tab","Enter","Space"],"status":"implemented","validation":"scripted-playwright"},
+    {"id":"modal-dialog","selector":"[data-component='modal-dialog']","pages":["all"],"behavior":["portal sign-in demo dialog, validation, no sign-in"],"keyboard":["Tab","Escape","Enter"],"status":"implemented","validation":"scripted-playwright"},
+    {"id":"appointment-form","selector":"[data-component='appointment-form']","pages":["contact-us.html"],"behavior":["simulated form","inline errors","error summary with focus","demo success"],"keyboard":["Tab","Enter"],"status":"implemented","validation":"scripted-playwright"},
+    {"id":"contact-card","selector":"[data-component='contact-card']","pages":["contact-us.html","hospital-bayfront.html"],"behavior":["static contact details"],"keyboard":[],"status":"implemented","validation":"axe-automated"},
+    {"id":"site-footer","selector":"[data-component='site-footer']","pages":["all"],"behavior":["footer links","phone"],"keyboard":["Tab"],"status":"implemented","validation":"axe-automated"}
+  ]
+}

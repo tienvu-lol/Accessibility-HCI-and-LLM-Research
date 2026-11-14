@@ -1,0 +1,208 @@
+{
+  "allocation_protocol": "WEB-REPLICA-ALLOCATION-V1.0",
+  "generation_protocol": "WEB-REPLICA-V1.0",
+  "category": "university",
+  "slot": 4,
+  "source_id": "UNI-04",
+  "model_group": "codex",
+  "model_id": "gpt-6.1-sol",
+  "model_version": null,
+  "model_provider_or_runtime": "OpenAI collaboration worker (gpt-6.1-sol), orchestrated in Codex",
+  "model_attribution": "Explicit task runtime declaration; exact release version is unavailable; historical codex-cli 0.167.0 was research runtime only.",
+  "generation_mode": "single-source independent worker in isolated filesystem snapshot; user-authorized three-site parallel orchestration",
+  "operator": "Samhith Varma",
+  "approved_source_url": "https://www.psu.edu/",
+  "source_name": "The Pennsylvania State University (Penn State)",
+  "source_verified_at": "2026-11-12",
+  "source_verification_method": "HTTP-only urllib GET and live web search/text extraction; no browser rendering",
+  "source_verification_result": "verified",
+  "source_evidence_reference": "pipelines/codex/research/UNI.md#uni-04",
+  "source_approved_at": "2026-11-12",
+  "approval_reference": "metadata/change-log.md \u00a7 2026-11-12 \u2014 Codex Phase A approval (slots 04\u201306)",
+  "generation_started_at": "2026-11-13T15:39:13.240588+00:00",
+  "generation_completed_at": "2026-11-13T15:45:45.182332+00:00",
+  "rules_revision": "04b1c3e38b76f2aff3aef869d67370bb4532cd8f9ab5e22ac8276f26cbb859bf",
+  "allocation_revision": "dba261a89763c22a6c41fc6b066593345aef7871121cef52ff7b73ff88cce3cd",
+  "category_prompt_revision": "843ea7d8d1cc7d01385643f848408dea32997985422496d98e8f108bbc09a333",
+  "prompt_or_transcript_reference": "pipelines/codex/runs/2026-11-13T15-34-51-696Z-build-UNI-04/task.md",
+  "prompt_sha256": "003b8be299206c2f6de92c4fd9ce6bbf93f83ba80efea882a24692f1876243b6",
+  "protocol_snapshots": [
+    {
+      "path": "Rules.md",
+      "sha256": "04b1c3e38b76f2aff3aef869d67370bb4532cd8f9ab5e22ac8276f26cbb859bf"
+    },
+    {
+      "path": "MODEL_ALLOCATION.md",
+      "sha256": "dba261a89763c22a6c41fc6b066593345aef7871121cef52ff7b73ff88cce3cd"
+    },
+    {
+      "path": "pipelines/codex/config.json",
+      "sha256": "b16751854f14ec50f9e8e8726e4ab0c064503f1ebdea6d71ba7e1faf85ed6d95"
+    },
+    {
+      "path": "pipelines/codex/categories.json",
+      "sha256": "843ea7d8d1cc7d01385643f848408dea32997985422496d98e8f108bbc09a333"
+    },
+    {
+      "path": "pipelines/codex/prompts/build.md",
+      "sha256": "37567f6a4198f7539b11964980cf814a7b8c0732f926dfe9aa6f86849dd2277c"
+    },
+    {
+      "path": "metadata/source-inventories/university.csv",
+      "sha256": "5440c3be1b991975717f32484b2e1a5069f04e4899245706f29eea8272acc9db"
+    },
+    {
+      "path": "metadata/assignments.csv",
+      "sha256": "c64f58a19f9540122d680901fe888ce91a724068a6b719b1bb4f324ba5d8277c"
+    }
+  ],
+  "active_allocation": [
+    "01",
+    "02",
+    "03",
+    "04",
+    "05",
+    "06"
+  ],
+  "deferred_allocation": [
+    "07",
+    "08",
+    "09",
+    "10"
+  ],
+  "tool_access": [
+    "exec_command shell Python file generation",
+    "shared Node QC / Playwright attempted",
+    "Sites skill local-only; no publishing",
+    "Node vm logic harness with DOM stand-ins",
+    "Python HTML parser, static reference/inventory audits and palette math"
+  ],
+  "generation_budget": null,
+  "human_edits": [],
+  "cross_model_edits": [],
+  "source_pages": [
+    {
+      "url": "https://www.psu.edu/",
+      "title": "The Pennsylvania State University | Penn State",
+      "local_file": "index.html"
+    },
+    {
+      "url": "https://www.psu.edu/academics/undergraduate/majors",
+      "title": "Undergraduate Majors | Penn State",
+      "local_file": "majors.html"
+    },
+    {
+      "url": "https://bulletins.psu.edu/undergraduate/colleges/eberly-science/biology-bs/",
+      "title": "Biology, B.S. (Science) | Penn State",
+      "local_file": "biology.html"
+    },
+    {
+      "url": "https://www.psu.edu/admission/undergraduate/how-to-apply",
+      "title": "How to Apply | Undergraduate Admissions | Penn State",
+      "local_file": "apply.html"
+    },
+    {
+      "url": "https://www.psu.edu/costs-aid",
+      "title": "Invest in Your Future | Student Aid | Penn State",
+      "local_file": "costs-aid.html"
+    },
+    {
+      "url": "https://www.psu.edu/admission/undergraduate/explore/visit-penn-state",
+      "title": "Visit Penn State | Undergraduate Admissions | Penn State",
+      "local_file": "visit.html"
+    },
+    {
+      "url": "https://www.psu.edu/search/directories",
+      "title": "Faculty and Staff Directories | Penn State",
+      "local_file": "directories.html"
+    },
+    {
+      "url": "https://www.psu.edu/news",
+      "title": "News | Penn State University",
+      "local_file": "news.html"
+    }
+  ],
+  "local_additions": [
+    "404.html",
+    "simulation fields and feedback",
+    "fictional local records and story bodies"
+  ],
+  "retries": [
+    {
+      "at": "2026-11-13T15:43:24.266784+00:00",
+      "reason": "Parent instrumentation review: meaningful regions need both metadata attributes; explicit button types requested",
+      "changes": [
+        "Added missing data-section/data-component on semantic regions",
+        "Added explicit type=button to non-submit buttons",
+        "Regenerated component inventory from actual instance locations"
+      ],
+      "initial_artifact": "initial-site.tar.gz",
+      "human_edits": [],
+      "cross_model_edits": []
+    },
+    {
+      "at": "2026-11-13T15:44:59.660348+00:00",
+      "reason": "Source review found current-page indication was limited to two top-level links",
+      "changes": [
+        "Added aria-current=page to matching local navigation links and a visible underline"
+      ],
+      "human_edits": [],
+      "cross_model_edits": []
+    }
+  ],
+  "validation_summary": {
+    "technology": "pass",
+    "completeness": "pass",
+    "structure": "pass",
+    "interaction": "not-tested",
+    "accessibility": "not-tested",
+    "traceability": "pass",
+    "scope": "pass"
+  },
+  "validation_evidence": "pipelines/codex/runs/2026-11-13T15-34-51-696Z-build-UNI-04/",
+  "limitations": [
+    "HTTP/text source evidence only",
+    "No source rendering or interaction tests",
+    "Exact model release version unavailable",
+    "Human acceptance pending",
+    "Shared QC exit 2 at Chromium launch: MachPortRendezvous bootstrap_check_in permission denied. No axe/runtime summary exists.",
+    "Node logic harness does not validate rendered browser behavior or native dialog focus containment."
+  ],
+  "validation_details": {
+    "technology": "Static dependency/file audit and node --check passed. No runtime libraries, remote assets, storage, backend or network calls.",
+    "completeness": "9 pages / 17 files. All local links and fragments resolve; all required artifacts present.",
+    "structure": "Source sequence compared with approved HTTP heading evidence; static HTML landmarks, one H1, labels, heading hierarchy and both region attributes verified. Rendered fidelity unverified.",
+    "interaction": "Actual JS logic passed 5 Node vm test groups with DOM stand-ins. Native browser event/focus behavior is not-tested because shared QC browser launch failed.",
+    "accessibility": "Declared palette contrast calculations passed 9 pairs; semantic source review passed. Browser axe, rendered reflow, actual focus containment, screen reader and zoom not-tested.",
+    "traceability": "Source approval, exact map, durable protocol/prompt hashes, actual runtime and timestamps, initial artifact, repairs and failing QC log retained.",
+    "scope": "Only 8 mapped content pages plus approved local 404; simulation and approximations disclosed."
+  },
+  "qc_runs": [
+    {
+      "started_at": "2026-11-13T15:43:33.794581+00:00",
+      "completed_at": "2026-11-13T15:43:34.365434+00:00",
+      "command": [
+        "node",
+        "/Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/tools/qc/qc.js",
+        "/private/tmp/codex-uni-04-t4teqbdv/repository/Websites/university/codex/UNI-04",
+        "--json",
+        "/private/tmp/codex-uni-04-t4teqbdv/repository/Websites/pipelines/codex/runs/2026-11-13T15-34-51-696Z-build-UNI-04/qc-01.json"
+      ],
+      "exit_code": 2,
+      "report_created": false,
+      "browser_status": "not-tested",
+      "note": "Browser launch blocked; no successful axe/runtime result may be inferred."
+    }
+  ],
+  "test_runner_retries": [
+    {
+      "reason": "Node harness path had one excess parent segment; corrected test script only",
+      "evidence": "interaction-harness-first-error.log"
+    }
+  ],
+  "delivery_status": "complete site; blocked browser QC; awaiting parent review",
+  "initial_artifact": {
+    "path": "pipelines/codex/runs/2026-11-13T15-34-51-696Z-build-UNI-04/initial-site.tar.gz",
+    "sha256": "424533cd17db603486e1a2891415444bda83538629ae75cde3b809ea092ba1d9"
+  }
+}

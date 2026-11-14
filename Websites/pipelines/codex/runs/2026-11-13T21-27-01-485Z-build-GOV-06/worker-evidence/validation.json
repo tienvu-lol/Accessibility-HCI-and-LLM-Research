@@ -1,0 +1,42 @@
+{
+  "completed_at": "2026-11-13T21:34:46.761654+00:00",
+  "gates": {
+    "technology": "pass",
+    "completeness": "pass",
+    "structure": "pass",
+    "interaction": "not-tested",
+    "accessibility": "not-tested",
+    "traceability": "pass",
+    "scope": "pass"
+  },
+  "evidence": {
+    "static_audit": "static-audit.json: 1115 checks; no issues",
+    "javascript_syntax": "node --check js/main.js: exit 0",
+    "handler_logic": "interaction-tests.log: 67 assertions passed using actual main.js in node:vm with deliberately limited DOM mocks",
+    "shared_qc": "qc-initial.log / qc-attempt.json: one attempt, exit 2, Chromium launch blocked, JSON report not produced"
+  },
+  "gate_qualifications": {
+    "structure": "Static semantic/instrumentation review and source text hierarchy mapping only; source rendered fidelity unverified",
+    "interaction": "Partial handler-state testing passed; native browser interactions not tested",
+    "accessibility": "Static labels/headings/alt/metadata checked; native keyboard, focus appearance, screen reader, zoom, rendered contrast, responsive reflow and axe not tested",
+    "traceability": "Required documentation/inventory and approved mapping reviewed against implementation"
+  },
+  "not_tested": [
+    "native keyboard/focus return",
+    "axe/browser runtime",
+    "screen reader",
+    "zoom/text resizing",
+    "rendered contrast/focus visibility",
+    "375px and 1280px reflow",
+    "visual/source fidelity"
+  ],
+  "retries": [
+    {
+      "type": "test harness",
+      "initial": "interaction-tests-initial-harness-error.log",
+      "reason": "Harness site path traversed one directory too far; ENOENT before executing replica JavaScript",
+      "correction": "Changed test-only relative path from five parent levels to four",
+      "result": "67 assertions pass; no replica-code correction"
+    }
+  ]
+}
