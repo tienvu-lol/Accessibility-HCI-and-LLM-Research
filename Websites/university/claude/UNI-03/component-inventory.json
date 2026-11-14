@@ -1,0 +1,624 @@
+{
+  "protocol_version": "1.0",
+  "replica_id": "UNI-03",
+  "category": "university",
+  "source_url": "https://www.nvcc.edu/",
+  "components": [
+    {
+      "id": "accordion",
+      "selector": "[data-component='accordion']",
+      "pages": [
+        "admissions.html"
+      ],
+      "behavior": [
+        "native details/summary"
+      ],
+      "keyboard": [
+        "Enter/Space"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-qc-load-only; interaction flows scripted in Playwright for search, filter, form, dropdown, dialog, mobile menu; manual keyboard walkthrough not performed"
+    },
+    {
+      "id": "breadcrumbs",
+      "selector": "[data-component='breadcrumbs']",
+      "pages": [
+        "404.html",
+        "admissions.html",
+        "apply.html",
+        "calendar.html",
+        "directory.html",
+        "financial-aid.html",
+        "locations.html",
+        "news.html",
+        "program.html",
+        "programs.html",
+        "student-life.html",
+        "student-resources.html",
+        "tuition.html",
+        "visit.html"
+      ],
+      "behavior": [
+        "static presentation or data-rendered content"
+      ],
+      "keyboard": [
+        "Tab (native links/controls only)"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-qc-load-only; interaction flows scripted in Playwright for search, filter, form, dropdown, dialog, mobile menu; manual keyboard walkthrough not performed"
+    },
+    {
+      "id": "calculator",
+      "selector": "[data-component='calculator']",
+      "pages": [
+        "tuition.html"
+      ],
+      "behavior": [
+        "tuition estimate with validation"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-qc-load-only; interaction flows scripted in Playwright for search, filter, form, dropdown, dialog, mobile menu; manual keyboard walkthrough not performed"
+    },
+    {
+      "id": "card-grid",
+      "selector": "[data-component='card-grid']",
+      "pages": [
+        "financial-aid.html",
+        "index.html",
+        "locations.html",
+        "news.html",
+        "programs.html",
+        "student-life.html",
+        "visit.html"
+      ],
+      "behavior": [
+        "static presentation or data-rendered content"
+      ],
+      "keyboard": [
+        "Tab (native links/controls only)"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-qc-load-only; interaction flows scripted in Playwright for search, filter, form, dropdown, dialog, mobile menu; manual keyboard walkthrough not performed"
+    },
+    {
+      "id": "content-section",
+      "selector": "[data-component='content-section']",
+      "pages": [
+        "admissions.html",
+        "apply.html",
+        "financial-aid.html",
+        "student-life.html",
+        "student-resources.html"
+      ],
+      "behavior": [
+        "static presentation or data-rendered content"
+      ],
+      "keyboard": [
+        "Tab (native links/controls only)"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-qc-load-only; interaction flows scripted in Playwright for search, filter, form, dropdown, dialog, mobile menu; manual keyboard walkthrough not performed"
+    },
+    {
+      "id": "cta-buttons",
+      "selector": "[data-component='cta-buttons']",
+      "pages": [
+        "404.html",
+        "admissions.html",
+        "apply.html",
+        "calendar.html",
+        "directory.html",
+        "financial-aid.html",
+        "index.html",
+        "locations.html",
+        "news.html",
+        "program.html",
+        "programs.html",
+        "student-life.html",
+        "student-resources.html",
+        "tuition.html",
+        "visit.html"
+      ],
+      "behavior": [
+        "static presentation or data-rendered content"
+      ],
+      "keyboard": [
+        "Tab (native links/controls only)"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-qc-load-only; interaction flows scripted in Playwright for search, filter, form, dropdown, dialog, mobile menu; manual keyboard walkthrough not performed"
+    },
+    {
+      "id": "data-table",
+      "selector": "[data-component='data-table']",
+      "pages": [
+        "calendar.html",
+        "directory.html",
+        "tuition.html"
+      ],
+      "behavior": [
+        "static presentation or data-rendered content"
+      ],
+      "keyboard": [
+        "Tab (native links/controls only)"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-qc-load-only; interaction flows scripted in Playwright for search, filter, form, dropdown, dialog, mobile menu; manual keyboard walkthrough not performed"
+    },
+    {
+      "id": "demo-success",
+      "selector": "[data-component='demo-success']",
+      "pages": [
+        "apply.html",
+        "visit.html"
+      ],
+      "behavior": [
+        "static presentation or data-rendered content"
+      ],
+      "keyboard": [
+        "Tab (native links/controls only)"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-qc-load-only; interaction flows scripted in Playwright for search, filter, form, dropdown, dialog, mobile menu; manual keyboard walkthrough not performed"
+    },
+    {
+      "id": "dropdown-menu",
+      "selector": "[data-component='dropdown-menu']",
+      "pages": [
+        "404.html",
+        "admissions.html",
+        "apply.html",
+        "calendar.html",
+        "directory.html",
+        "financial-aid.html",
+        "index.html",
+        "locations.html",
+        "news.html",
+        "program.html",
+        "programs.html",
+        "student-life.html",
+        "student-resources.html",
+        "tuition.html",
+        "visit.html"
+      ],
+      "behavior": [
+        "aria-expanded disclosure",
+        "closes on outside click, focus leave, Escape"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter/Space",
+        "ArrowDown/Up",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-qc-load-only; interaction flows scripted in Playwright for search, filter, form, dropdown, dialog, mobile menu; manual keyboard walkthrough not performed"
+    },
+    {
+      "id": "error-summary",
+      "selector": "[data-component='error-summary']",
+      "pages": [
+        "apply.html",
+        "visit.html"
+      ],
+      "behavior": [
+        "static presentation or data-rendered content"
+      ],
+      "keyboard": [
+        "Tab (native links/controls only)"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-qc-load-only; interaction flows scripted in Playwright for search, filter, form, dropdown, dialog, mobile menu; manual keyboard walkthrough not performed"
+    },
+    {
+      "id": "feature-cards",
+      "selector": "[data-component='feature-cards']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "static presentation or data-rendered content"
+      ],
+      "keyboard": [
+        "Tab (native links/controls only)"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-qc-load-only; interaction flows scripted in Playwright for search, filter, form, dropdown, dialog, mobile menu; manual keyboard walkthrough not performed"
+    },
+    {
+      "id": "feature-panel",
+      "selector": "[data-component='feature-panel']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "static presentation or data-rendered content"
+      ],
+      "keyboard": [
+        "Tab (native links/controls only)"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-qc-load-only; interaction flows scripted in Playwright for search, filter, form, dropdown, dialog, mobile menu; manual keyboard walkthrough not performed"
+    },
+    {
+      "id": "filter-form",
+      "selector": "[data-component='filter-form']",
+      "pages": [
+        "calendar.html"
+      ],
+      "behavior": [
+        "static presentation or data-rendered content"
+      ],
+      "keyboard": [
+        "Tab (native links/controls only)"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-qc-load-only; interaction flows scripted in Playwright for search, filter, form, dropdown, dialog, mobile menu; manual keyboard walkthrough not performed"
+    },
+    {
+      "id": "filter-search-form",
+      "selector": "[data-component='filter-search-form']",
+      "pages": [
+        "directory.html",
+        "news.html",
+        "programs.html"
+      ],
+      "behavior": [
+        "client-side search and filter over inline data",
+        "live result count",
+        "empty state"
+      ],
+      "keyboard": [
+        "Tab",
+        "typing",
+        "arrow keys in selects/radios"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-qc-load-only; interaction flows scripted in Playwright for search, filter, form, dropdown, dialog, mobile menu; manual keyboard walkthrough not performed"
+    },
+    {
+      "id": "footer-links",
+      "selector": "[data-component='footer-links']",
+      "pages": [
+        "404.html",
+        "admissions.html",
+        "apply.html",
+        "calendar.html",
+        "directory.html",
+        "financial-aid.html",
+        "index.html",
+        "locations.html",
+        "news.html",
+        "program.html",
+        "programs.html",
+        "student-life.html",
+        "student-resources.html",
+        "tuition.html",
+        "visit.html"
+      ],
+      "behavior": [
+        "static presentation or data-rendered content"
+      ],
+      "keyboard": [
+        "Tab (native links/controls only)"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-qc-load-only; interaction flows scripted in Playwright for search, filter, form, dropdown, dialog, mobile menu; manual keyboard walkthrough not performed"
+    },
+    {
+      "id": "form-field",
+      "selector": "[data-component='form-field']",
+      "pages": [
+        "apply.html",
+        "visit.html"
+      ],
+      "behavior": [
+        "static presentation or data-rendered content"
+      ],
+      "keyboard": [
+        "Tab (native links/controls only)"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-qc-load-only; interaction flows scripted in Playwright for search, filter, form, dropdown, dialog, mobile menu; manual keyboard walkthrough not performed"
+    },
+    {
+      "id": "form-section",
+      "selector": "[data-component='form-section']",
+      "pages": [
+        "apply.html",
+        "visit.html"
+      ],
+      "behavior": [
+        "static presentation or data-rendered content"
+      ],
+      "keyboard": [
+        "Tab (native links/controls only)"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-qc-load-only; interaction flows scripted in Playwright for search, filter, form, dropdown, dialog, mobile menu; manual keyboard walkthrough not performed"
+    },
+    {
+      "id": "hero-banner",
+      "selector": "[data-component='hero-banner']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "static presentation or data-rendered content"
+      ],
+      "keyboard": [
+        "Tab (native links/controls only)"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-qc-load-only; interaction flows scripted in Playwright for search, filter, form, dropdown, dialog, mobile menu; manual keyboard walkthrough not performed"
+    },
+    {
+      "id": "local-nav",
+      "selector": "[data-component='local-nav']",
+      "pages": [
+        "admissions.html",
+        "financial-aid.html",
+        "student-resources.html"
+      ],
+      "behavior": [
+        "static presentation or data-rendered content"
+      ],
+      "keyboard": [
+        "Tab (native links/controls only)"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-qc-load-only; interaction flows scripted in Playwright for search, filter, form, dropdown, dialog, mobile menu; manual keyboard walkthrough not performed"
+    },
+    {
+      "id": "modal-dialog",
+      "selector": "[data-component='modal-dialog']",
+      "pages": [
+        "apply.html"
+      ],
+      "behavior": [
+        "native dialog.showModal simulated portal sign-in"
+      ],
+      "keyboard": [
+        "Escape closes",
+        "focus returns to opener"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-qc-load-only; interaction flows scripted in Playwright for search, filter, form, dropdown, dialog, mobile menu; manual keyboard walkthrough not performed"
+    },
+    {
+      "id": "primary-nav",
+      "selector": "[data-component='primary-nav']",
+      "pages": [
+        "404.html",
+        "admissions.html",
+        "apply.html",
+        "calendar.html",
+        "directory.html",
+        "financial-aid.html",
+        "index.html",
+        "locations.html",
+        "news.html",
+        "program.html",
+        "programs.html",
+        "student-life.html",
+        "student-resources.html",
+        "tuition.html",
+        "visit.html"
+      ],
+      "behavior": [
+        "desktop dropdown groups",
+        "mobile Menu disclosure",
+        "active group indicator"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter/Space toggles",
+        "ArrowDown/ArrowUp in panel",
+        "Escape closes and returns focus"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-qc-load-only; interaction flows scripted in Playwright for search, filter, form, dropdown, dialog, mobile menu; manual keyboard walkthrough not performed"
+    },
+    {
+      "id": "program-detail",
+      "selector": "[data-component='program-detail']",
+      "pages": [
+        "program.html"
+      ],
+      "behavior": [
+        "static presentation or data-rendered content"
+      ],
+      "keyboard": [
+        "Tab (native links/controls only)"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-qc-load-only; interaction flows scripted in Playwright for search, filter, form, dropdown, dialog, mobile menu; manual keyboard walkthrough not performed"
+    },
+    {
+      "id": "program-search-promo",
+      "selector": "[data-component='program-search-promo']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "static presentation or data-rendered content"
+      ],
+      "keyboard": [
+        "Tab (native links/controls only)"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-qc-load-only; interaction flows scripted in Playwright for search, filter, form, dropdown, dialog, mobile menu; manual keyboard walkthrough not performed"
+    },
+    {
+      "id": "search-form",
+      "selector": "[data-component='search-form']",
+      "pages": [
+        "404.html",
+        "admissions.html",
+        "apply.html",
+        "calendar.html",
+        "directory.html",
+        "financial-aid.html",
+        "index.html",
+        "locations.html",
+        "news.html",
+        "program.html",
+        "programs.html",
+        "student-life.html",
+        "student-resources.html",
+        "tuition.html",
+        "visit.html"
+      ],
+      "behavior": [
+        "static presentation or data-rendered content"
+      ],
+      "keyboard": [
+        "Tab (native links/controls only)"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-qc-load-only; interaction flows scripted in Playwright for search, filter, form, dropdown, dialog, mobile menu; manual keyboard walkthrough not performed"
+    },
+    {
+      "id": "site-footer",
+      "selector": "[data-component='site-footer']",
+      "pages": [
+        "404.html",
+        "admissions.html",
+        "apply.html",
+        "calendar.html",
+        "directory.html",
+        "financial-aid.html",
+        "index.html",
+        "locations.html",
+        "news.html",
+        "program.html",
+        "programs.html",
+        "student-life.html",
+        "student-resources.html",
+        "tuition.html",
+        "visit.html"
+      ],
+      "behavior": [
+        "static presentation or data-rendered content"
+      ],
+      "keyboard": [
+        "Tab (native links/controls only)"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-qc-load-only; interaction flows scripted in Playwright for search, filter, form, dropdown, dialog, mobile menu; manual keyboard walkthrough not performed"
+    },
+    {
+      "id": "site-header",
+      "selector": "[data-component='site-header']",
+      "pages": [
+        "404.html",
+        "admissions.html",
+        "apply.html",
+        "calendar.html",
+        "directory.html",
+        "financial-aid.html",
+        "index.html",
+        "locations.html",
+        "news.html",
+        "program.html",
+        "programs.html",
+        "student-life.html",
+        "student-resources.html",
+        "tuition.html",
+        "visit.html"
+      ],
+      "behavior": [
+        "static presentation or data-rendered content"
+      ],
+      "keyboard": [
+        "Tab (native links/controls only)"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-qc-load-only; interaction flows scripted in Playwright for search, filter, form, dropdown, dialog, mobile menu; manual keyboard walkthrough not performed"
+    },
+    {
+      "id": "stats-band",
+      "selector": "[data-component='stats-band']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "static presentation or data-rendered content"
+      ],
+      "keyboard": [
+        "Tab (native links/controls only)"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-qc-load-only; interaction flows scripted in Playwright for search, filter, form, dropdown, dialog, mobile menu; manual keyboard walkthrough not performed"
+    },
+    {
+      "id": "step-list",
+      "selector": "[data-component='step-list']",
+      "pages": [
+        "admissions.html"
+      ],
+      "behavior": [
+        "static presentation or data-rendered content"
+      ],
+      "keyboard": [
+        "Tab (native links/controls only)"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-qc-load-only; interaction flows scripted in Playwright for search, filter, form, dropdown, dialog, mobile menu; manual keyboard walkthrough not performed"
+    },
+    {
+      "id": "utility-nav",
+      "selector": "[data-component='utility-nav']",
+      "pages": [
+        "404.html",
+        "admissions.html",
+        "apply.html",
+        "calendar.html",
+        "directory.html",
+        "financial-aid.html",
+        "index.html",
+        "locations.html",
+        "news.html",
+        "program.html",
+        "programs.html",
+        "student-life.html",
+        "student-resources.html",
+        "tuition.html",
+        "visit.html"
+      ],
+      "behavior": [
+        "static presentation or data-rendered content"
+      ],
+      "keyboard": [
+        "Tab (native links/controls only)"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-qc-load-only; interaction flows scripted in Playwright for search, filter, form, dropdown, dialog, mobile menu; manual keyboard walkthrough not performed"
+    },
+    {
+      "id": "validated-form",
+      "selector": "[data-component='validated-form']",
+      "pages": [
+        "apply.html",
+        "visit.html"
+      ],
+      "behavior": [
+        "required/email/minlength validation",
+        "error summary with focus",
+        "inline errors",
+        "demo success"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter submits",
+        "links in summary move focus to field"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-qc-load-only; interaction flows scripted in Playwright for search, filter, form, dropdown, dialog, mobile menu; manual keyboard walkthrough not performed"
+    }
+  ]
+}

@@ -84,8 +84,8 @@ export const categoryFor = (setup,target) => setup.categories.find(c=>c.prefix==
 export function validateSetup(setup) {
   const {root,pipeline,config,categories,queue}=setup;
   const errors=validateSchema(config,readJSON(path.join(pipeline,'schemas/config.schema.json')));
-  const requiredCategories=['university','healthcare','company','e-commerce','news','government','fashion','weather','nonprofit','church'];
-  if (JSON.stringify([...categories.map(c=>c.category)].sort())!==JSON.stringify([...requiredCategories].sort())) errors.push('Exactly the ten study categories are required');
+  const requiredCategories=['university','healthcare','company','e-commerce','news','government','fashion','weather','nonprofit','church','portfolio','restaurant'];
+  if (JSON.stringify([...categories.map(c=>c.category)].sort())!==JSON.stringify([...requiredCategories].sort())) errors.push('Exactly the twelve study categories are required');
   const allIDs=new Set();
   const assignments=readCSV(inside(root,config.paths.assignments));
   for (const c of categories) {
@@ -109,7 +109,7 @@ export function validateSetup(setup) {
     }
   }
   const expectedTasks=categories.flatMap(c=>[`research-${c.prefix}`,...[4,5,6].map(n=>`build-${c.prefix}-0${n}`)]);
-  if (queue.tasks.length!==40 || new Set(queue.tasks.map(t=>t.id)).size!==40 || expectedTasks.some(id=>!queue.tasks.some(t=>t.id===id))) errors.push('Queue must contain exactly ten research tasks and thirty Codex build tasks');
+  if (queue.tasks.length!==48 || new Set(queue.tasks.map(t=>t.id)).size!==48 || expectedTasks.some(id=>!queue.tasks.some(t=>t.id===id))) errors.push('Queue must contain exactly twelve research tasks and thirty-six Codex build tasks');
   for (const t of queue.tasks) {
     const c=categoryFor(setup,t.target);
     if (!c || t.category!==c.category || !['research','build'].includes(t.phase) || t.id!==`${t.phase}-${t.target}` || !['planned','prepared','running','completed','blocked'].includes(t.status)) errors.push(`Invalid task ${t.id}`);
@@ -130,15 +130,18 @@ export function buildReadiness(setup,id,model) {
   if (!c || !new RegExp(`^${c?.prefix}-0[456]$`).test(id)) return ['Build target must be an allocated Codex ID (04–06)'];
   const inventory=readCSV(inside(setup.root,`${setup.config.paths.inventories}/${c.category}.csv`));
   const register=readCSV(inside(setup.root,setup.config.paths.assignments));
-  const seen=new Set();
+  const group=setup.config.model_group;
+  const normalizeUrl=u=>{try{const url=new URL((u||'').trim());if(!['http:','https:'].includes(url.protocol))return null;url.hostname=url.hostname.replace(/^www\./i,'');url.hash='';url.search='';url.protocol='https:';return url.href.replace(/\/$/,'');}catch{return null;}};
+  const reserved=new Map();
+  for (const row of inventory) {const n=normalizeUrl(row.source_url);if(n)reserved.set(n,[...(reserved.get(n)||[]),row.source_id]);}
   for (const row of inventory) {
+    if (row.model_group!==group) continue;
     try {
       for (const key of ['source_name','source_url','model_id','subcategory','verified_at','verification_method','verification_result','evidence_reference','complexity','stack_clues','limitations','approved_at','approved_by','approval_reference']) if (!row[key]?.trim()) throw new Error(`${row.source_id}: missing ${key}`);
-      const url=new URL(row.source_url);
-      if (!['http:','https:'].includes(url.protocol)) throw new Error(`${row.source_id}: invalid source URL`);
-      url.hostname=url.hostname.replace(/^www\./i,''); url.hash=''; url.search=''; url.protocol='https:';
-      const normalized=url.href.replace(/\/$/,'');
-      if (seen.has(normalized)) throw new Error(`${row.source_id}: duplicate reference URL`);seen.add(normalized);
+      const normalized=normalizeUrl(row.source_url);
+      if (!normalized) throw new Error(`${row.source_id}: invalid source URL`);
+      const holders=(reserved.get(normalized)||[]).filter(i=>i!==row.source_id);
+      if (holders.length) throw new Error(`${row.source_id}: duplicate reference URL, also held by ${holders.join(', ')}`);
       if (row.verification_result!=='verified') throw new Error(`${row.source_id}: source is not verified`);
       if (!['low','medium','high'].includes(row.complexity)) throw new Error(`${row.source_id}: complexity must be low, medium or high`);
       for (const key of ['verified_at','approved_at']) if (!/^\d{4}-\d{2}-\d{2}(T.*)?$/.test(row[key]) || Number.isNaN(Date.parse(row[key]))) throw new Error(`${row.source_id}: invalid ${key}`);
@@ -150,8 +153,13 @@ export function buildReadiness(setup,id,model) {
       if (!names.has('index.html')) throw new Error(`${row.source_id}: page map requires index.html`);
       jsonField(row,'key_regions');
       for (const item of jsonField(row,'key_interactions')) if (!item.name || !['observed','inferred'].includes(item.evidence)) throw new Error(`${row.source_id}: interactions need name and observed/inferred evidence`);
-      const evidence=row.evidence_reference;
-      if (!/^https?:\/\//.test(evidence) && !fs.existsSync(inside(setup.root,evidence))) throw new Error(`${row.source_id}: missing evidence file`);
+      const parts=row.evidence_reference.split(';').map(x=>x.trim()).filter(Boolean);
+      if (!parts.length) throw new Error(`${row.source_id}: missing evidence_reference`);
+      for (const part of parts) {
+        if (/^https?:\/\//.test(part)) continue;
+        const file=part.split('#')[0].trim();
+        if (!file || !fs.existsSync(inside(setup.root,file))) throw new Error(`${row.source_id}: missing evidence file ${file || part}`);
+      }
       const match=register.find(r=>r.category===c.category && r.source_id===row.source_id);
       if (!match || match.source_url!==row.source_url || match.model_id!==row.model_id || (match.model_version || '')!==(row.model_version || '') || match.approved_at!==row.approved_at) throw new Error(`${row.source_id}: approval/source/model not synchronized with assignment register`);
     } catch(e) { errors.push(e.message); }

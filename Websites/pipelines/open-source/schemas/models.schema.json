@@ -1,0 +1,122 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "declared_at",
+    "declared_by",
+    "slots"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "declared_at": {
+      "type": "string",
+      "minLength": 1
+    },
+    "declared_by": {
+      "type": "string",
+      "minLength": 1
+    },
+    "note": {
+      "type": "string"
+    },
+    "slots": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "7": {
+          "$ref": "#/$defs/slot"
+        },
+        "8": {
+          "$ref": "#/$defs/slot"
+        },
+        "9": {
+          "$ref": "#/$defs/slot"
+        },
+        "10": {
+          "$ref": "#/$defs/slot"
+        }
+      },
+      "description": "Declared slots. A partial declaration is allowed while researching; MODEL_ALLOCATION.md section 2 requires all four before generation."
+    }
+  },
+  "$defs": {
+    "slot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "model_id",
+        "model_version",
+        "weights_url",
+        "license",
+        "open_weights",
+        "eligibility_note",
+        "provider",
+        "base_url",
+        "api_key_env",
+        "params"
+      ],
+      "properties": {
+        "model_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "model_version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "weights_url": {
+          "type": "string",
+          "minLength": 1
+        },
+        "license": {
+          "type": "string",
+          "minLength": 1
+        },
+        "open_weights": {
+          "const": true
+        },
+        "eligibility_note": {
+          "type": "string",
+          "minLength": 1
+        },
+        "provider": {
+          "type": "string",
+          "minLength": 1
+        },
+        "base_url": {
+          "type": "string",
+          "minLength": 1
+        },
+        "api_key_env": {
+          "type": "string",
+          "minLength": 1
+        },
+        "params": {
+          "type": "object",
+          "additionalProperties": true,
+          "required": [
+            "temperature",
+            "max_tokens"
+          ],
+          "properties": {
+            "temperature": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 2
+            },
+            "max_tokens": {
+              "type": "integer",
+              "minimum": 1024,
+              "maximum": 200000
+            }
+          }
+        }
+      }
+    }
+  }
+}

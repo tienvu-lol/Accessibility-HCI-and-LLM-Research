@@ -1,0 +1,420 @@
+{
+  "protocol_version": "1.0",
+  "replica_id": "NEWS-04",
+  "category": "news",
+  "source_url": "https://www.japantimes.co.jp/",
+  "components": [
+    {
+      "id": "article-detail",
+      "selector": "[data-component=\"article-detail\"]",
+      "pages": [
+        "article.html"
+      ],
+      "behavior": [
+        "Static editorial content or relative navigation"
+      ],
+      "keyboard": [
+        "Tab; Enter on links",
+        "No custom keyboard behavior"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser not-tested"
+    },
+    {
+      "id": "breadcrumb",
+      "selector": "[data-component=\"breadcrumb\"]",
+      "pages": [
+        "article.html",
+        "japan.html"
+      ],
+      "behavior": [
+        "Static editorial content or relative navigation"
+      ],
+      "keyboard": [
+        "Tab; Enter on links",
+        "No custom keyboard behavior"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser not-tested"
+    },
+    {
+      "id": "captioned-image",
+      "selector": "[data-component=\"captioned-image\"]",
+      "pages": [
+        "article.html"
+      ],
+      "behavior": [
+        "Static editorial content or relative navigation"
+      ],
+      "keyboard": [
+        "Tab; Enter on links",
+        "No custom keyboard behavior"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser not-tested"
+    },
+    {
+      "id": "directory-list",
+      "selector": "[data-component=\"directory-list\"]",
+      "pages": [
+        "404.html",
+        "about.html",
+        "article.html",
+        "index.html",
+        "japan.html",
+        "newsletters.html"
+      ],
+      "behavior": [
+        "Static editorial content or relative navigation"
+      ],
+      "keyboard": [
+        "Tab; Enter on links",
+        "No custom keyboard behavior"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser not-tested"
+    },
+    {
+      "id": "error-message",
+      "selector": "[data-component=\"error-message\"]",
+      "pages": [
+        "404.html"
+      ],
+      "behavior": [
+        "Static editorial content or relative navigation"
+      ],
+      "keyboard": [
+        "Tab; Enter on links",
+        "No custom keyboard behavior"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser not-tested"
+    },
+    {
+      "id": "footer-nav",
+      "selector": "[data-component=\"footer-nav\"]",
+      "pages": [
+        "404.html",
+        "about.html",
+        "article.html",
+        "index.html",
+        "japan.html",
+        "newsletters.html"
+      ],
+      "behavior": [
+        "Static editorial content or relative navigation"
+      ],
+      "keyboard": [
+        "Tab; Enter on links",
+        "No custom keyboard behavior"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser not-tested"
+    },
+    {
+      "id": "headline-list",
+      "selector": "[data-component=\"headline-list\"]",
+      "pages": [
+        "index.html",
+        "japan.html"
+      ],
+      "behavior": [
+        "Static editorial content or relative navigation"
+      ],
+      "keyboard": [
+        "Tab; Enter on links",
+        "No custom keyboard behavior"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser not-tested"
+    },
+    {
+      "id": "lead-grid",
+      "selector": "[data-component=\"lead-grid\"]",
+      "pages": [
+        "index.html",
+        "japan.html"
+      ],
+      "behavior": [
+        "Static editorial content or relative navigation"
+      ],
+      "keyboard": [
+        "Tab; Enter on links",
+        "No custom keyboard behavior"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser not-tested"
+    },
+    {
+      "id": "news-band",
+      "selector": "[data-component=\"news-band\"]",
+      "pages": [
+        "index.html",
+        "japan.html"
+      ],
+      "behavior": [
+        "Static editorial content or relative navigation"
+      ],
+      "keyboard": [
+        "Tab; Enter on links",
+        "No custom keyboard behavior"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser not-tested"
+    },
+    {
+      "id": "newsletter-callout",
+      "selector": "[data-component=\"newsletter-callout\"]",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "Static editorial content or relative navigation"
+      ],
+      "keyboard": [
+        "Tab; Enter on links",
+        "No custom keyboard behavior"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser not-tested"
+    },
+    {
+      "id": "newsletter-card",
+      "selector": "[data-component=\"newsletter-card\"]",
+      "pages": [
+        "newsletters.html"
+      ],
+      "behavior": [
+        "Static editorial content or relative navigation"
+      ],
+      "keyboard": [
+        "Tab; Enter on links",
+        "No custom keyboard behavior"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser not-tested"
+    },
+    {
+      "id": "newsletter-directory",
+      "selector": "[data-component=\"newsletter-directory\"]",
+      "pages": [
+        "newsletters.html"
+      ],
+      "behavior": [
+        "Static editorial content or relative navigation"
+      ],
+      "keyboard": [
+        "Tab; Enter on links",
+        "No custom keyboard behavior"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser not-tested"
+    },
+    {
+      "id": "newsletter-form",
+      "selector": "[data-component=\"newsletter-form\"]",
+      "pages": [
+        "newsletters.html"
+      ],
+      "behavior": [
+        "Local validation and demo status"
+      ],
+      "keyboard": [
+        "Tab; Enter on links",
+        "Native form keyboard behavior"
+      ],
+      "status": "implemented",
+      "validation": "Mock DOM logic tested; real browser and keyboard not-tested"
+    },
+    {
+      "id": "primary-nav",
+      "selector": "[data-component=\"primary-nav\"]",
+      "pages": [
+        "404.html",
+        "about.html",
+        "article.html",
+        "index.html",
+        "japan.html",
+        "newsletters.html"
+      ],
+      "behavior": [
+        "Local disclosure with Escape dismissal"
+      ],
+      "keyboard": [
+        "Tab; Enter on links",
+        "Enter/Space on buttons; Escape closes menu"
+      ],
+      "status": "implemented",
+      "validation": "Mock DOM logic tested; real browser and keyboard not-tested"
+    },
+    {
+      "id": "prose-section",
+      "selector": "[data-component=\"prose-section\"]",
+      "pages": [
+        "about.html",
+        "article.html",
+        "japan.html"
+      ],
+      "behavior": [
+        "Static editorial content or relative navigation"
+      ],
+      "keyboard": [
+        "Tab; Enter on links",
+        "No custom keyboard behavior"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser not-tested"
+    },
+    {
+      "id": "related-stories",
+      "selector": "[data-component=\"related-stories\"]",
+      "pages": [
+        "article.html"
+      ],
+      "behavior": [
+        "Static editorial content or relative navigation"
+      ],
+      "keyboard": [
+        "Tab; Enter on links",
+        "No custom keyboard behavior"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser not-tested"
+    },
+    {
+      "id": "search-demo",
+      "selector": "[data-component=\"search-demo\"]",
+      "pages": [
+        "404.html",
+        "about.html",
+        "article.html",
+        "index.html",
+        "japan.html",
+        "newsletters.html"
+      ],
+      "behavior": [
+        "Visibly disabled nonfunctional demonstration"
+      ],
+      "keyboard": [
+        "Tab; Enter on links",
+        "No custom keyboard behavior"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser not-tested"
+    },
+    {
+      "id": "section-nav",
+      "selector": "[data-component=\"section-nav\"]",
+      "pages": [
+        "japan.html"
+      ],
+      "behavior": [
+        "Static editorial content or relative navigation"
+      ],
+      "keyboard": [
+        "Tab; Enter on links",
+        "No custom keyboard behavior"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser not-tested"
+    },
+    {
+      "id": "site-footer",
+      "selector": "[data-component=\"site-footer\"]",
+      "pages": [
+        "404.html",
+        "about.html",
+        "article.html",
+        "index.html",
+        "japan.html",
+        "newsletters.html"
+      ],
+      "behavior": [
+        "Static editorial content or relative navigation"
+      ],
+      "keyboard": [
+        "Tab; Enter on links",
+        "No custom keyboard behavior"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser not-tested"
+    },
+    {
+      "id": "site-header",
+      "selector": "[data-component=\"site-header\"]",
+      "pages": [
+        "404.html",
+        "about.html",
+        "article.html",
+        "index.html",
+        "japan.html",
+        "newsletters.html"
+      ],
+      "behavior": [
+        "Static editorial content or relative navigation"
+      ],
+      "keyboard": [
+        "Tab; Enter on links",
+        "No custom keyboard behavior"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser not-tested"
+    },
+    {
+      "id": "story-card",
+      "selector": "[data-component=\"story-card\"]",
+      "pages": [
+        "article.html",
+        "index.html",
+        "japan.html"
+      ],
+      "behavior": [
+        "Static editorial content or relative navigation"
+      ],
+      "keyboard": [
+        "Tab; Enter on links",
+        "No custom keyboard behavior"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser not-tested"
+    },
+    {
+      "id": "utility-nav",
+      "selector": "[data-component=\"utility-nav\"]",
+      "pages": [
+        "404.html",
+        "about.html",
+        "article.html",
+        "index.html",
+        "japan.html",
+        "newsletters.html"
+      ],
+      "behavior": [
+        "Static editorial content or relative navigation"
+      ],
+      "keyboard": [
+        "Tab; Enter on links",
+        "No custom keyboard behavior"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser not-tested"
+    },
+    {
+      "id": "supplementary-content",
+      "selector": "[data-component=\"supplementary-content\"]",
+      "pages": [
+        "about.html",
+        "article.html",
+        "japan.html"
+      ],
+      "behavior": [
+        "Static podcast and longform previews with supplement directory"
+      ],
+      "keyboard": [
+        "No custom keyboard behavior"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser not-tested"
+    }
+  ]
+}

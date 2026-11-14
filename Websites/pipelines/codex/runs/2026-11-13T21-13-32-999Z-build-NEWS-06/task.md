@@ -1,0 +1,445 @@
+# Phase B — One Codex replica
+
+Read the shared `Websites/Rules.md` and `Websites/MODEL_ALLOCATION.md` completely. Build exactly the single source in the exact task context. The selected source, approved page map, model, category, and output directory are fixed. Missing, changed, or unverifiable approval/source evidence must stop this task; do not substitute another source or inherit Claude's waiver.
+
+## Scope and boundaries
+
+Write website files only inside the assigned `Websites/<category>/codex/<ID>/`. Keep run evidence in this task's `pipelines/codex/runs/<run-id>/` directory. Do not touch another model group's files or prompts, the shared rules/QC, or unrelated websites. Use an isolated checkout for concurrent work; pipeline task preparation does not itself create worktrees or launch agents. Do not commit, push, publish, or send messages. One replica is one run and one delivery. Do not start another site automatically.
+
+Confirm that the actual model/runtime matches the declared assignment before generation. If the underlying model cannot be identified, report that fact rather than invent an exact model name. Record start/completion timestamps from the real clock, available tools, generation budget if known, retries, and all human or cross-model changes. Preparation timestamps are not generation timestamps. Preserve the exact prompt and protocol snapshots.
+
+## Implementation
+
+Use semantic HTML5, CSS3, and vanilla JavaScript only. Follow the approved page map and observed information architecture, navigation, hero/above-the-fold hierarchy, content bands, sidebar where present, footer, and source-specific detail pages. The category checklist is conditional; omit nonexistent features or explicitly document approved research additions. Do not impose a universal homepage or arbitrary page-count quota.
+
+Each site works independently through ordinary file:// navigation with relative paths, local placeholder artwork, and inline demo data. Default shared files within the site: css/styles.css and js/main.js. Repeat critical navigation HTML consistently. No frameworks, jQuery, Bootstrap, external UI libraries/fonts/CDNs, runtime package installation, templating, PHP, backend, database, external widgets, accounts, API calls, or build step. The shared external QC dependencies are permitted evaluation tools and must never be copied into the site.
+
+Use fictional names, original prose, and original placeholder assets. No copied logos, seals, real testimonials, proprietary media, or claims of measured outcomes. Every visible control must work on meaningful local samples or be clearly identified as a nonfunctional demo. Forms validate with intelligible errors and useful focus/status feedback; payments, applications, appointments, subscriptions, portals, giving, and logins never perform real transactions. Follow the task's category-specific simulation restrictions.
+
+Target the shared WCAG 2.2 AA baseline: landmarks, logical heading hierarchy, one H1, visible-on-focus skip link to main id="main-content", native controls, labels, descriptive feedback, visible focus, keyboard operation and Escape dismissal, dialog focus handling, readable contrast, responsive reflow, reduced motion, and useful image alternatives. Do not claim conformance or inject intentional defects. Instrument meaningful regions and reusable components with stable descriptive kebab-case data-section/data-component values; do not indiscriminately label incidental spans.
+
+## Required output and provenance
+
+Include all approved mapped pages, index.html, 404.html, css/styles.css, js/main.js, local assets, README.md, fidelity-notes.md, component-inventory.json, and generation-metadata.json. Use the schemas in the shared protocols. README includes source ID, actual verification method/date, complete sitemap and source mapping, sample dataset counts, interaction/simulation notes, run instructions, QC evidence, and limitations. Fidelity notes distinguish replicated, approximated, simulated, added, omitted, and unverified elements. Component inventory lists actual locations/selectors, behavior, keyboard expectations, and test status.
+
+generation-metadata.json must accurately identify the category, numeric slot, stable source ID, model_group codex, actual declared model/version/runtime, operator, source URL/verification/approval evidence, real generation timestamps, durable protocol/prompt revisions, generation mode, human edits, and the seven validation gates. Use supplied SHA-256 snapshots as durable revisions; include additional commit references when known. Do not copy hardcoded Claude dates/model IDs or label unknown fields as verified. A changed model or scope requires a documented reassignment.
+
+## Validation and handoff
+
+Run the same shared QC as the other arms. If needed, install its locked dependencies from Websites/tools/qc using npm ci, outside the replica. Execute shared qc.js against this one output and retain the JSON/log evidence in this run directory; record-qc.mjs provides that wrapper. Report inability to execute browser tests as not-tested/blocked, never as failures=0. Do not weaken or edit the QC to pass.
+
+Exercise the implemented interaction states separately: menus and keyboard dismissal, local search/filter/sort and empty results, validation and demo success, tabs/accordions, dialogs/focus return, and category-specific flows. Initial-page axe scans do not test these states. Record exact tests performed and untested screen-reader/zoom/browser/fidelity checks. Preserve the first QC report and log every correction/retry; distinguish the initial generated artifact from any repaired revision for study analysis.
+
+Finish with complete files, a concise page/file count, source and verification status, actual QC outcome and evidence location, interactions tested, deviations, and remaining limits. Update run evidence; the coordinator updates only this Codex assignment row and change log after reviewing actual delivery. Prepared != generating, submitted != accepted, and successful automated QC != human acceptance. Stop after this site.
+
+
+## Exact task context
+
+```json
+{
+  "phase": "build",
+  "target": "NEWS-06",
+  "category": "news",
+  "category_requirements": {
+    "category": "news",
+    "prefix": "NEWS",
+    "name": "News publishers",
+    "sampling_strata": [
+      {
+        "slot": 1,
+        "source_id": "NEWS-01",
+        "model_group": "claude",
+        "stratum": "national daily newspaper",
+        "authority": "coordination proposal; reconcile with shared inventory"
+      },
+      {
+        "slot": 2,
+        "source_id": "NEWS-02",
+        "model_group": "claude",
+        "stratum": "local/regional newsroom",
+        "authority": "coordination proposal; reconcile with shared inventory"
+      },
+      {
+        "slot": 3,
+        "source_id": "NEWS-03",
+        "model_group": "claude",
+        "stratum": "public broadcaster or nonprofit newsroom",
+        "authority": "coordination proposal; reconcile with shared inventory"
+      },
+      {
+        "slot": 4,
+        "source_id": "NEWS-04",
+        "model_group": "codex",
+        "stratum": "national daily newspaper",
+        "authority": "codex assignment"
+      },
+      {
+        "slot": 5,
+        "source_id": "NEWS-05",
+        "model_group": "codex",
+        "stratum": "local/regional newsroom",
+        "authority": "codex assignment"
+      },
+      {
+        "slot": 6,
+        "source_id": "NEWS-06",
+        "model_group": "codex",
+        "stratum": "public broadcaster or nonprofit newsroom",
+        "authority": "codex assignment"
+      },
+      {
+        "slot": 7,
+        "source_id": "NEWS-07",
+        "model_group": "open-source",
+        "stratum": "national daily newspaper",
+        "authority": "coordination proposal; reconcile with shared inventory"
+      },
+      {
+        "slot": 8,
+        "source_id": "NEWS-08",
+        "model_group": "open-source",
+        "stratum": "local/regional newsroom",
+        "authority": "coordination proposal; reconcile with shared inventory"
+      },
+      {
+        "slot": 9,
+        "source_id": "NEWS-09",
+        "model_group": "open-source",
+        "stratum": "public broadcaster or nonprofit newsroom",
+        "authority": "coordination proposal; reconcile with shared inventory"
+      },
+      {
+        "slot": 10,
+        "source_id": "NEWS-10",
+        "model_group": "open-source",
+        "stratum": "additional distinct national daily newspaper (complexity-matched reserve)",
+        "authority": "coordination proposal; reconcile with shared inventory"
+      }
+    ],
+    "representative_pages": [
+      "home",
+      "section front",
+      "article",
+      "search",
+      "newsletter",
+      "subscription information",
+      "about",
+      "404"
+    ],
+    "conditional_interactions": [
+      "section navigation",
+      "local article search",
+      "latest/most-read tabs when observed",
+      "newsletter simulation"
+    ],
+    "simulation_notes": "All articles original and fictional. No live financial/weather widgets, real subscription, or embedded player dependencies.",
+    "scope_rule": "Use only observed source pages/features; label inferred behavior and intentional additions. Page count follows approved scope, not a fixed quota."
+  },
+  "model": {
+    "id": "gpt-6.1-sol",
+    "version": null,
+    "runtime": "OpenAI collaboration worker (gpt-6.1-sol), orchestrated in Codex",
+    "reasoning_effort": null,
+    "operator": "Samhith Varma"
+  },
+  "output_relative_to_Websites": "news/codex/NEWS-06",
+  "selected_source": {
+    "category": "news",
+    "slot": "06",
+    "source_id": "NEWS-06",
+    "model_group": "codex",
+    "model_id": "gpt-6.1-sol",
+    "model_version": "",
+    "subcategory": "public broadcaster or nonprofit newsroom",
+    "source_name": "ProPublica",
+    "source_url": "https://www.propublica.org/",
+    "verified_at": "2026-11-12T00:54:46.019327+00:00",
+    "verification_method": "Live web search; web extracted-text home opens; direct Python urllib HTTPS GET (HTTP-only; no browser/JS interaction testing)",
+    "verification_result": "verified",
+    "evidence_reference": "pipelines/codex/research/NEWS.md",
+    "source_pages": "[{\"url\": \"https://www.propublica.org/\", \"title\": \"ProPublica — Investigative Journalism and News in the Public Interest\", \"local_file\": \"index.html\"}, {\"url\": \"https://www.propublica.org/topics/democracy\", \"title\": \"Investigative Reporting on Democracy — ProPublica\", \"local_file\": \"democracy.html\"}, {\"url\": \"https://www.propublica.org/article/election-challenge-forsyth-county-georgia\", \"title\": \"Election Deniers Are Using a Faulty Tool to Challenge Midterm Ballots — ProPublica\", \"local_file\": \"article.html\"}, {\"url\": \"https://www.propublica.org/?s=climate\", \"title\": \"You searched for climate — ProPublica\", \"local_file\": \"search.html\"}, {\"url\": \"https://www.propublica.org/newsletters\", \"title\": \"Email Newsletters — ProPublica\", \"local_file\": \"newsletters.html\"}, {\"url\": \"https://www.propublica.org/about\", \"title\": \"About Us — ProPublica\", \"local_file\": \"about.html\"}]",
+    "key_regions": "[\"Masthead with donation, menu and search controls; utility links\", \"Overlay markup containing topic directory and major-series navigation\", \"Homepage lead investigations, related reporting, biggest-story and topic groupings\", \"Democracy front: featured investigations, reporting impact and series groups\", \"Article headline/deck, contributors, read-more, republishing, related-topic and most-read groups\", \"Search results with filter heading and result list\", \"Newsletter email/list-selection form; about mission region\", \"Newsletter callout and grouped information, coverage, local, contact and support footer\"]",
+    "key_interactions": "[{\"name\": \"Topic navigation\", \"evidence\": \"observed\", \"notes\": \"Topic and series links in HTTP markup; fetched democracy topic page successfully.\"}, {\"name\": \"Search and filter affordances\", \"evidence\": \"observed\", \"notes\": \"GET ?s=climate returns results and Filter Results heading; filter application/runtime untested.\"}, {\"name\": \"Menu and search overlay\", \"evidence\": \"inferred\", \"notes\": \"Open navigation, close navigation and search button labels exist; opening, focus trapping and Escape handling not tested.\"}, {\"name\": \"Newsletter selection form\", \"evidence\": \"observed\", \"notes\": \"Email/list-choice form and external POST action exist; no submission performed.\"}, {\"name\": \"Newsletter simulation\", \"evidence\": \"inferred\", \"notes\": \"Future local validation and demo success would be simulation, not an observed successful subscription.\"}, {\"name\": \"Most-read list\", \"evidence\": \"observed\", \"notes\": \"Article contains Most Read heading; tab switching was not observed and is excluded.\"}]",
+    "complexity": "high",
+    "stack_clues": "wp-content and wp-json plus svelte-* class markers observed; consistent with WordPress content and Svelte UI portions, not proof of full architecture. parsely, googletag and gtm.js also present. Versions unknown.",
+    "limitations": "PROVISIONAL: reservation reconciliation and full-category approval pending. HTTP-only. No rendered, keyboard, filter-application, overlay, consent or submission verification. No paid subscription information mapped: nonprofit mission/about is inspected; donation transaction excluded. Embedded media, live data and external signup services not part of proposed implementation scope.",
+    "approved_at": "2026-11-12",
+    "approved_by": "Samhith Varma",
+    "approval_reference": "metadata/change-log.md § 2026-11-12 — Codex Phase A approval (slots 04–06)"
+  },
+  "category_inventory": [
+    {
+      "category": "news",
+      "slot": "01",
+      "source_id": "NEWS-01",
+      "model_group": "claude",
+      "model_id": "claude-sonnet-5-5",
+      "model_version": "",
+      "subcategory": "national daily newspaper. The Guardian is a UK national daily; I used its US edition, which has US-specific sections.",
+      "source_name": "The Guardian (US edition)",
+      "source_url": "https://www.theguardian.com/us",
+      "verified_at": "2026-11-10",
+      "verification_method": "HTTP GET via curl (no browser rendering)",
+      "verification_result": "verified",
+      "evidence_reference": "pipelines/claude/research/NEWS.md#news-01",
+      "source_pages": "[{\"url\": \"https://www.theguardian.com/us\", \"title\": \"Latest news, sport and opinion from the Guardian\", \"local_file\": \"index.html\"}, {\"url\": \"https://www.theguardian.com/us-news\", \"title\": \"US news from the Guardian | The Guardian\", \"local_file\": \"us-news.html\"}, {\"url\": \"https://www.theguardian.com/us-news/us-politics\", \"title\": \"US politics | The Guardian\", \"local_file\": \"us-politics.html\"}, {\"url\": \"https://www.theguardian.com/world\", \"title\": \"Latest news from around the world | The Guardian\", \"local_file\": \"world.html\"}, {\"url\": \"https://www.theguardian.com/us/business\", \"title\": \"Business and finance news from Guardian US | The Guardian\", \"local_file\": \"business.html\"}, {\"url\": \"https://www.theguardian.com/us/technology\", \"title\": \"Technology news, features and analysis from Guardian US | The Guardian\", \"local_file\": \"technology.html\"}, {\"url\": \"https://www.theguardian.com/us/sport\", \"title\": \"Sports news, scores, analysis and opinion from the Guardian US | The Guardian\", \"local_file\": \"sport.html\"}, {\"url\": \"https://www.theguardian.com/us/culture\", \"title\": \"Arts and entertainment news from Guardian US | The Guardian\", \"local_file\": \"culture.html\"}, {\"url\": \"https://www.theguardian.com/email-newsletters\", \"title\": \"Guardian newsletters: Sign up for our free newsletters\", \"local_file\": \"email-newsletters.html\"}, {\"url\": \"https://www.theguardian.com/us/podcasts\", \"title\": \"Podcasts | The Guardian\", \"local_file\": \"podcasts.html\"}, {\"url\": \"https://www.theguardian.com/crosswords\", \"title\": \"Crosswords | Online and free | The Guardian\", \"local_file\": \"crosswords.html\"}, {\"url\": \"https://www.theguardian.com/us-news/2026/nov/09/citizen-shot-ice-officer-lawsuit-california\", \"title\": \"US citizen shot by ICE officer near children's bus stop sues government for $25m | ICE (US Immigration and Customs Enforcement) | The Guardian\", \"local_file\": \"citizen-shot-ice-officer-lawsuit-california.html\"}]",
+      "key_regions": "[\"(observed in HTML):\", \"Top bar: \\\"Print subscriptions\\\", \\\"Newsletters\\\", sign-in.\", \"Search form (`id=gu-search-desktop` and `gu-search-mobile`, posts to google.co.uk/search).\", \"Primary nav in `<nav>` (`id=navigation`), toggled by a hidden checkbox (`header-nav-input-checkbox`), with an expanded menu (`header-expanded-menu`, `nav-menu-columns`).\", \"Nav structure:\", \"Five expandable groups (News, Opinion, Sport, Culture, Lifestyle), each with a \\\"View all …\\\" link.\", \"News: US news, US politics, World news, Ukraine, Middle East, US immigration, Environment, Climate crisis, Science, Tech, Business, Money, Midterms 2026.\", \"Opinion: The Guardian view, Columnists, Cartoons, Opinion videos, Letters.\", \"Sport: Soccer, NFL, NBA, MLB, MLS, NHL, WNBA, F1, Tennis, Golf.\", \"Culture: Film, Music, Books, Art & design, TV & radio, Stage, Classical, Games.\", \"Lifestyle: Wellness, Fashion, Food, Recipes, Travel, Health & fitness, Love & sex, Family, Home & garden, The Filter.\", \"Secondary links: Newsletters, Podcasts, Pictures, Video, Crosswords, Wordiply, Corrections, Tips, Digital Archive, About Us, Support us, Download the app, Guardian Weekly, Live events.\"]",
+      "key_interactions": "[{\"name\": \"in markup: nav toggle checkbox, \\\"Hide\\\" buttons per front section, caro\", \"evidence\": \"observed\", \"notes\": \"in markup: nav toggle checkbox, \\\"Hide\\\" buttons per front section, carousels with navigation, search form, newsletter signup, comment-count links, rich-link related cards, a \\\"Most viewed\\\" list, and a print-subscription / support prompt.\"}, {\"name\": \"expand/collapse of nav columns, a \\\"most viewed\\\" tabbed switch, and the\", \"evidence\": \"inferred\", \"notes\": \"expand/collapse of nav columns, a \\\"most viewed\\\" tabbed switch, and the signup and subscription flows. These should be simulation only.\"}]",
+      "complexity": "high",
+      "stack_clues": "The Guardian's open-source frontend (\"DCR\") is visible in the markup: `gu-island` custom elements (141 occurrences) and `dcr-*` hashed class names. This looks like server-rendered HTML with hydrated islands (inferred), plus inline `DOMContentLoaded` script for the nav checkbox.",
+      "limitations": "- `/us/video` and `/info/about-guardian` returned 404, and `/us/lifestyle` returned 404 (the real path is `/lifeandstyle`).",
+      "approved_at": "2026-11-13",
+      "approved_by": "Samhith Varma",
+      "approval_reference": "pipelines/claude/research/approval-2026-11-13.md"
+    },
+    {
+      "category": "news",
+      "slot": "02",
+      "source_id": "NEWS-02",
+      "model_group": "claude",
+      "model_id": "claude-sonnet-5-5",
+      "model_version": "",
+      "subcategory": "local-regional news outlet (metro daily, Chicago area)",
+      "source_name": "Chicago Tribune",
+      "source_url": "https://www.chicagotribune.com/",
+      "verified_at": "2026-11-10",
+      "verification_method": "HTTP GET via curl (no browser rendering)",
+      "verification_result": "verified",
+      "evidence_reference": "pipelines/claude/research/NEWS.md#news-02",
+      "source_pages": "[{\"url\": \"https://www.chicagotribune.com/\", \"title\": \"Chicago Tribune - Chicago News, Sports, Weather, Business & Things to Do\", \"local_file\": \"index.html\"}, {\"url\": \"https://www.chicagotribune.com/news/\", \"title\": \"Chicago News - Chicago Tribune\", \"local_file\": \"news.html\"}, {\"url\": \"https://www.chicagotribune.com/local-news/\", \"title\": \"Local News – Chicago Tribune\", \"local_file\": \"local-news.html\"}, {\"url\": \"https://www.chicagotribune.com/latest-headlines/\", \"title\": \"Latest Headlines – Chicago Tribune\", \"local_file\": \"latest-headlines.html\"}, {\"url\": \"https://www.chicagotribune.com/news/politics/\", \"title\": \"Politics\", \"local_file\": \"politics.html\"}, {\"url\": \"https://www.chicagotribune.com/business/\", \"title\": \"Business - Chicago Tribune\", \"local_file\": \"business.html\"}, {\"url\": \"https://www.chicagotribune.com/sports/\", \"title\": \"Chicago Sports News, Schedules and Scores\", \"local_file\": \"sports.html\"}, {\"url\": \"https://www.chicagotribune.com/opinion/\", \"title\": \"Opinion\", \"local_file\": \"opinion.html\"}, {\"url\": \"https://www.chicagotribune.com/things-to-do/\", \"title\": \"Things to do in and around Chicago\", \"local_file\": \"things-to-do.html\"}, {\"url\": \"https://www.chicagotribune.com/suburbs/\", \"title\": \"Chicago Tribune: Suburban coverage areas\", \"local_file\": \"suburbs.html\"}, {\"url\": \"https://www.chicagotribune.com/obituaries/\", \"title\": \"Chicago Tribune Obituaries\", \"local_file\": \"obituaries.html\"}, {\"url\": \"https://www.chicagotribune.com/news/weather/\", \"title\": \"Weather – Chicago Tribune\", \"local_file\": \"weather.html\"}, {\"url\": \"https://www.chicagotribune.com/?s=chicago\", \"title\": \"Search Results for\", \"local_file\": \"index-2.html\"}, {\"url\": \"https://www.chicagotribune.com/2026/11/09/wgn-tonya-francisco-bronzeville/\", \"title\": \"WGN's Tonya Francisco sells Bronzeville mansion for $645,000\", \"local_file\": \"wgn-tonya-francisco-bronzeville.html\"}]",
+      "key_regions": "[\"(observed in HTML):\", \"Subscribe button (`id=mega-subscribe-button`).\", \"AccuWeather link showing the current temperature (live in the real site; the replica must use labeled static sample data).\", \"Subscriber Services dropdown: Manage Subscription, EZ Pay, Vacation Stop, Delivery Issue.\", \"\\\"Today's E-Editions\\\" link.\", \"Search form (`id=search-bar`, GET to `/` with `?s=`).\", \"Push-nav menu (`id=pushnav`, `menu-toggle`) and a digital-subscription menu (`dfm-digisubs-menu`).\", \"Nav structure:\", \"News: Latest Headlines, Local News, Crime and Public Safety, Education, Environment, Health, Immigration, Marijuana, National, Science, World, Weather, Politics, Investigations, History.\", \"Business: Real Estate, Transportation, Careers & Finance, Top Workplaces.\", \"Sports: College Sports, Soccer.\", \"Opinion: Editorials, Commentary, Letters, Tribune Voices.\"]",
+      "key_interactions": "[{\"name\": \"in markup: search form GET (results page rendered), push-nav toggle, s\", \"evidence\": \"observed\", \"notes\": \"in markup: search form GET (results page rendered), push-nav toggle, subscriber-services dropdown, newsletter signup blocks, share buttons, breadcrumbs, and a \\\"Most Popular\\\" list.\"}, {\"name\": \"a Latest/Most-read tab switch (only the \\\"Most Popular\\\" list was observ\", \"evidence\": \"inferred\", \"notes\": \"a Latest/Most-read tab switch (only the \\\"Most Popular\\\" list was observed), and the newsletter and subscribe flows. These should be simulation only.\"}]",
+      "complexity": "medium",
+      "stack_clues": "WordPress. `wp-content` appears 241 times, there are `wp-json` and `wordpress` references, and `tribpub` assets. Third-party scripts: Parse.ly (`cdn.parsely.com`), Sophi (`cdn.sophi.io`), `googletag`, Sailthru newsletter script (`id=mng-newsletters-sailthru-scout-js`), and an AccuWeather link.",
+      "limitations": "- The article page returned 200, but I didn't check whether a paywall appears for non-subscribers.",
+      "approved_at": "2026-11-13",
+      "approved_by": "Samhith Varma",
+      "approval_reference": "pipelines/claude/research/approval-2026-11-13.md"
+    },
+    {
+      "category": "news",
+      "slot": "03",
+      "source_id": "NEWS-03",
+      "model_group": "claude",
+      "model_id": "claude-sonnet-5-5",
+      "model_version": "",
+      "subcategory": "public broadcaster",
+      "source_name": "NPR",
+      "source_url": "https://www.npr.org/",
+      "verified_at": "2026-11-10",
+      "verification_method": "HTTP GET via curl (no browser rendering)",
+      "verification_result": "verified",
+      "evidence_reference": "pipelines/claude/research/NEWS.md#news-03",
+      "source_pages": "[{\"url\": \"https://www.npr.org/\", \"title\": \"NPR - Breaking News, Analysis, Music, Arts & Podcasts : NPR\", \"local_file\": \"index.html\"}, {\"url\": \"https://www.npr.org/sections/news/\", \"title\": \"News: U.S. and World News Headlines : NPR\", \"local_file\": \"news.html\"}, {\"url\": \"https://www.npr.org/sections/national/\", \"title\": \"U.S. News and National Top Stories : NPR\", \"local_file\": \"national.html\"}, {\"url\": \"https://www.npr.org/sections/politics/\", \"title\": \"Politics : NPR\", \"local_file\": \"politics.html\"}, {\"url\": \"https://www.npr.org/sections/health/\", \"title\": \"Health : NPR\", \"local_file\": \"health.html\"}, {\"url\": \"https://www.npr.org/sections/climate/\", \"title\": \"Climate : NPR\", \"local_file\": \"climate.html\"}, {\"url\": \"https://www.npr.org/sections/culture/\", \"title\": \"Culture : NPR\", \"local_file\": \"culture.html\"}, {\"url\": \"https://www.npr.org/music/\", \"title\": \"NPR Music: Tiny Desk, New Music and Music News : NPR\", \"local_file\": \"music.html\"}, {\"url\": \"https://www.npr.org/podcasts-and-shows/\", \"title\": \"NPR Podcasts & Shows : NPR\", \"local_file\": \"podcasts-and-shows.html\"}, {\"url\": \"https://www.npr.org/programs/morning-edition/\", \"title\": \"Morning Edition : NPR\", \"local_file\": \"morning-edition.html\"}, {\"url\": \"https://www.npr.org/programs/all-things-considered/\", \"title\": \"All Things Considered : NPR\", \"local_file\": \"all-things-considered.html\"}, {\"url\": \"https://www.npr.org/newsletters/\", \"title\": \"NPR Newsletters : NPR\", \"local_file\": \"newsletters.html\"}, {\"url\": \"https://www.npr.org/about/\", \"title\": \"About NPR : NPR\", \"local_file\": \"about.html\"}, {\"url\": \"https://www.npr.org/search/?query=climate\", \"title\": \"NPR Search : NPR\", \"local_file\": \"search.html\"}, {\"url\": \"https://www.npr.org/2026/11/09/g-s1-151625/california-billionaire-tax-referendum\", \"title\": \"California voters defeat billionaire tax proposal : NPR\", \"local_file\": \"california-billionaire-tax-referendum.html\"}, {\"url\": \"https://www.npr.org/2026/11/09/nx-s1-6034945/will-secretary-pete-hegseth-pay-the-price-for-the-iran-war\", \"title\": \"Will Secretary Pete Hegseth pay the price for the Iran war? : Consider This from NPR : NPR\", \"local_file\": \"will-secretary-pete-hegseth-pay-the-price-for-the-iran-war.html\"}]",
+      "key_regions": "[\"(observed in HTML):\", \"Main menu (`id=main-menu`) with a mobile toggle (`navigation__toggle--open` and `--close`), search icon and dropdown (`navigation_dropdown-search`), a station-picker mount (`navigation__station-mount`) and a donate mount\", \"Four top items have submenus (`menu__toggle-submenu`): News, Culture, Music, Podcasts & Shows. The News submenu contains National, World, Politics, Business, Elections, Health, Science, Climate and Race. The Culture subm\", \"Top-level links: Newsletters, About NPR, Press.\", \"Hero and body:\", \"Lead story with a WATCH video promo (Tiny Desk) and a vertical video playlist with previous/next buttons.\", \"Story cards carrying \\\"Listen\\\" audio modules (`audio-module-listen`, with play icon and duration; 23 on the home page).\", \"Section blocks such as Congress, Politics, Book News & Features, Only on NPR, Elections and National.\", \"A player shelf (`id=player-shelf…`).\", \"Article page:\", \"Story title (`storytitle`) and byline (`id=storybyline`), a story-meta block that holds the date, share tools (`share-tools__service-name`), topic tags (`class=tags`), a toggle caption, and an audio-module for audio stor\", \"Footer** (`id=npr-footer`, 4 modules):\"]",
+      "key_interactions": "[{\"name\": \"in markup: submenu toggles, search dropdown, station picker and donate\", \"evidence\": \"observed\", \"notes\": \"in markup: submenu toggles, search dropdown, station picker and donate mounts, audio \\\"Listen\\\" buttons, video playlist previous/next, share tools, toggle captions, and a newsletter page.\"}, {\"name\": \"station selection (the mount points exist but are empty in the server \", \"evidence\": \"inferred\", \"notes\": \"station selection (the mount points exist but are empty in the server HTML), playback behavior (audio modules have `--no-js` fallback classes), and the search results listing. Donate, subscribe and player controls should be simulated only.\"}]",
+      "complexity": "high",
+      "stack_clues": "Server-rendered HTML with progressive enhancement; webpack bundles (8 references), and GTM (Google Tag Manager) references. Any specific framework is unknown.",
+      "limitations": "- The search page's results markup wasn't found in the static HTML, so the results list is likely client-rendered. Replicate it with static sample results. Complexity recorded in research as 'Medium-high'; normalized to 'high' for this field.",
+      "approved_at": "2026-11-13",
+      "approved_by": "Samhith Varma",
+      "approval_reference": "pipelines/claude/research/approval-2026-11-13.md"
+    },
+    {
+      "category": "news",
+      "slot": "04",
+      "source_id": "NEWS-04",
+      "model_group": "codex",
+      "model_id": "gpt-6.1-sol",
+      "model_version": "",
+      "subcategory": "national daily newspaper",
+      "source_name": "The Japan Times",
+      "source_url": "https://www.japantimes.co.jp/",
+      "verified_at": "2026-11-12T00:54:46.018907+00:00",
+      "verification_method": "Live web search; web extracted-text home opens; direct Python urllib HTTPS GET (HTTP-only; no browser/JS interaction testing)",
+      "verification_result": "verified",
+      "evidence_reference": "pipelines/codex/research/NEWS.md",
+      "source_pages": "[{\"url\": \"https://www.japantimes.co.jp/\", \"title\": \"The Japan Times - News On Japan, Business News, Opinion, Sports, Entertainment And More\", \"local_file\": \"index.html\"}, {\"url\": \"https://www.japantimes.co.jp/news/japan/\", \"title\": \"Japan - News - The Japan Times\", \"local_file\": \"japan.html\"}, {\"url\": \"https://www.japantimes.co.jp/news/2026/11/11/japan/politics/koizumi-obuchi-ldp/\", \"title\": \"Amid concerns over internal opposition within LDP, Koizumi pledges support for Takaichi - The Japan Times\", \"local_file\": \"article.html\"}, {\"url\": \"https://www.japantimes.co.jp/email-newsletters/\", \"title\": \"Email Newsletters - The Japan Times\", \"local_file\": \"newsletters.html\"}, {\"url\": \"https://www.japantimes.co.jp/about-us/\", \"title\": \"About Us - The Japan Times\", \"local_file\": \"about.html\"}]",
+      "key_regions": "[\"Homepage masthead and duplicated desktop/mobile search forms; topic navigation\", \"Lead news and More coverage; Japan, Business, World, Sports and Opinion bands\", \"Culture, Life, Community, Editors Picks, Podcast and Longform bands\", \"Japan section: Politics, Society, Crime & Legal, Science & Health, Explainer and History groups\", \"Article title and editorial content region; common supplementary-content groups\", \"Newsletter directory: daily updates, curated digest, alerts and offers; about page\", \"Supplement, directory and footer link groups\"]",
+      "key_interactions": "[{\"name\": \"Section navigation\", \"evidence\": \"observed\", \"notes\": \"Anchors and section-front headings exist in HTTP HTML; clicks and responsive behavior untested.\"}, {\"name\": \"Search form\", \"evidence\": \"observed\", \"notes\": \"GET /search with query input exists; attempted climate results URL returned HTTP 403 challenge.\"}, {\"name\": \"Newsletter enrollment\", \"evidence\": \"inferred\", \"notes\": \"Directory returned 200; enrollment completion and dynamic controls untested. Any later local enrollment must be labeled simulation.\"}]",
+      "complexity": "high",
+      "stack_clues": "wp-content, piano, googletag and gtm.js string markers observed; specific CMS/framework and payment implementation unknown. Markers alone do not establish current architecture.",
+      "limitations": "PROVISIONAL: reservation reconciliation and full-category approval pending. HTTP-only. Web search open returned 402 while direct urllib homepage GET returned 200. Search returned 403 Just a moment challenge. Newsletter submission, paywall, consent, menu expansion and responsive layout untested. Invalid-path probe resolved to home with 200; no source 404 template confirmed. Subscription information page not inspected; omit from proposed scope.",
+      "approved_at": "2026-11-12",
+      "approved_by": "Samhith Varma",
+      "approval_reference": "metadata/change-log.md § 2026-11-12 — Codex Phase A approval (slots 04–06)"
+    },
+    {
+      "category": "news",
+      "slot": "05",
+      "source_id": "NEWS-05",
+      "model_group": "codex",
+      "model_id": "gpt-6.1-sol",
+      "model_version": "",
+      "subcategory": "local/regional newsroom",
+      "source_name": "Cardinal News",
+      "source_url": "https://cardinalnews.org/",
+      "verified_at": "2026-11-12T00:54:46.019250+00:00",
+      "verification_method": "Live web search; web extracted-text home opens; direct Python urllib HTTPS GET (HTTP-only; no browser/JS interaction testing)",
+      "verification_result": "verified",
+      "evidence_reference": "pipelines/codex/research/NEWS.md",
+      "source_pages": "[{\"url\": \"https://cardinalnews.org/\", \"title\": \"Cardinal News | Virginia news, politics, weather and sports\", \"local_file\": \"index.html\"}, {\"url\": \"https://cardinalnews.org/category/politics/\", \"title\": \"Politics - Cardinal News\", \"local_file\": \"politics.html\"}, {\"url\": \"https://cardinalnews.org/2026/11/11/lawsuit-over-botetourt-county-data-center-project-can-move-forward-judge-rules/\", \"title\": \"Lawsuit over Botetourt County data center project can move forward, judge rules - Cardinal News\", \"local_file\": \"article.html\"}, {\"url\": \"https://cardinalnews.org/?s=housing\", \"title\": \"You searched for housing - Cardinal News\", \"local_file\": \"search.html\"}, {\"url\": \"https://cardinalnews.org/sign-up-for-updates/\", \"title\": \"Sign up for Cardinal News newsletters - Cardinal News\", \"local_file\": \"newsletters.html\"}, {\"url\": \"https://cardinalnews.org/about-us/\", \"title\": \"About us - Cardinal News\", \"local_file\": \"about.html\"}, {\"url\": \"https://cardinalnews.org/frequently-asked-questions/\", \"title\": \"Frequently Asked Questions - Cardinal News\", \"local_file\": \"faq.html\"}]",
+      "key_regions": "[\"Masthead with regional coverage strapline; donation, newsletter and sign-in utility links\", \"Local geography navigation and nested topic/project navigation; search forms\", \"Latest stories followed by Roanoke, New River Valley, Lynchburg, Southwest, Danville and Martinsville groups\", \"Politics archive with article listing\", \"Article heading, share region, related stories, author and post navigation; popular-story region\", \"Search results heading and Nothing Found empty state\", \"Newsletter signup form; organizational about/annual-report material; FAQ table of contents\", \"Footer topic/about/member groups and sign-in/verification markup\"]",
+      "key_interactions": "[{\"name\": \"Section navigation\", \"evidence\": \"observed\", \"notes\": \"HTTP anchors expose regional and topic hierarchy; expanded-menu runtime untested.\"}, {\"name\": \"Local article search affordance and empty state\", \"evidence\": \"observed\", \"notes\": \"GET form uses s; direct ?s=housing response had Search results and Nothing Found. Positive results behavior not verified.\"}, {\"name\": \"Newsletter form\", \"evidence\": \"observed\", \"notes\": \"Newsletter endpoint exposes Newspack signup form and email control; no POST performed.\"}, {\"name\": \"Newsletter demo success\", \"evidence\": \"inferred\", \"notes\": \"Future local validation/success state would simulate enrollment; no source success state observed.\"}, {\"name\": \"Menu disclosure\", \"evidence\": \"inferred\", \"notes\": \"Menu/search controls and duplicated navigation markup indicate disclosure; no browser toggle executed.\"}]",
+      "complexity": "medium",
+      "stack_clues": "wp-content, wp-json and newspack markers observed, consistent with WordPress/Newspack; parsely, googletag and gtm.js markers. Exact deployed versions unknown.",
+      "limitations": "PROVISIONAL: reservation reconciliation and full-category approval pending. HTTP-only. Search query housing returned Nothing Found despite housing headlines on home; cause unknown, so do not claim search works correctly. Form submission, sign-in, donation, menus, consent and responsive behavior untested. FAQ describes free access; no paid subscription-information flow proposed. Most-popular list exists in article headings; no latest/most-read tab switch observed.",
+      "approved_at": "2026-11-12",
+      "approved_by": "Samhith Varma",
+      "approval_reference": "metadata/change-log.md § 2026-11-12 — Codex Phase A approval (slots 04–06)"
+    },
+    {
+      "category": "news",
+      "slot": "06",
+      "source_id": "NEWS-06",
+      "model_group": "codex",
+      "model_id": "gpt-6.1-sol",
+      "model_version": "",
+      "subcategory": "public broadcaster or nonprofit newsroom",
+      "source_name": "ProPublica",
+      "source_url": "https://www.propublica.org/",
+      "verified_at": "2026-11-12T00:54:46.019327+00:00",
+      "verification_method": "Live web search; web extracted-text home opens; direct Python urllib HTTPS GET (HTTP-only; no browser/JS interaction testing)",
+      "verification_result": "verified",
+      "evidence_reference": "pipelines/codex/research/NEWS.md",
+      "source_pages": "[{\"url\": \"https://www.propublica.org/\", \"title\": \"ProPublica — Investigative Journalism and News in the Public Interest\", \"local_file\": \"index.html\"}, {\"url\": \"https://www.propublica.org/topics/democracy\", \"title\": \"Investigative Reporting on Democracy — ProPublica\", \"local_file\": \"democracy.html\"}, {\"url\": \"https://www.propublica.org/article/election-challenge-forsyth-county-georgia\", \"title\": \"Election Deniers Are Using a Faulty Tool to Challenge Midterm Ballots — ProPublica\", \"local_file\": \"article.html\"}, {\"url\": \"https://www.propublica.org/?s=climate\", \"title\": \"You searched for climate — ProPublica\", \"local_file\": \"search.html\"}, {\"url\": \"https://www.propublica.org/newsletters\", \"title\": \"Email Newsletters — ProPublica\", \"local_file\": \"newsletters.html\"}, {\"url\": \"https://www.propublica.org/about\", \"title\": \"About Us — ProPublica\", \"local_file\": \"about.html\"}]",
+      "key_regions": "[\"Masthead with donation, menu and search controls; utility links\", \"Overlay markup containing topic directory and major-series navigation\", \"Homepage lead investigations, related reporting, biggest-story and topic groupings\", \"Democracy front: featured investigations, reporting impact and series groups\", \"Article headline/deck, contributors, read-more, republishing, related-topic and most-read groups\", \"Search results with filter heading and result list\", \"Newsletter email/list-selection form; about mission region\", \"Newsletter callout and grouped information, coverage, local, contact and support footer\"]",
+      "key_interactions": "[{\"name\": \"Topic navigation\", \"evidence\": \"observed\", \"notes\": \"Topic and series links in HTTP markup; fetched democracy topic page successfully.\"}, {\"name\": \"Search and filter affordances\", \"evidence\": \"observed\", \"notes\": \"GET ?s=climate returns results and Filter Results heading; filter application/runtime untested.\"}, {\"name\": \"Menu and search overlay\", \"evidence\": \"inferred\", \"notes\": \"Open navigation, close navigation and search button labels exist; opening, focus trapping and Escape handling not tested.\"}, {\"name\": \"Newsletter selection form\", \"evidence\": \"observed\", \"notes\": \"Email/list-choice form and external POST action exist; no submission performed.\"}, {\"name\": \"Newsletter simulation\", \"evidence\": \"inferred\", \"notes\": \"Future local validation and demo success would be simulation, not an observed successful subscription.\"}, {\"name\": \"Most-read list\", \"evidence\": \"observed\", \"notes\": \"Article contains Most Read heading; tab switching was not observed and is excluded.\"}]",
+      "complexity": "high",
+      "stack_clues": "wp-content and wp-json plus svelte-* class markers observed; consistent with WordPress content and Svelte UI portions, not proof of full architecture. parsely, googletag and gtm.js also present. Versions unknown.",
+      "limitations": "PROVISIONAL: reservation reconciliation and full-category approval pending. HTTP-only. No rendered, keyboard, filter-application, overlay, consent or submission verification. No paid subscription information mapped: nonprofit mission/about is inspected; donation transaction excluded. Embedded media, live data and external signup services not part of proposed implementation scope.",
+      "approved_at": "2026-11-12",
+      "approved_by": "Samhith Varma",
+      "approval_reference": "metadata/change-log.md § 2026-11-12 — Codex Phase A approval (slots 04–06)"
+    },
+    {
+      "category": "news",
+      "slot": "07",
+      "source_id": "NEWS-07",
+      "model_group": "open-source",
+      "model_id": "",
+      "model_version": "",
+      "subcategory": "",
+      "source_name": "",
+      "source_url": "",
+      "verified_at": "",
+      "verification_method": "",
+      "verification_result": "",
+      "evidence_reference": "",
+      "source_pages": "",
+      "key_regions": "",
+      "key_interactions": "",
+      "complexity": "",
+      "stack_clues": "",
+      "limitations": "",
+      "approved_at": "",
+      "approved_by": "",
+      "approval_reference": ""
+    },
+    {
+      "category": "news",
+      "slot": "08",
+      "source_id": "NEWS-08",
+      "model_group": "open-source",
+      "model_id": "",
+      "model_version": "",
+      "subcategory": "",
+      "source_name": "",
+      "source_url": "",
+      "verified_at": "",
+      "verification_method": "",
+      "verification_result": "",
+      "evidence_reference": "",
+      "source_pages": "",
+      "key_regions": "",
+      "key_interactions": "",
+      "complexity": "",
+      "stack_clues": "",
+      "limitations": "",
+      "approved_at": "",
+      "approved_by": "",
+      "approval_reference": ""
+    },
+    {
+      "category": "news",
+      "slot": "09",
+      "source_id": "NEWS-09",
+      "model_group": "open-source",
+      "model_id": "",
+      "model_version": "",
+      "subcategory": "",
+      "source_name": "",
+      "source_url": "",
+      "verified_at": "",
+      "verification_method": "",
+      "verification_result": "",
+      "evidence_reference": "",
+      "source_pages": "",
+      "key_regions": "",
+      "key_interactions": "",
+      "complexity": "",
+      "stack_clues": "",
+      "limitations": "",
+      "approved_at": "",
+      "approved_by": "",
+      "approval_reference": ""
+    },
+    {
+      "category": "news",
+      "slot": "10",
+      "source_id": "NEWS-10",
+      "model_group": "open-source",
+      "model_id": "",
+      "model_version": "",
+      "subcategory": "",
+      "source_name": "",
+      "source_url": "",
+      "verified_at": "",
+      "verification_method": "",
+      "verification_result": "",
+      "evidence_reference": "",
+      "source_pages": "",
+      "key_regions": "",
+      "key_interactions": "",
+      "complexity": "",
+      "stack_clues": "",
+      "limitations": "",
+      "approved_at": "",
+      "approved_by": "",
+      "approval_reference": ""
+    }
+  ],
+  "protocol_snapshots": [
+    {
+      "path": "Rules.md",
+      "sha256": "04b1c3e38b76f2aff3aef869d67370bb4532cd8f9ab5e22ac8276f26cbb859bf"
+    },
+    {
+      "path": "MODEL_ALLOCATION.md",
+      "sha256": "dba261a89763c22a6c41fc6b066593345aef7871121cef52ff7b73ff88cce3cd"
+    },
+    {
+      "path": "pipelines/codex/config.json",
+      "sha256": "b16751854f14ec50f9e8e8726e4ab0c064503f1ebdea6d71ba7e1faf85ed6d95"
+    },
+    {
+      "path": "pipelines/codex/categories.json",
+      "sha256": "843ea7d8d1cc7d01385643f848408dea32997985422496d98e8f108bbc09a333"
+    },
+    {
+      "path": "pipelines/codex/prompts/build.md",
+      "sha256": "37567f6a4198f7539b11964980cf814a7b8c0732f926dfe9aa6f86849dd2277c"
+    },
+    {
+      "path": "metadata/source-inventories/news.csv",
+      "sha256": "be25d72b221ef9e0a418f4e5958e6468a882224cbb3fb03a2aefa011a0d37550"
+    },
+    {
+      "path": "metadata/assignments.csv",
+      "sha256": "6286f19d1e1559304a45e23c9d2852fb05fe0753e288d7b46affcd49b1ac6a20"
+    }
+  ],
+  "prepared_at": "2026-11-13T21:13:32.998Z",
+  "task_is_execution": false
+}
+```

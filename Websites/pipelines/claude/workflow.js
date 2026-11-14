@@ -25,6 +25,10 @@ const cats = [
     hints: "mission/about, programs, donate flow with amount selector and frequency (simulation only), volunteer signup form, events, impact stats, news/stories, find-a-local-chapter or location search" },
   { dir: "church", prefix: "CHUR", name: "Church", strata: ["large or multi-site church", "historic cathedral or parish", "small community congregation"],
     hints: "plan-a-visit, service times, sermons/media archive with filter and search, events calendar, ministries/groups finder, online giving (simulation only), prayer-request form, beliefs/about, staff/leadership" },
+  { dir: "portfolio", prefix: "PORT", name: "Portfolio (Personal & Creative)", strata: ["minimal one-page personal site", "software developer / engineer", "motion / 3D designer"],
+    hints: "work/project index with filtering on inline data, project detail or case study, about/bio, services or process, writing or journal, contact-inquiry form (simulated), gallery or lightbox navigation; honor prefers-reduced-motion wherever the reference animates; placeholder imagery only" },
+  { dir: "restaurant", prefix: "REST", name: "Restaurant & Food Service", strata: ["small local independent", "BBQ / smokehouse", "fine dining"],
+    hints: "menu index and menu detail on inline data with dietary filtering, reservation-request form (simulation only), about/story, locations or visit with hours and an open/closed indicator, private-events or catering inquiry, news/journal, newsletter signup; online ordering, delivery, payment and gift cards are simulation only" },
 ];
 
 const want = args.prefixes;

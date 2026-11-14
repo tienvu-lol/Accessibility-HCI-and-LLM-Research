@@ -1,0 +1,698 @@
+{
+  "protocol_version": "1.0",
+  "replica_id": "UNI-06",
+  "category": "university",
+  "source_url": "https://www.waketech.edu/",
+  "components": [
+    {
+      "id": "breadcrumb",
+      "selector": "[data-component=\"breadcrumb\"]",
+      "pages": [
+        "404.html",
+        "admissions.html",
+        "program-detail.html",
+        "programs.html",
+        "tuition.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "section": "breadcrumb-navigation"
+        },
+        {
+          "page": "admissions.html",
+          "section": "breadcrumb-navigation"
+        },
+        {
+          "page": "program-detail.html",
+          "section": "breadcrumb-navigation"
+        },
+        {
+          "page": "programs.html",
+          "section": "breadcrumb-navigation"
+        },
+        {
+          "page": "tuition.html",
+          "section": "breadcrumb-navigation"
+        }
+      ],
+      "behavior": [
+        "native links and structured content"
+      ],
+      "keyboard": [
+        "Tab and Enter on links; native reading order"
+      ],
+      "status": "implemented",
+      "validation": "source instrumentation checked; header handler logic passed in Node VM; browser/axe not-tested (environmental launch block)"
+    },
+    {
+      "id": "call-to-action",
+      "selector": "[data-component=\"call-to-action\"]",
+      "pages": [
+        "404.html",
+        "index.html",
+        "program-detail.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "section": "not-found"
+        },
+        {
+          "page": "index.html",
+          "section": "planning-next-step"
+        },
+        {
+          "page": "program-detail.html",
+          "section": "program-next-step"
+        }
+      ],
+      "behavior": [
+        "native links and structured content"
+      ],
+      "keyboard": [
+        "Tab and Enter on links; native reading order"
+      ],
+      "status": "implemented",
+      "validation": "source instrumentation checked; header handler logic passed in Node VM; browser/axe not-tested (environmental launch block)"
+    },
+    {
+      "id": "career-field-card",
+      "selector": "[data-component=\"career-field-card\"]",
+      "pages": [
+        "index.html"
+      ],
+      "instances": [
+        {
+          "page": "index.html",
+          "section": null
+        },
+        {
+          "page": "index.html",
+          "section": null
+        },
+        {
+          "page": "index.html",
+          "section": null
+        },
+        {
+          "page": "index.html",
+          "section": null
+        },
+        {
+          "page": "index.html",
+          "section": null
+        },
+        {
+          "page": "index.html",
+          "section": null
+        }
+      ],
+      "behavior": [
+        "native links and structured content"
+      ],
+      "keyboard": [
+        "Tab and Enter on links; native reading order"
+      ],
+      "status": "implemented",
+      "validation": "source instrumentation checked; header handler logic passed in Node VM; browser/axe not-tested (environmental launch block)"
+    },
+    {
+      "id": "career-field-grid",
+      "selector": "[data-component=\"career-field-grid\"]",
+      "pages": [
+        "index.html"
+      ],
+      "instances": [
+        {
+          "page": "index.html",
+          "section": "career-fields"
+        }
+      ],
+      "behavior": [
+        "native links and structured content"
+      ],
+      "keyboard": [
+        "Tab and Enter on links; native reading order"
+      ],
+      "status": "implemented",
+      "validation": "source instrumentation checked; header handler logic passed in Node VM; browser/axe not-tested (environmental launch block)"
+    },
+    {
+      "id": "content-article",
+      "selector": "[data-component=\"content-article\"]",
+      "pages": [
+        "program-detail.html",
+        "tuition.html"
+      ],
+      "instances": [
+        {
+          "page": "program-detail.html",
+          "section": "program-content"
+        },
+        {
+          "page": "tuition.html",
+          "section": "tuition-content"
+        }
+      ],
+      "behavior": [
+        "native links and structured content"
+      ],
+      "keyboard": [
+        "Tab and Enter on links; native reading order"
+      ],
+      "status": "implemented",
+      "validation": "source instrumentation checked; header handler logic passed in Node VM; browser/axe not-tested (environmental launch block)"
+    },
+    {
+      "id": "credential-table",
+      "selector": "[data-component=\"credential-table\"]",
+      "pages": [
+        "programs.html",
+        "tuition.html"
+      ],
+      "instances": [
+        {
+          "page": "programs.html",
+          "section": "business-programs"
+        },
+        {
+          "page": "programs.html",
+          "section": "engineering-programs"
+        },
+        {
+          "page": "programs.html",
+          "section": "health-programs"
+        },
+        {
+          "page": "programs.html",
+          "section": "digital-programs"
+        },
+        {
+          "page": "programs.html",
+          "section": "arts-programs"
+        },
+        {
+          "page": "programs.html",
+          "section": "transfer-programs"
+        },
+        {
+          "page": "tuition.html",
+          "section": "tuition-rates"
+        },
+        {
+          "page": "tuition.html",
+          "section": "payment-deadlines"
+        }
+      ],
+      "behavior": [
+        "native links and structured content"
+      ],
+      "keyboard": [
+        "Tab and Enter on links; native reading order"
+      ],
+      "status": "implemented",
+      "validation": "source instrumentation checked; header handler logic passed in Node VM; browser/axe not-tested (environmental launch block)"
+    },
+    {
+      "id": "demo-notice",
+      "selector": "[data-component=\"demo-notice\"]",
+      "pages": [
+        "admissions.html",
+        "tuition.html"
+      ],
+      "instances": [
+        {
+          "page": "admissions.html",
+          "section": "information-request"
+        },
+        {
+          "page": "admissions.html",
+          "section": "campus-tour"
+        },
+        {
+          "page": "tuition.html",
+          "section": "sample-disclosure"
+        },
+        {
+          "page": "tuition.html",
+          "section": "payment-options"
+        }
+      ],
+      "behavior": [
+        "native links and structured content"
+      ],
+      "keyboard": [
+        "Tab and Enter on links; native reading order"
+      ],
+      "status": "implemented",
+      "validation": "source instrumentation checked; header handler logic passed in Node VM; browser/axe not-tested (environmental launch block)"
+    },
+    {
+      "id": "feature-band",
+      "selector": "[data-component=\"feature-band\"]",
+      "pages": [
+        "index.html"
+      ],
+      "instances": [
+        {
+          "page": "index.html",
+          "section": "student-pathways"
+        }
+      ],
+      "behavior": [
+        "native links and structured content"
+      ],
+      "keyboard": [
+        "Tab and Enter on links; native reading order"
+      ],
+      "status": "implemented",
+      "validation": "source instrumentation checked; header handler logic passed in Node VM; browser/axe not-tested (environmental launch block)"
+    },
+    {
+      "id": "local-nav",
+      "selector": "[data-component=\"local-nav\"]",
+      "pages": [
+        "program-detail.html",
+        "tuition.html"
+      ],
+      "instances": [
+        {
+          "page": "program-detail.html",
+          "section": "program-navigation"
+        },
+        {
+          "page": "tuition.html",
+          "section": "tuition-navigation"
+        }
+      ],
+      "behavior": [
+        "native links and structured content"
+      ],
+      "keyboard": [
+        "Tab and Enter on links; native reading order"
+      ],
+      "status": "implemented",
+      "validation": "source instrumentation checked; header handler logic passed in Node VM; browser/axe not-tested (environmental launch block)"
+    },
+    {
+      "id": "media-hero",
+      "selector": "[data-component=\"media-hero\"]",
+      "pages": [
+        "index.html"
+      ],
+      "instances": [
+        {
+          "page": "index.html",
+          "section": "home-hero"
+        }
+      ],
+      "behavior": [
+        "native links and structured content"
+      ],
+      "keyboard": [
+        "Tab and Enter on links; native reading order"
+      ],
+      "status": "implemented",
+      "validation": "source instrumentation checked; header handler logic passed in Node VM; browser/axe not-tested (environmental launch block)"
+    },
+    {
+      "id": "page-intro",
+      "selector": "[data-component=\"page-intro\"]",
+      "pages": [
+        "404.html",
+        "admissions.html",
+        "program-detail.html",
+        "programs.html",
+        "tuition.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "section": "page-introduction"
+        },
+        {
+          "page": "admissions.html",
+          "section": "page-introduction"
+        },
+        {
+          "page": "program-detail.html",
+          "section": "page-introduction"
+        },
+        {
+          "page": "programs.html",
+          "section": "page-introduction"
+        },
+        {
+          "page": "tuition.html",
+          "section": "page-introduction"
+        }
+      ],
+      "behavior": [
+        "native links and structured content"
+      ],
+      "keyboard": [
+        "Tab and Enter on links; native reading order"
+      ],
+      "status": "implemented",
+      "validation": "source instrumentation checked; header handler logic passed in Node VM; browser/axe not-tested (environmental launch block)"
+    },
+    {
+      "id": "pathway-card",
+      "selector": "[data-component=\"pathway-card\"]",
+      "pages": [
+        "admissions.html"
+      ],
+      "instances": [
+        {
+          "page": "admissions.html",
+          "section": "new-student-pathway"
+        },
+        {
+          "page": "admissions.html",
+          "section": "returning-student-pathway"
+        },
+        {
+          "page": "admissions.html",
+          "section": "continuing-education-pathway"
+        }
+      ],
+      "behavior": [
+        "native links and structured content"
+      ],
+      "keyboard": [
+        "Tab and Enter on links; native reading order"
+      ],
+      "status": "implemented",
+      "validation": "source instrumentation checked; header handler logic passed in Node VM; browser/axe not-tested (environmental launch block)"
+    },
+    {
+      "id": "pathway-grid",
+      "selector": "[data-component=\"pathway-grid\"]",
+      "pages": [
+        "admissions.html"
+      ],
+      "instances": [
+        {
+          "page": "admissions.html",
+          "section": "admissions-pathways"
+        }
+      ],
+      "behavior": [
+        "native links and structured content"
+      ],
+      "keyboard": [
+        "Tab and Enter on links; native reading order"
+      ],
+      "status": "implemented",
+      "validation": "source instrumentation checked; header handler logic passed in Node VM; browser/axe not-tested (environmental launch block)"
+    },
+    {
+      "id": "primary-nav",
+      "selector": "[data-component=\"primary-nav\"]",
+      "pages": [
+        "404.html",
+        "admissions.html",
+        "index.html",
+        "program-detail.html",
+        "programs.html",
+        "tuition.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "section": "global-navigation"
+        },
+        {
+          "page": "admissions.html",
+          "section": "global-navigation"
+        },
+        {
+          "page": "index.html",
+          "section": "global-navigation"
+        },
+        {
+          "page": "program-detail.html",
+          "section": "global-navigation"
+        },
+        {
+          "page": "programs.html",
+          "section": "global-navigation"
+        },
+        {
+          "page": "tuition.html",
+          "section": "global-navigation"
+        }
+      ],
+      "behavior": [
+        "header disclosure and local navigation/search"
+      ],
+      "keyboard": [
+        "Tab, Enter, Space on buttons; Escape dismisses and returns focus"
+      ],
+      "status": "implemented",
+      "validation": "source instrumentation checked; header handler logic passed in Node VM; browser/axe not-tested (environmental launch block)"
+    },
+    {
+      "id": "process-list",
+      "selector": "[data-component=\"process-list\"]",
+      "pages": [
+        "admissions.html"
+      ],
+      "instances": [
+        {
+          "page": "admissions.html",
+          "section": "application-steps"
+        }
+      ],
+      "behavior": [
+        "native links and structured content"
+      ],
+      "keyboard": [
+        "Tab and Enter on links; native reading order"
+      ],
+      "status": "implemented",
+      "validation": "source instrumentation checked; header handler logic passed in Node VM; browser/axe not-tested (environmental launch block)"
+    },
+    {
+      "id": "program-facts",
+      "selector": "[data-component=\"program-facts\"]",
+      "pages": [
+        "program-detail.html"
+      ],
+      "instances": [
+        {
+          "page": "program-detail.html",
+          "section": "credential-information"
+        }
+      ],
+      "behavior": [
+        "native links and structured content"
+      ],
+      "keyboard": [
+        "Tab and Enter on links; native reading order"
+      ],
+      "status": "implemented",
+      "validation": "source instrumentation checked; header handler logic passed in Node VM; browser/axe not-tested (environmental launch block)"
+    },
+    {
+      "id": "section-nav",
+      "selector": "[data-component=\"section-nav\"]",
+      "pages": [
+        "program-detail.html",
+        "programs.html",
+        "tuition.html"
+      ],
+      "instances": [
+        {
+          "page": "program-detail.html",
+          "section": "program-section-navigation"
+        },
+        {
+          "page": "programs.html",
+          "section": "career-field-navigation"
+        },
+        {
+          "page": "tuition.html",
+          "section": "tuition-section-navigation"
+        }
+      ],
+      "behavior": [
+        "native links and structured content"
+      ],
+      "keyboard": [
+        "Tab and Enter on links; native reading order"
+      ],
+      "status": "implemented",
+      "validation": "source instrumentation checked; header handler logic passed in Node VM; browser/axe not-tested (environmental launch block)"
+    },
+    {
+      "id": "site-footer",
+      "selector": "[data-component=\"site-footer\"]",
+      "pages": [
+        "404.html",
+        "admissions.html",
+        "index.html",
+        "program-detail.html",
+        "programs.html",
+        "tuition.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "section": "global-footer"
+        },
+        {
+          "page": "admissions.html",
+          "section": "global-footer"
+        },
+        {
+          "page": "index.html",
+          "section": "global-footer"
+        },
+        {
+          "page": "program-detail.html",
+          "section": "global-footer"
+        },
+        {
+          "page": "programs.html",
+          "section": "global-footer"
+        },
+        {
+          "page": "tuition.html",
+          "section": "global-footer"
+        }
+      ],
+      "behavior": [
+        "native links and structured content"
+      ],
+      "keyboard": [
+        "Tab and Enter on links; native reading order"
+      ],
+      "status": "implemented",
+      "validation": "source instrumentation checked; header handler logic passed in Node VM; browser/axe not-tested (environmental launch block)"
+    },
+    {
+      "id": "site-header",
+      "selector": "[data-component=\"site-header\"]",
+      "pages": [
+        "404.html",
+        "admissions.html",
+        "index.html",
+        "program-detail.html",
+        "programs.html",
+        "tuition.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "section": "global-header"
+        },
+        {
+          "page": "admissions.html",
+          "section": "global-header"
+        },
+        {
+          "page": "index.html",
+          "section": "global-header"
+        },
+        {
+          "page": "program-detail.html",
+          "section": "global-header"
+        },
+        {
+          "page": "programs.html",
+          "section": "global-header"
+        },
+        {
+          "page": "tuition.html",
+          "section": "global-header"
+        }
+      ],
+      "behavior": [
+        "native links and structured content"
+      ],
+      "keyboard": [
+        "Tab and Enter on links; native reading order"
+      ],
+      "status": "implemented",
+      "validation": "source instrumentation checked; header handler logic passed in Node VM; browser/axe not-tested (environmental launch block)"
+    },
+    {
+      "id": "site-search",
+      "selector": "[data-component=\"site-search\"]",
+      "pages": [
+        "404.html",
+        "admissions.html",
+        "index.html",
+        "program-detail.html",
+        "programs.html",
+        "tuition.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "section": "site-search"
+        },
+        {
+          "page": "admissions.html",
+          "section": "site-search"
+        },
+        {
+          "page": "index.html",
+          "section": "site-search"
+        },
+        {
+          "page": "program-detail.html",
+          "section": "site-search"
+        },
+        {
+          "page": "programs.html",
+          "section": "site-search"
+        },
+        {
+          "page": "tuition.html",
+          "section": "site-search"
+        }
+      ],
+      "behavior": [
+        "header disclosure and local navigation/search"
+      ],
+      "keyboard": [
+        "Tab, Enter, Space on buttons; Escape dismisses and returns focus"
+      ],
+      "status": "implemented",
+      "validation": "source instrumentation checked; header handler logic passed in Node VM; browser/axe not-tested (environmental launch block)"
+    },
+    {
+      "id": "text-section",
+      "selector": "[data-component=\"text-section\"]",
+      "pages": [
+        "program-detail.html",
+        "tuition.html"
+      ],
+      "instances": [
+        {
+          "page": "program-detail.html",
+          "section": "program-overview"
+        },
+        {
+          "page": "program-detail.html",
+          "section": "program-courses"
+        },
+        {
+          "page": "tuition.html",
+          "section": "financial-aid"
+        }
+      ],
+      "behavior": [
+        "native links and structured content"
+      ],
+      "keyboard": [
+        "Tab and Enter on links; native reading order"
+      ],
+      "status": "implemented",
+      "validation": "source instrumentation checked; header handler logic passed in Node VM; browser/axe not-tested (environmental launch block)"
+    }
+  ]
+}

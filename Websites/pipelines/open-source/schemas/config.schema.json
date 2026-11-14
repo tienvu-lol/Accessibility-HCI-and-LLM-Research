@@ -1,0 +1,98 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version","model_group","slots","excluded_categories","allocation","models_file","execution","approval","paths","research","qc","api"],
+  "properties": {
+    "schema_version": { "const": "1.0" },
+    "model_group": { "const": "open-source" },
+    "slots": { "type": "array", "const": [7,8,9,10] },
+    "excluded_categories": { "type": "array", "const": [] },
+    "allocation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["claude","codex","open-source"],
+      "properties": {
+        "claude": { "const": 3 },
+        "codex": { "const": 3 },
+        "open-source": { "const": 4 }
+      }
+    },
+    "models_file": { "type": "string", "minLength": 1 },
+    "execution": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["mode","one_replica_per_run","max_concurrent_builds","automatic_generation","automatic_publish","automatic_commit","max_build_turns","max_repair_rounds","preserve_initial_artifact"],
+      "properties": {
+        "mode": { "const": "orchestrated-api-execution" },
+        "one_replica_per_run": { "const": true },
+        "max_concurrent_builds": { "type": "integer", "minimum": 1, "maximum": 4 },
+        "automatic_generation": { "type": "boolean" },
+        "automatic_publish": { "const": false },
+        "automatic_commit": { "const": false },
+        "max_build_turns": { "type": "integer", "minimum": 4, "maximum": 80 },
+        "max_repair_rounds": { "type": "integer", "minimum": 0, "maximum": 10 },
+        "preserve_initial_artifact": { "const": true }
+      }
+    },
+    "approval": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["require_all_ten_sources","allow_unverified_sources","inherit_claude_waiver","require_open_weight_confirmation"],
+      "properties": {
+        "require_all_ten_sources": { "type": "boolean" },
+        "allow_unverified_sources": { "const": false },
+        "inherit_claude_waiver": { "const": false },
+        "require_open_weight_confirmation": { "const": true }
+      }
+    },
+    "paths": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["rules","allocation","assignments","inventories","qc","change_log"],
+      "properties": {
+        "rules": { "type": "string", "minLength": 1 },
+        "allocation": { "type": "string", "minLength": 1 },
+        "assignments": { "type": "string", "minLength": 1 },
+        "inventories": { "type": "string", "minLength": 1 },
+        "qc": { "type": "string", "minLength": 1 },
+        "change_log": { "type": "string", "minLength": 1 }
+      }
+    },
+    "research": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["preferred_method","fallback","http_timeout_ms","http_user_agent","max_pages_per_source","min_pages_per_source"],
+      "properties": {
+        "preferred_method": { "type": "string", "minLength": 1 },
+        "fallback": { "type": "string", "minLength": 1 },
+        "http_timeout_ms": { "type": "integer", "minimum": 1000, "maximum": 120000 },
+        "http_user_agent": { "type": "string", "minLength": 1 },
+        "max_pages_per_source": { "type": "integer", "minimum": 1, "maximum": 40 },
+        "min_pages_per_source": { "type": "integer", "minimum": 1, "maximum": 40 }
+      }
+    },
+    "qc": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["required_exit_code","required_failures","interaction_review_required","manual_review_required_for_acceptance"],
+      "properties": {
+        "required_exit_code": { "const": 0 },
+        "required_failures": { "const": 0 },
+        "interaction_review_required": { "const": true },
+        "manual_review_required_for_acceptance": { "const": true }
+      }
+    },
+    "api": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["protocol","timeout_ms","max_retries","retry_backoff_ms","key_source"],
+      "properties": {
+        "protocol": { "const": "openai-chat-completions" },
+        "timeout_ms": { "type": "integer", "minimum": 10000, "maximum": 1800000 },
+        "max_retries": { "type": "integer", "minimum": 0, "maximum": 10 },
+        "retry_backoff_ms": { "type": "integer", "minimum": 100, "maximum": 60000 },
+        "key_source": { "type": "string", "minLength": 1 }
+      }
+    }
+  }
+}

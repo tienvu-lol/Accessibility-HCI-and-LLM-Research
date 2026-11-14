@@ -1,0 +1,24 @@
+{
+  "result": "pass",
+  "tests": [
+    "chair listing contains four chair samples",
+    "search is case-insensitive and meaningful",
+    "combined color/price filter and empty state",
+    "price sorting ascending/descending",
+    "cart color merge, subtotal and cap",
+    "malformed storage discarded and allowed fields normalized",
+    "mock DOM: malformed storage starts empty; real color handler updates text/image",
+    "mock DOM: actual add handler persists selected variant and announces count",
+    "mock DOM: actual menu and dialog close handlers update states/focus",
+    "mock DOM: storage write denial keeps in-page cart and announces fallback"
+  ],
+  "count": 10,
+  "method": "actual delivered JS in Node; DOM handler tests use explicit lightweight mocks, no layout/browser/assistive technology",
+  "not_tested": [
+    "real browser navigation/focus/keyboard",
+    "cart DOM quantity/removal handlers",
+    "store results DOM",
+    "axe",
+    "reflow and contrast"
+  ]
+}

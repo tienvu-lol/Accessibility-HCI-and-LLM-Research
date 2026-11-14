@@ -1,0 +1,668 @@
+{
+  "protocol_version": "1.0",
+  "replica_id": "REST-03",
+  "category": "restaurant",
+  "source_url": "https://www.elevenmadisonpark.com/",
+  "components": [
+    {
+      "id": "site-header",
+      "selector": "[data-component='site-header']",
+      "pages": [
+        "index.html",
+        "about.html",
+        "team.html",
+        "menu.html",
+        "reservations.html",
+        "events.html",
+        "stories.html",
+        "lantern-fields.html",
+        "faq.html",
+        "press.html",
+        "careers.html",
+        "gift-cards.html",
+        "contact.html",
+        "accessibility.html",
+        "404.html"
+      ],
+      "behavior": [
+        "brand",
+        "demo banner"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "axe-automated"
+    },
+    {
+      "id": "demo-banner",
+      "selector": "[data-component='demo-banner']",
+      "pages": [
+        "index.html",
+        "about.html",
+        "team.html",
+        "menu.html",
+        "reservations.html",
+        "events.html",
+        "stories.html",
+        "lantern-fields.html",
+        "faq.html",
+        "press.html",
+        "careers.html",
+        "gift-cards.html",
+        "contact.html",
+        "accessibility.html",
+        "404.html"
+      ],
+      "behavior": [
+        "states the replica is fictional"
+      ],
+      "keyboard": [
+        "none"
+      ],
+      "status": "implemented",
+      "validation": "axe-automated"
+    },
+    {
+      "id": "primary-nav",
+      "selector": "[data-component='primary-nav']",
+      "pages": [
+        "index.html",
+        "about.html",
+        "team.html",
+        "menu.html",
+        "reservations.html",
+        "events.html",
+        "stories.html",
+        "lantern-fields.html",
+        "faq.html",
+        "press.html",
+        "careers.html",
+        "gift-cards.html",
+        "contact.html",
+        "accessibility.html",
+        "404.html"
+      ],
+      "behavior": [
+        "desktop navigation",
+        "About and Shop disclosure menus",
+        "aria-current",
+        "inferred menu contents"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "Escape closes menu and returns focus"
+      ],
+      "status": "implemented",
+      "validation": "scripted-flow"
+    },
+    {
+      "id": "mobile-menu-toggle",
+      "selector": "[data-component='mobile-menu-toggle']",
+      "pages": [
+        "index.html",
+        "about.html",
+        "team.html",
+        "menu.html",
+        "reservations.html",
+        "events.html",
+        "stories.html",
+        "lantern-fields.html",
+        "faq.html",
+        "press.html",
+        "careers.html",
+        "gift-cards.html",
+        "contact.html",
+        "accessibility.html",
+        "404.html"
+      ],
+      "behavior": [
+        "collapses nav under 56rem",
+        "aria-expanded"
+      ],
+      "keyboard": [
+        "Enter",
+        "Space",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "scripted-flow"
+    },
+    {
+      "id": "utility-nav",
+      "selector": "[data-component='utility-nav']",
+      "pages": [
+        "index.html",
+        "about.html",
+        "team.html",
+        "menu.html",
+        "reservations.html",
+        "events.html",
+        "stories.html",
+        "lantern-fields.html",
+        "faq.html",
+        "press.html",
+        "careers.html",
+        "gift-cards.html",
+        "contact.html",
+        "accessibility.html",
+        "404.html"
+      ],
+      "behavior": [
+        "cart count link",
+        "Reserve link"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-automated"
+    },
+    {
+      "id": "breadcrumb",
+      "selector": "[data-component='breadcrumb']",
+      "pages": [
+        "about.html",
+        "team.html",
+        "menu.html",
+        "reservations.html",
+        "events.html",
+        "stories.html",
+        "lantern-fields.html",
+        "faq.html",
+        "press.html",
+        "careers.html",
+        "gift-cards.html",
+        "contact.html",
+        "accessibility.html"
+      ],
+      "behavior": [
+        "home link trail"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-automated"
+    },
+    {
+      "id": "site-footer",
+      "selector": "[data-component='site-footer']",
+      "pages": [
+        "index.html",
+        "about.html",
+        "team.html",
+        "menu.html",
+        "reservations.html",
+        "events.html",
+        "stories.html",
+        "lantern-fields.html",
+        "faq.html",
+        "press.html",
+        "careers.html",
+        "gift-cards.html",
+        "contact.html",
+        "accessibility.html",
+        "404.html"
+      ],
+      "behavior": [
+        "address",
+        "footer nav",
+        "newsletter"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-automated"
+    },
+    {
+      "id": "footer-nav",
+      "selector": "[data-component='footer-nav']",
+      "pages": [
+        "index.html",
+        "about.html",
+        "team.html",
+        "menu.html",
+        "reservations.html",
+        "events.html",
+        "stories.html",
+        "lantern-fields.html",
+        "faq.html",
+        "press.html",
+        "careers.html",
+        "gift-cards.html",
+        "contact.html",
+        "accessibility.html",
+        "404.html"
+      ],
+      "behavior": [
+        "FAQs, press, careers, contact, accessibility links"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-automated"
+    },
+    {
+      "id": "newsletter-form",
+      "selector": "[data-component='newsletter-form']",
+      "pages": [
+        "index.html",
+        "about.html",
+        "team.html",
+        "menu.html",
+        "reservations.html",
+        "events.html",
+        "stories.html",
+        "lantern-fields.html",
+        "faq.html",
+        "press.html",
+        "careers.html",
+        "gift-cards.html",
+        "contact.html",
+        "accessibility.html",
+        "404.html"
+      ],
+      "behavior": [
+        "first name, last name, email",
+        "validation",
+        "error summary",
+        "demo success"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "scripted-flow"
+    },
+    {
+      "id": "hero-banner",
+      "selector": "[data-component='hero-banner']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "heading, lede, calls to action (layout inferred)"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-automated"
+    },
+    {
+      "id": "card-grid",
+      "selector": "[data-component='card-grid']",
+      "pages": [
+        "index.html",
+        "events.html"
+      ],
+      "behavior": [
+        "link cards"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-automated"
+    },
+    {
+      "id": "visit-info",
+      "selector": "[data-component='visit-info']",
+      "pages": [
+        "index.html",
+        "contact.html"
+      ],
+      "behavior": [
+        "address",
+        "hours table"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "axe-automated"
+    },
+    {
+      "id": "content-block",
+      "selector": "[data-component='content-block']",
+      "pages": [
+        "about.html",
+        "accessibility.html"
+      ],
+      "behavior": [
+        "prose sections"
+      ],
+      "keyboard": [
+        "none"
+      ],
+      "status": "implemented",
+      "validation": "axe-automated"
+    },
+    {
+      "id": "team-grid",
+      "selector": "[data-component='team-grid']",
+      "pages": [
+        "team.html"
+      ],
+      "behavior": [
+        "bio disclosures with aria-expanded"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "scripted-flow"
+    },
+    {
+      "id": "menu-browser",
+      "selector": "[data-component='menu-browser']",
+      "pages": [
+        "menu.html"
+      ],
+      "behavior": [
+        "search",
+        "course select",
+        "dietary checkboxes",
+        "live count",
+        "empty state",
+        "reset"
+      ],
+      "keyboard": [
+        "Tab",
+        "Space",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "scripted-flow"
+    },
+    {
+      "id": "reservation-form",
+      "selector": "[data-component='reservation-form']",
+      "pages": [
+        "reservations.html"
+      ],
+      "behavior": [
+        "simulated",
+        "validation",
+        "error summary focus",
+        "demo success"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "scripted-flow"
+    },
+    {
+      "id": "inquiry-form",
+      "selector": "[data-component='inquiry-form']",
+      "pages": [
+        "events.html"
+      ],
+      "behavior": [
+        "simulated private-event inquiry"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-automated"
+    },
+    {
+      "id": "contact-form",
+      "selector": "[data-component='contact-form']",
+      "pages": [
+        "contact.html"
+      ],
+      "behavior": [
+        "simulated contact form"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-automated"
+    },
+    {
+      "id": "story-list",
+      "selector": "[data-component='story-list']",
+      "pages": [
+        "stories.html"
+      ],
+      "behavior": [
+        "topic filter",
+        "empty state"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "scripted-flow"
+    },
+    {
+      "id": "modal-dialog",
+      "selector": "[data-component='modal-dialog']",
+      "pages": [
+        "stories.html"
+      ],
+      "behavior": [
+        "native dialog",
+        "focus returns to trigger"
+      ],
+      "keyboard": [
+        "Enter",
+        "Escape closes"
+      ],
+      "status": "implemented",
+      "validation": "scripted-flow"
+    },
+    {
+      "id": "tabs",
+      "selector": "[data-component='tabs']",
+      "pages": [
+        "lantern-fields.html"
+      ],
+      "behavior": [
+        "season tabs",
+        "roving tabindex"
+      ],
+      "keyboard": [
+        "ArrowLeft",
+        "ArrowRight",
+        "Home",
+        "End",
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "scripted-flow"
+    },
+    {
+      "id": "faq-accordion",
+      "selector": "[data-component='faq-accordion']",
+      "pages": [
+        "faq.html"
+      ],
+      "behavior": [
+        "search",
+        "accordion",
+        "empty state"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "scripted-flow"
+    },
+    {
+      "id": "press-list",
+      "selector": "[data-component='press-list']",
+      "pages": [
+        "press.html"
+      ],
+      "behavior": [
+        "year and type filters",
+        "empty state"
+      ],
+      "keyboard": [
+        "Tab",
+        "arrow keys on selects"
+      ],
+      "status": "implemented",
+      "validation": "scripted-flow"
+    },
+    {
+      "id": "job-list",
+      "selector": "[data-component='job-list']",
+      "pages": [
+        "careers.html"
+      ],
+      "behavior": [
+        "department filter",
+        "accordion",
+        "demo application form"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "scripted-flow"
+    },
+    {
+      "id": "gift-card-form",
+      "selector": "[data-component='gift-card-form']",
+      "pages": [
+        "gift-cards.html"
+      ],
+      "behavior": [
+        "radio amount",
+        "validation",
+        "adds to demo cart"
+      ],
+      "keyboard": [
+        "Tab",
+        "Arrow keys on radios",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "scripted-flow"
+    },
+    {
+      "id": "cart-summary",
+      "selector": "[data-component='cart-summary']",
+      "pages": [
+        "gift-cards.html"
+      ],
+      "behavior": [
+        "list",
+        "remove",
+        "demo checkout (no payment)"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "scripted-flow"
+    },
+    {
+      "id": "cart-link",
+      "selector": "[data-component='cart-link']",
+      "pages": [
+        "index.html",
+        "about.html",
+        "team.html",
+        "menu.html",
+        "reservations.html",
+        "events.html",
+        "stories.html",
+        "lantern-fields.html",
+        "faq.html",
+        "press.html",
+        "careers.html",
+        "gift-cards.html",
+        "contact.html",
+        "accessibility.html",
+        "404.html"
+      ],
+      "behavior": [
+        "count from sessionStorage"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "scripted-flow"
+    },
+    {
+      "id": "simulation-notice",
+      "selector": "[data-component='simulation-notice']",
+      "pages": [
+        "reservations.html",
+        "events.html",
+        "careers.html",
+        "contact.html"
+      ],
+      "behavior": [
+        "states form is a simulation"
+      ],
+      "keyboard": [
+        "none"
+      ],
+      "status": "implemented",
+      "validation": "axe-automated"
+    },
+    {
+      "id": "brand-wordmark",
+      "selector": "[data-component='brand-wordmark']",
+      "pages": [
+        "index.html",
+        "about.html",
+        "team.html",
+        "menu.html",
+        "reservations.html",
+        "events.html",
+        "stories.html",
+        "lantern-fields.html",
+        "faq.html",
+        "press.html",
+        "careers.html",
+        "gift-cards.html",
+        "contact.html",
+        "accessibility.html",
+        "404.html"
+      ],
+      "behavior": [
+        "text wordmark link home"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-automated"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "status": "fail",
+  "errors": [
+    "government.html: missing fragment #site-search",
+    "agencies.html: missing fragment #site-search"
+  ],
+  "pages": 6,
+  "per_page": {
+    "service-category.html": {
+      "regions": 16,
+      "instrumented_instances": 20,
+      "h1": 1
+    },
+    "index.html": {
+      "regions": 20,
+      "instrumented_instances": 25,
+      "h1": 1
+    },
+    "government.html": {
+      "regions": 17,
+      "instrumented_instances": 21,
+      "h1": 1
+    },
+    "404.html": {
+      "regions": 12,
+      "instrumented_instances": 16,
+      "h1": 1
+    },
+    "services.html": {
+      "regions": 22,
+      "instrumented_instances": 27,
+      "h1": 1
+    },
+    "agencies.html": {
+      "regions": 12,
+      "instrumented_instances": 16,
+      "h1": 1
+    }
+  },
+  "static_instrumentation_instances": 125,
+  "inventory_static_instances": 125,
+  "checks": [
+    "one H1",
+    "main and skip target",
+    "relative local links and fragment targets",
+    "landmark instrumentation",
+    "button explicit type",
+    "image alt",
+    "field labels",
+    "duplicate ids",
+    "inventory instance count",
+    "no JS/CSS network tokens"
+  ],
+  "limits": "Static source inspection; no native rendering, accessibility or interaction claim."
+}

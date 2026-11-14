@@ -1,0 +1,660 @@
+{
+  "protocol_version": "1.0",
+  "replica_id": "WX-05",
+  "category": "weather",
+  "source_url": "https://www.timeanddate.com/weather/",
+  "components": [
+    {
+      "id": "accordion",
+      "selector": "[data-component='accordion']",
+      "pages": [
+        "help.html"
+      ],
+      "instances": [
+        {
+          "page": "help.html",
+          "section": "extended-question"
+        },
+        {
+          "page": "help.html",
+          "section": "units-question"
+        },
+        {
+          "page": "help.html",
+          "section": "data-question"
+        },
+        {
+          "page": "help.html",
+          "section": "navigation-question"
+        }
+      ],
+      "behavior": [
+        "Native help disclosure using Enter/Space."
+      ],
+      "keyboard": [
+        "Tab/Enter for links; native controls use Enter/Space and arrow keys where applicable"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution not-tested"
+    },
+    {
+      "id": "accordion-group",
+      "selector": "[data-component='accordion-group']",
+      "pages": [
+        "help.html"
+      ],
+      "instances": [
+        {
+          "page": "help.html",
+          "section": "help-questions"
+        }
+      ],
+      "behavior": [
+        "Semantic static content and relative navigation where applicable."
+      ],
+      "keyboard": [
+        "Tab/Enter for links; native controls use Enter/Space and arrow keys where applicable"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution not-tested"
+    },
+    {
+      "id": "breadcrumb",
+      "selector": "[data-component='breadcrumb']",
+      "pages": [
+        "404.html",
+        "extended.html",
+        "help.html",
+        "hourly.html",
+        "location.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "section": "breadcrumb"
+        },
+        {
+          "page": "extended.html",
+          "section": "breadcrumb"
+        },
+        {
+          "page": "help.html",
+          "section": "breadcrumb"
+        },
+        {
+          "page": "hourly.html",
+          "section": "breadcrumb"
+        },
+        {
+          "page": "location.html",
+          "section": "breadcrumb"
+        }
+      ],
+      "behavior": [
+        "Semantic static content and relative navigation where applicable."
+      ],
+      "keyboard": [
+        "Tab/Enter for links; native controls use Enter/Space and arrow keys where applicable"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution not-tested"
+    },
+    {
+      "id": "city-directory",
+      "selector": "[data-component='city-directory']",
+      "pages": [
+        "index.html"
+      ],
+      "instances": [
+        {
+          "page": "index.html",
+          "section": "world-weather"
+        }
+      ],
+      "behavior": [
+        "Semantic static content and relative navigation where applicable."
+      ],
+      "keyboard": [
+        "Tab/Enter for links; native controls use Enter/Space and arrow keys where applicable"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution not-tested"
+    },
+    {
+      "id": "conditions-summary",
+      "selector": "[data-component='conditions-summary']",
+      "pages": [
+        "location.html"
+      ],
+      "instances": [
+        {
+          "page": "location.html",
+          "section": "city-current-conditions"
+        }
+      ],
+      "behavior": [
+        "Semantic static content and relative navigation where applicable."
+      ],
+      "keyboard": [
+        "Tab/Enter for links; native controls use Enter/Space and arrow keys where applicable"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution not-tested"
+    },
+    {
+      "id": "day-selector",
+      "selector": "[data-component='day-selector']",
+      "pages": [
+        "hourly.html"
+      ],
+      "instances": [
+        {
+          "page": "hourly.html",
+          "section": "hourly-date-selection"
+        }
+      ],
+      "behavior": [
+        "Native select redraws four hourly rows for one of three sample days; preserves chosen unit."
+      ],
+      "keyboard": [
+        "Tab/Enter for links; native controls use Enter/Space and arrow keys where applicable"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution not-tested"
+    },
+    {
+      "id": "demo-notice",
+      "selector": "[data-component='demo-notice']",
+      "pages": [
+        "404.html",
+        "extended.html",
+        "help.html",
+        "hourly.html",
+        "index.html",
+        "location.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "section": "sample-disclosure"
+        },
+        {
+          "page": "extended.html",
+          "section": "sample-disclosure"
+        },
+        {
+          "page": "help.html",
+          "section": "sample-disclosure"
+        },
+        {
+          "page": "hourly.html",
+          "section": "sample-disclosure"
+        },
+        {
+          "page": "index.html",
+          "section": "sample-disclosure"
+        },
+        {
+          "page": "location.html",
+          "section": "sample-disclosure"
+        }
+      ],
+      "behavior": [
+        "Semantic static content and relative navigation where applicable."
+      ],
+      "keyboard": [
+        "Tab/Enter for links; native controls use Enter/Space and arrow keys where applicable"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution not-tested"
+    },
+    {
+      "id": "editorial-content",
+      "selector": "[data-component='editorial-content']",
+      "pages": [
+        "extended.html",
+        "hourly.html",
+        "location.html"
+      ],
+      "instances": [
+        {
+          "page": "extended.html",
+          "section": "extended-explanation"
+        },
+        {
+          "page": "hourly.html",
+          "section": "hourly-notes"
+        },
+        {
+          "page": "location.html",
+          "section": "city-additional-information"
+        }
+      ],
+      "behavior": [
+        "Semantic static content and relative navigation where applicable."
+      ],
+      "keyboard": [
+        "Tab/Enter for links; native controls use Enter/Space and arrow keys where applicable"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution not-tested"
+    },
+    {
+      "id": "feature-grid",
+      "selector": "[data-component='feature-grid']",
+      "pages": [
+        "location.html"
+      ],
+      "instances": [
+        {
+          "page": "location.html",
+          "section": "city-forecast-overview"
+        }
+      ],
+      "behavior": [
+        "Semantic static content and relative navigation where applicable."
+      ],
+      "keyboard": [
+        "Tab/Enter for links; native controls use Enter/Space and arrow keys where applicable"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution not-tested"
+    },
+    {
+      "id": "forecast-table",
+      "selector": "[data-component='forecast-table']",
+      "pages": [
+        "extended.html",
+        "hourly.html",
+        "index.html"
+      ],
+      "instances": [
+        {
+          "page": "extended.html",
+          "section": "forecast-data"
+        },
+        {
+          "page": "hourly.html",
+          "section": "forecast-data"
+        },
+        {
+          "page": "index.html",
+          "section": "forecast-data"
+        }
+      ],
+      "behavior": [
+        "Semantic static content and relative navigation where applicable."
+      ],
+      "keyboard": [
+        "Tab/Enter for links; native controls use Enter/Space and arrow keys where applicable"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution not-tested"
+    },
+    {
+      "id": "info-card",
+      "selector": "[data-component='info-card']",
+      "pages": [
+        "index.html"
+      ],
+      "instances": [
+        {
+          "page": "index.html",
+          "section": "directory-context"
+        }
+      ],
+      "behavior": [
+        "Semantic static content and relative navigation where applicable."
+      ],
+      "keyboard": [
+        "Tab/Enter for links; native controls use Enter/Space and arrow keys where applicable"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution not-tested"
+    },
+    {
+      "id": "main-content",
+      "selector": "[data-component='main-content']",
+      "pages": [
+        "404.html",
+        "extended.html",
+        "help.html",
+        "hourly.html",
+        "index.html",
+        "location.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "section": "main-content"
+        },
+        {
+          "page": "extended.html",
+          "section": "main-content"
+        },
+        {
+          "page": "help.html",
+          "section": "main-content"
+        },
+        {
+          "page": "hourly.html",
+          "section": "main-content"
+        },
+        {
+          "page": "index.html",
+          "section": "main-content"
+        },
+        {
+          "page": "location.html",
+          "section": "main-content"
+        }
+      ],
+      "behavior": [
+        "Semantic static content and relative navigation where applicable."
+      ],
+      "keyboard": [
+        "Tab/Enter for links; native controls use Enter/Space and arrow keys where applicable"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution not-tested"
+    },
+    {
+      "id": "page-heading",
+      "selector": "[data-component='page-heading']",
+      "pages": [
+        "404.html",
+        "extended.html",
+        "help.html",
+        "hourly.html",
+        "index.html",
+        "location.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "section": "page-introduction"
+        },
+        {
+          "page": "extended.html",
+          "section": "page-introduction"
+        },
+        {
+          "page": "help.html",
+          "section": "page-introduction"
+        },
+        {
+          "page": "hourly.html",
+          "section": "page-introduction"
+        },
+        {
+          "page": "index.html",
+          "section": "page-introduction"
+        },
+        {
+          "page": "location.html",
+          "section": "page-introduction"
+        }
+      ],
+      "behavior": [
+        "Semantic static content and relative navigation where applicable."
+      ],
+      "keyboard": [
+        "Tab/Enter for links; native controls use Enter/Space and arrow keys where applicable"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution not-tested"
+    },
+    {
+      "id": "primary-nav",
+      "selector": "[data-component='primary-nav']",
+      "pages": [
+        "404.html",
+        "extended.html",
+        "help.html",
+        "hourly.html",
+        "index.html",
+        "location.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "section": "global-navigation"
+        },
+        {
+          "page": "extended.html",
+          "section": "global-navigation"
+        },
+        {
+          "page": "help.html",
+          "section": "global-navigation"
+        },
+        {
+          "page": "hourly.html",
+          "section": "global-navigation"
+        },
+        {
+          "page": "index.html",
+          "section": "global-navigation"
+        },
+        {
+          "page": "location.html",
+          "section": "global-navigation"
+        }
+      ],
+      "behavior": [
+        "Semantic static content and relative navigation where applicable."
+      ],
+      "keyboard": [
+        "Tab/Enter for links; native controls use Enter/Space and arrow keys where applicable"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution not-tested"
+    },
+    {
+      "id": "search-form",
+      "selector": "[data-component='search-form']",
+      "pages": [
+        "index.html"
+      ],
+      "instances": [
+        {
+          "page": "index.html",
+          "section": "local-search-form"
+        }
+      ],
+      "behavior": [
+        "Submit filters four inline cities; blank/no-match feedback and local query links."
+      ],
+      "keyboard": [
+        "Tab/Enter for links; native controls use Enter/Space and arrow keys where applicable"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution not-tested"
+    },
+    {
+      "id": "search-panel",
+      "selector": "[data-component='search-panel']",
+      "pages": [
+        "index.html"
+      ],
+      "instances": [
+        {
+          "page": "index.html",
+          "section": "local-search"
+        }
+      ],
+      "behavior": [
+        "Semantic static content and relative navigation where applicable."
+      ],
+      "keyboard": [
+        "Tab/Enter for links; native controls use Enter/Space and arrow keys where applicable"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution not-tested"
+    },
+    {
+      "id": "section-nav",
+      "selector": "[data-component='section-nav']",
+      "pages": [
+        "extended.html",
+        "help.html",
+        "hourly.html",
+        "location.html"
+      ],
+      "instances": [
+        {
+          "page": "extended.html",
+          "section": "city-sections"
+        },
+        {
+          "page": "help.html",
+          "section": "help-topics"
+        },
+        {
+          "page": "hourly.html",
+          "section": "city-sections"
+        },
+        {
+          "page": "location.html",
+          "section": "city-sections"
+        }
+      ],
+      "behavior": [
+        "Separate HTML forecast links, not client-side tabs."
+      ],
+      "keyboard": [
+        "Tab/Enter for links; native controls use Enter/Space and arrow keys where applicable"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution not-tested"
+    },
+    {
+      "id": "site-footer",
+      "selector": "[data-component='site-footer']",
+      "pages": [
+        "404.html",
+        "extended.html",
+        "help.html",
+        "hourly.html",
+        "index.html",
+        "location.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "section": "global-footer"
+        },
+        {
+          "page": "extended.html",
+          "section": "global-footer"
+        },
+        {
+          "page": "help.html",
+          "section": "global-footer"
+        },
+        {
+          "page": "hourly.html",
+          "section": "global-footer"
+        },
+        {
+          "page": "index.html",
+          "section": "global-footer"
+        },
+        {
+          "page": "location.html",
+          "section": "global-footer"
+        }
+      ],
+      "behavior": [
+        "Semantic static content and relative navigation where applicable."
+      ],
+      "keyboard": [
+        "Tab/Enter for links; native controls use Enter/Space and arrow keys where applicable"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution not-tested"
+    },
+    {
+      "id": "site-header",
+      "selector": "[data-component='site-header']",
+      "pages": [
+        "404.html",
+        "extended.html",
+        "help.html",
+        "hourly.html",
+        "index.html",
+        "location.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "section": "global-header"
+        },
+        {
+          "page": "extended.html",
+          "section": "global-header"
+        },
+        {
+          "page": "help.html",
+          "section": "global-header"
+        },
+        {
+          "page": "hourly.html",
+          "section": "global-header"
+        },
+        {
+          "page": "index.html",
+          "section": "global-header"
+        },
+        {
+          "page": "location.html",
+          "section": "global-header"
+        }
+      ],
+      "behavior": [
+        "Semantic static content and relative navigation where applicable."
+      ],
+      "keyboard": [
+        "Tab/Enter for links; native controls use Enter/Space and arrow keys where applicable"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution not-tested"
+    },
+    {
+      "id": "unit-settings",
+      "selector": "[data-component='unit-settings']",
+      "pages": [
+        "extended.html",
+        "hourly.html",
+        "index.html",
+        "location.html"
+      ],
+      "instances": [
+        {
+          "page": "extended.html",
+          "section": "unit-preferences"
+        },
+        {
+          "page": "hourly.html",
+          "section": "unit-preferences"
+        },
+        {
+          "page": "index.html",
+          "section": "unit-preferences"
+        },
+        {
+          "page": "location.html",
+          "section": "unit-preferences"
+        }
+      ],
+      "behavior": [
+        "Native select converts all sample temperature spans on current page."
+      ],
+      "keyboard": [
+        "Tab/Enter for links; native controls use Enter/Space and arrow keys where applicable"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution not-tested"
+    }
+  ]
+}

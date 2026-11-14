@@ -1,0 +1,57 @@
+{
+  "at": "2026-11-13T21:44:37.544326+00:00",
+  "method": "Python HTMLParser static audit; no rendered HTML or browser engine",
+  "pages": [
+    {
+      "page": "404.html",
+      "h1_count": 1,
+      "references_checked": 20,
+      "instrumented_instances": 11
+    },
+    {
+      "page": "index.html",
+      "h1_count": 1,
+      "references_checked": 26,
+      "instrumented_instances": 16
+    },
+    {
+      "page": "magazine.html",
+      "h1_count": 1,
+      "references_checked": 29,
+      "instrumented_instances": 21
+    },
+    {
+      "page": "search.html",
+      "h1_count": 1,
+      "references_checked": 20,
+      "instrumented_instances": 14
+    },
+    {
+      "page": "seasonal-concept.html",
+      "h1_count": 1,
+      "references_checked": 22,
+      "instrumented_instances": 16
+    },
+    {
+      "page": "story.html",
+      "h1_count": 1,
+      "references_checked": 21,
+      "instrumented_instances": 17
+    }
+  ],
+  "errors": [],
+  "checks": [
+    "all href/src/action relative and present; fragment targets",
+    "one H1, main and skip link",
+    "region metadata and inventory membership",
+    "labels, image alternatives, button types, describedby targets",
+    "unique ids and required files",
+    "runtime network dependency pattern audit"
+  ],
+  "result": "pass",
+  "limits": [
+    "DOM mock tests do not prove browser behavior",
+    "no HTML conformance validator",
+    "no rendered contrast/reflow/keyboard/axe or source fidelity test"
+  ]
+}

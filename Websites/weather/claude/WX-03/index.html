@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Weather | Meridian 12 Weather (sample data)</title>
+<meta name="description" content="Fictional local-TV weather hub with sample 7-day, hourly and weekend forecasts. All data invented.">
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="index">
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header" data-section="global-header" data-component="site-header">
+<div class="wrap header-row">
+<a class="brand" href="index.html" data-component="brand-logo"><img src="assets/logo.svg" alt="" width="48" height="48"><span class="brand-text"><span class="brand-name">Meridian 12 Weather</span><span class="brand-sub">Fictional station &middot; Cedar Basin (invented)</span></span></a>
+<div class="header-tools">
+<button type="button" class="unit-toggle" aria-pressed="false" hidden data-component="unit-toggle">Celsius (&deg;C)</button><span id="unit-status" class="sr-only" role="status"></span>
+<button type="button" class="menu-toggle" aria-expanded="false" aria-controls="section-nav" hidden data-component="menu-toggle">Menu</button>
+</div></div>
+<nav id="section-nav" class="site-nav" aria-label="Weather sections" data-section="global-navigation" data-component="primary-nav"><div class="wrap"><ul><li><a href="#7-day">7 Day</a></li><li><a href="#hourly">Hourly</a></li><li><a href="#weekend">Weekend</a></li><li><a href="alerts.html">Weather Alerts</a></li><li><a href="almanac.html">Almanac</a></li><li><a href="closings.html">Closings</a></li><li><a href="hurricanes.html">Hurricanes</a></li><li><a href="map-center.html">Map Center</a></li><li><a href="webcams.html">Webcams</a></li><li><a href="resources.html">Resources</a></li><li><a href="news.html">View more top stories</a></li></ul></div></nav>
+</header>
+<main id="main-content" data-section="main-content">
+<div class="sample-banner" role="note" data-section="sample-data-notice" data-component="sample-data-banner"><p><strong>SAMPLE DATA ONLY.</strong> Every temperature, forecast, alert, almanac figure, closing and time on this page is invented for a research replica. It is not a real forecast, it does not describe current conditions, and nothing here should be used to plan anything. Meridian 12 Weather is a fictional station.</p></div>
+
+<div class="page-title"><h1>Weather <span class="badge-sample">Sample</span></h1>
+<p class="lead">Invented forecast for <strong data-loc-name>Ashford Falls</strong>, Cedar Basin (fictional). Sample issue time: not a real time.</p></div>
+
+<section class="card js-only" aria-labelledby="loc-title" data-section="location-search" data-component="location-search">
+<h2 id="loc-title">Choose a sample place</h2>
+<p class="hint">Intentional addition: the reference research marked a location lookup as inferred, not verified. This one searches 8 invented places only.</p>
+<div id="loc-summary" class="error-summary" tabindex="-1" hidden></div>
+<form id="loc-form" novalidate data-component="search-form">
+<div class="field"><label for="loc-q">Place name, county or sample code</label>
+<p id="loc-hint" class="hint">Examples: Ashford, Marlow County, CB-105.</p>
+<p id="loc-error" class="field-error" hidden></p>
+<input id="loc-q" name="q" type="search" autocomplete="off" aria-describedby="loc-hint loc-error"></div>
+<div class="btn-row"><button type="submit" class="btn">Search sample places</button><button type="button" id="loc-reset" class="btn btn-secondary">Reset to Ashford Falls</button></div>
+</form>
+<div id="loc-results"></div><p id="loc-status" class="sr-only" role="status"></p>
+</section>
+
+<section class="card" aria-labelledby="now-title" data-section="current-conditions" data-component="current-conditions">
+<h2 id="now-title">Sample conditions for <span data-loc-name>Ashford Falls</span> <span class="badge-sample">Sample</span></h2>
+<p class="hint">Invented observation. Not current weather.</p>
+<div id="current-body"><div class="cur-main"><img src="assets/icon-partly.svg" alt="" width="64" height="64"><div><p class="cur-temp"><span class="temp" data-f="52">52&deg;F</span></p><p class="cur-cond">Partly cloudy</p></div></div><dl class="kv"><div><dt>Feels like</dt><dd><span class="temp" data-f="49">49&deg;F</span></dd></div><div><dt>Humidity</dt><dd>58%</dd></div><div><dt>Wind</dt><dd>NW 9 mph</dd></div><div><dt>Visibility</dt><dd>10 mi</dd></div></dl></div></section>
+
+<section class="card" aria-labelledby="sum-title" data-section="forecast-summary" data-component="forecast-summary">
+<h2 id="sum-title">Forecast summary <span class="badge-sample">Sample</span></h2>
+<p>In this made-up scenario, a calm, sunny start gives way to rain midweek as an invented cold front approaches. Thunderstorms are possible Thursday, then colder, breezier air arrives Friday ahead of a clear, frosty weekend. Read the <a href="forecast.html">full sample forecast discussion</a>.</p></section>
+
+<section class="card" aria-labelledby="views-title" id="forecast-panels" data-section="forecast-views" data-component="anchor-tabs">
+<h2 id="views-title">Forecast views for <span data-loc-name>Ashford Falls</span></h2>
+<nav class="view-nav" aria-label="Forecast views"><ul><li><a href="#7-day">7 Day</a></li><li><a href="#hourly">Hourly</a></li><li><a href="#weekend">Weekend</a></li></ul></nav>
+<p class="hint">These are same-page links. With JavaScript, choosing one shows that view; without it all three views are listed in order.</p>
+<section id="7-day" tabindex="-1" aria-labelledby="h-7day" class="panel" data-component="forecast-panel"><h3 id="h-7day">7-day forecast <span class="badge-sample">Sample</span></h3>
+<div class="table-scroll" role="region" aria-label="7-day sample forecast table, scrollable" tabindex="0"><table><caption>Invented 7-day outlook. Not a real forecast.</caption><thead><tr><th scope="col">Day</th><th scope="col">Conditions</th><th scope="col">High</th><th scope="col">Low</th><th scope="col">Precipitation chance</th><th scope="col">Wind</th></tr></thead><tbody id="days-body"><tr><th scope="row">Mon</th><td class="cond"><img class="cond-icon" src="assets/icon-sun.svg" alt="" width="28" height="28"> <span>Sunny</span></td><td><span class="temp" data-f="61">61&deg;F</span></td><td><span class="temp" data-f="38">38&deg;F</span></td><td>5%</td><td>NW 8 mph</td></tr><tr><th scope="row">Tue</th><td class="cond"><img class="cond-icon" src="assets/icon-partly.svg" alt="" width="28" height="28"> <span>Partly cloudy</span></td><td><span class="temp" data-f="64">64&deg;F</span></td><td><span class="temp" data-f="41">41&deg;F</span></td><td>10%</td><td>W 6 mph</td></tr><tr><th scope="row">Wed</th><td class="cond"><img class="cond-icon" src="assets/icon-rain.svg" alt="" width="28" height="28"> <span>Rain showers</span></td><td><span class="temp" data-f="58">58&deg;F</span></td><td><span class="temp" data-f="46">46&deg;F</span></td><td>70%</td><td>S 10 mph</td></tr><tr><th scope="row">Thu</th><td class="cond"><img class="cond-icon" src="assets/icon-storm.svg" alt="" width="28" height="28"> <span>Thunderstorms</span></td><td><span class="temp" data-f="55">55&deg;F</span></td><td><span class="temp" data-f="47">47&deg;F</span></td><td>80%</td><td>SW 14 mph</td></tr><tr><th scope="row">Fri</th><td class="cond"><img class="cond-icon" src="assets/icon-cold.svg" alt="" width="28" height="28"> <span>Windy and colder</span></td><td><span class="temp" data-f="49">49&deg;F</span></td><td><span class="temp" data-f="34">34&deg;F</span></td><td>40%</td><td>NW 18 mph</td></tr><tr><th scope="row">Sat</th><td class="cond"><img class="cond-icon" src="assets/icon-moon.svg" alt="" width="28" height="28"> <span>Clear</span></td><td><span class="temp" data-f="44">44&deg;F</span></td><td><span class="temp" data-f="27">27&deg;F</span></td><td>5%</td><td>N 7 mph</td></tr><tr><th scope="row">Sun</th><td class="cond"><img class="cond-icon" src="assets/icon-sun.svg" alt="" width="28" height="28"> <span>Sunny</span></td><td><span class="temp" data-f="50">50&deg;F</span></td><td><span class="temp" data-f="30">30&deg;F</span></td><td>0%</td><td>NE 5 mph</td></tr></tbody></table></div></section>
+<section id="hourly" tabindex="-1" aria-labelledby="h-hourly" class="panel" data-component="forecast-panel"><h3 id="h-hourly">Hourly forecast <span class="badge-sample">Sample</span></h3>
+<div class="table-scroll" role="region" aria-label="Hourly sample forecast table, scrollable" tabindex="0"><table><caption>Invented 24-hour outlook in two-hour steps, starting from a sample 6 AM. Not a real forecast.</caption><thead><tr><th scope="col">Sample time</th><th scope="col">Conditions</th><th scope="col">Temperature</th><th scope="col">Precipitation chance</th><th scope="col">Wind</th></tr></thead><tbody id="hours-body"><tr><th scope="row">6 AM</th><td class="cond"><img class="cond-icon" src="assets/icon-moon.svg" alt="" width="28" height="28"> <span>Clear</span></td><td><span class="temp" data-f="41">41&deg;F</span></td><td>0%</td><td>NW 5 mph</td></tr><tr><th scope="row">8 AM</th><td class="cond"><img class="cond-icon" src="assets/icon-sun.svg" alt="" width="28" height="28"> <span>Sunny</span></td><td><span class="temp" data-f="46">46&deg;F</span></td><td>0%</td><td>NW 6 mph</td></tr><tr><th scope="row">10 AM</th><td class="cond"><img class="cond-icon" src="assets/icon-sun.svg" alt="" width="28" height="28"> <span>Sunny</span></td><td><span class="temp" data-f="54">54&deg;F</span></td><td>0%</td><td>NW 8 mph</td></tr><tr><th scope="row">12 PM</th><td class="cond"><img class="cond-icon" src="assets/icon-sun.svg" alt="" width="28" height="28"> <span>Sunny</span></td><td><span class="temp" data-f="59">59&deg;F</span></td><td>5%</td><td>NW 9 mph</td></tr><tr><th scope="row">2 PM</th><td class="cond"><img class="cond-icon" src="assets/icon-partly.svg" alt="" width="28" height="28"> <span>Partly cloudy</span></td><td><span class="temp" data-f="61">61&deg;F</span></td><td>5%</td><td>W 9 mph</td></tr><tr><th scope="row">4 PM</th><td class="cond"><img class="cond-icon" src="assets/icon-partly.svg" alt="" width="28" height="28"> <span>Partly cloudy</span></td><td><span class="temp" data-f="60">60&deg;F</span></td><td>5%</td><td>W 8 mph</td></tr><tr><th scope="row">6 PM</th><td class="cond"><img class="cond-icon" src="assets/icon-partly.svg" alt="" width="28" height="28"> <span>Partly cloudy</span></td><td><span class="temp" data-f="55">55&deg;F</span></td><td>10%</td><td>W 6 mph</td></tr><tr><th scope="row">8 PM</th><td class="cond"><img class="cond-icon" src="assets/icon-moon.svg" alt="" width="28" height="28"> <span>Clear</span></td><td><span class="temp" data-f="49">49&deg;F</span></td><td>10%</td><td>W 5 mph</td></tr><tr><th scope="row">10 PM</th><td class="cond"><img class="cond-icon" src="assets/icon-moon.svg" alt="" width="28" height="28"> <span>Clear</span></td><td><span class="temp" data-f="45">45&deg;F</span></td><td>5%</td><td>W 4 mph</td></tr><tr><th scope="row">12 AM</th><td class="cond"><img class="cond-icon" src="assets/icon-moon.svg" alt="" width="28" height="28"> <span>Clear</span></td><td><span class="temp" data-f="42">42&deg;F</span></td><td>0%</td><td>W 4 mph</td></tr><tr><th scope="row">2 AM</th><td class="cond"><img class="cond-icon" src="assets/icon-moon.svg" alt="" width="28" height="28"> <span>Clear</span></td><td><span class="temp" data-f="40">40&deg;F</span></td><td>0%</td><td>NW 3 mph</td></tr><tr><th scope="row">4 AM</th><td class="cond"><img class="cond-icon" src="assets/icon-moon.svg" alt="" width="28" height="28"> <span>Clear</span></td><td><span class="temp" data-f="38">38&deg;F</span></td><td>0%</td><td>NW 3 mph</td></tr></tbody></table></div></section>
+<section id="weekend" tabindex="-1" aria-labelledby="h-weekend" class="panel" data-component="forecast-panel"><h3 id="h-weekend">Weekend forecast <span class="badge-sample">Sample</span></h3>
+<div id="weekend-list" class="wk-grid"><article class="wk-card"><h3>Saturday <span class="badge-sample">Sample</span></h3><p class="wk-cond"><img class="cond-icon" src="assets/icon-moon.svg" alt="" width="28" height="28"> <span>Clear</span></p><dl class="kv"><div><dt>High</dt><dd><span class="temp" data-f="44">44&deg;F</span></dd></div><div><dt>Low</dt><dd><span class="temp" data-f="27">27&deg;F</span></dd></div><div><dt>Precipitation chance</dt><dd>5%</dd></div><div><dt>Wind</dt><dd>N 7 mph</dd></div></dl><p>A sample hard freeze is possible at dawn, then a bright, chilly afternoon. Good fictional weather for a fictional jacket.</p></article><article class="wk-card"><h3>Sunday <span class="badge-sample">Sample</span></h3><p class="wk-cond"><img class="cond-icon" src="assets/icon-sun.svg" alt="" width="28" height="28"> <span>Sunny</span></p><dl class="kv"><div><dt>High</dt><dd><span class="temp" data-f="50">50&deg;F</span></dd></div><div><dt>Low</dt><dd><span class="temp" data-f="30">30&deg;F</span></dd></div><div><dt>Precipitation chance</dt><dd>0%</dd></div><div><dt>Wind</dt><dd>NE 5 mph</dd></div></dl><p>Sunnier and a little milder in this sample scenario, with light winds all day.</p></article></div></section>
+</section>
+
+<section class="card media-card" aria-labelledby="radar-title" data-section="live-radar-link" data-component="media-teaser">
+<img src="assets/radar-frame-1.svg" alt="Placeholder radar image labeled sample, not live" width="320" height="200">
+<div><h2 id="radar-title">Radar player (non-functional placeholder)</h2>
+<p>The reference links to a live radar video. This replica has no video and no live radar. The linked page is a labeled placeholder with four invented frames.</p>
+<p><a class="btn" href="radar-video.html">Open the placeholder radar player</a></p></div></section>
+
+<section aria-labelledby="news-title" data-section="weather-news" data-component="news-teasers">
+<h2 id="news-title">Weather and science stories <span class="badge-sample">Sample</span></h2>
+<ul class="news-list"><li class="news-item" data-topic="Weather"><p class="news-topic">Weather &middot; <span class="badge-sample">Sample story</span></p><h3><a href="forecast.html">Cold front sample: what changes between Thursday and Friday</a></h3><p>A fictional walk-through of how an invented front could shift winds and temperatures.</p></li><li class="news-item" data-topic="Ask the Meteorologist"><p class="news-topic">Ask the Meteorologist &middot; <span class="badge-sample">Sample story</span></p><h3>Ask the Meteorologist: why does fog like river valleys?</h3><p>A sample answer about cool, damp air settling into low ground.</p></li><li class="news-item" data-topic="Weather"><p class="news-topic">Weather &middot; <span class="badge-sample">Sample story</span></p><h3>Flooding sample: how to read a flood watch versus a warning</h3><p>Invented examples of what each label means, with no real places named.</p></li><li class="news-item" data-topic="Science"><p class="news-topic">Science &middot; <span class="badge-sample">Sample story</span></p><h3>Space weather sample: a quiet week for the invented sun</h3><p>A made-up summary of solar activity, written for the research replica.</p></li></ul>
+<p><a href="news.html">View more top stories</a></p></section>
+
+</main>
+<footer class="site-footer" data-section="global-footer" data-component="site-footer"><div class="wrap">
+<div class="foot-grid">
+<section aria-labelledby="f1"><h2 id="f1">Forecasts</h2><ul><li><a href="index.html#7-day">7 Day</a></li><li><a href="index.html#hourly">Hourly</a></li><li><a href="index.html#weekend">Weekend</a></li><li><a href="forecast.html">Forecast discussion</a></li><li><a href="radar-video.html">Radar player (placeholder)</a></li></ul></section>
+<section aria-labelledby="f2"><h2 id="f2">Alerts and local</h2><ul><li><a href="alerts.html">Weather Alerts</a></li><li><a href="closings.html">Closings</a></li><li><a href="hurricanes.html">Hurricanes</a></li><li><a href="webcams.html">Webcams</a></li></ul></section>
+<section aria-labelledby="f3"><h2 id="f3">Learn more</h2><ul><li><a href="almanac.html">Almanac</a></li><li><a href="map-center.html">Map Center</a></li><li><a href="resources.html">Resources</a></li><li><a href="news.html">Weather news</a></li></ul></section>
+</div>
+<p class="foot-note"><strong>Research replica.</strong> Meridian 12 Weather is a fictional station and not affiliated with any real broadcaster. All weather data, alerts, closings and timestamps are invented sample data. No ads, tracking or third-party scripts. Footer grouping is inferred, not observed.</p>
+</div></footer>
+<script src="js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+{
+  "allocation_protocol": "WEB-REPLICA-ALLOCATION-V1.0",
+  "generation_protocol": "WEB-REPLICA-V1.0",
+  "category": "weather",
+  "slot": 2,
+  "source_id": "WX-02",
+  "model_group": "claude",
+  "model_id": "claude-sonnet-5-5",
+  "model_version": null,
+  "model_provider_or_runtime": "Claude Code Agent tool builder (claude-sonnet-5-5); orchestrated by claude-opus-5",
+  "generation_mode": "autonomous agent run, one replica per run, no human edits during generation",
+  "operator": "project lead (Samhith Varma) via orchestrator agent",
+  "approved_source_url": "https://www.wunderground.com/",
+  "source_verified_at": "2026-11-12",
+  "source_approved_at": "2026-11-13",
+  "generation_started_at": "2026-11-14T05:31:12Z",
+  "generation_completed_at": "2026-11-14T05:41:59Z",
+  "rules_revision": "WEB-REPLICA-V1.0 / WEB-REPLICA-ALLOCATION-V1.0, working tree as of 2026-11-14 (uncommitted modifications to Rules.md and MODEL_ALLOCATION.md on top of commit a07e70e, branch websites/portfolio-claude-01-03)",
+  "category_prompt_revision": "orchestrator brief 2026-11-14 (no separate category prompt file)",
+  "prompt_or_transcript_reference": "Claude Code orchestrator session, round 08 weather build",
+  "human_edits": [],
+  "validation_summary": {
+    "technology": "pass (qc.js run 2026-11-14: pages=14 files=26 failures=0 warnings=0)",
+    "completeness": "pass (qc.js)",
+    "structure": "pass (manual inspection plus qc.js metadata presence check)",
+    "interaction": "pass (40 scripted Playwright checks; one test-selector artifact re-verified)",
+    "accessibility": "partial (axe-core clean at 1280 and 375 px via qc.js; keyboard flows scripted; no assistive-technology testing; no WCAG conformance claimed)",
+    "traceability": "pass (manual)",
+    "scope": "pass (manual)"
+  }
+}

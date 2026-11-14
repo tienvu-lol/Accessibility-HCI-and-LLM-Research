@@ -1,0 +1,55 @@
+{
+  "allocation_protocol": "WEB-REPLICA-ALLOCATION-V1.0",
+  "generation_protocol": "WEB-REPLICA-V1.0",
+  "category": "weather",
+  "slot": 6,
+  "source_id": "WX-06",
+  "model_group": "codex",
+  "model_id": "gpt-6",
+  "model_version": null,
+  "model_provider_or_runtime": "OpenAI / Codex coding agent",
+  "model_identity_limit": "GPT-6 family identified by session only; exact release/version unknown.",
+  "model_reassignment_evidence": "pipelines/codex/research/evidence/weather-model-execution-2026-11-14.json",
+  "generation_mode": "serial single-session static implementation",
+  "operator": "Samhith Varma",
+  "approved_source_url": "https://www.mountain-forecast.com/",
+  "source_verified_at": "2026-11-12T00:58:05.793873+00:00",
+  "source_verification_method": "Live web search and web extracted-text opens/clicks; direct Python urllib HTTPS GET; HTTP-only, no browser/JS tests",
+  "source_approved_at": "2026-11-12",
+  "source_approval_reference": "metadata/change-log.md \u00a7 2026-11-12 \u2014 Codex Phase A approval (slots 04\u201306)",
+  "generation_started_at": "2026-11-14T05:33:24.065836+00:00",
+  "generation_completed_at": "2026-11-14T05:33:24.069567+00:00",
+  "rules_revision": "04b1c3e38b76f2aff3aef869d67370bb4532cd8f9ab5e22ac8276f26cbb859bf",
+  "category_prompt_revision": "24e7955b43d30f2e988d94adc577d00c30f1e9895833ed388eadb09d75589482",
+  "prompt_or_transcript_reference": "Websites/pipelines/codex/runs/2026-11-14T05-25-43-557Z-build-WX-06/task.md",
+  "human_edits": [],
+  "validation_summary": {
+    "technology": "pass (source/file inspection)",
+    "completeness": "pass (static audit)",
+    "structure": "pass (source self-review); rendered fidelity not-tested",
+    "interaction": "pure data functions pass; DOM/browser not-tested",
+    "accessibility": "not-tested; browser QC unavailable",
+    "traceability": "pass (same-session static self-review)",
+    "scope": "pass (source self-review)"
+  },
+  "qc_status": "blocked; shared browser launch exit 2",
+  "validation_evidence": {
+    "static": "Websites/pipelines/codex/runs/2026-11-14T05-25-43-557Z-build-WX-06/static-audit.json",
+    "logic": "Websites/pipelines/codex/runs/2026-11-14T05-25-43-557Z-build-WX-06/logic-tests.json",
+    "qc_logs": [
+      "qc-2026-11-14T05-33-24-196Z.log",
+      "qc-2026-11-14T05-33-54-104Z.log"
+    ]
+  },
+  "corrections": [
+    {
+      "at": "2026-11-14T05:33:53.844686+00:00",
+      "type": "same-session source-review correction",
+      "reason": "Use SVG style.display for overlay toggles rather than HTMLElement hidden reflection; correct README sample-count arithmetic. Initial output preserved.",
+      "files": [
+        "js/main.js",
+        "README.md"
+      ]
+    }
+  ]
+}

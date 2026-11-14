@@ -1,0 +1,23 @@
+[
+  {
+    "at": "2026-11-13T15:43:24.266784+00:00",
+    "reason": "Parent instrumentation review: meaningful regions need both metadata attributes; explicit button types requested",
+    "changes": [
+      "Added missing data-section/data-component on semantic regions",
+      "Added explicit type=button to non-submit buttons",
+      "Regenerated component inventory from actual instance locations"
+    ],
+    "initial_artifact": "initial-site.tar.gz",
+    "human_edits": [],
+    "cross_model_edits": []
+  },
+  {
+    "at": "2026-11-13T15:44:59.660348+00:00",
+    "reason": "Source review found current-page indication was limited to two top-level links",
+    "changes": [
+      "Added aria-current=page to matching local navigation links and a visible underline"
+    ],
+    "human_edits": [],
+    "cross_model_edits": []
+  }
+]

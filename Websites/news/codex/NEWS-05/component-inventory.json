@@ -1,0 +1,462 @@
+{
+  "protocol_version": "1.0",
+  "replica_id": "NEWS-05",
+  "category": "news",
+  "source_url": "https://cardinalnews.org/",
+  "components": [
+    {
+      "id": "site-header",
+      "selector": "[data-component=\"site-header\"]",
+      "pages": [
+        "index.html",
+        "politics.html",
+        "article.html",
+        "search.html",
+        "newsletters.html",
+        "about.html",
+        "faq.html",
+        "404.html"
+      ],
+      "behavior": [
+        "masthead and utilities"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "Static selector/page review passed; browser not-tested"
+    },
+    {
+      "id": "primary-nav",
+      "selector": "[data-component=\"primary-nav\"]",
+      "pages": [
+        "index.html",
+        "politics.html",
+        "article.html",
+        "search.html",
+        "newsletters.html",
+        "about.html",
+        "faq.html",
+        "404.html"
+      ],
+      "behavior": [
+        "consistent direct page/anchor navigation"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "Static selector/page review passed; browser not-tested"
+    },
+    {
+      "id": "navigation-disclosure",
+      "selector": "[data-component=\"navigation-disclosure\"]",
+      "pages": [
+        "index.html",
+        "politics.html",
+        "article.html",
+        "search.html",
+        "newsletters.html",
+        "about.html",
+        "faq.html",
+        "404.html"
+      ],
+      "behavior": [
+        "toggle directory",
+        "Escape closes and returns focus"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "Static selector/page review passed; browser not-tested; delivered-JS VM behavior passed with DOM mocks"
+    },
+    {
+      "id": "search-form",
+      "selector": "[data-component=\"search-form\"]",
+      "pages": [
+        "index.html",
+        "politics.html",
+        "article.html",
+        "search.html",
+        "newsletters.html",
+        "about.html",
+        "faq.html",
+        "404.html"
+      ],
+      "behavior": [
+        "GET to local search"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "Static selector/page review passed; browser not-tested"
+    },
+    {
+      "id": "site-footer",
+      "selector": "[data-component=\"site-footer\"]",
+      "pages": [
+        "index.html",
+        "politics.html",
+        "article.html",
+        "search.html",
+        "newsletters.html",
+        "about.html",
+        "faq.html",
+        "404.html"
+      ],
+      "behavior": [
+        "grouped local links"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "Static selector/page review passed; browser not-tested"
+    },
+    {
+      "id": "lead-grid",
+      "selector": "[data-component=\"lead-grid\"]",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "lead and latest hierarchy"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "Static selector/page review passed; browser not-tested"
+    },
+    {
+      "id": "story-card",
+      "selector": "[data-component=\"story-card\"]",
+      "pages": [
+        "index.html",
+        "politics.html",
+        "article.html"
+      ],
+      "behavior": [
+        "selected fictional article links"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "Static selector/page review passed; browser not-tested",
+      "instances": [
+        {
+          "page": "index.html",
+          "selector": "article[data-section=\"story-preview\"][data-component=\"story-card\"]",
+          "count": 12
+        },
+        {
+          "page": "politics.html",
+          "selector": "article[data-section=\"story-preview\"][data-component=\"story-card\"]",
+          "count": 4
+        },
+        {
+          "page": "article.html",
+          "selector": "article[data-section=\"story-preview\"][data-component=\"story-card\"]",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "id": "regional-band",
+      "selector": "[data-component=\"regional-band\"]",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "six geography bands"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "Static selector/page review passed; browser not-tested"
+    },
+    {
+      "id": "newsletter-callout",
+      "selector": "[data-component=\"newsletter-callout\"]",
+      "pages": [
+        "index.html",
+        "politics.html"
+      ],
+      "behavior": [
+        "newsletter information/link"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "Static selector/page review passed; browser not-tested"
+    },
+    {
+      "id": "article-list",
+      "selector": "[data-component=\"article-list\"]",
+      "pages": [
+        "politics.html"
+      ],
+      "behavior": [
+        "archive"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "Static selector/page review passed; browser not-tested"
+    },
+    {
+      "id": "breadcrumb",
+      "selector": "[data-component=\"breadcrumb\"]",
+      "pages": [
+        "article.html"
+      ],
+      "behavior": [
+        "hierarchical links"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "Static selector/page review passed; browser not-tested"
+    },
+    {
+      "id": "article-detail",
+      "selector": "[data-component=\"article-detail\"]",
+      "pages": [
+        "article.html"
+      ],
+      "behavior": [
+        "query-selected headline/deck/image"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "Static selector/page review passed; browser not-tested; delivered-JS VM behavior passed with DOM mocks"
+    },
+    {
+      "id": "share-tools",
+      "selector": "[data-component=\"share-tools\"]",
+      "pages": [
+        "article.html"
+      ],
+      "behavior": [
+        "show local share address"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "Static selector/page review passed; browser not-tested; delivered-JS VM behavior passed with DOM mocks"
+    },
+    {
+      "id": "article-figure",
+      "selector": "[data-component=\"article-figure\"]",
+      "pages": [
+        "article.html",
+        "about.html"
+      ],
+      "behavior": [
+        "local illustration and caption"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "Static selector/page review passed; browser not-tested"
+    },
+    {
+      "id": "author-bio",
+      "selector": "[data-component=\"author-bio\"]",
+      "pages": [
+        "article.html"
+      ],
+      "behavior": [
+        "fictional author context"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "Static selector/page review passed; browser not-tested"
+    },
+    {
+      "id": "popular-list",
+      "selector": "[data-component=\"popular-list\"]",
+      "pages": [
+        "article.html"
+      ],
+      "behavior": [
+        "ranked story links"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "Static selector/page review passed; browser not-tested"
+    },
+    {
+      "id": "related-stories",
+      "selector": "[data-component=\"related-stories\"]",
+      "pages": [
+        "article.html"
+      ],
+      "behavior": [
+        "related story links"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "Static selector/page review passed; browser not-tested"
+    },
+    {
+      "id": "post-navigation",
+      "selector": "[data-component=\"post-navigation\"]",
+      "pages": [
+        "article.html"
+      ],
+      "behavior": [
+        "previous/next links"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "Static selector/page review passed; browser not-tested"
+    },
+    {
+      "id": "search-results",
+      "selector": "[data-component=\"search-results\"]",
+      "pages": [
+        "search.html"
+      ],
+      "behavior": [
+        "local results and empty state"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "Static selector/page review passed; browser not-tested; delivered-JS VM behavior passed with DOM mocks"
+    },
+    {
+      "id": "search-result",
+      "selector": "[data-component=\"search-result\"]",
+      "pages": [
+        "search.html"
+      ],
+      "behavior": [
+        "generated result link"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "Static selector/page review passed; browser not-tested; delivered-JS VM behavior passed with DOM mocks",
+      "instances": [
+        {
+          "page": "search.html",
+          "selector": "article[data-section=\"search-result-item\"][data-component=\"search-result\"]",
+          "count": "0\u20138 dynamically generated by js/main.js; explicit VM metadata assertions passed"
+        }
+      ]
+    },
+    {
+      "id": "newsletter-form",
+      "selector": "[data-component=\"newsletter-form\"]",
+      "pages": [
+        "newsletters.html"
+      ],
+      "behavior": [
+        "five choices",
+        "email/list validation",
+        "explicit demo success"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "Static selector/page review passed; browser not-tested; delivered-JS VM behavior passed with DOM mocks"
+    },
+    {
+      "id": "prose-section",
+      "selector": "[data-component=\"prose-section\"]",
+      "pages": [
+        "about.html"
+      ],
+      "behavior": [
+        "mission/annual overview/standards"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "Static selector/page review passed; browser not-tested"
+    },
+    {
+      "id": "table-of-contents",
+      "selector": "[data-component=\"table-of-contents\"]",
+      "pages": [
+        "faq.html"
+      ],
+      "behavior": [
+        "answer anchor navigation"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "Static selector/page review passed; browser not-tested"
+    },
+    {
+      "id": "faq-answer",
+      "selector": "[data-component=\"faq-answer\"]",
+      "pages": [
+        "faq.html"
+      ],
+      "behavior": [
+        "free-access/funding explanations"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "Static selector/page review passed; browser not-tested"
+    }
+  ]
+}

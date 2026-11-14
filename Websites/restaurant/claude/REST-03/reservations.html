@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Request a reservation | Vane &amp; Alder</title>
+<meta name="description" content="Simulated reservation request form.">
+<link rel="icon" href="assets/plate.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header" data-section="global-header" data-component="site-header">
+<p class="demo-banner" data-component="demo-banner">Fictional restaurant. Research replica: nothing here is real, bookable or purchasable.</p>
+<div class="header-inner">
+<a class="brand" href="index.html" data-component="brand-wordmark">Vane &amp; Alder</a>
+<button type="button" class="menu-toggle" aria-expanded="false" aria-controls="nav-wrap" data-component="mobile-menu-toggle">Menu</button>
+<div class="nav-wrap" id="nav-wrap">
+<nav aria-label="Primary" data-section="global-navigation" data-component="primary-nav"><ul class="nav-list">
+<li class=""><button type="button" class="sub-toggle" aria-expanded="false" aria-controls="sub-about">About</button><ul class="sub-list" id="sub-about"><li><a href="about.html">Our restaurant</a></li><li><a href="team.html">Team</a></li><li><a href="lantern-fields.html">Lantern Fields</a></li><li><a href="press.html">Press and accolades</a></li><li><a href="careers.html">Careers</a></li><li><a href="faq.html">FAQs</a></li></ul></li>
+<li><a href="menu.html">Menu</a></li><li><a href="events.html">Events</a></li><li><a href="stories.html">Stories</a></li>
+<li class=""><button type="button" class="sub-toggle" aria-expanded="false" aria-controls="sub-shop">Shop</button><ul class="sub-list" id="sub-shop"><li><a href="gift-cards.html">Gift cards</a></li></ul></li>
+<li><a href="contact.html">Contact</a></li>
+</ul></nav>
+<nav aria-label="Utility" class="utility-nav" data-section="utility-navigation" data-component="utility-nav"><ul>
+<li><a class="cart-link" href="gift-cards.html#cart-heading" data-component="cart-link">Cart (<span data-cart-count>0</span><span class="sr-only"> items, demo</span>)</a></li>
+<li><a class="btn" href="reservations.html" aria-current="page">Reserve</a></li>
+</ul></nav>
+</div></div></header>
+<main id="main-content" data-section="main-content">
+<div class="wrap"><nav class="breadcrumb" aria-label="Breadcrumb" data-component="breadcrumb"><ol><li><a href="index.html">Home</a></li><li aria-current="page">Request a reservation</li></ol></nav></div>
+
+<div class="wrap narrow page-head"><p class="eyebrow">Reservations</p><h1>Request a reservation</h1><p class="lede">Intentional addition. The reference sends guests to an external booking service; here the step is a local simulation.</p></div>
+<div class="wrap narrow"><section aria-labelledby="res-h" data-section="reservation" data-component="reservation-form">
+<p class="form-note" data-component="simulation-notice"><strong>Simulation.</strong> No table is held, no availability is checked and no email is sent. Submitting only validates your entries and shows a demo confirmation.</p>
+<h2 id="res-h">Your details</h2>
+<form data-demo-form aria-labelledby="res-h">
+<div class="error-summary" tabindex="-1" hidden></div>
+<div class="field"><label for="res-date">Date <span>(required)</span></label><span class="hint" id="res-date-hint">Dinner is served Wednesday to Saturday. Past dates are rejected.</span><input id="res-date" name="res-date" type="date" aria-describedby="res-date-hint res-date-error" data-required data-future><p class="error" id="res-date-error" hidden></p></div>
+<div class="field"><label for="res-time">Preferred time <span>(required)</span></label><select id="res-time" name="res-time" aria-describedby="res-time-error" data-required><option value="">Choose...</option><option value="5:30 pm">5:30 pm</option><option value="6:00 pm">6:00 pm</option><option value="6:30 pm">6:30 pm</option><option value="7:00 pm">7:00 pm</option><option value="7:30 pm">7:30 pm</option><option value="8:00 pm">8:00 pm</option><option value="8:30 pm">8:30 pm</option></select><p class="error" id="res-time-error" hidden></p></div>
+<div class="field"><label for="res-party">Party size <span>(required)</span></label><span class="hint" id="res-party-hint">1 to 8 guests.</span><input id="res-party" name="res-party" type="number" aria-describedby="res-party-hint res-party-error" data-required min="1" max="8" inputmode="numeric"><p class="error" id="res-party-error" hidden></p></div>
+<div class="field"><label for="res-name">Full name <span>(required)</span></label><input id="res-name" name="res-name" type="text" autocomplete="name" aria-describedby="res-name-error" data-required><p class="error" id="res-name-error" hidden></p></div>
+<div class="field"><label for="res-email">Email <span>(required)</span></label><input id="res-email" name="res-email" type="email" autocomplete="email" aria-describedby="res-email-error" data-required><p class="error" id="res-email-error" hidden></p></div>
+<div class="field"><label for="res-phone">Phone <span>(optional)</span></label><span class="hint" id="res-phone-hint">Optional. Example: 555-0100.</span><input id="res-phone" name="res-phone" type="tel" autocomplete="tel" aria-describedby="res-phone-hint res-phone-error"><p class="error" id="res-phone-error" hidden></p></div>
+<div class="field"><label for="res-notes">Dietary needs or notes <span>(optional)</span></label><span class="hint" id="res-notes-hint">Optional.</span><textarea id="res-notes" name="res-notes" aria-describedby="res-notes-hint res-notes-error"></textarea><p class="error" id="res-notes-error" hidden></p></div>
+<button class="btn" type="submit">Send request (demo)</button>
+<div class="demo-success" tabindex="-1" hidden><h2>Demo only: request received</h2><p class="demo-success-text" data-text="This is a demonstration. No reservation was made and nothing was transmitted."></p></div>
+</form></section></div>
+</main>
+<footer class="site-footer" data-section="global-footer" data-component="site-footer"><div class="wrap">
+<div class="footer-grid">
+<section aria-labelledby="ft-visit"><h2 id="ft-visit">Address and hours</h2><p>14 Lantern Court<br>Harrowgate, Fictional State 00000<br>Wednesday to Saturday, 5:30 to 10:00 pm</p><p><a href="contact.html">Contact and hours</a></p></section>
+<nav aria-label="Footer" data-section="footer-navigation" data-component="footer-nav"><h2>Explore</h2><ul>
+<li><a href="faq.html">FAQs</a></li><li><a href="press.html">Press and accolades</a></li><li><a href="careers.html">Careers</a></li><li><a href="contact.html">Contact us</a></li><li><a href="accessibility.html">Accessibility statement</a></li></ul></nav>
+<section aria-labelledby="ft-news" data-section="newsletter" ><h2 id="ft-news">Newsletter (demo)</h2>
+<form data-demo-form data-component="newsletter-form" aria-labelledby="ft-news">
+<div class="error-summary" tabindex="-1" hidden></div>
+<div class="field"><label for="nl-given">First name <span>(required)</span></label><input id="nl-given" name="nl-given" type="text" autocomplete="given-name" aria-describedby="nl-given-error" data-required><p class="error" id="nl-given-error" hidden></p></div>
+<div class="field"><label for="nl-surname">Last name <span>(required)</span></label><input id="nl-surname" name="nl-surname" type="text" autocomplete="family-name" aria-describedby="nl-surname-error" data-required><p class="error" id="nl-surname-error" hidden></p></div>
+<div class="field"><label for="nl-email">Email <span>(required)</span></label><input id="nl-email" name="nl-email" type="email" autocomplete="email" aria-describedby="nl-email-error" data-required><p class="error" id="nl-email-error" hidden></p></div>
+<button type="submit" class="btn">Subscribe (demo)</button>
+<div class="demo-success" tabindex="-1" hidden><h3>Demo subscription received</h3><p class="demo-success-text" data-text="This is a demonstration. Nothing was sent or stored, and no email will arrive."></p></div>
+</form></section></div>
+<p class="fine">Vane &amp; Alder is a fictional restaurant invented for a research dataset. Layout inspired by the information architecture of a public restaurant website; no real branding or copy is reproduced.</p>
+</div></footer>
+<script src="js/main.js"></script>
+</body>
+</html>

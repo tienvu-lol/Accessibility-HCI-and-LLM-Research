@@ -1,0 +1,101 @@
+{
+  "allocation_protocol": "WEB-REPLICA-ALLOCATION-V1.0",
+  "generation_protocol": "WEB-REPLICA-V1.0",
+  "category": "healthcare",
+  "slot": 5,
+  "source_id": "HOSP-05",
+  "model_group": "codex",
+  "model_id": "gpt-6.1-sol",
+  "model_version": null,
+  "model_provider_or_runtime": "OpenAI collaboration worker (gpt-6.1-sol), orchestrated in Codex; runtime declared in task, version not exposed",
+  "generation_mode": "isolated local static snapshot; original code authored by assigned worker",
+  "operator": "Samhith Varma",
+  "approved_source_url": "https://www.evergreenhealth.com/",
+  "source_verified_at": "2026-11-12T00:52:42Z",
+  "source_verification_method": "Live web search plus web open/click text extraction (not browser rendering); direct urllib homepage GET returned 403",
+  "source_verification_limitations": "Provisional reservation pending coordinator. Direct homepage HTTP 403; web-tool text pages readable with crawl labels today to three days ago, without origin status. No rendered/interaction tests. Primary-care provider listing timed out; no provider profile verified. No appointment inquiry form observed.",
+  "source_approved_at": "2026-11-12",
+  "approval_reference": "metadata/change-log.md \u00a7 2026-11-12 \u2014 Codex Phase A approval (slots 04\u201306)",
+  "generation_started_at": "2026-11-13T15:48:47Z",
+  "generation_completed_at": "2026-11-13T15:53:54.332026Z",
+  "rules_revision": "04b1c3e38b76f2aff3aef869d67370bb4532cd8f9ab5e22ac8276f26cbb859bf",
+  "category_prompt_revision": "843ea7d8d1cc7d01385643f848408dea32997985422496d98e8f108bbc09a333",
+  "protocol_snapshots": [
+    {
+      "path": "Rules.md",
+      "sha256": "04b1c3e38b76f2aff3aef869d67370bb4532cd8f9ab5e22ac8276f26cbb859bf"
+    },
+    {
+      "path": "MODEL_ALLOCATION.md",
+      "sha256": "dba261a89763c22a6c41fc6b066593345aef7871121cef52ff7b73ff88cce3cd"
+    },
+    {
+      "path": "pipelines/codex/config.json",
+      "sha256": "b16751854f14ec50f9e8e8726e4ab0c064503f1ebdea6d71ba7e1faf85ed6d95"
+    },
+    {
+      "path": "pipelines/codex/categories.json",
+      "sha256": "843ea7d8d1cc7d01385643f848408dea32997985422496d98e8f108bbc09a333"
+    },
+    {
+      "path": "pipelines/codex/prompts/build.md",
+      "sha256": "37567f6a4198f7539b11964980cf814a7b8c0732f926dfe9aa6f86849dd2277c"
+    },
+    {
+      "path": "metadata/source-inventories/healthcare.csv",
+      "sha256": "824cd91b8ff64910e05cf7eb2f4ce7517b236fba312d8694cd9a8263b887f085"
+    },
+    {
+      "path": "metadata/assignments.csv",
+      "sha256": "a10fbf398eb226807cb7391e6756fcd1a192a6ed246292ecdda77c24c6e35362"
+    }
+  ],
+  "prompt_or_transcript_reference": "pipelines/codex/runs/2026-11-13T15-47-56-558Z-build-HOSP-05/task.md",
+  "human_edits": [],
+  "cross_model_edits": [],
+  "active_allocation": [
+    "01",
+    "02",
+    "03",
+    "04",
+    "05",
+    "06"
+  ],
+  "deferred_allocation": [
+    "07",
+    "08",
+    "09",
+    "10"
+  ],
+  "tool_access": [
+    "exec_command",
+    "Python standard library for authoring/static audit",
+    "Node for JS checks",
+    "shared qc.js browser attempt"
+  ],
+  "generation_budget": null,
+  "retries": [
+    {
+      "type": "provenance correction",
+      "at": "2026-11-13T15:53:54.332026Z",
+      "detail": "Corrected generation_started_at to first tool-recorded UTC time before generation (15:48:47Z), replacing unsubstantiated initial 15:48:03Z. No site code corrections or shared-QC retries."
+    }
+  ],
+  "validation_summary": {
+    "technology": "pass",
+    "completeness": "pass",
+    "structure": "pass",
+    "interaction": "not-tested",
+    "accessibility": "not-tested",
+    "traceability": "pass",
+    "scope": "pass"
+  },
+  "qc_evidence": {
+    "shared_qc_exit_code": 2,
+    "shared_qc_attempts": 1,
+    "browser": "blocked at Chromium launch; no axe result",
+    "raw_log": "pipelines/codex/runs/2026-11-13T15-47-56-558Z-build-HOSP-05/qc-initial.log",
+    "static": "pipelines/codex/runs/2026-11-13T15-47-56-558Z-build-HOSP-05/static-check.json",
+    "logic": "pipelines/codex/runs/2026-11-13T15-47-56-558Z-build-HOSP-05/logic-check.json"
+  }
+}

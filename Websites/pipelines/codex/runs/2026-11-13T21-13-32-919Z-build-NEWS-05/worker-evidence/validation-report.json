@@ -1,0 +1,46 @@
+{
+  "timestamp": "2026-11-13T21:19:24.891513+00:00",
+  "static": {
+    "pages": 8,
+    "files": 18,
+    "element_checks": 952,
+    "errors": [],
+    "result": "pass"
+  },
+  "javascript_syntax": "pass: node --check",
+  "interaction": {
+    "method": "actual delivered JS in Node VM with explicit lightweight DOM mocks",
+    "tests": 9,
+    "result": "pass",
+    "browser_keyboard_state_testing": "not-tested"
+  },
+  "shared_qc": {
+    "attempts": 1,
+    "exit_code": 2,
+    "outcome": "blocked: Chromium MachPort bootstrap permission denied",
+    "browser_axe": "not-tested",
+    "report_json_emitted": false,
+    "log": "qc-initial.log"
+  },
+  "manual_source_review": "Supplied HTTP evidence only; hierarchy approximated without rendering",
+  "not_tested": [
+    "browser rendering",
+    "axe",
+    "actual keyboard navigation",
+    "focus visibility",
+    "screen reader",
+    "zoom",
+    "responsive reflow",
+    "rendered contrast",
+    "visual source fidelity"
+  ],
+  "gates": {
+    "technology": "pass",
+    "completeness": "pass",
+    "structure": "pass",
+    "interaction": "not-tested",
+    "accessibility": "not-tested",
+    "traceability": "pass",
+    "scope": "pass"
+  }
+}

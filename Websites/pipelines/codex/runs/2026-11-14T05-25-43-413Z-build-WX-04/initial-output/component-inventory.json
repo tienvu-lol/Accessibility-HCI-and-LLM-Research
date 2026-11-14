@@ -1,0 +1,687 @@
+{
+  "protocol_version": "1.0",
+  "replica_id": "WX-04",
+  "category": "weather",
+  "source_url": "https://www.metoffice.gov.uk/",
+  "components": [
+    {
+      "id": "accordion",
+      "selector": "[data-component='accordion']",
+      "pages": [
+        "london.html",
+        "warnings.html"
+      ],
+      "instances": [
+        {
+          "page": "london.html",
+          "section": "rain-explanation"
+        },
+        {
+          "page": "london.html",
+          "section": "wind-explanation"
+        },
+        {
+          "page": "warnings.html",
+          "section": "subscription-demo"
+        }
+      ],
+      "behavior": [
+        "Native disclosure using Enter/Space."
+      ],
+      "keyboard": [
+        "Tab/Enter for links; native controls use Enter/Space and arrow keys where applicable"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution not-tested"
+    },
+    {
+      "id": "breadcrumb",
+      "selector": "[data-component='breadcrumb']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "london.html",
+        "radar.html",
+        "warnings.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "section": "breadcrumb"
+        },
+        {
+          "page": "about.html",
+          "section": "breadcrumb"
+        },
+        {
+          "page": "london.html",
+          "section": "breadcrumb"
+        },
+        {
+          "page": "radar.html",
+          "section": "breadcrumb"
+        },
+        {
+          "page": "warnings.html",
+          "section": "breadcrumb"
+        }
+      ],
+      "behavior": [
+        "Semantic static content and relative navigation where applicable."
+      ],
+      "keyboard": [
+        "Tab/Enter for links; native controls use Enter/Space and arrow keys where applicable"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution not-tested"
+    },
+    {
+      "id": "conditions-summary",
+      "selector": "[data-component='conditions-summary']",
+      "pages": [
+        "london.html"
+      ],
+      "instances": [
+        {
+          "page": "london.html",
+          "section": "location-summary"
+        }
+      ],
+      "behavior": [
+        "Semantic static content and relative navigation where applicable."
+      ],
+      "keyboard": [
+        "Tab/Enter for links; native controls use Enter/Space and arrow keys where applicable"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution not-tested"
+    },
+    {
+      "id": "day-selector",
+      "selector": "[data-component='day-selector']",
+      "pages": [
+        "london.html"
+      ],
+      "instances": [
+        {
+          "page": "london.html",
+          "section": "forecast-day-selection"
+        }
+      ],
+      "behavior": [
+        "Buttons update sample day, pressed state and hourly data."
+      ],
+      "keyboard": [
+        "Tab/Enter for links; native controls use Enter/Space and arrow keys where applicable"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution not-tested"
+    },
+    {
+      "id": "demo-notice",
+      "selector": "[data-component='demo-notice']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "index.html",
+        "london.html",
+        "radar.html",
+        "warnings.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "section": "sample-disclosure"
+        },
+        {
+          "page": "about.html",
+          "section": "sample-disclosure"
+        },
+        {
+          "page": "index.html",
+          "section": "sample-disclosure"
+        },
+        {
+          "page": "london.html",
+          "section": "sample-disclosure"
+        },
+        {
+          "page": "radar.html",
+          "section": "sample-disclosure"
+        },
+        {
+          "page": "warnings.html",
+          "section": "sample-disclosure"
+        }
+      ],
+      "behavior": [
+        "Semantic static content and relative navigation where applicable."
+      ],
+      "keyboard": [
+        "Tab/Enter for links; native controls use Enter/Space and arrow keys where applicable"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution not-tested"
+    },
+    {
+      "id": "editorial-content",
+      "selector": "[data-component='editorial-content']",
+      "pages": [
+        "about.html",
+        "index.html"
+      ],
+      "instances": [
+        {
+          "page": "about.html",
+          "section": "organization-overview"
+        },
+        {
+          "page": "about.html",
+          "section": "service-limitations"
+        },
+        {
+          "page": "index.html",
+          "section": "understanding-weather"
+        }
+      ],
+      "behavior": [
+        "Semantic static content and relative navigation where applicable."
+      ],
+      "keyboard": [
+        "Tab/Enter for links; native controls use Enter/Space and arrow keys where applicable"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution not-tested"
+    },
+    {
+      "id": "explanation-grid",
+      "selector": "[data-component='explanation-grid']",
+      "pages": [
+        "london.html",
+        "warnings.html"
+      ],
+      "instances": [
+        {
+          "page": "london.html",
+          "section": "forecast-explanations"
+        },
+        {
+          "page": "warnings.html",
+          "section": "warning-context"
+        }
+      ],
+      "behavior": [
+        "Semantic static content and relative navigation where applicable."
+      ],
+      "keyboard": [
+        "Tab/Enter for links; native controls use Enter/Space and arrow keys where applicable"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution not-tested"
+    },
+    {
+      "id": "feature-grid",
+      "selector": "[data-component='feature-grid']",
+      "pages": [
+        "index.html"
+      ],
+      "instances": [
+        {
+          "page": "index.html",
+          "section": "weather-tools"
+        }
+      ],
+      "behavior": [
+        "Semantic static content and relative navigation where applicable."
+      ],
+      "keyboard": [
+        "Tab/Enter for links; native controls use Enter/Space and arrow keys where applicable"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution not-tested"
+    },
+    {
+      "id": "forecast-card",
+      "selector": "[data-component='forecast-card']",
+      "pages": [
+        "index.html"
+      ],
+      "instances": [
+        {
+          "page": "index.html",
+          "section": "summary-morning"
+        },
+        {
+          "page": "index.html",
+          "section": "summary-afternoon"
+        },
+        {
+          "page": "index.html",
+          "section": "summary-evening"
+        }
+      ],
+      "behavior": [
+        "Semantic static content and relative navigation where applicable."
+      ],
+      "keyboard": [
+        "Tab/Enter for links; native controls use Enter/Space and arrow keys where applicable"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution not-tested"
+    },
+    {
+      "id": "forecast-summary",
+      "selector": "[data-component='forecast-summary']",
+      "pages": [
+        "index.html"
+      ],
+      "instances": [
+        {
+          "page": "index.html",
+          "section": "national-summary"
+        }
+      ],
+      "behavior": [
+        "Semantic static content and relative navigation where applicable."
+      ],
+      "keyboard": [
+        "Tab/Enter for links; native controls use Enter/Space and arrow keys where applicable"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution not-tested"
+    },
+    {
+      "id": "forecast-table",
+      "selector": "[data-component='forecast-table']",
+      "pages": [
+        "london.html"
+      ],
+      "instances": [
+        {
+          "page": "london.html",
+          "section": "forecast-data"
+        }
+      ],
+      "behavior": [
+        "Semantic static content and relative navigation where applicable."
+      ],
+      "keyboard": [
+        "Tab/Enter for links; native controls use Enter/Space and arrow keys where applicable"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution not-tested"
+    },
+    {
+      "id": "main-content",
+      "selector": "[data-component='main-content']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "index.html",
+        "london.html",
+        "radar.html",
+        "warnings.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "section": "main-content"
+        },
+        {
+          "page": "about.html",
+          "section": "main-content"
+        },
+        {
+          "page": "index.html",
+          "section": "main-content"
+        },
+        {
+          "page": "london.html",
+          "section": "main-content"
+        },
+        {
+          "page": "radar.html",
+          "section": "main-content"
+        },
+        {
+          "page": "warnings.html",
+          "section": "main-content"
+        }
+      ],
+      "behavior": [
+        "Semantic static content and relative navigation where applicable."
+      ],
+      "keyboard": [
+        "Tab/Enter for links; native controls use Enter/Space and arrow keys where applicable"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution not-tested"
+    },
+    {
+      "id": "map-demo",
+      "selector": "[data-component='map-demo']",
+      "pages": [
+        "radar.html"
+      ],
+      "instances": [
+        {
+          "page": "radar.html",
+          "section": "radar-timeline"
+        }
+      ],
+      "behavior": [
+        "Range and previous/next cycle fixed frames; checkbox hides fictional rain layer."
+      ],
+      "keyboard": [
+        "Tab/Enter for links; native controls use Enter/Space and arrow keys where applicable"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution not-tested"
+    },
+    {
+      "id": "map-preview",
+      "selector": "[data-component='map-preview']",
+      "pages": [
+        "london.html"
+      ],
+      "instances": [
+        {
+          "page": "london.html",
+          "section": "location-map-preview"
+        }
+      ],
+      "behavior": [
+        "Semantic static content and relative navigation where applicable."
+      ],
+      "keyboard": [
+        "Tab/Enter for links; native controls use Enter/Space and arrow keys where applicable"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution not-tested"
+    },
+    {
+      "id": "page-heading",
+      "selector": "[data-component='page-heading']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "london.html",
+        "radar.html",
+        "warnings.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "section": "page-introduction"
+        },
+        {
+          "page": "about.html",
+          "section": "page-introduction"
+        },
+        {
+          "page": "london.html",
+          "section": "page-introduction"
+        },
+        {
+          "page": "radar.html",
+          "section": "page-introduction"
+        },
+        {
+          "page": "warnings.html",
+          "section": "page-introduction"
+        }
+      ],
+      "behavior": [
+        "Semantic static content and relative navigation where applicable."
+      ],
+      "keyboard": [
+        "Tab/Enter for links; native controls use Enter/Space and arrow keys where applicable"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution not-tested"
+    },
+    {
+      "id": "primary-nav",
+      "selector": "[data-component='primary-nav']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "index.html",
+        "london.html",
+        "radar.html",
+        "warnings.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "section": "global-navigation"
+        },
+        {
+          "page": "about.html",
+          "section": "global-navigation"
+        },
+        {
+          "page": "index.html",
+          "section": "global-navigation"
+        },
+        {
+          "page": "london.html",
+          "section": "global-navigation"
+        },
+        {
+          "page": "radar.html",
+          "section": "global-navigation"
+        },
+        {
+          "page": "warnings.html",
+          "section": "global-navigation"
+        }
+      ],
+      "behavior": [
+        "Semantic static content and relative navigation where applicable."
+      ],
+      "keyboard": [
+        "Tab/Enter for links; native controls use Enter/Space and arrow keys where applicable"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution not-tested"
+    },
+    {
+      "id": "search-form",
+      "selector": "[data-component='search-form']",
+      "pages": [
+        "index.html"
+      ],
+      "instances": [
+        {
+          "page": "index.html",
+          "section": "local-search-form"
+        }
+      ],
+      "behavior": [
+        "Submit filters three inline places, blank and no-match feedback; result links carry local query ID."
+      ],
+      "keyboard": [
+        "Tab/Enter for links; native controls use Enter/Space and arrow keys where applicable"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution not-tested"
+    },
+    {
+      "id": "search-panel",
+      "selector": "[data-component='search-panel']",
+      "pages": [
+        "index.html"
+      ],
+      "instances": [
+        {
+          "page": "index.html",
+          "section": "local-search"
+        }
+      ],
+      "behavior": [
+        "Semantic static content and relative navigation where applicable."
+      ],
+      "keyboard": [
+        "Tab/Enter for links; native controls use Enter/Space and arrow keys where applicable"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution not-tested"
+    },
+    {
+      "id": "site-footer",
+      "selector": "[data-component='site-footer']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "index.html",
+        "london.html",
+        "radar.html",
+        "warnings.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "section": "global-footer"
+        },
+        {
+          "page": "about.html",
+          "section": "global-footer"
+        },
+        {
+          "page": "index.html",
+          "section": "global-footer"
+        },
+        {
+          "page": "london.html",
+          "section": "global-footer"
+        },
+        {
+          "page": "radar.html",
+          "section": "global-footer"
+        },
+        {
+          "page": "warnings.html",
+          "section": "global-footer"
+        }
+      ],
+      "behavior": [
+        "Semantic static content and relative navigation where applicable."
+      ],
+      "keyboard": [
+        "Tab/Enter for links; native controls use Enter/Space and arrow keys where applicable"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution not-tested"
+    },
+    {
+      "id": "site-header",
+      "selector": "[data-component='site-header']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "index.html",
+        "london.html",
+        "radar.html",
+        "warnings.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "section": "global-header"
+        },
+        {
+          "page": "about.html",
+          "section": "global-header"
+        },
+        {
+          "page": "index.html",
+          "section": "global-header"
+        },
+        {
+          "page": "london.html",
+          "section": "global-header"
+        },
+        {
+          "page": "radar.html",
+          "section": "global-header"
+        },
+        {
+          "page": "warnings.html",
+          "section": "global-header"
+        }
+      ],
+      "behavior": [
+        "Semantic static content and relative navigation where applicable."
+      ],
+      "keyboard": [
+        "Tab/Enter for links; native controls use Enter/Space and arrow keys where applicable"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution not-tested"
+    },
+    {
+      "id": "split-hero",
+      "selector": "[data-component='split-hero']",
+      "pages": [
+        "index.html"
+      ],
+      "instances": [
+        {
+          "page": "index.html",
+          "section": "weather-overview"
+        }
+      ],
+      "behavior": [
+        "Semantic static content and relative navigation where applicable."
+      ],
+      "keyboard": [
+        "Tab/Enter for links; native controls use Enter/Space and arrow keys where applicable"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution not-tested"
+    },
+    {
+      "id": "warning-card",
+      "selector": "[data-component='warning-card']",
+      "pages": [
+        "warnings.html"
+      ],
+      "instances": [
+        {
+          "page": "warnings.html",
+          "section": "sample-warning"
+        }
+      ],
+      "behavior": [
+        "Semantic static content and relative navigation where applicable."
+      ],
+      "keyboard": [
+        "Tab/Enter for links; native controls use Enter/Space and arrow keys where applicable"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution not-tested"
+    },
+    {
+      "id": "warning-filter",
+      "selector": "[data-component='warning-filter']",
+      "pages": [
+        "warnings.html"
+      ],
+      "instances": [
+        {
+          "page": "warnings.html",
+          "section": "warning-day-selection"
+        }
+      ],
+      "behavior": [
+        "Native radios filter fictional warning records, including empty days."
+      ],
+      "keyboard": [
+        "Tab/Enter for links; native controls use Enter/Space and arrow keys where applicable"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser execution not-tested"
+    }
+  ]
+}

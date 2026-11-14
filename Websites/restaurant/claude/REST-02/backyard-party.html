@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Private Party in Our Backyard | Cinder Ridge Smokehouse</title>
+<meta name="description" content="The covered backyard venue at Cinder Ridge Smokehouse: capacity, what is included, and a demo booking inquiry.">
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<div class="announce" data-section="announcement-bar" data-component="announcement-bar" role="region" aria-label="Announcement">
+  <div class="wrap"><p>Holiday party and catering dates are filling up. <a href="private-events.html">Send a demo inquiry for a December date.</a></p><button type="button" aria-label="Dismiss announcement"><span aria-hidden="true">&times;</span></button></div>
+</div>
+<header class="site-header" data-section="global-header" data-component="site-header">
+  <div class="wrap bar">
+    <a class="brand" href="index.html"><img src="assets/logo.svg" alt="" width="44" height="44"><span>Cinder Ridge Smokehouse</span></a>
+    <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="nav-wrap">Menu</button>
+    <div class="nav-wrap" id="nav-wrap">
+      <nav aria-label="Primary" class="primary-nav" data-section="global-navigation" data-component="primary-nav"><ul><li><a href="visit-us.html">Visit Us</a></li><li><a href="menu.html">Menu</a></li><li><a href="sauces-rubs.html">Sauces & Rubs</a></li><li><a href="about.html">About</a></li><li><a href="gift-cards.html">Gift Cards</a></li><li><a href="private-events.html">Private Events</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
+      <nav aria-label="Cart" class="utility-nav" data-section="utility-navigation" data-component="utility-nav"><ul><li><a href="cart.html">Cart (<span data-cart-count>0</span><span class="visually-hidden"> items</span>)</a></li></ul></nav>
+    </div>
+  </div>
+  <div class="status-strip" data-section="open-status" data-component="open-status-indicator"><div class="wrap">
+    <span class="chip" data-status-chip data-state="closed"><span class="dot" aria-hidden="true"></span><span class="chip-text">Checking hours</span></span>
+    <small data-status-sub></small>
+  </div></div>
+</header>
+<div id="live-region" class="visually-hidden" role="status" aria-live="polite"></div>
+<main id="main-content" data-section="main-content">
+<div class="page-hero" data-section="page-hero" data-component="page-hero"><div class="wrap"><nav class="crumbs" aria-label="Breadcrumb" data-section="breadcrumbs" data-component="breadcrumb"><ol><li><a href="index.html">Home</a></li><li aria-current="page">Backyard Party</li></ol></nav><h1>Private Party in the Backyard</h1><p>Our covered backyard is available for birthdays, rehearsal dinners and company parties.</p></div></div>
+
+<section class="band" aria-labelledby="yard-title" data-section="venue-details" data-component="feature-panel"><div class="wrap grid cols-2">
+  <img src="assets/venue.svg" alt="Illustration of a backyard venue with string lights" width="400" height="300">
+  <div><h2 id="yard-title">The space</h2><p>A covered patio and lawn, string lights, picnic tables, and a stage corner. All details are fictional.</p>
+  <dl class="kv"><dt>Capacity</dt><dd>Up to 120 guests</dd><dt>Rental</dt><dd>4 hours, from $600 (demo)</dd><dt>Food</dt><dd>Catering package required</dd><dt>Access</dt><dd>Step-free entrance and accessible restrooms</dd></dl></div>
+</div></section>
+<section class="band alt" aria-labelledby="yard-inq" data-section="inquiry" data-component="inquiry-section"><div class="wrap">
+  <h2 id="yard-inq">Ask about a date</h2>
+  <form data-validate data-hook="inquiry" data-section="backyard-inquiry" data-component="inquiry-form" aria-label="Backyard party inquiry">
+  <div class="demo-note">Simulation only. This form does not send anything.</div><p class="hint">Fields marked <span class="req" aria-hidden="true">*</span><span class="visually-hidden">with an asterisk</span> are required.</p>
+  <div class="field"><label for="backyard-name">Your name <span class="req" aria-hidden="true">*</span></label><input id="backyard-name" name="backyard-name" type="text" autocomplete="name" required></div>
+  <div class="field"><label for="backyard-email">Email <span class="req" aria-hidden="true">*</span></label><input id="backyard-email" name="backyard-email" type="email" autocomplete="email" required></div>
+  <div class="field"><label for="backyard-phone">Phone <span class="hint">(optional)</span></label><input id="backyard-phone" name="backyard-phone" type="tel" autocomplete="tel"></div>
+  <div class="field"><label for="backyard-date">Event date <span class="req" aria-hidden="true">*</span></label><input id="backyard-date" name="backyard-date" type="date" data-min-today required></div>
+  <div class="field"><label for="backyard-guests">Guest count <span class="req" aria-hidden="true">*</span></label><p class="hint" id="backyard-guests-hint">Between 10 and 120 guests.</p><input id="backyard-guests" name="backyard-guests" type="number" aria-describedby="backyard-guests-hint" data-desc="backyard-guests-hint" min="10" max="120" required></div>
+  <div class="field"><label for="backyard-time">Preferred start time <span class="req" aria-hidden="true">*</span></label><select id="backyard-time" name="backyard-time" required><option value="">Choose a time</option><option value="noon">Noon</option><option value="4pm">4 pm</option><option value="6pm">6 pm</option></select></div>
+  <div class="field"><label for="backyard-notes">Anything else we should know <span class="hint">(optional)</span></label><textarea id="backyard-notes" name="backyard-notes" rows="4" ></textarea></div>
+  <button type="submit" class="btn">Send demo inquiry</button>
+  <div class="success" data-success hidden role="status"><h3>Demo inquiry received</h3><p data-success-detail></p></div>
+</form>
+  <p><a href="private-events.html">Back to catering and private events</a></p>
+</div></section>
+</main>
+<footer class="site-footer" data-section="global-footer" data-component="site-footer">
+  <div class="wrap">
+    <div class="grid cols-3">
+      <div><h2>Cinder Ridge Smokehouse</h2><address style="font-style:normal">1480 Mesquite Row<br>Juniper Falls, TX 78999<br><a href="tel:+15550100142">(555) 010-0142</a><br><a href="mailto:hello@cinderridge.example">hello@cinderridge.example</a></address></div>
+      <div><h2>Lunch hours</h2><p>Tuesday to Sunday, 11 am until sold out (about 3 pm). Closed Monday.</p></div>
+      <nav aria-label="Footer" class="footer-nav" data-section="footer-navigation" data-component="footer-nav"><h2>Explore</h2><ul><li><a href="visit-us.html">Visit Us</a></li><li><a href="menu.html">Menu</a></li><li><a href="sauces-rubs.html">Sauces & Rubs</a></li><li><a href="about.html">About</a></li><li><a href="gift-cards.html">Gift Cards</a></li><li><a href="private-events.html">Private Events</a></li><li><a href="contact.html">Contact</a></li><li><a href="cart.html">Cart</a></li></ul></nav>
+    </div>
+    <p class="legal">Cinder Ridge Smokehouse is a fictional restaurant created for an accessibility and usability research dataset. Names, address, prices, hours and events are invented. Ordering, gift cards and forms are local demonstrations only.</p>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

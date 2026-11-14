@@ -1,0 +1,158 @@
+{
+  "allocation_protocol": "WEB-REPLICA-ALLOCATION-V1.0",
+  "generation_protocol": "WEB-REPLICA-V1.0",
+  "category": "news",
+  "slot": 5,
+  "source_id": "NEWS-05",
+  "model_group": "codex",
+  "model_id": "gpt-6.1-sol",
+  "model_version": null,
+  "model_provider_or_runtime": "OpenAI collaboration worker (gpt-6.1-sol), orchestrated in Codex",
+  "model_attribution": "Declared task/session worker model; exact release version unavailable, not independently authenticated",
+  "generation_mode": "Isolated local-only collaboration worker; one approved replica",
+  "operator": "Samhith Varma",
+  "approved_source_url": "https://cardinalnews.org/",
+  "source_name": "Cardinal News",
+  "source_verified_at": "2026-11-12T00:54:46.019250+00:00",
+  "source_verification_method": "Live web search; web extracted-text home opens; direct Python urllib HTTPS GET (HTTP-only; no browser/JS interaction testing)",
+  "source_verification_result": "HTTP availability verified; browser/runtime unverified",
+  "source_approved_at": "2026-11-12",
+  "source_approval_reference": "metadata/change-log.md \u00a7 2026-11-12 \u2014 Codex Phase A approval (slots 04\u201306)",
+  "generation_started_at": "2026-11-13T21:17:04.682885+00:00",
+  "generation_completed_at": "2026-11-13T21:20:22.723770+00:00",
+  "rules_revision": "04b1c3e38b76f2aff3aef869d67370bb4532cd8f9ab5e22ac8276f26cbb859bf",
+  "category_prompt_revision": "37567f6a4198f7539b11964980cf814a7b8c0732f926dfe9aa6f86849dd2277c",
+  "protocol_snapshots": [
+    {
+      "path": "Rules.md",
+      "sha256": "04b1c3e38b76f2aff3aef869d67370bb4532cd8f9ab5e22ac8276f26cbb859bf"
+    },
+    {
+      "path": "MODEL_ALLOCATION.md",
+      "sha256": "dba261a89763c22a6c41fc6b066593345aef7871121cef52ff7b73ff88cce3cd"
+    },
+    {
+      "path": "pipelines/codex/config.json",
+      "sha256": "b16751854f14ec50f9e8e8726e4ab0c064503f1ebdea6d71ba7e1faf85ed6d95"
+    },
+    {
+      "path": "pipelines/codex/categories.json",
+      "sha256": "843ea7d8d1cc7d01385643f848408dea32997985422496d98e8f108bbc09a333"
+    },
+    {
+      "path": "pipelines/codex/prompts/build.md",
+      "sha256": "37567f6a4198f7539b11964980cf814a7b8c0732f926dfe9aa6f86849dd2277c"
+    },
+    {
+      "path": "metadata/source-inventories/news.csv",
+      "sha256": "be25d72b221ef9e0a418f4e5958e6468a882224cbb3fb03a2aefa011a0d37550"
+    },
+    {
+      "path": "metadata/assignments.csv",
+      "sha256": "6286f19d1e1559304a45e23c9d2852fb05fe0753e288d7b46affcd49b1ac6a20"
+    }
+  ],
+  "prompt_or_transcript_reference": "Websites/pipelines/codex/runs/2026-11-13T21-13-32-919Z-build-NEWS-05/task.md",
+  "task_sha256": "cc34d40ae46937d7abef3e654cbc8fbcc0541d76eb89fa83b763fba97ff7af6f",
+  "human_edits": [],
+  "cross_model_edits": [],
+  "retries": [
+    {
+      "timestamp": "2026-11-13T21:20:22.723770+00:00",
+      "type": "same-worker coordinator-prompted correction",
+      "prompt_source": "Parent independent source review; coordinator-source-review-initial.json retained by parent in actual run",
+      "finding": "18 static article cards had data-component but lacked data-section; dynamic search-result article also lacked data-section. Original checker accepted either attribute and missed this.",
+      "files": [
+        "index.html",
+        "politics.html",
+        "article.html",
+        "js/main.js",
+        "component-inventory.json",
+        "README.md",
+        "fidelity-notes.md",
+        "generation-metadata.json"
+      ],
+      "change": "Added data-section=story-preview to 18 story cards; search-result-item to dynamic result articles. Tightened static checker to require data-section on every meaningful semantic region; added explicit dynamic metadata VM assertions.",
+      "validation": "Stricter static checker passes 952 element checks; node --check passes; 9 delivered-JS VM tests pass with mocks; no browser QC repeat."
+    }
+  ],
+  "budget": null,
+  "active_allocation": {
+    "slots": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "deferred": [
+      7,
+      8,
+      9,
+      10
+    ],
+    "approval_policy": "per model group"
+  },
+  "validation_summary": {
+    "technology": "pass",
+    "completeness": "pass",
+    "structure": "pass",
+    "interaction": "not-tested",
+    "accessibility": "not-tested",
+    "traceability": "pass",
+    "scope": "pass"
+  },
+  "limitations": [
+    "Source evidence is HTTP-only; rendered layout and source interactions unverified.",
+    "Browser/axe, screen reader, zoom, reflow and real keyboard checks pending."
+  ],
+  "validation_evidence": "Websites/pipelines/codex/runs/2026-11-13T21-13-32-919Z-build-NEWS-05/validation-report.json",
+  "qc_runs": [
+    {
+      "attempt": 1,
+      "exit_code": 2,
+      "log": "Websites/pipelines/codex/runs/2026-11-13T21-13-32-919Z-build-NEWS-05/qc-initial.log",
+      "outcome": "blocked; browser/axe not-tested; no JSON emitted"
+    }
+  ],
+  "initial_artifact_reference": "Websites/pipelines/codex/runs/2026-11-13T21-13-32-919Z-build-NEWS-05/initial-artifact.tar.gz",
+  "initial_sha256_reference": "Websites/pipelines/codex/runs/2026-11-13T21-13-32-919Z-build-NEWS-05/initial-artifact-sha256.json",
+  "post_generation_changes": [
+    {
+      "timestamp": "2026-11-13T21:19:24.803540+00:00",
+      "files": [
+        "README.md",
+        "generation-metadata.json",
+        "component-inventory.json"
+      ],
+      "reason": "Record actual validation results; no website behavior or styling repair"
+    },
+    {
+      "timestamp": "2026-11-13T21:20:22.723770+00:00",
+      "type": "same-worker coordinator-prompted correction",
+      "prompt_source": "Parent independent source review; coordinator-source-review-initial.json retained by parent in actual run",
+      "finding": "18 static article cards had data-component but lacked data-section; dynamic search-result article also lacked data-section. Original checker accepted either attribute and missed this.",
+      "files": [
+        "index.html",
+        "politics.html",
+        "article.html",
+        "js/main.js",
+        "component-inventory.json",
+        "README.md",
+        "fidelity-notes.md",
+        "generation-metadata.json"
+      ],
+      "change": "Added data-section=story-preview to 18 story cards; search-result-item to dynamic result articles. Tightened static checker to require data-section on every meaningful semantic region; added explicit dynamic metadata VM assertions.",
+      "validation": "Stricter static checker passes 952 element checks; node --check passes; 9 delivered-JS VM tests pass with mocks; no browser QC repeat."
+    }
+  ],
+  "coordinator_feedback": [
+    {
+      "role": "independent source reviewer",
+      "code_edits": false,
+      "finding": "missing data-section on article cards",
+      "implemented_by": "same gpt-6.1-sol worker"
+    }
+  ]
+}

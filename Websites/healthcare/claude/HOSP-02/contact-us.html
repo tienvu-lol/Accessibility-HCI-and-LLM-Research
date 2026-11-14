@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact Us | Harborview Community Hospital</title>
+<meta name="description" content="Contact the fictional Harborview hospital and use a simulated appointment request form.">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<div class="emergency-bar" role="region" aria-label="Emergency notice" data-section="emergency-announcement" data-component="emergency-banner"><p><strong>In an emergency, call your local emergency services.</strong> Harborview is a fictional hospital in a design study; this website cannot receive emergency requests.</p></div>
+<header data-section="global-header" data-component="site-header">
+<div class="utility"><nav aria-label="Utility" data-section="utility-navigation" data-component="utility-nav"><ul>
+<li><button type="button" class="link-button" data-open-portal>Pay Your Bill</button></li>
+<li><a href="contact-us.html" aria-current="page">Contact Us</a></li>
+<li><a href="find-care.html">Find Care</a></li></ul></nav></div>
+<div class="header-main" data-section="brand-and-navigation">
+<a class="brand" href="index.html" data-component="brand-link"><img src="assets/logo.svg" alt="" width="44" height="44"><span>Harborview Community Hospital<small>Harborview Health Network (fictional)</small></span></a>
+<button type="button" class="menu-toggle" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+<nav class="primary-nav" id="primary-nav" aria-label="Primary" data-section="global-navigation" data-component="primary-nav" data-collapsed="false"><ul class="nav-list">
+<li class="nav-item"><button type="button" class="nav-trigger" aria-expanded="false" aria-controls="menu-services">Explore Services</button><ul class="submenu" id="menu-services" hidden><li><a href="cancer-institute.html">Cancer</a></li><li><a href="heart-vascular-institute.html">Heart &amp; Vascular</a></li><li><a href="specialties-services.html">Programs &amp; Services</a></li></ul></li>
+<li class="nav-item"><button type="button" class="nav-trigger" aria-expanded="false" aria-controls="menu-locations">Locations</button><ul class="submenu" id="menu-locations" hidden><li><a href="locations.html">All Locations</a></li><li><a href="hospital-bayfront.html">Harborview Hospital Bayfront</a></li></ul></li>
+<li class="nav-item"><button type="button" class="nav-trigger" aria-expanded="false" aria-controls="menu-resources">Resources</button><ul class="submenu" id="menu-resources" hidden><li><a href="patients-visitors.html">Patients &amp; Visitors</a></li><li><a href="classes-events.html">Classes &amp; Events</a></li></ul></li>
+<li class="nav-item"><a class="nav-link" href="about.html">About Harborview</a></li>
+</ul></nav></div></header>
+<nav class="crumbs" aria-label="Breadcrumb" data-section="breadcrumbs" data-component="breadcrumbs"><div class="wrap"><ol><li><a href="index.html">Home</a></li><li aria-current="page">Contact Us</li></ol></div></nav>
+<main id="main-content" data-section="main-content">
+
+<section class="page-hero" data-section="page-header" data-component="page-hero"><div class="wrap"><h1>Contact Us</h1><p class="lead">Fictional contact details and a simulated appointment request.</p></div></section>
+<section class="band" data-section="contact-info" data-component="contact-card"><div class="wrap two-col"><div>
+<h2>Reach us</h2><p>Main line: (800) 555-0142<br>Billing office: (800) 555-0180<br>Fictional numbers using the 555 exchange.</p>
+<p><strong>For an emergency, call your local emergency services.</strong> Do not use the form below for urgent matters.</p>
+<p>Prefer to look first? <a href="locations.html">Find a location</a> or <a href="find-care.html">search for care</a>.</p></div>
+<aside class="aside-box"><h2>Notice</h2><p>The reference site does not show an appointment form on the pages that were checked. The form below is an intentional addition and is simulated.</p></aside></div></section>
+<section class="band alt" aria-labelledby="appointment-title" data-section="appointment-request" data-component="appointment-form"><div class="wrap">
+<h2 id="appointment-title">Request an appointment (simulated)</h2>
+<p class="demo-note">Intentional addition and non-functional demo. Nothing is sent or stored. Do not enter real personal or health information.</p>
+<div id="ap-summary" class="error-summary" role="alert" tabindex="-1" aria-labelledby="ap-summary-title" hidden data-component="error-summary"></div>
+<div id="ap-success" class="success" tabindex="-1" role="status" hidden><strong>Demo request received.</strong> This was a simulation: no appointment was made and no data left your browser.</div>
+<form id="appointment-form" novalidate>
+<div class="row cols-2">
+<div class="field"><label for="ap-name">Full name <span aria-hidden="true">*</span></label><input type="text" id="ap-name" autocomplete="name" required aria-required="true" aria-describedby="ap-name-error"><p class="error-msg" id="ap-name-error"></p></div>
+<div class="field"><label for="ap-email">Email <span aria-hidden="true">*</span></label><input type="email" id="ap-email" autocomplete="email" required aria-required="true" aria-describedby="ap-email-hint ap-email-error"><p class="hint" id="ap-email-hint">Example: name@example.org</p><p class="error-msg" id="ap-email-error"></p></div>
+<div class="field"><label for="ap-phone">Phone (optional)</label><input type="tel" id="ap-phone" autocomplete="tel" aria-describedby="ap-phone-error"><p class="error-msg" id="ap-phone-error"></p></div>
+<div class="field"><label for="ap-date">Preferred date (optional)</label><input type="date" id="ap-date" aria-describedby="ap-date-error"><p class="error-msg" id="ap-date-error"></p></div>
+<div class="field"><label for="ap-service">Service <span aria-hidden="true">*</span></label><select id="ap-service" required aria-required="true" aria-describedby="ap-service-error"><option value="">Choose a service</option></select><p class="error-msg" id="ap-service-error"></p></div>
+<div class="field"><label for="ap-location">Location <span aria-hidden="true">*</span></label><select id="ap-location" required aria-required="true" aria-describedby="ap-location-error"><option value="">Choose a location</option></select><p class="error-msg" id="ap-location-error"></p></div></div>
+<fieldset><legend>Preferred contact method</legend><div class="choice"><input type="radio" id="ap-c-email" name="contact" checked><label for="ap-c-email">Email</label></div><div class="choice"><input type="radio" id="ap-c-phone" name="contact"><label for="ap-c-phone">Phone</label></div></fieldset>
+<div class="field"><label for="ap-note">Note (optional, non-medical)</label><textarea id="ap-note" aria-describedby="ap-note-hint"></textarea><p class="hint" id="ap-note-hint">Please do not include health details in this demo.</p></div>
+<div class="field"><div class="choice"><input type="checkbox" id="ap-consent" required aria-required="true" aria-describedby="ap-consent-error"><label for="ap-consent">I understand this is a simulated form <span aria-hidden="true">*</span></label></div><p class="error-msg" id="ap-consent-error"></p></div>
+<button type="submit" class="btn">Submit simulated request</button></form></div></section>
+</main>
+<footer class="site-footer" data-section="global-footer" data-component="site-footer"><div class="wrap">
+<div class="grid"><div><h2>Harborview Community Hospital</h2><p>Main line: <a href="contact-us.html">(800) 555-0142</a> (fictional number)</p></div>
+<nav aria-label="Footer" data-section="footer-navigation" data-component="footer-nav"><h2>Quick links</h2><ul><li><a href="find-care.html">Find Care</a></li><li><a href="patients-visitors.html">Patients &amp; Visitors</a></li><li><a href="billing-help.html">Billing Information</a></li><li><a href="contact-us.html">Contact Us</a></li><li><a href="about.html">About Harborview</a></li></ul></nav></div>
+<p class="fine">Fictional website for an accessibility and usability research dataset. No real organization, provider, address or phone number is represented. Content is illustrative and is not medical advice. In an emergency, call your local emergency services.</p>
+</div></footer>
+<dialog id="portal-dialog" aria-labelledby="portal-title" data-section="portal-login" data-component="modal-dialog">
+<div class="dialog-head"><h2 id="portal-title">Patient portal sign-in (demo)</h2><button type="button" class="btn secondary" data-close-dialog>Close<span class="visually-hidden"> portal dialog</span></button></div>
+<p class="demo-note">Non-functional demonstration. The real reference links to an off-site portal; this replica never signs anyone in. Do not enter real credentials.</p>
+<form novalidate data-component="portal-login-form">
+<div class="field"><label for="portal-user">Username</label><input type="text" id="portal-user" autocomplete="off" aria-describedby="portal-user-error"><p class="error-msg" id="portal-user-error"></p></div>
+<div class="field"><label for="portal-pass">Password</label><input type="password" id="portal-pass" autocomplete="off" aria-describedby="portal-pass-error"><p class="error-msg" id="portal-pass-error"></p></div>
+<button type="submit" class="btn">Try demo sign-in</button></form>
+<p class="portal-msg success" role="status" hidden></p></dialog>
+<script src="js/main.js" defer></script>
+</body>
+</html>

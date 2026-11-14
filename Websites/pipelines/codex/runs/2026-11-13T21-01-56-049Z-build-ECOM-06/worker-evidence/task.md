@@ -1,0 +1,446 @@
+# Phase B — One Codex replica
+
+Read the shared `Websites/Rules.md` and `Websites/MODEL_ALLOCATION.md` completely. Build exactly the single source in the exact task context. The selected source, approved page map, model, category, and output directory are fixed. Missing, changed, or unverifiable approval/source evidence must stop this task; do not substitute another source or inherit Claude's waiver.
+
+## Scope and boundaries
+
+Write website files only inside the assigned `Websites/<category>/codex/<ID>/`. Keep run evidence in this task's `pipelines/codex/runs/<run-id>/` directory. Do not touch another model group's files or prompts, the shared rules/QC, or unrelated websites. Use an isolated checkout for concurrent work; pipeline task preparation does not itself create worktrees or launch agents. Do not commit, push, publish, or send messages. One replica is one run and one delivery. Do not start another site automatically.
+
+Confirm that the actual model/runtime matches the declared assignment before generation. If the underlying model cannot be identified, report that fact rather than invent an exact model name. Record start/completion timestamps from the real clock, available tools, generation budget if known, retries, and all human or cross-model changes. Preparation timestamps are not generation timestamps. Preserve the exact prompt and protocol snapshots.
+
+## Implementation
+
+Use semantic HTML5, CSS3, and vanilla JavaScript only. Follow the approved page map and observed information architecture, navigation, hero/above-the-fold hierarchy, content bands, sidebar where present, footer, and source-specific detail pages. The category checklist is conditional; omit nonexistent features or explicitly document approved research additions. Do not impose a universal homepage or arbitrary page-count quota.
+
+Each site works independently through ordinary file:// navigation with relative paths, local placeholder artwork, and inline demo data. Default shared files within the site: css/styles.css and js/main.js. Repeat critical navigation HTML consistently. No frameworks, jQuery, Bootstrap, external UI libraries/fonts/CDNs, runtime package installation, templating, PHP, backend, database, external widgets, accounts, API calls, or build step. The shared external QC dependencies are permitted evaluation tools and must never be copied into the site.
+
+Use fictional names, original prose, and original placeholder assets. No copied logos, seals, real testimonials, proprietary media, or claims of measured outcomes. Every visible control must work on meaningful local samples or be clearly identified as a nonfunctional demo. Forms validate with intelligible errors and useful focus/status feedback; payments, applications, appointments, subscriptions, portals, giving, and logins never perform real transactions. Follow the task's category-specific simulation restrictions.
+
+Target the shared WCAG 2.2 AA baseline: landmarks, logical heading hierarchy, one H1, visible-on-focus skip link to main id="main-content", native controls, labels, descriptive feedback, visible focus, keyboard operation and Escape dismissal, dialog focus handling, readable contrast, responsive reflow, reduced motion, and useful image alternatives. Do not claim conformance or inject intentional defects. Instrument meaningful regions and reusable components with stable descriptive kebab-case data-section/data-component values; do not indiscriminately label incidental spans.
+
+## Required output and provenance
+
+Include all approved mapped pages, index.html, 404.html, css/styles.css, js/main.js, local assets, README.md, fidelity-notes.md, component-inventory.json, and generation-metadata.json. Use the schemas in the shared protocols. README includes source ID, actual verification method/date, complete sitemap and source mapping, sample dataset counts, interaction/simulation notes, run instructions, QC evidence, and limitations. Fidelity notes distinguish replicated, approximated, simulated, added, omitted, and unverified elements. Component inventory lists actual locations/selectors, behavior, keyboard expectations, and test status.
+
+generation-metadata.json must accurately identify the category, numeric slot, stable source ID, model_group codex, actual declared model/version/runtime, operator, source URL/verification/approval evidence, real generation timestamps, durable protocol/prompt revisions, generation mode, human edits, and the seven validation gates. Use supplied SHA-256 snapshots as durable revisions; include additional commit references when known. Do not copy hardcoded Claude dates/model IDs or label unknown fields as verified. A changed model or scope requires a documented reassignment.
+
+## Validation and handoff
+
+Run the same shared QC as the other arms. If needed, install its locked dependencies from Websites/tools/qc using npm ci, outside the replica. Execute shared qc.js against this one output and retain the JSON/log evidence in this run directory; record-qc.mjs provides that wrapper. Report inability to execute browser tests as not-tested/blocked, never as failures=0. Do not weaken or edit the QC to pass.
+
+Exercise the implemented interaction states separately: menus and keyboard dismissal, local search/filter/sort and empty results, validation and demo success, tabs/accordions, dialogs/focus return, and category-specific flows. Initial-page axe scans do not test these states. Record exact tests performed and untested screen-reader/zoom/browser/fidelity checks. Preserve the first QC report and log every correction/retry; distinguish the initial generated artifact from any repaired revision for study analysis.
+
+Finish with complete files, a concise page/file count, source and verification status, actual QC outcome and evidence location, interactions tested, deviations, and remaining limits. Update run evidence; the coordinator updates only this Codex assignment row and change log after reviewing actual delivery. Prepared != generating, submitted != accepted, and successful automated QC != human acceptance. Stop after this site.
+
+
+## Exact task context
+
+```json
+{
+  "phase": "build",
+  "target": "ECOM-06",
+  "category": "e-commerce",
+  "category_requirements": {
+    "category": "e-commerce",
+    "prefix": "ECOM",
+    "name": "E-commerce",
+    "sampling_strata": [
+      {
+        "slot": 1,
+        "source_id": "ECOM-01",
+        "model_group": "claude",
+        "stratum": "single-brand direct-to-consumer store",
+        "authority": "coordination proposal; reconcile with shared inventory"
+      },
+      {
+        "slot": 2,
+        "source_id": "ECOM-02",
+        "model_group": "claude",
+        "stratum": "multi-category retailer",
+        "authority": "coordination proposal; reconcile with shared inventory"
+      },
+      {
+        "slot": 3,
+        "source_id": "ECOM-03",
+        "model_group": "claude",
+        "stratum": "specialty retailer",
+        "authority": "coordination proposal; reconcile with shared inventory"
+      },
+      {
+        "slot": 4,
+        "source_id": "ECOM-04",
+        "model_group": "codex",
+        "stratum": "single-brand direct-to-consumer store",
+        "authority": "codex assignment"
+      },
+      {
+        "slot": 5,
+        "source_id": "ECOM-05",
+        "model_group": "codex",
+        "stratum": "multi-category retailer",
+        "authority": "codex assignment"
+      },
+      {
+        "slot": 6,
+        "source_id": "ECOM-06",
+        "model_group": "codex",
+        "stratum": "specialty retailer",
+        "authority": "codex assignment"
+      },
+      {
+        "slot": 7,
+        "source_id": "ECOM-07",
+        "model_group": "open-source",
+        "stratum": "single-brand direct-to-consumer store",
+        "authority": "coordination proposal; reconcile with shared inventory"
+      },
+      {
+        "slot": 8,
+        "source_id": "ECOM-08",
+        "model_group": "open-source",
+        "stratum": "multi-category retailer",
+        "authority": "coordination proposal; reconcile with shared inventory"
+      },
+      {
+        "slot": 9,
+        "source_id": "ECOM-09",
+        "model_group": "open-source",
+        "stratum": "specialty retailer",
+        "authority": "coordination proposal; reconcile with shared inventory"
+      },
+      {
+        "slot": 10,
+        "source_id": "ECOM-10",
+        "model_group": "open-source",
+        "stratum": "additional distinct single-brand direct-to-consumer store (complexity-matched reserve)",
+        "authority": "coordination proposal; reconcile with shared inventory"
+      }
+    ],
+    "representative_pages": [
+      "home",
+      "collection/listing",
+      "product detail",
+      "cart",
+      "demo checkout",
+      "search",
+      "help/returns",
+      "404"
+    ],
+    "conditional_interactions": [
+      "product category/price filters",
+      "sort",
+      "variant selection",
+      "cart quantity/removal",
+      "checkout validation"
+    ],
+    "simulation_notes": "No real purchases, card details, payment processing, shipping or accounts. Storage is browser-local only if justified; record its use.",
+    "scope_rule": "Use only observed source pages/features; label inferred behavior and intentional additions. Page count follows approved scope, not a fixed quota."
+  },
+  "model": {
+    "id": "gpt-6.1-sol",
+    "version": null,
+    "runtime": "OpenAI collaboration worker (gpt-6.1-sol), orchestrated in Codex",
+    "reasoning_effort": null,
+    "operator": "Samhith Varma"
+  },
+  "output_relative_to_Websites": "e-commerce/codex/ECOM-06",
+  "selected_source": {
+    "category": "e-commerce",
+    "slot": "06",
+    "source_id": "ECOM-06",
+    "model_group": "codex",
+    "model_id": "gpt-6.1-sol",
+    "model_version": "",
+    "subcategory": "specialty retailer",
+    "source_name": "Adafruit Industries",
+    "source_url": "https://www.adafruit.com/",
+    "verified_at": "2026-11-12T00:52:39.545675+00:00",
+    "verification_method": "Live search + web text extraction of home; HTTP GET urllib for page scope; HTTP-only, no rendering/JS",
+    "verification_result": "verified",
+    "evidence_reference": "pipelines/codex/research/ECOM.md",
+    "source_pages": "[{\"url\": \"https://www.adafruit.com/\", \"title\": \"Adafruit Industries, Unique & fun DIY electronics and kits\", \"local_file\": \"index.html\"}, {\"url\": \"https://www.adafruit.com/category/54\", \"title\": \"Components & Parts Products Category on Adafruit Industries\", \"local_file\": \"components.html\"}, {\"url\": \"https://www.adafruit.com/product/5001\", \"title\": \"ANO Directional Navigation and Scroll Wheel Rotary Encoder : Adafruit Industries, Unique & fun DIY electronics and kits\", \"local_file\": \"encoder.html\"}, {\"url\": \"https://www.adafruit.com/shopping_cart\", \"title\": \"The Shopping Cart : Adafruit Industries, Unique & fun DIY electronics and kits\", \"local_file\": \"cart.html\"}, {\"url\": \"https://www.adafruit.com/?q=encoder\", \"title\": \"Search Results for 'encoder' on Adafruit Industries\", \"local_file\": \"search.html\"}, {\"url\": \"https://www.adafruit.com/shipping\", \"title\": \"Shipping & Returns\", \"local_file\": \"shipping-returns.html\"}]",
+    "key_regions": "[\"Shop/learning/community utility links, search, account and cart header\", \"Product-category navigation and new/featured merchandise areas\", \"Components & Parts product listing with purchase affordances\", \"Encoder product gallery, description, technical details, learning links and related items\", \"Search results with sort, availability and price filter forms\", \"Cart quantity/coupon/wishlist controls and Shipping & Returns help page\"]",
+    "key_interactions": "[{\"name\": \"Menu and search\", \"evidence\": \"observed\", \"notes\": \"toggle menu and search fields in HTTP markup; no expansion or submission action performed.\"}, {\"name\": \"Filter and sort\", \"evidence\": \"observed\", \"notes\": \"Search contains best-match/most-recent inputs, availability checkboxes, price-bracket inputs and apply buttons; effects untested.\"}, {\"name\": \"Quantity and add to cart\", \"evidence\": \"observed\", \"notes\": \"Product has qty input and Add to Cart; add-on checkbox markup present. No purchase/cart mutation.\"}, {\"name\": \"Cart controls\", \"evidence\": \"observed\", \"notes\": \"Shopping-cart markup includes Empty Cart, Update Quantities and coupon Apply; actual item removal/quantity updates untested.\"}, {\"name\": \"Product variants\", \"evidence\": \"inferred\", \"notes\": \"No size/color variant selector established for selected encoder; do not add a generic variant matrix.\"}]",
+    "complexity": "medium",
+    "stack_clues": "jquery/bootstrap strings in returned markup. Store backend and framework version unknown; no claim of Zen Cart based on URL style.",
+    "limitations": "PROVISIONAL: coordinator reservations and complete ten-source approval pending. HTTP-only. Guessed /returns returned 404; linked /shipping returned 200 and is the correct help page. No checkout, account, cart mutation, rendered layout, keyboard or storage testing. Technical/learning/distributor external pages outside scope.",
+    "approved_at": "2026-11-12",
+    "approved_by": "Samhith Varma",
+    "approval_reference": "metadata/change-log.md § 2026-11-12 — Codex Phase A approval (slots 04–06)"
+  },
+  "category_inventory": [
+    {
+      "category": "e-commerce",
+      "slot": "01",
+      "source_id": "ECOM-01",
+      "model_group": "claude",
+      "model_id": "claude-sonnet-5-5",
+      "model_version": "",
+      "subcategory": "direct-to-consumer single-brand store (beauty)",
+      "source_name": "Glossier",
+      "source_url": "https://www.glossier.com/",
+      "verified_at": "2026-11-10",
+      "verification_method": "HTTP GET via curl (no browser rendering)",
+      "verification_result": "verified",
+      "evidence_reference": "pipelines/claude/research/ECOM.md#ecom-01",
+      "source_pages": "[{\"url\": \"https://www.glossier.com/\", \"title\": \"Glossier\", \"local_file\": \"index.html\"}, {\"url\": \"https://www.glossier.com/collections/all\", \"title\": \"Shop All – Glossier\", \"local_file\": \"collections-all.html\"}, {\"url\": \"https://www.glossier.com/collections/skincare\", \"title\": \"All Skincare – Glossier\", \"local_file\": \"skincare.html\"}, {\"url\": \"https://www.glossier.com/collections/makeup\", \"title\": \"Makeup – Glossier\", \"local_file\": \"makeup.html\"}, {\"url\": \"https://www.glossier.com/collections/fragrance\", \"title\": \"Fragrance – Glossier\", \"local_file\": \"fragrance.html\"}, {\"url\": \"https://www.glossier.com/collections/best-sellers\", \"title\": \"Best-sellers – Glossier\", \"local_file\": \"best-sellers.html\"}, {\"url\": \"https://www.glossier.com/products/boy-brow\", \"title\": \"Boy Brow | Tinted Brow Gel – Glossier\", \"local_file\": \"boy-brow.html\"}, {\"url\": \"https://www.glossier.com/products/glossier-you\", \"title\": \"Glossier You\", \"local_file\": \"glossier-you.html\"}, {\"url\": \"https://www.glossier.com/search?q=balm\", \"title\": \"`Search results for \\\"balm\\\" (29 items)`\", \"local_file\": \"search.html\"}, {\"url\": \"https://www.glossier.com/cart\", \"title\": \"Your Shopping Cart – Glossier\", \"local_file\": \"cart.html\"}, {\"url\": \"https://www.glossier.com/account/login\", \"title\": \"Account – Glossier\", \"local_file\": \"login.html\"}, {\"url\": \"https://www.glossier.com/pages/locations\", \"title\": \"Locations – Glossier\", \"local_file\": \"locations.html\"}, {\"url\": \"https://www.glossier.com/pages/holiday-gift-guide\", \"title\": \"Holiday Gift Guide – Glossier\", \"local_file\": \"holiday-gift-guide.html\"}, {\"url\": \"https://www.glossier.com/policies/refund-policy\", \"title\": \"Refund policy – Glossier\", \"local_file\": \"refund-policy.html\"}]",
+      "key_regions": "[\"(observed in HTML):\", \"Header:** `<header id=\\\"header\\\" data-cy=\\\"header\\\">` with `<nav id=\\\"nav\\\">` and `<form action=\\\"/search\\\" role=\\\"search\\\">`. There is also a country/localization form (`/localization`, \\\"You're shopping in United States\\\").\", \"Shop: All, Bestsellers, Digital Gift Card.\", \"Gift Guide link (`/pages/holiday-gift-guide`).\", \"Fragrance submenu: Glossier You, Doux, Soie, Rêve, Fleur, Save with Sets, All Fragrance.\", \"Makeup submenu: Face, Lip, Brow, Eye, Cheek, Save with Sets, All Makeup.\", \"Skincare submenu: Moisturizers, Cleansers, Treatments, Sunscreen, Save with Sets, All Skincare.\", \"The submenu buttons are labelled \\\"Open submenu\\\".\", \"Hero:** the homepage has no `<h1>`. I did not identify the hero from the raw HTML, so it is not recorded.\", \"Footer:** `<footer id=\\\"footer\\\" role=\\\"contentinfo\\\">`. It has a brand blurb (\\\"Skin First. Makeup Second™\\\") and a \\\"How can we help?\\\" group. That group links Contact, Track my package, Returns & exchanges, Help & FAQ (on `he\"]",
+      "key_interactions": "[{\"name\": \"A search form that reaches a results page.\", \"evidence\": \"observed\", \"notes\": \"A search form that reaches a results page.\"}, {\"name\": \"Collection filter and sort markup (`filter-group-display__list-item`, \", \"evidence\": \"observed\", \"notes\": \"Collection filter and sort markup (`filter-group-display__list-item`, `sort-option`, 56 `data-product-id` tiles on `/collections/all`).\"}, {\"name\": \"A product form with a hidden `select[name=id]` variant selector, a `pv\", \"evidence\": \"observed\", \"notes\": \"A product form with a hidden `select[name=id]` variant selector, a `pv-qty__input` quantity field, a `pv-form__variant` section and a sticky add-to-bag bar (`pv-sticky-atb`).\"}, {\"name\": \"A cart drawer (`bag__header`) plus a `/cart` page.\", \"evidence\": \"observed\", \"notes\": \"A cart drawer (`bag__header`) plus a `/cart` page.\"}, {\"name\": \"A login page (`h1#login`).\", \"evidence\": \"observed\", \"notes\": \"A login page (`h1#login`).\"}, {\"name\": \"** cart persistence uses Shopify cart cookies. I did not check storage\", \"evidence\": \"inferred\", \"notes\": \"** cart persistence uses Shopify cart cookies. I did not check storage.\"}, {\"name\": \"Checkout:** Shopify-hosted, not fetched and not replicable as-is. A de\", \"evidence\": \"inferred\", \"notes\": \"Checkout:** Shopify-hosted, not fetched and not replicable as-is. A demo checkout would need to be built.\"}]",
+      "complexity": "medium",
+      "stack_clues": "Shopify (`cdn.shopify`, `window.Shopify`, `Shopify.theme`), plus Klaviyo, Yotpo and Gorgias strings. The pages are server-rendered.",
+      "limitations": "- Hero and carousel content was not characterized.",
+      "approved_at": "2026-11-13",
+      "approved_by": "Samhith Varma",
+      "approval_reference": "pipelines/claude/research/approval-2026-11-13.md"
+    },
+    {
+      "category": "e-commerce",
+      "slot": "02",
+      "source_id": "ECOM-02",
+      "model_group": "claude",
+      "model_id": "claude-sonnet-5-5",
+      "model_version": "",
+      "subcategory": "large multi-category retailer (home furnishings)",
+      "source_name": "IKEA USA",
+      "source_url": "https://www.ikea.com/us/en/",
+      "verified_at": "2026-11-10",
+      "verification_method": "HTTP GET via curl (no browser rendering)",
+      "verification_result": "verified",
+      "evidence_reference": "pipelines/claude/research/ECOM.md#ecom-02",
+      "source_pages": "[{\"url\": \"https://www.ikea.com/us/en/\", \"title\": \"Shop Affordable Home Furnishings & Home Goods - IKEA\", \"local_file\": \"index.html\"}, {\"url\": \"https://www.ikea.com/us/en/cat/furniture-fu001/\", \"title\": \"Shop Quality & Affordable Furniture - IKEA\", \"local_file\": \"furniture-fu001.html\"}, {\"url\": \"https://www.ikea.com/us/en/cat/sofas-armchairs-700640/\", \"title\": \"Sofas & Armchairs - IKEA\", \"local_file\": \"sofas-armchairs-700640.html\"}, {\"url\": \"https://www.ikea.com/us/en/cat/lighting-li001/\", \"title\": \"Room Lighting - Home Lighting Solutions - IKEA\", \"local_file\": \"lighting-li001.html\"}, {\"url\": \"https://www.ikea.com/us/en/cat/beds-mattresses-bm001/\", \"title\": \"Beds & Mattresses - Quality & Affordable - IKEA\", \"local_file\": \"beds-mattresses-bm001.html\"}, {\"url\": \"https://www.ikea.com/us/en/p/kivik-sofa-tibbleby-beige-gray-s39440593/\", \"title\": \"KIVIK Tibbleby beige/gray sofa - IKEA\", \"local_file\": \"kivik-sofa-tibbleby-beige-gray-s39440593.html\"}, {\"url\": \"https://www.ikea.com/us/en/search/?q=desk\", \"title\": \"Search - IKEA\", \"local_file\": \"search.html\"}, {\"url\": \"https://www.ikea.com/us/en/shoppingcart/\", \"title\": \"IKEA\", \"local_file\": \"shoppingcart.html\"}, {\"url\": \"https://www.ikea.com/us/en/profile/login/\", \"title\": \"User Account - IKEA\", \"local_file\": \"login.html\"}, {\"url\": \"https://www.ikea.com/us/en/new/\", \"title\": \"New products and collections - IKEA\", \"local_file\": \"en-new.html\"}, {\"url\": \"https://www.ikea.com/us/en/rooms/\", \"title\": \"Rooms for Furniture and Furnishings - IKEA\", \"local_file\": \"rooms.html\"}, {\"url\": \"https://www.ikea.com/us/en/customer-service/\", \"title\": \"Customer service - IKEA\", \"local_file\": \"customer-service.html\"}, {\"url\": \"https://www.ikea.com/us/en/customer-service/returns-claims/\", \"title\": \"Return policies - IKEA\", \"local_file\": \"returns-claims.html\"}, {\"url\": \"https://www.ikea.com/us/en/customer-service/faq/\", \"title\": \"FAQs - IKEA\", \"local_file\": \"customer-service-faq.html\"}, {\"url\": \"https://www.ikea.com/us/en/customer-service/contact-us/\", \"title\": \"Contact us - IKEA\", \"local_file\": \"contact-us.html\"}, {\"url\": \"https://www.ikea.com/us/en/customer-service/services/delivery/\", \"title\": \"Explore delivery service options and pricing - IKEA\", \"local_file\": \"delivery.html\"}]",
+      "key_regions": "[\"Header:** `<header class=\\\"hnf-header\\\">`, preceded by `<nav aria-label=\\\"Accessibility\\\">` with a \\\"Skip product categories list\\\" link.\", \"`nav[aria-label=\\\"Open the navigation menu\\\"]` holds the entry points.\", \"`form[role=search]` is the search box.\", \"`nav[aria-label=\\\"Shopping links\\\"]` holds \\\"Hej! Log in or sign up\\\", Favorites and Shopping bag.\", \"The mega-menu content was not in the static HTML (entrypoints carry a `--loading` class). I could not enumerate its dropdown items.\", \"Category links on the homepage:** baby-kids, bathroom, beds-mattresses, cookware-tableware, furniture, home-decor, home-electronics, home-improvement, home-textiles, food-restaurant, kitchen-appliances, laundry-cleaning,\", \"Hero / body:** `<h1>` \\\"Welcome to IKEA USA\\\". The promo strip carries date-dependent copy (e.g. \\\"15% off all BESTÅ storage solutions ends Wednesday\\\"). The body sections have `<h2>`/`<h3>` headings: \\\"Today's best deals\\\", \\\"\", \"Footer:** `<footer class=\\\"hnf-footer\\\">` with a \\\"Footer\\\" heading, \\\"Join IKEA Family\\\" and \\\"Join IKEA Business Network\\\" blocks, and these link groups:\", \"Customer service: FAQ, My orders, Contact Us, Product Recalls, Return Policy, Warranties, Feedback, Find a Location.\", \"Services: IKEA Services, IKEA Family, IKEA for Business, Planning Tools, Brochures, Buying guides, Payment options, Gift Cards, credit cards, Afterpay, app.\", \"This is IKEA: Careers, Newsroom, Life at Home, IKEA Foundation, Safety at Home.\", \"Legal: Privacy & Security, Privacy policy, Terms and conditions, Accessibility, Cookie policy, California Notice.\"]",
+      "key_interactions": "[{\"name\": \"Category listing pages have `filters`/`sorting` markup (`plp-*` classe\", \"evidence\": \"observed\", \"notes\": \"Category listing pages have `filters`/`sorting` markup (`plp-*` classes, `filters=f-subcategories%3A…` links, `?page=2` pagination).\"}, {\"name\": \"The product page contains \\\"Add to bag\\\", \\\"Choose cover\\\", \\\"Choose an opt\", \"evidence\": \"observed\", \"notes\": \"The product page contains \\\"Add to bag\\\", \\\"Choose cover\\\", \\\"Choose an option\\\" and \\\"Choose a different size\\\" strings.\"}, {\"name\": \"Search form, bag page, login page, favorites.\", \"evidence\": \"observed\", \"notes\": \"Search form, bag page, login page, favorites.\"}, {\"name\": \"** a cart in client storage and a login modal. I did not verify either\", \"evidence\": \"inferred\", \"notes\": \"** a cart in client storage and a login modal. I did not verify either.\"}]",
+      "complexity": "high",
+      "stack_clues": "`hnf-` header/footer fragments (631 occurrences), React strings, `utag_data` (Tealium) with `site_platform: \"m2\"`. The pages are server-rendered with hydrated fragments.",
+      "limitations": "- Dropdown contents are not in the static HTML.",
+      "approved_at": "2026-11-13",
+      "approved_by": "Samhith Varma",
+      "approval_reference": "pipelines/claude/research/approval-2026-11-13.md"
+    },
+    {
+      "category": "e-commerce",
+      "slot": "03",
+      "source_id": "ECOM-03",
+      "model_group": "claude",
+      "model_id": "claude-sonnet-5-5",
+      "model_version": "",
+      "subcategory": "specialty retailer (fly fishing, outdoor apparel, dog and hunt)",
+      "source_name": "Orvis",
+      "source_url": "https://www.orvis.com/",
+      "verified_at": "2026-11-10",
+      "verification_method": "HTTP GET via curl (no browser rendering)",
+      "verification_result": "verified",
+      "evidence_reference": "pipelines/claude/research/ECOM.md#ecom-03",
+      "source_pages": "[{\"url\": \"https://www.orvis.com/\", \"title\": \"Orvis: Quality Clothing, Fly-Fishing Gear & More Since 1856 | Orvis\", \"local_file\": \"index.html\"}, {\"url\": \"https://www.orvis.com/men\", \"title\": \"Men's Outdoor Clothing & Apparel | Orvis\", \"local_file\": \"men.html\"}, {\"url\": \"https://www.orvis.com/women\", \"title\": \"Women's Clothing & Apparel | Orvis\", \"local_file\": \"women.html\"}, {\"url\": \"https://www.orvis.com/fly-fishing\", \"title\": \"Fly Fishing – The Best Fly Fishing Gear in the World | Orvis\", \"local_file\": \"fly-fishing.html\"}, {\"url\": \"https://www.orvis.com/fly-fishing/wading-gear/waders\", \"title\": \"Fly Fishing Waders | Orvis\", \"local_file\": \"waders.html\"}, {\"url\": \"https://www.orvis.com/dog-products\", \"title\": \"Dog Products | Orvis\", \"local_file\": \"dog-products.html\"}, {\"url\": \"https://www.orvis.com/hunt\", \"title\": \"Hunting Gear, Equipment, Clothing & Accessories | Orvis\", \"local_file\": \"hunt.html\"}, {\"url\": \"https://www.orvis.com/product/kids-clearwater-waders/2TZ0.html\", \"title\": \"Kids' Clearwater Fly-Fishing Waders | Orvis\", \"local_file\": \"2tz0.html\"}, {\"url\": \"https://www.orvis.com/cart\", \"title\": \"Cart | Orvis\\\" (`h1` \\\"Your Shopping Cart\\\")\", \"local_file\": \"cart.html\"}, {\"url\": \"https://www.orvis.com/login\", \"title\": \"Login | Orvis\", \"local_file\": \"login.html\"}, {\"url\": \"https://www.orvis.com/gifts/gift-card\", \"title\": \"Orvis Gift Cards | Orvis\", \"local_file\": \"gift-card.html\"}, {\"url\": \"https://www.orvis.com/customer-care.html\", \"title\": \"Customer Service | Orvis\", \"local_file\": \"customer-care.html\"}, {\"url\": \"https://www.orvis.com/returns-exchanges.html\", \"title\": \"Product Returns & Exchanges | Orvis\", \"local_file\": \"returns-exchanges.html\"}, {\"url\": \"https://www.orvis.com/size-and-fit-guide.html\", \"title\": \"Size & Fit Guides | Orvis\", \"local_file\": \"size-and-fit-guide.html\"}]",
+      "key_regions": "[\"Header:** `<header class=\\\"st-global-header\\\">` with `nav.navbar`. Skip links \\\"Skip to main content\\\" and \\\"Skip to footer content\\\". Top-level nav buttons: Gifts, New, Men, Women, Fly Fishing, Dog, Hunt, Home Goods, Packs & \", \"Promo bar:** free-shipping banner with a Details link, plus an \\\"orvis.com/exclusions\\\" link.\", \"Hero:** `/the-fall-collection` (\\\"Shop The Fall Collection\\\") and `/gifts` (\\\"Shop Now\\\") calls to action. The homepage has no `<h1>`.\", \"Customer Care: Help/FAQ, Contact Us, Order Status, Shipping Info, Size & Fit, Returns & Exchanges, Repairs, Gift Card Balance, Orvis Rewards Visa, International Orders, Corporate Sales, Promotional Exclusions, Give Us Fe\", \"Company: Terms Of Use, Privacy Policy, State Supplemental Privacy Notice, Who We Are, Fly Fishing Learning Center, News, Careers, Press Room, Dealers.\", \"Store Locator: \\\"Find My Nearest Store\\\" and \\\"See if we can fix it\\\".\"]",
+      "key_interactions": "[{\"name\": \"Listing pages have `refinements` markup (refinement-item-size, -featur\", \"evidence\": \"observed\", \"notes\": \"Listing pages have `refinements` markup (refinement-item-size, -features, -styleType) and product tiles.\"}, {\"name\": \"The product page has `data-attr=\\\"color\\\"` and `data-attr=\\\"size\\\"` select\", \"evidence\": \"observed\", \"notes\": \"The product page has `data-attr=\\\"color\\\"` and `data-attr=\\\"size\\\"` selectors, `swatch` elements and an \\\"Add to Cart\\\" button.\"}, {\"name\": \"`/cart` page, `/login` page.\", \"evidence\": \"observed\", \"notes\": \"`/cart` page, `/login` page.\"}, {\"name\": \"** a client-side sort control (not confirmed) and a separate flow for \", \"evidence\": \"inferred\", \"notes\": \"** a client-side sort control (not confirmed) and a separate flow for gift cards.\"}, {\"name\": \"Not checked:** `localStorage` or `sessionStorage` use. The product pag\", \"evidence\": \"inferred\", \"notes\": \"Not checked:** `localStorage` or `sessionStorage` use. The product page HTML contained neither string.\"}]",
+      "complexity": "high",
+      "stack_clues": "Salesforce Commerce Cloud / Demandware (`/on/demandware.store/Sites-USOrvis-Site/en_US/…`, `dwvar_` URL parameters) and Cloudflare mentions. The pages are server-rendered.",
+      "limitations": "- Sub-drawer link text was not captured. Complexity recorded in research as 'medium-high'; normalized to 'high' for this field.",
+      "approved_at": "2026-11-13",
+      "approved_by": "Samhith Varma",
+      "approval_reference": "pipelines/claude/research/approval-2026-11-13.md"
+    },
+    {
+      "category": "e-commerce",
+      "slot": "04",
+      "source_id": "ECOM-04",
+      "model_group": "codex",
+      "model_id": "gpt-6.1-sol",
+      "model_version": "",
+      "subcategory": "single-brand direct-to-consumer store",
+      "source_name": "Allbirds",
+      "source_url": "https://www.allbirds.com/",
+      "verified_at": "2026-11-12T00:52:36.949760+00:00",
+      "verification_method": "Live search + web text extraction of home; HTTP GET urllib for page scope; HTTP-only, no rendering/JS",
+      "verification_result": "verified",
+      "evidence_reference": "pipelines/codex/research/ECOM.md",
+      "source_pages": "[{\"url\": \"https://www.allbirds.com/\", \"title\": \"Allbirds: Comfortable, Sustainable Shoes & Apparel\", \"local_file\": \"index.html\"}, {\"url\": \"https://www.allbirds.com/collections/mens\", \"title\": \"Allbirds: Sustainable Men’s Shoes, Wear-All-Day Comfort\", \"local_file\": \"mens.html\"}, {\"url\": \"https://www.allbirds.com/products/mens-tree-runner-nz-medium-grey\", \"title\": \"Men's Tree Runner NZ - Everyday Sneakers | Allbirds\", \"local_file\": \"tree-runner.html\"}, {\"url\": \"https://www.allbirds.com/cart\", \"title\": \"Cart (empty response title)\", \"local_file\": \"cart.html\"}, {\"url\": \"https://www.allbirds.com/search?q=wool\", \"title\": \"Search - Allbirds\", \"local_file\": \"search.html\"}, {\"url\": \"https://www.allbirds.com/pages/returns-exchanges\", \"title\": \"Returns & Exchanges | 30-Day Return Policy | Allbirds\", \"local_file\": \"returns.html\"}]",
+      "key_regions": "[\"Header with men/women navigation and search entry\", \"Home promotional hero followed by new-arrival, gender, best-seller and material/weather merchandising bands\", \"Collection and search product cards with size-related controls\", \"Product gallery/purchase area and product-information sections\", \"Shared cart-drawer markup and newsletter/policy footer\"]",
+      "key_interactions": "[{\"name\": \"Navigation and search\", \"evidence\": \"observed\", \"notes\": \"HTTP markup contains men/women buttons and search fields; expansion and submission effects untested.\"}, {\"name\": \"Size selection and add to cart\", \"evidence\": \"observed\", \"notes\": \"Product markup contains Select A Size and add-to-cart buttons; enabled/disabled states and cart mutation untested.\"}, {\"name\": \"Filter and sort\", \"evidence\": \"observed\", \"notes\": \"Search inputs include size filters and sort_by; relevance and ascending/descending price values were inspected in the initial HTTP response. Result changes untested.\"}, {\"name\": \"Cart quantity/removal and persistence\", \"evidence\": \"inferred\", \"notes\": \"Cart/drawer integration suggested by assets and Added to Cart markup; populated cart and storage were not inspected.\"}]",
+      "complexity": "medium",
+      "stack_clues": "Shopify and cdn/shop strings; v-model and @change template attributes suggest reactive client rendering (framework/runtime not confirmed). jquery/bootstrap strings alone do not establish active dependencies.",
+      "limitations": "PROVISIONAL: coordinator reservations and complete ten-source approval pending. HTTP-only. Cart returns 200 with an empty title; shared shell is present but dedicated cart content is not established. Returned markup includes unexecuted template expressions. Returns page availability/title established, detailed layout not characterized. No rendered layout, mobile state, keyboard, storage or checkout tests.",
+      "approved_at": "2026-11-12",
+      "approved_by": "Samhith Varma",
+      "approval_reference": "metadata/change-log.md § 2026-11-12 — Codex Phase A approval (slots 04–06)"
+    },
+    {
+      "category": "e-commerce",
+      "slot": "05",
+      "source_id": "ECOM-05",
+      "model_group": "codex",
+      "model_id": "gpt-6.1-sol",
+      "model_version": "",
+      "subcategory": "multi-category retailer",
+      "source_name": "World Market",
+      "source_url": "https://www.worldmarket.com/",
+      "verified_at": "2026-11-12T00:52:37.323742+00:00",
+      "verification_method": "Live search + web text extraction of home; HTTP GET urllib for page scope; HTTP-only, no rendering/JS",
+      "verification_result": "verified",
+      "evidence_reference": "pipelines/codex/research/ECOM.md",
+      "source_pages": "[{\"url\": \"https://www.worldmarket.com/\", \"title\": \"Furniture, Home Decor, Rugs, Outdoor & More | World Market\", \"local_file\": \"index.html\"}, {\"url\": \"https://www.worldmarket.com/c/furniture/\", \"title\": \"Unique & Affordable Furniture Sets\", \"local_file\": \"furniture.html\"}, {\"url\": \"https://www.worldmarket.com/c/furniture/living-room-furniture/chairs/\", \"title\": \"Accent & Living Room Chairs - World Market\", \"local_file\": \"chairs.html\"}, {\"url\": \"https://www.worldmarket.com/p/sophie-upholstered-swivel-chair-112628.html\", \"title\": \"Sophie Upholstered Swivel Chair - World Market\", \"local_file\": \"sophie-chair.html\"}, {\"url\": \"https://www.worldmarket.com/cart\", \"title\": \"Cart | World Market\", \"local_file\": \"cart.html\"}, {\"url\": \"https://www.worldmarket.com/search?q=chair\", \"title\": \"chair - World Market\", \"local_file\": \"search.html\"}, {\"url\": \"https://www.worldmarket.com/customer-service/return-policy.html\", \"title\": \"Return Policy & Refunds Guide | World Market\", \"local_file\": \"returns.html\"}]",
+      "key_regions": "[\"Utility header with store selection, search, account and cart affordances\", \"Department navigation spanning furniture, decor, bath and food/drinks\", \"Home seasonal merchandising and department bands\", \"Furniture editorial landing and chair listing with filter/sort controls\", \"Product purchase area with color and add-to-cart controls\", \"Empty-cart state and return-policy content; shared service/legal footer\"]",
+      "key_interactions": "[{\"name\": \"Store selection and search\", \"evidence\": \"observed\", \"notes\": \"ZIP/city field and store-selection buttons exist in markup; no location submitted. HTTP assigned Tuscaloosa while web extraction showed Oakbrook: locale is not stable.\"}, {\"name\": \"Listing filters and sorting\", \"evidence\": \"observed\", \"notes\": \"Chair listing has FILTER/SORT, price/color controls and ascending/descending price options. No result-changing action performed.\"}, {\"name\": \"Product color and add to cart\", \"evidence\": \"observed\", \"notes\": \"Sophie product markup identifies color and Add to Cart; selection/mutation untested.\"}, {\"name\": \"Search and empty cart\", \"evidence\": \"observed\", \"notes\": \"Search URL returned Search Results heading; cart returned empty-cart heading. Populated cart not observed.\"}, {\"name\": \"Cart quantity/removal\", \"evidence\": \"inferred\", \"notes\": \"Expected purchase-flow behavior, not present in observed empty state; exclude from fidelity claims until tested.\"}]",
+      "complexity": "high",
+      "stack_clues": "demandware.store and demandware.static URL paths identify Salesforce Commerce Cloud conventions; underlying application/version unknown.",
+      "limitations": "PROVISIONAL: coordinator reservations and complete ten-source approval pending. HTTP-only. No dropdown expansion, responsive layout, cart mutation, checkout, validation or storage tested. Store location varies by tool/session. Rewards/account/store-service flows outside proposed page scope; product stock and campaigns vary.",
+      "approved_at": "2026-11-12",
+      "approved_by": "Samhith Varma",
+      "approval_reference": "metadata/change-log.md § 2026-11-12 — Codex Phase A approval (slots 04–06)"
+    },
+    {
+      "category": "e-commerce",
+      "slot": "06",
+      "source_id": "ECOM-06",
+      "model_group": "codex",
+      "model_id": "gpt-6.1-sol",
+      "model_version": "",
+      "subcategory": "specialty retailer",
+      "source_name": "Adafruit Industries",
+      "source_url": "https://www.adafruit.com/",
+      "verified_at": "2026-11-12T00:52:39.545675+00:00",
+      "verification_method": "Live search + web text extraction of home; HTTP GET urllib for page scope; HTTP-only, no rendering/JS",
+      "verification_result": "verified",
+      "evidence_reference": "pipelines/codex/research/ECOM.md",
+      "source_pages": "[{\"url\": \"https://www.adafruit.com/\", \"title\": \"Adafruit Industries, Unique & fun DIY electronics and kits\", \"local_file\": \"index.html\"}, {\"url\": \"https://www.adafruit.com/category/54\", \"title\": \"Components & Parts Products Category on Adafruit Industries\", \"local_file\": \"components.html\"}, {\"url\": \"https://www.adafruit.com/product/5001\", \"title\": \"ANO Directional Navigation and Scroll Wheel Rotary Encoder : Adafruit Industries, Unique & fun DIY electronics and kits\", \"local_file\": \"encoder.html\"}, {\"url\": \"https://www.adafruit.com/shopping_cart\", \"title\": \"The Shopping Cart : Adafruit Industries, Unique & fun DIY electronics and kits\", \"local_file\": \"cart.html\"}, {\"url\": \"https://www.adafruit.com/?q=encoder\", \"title\": \"Search Results for 'encoder' on Adafruit Industries\", \"local_file\": \"search.html\"}, {\"url\": \"https://www.adafruit.com/shipping\", \"title\": \"Shipping & Returns\", \"local_file\": \"shipping-returns.html\"}]",
+      "key_regions": "[\"Shop/learning/community utility links, search, account and cart header\", \"Product-category navigation and new/featured merchandise areas\", \"Components & Parts product listing with purchase affordances\", \"Encoder product gallery, description, technical details, learning links and related items\", \"Search results with sort, availability and price filter forms\", \"Cart quantity/coupon/wishlist controls and Shipping & Returns help page\"]",
+      "key_interactions": "[{\"name\": \"Menu and search\", \"evidence\": \"observed\", \"notes\": \"toggle menu and search fields in HTTP markup; no expansion or submission action performed.\"}, {\"name\": \"Filter and sort\", \"evidence\": \"observed\", \"notes\": \"Search contains best-match/most-recent inputs, availability checkboxes, price-bracket inputs and apply buttons; effects untested.\"}, {\"name\": \"Quantity and add to cart\", \"evidence\": \"observed\", \"notes\": \"Product has qty input and Add to Cart; add-on checkbox markup present. No purchase/cart mutation.\"}, {\"name\": \"Cart controls\", \"evidence\": \"observed\", \"notes\": \"Shopping-cart markup includes Empty Cart, Update Quantities and coupon Apply; actual item removal/quantity updates untested.\"}, {\"name\": \"Product variants\", \"evidence\": \"inferred\", \"notes\": \"No size/color variant selector established for selected encoder; do not add a generic variant matrix.\"}]",
+      "complexity": "medium",
+      "stack_clues": "jquery/bootstrap strings in returned markup. Store backend and framework version unknown; no claim of Zen Cart based on URL style.",
+      "limitations": "PROVISIONAL: coordinator reservations and complete ten-source approval pending. HTTP-only. Guessed /returns returned 404; linked /shipping returned 200 and is the correct help page. No checkout, account, cart mutation, rendered layout, keyboard or storage testing. Technical/learning/distributor external pages outside scope.",
+      "approved_at": "2026-11-12",
+      "approved_by": "Samhith Varma",
+      "approval_reference": "metadata/change-log.md § 2026-11-12 — Codex Phase A approval (slots 04–06)"
+    },
+    {
+      "category": "e-commerce",
+      "slot": "07",
+      "source_id": "ECOM-07",
+      "model_group": "open-source",
+      "model_id": "",
+      "model_version": "",
+      "subcategory": "",
+      "source_name": "",
+      "source_url": "",
+      "verified_at": "",
+      "verification_method": "",
+      "verification_result": "",
+      "evidence_reference": "",
+      "source_pages": "",
+      "key_regions": "",
+      "key_interactions": "",
+      "complexity": "",
+      "stack_clues": "",
+      "limitations": "",
+      "approved_at": "",
+      "approved_by": "",
+      "approval_reference": ""
+    },
+    {
+      "category": "e-commerce",
+      "slot": "08",
+      "source_id": "ECOM-08",
+      "model_group": "open-source",
+      "model_id": "",
+      "model_version": "",
+      "subcategory": "",
+      "source_name": "",
+      "source_url": "",
+      "verified_at": "",
+      "verification_method": "",
+      "verification_result": "",
+      "evidence_reference": "",
+      "source_pages": "",
+      "key_regions": "",
+      "key_interactions": "",
+      "complexity": "",
+      "stack_clues": "",
+      "limitations": "",
+      "approved_at": "",
+      "approved_by": "",
+      "approval_reference": ""
+    },
+    {
+      "category": "e-commerce",
+      "slot": "09",
+      "source_id": "ECOM-09",
+      "model_group": "open-source",
+      "model_id": "",
+      "model_version": "",
+      "subcategory": "",
+      "source_name": "",
+      "source_url": "",
+      "verified_at": "",
+      "verification_method": "",
+      "verification_result": "",
+      "evidence_reference": "",
+      "source_pages": "",
+      "key_regions": "",
+      "key_interactions": "",
+      "complexity": "",
+      "stack_clues": "",
+      "limitations": "",
+      "approved_at": "",
+      "approved_by": "",
+      "approval_reference": ""
+    },
+    {
+      "category": "e-commerce",
+      "slot": "10",
+      "source_id": "ECOM-10",
+      "model_group": "open-source",
+      "model_id": "",
+      "model_version": "",
+      "subcategory": "",
+      "source_name": "",
+      "source_url": "",
+      "verified_at": "",
+      "verification_method": "",
+      "verification_result": "",
+      "evidence_reference": "",
+      "source_pages": "",
+      "key_regions": "",
+      "key_interactions": "",
+      "complexity": "",
+      "stack_clues": "",
+      "limitations": "",
+      "approved_at": "",
+      "approved_by": "",
+      "approval_reference": ""
+    }
+  ],
+  "protocol_snapshots": [
+    {
+      "path": "Rules.md",
+      "sha256": "04b1c3e38b76f2aff3aef869d67370bb4532cd8f9ab5e22ac8276f26cbb859bf"
+    },
+    {
+      "path": "MODEL_ALLOCATION.md",
+      "sha256": "dba261a89763c22a6c41fc6b066593345aef7871121cef52ff7b73ff88cce3cd"
+    },
+    {
+      "path": "pipelines/codex/config.json",
+      "sha256": "b16751854f14ec50f9e8e8726e4ab0c064503f1ebdea6d71ba7e1faf85ed6d95"
+    },
+    {
+      "path": "pipelines/codex/categories.json",
+      "sha256": "843ea7d8d1cc7d01385643f848408dea32997985422496d98e8f108bbc09a333"
+    },
+    {
+      "path": "pipelines/codex/prompts/build.md",
+      "sha256": "37567f6a4198f7539b11964980cf814a7b8c0732f926dfe9aa6f86849dd2277c"
+    },
+    {
+      "path": "metadata/source-inventories/e-commerce.csv",
+      "sha256": "92c04a7ae1f63822938936f19d915135bfd90238df7a5d7c4845321fa22db520"
+    },
+    {
+      "path": "metadata/assignments.csv",
+      "sha256": "f1022dd15c076a2bbe4d8e86883174a4f2318bc6133ea120ff6dca2aa8101b74"
+    }
+  ],
+  "prepared_at": "2026-11-13T21:01:56.040Z",
+  "task_is_execution": false
+}
+```

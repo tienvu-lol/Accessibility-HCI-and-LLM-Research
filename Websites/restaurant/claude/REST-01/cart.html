@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cart | Trattoria Fico Nero</title>
+<meta name="description" content="Demo shopping cart.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="cart">
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header" data-section="global-header" data-component="site-header">
+<div class="demo-banner" data-section="demo-banner" data-component="announcement-bar"><p>Fictional restaurant for a research dataset. Reservations, orders and the shop are local simulations.</p></div>
+ <div class="header-inner">
+  <a class="brand" href="index.html" data-component="brand-link"><img src="assets/logo.svg" alt="" width="44" height="44"><span>Trattoria Fico Nero</span></a>
+  <div class="header-tools" data-section="header-utility" data-component="utility-bar">
+   <a class="text-menu-link" href="text-menu.html">Plain-text menu</a>
+   <form class="search-form" role="search" aria-label="Site search" action="search.html" method="get" data-section="site-search" data-component="search-form">
+    <label for="site-search-q" class="visually-hidden">Search this site</label>
+    <input id="site-search-q" type="search" name="q" placeholder="Search" autocomplete="off">
+    <button type="submit">Search</button>
+   </form>
+   <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" data-component="nav-toggle">Menu</button>
+  </div>
+ </div>
+ <nav id="primary-nav" class="primary-nav" aria-label="Primary" data-section="global-navigation" data-component="primary-nav"><ul><li><a href="gatherings.html">Gatherings</a></li><li><a href="shop.html">Shop</a></li><li><a href="cocktails.html">Craft Cocktails</a></li><li><a href="owners.html">Marta &amp; Joel</a></li><li><a href="cart.html" aria-current="page" data-cart-link>Cart</a></li></ul></nav>
+</header>
+<main id="main-content" data-section="main-content" tabindex="-1">
+<nav class="breadcrumb" aria-label="Breadcrumb" data-section="breadcrumb" data-component="breadcrumb"><ol><li><a href="index.html">Home</a></li><li aria-current="page">Cart</li></ol></nav>
+
+<h1>Cart</h1>
+<p class="note"><strong>Demo cart.</strong> Stored only in this browser; no payment is processed.</p>
+<div id="cart-root" data-section="cart" data-component="cart-summary"><noscript><p>The demo cart needs JavaScript.</p></noscript></div>
+<p id="cart-status" role="status" class="count"></p>
+</main>
+<footer class="site-footer" data-section="global-footer" data-component="site-footer">
+ <div class="footer-grid">
+  <section aria-labelledby="newsletter-title" data-section="newsletter" data-component="newsletter-form">
+   <h2 id="newsletter-title">Stay in touch</h2>
+   <p>Seasonal menus and event news, a few times a year. <strong>Demo:</strong> nothing is stored or sent.</p>
+   <form id="newsletter-form" novalidate data-validate data-demo-form="newsletter">
+    <div class="error-summary" tabindex="-1" hidden data-component="error-summary"></div>
+    <div class="field"><label for="nl-email">Email address</label><input id="nl-email" name="email" type="email" autocomplete="email" required></div>
+    <button type="submit">Subscribe (demo)</button>
+    <p class="form-status" role="status" data-status></p>
+   </form>
+  </section>
+  <nav aria-label="Footer" data-section="footer-navigation" data-component="footer-nav"><h2>Explore</h2><ul><li><a href="text-menu.html">Plain-text menu</a></li><li><a href="reserve.html">Reserve (demo)</a></li><li><a href="press.html">Press</a></li><li><a href="community.html">Community</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="accessibility.html">Accessibility</a></li><li><a href="search.html">Search</a></li></ul></nav>
+  <section aria-labelledby="footer-visit" data-section="footer-contact" data-component="contact-block">
+   <h2 id="footer-visit">Visit</h2>
+   <address>27 Mulberry Alley<br>Lakeview Falls (fictional)</address>
+   <p>ciao@ficonero.example</p>
+   <p>Comments and questions are welcome.</p>
+  </section>
+ </div>
+ <p class="legal">Trattoria Fico Nero is a fictional business created for a research dataset. Not a real restaurant. Inspired by the structure of a public restaurant site; no real names, logos or text are reproduced.</p>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

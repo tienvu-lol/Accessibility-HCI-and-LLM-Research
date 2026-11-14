@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Weather News | Meridian 12 Weather (sample data)</title>
+<meta name="description" content="Sample weather and science story teasers, plus a demo Ask the Meteorologist form.">
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="news">
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header" data-section="global-header" data-component="site-header">
+<div class="wrap header-row">
+<a class="brand" href="index.html" data-component="brand-logo"><img src="assets/logo.svg" alt="" width="48" height="48"><span class="brand-text"><span class="brand-name">Meridian 12 Weather</span><span class="brand-sub">Fictional station &middot; Cedar Basin (invented)</span></span></a>
+<div class="header-tools">
+
+<button type="button" class="menu-toggle" aria-expanded="false" aria-controls="section-nav" hidden data-component="menu-toggle">Menu</button>
+</div></div>
+<nav id="section-nav" class="site-nav" aria-label="Weather sections" data-section="global-navigation" data-component="primary-nav"><div class="wrap"><ul><li><a href="index.html#7-day">7 Day</a></li><li><a href="index.html#hourly">Hourly</a></li><li><a href="index.html#weekend">Weekend</a></li><li><a href="alerts.html">Weather Alerts</a></li><li><a href="almanac.html">Almanac</a></li><li><a href="closings.html">Closings</a></li><li><a href="hurricanes.html">Hurricanes</a></li><li><a href="map-center.html">Map Center</a></li><li><a href="webcams.html">Webcams</a></li><li><a href="resources.html">Resources</a></li><li><a href="news.html" aria-current="page">View more top stories</a></li></ul></div></nav>
+</header>
+<main id="main-content" data-section="main-content">
+<div class="sample-banner" role="note" data-section="sample-data-notice" data-component="sample-data-banner"><p><strong>SAMPLE DATA ONLY.</strong> Every temperature, forecast, alert, almanac figure, closing and time on this page is invented for a research replica. It is not a real forecast, it does not describe current conditions, and nothing here should be used to plan anything. Meridian 12 Weather is a fictional station.</p></div>
+
+<div class="page-title"><h1>Weather News <span class="badge-sample">Sample</span></h1><p class="lead">Eight invented story teasers. Only teasers are replicated; full article pages are not.</p></div>
+<section class="card js-only" aria-labelledby="nt" data-section="news-filter" data-component="filter-form"><h2 id="nt">Filter by topic</h2>
+<div class="btn-row" role="group" aria-label="Story topics">
+<button type="button" class="btn btn-secondary topic-btn" data-topic="all" aria-pressed="true">All</button>
+<button type="button" class="btn btn-secondary topic-btn" data-topic="Weather" aria-pressed="false">Weather</button>
+<button type="button" class="btn btn-secondary topic-btn" data-topic="Science" aria-pressed="false">Science</button>
+<button type="button" class="btn btn-secondary topic-btn" data-topic="Ask the Meteorologist" aria-pressed="false">Ask the Meteorologist</button></div>
+<p id="news-count" class="hint" role="status">8 of 8 sample stories shown.</p></section>
+<section aria-labelledby="ns" data-section="story-list" data-component="news-teasers"><h2 id="ns">Stories</h2><ul id="news-list" class="news-list"><li class="news-item" data-topic="Weather"><p class="news-topic">Weather &middot; <span class="badge-sample">Sample story</span></p><h3><a href="forecast.html">Cold front sample: what changes between Thursday and Friday</a></h3><p>A fictional walk-through of how an invented front could shift winds and temperatures.</p></li><li class="news-item" data-topic="Ask the Meteorologist"><p class="news-topic">Ask the Meteorologist &middot; <span class="badge-sample">Sample story</span></p><h3>Ask the Meteorologist: why does fog like river valleys?</h3><p>A sample answer about cool, damp air settling into low ground.</p></li><li class="news-item" data-topic="Weather"><p class="news-topic">Weather &middot; <span class="badge-sample">Sample story</span></p><h3>Flooding sample: how to read a flood watch versus a warning</h3><p>Invented examples of what each label means, with no real places named.</p></li><li class="news-item" data-topic="Science"><p class="news-topic">Science &middot; <span class="badge-sample">Sample story</span></p><h3>Space weather sample: a quiet week for the invented sun</h3><p>A made-up summary of solar activity, written for the research replica.</p></li><li class="news-item" data-topic="Weather"><p class="news-topic">Weather &middot; <span class="badge-sample">Sample story</span></p><h3><a href="hurricanes.html">Hurricane season sample: quiet in the invented basin again</a></h3><p>A fictional update that pairs with the sample tracker page.</p></li><li class="news-item" data-topic="Ask the Meteorologist"><p class="news-topic">Ask the Meteorologist &middot; <span class="badge-sample">Sample story</span></p><h3>Ask the Meteorologist: what is a "feels like" temperature?</h3><p>A sample explanation of wind chill and heat index, using invented numbers.</p></li><li class="news-item" data-topic="Science"><p class="news-topic">Science &middot; <span class="badge-sample">Sample story</span></p><h3>Science sample: how radar sees raindrops</h3><p>A plain-language, fictional explainer on echoes and reflectivity.</p></li><li class="news-item" data-topic="Science"><p class="news-topic">Science &middot; <span class="badge-sample">Sample story</span></p><h3><a href="almanac.html">Science sample: why the winter sun sits low</a></h3><p>A short invented piece about the tilt of the Earth and short days.</p></li></ul></section>
+<section class="card js-only" aria-labelledby="ask" data-section="ask-the-meteorologist" data-component="contact-form"><h2 id="ask">Ask the Meteorologist (demo form)</h2>
+<p class="hint">Intentional addition: the reference has an &ldquo;Ask the Meteorologist&rdquo; story series; a submission form was not observed. This form sends nothing anywhere.</p>
+<div id="ask-summary" class="error-summary" tabindex="-1" hidden></div>
+<div id="ask-success" class="success-box" tabindex="-1" hidden><p><strong>Demo only:</strong> your question was not sent. No data left this page.</p></div>
+<form id="ask-form" novalidate>
+<div class="field"><label for="ask-email">Email address (required)</label><p id="ask-email-error" class="field-error" hidden></p><input id="ask-email" type="email" autocomplete="email" aria-describedby="ask-email-error"></div>
+<div class="field"><label for="ask-q">Your question (required)</label><p id="ask-q-error" class="field-error" hidden></p><textarea id="ask-q" rows="4" aria-describedby="ask-q-error"></textarea></div>
+<button type="submit" class="btn">Submit demo question</button></form></section>
+</main>
+<footer class="site-footer" data-section="global-footer" data-component="site-footer"><div class="wrap">
+<div class="foot-grid">
+<section aria-labelledby="f1"><h2 id="f1">Forecasts</h2><ul><li><a href="index.html#7-day">7 Day</a></li><li><a href="index.html#hourly">Hourly</a></li><li><a href="index.html#weekend">Weekend</a></li><li><a href="forecast.html">Forecast discussion</a></li><li><a href="radar-video.html">Radar player (placeholder)</a></li></ul></section>
+<section aria-labelledby="f2"><h2 id="f2">Alerts and local</h2><ul><li><a href="alerts.html">Weather Alerts</a></li><li><a href="closings.html">Closings</a></li><li><a href="hurricanes.html">Hurricanes</a></li><li><a href="webcams.html">Webcams</a></li></ul></section>
+<section aria-labelledby="f3"><h2 id="f3">Learn more</h2><ul><li><a href="almanac.html">Almanac</a></li><li><a href="map-center.html">Map Center</a></li><li><a href="resources.html">Resources</a></li><li><a href="news.html">Weather news</a></li></ul></section>
+</div>
+<p class="foot-note"><strong>Research replica.</strong> Meridian 12 Weather is a fictional station and not affiliated with any real broadcaster. All weather data, alerts, closings and timestamps are invented sample data. No ads, tracking or third-party scripts. Footer grouping is inferred, not observed.</p>
+</div></footer>
+<script src="js/main.js" defer></script>
+</body>
+</html>

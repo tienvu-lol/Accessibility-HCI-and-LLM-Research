@@ -1,0 +1,877 @@
+{
+  "protocol_version": "1.0",
+  "replica_id": "UNI-01",
+  "category": "university",
+  "source_url": "https://www.wisc.edu/",
+  "components": [
+    {
+      "id": "accordion-group",
+      "selector": "[data-component='accordion-group']",
+      "pages": [
+        "academics.html",
+        "research.html"
+      ],
+      "behavior": [
+        "static presentational component"
+      ],
+      "keyboard": [
+        "Tab for links where present"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-qc-run; interaction flows checked with scripted Playwright for filters, forms, menu, dialog; screen readers not tested"
+    },
+    {
+      "id": "application-start-form",
+      "selector": "[data-component='application-start-form']",
+      "pages": [
+        "apply.html"
+      ],
+      "behavior": [
+        "static presentational component"
+      ],
+      "keyboard": [
+        "Tab for links where present"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-qc-run; interaction flows checked with scripted Playwright for filters, forms, menu, dialog; screen readers not tested"
+    },
+    {
+      "id": "breadcrumbs",
+      "selector": "[data-component='breadcrumbs']",
+      "pages": [
+        "about.html",
+        "academics.html",
+        "apply.html",
+        "athletics.html",
+        "directories.html",
+        "events.html",
+        "facts.html",
+        "majors.html",
+        "news.html",
+        "research.html",
+        "search.html",
+        "services.html",
+        "student-life.html",
+        "visit.html"
+      ],
+      "behavior": [
+        "trail with aria-current on last item"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-qc-run; interaction flows checked with scripted Playwright for filters, forms, menu, dialog; screen readers not tested"
+    },
+    {
+      "id": "callout-band",
+      "selector": "[data-component='callout-band']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "static presentational component"
+      ],
+      "keyboard": [
+        "Tab for links where present"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-qc-run; interaction flows checked with scripted Playwright for filters, forms, menu, dialog; screen readers not tested"
+    },
+    {
+      "id": "card-grid",
+      "selector": "[data-component='card-grid']",
+      "pages": [
+        "about.html",
+        "academics.html",
+        "admissions.html",
+        "apply.html",
+        "athletics.html",
+        "index.html",
+        "research.html",
+        "student-life.html",
+        "visit.html"
+      ],
+      "behavior": [
+        "static presentational component"
+      ],
+      "keyboard": [
+        "Tab for links where present"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-qc-run; interaction flows checked with scripted Playwright for filters, forms, menu, dialog; screen readers not tested"
+    },
+    {
+      "id": "contact-block",
+      "selector": "[data-component='contact-block']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "academics.html",
+        "admissions.html",
+        "apply.html",
+        "athletics.html",
+        "directories.html",
+        "events.html",
+        "facts.html",
+        "index.html",
+        "majors.html",
+        "news.html",
+        "research.html",
+        "search.html",
+        "services.html",
+        "student-life.html",
+        "visit.html"
+      ],
+      "behavior": [
+        "static presentational component"
+      ],
+      "keyboard": [
+        "Tab for links where present"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-qc-run; interaction flows checked with scripted Playwright for filters, forms, menu, dialog; screen readers not tested"
+    },
+    {
+      "id": "content-card",
+      "selector": "[data-component='content-card']",
+      "pages": [
+        "about.html",
+        "academics.html",
+        "admissions.html",
+        "athletics.html",
+        "index.html",
+        "research.html",
+        "student-life.html",
+        "visit.html"
+      ],
+      "behavior": [
+        "static presentational component"
+      ],
+      "keyboard": [
+        "Tab for links where present"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-qc-run; interaction flows checked with scripted Playwright for filters, forms, menu, dialog; screen readers not tested"
+    },
+    {
+      "id": "data-table",
+      "selector": "[data-component='data-table']",
+      "pages": [
+        "admissions.html",
+        "facts.html"
+      ],
+      "behavior": [
+        "captioned table in focusable scroll region"
+      ],
+      "keyboard": [
+        "Tab",
+        "arrow scroll"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-qc-run; interaction flows checked with scripted Playwright for filters, forms, menu, dialog; screen readers not tested"
+    },
+    {
+      "id": "demo-success",
+      "selector": "[data-component='demo-success']",
+      "pages": [
+        "apply.html",
+        "visit.html"
+      ],
+      "behavior": [
+        "role=status, focused, labeled demonstration, Start over button"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-qc-run; interaction flows checked with scripted Playwright for filters, forms, menu, dialog; screen readers not tested"
+    },
+    {
+      "id": "dialog",
+      "selector": "[data-component='dialog']",
+      "pages": [
+        "majors.html"
+      ],
+      "behavior": [
+        "native dialog, showModal, focus returns to opener"
+      ],
+      "keyboard": [
+        "Escape",
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-qc-run; interaction flows checked with scripted Playwright for filters, forms, menu, dialog; screen readers not tested"
+    },
+    {
+      "id": "disclosure",
+      "selector": "[data-component='disclosure']",
+      "pages": [
+        "academics.html",
+        "research.html"
+      ],
+      "behavior": [
+        "native details/summary"
+      ],
+      "keyboard": [
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-qc-run; interaction flows checked with scripted Playwright for filters, forms, menu, dialog; screen readers not tested"
+    },
+    {
+      "id": "empty-state",
+      "selector": "[data-component='empty-state']",
+      "pages": [
+        "directories.html",
+        "events.html",
+        "majors.html",
+        "news.html"
+      ],
+      "behavior": [
+        "static presentational component"
+      ],
+      "keyboard": [
+        "Tab for links where present"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-qc-run; interaction flows checked with scripted Playwright for filters, forms, menu, dialog; screen readers not tested"
+    },
+    {
+      "id": "error-summary",
+      "selector": "[data-component='error-summary']",
+      "pages": [
+        "apply.html",
+        "directories.html",
+        "visit.html"
+      ],
+      "behavior": [
+        "role=alert, focused on failed submit, links focus fields"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-qc-run; interaction flows checked with scripted Playwright for filters, forms, menu, dialog; screen readers not tested"
+    },
+    {
+      "id": "events-list",
+      "selector": "[data-component='events-list']",
+      "pages": [
+        "events.html"
+      ],
+      "behavior": [
+        "search, category, date filter over 14 sample events"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-qc-run; interaction flows checked with scripted Playwright for filters, forms, menu, dialog; screen readers not tested"
+    },
+    {
+      "id": "feature-panel",
+      "selector": "[data-component='feature-panel']",
+      "pages": [
+        "about.html",
+        "academics.html",
+        "admissions.html",
+        "athletics.html",
+        "index.html",
+        "research.html",
+        "student-life.html"
+      ],
+      "behavior": [
+        "static presentational component"
+      ],
+      "keyboard": [
+        "Tab for links where present"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-qc-run; interaction flows checked with scripted Playwright for filters, forms, menu, dialog; screen readers not tested"
+    },
+    {
+      "id": "filter-form",
+      "selector": "[data-component='filter-form']",
+      "pages": [
+        "events.html",
+        "majors.html",
+        "news.html"
+      ],
+      "behavior": [
+        "static presentational component"
+      ],
+      "keyboard": [
+        "Tab for links where present"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-qc-run; interaction flows checked with scripted Playwright for filters, forms, menu, dialog; screen readers not tested"
+    },
+    {
+      "id": "footer-link-group",
+      "selector": "[data-component='footer-link-group']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "academics.html",
+        "admissions.html",
+        "apply.html",
+        "athletics.html",
+        "directories.html",
+        "events.html",
+        "facts.html",
+        "index.html",
+        "majors.html",
+        "news.html",
+        "research.html",
+        "search.html",
+        "services.html",
+        "student-life.html",
+        "visit.html"
+      ],
+      "behavior": [
+        "static presentational component"
+      ],
+      "keyboard": [
+        "Tab for links where present"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-qc-run; interaction flows checked with scripted Playwright for filters, forms, menu, dialog; screen readers not tested"
+    },
+    {
+      "id": "hero-banner",
+      "selector": "[data-component='hero-banner']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "static presentational component"
+      ],
+      "keyboard": [
+        "Tab for links where present"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-qc-run; interaction flows checked with scripted Playwright for filters, forms, menu, dialog; screen readers not tested"
+    },
+    {
+      "id": "link-list",
+      "selector": "[data-component='link-list']",
+      "pages": [
+        "services.html"
+      ],
+      "behavior": [
+        "static presentational component"
+      ],
+      "keyboard": [
+        "Tab for links where present"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-qc-run; interaction flows checked with scripted Playwright for filters, forms, menu, dialog; screen readers not tested"
+    },
+    {
+      "id": "map-placeholder",
+      "selector": "[data-component='map-placeholder']",
+      "pages": [
+        "visit.html"
+      ],
+      "behavior": [
+        "static presentational component"
+      ],
+      "keyboard": [
+        "Tab for links where present"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-qc-run; interaction flows checked with scripted Playwright for filters, forms, menu, dialog; screen readers not tested"
+    },
+    {
+      "id": "mobile-menu-toggle",
+      "selector": "[data-component='mobile-menu-toggle']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "academics.html",
+        "admissions.html",
+        "apply.html",
+        "athletics.html",
+        "directories.html",
+        "events.html",
+        "facts.html",
+        "index.html",
+        "majors.html",
+        "news.html",
+        "research.html",
+        "search.html",
+        "services.html",
+        "student-life.html",
+        "visit.html"
+      ],
+      "behavior": [
+        "toggles aria-expanded and visibility of utility and primary nav at <=860px"
+      ],
+      "keyboard": [
+        "Enter",
+        "Space",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-qc-run; interaction flows checked with scripted Playwright for filters, forms, menu, dialog; screen readers not tested"
+    },
+    {
+      "id": "news-list",
+      "selector": "[data-component='news-list']",
+      "pages": [
+        "news.html"
+      ],
+      "behavior": [
+        "search and category filter over 12 sample stories"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-qc-run; interaction flows checked with scripted Playwright for filters, forms, menu, dialog; screen readers not tested"
+    },
+    {
+      "id": "not-found-panel",
+      "selector": "[data-component='not-found-panel']",
+      "pages": [
+        "404.html"
+      ],
+      "behavior": [
+        "static presentational component"
+      ],
+      "keyboard": [
+        "Tab for links where present"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-qc-run; interaction flows checked with scripted Playwright for filters, forms, menu, dialog; screen readers not tested"
+    },
+    {
+      "id": "notice",
+      "selector": "[data-component='notice']",
+      "pages": [
+        "admissions.html",
+        "apply.html",
+        "directories.html",
+        "events.html",
+        "majors.html",
+        "news.html",
+        "services.html",
+        "visit.html"
+      ],
+      "behavior": [
+        "static presentational component"
+      ],
+      "keyboard": [
+        "Tab for links where present"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-qc-run; interaction flows checked with scripted Playwright for filters, forms, menu, dialog; screen readers not tested"
+    },
+    {
+      "id": "page-title-band",
+      "selector": "[data-component='page-title-band']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "academics.html",
+        "admissions.html",
+        "apply.html",
+        "athletics.html",
+        "directories.html",
+        "events.html",
+        "facts.html",
+        "majors.html",
+        "news.html",
+        "research.html",
+        "search.html",
+        "services.html",
+        "student-life.html",
+        "visit.html"
+      ],
+      "behavior": [
+        "static presentational component"
+      ],
+      "keyboard": [
+        "Tab for links where present"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-qc-run; interaction flows checked with scripted Playwright for filters, forms, menu, dialog; screen readers not tested"
+    },
+    {
+      "id": "people-search",
+      "selector": "[data-component='people-search']",
+      "pages": [
+        "directories.html"
+      ],
+      "behavior": [
+        "validated directory search over 30 fictional people, empty state"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-qc-run; interaction flows checked with scripted Playwright for filters, forms, menu, dialog; screen readers not tested"
+    },
+    {
+      "id": "primary-nav",
+      "selector": "[data-component='primary-nav']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "academics.html",
+        "admissions.html",
+        "apply.html",
+        "athletics.html",
+        "directories.html",
+        "events.html",
+        "facts.html",
+        "index.html",
+        "majors.html",
+        "news.html",
+        "research.html",
+        "search.html",
+        "services.html",
+        "student-life.html",
+        "visit.html"
+      ],
+      "behavior": [
+        "flat six-item navigation",
+        "mobile disclosure via Menu button",
+        "aria-current on active page"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Escape closes mobile menu"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-qc-run; interaction flows checked with scripted Playwright for filters, forms, menu, dialog; screen readers not tested"
+    },
+    {
+      "id": "program-finder",
+      "selector": "[data-component='program-finder']",
+      "pages": [
+        "majors.html"
+      ],
+      "behavior": [
+        "search, college select, type checkboxes, sort, reset, count status, empty state, details dialog"
+      ],
+      "keyboard": [
+        "Tab",
+        "Space",
+        "Enter",
+        "Escape closes dialog"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-qc-run; interaction flows checked with scripted Playwright for filters, forms, menu, dialog; screen readers not tested"
+    },
+    {
+      "id": "result-group",
+      "selector": "[data-component='result-group']",
+      "pages": [
+        "search.html"
+      ],
+      "behavior": [
+        "static presentational component"
+      ],
+      "keyboard": [
+        "Tab for links where present"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-qc-run; interaction flows checked with scripted Playwright for filters, forms, menu, dialog; screen readers not tested"
+    },
+    {
+      "id": "result-list",
+      "selector": "[data-component='result-list']",
+      "pages": [
+        "directories.html",
+        "events.html",
+        "majors.html",
+        "news.html"
+      ],
+      "behavior": [
+        "static presentational component"
+      ],
+      "keyboard": [
+        "Tab for links where present"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-qc-run; interaction flows checked with scripted Playwright for filters, forms, menu, dialog; screen readers not tested"
+    },
+    {
+      "id": "search-band",
+      "selector": "[data-component='search-band']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "static presentational component"
+      ],
+      "keyboard": [
+        "Tab for links where present"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-qc-run; interaction flows checked with scripted Playwright for filters, forms, menu, dialog; screen readers not tested"
+    },
+    {
+      "id": "search-results",
+      "selector": "[data-component='search-results']",
+      "pages": [
+        "search.html"
+      ],
+      "behavior": [
+        "static presentational component"
+      ],
+      "keyboard": [
+        "Tab for links where present"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-qc-run; interaction flows checked with scripted Playwright for filters, forms, menu, dialog; screen readers not tested"
+    },
+    {
+      "id": "site-footer",
+      "selector": "[data-component='site-footer']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "academics.html",
+        "admissions.html",
+        "apply.html",
+        "athletics.html",
+        "directories.html",
+        "events.html",
+        "facts.html",
+        "index.html",
+        "majors.html",
+        "news.html",
+        "research.html",
+        "search.html",
+        "services.html",
+        "student-life.html",
+        "visit.html"
+      ],
+      "behavior": [
+        "static presentational component"
+      ],
+      "keyboard": [
+        "Tab for links where present"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-qc-run; interaction flows checked with scripted Playwright for filters, forms, menu, dialog; screen readers not tested"
+    },
+    {
+      "id": "site-header",
+      "selector": "[data-component='site-header']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "academics.html",
+        "admissions.html",
+        "apply.html",
+        "athletics.html",
+        "directories.html",
+        "events.html",
+        "facts.html",
+        "index.html",
+        "majors.html",
+        "news.html",
+        "research.html",
+        "search.html",
+        "services.html",
+        "student-life.html",
+        "visit.html"
+      ],
+      "behavior": [
+        "static presentational component"
+      ],
+      "keyboard": [
+        "Tab for links where present"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-qc-run; interaction flows checked with scripted Playwright for filters, forms, menu, dialog; screen readers not tested"
+    },
+    {
+      "id": "site-logo",
+      "selector": "[data-component='site-logo']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "academics.html",
+        "admissions.html",
+        "apply.html",
+        "athletics.html",
+        "directories.html",
+        "events.html",
+        "facts.html",
+        "index.html",
+        "majors.html",
+        "news.html",
+        "research.html",
+        "search.html",
+        "services.html",
+        "student-life.html",
+        "visit.html"
+      ],
+      "behavior": [
+        "static presentational component"
+      ],
+      "keyboard": [
+        "Tab for links where present"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-qc-run; interaction flows checked with scripted Playwright for filters, forms, menu, dialog; screen readers not tested"
+    },
+    {
+      "id": "site-search-form",
+      "selector": "[data-component='site-search-form']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "academics.html",
+        "admissions.html",
+        "apply.html",
+        "athletics.html",
+        "directories.html",
+        "events.html",
+        "facts.html",
+        "index.html",
+        "majors.html",
+        "news.html",
+        "research.html",
+        "search.html",
+        "services.html",
+        "student-life.html",
+        "visit.html"
+      ],
+      "behavior": [
+        "GET to search.html with q; results over inline data"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-qc-run; interaction flows checked with scripted Playwright for filters, forms, menu, dialog; screen readers not tested"
+    },
+    {
+      "id": "stat-list",
+      "selector": "[data-component='stat-list']",
+      "pages": [
+        "facts.html"
+      ],
+      "behavior": [
+        "static presentational component"
+      ],
+      "keyboard": [
+        "Tab for links where present"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-qc-run; interaction flows checked with scripted Playwright for filters, forms, menu, dialog; screen readers not tested"
+    },
+    {
+      "id": "step-card",
+      "selector": "[data-component='step-card']",
+      "pages": [
+        "apply.html",
+        "index.html"
+      ],
+      "behavior": [
+        "static presentational component"
+      ],
+      "keyboard": [
+        "Tab for links where present"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-qc-run; interaction flows checked with scripted Playwright for filters, forms, menu, dialog; screen readers not tested"
+    },
+    {
+      "id": "utility-nav",
+      "selector": "[data-component='utility-nav']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "academics.html",
+        "admissions.html",
+        "apply.html",
+        "athletics.html",
+        "directories.html",
+        "events.html",
+        "facts.html",
+        "index.html",
+        "majors.html",
+        "news.html",
+        "research.html",
+        "search.html",
+        "services.html",
+        "student-life.html",
+        "visit.html"
+      ],
+      "behavior": [
+        "14 utility links to local stand-ins"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-qc-run; interaction flows checked with scripted Playwright for filters, forms, menu, dialog; screen readers not tested"
+    },
+    {
+      "id": "validated-form",
+      "selector": "[data-component='validated-form']",
+      "pages": [
+        "apply.html",
+        "directories.html",
+        "visit.html"
+      ],
+      "behavior": [
+        "client-side validation, inline errors, error summary with focus, demo success"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-qc-run; interaction flows checked with scripted Playwright for filters, forms, menu, dialog; screen readers not tested"
+    },
+    {
+      "id": "value-card",
+      "selector": "[data-component='value-card']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "static presentational component"
+      ],
+      "keyboard": [
+        "Tab for links where present"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-qc-run; interaction flows checked with scripted Playwright for filters, forms, menu, dialog; screen readers not tested"
+    },
+    {
+      "id": "visit-request-form",
+      "selector": "[data-component='visit-request-form']",
+      "pages": [
+        "visit.html"
+      ],
+      "behavior": [
+        "static presentational component"
+      ],
+      "keyboard": [
+        "Tab for links where present"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-qc-run; interaction flows checked with scripted Playwright for filters, forms, menu, dialog; screen readers not tested"
+    }
+  ]
+}

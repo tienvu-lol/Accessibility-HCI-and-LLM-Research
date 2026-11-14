@@ -1,0 +1,1062 @@
+{
+  "protocol_version": "1.0",
+  "replica_id": "FASH-05",
+  "category": "fashion",
+  "source_url": "https://www.toa.st/",
+  "components": [
+    {
+      "id": "article-header",
+      "selector": "[data-component='article-header']",
+      "pages": [
+        "story.html"
+      ],
+      "instances": [
+        {
+          "page": "story.html",
+          "section": "story-heading",
+          "selector": "[data-section='story-heading'][data-component='article-header']"
+        }
+      ],
+      "behavior": [
+        "static semantic region or relative local links"
+      ],
+      "keyboard": [
+        "Tab / Shift+Tab for contained links or fields",
+        "Enter for links; Enter/Space for native buttons and summary where present",
+        "Escape for menu/disclosure where relevant"
+      ],
+      "status": "implemented",
+      "validation": "static audited; relevant delivered-JS behavior tested with DOM mocks; browser/native interaction not-tested"
+    },
+    {
+      "id": "breadcrumb-nav",
+      "selector": "[data-component='breadcrumb-nav']",
+      "pages": [
+        "story.html"
+      ],
+      "instances": [
+        {
+          "page": "story.html",
+          "section": "story-breadcrumb",
+          "selector": "[data-section='story-breadcrumb'][data-component='breadcrumb-nav']"
+        }
+      ],
+      "behavior": [
+        "static semantic region or relative local links"
+      ],
+      "keyboard": [
+        "Tab / Shift+Tab for contained links or fields",
+        "Enter for links; Enter/Space for native buttons and summary where present",
+        "Escape for menu/disclosure where relevant"
+      ],
+      "status": "implemented",
+      "validation": "static audited; relevant delivered-JS behavior tested with DOM mocks; browser/native interaction not-tested"
+    },
+    {
+      "id": "comment-card",
+      "selector": "[data-component='comment-card']",
+      "pages": [
+        "story.html"
+      ],
+      "instances": [
+        {
+          "page": "story.html",
+          "section": "comment-preview",
+          "selector": "[data-section='comment-preview'][data-component='comment-card']"
+        }
+      ],
+      "behavior": [
+        "static semantic region or relative local links"
+      ],
+      "keyboard": [
+        "Tab / Shift+Tab for contained links or fields",
+        "Enter for links; Enter/Space for native buttons and summary where present",
+        "Escape for menu/disclosure where relevant"
+      ],
+      "status": "implemented",
+      "validation": "static audited; relevant delivered-JS behavior tested with DOM mocks; browser/native interaction not-tested"
+    },
+    {
+      "id": "comment-form",
+      "selector": "[data-component='comment-form']",
+      "pages": [
+        "story.html"
+      ],
+      "instances": [
+        {
+          "page": "story.html",
+          "section": "story-comments",
+          "selector": "[data-section='story-comments'][data-component='comment-form']"
+        }
+      ],
+      "behavior": [
+        "required fields and email validation; safe preview and status focus"
+      ],
+      "keyboard": [
+        "Tab / Shift+Tab for contained links or fields",
+        "Enter for links; Enter/Space for native buttons and summary where present",
+        "Escape for menu/disclosure where relevant"
+      ],
+      "status": "implemented",
+      "validation": "static audited; relevant delivered-JS behavior tested with DOM mocks; browser/native interaction not-tested"
+    },
+    {
+      "id": "comment-section",
+      "selector": "[data-component='comment-section']",
+      "pages": [
+        "story.html"
+      ],
+      "instances": [
+        {
+          "page": "story.html",
+          "section": "story-comments",
+          "selector": "[data-section='story-comments'][data-component='comment-section']"
+        }
+      ],
+      "behavior": [
+        "static semantic region or relative local links"
+      ],
+      "keyboard": [
+        "Tab / Shift+Tab for contained links or fields",
+        "Enter for links; Enter/Space for native buttons and summary where present",
+        "Escape for menu/disclosure where relevant"
+      ],
+      "status": "implemented",
+      "validation": "static audited; relevant delivered-JS behavior tested with DOM mocks; browser/native interaction not-tested"
+    },
+    {
+      "id": "demo-notice",
+      "selector": "[data-component='demo-notice']",
+      "pages": [
+        "404.html",
+        "index.html",
+        "magazine.html",
+        "search.html",
+        "seasonal-concept.html",
+        "story.html"
+      ],
+      "instances": [
+        {
+          "page": "index.html",
+          "section": "footer-information",
+          "selector": "[data-section='footer-information'][data-component='demo-notice']"
+        },
+        {
+          "page": "seasonal-concept.html",
+          "section": "footer-information",
+          "selector": "[data-section='footer-information'][data-component='demo-notice']"
+        },
+        {
+          "page": "404.html",
+          "section": "footer-information",
+          "selector": "[data-section='footer-information'][data-component='demo-notice']"
+        },
+        {
+          "page": "story.html",
+          "section": "footer-information",
+          "selector": "[data-section='footer-information'][data-component='demo-notice']"
+        },
+        {
+          "page": "search.html",
+          "section": "footer-information",
+          "selector": "[data-section='footer-information'][data-component='demo-notice']"
+        },
+        {
+          "page": "magazine.html",
+          "section": "footer-information",
+          "selector": "[data-section='footer-information'][data-component='demo-notice']"
+        }
+      ],
+      "behavior": [
+        "static semantic region or relative local links"
+      ],
+      "keyboard": [
+        "Tab / Shift+Tab for contained links or fields",
+        "Enter for links; Enter/Space for native buttons and summary where present",
+        "Escape for menu/disclosure where relevant"
+      ],
+      "status": "implemented",
+      "validation": "static audited; relevant delivered-JS behavior tested with DOM mocks; browser/native interaction not-tested"
+    },
+    {
+      "id": "disclosure-menu",
+      "selector": "[data-component='disclosure-menu']",
+      "pages": [
+        "404.html",
+        "index.html",
+        "magazine.html",
+        "search.html",
+        "seasonal-concept.html",
+        "story.html"
+      ],
+      "instances": [
+        {
+          "page": "index.html",
+          "section": "community-navigation",
+          "selector": "[data-section='community-navigation'][data-component='disclosure-menu']"
+        },
+        {
+          "page": "seasonal-concept.html",
+          "section": "community-navigation",
+          "selector": "[data-section='community-navigation'][data-component='disclosure-menu']"
+        },
+        {
+          "page": "404.html",
+          "section": "community-navigation",
+          "selector": "[data-section='community-navigation'][data-component='disclosure-menu']"
+        },
+        {
+          "page": "story.html",
+          "section": "community-navigation",
+          "selector": "[data-section='community-navigation'][data-component='disclosure-menu']"
+        },
+        {
+          "page": "search.html",
+          "section": "community-navigation",
+          "selector": "[data-section='community-navigation'][data-component='disclosure-menu']"
+        },
+        {
+          "page": "magazine.html",
+          "section": "community-navigation",
+          "selector": "[data-section='community-navigation'][data-component='disclosure-menu']"
+        }
+      ],
+      "behavior": [
+        "native details/summary; Escape closes and focuses summary"
+      ],
+      "keyboard": [
+        "Tab / Shift+Tab for contained links or fields",
+        "Enter for links; Enter/Space for native buttons and summary where present",
+        "Escape for menu/disclosure where relevant"
+      ],
+      "status": "implemented",
+      "validation": "static audited; relevant delivered-JS behavior tested with DOM mocks; browser/native interaction not-tested"
+    },
+    {
+      "id": "editorial-article",
+      "selector": "[data-component='editorial-article']",
+      "pages": [
+        "story.html"
+      ],
+      "instances": [
+        {
+          "page": "story.html",
+          "section": "story",
+          "selector": "[data-section='story'][data-component='editorial-article']"
+        }
+      ],
+      "behavior": [
+        "static semantic region or relative local links"
+      ],
+      "keyboard": [
+        "Tab / Shift+Tab for contained links or fields",
+        "Enter for links; Enter/Space for native buttons and summary where present",
+        "Escape for menu/disclosure where relevant"
+      ],
+      "status": "implemented",
+      "validation": "static audited; relevant delivered-JS behavior tested with DOM mocks; browser/native interaction not-tested"
+    },
+    {
+      "id": "editorial-figure",
+      "selector": "[data-component='editorial-figure']",
+      "pages": [
+        "seasonal-concept.html",
+        "story.html"
+      ],
+      "instances": [
+        {
+          "page": "seasonal-concept.html",
+          "section": "seasonal-landscape",
+          "selector": "[data-section='seasonal-landscape'][data-component='editorial-figure']"
+        },
+        {
+          "page": "story.html",
+          "section": "story-illustration",
+          "selector": "[data-section='story-illustration'][data-component='editorial-figure']"
+        }
+      ],
+      "behavior": [
+        "static semantic region or relative local links"
+      ],
+      "keyboard": [
+        "Tab / Shift+Tab for contained links or fields",
+        "Enter for links; Enter/Space for native buttons and summary where present",
+        "Escape for menu/disclosure where relevant"
+      ],
+      "status": "implemented",
+      "validation": "static audited; relevant delivered-JS behavior tested with DOM mocks; browser/native interaction not-tested"
+    },
+    {
+      "id": "editorial-grid",
+      "selector": "[data-component='editorial-grid']",
+      "pages": [
+        "index.html",
+        "magazine.html",
+        "seasonal-concept.html"
+      ],
+      "instances": [
+        {
+          "page": "index.html",
+          "section": "home-magazine",
+          "selector": "[data-section='home-magazine'][data-component='editorial-grid']"
+        },
+        {
+          "page": "seasonal-concept.html",
+          "section": "seasonal-craft",
+          "selector": "[data-section='seasonal-craft'][data-component='editorial-grid']"
+        },
+        {
+          "page": "magazine.html",
+          "section": "clothing-stories",
+          "selector": "[data-section='clothing-stories'][data-component='editorial-grid']"
+        },
+        {
+          "page": "magazine.html",
+          "section": "making-stories",
+          "selector": "[data-section='making-stories'][data-component='editorial-grid']"
+        },
+        {
+          "page": "magazine.html",
+          "section": "place-stories",
+          "selector": "[data-section='place-stories'][data-component='editorial-grid']"
+        }
+      ],
+      "behavior": [
+        "static semantic region or relative local links"
+      ],
+      "keyboard": [
+        "Tab / Shift+Tab for contained links or fields",
+        "Enter for links; Enter/Space for native buttons and summary where present",
+        "Escape for menu/disclosure where relevant"
+      ],
+      "status": "implemented",
+      "validation": "static audited; relevant delivered-JS behavior tested with DOM mocks; browser/native interaction not-tested"
+    },
+    {
+      "id": "editorial-text",
+      "selector": "[data-component='editorial-text']",
+      "pages": [
+        "seasonal-concept.html"
+      ],
+      "instances": [
+        {
+          "page": "seasonal-concept.html",
+          "section": "seasonal-concept",
+          "selector": "[data-section='seasonal-concept'][data-component='editorial-text']"
+        }
+      ],
+      "behavior": [
+        "static semantic region or relative local links"
+      ],
+      "keyboard": [
+        "Tab / Shift+Tab for contained links or fields",
+        "Enter for links; Enter/Space for native buttons and summary where present",
+        "Escape for menu/disclosure where relevant"
+      ],
+      "status": "implemented",
+      "validation": "static audited; relevant delivered-JS behavior tested with DOM mocks; browser/native interaction not-tested"
+    },
+    {
+      "id": "footer-nav",
+      "selector": "[data-component='footer-nav']",
+      "pages": [
+        "404.html",
+        "index.html",
+        "magazine.html",
+        "search.html",
+        "seasonal-concept.html",
+        "story.html"
+      ],
+      "instances": [
+        {
+          "page": "index.html",
+          "section": "footer-explore",
+          "selector": "[data-section='footer-explore'][data-component='footer-nav']"
+        },
+        {
+          "page": "seasonal-concept.html",
+          "section": "footer-explore",
+          "selector": "[data-section='footer-explore'][data-component='footer-nav']"
+        },
+        {
+          "page": "404.html",
+          "section": "footer-explore",
+          "selector": "[data-section='footer-explore'][data-component='footer-nav']"
+        },
+        {
+          "page": "story.html",
+          "section": "footer-explore",
+          "selector": "[data-section='footer-explore'][data-component='footer-nav']"
+        },
+        {
+          "page": "search.html",
+          "section": "footer-explore",
+          "selector": "[data-section='footer-explore'][data-component='footer-nav']"
+        },
+        {
+          "page": "magazine.html",
+          "section": "footer-explore",
+          "selector": "[data-section='footer-explore'][data-component='footer-nav']"
+        }
+      ],
+      "behavior": [
+        "static semantic region or relative local links"
+      ],
+      "keyboard": [
+        "Tab / Shift+Tab for contained links or fields",
+        "Enter for links; Enter/Space for native buttons and summary where present",
+        "Escape for menu/disclosure where relevant"
+      ],
+      "status": "implemented",
+      "validation": "static audited; relevant delivered-JS behavior tested with DOM mocks; browser/native interaction not-tested"
+    },
+    {
+      "id": "image-feature",
+      "selector": "[data-component='image-feature']",
+      "pages": [
+        "index.html"
+      ],
+      "instances": [
+        {
+          "page": "index.html",
+          "section": "seasonal-hero",
+          "selector": "[data-section='seasonal-hero'][data-component='image-feature']"
+        }
+      ],
+      "behavior": [
+        "static semantic region or relative local links"
+      ],
+      "keyboard": [
+        "Tab / Shift+Tab for contained links or fields",
+        "Enter for links; Enter/Space for native buttons and summary where present",
+        "Escape for menu/disclosure where relevant"
+      ],
+      "status": "implemented",
+      "validation": "static audited; relevant delivered-JS behavior tested with DOM mocks; browser/native interaction not-tested"
+    },
+    {
+      "id": "newsletter-callout",
+      "selector": "[data-component='newsletter-callout']",
+      "pages": [
+        "404.html",
+        "index.html",
+        "magazine.html",
+        "search.html",
+        "seasonal-concept.html",
+        "story.html"
+      ],
+      "instances": [
+        {
+          "page": "index.html",
+          "section": "newsletter",
+          "selector": "[data-section='newsletter'][data-component='newsletter-callout']"
+        },
+        {
+          "page": "seasonal-concept.html",
+          "section": "newsletter",
+          "selector": "[data-section='newsletter'][data-component='newsletter-callout']"
+        },
+        {
+          "page": "404.html",
+          "section": "newsletter",
+          "selector": "[data-section='newsletter'][data-component='newsletter-callout']"
+        },
+        {
+          "page": "story.html",
+          "section": "newsletter",
+          "selector": "[data-section='newsletter'][data-component='newsletter-callout']"
+        },
+        {
+          "page": "search.html",
+          "section": "newsletter",
+          "selector": "[data-section='newsletter'][data-component='newsletter-callout']"
+        },
+        {
+          "page": "magazine.html",
+          "section": "newsletter",
+          "selector": "[data-section='newsletter'][data-component='newsletter-callout']"
+        }
+      ],
+      "behavior": [
+        "static semantic region or relative local links"
+      ],
+      "keyboard": [
+        "Tab / Shift+Tab for contained links or fields",
+        "Enter for links; Enter/Space for native buttons and summary where present",
+        "Escape for menu/disclosure where relevant"
+      ],
+      "status": "implemented",
+      "validation": "static audited; relevant delivered-JS behavior tested with DOM mocks; browser/native interaction not-tested"
+    },
+    {
+      "id": "newsletter-form",
+      "selector": "[data-component='newsletter-form']",
+      "pages": [
+        "404.html",
+        "index.html",
+        "magazine.html",
+        "search.html",
+        "seasonal-concept.html",
+        "story.html"
+      ],
+      "instances": [
+        {
+          "page": "index.html",
+          "section": "newsletter",
+          "selector": "[data-section='newsletter'][data-component='newsletter-form']"
+        },
+        {
+          "page": "seasonal-concept.html",
+          "section": "newsletter",
+          "selector": "[data-section='newsletter'][data-component='newsletter-form']"
+        },
+        {
+          "page": "404.html",
+          "section": "newsletter",
+          "selector": "[data-section='newsletter'][data-component='newsletter-form']"
+        },
+        {
+          "page": "story.html",
+          "section": "newsletter",
+          "selector": "[data-section='newsletter'][data-component='newsletter-form']"
+        },
+        {
+          "page": "search.html",
+          "section": "newsletter",
+          "selector": "[data-section='newsletter'][data-component='newsletter-form']"
+        },
+        {
+          "page": "magazine.html",
+          "section": "newsletter",
+          "selector": "[data-section='newsletter'][data-component='newsletter-form']"
+        }
+      ],
+      "behavior": [
+        "email validation and demo status focus"
+      ],
+      "keyboard": [
+        "Tab / Shift+Tab for contained links or fields",
+        "Enter for links; Enter/Space for native buttons and summary where present",
+        "Escape for menu/disclosure where relevant"
+      ],
+      "status": "implemented",
+      "validation": "static audited; relevant delivered-JS behavior tested with DOM mocks; browser/native interaction not-tested"
+    },
+    {
+      "id": "page-main",
+      "selector": "[data-component='page-main']",
+      "pages": [
+        "404.html",
+        "index.html",
+        "magazine.html",
+        "search.html",
+        "seasonal-concept.html",
+        "story.html"
+      ],
+      "instances": [
+        {
+          "page": "index.html",
+          "section": "main-content",
+          "selector": "[data-section='main-content'][data-component='page-main']"
+        },
+        {
+          "page": "seasonal-concept.html",
+          "section": "main-content",
+          "selector": "[data-section='main-content'][data-component='page-main']"
+        },
+        {
+          "page": "404.html",
+          "section": "main-content",
+          "selector": "[data-section='main-content'][data-component='page-main']"
+        },
+        {
+          "page": "story.html",
+          "section": "main-content",
+          "selector": "[data-section='main-content'][data-component='page-main']"
+        },
+        {
+          "page": "search.html",
+          "section": "main-content",
+          "selector": "[data-section='main-content'][data-component='page-main']"
+        },
+        {
+          "page": "magazine.html",
+          "section": "main-content",
+          "selector": "[data-section='main-content'][data-component='page-main']"
+        }
+      ],
+      "behavior": [
+        "static semantic region or relative local links"
+      ],
+      "keyboard": [
+        "Tab / Shift+Tab for contained links or fields",
+        "Enter for links; Enter/Space for native buttons and summary where present",
+        "Escape for menu/disclosure where relevant"
+      ],
+      "status": "implemented",
+      "validation": "static audited; relevant delivered-JS behavior tested with DOM mocks; browser/native interaction not-tested"
+    },
+    {
+      "id": "primary-nav",
+      "selector": "[data-component='primary-nav']",
+      "pages": [
+        "404.html",
+        "index.html",
+        "magazine.html",
+        "search.html",
+        "seasonal-concept.html",
+        "story.html"
+      ],
+      "instances": [
+        {
+          "page": "index.html",
+          "section": "global-navigation",
+          "selector": "[data-section='global-navigation'][data-component='primary-nav']"
+        },
+        {
+          "page": "seasonal-concept.html",
+          "section": "global-navigation",
+          "selector": "[data-section='global-navigation'][data-component='primary-nav']"
+        },
+        {
+          "page": "404.html",
+          "section": "global-navigation",
+          "selector": "[data-section='global-navigation'][data-component='primary-nav']"
+        },
+        {
+          "page": "story.html",
+          "section": "global-navigation",
+          "selector": "[data-section='global-navigation'][data-component='primary-nav']"
+        },
+        {
+          "page": "search.html",
+          "section": "global-navigation",
+          "selector": "[data-section='global-navigation'][data-component='primary-nav']"
+        },
+        {
+          "page": "magazine.html",
+          "section": "global-navigation",
+          "selector": "[data-section='global-navigation'][data-component='primary-nav']"
+        }
+      ],
+      "behavior": [
+        "mobile disclosure button, expanded state and Escape focus return"
+      ],
+      "keyboard": [
+        "Tab / Shift+Tab for contained links or fields",
+        "Enter for links; Enter/Space for native buttons and summary where present",
+        "Escape for menu/disclosure where relevant"
+      ],
+      "status": "implemented",
+      "validation": "static audited; relevant delivered-JS behavior tested with DOM mocks; browser/native interaction not-tested"
+    },
+    {
+      "id": "recovery-panel",
+      "selector": "[data-component='recovery-panel']",
+      "pages": [
+        "404.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "section": "page-recovery",
+          "selector": "[data-section='page-recovery'][data-component='recovery-panel']"
+        }
+      ],
+      "behavior": [
+        "static semantic region or relative local links"
+      ],
+      "keyboard": [
+        "Tab / Shift+Tab for contained links or fields",
+        "Enter for links; Enter/Space for native buttons and summary where present",
+        "Escape for menu/disclosure where relevant"
+      ],
+      "status": "implemented",
+      "validation": "static audited; relevant delivered-JS behavior tested with DOM mocks; browser/native interaction not-tested"
+    },
+    {
+      "id": "results-grid",
+      "selector": "[data-component='results-grid']",
+      "pages": [
+        "search.html"
+      ],
+      "instances": [
+        {
+          "page": "search.html",
+          "section": "search-results",
+          "selector": "[data-section='search-results'][data-component='results-grid']"
+        }
+      ],
+      "behavior": [
+        "static semantic region or relative local links"
+      ],
+      "keyboard": [
+        "Tab / Shift+Tab for contained links or fields",
+        "Enter for links; Enter/Space for native buttons and summary where present",
+        "Escape for menu/disclosure where relevant"
+      ],
+      "status": "implemented",
+      "validation": "static audited; relevant delivered-JS behavior tested with DOM mocks; browser/native interaction not-tested"
+    },
+    {
+      "id": "search-form",
+      "selector": "[data-component='search-form']",
+      "pages": [
+        "search.html"
+      ],
+      "instances": [
+        {
+          "page": "search.html",
+          "section": "journal-search",
+          "selector": "[data-section='journal-search'][data-component='search-form']"
+        }
+      ],
+      "behavior": [
+        "local six-record search including initial query, blank and empty states"
+      ],
+      "keyboard": [
+        "Tab / Shift+Tab for contained links or fields",
+        "Enter for links; Enter/Space for native buttons and summary where present",
+        "Escape for menu/disclosure where relevant"
+      ],
+      "status": "implemented",
+      "validation": "static audited; relevant delivered-JS behavior tested with DOM mocks; browser/native interaction not-tested"
+    },
+    {
+      "id": "search-panel",
+      "selector": "[data-component='search-panel']",
+      "pages": [
+        "search.html"
+      ],
+      "instances": [
+        {
+          "page": "search.html",
+          "section": "journal-search",
+          "selector": "[data-section='journal-search'][data-component='search-panel']"
+        }
+      ],
+      "behavior": [
+        "static semantic region or relative local links"
+      ],
+      "keyboard": [
+        "Tab / Shift+Tab for contained links or fields",
+        "Enter for links; Enter/Space for native buttons and summary where present",
+        "Escape for menu/disclosure where relevant"
+      ],
+      "status": "implemented",
+      "validation": "static audited; relevant delivered-JS behavior tested with DOM mocks; browser/native interaction not-tested"
+    },
+    {
+      "id": "site-footer",
+      "selector": "[data-component='site-footer']",
+      "pages": [
+        "404.html",
+        "index.html",
+        "magazine.html",
+        "search.html",
+        "seasonal-concept.html",
+        "story.html"
+      ],
+      "instances": [
+        {
+          "page": "index.html",
+          "section": "global-footer",
+          "selector": "[data-section='global-footer'][data-component='site-footer']"
+        },
+        {
+          "page": "seasonal-concept.html",
+          "section": "global-footer",
+          "selector": "[data-section='global-footer'][data-component='site-footer']"
+        },
+        {
+          "page": "404.html",
+          "section": "global-footer",
+          "selector": "[data-section='global-footer'][data-component='site-footer']"
+        },
+        {
+          "page": "story.html",
+          "section": "global-footer",
+          "selector": "[data-section='global-footer'][data-component='site-footer']"
+        },
+        {
+          "page": "search.html",
+          "section": "global-footer",
+          "selector": "[data-section='global-footer'][data-component='site-footer']"
+        },
+        {
+          "page": "magazine.html",
+          "section": "global-footer",
+          "selector": "[data-section='global-footer'][data-component='site-footer']"
+        }
+      ],
+      "behavior": [
+        "static semantic region or relative local links"
+      ],
+      "keyboard": [
+        "Tab / Shift+Tab for contained links or fields",
+        "Enter for links; Enter/Space for native buttons and summary where present",
+        "Escape for menu/disclosure where relevant"
+      ],
+      "status": "implemented",
+      "validation": "static audited; relevant delivered-JS behavior tested with DOM mocks; browser/native interaction not-tested"
+    },
+    {
+      "id": "site-header",
+      "selector": "[data-component='site-header']",
+      "pages": [
+        "404.html",
+        "index.html",
+        "magazine.html",
+        "search.html",
+        "seasonal-concept.html",
+        "story.html"
+      ],
+      "instances": [
+        {
+          "page": "index.html",
+          "section": "global-header",
+          "selector": "[data-section='global-header'][data-component='site-header']"
+        },
+        {
+          "page": "seasonal-concept.html",
+          "section": "global-header",
+          "selector": "[data-section='global-header'][data-component='site-header']"
+        },
+        {
+          "page": "404.html",
+          "section": "global-header",
+          "selector": "[data-section='global-header'][data-component='site-header']"
+        },
+        {
+          "page": "story.html",
+          "section": "global-header",
+          "selector": "[data-section='global-header'][data-component='site-header']"
+        },
+        {
+          "page": "search.html",
+          "section": "global-header",
+          "selector": "[data-section='global-header'][data-component='site-header']"
+        },
+        {
+          "page": "magazine.html",
+          "section": "global-header",
+          "selector": "[data-section='global-header'][data-component='site-header']"
+        }
+      ],
+      "behavior": [
+        "static semantic region or relative local links"
+      ],
+      "keyboard": [
+        "Tab / Shift+Tab for contained links or fields",
+        "Enter for links; Enter/Space for native buttons and summary where present",
+        "Escape for menu/disclosure where relevant"
+      ],
+      "status": "implemented",
+      "validation": "static audited; relevant delivered-JS behavior tested with DOM mocks; browser/native interaction not-tested"
+    },
+    {
+      "id": "story-card",
+      "selector": "[data-component='story-card']",
+      "pages": [
+        "index.html",
+        "magazine.html",
+        "search.html",
+        "seasonal-concept.html"
+      ],
+      "instances": [
+        {
+          "page": "index.html",
+          "section": "editorial-list",
+          "selector": "[data-section='editorial-list'][data-component='story-card']"
+        },
+        {
+          "page": "index.html",
+          "section": "editorial-list",
+          "selector": "[data-section='editorial-list'][data-component='story-card']"
+        },
+        {
+          "page": "index.html",
+          "section": "editorial-list",
+          "selector": "[data-section='editorial-list'][data-component='story-card']"
+        },
+        {
+          "page": "seasonal-concept.html",
+          "section": "editorial-list",
+          "selector": "[data-section='editorial-list'][data-component='story-card']"
+        },
+        {
+          "page": "seasonal-concept.html",
+          "section": "editorial-list",
+          "selector": "[data-section='editorial-list'][data-component='story-card']"
+        },
+        {
+          "page": "magazine.html",
+          "section": "editorial-list",
+          "selector": "[data-section='editorial-list'][data-component='story-card']"
+        },
+        {
+          "page": "magazine.html",
+          "section": "editorial-list",
+          "selector": "[data-section='editorial-list'][data-component='story-card']"
+        },
+        {
+          "page": "magazine.html",
+          "section": "editorial-list",
+          "selector": "[data-section='editorial-list'][data-component='story-card']"
+        },
+        {
+          "page": "magazine.html",
+          "section": "editorial-list",
+          "selector": "[data-section='editorial-list'][data-component='story-card']"
+        },
+        {
+          "page": "magazine.html",
+          "section": "editorial-list",
+          "selector": "[data-section='editorial-list'][data-component='story-card']"
+        },
+        {
+          "page": "magazine.html",
+          "section": "editorial-list",
+          "selector": "[data-section='editorial-list'][data-component='story-card']"
+        },
+        {
+          "page": "search.html",
+          "section": "search-results",
+          "selector": "#search-results [data-component='story-card']",
+          "generated_by": "js/main.js renderSearch"
+        }
+      ],
+      "behavior": [
+        "Only the two matching mapped headlines have relative detail links; four other sample titles are labeled summary-only and have no links.",
+        "Search cards generated with DOM textContent; metadata present on all articles."
+      ],
+      "keyboard": [
+        "Tab / Shift+Tab for contained links or fields",
+        "Enter for links; Enter/Space for native buttons and summary where present",
+        "Escape for menu/disclosure where relevant"
+      ],
+      "status": "implemented",
+      "validation": "Static headline/destination audit and 13 delivered-JS mocked tests pass; browser/native tests not-tested."
+    },
+    {
+      "id": "text-introduction",
+      "selector": "[data-component='text-introduction']",
+      "pages": [
+        "index.html",
+        "magazine.html",
+        "search.html",
+        "seasonal-concept.html"
+      ],
+      "instances": [
+        {
+          "page": "index.html",
+          "section": "home-introduction",
+          "selector": "[data-section='home-introduction'][data-component='text-introduction']"
+        },
+        {
+          "page": "seasonal-concept.html",
+          "section": "seasonal-introduction",
+          "selector": "[data-section='seasonal-introduction'][data-component='text-introduction']"
+        },
+        {
+          "page": "search.html",
+          "section": "search-introduction",
+          "selector": "[data-section='search-introduction'][data-component='text-introduction']"
+        },
+        {
+          "page": "magazine.html",
+          "section": "magazine-introduction",
+          "selector": "[data-section='magazine-introduction'][data-component='text-introduction']"
+        }
+      ],
+      "behavior": [
+        "static semantic region or relative local links"
+      ],
+      "keyboard": [
+        "Tab / Shift+Tab for contained links or fields",
+        "Enter for links; Enter/Space for native buttons and summary where present",
+        "Escape for menu/disclosure where relevant"
+      ],
+      "status": "implemented",
+      "validation": "static audited; relevant delivered-JS behavior tested with DOM mocks; browser/native interaction not-tested"
+    },
+    {
+      "id": "topic-nav",
+      "selector": "[data-component='topic-nav']",
+      "pages": [
+        "magazine.html"
+      ],
+      "instances": [
+        {
+          "page": "magazine.html",
+          "section": "magazine-topics",
+          "selector": "[data-section='magazine-topics'][data-component='topic-nav']"
+        }
+      ],
+      "behavior": [
+        "static semantic region or relative local links"
+      ],
+      "keyboard": [
+        "Tab / Shift+Tab for contained links or fields",
+        "Enter for links; Enter/Space for native buttons and summary where present",
+        "Escape for menu/disclosure where relevant"
+      ],
+      "status": "implemented",
+      "validation": "static audited; relevant delivered-JS behavior tested with DOM mocks; browser/native interaction not-tested"
+    },
+    {
+      "id": "utility-strip",
+      "selector": "[data-component='utility-strip']",
+      "pages": [
+        "404.html",
+        "index.html",
+        "magazine.html",
+        "search.html",
+        "seasonal-concept.html",
+        "story.html"
+      ],
+      "instances": [
+        {
+          "page": "index.html",
+          "section": "utility",
+          "selector": "[data-section='utility'][data-component='utility-strip']"
+        },
+        {
+          "page": "seasonal-concept.html",
+          "section": "utility",
+          "selector": "[data-section='utility'][data-component='utility-strip']"
+        },
+        {
+          "page": "404.html",
+          "section": "utility",
+          "selector": "[data-section='utility'][data-component='utility-strip']"
+        },
+        {
+          "page": "story.html",
+          "section": "utility",
+          "selector": "[data-section='utility'][data-component='utility-strip']"
+        },
+        {
+          "page": "search.html",
+          "section": "utility",
+          "selector": "[data-section='utility'][data-component='utility-strip']"
+        },
+        {
+          "page": "magazine.html",
+          "section": "utility",
+          "selector": "[data-section='utility'][data-component='utility-strip']"
+        }
+      ],
+      "behavior": [
+        "static semantic region or relative local links"
+      ],
+      "keyboard": [
+        "Tab / Shift+Tab for contained links or fields",
+        "Enter for links; Enter/Space for native buttons and summary where present",
+        "Escape for menu/disclosure where relevant"
+      ],
+      "status": "implemented",
+      "validation": "static audited; relevant delivered-JS behavior tested with DOM mocks; browser/native interaction not-tested"
+    }
+  ]
+}

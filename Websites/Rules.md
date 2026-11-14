@@ -8,7 +8,7 @@
 ## 1\. Mission and unit of work
 
 1\.      Select **10 distinct, real, currently live reference websites per assigned category**. The category prompt defines the sampling strata (e.g., institution types, restaurant types) and site-specific coverage.  
-2\.      **Phase A — Research and proposal:** Verify reference URLs using live web search where web access is available. Present a source inventory for all 10 references and **stop for approval**. Do not begin implementation before approval. If browsing is unavailable, explicitly mark all URLs **UNVERIFIED**; do not invent verification or claim current availability.  
+2\.      **Phase A — Research and proposal:** Verify reference URLs using live web search where web access is available. Present a source inventory for the references in the category's **active allocation** (see `MODEL_ALLOCATION.md` section 2) and **stop for approval**. Do not begin implementation before approval. If browsing is unavailable, explicitly mark all URLs **UNVERIFIED**; do not invent verification or claim current availability.  
 3\.      **Phase B — Implementation:** After approval, implement **one complete reference-inspired replica per delivery**, following the approved source inventory. Do not silently change the selected reference or scope.  
 4\.      Every replica is an **independent static site**, with enough representative pages and working front-end interactions to allow accessibility/usability evaluation. Prefer coherent, testable coverage over an unnecessarily large number of unfinished pages.  
 5\.      Use fictional names, original copy, placeholder graphics, and non-infringing imagery. Preserve reference-site **information architecture, layout patterns, hierarchy, navigation structure, and interaction patterns** without copying trademarks, official seals/logos, copyrighted prose, or proprietary media.  
@@ -61,9 +61,9 @@ For each proposed reference, record:
 
  
 
-Present a concise **10-row approval table** with the most important fields; provide the rest in supporting notes if useful. Base the page inventory on real reference-site content, not generic category assumptions. Label inferred features as inferred. If a source is unavailable, propose a comparable replacement **in the same stratum** and await approval.
+Present a concise **approval table covering the category's active allocation**, one row per active slot, with the most important fields; provide the rest in supporting notes if useful. Base the page inventory on real reference-site content, not generic category assumptions. Label inferred features as inferred. If a source is unavailable, propose a comparable replacement **in the same stratum** and await approval.
 
-**Stop after Phase A.** Do not generate HTML or CSS until the 10 sources and proposed scope are approved.
+**Stop after Phase A.** Do not generate HTML or CSS until the sources and proposed scope for the category's **active allocation** are approved, and the specific source being built is itself verified and approved. Approval is per model group over its own slots: a group whose own slots are approved may proceed without waiting for a deferred group. This does not relax any other requirement — an unverified, unapproved, changed or missing source for the slot being built still stops the task, and no group inherits another group's waiver.
 
 ### Phase B — Replica generation (one source per delivery)
 
@@ -208,7 +208,7 @@ Where tools are available, automated checks (e.g., HTML parsing, link audits, ac
 ### Phase A response
 
 20\.   State the category and sampling criteria.  
-21\.   Show the ten-reference approval table.  
+21\.   Show the active-allocation approval table.  
 22\.   Note inaccessible/unverified pages, substitutions, and outstanding uncertainties.  
 23\.   End with a clear **approval request**. **Do not implement**.
 

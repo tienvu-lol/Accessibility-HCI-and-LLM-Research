@@ -1,0 +1,32 @@
+{
+  "allocation_protocol": "WEB-REPLICA-ALLOCATION-V1.0",
+  "generation_protocol": "WEB-REPLICA-V1.0",
+  "category": "e-commerce",
+  "slot": 1,
+  "source_id": "ECOM-01",
+  "model_group": "claude",
+  "model_id": "claude-sonnet-5-5",
+  "model_version": null,
+  "model_provider_or_runtime": "Claude Code Agent tool subagent (claude-sonnet-5-5); orchestrated by claude-opus-5",
+  "generation_mode": "autonomous agent run, one replica per run, no human edits during generation",
+  "operator": "project lead (Samhith Varma) via orchestrator agent",
+  "approved_source_url": "https://www.glossier.com/",
+  "source_verified_at": "2026-11-10",
+  "source_approved_at": "2026-11-13",
+  "generation_started_at": "2026-11-13T16:37:03Z",
+  "generation_completed_at": "2026-11-13T17:28:24Z",
+  "rules_revision": "WEB-REPLICA-V1.0 / WEB-REPLICA-ALLOCATION-V1.0 at commit f7189ed plus the uncommitted active-allocation amendment of 2026-11-13 (see Websites/metadata/change-log.md)",
+  "category_prompt_revision": "orchestrator brief 2026-11-13, round 04 e-commerce (no separate category prompt file)",
+  "prompt_or_transcript_reference": "Claude Code orchestrator session 2026-11-13, build ECOM-01",
+  "human_edits": [],
+  "validation_summary": {
+    "technology": "pass",
+    "completeness": "pass",
+    "structure": "partial",
+    "interaction": "pass",
+    "accessibility": "partial",
+    "traceability": "pass",
+    "scope": "pass"
+  },
+  "validation_notes": "qc.js final line: pages=15 files=27 failures=0 warnings=0. Accessibility evidence is axe automated rules (initial state at 1280 and 375, plus opened menu, drawer, empty and error states) and scripted Playwright keyboard/focus checks in headless Chromium only; no screen-reader or manual audit. Structure is partial because the reference hero and carousel content was not characterized in the research block."
+}

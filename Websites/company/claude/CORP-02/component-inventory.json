@@ -1,0 +1,978 @@
+{
+  "protocol_version": "1.0",
+  "replica_id": "CORP-02",
+  "category": "company",
+  "source_url": "https://www.dcu.org/",
+  "components": [
+    {
+      "id": "accordion-item",
+      "selector": "[data-component='accordion-item']",
+      "pages": [
+        "support.html"
+      ],
+      "behavior": [
+        "expand/collapse FAQ answer with aria-expanded"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "automated axe rules via qc.js plus scripted flow checks (partial); no screen reader testing"
+    },
+    {
+      "id": "article-card",
+      "selector": "[data-component='article-card']",
+      "pages": [
+        "education.html"
+      ],
+      "behavior": [
+        "article summary card"
+      ],
+      "keyboard": [
+        "none"
+      ],
+      "status": "implemented",
+      "validation": "automated axe rules via qc.js plus scripted flow checks (partial); no screen reader testing"
+    },
+    {
+      "id": "brand-link",
+      "selector": "[data-component='brand-link']",
+      "pages": [
+        "404.html",
+        "accessibility.html",
+        "auto-loans.html",
+        "branches.html",
+        "certificates.html",
+        "checking.html",
+        "contact.html",
+        "credit-cards.html",
+        "education.html",
+        "index.html",
+        "membership.html",
+        "mortgages.html",
+        "rates.html",
+        "savings.html",
+        "support.html"
+      ],
+      "behavior": [
+        "link home"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated axe rules via qc.js plus scripted flow checks (partial); no screen reader testing"
+    },
+    {
+      "id": "breadcrumb",
+      "selector": "[data-component='breadcrumb']",
+      "pages": [
+        "accessibility.html",
+        "auto-loans.html",
+        "branches.html",
+        "certificates.html",
+        "checking.html",
+        "contact.html",
+        "credit-cards.html",
+        "education.html",
+        "membership.html",
+        "mortgages.html",
+        "rates.html",
+        "savings.html",
+        "support.html"
+      ],
+      "behavior": [
+        "breadcrumb trail with aria-current"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated axe rules via qc.js plus scripted flow checks (partial); no screen reader testing"
+    },
+    {
+      "id": "calculator",
+      "selector": "[data-component='calculator']",
+      "pages": [
+        "auto-loans.html",
+        "savings.html"
+      ],
+      "behavior": [
+        "dividend and loan calculators with validation and result"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated axe rules via qc.js plus scripted flow checks (partial); no screen reader testing"
+    },
+    {
+      "id": "card-grid",
+      "selector": "[data-component='card-grid']",
+      "pages": [
+        "index.html",
+        "support.html"
+      ],
+      "behavior": [
+        "responsive grid of cards"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated axe rules via qc.js plus scripted flow checks (partial); no screen reader testing"
+    },
+    {
+      "id": "comparison-table",
+      "selector": "[data-component='comparison-table']",
+      "pages": [
+        "checking.html"
+      ],
+      "behavior": [
+        "checking tier comparison"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "automated axe rules via qc.js plus scripted flow checks (partial); no screen reader testing"
+    },
+    {
+      "id": "contact-form",
+      "selector": "[data-component='contact-form']",
+      "pages": [
+        "contact.html"
+      ],
+      "behavior": [
+        "contact validation with demo success"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented (non-functional demo)",
+      "validation": "automated axe rules via qc.js plus scripted flow checks (partial); no screen reader testing"
+    },
+    {
+      "id": "data-table",
+      "selector": "[data-component='data-table']",
+      "pages": [
+        "branches.html"
+      ],
+      "behavior": [
+        "captioned locations table rendered from inline data"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "automated axe rules via qc.js plus scripted flow checks (partial); no screen reader testing"
+    },
+    {
+      "id": "eligibility-form",
+      "selector": "[data-component='eligibility-form']",
+      "pages": [
+        "membership.html"
+      ],
+      "behavior": [
+        "membership eligibility simulation"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented (simulation)",
+      "validation": "automated axe rules via qc.js plus scripted flow checks (partial); no screen reader testing"
+    },
+    {
+      "id": "error-message",
+      "selector": "[data-component='error-message']",
+      "pages": [
+        "404.html"
+      ],
+      "behavior": [
+        "404 content with routes home"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated axe rules via qc.js plus scripted flow checks (partial); no screen reader testing"
+    },
+    {
+      "id": "fact-list",
+      "selector": "[data-component='fact-list']",
+      "pages": [
+        "auto-loans.html",
+        "certificates.html",
+        "checking.html",
+        "credit-cards.html",
+        "mortgages.html",
+        "savings.html"
+      ],
+      "behavior": [
+        "key facts description list"
+      ],
+      "keyboard": [
+        "none"
+      ],
+      "status": "implemented",
+      "validation": "automated axe rules via qc.js plus scripted flow checks (partial); no screen reader testing"
+    },
+    {
+      "id": "faq-search",
+      "selector": "[data-component='faq-search']",
+      "pages": [
+        "support.html"
+      ],
+      "behavior": [
+        "text and topic filter over inline FAQ with empty state"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated axe rules via qc.js plus scripted flow checks (partial); no screen reader testing"
+    },
+    {
+      "id": "feature-banner",
+      "selector": "[data-component='feature-banner']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "app and online-banking concept band"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated axe rules via qc.js plus scripted flow checks (partial); no screen reader testing"
+    },
+    {
+      "id": "feature-columns",
+      "selector": "[data-component='feature-columns']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "three-column differentiators"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated axe rules via qc.js plus scripted flow checks (partial); no screen reader testing"
+    },
+    {
+      "id": "feature-list",
+      "selector": "[data-component='feature-list']",
+      "pages": [
+        "auto-loans.html",
+        "certificates.html",
+        "checking.html",
+        "credit-cards.html",
+        "mortgages.html",
+        "savings.html"
+      ],
+      "behavior": [
+        "checklist of product features"
+      ],
+      "keyboard": [
+        "none"
+      ],
+      "status": "implemented",
+      "validation": "automated axe rules via qc.js plus scripted flow checks (partial); no screen reader testing"
+    },
+    {
+      "id": "filterable-list",
+      "selector": "[data-component='filterable-list']",
+      "pages": [
+        "education.html"
+      ],
+      "behavior": [
+        "education article search and topic filter"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated axe rules via qc.js plus scripted flow checks (partial); no screen reader testing"
+    },
+    {
+      "id": "hero-banner",
+      "selector": "[data-component='hero-banner']",
+      "pages": [
+        "auto-loans.html",
+        "certificates.html",
+        "checking.html",
+        "credit-cards.html",
+        "index.html",
+        "mortgages.html",
+        "savings.html"
+      ],
+      "behavior": [
+        "heading, lead copy, CTAs, illustration"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated axe rules via qc.js plus scripted flow checks (partial); no screen reader testing"
+    },
+    {
+      "id": "join-form",
+      "selector": "[data-component='join-form']",
+      "pages": [
+        "membership.html"
+      ],
+      "behavior": [
+        "join demo form, no real application"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented (non-functional demo)",
+      "validation": "automated axe rules via qc.js plus scripted flow checks (partial); no screen reader testing"
+    },
+    {
+      "id": "location-row",
+      "selector": "[data-component='location-row']",
+      "pages": [
+        "branches.html"
+      ],
+      "behavior": [
+        "table row for a location"
+      ],
+      "keyboard": [
+        "none"
+      ],
+      "status": "implemented",
+      "validation": "automated axe rules via qc.js plus scripted flow checks (partial); no screen reader testing"
+    },
+    {
+      "id": "location-search",
+      "selector": "[data-component='location-search']",
+      "pages": [
+        "branches.html"
+      ],
+      "behavior": [
+        "branch/ATM filter by text, type, Saturday, drive-up; sort; empty state"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "automated axe rules via qc.js plus scripted flow checks (partial); no screen reader testing"
+    },
+    {
+      "id": "login-form",
+      "selector": "[data-component='login-form']",
+      "pages": [
+        "404.html",
+        "accessibility.html",
+        "auto-loans.html",
+        "branches.html",
+        "certificates.html",
+        "checking.html",
+        "contact.html",
+        "credit-cards.html",
+        "education.html",
+        "index.html",
+        "membership.html",
+        "mortgages.html",
+        "rates.html",
+        "savings.html",
+        "support.html"
+      ],
+      "behavior": [
+        "demo sign-in validation, no session"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented (non-functional demo)",
+      "validation": "automated axe rules via qc.js plus scripted flow checks (partial); no screen reader testing"
+    },
+    {
+      "id": "login-trigger",
+      "selector": "[data-component='login-trigger']",
+      "pages": [
+        "404.html",
+        "accessibility.html",
+        "auto-loans.html",
+        "branches.html",
+        "certificates.html",
+        "checking.html",
+        "contact.html",
+        "credit-cards.html",
+        "education.html",
+        "index.html",
+        "membership.html",
+        "mortgages.html",
+        "rates.html",
+        "savings.html",
+        "support.html"
+      ],
+      "behavior": [
+        "opens sign-in demo dialog",
+        "opens pay-loan demo dialog"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented (non-functional demo)",
+      "validation": "automated axe rules via qc.js plus scripted flow checks (partial); no screen reader testing"
+    },
+    {
+      "id": "media-block",
+      "selector": "[data-component='media-block']",
+      "pages": [
+        "branches.html",
+        "index.html"
+      ],
+      "behavior": [
+        "text with illustration"
+      ],
+      "keyboard": [
+        "none"
+      ],
+      "status": "implemented",
+      "validation": "automated axe rules via qc.js plus scripted flow checks (partial); no screen reader testing"
+    },
+    {
+      "id": "mega-menu-panel",
+      "selector": "[data-component='mega-menu-panel']",
+      "pages": [
+        "404.html",
+        "accessibility.html",
+        "auto-loans.html",
+        "branches.html",
+        "certificates.html",
+        "checking.html",
+        "contact.html",
+        "credit-cards.html",
+        "education.html",
+        "index.html",
+        "membership.html",
+        "mortgages.html",
+        "rates.html",
+        "savings.html",
+        "support.html"
+      ],
+      "behavior": [
+        "dropdown link groups listing only existing local pages"
+      ],
+      "keyboard": [
+        "Tab",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "automated axe rules via qc.js plus scripted flow checks (partial); no screen reader testing"
+    },
+    {
+      "id": "menu-toggle",
+      "selector": "[data-component='menu-toggle']",
+      "pages": [
+        "404.html",
+        "accessibility.html",
+        "auto-loans.html",
+        "branches.html",
+        "certificates.html",
+        "checking.html",
+        "contact.html",
+        "credit-cards.html",
+        "education.html",
+        "index.html",
+        "membership.html",
+        "mortgages.html",
+        "rates.html",
+        "savings.html",
+        "support.html"
+      ],
+      "behavior": [
+        "mobile menu disclosure with aria-expanded"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "automated axe rules via qc.js plus scripted flow checks (partial); no screen reader testing"
+    },
+    {
+      "id": "modal-dialog",
+      "selector": "[data-component='modal-dialog']",
+      "pages": [
+        "404.html",
+        "accessibility.html",
+        "auto-loans.html",
+        "branches.html",
+        "certificates.html",
+        "checking.html",
+        "contact.html",
+        "credit-cards.html",
+        "education.html",
+        "index.html",
+        "membership.html",
+        "mortgages.html",
+        "rates.html",
+        "savings.html",
+        "support.html"
+      ],
+      "behavior": [
+        "native dialog, focus trap, Escape to close, focus return"
+      ],
+      "keyboard": [
+        "Tab",
+        "Shift+Tab",
+        "Escape"
+      ],
+      "status": "implemented (non-functional demo)",
+      "validation": "automated axe rules via qc.js plus scripted flow checks (partial); no screen reader testing"
+    },
+    {
+      "id": "notice-banner",
+      "selector": "[data-component='notice-banner']",
+      "pages": [
+        "404.html",
+        "accessibility.html",
+        "auto-loans.html",
+        "branches.html",
+        "certificates.html",
+        "checking.html",
+        "contact.html",
+        "credit-cards.html",
+        "education.html",
+        "index.html",
+        "membership.html",
+        "mortgages.html",
+        "rates.html",
+        "savings.html",
+        "support.html"
+      ],
+      "behavior": [
+        "persistent fictional-site banner"
+      ],
+      "keyboard": [
+        "none"
+      ],
+      "status": "implemented",
+      "validation": "automated axe rules via qc.js plus scripted flow checks (partial); no screen reader testing"
+    },
+    {
+      "id": "primary-nav",
+      "selector": "[data-component='primary-nav']",
+      "pages": [
+        "404.html",
+        "accessibility.html",
+        "auto-loans.html",
+        "branches.html",
+        "certificates.html",
+        "checking.html",
+        "contact.html",
+        "credit-cards.html",
+        "education.html",
+        "index.html",
+        "membership.html",
+        "mortgages.html",
+        "rates.html",
+        "savings.html",
+        "support.html"
+      ],
+      "behavior": [
+        "desktop dropdown disclosures",
+        "mobile disclosure",
+        "aria-current on active link"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "Escape closes and restores focus"
+      ],
+      "status": "implemented",
+      "validation": "automated axe rules via qc.js plus scripted flow checks (partial); no screen reader testing"
+    },
+    {
+      "id": "product-card",
+      "selector": "[data-component='product-card']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "product teaser card with link"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated axe rules via qc.js plus scripted flow checks (partial); no screen reader testing"
+    },
+    {
+      "id": "prose-block",
+      "selector": "[data-component='prose-block']",
+      "pages": [
+        "accessibility.html"
+      ],
+      "behavior": [
+        "accessibility statement text"
+      ],
+      "keyboard": [
+        "none"
+      ],
+      "status": "implemented",
+      "validation": "automated axe rules via qc.js plus scripted flow checks (partial); no screen reader testing"
+    },
+    {
+      "id": "quick-link-list",
+      "selector": "[data-component='quick-link-list']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "quick links to pages and demo dialog"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated axe rules via qc.js plus scripted flow checks (partial); no screen reader testing"
+    },
+    {
+      "id": "rate-summary",
+      "selector": "[data-component='rate-summary']",
+      "pages": [
+        "auto-loans.html",
+        "certificates.html",
+        "checking.html",
+        "credit-cards.html",
+        "mortgages.html",
+        "savings.html"
+      ],
+      "behavior": [
+        "sample rate table summary on product pages"
+      ],
+      "keyboard": [
+        "Tab to scroll region"
+      ],
+      "status": "implemented",
+      "validation": "automated axe rules via qc.js plus scripted flow checks (partial); no screen reader testing"
+    },
+    {
+      "id": "rate-table",
+      "selector": "[data-component='rate-table']",
+      "pages": [
+        "auto-loans.html",
+        "certificates.html",
+        "checking.html",
+        "credit-cards.html",
+        "mortgages.html",
+        "rates.html",
+        "savings.html"
+      ],
+      "behavior": [
+        "captioned table with th scope, focusable scroll region"
+      ],
+      "keyboard": [
+        "Tab",
+        "Arrow keys when scrolling"
+      ],
+      "status": "implemented",
+      "validation": "automated axe rules via qc.js plus scripted flow checks (partial); no screen reader testing"
+    },
+    {
+      "id": "regulator-notice",
+      "selector": "[data-component='regulator-notice']",
+      "pages": [
+        "404.html",
+        "accessibility.html",
+        "auto-loans.html",
+        "branches.html",
+        "certificates.html",
+        "checking.html",
+        "contact.html",
+        "credit-cards.html",
+        "education.html",
+        "index.html",
+        "membership.html",
+        "mortgages.html",
+        "rates.html",
+        "savings.html",
+        "support.html"
+      ],
+      "behavior": [
+        "fictional deposit-coverage notice"
+      ],
+      "keyboard": [
+        "none"
+      ],
+      "status": "implemented",
+      "validation": "automated axe rules via qc.js plus scripted flow checks (partial); no screen reader testing"
+    },
+    {
+      "id": "sample-data-notice",
+      "selector": "[data-component='sample-data-notice']",
+      "pages": [
+        "auto-loans.html",
+        "certificates.html",
+        "checking.html",
+        "credit-cards.html",
+        "index.html",
+        "mortgages.html",
+        "rates.html",
+        "savings.html"
+      ],
+      "behavior": [
+        "fictional sample-data disclaimer"
+      ],
+      "keyboard": [
+        "none"
+      ],
+      "status": "implemented",
+      "validation": "automated axe rules via qc.js plus scripted flow checks (partial); no screen reader testing"
+    },
+    {
+      "id": "search-form",
+      "selector": "[data-component='search-form']",
+      "pages": [
+        "404.html",
+        "accessibility.html",
+        "auto-loans.html",
+        "branches.html",
+        "certificates.html",
+        "checking.html",
+        "contact.html",
+        "credit-cards.html",
+        "education.html",
+        "index.html",
+        "membership.html",
+        "mortgages.html",
+        "rates.html",
+        "savings.html",
+        "support.html"
+      ],
+      "behavior": [
+        "site search over inline page index with empty state; FAQ search form"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated axe rules via qc.js plus scripted flow checks (partial); no screen reader testing"
+    },
+    {
+      "id": "search-results-panel",
+      "selector": "[data-component='search-results-panel']",
+      "pages": [
+        "404.html",
+        "accessibility.html",
+        "auto-loans.html",
+        "branches.html",
+        "certificates.html",
+        "checking.html",
+        "contact.html",
+        "credit-cards.html",
+        "education.html",
+        "index.html",
+        "membership.html",
+        "mortgages.html",
+        "rates.html",
+        "savings.html",
+        "support.html"
+      ],
+      "behavior": [
+        "inline results region for site search"
+      ],
+      "keyboard": [
+        "Escape closes"
+      ],
+      "status": "implemented",
+      "validation": "automated axe rules via qc.js plus scripted flow checks (partial); no screen reader testing"
+    },
+    {
+      "id": "select-field",
+      "selector": "[data-component='select-field']",
+      "pages": [
+        "rates.html"
+      ],
+      "behavior": [
+        "select that switches rate tab"
+      ],
+      "keyboard": [
+        "Arrow keys"
+      ],
+      "status": "implemented",
+      "validation": "automated axe rules via qc.js plus scripted flow checks (partial); no screen reader testing"
+    },
+    {
+      "id": "side-panel",
+      "selector": "[data-component='side-panel']",
+      "pages": [
+        "auto-loans.html",
+        "certificates.html",
+        "checking.html",
+        "contact.html",
+        "credit-cards.html",
+        "mortgages.html",
+        "savings.html"
+      ],
+      "behavior": [
+        "aside call to action"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated axe rules via qc.js plus scripted flow checks (partial); no screen reader testing"
+    },
+    {
+      "id": "site-footer",
+      "selector": "[data-component='site-footer']",
+      "pages": [
+        "404.html",
+        "accessibility.html",
+        "auto-loans.html",
+        "branches.html",
+        "certificates.html",
+        "checking.html",
+        "contact.html",
+        "credit-cards.html",
+        "education.html",
+        "index.html",
+        "membership.html",
+        "mortgages.html",
+        "rates.html",
+        "savings.html",
+        "support.html"
+      ],
+      "behavior": [
+        "grouped links",
+        "fictional regulator notice"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated axe rules via qc.js plus scripted flow checks (partial); no screen reader testing"
+    },
+    {
+      "id": "site-header",
+      "selector": "[data-component='site-header']",
+      "pages": [
+        "404.html",
+        "accessibility.html",
+        "auto-loans.html",
+        "branches.html",
+        "certificates.html",
+        "checking.html",
+        "contact.html",
+        "credit-cards.html",
+        "education.html",
+        "index.html",
+        "membership.html",
+        "mortgages.html",
+        "rates.html",
+        "savings.html",
+        "support.html"
+      ],
+      "behavior": [
+        "brand, utility bar, search, primary nav"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "automated axe rules via qc.js plus scripted flow checks (partial); no screen reader testing"
+    },
+    {
+      "id": "tabs",
+      "selector": "[data-component='tabs']",
+      "pages": [
+        "rates.html"
+      ],
+      "behavior": [
+        "ARIA tabs for rate groups"
+      ],
+      "keyboard": [
+        "Arrow keys",
+        "Home",
+        "End",
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "automated axe rules via qc.js plus scripted flow checks (partial); no screen reader testing"
+    },
+    {
+      "id": "testimonial-list",
+      "selector": "[data-component='testimonial-list']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "fictional member quotations"
+      ],
+      "keyboard": [
+        "none"
+      ],
+      "status": "implemented",
+      "validation": "automated axe rules via qc.js plus scripted flow checks (partial); no screen reader testing"
+    },
+    {
+      "id": "utility-nav",
+      "selector": "[data-component='utility-nav']",
+      "pages": [
+        "404.html",
+        "accessibility.html",
+        "auto-loans.html",
+        "branches.html",
+        "certificates.html",
+        "checking.html",
+        "contact.html",
+        "credit-cards.html",
+        "education.html",
+        "index.html",
+        "membership.html",
+        "mortgages.html",
+        "rates.html",
+        "savings.html",
+        "support.html"
+      ],
+      "behavior": [
+        "utility links"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated axe rules via qc.js plus scripted flow checks (partial); no screen reader testing"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "allocation_protocol": "WEB-REPLICA-ALLOCATION-V1.0",
+  "generation_protocol": "WEB-REPLICA-V1.0",
+  "category": "restaurant",
+  "slot": 3,
+  "source_id": "REST-03",
+  "model_group": "claude",
+  "model_id": "claude-sonnet-5-5",
+  "model_version": null,
+  "model_provider_or_runtime": "Claude Code Agent tool builder (claude-sonnet-5-5); orchestrated by claude-opus-5",
+  "generation_mode": "autonomous agent run, one replica per run, no human edits during generation",
+  "operator": "project lead (Samhith Varma) via orchestrator agent",
+  "approved_source_url": "https://www.elevenmadisonpark.com/",
+  "source_verified_at": "2026-11-14",
+  "source_approved_at": "2026-11-14",
+  "generation_started_at": "2026-11-14T05:14:42Z",
+  "generation_completed_at": "2026-11-14T05:19:23Z",
+  "rules_revision": "WEB-REPLICA-V1.0 / WEB-REPLICA-ALLOCATION-V1.0, working tree as of 2026-11-14 (uncommitted modifications to Rules.md and MODEL_ALLOCATION.md on top of commit a07e70e, branch websites/portfolio-claude-01-03)",
+  "category_prompt_revision": "orchestrator brief 2026-11-14 (no separate category prompt file)",
+  "prompt_or_transcript_reference": "Claude Code orchestrator session, round 11 restaurant build",
+  "human_edits": [],
+  "validation_summary": {
+    "technology": "pass",
+    "completeness": "pass",
+    "structure": "partial: landmarks and metadata pass in qc.js; match to reference hierarchy not testable because the reference's rendered structure was never observed (IA inferred)",
+    "interaction": "pass (scripted Playwright flow checks, 35/35)",
+    "accessibility": "partial: axe-core at 1280px and 375px and horizontal-scroll pass via qc.js; screen readers, 200% zoom, text spacing and human keyboard walkthrough not tested",
+    "traceability": "pass (self-review)",
+    "scope": "pass (self-review)"
+  }
+}

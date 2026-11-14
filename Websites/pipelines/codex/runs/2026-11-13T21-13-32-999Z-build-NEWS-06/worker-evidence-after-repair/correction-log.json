@@ -1,0 +1,30 @@
+[
+  {
+    "at": "2026-11-13T21:19:06.004567+00:00",
+    "reason": "Static audit found menu dialog inner navigation lacked explicit data-section attributes on all seven pages",
+    "changes": [
+      "Added overlay-topics/topic-nav and overlay-series/series-nav metadata to existing nav elements",
+      "Added both component inventory entries"
+    ],
+    "scope_change": false,
+    "model": "gpt-6.1-sol",
+    "human_edits": false,
+    "initial_evidence": "initial-artifact.tar.gz, initial-sha256.json, static-tests-initial.json",
+    "shared_qc_retry": false
+  },
+  {
+    "at": "2026-11-13T21:20:36.819680+00:00",
+    "requested_by": "Coordinator parent source audit",
+    "reason": "Coordinator requested both metadata attributes on every meaningful region; initial audit checked only data-section",
+    "changes": [
+      "Added descriptive stable data-component to all previously data-section-only header/nav/main/section/article/aside/form/footer elements",
+      "Rebuilt component inventory from actual page instances, retaining explicitly dynamic search results",
+      "Strengthened static audit to require both metadata attributes on meaningful regions"
+    ],
+    "model": "gpt-6.1-sol",
+    "human_edits": false,
+    "cross_model_edits": false,
+    "initial_evidence": "initial-artifact.tar.gz, before-coordinator-correction.tar.gz and hash manifests",
+    "browser_qc_retried": false
+  }
+]

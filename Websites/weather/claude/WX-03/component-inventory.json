@@ -1,0 +1,524 @@
+{
+  "protocol_version": "1.0",
+  "replica_id": "WX-03",
+  "category": "weather",
+  "source_url": "https://www.wral.com/weather/",
+  "components": [
+    {
+      "id": "accordion",
+      "selector": "[data-component='accordion']",
+      "pages": [
+        "resources.html"
+      ],
+      "behavior": [
+        "native details/summary"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe pass (static, 1280 and 375); interaction scripted check where interactive; screen reader not tested"
+    },
+    {
+      "id": "alert-list",
+      "selector": "[data-component='alert-list']",
+      "pages": [
+        "alerts.html"
+      ],
+      "behavior": [
+        "native details/summary disclosures; level written as text plus border style"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe pass (static, 1280 and 375); interaction scripted check where interactive; screen reader not tested"
+    },
+    {
+      "id": "anchor-tabs",
+      "selector": "[data-component='anchor-tabs']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "7 Day / Hourly / Weekend same-page anchors",
+        "with JS shows one panel, pushState hash, focuses panel, honors back and deep links",
+        "without JS all panels visible and anchors scroll"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Browser Back"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe pass (static, 1280 and 375); interaction scripted check where interactive; screen reader not tested"
+    },
+    {
+      "id": "article",
+      "selector": "[data-component='article']",
+      "pages": [
+        "forecast.html"
+      ],
+      "behavior": [
+        "forecast discussion post"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe pass (static, 1280 and 375); interaction scripted check where interactive; screen reader not tested"
+    },
+    {
+      "id": "brand-logo",
+      "selector": "[data-component='brand-logo']",
+      "pages": [
+        "404.html",
+        "alerts.html",
+        "almanac.html",
+        "closings.html",
+        "forecast.html",
+        "hurricanes.html",
+        "index.html",
+        "map-center.html",
+        "news.html",
+        "radar-video.html",
+        "resources.html",
+        "webcams.html"
+      ],
+      "behavior": [
+        "link to index.html; local SVG logo"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe pass (static, 1280 and 375); interaction scripted check where interactive; screen reader not tested"
+    },
+    {
+      "id": "card-grid",
+      "selector": "[data-component='card-grid']",
+      "pages": [
+        "webcams.html"
+      ],
+      "behavior": [
+        "placeholder webcam tiles, area filter, modal dialog (native dialog), Escape closes, focus returns"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe pass (static, 1280 and 375); interaction scripted check where interactive; screen reader not tested"
+    },
+    {
+      "id": "contact-form",
+      "selector": "[data-component='contact-form']",
+      "pages": [
+        "news.html"
+      ],
+      "behavior": [
+        "Ask the Meteorologist demo form with error summary, inline errors, focus management, demo success; sends nothing",
+        "intentional addition"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe pass (static, 1280 and 375); interaction scripted check where interactive; screen reader not tested"
+    },
+    {
+      "id": "current-conditions",
+      "selector": "[data-component='current-conditions']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "sample conditions re-rendered per location"
+      ],
+      "keyboard": [
+        "none (static)"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe pass (static, 1280 and 375); interaction scripted check where interactive; screen reader not tested"
+    },
+    {
+      "id": "data-table",
+      "selector": "[data-component='data-table']",
+      "pages": [
+        "almanac.html",
+        "closings.html",
+        "hurricanes.html"
+      ],
+      "behavior": [
+        "real table with caption and scope headers",
+        "keyboard-focusable named scroll container"
+      ],
+      "keyboard": [
+        "Tab",
+        "arrow keys in scroll region"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe pass (static, 1280 and 375); interaction scripted check where interactive; screen reader not tested"
+    },
+    {
+      "id": "empty-state",
+      "selector": "[data-component='empty-state']",
+      "pages": [
+        "hurricanes.html"
+      ],
+      "behavior": [
+        "quiet-basin scenario message"
+      ],
+      "keyboard": [
+        "none (static)"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe pass (static, 1280 and 375); interaction scripted check where interactive; screen reader not tested"
+    },
+    {
+      "id": "filter-form",
+      "selector": "[data-component='filter-form']",
+      "pages": [
+        "alerts.html",
+        "almanac.html",
+        "closings.html",
+        "hurricanes.html",
+        "news.html",
+        "webcams.html"
+      ],
+      "behavior": [
+        "inline-data filters with live status count and empty state"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "arrow keys on selects"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe pass (static, 1280 and 375); interaction scripted check where interactive; screen reader not tested"
+    },
+    {
+      "id": "forecast-panel",
+      "selector": "[data-component='forecast-panel']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "table or card content for one forecast view"
+      ],
+      "keyboard": [
+        "Tab to scroll region; arrow keys scroll"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe pass (static, 1280 and 375); interaction scripted check where interactive; screen reader not tested"
+    },
+    {
+      "id": "forecast-summary",
+      "selector": "[data-component='forecast-summary']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "static sample summary text"
+      ],
+      "keyboard": [
+        "none (static)"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe pass (static, 1280 and 375); interaction scripted check where interactive; screen reader not tested"
+    },
+    {
+      "id": "link-list",
+      "selector": "[data-component='link-list']",
+      "pages": [
+        "resources.html"
+      ],
+      "behavior": [
+        "related links list"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe pass (static, 1280 and 375); interaction scripted check where interactive; screen reader not tested"
+    },
+    {
+      "id": "location-search",
+      "selector": "[data-component='location-search']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "search over 8 inline sample places",
+        "empty-input error summary with focus",
+        "no-match empty state",
+        "intentional addition (inferred in research)"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe pass (static, 1280 and 375); interaction scripted check where interactive; screen reader not tested"
+    },
+    {
+      "id": "map-placeholder",
+      "selector": "[data-component='map-placeholder']",
+      "pages": [
+        "map-center.html"
+      ],
+      "behavior": [
+        "layer radios swap local SVGs",
+        "demo zoom buttons with aria-disabled",
+        "legend disclosure aria-expanded, Escape collapses",
+        "non-functional demo"
+      ],
+      "keyboard": [
+        "Tab",
+        "Space",
+        "arrow keys on radios",
+        "Enter",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe pass (static, 1280 and 375); interaction scripted check where interactive; screen reader not tested"
+    },
+    {
+      "id": "media-player-placeholder",
+      "selector": "[data-component='media-player-placeholder']",
+      "pages": [
+        "radar-video.html"
+      ],
+      "behavior": [
+        "labeled non-live placeholder; prev/next frame; optional demo loop disabled under reduced motion"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe pass (static, 1280 and 375); interaction scripted check where interactive; screen reader not tested"
+    },
+    {
+      "id": "media-teaser",
+      "selector": "[data-component='media-teaser']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "hub card linking to radar placeholder"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe pass (static, 1280 and 375); interaction scripted check where interactive; screen reader not tested"
+    },
+    {
+      "id": "menu-toggle",
+      "selector": "[data-component='menu-toggle']",
+      "pages": [
+        "404.html",
+        "alerts.html",
+        "almanac.html",
+        "closings.html",
+        "forecast.html",
+        "hurricanes.html",
+        "index.html",
+        "map-center.html",
+        "news.html",
+        "radar-video.html",
+        "resources.html",
+        "webcams.html"
+      ],
+      "behavior": [
+        "mobile disclosure, aria-expanded",
+        "Escape closes and returns focus",
+        "JS-only; nav always visible without JS"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe pass (static, 1280 and 375); interaction scripted check where interactive; screen reader not tested"
+    },
+    {
+      "id": "news-teasers",
+      "selector": "[data-component='news-teasers']",
+      "pages": [
+        "index.html",
+        "news.html"
+      ],
+      "behavior": [
+        "sample story teasers; topic filter on news.html; 2 of 8 link locally"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe pass (static, 1280 and 375); interaction scripted check where interactive; screen reader not tested"
+    },
+    {
+      "id": "primary-nav",
+      "selector": "[data-component='primary-nav']",
+      "pages": [
+        "404.html",
+        "alerts.html",
+        "almanac.html",
+        "closings.html",
+        "forecast.html",
+        "hurricanes.html",
+        "index.html",
+        "map-center.html",
+        "news.html",
+        "radar-video.html",
+        "resources.html",
+        "webcams.html"
+      ],
+      "behavior": [
+        "section navigation to built pages only",
+        "aria-current on current page",
+        "same-page anchors on hub"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe pass (static, 1280 and 375); interaction scripted check where interactive; screen reader not tested"
+    },
+    {
+      "id": "sample-data-banner",
+      "selector": "[data-component='sample-data-banner']",
+      "pages": [
+        "404.html",
+        "alerts.html",
+        "almanac.html",
+        "closings.html",
+        "forecast.html",
+        "hurricanes.html",
+        "index.html",
+        "map-center.html",
+        "news.html",
+        "radar-video.html",
+        "resources.html",
+        "webcams.html"
+      ],
+      "behavior": [
+        "persistent text notice that all data is invented"
+      ],
+      "keyboard": [
+        "none (static)"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe pass (static, 1280 and 375); interaction scripted check where interactive; screen reader not tested"
+    },
+    {
+      "id": "search-form",
+      "selector": "[data-component='search-form']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "form wrapper for location search"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe pass (static, 1280 and 375); interaction scripted check where interactive; screen reader not tested"
+    },
+    {
+      "id": "site-footer",
+      "selector": "[data-component='site-footer']",
+      "pages": [
+        "404.html",
+        "alerts.html",
+        "almanac.html",
+        "closings.html",
+        "forecast.html",
+        "hurricanes.html",
+        "index.html",
+        "map-center.html",
+        "news.html",
+        "radar-video.html",
+        "resources.html",
+        "webcams.html"
+      ],
+      "behavior": [
+        "grouped links (inferred grouping), single footer element"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe pass (static, 1280 and 375); interaction scripted check where interactive; screen reader not tested"
+    },
+    {
+      "id": "site-header",
+      "selector": "[data-component='site-header']",
+      "pages": [
+        "404.html",
+        "alerts.html",
+        "almanac.html",
+        "closings.html",
+        "forecast.html",
+        "hurricanes.html",
+        "index.html",
+        "map-center.html",
+        "news.html",
+        "radar-video.html",
+        "resources.html",
+        "webcams.html"
+      ],
+      "behavior": [
+        "fixed station header",
+        "brand link home"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe pass (static, 1280 and 375); interaction scripted check where interactive; screen reader not tested"
+    },
+    {
+      "id": "unit-toggle",
+      "selector": "[data-component='unit-toggle']",
+      "pages": [
+        "almanac.html",
+        "forecast.html",
+        "index.html"
+      ],
+      "behavior": [
+        "F/C switch over all .temp values, aria-pressed, persisted in localStorage (try/catch)",
+        "intentional addition"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe pass (static, 1280 and 375); interaction scripted check where interactive; screen reader not tested"
+    }
+  ]
+}

@@ -1,0 +1,1435 @@
+{
+  "protocol_version": "1.0",
+  "replica_id": "ECOM-06",
+  "category": "e-commerce",
+  "source_url": "https://www.adafruit.com/",
+  "components": [
+    {
+      "id": "site-header",
+      "selector": "[data-component=\"site-header\"]",
+      "pages": [
+        "404.html",
+        "cart.html",
+        "components.html",
+        "encoder.html",
+        "index.html",
+        "search.html",
+        "shipping-returns.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "tag": "header",
+          "section": "global-header",
+          "selector": "[data-section=\"global-header\"][data-component=\"site-header\"]"
+        },
+        {
+          "page": "cart.html",
+          "tag": "header",
+          "section": "global-header",
+          "selector": "[data-section=\"global-header\"][data-component=\"site-header\"]"
+        },
+        {
+          "page": "components.html",
+          "tag": "header",
+          "section": "global-header",
+          "selector": "[data-section=\"global-header\"][data-component=\"site-header\"]"
+        },
+        {
+          "page": "encoder.html",
+          "tag": "header",
+          "section": "global-header",
+          "selector": "[data-section=\"global-header\"][data-component=\"site-header\"]"
+        },
+        {
+          "page": "index.html",
+          "tag": "header",
+          "section": "global-header",
+          "selector": "[data-section=\"global-header\"][data-component=\"site-header\"]"
+        },
+        {
+          "page": "search.html",
+          "tag": "header",
+          "section": "global-header",
+          "selector": "[data-section=\"global-header\"][data-component=\"site-header\"]"
+        },
+        {
+          "page": "shipping-returns.html",
+          "tag": "header",
+          "section": "global-header",
+          "selector": "[data-section=\"global-header\"][data-component=\"site-header\"]"
+        }
+      ],
+      "behavior": [
+        "Static semantic content and/or mapped local navigation"
+      ],
+      "keyboard": [
+        "Tab and Enter for links; Tab, Enter/Space for buttons and summaries where present"
+      ],
+      "status": "implemented",
+      "validation": "static-inventory; browser not-tested"
+    },
+    {
+      "id": "utility-nav",
+      "selector": "[data-component=\"utility-nav\"]",
+      "pages": [
+        "404.html",
+        "cart.html",
+        "components.html",
+        "encoder.html",
+        "index.html",
+        "search.html",
+        "shipping-returns.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "tag": "nav",
+          "section": "utility-navigation",
+          "selector": "[data-section=\"utility-navigation\"][data-component=\"utility-nav\"]"
+        },
+        {
+          "page": "cart.html",
+          "tag": "nav",
+          "section": "utility-navigation",
+          "selector": "[data-section=\"utility-navigation\"][data-component=\"utility-nav\"]"
+        },
+        {
+          "page": "components.html",
+          "tag": "nav",
+          "section": "utility-navigation",
+          "selector": "[data-section=\"utility-navigation\"][data-component=\"utility-nav\"]"
+        },
+        {
+          "page": "encoder.html",
+          "tag": "nav",
+          "section": "utility-navigation",
+          "selector": "[data-section=\"utility-navigation\"][data-component=\"utility-nav\"]"
+        },
+        {
+          "page": "index.html",
+          "tag": "nav",
+          "section": "utility-navigation",
+          "selector": "[data-section=\"utility-navigation\"][data-component=\"utility-nav\"]"
+        },
+        {
+          "page": "search.html",
+          "tag": "nav",
+          "section": "utility-navigation",
+          "selector": "[data-section=\"utility-navigation\"][data-component=\"utility-nav\"]"
+        },
+        {
+          "page": "shipping-returns.html",
+          "tag": "nav",
+          "section": "utility-navigation",
+          "selector": "[data-section=\"utility-navigation\"][data-component=\"utility-nav\"]"
+        }
+      ],
+      "behavior": [
+        "Static semantic content and/or mapped local navigation"
+      ],
+      "keyboard": [
+        "Tab and Enter for links; Tab, Enter/Space for buttons and summaries where present"
+      ],
+      "status": "implemented",
+      "validation": "static-inventory; browser not-tested"
+    },
+    {
+      "id": "search-form",
+      "selector": "[data-component=\"search-form\"]",
+      "pages": [
+        "404.html",
+        "cart.html",
+        "components.html",
+        "encoder.html",
+        "index.html",
+        "search.html",
+        "shipping-returns.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "tag": "form",
+          "section": "header-search",
+          "selector": "[data-section=\"header-search\"][data-component=\"search-form\"]"
+        },
+        {
+          "page": "cart.html",
+          "tag": "form",
+          "section": "header-search",
+          "selector": "[data-section=\"header-search\"][data-component=\"search-form\"]"
+        },
+        {
+          "page": "components.html",
+          "tag": "form",
+          "section": "header-search",
+          "selector": "[data-section=\"header-search\"][data-component=\"search-form\"]"
+        },
+        {
+          "page": "encoder.html",
+          "tag": "form",
+          "section": "header-search",
+          "selector": "[data-section=\"header-search\"][data-component=\"search-form\"]"
+        },
+        {
+          "page": "index.html",
+          "tag": "form",
+          "section": "header-search",
+          "selector": "[data-section=\"header-search\"][data-component=\"search-form\"]"
+        },
+        {
+          "page": "search.html",
+          "tag": "form",
+          "section": "header-search",
+          "selector": "[data-section=\"header-search\"][data-component=\"search-form\"]"
+        },
+        {
+          "page": "search.html",
+          "tag": "form",
+          "section": "catalog-search",
+          "selector": "[data-section=\"catalog-search\"][data-component=\"search-form\"]"
+        },
+        {
+          "page": "shipping-returns.html",
+          "tag": "form",
+          "section": "header-search",
+          "selector": "[data-section=\"header-search\"][data-component=\"search-form\"]"
+        }
+      ],
+      "behavior": [
+        "GET navigation with local query; local dataset search"
+      ],
+      "keyboard": [
+        "Tab and Enter for links; Tab, Enter/Space for buttons and summaries where present"
+      ],
+      "status": "implemented",
+      "validation": "static-inventory; browser not-tested"
+    },
+    {
+      "id": "primary-nav",
+      "selector": "[data-component=\"primary-nav\"]",
+      "pages": [
+        "404.html",
+        "cart.html",
+        "components.html",
+        "encoder.html",
+        "index.html",
+        "search.html",
+        "shipping-returns.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "tag": "nav",
+          "section": "global-navigation",
+          "selector": "[data-section=\"global-navigation\"][data-component=\"primary-nav\"]"
+        },
+        {
+          "page": "cart.html",
+          "tag": "nav",
+          "section": "global-navigation",
+          "selector": "[data-section=\"global-navigation\"][data-component=\"primary-nav\"]"
+        },
+        {
+          "page": "components.html",
+          "tag": "nav",
+          "section": "global-navigation",
+          "selector": "[data-section=\"global-navigation\"][data-component=\"primary-nav\"]"
+        },
+        {
+          "page": "encoder.html",
+          "tag": "nav",
+          "section": "global-navigation",
+          "selector": "[data-section=\"global-navigation\"][data-component=\"primary-nav\"]"
+        },
+        {
+          "page": "index.html",
+          "tag": "nav",
+          "section": "global-navigation",
+          "selector": "[data-section=\"global-navigation\"][data-component=\"primary-nav\"]"
+        },
+        {
+          "page": "search.html",
+          "tag": "nav",
+          "section": "global-navigation",
+          "selector": "[data-section=\"global-navigation\"][data-component=\"primary-nav\"]"
+        },
+        {
+          "page": "shipping-returns.html",
+          "tag": "nav",
+          "section": "global-navigation",
+          "selector": "[data-section=\"global-navigation\"][data-component=\"primary-nav\"]"
+        }
+      ],
+      "behavior": [
+        "Menu button toggles mobile disclosure; Escape closes and returns focus"
+      ],
+      "keyboard": [
+        "Tab and Enter for links; Tab, Enter/Space for buttons and summaries where present"
+      ],
+      "status": "implemented",
+      "validation": "static-inventory; browser not-tested"
+    },
+    {
+      "id": "breadcrumb",
+      "selector": "[data-component=\"breadcrumb\"]",
+      "pages": [
+        "404.html",
+        "cart.html",
+        "components.html",
+        "encoder.html",
+        "search.html",
+        "shipping-returns.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "tag": "nav",
+          "section": "breadcrumb",
+          "selector": "[data-section=\"breadcrumb\"][data-component=\"breadcrumb\"]"
+        },
+        {
+          "page": "cart.html",
+          "tag": "nav",
+          "section": "breadcrumb",
+          "selector": "[data-section=\"breadcrumb\"][data-component=\"breadcrumb\"]"
+        },
+        {
+          "page": "components.html",
+          "tag": "nav",
+          "section": "breadcrumb",
+          "selector": "[data-section=\"breadcrumb\"][data-component=\"breadcrumb\"]"
+        },
+        {
+          "page": "encoder.html",
+          "tag": "nav",
+          "section": "breadcrumb",
+          "selector": "[data-section=\"breadcrumb\"][data-component=\"breadcrumb\"]"
+        },
+        {
+          "page": "search.html",
+          "tag": "nav",
+          "section": "breadcrumb",
+          "selector": "[data-section=\"breadcrumb\"][data-component=\"breadcrumb\"]"
+        },
+        {
+          "page": "shipping-returns.html",
+          "tag": "nav",
+          "section": "breadcrumb",
+          "selector": "[data-section=\"breadcrumb\"][data-component=\"breadcrumb\"]"
+        }
+      ],
+      "behavior": [
+        "Static semantic content and/or mapped local navigation"
+      ],
+      "keyboard": [
+        "Tab and Enter for links; Tab, Enter/Space for buttons and summaries where present"
+      ],
+      "status": "implemented",
+      "validation": "static-inventory; browser not-tested"
+    },
+    {
+      "id": "category-navigation",
+      "selector": "[data-component=\"category-navigation\"]",
+      "pages": [
+        "404.html",
+        "cart.html",
+        "components.html",
+        "encoder.html",
+        "index.html",
+        "search.html",
+        "shipping-returns.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "tag": "aside",
+          "section": "catalog-sidebar",
+          "selector": "[data-section=\"catalog-sidebar\"][data-component=\"category-navigation\"]"
+        },
+        {
+          "page": "cart.html",
+          "tag": "aside",
+          "section": "catalog-sidebar",
+          "selector": "[data-section=\"catalog-sidebar\"][data-component=\"category-navigation\"]"
+        },
+        {
+          "page": "components.html",
+          "tag": "aside",
+          "section": "catalog-sidebar",
+          "selector": "[data-section=\"catalog-sidebar\"][data-component=\"category-navigation\"]"
+        },
+        {
+          "page": "encoder.html",
+          "tag": "aside",
+          "section": "catalog-sidebar",
+          "selector": "[data-section=\"catalog-sidebar\"][data-component=\"category-navigation\"]"
+        },
+        {
+          "page": "index.html",
+          "tag": "aside",
+          "section": "catalog-sidebar",
+          "selector": "[data-section=\"catalog-sidebar\"][data-component=\"category-navigation\"]"
+        },
+        {
+          "page": "search.html",
+          "tag": "aside",
+          "section": "catalog-sidebar",
+          "selector": "[data-section=\"catalog-sidebar\"][data-component=\"category-navigation\"]"
+        },
+        {
+          "page": "shipping-returns.html",
+          "tag": "aside",
+          "section": "catalog-sidebar",
+          "selector": "[data-section=\"catalog-sidebar\"][data-component=\"category-navigation\"]"
+        }
+      ],
+      "behavior": [
+        "Static semantic content and/or mapped local navigation"
+      ],
+      "keyboard": [
+        "Tab and Enter for links; Tab, Enter/Space for buttons and summaries where present"
+      ],
+      "status": "implemented",
+      "validation": "static-inventory; browser not-tested"
+    },
+    {
+      "id": "category-nav",
+      "selector": "[data-component=\"category-nav\"]",
+      "pages": [
+        "404.html",
+        "cart.html",
+        "components.html",
+        "encoder.html",
+        "index.html",
+        "search.html",
+        "shipping-returns.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "tag": "nav",
+          "section": "category-navigation",
+          "selector": "[data-section=\"category-navigation\"][data-component=\"category-nav\"]"
+        },
+        {
+          "page": "cart.html",
+          "tag": "nav",
+          "section": "category-navigation",
+          "selector": "[data-section=\"category-navigation\"][data-component=\"category-nav\"]"
+        },
+        {
+          "page": "components.html",
+          "tag": "nav",
+          "section": "category-navigation",
+          "selector": "[data-section=\"category-navigation\"][data-component=\"category-nav\"]"
+        },
+        {
+          "page": "encoder.html",
+          "tag": "nav",
+          "section": "category-navigation",
+          "selector": "[data-section=\"category-navigation\"][data-component=\"category-nav\"]"
+        },
+        {
+          "page": "index.html",
+          "tag": "nav",
+          "section": "category-navigation",
+          "selector": "[data-section=\"category-navigation\"][data-component=\"category-nav\"]"
+        },
+        {
+          "page": "search.html",
+          "tag": "nav",
+          "section": "category-navigation",
+          "selector": "[data-section=\"category-navigation\"][data-component=\"category-nav\"]"
+        },
+        {
+          "page": "shipping-returns.html",
+          "tag": "nav",
+          "section": "category-navigation",
+          "selector": "[data-section=\"category-navigation\"][data-component=\"category-nav\"]"
+        }
+      ],
+      "behavior": [
+        "Static semantic content and/or mapped local navigation"
+      ],
+      "keyboard": [
+        "Tab and Enter for links; Tab, Enter/Space for buttons and summaries where present"
+      ],
+      "status": "implemented",
+      "validation": "static-inventory; browser not-tested"
+    },
+    {
+      "id": "learning-callout",
+      "selector": "[data-component=\"learning-callout\"]",
+      "pages": [
+        "404.html",
+        "cart.html",
+        "components.html",
+        "encoder.html",
+        "index.html",
+        "search.html",
+        "shipping-returns.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "tag": "div",
+          "section": "sidebar-learning",
+          "selector": "[data-section=\"sidebar-learning\"][data-component=\"learning-callout\"]"
+        },
+        {
+          "page": "cart.html",
+          "tag": "div",
+          "section": "sidebar-learning",
+          "selector": "[data-section=\"sidebar-learning\"][data-component=\"learning-callout\"]"
+        },
+        {
+          "page": "components.html",
+          "tag": "div",
+          "section": "sidebar-learning",
+          "selector": "[data-section=\"sidebar-learning\"][data-component=\"learning-callout\"]"
+        },
+        {
+          "page": "encoder.html",
+          "tag": "div",
+          "section": "sidebar-learning",
+          "selector": "[data-section=\"sidebar-learning\"][data-component=\"learning-callout\"]"
+        },
+        {
+          "page": "index.html",
+          "tag": "div",
+          "section": "sidebar-learning",
+          "selector": "[data-section=\"sidebar-learning\"][data-component=\"learning-callout\"]"
+        },
+        {
+          "page": "search.html",
+          "tag": "div",
+          "section": "sidebar-learning",
+          "selector": "[data-section=\"sidebar-learning\"][data-component=\"learning-callout\"]"
+        },
+        {
+          "page": "shipping-returns.html",
+          "tag": "div",
+          "section": "sidebar-learning",
+          "selector": "[data-section=\"sidebar-learning\"][data-component=\"learning-callout\"]"
+        }
+      ],
+      "behavior": [
+        "Static semantic content and/or mapped local navigation"
+      ],
+      "keyboard": [
+        "Tab and Enter for links; Tab, Enter/Space for buttons and summaries where present"
+      ],
+      "status": "implemented",
+      "validation": "static-inventory; browser not-tested"
+    },
+    {
+      "id": "page-content",
+      "selector": "[data-component=\"page-content\"]",
+      "pages": [
+        "404.html",
+        "cart.html",
+        "components.html",
+        "encoder.html",
+        "index.html",
+        "search.html",
+        "shipping-returns.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "tag": "main",
+          "section": "main-content",
+          "selector": "[data-section=\"main-content\"][data-component=\"page-content\"]"
+        },
+        {
+          "page": "cart.html",
+          "tag": "main",
+          "section": "main-content",
+          "selector": "[data-section=\"main-content\"][data-component=\"page-content\"]"
+        },
+        {
+          "page": "components.html",
+          "tag": "main",
+          "section": "main-content",
+          "selector": "[data-section=\"main-content\"][data-component=\"page-content\"]"
+        },
+        {
+          "page": "encoder.html",
+          "tag": "main",
+          "section": "main-content",
+          "selector": "[data-section=\"main-content\"][data-component=\"page-content\"]"
+        },
+        {
+          "page": "index.html",
+          "tag": "main",
+          "section": "main-content",
+          "selector": "[data-section=\"main-content\"][data-component=\"page-content\"]"
+        },
+        {
+          "page": "search.html",
+          "tag": "main",
+          "section": "main-content",
+          "selector": "[data-section=\"main-content\"][data-component=\"page-content\"]"
+        },
+        {
+          "page": "shipping-returns.html",
+          "tag": "main",
+          "section": "main-content",
+          "selector": "[data-section=\"main-content\"][data-component=\"page-content\"]"
+        }
+      ],
+      "behavior": [
+        "Static semantic content and/or mapped local navigation"
+      ],
+      "keyboard": [
+        "Tab and Enter for links; Tab, Enter/Space for buttons and summaries where present"
+      ],
+      "status": "implemented",
+      "validation": "static-inventory; browser not-tested"
+    },
+    {
+      "id": "error-state",
+      "selector": "[data-component=\"error-state\"]",
+      "pages": [
+        "404.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "tag": "section",
+          "section": "page-recovery",
+          "selector": "[data-section=\"page-recovery\"][data-component=\"error-state\"]"
+        }
+      ],
+      "behavior": [
+        "Static semantic content and/or mapped local navigation"
+      ],
+      "keyboard": [
+        "Tab and Enter for links; Tab, Enter/Space for buttons and summaries where present"
+      ],
+      "status": "implemented",
+      "validation": "static-inventory; browser not-tested"
+    },
+    {
+      "id": "site-footer",
+      "selector": "[data-component=\"site-footer\"]",
+      "pages": [
+        "404.html",
+        "cart.html",
+        "components.html",
+        "encoder.html",
+        "index.html",
+        "search.html",
+        "shipping-returns.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "tag": "footer",
+          "section": "global-footer",
+          "selector": "[data-section=\"global-footer\"][data-component=\"site-footer\"]"
+        },
+        {
+          "page": "cart.html",
+          "tag": "footer",
+          "section": "global-footer",
+          "selector": "[data-section=\"global-footer\"][data-component=\"site-footer\"]"
+        },
+        {
+          "page": "components.html",
+          "tag": "footer",
+          "section": "global-footer",
+          "selector": "[data-section=\"global-footer\"][data-component=\"site-footer\"]"
+        },
+        {
+          "page": "encoder.html",
+          "tag": "footer",
+          "section": "global-footer",
+          "selector": "[data-section=\"global-footer\"][data-component=\"site-footer\"]"
+        },
+        {
+          "page": "index.html",
+          "tag": "footer",
+          "section": "global-footer",
+          "selector": "[data-section=\"global-footer\"][data-component=\"site-footer\"]"
+        },
+        {
+          "page": "search.html",
+          "tag": "footer",
+          "section": "global-footer",
+          "selector": "[data-section=\"global-footer\"][data-component=\"site-footer\"]"
+        },
+        {
+          "page": "shipping-returns.html",
+          "tag": "footer",
+          "section": "global-footer",
+          "selector": "[data-section=\"global-footer\"][data-component=\"site-footer\"]"
+        }
+      ],
+      "behavior": [
+        "Static semantic content and/or mapped local navigation"
+      ],
+      "keyboard": [
+        "Tab and Enter for links; Tab, Enter/Space for buttons and summaries where present"
+      ],
+      "status": "implemented",
+      "validation": "static-inventory; browser not-tested"
+    },
+    {
+      "id": "footer-nav",
+      "selector": "[data-component=\"footer-nav\"]",
+      "pages": [
+        "404.html",
+        "cart.html",
+        "components.html",
+        "encoder.html",
+        "index.html",
+        "search.html",
+        "shipping-returns.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "tag": "nav",
+          "section": "footer-shop",
+          "selector": "[data-section=\"footer-shop\"][data-component=\"footer-nav\"]"
+        },
+        {
+          "page": "404.html",
+          "tag": "nav",
+          "section": "footer-help",
+          "selector": "[data-section=\"footer-help\"][data-component=\"footer-nav\"]"
+        },
+        {
+          "page": "cart.html",
+          "tag": "nav",
+          "section": "footer-shop",
+          "selector": "[data-section=\"footer-shop\"][data-component=\"footer-nav\"]"
+        },
+        {
+          "page": "cart.html",
+          "tag": "nav",
+          "section": "footer-help",
+          "selector": "[data-section=\"footer-help\"][data-component=\"footer-nav\"]"
+        },
+        {
+          "page": "components.html",
+          "tag": "nav",
+          "section": "footer-shop",
+          "selector": "[data-section=\"footer-shop\"][data-component=\"footer-nav\"]"
+        },
+        {
+          "page": "components.html",
+          "tag": "nav",
+          "section": "footer-help",
+          "selector": "[data-section=\"footer-help\"][data-component=\"footer-nav\"]"
+        },
+        {
+          "page": "encoder.html",
+          "tag": "nav",
+          "section": "footer-shop",
+          "selector": "[data-section=\"footer-shop\"][data-component=\"footer-nav\"]"
+        },
+        {
+          "page": "encoder.html",
+          "tag": "nav",
+          "section": "footer-help",
+          "selector": "[data-section=\"footer-help\"][data-component=\"footer-nav\"]"
+        },
+        {
+          "page": "index.html",
+          "tag": "nav",
+          "section": "footer-shop",
+          "selector": "[data-section=\"footer-shop\"][data-component=\"footer-nav\"]"
+        },
+        {
+          "page": "index.html",
+          "tag": "nav",
+          "section": "footer-help",
+          "selector": "[data-section=\"footer-help\"][data-component=\"footer-nav\"]"
+        },
+        {
+          "page": "search.html",
+          "tag": "nav",
+          "section": "footer-shop",
+          "selector": "[data-section=\"footer-shop\"][data-component=\"footer-nav\"]"
+        },
+        {
+          "page": "search.html",
+          "tag": "nav",
+          "section": "footer-help",
+          "selector": "[data-section=\"footer-help\"][data-component=\"footer-nav\"]"
+        },
+        {
+          "page": "shipping-returns.html",
+          "tag": "nav",
+          "section": "footer-shop",
+          "selector": "[data-section=\"footer-shop\"][data-component=\"footer-nav\"]"
+        },
+        {
+          "page": "shipping-returns.html",
+          "tag": "nav",
+          "section": "footer-help",
+          "selector": "[data-section=\"footer-help\"][data-component=\"footer-nav\"]"
+        }
+      ],
+      "behavior": [
+        "Static semantic content and/or mapped local navigation"
+      ],
+      "keyboard": [
+        "Tab and Enter for links; Tab, Enter/Space for buttons and summaries where present"
+      ],
+      "status": "implemented",
+      "validation": "static-inventory; browser not-tested"
+    },
+    {
+      "id": "cart",
+      "selector": "[data-component=\"cart\"]",
+      "pages": [
+        "cart.html"
+      ],
+      "instances": [
+        {
+          "page": "cart.html",
+          "tag": "section",
+          "section": "shopping-cart",
+          "selector": "[data-section=\"shopping-cart\"][data-component=\"cart\"]"
+        }
+      ],
+      "behavior": [
+        "Static semantic content and/or mapped local navigation"
+      ],
+      "keyboard": [
+        "Tab and Enter for links; Tab, Enter/Space for buttons and summaries where present"
+      ],
+      "status": "implemented",
+      "validation": "static-inventory; browser not-tested"
+    },
+    {
+      "id": "cart-form",
+      "selector": "[data-component=\"cart-form\"]",
+      "pages": [
+        "cart.html"
+      ],
+      "instances": [
+        {
+          "page": "cart.html",
+          "tag": "form",
+          "section": "cart-items",
+          "selector": "[data-section=\"cart-items\"][data-component=\"cart-form\"]"
+        }
+      ],
+      "behavior": [
+        "Validate all quantities before update; zero removes; Empty clears cart/coupon"
+      ],
+      "keyboard": [
+        "Tab and Enter for links; Tab, Enter/Space for buttons and summaries where present"
+      ],
+      "status": "implemented",
+      "validation": "static-inventory; browser not-tested"
+    },
+    {
+      "id": "coupon-form",
+      "selector": "[data-component=\"coupon-form\"]",
+      "pages": [
+        "cart.html"
+      ],
+      "instances": [
+        {
+          "page": "cart.html",
+          "tag": "form",
+          "section": "cart-coupon",
+          "selector": "[data-section=\"cart-coupon\"][data-component=\"coupon-form\"]"
+        }
+      ],
+      "behavior": [
+        "BENCH10 sample discount; invalid error; blank removes"
+      ],
+      "keyboard": [
+        "Tab and Enter for links; Tab, Enter/Space for buttons and summaries where present"
+      ],
+      "status": "implemented",
+      "validation": "static-inventory; browser not-tested"
+    },
+    {
+      "id": "order-summary",
+      "selector": "[data-component=\"order-summary\"]",
+      "pages": [
+        "cart.html"
+      ],
+      "instances": [
+        {
+          "page": "cart.html",
+          "tag": "section",
+          "section": "cart-totals",
+          "selector": "[data-section=\"cart-totals\"][data-component=\"order-summary\"]"
+        }
+      ],
+      "behavior": [
+        "Integer-cent totals and explanatory checkout feedback"
+      ],
+      "keyboard": [
+        "Tab and Enter for links; Tab, Enter/Space for buttons and summaries where present"
+      ],
+      "status": "implemented",
+      "validation": "static-inventory; browser not-tested"
+    },
+    {
+      "id": "filtered-catalog",
+      "selector": "[data-component=\"filtered-catalog\"]",
+      "pages": [
+        "components.html",
+        "search.html"
+      ],
+      "instances": [
+        {
+          "page": "components.html",
+          "tag": "section",
+          "section": "catalog-results",
+          "selector": "[data-section=\"catalog-results\"][data-component=\"filtered-catalog\"]"
+        },
+        {
+          "page": "search.html",
+          "tag": "section",
+          "section": "catalog-results",
+          "selector": "[data-section=\"catalog-results\"][data-component=\"filtered-catalog\"]"
+        }
+      ],
+      "behavior": [
+        "Static semantic content and/or mapped local navigation"
+      ],
+      "keyboard": [
+        "Tab and Enter for links; Tab, Enter/Space for buttons and summaries where present"
+      ],
+      "status": "implemented",
+      "validation": "static-inventory; browser not-tested"
+    },
+    {
+      "id": "filter-form",
+      "selector": "[data-component=\"filter-form\"]",
+      "pages": [
+        "components.html",
+        "search.html"
+      ],
+      "instances": [
+        {
+          "page": "components.html",
+          "tag": "form",
+          "section": "catalog-filters",
+          "selector": "[data-section=\"catalog-filters\"][data-component=\"filter-form\"]"
+        },
+        {
+          "page": "search.html",
+          "tag": "form",
+          "section": "catalog-filters",
+          "selector": "[data-section=\"catalog-filters\"][data-component=\"filter-form\"]"
+        }
+      ],
+      "behavior": [
+        "Explicit Apply; availability, price and best/recent sort; Reset"
+      ],
+      "keyboard": [
+        "Tab and Enter for links; Tab, Enter/Space for buttons and summaries where present"
+      ],
+      "status": "implemented",
+      "validation": "static-inventory; browser not-tested"
+    },
+    {
+      "id": "product-card",
+      "selector": "[data-component=\"product-card\"]",
+      "pages": [
+        "components.html",
+        "encoder.html",
+        "index.html",
+        "search.html"
+      ],
+      "instances": [
+        {
+          "page": "components.html",
+          "tag": "article",
+          "section": "catalog-products",
+          "selector": "[data-section=\"catalog-products\"][data-component=\"product-card\"]"
+        },
+        {
+          "page": "components.html",
+          "tag": "article",
+          "section": "catalog-products",
+          "selector": "[data-section=\"catalog-products\"][data-component=\"product-card\"]"
+        },
+        {
+          "page": "components.html",
+          "tag": "article",
+          "section": "catalog-products",
+          "selector": "[data-section=\"catalog-products\"][data-component=\"product-card\"]"
+        },
+        {
+          "page": "components.html",
+          "tag": "article",
+          "section": "catalog-products",
+          "selector": "[data-section=\"catalog-products\"][data-component=\"product-card\"]"
+        },
+        {
+          "page": "components.html",
+          "tag": "article",
+          "section": "catalog-products",
+          "selector": "[data-section=\"catalog-products\"][data-component=\"product-card\"]"
+        },
+        {
+          "page": "components.html",
+          "tag": "article",
+          "section": "catalog-products",
+          "selector": "[data-section=\"catalog-products\"][data-component=\"product-card\"]"
+        },
+        {
+          "page": "components.html",
+          "tag": "article",
+          "section": "catalog-products",
+          "selector": "[data-section=\"catalog-products\"][data-component=\"product-card\"]"
+        },
+        {
+          "page": "components.html",
+          "tag": "article",
+          "section": "catalog-products",
+          "selector": "[data-section=\"catalog-products\"][data-component=\"product-card\"]"
+        },
+        {
+          "page": "encoder.html",
+          "tag": "article",
+          "section": "catalog-products",
+          "selector": "[data-section=\"catalog-products\"][data-component=\"product-card\"]"
+        },
+        {
+          "page": "encoder.html",
+          "tag": "article",
+          "section": "catalog-products",
+          "selector": "[data-section=\"catalog-products\"][data-component=\"product-card\"]"
+        },
+        {
+          "page": "encoder.html",
+          "tag": "article",
+          "section": "catalog-products",
+          "selector": "[data-section=\"catalog-products\"][data-component=\"product-card\"]"
+        },
+        {
+          "page": "index.html",
+          "tag": "article",
+          "section": "catalog-products",
+          "selector": "[data-section=\"catalog-products\"][data-component=\"product-card\"]"
+        },
+        {
+          "page": "index.html",
+          "tag": "article",
+          "section": "catalog-products",
+          "selector": "[data-section=\"catalog-products\"][data-component=\"product-card\"]"
+        },
+        {
+          "page": "index.html",
+          "tag": "article",
+          "section": "catalog-products",
+          "selector": "[data-section=\"catalog-products\"][data-component=\"product-card\"]"
+        },
+        {
+          "page": "index.html",
+          "tag": "article",
+          "section": "catalog-products",
+          "selector": "[data-section=\"catalog-products\"][data-component=\"product-card\"]"
+        },
+        {
+          "page": "index.html",
+          "tag": "article",
+          "section": "catalog-products",
+          "selector": "[data-section=\"catalog-products\"][data-component=\"product-card\"]"
+        },
+        {
+          "page": "index.html",
+          "tag": "article",
+          "section": "catalog-products",
+          "selector": "[data-section=\"catalog-products\"][data-component=\"product-card\"]"
+        },
+        {
+          "page": "index.html",
+          "tag": "article",
+          "section": "catalog-products",
+          "selector": "[data-section=\"catalog-products\"][data-component=\"product-card\"]"
+        },
+        {
+          "page": "index.html",
+          "tag": "article",
+          "section": "catalog-products",
+          "selector": "[data-section=\"catalog-products\"][data-component=\"product-card\"]"
+        },
+        {
+          "page": "search.html",
+          "tag": "article",
+          "section": "catalog-products",
+          "selector": "[data-section=\"catalog-products\"][data-component=\"product-card\"]"
+        },
+        {
+          "page": "search.html",
+          "tag": "article",
+          "section": "catalog-products",
+          "selector": "[data-section=\"catalog-products\"][data-component=\"product-card\"]"
+        },
+        {
+          "page": "search.html",
+          "tag": "article",
+          "section": "catalog-products",
+          "selector": "[data-section=\"catalog-products\"][data-component=\"product-card\"]"
+        },
+        {
+          "page": "search.html",
+          "tag": "article",
+          "section": "catalog-products",
+          "selector": "[data-section=\"catalog-products\"][data-component=\"product-card\"]"
+        },
+        {
+          "page": "search.html",
+          "tag": "article",
+          "section": "catalog-products",
+          "selector": "[data-section=\"catalog-products\"][data-component=\"product-card\"]"
+        },
+        {
+          "page": "search.html",
+          "tag": "article",
+          "section": "catalog-products",
+          "selector": "[data-section=\"catalog-products\"][data-component=\"product-card\"]"
+        },
+        {
+          "page": "search.html",
+          "tag": "article",
+          "section": "catalog-products",
+          "selector": "[data-section=\"catalog-products\"][data-component=\"product-card\"]"
+        },
+        {
+          "page": "search.html",
+          "tag": "article",
+          "section": "catalog-products",
+          "selector": "[data-section=\"catalog-products\"][data-component=\"product-card\"]"
+        }
+      ],
+      "behavior": [
+        "Local product/search link and available-item demo add"
+      ],
+      "keyboard": [
+        "Tab and Enter for links; Tab, Enter/Space for buttons and summaries where present"
+      ],
+      "status": "implemented",
+      "validation": "static-inventory; browser not-tested"
+    },
+    {
+      "id": "product-detail",
+      "selector": "[data-component=\"product-detail\"]",
+      "pages": [
+        "encoder.html"
+      ],
+      "instances": [
+        {
+          "page": "encoder.html",
+          "tag": "section",
+          "section": "product-purchase",
+          "selector": "[data-section=\"product-purchase\"][data-component=\"product-detail\"]"
+        }
+      ],
+      "behavior": [
+        "Static semantic content and/or mapped local navigation"
+      ],
+      "keyboard": [
+        "Tab and Enter for links; Tab, Enter/Space for buttons and summaries where present"
+      ],
+      "status": "implemented",
+      "validation": "static-inventory; browser not-tested"
+    },
+    {
+      "id": "product-gallery",
+      "selector": "[data-component=\"product-gallery\"]",
+      "pages": [
+        "encoder.html"
+      ],
+      "instances": [
+        {
+          "page": "encoder.html",
+          "tag": "div",
+          "section": "product-gallery",
+          "selector": "[data-section=\"product-gallery\"][data-component=\"product-gallery\"]"
+        }
+      ],
+      "behavior": [
+        "Static semantic content and/or mapped local navigation"
+      ],
+      "keyboard": [
+        "Tab and Enter for links; Tab, Enter/Space for buttons and summaries where present"
+      ],
+      "status": "implemented",
+      "validation": "static-inventory; browser not-tested"
+    },
+    {
+      "id": "add-to-cart-form",
+      "selector": "[data-component=\"add-to-cart-form\"]",
+      "pages": [
+        "encoder.html"
+      ],
+      "instances": [
+        {
+          "page": "encoder.html",
+          "tag": "form",
+          "section": "product-order",
+          "selector": "[data-section=\"product-order\"][data-component=\"add-to-cart-form\"]"
+        }
+      ],
+      "behavior": [
+        "Whole quantity validation; optional same-quantity knob; local cart addition"
+      ],
+      "keyboard": [
+        "Tab and Enter for links; Tab, Enter/Space for buttons and summaries where present"
+      ],
+      "status": "implemented",
+      "validation": "static-inventory; browser not-tested"
+    },
+    {
+      "id": "anchor-nav",
+      "selector": "[data-component=\"anchor-nav\"]",
+      "pages": [
+        "encoder.html"
+      ],
+      "instances": [
+        {
+          "page": "encoder.html",
+          "tag": "nav",
+          "section": "product-navigation",
+          "selector": "[data-section=\"product-navigation\"][data-component=\"anchor-nav\"]"
+        }
+      ],
+      "behavior": [
+        "Static semantic content and/or mapped local navigation"
+      ],
+      "keyboard": [
+        "Tab and Enter for links; Tab, Enter/Space for buttons and summaries where present"
+      ],
+      "status": "implemented",
+      "validation": "static-inventory; browser not-tested"
+    },
+    {
+      "id": "technical-copy",
+      "selector": "[data-component=\"technical-copy\"]",
+      "pages": [
+        "encoder.html"
+      ],
+      "instances": [
+        {
+          "page": "encoder.html",
+          "tag": "section",
+          "section": "product-description",
+          "selector": "[data-section=\"product-description\"][data-component=\"technical-copy\"]"
+        }
+      ],
+      "behavior": [
+        "Static semantic content and/or mapped local navigation"
+      ],
+      "keyboard": [
+        "Tab and Enter for links; Tab, Enter/Space for buttons and summaries where present"
+      ],
+      "status": "implemented",
+      "validation": "static-inventory; browser not-tested"
+    },
+    {
+      "id": "specification-table",
+      "selector": "[data-component=\"specification-table\"]",
+      "pages": [
+        "encoder.html"
+      ],
+      "instances": [
+        {
+          "page": "encoder.html",
+          "tag": "section",
+          "section": "product-technical",
+          "selector": "[data-section=\"product-technical\"][data-component=\"specification-table\"]"
+        }
+      ],
+      "behavior": [
+        "Static semantic content and/or mapped local navigation"
+      ],
+      "keyboard": [
+        "Tab and Enter for links; Tab, Enter/Space for buttons and summaries where present"
+      ],
+      "status": "implemented",
+      "validation": "static-inventory; browser not-tested"
+    },
+    {
+      "id": "disclosure",
+      "selector": "[data-component=\"disclosure\"]",
+      "pages": [
+        "encoder.html",
+        "shipping-returns.html"
+      ],
+      "instances": [
+        {
+          "page": "encoder.html",
+          "tag": "details",
+          "section": "product-learning",
+          "selector": "[data-section=\"product-learning\"][data-component=\"disclosure\"]"
+        },
+        {
+          "page": "shipping-returns.html",
+          "tag": "details",
+          "section": "shipping-questions",
+          "selector": "[data-section=\"shipping-questions\"][data-component=\"disclosure\"]"
+        },
+        {
+          "page": "shipping-returns.html",
+          "tag": "details",
+          "section": "returns-questions",
+          "selector": "[data-section=\"returns-questions\"][data-component=\"disclosure\"]"
+        }
+      ],
+      "behavior": [
+        "Native expandable help/technical note"
+      ],
+      "keyboard": [
+        "Tab and Enter for links; Tab, Enter/Space for buttons and summaries where present"
+      ],
+      "status": "implemented",
+      "validation": "static-inventory; browser not-tested"
+    },
+    {
+      "id": "product-grid",
+      "selector": "[data-component=\"product-grid\"]",
+      "pages": [
+        "encoder.html",
+        "index.html"
+      ],
+      "instances": [
+        {
+          "page": "encoder.html",
+          "tag": "section",
+          "section": "related-products",
+          "selector": "[data-section=\"related-products\"][data-component=\"product-grid\"]"
+        },
+        {
+          "page": "index.html",
+          "tag": "section",
+          "section": "new-products",
+          "selector": "[data-section=\"new-products\"][data-component=\"product-grid\"]"
+        },
+        {
+          "page": "index.html",
+          "tag": "section",
+          "section": "more-components",
+          "selector": "[data-section=\"more-components\"][data-component=\"product-grid\"]"
+        }
+      ],
+      "behavior": [
+        "Static semantic content and/or mapped local navigation"
+      ],
+      "keyboard": [
+        "Tab and Enter for links; Tab, Enter/Space for buttons and summaries where present"
+      ],
+      "status": "implemented",
+      "validation": "static-inventory; browser not-tested"
+    },
+    {
+      "id": "merchandising-hero",
+      "selector": "[data-component=\"merchandising-hero\"]",
+      "pages": [
+        "index.html"
+      ],
+      "instances": [
+        {
+          "page": "index.html",
+          "tag": "section",
+          "section": "home-hero",
+          "selector": "[data-section=\"home-hero\"][data-component=\"merchandising-hero\"]"
+        }
+      ],
+      "behavior": [
+        "Static semantic content and/or mapped local navigation"
+      ],
+      "keyboard": [
+        "Tab and Enter for links; Tab, Enter/Space for buttons and summaries where present"
+      ],
+      "status": "implemented",
+      "validation": "static-inventory; browser not-tested"
+    },
+    {
+      "id": "editorial-feature",
+      "selector": "[data-component=\"editorial-feature\"]",
+      "pages": [
+        "index.html"
+      ],
+      "instances": [
+        {
+          "page": "index.html",
+          "tag": "section",
+          "section": "home-workbench",
+          "selector": "[data-section=\"home-workbench\"][data-component=\"editorial-feature\"]"
+        }
+      ],
+      "behavior": [
+        "Static semantic content and/or mapped local navigation"
+      ],
+      "keyboard": [
+        "Tab and Enter for links; Tab, Enter/Space for buttons and summaries where present"
+      ],
+      "status": "implemented",
+      "validation": "static-inventory; browser not-tested"
+    },
+    {
+      "id": "help-content",
+      "selector": "[data-component=\"help-content\"]",
+      "pages": [
+        "shipping-returns.html"
+      ],
+      "instances": [
+        {
+          "page": "shipping-returns.html",
+          "tag": "section",
+          "section": "shipping-help",
+          "selector": "[data-section=\"shipping-help\"][data-component=\"help-content\"]"
+        },
+        {
+          "page": "shipping-returns.html",
+          "tag": "section",
+          "section": "returns-help",
+          "selector": "[data-section=\"returns-help\"][data-component=\"help-content\"]"
+        },
+        {
+          "page": "shipping-returns.html",
+          "tag": "section",
+          "section": "help-learning",
+          "selector": "[data-section=\"help-learning\"][data-component=\"help-content\"]"
+        }
+      ],
+      "behavior": [
+        "Static semantic content and/or mapped local navigation"
+      ],
+      "keyboard": [
+        "Tab and Enter for links; Tab, Enter/Space for buttons and summaries where present"
+      ],
+      "status": "implemented",
+      "validation": "static-inventory; browser not-tested"
+    },
+    {
+      "id": "cart-item",
+      "selector": "[data-component=\"cart-item\"]",
+      "pages": [
+        "cart.html"
+      ],
+      "instances": [
+        {
+          "page": "cart.html",
+          "section": "cart-line-items",
+          "selector": "#cart-items [data-component=\"cart-item\"]",
+          "rendered": "zero to six actual sample items depending on cart"
+        }
+      ],
+      "behavior": [
+        "Generated from selected available items; quantity labels, unit and line totals"
+      ],
+      "keyboard": [
+        "Tab to quantity inputs"
+      ],
+      "status": "implemented",
+      "validation": "Node VM handler test with DOM mocks; browser not-tested"
+    }
+  ]
+}

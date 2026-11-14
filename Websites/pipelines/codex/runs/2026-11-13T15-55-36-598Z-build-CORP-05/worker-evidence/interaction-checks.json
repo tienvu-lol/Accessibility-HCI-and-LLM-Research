@@ -1,0 +1,23 @@
+{
+  "status": "pass",
+  "tests": [
+    "Actual exported filter: \"\" gives 3",
+    "Actual exported filter: \"alder\" gives 1",
+    "Actual exported filter: \"  CEDAR \" gives 1",
+    "Actual exported filter: \"ATM\" gives 3",
+    "Actual exported filter: \"saturday\" gives 1",
+    "Actual exported filter: \"not-a-place\" gives 0",
+    "Actual exported filter: \"<script>\" gives 0",
+    "Mock DOM: menu opens, Escape closes and requests toggle focus",
+    "Mock DOM: viewport change clears menu state",
+    "Mock DOM: dialog requests showModal and close-button focus; close requests opener focus",
+    "Mock DOM: submit prevented, one matching result and count rendered with textContent",
+    "Mock DOM: empty result message",
+    "Mock DOM: reset clears input, renders all three and requests input focus"
+  ],
+  "limitations": [
+    "Mock DOM is not browser execution",
+    "Native details keyboard/semantics, modal focus trap, Escape close, actual focus return and responsive rendering not tested in browser",
+    "No actual credentials, inquiry form or account opening implemented"
+  ]
+}

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jobs | Northcairn</title><meta name="description" content="Browse sample Northcairn job openings with location and department filters (fictional).">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="css/styles.css"></head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<aside class="demo-banner" aria-label="Design study notice" data-section="demo-notice" data-component="demo-banner"><div class="wrap">Design-study replica. Northcairn is a fictional company; nothing on this site is real, for sale or an offer.</div></aside>
+<header class="site-header" data-section="global-header" data-component="site-header"><div class="wrap header-bar">
+<a class="brand" href="index.html" data-component="brand-link"><img src="assets/logo.svg" alt="" width="36" height="36">Northcairn</a>
+<button class="btn secondary small menu-toggle" type="button" aria-expanded="false" aria-controls="nav-area" data-component="mobile-menu-toggle">Menu</button>
+<div class="nav-area" id="nav-area">
+<nav class="primary-nav" aria-label="Primary" data-section="global-navigation" data-component="primary-nav"><ul>
+<li class="has-menu"><button class="nav-trigger" type="button" aria-expanded="false" aria-controls="m-platform">Platform</button><div class="mega" id="m-platform" hidden data-component="mega-menu"><div><h3>Build and deliver</h3><ul><li><a href="platform.html">Platform overview<span>Every stage in one workspace</span></a></li><li><a href="get-started.html">Get started<span>Pick a path and begin</span></a></li></ul></div><div><h3>Security and governance</h3><ul><li><a href="security.html">Security and trust<span>How we approach protection</span></a></li></ul></div></div></li>
+<li class="has-menu"><button class="nav-trigger" type="button" aria-expanded="false" aria-controls="m-solutions">Solutions</button><div class="mega" id="m-solutions" hidden data-component="mega-menu"><div><h3>Outcomes</h3><ul><li><a href="solutions.html">All solutions<span>By outcome, size and industry</span></a></li><li><a href="solutions-pipelines.html">Pipelines and delivery<span>Faster, safer releases</span></a></li></ul></div></div></li>
+<li><a class="nav-link" href="pricing.html">Pricing</a></li>
+<li class="has-menu"><button class="nav-trigger" type="button" aria-expanded="false" aria-controls="m-resources">Resources</button><div class="mega" id="m-resources" hidden data-component="mega-menu"><div><h3>Connect</h3><ul><li><a href="customers.html">Customer stories<span>Fictional examples</span></a></li><li><a href="blog.html">Blog<span>Articles and release notes</span></a></li></ul></div></div></li>
+<li class="has-menu"><button class="nav-trigger" type="button" aria-expanded="false" aria-controls="m-company">Company</button><div class="mega" id="m-company" hidden data-component="mega-menu"><div><h3>About</h3><ul><li><a href="company.html">About Northcairn<span>Mission and people</span></a></li><li><a href="jobs.html">Jobs<span>Sample openings</span></a></li><li><a href="sales.html">Contact us<span>Talk to the sales team</span></a></li></ul></div></div></li>
+</ul></nav>
+<div class="utility" data-section="header-utility" data-component="utility-nav">
+<button class="search-btn" type="button" id="open-search" data-component="search-trigger">Search site</button>
+<a class="btn secondary small" href="sales.html">Talk to sales</a>
+<a class="btn secondary small" href="demo.html">Request a demo</a>
+<a class="btn small" href="get-started.html">Get free trial</a>
+</div></div></div>
+<dialog class="search-dialog" id="search-dialog" aria-labelledby="search-title" data-section="site-search" data-component="search-dialog">
+<div class="dialog-head"><h2 id="search-title">Search this demo site</h2><button class="btn secondary small" type="button" id="close-search">Close</button></div>
+<form id="site-search-form" role="search"><label for="site-search-input">Search pages</label><input type="search" id="site-search-input" autocomplete="off"></form>
+<p id="site-search-status" role="status" aria-live="polite"></p><ul class="results" id="site-search-results"></ul></dialog>
+</header>
+<main id="main-content" data-section="main-content">
+<section class="hero" aria-labelledby="page-title" data-section="page-hero" data-component="hero"><div class="wrap hero-grid"><div><nav class="breadcrumb" aria-label="Breadcrumb" data-component="breadcrumb"><ol><li><a href="index.html">Home</a></li><li aria-current="page">Jobs</li></ol></nav><p class="eyebrow">Careers</p><h1 id="page-title">Join Northcairn</h1><p class="lede">Browse invented openings. Filter by location, department or keyword.</p><div class="btn-row"></div></div></div></section><section class="band " aria-labelledby="job-browser-h" data-section="job-browser" data-component="job-list"><div class="wrap"><h2 id="job-browser-h">Open roles</h2><form id="job-filters" class="filters" aria-label="Filter jobs" data-component="filter-bar"><div class="field"><label for="job-location">Location</label><select id="job-location"><option value="">View all locations</option></select></div><div class="field"><label for="job-department">Department</label><select id="job-department"><option value="">View all departments</option></select></div><div class="field"><label for="job-keyword">Keyword</label><input type="search" id="job-keyword" autocomplete="off"></div><button type="button" class="btn secondary job-reset">Clear filters</button></form><p id="job-status" class="result-count" role="status" aria-live="polite"></p><div class="accordion" id="job-list" data-component="accordion"></div><div class="empty" id="job-empty" hidden data-component="empty-state"><h3>No openings match these filters</h3><p>Broaden your search or clear the filters.</p><button type="button" class="btn job-reset">Clear filters</button></div></div></section><section class="band soft" aria-labelledby="culture-h" data-section="culture" data-component="culture-cards"><div class="wrap"><h2 id="culture-h">How we work</h2><div class="grid" data-component="card-grid"><div class="card" data-component="feature-card"><h3>Remote-first</h3><p>Most roles can be done from anywhere (sample claim).</p></div><div class="card" data-component="feature-card"><h3>Written by default</h3><p>Decisions are recorded where everyone can read them.</p></div><div class="card" data-component="feature-card"><h3>Accessible workplace</h3><p>Adjustments are welcome at every stage.</p></div></div></div></section>
+</main>
+<footer class="site-footer" data-section="global-footer" data-component="site-footer"><div class="wrap">
+<div class="footer-grid">
+<div data-component="footer-column"><h2>Platform</h2><ul><li><a href="platform.html">Platform overview</a></li><li><a href="solutions-pipelines.html">Pipelines and delivery</a></li><li><a href="security.html">Security and trust</a></li><li><a href="get-started.html">Get started</a></li></ul></div>
+<div data-component="footer-column"><h2>Plans</h2><ul><li><a href="pricing.html">View plans</a></li><li><a href="pricing-plus.html">Why Plus?</a></li><li><a href="sales.html">Contact sales</a></li><li><a href="demo.html">Request a demo</a></li></ul></div>
+<div data-component="footer-column"><h2>Solutions</h2><ul><li><a href="solutions.html">All solutions</a></li><li><a href="customers.html">Customer stories</a></li></ul></div>
+<div data-component="footer-column"><h2>Company</h2><ul><li><a href="company.html">About Northcairn</a></li><li><a href="jobs.html">Jobs</a></li><li><a href="blog.html">Blog</a></li></ul></div>
+</div>
+<div class="footer-bottom"><p>Northcairn is a fictional brand created for an accessibility and usability research dataset. Sample figures, people, companies and postings are invented. Address: 400 Example Row, Sampleton (fictional). Phone: 555-0142.</p><p>&copy; 2026 Northcairn (fictional). Not an offer or a real service.</p></div>
+</div></footer>
+<script src="js/main.js"></script>
+</body></html>

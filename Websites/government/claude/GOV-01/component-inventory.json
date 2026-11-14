@@ -1,0 +1,750 @@
+{
+  "protocol_version": "1.0",
+  "replica_id": "GOV-01",
+  "category": "government",
+  "source_url": "https://www.cityofboise.org/",
+  "components": [
+    {
+      "id": "fictional-notice",
+      "selector": "[data-component='fictional-notice']",
+      "pages": [
+        "index.html",
+        "residents.html",
+        "visitors.html",
+        "business.html",
+        "government.html",
+        "departments.html",
+        "services.html",
+        "trash-and-recycling.html",
+        "public-meetings.html",
+        "report-an-issue.html",
+        "executive-office.html",
+        "city-council.html",
+        "permits.html",
+        "boards-and-commissions.html",
+        "404.html"
+      ],
+      "behavior": [
+        "persistent static fictional-government notice in masthead"
+      ],
+      "keyboard": [
+        "none (static text)"
+      ],
+      "status": "implemented",
+      "validation": "axe plus scripted checks only"
+    },
+    {
+      "id": "site-header",
+      "selector": "[data-component='site-header']",
+      "pages": [
+        "index.html",
+        "residents.html",
+        "visitors.html",
+        "business.html",
+        "government.html",
+        "departments.html",
+        "services.html",
+        "trash-and-recycling.html",
+        "public-meetings.html",
+        "report-an-issue.html",
+        "executive-office.html",
+        "city-council.html",
+        "permits.html",
+        "boards-and-commissions.html",
+        "404.html"
+      ],
+      "behavior": [
+        "masthead with brand, utilities"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "axe plus scripted checks only"
+    },
+    {
+      "id": "brand-wordmark",
+      "selector": "[data-component='brand-wordmark']",
+      "pages": [
+        "index.html",
+        "residents.html",
+        "visitors.html",
+        "business.html",
+        "government.html",
+        "departments.html",
+        "services.html",
+        "trash-and-recycling.html",
+        "public-meetings.html",
+        "report-an-issue.html",
+        "executive-office.html",
+        "city-council.html",
+        "permits.html",
+        "boards-and-commissions.html",
+        "404.html"
+      ],
+      "behavior": [
+        "invented wordmark and emblem linking home"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe plus scripted checks only"
+    },
+    {
+      "id": "primary-nav",
+      "selector": "[data-component='primary-nav']",
+      "pages": [
+        "index.html",
+        "residents.html",
+        "visitors.html",
+        "business.html",
+        "government.html",
+        "departments.html",
+        "services.html",
+        "trash-and-recycling.html",
+        "public-meetings.html",
+        "report-an-issue.html",
+        "executive-office.html",
+        "city-council.html",
+        "permits.html",
+        "boards-and-commissions.html",
+        "404.html"
+      ],
+      "behavior": [
+        "desktop nav",
+        "mobile disclosure",
+        "dropdowns"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "axe plus scripted checks only"
+    },
+    {
+      "id": "nav-dropdown-toggle",
+      "selector": "[data-component='nav-dropdown-toggle']",
+      "pages": [
+        "index.html",
+        "residents.html",
+        "visitors.html",
+        "business.html",
+        "government.html",
+        "departments.html",
+        "services.html",
+        "trash-and-recycling.html",
+        "public-meetings.html",
+        "report-an-issue.html",
+        "executive-office.html",
+        "city-council.html",
+        "permits.html",
+        "boards-and-commissions.html",
+        "404.html"
+      ],
+      "behavior": [
+        "aria-expanded disclosure buttons"
+      ],
+      "keyboard": [
+        "Enter",
+        "Space",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "axe plus scripted checks only"
+    },
+    {
+      "id": "mobile-menu-toggle",
+      "selector": "[data-component='mobile-menu-toggle']",
+      "pages": [
+        "index.html",
+        "residents.html",
+        "visitors.html",
+        "business.html",
+        "government.html",
+        "departments.html",
+        "services.html",
+        "trash-and-recycling.html",
+        "public-meetings.html",
+        "report-an-issue.html",
+        "executive-office.html",
+        "city-council.html",
+        "permits.html",
+        "boards-and-commissions.html",
+        "404.html"
+      ],
+      "behavior": [
+        "menu disclosure under 48rem"
+      ],
+      "keyboard": [
+        "Enter",
+        "Space",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "axe plus scripted checks only"
+    },
+    {
+      "id": "language-selector-demo",
+      "selector": "[data-component='language-selector-demo']",
+      "pages": [
+        "index.html",
+        "residents.html",
+        "visitors.html",
+        "business.html",
+        "government.html",
+        "departments.html",
+        "services.html",
+        "trash-and-recycling.html",
+        "public-meetings.html",
+        "report-an-issue.html",
+        "executive-office.html",
+        "city-council.html",
+        "permits.html",
+        "boards-and-commissions.html",
+        "404.html"
+      ],
+      "behavior": [
+        "non-functional labelled demo disclosure"
+      ],
+      "keyboard": [
+        "Enter",
+        "Space",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "axe plus scripted checks only"
+    },
+    {
+      "id": "site-search",
+      "selector": "[data-component='site-search']",
+      "pages": [
+        "index.html",
+        "residents.html",
+        "visitors.html",
+        "business.html",
+        "government.html",
+        "departments.html",
+        "services.html",
+        "trash-and-recycling.html",
+        "public-meetings.html",
+        "report-an-issue.html",
+        "executive-office.html",
+        "city-council.html",
+        "permits.html",
+        "boards-and-commissions.html",
+        "404.html"
+      ],
+      "behavior": [
+        "GET form to services.html?q="
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe plus scripted checks only"
+    },
+    {
+      "id": "breadcrumb",
+      "selector": "[data-component='breadcrumb']",
+      "pages": [
+        "residents.html",
+        "visitors.html",
+        "business.html",
+        "government.html",
+        "departments.html",
+        "services.html",
+        "trash-and-recycling.html",
+        "public-meetings.html",
+        "report-an-issue.html",
+        "executive-office.html",
+        "city-council.html",
+        "permits.html",
+        "boards-and-commissions.html"
+      ],
+      "behavior": [
+        "breadcrumb trail"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe plus scripted checks only"
+    },
+    {
+      "id": "site-footer",
+      "selector": "[data-component='site-footer']",
+      "pages": [
+        "index.html",
+        "residents.html",
+        "visitors.html",
+        "business.html",
+        "government.html",
+        "departments.html",
+        "services.html",
+        "trash-and-recycling.html",
+        "public-meetings.html",
+        "report-an-issue.html",
+        "executive-office.html",
+        "city-council.html",
+        "permits.html",
+        "boards-and-commissions.html",
+        "404.html"
+      ],
+      "behavior": [
+        "footer groups and disclaimer"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "axe plus scripted checks only"
+    },
+    {
+      "id": "footer-link-group",
+      "selector": "[data-component='footer-link-group']",
+      "pages": [
+        "index.html",
+        "residents.html",
+        "visitors.html",
+        "business.html",
+        "government.html",
+        "departments.html",
+        "services.html",
+        "trash-and-recycling.html",
+        "public-meetings.html",
+        "report-an-issue.html",
+        "executive-office.html",
+        "city-council.html",
+        "permits.html",
+        "boards-and-commissions.html",
+        "404.html"
+      ],
+      "behavior": [
+        "footer link lists"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe plus scripted checks only"
+    },
+    {
+      "id": "hero-search",
+      "selector": "[data-component='hero-search']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "home hero with services search"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe plus scripted checks only"
+    },
+    {
+      "id": "community-notice",
+      "selector": "[data-component='community-notice']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "static fictional non-emergency notice; not an alert"
+      ],
+      "keyboard": [
+        "none"
+      ],
+      "status": "implemented",
+      "validation": "axe plus scripted checks only"
+    },
+    {
+      "id": "quick-links",
+      "selector": "[data-component='quick-links']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "link grid"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe plus scripted checks only"
+    },
+    {
+      "id": "card-grid",
+      "selector": "[data-component='card-grid']",
+      "pages": [
+        "index.html",
+        "residents.html",
+        "visitors.html",
+        "business.html",
+        "government.html",
+        "city-council.html",
+        "boards-and-commissions.html"
+      ],
+      "behavior": [
+        "card lists"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe plus scripted checks only"
+    },
+    {
+      "id": "demo-note",
+      "selector": "[data-component='demo-note']",
+      "pages": [
+        "residents.html",
+        "visitors.html",
+        "business.html",
+        "government.html",
+        "departments.html",
+        "services.html",
+        "trash-and-recycling.html",
+        "public-meetings.html",
+        "report-an-issue.html",
+        "executive-office.html",
+        "city-council.html",
+        "permits.html",
+        "boards-and-commissions.html"
+      ],
+      "behavior": [
+        "illustrative-only note"
+      ],
+      "keyboard": [
+        "none"
+      ],
+      "status": "implemented",
+      "validation": "axe plus scripted checks only"
+    },
+    {
+      "id": "directory-filter",
+      "selector": "[data-component='directory-filter']",
+      "pages": [
+        "departments.html",
+        "services.html",
+        "permits.html"
+      ],
+      "behavior": [
+        "live text filter",
+        "group select",
+        "polite result count",
+        "empty state",
+        "reset"
+      ],
+      "keyboard": [
+        "Tab",
+        "type",
+        "Arrow keys in select"
+      ],
+      "status": "implemented",
+      "validation": "axe plus scripted checks only"
+    },
+    {
+      "id": "service-item",
+      "selector": "[data-component='service-item']",
+      "pages": [
+        "services.html"
+      ],
+      "behavior": [
+        "rendered result items"
+      ],
+      "keyboard": [
+        "none"
+      ],
+      "status": "implemented",
+      "validation": "axe plus scripted checks only"
+    },
+    {
+      "id": "department-item",
+      "selector": "[data-component='department-item']",
+      "pages": [
+        "departments.html"
+      ],
+      "behavior": [
+        "rendered result items"
+      ],
+      "keyboard": [
+        "none"
+      ],
+      "status": "implemented",
+      "validation": "axe plus scripted checks only"
+    },
+    {
+      "id": "permit-item",
+      "selector": "[data-component='permit-item']",
+      "pages": [
+        "permits.html"
+      ],
+      "behavior": [
+        "rendered result items"
+      ],
+      "keyboard": [
+        "none"
+      ],
+      "status": "implemented",
+      "validation": "axe plus scripted checks only"
+    },
+    {
+      "id": "meetings-table",
+      "selector": "[data-component='meetings-table']",
+      "pages": [
+        "public-meetings.html"
+      ],
+      "behavior": [
+        "table with filters",
+        "body and month filters",
+        "empty state"
+      ],
+      "keyboard": [
+        "Tab",
+        "Arrow keys in select"
+      ],
+      "status": "implemented",
+      "validation": "axe plus scripted checks only"
+    },
+    {
+      "id": "meeting-row",
+      "selector": "[data-component='meeting-row']",
+      "pages": [
+        "public-meetings.html"
+      ],
+      "behavior": [
+        "row with expandable sample agenda"
+      ],
+      "keyboard": [
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "axe plus scripted checks only"
+    },
+    {
+      "id": "accordion",
+      "selector": "[data-component='accordion']",
+      "pages": [
+        "trash-and-recycling.html"
+      ],
+      "behavior": [
+        "native details disclosure"
+      ],
+      "keyboard": [
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "axe plus scripted checks only"
+    },
+    {
+      "id": "sidebar-links",
+      "selector": "[data-component='sidebar-links']",
+      "pages": [
+        "trash-and-recycling.html"
+      ],
+      "behavior": [
+        "related links"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe plus scripted checks only"
+    },
+    {
+      "id": "content-block",
+      "selector": "[data-component='content-block']",
+      "pages": [
+        "trash-and-recycling.html",
+        "executive-office.html"
+      ],
+      "behavior": [
+        "prose block"
+      ],
+      "keyboard": [
+        "none"
+      ],
+      "status": "implemented",
+      "validation": "axe plus scripted checks only"
+    },
+    {
+      "id": "contact-card",
+      "selector": "[data-component='contact-card']",
+      "pages": [
+        "executive-office.html"
+      ],
+      "behavior": [
+        "invented contact details"
+      ],
+      "keyboard": [
+        "none"
+      ],
+      "status": "implemented",
+      "validation": "axe plus scripted checks only"
+    },
+    {
+      "id": "info-card",
+      "selector": "[data-component='info-card']",
+      "pages": [
+        "visitors.html",
+        "city-council.html",
+        "boards-and-commissions.html"
+      ],
+      "behavior": [
+        "static card"
+      ],
+      "keyboard": [
+        "none"
+      ],
+      "status": "implemented",
+      "validation": "axe plus scripted checks only"
+    },
+    {
+      "id": "link-card",
+      "selector": "[data-component='link-card']",
+      "pages": [
+        "index.html",
+        "residents.html",
+        "business.html",
+        "government.html"
+      ],
+      "behavior": [
+        "card with link"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe plus scripted checks only"
+    },
+    {
+      "id": "report-form",
+      "selector": "[data-component='report-form']",
+      "pages": [
+        "report-an-issue.html"
+      ],
+      "behavior": [
+        "simulated form region"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "axe plus scripted checks only"
+    },
+    {
+      "id": "simulated-form",
+      "selector": "[data-component='simulated-form']",
+      "pages": [
+        "report-an-issue.html"
+      ],
+      "behavior": [
+        "validation",
+        "inline errors",
+        "focus management",
+        "no submission"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "axe plus scripted checks only"
+    },
+    {
+      "id": "error-summary",
+      "selector": "[data-component='error-summary']",
+      "pages": [
+        "report-an-issue.html"
+      ],
+      "behavior": [
+        "role=alert summary with links to fields, receives focus"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe plus scripted checks only"
+    },
+    {
+      "id": "demo-outcome",
+      "selector": "[data-component='demo-outcome']",
+      "pages": [
+        "report-an-issue.html"
+      ],
+      "behavior": [
+        "demo-only outcome stating nothing was sent"
+      ],
+      "keyboard": [
+        "none"
+      ],
+      "status": "implemented",
+      "validation": "axe plus scripted checks only"
+    },
+    {
+      "id": "not-found-help",
+      "selector": "[data-component='not-found-help']",
+      "pages": [
+        "404.html"
+      ],
+      "behavior": [
+        "routes back to site"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe plus scripted checks only"
+    },
+    {
+      "id": "nav-dropdown-panel",
+      "selector": "[data-component='nav-dropdown-panel']",
+      "pages": [
+        "index.html",
+        "residents.html",
+        "visitors.html",
+        "business.html",
+        "government.html",
+        "departments.html",
+        "services.html",
+        "trash-and-recycling.html",
+        "public-meetings.html",
+        "report-an-issue.html",
+        "executive-office.html",
+        "city-council.html",
+        "permits.html",
+        "boards-and-commissions.html",
+        "404.html"
+      ],
+      "behavior": [
+        "hidden list of local links, toggled by its button"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "axe plus scripted checks only"
+    }
+  ]
+}

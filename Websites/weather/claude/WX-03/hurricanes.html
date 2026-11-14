@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hurricane Tracker | Meridian 12 Weather (sample data)</title>
+<meta name="description" content="Sample tropical systems tracker (invented storms).">
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="hurricanes">
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header" data-section="global-header" data-component="site-header">
+<div class="wrap header-row">
+<a class="brand" href="index.html" data-component="brand-logo"><img src="assets/logo.svg" alt="" width="48" height="48"><span class="brand-text"><span class="brand-name">Meridian 12 Weather</span><span class="brand-sub">Fictional station &middot; Cedar Basin (invented)</span></span></a>
+<div class="header-tools">
+
+<button type="button" class="menu-toggle" aria-expanded="false" aria-controls="section-nav" hidden data-component="menu-toggle">Menu</button>
+</div></div>
+<nav id="section-nav" class="site-nav" aria-label="Weather sections" data-section="global-navigation" data-component="primary-nav"><div class="wrap"><ul><li><a href="index.html#7-day">7 Day</a></li><li><a href="index.html#hourly">Hourly</a></li><li><a href="index.html#weekend">Weekend</a></li><li><a href="alerts.html">Weather Alerts</a></li><li><a href="almanac.html">Almanac</a></li><li><a href="closings.html">Closings</a></li><li><a href="hurricanes.html" aria-current="page">Hurricanes</a></li><li><a href="map-center.html">Map Center</a></li><li><a href="webcams.html">Webcams</a></li><li><a href="resources.html">Resources</a></li><li><a href="news.html">View more top stories</a></li></ul></div></nav>
+</header>
+<main id="main-content" data-section="main-content">
+<div class="sample-banner" role="note" data-section="sample-data-notice" data-component="sample-data-banner"><p><strong>SAMPLE DATA ONLY.</strong> Every temperature, forecast, alert, almanac figure, closing and time on this page is invented for a research replica. It is not a real forecast, it does not describe current conditions, and nothing here should be used to plan anything. Meridian 12 Weather is a fictional station.</p></div>
+
+<div class="page-title"><h1>Hurricane Tracker <span class="badge-sample">Sample</span></h1>
+<p class="lead">Invented Atlantic-style storms with made-up names, positions and winds. This is not a real tracker.</p></div>
+<section class="card js-only" aria-labelledby="scn" data-section="scenario-control" data-component="filter-form"><h2 id="scn">Demo scenario</h2>
+<div class="field"><label for="storm-scenario">Choose a sample scenario</label><select id="storm-scenario"><option value="active">Active season (three invented systems)</option><option value="quiet">Quiet basin (no active systems)</option></select></div>
+<p id="storm-status" class="sr-only" role="status"></p></section>
+<section id="storm-active" aria-labelledby="act" data-section="active-systems" data-component="data-table"><h2 id="act">Active systems <span class="badge-sample">Sample</span></h2>
+<figure class="figure"><img src="assets/hurricane-track.svg" alt="Placeholder tracking map labeled sample, with two invented storm tracks over open water" width="640" height="360"><figcaption>Sample track map. Invented storms, not a forecast cone.</figcaption></figure>
+<div class="table-scroll" role="region" aria-label="Sample storms table, scrollable" tabindex="0"><table><caption>Invented tropical systems.</caption><thead><tr><th scope="col">System</th><th scope="col">Strength</th><th scope="col">Maximum winds</th><th scope="col">Position</th><th scope="col">Movement</th></tr></thead><tbody><tr><th scope="row">Tropical Storm Quillon <span class="badge-sample">Sample</span></th><td>Tropical storm</td><td>50 mph</td><td>Sample position: central basin, far from any coast</td><td>Moving west at 12 mph</td></tr><tr><th scope="row">Hurricane Tavish <span class="badge-sample">Sample</span></th><td>Category 2 hurricane</td><td>105 mph</td><td>Sample position: open water, invented 900 miles out</td><td>Moving northwest at 9 mph</td></tr><tr><th scope="row">Tropical Depression Nine-X <span class="badge-sample">Sample</span></th><td>Tropical depression</td><td>35 mph</td><td>Sample position: near invented islands</td><td>Moving north at 6 mph</td></tr></tbody></table></div></section>
+<section id="storm-quiet" aria-labelledby="qt" hidden data-section="quiet-basin" data-component="empty-state"><h2 id="qt">Quiet in the sample basin</h2><p class="empty">No active systems in this sample scenario. The reference page also carries a &ldquo;quiet in the Atlantic&rdquo; style update; this text is invented.</p></section>
+</main>
+<footer class="site-footer" data-section="global-footer" data-component="site-footer"><div class="wrap">
+<div class="foot-grid">
+<section aria-labelledby="f1"><h2 id="f1">Forecasts</h2><ul><li><a href="index.html#7-day">7 Day</a></li><li><a href="index.html#hourly">Hourly</a></li><li><a href="index.html#weekend">Weekend</a></li><li><a href="forecast.html">Forecast discussion</a></li><li><a href="radar-video.html">Radar player (placeholder)</a></li></ul></section>
+<section aria-labelledby="f2"><h2 id="f2">Alerts and local</h2><ul><li><a href="alerts.html">Weather Alerts</a></li><li><a href="closings.html">Closings</a></li><li><a href="hurricanes.html">Hurricanes</a></li><li><a href="webcams.html">Webcams</a></li></ul></section>
+<section aria-labelledby="f3"><h2 id="f3">Learn more</h2><ul><li><a href="almanac.html">Almanac</a></li><li><a href="map-center.html">Map Center</a></li><li><a href="resources.html">Resources</a></li><li><a href="news.html">Weather news</a></li></ul></section>
+</div>
+<p class="foot-note"><strong>Research replica.</strong> Meridian 12 Weather is a fictional station and not affiliated with any real broadcaster. All weather data, alerts, closings and timestamps are invented sample data. No ads, tracking or third-party scripts. Footer grouping is inferred, not observed.</p>
+</div></footer>
+<script src="js/main.js" defer></script>
+</body>
+</html>

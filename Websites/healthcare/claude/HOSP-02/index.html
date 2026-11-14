@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Harborview Community Hospital | Fictional Community Health System</title>
+<meta name="description" content="Fictional community hospital home page for an accessibility research replica: find care, locations, patient resources.">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<div class="emergency-bar" role="region" aria-label="Emergency notice" data-section="emergency-announcement" data-component="emergency-banner"><p><strong>In an emergency, call your local emergency services.</strong> Harborview is a fictional hospital in a design study; this website cannot receive emergency requests.</p></div>
+<header data-section="global-header" data-component="site-header">
+<div class="utility"><nav aria-label="Utility" data-section="utility-navigation" data-component="utility-nav"><ul>
+<li><button type="button" class="link-button" data-open-portal>Pay Your Bill</button></li>
+<li><a href="contact-us.html">Contact Us</a></li>
+<li><a href="find-care.html">Find Care</a></li></ul></nav></div>
+<div class="header-main" data-section="brand-and-navigation">
+<a class="brand" href="index.html" data-component="brand-link"><img src="assets/logo.svg" alt="" width="44" height="44"><span>Harborview Community Hospital<small>Harborview Health Network (fictional)</small></span></a>
+<button type="button" class="menu-toggle" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+<nav class="primary-nav" id="primary-nav" aria-label="Primary" data-section="global-navigation" data-component="primary-nav" data-collapsed="false"><ul class="nav-list">
+<li class="nav-item"><button type="button" class="nav-trigger" aria-expanded="false" aria-controls="menu-services">Explore Services</button><ul class="submenu" id="menu-services" hidden><li><a href="cancer-institute.html">Cancer</a></li><li><a href="heart-vascular-institute.html">Heart &amp; Vascular</a></li><li><a href="specialties-services.html">Programs &amp; Services</a></li></ul></li>
+<li class="nav-item"><button type="button" class="nav-trigger" aria-expanded="false" aria-controls="menu-locations">Locations</button><ul class="submenu" id="menu-locations" hidden><li><a href="locations.html">All Locations</a></li><li><a href="hospital-bayfront.html">Harborview Hospital Bayfront</a></li></ul></li>
+<li class="nav-item"><button type="button" class="nav-trigger" aria-expanded="false" aria-controls="menu-resources">Resources</button><ul class="submenu" id="menu-resources" hidden><li><a href="patients-visitors.html">Patients &amp; Visitors</a></li><li><a href="classes-events.html">Classes &amp; Events</a></li></ul></li>
+<li class="nav-item"><a class="nav-link" href="about.html">About Harborview</a></li>
+</ul></nav></div></header>
+
+<main id="main-content" data-section="main-content">
+
+<section class="hero" aria-labelledby="hero-title" data-section="hero" data-component="hero-banner"><div class="wrap">
+<h1 id="hero-title">A New Chapter of Care in Westmere</h1>
+<p>Harborview Hospital Westmere is a fictional new campus used in this study.</p>
+<h2>Find the right care, close to home</h2>
+<div class="search-panel" data-section="hero-search" data-component="find-care-search">
+<form action="find-care.html" method="get" role="search" aria-label="Find care">
+<fieldset><legend>Search by</legend>
+<div class="choice"><input type="radio" id="h-spec" name="type" value="specialty" checked><label for="h-spec">Specialty or condition</label></div>
+<div class="choice"><input type="radio" id="h-phys" name="type" value="physician"><label for="h-phys">Find a physician</label></div></fieldset>
+<div class="row cols-2"><div class="field"><label for="h-q">Search term</label><input type="search" id="h-q" name="q" placeholder="For example: heart, primary care"></div>
+<div class="field"><label for="h-loc">Location</label><input type="text" id="h-loc" name="loc" placeholder="City or ZIP, such as Bayfront"></div></div>
+<button type="submit" class="btn">Search</button> <span class="hint">Searches invented sample data only.</span></form></div>
+</div></section>
+<section class="band" aria-labelledby="quick-title" data-section="quick-links" data-component="quick-link-tiles"><div class="wrap">
+<h2 id="quick-title">Quick links</h2>
+<ul class="tiles">
+<li><a href="find-care.html?type=physician">Find a Doctor</a></li>
+<li><a href="billing-help.html">Pay my bill</a></li>
+<li><button type="button" data-open-portal>Sign in to patient portal (demo)</button></li>
+<li><a href="insurance-accepted.html">Check Insurance</a></li>
+<li><a href="patients-visitors.html">Visitor Info</a></li>
+<li><a href="locations.html">Find a Harborview Location</a></li></ul></div></section>
+<section class="band alt" aria-labelledby="inst-title" data-section="institutes" data-component="card-grid"><div class="wrap">
+<h2 id="inst-title">Our institutes</h2><p>Centers of excellence that bring teams together around a shared area of care (descriptions are illustrative).</p>
+<div class="grid">
+<article class="card" data-component="institute-card"><img src="assets/institute-cancer.svg" alt="" width="640" height="360"><div class="body"><h3><a href="cancer-institute.html">Harborview Family Cancer Institute</a></h3><p>Coordinated cancer services, education and community programs.</p></div></article>
+<article class="card" data-component="institute-card"><img src="assets/institute-heart.svg" alt="" width="640" height="360"><div class="body"><h3><a href="heart-vascular-institute.html">Harborview Heart &amp; Vascular Institute</a></h3><p>Heart and vascular services across the network.</p></div></article>
+<article class="card" data-component="institute-card"><img src="assets/building.svg" alt="" width="640" height="360"><div class="body"><h3><a href="specialties-services.html">Programs &amp; Services</a></h3><p>Browse primary care, imaging, orthopedics and more.</p></div></article>
+</div></div></section>
+<section class="band" aria-labelledby="why-title" data-section="why-choose" data-component="feature-list"><div class="wrap">
+<h2 id="why-title">Why choose Harborview</h2>
+<div class="grid">
+<div><h3>Community governed</h3><p>A nonprofit health system guided by local volunteers (fictional).</p></div>
+<div><h3>Care close to home</h3><p>Hospitals, health centers, primary care and urgent care sites across the region.</p></div>
+<div><h3>Connected teams</h3><p>Specialists and primary care teams share one patient portal (demo).</p></div>
+<div><h3>Learning together</h3><p>Classes and support groups open to neighbors and families.</p></div></div></div></section>
+<section class="band alt" aria-labelledby="story-title" data-section="testimonials" data-component="testimonial-carousel"><div class="wrap">
+<h2 id="story-title">Patient stories</h2>
+<div class="carousel" role="group" aria-roledescription="carousel" aria-label="Patient stories (invented examples)">
+<figure style="margin:0"><blockquote><p></p></blockquote><figcaption></figcaption></figure>
+<div class="carousel-controls"><button type="button" class="btn secondary" data-carousel-prev>Previous story</button><button type="button" class="btn secondary" data-carousel-next>Next story</button><span class="carousel-pos" aria-live="polite"></span></div></div></div></section>
+<section class="band" aria-labelledby="comm-title" data-section="community" data-component="media-text"><div class="wrap two-col even">
+<div><h2 id="comm-title">We&rsquo;re part of your community</h2><p>Harborview supports neighborhood events, health education and volunteer programs. Browse upcoming sample classes and support groups.</p><p><a class="btn" href="classes-events.html">See classes &amp; events</a> <a class="btn secondary" href="about.html">About Harborview</a></p></div>
+<img src="assets/community.svg" alt="" width="640" height="360"></div></section>
+<section class="band alt" aria-labelledby="art-title" data-section="articles" data-component="card-grid"><div class="wrap">
+<h2 id="art-title">Health &amp; wellness articles</h2><p class="hint">Sample headlines only. The reference&rsquo;s article pages are not part of this replica.</p>
+<div class="grid">
+<article class="card" data-component="article-card"><div class="body"><h3>Making time for a yearly check-in</h3><p>A general reminder about staying connected with your care team.</p></div></article>
+<article class="card" data-component="article-card"><div class="body"><h3>Moving a little more each week</h3><p>Ideas for community walking groups (illustrative).</p></div></article>
+<article class="card" data-component="article-card"><div class="body"><h3>Supporting a family caregiver</h3><p>Ways neighbors can help, and where groups meet.</p></div></article></div></div></section>
+
+</main>
+<footer class="site-footer" data-section="global-footer" data-component="site-footer"><div class="wrap">
+<div class="grid"><div><h2>Harborview Community Hospital</h2><p>Main line: <a href="contact-us.html">(800) 555-0142</a> (fictional number)</p></div>
+<nav aria-label="Footer" data-section="footer-navigation" data-component="footer-nav"><h2>Quick links</h2><ul><li><a href="find-care.html">Find Care</a></li><li><a href="patients-visitors.html">Patients &amp; Visitors</a></li><li><a href="billing-help.html">Billing Information</a></li><li><a href="contact-us.html">Contact Us</a></li><li><a href="about.html">About Harborview</a></li></ul></nav></div>
+<p class="fine">Fictional website for an accessibility and usability research dataset. No real organization, provider, address or phone number is represented. Content is illustrative and is not medical advice. In an emergency, call your local emergency services.</p>
+</div></footer>
+<dialog id="portal-dialog" aria-labelledby="portal-title" data-section="portal-login" data-component="modal-dialog">
+<div class="dialog-head"><h2 id="portal-title">Patient portal sign-in (demo)</h2><button type="button" class="btn secondary" data-close-dialog>Close<span class="visually-hidden"> portal dialog</span></button></div>
+<p class="demo-note">Non-functional demonstration. The real reference links to an off-site portal; this replica never signs anyone in. Do not enter real credentials.</p>
+<form novalidate data-component="portal-login-form">
+<div class="field"><label for="portal-user">Username</label><input type="text" id="portal-user" autocomplete="off" aria-describedby="portal-user-error"><p class="error-msg" id="portal-user-error"></p></div>
+<div class="field"><label for="portal-pass">Password</label><input type="password" id="portal-pass" autocomplete="off" aria-describedby="portal-pass-error"><p class="error-msg" id="portal-pass-error"></p></div>
+<button type="submit" class="btn">Try demo sign-in</button></form>
+<p class="portal-msg success" role="status" hidden></p></dialog>
+<script src="js/main.js" defer></script>
+</body>
+</html>

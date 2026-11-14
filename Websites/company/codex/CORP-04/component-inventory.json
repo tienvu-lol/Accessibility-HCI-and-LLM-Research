@@ -1,0 +1,1200 @@
+{
+  "protocol_version": "1.0",
+  "replica_id": "CORP-04",
+  "category": "company",
+  "source_url": "https://www.chase.com/",
+  "components": [
+    {
+      "id": "site-header",
+      "selector": "[data-component='site-header']",
+      "pages": [
+        "404.html",
+        "checking.html",
+        "contact.html",
+        "help.html",
+        "index.html",
+        "locations.html",
+        "total-checking.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "tag": "header",
+          "data_section": "global-header",
+          "selector": "[data-section='global-header'][data-component='site-header']",
+          "instance_in_page": 1
+        },
+        {
+          "page": "checking.html",
+          "tag": "header",
+          "data_section": "global-header",
+          "selector": "[data-section='global-header'][data-component='site-header']",
+          "instance_in_page": 1
+        },
+        {
+          "page": "contact.html",
+          "tag": "header",
+          "data_section": "global-header",
+          "selector": "[data-section='global-header'][data-component='site-header']",
+          "instance_in_page": 1
+        },
+        {
+          "page": "help.html",
+          "tag": "header",
+          "data_section": "global-header",
+          "selector": "[data-section='global-header'][data-component='site-header']",
+          "instance_in_page": 1
+        },
+        {
+          "page": "index.html",
+          "tag": "header",
+          "data_section": "global-header",
+          "selector": "[data-section='global-header'][data-component='site-header']",
+          "instance_in_page": 1
+        },
+        {
+          "page": "locations.html",
+          "tag": "header",
+          "data_section": "global-header",
+          "selector": "[data-section='global-header'][data-component='site-header']",
+          "instance_in_page": 1
+        },
+        {
+          "page": "total-checking.html",
+          "tag": "header",
+          "data_section": "global-header",
+          "selector": "[data-section='global-header'][data-component='site-header']",
+          "instance_in_page": 1
+        }
+      ],
+      "behavior": [
+        "Static semantic region, content or local navigation"
+      ],
+      "keyboard": [
+        "Native Tab/Enter for contained links and controls"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser not-tested; see validation-report for mocked logic scope"
+    },
+    {
+      "id": "primary-nav",
+      "selector": "[data-component='primary-nav']",
+      "pages": [
+        "404.html",
+        "checking.html",
+        "contact.html",
+        "help.html",
+        "index.html",
+        "locations.html",
+        "total-checking.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "tag": "nav",
+          "data_section": "global-navigation",
+          "selector": "[data-section='global-navigation'][data-component='primary-nav']",
+          "instance_in_page": 1
+        },
+        {
+          "page": "checking.html",
+          "tag": "nav",
+          "data_section": "global-navigation",
+          "selector": "[data-section='global-navigation'][data-component='primary-nav']",
+          "instance_in_page": 1
+        },
+        {
+          "page": "contact.html",
+          "tag": "nav",
+          "data_section": "global-navigation",
+          "selector": "[data-section='global-navigation'][data-component='primary-nav']",
+          "instance_in_page": 1
+        },
+        {
+          "page": "help.html",
+          "tag": "nav",
+          "data_section": "global-navigation",
+          "selector": "[data-section='global-navigation'][data-component='primary-nav']",
+          "instance_in_page": 1
+        },
+        {
+          "page": "index.html",
+          "tag": "nav",
+          "data_section": "global-navigation",
+          "selector": "[data-section='global-navigation'][data-component='primary-nav']",
+          "instance_in_page": 1
+        },
+        {
+          "page": "locations.html",
+          "tag": "nav",
+          "data_section": "global-navigation",
+          "selector": "[data-section='global-navigation'][data-component='primary-nav']",
+          "instance_in_page": 1
+        },
+        {
+          "page": "total-checking.html",
+          "tag": "nav",
+          "data_section": "global-navigation",
+          "selector": "[data-section='global-navigation'][data-component='primary-nav']",
+          "instance_in_page": 1
+        }
+      ],
+      "behavior": [
+        "Direct navigation and responsive disclosure; Tab, Enter; Escape closes mobile menu"
+      ],
+      "keyboard": [
+        "Direct navigation and responsive disclosure; Tab, Enter; Escape closes mobile menu"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser not-tested; see validation-report for mocked logic scope"
+    },
+    {
+      "id": "navigation-disclosure",
+      "selector": "[data-component='navigation-disclosure']",
+      "pages": [
+        "404.html",
+        "checking.html",
+        "contact.html",
+        "help.html",
+        "index.html",
+        "locations.html",
+        "total-checking.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "tag": "div",
+          "data_section": "global-navigation",
+          "selector": "[data-section='global-navigation'][data-component='navigation-disclosure']",
+          "instance_in_page": 1
+        },
+        {
+          "page": "checking.html",
+          "tag": "div",
+          "data_section": "global-navigation",
+          "selector": "[data-section='global-navigation'][data-component='navigation-disclosure']",
+          "instance_in_page": 1
+        },
+        {
+          "page": "contact.html",
+          "tag": "div",
+          "data_section": "global-navigation",
+          "selector": "[data-section='global-navigation'][data-component='navigation-disclosure']",
+          "instance_in_page": 1
+        },
+        {
+          "page": "help.html",
+          "tag": "div",
+          "data_section": "global-navigation",
+          "selector": "[data-section='global-navigation'][data-component='navigation-disclosure']",
+          "instance_in_page": 1
+        },
+        {
+          "page": "index.html",
+          "tag": "div",
+          "data_section": "global-navigation",
+          "selector": "[data-section='global-navigation'][data-component='navigation-disclosure']",
+          "instance_in_page": 1
+        },
+        {
+          "page": "locations.html",
+          "tag": "div",
+          "data_section": "global-navigation",
+          "selector": "[data-section='global-navigation'][data-component='navigation-disclosure']",
+          "instance_in_page": 1
+        },
+        {
+          "page": "total-checking.html",
+          "tag": "div",
+          "data_section": "global-navigation",
+          "selector": "[data-section='global-navigation'][data-component='navigation-disclosure']",
+          "instance_in_page": 1
+        }
+      ],
+      "behavior": [
+        "Enter/Space toggles product links; Escape closes and restores trigger focus"
+      ],
+      "keyboard": [
+        "Enter/Space toggles product links; Escape closes and restores trigger focus"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser not-tested; see validation-report for mocked logic scope"
+    },
+    {
+      "id": "page-main",
+      "selector": "[data-component='page-main']",
+      "pages": [
+        "404.html",
+        "checking.html",
+        "contact.html",
+        "help.html",
+        "index.html",
+        "locations.html",
+        "total-checking.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "tag": "main",
+          "data_section": "main-content",
+          "selector": "[data-section='main-content'][data-component='page-main']",
+          "instance_in_page": 1
+        },
+        {
+          "page": "checking.html",
+          "tag": "main",
+          "data_section": "main-content",
+          "selector": "[data-section='main-content'][data-component='page-main']",
+          "instance_in_page": 1
+        },
+        {
+          "page": "contact.html",
+          "tag": "main",
+          "data_section": "main-content",
+          "selector": "[data-section='main-content'][data-component='page-main']",
+          "instance_in_page": 1
+        },
+        {
+          "page": "help.html",
+          "tag": "main",
+          "data_section": "main-content",
+          "selector": "[data-section='main-content'][data-component='page-main']",
+          "instance_in_page": 1
+        },
+        {
+          "page": "index.html",
+          "tag": "main",
+          "data_section": "main-content",
+          "selector": "[data-section='main-content'][data-component='page-main']",
+          "instance_in_page": 1
+        },
+        {
+          "page": "locations.html",
+          "tag": "main",
+          "data_section": "main-content",
+          "selector": "[data-section='main-content'][data-component='page-main']",
+          "instance_in_page": 1
+        },
+        {
+          "page": "total-checking.html",
+          "tag": "main",
+          "data_section": "main-content",
+          "selector": "[data-section='main-content'][data-component='page-main']",
+          "instance_in_page": 1
+        }
+      ],
+      "behavior": [
+        "Static semantic region, content or local navigation"
+      ],
+      "keyboard": [
+        "Native Tab/Enter for contained links and controls"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser not-tested; see validation-report for mocked logic scope"
+    },
+    {
+      "id": "page-hero",
+      "selector": "[data-component='page-hero']",
+      "pages": [
+        "404.html",
+        "checking.html",
+        "contact.html",
+        "help.html",
+        "locations.html",
+        "total-checking.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "tag": "section",
+          "data_section": "page-heading",
+          "selector": "[data-section='page-heading'][data-component='page-hero']",
+          "instance_in_page": 1
+        },
+        {
+          "page": "checking.html",
+          "tag": "section",
+          "data_section": "page-heading",
+          "selector": "[data-section='page-heading'][data-component='page-hero']",
+          "instance_in_page": 1
+        },
+        {
+          "page": "contact.html",
+          "tag": "section",
+          "data_section": "page-heading",
+          "selector": "[data-section='page-heading'][data-component='page-hero']",
+          "instance_in_page": 1
+        },
+        {
+          "page": "help.html",
+          "tag": "section",
+          "data_section": "page-heading",
+          "selector": "[data-section='page-heading'][data-component='page-hero']",
+          "instance_in_page": 1
+        },
+        {
+          "page": "locations.html",
+          "tag": "section",
+          "data_section": "page-heading",
+          "selector": "[data-section='page-heading'][data-component='page-hero']",
+          "instance_in_page": 1
+        },
+        {
+          "page": "total-checking.html",
+          "tag": "section",
+          "data_section": "page-heading",
+          "selector": "[data-section='page-heading'][data-component='page-hero']",
+          "instance_in_page": 1
+        }
+      ],
+      "behavior": [
+        "Static semantic region, content or local navigation"
+      ],
+      "keyboard": [
+        "Native Tab/Enter for contained links and controls"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser not-tested; see validation-report for mocked logic scope"
+    },
+    {
+      "id": "error-panel",
+      "selector": "[data-component='error-panel']",
+      "pages": [
+        "404.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "tag": "div",
+          "data_section": "page-recovery",
+          "selector": "[data-section='page-recovery'][data-component='error-panel']",
+          "instance_in_page": 1
+        }
+      ],
+      "behavior": [
+        "Static semantic region, content or local navigation"
+      ],
+      "keyboard": [
+        "Native Tab/Enter for contained links and controls"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser not-tested; see validation-report for mocked logic scope"
+    },
+    {
+      "id": "site-footer",
+      "selector": "[data-component='site-footer']",
+      "pages": [
+        "404.html",
+        "checking.html",
+        "contact.html",
+        "help.html",
+        "index.html",
+        "locations.html",
+        "total-checking.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "tag": "footer",
+          "data_section": "global-footer",
+          "selector": "[data-section='global-footer'][data-component='site-footer']",
+          "instance_in_page": 1
+        },
+        {
+          "page": "checking.html",
+          "tag": "footer",
+          "data_section": "global-footer",
+          "selector": "[data-section='global-footer'][data-component='site-footer']",
+          "instance_in_page": 1
+        },
+        {
+          "page": "contact.html",
+          "tag": "footer",
+          "data_section": "global-footer",
+          "selector": "[data-section='global-footer'][data-component='site-footer']",
+          "instance_in_page": 1
+        },
+        {
+          "page": "help.html",
+          "tag": "footer",
+          "data_section": "global-footer",
+          "selector": "[data-section='global-footer'][data-component='site-footer']",
+          "instance_in_page": 1
+        },
+        {
+          "page": "index.html",
+          "tag": "footer",
+          "data_section": "global-footer",
+          "selector": "[data-section='global-footer'][data-component='site-footer']",
+          "instance_in_page": 1
+        },
+        {
+          "page": "locations.html",
+          "tag": "footer",
+          "data_section": "global-footer",
+          "selector": "[data-section='global-footer'][data-component='site-footer']",
+          "instance_in_page": 1
+        },
+        {
+          "page": "total-checking.html",
+          "tag": "footer",
+          "data_section": "global-footer",
+          "selector": "[data-section='global-footer'][data-component='site-footer']",
+          "instance_in_page": 1
+        }
+      ],
+      "behavior": [
+        "Static semantic region, content or local navigation"
+      ],
+      "keyboard": [
+        "Native Tab/Enter for contained links and controls"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser not-tested; see validation-report for mocked logic scope"
+    },
+    {
+      "id": "simulation-dialog",
+      "selector": "[data-component='simulation-dialog']",
+      "pages": [
+        "404.html",
+        "checking.html",
+        "contact.html",
+        "help.html",
+        "index.html",
+        "locations.html",
+        "total-checking.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "tag": "dialog",
+          "data_section": "demo-notice",
+          "selector": "[data-section='demo-notice'][data-component='simulation-dialog']",
+          "instance_in_page": 1
+        },
+        {
+          "page": "checking.html",
+          "tag": "dialog",
+          "data_section": "demo-notice",
+          "selector": "[data-section='demo-notice'][data-component='simulation-dialog']",
+          "instance_in_page": 1
+        },
+        {
+          "page": "contact.html",
+          "tag": "dialog",
+          "data_section": "demo-notice",
+          "selector": "[data-section='demo-notice'][data-component='simulation-dialog']",
+          "instance_in_page": 1
+        },
+        {
+          "page": "help.html",
+          "tag": "dialog",
+          "data_section": "demo-notice",
+          "selector": "[data-section='demo-notice'][data-component='simulation-dialog']",
+          "instance_in_page": 1
+        },
+        {
+          "page": "index.html",
+          "tag": "dialog",
+          "data_section": "demo-notice",
+          "selector": "[data-section='demo-notice'][data-component='simulation-dialog']",
+          "instance_in_page": 1
+        },
+        {
+          "page": "locations.html",
+          "tag": "dialog",
+          "data_section": "demo-notice",
+          "selector": "[data-section='demo-notice'][data-component='simulation-dialog']",
+          "instance_in_page": 1
+        },
+        {
+          "page": "total-checking.html",
+          "tag": "dialog",
+          "data_section": "demo-notice",
+          "selector": "[data-section='demo-notice'][data-component='simulation-dialog']",
+          "instance_in_page": 1
+        }
+      ],
+      "behavior": [
+        "Native showModal, Escape or close submits method=dialog; close restores trigger focus"
+      ],
+      "keyboard": [
+        "Native showModal, Escape or close submits method=dialog; close restores trigger focus"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser not-tested; see validation-report for mocked logic scope"
+    },
+    {
+      "id": "dialog-close-form",
+      "selector": "[data-component='dialog-close-form']",
+      "pages": [
+        "404.html",
+        "checking.html",
+        "contact.html",
+        "help.html",
+        "index.html",
+        "locations.html",
+        "total-checking.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "tag": "form",
+          "data_section": "demo-notice",
+          "selector": "[data-section='demo-notice'][data-component='dialog-close-form']",
+          "instance_in_page": 1
+        },
+        {
+          "page": "checking.html",
+          "tag": "form",
+          "data_section": "demo-notice",
+          "selector": "[data-section='demo-notice'][data-component='dialog-close-form']",
+          "instance_in_page": 1
+        },
+        {
+          "page": "contact.html",
+          "tag": "form",
+          "data_section": "demo-notice",
+          "selector": "[data-section='demo-notice'][data-component='dialog-close-form']",
+          "instance_in_page": 1
+        },
+        {
+          "page": "help.html",
+          "tag": "form",
+          "data_section": "demo-notice",
+          "selector": "[data-section='demo-notice'][data-component='dialog-close-form']",
+          "instance_in_page": 1
+        },
+        {
+          "page": "index.html",
+          "tag": "form",
+          "data_section": "demo-notice",
+          "selector": "[data-section='demo-notice'][data-component='dialog-close-form']",
+          "instance_in_page": 1
+        },
+        {
+          "page": "locations.html",
+          "tag": "form",
+          "data_section": "demo-notice",
+          "selector": "[data-section='demo-notice'][data-component='dialog-close-form']",
+          "instance_in_page": 1
+        },
+        {
+          "page": "total-checking.html",
+          "tag": "form",
+          "data_section": "demo-notice",
+          "selector": "[data-section='demo-notice'][data-component='dialog-close-form']",
+          "instance_in_page": 1
+        }
+      ],
+      "behavior": [
+        "Static semantic region, content or local navigation"
+      ],
+      "keyboard": [
+        "Native Tab/Enter for contained links and controls"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser not-tested; see validation-report for mocked logic scope"
+    },
+    {
+      "id": "content-band",
+      "selector": "[data-component='content-band']",
+      "pages": [
+        "checking.html",
+        "contact.html",
+        "help.html",
+        "index.html",
+        "total-checking.html"
+      ],
+      "instances": [
+        {
+          "page": "checking.html",
+          "tag": "section",
+          "data_section": "checking-options",
+          "selector": "[data-section='checking-options'][data-component='content-band']",
+          "instance_in_page": 1
+        },
+        {
+          "page": "contact.html",
+          "tag": "section",
+          "data_section": "contact-channels",
+          "selector": "[data-section='contact-channels'][data-component='content-band']",
+          "instance_in_page": 1
+        },
+        {
+          "page": "contact.html",
+          "tag": "section",
+          "data_section": "contact-guidance",
+          "selector": "[data-section='contact-guidance'][data-component='content-band']",
+          "instance_in_page": 2
+        },
+        {
+          "page": "help.html",
+          "tag": "section",
+          "data_section": "support-topics",
+          "selector": "[data-section='support-topics'][data-component='content-band']",
+          "instance_in_page": 1
+        },
+        {
+          "page": "help.html",
+          "tag": "section",
+          "data_section": "support-routing",
+          "selector": "[data-section='support-routing'][data-component='content-band']",
+          "instance_in_page": 2
+        },
+        {
+          "page": "index.html",
+          "tag": "section",
+          "data_section": "banking-options",
+          "selector": "[data-section='banking-options'][data-component='content-band']",
+          "instance_in_page": 1
+        },
+        {
+          "page": "total-checking.html",
+          "tag": "section",
+          "data_section": "account-benefits",
+          "selector": "[data-section='account-benefits'][data-component='content-band']",
+          "instance_in_page": 1
+        },
+        {
+          "page": "total-checking.html",
+          "tag": "section",
+          "data_section": "fee-details",
+          "selector": "[data-section='fee-details'][data-component='content-band']",
+          "instance_in_page": 2
+        }
+      ],
+      "behavior": [
+        "Static semantic region, content or local navigation"
+      ],
+      "keyboard": [
+        "Native Tab/Enter for contained links and controls"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser not-tested; see validation-report for mocked logic scope"
+    },
+    {
+      "id": "content-card",
+      "selector": "[data-component='content-card']",
+      "pages": [
+        "checking.html",
+        "contact.html",
+        "help.html",
+        "index.html",
+        "total-checking.html"
+      ],
+      "instances": [
+        {
+          "page": "checking.html",
+          "tag": "article",
+          "data_section": "product-options",
+          "selector": "[data-section='product-options'][data-component='content-card']",
+          "instance_in_page": 1
+        },
+        {
+          "page": "checking.html",
+          "tag": "article",
+          "data_section": "product-options",
+          "selector": "[data-section='product-options'][data-component='content-card']",
+          "instance_in_page": 2
+        },
+        {
+          "page": "checking.html",
+          "tag": "article",
+          "data_section": "product-options",
+          "selector": "[data-section='product-options'][data-component='content-card']",
+          "instance_in_page": 3
+        },
+        {
+          "page": "contact.html",
+          "tag": "article",
+          "data_section": "product-options",
+          "selector": "[data-section='product-options'][data-component='content-card']",
+          "instance_in_page": 1
+        },
+        {
+          "page": "contact.html",
+          "tag": "article",
+          "data_section": "product-options",
+          "selector": "[data-section='product-options'][data-component='content-card']",
+          "instance_in_page": 2
+        },
+        {
+          "page": "contact.html",
+          "tag": "article",
+          "data_section": "product-options",
+          "selector": "[data-section='product-options'][data-component='content-card']",
+          "instance_in_page": 3
+        },
+        {
+          "page": "help.html",
+          "tag": "article",
+          "data_section": "product-options",
+          "selector": "[data-section='product-options'][data-component='content-card']",
+          "instance_in_page": 1
+        },
+        {
+          "page": "help.html",
+          "tag": "article",
+          "data_section": "product-options",
+          "selector": "[data-section='product-options'][data-component='content-card']",
+          "instance_in_page": 2
+        },
+        {
+          "page": "help.html",
+          "tag": "article",
+          "data_section": "product-options",
+          "selector": "[data-section='product-options'][data-component='content-card']",
+          "instance_in_page": 3
+        },
+        {
+          "page": "index.html",
+          "tag": "article",
+          "data_section": "product-options",
+          "selector": "[data-section='product-options'][data-component='content-card']",
+          "instance_in_page": 1
+        },
+        {
+          "page": "index.html",
+          "tag": "article",
+          "data_section": "product-options",
+          "selector": "[data-section='product-options'][data-component='content-card']",
+          "instance_in_page": 2
+        },
+        {
+          "page": "index.html",
+          "tag": "article",
+          "data_section": "product-options",
+          "selector": "[data-section='product-options'][data-component='content-card']",
+          "instance_in_page": 3
+        },
+        {
+          "page": "total-checking.html",
+          "tag": "article",
+          "data_section": "product-options",
+          "selector": "[data-section='product-options'][data-component='content-card']",
+          "instance_in_page": 1
+        },
+        {
+          "page": "total-checking.html",
+          "tag": "article",
+          "data_section": "product-options",
+          "selector": "[data-section='product-options'][data-component='content-card']",
+          "instance_in_page": 2
+        }
+      ],
+      "behavior": [
+        "Static semantic region, content or local navigation"
+      ],
+      "keyboard": [
+        "Native Tab/Enter for contained links and controls"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser not-tested; see validation-report for mocked logic scope"
+    },
+    {
+      "id": "comparison-table",
+      "selector": "[data-component='comparison-table']",
+      "pages": [
+        "checking.html"
+      ],
+      "instances": [
+        {
+          "page": "checking.html",
+          "tag": "section",
+          "data_section": "comparison",
+          "selector": "[data-section='comparison'][data-component='comparison-table']",
+          "instance_in_page": 1
+        }
+      ],
+      "behavior": [
+        "Static semantic region, content or local navigation"
+      ],
+      "keyboard": [
+        "Native Tab/Enter for contained links and controls"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser not-tested; see validation-report for mocked logic scope"
+    },
+    {
+      "id": "accordion-group",
+      "selector": "[data-component='accordion-group']",
+      "pages": [
+        "checking.html",
+        "help.html",
+        "total-checking.html"
+      ],
+      "instances": [
+        {
+          "page": "checking.html",
+          "tag": "section",
+          "data_section": "questions",
+          "selector": "[data-section='questions'][data-component='accordion-group']",
+          "instance_in_page": 1
+        },
+        {
+          "page": "help.html",
+          "tag": "section",
+          "data_section": "questions",
+          "selector": "[data-section='questions'][data-component='accordion-group']",
+          "instance_in_page": 1
+        },
+        {
+          "page": "total-checking.html",
+          "tag": "section",
+          "data_section": "questions",
+          "selector": "[data-section='questions'][data-component='accordion-group']",
+          "instance_in_page": 1
+        }
+      ],
+      "behavior": [
+        "Static semantic region, content or local navigation"
+      ],
+      "keyboard": [
+        "Native Tab/Enter for contained links and controls"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser not-tested; see validation-report for mocked logic scope"
+    },
+    {
+      "id": "accordion",
+      "selector": "[data-component='accordion']",
+      "pages": [
+        "checking.html",
+        "contact.html",
+        "help.html",
+        "total-checking.html"
+      ],
+      "instances": [
+        {
+          "page": "checking.html",
+          "tag": "details",
+          "data_section": "questions",
+          "selector": "[data-section='questions'][data-component='accordion']",
+          "instance_in_page": 1
+        },
+        {
+          "page": "checking.html",
+          "tag": "details",
+          "data_section": "questions",
+          "selector": "[data-section='questions'][data-component='accordion']",
+          "instance_in_page": 2
+        },
+        {
+          "page": "contact.html",
+          "tag": "details",
+          "data_section": "questions",
+          "selector": "[data-section='questions'][data-component='accordion']",
+          "instance_in_page": 1
+        },
+        {
+          "page": "contact.html",
+          "tag": "details",
+          "data_section": "questions",
+          "selector": "[data-section='questions'][data-component='accordion']",
+          "instance_in_page": 2
+        },
+        {
+          "page": "help.html",
+          "tag": "details",
+          "data_section": "questions",
+          "selector": "[data-section='questions'][data-component='accordion']",
+          "instance_in_page": 1
+        },
+        {
+          "page": "help.html",
+          "tag": "details",
+          "data_section": "questions",
+          "selector": "[data-section='questions'][data-component='accordion']",
+          "instance_in_page": 2
+        },
+        {
+          "page": "help.html",
+          "tag": "details",
+          "data_section": "questions",
+          "selector": "[data-section='questions'][data-component='accordion']",
+          "instance_in_page": 3
+        },
+        {
+          "page": "total-checking.html",
+          "tag": "details",
+          "data_section": "questions",
+          "selector": "[data-section='questions'][data-component='accordion']",
+          "instance_in_page": 1
+        },
+        {
+          "page": "total-checking.html",
+          "tag": "details",
+          "data_section": "questions",
+          "selector": "[data-section='questions'][data-component='accordion']",
+          "instance_in_page": 2
+        }
+      ],
+      "behavior": [
+        "Native details disclosure; Enter/Space toggle summary"
+      ],
+      "keyboard": [
+        "Native details disclosure; Enter/Space toggle summary"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser not-tested; see validation-report for mocked logic scope"
+    },
+    {
+      "id": "promotional-hero",
+      "selector": "[data-component='promotional-hero']",
+      "pages": [
+        "index.html"
+      ],
+      "instances": [
+        {
+          "page": "index.html",
+          "tag": "section",
+          "data_section": "banking-promotion",
+          "selector": "[data-section='banking-promotion'][data-component='promotional-hero']",
+          "instance_in_page": 1
+        }
+      ],
+      "behavior": [
+        "Static semantic region, content or local navigation"
+      ],
+      "keyboard": [
+        "Native Tab/Enter for contained links and controls"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser not-tested; see validation-report for mocked logic scope"
+    },
+    {
+      "id": "sign-in-demo",
+      "selector": "[data-component='sign-in-demo']",
+      "pages": [
+        "index.html"
+      ],
+      "instances": [
+        {
+          "page": "index.html",
+          "tag": "aside",
+          "data_section": "sign-in",
+          "selector": "[data-section='sign-in'][data-component='sign-in-demo']",
+          "instance_in_page": 1
+        }
+      ],
+      "behavior": [
+        "Static semantic region, content or local navigation"
+      ],
+      "keyboard": [
+        "Native Tab/Enter for contained links and controls"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser not-tested; see validation-report for mocked logic scope"
+    },
+    {
+      "id": "quick-link-grid",
+      "selector": "[data-component='quick-link-grid']",
+      "pages": [
+        "index.html"
+      ],
+      "instances": [
+        {
+          "page": "index.html",
+          "tag": "section",
+          "data_section": "product-shortcuts",
+          "selector": "[data-section='product-shortcuts'][data-component='quick-link-grid']",
+          "instance_in_page": 1
+        }
+      ],
+      "behavior": [
+        "Static semantic region, content or local navigation"
+      ],
+      "keyboard": [
+        "Native Tab/Enter for contained links and controls"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser not-tested; see validation-report for mocked logic scope"
+    },
+    {
+      "id": "feature-panel",
+      "selector": "[data-component='feature-panel']",
+      "pages": [
+        "index.html"
+      ],
+      "instances": [
+        {
+          "page": "index.html",
+          "tag": "section",
+          "data_section": "digital-banking",
+          "selector": "[data-section='digital-banking'][data-component='feature-panel']",
+          "instance_in_page": 1
+        }
+      ],
+      "behavior": [
+        "Static semantic region, content or local navigation"
+      ],
+      "keyboard": [
+        "Native Tab/Enter for contained links and controls"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser not-tested; see validation-report for mocked logic scope"
+    },
+    {
+      "id": "branch-locator",
+      "selector": "[data-component='branch-locator']",
+      "pages": [
+        "locations.html"
+      ],
+      "instances": [
+        {
+          "page": "locations.html",
+          "tag": "section",
+          "data_section": "location-search",
+          "selector": "[data-section='location-search'][data-component='branch-locator']",
+          "instance_in_page": 1
+        }
+      ],
+      "behavior": [
+        "Static semantic region, content or local navigation"
+      ],
+      "keyboard": [
+        "Native Tab/Enter for contained links and controls"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser not-tested; see validation-report for mocked logic scope"
+    },
+    {
+      "id": "search-form",
+      "selector": "[data-component='search-form']",
+      "pages": [
+        "locations.html"
+      ],
+      "instances": [
+        {
+          "page": "locations.html",
+          "tag": "form",
+          "data_section": "location-search",
+          "selector": "[data-section='location-search'][data-component='search-form']",
+          "instance_in_page": 1
+        }
+      ],
+      "behavior": [
+        "Submit filters inline records; empty query sets error/aria-invalid and focuses input; reset clears filter"
+      ],
+      "keyboard": [
+        "Submit filters inline records; empty query sets error/aria-invalid and focuses input; reset clears filter"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser not-tested; see validation-report for mocked logic scope"
+    },
+    {
+      "id": "search-results",
+      "selector": "[data-component='search-results']",
+      "pages": [
+        "locations.html"
+      ],
+      "instances": [
+        {
+          "page": "locations.html",
+          "tag": "div",
+          "data_section": "location-results",
+          "selector": "[data-section='location-results'][data-component='search-results']",
+          "instance_in_page": 1
+        }
+      ],
+      "behavior": [
+        "Polite result status and generated local branch cards"
+      ],
+      "keyboard": [
+        "Polite result status and generated local branch cards"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser not-tested; see validation-report for mocked logic scope"
+    },
+    {
+      "id": "locator-illustration",
+      "selector": "[data-component='locator-illustration']",
+      "pages": [
+        "locations.html"
+      ],
+      "instances": [
+        {
+          "page": "locations.html",
+          "tag": "aside",
+          "data_section": "location-context",
+          "selector": "[data-section='location-context'][data-component='locator-illustration']",
+          "instance_in_page": 1
+        }
+      ],
+      "behavior": [
+        "Static semantic region, content or local navigation"
+      ],
+      "keyboard": [
+        "Native Tab/Enter for contained links and controls"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser not-tested; see validation-report for mocked logic scope"
+    },
+    {
+      "id": "account-action-panel",
+      "selector": "[data-component='account-action-panel']",
+      "pages": [
+        "total-checking.html"
+      ],
+      "instances": [
+        {
+          "page": "total-checking.html",
+          "tag": "aside",
+          "data_section": "account-action",
+          "selector": "[data-section='account-action'][data-component='account-action-panel']",
+          "instance_in_page": 1
+        }
+      ],
+      "behavior": [
+        "Static semantic region, content or local navigation"
+      ],
+      "keyboard": [
+        "Native Tab/Enter for contained links and controls"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser not-tested; see validation-report for mocked logic scope"
+    },
+    {
+      "id": "branch-card",
+      "selector": "[data-component='branch-card']",
+      "pages": [
+        "locations.html"
+      ],
+      "instances": [
+        {
+          "page": "locations.html",
+          "tag": "article",
+          "data_section": "location-results",
+          "selector": "#branch-results [data-component='branch-card']",
+          "instance_in_page": 1,
+          "generated_from": "Fairhaven Center"
+        },
+        {
+          "page": "locations.html",
+          "tag": "article",
+          "data_section": "location-results",
+          "selector": "#branch-results [data-component='branch-card']",
+          "instance_in_page": 2,
+          "generated_from": "Cedar Square"
+        },
+        {
+          "page": "locations.html",
+          "tag": "article",
+          "data_section": "location-results",
+          "selector": "#branch-results [data-component='branch-card']",
+          "instance_in_page": 3,
+          "generated_from": "Fairhaven Station ATM"
+        }
+      ],
+      "behavior": [
+        "Static semantic region, content or local navigation"
+      ],
+      "keyboard": [
+        "Native Tab/Enter for contained links and controls"
+      ],
+      "status": "implemented",
+      "validation": "source-inspected; browser not-tested; see validation-report for mocked logic scope"
+    }
+  ]
+}

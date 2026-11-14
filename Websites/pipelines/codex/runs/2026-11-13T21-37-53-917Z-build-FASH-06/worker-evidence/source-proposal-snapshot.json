@@ -1,0 +1,371 @@
+{
+  "checked_at_utc": "2026-11-13T00:07:47Z",
+  "local_date": "2026-11-12",
+  "status": "PROPOSED_REPLACEMENTS_PENDING_APPROVAL",
+  "method": "Connected web search plus page-open text retrieval, 25 source-mapped pages and one company supporting page",
+  "origin_http_status": null,
+  "origin_http_limitation": "Independent urllib GET attempts for all five candidate hosts failed DNS resolution in this session; no direct-origin HTTP success is claimed.",
+  "browser_limitation": "CUA inventory returned browser access host unavailable; no rendered or executed interaction verification.",
+  "cache_limitation": "Tool retrieval can use indexed/cached content; a crawl label is not a fresh origin-response timestamp.",
+  "duplicate_check": "No candidate is selected in central inventories or existing Claude source notes. Virginia appears only as an unselected fallback in previous Codex notes. Private/unentered reservations cannot be excluded.",
+  "selected_inventories_modified": false,
+  "proposals": [
+    {
+      "source_id": "UNI-06",
+      "replaces": "Community College of Philadelphia",
+      "source_name": "Wake Technical Community College",
+      "subcategory": "community college",
+      "source_url": "https://www.waketech.edu/",
+      "complexity": "high",
+      "verification_result": "readable_web_tool_content_confirmed",
+      "approval_status": "pending",
+      "source_pages": [
+        {
+          "url": "https://www.waketech.edu/",
+          "title": "Lead the Way | Wake Tech",
+          "local_file": "index.html",
+          "retrieval": "readable text/html extraction"
+        },
+        {
+          "url": "https://www.waketech.edu/catalog/programs-study",
+          "title": "Programs of Study | Wake Tech",
+          "local_file": "programs.html",
+          "retrieval": "readable text/html extraction"
+        },
+        {
+          "url": "https://www.waketech.edu/admissions",
+          "title": "Admissions | Wake Tech",
+          "local_file": "admissions.html",
+          "retrieval": "readable text/html extraction"
+        },
+        {
+          "url": "https://www.waketech.edu/programs-courses/credit/business-administration/degrees-programs/a25120a",
+          "title": "General Business Administration AAS | Wake Tech",
+          "local_file": "program-detail.html",
+          "retrieval": "readable text/html extraction"
+        },
+        {
+          "url": "https://www.waketech.edu/student-services/registration-student-records/payment-deadlines",
+          "title": "Tuition Information and Payment Deadlines | Wake Tech",
+          "local_file": "tuition.html",
+          "retrieval": "readable text/html extraction"
+        }
+      ],
+      "key_regions": [
+        "Apply/aid/info/search utility links",
+        "Career-field homepage bands",
+        "Credential tables",
+        "Program subnavigation and detail metadata",
+        "Admissions and tuition information"
+      ],
+      "key_interactions": [
+        {
+          "name": "Program links and credential rows",
+          "evidence": "observed affordance in extraction; operation not tested"
+        },
+        {
+          "name": "Apply, request-information and virtual-tour links",
+          "evidence": "observed affordance in extraction; operation not tested"
+        },
+        {
+          "name": "Program local-menu affordance",
+          "evidence": "observed affordance in extraction; operation not tested"
+        }
+      ],
+      "limitations": [
+        "Mobile-menu activation, filtering and form submission are untested",
+        "Application and virtual-tour destinations are external; simulate or disclose rather than embed",
+        "Do not assume a filterable program finder from the listing table"
+      ],
+      "stack_clues": "unknown; no rendered browser or raw-origin stack audit",
+      "approved_at": null,
+      "approved_by": null
+    },
+    {
+      "source_id": "GOV-04",
+      "replaces": "City of Raleigh",
+      "source_name": "City of Boston",
+      "subcategory": "municipal government",
+      "source_url": "https://www.boston.gov/",
+      "complexity": "high",
+      "verification_result": "readable_web_tool_content_confirmed",
+      "approval_status": "pending",
+      "source_pages": [
+        {
+          "url": "https://www.boston.gov/",
+          "title": "Homepage | Boston.gov",
+          "local_file": "index.html",
+          "retrieval": "readable text/html extraction"
+        },
+        {
+          "url": "https://www.boston.gov/departments",
+          "title": "Departments | Boston.gov",
+          "local_file": "departments.html",
+          "retrieval": "readable text/html extraction"
+        },
+        {
+          "url": "https://www.boston.gov/public-notices",
+          "title": "Public notices | Boston.gov",
+          "local_file": "notices.html",
+          "retrieval": "readable text/html extraction"
+        },
+        {
+          "url": "https://www.boston.gov/departments/parking-clerk",
+          "title": "Parking Clerk | Boston.gov",
+          "local_file": "parking.html",
+          "retrieval": "readable text/html extraction"
+        },
+        {
+          "url": "https://www.boston.gov/departments/311/city-boston-government",
+          "title": "City of Boston Government | Boston.gov",
+          "local_file": "government.html",
+          "retrieval": "readable text/html extraction"
+        }
+      ],
+      "key_regions": [
+        "Utility/menu/language controls",
+        "City-status homepage bands",
+        "Department directory",
+        "Public-notice listing",
+        "Service page section navigation"
+      ],
+      "key_interactions": [
+        {
+          "name": "Search affordance",
+          "evidence": "observed affordance in extraction; operation not tested"
+        },
+        {
+          "name": "Public-notice text and department filters",
+          "evidence": "observed affordance in extraction; operation not tested"
+        },
+        {
+          "name": "In-page section navigation and 311 handoff",
+          "evidence": "observed affordance in extraction; operation not tested"
+        }
+      ],
+      "limitations": [
+        "Search includes an AI-summary mode; replicate only labeled local search/demo behavior, never a live AI backend",
+        "Language switch, mobile menu, directory behavior and filters not executed",
+        "Do not copy real operational notices, seals, public officials or contact data into fictional content"
+      ],
+      "stack_clues": "unknown; no rendered browser or raw-origin stack audit",
+      "approved_at": null,
+      "approved_by": null
+    },
+    {
+      "source_id": "GOV-05",
+      "replaces": "Mass.gov",
+      "source_name": "Commonwealth of Virginia portal",
+      "subcategory": "state portal/agency",
+      "source_url": "https://www.virginia.gov/",
+      "complexity": "medium",
+      "verification_result": "readable_web_tool_content_confirmed",
+      "approval_status": "pending",
+      "source_pages": [
+        {
+          "url": "https://www.virginia.gov/",
+          "title": "Home | Virginia.gov",
+          "local_file": "index.html",
+          "retrieval": "readable text/html extraction"
+        },
+        {
+          "url": "https://www.virginia.gov/services/",
+          "title": "Services & Resources | Virginia.gov",
+          "local_file": "services.html",
+          "retrieval": "readable text/html extraction"
+        },
+        {
+          "url": "https://www.virginia.gov/agencies/",
+          "title": "Agencies | Virginia.gov",
+          "local_file": "agencies.html",
+          "retrieval": "readable text/html extraction"
+        },
+        {
+          "url": "https://www.virginia.gov/state-government/",
+          "title": "State Government | Virginia.gov",
+          "local_file": "government.html",
+          "retrieval": "readable text/html extraction"
+        },
+        {
+          "url": "https://www.virginia.gov/services/government/",
+          "title": "Government | Virginia.gov",
+          "local_file": "service-category.html",
+          "retrieval": "readable text/html extraction"
+        }
+      ],
+      "key_regions": [
+        "Multi-level service-topic navigation",
+        "Service category cards",
+        "Agency directory",
+        "State-government overview",
+        "Grouped footer navigation"
+      ],
+      "key_interactions": [
+        {
+          "name": "Site search affordance",
+          "evidence": "observed affordance in extraction; operation not tested"
+        },
+        {
+          "name": "Agency text filter and category checkboxes",
+          "evidence": "observed affordance in extraction; operation not tested"
+        },
+        {
+          "name": "Feedback open/close affordances",
+          "evidence": "observed affordance in extraction; operation not tested"
+        }
+      ],
+      "limitations": [
+        "Search/filter/feedback behavior untested",
+        "Agency-specific transactions are external and excluded from verified local scope",
+        "Prior GOV notes mentioned Virginia as a possible unverified substitute, not a reserved/selected source"
+      ],
+      "stack_clues": "unknown; no rendered browser or raw-origin stack audit",
+      "approved_at": null,
+      "approved_by": null
+    },
+    {
+      "source_id": "FASH-06",
+      "replaces": "Fashionista",
+      "source_name": "Who What Wear",
+      "subcategory": "fashion blog or trend publication",
+      "source_url": "https://www.whowhatwear.com/",
+      "complexity": "high",
+      "verification_result": "readable_web_tool_content_confirmed",
+      "approval_status": "pending",
+      "source_pages": [
+        {
+          "url": "https://www.whowhatwear.com/",
+          "title": "Celebrity Style and Fashion Trend Coverage | Who What Wear",
+          "local_file": "index.html",
+          "retrieval": "readable text/html extraction"
+        },
+        {
+          "url": "https://www.whowhatwear.com/fashion/trends",
+          "title": "The Latest Fashion and Style Trends for 2026 | Who What Wear",
+          "local_file": "trends.html",
+          "retrieval": "readable text/html extraction"
+        },
+        {
+          "url": "https://www.whowhatwear.com/fashion",
+          "title": "All Things Fashion, According to the Experts | Who What Wear",
+          "local_file": "fashion.html",
+          "retrieval": "readable text/html extraction"
+        },
+        {
+          "url": "https://www.whowhatwear.com/buying-guides",
+          "title": "Shopping Guides to the Latest Fashion Trends | Who What Wear",
+          "local_file": "guides.html",
+          "retrieval": "readable text/html extraction"
+        },
+        {
+          "url": "https://www.whowhatwear.com/fashion/trends/most-iconic-fashion-trends-last-20-years",
+          "title": "20 Trends That Defined the Past 20 Years of Fashion | Who What Wear",
+          "local_file": "article.html",
+          "retrieval": "readable text/html extraction"
+        }
+      ],
+      "key_regions": [
+        "Edition controls and search",
+        "Topic/subtopic navigation",
+        "Editorial card collections",
+        "Article image and section-jump list",
+        "Share affordances"
+      ],
+      "key_interactions": [
+        {
+          "name": "Search button/input",
+          "evidence": "observed affordance in extraction; operation not tested"
+        },
+        {
+          "name": "Subnavigation toggles indicated by extracted controls",
+          "evidence": "observed affordance in extraction; operation not tested"
+        },
+        {
+          "name": "Article jump links and sharing affordances",
+          "evidence": "observed affordance in extraction; operation not tested"
+        }
+      ],
+      "limitations": [
+        "No proprietary photos, editorial copy, affiliate products or endorsements will be reused",
+        "Sharing and commercial links will be labeled simulations",
+        "More complex than the original medium-rated Fashionista proposal; complexity matching should be rechecked"
+      ],
+      "stack_clues": "unknown; no rendered browser or raw-origin stack audit",
+      "approved_at": null,
+      "approved_by": null
+    },
+    {
+      "source_id": "WX-05",
+      "replaces": "meteoblue",
+      "source_name": "Time and Date AS \u2014 weather section",
+      "subcategory": "commercial weather portal",
+      "source_url": "https://www.timeanddate.com/weather/",
+      "complexity": "high",
+      "verification_result": "readable_web_tool_content_confirmed",
+      "approval_status": "pending",
+      "source_pages": [
+        {
+          "url": "https://www.timeanddate.com/weather/",
+          "title": "World Weather Today & Temperatures Right Now",
+          "local_file": "index.html",
+          "retrieval": "readable text/html extraction"
+        },
+        {
+          "url": "https://www.timeanddate.com/weather/usa/new-york",
+          "title": "Weather for New York, New York, USA",
+          "local_file": "location.html",
+          "retrieval": "readable text/html extraction"
+        },
+        {
+          "url": "https://www.timeanddate.com/weather/usa/new-york/hourly",
+          "title": "Hourly forecast for New York, New York, USA",
+          "local_file": "hourly.html",
+          "retrieval": "readable text/html extraction"
+        },
+        {
+          "url": "https://www.timeanddate.com/weather/usa/new-york/ext",
+          "title": "New York, New York, USA 14 day weather forecast",
+          "local_file": "extended.html",
+          "retrieval": "readable text/html extraction"
+        },
+        {
+          "url": "https://www.timeanddate.com/weather/ext-help.html",
+          "title": "FAQ: 14 Day Extended Weather Forecast for any City",
+          "local_file": "help.html",
+          "retrieval": "readable text/html extraction"
+        }
+      ],
+      "key_regions": [
+        "Utility navigation and search",
+        "World-city weather table",
+        "City breadcrumbs and section navigation",
+        "Conditions overview",
+        "Hourly/extended forecast tables",
+        "Help questions"
+      ],
+      "key_interactions": [
+        {
+          "name": "City search and world-table selection controls",
+          "evidence": "observed affordance in extraction; operation not tested"
+        },
+        {
+          "name": "Hourly date selector",
+          "evidence": "observed affordance in extraction; operation not tested"
+        },
+        {
+          "name": "Forecast-page links and unit-settings affordance",
+          "evidence": "observed affordance in extraction; operation not tested"
+        }
+      ],
+      "limitations": [
+        "Forecast links are separate pages; do not describe them as proven client-side tabs",
+        "No radar was observed in this selected scope; omit radar rather than force it",
+        "All replica weather and alerts must be fictional labeled samples; no live data/API",
+        "Company page was also retrieved to support the commercial-provider classification"
+      ],
+      "stack_clues": "unknown; no rendered browser or raw-origin stack audit",
+      "approved_at": null,
+      "approved_by": null
+    }
+  ]
+}

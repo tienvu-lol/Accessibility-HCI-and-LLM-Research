@@ -1,6 +1,6 @@
 # Codex pipeline — slots 04–06
 
-Thirty replicas across ten categories: university, healthcare, company, e-commerce, news, government, fashion, weather, nonprofit, church. Claude has slots 01–03, Codex 04–06, open-source 07–10. Portfolio and restaurant are outside this study allocation; legacy files and rows are preserved.
+Thirty-six replicas across twelve categories: university, healthcare, company, e-commerce, news, government, fashion, weather, nonprofit, church, portfolio, restaurant. Claude has slots 01–03, Codex 04–06, open-source 07–10. Portfolio and restaurant joined this pipeline on 2026-11-13. Portfolio slots 04–06 were already delivered before this queue existed and their directories were renamed that day from `01-rowan-ellis`/`02-jamie-vale`/`03-avery-north` to `PORT-04`/`PORT-05`/`PORT-06` for `MODEL_ALLOCATION.md` §5. Restaurant slots 04–06 are unbuilt: its pre-protocol batch was deleted on 2026-11-13.
 
 This is a **configuration and task-preparation pipeline**, operated through a Codex session. It does not call an API, invoke an assumed CLI, launch agents, create worktrees, generate sites, or publish automatically. No service credentials or API keys are required. The prepared brief is handed to the generation session explicitly, one replica at a time. This keeps the setup independent of Claude's provider-specific orchestration.
 
@@ -9,11 +9,11 @@ This is a **configuration and task-preparation pipeline**, operated through a Co
 | Path | Purpose |
 | --- | --- |
 | `config.json` | Fixed allocation, shared paths, approval policy, execution limits, declared model/runtime |
-| `categories.json` | Ten categories, ten slot strata each, conditional pages/interactions, simulation restrictions |
+| `categories.json` | Twelve categories, ten slot strata each, conditional pages/interactions, simulation restrictions |
 | `schemas/config.schema.json` | Strict configuration schema; scripts validate the subset used here without dependencies |
 | `prompts/` | Independently authored research, build, and QC-correction instructions |
 | `research/` | Codex source evidence; no fabricated research or source approval is prefilled |
-| `queue/manifest.json` | Ten planned research tasks and thirty planned build tasks, with dependencies |
+| `queue/manifest.json` | Twelve research tasks and thirty-six build tasks, with dependencies |
 | `scripts/validate.mjs` | Configuration and optional per-site readiness checks |
 | `scripts/prepare-task.mjs` | Exact brief preview or recorded brief with immutable input snapshots |
 | `scripts/record-qc.mjs` | Executes the shared QC and records real output/exit status in an existing run |
@@ -58,7 +58,7 @@ Preparation does not execute the brief or update queue/assignment statuses. Hand
 2. Complete `Websites/metadata/source-inventories/<category>.csv` for all ten distinct references, including actual model IDs, page scopes, evidence and verification limitations. See that directory's README for the CSV contract.
 3. Obtain project-lead approval for the complete category scope and assignments under the shared rules. Fill approval date/person/evidence only from that actual decision. Claude's waiver is not inherited.
 4. Synchronize source URL, model ID/version and approval date in `metadata/assignments.csv`; the coordinator owns other groups' rows. Retain durable evidence and log changes.
-5. Only then prepare a build. A missing or unverified reference, missing model, drifted assignment or incomplete ten-source approval blocks preparation. There is no fallback source picker in Phase B.
+5. Only then prepare a build. Readiness is scoped to the model group being built: a Codex build requires Codex's three rows to be complete, verified, approved and synchronized with the register, and is not blocked by incomplete Claude or open-source rows. A missing or unverified reference, missing model, drifted assignment or missing approval on a Codex row still blocks preparation, as does a Codex URL that duplicates any other row in the category. There is no fallback source picker in Phase B. The category's **active allocation** is slots 01–06 (`MODEL_ALLOCATION.md` section 2); open-source slots 07–10 are deferred and require no approval while inactive, so coordinating them is not a precondition for a Codex build.
 
 ### Prepare one build
 
@@ -120,4 +120,4 @@ node Websites/pipelines/codex/scripts/prepare-task.mjs repair UNI-04 --model ACT
 
 ## Verification
 
-The setup's thirteen tests cover CSV edge cases, configuration/allocation integrity, path boundaries, missing ten-source approvals, source duplication, assignment drift, model attribution, declared concurrency, task snapshot creation without execution, existing-output protection, and invalid CLI/repair inputs. Synthetic test sources are confined to temporary directories and deleted afterward. Passing pipeline tests does not mean any websites have been generated, their references approved, or browser QC completed.
+The setup's thirteen tests cover CSV edge cases, configuration/allocation integrity, path boundaries, per-group approval scoping, cross-group source duplication, assignment drift, model attribution, declared concurrency, task snapshot creation without execution, existing-output protection, and invalid CLI/repair inputs. Synthetic test sources are confined to temporary directories and deleted afterward. Passing pipeline tests does not mean any websites have been generated, their references approved, or browser QC completed.

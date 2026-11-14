@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Online Bill Pay | Larkspur Children&#39;s Hospital (fictional)</title>
+<meta name="description" content="Simulated bill pay. Fictional replica for an accessibility research dataset.">
+<link rel="icon" href="assets/logo-mark.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<div class="site-alert" role="region" aria-label="Site notice" data-section="global-alert" data-component="alert-banner"><div class="container"><p><strong>Fictional hospital for a layout study.</strong> In an emergency, call your local emergency number. This site cannot take emergency requests.</p></div></div>
+<header class="site-header" data-section="global-header" data-component="site-header">
+<div class="container header-top">
+<a class="brand" href="index.html" data-component="brand-logo"><img src="assets/logo-mark.svg" alt="" width="44" height="44"><span>Larkspur Children's Hospital<small>Fictional replica - not a real hospital</small></span></a>
+<div class="utility" data-section="utility-navigation" data-component="utility-nav">
+<button type="button" class="btn btn-outline" data-open-portal data-component="portal-login-trigger">Patient portal<span class="demo-tag">demo</span></button>
+<a class="btn" href="find-a-doctor.html">Find a doctor</a>
+</div></div>
+<nav class="primary-nav" aria-label="Primary" data-section="global-navigation" data-component="primary-nav"><div class="container">
+<button type="button" class="nav-toggle" aria-expanded="false" aria-controls="nav-list" data-component="mobile-menu-toggle">Menu</button>
+<ul class="nav-list" id="nav-list">
+<li class="nav-item"><button type="button" class="nav-trigger" aria-expanded="false" aria-controls="menu-care" data-component="mega-menu-trigger">Get care</button>
+<div class="mega" id="menu-care" data-component="mega-menu"><div><p class="mega-title">Care options</p><ul><li><a href="get-care.html">See all types of care</a></li><li><a href="appointments.html">Schedule an appointment</a></li><li><a href="find-a-doctor.html">Find a doctor</a></li><li><a href="conditions.html">Conditions we treat</a></li></ul></div>
+<div><p class="mega-title">Locations</p><ul><li><a href="locations.html?type=Primary">Primary care</a></li><li><a href="locations.html?type=Specialty">Specialty care</a></li><li><a href="emergency-care.html">Emergency care</a></li><li><a href="locations.html?type=Urgent">Urgent care</a></li><li><a href="locations.html?type=Inpatient">Inpatient care</a></li><li><a href="locations.html?type=Affiliate">Community hospital affiliates</a></li></ul></div></div></li>
+<li class="nav-item"><button type="button" class="nav-trigger" aria-expanded="false" aria-controls="menu-families" data-component="mega-menu-trigger">Patients &amp; families</button>
+<div class="mega" id="menu-families" data-component="mega-menu"><div><p class="mega-title">For families</p><ul><li><a href="patients-families.html">Resources for families</a></li><li><a href="emergency-care.html">Emergency care notice</a></li></ul></div></div></li>
+<li class="nav-item"><button type="button" class="nav-trigger is-current" aria-expanded="false" aria-controls="menu-billing" data-component="mega-menu-trigger">Billing &amp; insurance</button>
+<div class="mega" id="menu-billing" data-component="mega-menu"><div><p class="mega-title">Billing</p><ul><li><a href="billing-insurance.html">Billing and insurance overview</a></li><li><a href="online-bill-pay.html">Pay a bill (demo)</a></li></ul></div></div></li>
+<li class="nav-item"><a class="nav-link" href="locations.html">Locations</a></li>
+<li class="nav-item"><a class="nav-link" href="specialties.html">Specialties</a></li>
+</ul></div></nav></header>
+<dialog id="portal-dialog" aria-labelledby="portal-title" data-section="portal-login" data-component="modal-dialog">
+<h2 id="portal-title">Patient portal sign-in <span class="demo-tag">non-functional demo</span></h2>
+<p>This form is a demonstration only. There is no portal, no account and no server; whatever you type is never stored or sent.</p>
+<form novalidate data-component="login-form"><div class="form">
+<div class="field"><label for="portal-user">Username<span class="hint">Any text works for the demo.</span></label><input type="text" id="portal-user" name="user" required autocomplete="off"></div>
+<div class="field"><label for="portal-pass">Password</label><input type="password" id="portal-pass" name="pass" required autocomplete="off"></div>
+</div><p id="portal-result" class="note" role="status" hidden></p>
+<div class="dialog-actions"><button type="submit" class="btn">Try demo sign-in</button><button type="button" class="btn btn-outline" data-close-portal>Close</button></div></form></dialog>
+<div id="live-status" class="visually-hidden" role="status" aria-live="polite"></div>
+<nav class="breadcrumbs container" aria-label="Breadcrumb" data-section="breadcrumbs" data-component="breadcrumbs"><ol><li><a href="index.html">Home</a></li><li><a href="billing-insurance.html">Billing & insurance</a></li><li aria-current="page" >Online bill pay</li></ol></nav>
+<main id="main-content" data-section="main-content">
+
+<section class="page-hero" data-section="page-hero" data-component="page-hero"><div class="container"><h1>Online Bill Pay</h1><p><strong>Demo only: no payment is taken and nothing is sent.</strong> Do not enter real account details.</p></div></section>
+<div class="container" style="padding-block:2rem"><section aria-labelledby="bp-h" data-section="bill-pay" data-component="bill-pay-form"><h2 id="bp-h">Look up an account <span class="demo-tag">demo</span></h2>
+<form class="form" data-demo-form novalidate>
+<div class="field"><label for="bp-acct">Account number *<span class="hint">4 to 12 digits. Any made-up number works.</span></label><input type="text" id="bp-acct" name="acct" required data-numeric="1" inputmode="numeric" autocomplete="off"></div>
+<div class="field"><label for="bp-name">Guarantor last name *</label><input type="text" id="bp-name" name="last" required autocomplete="off"></div>
+<div class="field"><div class="check"><input type="checkbox" id="bp-ok" required><label for="bp-ok">I understand this is a simulation and no payment will occur. *</label></div></div>
+<div><button class="btn" type="submit">Continue (demo)</button></div></form>
+<div class="success" data-success tabindex="-1" hidden><h2>Demo only</h2><p>No account was looked up and no payment was made.</p></div></section></div>
+</main>
+
+<footer class="site-footer" data-section="global-footer" data-component="site-footer"><div class="container">
+<div class="footer-grid">
+<nav aria-label="Get care" data-section="footer-get-care" data-component="footer-link-group"><h2>Get care</h2><ul><li><a href="find-a-doctor.html">Find a doctor</a></li><li><a href="locations.html">Find a location</a></li><li><a href="specialties.html">Find a specialty</a></li><li><a href="appointments.html">Schedule an appointment</a></li></ul></nav>
+<nav aria-label="Patients and families" data-section="footer-families" data-component="footer-link-group"><h2>Patients &amp; families</h2><ul><li><a href="billing-insurance.html">Insurance &amp; billing</a></li><li><a href="patients-families.html">Resources for families</a></li><li><a href="conditions.html">Conditions we treat</a></li></ul></nav>
+<div data-section="footer-contact" data-component="contact-block"><h2>Contact (fictional numbers)</h2><ul><li>General: 555-0100</li><li>Appointments: 555-0110</li><li>Billing: 555-0120</li></ul><p class="small">No real telephone lines exist for this site.</p></div>
+</div>
+<div class="footer-sub">
+<section aria-labelledby="news-title" data-section="newsletter" data-component="newsletter-signup"><h2 id="news-title">Sign up for newsletters <span class="demo-tag">demo</span></h2>
+<div><form data-demo-form novalidate class="form"><div class="field"><label for="news-email">Email address<span class="hint">Demo only: nothing is sent or stored.</span></label><input type="email" id="news-email" name="email" required autocomplete="email"></div><div><button class="btn" type="submit">Subscribe (demo)</button></div></form>
+<div class="success" data-success tabindex="-1" hidden style="color:#1d2733"><h3>Demo subscription received</h3><p>No email was sent and no list exists.</p></div></div></section>
+<section aria-labelledby="lang-title" data-section="language-assistance" data-component="language-block"><h2 id="lang-title">Language assistance</h2><p class="small">The real reference offers translated pages. This replica offers English only; the languages below are listed to show the footer pattern and are not links.</p><ul class="lang-list"><li lang="en">English</li><li lang="es">Español</li><li lang="ar">العربية</li><li lang="zh-Hant">繁體中文</li><li lang="de">Deutsch</li><li lang="hi">हिंदी</li><li lang="it">Italiano</li><li lang="pl">Polski</li></ul></section>
+</div>
+<p class="small" style="margin-top:1.5rem">&copy; Larkspur Children's Hospital (fictional). Layout and accessibility research replica; no real patients, providers, addresses or phone numbers. Nothing here is medical advice. In an emergency call your local emergency number.</p>
+</div></footer>
+<script src="js/main.js"></script>
+</body>
+</html>

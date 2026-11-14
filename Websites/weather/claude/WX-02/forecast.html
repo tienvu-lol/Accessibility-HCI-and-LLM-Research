@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sample forecast - Larkspur Weather</title>
+<meta name="description" content="Sample conditions, hourly and 10-day tables for a fictional location.">
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/styles.css">
+<script src="js/main.js" defer></script>
+</head>
+<body data-page="forecast">
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header" data-section="global-header" data-component="site-header">
+<div class="sample-bar" role="note" data-section="sample-data-notice" data-component="sample-data-banner"><strong>SAMPLE DATA ONLY.</strong> All temperatures, forecasts, radar images, history and times on this site are fictional and invented for research. Not a real forecast; never current conditions.</div>
+<div class="header-row">
+<a class="brand" href="index.html" data-component="brand-link"><img src="assets/logo.svg" alt="" width="40" height="40"><span>Larkspur Weather</span></a>
+<button type="button" class="btn small menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="primary-nav" data-component="menu-toggle">Menu</button>
+<form class="loc-search" role="search" action="forecast.html" method="get" novalidate data-section="location-search" data-component="location-search">
+<label for="loc-q" class="sr-only">Search sample locations</label>
+<input id="loc-q" name="q" type="search" placeholder="Search Locations..." autocomplete="off" list="loc-list">
+<datalist id="loc-list"></datalist>
+<button type="submit" class="btn small">Search</button>
+<p id="loc-q-error" class="field-error" role="alert" hidden></p>
+</form>
+<div class="header-tools" data-section="utility-navigation" data-component="utility-nav">
+<a class="tool-link" href="index.html#favorites">Favorites</a>
+<div class="settings-wrap" data-component="settings-menu">
+<button type="button" id="settings-btn" class="btn small" aria-expanded="false" aria-controls="settings-panel">Settings</button>
+<div id="settings-panel" class="settings-panel" role="group" aria-label="Display settings" hidden>
+<fieldset><legend>Units</legend>
+<div><span class="hint">Temperature</span><br><label><input type="radio" name="pref-temp" value="F" checked> &deg;F</label><label><input type="radio" name="pref-temp" value="C"> &deg;C</label></div>
+<div><span class="hint">Wind</span><br><label><input type="radio" name="pref-wind" value="mph" checked> mph</label><label><input type="radio" name="pref-wind" value="kmh"> km/h</label></div>
+<div><span class="hint">Precipitation</span><br><label><input type="radio" name="pref-precip" value="in" checked> in</label><label><input type="radio" name="pref-precip" value="mm"> mm</label></div>
+</fieldset>
+<fieldset><legend>Density</legend><label><input type="radio" name="pref-density" value="comfortable" checked> Comfortable</label><label><input type="radio" name="pref-density" value="compact"> Compact</label></fieldset>
+<fieldset><legend>Appearance</legend><label><input type="radio" name="pref-theme" value="system" checked> System</label><label><input type="radio" name="pref-theme" value="light"> Light</label><label><input type="radio" name="pref-theme" value="dark"> Dark</label></fieldset>
+<button type="button" id="settings-reset" class="btn small secondary">Reset to defaults</button>
+<p id="settings-status" class="note" role="status"></p>
+<p class="note">Choices are kept only in this browser (localStorage) and convert every sample value.</p>
+</div></div></div></div>
+<nav id="primary-nav" class="primary-nav" aria-label="Primary" data-section="global-navigation" data-component="primary-nav"><ul class="nav-list"><li><a href="forecast.html" aria-current="page">Forecast</a></li><li class="nav-drop"><button type="button" class="nav-drop-btn" aria-expanded="false" aria-controls="drop-1">Maps &amp; Radar</button><ul id="drop-1" class="drop-list"><li><a href="maps.html">Maps catalog</a></li><li><a href="radar.html">Radar</a></li><li><a href="interactive-map.html">Interactive map</a></li></ul></li><li class="nav-drop"><button type="button" class="nav-drop-btn" aria-expanded="false" aria-controls="drop-2">Storms</button><ul id="drop-2" class="drop-list"><li><a href="tropical.html">Hurricane &amp; tropical cyclones</a></li></ul></li><li class="nav-drop"><button type="button" class="nav-drop-btn" aria-expanded="false" aria-controls="drop-3">Data</button><ul id="drop-3" class="drop-list"><li><a href="history.html">Historical weather</a></li><li><a href="stations.html">Station network</a></li></ul></li><li class="nav-drop"><button type="button" class="nav-drop-btn" aria-expanded="false" aria-controls="drop-4">Learn</button><ul id="drop-4" class="drop-list"><li><a href="articles.html">Articles</a></li><li><a href="prepare.html">Preparedness</a></li><li><a href="videos.html">Videos</a></li></ul></li></ul></nav>
+</header>
+<main id="main-content" data-section="main-content" tabindex="-1">
+<nav class="breadcrumb wrap" aria-label="Breadcrumb" data-section="breadcrumb" data-component="breadcrumb"><ol><li><a href="index.html">Home</a></li><li aria-current="page">Forecast</li></ol></nav>
+
+<div class="wrap">
+<h1 id="page-title">Alder Ridge, Northmere</h1>
+<p id="loc-notice" class="notice" hidden></p>
+<div id="results-view" hidden data-section="location-results" data-component="search-results"><p id="results-status" role="status"></p><ul id="results-list" class="plain"></ul><p><a href="index.html">Back to home</a></p></div>
+<div id="forecast-view">
+<p class="sample-badge" data-component="sample-data-label"><span class="badge">SAMPLE DATA</span> Every value on this page is fictional and invented for a research project. It is not a forecast and does not describe current conditions.</p>
+<p><button type="button" id="fav-toggle" class="btn secondary small" aria-pressed="false">Save to favorites</button> <span id="fav-status" role="status" class="muted"></span></p>
+<section aria-labelledby="now-title" data-section="current-conditions" data-component="current-conditions" class="panel"><h2 id="now-title">Sample conditions at sample time 14:00</h2>
+<p class="now"><span class="big" id="now-temp">--</span><span id="now-cond">--</span></p>
+<dl class="facts"><div><dt>Feels like</dt><dd id="now-feels">--</dd></div><div><dt>Wind</dt><dd id="now-wind">--</dd></div><div><dt>Humidity</dt><dd id="now-hum">--</dd></div><div><dt>Rain chance</dt><dd id="now-rain">--</dd></div></dl></section>
+<div id="forecast-tabs" data-section="forecast-tabs" data-component="tabs">
+<div role="tablist" aria-label="Sample forecast views">
+<button role="tab" id="tab-hourly" aria-selected="true" aria-controls="panel-hourly">Hourly</button>
+<button role="tab" id="tab-daily" aria-selected="false" aria-controls="panel-daily" tabindex="-1">10-day</button>
+<button role="tab" id="tab-alerts" aria-selected="false" aria-controls="panel-alerts" tabindex="-1">Alerts</button></div>
+<div role="tabpanel" id="panel-hourly" aria-labelledby="tab-hourly" data-component="forecast-table"><div class="table-scroll" role="region" tabindex="0" aria-label="Sample hourly forecast table, scrolls sideways on narrow screens"><table id="hourly-table"></table></div></div>
+<div role="tabpanel" id="panel-daily" aria-labelledby="tab-daily" hidden data-component="forecast-table"><div class="table-scroll" role="region" tabindex="0" aria-label="Sample 10-day forecast table, scrolls sideways on narrow screens"><table id="daily-table"></table></div></div>
+<div role="tabpanel" id="panel-alerts" aria-labelledby="tab-alerts" hidden data-component="alert-list"><h2>Sample alerts</h2><p class="sample-badge"><span class="badge">SAMPLE DATA</span> Invented alerts, not real warnings.</p><ul id="alerts-list" class="plain"></ul><p id="alerts-empty" class="notice" hidden>No sample alerts for this place.</p></div>
+</div>
+<p class="muted">Change units, density or appearance with the Settings button in the header. Compare places with the <a href="interactive-map.html">interactive map</a>.</p>
+</div></div>
+</main>
+<footer class="site-footer" data-section="global-footer" data-component="site-footer"><div class="wrap">
+<div class="footer-cols">
+<nav aria-label="Footer" data-section="footer-navigation" data-component="footer-nav"><h2>Explore</h2><ul><li><a href="maps.html">Maps catalog</a></li><li><a href="radar.html">Radar</a></li><li><a href="history.html">Historical weather</a></li><li><a href="stations.html">Station network</a></li><li><a href="articles.html">Articles</a></li><li><a href="prepare.html">Preparedness</a></li><li><a href="videos.html">Videos</a></li></ul></nav>
+<div><h2>About</h2><ul><li><a href="about.html">About us</a></li><li><a href="accessibility.html">Accessibility statement</a></li></ul></div>
+<div><h2>Fictional site</h2><p>Larkspur Weather is a fictional portal built for an accessibility research dataset. All weather data is sample data. There are no ads, trackers or accounts.</p></div>
+</div></div></footer>
+</body>
+</html>

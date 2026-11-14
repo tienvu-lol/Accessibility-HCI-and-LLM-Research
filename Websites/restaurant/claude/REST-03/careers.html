@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Careers | Vane &amp; Alder</title>
+<meta name="description" content="Sample job postings and a demo application form.">
+<link rel="icon" href="assets/plate.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header" data-section="global-header" data-component="site-header">
+<p class="demo-banner" data-component="demo-banner">Fictional restaurant. Research replica: nothing here is real, bookable or purchasable.</p>
+<div class="header-inner">
+<a class="brand" href="index.html" data-component="brand-wordmark">Vane &amp; Alder</a>
+<button type="button" class="menu-toggle" aria-expanded="false" aria-controls="nav-wrap" data-component="mobile-menu-toggle">Menu</button>
+<div class="nav-wrap" id="nav-wrap">
+<nav aria-label="Primary" data-section="global-navigation" data-component="primary-nav"><ul class="nav-list">
+<li class="has-current"><button type="button" class="sub-toggle" aria-expanded="false" aria-controls="sub-about">About</button><ul class="sub-list" id="sub-about"><li><a href="about.html">Our restaurant</a></li><li><a href="team.html">Team</a></li><li><a href="lantern-fields.html">Lantern Fields</a></li><li><a href="press.html">Press and accolades</a></li><li><a href="careers.html" aria-current="page">Careers</a></li><li><a href="faq.html">FAQs</a></li></ul></li>
+<li><a href="menu.html">Menu</a></li><li><a href="events.html">Events</a></li><li><a href="stories.html">Stories</a></li>
+<li class=""><button type="button" class="sub-toggle" aria-expanded="false" aria-controls="sub-shop">Shop</button><ul class="sub-list" id="sub-shop"><li><a href="gift-cards.html">Gift cards</a></li></ul></li>
+<li><a href="contact.html">Contact</a></li>
+</ul></nav>
+<nav aria-label="Utility" class="utility-nav" data-section="utility-navigation" data-component="utility-nav"><ul>
+<li><a class="cart-link" href="gift-cards.html#cart-heading" data-component="cart-link">Cart (<span data-cart-count>0</span><span class="sr-only"> items, demo</span>)</a></li>
+<li><a class="btn" href="reservations.html">Reserve</a></li>
+</ul></nav>
+</div></div></header>
+<main id="main-content" data-section="main-content">
+<div class="wrap"><nav class="breadcrumb" aria-label="Breadcrumb" data-component="breadcrumb"><ol><li><a href="index.html">Home</a></li><li aria-current="page">Careers</li></ol></nav></div>
+
+<div class="wrap narrow page-head"><p class="eyebrow">Careers</p><h1>Join the team</h1><p class="lede">Sample postings only. No jobs exist.</p></div>
+<div class="wrap narrow"><section aria-labelledby="car-h" data-section="careers" data-component="job-list"><h2 id="car-h">Open roles (sample)</h2>
+<div class="field"><label for="role-dept">Department</label><select id="role-dept"><option value="">All departments</option><option>Kitchen</option><option>Dining room</option><option>Farm</option></select></div>
+<p id="role-count" role="status" aria-live="polite"></p><div id="role-list"></div>
+<div id="role-empty" class="empty" hidden><p>No roles in this department.</p></div>
+<h2 id="apply-h">Apply (demo)</h2><p class="form-note" data-component="simulation-notice"><strong>Simulation.</strong> Nothing is uploaded or sent.</p>
+<form data-demo-form aria-labelledby="apply-h"><div class="error-summary" tabindex="-1" hidden></div>
+<div class="field"><label for="apply-name">Full name <span>(required)</span></label><input id="apply-name" name="apply-name" type="text" autocomplete="name" aria-describedby="apply-name-error" data-required><p class="error" id="apply-name-error" hidden></p></div>
+<div class="field"><label for="apply-email">Email <span>(required)</span></label><input id="apply-email" name="apply-email" type="email" autocomplete="email" aria-describedby="apply-email-error" data-required><p class="error" id="apply-email-error" hidden></p></div>
+<div class="field"><label for="apply-role">Role of interest <span>(required)</span></label><select id="apply-role" name="apply-role" aria-describedby="apply-role-error" data-required><option value="">Choose...</option></select><p class="error" id="apply-role-error" hidden></p></div>
+<div class="field"><label for="apply-msg">Why this role <span>(required)</span></label><span class="hint" id="apply-msg-hint">At least 20 characters.</span><textarea id="apply-msg" name="apply-msg" aria-describedby="apply-msg-hint apply-msg-error" data-required data-minlength="20"></textarea><p class="error" id="apply-msg-error" hidden></p></div>
+<button class="btn" type="submit">Submit application (demo)</button>
+<div class="demo-success" tabindex="-1" hidden><h2>Demo only: request received</h2><p class="demo-success-text" data-text="This is a demonstration. No application was submitted."></p></div></form></section></div>
+</main>
+<footer class="site-footer" data-section="global-footer" data-component="site-footer"><div class="wrap">
+<div class="footer-grid">
+<section aria-labelledby="ft-visit"><h2 id="ft-visit">Address and hours</h2><p>14 Lantern Court<br>Harrowgate, Fictional State 00000<br>Wednesday to Saturday, 5:30 to 10:00 pm</p><p><a href="contact.html">Contact and hours</a></p></section>
+<nav aria-label="Footer" data-section="footer-navigation" data-component="footer-nav"><h2>Explore</h2><ul>
+<li><a href="faq.html">FAQs</a></li><li><a href="press.html">Press and accolades</a></li><li><a href="careers.html">Careers</a></li><li><a href="contact.html">Contact us</a></li><li><a href="accessibility.html">Accessibility statement</a></li></ul></nav>
+<section aria-labelledby="ft-news" data-section="newsletter" ><h2 id="ft-news">Newsletter (demo)</h2>
+<form data-demo-form data-component="newsletter-form" aria-labelledby="ft-news">
+<div class="error-summary" tabindex="-1" hidden></div>
+<div class="field"><label for="nl-given">First name <span>(required)</span></label><input id="nl-given" name="nl-given" type="text" autocomplete="given-name" aria-describedby="nl-given-error" data-required><p class="error" id="nl-given-error" hidden></p></div>
+<div class="field"><label for="nl-surname">Last name <span>(required)</span></label><input id="nl-surname" name="nl-surname" type="text" autocomplete="family-name" aria-describedby="nl-surname-error" data-required><p class="error" id="nl-surname-error" hidden></p></div>
+<div class="field"><label for="nl-email">Email <span>(required)</span></label><input id="nl-email" name="nl-email" type="email" autocomplete="email" aria-describedby="nl-email-error" data-required><p class="error" id="nl-email-error" hidden></p></div>
+<button type="submit" class="btn">Subscribe (demo)</button>
+<div class="demo-success" tabindex="-1" hidden><h3>Demo subscription received</h3><p class="demo-success-text" data-text="This is a demonstration. Nothing was sent or stored, and no email will arrive."></p></div>
+</form></section></div>
+<p class="fine">Vane &amp; Alder is a fictional restaurant invented for a research dataset. Layout inspired by the information architecture of a public restaurant website; no real branding or copy is reproduced.</p>
+</div></footer>
+<script src="js/main.js"></script>
+</body>
+</html>

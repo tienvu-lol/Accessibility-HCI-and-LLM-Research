@@ -1,0 +1,1163 @@
+{
+  "protocol_version": "1.0",
+  "replica_id": "ECOM-02",
+  "category": "e-commerce",
+  "source_url": "https://www.ikea.com/us/en/",
+  "pages_note": "pages lists real delivered filenames. Components rendered by js/main.js (product cards, filter groups, variant selector, cart lines, store cards) are listed on the pages whose HTML hosts them.",
+  "components": [
+    {
+      "id": "accordion",
+      "selector": "[data-component='accordion']",
+      "pages": [
+        "faq.html"
+      ],
+      "behavior": [
+        "FAQ disclosure buttons with aria-expanded"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "axe-plus-scripted-playwright-flow"
+    },
+    {
+      "id": "add-to-bag",
+      "selector": "[data-component='add-to-bag']",
+      "pages": [
+        "product.html"
+      ],
+      "behavior": [
+        "Adds the chosen variant to the demo bag and announces it"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "axe-plus-scripted-playwright-flow"
+    },
+    {
+      "id": "bag-link",
+      "selector": "[data-component='bag-link']",
+      "pages": [
+        "404.html",
+        "beds.html",
+        "cart.html",
+        "checkout.html",
+        "confirmation.html",
+        "customer-service.html",
+        "faq.html",
+        "furniture.html",
+        "index.html",
+        "lighting.html",
+        "login.html",
+        "new.html",
+        "product.html",
+        "returns.html",
+        "rooms.html",
+        "search.html",
+        "sofas.html",
+        "stores.html"
+      ],
+      "behavior": [
+        "Bag link with item count badge"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-plus-scripted-playwright-flow"
+    },
+    {
+      "id": "brand-logo",
+      "selector": "[data-component='brand-logo']",
+      "pages": [
+        "404.html",
+        "beds.html",
+        "cart.html",
+        "checkout.html",
+        "confirmation.html",
+        "customer-service.html",
+        "faq.html",
+        "furniture.html",
+        "index.html",
+        "lighting.html",
+        "login.html",
+        "new.html",
+        "product.html",
+        "returns.html",
+        "rooms.html",
+        "search.html",
+        "sofas.html",
+        "stores.html"
+      ],
+      "behavior": [
+        "Local SVG logo linking home"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-only"
+    },
+    {
+      "id": "breadcrumb",
+      "selector": "[data-component='breadcrumb']",
+      "pages": [
+        "beds.html",
+        "cart.html",
+        "checkout.html",
+        "confirmation.html",
+        "customer-service.html",
+        "faq.html",
+        "furniture.html",
+        "lighting.html",
+        "login.html",
+        "new.html",
+        "product.html",
+        "returns.html",
+        "rooms.html",
+        "search.html",
+        "sofas.html",
+        "stores.html"
+      ],
+      "behavior": [
+        "Breadcrumb trail with aria-current on the current page"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-only"
+    },
+    {
+      "id": "cart-line",
+      "selector": "[data-component='cart-line']",
+      "pages": [
+        "cart.html"
+      ],
+      "behavior": [
+        "Bag line with quantity controls and remove button"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "axe-plus-scripted-playwright-flow"
+    },
+    {
+      "id": "cart-line-list",
+      "selector": "[data-component='cart-line-list']",
+      "pages": [
+        "cart.html"
+      ],
+      "behavior": [
+        "List of bag lines"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-plus-scripted-playwright-flow"
+    },
+    {
+      "id": "category-grid",
+      "selector": "[data-component='category-grid']",
+      "pages": [
+        "customer-service.html",
+        "furniture.html",
+        "index.html"
+      ],
+      "behavior": [
+        "Section of category tiles"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-only"
+    },
+    {
+      "id": "category-tile",
+      "selector": "[data-component='category-tile']",
+      "pages": [
+        "customer-service.html",
+        "furniture.html",
+        "index.html"
+      ],
+      "behavior": [
+        "Linked category tile"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-only"
+    },
+    {
+      "id": "category-tile-grid",
+      "selector": "[data-component='category-tile-grid']",
+      "pages": [
+        "customer-service.html",
+        "furniture.html",
+        "index.html"
+      ],
+      "behavior": [
+        "Grid of category tiles linking to rebuilt pages"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-only"
+    },
+    {
+      "id": "checkout-form",
+      "selector": "[data-component='checkout-form']",
+      "pages": [
+        "checkout.html"
+      ],
+      "behavior": [
+        "Simulated checkout form: contact, address, delivery option, acknowledgement; validation, error summary, focus management"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "axe-plus-scripted-playwright-flow"
+    },
+    {
+      "id": "contact-details",
+      "selector": "[data-component='contact-details']",
+      "pages": [
+        "customer-service.html"
+      ],
+      "behavior": [
+        "Invented contact details"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-only"
+    },
+    {
+      "id": "data-table",
+      "selector": "[data-component='data-table']",
+      "pages": [
+        "customer-service.html"
+      ],
+      "behavior": [
+        "Delivery options table with column and row headers (sample values)"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "axe-only"
+    },
+    {
+      "id": "demo-banner",
+      "selector": "[data-component='demo-banner']",
+      "pages": [
+        "cart.html",
+        "checkout.html",
+        "confirmation.html",
+        "login.html",
+        "returns.html",
+        "stores.html"
+      ],
+      "behavior": [
+        "Visible notice that the page is a demonstration and no order or payment exists"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "axe-only"
+    },
+    {
+      "id": "demo-success",
+      "selector": "[data-component='demo-success']",
+      "pages": [
+        "login.html"
+      ],
+      "behavior": [
+        "Demo-labelled success message that receives focus"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "axe-plus-scripted-playwright-flow"
+    },
+    {
+      "id": "empty-state",
+      "selector": "[data-component='empty-state']",
+      "pages": [
+        "beds.html",
+        "cart.html",
+        "checkout.html",
+        "lighting.html",
+        "search.html",
+        "sofas.html",
+        "stores.html"
+      ],
+      "behavior": [
+        "Message and recovery actions when nothing matches or the bag is empty"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-plus-scripted-playwright-flow"
+    },
+    {
+      "id": "error-summary",
+      "selector": "[data-component='error-summary']",
+      "pages": [
+        "checkout.html",
+        "login.html"
+      ],
+      "behavior": [
+        "Alert listing form errors with links to the fields; receives focus on failed submit"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-plus-scripted-playwright-flow"
+    },
+    {
+      "id": "feature-panel",
+      "selector": "[data-component='feature-panel']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "Static feature panel"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-only"
+    },
+    {
+      "id": "filter-group",
+      "selector": "[data-component='filter-group']",
+      "pages": [
+        "beds.html",
+        "lighting.html",
+        "sofas.html"
+      ],
+      "behavior": [
+        "Fieldset of checkboxes or radios (type, finish, price, new)"
+      ],
+      "keyboard": [
+        "Tab",
+        "Space",
+        "Arrow keys for radios"
+      ],
+      "status": "implemented",
+      "validation": "axe-plus-scripted-playwright-flow"
+    },
+    {
+      "id": "filter-panel",
+      "selector": "[data-component='filter-panel']",
+      "pages": [
+        "beds.html",
+        "lighting.html",
+        "sofas.html"
+      ],
+      "behavior": [
+        "Listing filters; collapses behind a button on narrow screens (aria-expanded)"
+      ],
+      "keyboard": [
+        "Tab",
+        "Space",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-plus-scripted-playwright-flow"
+    },
+    {
+      "id": "footer-link-group",
+      "selector": "[data-component='footer-link-group']",
+      "pages": [
+        "404.html",
+        "beds.html",
+        "cart.html",
+        "checkout.html",
+        "confirmation.html",
+        "customer-service.html",
+        "faq.html",
+        "furniture.html",
+        "index.html",
+        "lighting.html",
+        "login.html",
+        "new.html",
+        "product.html",
+        "returns.html",
+        "rooms.html",
+        "search.html",
+        "sofas.html",
+        "stores.html"
+      ],
+      "behavior": [
+        "Labelled footer navigation group"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-only"
+    },
+    {
+      "id": "form-step",
+      "selector": "[data-component='form-step']",
+      "pages": [
+        "checkout.html"
+      ],
+      "behavior": [
+        "Numbered section of the checkout form"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "axe-plus-scripted-playwright-flow"
+    },
+    {
+      "id": "hero-banner",
+      "selector": "[data-component='hero-banner']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "Home hero with heading, copy, calls to action, local SVG"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-only"
+    },
+    {
+      "id": "inline-status",
+      "selector": "[data-component='inline-status']",
+      "pages": [
+        "product.html"
+      ],
+      "behavior": [
+        "Status text after add to bag with link to the bag"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "axe-plus-scripted-playwright-flow"
+    },
+    {
+      "id": "legal-note",
+      "selector": "[data-component='legal-note']",
+      "pages": [
+        "404.html",
+        "beds.html",
+        "cart.html",
+        "checkout.html",
+        "confirmation.html",
+        "customer-service.html",
+        "faq.html",
+        "furniture.html",
+        "index.html",
+        "lighting.html",
+        "login.html",
+        "new.html",
+        "product.html",
+        "returns.html",
+        "rooms.html",
+        "search.html",
+        "sofas.html",
+        "stores.html"
+      ],
+      "behavior": [
+        "Fictional brand and sample-data notice"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "axe-only"
+    },
+    {
+      "id": "live-region",
+      "selector": "[data-component='live-region']",
+      "pages": [
+        "404.html",
+        "beds.html",
+        "cart.html",
+        "checkout.html",
+        "confirmation.html",
+        "customer-service.html",
+        "faq.html",
+        "furniture.html",
+        "index.html",
+        "lighting.html",
+        "login.html",
+        "new.html",
+        "product.html",
+        "returns.html",
+        "rooms.html",
+        "search.html",
+        "sofas.html",
+        "stores.html"
+      ],
+      "behavior": [
+        "Polite status region announcing add to bag, quantity, filter and sort changes"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "axe-plus-scripted-playwright-flow"
+    },
+    {
+      "id": "login-form",
+      "selector": "[data-component='login-form']",
+      "pages": [
+        "login.html"
+      ],
+      "behavior": [
+        "Demo sign-in form with validation"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-plus-scripted-playwright-flow"
+    },
+    {
+      "id": "mega-menu",
+      "selector": "[data-component='mega-menu']",
+      "pages": [
+        "404.html",
+        "beds.html",
+        "cart.html",
+        "checkout.html",
+        "confirmation.html",
+        "customer-service.html",
+        "faq.html",
+        "furniture.html",
+        "index.html",
+        "lighting.html",
+        "login.html",
+        "new.html",
+        "product.html",
+        "returns.html",
+        "rooms.html",
+        "search.html",
+        "sofas.html",
+        "stores.html"
+      ],
+      "behavior": [
+        "Mega-menu disclosure with department sub-disclosures; aria-expanded at each level; built from own item lists (dropdown contents of the reference were not observed)"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "Escape per level"
+      ],
+      "status": "implemented",
+      "validation": "axe-plus-scripted-playwright-flow"
+    },
+    {
+      "id": "membership-callout",
+      "selector": "[data-component='membership-callout']",
+      "pages": [
+        "404.html",
+        "beds.html",
+        "cart.html",
+        "checkout.html",
+        "confirmation.html",
+        "customer-service.html",
+        "faq.html",
+        "furniture.html",
+        "index.html",
+        "lighting.html",
+        "login.html",
+        "new.html",
+        "product.html",
+        "returns.html",
+        "rooms.html",
+        "search.html",
+        "sofas.html",
+        "stores.html"
+      ],
+      "behavior": [
+        "Static club block linking to the demo sign-in"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-only"
+    },
+    {
+      "id": "menu-toggle",
+      "selector": "[data-component='menu-toggle']",
+      "pages": [
+        "404.html",
+        "beds.html",
+        "cart.html",
+        "checkout.html",
+        "confirmation.html",
+        "customer-service.html",
+        "faq.html",
+        "furniture.html",
+        "index.html",
+        "lighting.html",
+        "login.html",
+        "new.html",
+        "product.html",
+        "returns.html",
+        "rooms.html",
+        "search.html",
+        "sofas.html",
+        "stores.html"
+      ],
+      "behavior": [
+        "Mobile disclosure for the main navigation (aria-expanded)"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "Escape closes"
+      ],
+      "status": "implemented",
+      "validation": "axe-plus-scripted-playwright-flow"
+    },
+    {
+      "id": "order-summary",
+      "selector": "[data-component='order-summary']",
+      "pages": [
+        "cart.html",
+        "checkout.html",
+        "confirmation.html"
+      ],
+      "behavior": [
+        "Sample subtotal, delivery fee and total; every amount labelled illustrative"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "axe-plus-scripted-playwright-flow"
+    },
+    {
+      "id": "pagination-show-more",
+      "selector": "[data-component='pagination-show-more']",
+      "pages": [
+        "beds.html",
+        "lighting.html",
+        "sofas.html"
+      ],
+      "behavior": [
+        "Show more button reveals the next eight products; focus moves to the first new card"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "axe-plus-scripted-playwright-flow"
+    },
+    {
+      "id": "payment-placeholder",
+      "selector": "[data-component='payment-placeholder']",
+      "pages": [
+        "checkout.html"
+      ],
+      "behavior": [
+        "Non-functional placeholder explaining that no payment is collected; contains no inputs"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "axe-plus-scripted-playwright-flow"
+    },
+    {
+      "id": "primary-nav",
+      "selector": "[data-component='primary-nav']",
+      "pages": [
+        "404.html",
+        "beds.html",
+        "cart.html",
+        "checkout.html",
+        "confirmation.html",
+        "customer-service.html",
+        "faq.html",
+        "furniture.html",
+        "index.html",
+        "lighting.html",
+        "login.html",
+        "new.html",
+        "product.html",
+        "returns.html",
+        "rooms.html",
+        "search.html",
+        "sofas.html",
+        "stores.html"
+      ],
+      "behavior": [
+        "Main navigation with three-level mega-menu (Shop all > department > link)"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "Escape closes innermost open level"
+      ],
+      "status": "implemented",
+      "validation": "axe-plus-scripted-playwright-flow"
+    },
+    {
+      "id": "product-card",
+      "selector": "[data-component='product-card']",
+      "pages": [
+        "beds.html",
+        "furniture.html",
+        "index.html",
+        "lighting.html",
+        "new.html",
+        "rooms.html",
+        "search.html",
+        "sofas.html"
+      ],
+      "behavior": [
+        "Product card with stretched name link, price, finishes"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-plus-scripted-playwright-flow"
+    },
+    {
+      "id": "product-card-grid",
+      "selector": "[data-component='product-card-grid']",
+      "pages": [
+        "beds.html",
+        "furniture.html",
+        "index.html",
+        "lighting.html",
+        "new.html",
+        "rooms.html",
+        "search.html",
+        "sofas.html"
+      ],
+      "behavior": [
+        "Grid of product cards rendered from inline data"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-plus-scripted-playwright-flow"
+    },
+    {
+      "id": "product-gallery",
+      "selector": "[data-component='product-gallery']",
+      "pages": [
+        "product.html"
+      ],
+      "behavior": [
+        "Inline SVG product art that changes with the selected finish"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "axe-only"
+    },
+    {
+      "id": "product-purchase",
+      "selector": "[data-component='product-purchase']",
+      "pages": [
+        "product.html"
+      ],
+      "behavior": [
+        "Variant, size, quantity and add to bag form"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-plus-scripted-playwright-flow"
+    },
+    {
+      "id": "promo-card-pair",
+      "selector": "[data-component='promo-card-pair']",
+      "pages": [
+        "index.html",
+        "new.html"
+      ],
+      "behavior": [
+        "Two static promotional panels"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-only"
+    },
+    {
+      "id": "promo-strip",
+      "selector": "[data-component='promo-strip']",
+      "pages": [
+        "404.html",
+        "beds.html",
+        "cart.html",
+        "checkout.html",
+        "confirmation.html",
+        "customer-service.html",
+        "faq.html",
+        "furniture.html",
+        "index.html",
+        "lighting.html",
+        "login.html",
+        "new.html",
+        "product.html",
+        "returns.html",
+        "rooms.html",
+        "search.html",
+        "sofas.html",
+        "stores.html"
+      ],
+      "behavior": [
+        "Site-wide fictional-demo notice"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "axe-only"
+    },
+    {
+      "id": "prose-block",
+      "selector": "[data-component='prose-block']",
+      "pages": [
+        "returns.html"
+      ],
+      "behavior": [
+        "Sample policy prose"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "axe-only"
+    },
+    {
+      "id": "quantity-stepper",
+      "selector": "[data-component='quantity-stepper']",
+      "pages": [
+        "cart.html",
+        "product.html"
+      ],
+      "behavior": [
+        "Decrease, number input and increase; range 1-10 with inline error"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Arrow keys in number input"
+      ],
+      "status": "implemented",
+      "validation": "axe-plus-scripted-playwright-flow"
+    },
+    {
+      "id": "result-count",
+      "selector": "[data-component='result-count']",
+      "pages": [
+        "beds.html",
+        "lighting.html",
+        "search.html",
+        "sofas.html"
+      ],
+      "behavior": [
+        "Status text for the number of results"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "axe-plus-scripted-playwright-flow"
+    },
+    {
+      "id": "search-form",
+      "selector": "[data-component='search-form']",
+      "pages": [
+        "404.html",
+        "beds.html",
+        "cart.html",
+        "checkout.html",
+        "confirmation.html",
+        "customer-service.html",
+        "faq.html",
+        "furniture.html",
+        "index.html",
+        "lighting.html",
+        "login.html",
+        "new.html",
+        "product.html",
+        "returns.html",
+        "rooms.html",
+        "search.html",
+        "sofas.html",
+        "stores.html"
+      ],
+      "behavior": [
+        "Header search, GET to search.html, results over inline data"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-plus-scripted-playwright-flow"
+    },
+    {
+      "id": "site-footer",
+      "selector": "[data-component='site-footer']",
+      "pages": [
+        "404.html",
+        "beds.html",
+        "cart.html",
+        "checkout.html",
+        "confirmation.html",
+        "customer-service.html",
+        "faq.html",
+        "furniture.html",
+        "index.html",
+        "lighting.html",
+        "login.html",
+        "new.html",
+        "product.html",
+        "returns.html",
+        "rooms.html",
+        "search.html",
+        "sofas.html",
+        "stores.html"
+      ],
+      "behavior": [
+        "Footer with link groups, demo club block and fictional-brand notice"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-only"
+    },
+    {
+      "id": "site-header",
+      "selector": "[data-component='site-header']",
+      "pages": [
+        "404.html",
+        "beds.html",
+        "cart.html",
+        "checkout.html",
+        "confirmation.html",
+        "customer-service.html",
+        "faq.html",
+        "furniture.html",
+        "index.html",
+        "lighting.html",
+        "login.html",
+        "new.html",
+        "product.html",
+        "returns.html",
+        "rooms.html",
+        "search.html",
+        "sofas.html",
+        "stores.html"
+      ],
+      "behavior": [
+        "Global header with promo strip, brand, search, utility links, menu"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "axe-plus-scripted-playwright-flow"
+    },
+    {
+      "id": "skip-link",
+      "selector": "[data-component='skip-link']",
+      "pages": [
+        "404.html",
+        "beds.html",
+        "cart.html",
+        "checkout.html",
+        "confirmation.html",
+        "customer-service.html",
+        "faq.html",
+        "furniture.html",
+        "index.html",
+        "lighting.html",
+        "login.html",
+        "new.html",
+        "product.html",
+        "returns.html",
+        "rooms.html",
+        "search.html",
+        "sofas.html",
+        "stores.html"
+      ],
+      "behavior": [
+        "Skip link to main content, visible on focus"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-only"
+    },
+    {
+      "id": "sort-control",
+      "selector": "[data-component='sort-control']",
+      "pages": [
+        "beds.html",
+        "lighting.html",
+        "search.html",
+        "sofas.html"
+      ],
+      "behavior": [
+        "Native select that re-sorts results and announces the change"
+      ],
+      "keyboard": [
+        "Tab",
+        "Arrow keys"
+      ],
+      "status": "implemented",
+      "validation": "axe-plus-scripted-playwright-flow"
+    },
+    {
+      "id": "spec-list",
+      "selector": "[data-component='spec-list']",
+      "pages": [
+        "product.html"
+      ],
+      "behavior": [
+        "Definition list of material, style and dimensions (sample values)"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "axe-only"
+    },
+    {
+      "id": "store-card",
+      "selector": "[data-component='store-card']",
+      "pages": [
+        "stores.html"
+      ],
+      "behavior": [
+        "One fictional store with invented address and 555 phone"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-plus-scripted-playwright-flow"
+    },
+    {
+      "id": "store-list",
+      "selector": "[data-component='store-list']",
+      "pages": [
+        "stores.html"
+      ],
+      "behavior": [
+        "Results list of fictional stores"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-plus-scripted-playwright-flow"
+    },
+    {
+      "id": "store-locator",
+      "selector": "[data-component='store-locator']",
+      "pages": [
+        "stores.html"
+      ],
+      "behavior": [
+        "Store search form over inline data with state filter and reset"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-plus-scripted-playwright-flow"
+    },
+    {
+      "id": "utility-nav",
+      "selector": "[data-component='utility-nav']",
+      "pages": [
+        "404.html",
+        "beds.html",
+        "cart.html",
+        "checkout.html",
+        "confirmation.html",
+        "customer-service.html",
+        "faq.html",
+        "furniture.html",
+        "index.html",
+        "lighting.html",
+        "login.html",
+        "new.html",
+        "product.html",
+        "returns.html",
+        "rooms.html",
+        "search.html",
+        "sofas.html",
+        "stores.html"
+      ],
+      "behavior": [
+        "Sign-in (demo), stores and bag links with live bag count"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-plus-scripted-playwright-flow"
+    },
+    {
+      "id": "variant-selector",
+      "selector": "[data-component='variant-selector']",
+      "pages": [
+        "product.html"
+      ],
+      "behavior": [
+        "Colour or finish radio group; every swatch has a visible text name and a check mark when selected"
+      ],
+      "keyboard": [
+        "Tab",
+        "Arrow keys",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "axe-plus-scripted-playwright-flow"
+    }
+  ]
+}

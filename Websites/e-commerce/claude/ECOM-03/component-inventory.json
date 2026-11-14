@@ -1,0 +1,1005 @@
+{
+  "protocol_version": "1.0",
+  "replica_id": "ECOM-03",
+  "category": "e-commerce",
+  "source_url": "https://www.orvis.com/",
+  "components": [
+    {
+      "id": "accordion",
+      "selector": "[data-component='accordion']",
+      "pages": [
+        "customer-care.html"
+      ],
+      "behavior": [
+        "container of FAQ items"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-only (see README); manual screen-reader testing not performed"
+    },
+    {
+      "id": "accordion-item",
+      "selector": "[data-component='accordion-item']",
+      "pages": [
+        "customer-care.html"
+      ],
+      "behavior": [
+        "disclosure button with aria-expanded; Escape collapses"
+      ],
+      "keyboard": [
+        "Enter",
+        "Space",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-only (see README); manual screen-reader testing not performed"
+    },
+    {
+      "id": "brand-link",
+      "selector": "[data-component='brand-link']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "cart.html",
+        "checkout.html",
+        "customer-care.html",
+        "dog-products.html",
+        "fly-fishing.html",
+        "gift-cards.html",
+        "index.html",
+        "login.html",
+        "men.html",
+        "order-demo.html",
+        "packs-bags.html",
+        "product.html",
+        "returns.html",
+        "search.html",
+        "size-guide.html",
+        "waders.html",
+        "women.html"
+      ],
+      "behavior": [
+        "static content block"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-only (see README); manual screen-reader testing not performed"
+    },
+    {
+      "id": "breadcrumbs",
+      "selector": "[data-component='breadcrumbs']",
+      "pages": [
+        "about.html",
+        "cart.html",
+        "checkout.html",
+        "customer-care.html",
+        "dog-products.html",
+        "fly-fishing.html",
+        "gift-cards.html",
+        "login.html",
+        "men.html",
+        "order-demo.html",
+        "packs-bags.html",
+        "product.html",
+        "returns.html",
+        "search.html",
+        "size-guide.html",
+        "waders.html",
+        "women.html"
+      ],
+      "behavior": [
+        "link trail, aria-current"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-only (see README); manual screen-reader testing not performed"
+    },
+    {
+      "id": "cart",
+      "selector": "[data-component='cart']",
+      "pages": [
+        "cart.html"
+      ],
+      "behavior": [
+        "quantity inputs, remove, clear, live announcements, empty state"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Number input arrows"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-only (see README); manual screen-reader testing not performed"
+    },
+    {
+      "id": "cart-line-item",
+      "selector": "[data-component='cart-line-item']",
+      "pages": [
+        "cart.html"
+      ],
+      "behavior": [
+        "quantity change and removal with focus management"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-only (see README); manual screen-reader testing not performed"
+    },
+    {
+      "id": "category-drawer",
+      "selector": "[data-component='category-drawer']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "cart.html",
+        "checkout.html",
+        "customer-care.html",
+        "dog-products.html",
+        "fly-fishing.html",
+        "gift-cards.html",
+        "index.html",
+        "login.html",
+        "men.html",
+        "order-demo.html",
+        "packs-bags.html",
+        "product.html",
+        "returns.html",
+        "search.html",
+        "size-guide.html",
+        "waders.html",
+        "women.html"
+      ],
+      "behavior": [
+        "modal dialog with accordion sub-lists",
+        "focus trap",
+        "Escape closes and returns focus to trigger",
+        "inert background"
+      ],
+      "keyboard": [
+        "Tab",
+        "Shift+Tab",
+        "Enter",
+        "Space",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-only (see README); manual screen-reader testing not performed"
+    },
+    {
+      "id": "category-drawer-trigger",
+      "selector": "[data-component='category-drawer-trigger']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "cart.html",
+        "checkout.html",
+        "customer-care.html",
+        "dog-products.html",
+        "fly-fishing.html",
+        "gift-cards.html",
+        "index.html",
+        "login.html",
+        "men.html",
+        "order-demo.html",
+        "packs-bags.html",
+        "product.html",
+        "returns.html",
+        "search.html",
+        "size-guide.html",
+        "waders.html",
+        "women.html"
+      ],
+      "behavior": [
+        "toggles drawer; aria-expanded"
+      ],
+      "keyboard": [
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-only (see README); manual screen-reader testing not performed"
+    },
+    {
+      "id": "category-tiles",
+      "selector": "[data-component='category-tiles']",
+      "pages": [
+        "404.html",
+        "dog-products.html",
+        "fly-fishing.html",
+        "index.html",
+        "men.html",
+        "packs-bags.html",
+        "women.html"
+      ],
+      "behavior": [
+        "static content block"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-only (see README); manual screen-reader testing not performed"
+    },
+    {
+      "id": "category-tiles-section",
+      "selector": "[data-component='category-tiles-section']",
+      "pages": [
+        "404.html",
+        "index.html"
+      ],
+      "behavior": [
+        "static content block"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-only (see README); manual screen-reader testing not performed"
+    },
+    {
+      "id": "checkout-form",
+      "selector": "[data-component='checkout-form']",
+      "pages": [
+        "checkout.html"
+      ],
+      "behavior": [
+        "validation, error summary, focus management, demo acknowledgement"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-only (see README); manual screen-reader testing not performed"
+    },
+    {
+      "id": "contact-form",
+      "selector": "[data-component='contact-form']",
+      "pages": [
+        "customer-care.html"
+      ],
+      "behavior": [
+        "demo validation only"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-only (see README); manual screen-reader testing not performed"
+    },
+    {
+      "id": "demo-notice",
+      "selector": "[data-component='demo-notice']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "cart.html",
+        "checkout.html",
+        "customer-care.html",
+        "dog-products.html",
+        "fly-fishing.html",
+        "gift-cards.html",
+        "index.html",
+        "login.html",
+        "men.html",
+        "order-demo.html",
+        "packs-bags.html",
+        "product.html",
+        "returns.html",
+        "search.html",
+        "size-guide.html",
+        "waders.html",
+        "women.html"
+      ],
+      "behavior": [
+        "static content block"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-only (see README); manual screen-reader testing not performed"
+    },
+    {
+      "id": "drawer-nav",
+      "selector": "[data-component='drawer-nav']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "cart.html",
+        "checkout.html",
+        "customer-care.html",
+        "dog-products.html",
+        "fly-fishing.html",
+        "gift-cards.html",
+        "index.html",
+        "login.html",
+        "men.html",
+        "order-demo.html",
+        "packs-bags.html",
+        "product.html",
+        "returns.html",
+        "search.html",
+        "size-guide.html",
+        "waders.html",
+        "women.html"
+      ],
+      "behavior": [
+        "accordion buttons with aria-expanded"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-only (see README); manual screen-reader testing not performed"
+    },
+    {
+      "id": "empty-state",
+      "selector": "[data-component='empty-state']",
+      "pages": [
+        "cart.html",
+        "checkout.html",
+        "dog-products.html",
+        "fly-fishing.html",
+        "men.html",
+        "packs-bags.html",
+        "search.html",
+        "waders.html",
+        "women.html"
+      ],
+      "behavior": [
+        "listing, search, cart and checkout empty states"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-only (see README); manual screen-reader testing not performed"
+    },
+    {
+      "id": "filter-panel",
+      "selector": "[data-component='filter-panel']",
+      "pages": [
+        "dog-products.html",
+        "fly-fishing.html",
+        "men.html",
+        "packs-bags.html",
+        "waders.html",
+        "women.html"
+      ],
+      "behavior": [
+        "checkbox groups in fieldsets",
+        "mobile disclosure with aria-expanded"
+      ],
+      "keyboard": [
+        "Tab",
+        "Space",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-only (see README); manual screen-reader testing not performed"
+    },
+    {
+      "id": "footer-link-group",
+      "selector": "[data-component='footer-link-group']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "cart.html",
+        "checkout.html",
+        "customer-care.html",
+        "dog-products.html",
+        "fly-fishing.html",
+        "gift-cards.html",
+        "index.html",
+        "login.html",
+        "men.html",
+        "order-demo.html",
+        "packs-bags.html",
+        "product.html",
+        "returns.html",
+        "search.html",
+        "size-guide.html",
+        "waders.html",
+        "women.html"
+      ],
+      "behavior": [
+        "static content block"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-only (see README); manual screen-reader testing not performed"
+    },
+    {
+      "id": "gift-card-form",
+      "selector": "[data-component='gift-card-form']",
+      "pages": [
+        "gift-cards.html"
+      ],
+      "behavior": [
+        "demo validation only"
+      ],
+      "keyboard": [
+        "Tab",
+        "Arrow keys",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-only (see README); manual screen-reader testing not performed"
+    },
+    {
+      "id": "hero-banner",
+      "selector": "[data-component='hero-banner']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "static content block"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-only (see README); manual screen-reader testing not performed"
+    },
+    {
+      "id": "info-block",
+      "selector": "[data-component='info-block']",
+      "pages": [
+        "customer-care.html",
+        "returns.html"
+      ],
+      "behavior": [
+        "static content block"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-only (see README); manual screen-reader testing not performed"
+    },
+    {
+      "id": "info-cards",
+      "selector": "[data-component='info-cards']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "static content block"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-only (see README); manual screen-reader testing not performed"
+    },
+    {
+      "id": "legal-note",
+      "selector": "[data-component='legal-note']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "cart.html",
+        "checkout.html",
+        "customer-care.html",
+        "dog-products.html",
+        "fly-fishing.html",
+        "gift-cards.html",
+        "index.html",
+        "login.html",
+        "men.html",
+        "order-demo.html",
+        "packs-bags.html",
+        "product.html",
+        "returns.html",
+        "search.html",
+        "size-guide.html",
+        "waders.html",
+        "women.html"
+      ],
+      "behavior": [
+        "static content block"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-only (see README); manual screen-reader testing not performed"
+    },
+    {
+      "id": "live-region",
+      "selector": "[data-component='live-region']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "cart.html",
+        "checkout.html",
+        "customer-care.html",
+        "dog-products.html",
+        "fly-fishing.html",
+        "gift-cards.html",
+        "index.html",
+        "login.html",
+        "men.html",
+        "order-demo.html",
+        "packs-bags.html",
+        "product.html",
+        "returns.html",
+        "search.html",
+        "size-guide.html",
+        "waders.html",
+        "women.html"
+      ],
+      "behavior": [
+        "polite status announcements"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-only (see README); manual screen-reader testing not performed"
+    },
+    {
+      "id": "login-form",
+      "selector": "[data-component='login-form']",
+      "pages": [
+        "login.html"
+      ],
+      "behavior": [
+        "demo validation only"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-only (see README); manual screen-reader testing not performed"
+    },
+    {
+      "id": "order-confirmation",
+      "selector": "[data-component='order-confirmation']",
+      "pages": [
+        "order-demo.html"
+      ],
+      "behavior": [
+        "marked DEMO ONLY; no order number"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-only (see README); manual screen-reader testing not performed"
+    },
+    {
+      "id": "order-summary",
+      "selector": "[data-component='order-summary']",
+      "pages": [
+        "cart.html",
+        "checkout.html"
+      ],
+      "behavior": [
+        "illustrative totals"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-only (see README); manual screen-reader testing not performed"
+    },
+    {
+      "id": "payment-placeholder",
+      "selector": "[data-component='payment-placeholder']",
+      "pages": [
+        "checkout.html"
+      ],
+      "behavior": [
+        "non-functional explanation; no payment fields exist"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-only (see README); manual screen-reader testing not performed"
+    },
+    {
+      "id": "primary-nav",
+      "selector": "[data-component='primary-nav']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "cart.html",
+        "checkout.html",
+        "customer-care.html",
+        "dog-products.html",
+        "fly-fishing.html",
+        "gift-cards.html",
+        "index.html",
+        "login.html",
+        "men.html",
+        "order-demo.html",
+        "packs-bags.html",
+        "product.html",
+        "returns.html",
+        "search.html",
+        "size-guide.html",
+        "waders.html",
+        "women.html"
+      ],
+      "behavior": [
+        "department links shown at 860px and wider; aria-current on active page"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-only (see README); manual screen-reader testing not performed"
+    },
+    {
+      "id": "product-card",
+      "selector": "[data-component='product-card']",
+      "pages": [
+        "dog-products.html",
+        "fly-fishing.html",
+        "index.html",
+        "men.html",
+        "packs-bags.html",
+        "search.html",
+        "waders.html",
+        "women.html"
+      ],
+      "behavior": [
+        "whole card link, colour chips with text names"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-only (see README); manual screen-reader testing not performed"
+    },
+    {
+      "id": "product-detail",
+      "selector": "[data-component='product-detail']",
+      "pages": [
+        "product.html"
+      ],
+      "behavior": [
+        "variant selection by radios with text names",
+        "add to cart",
+        "live region confirmation"
+      ],
+      "keyboard": [
+        "Tab",
+        "Arrow keys",
+        "Space",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-only (see README); manual screen-reader testing not performed"
+    },
+    {
+      "id": "product-grid",
+      "selector": "[data-component='product-grid']",
+      "pages": [
+        "dog-products.html",
+        "fly-fishing.html",
+        "index.html",
+        "men.html",
+        "packs-bags.html",
+        "search.html",
+        "waders.html",
+        "women.html"
+      ],
+      "behavior": [
+        "card grid"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-only (see README); manual screen-reader testing not performed"
+    },
+    {
+      "id": "product-grid-section",
+      "selector": "[data-component='product-grid-section']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "static content block"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-only (see README); manual screen-reader testing not performed"
+    },
+    {
+      "id": "product-listing",
+      "selector": "[data-component='product-listing']",
+      "pages": [
+        "dog-products.html",
+        "fly-fishing.html",
+        "men.html",
+        "packs-bags.html",
+        "waders.html",
+        "women.html"
+      ],
+      "behavior": [
+        "filters (type, colour, size, price, sale, availability)",
+        "sort",
+        "result count live announcement",
+        "empty state",
+        "mobile filter disclosure"
+      ],
+      "keyboard": [
+        "Tab",
+        "Space",
+        "Arrow keys on select",
+        "Escape closes mobile filter panel"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-only (see README); manual screen-reader testing not performed"
+    },
+    {
+      "id": "promo-banner",
+      "selector": "[data-component='promo-banner']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "cart.html",
+        "checkout.html",
+        "customer-care.html",
+        "dog-products.html",
+        "fly-fishing.html",
+        "gift-cards.html",
+        "index.html",
+        "login.html",
+        "men.html",
+        "order-demo.html",
+        "packs-bags.html",
+        "product.html",
+        "returns.html",
+        "search.html",
+        "size-guide.html",
+        "waders.html",
+        "women.html"
+      ],
+      "behavior": [
+        "static content block"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-only (see README); manual screen-reader testing not performed"
+    },
+    {
+      "id": "search-results",
+      "selector": "[data-component='search-results']",
+      "pages": [
+        "search.html"
+      ],
+      "behavior": [
+        "query over inline data",
+        "empty state"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-only (see README); manual screen-reader testing not performed"
+    },
+    {
+      "id": "site-footer",
+      "selector": "[data-component='site-footer']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "cart.html",
+        "checkout.html",
+        "customer-care.html",
+        "dog-products.html",
+        "fly-fishing.html",
+        "gift-cards.html",
+        "index.html",
+        "login.html",
+        "men.html",
+        "order-demo.html",
+        "packs-bags.html",
+        "product.html",
+        "returns.html",
+        "search.html",
+        "size-guide.html",
+        "waders.html",
+        "women.html"
+      ],
+      "behavior": [
+        "static content block"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-only (see README); manual screen-reader testing not performed"
+    },
+    {
+      "id": "site-header",
+      "selector": "[data-component='site-header']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "cart.html",
+        "checkout.html",
+        "customer-care.html",
+        "dog-products.html",
+        "fly-fishing.html",
+        "gift-cards.html",
+        "index.html",
+        "login.html",
+        "men.html",
+        "order-demo.html",
+        "packs-bags.html",
+        "product.html",
+        "returns.html",
+        "search.html",
+        "size-guide.html",
+        "waders.html",
+        "women.html"
+      ],
+      "behavior": [
+        "brand, search, utility links, cart count badge"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-only (see README); manual screen-reader testing not performed"
+    },
+    {
+      "id": "site-search",
+      "selector": "[data-component='site-search']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "cart.html",
+        "checkout.html",
+        "customer-care.html",
+        "dog-products.html",
+        "fly-fishing.html",
+        "gift-cards.html",
+        "index.html",
+        "login.html",
+        "men.html",
+        "order-demo.html",
+        "packs-bags.html",
+        "product.html",
+        "returns.html",
+        "search.html",
+        "size-guide.html",
+        "waders.html",
+        "women.html"
+      ],
+      "behavior": [
+        "GET form to search.html searching inline catalogue"
+      ],
+      "keyboard": [
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-only (see README); manual screen-reader testing not performed"
+    },
+    {
+      "id": "sort-bar",
+      "selector": "[data-component='sort-bar']",
+      "pages": [
+        "dog-products.html",
+        "fly-fishing.html",
+        "men.html",
+        "packs-bags.html",
+        "waders.html",
+        "women.html"
+      ],
+      "behavior": [
+        "native select sort"
+      ],
+      "keyboard": [
+        "Arrow keys"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-only (see README); manual screen-reader testing not performed"
+    },
+    {
+      "id": "tabs",
+      "selector": "[data-component='tabs']",
+      "pages": [
+        "size-guide.html"
+      ],
+      "behavior": [
+        "size chart tabs with arrow-key navigation"
+      ],
+      "keyboard": [
+        "Arrow keys",
+        "Home",
+        "End",
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-only (see README); manual screen-reader testing not performed"
+    },
+    {
+      "id": "utility-nav",
+      "selector": "[data-component='utility-nav']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "cart.html",
+        "checkout.html",
+        "customer-care.html",
+        "dog-products.html",
+        "fly-fishing.html",
+        "gift-cards.html",
+        "index.html",
+        "login.html",
+        "men.html",
+        "order-demo.html",
+        "packs-bags.html",
+        "product.html",
+        "returns.html",
+        "search.html",
+        "size-guide.html",
+        "waders.html",
+        "women.html"
+      ],
+      "behavior": [
+        "static content block"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-only (see README); manual screen-reader testing not performed"
+    },
+    {
+      "id": "variant-form",
+      "selector": "[data-component='variant-form']",
+      "pages": [
+        "product.html"
+      ],
+      "behavior": [
+        "colour, size and quantity validation with error summary and focus"
+      ],
+      "keyboard": [
+        "Tab",
+        "Arrow keys",
+        "Space",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-only (see README); manual screen-reader testing not performed"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "kind": "execution outcome wrapper, not shared QC output",
+  "command": "node <actual-repository>/Websites/tools/qc/qc.js <isolated-site-absolute-path> --json <run>/qc-initial.json",
+  "attempts": 1,
+  "exit_code": 2,
+  "shared_json_emitted": false,
+  "browser_launched": false,
+  "axe_executed": false,
+  "status": "blocked",
+  "reason": "Chromium launch crashed with permission errors (EPERM/SIGTRAP); retained full stderr in qc-initial.log. No browser reinstall, bypass or retry.",
+  "static_checks": "Separate static-checks.json passed; not treated as the missing shared QC JSON."
+}

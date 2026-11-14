@@ -1,0 +1,16 @@
+{
+  "at": "2026-11-13T15:44:29.671Z",
+  "method": "Node vm executes actual main.js with DOM stand-ins; no browser or rendering",
+  "tests": [
+    "Menu click expands; Escape closes and requests focus return",
+    "Opening second submenu closes first; Escape dismisses submenu",
+    "Actual filter handler: trim/case-insensitive match, combined campus empty state, reset/focus, field filter",
+    "visit: open, blank errors/summary focus, malformed email, valid local success with no-transaction disclosure, close focus return, reopen reset",
+    "apply: open, blank errors/summary focus, malformed email, valid local success with no-transaction disclosure, close focus return, reopen reset"
+  ],
+  "passed": 5,
+  "browser_interactions": "not-tested",
+  "limits": [
+    "Native details and dialog internals, focus containment, accessibility tree, actual keyboard events, CSS layout and responsive reflow are not validated by these stand-ins."
+  ]
+}

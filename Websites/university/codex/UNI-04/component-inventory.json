@@ -1,0 +1,1172 @@
+{
+  "protocol_version": "1.0",
+  "replica_id": "UNI-04",
+  "category": "university",
+  "source_url": "https://www.psu.edu/",
+  "components": [
+    {
+      "id": "accordion",
+      "selector": "[data-component=\"accordion\"]",
+      "pages": [
+        "apply.html",
+        "biology.html",
+        "costs-aid.html",
+        "visit.html"
+      ],
+      "behavior": [
+        "native independent disclosures"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "static instance/selector and page verification passed; browser behavior not-tested (Chromium launch permission denied)",
+      "instances": [
+        {
+          "page": "apply.html",
+          "data_section": "application-faq",
+          "element": "section"
+        },
+        {
+          "page": "biology.html",
+          "data_section": "academic-plan",
+          "element": "section"
+        },
+        {
+          "page": "costs-aid.html",
+          "data_section": "aid-types",
+          "element": "section"
+        },
+        {
+          "page": "visit.html",
+          "data_section": "virtual-visits",
+          "element": "section"
+        }
+      ]
+    },
+    {
+      "id": "breadcrumbs",
+      "selector": "[data-component=\"breadcrumbs\"]",
+      "pages": [
+        "404.html",
+        "apply.html",
+        "biology.html",
+        "costs-aid.html",
+        "directories.html",
+        "majors.html",
+        "news.html",
+        "visit.html"
+      ],
+      "behavior": [
+        "local hierarchy links"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "static instance/selector and page verification passed; browser behavior not-tested (Chromium launch permission denied)",
+      "instances": [
+        {
+          "page": "404.html",
+          "data_section": "breadcrumbs",
+          "element": "nav"
+        },
+        {
+          "page": "apply.html",
+          "data_section": "breadcrumbs",
+          "element": "nav"
+        },
+        {
+          "page": "biology.html",
+          "data_section": "breadcrumbs",
+          "element": "nav"
+        },
+        {
+          "page": "costs-aid.html",
+          "data_section": "breadcrumbs",
+          "element": "nav"
+        },
+        {
+          "page": "directories.html",
+          "data_section": "breadcrumbs",
+          "element": "nav"
+        },
+        {
+          "page": "majors.html",
+          "data_section": "breadcrumbs",
+          "element": "nav"
+        },
+        {
+          "page": "news.html",
+          "data_section": "breadcrumbs",
+          "element": "nav"
+        },
+        {
+          "page": "visit.html",
+          "data_section": "breadcrumbs",
+          "element": "nav"
+        }
+      ]
+    },
+    {
+      "id": "card-grid",
+      "selector": "[data-component=\"card-grid\"]",
+      "pages": [
+        "apply.html",
+        "directories.html",
+        "index.html",
+        "news.html",
+        "visit.html"
+      ],
+      "behavior": [
+        "grouped linked content"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "static instance/selector and page verification passed; browser behavior not-tested (Chromium launch permission denied)",
+      "instances": [
+        {
+          "page": "apply.html",
+          "data_section": "application-routes",
+          "element": "section"
+        },
+        {
+          "page": "directories.html",
+          "data_section": "directory-gateway",
+          "element": "section"
+        },
+        {
+          "page": "index.html",
+          "data_section": "latest-news",
+          "element": "section"
+        },
+        {
+          "page": "news.html",
+          "data_section": "around-campus",
+          "element": "section"
+        },
+        {
+          "page": "visit.html",
+          "data_section": "campus-visit-options",
+          "element": "section"
+        }
+      ]
+    },
+    {
+      "id": "content-card",
+      "selector": "[data-component=\"content-card\"]",
+      "pages": [
+        "apply.html",
+        "costs-aid.html",
+        "directories.html",
+        "index.html",
+        "news.html",
+        "visit.html"
+      ],
+      "behavior": [
+        "local content links or simulation trigger"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "static instance/selector and page verification passed; browser behavior not-tested (Chromium launch permission denied)",
+      "instances": [
+        {
+          "page": "apply.html",
+          "data_section": "content-card",
+          "element": "article"
+        },
+        {
+          "page": "apply.html",
+          "data_section": "content-card",
+          "element": "article"
+        },
+        {
+          "page": "costs-aid.html",
+          "data_section": "content-card",
+          "element": "article"
+        },
+        {
+          "page": "costs-aid.html",
+          "data_section": "content-card",
+          "element": "article"
+        },
+        {
+          "page": "costs-aid.html",
+          "data_section": "content-card",
+          "element": "article"
+        },
+        {
+          "page": "directories.html",
+          "data_section": "content-card",
+          "element": "article"
+        },
+        {
+          "page": "directories.html",
+          "data_section": "content-card",
+          "element": "article"
+        },
+        {
+          "page": "directories.html",
+          "data_section": "content-card",
+          "element": "article"
+        },
+        {
+          "page": "index.html",
+          "data_section": "content-card",
+          "element": "article"
+        },
+        {
+          "page": "index.html",
+          "data_section": "content-card",
+          "element": "article"
+        },
+        {
+          "page": "index.html",
+          "data_section": "content-card",
+          "element": "article"
+        },
+        {
+          "page": "news.html",
+          "data_section": "content-card",
+          "element": "article"
+        },
+        {
+          "page": "news.html",
+          "data_section": "content-card",
+          "element": "article"
+        },
+        {
+          "page": "visit.html",
+          "data_section": "content-card",
+          "element": "article"
+        },
+        {
+          "page": "visit.html",
+          "data_section": "content-card",
+          "element": "article"
+        },
+        {
+          "page": "visit.html",
+          "data_section": "content-card",
+          "element": "article"
+        }
+      ]
+    },
+    {
+      "id": "content-section",
+      "selector": "[data-component=\"content-section\"]",
+      "behavior": [
+        "semantic content region"
+      ],
+      "keyboard": [
+        "Tab and Enter for links where present"
+      ],
+      "status": "implemented",
+      "pages": [
+        "apply.html",
+        "biology.html",
+        "costs-aid.html",
+        "directories.html",
+        "news.html",
+        "visit.html"
+      ],
+      "instances": [
+        {
+          "page": "apply.html",
+          "data_section": "application-preparation",
+          "element": "section"
+        },
+        {
+          "page": "apply.html",
+          "data_section": "admission-requirements",
+          "element": "section"
+        },
+        {
+          "page": "biology.html",
+          "data_section": "program-description",
+          "element": "section"
+        },
+        {
+          "page": "biology.html",
+          "data_section": "entrance-requirements",
+          "element": "section"
+        },
+        {
+          "page": "biology.html",
+          "data_section": "learning-objectives",
+          "element": "section"
+        },
+        {
+          "page": "biology.html",
+          "data_section": "academic-advising",
+          "element": "section"
+        },
+        {
+          "page": "biology.html",
+          "data_section": "career-paths",
+          "element": "section"
+        },
+        {
+          "page": "costs-aid.html",
+          "data_section": "student-aid-process",
+          "element": "section"
+        },
+        {
+          "page": "costs-aid.html",
+          "data_section": "aid-application",
+          "element": "section"
+        },
+        {
+          "page": "costs-aid.html",
+          "data_section": "aid-management",
+          "element": "section"
+        },
+        {
+          "page": "directories.html",
+          "data_section": "academic-offices",
+          "element": "section"
+        },
+        {
+          "page": "directories.html",
+          "data_section": "student-support-offices",
+          "element": "section"
+        },
+        {
+          "page": "news.html",
+          "data_section": "news-stories",
+          "element": "section"
+        },
+        {
+          "page": "visit.html",
+          "data_section": "ridge-campus-visits",
+          "element": "section"
+        },
+        {
+          "page": "visit.html",
+          "data_section": "river-campus-visits",
+          "element": "section"
+        }
+      ],
+      "validation": "static instance/selector and page verification passed; browser behavior not-tested (Chromium launch permission denied)"
+    },
+    {
+      "id": "demo-dialog",
+      "selector": "[data-component=\"demo-dialog\"]",
+      "pages": [
+        "apply.html",
+        "visit.html"
+      ],
+      "behavior": [
+        "native modal",
+        "close and focus return",
+        "reset before each open"
+      ],
+      "keyboard": [
+        "Tab",
+        "Shift+Tab",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "static instance/selector and page verification passed; browser behavior not-tested (Chromium launch permission denied)",
+      "instances": [
+        {
+          "page": "apply.html",
+          "data_section": "request-simulation",
+          "element": "dialog"
+        },
+        {
+          "page": "visit.html",
+          "data_section": "request-simulation",
+          "element": "dialog"
+        }
+      ],
+      "logic_validation": "actual main.js executed with Node vm DOM stand-ins; 5 test groups passed; see interaction-logic-results.json; not a browser interaction test"
+    },
+    {
+      "id": "demo-form",
+      "selector": "[data-component=\"demo-form\"]",
+      "pages": [
+        "apply.html",
+        "visit.html"
+      ],
+      "behavior": [
+        "required name and valid email",
+        "visit date required",
+        "focused error summary",
+        "local simulation success"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "native select/date controls"
+      ],
+      "status": "implemented",
+      "validation": "static instance/selector and page verification passed; browser behavior not-tested (Chromium launch permission denied)",
+      "instances": [
+        {
+          "page": "apply.html",
+          "data_section": "demo-form",
+          "element": "form"
+        },
+        {
+          "page": "visit.html",
+          "data_section": "demo-form",
+          "element": "form"
+        }
+      ],
+      "logic_validation": "actual main.js executed with Node vm DOM stand-ins; 5 test groups passed; see interaction-logic-results.json; not a browser interaction test"
+    },
+    {
+      "id": "feature-band",
+      "selector": "[data-component=\"feature-band\"]",
+      "pages": [
+        "apply.html",
+        "costs-aid.html",
+        "index.html"
+      ],
+      "behavior": [
+        "opportunity and introduction regions"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "static instance/selector and page verification passed; browser behavior not-tested (Chromium launch permission denied)",
+      "instances": [
+        {
+          "page": "apply.html",
+          "data_section": "community-introduction",
+          "element": "section"
+        },
+        {
+          "page": "costs-aid.html",
+          "data_section": "aid-introduction",
+          "element": "section"
+        },
+        {
+          "page": "index.html",
+          "data_section": "opportunities",
+          "element": "section"
+        }
+      ]
+    },
+    {
+      "id": "feature-panel",
+      "selector": "[data-component=\"feature-panel\"]",
+      "pages": [
+        "index.html",
+        "news.html",
+        "visit.html"
+      ],
+      "behavior": [
+        "illustration and feature content"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "static instance/selector and page verification passed; browser behavior not-tested (Chromium launch permission denied)",
+      "instances": [
+        {
+          "page": "index.html",
+          "data_section": "campus-traditions",
+          "element": "section"
+        },
+        {
+          "page": "news.html",
+          "data_section": "featured-research",
+          "element": "section"
+        },
+        {
+          "page": "visit.html",
+          "data_section": "admitted-student-visits",
+          "element": "section"
+        }
+      ]
+    },
+    {
+      "id": "main-content",
+      "selector": "[data-component=\"main-content\"]",
+      "behavior": [
+        "semantic content region"
+      ],
+      "keyboard": [
+        "Tab and Enter for links where present"
+      ],
+      "status": "implemented",
+      "pages": [
+        "404.html",
+        "apply.html",
+        "biology.html",
+        "costs-aid.html",
+        "directories.html",
+        "index.html",
+        "majors.html",
+        "news.html",
+        "visit.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "data_section": "main-content",
+          "element": "main"
+        },
+        {
+          "page": "apply.html",
+          "data_section": "main-content",
+          "element": "main"
+        },
+        {
+          "page": "biology.html",
+          "data_section": "main-content",
+          "element": "main"
+        },
+        {
+          "page": "costs-aid.html",
+          "data_section": "main-content",
+          "element": "main"
+        },
+        {
+          "page": "directories.html",
+          "data_section": "main-content",
+          "element": "main"
+        },
+        {
+          "page": "index.html",
+          "data_section": "main-content",
+          "element": "main"
+        },
+        {
+          "page": "majors.html",
+          "data_section": "main-content",
+          "element": "main"
+        },
+        {
+          "page": "news.html",
+          "data_section": "main-content",
+          "element": "main"
+        },
+        {
+          "page": "visit.html",
+          "data_section": "main-content",
+          "element": "main"
+        }
+      ],
+      "validation": "static instance/selector and page verification passed; browser behavior not-tested (Chromium launch permission denied)"
+    },
+    {
+      "id": "media-hero",
+      "selector": "[data-component=\"media-hero\"]",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "illustrated home introduction"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "static instance/selector and page verification passed; browser behavior not-tested (Chromium launch permission denied)",
+      "instances": [
+        {
+          "page": "index.html",
+          "data_section": "home-hero",
+          "element": "section"
+        }
+      ]
+    },
+    {
+      "id": "news-article",
+      "selector": "[data-component=\"news-article\"]",
+      "pages": [
+        "news.html"
+      ],
+      "behavior": [
+        "three inline fictional stories with anchor navigation"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter for linked program"
+      ],
+      "status": "implemented",
+      "validation": "static instance/selector and page verification passed; browser behavior not-tested (Chromium launch permission denied)",
+      "instances": [
+        {
+          "page": "news.html",
+          "data_section": "news-article",
+          "element": "article"
+        },
+        {
+          "page": "news.html",
+          "data_section": "news-article",
+          "element": "article"
+        },
+        {
+          "page": "news.html",
+          "data_section": "news-article",
+          "element": "article"
+        }
+      ]
+    },
+    {
+      "id": "notice",
+      "selector": "[data-component=\"notice\"]",
+      "pages": [
+        "404.html",
+        "index.html",
+        "news.html"
+      ],
+      "behavior": [
+        "informational disclosure or recovery links"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter where linked"
+      ],
+      "status": "implemented",
+      "validation": "static instance/selector and page verification passed; browser behavior not-tested (Chromium launch permission denied)",
+      "instances": [
+        {
+          "page": "404.html",
+          "data_section": "error-recovery",
+          "element": "section"
+        },
+        {
+          "page": "index.html",
+          "data_section": "research-disclosure",
+          "element": "section"
+        },
+        {
+          "page": "news.html",
+          "data_section": "media-highlights",
+          "element": "section"
+        }
+      ]
+    },
+    {
+      "id": "page-hero",
+      "selector": "[data-component=\"page-hero\"]",
+      "pages": [
+        "404.html",
+        "apply.html",
+        "biology.html",
+        "costs-aid.html",
+        "directories.html",
+        "majors.html",
+        "news.html",
+        "visit.html"
+      ],
+      "behavior": [
+        "page introduction"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "static instance/selector and page verification passed; browser behavior not-tested (Chromium launch permission denied)",
+      "instances": [
+        {
+          "page": "404.html",
+          "data_section": "page-introduction",
+          "element": "section"
+        },
+        {
+          "page": "apply.html",
+          "data_section": "page-introduction",
+          "element": "section"
+        },
+        {
+          "page": "biology.html",
+          "data_section": "bulletin-heading",
+          "element": "section"
+        },
+        {
+          "page": "costs-aid.html",
+          "data_section": "page-introduction",
+          "element": "section"
+        },
+        {
+          "page": "directories.html",
+          "data_section": "page-introduction",
+          "element": "section"
+        },
+        {
+          "page": "majors.html",
+          "data_section": "page-introduction",
+          "element": "section"
+        },
+        {
+          "page": "news.html",
+          "data_section": "news-heading",
+          "element": "section"
+        },
+        {
+          "page": "visit.html",
+          "data_section": "page-introduction",
+          "element": "section"
+        }
+      ]
+    },
+    {
+      "id": "primary-nav",
+      "selector": "[data-component=\"primary-nav\"]",
+      "pages": [
+        "404.html",
+        "apply.html",
+        "biology.html",
+        "costs-aid.html",
+        "directories.html",
+        "index.html",
+        "majors.html",
+        "news.html",
+        "visit.html"
+      ],
+      "behavior": [
+        "responsive menu",
+        "native nested disclosures",
+        "exclusive opening and Escape dismissal"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "static instance/selector and page verification passed; browser behavior not-tested (Chromium launch permission denied)",
+      "instances": [
+        {
+          "page": "404.html",
+          "data_section": "global-navigation",
+          "element": "nav"
+        },
+        {
+          "page": "apply.html",
+          "data_section": "global-navigation",
+          "element": "nav"
+        },
+        {
+          "page": "biology.html",
+          "data_section": "global-navigation",
+          "element": "nav"
+        },
+        {
+          "page": "costs-aid.html",
+          "data_section": "global-navigation",
+          "element": "nav"
+        },
+        {
+          "page": "directories.html",
+          "data_section": "global-navigation",
+          "element": "nav"
+        },
+        {
+          "page": "index.html",
+          "data_section": "global-navigation",
+          "element": "nav"
+        },
+        {
+          "page": "majors.html",
+          "data_section": "global-navigation",
+          "element": "nav"
+        },
+        {
+          "page": "news.html",
+          "data_section": "global-navigation",
+          "element": "nav"
+        },
+        {
+          "page": "visit.html",
+          "data_section": "global-navigation",
+          "element": "nav"
+        }
+      ],
+      "logic_validation": "actual main.js executed with Node vm DOM stand-ins; 5 test groups passed; see interaction-logic-results.json; not a browser interaction test"
+    },
+    {
+      "id": "program-card",
+      "selector": "[data-component=\"program-card\"]",
+      "pages": [
+        "majors.html"
+      ],
+      "behavior": [
+        "eight inline records; one mapped detail"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter for Biology"
+      ],
+      "status": "implemented",
+      "validation": "static instance/selector and page verification passed; browser behavior not-tested (Chromium launch permission denied)",
+      "instances": [
+        {
+          "page": "majors.html",
+          "data_section": "program-card",
+          "element": "article"
+        },
+        {
+          "page": "majors.html",
+          "data_section": "program-card",
+          "element": "article"
+        },
+        {
+          "page": "majors.html",
+          "data_section": "program-card",
+          "element": "article"
+        },
+        {
+          "page": "majors.html",
+          "data_section": "program-card",
+          "element": "article"
+        },
+        {
+          "page": "majors.html",
+          "data_section": "program-card",
+          "element": "article"
+        },
+        {
+          "page": "majors.html",
+          "data_section": "program-card",
+          "element": "article"
+        },
+        {
+          "page": "majors.html",
+          "data_section": "program-card",
+          "element": "article"
+        },
+        {
+          "page": "majors.html",
+          "data_section": "program-card",
+          "element": "article"
+        }
+      ]
+    },
+    {
+      "id": "program-search",
+      "selector": "[data-component=\"program-search\"]",
+      "pages": [
+        "majors.html"
+      ],
+      "behavior": [
+        "text search and combined local filters",
+        "reset",
+        "result status and empty state"
+      ],
+      "keyboard": [
+        "Tab",
+        "typing",
+        "native select arrows",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "static instance/selector and page verification passed; browser behavior not-tested (Chromium launch permission denied)",
+      "instances": [
+        {
+          "page": "majors.html",
+          "data_section": "major-finder",
+          "element": "section"
+        }
+      ],
+      "logic_validation": "actual main.js executed with Node vm DOM stand-ins; 5 test groups passed; see interaction-logic-results.json; not a browser interaction test"
+    },
+    {
+      "id": "requirements-table",
+      "selector": "[data-component=\"requirements-table\"]",
+      "pages": [
+        "apply.html",
+        "biology.html",
+        "costs-aid.html"
+      ],
+      "behavior": [
+        "semantic table headers and captions"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "static instance/selector and page verification passed; browser behavior not-tested (Chromium launch permission denied)",
+      "instances": [
+        {
+          "page": "apply.html",
+          "data_section": "application-dates",
+          "element": "section"
+        },
+        {
+          "page": "biology.html",
+          "data_section": "degree-requirements",
+          "element": "section"
+        },
+        {
+          "page": "costs-aid.html",
+          "data_section": "cost-of-attendance",
+          "element": "section"
+        }
+      ]
+    },
+    {
+      "id": "section-nav",
+      "selector": "[data-component=\"section-nav\"]",
+      "pages": [
+        "biology.html"
+      ],
+      "behavior": [
+        "in-page program section links"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "static instance/selector and page verification passed; browser behavior not-tested (Chromium launch permission denied)",
+      "instances": [
+        {
+          "page": "biology.html",
+          "data_section": "program-navigation",
+          "element": "aside"
+        }
+      ]
+    },
+    {
+      "id": "site-footer",
+      "selector": "[data-component=\"site-footer\"]",
+      "pages": [
+        "404.html",
+        "apply.html",
+        "biology.html",
+        "costs-aid.html",
+        "directories.html",
+        "index.html",
+        "majors.html",
+        "news.html",
+        "visit.html"
+      ],
+      "behavior": [
+        "grouped local links"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "static instance/selector and page verification passed; browser behavior not-tested (Chromium launch permission denied)",
+      "instances": [
+        {
+          "page": "404.html",
+          "data_section": "global-footer",
+          "element": "footer"
+        },
+        {
+          "page": "apply.html",
+          "data_section": "global-footer",
+          "element": "footer"
+        },
+        {
+          "page": "biology.html",
+          "data_section": "global-footer",
+          "element": "footer"
+        },
+        {
+          "page": "costs-aid.html",
+          "data_section": "global-footer",
+          "element": "footer"
+        },
+        {
+          "page": "directories.html",
+          "data_section": "global-footer",
+          "element": "footer"
+        },
+        {
+          "page": "index.html",
+          "data_section": "global-footer",
+          "element": "footer"
+        },
+        {
+          "page": "majors.html",
+          "data_section": "global-footer",
+          "element": "footer"
+        },
+        {
+          "page": "news.html",
+          "data_section": "global-footer",
+          "element": "footer"
+        },
+        {
+          "page": "visit.html",
+          "data_section": "global-footer",
+          "element": "footer"
+        }
+      ]
+    },
+    {
+      "id": "site-header",
+      "selector": "[data-component=\"site-header\"]",
+      "pages": [
+        "404.html",
+        "apply.html",
+        "biology.html",
+        "costs-aid.html",
+        "directories.html",
+        "index.html",
+        "majors.html",
+        "news.html",
+        "visit.html"
+      ],
+      "behavior": [
+        "static brand and utility navigation"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "static instance/selector and page verification passed; browser behavior not-tested (Chromium launch permission denied)",
+      "instances": [
+        {
+          "page": "404.html",
+          "data_section": "global-header",
+          "element": "header"
+        },
+        {
+          "page": "apply.html",
+          "data_section": "global-header",
+          "element": "header"
+        },
+        {
+          "page": "biology.html",
+          "data_section": "global-header",
+          "element": "header"
+        },
+        {
+          "page": "costs-aid.html",
+          "data_section": "global-header",
+          "element": "header"
+        },
+        {
+          "page": "directories.html",
+          "data_section": "global-header",
+          "element": "header"
+        },
+        {
+          "page": "index.html",
+          "data_section": "global-header",
+          "element": "header"
+        },
+        {
+          "page": "majors.html",
+          "data_section": "global-header",
+          "element": "header"
+        },
+        {
+          "page": "news.html",
+          "data_section": "global-header",
+          "element": "header"
+        },
+        {
+          "page": "visit.html",
+          "data_section": "global-header",
+          "element": "header"
+        }
+      ]
+    },
+    {
+      "id": "statistics-band",
+      "selector": "[data-component=\"statistics-band\"]",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "qualitative highlights replacing statistical claims"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "static instance/selector and page verification passed; browser behavior not-tested (Chromium launch permission denied)",
+      "instances": [
+        {
+          "page": "index.html",
+          "data_section": "opportunity-highlights",
+          "element": "section"
+        }
+      ]
+    },
+    {
+      "id": "utility-nav",
+      "selector": "[data-component=\"utility-nav\"]",
+      "behavior": [
+        "local grouped links"
+      ],
+      "keyboard": [
+        "Tab and Enter for links where present"
+      ],
+      "status": "implemented",
+      "pages": [
+        "404.html",
+        "apply.html",
+        "biology.html",
+        "costs-aid.html",
+        "directories.html",
+        "index.html",
+        "majors.html",
+        "news.html",
+        "visit.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "data_section": "utility-navigation",
+          "element": "nav"
+        },
+        {
+          "page": "apply.html",
+          "data_section": "utility-navigation",
+          "element": "nav"
+        },
+        {
+          "page": "biology.html",
+          "data_section": "utility-navigation",
+          "element": "nav"
+        },
+        {
+          "page": "biology.html",
+          "data_section": "biology-sections-navigation",
+          "element": "nav"
+        },
+        {
+          "page": "costs-aid.html",
+          "data_section": "utility-navigation",
+          "element": "nav"
+        },
+        {
+          "page": "directories.html",
+          "data_section": "utility-navigation",
+          "element": "nav"
+        },
+        {
+          "page": "index.html",
+          "data_section": "utility-navigation",
+          "element": "nav"
+        },
+        {
+          "page": "majors.html",
+          "data_section": "utility-navigation",
+          "element": "nav"
+        },
+        {
+          "page": "news.html",
+          "data_section": "utility-navigation",
+          "element": "nav"
+        },
+        {
+          "page": "visit.html",
+          "data_section": "utility-navigation",
+          "element": "nav"
+        }
+      ],
+      "validation": "static instance/selector and page verification passed; browser behavior not-tested (Chromium launch permission denied)"
+    }
+  ]
+}

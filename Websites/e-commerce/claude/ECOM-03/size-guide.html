@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Size and fit guide | Fernhollow Outfitters (demo)</title>
+<meta name="description" content="Fictional demo store used for accessibility research. Nothing can be purchased.">
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/styles.css">
+<script src="js/main.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<a class="skip-link" href="#site-footer">Skip to footer</a>
+<div data-inert-when-drawer>
+<aside aria-label="Store notices">
+<div class="promo-bar" data-section="promo-bar" data-component="promo-banner"><p>Demo banner: sample free standard shipping on illustrative orders of $150 or more. <a href="customer-care.html#shipping">Details</a></p></div>
+<div class="demo-ribbon" data-section="demo-notice" data-component="demo-notice"><p><strong>Fictional demo store.</strong> Fernhollow Outfitters is a research prototype. Nothing here can be bought, paid for or shipped.</p></div>
+</aside>
+<header class="site-header" data-section="global-header" data-component="site-header">
+ <div class="header-inner">
+  <button type="button" class="menu-btn" data-drawer-trigger data-component="category-drawer-trigger" aria-expanded="false" aria-controls="category-drawer">Shop departments</button>
+  <a class="brand" href="index.html" data-component="brand-link"><img src="assets/logo.svg" alt="Fernhollow Outfitters, home page" width="260" height="56"></a>
+  <form class="search" role="search" action="search.html" method="get" data-section="header-search" data-component="site-search"><label class="sr-only" for="header-q">Search the demo catalogue</label><input type="search" id="header-q" name="q" placeholder="Search products" autocomplete="off"><button type="submit" class="btn">Search</button></form>
+  <ul class="utility" data-section="utility-navigation" data-component="utility-nav"><li><a href="login.html">Sign in (demo)</a></li><li><a href="cart.html">Cart (<span data-cart-count>0</span><span class="vh"> items</span>)</a></li></ul>
+ </div>
+ <nav class="primary-nav" aria-label="Primary" data-section="global-navigation" data-component="primary-nav"><ul><li><a href="gift-cards.html">Gifts</a></li><li><a href="men.html">Men</a></li><li><a href="women.html">Women</a></li><li><a href="fly-fishing.html">Fly Fishing</a></li><li><a href="dog-products.html">Dog</a></li><li><a href="packs-bags.html">Packs & Bags</a></li></ul></nav>
+</header>
+</div>
+<main id="main-content" data-section="main-content">
+<div class="wrap">
+<nav class="crumbs" aria-label="Breadcrumb" data-section="breadcrumbs" data-component="breadcrumbs"><ol><li><a href="index.html">Home</a></li><li><span aria-current="page">Size and fit guide</span></li></ol></nav>
+<h1>Size and fit guide</h1><p>Illustrative measurements in inches for fictional garments. Real stores publish measured charts; these are invented.</p>
+<div class="tabs" data-tabs data-section="size-tables" data-component="tabs">
+<div role="tablist" aria-label="Size chart groups"><button role="tab" type="button" id="tab-m" aria-selected="true" aria-controls="panel-m">Men</button><button role="tab" type="button" id="tab-w" aria-selected="false" tabindex="-1" aria-controls="panel-w">Women</button><button role="tab" type="button" id="tab-wd" aria-selected="false" tabindex="-1" aria-controls="panel-wd">Waders</button></div>
+<div role="tabpanel" id="panel-m" aria-labelledby="tab-m"><div class="table-scroll"><table class="data"><caption>Men's tops (sample)</caption><thead><tr><th scope="col">Size</th><th scope="col">Chest</th><th scope="col">Sleeve</th></tr></thead><tbody><tr><th scope="row">S</th><td>36-38</td><td>33</td></tr><tr><th scope="row">M</th><td>39-41</td><td>34</td></tr><tr><th scope="row">L</th><td>42-44</td><td>35</td></tr><tr><th scope="row">XL</th><td>45-47</td><td>36</td></tr><tr><th scope="row">XXL</th><td>48-50</td><td>37</td></tr></tbody></table></div></div>
+<div role="tabpanel" id="panel-w" aria-labelledby="tab-w" hidden><div class="table-scroll"><table class="data"><caption>Women's tops (sample)</caption><thead><tr><th scope="col">Size</th><th scope="col">Bust</th><th scope="col">Sleeve</th></tr></thead><tbody><tr><th scope="row">S</th><td>33-35</td><td>31</td></tr><tr><th scope="row">M</th><td>36-38</td><td>32</td></tr><tr><th scope="row">L</th><td>39-41</td><td>33</td></tr><tr><th scope="row">XL</th><td>42-44</td><td>34</td></tr><tr><th scope="row">XXL</th><td>45-47</td><td>35</td></tr></tbody></table></div></div>
+<div role="tabpanel" id="panel-wd" aria-labelledby="tab-wd" hidden><div class="table-scroll"><table class="data"><caption>Waders (sample)</caption><thead><tr><th scope="col">Size</th><th scope="col">Height</th><th scope="col">Chest</th></tr></thead><tbody><tr><th scope="row">S</th><td>5'4"-5'8"</td><td>34-37</td></tr><tr><th scope="row">M</th><td>5'8"-6'0"</td><td>38-41</td></tr><tr><th scope="row">L</th><td>6'0"-6'3"</td><td>42-45</td></tr><tr><th scope="row">XL</th><td>6'1"-6'4"</td><td>46-49</td></tr></tbody></table></div></div>
+</div>
+</div>
+</main>
+<div data-inert-when-drawer>
+<footer class="site-footer" id="site-footer" tabindex="-1" data-section="global-footer" data-component="site-footer"><div class="wrap">
+ <div class="footer-grid">
+  <section aria-labelledby="ft-care" data-section="footer-customer-care" data-component="footer-link-group"><h2 id="ft-care">Customer care</h2><ul><li><a href="customer-care.html">Help and FAQ</a></li><li><a href="customer-care.html#contact">Contact us (demo)</a></li><li><a href="customer-care.html#shipping">Shipping info</a></li><li><a href="size-guide.html">Size and fit</a></li><li><a href="returns.html">Returns and exchanges</a></li></ul></section>
+  <section aria-labelledby="ft-shop" data-section="footer-shop" data-component="footer-link-group"><h2 id="ft-shop">Shop</h2><ul><li><a href="men.html">Men</a></li><li><a href="women.html">Women</a></li><li><a href="fly-fishing.html">Fly fishing</a></li><li><a href="dog-products.html">Dog</a></li><li><a href="packs-bags.html">Packs and bags</a></li><li><a href="gift-cards.html">Gift cards</a></li></ul></section>
+  <section aria-labelledby="ft-co" data-section="footer-company" data-component="footer-link-group"><h2 id="ft-co">Company</h2><ul><li><a href="about.html">Who we are</a></li><li><a href="login.html">Account sign-in (demo)</a></li><li><a href="cart.html">Cart</a></li></ul></section>
+  <section aria-labelledby="ft-store" data-section="footer-store" data-component="footer-link-group"><h2 id="ft-store">Visit us</h2><p>Fernhollow Outfitters (fictional)<br>100 Example Road, Sampletown<br>Phone: 555-0142<br>Email: care@fernhollow.example</p></section>
+ </div>
+ <div class="legal" data-component="legal-note"><p>Fernhollow Outfitters is a fictional brand created for an accessibility and usability research dataset. All products, prices and policies are invented sample data. No orders are taken, no payments are collected and nothing is shipped.</p></div>
+</div></footer>
+</div>
+<div class="drawer-overlay" data-drawer-overlay hidden></div>
+<div id="category-drawer" class="drawer" role="dialog" aria-modal="true" aria-labelledby="drawer-title" hidden data-section="category-drawer" data-component="category-drawer">
+ <div class="drawer-head"><h2 id="drawer-title">Shop departments</h2><button type="button" class="btn btn-secondary drawer-close">Close menu</button></div>
+ <nav aria-label="Departments" data-component="drawer-nav"><ul><li><a href="gift-cards.html">Gifts</a></li><li><button type="button" class="acc-btn" aria-expanded="false" aria-controls="sub-1">Men</button><ul id="sub-1" hidden><li><a href="men.html">All men's</a></li><li><a href="men.html?type=jackets">Jackets & vests</a></li><li><a href="men.html?type=shirts">Shirts</a></li><li><a href="men.html?type=pants">Pants</a></li></ul></li><li><button type="button" class="acc-btn" aria-expanded="false" aria-controls="sub-2">Women</button><ul id="sub-2" hidden><li><a href="women.html">All women's</a></li><li><a href="women.html?type=jackets">Jackets & vests</a></li><li><a href="women.html?type=shirts">Shirts</a></li><li><a href="women.html?type=sweaters">Sweaters</a></li></ul></li><li><button type="button" class="acc-btn" aria-expanded="false" aria-controls="sub-3">Fly Fishing</button><ul id="sub-3" hidden><li><a href="fly-fishing.html">Fly fishing home</a></li><li><a href="waders.html">Waders</a></li><li><a href="fly-fishing.html?type=rods">Rods</a></li><li><a href="fly-fishing.html?type=reels">Reels</a></li><li><a href="fly-fishing.html?type=vests-packs">Vests & packs</a></li></ul></li><li><button type="button" class="acc-btn" aria-expanded="false" aria-controls="sub-4">Dog</button><ul id="sub-4" hidden><li><a href="dog-products.html">All dog gear</a></li><li><a href="dog-products.html?type=beds">Beds</a></li><li><a href="dog-products.html?type=coats">Coats</a></li><li><a href="dog-products.html?type=leads">Leads & collars</a></li><li><a href="dog-products.html?type=bowls">Bowls</a></li></ul></li><li><button type="button" class="acc-btn" aria-expanded="false" aria-controls="sub-5">Packs & Bags</button><ul id="sub-5" hidden><li><a href="packs-bags.html">All packs & bags</a></li><li><a href="packs-bags.html?type=backpacks">Backpacks</a></li><li><a href="packs-bags.html?type=duffels">Duffels</a></li><li><a href="packs-bags.html?type=totes">Totes</a></li></ul></li></ul></nav>
+ <p class="hint">Sub-item labels are this replica's own wording.</p>
+</div>
+<div id="live-region" class="sr-only" role="status" aria-live="polite" aria-atomic="true" data-component="live-region"></div>
+</body>
+</html>

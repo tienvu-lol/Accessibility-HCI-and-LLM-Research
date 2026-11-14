@@ -1,0 +1,1668 @@
+{
+  "protocol_version": "1.0",
+  "replica_id": "CORP-05",
+  "category": "company",
+  "source_url": "https://www.becu.org/",
+  "components": [
+    {
+      "id": "site-header",
+      "selector": "[data-component=\"site-header\"]",
+      "pages": [
+        "404.html",
+        "about.html",
+        "checking.html",
+        "contact.html",
+        "everyday-banking.html",
+        "help.html",
+        "index.html",
+        "locations.html",
+        "rates.html"
+      ],
+      "instances": [
+        {
+          "page": "help.html",
+          "tag": "header",
+          "data_section": "global-header",
+          "selector": "[data-section=\"global-header\"][data-component=\"site-header\"]"
+        },
+        {
+          "page": "index.html",
+          "tag": "header",
+          "data_section": "global-header",
+          "selector": "[data-section=\"global-header\"][data-component=\"site-header\"]"
+        },
+        {
+          "page": "about.html",
+          "tag": "header",
+          "data_section": "global-header",
+          "selector": "[data-section=\"global-header\"][data-component=\"site-header\"]"
+        },
+        {
+          "page": "contact.html",
+          "tag": "header",
+          "data_section": "global-header",
+          "selector": "[data-section=\"global-header\"][data-component=\"site-header\"]"
+        },
+        {
+          "page": "404.html",
+          "tag": "header",
+          "data_section": "global-header",
+          "selector": "[data-section=\"global-header\"][data-component=\"site-header\"]"
+        },
+        {
+          "page": "rates.html",
+          "tag": "header",
+          "data_section": "global-header",
+          "selector": "[data-section=\"global-header\"][data-component=\"site-header\"]"
+        },
+        {
+          "page": "everyday-banking.html",
+          "tag": "header",
+          "data_section": "global-header",
+          "selector": "[data-section=\"global-header\"][data-component=\"site-header\"]"
+        },
+        {
+          "page": "checking.html",
+          "tag": "header",
+          "data_section": "global-header",
+          "selector": "[data-section=\"global-header\"][data-component=\"site-header\"]"
+        },
+        {
+          "page": "locations.html",
+          "tag": "header",
+          "data_section": "global-header",
+          "selector": "[data-section=\"global-header\"][data-component=\"site-header\"]"
+        }
+      ],
+      "behavior": [
+        "semantic content/navigation region"
+      ],
+      "keyboard": [
+        "Tab to links/controls; Enter to activate",
+        "Space for buttons/disclosures where relevant",
+        "Escape for modal/menu where relevant"
+      ],
+      "status": "implemented",
+      "validation": "not-tested",
+      "validation_detail": "All actual source instances verified by static checks; browser interaction/accessibility not tested (Chromium launch blocked)."
+    },
+    {
+      "id": "utility-nav",
+      "selector": "[data-component=\"utility-nav\"]",
+      "pages": [
+        "404.html",
+        "about.html",
+        "checking.html",
+        "contact.html",
+        "everyday-banking.html",
+        "help.html",
+        "index.html",
+        "locations.html",
+        "rates.html"
+      ],
+      "instances": [
+        {
+          "page": "help.html",
+          "tag": "nav",
+          "data_section": "utility-navigation",
+          "selector": "[data-section=\"utility-navigation\"][data-component=\"utility-nav\"]"
+        },
+        {
+          "page": "index.html",
+          "tag": "nav",
+          "data_section": "utility-navigation",
+          "selector": "[data-section=\"utility-navigation\"][data-component=\"utility-nav\"]"
+        },
+        {
+          "page": "about.html",
+          "tag": "nav",
+          "data_section": "utility-navigation",
+          "selector": "[data-section=\"utility-navigation\"][data-component=\"utility-nav\"]"
+        },
+        {
+          "page": "contact.html",
+          "tag": "nav",
+          "data_section": "utility-navigation",
+          "selector": "[data-section=\"utility-navigation\"][data-component=\"utility-nav\"]"
+        },
+        {
+          "page": "404.html",
+          "tag": "nav",
+          "data_section": "utility-navigation",
+          "selector": "[data-section=\"utility-navigation\"][data-component=\"utility-nav\"]"
+        },
+        {
+          "page": "rates.html",
+          "tag": "nav",
+          "data_section": "utility-navigation",
+          "selector": "[data-section=\"utility-navigation\"][data-component=\"utility-nav\"]"
+        },
+        {
+          "page": "everyday-banking.html",
+          "tag": "nav",
+          "data_section": "utility-navigation",
+          "selector": "[data-section=\"utility-navigation\"][data-component=\"utility-nav\"]"
+        },
+        {
+          "page": "checking.html",
+          "tag": "nav",
+          "data_section": "utility-navigation",
+          "selector": "[data-section=\"utility-navigation\"][data-component=\"utility-nav\"]"
+        },
+        {
+          "page": "locations.html",
+          "tag": "nav",
+          "data_section": "utility-navigation",
+          "selector": "[data-section=\"utility-navigation\"][data-component=\"utility-nav\"]"
+        }
+      ],
+      "behavior": [
+        "semantic content/navigation region"
+      ],
+      "keyboard": [
+        "Tab to links/controls; Enter to activate",
+        "Space for buttons/disclosures where relevant",
+        "Escape for modal/menu where relevant"
+      ],
+      "status": "implemented",
+      "validation": "not-tested",
+      "validation_detail": "All actual source instances verified by static checks; browser interaction/accessibility not tested (Chromium launch blocked)."
+    },
+    {
+      "id": "primary-nav",
+      "selector": "[data-component=\"primary-nav\"]",
+      "pages": [
+        "404.html",
+        "about.html",
+        "checking.html",
+        "contact.html",
+        "everyday-banking.html",
+        "help.html",
+        "index.html",
+        "locations.html",
+        "rates.html"
+      ],
+      "instances": [
+        {
+          "page": "help.html",
+          "tag": "nav",
+          "data_section": "global-navigation",
+          "selector": "[data-section=\"global-navigation\"][data-component=\"primary-nav\"]"
+        },
+        {
+          "page": "index.html",
+          "tag": "nav",
+          "data_section": "global-navigation",
+          "selector": "[data-section=\"global-navigation\"][data-component=\"primary-nav\"]"
+        },
+        {
+          "page": "about.html",
+          "tag": "nav",
+          "data_section": "global-navigation",
+          "selector": "[data-section=\"global-navigation\"][data-component=\"primary-nav\"]"
+        },
+        {
+          "page": "contact.html",
+          "tag": "nav",
+          "data_section": "global-navigation",
+          "selector": "[data-section=\"global-navigation\"][data-component=\"primary-nav\"]"
+        },
+        {
+          "page": "404.html",
+          "tag": "nav",
+          "data_section": "global-navigation",
+          "selector": "[data-section=\"global-navigation\"][data-component=\"primary-nav\"]"
+        },
+        {
+          "page": "rates.html",
+          "tag": "nav",
+          "data_section": "global-navigation",
+          "selector": "[data-section=\"global-navigation\"][data-component=\"primary-nav\"]"
+        },
+        {
+          "page": "everyday-banking.html",
+          "tag": "nav",
+          "data_section": "global-navigation",
+          "selector": "[data-section=\"global-navigation\"][data-component=\"primary-nav\"]"
+        },
+        {
+          "page": "checking.html",
+          "tag": "nav",
+          "data_section": "global-navigation",
+          "selector": "[data-section=\"global-navigation\"][data-component=\"primary-nav\"]"
+        },
+        {
+          "page": "locations.html",
+          "tag": "nav",
+          "data_section": "global-navigation",
+          "selector": "[data-section=\"global-navigation\"][data-component=\"primary-nav\"]"
+        }
+      ],
+      "behavior": [
+        "direct navigation",
+        "mobile disclosure and Escape return"
+      ],
+      "keyboard": [
+        "Tab to links/controls; Enter to activate",
+        "Space for buttons/disclosures where relevant",
+        "Escape for modal/menu where relevant"
+      ],
+      "status": "implemented",
+      "validation": "not-tested",
+      "validation_detail": "All actual source instances verified by static checks; browser interaction/accessibility not tested (Chromium launch blocked). Actual main.js handlers exercised in mock DOM; locator filter tested as actual exported function. These are not browser tests."
+    },
+    {
+      "id": "page-content",
+      "selector": "[data-component=\"page-content\"]",
+      "pages": [
+        "404.html",
+        "about.html",
+        "checking.html",
+        "contact.html",
+        "everyday-banking.html",
+        "help.html",
+        "index.html",
+        "locations.html",
+        "rates.html"
+      ],
+      "instances": [
+        {
+          "page": "help.html",
+          "tag": "main",
+          "data_section": "main-content",
+          "selector": "[data-section=\"main-content\"][data-component=\"page-content\"]"
+        },
+        {
+          "page": "index.html",
+          "tag": "main",
+          "data_section": "main-content",
+          "selector": "[data-section=\"main-content\"][data-component=\"page-content\"]"
+        },
+        {
+          "page": "about.html",
+          "tag": "main",
+          "data_section": "main-content",
+          "selector": "[data-section=\"main-content\"][data-component=\"page-content\"]"
+        },
+        {
+          "page": "contact.html",
+          "tag": "main",
+          "data_section": "main-content",
+          "selector": "[data-section=\"main-content\"][data-component=\"page-content\"]"
+        },
+        {
+          "page": "404.html",
+          "tag": "main",
+          "data_section": "main-content",
+          "selector": "[data-section=\"main-content\"][data-component=\"page-content\"]"
+        },
+        {
+          "page": "rates.html",
+          "tag": "main",
+          "data_section": "main-content",
+          "selector": "[data-section=\"main-content\"][data-component=\"page-content\"]"
+        },
+        {
+          "page": "everyday-banking.html",
+          "tag": "main",
+          "data_section": "main-content",
+          "selector": "[data-section=\"main-content\"][data-component=\"page-content\"]"
+        },
+        {
+          "page": "checking.html",
+          "tag": "main",
+          "data_section": "main-content",
+          "selector": "[data-section=\"main-content\"][data-component=\"page-content\"]"
+        },
+        {
+          "page": "locations.html",
+          "tag": "main",
+          "data_section": "main-content",
+          "selector": "[data-section=\"main-content\"][data-component=\"page-content\"]"
+        }
+      ],
+      "behavior": [
+        "semantic content/navigation region"
+      ],
+      "keyboard": [
+        "Tab to links/controls; Enter to activate",
+        "Space for buttons/disclosures where relevant",
+        "Escape for modal/menu where relevant"
+      ],
+      "status": "implemented",
+      "validation": "not-tested",
+      "validation_detail": "All actual source instances verified by static checks; browser interaction/accessibility not tested (Chromium launch blocked)."
+    },
+    {
+      "id": "breadcrumb",
+      "selector": "[data-component=\"breadcrumb\"]",
+      "pages": [
+        "404.html",
+        "about.html",
+        "checking.html",
+        "contact.html",
+        "everyday-banking.html",
+        "help.html",
+        "locations.html",
+        "rates.html"
+      ],
+      "instances": [
+        {
+          "page": "help.html",
+          "tag": "nav",
+          "data_section": "page-breadcrumbs",
+          "selector": "[data-section=\"page-breadcrumbs\"][data-component=\"breadcrumb\"]"
+        },
+        {
+          "page": "about.html",
+          "tag": "nav",
+          "data_section": "page-breadcrumbs",
+          "selector": "[data-section=\"page-breadcrumbs\"][data-component=\"breadcrumb\"]"
+        },
+        {
+          "page": "contact.html",
+          "tag": "nav",
+          "data_section": "page-breadcrumbs",
+          "selector": "[data-section=\"page-breadcrumbs\"][data-component=\"breadcrumb\"]"
+        },
+        {
+          "page": "404.html",
+          "tag": "nav",
+          "data_section": "page-breadcrumbs",
+          "selector": "[data-section=\"page-breadcrumbs\"][data-component=\"breadcrumb\"]"
+        },
+        {
+          "page": "rates.html",
+          "tag": "nav",
+          "data_section": "page-breadcrumbs",
+          "selector": "[data-section=\"page-breadcrumbs\"][data-component=\"breadcrumb\"]"
+        },
+        {
+          "page": "everyday-banking.html",
+          "tag": "nav",
+          "data_section": "page-breadcrumbs",
+          "selector": "[data-section=\"page-breadcrumbs\"][data-component=\"breadcrumb\"]"
+        },
+        {
+          "page": "checking.html",
+          "tag": "nav",
+          "data_section": "page-breadcrumbs",
+          "selector": "[data-section=\"page-breadcrumbs\"][data-component=\"breadcrumb\"]"
+        },
+        {
+          "page": "locations.html",
+          "tag": "nav",
+          "data_section": "page-breadcrumbs",
+          "selector": "[data-section=\"page-breadcrumbs\"][data-component=\"breadcrumb\"]"
+        }
+      ],
+      "behavior": [
+        "semantic content/navigation region"
+      ],
+      "keyboard": [
+        "Tab to links/controls; Enter to activate",
+        "Space for buttons/disclosures where relevant",
+        "Escape for modal/menu where relevant"
+      ],
+      "status": "implemented",
+      "validation": "not-tested",
+      "validation_detail": "All actual source instances verified by static checks; browser interaction/accessibility not tested (Chromium launch blocked)."
+    },
+    {
+      "id": "page-hero",
+      "selector": "[data-component=\"page-hero\"]",
+      "pages": [
+        "404.html",
+        "about.html",
+        "checking.html",
+        "contact.html",
+        "everyday-banking.html",
+        "help.html",
+        "index.html",
+        "locations.html",
+        "rates.html"
+      ],
+      "instances": [
+        {
+          "page": "help.html",
+          "tag": "section",
+          "data_section": "page-introduction",
+          "selector": "[data-section=\"page-introduction\"][data-component=\"page-hero\"]"
+        },
+        {
+          "page": "index.html",
+          "tag": "section",
+          "data_section": "page-introduction",
+          "selector": "[data-section=\"page-introduction\"][data-component=\"page-hero\"]"
+        },
+        {
+          "page": "about.html",
+          "tag": "section",
+          "data_section": "page-introduction",
+          "selector": "[data-section=\"page-introduction\"][data-component=\"page-hero\"]"
+        },
+        {
+          "page": "contact.html",
+          "tag": "section",
+          "data_section": "page-introduction",
+          "selector": "[data-section=\"page-introduction\"][data-component=\"page-hero\"]"
+        },
+        {
+          "page": "404.html",
+          "tag": "section",
+          "data_section": "page-introduction",
+          "selector": "[data-section=\"page-introduction\"][data-component=\"page-hero\"]"
+        },
+        {
+          "page": "rates.html",
+          "tag": "section",
+          "data_section": "page-introduction",
+          "selector": "[data-section=\"page-introduction\"][data-component=\"page-hero\"]"
+        },
+        {
+          "page": "everyday-banking.html",
+          "tag": "section",
+          "data_section": "page-introduction",
+          "selector": "[data-section=\"page-introduction\"][data-component=\"page-hero\"]"
+        },
+        {
+          "page": "checking.html",
+          "tag": "section",
+          "data_section": "page-introduction",
+          "selector": "[data-section=\"page-introduction\"][data-component=\"page-hero\"]"
+        },
+        {
+          "page": "locations.html",
+          "tag": "section",
+          "data_section": "page-introduction",
+          "selector": "[data-section=\"page-introduction\"][data-component=\"page-hero\"]"
+        }
+      ],
+      "behavior": [
+        "semantic content/navigation region"
+      ],
+      "keyboard": [
+        "Tab to links/controls; Enter to activate",
+        "Space for buttons/disclosures where relevant",
+        "Escape for modal/menu where relevant"
+      ],
+      "status": "implemented",
+      "validation": "not-tested",
+      "validation_detail": "All actual source instances verified by static checks; browser interaction/accessibility not tested (Chromium launch blocked)."
+    },
+    {
+      "id": "content-band",
+      "selector": "[data-component=\"content-band\"]",
+      "pages": [
+        "404.html",
+        "about.html",
+        "checking.html",
+        "contact.html",
+        "everyday-banking.html",
+        "help.html",
+        "index.html",
+        "locations.html",
+        "rates.html"
+      ],
+      "instances": [
+        {
+          "page": "help.html",
+          "tag": "section",
+          "data_section": "common-topics",
+          "selector": "[data-section=\"common-topics\"][data-component=\"content-band\"]"
+        },
+        {
+          "page": "help.html",
+          "tag": "section",
+          "data_section": "support-answers",
+          "selector": "[data-section=\"support-answers\"][data-component=\"content-band\"]"
+        },
+        {
+          "page": "help.html",
+          "tag": "section",
+          "data_section": "security",
+          "selector": "[data-section=\"security\"][data-component=\"content-band\"]"
+        },
+        {
+          "page": "index.html",
+          "tag": "section",
+          "data_section": "product-paths",
+          "selector": "[data-section=\"product-paths\"][data-component=\"content-band\"]"
+        },
+        {
+          "page": "index.html",
+          "tag": "section",
+          "data_section": "wellbeing",
+          "selector": "[data-section=\"wellbeing\"][data-component=\"content-band\"]"
+        },
+        {
+          "page": "index.html",
+          "tag": "section",
+          "data_section": "community-impact",
+          "selector": "[data-section=\"community-impact\"][data-component=\"content-band\"]"
+        },
+        {
+          "page": "index.html",
+          "tag": "section",
+          "data_section": "resources",
+          "selector": "[data-section=\"resources\"][data-component=\"content-band\"]"
+        },
+        {
+          "page": "about.html",
+          "tag": "section",
+          "data_section": "member-owned",
+          "selector": "[data-section=\"member-owned\"][data-component=\"content-band\"]"
+        },
+        {
+          "page": "about.html",
+          "tag": "section",
+          "data_section": "our-impact",
+          "selector": "[data-section=\"our-impact\"][data-component=\"content-band\"]"
+        },
+        {
+          "page": "about.html",
+          "tag": "section",
+          "data_section": "about-next",
+          "selector": "[data-section=\"about-next\"][data-component=\"content-band\"]"
+        },
+        {
+          "page": "contact.html",
+          "tag": "section",
+          "data_section": "contact-channels",
+          "selector": "[data-section=\"contact-channels\"][data-component=\"content-band\"]"
+        },
+        {
+          "page": "contact.html",
+          "tag": "section",
+          "data_section": "visit-contact",
+          "selector": "[data-section=\"visit-contact\"][data-component=\"content-band\"]"
+        },
+        {
+          "page": "contact.html",
+          "tag": "section",
+          "data_section": "contact-other",
+          "selector": "[data-section=\"contact-other\"][data-component=\"content-band\"]"
+        },
+        {
+          "page": "404.html",
+          "tag": "section",
+          "data_section": "recovery-links",
+          "selector": "[data-section=\"recovery-links\"][data-component=\"content-band\"]"
+        },
+        {
+          "page": "rates.html",
+          "tag": "section",
+          "data_section": "rate-navigation",
+          "selector": "[data-section=\"rate-navigation\"][data-component=\"content-band\"]"
+        },
+        {
+          "page": "rates.html",
+          "tag": "section",
+          "data_section": "rate-deposits",
+          "selector": "[data-section=\"rate-deposits\"][data-component=\"content-band\"]"
+        },
+        {
+          "page": "rates.html",
+          "tag": "section",
+          "data_section": "rate-home",
+          "selector": "[data-section=\"rate-home\"][data-component=\"content-band\"]"
+        },
+        {
+          "page": "rates.html",
+          "tag": "section",
+          "data_section": "rate-vehicles",
+          "selector": "[data-section=\"rate-vehicles\"][data-component=\"content-band\"]"
+        },
+        {
+          "page": "rates.html",
+          "tag": "section",
+          "data_section": "rate-borrowing",
+          "selector": "[data-section=\"rate-borrowing\"][data-component=\"content-band\"]"
+        },
+        {
+          "page": "rates.html",
+          "tag": "section",
+          "data_section": "rate-context",
+          "selector": "[data-section=\"rate-context\"][data-component=\"content-band\"]"
+        },
+        {
+          "page": "everyday-banking.html",
+          "tag": "section",
+          "data_section": "banking-options",
+          "selector": "[data-section=\"banking-options\"][data-component=\"content-band\"]"
+        },
+        {
+          "page": "everyday-banking.html",
+          "tag": "section",
+          "data_section": "digital-banking",
+          "selector": "[data-section=\"digital-banking\"][data-component=\"content-band\"]"
+        },
+        {
+          "page": "everyday-banking.html",
+          "tag": "section",
+          "data_section": "membership",
+          "selector": "[data-section=\"membership\"][data-component=\"content-band\"]"
+        },
+        {
+          "page": "checking.html",
+          "tag": "section",
+          "data_section": "checking-overview",
+          "selector": "[data-section=\"checking-overview\"][data-component=\"content-band\"]"
+        },
+        {
+          "page": "checking.html",
+          "tag": "section",
+          "data_section": "features",
+          "selector": "[data-section=\"features\"][data-component=\"content-band\"]"
+        },
+        {
+          "page": "checking.html",
+          "tag": "section",
+          "data_section": "membership",
+          "selector": "[data-section=\"membership\"][data-component=\"content-band\"]"
+        },
+        {
+          "page": "checking.html",
+          "tag": "section",
+          "data_section": "checking-questions",
+          "selector": "[data-section=\"checking-questions\"][data-component=\"content-band\"]"
+        },
+        {
+          "page": "locations.html",
+          "tag": "section",
+          "data_section": "location-finder",
+          "selector": "[data-section=\"location-finder\"][data-component=\"content-band\"]"
+        },
+        {
+          "page": "locations.html",
+          "tag": "section",
+          "data_section": "plan-visit",
+          "selector": "[data-section=\"plan-visit\"][data-component=\"content-band\"]"
+        }
+      ],
+      "behavior": [
+        "semantic content/navigation region"
+      ],
+      "keyboard": [
+        "Tab to links/controls; Enter to activate",
+        "Space for buttons/disclosures where relevant",
+        "Escape for modal/menu where relevant"
+      ],
+      "status": "implemented",
+      "validation": "not-tested",
+      "validation_detail": "All actual source instances verified by static checks; browser interaction/accessibility not tested (Chromium launch blocked)."
+    },
+    {
+      "id": "feature-card",
+      "selector": "[data-component=\"feature-card\"]",
+      "pages": [
+        "404.html",
+        "about.html",
+        "checking.html",
+        "contact.html",
+        "everyday-banking.html",
+        "help.html",
+        "index.html",
+        "locations.html",
+        "rates.html"
+      ],
+      "instances": [
+        {
+          "page": "help.html",
+          "tag": "article",
+          "data_section": "help-access",
+          "selector": "[data-section=\"help-access\"][data-component=\"feature-card\"]"
+        },
+        {
+          "page": "help.html",
+          "tag": "article",
+          "data_section": "help-cards",
+          "selector": "[data-section=\"help-cards\"][data-component=\"feature-card\"]"
+        },
+        {
+          "page": "help.html",
+          "tag": "article",
+          "data_section": "help-locations",
+          "selector": "[data-section=\"help-locations\"][data-component=\"feature-card\"]"
+        },
+        {
+          "page": "index.html",
+          "tag": "article",
+          "data_section": "checking-path",
+          "selector": "[data-section=\"checking-path\"][data-component=\"feature-card\"]"
+        },
+        {
+          "page": "index.html",
+          "tag": "article",
+          "data_section": "rates-path",
+          "selector": "[data-section=\"rates-path\"][data-component=\"feature-card\"]"
+        },
+        {
+          "page": "index.html",
+          "tag": "article",
+          "data_section": "support-path",
+          "selector": "[data-section=\"support-path\"][data-component=\"feature-card\"]"
+        },
+        {
+          "page": "index.html",
+          "tag": "article",
+          "data_section": "resource-checking",
+          "selector": "[data-section=\"resource-checking\"][data-component=\"feature-card\"]"
+        },
+        {
+          "page": "index.html",
+          "tag": "article",
+          "data_section": "resource-help",
+          "selector": "[data-section=\"resource-help\"][data-component=\"feature-card\"]"
+        },
+        {
+          "page": "index.html",
+          "tag": "article",
+          "data_section": "resource-visit",
+          "selector": "[data-section=\"resource-visit\"][data-component=\"feature-card\"]"
+        },
+        {
+          "page": "about.html",
+          "tag": "article",
+          "data_section": "learning-value",
+          "selector": "[data-section=\"learning-value\"][data-component=\"feature-card\"]"
+        },
+        {
+          "page": "about.html",
+          "tag": "article",
+          "data_section": "access-value",
+          "selector": "[data-section=\"access-value\"][data-component=\"feature-card\"]"
+        },
+        {
+          "page": "about.html",
+          "tag": "article",
+          "data_section": "belonging-value",
+          "selector": "[data-section=\"belonging-value\"][data-component=\"feature-card\"]"
+        },
+        {
+          "page": "contact.html",
+          "tag": "article",
+          "data_section": "phone-channel",
+          "selector": "[data-section=\"phone-channel\"][data-component=\"feature-card\"]"
+        },
+        {
+          "page": "contact.html",
+          "tag": "article",
+          "data_section": "messenger-channel",
+          "selector": "[data-section=\"messenger-channel\"][data-component=\"feature-card\"]"
+        },
+        {
+          "page": "contact.html",
+          "tag": "article",
+          "data_section": "video-channel",
+          "selector": "[data-section=\"video-channel\"][data-component=\"feature-card\"]"
+        },
+        {
+          "page": "404.html",
+          "tag": "article",
+          "data_section": "recovery-banking",
+          "selector": "[data-section=\"recovery-banking\"][data-component=\"feature-card\"]"
+        },
+        {
+          "page": "404.html",
+          "tag": "article",
+          "data_section": "recovery-help",
+          "selector": "[data-section=\"recovery-help\"][data-component=\"feature-card\"]"
+        },
+        {
+          "page": "404.html",
+          "tag": "article",
+          "data_section": "recovery-locations",
+          "selector": "[data-section=\"recovery-locations\"][data-component=\"feature-card\"]"
+        },
+        {
+          "page": "rates.html",
+          "tag": "article",
+          "data_section": "deposits-category-1",
+          "selector": "[data-section=\"deposits-category-1\"][data-component=\"feature-card\"]"
+        },
+        {
+          "page": "rates.html",
+          "tag": "article",
+          "data_section": "deposits-category-2",
+          "selector": "[data-section=\"deposits-category-2\"][data-component=\"feature-card\"]"
+        },
+        {
+          "page": "rates.html",
+          "tag": "article",
+          "data_section": "deposits-category-3",
+          "selector": "[data-section=\"deposits-category-3\"][data-component=\"feature-card\"]"
+        },
+        {
+          "page": "rates.html",
+          "tag": "article",
+          "data_section": "home-category-1",
+          "selector": "[data-section=\"home-category-1\"][data-component=\"feature-card\"]"
+        },
+        {
+          "page": "rates.html",
+          "tag": "article",
+          "data_section": "home-category-2",
+          "selector": "[data-section=\"home-category-2\"][data-component=\"feature-card\"]"
+        },
+        {
+          "page": "rates.html",
+          "tag": "article",
+          "data_section": "vehicles-category-1",
+          "selector": "[data-section=\"vehicles-category-1\"][data-component=\"feature-card\"]"
+        },
+        {
+          "page": "rates.html",
+          "tag": "article",
+          "data_section": "borrowing-category-1",
+          "selector": "[data-section=\"borrowing-category-1\"][data-component=\"feature-card\"]"
+        },
+        {
+          "page": "rates.html",
+          "tag": "article",
+          "data_section": "borrowing-category-2",
+          "selector": "[data-section=\"borrowing-category-2\"][data-component=\"feature-card\"]"
+        },
+        {
+          "page": "everyday-banking.html",
+          "tag": "article",
+          "data_section": "checking-option",
+          "selector": "[data-section=\"checking-option\"][data-component=\"feature-card\"]"
+        },
+        {
+          "page": "everyday-banking.html",
+          "tag": "article",
+          "data_section": "savings-option",
+          "selector": "[data-section=\"savings-option\"][data-component=\"feature-card\"]"
+        },
+        {
+          "page": "everyday-banking.html",
+          "tag": "article",
+          "data_section": "cards-option",
+          "selector": "[data-section=\"cards-option\"][data-component=\"feature-card\"]"
+        },
+        {
+          "page": "checking.html",
+          "tag": "article",
+          "data_section": "fee-example",
+          "selector": "[data-section=\"fee-example\"][data-component=\"feature-card\"]"
+        },
+        {
+          "page": "checking.html",
+          "tag": "article",
+          "data_section": "access-example",
+          "selector": "[data-section=\"access-example\"][data-component=\"feature-card\"]"
+        },
+        {
+          "page": "checking.html",
+          "tag": "article",
+          "data_section": "support-example",
+          "selector": "[data-section=\"support-example\"][data-component=\"feature-card\"]"
+        },
+        {
+          "page": "checking.html",
+          "tag": "article",
+          "data_section": "eligibility-guide",
+          "selector": "[data-section=\"eligibility-guide\"][data-component=\"feature-card\"]"
+        },
+        {
+          "page": "checking.html",
+          "tag": "article",
+          "data_section": "opening-guide",
+          "selector": "[data-section=\"opening-guide\"][data-component=\"feature-card\"]"
+        },
+        {
+          "page": "locations.html",
+          "tag": "article",
+          "data_section": "location-alder",
+          "selector": "[data-section=\"location-alder\"][data-component=\"feature-card\"]"
+        },
+        {
+          "page": "locations.html",
+          "tag": "article",
+          "data_section": "location-cedar",
+          "selector": "[data-section=\"location-cedar\"][data-component=\"feature-card\"]"
+        },
+        {
+          "page": "locations.html",
+          "tag": "article",
+          "data_section": "location-harbor",
+          "selector": "[data-section=\"location-harbor\"][data-component=\"feature-card\"]"
+        }
+      ],
+      "behavior": [
+        "linked content where present"
+      ],
+      "keyboard": [
+        "Tab to links/controls; Enter to activate",
+        "Space for buttons/disclosures where relevant",
+        "Escape for modal/menu where relevant"
+      ],
+      "status": "implemented",
+      "validation": "not-tested",
+      "validation_detail": "All actual source instances verified by static checks; browser interaction/accessibility not tested (Chromium launch blocked)."
+    },
+    {
+      "id": "accordion",
+      "selector": "[data-component=\"accordion\"]",
+      "pages": [
+        "checking.html",
+        "contact.html",
+        "help.html"
+      ],
+      "instances": [
+        {
+          "page": "help.html",
+          "tag": "details",
+          "data_section": "access-answer",
+          "selector": "[data-section=\"access-answer\"][data-component=\"accordion\"]"
+        },
+        {
+          "page": "help.html",
+          "tag": "details",
+          "data_section": "card-answer",
+          "selector": "[data-section=\"card-answer\"][data-component=\"accordion\"]"
+        },
+        {
+          "page": "help.html",
+          "tag": "details",
+          "data_section": "visit-answer",
+          "selector": "[data-section=\"visit-answer\"][data-component=\"accordion\"]"
+        },
+        {
+          "page": "contact.html",
+          "tag": "details",
+          "data_section": "suspicious-contact",
+          "selector": "[data-section=\"suspicious-contact\"][data-component=\"accordion\"]"
+        },
+        {
+          "page": "contact.html",
+          "tag": "details",
+          "data_section": "suggestion-contact",
+          "selector": "[data-section=\"suggestion-contact\"][data-component=\"accordion\"]"
+        },
+        {
+          "page": "contact.html",
+          "tag": "details",
+          "data_section": "media-contact",
+          "selector": "[data-section=\"media-contact\"][data-component=\"accordion\"]"
+        },
+        {
+          "page": "checking.html",
+          "tag": "details",
+          "data_section": "monthly-fee",
+          "selector": "[data-section=\"monthly-fee\"][data-component=\"accordion\"]"
+        },
+        {
+          "page": "checking.html",
+          "tag": "details",
+          "data_section": "digital-access",
+          "selector": "[data-section=\"digital-access\"][data-component=\"accordion\"]"
+        },
+        {
+          "page": "checking.html",
+          "tag": "details",
+          "data_section": "open-account",
+          "selector": "[data-section=\"open-account\"][data-component=\"accordion\"]"
+        },
+        {
+          "page": "checking.html",
+          "tag": "details",
+          "data_section": "checking-support",
+          "selector": "[data-section=\"checking-support\"][data-component=\"accordion\"]"
+        }
+      ],
+      "behavior": [
+        "native disclosure"
+      ],
+      "keyboard": [
+        "Tab to links/controls; Enter to activate",
+        "Space for buttons/disclosures where relevant",
+        "Escape for modal/menu where relevant"
+      ],
+      "status": "implemented",
+      "validation": "not-tested",
+      "validation_detail": "All actual source instances verified by static checks; browser interaction/accessibility not tested (Chromium launch blocked)."
+    },
+    {
+      "id": "information-panel",
+      "selector": "[data-component=\"information-panel\"]",
+      "pages": [
+        "checking.html",
+        "contact.html",
+        "everyday-banking.html",
+        "help.html",
+        "index.html"
+      ],
+      "instances": [
+        {
+          "page": "help.html",
+          "tag": "aside",
+          "data_section": "support-contact-route",
+          "selector": "[data-section=\"support-contact-route\"][data-component=\"information-panel\"]"
+        },
+        {
+          "page": "index.html",
+          "tag": "aside",
+          "data_section": "community-note",
+          "selector": "[data-section=\"community-note\"][data-component=\"information-panel\"]"
+        },
+        {
+          "page": "contact.html",
+          "tag": "aside",
+          "data_section": "mailing-address",
+          "selector": "[data-section=\"mailing-address\"][data-component=\"information-panel\"]"
+        },
+        {
+          "page": "everyday-banking.html",
+          "tag": "aside",
+          "data_section": "digital-demo-note",
+          "selector": "[data-section=\"digital-demo-note\"][data-component=\"information-panel\"]"
+        },
+        {
+          "page": "checking.html",
+          "tag": "aside",
+          "data_section": "checking-rate",
+          "selector": "[data-section=\"checking-rate\"][data-component=\"information-panel\"]"
+        }
+      ],
+      "behavior": [
+        "semantic content/navigation region"
+      ],
+      "keyboard": [
+        "Tab to links/controls; Enter to activate",
+        "Space for buttons/disclosures where relevant",
+        "Escape for modal/menu where relevant"
+      ],
+      "status": "implemented",
+      "validation": "not-tested",
+      "validation_detail": "All actual source instances verified by static checks; browser interaction/accessibility not tested (Chromium launch blocked)."
+    },
+    {
+      "id": "help-banner",
+      "selector": "[data-component=\"help-banner\"]",
+      "pages": [
+        "404.html",
+        "about.html",
+        "checking.html",
+        "contact.html",
+        "everyday-banking.html",
+        "help.html",
+        "index.html",
+        "locations.html",
+        "rates.html"
+      ],
+      "instances": [
+        {
+          "page": "help.html",
+          "tag": "section",
+          "data_section": "global-help",
+          "selector": "[data-section=\"global-help\"][data-component=\"help-banner\"]"
+        },
+        {
+          "page": "index.html",
+          "tag": "section",
+          "data_section": "global-help",
+          "selector": "[data-section=\"global-help\"][data-component=\"help-banner\"]"
+        },
+        {
+          "page": "about.html",
+          "tag": "section",
+          "data_section": "global-help",
+          "selector": "[data-section=\"global-help\"][data-component=\"help-banner\"]"
+        },
+        {
+          "page": "contact.html",
+          "tag": "section",
+          "data_section": "global-help",
+          "selector": "[data-section=\"global-help\"][data-component=\"help-banner\"]"
+        },
+        {
+          "page": "404.html",
+          "tag": "section",
+          "data_section": "global-help",
+          "selector": "[data-section=\"global-help\"][data-component=\"help-banner\"]"
+        },
+        {
+          "page": "rates.html",
+          "tag": "section",
+          "data_section": "global-help",
+          "selector": "[data-section=\"global-help\"][data-component=\"help-banner\"]"
+        },
+        {
+          "page": "everyday-banking.html",
+          "tag": "section",
+          "data_section": "global-help",
+          "selector": "[data-section=\"global-help\"][data-component=\"help-banner\"]"
+        },
+        {
+          "page": "checking.html",
+          "tag": "section",
+          "data_section": "global-help",
+          "selector": "[data-section=\"global-help\"][data-component=\"help-banner\"]"
+        },
+        {
+          "page": "locations.html",
+          "tag": "section",
+          "data_section": "global-help",
+          "selector": "[data-section=\"global-help\"][data-component=\"help-banner\"]"
+        }
+      ],
+      "behavior": [
+        "semantic content/navigation region"
+      ],
+      "keyboard": [
+        "Tab to links/controls; Enter to activate",
+        "Space for buttons/disclosures where relevant",
+        "Escape for modal/menu where relevant"
+      ],
+      "status": "implemented",
+      "validation": "not-tested",
+      "validation_detail": "All actual source instances verified by static checks; browser interaction/accessibility not tested (Chromium launch blocked)."
+    },
+    {
+      "id": "site-footer",
+      "selector": "[data-component=\"site-footer\"]",
+      "pages": [
+        "404.html",
+        "about.html",
+        "checking.html",
+        "contact.html",
+        "everyday-banking.html",
+        "help.html",
+        "index.html",
+        "locations.html",
+        "rates.html"
+      ],
+      "instances": [
+        {
+          "page": "help.html",
+          "tag": "footer",
+          "data_section": "global-footer",
+          "selector": "[data-section=\"global-footer\"][data-component=\"site-footer\"]"
+        },
+        {
+          "page": "index.html",
+          "tag": "footer",
+          "data_section": "global-footer",
+          "selector": "[data-section=\"global-footer\"][data-component=\"site-footer\"]"
+        },
+        {
+          "page": "about.html",
+          "tag": "footer",
+          "data_section": "global-footer",
+          "selector": "[data-section=\"global-footer\"][data-component=\"site-footer\"]"
+        },
+        {
+          "page": "contact.html",
+          "tag": "footer",
+          "data_section": "global-footer",
+          "selector": "[data-section=\"global-footer\"][data-component=\"site-footer\"]"
+        },
+        {
+          "page": "404.html",
+          "tag": "footer",
+          "data_section": "global-footer",
+          "selector": "[data-section=\"global-footer\"][data-component=\"site-footer\"]"
+        },
+        {
+          "page": "rates.html",
+          "tag": "footer",
+          "data_section": "global-footer",
+          "selector": "[data-section=\"global-footer\"][data-component=\"site-footer\"]"
+        },
+        {
+          "page": "everyday-banking.html",
+          "tag": "footer",
+          "data_section": "global-footer",
+          "selector": "[data-section=\"global-footer\"][data-component=\"site-footer\"]"
+        },
+        {
+          "page": "checking.html",
+          "tag": "footer",
+          "data_section": "global-footer",
+          "selector": "[data-section=\"global-footer\"][data-component=\"site-footer\"]"
+        },
+        {
+          "page": "locations.html",
+          "tag": "footer",
+          "data_section": "global-footer",
+          "selector": "[data-section=\"global-footer\"][data-component=\"site-footer\"]"
+        }
+      ],
+      "behavior": [
+        "semantic content/navigation region"
+      ],
+      "keyboard": [
+        "Tab to links/controls; Enter to activate",
+        "Space for buttons/disclosures where relevant",
+        "Escape for modal/menu where relevant"
+      ],
+      "status": "implemented",
+      "validation": "not-tested",
+      "validation_detail": "All actual source instances verified by static checks; browser interaction/accessibility not tested (Chromium launch blocked)."
+    },
+    {
+      "id": "footer-nav",
+      "selector": "[data-component=\"footer-nav\"]",
+      "pages": [
+        "404.html",
+        "about.html",
+        "checking.html",
+        "contact.html",
+        "everyday-banking.html",
+        "help.html",
+        "index.html",
+        "locations.html",
+        "rates.html"
+      ],
+      "instances": [
+        {
+          "page": "help.html",
+          "tag": "nav",
+          "data_section": "footer-banking",
+          "selector": "[data-section=\"footer-banking\"][data-component=\"footer-nav\"]"
+        },
+        {
+          "page": "help.html",
+          "tag": "nav",
+          "data_section": "footer-community",
+          "selector": "[data-section=\"footer-community\"][data-component=\"footer-nav\"]"
+        },
+        {
+          "page": "help.html",
+          "tag": "nav",
+          "data_section": "footer-help",
+          "selector": "[data-section=\"footer-help\"][data-component=\"footer-nav\"]"
+        },
+        {
+          "page": "index.html",
+          "tag": "nav",
+          "data_section": "footer-banking",
+          "selector": "[data-section=\"footer-banking\"][data-component=\"footer-nav\"]"
+        },
+        {
+          "page": "index.html",
+          "tag": "nav",
+          "data_section": "footer-community",
+          "selector": "[data-section=\"footer-community\"][data-component=\"footer-nav\"]"
+        },
+        {
+          "page": "index.html",
+          "tag": "nav",
+          "data_section": "footer-help",
+          "selector": "[data-section=\"footer-help\"][data-component=\"footer-nav\"]"
+        },
+        {
+          "page": "about.html",
+          "tag": "nav",
+          "data_section": "footer-banking",
+          "selector": "[data-section=\"footer-banking\"][data-component=\"footer-nav\"]"
+        },
+        {
+          "page": "about.html",
+          "tag": "nav",
+          "data_section": "footer-community",
+          "selector": "[data-section=\"footer-community\"][data-component=\"footer-nav\"]"
+        },
+        {
+          "page": "about.html",
+          "tag": "nav",
+          "data_section": "footer-help",
+          "selector": "[data-section=\"footer-help\"][data-component=\"footer-nav\"]"
+        },
+        {
+          "page": "contact.html",
+          "tag": "nav",
+          "data_section": "footer-banking",
+          "selector": "[data-section=\"footer-banking\"][data-component=\"footer-nav\"]"
+        },
+        {
+          "page": "contact.html",
+          "tag": "nav",
+          "data_section": "footer-community",
+          "selector": "[data-section=\"footer-community\"][data-component=\"footer-nav\"]"
+        },
+        {
+          "page": "contact.html",
+          "tag": "nav",
+          "data_section": "footer-help",
+          "selector": "[data-section=\"footer-help\"][data-component=\"footer-nav\"]"
+        },
+        {
+          "page": "404.html",
+          "tag": "nav",
+          "data_section": "footer-banking",
+          "selector": "[data-section=\"footer-banking\"][data-component=\"footer-nav\"]"
+        },
+        {
+          "page": "404.html",
+          "tag": "nav",
+          "data_section": "footer-community",
+          "selector": "[data-section=\"footer-community\"][data-component=\"footer-nav\"]"
+        },
+        {
+          "page": "404.html",
+          "tag": "nav",
+          "data_section": "footer-help",
+          "selector": "[data-section=\"footer-help\"][data-component=\"footer-nav\"]"
+        },
+        {
+          "page": "rates.html",
+          "tag": "nav",
+          "data_section": "footer-banking",
+          "selector": "[data-section=\"footer-banking\"][data-component=\"footer-nav\"]"
+        },
+        {
+          "page": "rates.html",
+          "tag": "nav",
+          "data_section": "footer-community",
+          "selector": "[data-section=\"footer-community\"][data-component=\"footer-nav\"]"
+        },
+        {
+          "page": "rates.html",
+          "tag": "nav",
+          "data_section": "footer-help",
+          "selector": "[data-section=\"footer-help\"][data-component=\"footer-nav\"]"
+        },
+        {
+          "page": "everyday-banking.html",
+          "tag": "nav",
+          "data_section": "footer-banking",
+          "selector": "[data-section=\"footer-banking\"][data-component=\"footer-nav\"]"
+        },
+        {
+          "page": "everyday-banking.html",
+          "tag": "nav",
+          "data_section": "footer-community",
+          "selector": "[data-section=\"footer-community\"][data-component=\"footer-nav\"]"
+        },
+        {
+          "page": "everyday-banking.html",
+          "tag": "nav",
+          "data_section": "footer-help",
+          "selector": "[data-section=\"footer-help\"][data-component=\"footer-nav\"]"
+        },
+        {
+          "page": "checking.html",
+          "tag": "nav",
+          "data_section": "footer-banking",
+          "selector": "[data-section=\"footer-banking\"][data-component=\"footer-nav\"]"
+        },
+        {
+          "page": "checking.html",
+          "tag": "nav",
+          "data_section": "footer-community",
+          "selector": "[data-section=\"footer-community\"][data-component=\"footer-nav\"]"
+        },
+        {
+          "page": "checking.html",
+          "tag": "nav",
+          "data_section": "footer-help",
+          "selector": "[data-section=\"footer-help\"][data-component=\"footer-nav\"]"
+        },
+        {
+          "page": "locations.html",
+          "tag": "nav",
+          "data_section": "footer-banking",
+          "selector": "[data-section=\"footer-banking\"][data-component=\"footer-nav\"]"
+        },
+        {
+          "page": "locations.html",
+          "tag": "nav",
+          "data_section": "footer-community",
+          "selector": "[data-section=\"footer-community\"][data-component=\"footer-nav\"]"
+        },
+        {
+          "page": "locations.html",
+          "tag": "nav",
+          "data_section": "footer-help",
+          "selector": "[data-section=\"footer-help\"][data-component=\"footer-nav\"]"
+        }
+      ],
+      "behavior": [
+        "semantic content/navigation region"
+      ],
+      "keyboard": [
+        "Tab to links/controls; Enter to activate",
+        "Space for buttons/disclosures where relevant",
+        "Escape for modal/menu where relevant"
+      ],
+      "status": "implemented",
+      "validation": "not-tested",
+      "validation_detail": "All actual source instances verified by static checks; browser interaction/accessibility not tested (Chromium launch blocked)."
+    },
+    {
+      "id": "demo-dialog",
+      "selector": "[data-component=\"demo-dialog\"]",
+      "pages": [
+        "404.html",
+        "about.html",
+        "checking.html",
+        "contact.html",
+        "everyday-banking.html",
+        "help.html",
+        "index.html",
+        "locations.html",
+        "rates.html"
+      ],
+      "instances": [
+        {
+          "page": "help.html",
+          "tag": "dialog",
+          "data_section": "sign-in-notice",
+          "selector": "[data-section=\"sign-in-notice\"][data-component=\"demo-dialog\"]"
+        },
+        {
+          "page": "index.html",
+          "tag": "dialog",
+          "data_section": "sign-in-notice",
+          "selector": "[data-section=\"sign-in-notice\"][data-component=\"demo-dialog\"]"
+        },
+        {
+          "page": "about.html",
+          "tag": "dialog",
+          "data_section": "sign-in-notice",
+          "selector": "[data-section=\"sign-in-notice\"][data-component=\"demo-dialog\"]"
+        },
+        {
+          "page": "contact.html",
+          "tag": "dialog",
+          "data_section": "sign-in-notice",
+          "selector": "[data-section=\"sign-in-notice\"][data-component=\"demo-dialog\"]"
+        },
+        {
+          "page": "404.html",
+          "tag": "dialog",
+          "data_section": "sign-in-notice",
+          "selector": "[data-section=\"sign-in-notice\"][data-component=\"demo-dialog\"]"
+        },
+        {
+          "page": "rates.html",
+          "tag": "dialog",
+          "data_section": "sign-in-notice",
+          "selector": "[data-section=\"sign-in-notice\"][data-component=\"demo-dialog\"]"
+        },
+        {
+          "page": "everyday-banking.html",
+          "tag": "dialog",
+          "data_section": "sign-in-notice",
+          "selector": "[data-section=\"sign-in-notice\"][data-component=\"demo-dialog\"]"
+        },
+        {
+          "page": "checking.html",
+          "tag": "dialog",
+          "data_section": "sign-in-notice",
+          "selector": "[data-section=\"sign-in-notice\"][data-component=\"demo-dialog\"]"
+        },
+        {
+          "page": "locations.html",
+          "tag": "dialog",
+          "data_section": "sign-in-notice",
+          "selector": "[data-section=\"sign-in-notice\"][data-component=\"demo-dialog\"]"
+        }
+      ],
+      "behavior": [
+        "notice-only modal",
+        "native Escape and focus return"
+      ],
+      "keyboard": [
+        "Tab to links/controls; Enter to activate",
+        "Space for buttons/disclosures where relevant",
+        "Escape for modal/menu where relevant"
+      ],
+      "status": "implemented",
+      "validation": "not-tested",
+      "validation_detail": "All actual source instances verified by static checks; browser interaction/accessibility not tested (Chromium launch blocked). Actual main.js handlers exercised in mock DOM; locator filter tested as actual exported function. These are not browser tests."
+    },
+    {
+      "id": "dialog-form",
+      "selector": "[data-component=\"dialog-form\"]",
+      "pages": [
+        "404.html",
+        "about.html",
+        "checking.html",
+        "contact.html",
+        "everyday-banking.html",
+        "help.html",
+        "index.html",
+        "locations.html",
+        "rates.html"
+      ],
+      "instances": [
+        {
+          "page": "help.html",
+          "tag": "form",
+          "data_section": "dialog-dismiss",
+          "selector": "[data-section=\"dialog-dismiss\"][data-component=\"dialog-form\"]"
+        },
+        {
+          "page": "index.html",
+          "tag": "form",
+          "data_section": "dialog-dismiss",
+          "selector": "[data-section=\"dialog-dismiss\"][data-component=\"dialog-form\"]"
+        },
+        {
+          "page": "about.html",
+          "tag": "form",
+          "data_section": "dialog-dismiss",
+          "selector": "[data-section=\"dialog-dismiss\"][data-component=\"dialog-form\"]"
+        },
+        {
+          "page": "contact.html",
+          "tag": "form",
+          "data_section": "dialog-dismiss",
+          "selector": "[data-section=\"dialog-dismiss\"][data-component=\"dialog-form\"]"
+        },
+        {
+          "page": "404.html",
+          "tag": "form",
+          "data_section": "dialog-dismiss",
+          "selector": "[data-section=\"dialog-dismiss\"][data-component=\"dialog-form\"]"
+        },
+        {
+          "page": "rates.html",
+          "tag": "form",
+          "data_section": "dialog-dismiss",
+          "selector": "[data-section=\"dialog-dismiss\"][data-component=\"dialog-form\"]"
+        },
+        {
+          "page": "everyday-banking.html",
+          "tag": "form",
+          "data_section": "dialog-dismiss",
+          "selector": "[data-section=\"dialog-dismiss\"][data-component=\"dialog-form\"]"
+        },
+        {
+          "page": "checking.html",
+          "tag": "form",
+          "data_section": "dialog-dismiss",
+          "selector": "[data-section=\"dialog-dismiss\"][data-component=\"dialog-form\"]"
+        },
+        {
+          "page": "locations.html",
+          "tag": "form",
+          "data_section": "dialog-dismiss",
+          "selector": "[data-section=\"dialog-dismiss\"][data-component=\"dialog-form\"]"
+        }
+      ],
+      "behavior": [
+        "native modal close"
+      ],
+      "keyboard": [
+        "Tab to links/controls; Enter to activate",
+        "Space for buttons/disclosures where relevant",
+        "Escape for modal/menu where relevant"
+      ],
+      "status": "implemented",
+      "validation": "not-tested",
+      "validation_detail": "All actual source instances verified by static checks; browser interaction/accessibility not tested (Chromium launch blocked)."
+    },
+    {
+      "id": "local-nav",
+      "selector": "[data-component=\"local-nav\"]",
+      "pages": [
+        "rates.html"
+      ],
+      "instances": [
+        {
+          "page": "rates.html",
+          "tag": "nav",
+          "data_section": "rate-category-navigation",
+          "selector": "[data-section=\"rate-category-navigation\"][data-component=\"local-nav\"]"
+        }
+      ],
+      "behavior": [
+        "semantic content/navigation region"
+      ],
+      "keyboard": [
+        "Tab to links/controls; Enter to activate",
+        "Space for buttons/disclosures where relevant",
+        "Escape for modal/menu where relevant"
+      ],
+      "status": "implemented",
+      "validation": "not-tested",
+      "validation_detail": "All actual source instances verified by static checks; browser interaction/accessibility not tested (Chromium launch blocked)."
+    },
+    {
+      "id": "search-form",
+      "selector": "[data-component=\"search-form\"]",
+      "pages": [
+        "locations.html"
+      ],
+      "instances": [
+        {
+          "page": "locations.html",
+          "tag": "form",
+          "data_section": "location-search",
+          "selector": "[data-section=\"location-search\"][data-component=\"search-form\"]"
+        }
+      ],
+      "behavior": [
+        "local filter of 3 fictional locations",
+        "result count/empty status",
+        "reset"
+      ],
+      "keyboard": [
+        "Tab to links/controls; Enter to activate",
+        "Space for buttons/disclosures where relevant",
+        "Escape for modal/menu where relevant"
+      ],
+      "status": "implemented",
+      "validation": "not-tested",
+      "validation_detail": "All actual source instances verified by static checks; browser interaction/accessibility not tested (Chromium launch blocked). Actual main.js handlers exercised in mock DOM; locator filter tested as actual exported function. These are not browser tests."
+    }
+  ],
+  "dynamic_instances": [
+    {
+      "component": "feature-card",
+      "container_selector": "#location-results",
+      "pages": [
+        "locations.html"
+      ],
+      "count": "0\u20133 after filtering; three initial HTML cards listed above",
+      "selector": "#location-results [data-component=\"feature-card\"]",
+      "behavior": "generated via createElement/textContent; same metadata pattern",
+      "validation": "mock DOM handler tests only; browser not-tested"
+    }
+  ]
+}

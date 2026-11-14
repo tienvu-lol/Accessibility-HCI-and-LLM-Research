@@ -1,0 +1,2 @@
+# Corrections and retries
+Initial site archive preserved before QC and checks. Shared QC exit 2: Chromium launch blocked; no browser retry or dependency changes. Initial source audit identified a label without explicit for; it wrapped the checkbox (valid native labeling), and an explicit for was added for clarity. Initial JS test harness import path had one excess parent segment; corrected harness path. No other site changes. Inventory selectors/instances unchanged.

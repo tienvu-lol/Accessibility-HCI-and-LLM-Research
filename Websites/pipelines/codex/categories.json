@@ -120,7 +120,7 @@
           "slot": 3,
           "source_id": "HOSP-03",
           "model_group": "claude",
-          "stratum": "children\u2019s hospital",
+          "stratum": "children’s hospital",
           "authority": "coordination proposal; reconcile with shared inventory"
         },
         {
@@ -141,7 +141,7 @@
           "slot": 6,
           "source_id": "HOSP-06",
           "model_group": "codex",
-          "stratum": "children\u2019s hospital",
+          "stratum": "children’s hospital",
           "authority": "codex assignment"
         },
         {
@@ -162,7 +162,7 @@
           "slot": 9,
           "source_id": "HOSP-09",
           "model_group": "open-source",
-          "stratum": "children\u2019s hospital",
+          "stratum": "children’s hospital",
           "authority": "coordination proposal; reconcile with shared inventory"
         },
         {
@@ -956,6 +956,201 @@
         "giving simulation"
       ],
       "simulation_notes": "No real prayer requests, personal/sensitive submissions, giving, external video widgets, or live service-status claims.",
+      "scope_rule": "Use only observed source pages/features; label inferred behavior and intentional additions. Page count follows approved scope, not a fixed quota."
+    },
+    {
+      "category": "portfolio",
+      "prefix": "PORT",
+      "name": "Personal and creative portfolios",
+      "sampling_strata": [
+        {
+          "slot": 1,
+          "source_id": "PORT-01",
+          "model_group": "claude",
+          "stratum": "minimal one-page personal site",
+          "authority": "coordination proposal; reconcile with shared inventory"
+        },
+        {
+          "slot": 2,
+          "source_id": "PORT-02",
+          "model_group": "claude",
+          "stratum": "software developer / engineer",
+          "authority": "coordination proposal; reconcile with shared inventory"
+        },
+        {
+          "slot": 3,
+          "source_id": "PORT-03",
+          "model_group": "claude",
+          "stratum": "motion / 3D designer",
+          "authority": "coordination proposal; reconcile with shared inventory"
+        },
+        {
+          "slot": 4,
+          "source_id": "PORT-04",
+          "model_group": "codex",
+          "stratum": "software developer / engineer",
+          "authority": "codex assignment"
+        },
+        {
+          "slot": 5,
+          "source_id": "PORT-05",
+          "model_group": "codex",
+          "stratum": "designer / developer hybrid",
+          "authority": "codex assignment"
+        },
+        {
+          "slot": 6,
+          "source_id": "PORT-06",
+          "model_group": "codex",
+          "stratum": "photographer / visual artist",
+          "authority": "codex assignment"
+        },
+        {
+          "slot": 7,
+          "source_id": "PORT-07",
+          "model_group": "open-source",
+          "stratum": "minimal one-page personal site",
+          "authority": "coordination proposal; reconcile with shared inventory"
+        },
+        {
+          "slot": 8,
+          "source_id": "PORT-08",
+          "model_group": "open-source",
+          "stratum": "software developer / engineer",
+          "authority": "coordination proposal; reconcile with shared inventory"
+        },
+        {
+          "slot": 9,
+          "source_id": "PORT-09",
+          "model_group": "open-source",
+          "stratum": "motion / 3D designer",
+          "authority": "coordination proposal; reconcile with shared inventory"
+        },
+        {
+          "slot": 10,
+          "source_id": "PORT-10",
+          "model_group": "open-source",
+          "stratum": "additional distinct software developer / engineer (complexity-matched reserve)",
+          "authority": "coordination proposal; reconcile with shared inventory"
+        }
+      ],
+      "representative_pages": [
+        "home",
+        "work/project index",
+        "project detail",
+        "about",
+        "services or process when present",
+        "writing/journal when present",
+        "contact",
+        "404"
+      ],
+      "conditional_interactions": [
+        "project filtering on inline data",
+        "gallery or lightbox navigation",
+        "responsive navigation",
+        "contact inquiry on inline data",
+        "reduced-motion handling where observed"
+      ],
+      "simulation_notes": "Contact submissions, commission requests, and any commerce are labeled simulations only.",
+      "scope_rule": "Use only observed source pages/features; label inferred behavior and intentional additions. Page count follows approved scope, not a fixed quota."
+    },
+    {
+      "category": "restaurant",
+      "prefix": "REST",
+      "name": "Restaurants and food service",
+      "sampling_strata": [
+        {
+          "slot": 1,
+          "source_id": "REST-01",
+          "model_group": "claude",
+          "stratum": "small local independent",
+          "authority": "coordination proposal; reconcile with shared inventory"
+        },
+        {
+          "slot": 2,
+          "source_id": "REST-02",
+          "model_group": "claude",
+          "stratum": "BBQ / smokehouse",
+          "authority": "coordination proposal; reconcile with shared inventory"
+        },
+        {
+          "slot": 3,
+          "source_id": "REST-03",
+          "model_group": "claude",
+          "stratum": "fine dining",
+          "authority": "coordination proposal; reconcile with shared inventory"
+        },
+        {
+          "slot": 4,
+          "source_id": "REST-04",
+          "model_group": "codex",
+          "stratum": "vegan / health",
+          "authority": "codex assignment"
+        },
+        {
+          "slot": 5,
+          "source_id": "REST-05",
+          "model_group": "codex",
+          "stratum": "multi-location group",
+          "authority": "codex assignment"
+        },
+        {
+          "slot": 6,
+          "source_id": "REST-06",
+          "model_group": "codex",
+          "stratum": "pizzeria",
+          "authority": "codex assignment"
+        },
+        {
+          "slot": 7,
+          "source_id": "REST-07",
+          "model_group": "open-source",
+          "stratum": "fast-casual chain",
+          "authority": "coordination proposal; reconcile with shared inventory"
+        },
+        {
+          "slot": 8,
+          "source_id": "REST-08",
+          "model_group": "open-source",
+          "stratum": "ethnic (Xi'an Chinese)",
+          "authority": "coordination proposal; reconcile with shared inventory"
+        },
+        {
+          "slot": 9,
+          "source_id": "REST-09",
+          "model_group": "open-source",
+          "stratum": "brewery (age gate)",
+          "authority": "coordination proposal; reconcile with shared inventory"
+        },
+        {
+          "slot": 10,
+          "source_id": "REST-10",
+          "model_group": "open-source",
+          "stratum": "cafe / bakery",
+          "authority": "coordination proposal; reconcile with shared inventory"
+        }
+      ],
+      "representative_pages": [
+        "home",
+        "menu index",
+        "menu detail when present",
+        "reservations",
+        "about/story",
+        "locations or visit",
+        "private events or catering",
+        "news/journal when present",
+        "contact",
+        "404"
+      ],
+      "conditional_interactions": [
+        "menu filtering on inline data",
+        "reservation request on inline data",
+        "responsive navigation",
+        "open/closed hours display",
+        "age gate where observed",
+        "newsletter signup where observed"
+      ],
+      "simulation_notes": "Reservations, online ordering, delivery, payment and gift cards are labeled simulations only.",
       "scope_rule": "Use only observed source pages/features; label inferred behavior and intentional additions. Page count follows approved scope, not a fixed quota."
     }
   ]

@@ -1,0 +1,31 @@
+{
+  "allocation_protocol": "WEB-REPLICA-ALLOCATION-V1.0",
+  "generation_protocol": "WEB-REPLICA-V1.0",
+  "category": "weather",
+  "slot": 3,
+  "source_id": "WX-03",
+  "model_group": "claude",
+  "model_id": "claude-sonnet-5-5",
+  "model_version": null,
+  "model_provider_or_runtime": "Claude Code Agent tool builder (claude-sonnet-5-5); orchestrated by claude-opus-5",
+  "generation_mode": "autonomous agent run, one replica per run, no human edits during generation",
+  "operator": "project lead (Samhith Varma) via orchestrator agent",
+  "approved_source_url": "https://www.wral.com/weather/",
+  "source_verified_at": "2026-11-12",
+  "source_approved_at": "2026-11-13",
+  "generation_started_at": "2026-11-14T05:28:08Z",
+  "generation_completed_at": "2026-11-14T05:40:05Z",
+  "rules_revision": "WEB-REPLICA-V1.0 / WEB-REPLICA-ALLOCATION-V1.0, working tree as of 2026-11-14 (uncommitted modifications to Rules.md and MODEL_ALLOCATION.md on top of commit a07e70e, branch websites/portfolio-claude-01-03)",
+  "category_prompt_revision": "orchestrator brief 2026-11-14 (no separate category prompt file)",
+  "prompt_or_transcript_reference": "Claude Code orchestrator session, round 08 weather build",
+  "human_edits": [],
+  "validation_summary": {
+    "technology": "pass (qc.js failures=0)",
+    "completeness": "pass (qc.js failures=0)",
+    "structure": "pass (manual; presence checked by qc.js)",
+    "interaction": "pass (scripted Playwright flows, 55/56 assertions, the 1 miss was a wrong expected value in the script)",
+    "accessibility": "partial (axe 0 violations at 1280 and 375 on 12 pages; no screen reader or manual audit; no conformance claim)",
+    "traceability": "pass (manual)",
+    "scope": "pass (manual)"
+  }
+}

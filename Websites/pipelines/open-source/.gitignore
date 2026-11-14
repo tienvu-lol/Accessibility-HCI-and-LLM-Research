@@ -1,0 +1,10 @@
+# Retain task/run/snapshot/QC-JSON provenance; exclude heavy or transient evidence.
+runs/**/*.log
+runs/**/*.png
+runs/**/*.jpg
+runs/**/*.webm
+runs/**/scratch/
+runs/**/transcript-raw/
+.worktrees/
+.env
+.DS_Store

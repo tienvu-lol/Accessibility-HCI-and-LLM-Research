@@ -1,0 +1,122 @@
+{
+  "allocation_protocol": "WEB-REPLICA-ALLOCATION-V1.0",
+  "generation_protocol": "WEB-REPLICA-V1.0",
+  "category": "university",
+  "slot": 5,
+  "source_id": "UNI-05",
+  "model_group": "codex",
+  "model_id": "gpt-6.1-sol",
+  "model_version": null,
+  "model_provider_or_runtime": "OpenAI collaboration worker (gpt-6.1-sol), orchestrated in Codex; model ID declared by parent, exact release version unavailable",
+  "generation_mode": "isolated snapshot; single assigned site; local-only",
+  "operator": "Samhith Varma",
+  "approved_source_url": "https://www.dickinson.edu/",
+  "source_verified_at": "2026-11-12",
+  "source_verification_method": "HTTP-only urllib GET and live web search/text extraction; no browser rendering",
+  "source_approved_at": "2026-11-12",
+  "approval_reference": "metadata/change-log.md \u00a7 2026-11-12 \u2014 Codex Phase A approval (slots 04\u201306)",
+  "generation_started_at": "2026-11-13T15:39:26.394622+00:00",
+  "generation_completed_at": "2026-11-13T15:43:13.740107+00:00",
+  "rules_revision": "04b1c3e38b76f2aff3aef869d67370bb4532cd8f9ab5e22ac8276f26cbb859bf",
+  "allocation_revision": "dba261a89763c22a6c41fc6b066593345aef7871121cef52ff7b73ff88cce3cd",
+  "category_prompt_revision": "843ea7d8d1cc7d01385643f848408dea32997985422496d98e8f108bbc09a333",
+  "build_prompt_revision": "37567f6a4198f7539b11964980cf814a7b8c0732f926dfe9aa6f86849dd2277c",
+  "prompt_or_transcript_reference": "pipelines/codex/runs/2026-11-13T15-34-51-770Z-build-UNI-05/task.md",
+  "task_sha256": "2fdf4d7fdcd40aa33ac0cb3acacc6e2f2cc0f50ee3cf70ec3a17dc003eceecf2",
+  "active_allocation": [
+    "01",
+    "02",
+    "03",
+    "04",
+    "05",
+    "06"
+  ],
+  "deferred_allocation": [
+    "07",
+    "08",
+    "09",
+    "10"
+  ],
+  "human_edits": [],
+  "cross_model_edits": [],
+  "tool_access": [
+    "filesystem via exec",
+    "shared QC Playwright and axe evaluation only"
+  ],
+  "generation_budget": null,
+  "retries": [
+    {
+      "corrected_at": "2026-11-13T15:43:13.740107+00:00",
+      "worker_model": "gpt-6.1-sol",
+      "reason": "Coordinator source review identified missing region/component instrumentation",
+      "changes": [
+        {
+          "page": "404.html",
+          "attributes_added": 9
+        },
+        {
+          "page": "admissions.html",
+          "attributes_added": 16
+        },
+        {
+          "page": "apply.html",
+          "attributes_added": 12
+        },
+        {
+          "page": "biology.html",
+          "attributes_added": 11
+        },
+        {
+          "page": "index.html",
+          "attributes_added": 16
+        },
+        {
+          "page": "news.html",
+          "attributes_added": 13
+        },
+        {
+          "page": "programs.html",
+          "attributes_added": 17
+        },
+        {
+          "page": "tuition-aid.html",
+          "attributes_added": 12
+        },
+        {
+          "page": "visit.html",
+          "attributes_added": 14
+        }
+      ],
+      "human_edits": [],
+      "scope": "metadata attributes and inventory only; presentation and interaction code unchanged",
+      "browser_tests": "not rerun; prior launch blocker remains",
+      "initial_artifact": "initial-generated-artifact.tar.gz preserved unchanged"
+    }
+  ],
+  "validation_summary": {
+    "technology": "pass",
+    "completeness": "pass",
+    "structure": "pass",
+    "interaction": "not-tested",
+    "accessibility": "not-tested",
+    "traceability": "pass",
+    "scope": "pass"
+  },
+  "validation_evidence": {
+    "shared_qc": "qc-attempt.json and qc-initial.log (blocked, exit 2)",
+    "static": "static-results.json",
+    "interaction": "interaction-results.json",
+    "syntax": "node --check js/main.js exited 0",
+    "instrumentation": "instrumentation-correction.json and instrumentation-audit.json"
+  },
+  "validation_limits": [
+    "No rendered source or replica visual comparison",
+    "No axe, runtime browser, reflow, zoom or screen-reader check",
+    "DOM stubs verify logic, not browser focus semantics"
+  ],
+  "validation_details": {
+    "interaction": "Six mocked-DOM logic tests passed; actual browser interactions, focus behavior and native keyboard execution remain untested. This does not pass the complete interaction gate.",
+    "accessibility": "Source semantics and solid color token contrasts inspected; required browser/axe tests blocked by Chromium launch SIGTRAP/EPERM. Screen reader, zoom and rendered reflow untested.",
+    "instrumentation": "Post-review model-only correction audited all 9 pages, 21 component types and 139 exact instances."
+  }
+}

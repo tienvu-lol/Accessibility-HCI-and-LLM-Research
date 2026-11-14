@@ -1,0 +1,112 @@
+{
+  "allocation_protocol": "WEB-REPLICA-ALLOCATION-V1.0",
+  "generation_protocol": "WEB-REPLICA-V1.0",
+  "category": "fashion",
+  "slot": 4,
+  "source_id": "FASH-04",
+  "model_group": "codex",
+  "model_id": "gpt-6.1-sol",
+  "model_version": null,
+  "model_provider_or_runtime": "OpenAI collaboration worker, orchestrated in Codex; assignment declaration; exact release unavailable",
+  "model_attribution": "Parent task declares gpt-6.1-sol; no independent runtime model introspection tool",
+  "generation_mode": "single isolated collaboration worker; local-only",
+  "operator": "Samhith Varma",
+  "approved_source_url": "https://www.anothermag.com/",
+  "source_verified_at": "2026-11-12",
+  "source_verification_method": "HTTP-only: live web search/text extraction + Python urllib GET; no rendered browser",
+  "source_verification_limits": "Source verification on 2026-11-12 used live web search/text extraction and direct Python urllib GET: HTTP 200 for six mapped URLs. Availability only; no rendered geometry, mobile layout or interaction was verified. Gallery web fetch had a cache miss while direct HTTP returned 200. No fresh source verification during generation.",
+  "source_approved_at": "2026-11-12",
+  "approval_reference": "metadata/change-log.md \u00a7 2026-11-12 \u2014 Codex Phase A approval (slots 04\u201306)",
+  "generation_started_at": "2026-11-13T21:40:32.509733+00:00",
+  "generation_completed_at": "2026-11-13T21:43:06.277791+00:00",
+  "rules_revision": "04b1c3e38b76f2aff3aef869d67370bb4532cd8f9ab5e22ac8276f26cbb859bf",
+  "category_prompt_revision": "843ea7d8d1cc7d01385643f848408dea32997985422496d98e8f108bbc09a333",
+  "protocol_snapshots": [
+    {
+      "path": "Rules.md",
+      "sha256": "04b1c3e38b76f2aff3aef869d67370bb4532cd8f9ab5e22ac8276f26cbb859bf"
+    },
+    {
+      "path": "MODEL_ALLOCATION.md",
+      "sha256": "81f3a5dc01cd370643ad84f39989a2625a03611ab5f5a34b10de5494d9e61a9b"
+    },
+    {
+      "path": "pipelines/codex/config.json",
+      "sha256": "b16751854f14ec50f9e8e8726e4ab0c064503f1ebdea6d71ba7e1faf85ed6d95"
+    },
+    {
+      "path": "pipelines/codex/categories.json",
+      "sha256": "843ea7d8d1cc7d01385643f848408dea32997985422496d98e8f108bbc09a333"
+    },
+    {
+      "path": "pipelines/codex/prompts/build.md",
+      "sha256": "37567f6a4198f7539b11964980cf814a7b8c0732f926dfe9aa6f86849dd2277c"
+    },
+    {
+      "path": "metadata/source-inventories/fashion.csv",
+      "sha256": "90471a4bdc55f04c3d61b22aeb8e3895cbb22985fe040058998067a3f6b76e9c"
+    },
+    {
+      "path": "metadata/assignments.csv",
+      "sha256": "2659587ae054d3738b8fc412c83d368e8d577b8b610cfabb655e8effc606a934"
+    }
+  ],
+  "prompt_or_transcript_reference": "Websites/pipelines/codex/runs/2026-11-13T21-37-53-564Z-build-FASH-04/task.md",
+  "task_sha256": "91c631f4fee6e06011efe3eb3fb7d9d895a8cbd699dc87cef6f4a418d5f0ac91",
+  "human_edits": [],
+  "cross_model_edits": [],
+  "generation_budget": null,
+  "tools": [
+    "exec_command: Python file generation/static audit; node JS tests; shared QC"
+  ],
+  "retries": [
+    {
+      "revision": 1,
+      "at": "2026-11-13T21:41:46.434969+00:00",
+      "changes": "Documentation/provenance finalized after tests; no HTML/CSS/JS repairs. Initial artifact preserved before validation.",
+      "tests": "node --check passed; explicit DOM mocked delivered-JS tests passed; static audit passed; shared QC launch blocked"
+    },
+    {
+      "revision": 2,
+      "at": "2026-11-13T21:43:06.277791+00:00",
+      "requested_by": "coordinator independent functional review",
+      "changes": "Corrected misleading links: three nonfeatured editorial records are now visibly labeled unlinked summary-only samples in cards and static/dynamic search. Featured full story remains linked. No pages added. Same worker correction.",
+      "tests": "node --check pass; revised delivered-JS DOM mocks pass (summary no-link and featured-link assertions); static audit revision 2 pass. Shared QC not retried per coordinator request; initial blocked evidence retained."
+    }
+  ],
+  "validation_summary": {
+    "technology": "pass",
+    "completeness": "pass",
+    "structure": "pass",
+    "interaction": "pass",
+    "accessibility": "not-tested",
+    "traceability": "pass",
+    "scope": "pass"
+  },
+  "validation_limits": {
+    "structure": "Static semantic/instrumentation and approved map review; rendered fidelity not tested",
+    "interaction": "Delivered-JS mocked-DOM tests only; native interaction not-tested",
+    "accessibility": "Static labels/alt/landmarks/focus-style review only; shared browser QC crashed; no conformance claim"
+  },
+  "qc_runs": [
+    {
+      "attempt": 1,
+      "exit_code": 2,
+      "status": "blocked",
+      "report": "qc-first.json not produced: browser launch crashed",
+      "log": "Websites/pipelines/codex/runs/2026-11-13T21-37-53-564Z-build-FASH-04/qc-first.log",
+      "browser_axe": "not-tested"
+    }
+  ],
+  "initial_artifact_reference": "Websites/pipelines/codex/runs/2026-11-13T21-37-53-564Z-build-FASH-04/initial-artifact.tar.gz",
+  "initial_hashes_reference": "Websites/pipelines/codex/runs/2026-11-13T21-37-53-564Z-build-FASH-04/initial-hashes.json",
+  "coordinator_requested_edits": [
+    {
+      "revision": 2,
+      "at": "2026-11-13T21:43:06.277791+00:00",
+      "requested_by": "coordinator independent functional review",
+      "changes": "Corrected misleading links: three nonfeatured editorial records are now visibly labeled unlinked summary-only samples in cards and static/dynamic search. Featured full story remains linked. No pages added. Same worker correction.",
+      "tests": "node --check pass; revised delivered-JS DOM mocks pass (summary no-link and featured-link assertions); static audit revision 2 pass. Shared QC not retried per coordinator request; initial blocked evidence retained."
+    }
+  ]
+}
