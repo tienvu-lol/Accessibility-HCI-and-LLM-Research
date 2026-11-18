@@ -1,0 +1,507 @@
+{
+  "run_id": "2026-11-17T06-42-06-379Z-build-ECOM-08",
+  "phase": "build",
+  "target": "ECOM-08",
+  "category": "e-commerce",
+  "slot": 8,
+  "model_group": "open-source",
+  "model": {
+    "model_id": "unsloth/NVIDIA-Nemotron-3-Super-120B-A12B-GGUF",
+    "model_version": "MXFP4_MOE",
+    "model_provider_or_runtime": "vt-arc-falcon-llamacpp (OpenAI-compatible chat completions at http://localhost:8081/v1)",
+    "weights_url": "https://huggingface.co/unsloth/NVIDIA-Nemotron-3-Super-120B-A12B-GGUF",
+    "license": "nvidia-nemotron-open-model-license",
+    "open_weights": true,
+    "eligibility_note": "Open weights. Licence is the NVIDIA Nemotron Open Model License (HF tag nvidia-nemotron-open-model-license), as published on huggingface.co/unsloth/NVIDIA-Nemotron-3-Super-120B-A12B-GGUF and on the base model card nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-BF16, both read 2026-11-17 by the orchestrator. This is a vendor open-model licence, NOT an OSI-approved open-source licence: this slot is open-weight but should not be described as open-source without checking the licence text against the study's definition. Quantisation MXFP4_MOE. Served self-hosted via llama.cpp on VT ARC Falcon node fal052:50413 over an SSH tunnel on localhost:8081; no third-party inference provider.",
+    "params": {
+      "temperature": 0.3,
+      "max_tokens": 32000
+    }
+  },
+  "operator": "Samhith Varma Yallamraju",
+  "status": "completed",
+  "prepared_at": "2026-11-17T06:42:06.384Z",
+  "generation_started_at": "2026-11-17T06:42:06.384Z",
+  "generation_completed_at": "2026-11-17T06:51:07.981Z",
+  "tool_access": "chat-completions API only: no browsing, no shell, no filesystem. The orchestrator wrote every file and ran every check.",
+  "budget": {
+    "max_build_turns": 28,
+    "max_repair_rounds": 3,
+    "max_tokens_per_request": 32000,
+    "temperature": 0.3
+  },
+  "approved_source": {
+    "source_name": "Target",
+    "source_url": "https://www.target.com/",
+    "verified_at": "2026-11-17",
+    "verification_method": "HTTP GET by the orchestrator",
+    "verification_result": "verified",
+    "evidence_reference": "pipelines/open-source/research/evidence/ECOM-08-http-2026-11-17.json",
+    "complexity": "high",
+    "stack_clues": "unknown",
+    "limitations": "Verification date not provided in evidence; verified_at left blank. Cart page (https://www.target.com/cart?prehydrateClick=true) skipped due to robots.txt disallow. Product detail pages (e.g., https://www.target.com/pl/188903077, https://www.target.com/pl/411502157?content_id=STORY-48777) skipped due to robots.txt disallow. Any other desired pages not present in nav_links or other_links remain unverified.",
+    "approved_at": "2026-11-17",
+    "approved_by": "Samhith Varma Yallamraju",
+    "approval_reference": "Project lead approval of all slot-08 sources given 2026-11-17 in the Claude Code orchestration session; see research/ECOM-08.md and research/proposals/ECOM-rows.json"
+  },
+  "approved_page_map": [
+    {
+      "url": "https://www.target.com/",
+      "title": "Target : Expect More. Pay Less.",
+      "local_file": "index.html"
+    },
+    {
+      "url": "https://www.target.com/l/target-circle/-/N-pzno9",
+      "title": "Target Circle™",
+      "local_file": "target-circle.html"
+    },
+    {
+      "url": "https://www.target.com/gift-registry",
+      "title": "Gift Registry & Wish lists : Target",
+      "local_file": "gift-registry.html"
+    },
+    {
+      "url": "https://www.target.com/weekly-ad",
+      "title": "Target Weekly Ad",
+      "local_file": "weekly-ad.html"
+    },
+    {
+      "url": "https://www.target.com/store-locator/find-stores",
+      "title": "Stores Near Me : Target",
+      "local_file": "store-locator.html"
+    },
+    {
+      "url": "https://www.target.com/c/shop-all-categories/-/N-5xsxf?prehydrateClick=true",
+      "title": "Shop All Categories : Target",
+      "local_file": "shop-all-categories.html"
+    },
+    {
+      "url": "https://www.target.com/c/top-deals/-/N-4xw74?prehydrateClick=true",
+      "title": "Top Deals at Target",
+      "local_file": "top-deals.html"
+    }
+  ],
+  "protocol_snapshots": [
+    {
+      "path": "Rules.md",
+      "sha256": "04b1c3e38b76f2aff3aef869d67370bb4532cd8f9ab5e22ac8276f26cbb859bf"
+    },
+    {
+      "path": "MODEL_ALLOCATION.md",
+      "sha256": "7e9487530a6e80b35af48d0691951dafc2fffea39798c81a3c49203909148d30"
+    },
+    {
+      "path": "pipelines/open-source/config.json",
+      "sha256": "e5c7666dbdc7c302e54c0c94c946dcd01d64992b89a56df7ce1ee272dd488edf"
+    },
+    {
+      "path": "pipelines/open-source/categories.json",
+      "sha256": "8180966e55daa24799e51106645e93fd5807dde470765ab8b3b38d3f922c867b"
+    },
+    {
+      "path": "pipelines/open-source/prompts/system.md",
+      "sha256": "61bc24a57de14bd6a662cd6b5f98d0cfc57bf47e187fc58a97831bf1f272b4ee"
+    },
+    {
+      "path": "pipelines/open-source/prompts/build.md",
+      "sha256": "6096ab8b698af7a99d8ddaf1534cc95f41844d1d00cdd1fce740123b3146ab6a"
+    },
+    {
+      "path": "pipelines/open-source/prompts/repair.md",
+      "sha256": "8a84e51995736607b3efa6f5b2d76e52692423c2c26b03409afb4afa3c6586d6"
+    },
+    {
+      "path": "pipelines/open-source/models.json",
+      "sha256": "f02e4efcab2732e1736a96e02459eef895400d01c2888b63c7cded93435f36c4"
+    },
+    {
+      "path": "metadata/source-inventories/e-commerce.csv",
+      "sha256": "abddfb77dec470f02c62893ec4fa715f1b8bfff48c16335056d71d3a83b6f38c"
+    },
+    {
+      "path": "metadata/assignments.csv",
+      "sha256": "75aa44ee9046372a60e2b9bafe18f1e0dbb3f7c5bd80c29f49f4c060050bca06"
+    }
+  ],
+  "turns": [
+    {
+      "turn": 1,
+      "label": "plan",
+      "status_line": "CONTINUE",
+      "prose_chars": 2756,
+      "files_written": [],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 1327,
+        "prompt_tokens": 5238,
+        "total_tokens": 6565,
+        "prompt_tokens_details": {
+          "cached_tokens": 541
+        }
+      },
+      "at": "2026-11-17T06:42:34.501Z"
+    },
+    {
+      "turn": 2,
+      "label": "files-2",
+      "status_line": "CONTINUE",
+      "prose_chars": 0,
+      "files_written": [
+        "css/styles.css",
+        "js/main.js",
+        "index.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 4017,
+        "prompt_tokens": 6145,
+        "total_tokens": 10162,
+        "prompt_tokens_details": {
+          "cached_tokens": 5234
+        }
+      },
+      "at": "2026-11-17T06:43:53.147Z"
+    },
+    {
+      "turn": 3,
+      "label": "files-3",
+      "status_line": "CONTINUE",
+      "prose_chars": 0,
+      "files_written": [
+        "target-circle.html",
+        "gift-registry.html",
+        "weekly-ad.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 1783,
+        "prompt_tokens": 10168,
+        "total_tokens": 11951,
+        "prompt_tokens_details": {
+          "cached_tokens": 6141
+        }
+      },
+      "at": "2026-11-17T06:44:29.654Z"
+    },
+    {
+      "turn": 4,
+      "label": "files-4",
+      "status_line": "CONTINUE",
+      "prose_chars": 0,
+      "files_written": [
+        "store-locator.html",
+        "shop-all-categories.html",
+        "top-deals.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 2325,
+        "prompt_tokens": 11869,
+        "total_tokens": 14194,
+        "prompt_tokens_details": {
+          "cached_tokens": 10164
+        }
+      },
+      "at": "2026-11-17T06:45:16.028Z"
+    },
+    {
+      "turn": 5,
+      "label": "files-5",
+      "status_line": "COMPLETE",
+      "prose_chars": 0,
+      "files_written": [
+        "404.html",
+        "README.md",
+        "fidelity-notes.md",
+        "component-inventory.json",
+        "generation-metadata.json"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 5363,
+        "prompt_tokens": 14274,
+        "total_tokens": 19637,
+        "prompt_tokens_details": {
+          "cached_tokens": 11865
+        }
+      },
+      "at": "2026-11-17T06:47:01.913Z"
+    },
+    {
+      "turn": 6,
+      "label": "repair-1",
+      "status_line": "COMPLETE",
+      "prose_chars": 471,
+      "files_written": [
+        "assets/placeholder.svg",
+        "index.html",
+        "target-circle.html",
+        "gift-registry.html",
+        "weekly-ad.html",
+        "store-locator.html",
+        "shop-all-categories.html",
+        "top-deals.html",
+        "404.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 6205,
+        "prompt_tokens": 21199,
+        "total_tokens": 27404,
+        "prompt_tokens_details": {
+          "cached_tokens": 14270
+        }
+      },
+      "at": "2026-11-17T06:49:09.678Z"
+    },
+    {
+      "turn": 7,
+      "label": "repair-2",
+      "status_line": "COMPLETE",
+      "prose_chars": 401,
+      "files_written": [
+        "index.html",
+        "target-circle.html",
+        "gift-registry.html",
+        "weekly-ad.html",
+        "store-locator.html",
+        "shop-all-categories.html",
+        "top-deals.html",
+        "404.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 5571,
+        "prompt_tokens": 27324,
+        "total_tokens": 32895,
+        "prompt_tokens_details": {
+          "cached_tokens": 21195
+        }
+      },
+      "at": "2026-11-17T06:51:04.973Z"
+    }
+  ],
+  "rejected_files": [],
+  "qc_runs": [
+    {
+      "started_at": "2026-11-17T06:47:01.919Z",
+      "completed_at": "2026-11-17T06:47:05.271Z",
+      "exit_code": 1,
+      "executed": true,
+      "passed": false,
+      "outcome": "fail",
+      "failures": [
+        "placeholder href=\"#\" in 404.html",
+        "placeholder href=\"#\" in 404.html",
+        "placeholder href=\"#\" in gift-registry.html",
+        "placeholder href=\"#\" in gift-registry.html",
+        "placeholder href=\"#\" in index.html",
+        "placeholder href=\"#\" in index.html",
+        "placeholder href=\"#\" in shop-all-categories.html",
+        "placeholder href=\"#\" in shop-all-categories.html",
+        "placeholder href=\"#\" in store-locator.html",
+        "placeholder href=\"#\" in store-locator.html",
+        "placeholder href=\"#\" in target-circle.html",
+        "placeholder href=\"#\" in target-circle.html",
+        "placeholder href=\"#\" in top-deals.html",
+        "placeholder href=\"#\" in top-deals.html",
+        "placeholder href=\"#\" in weekly-ad.html",
+        "placeholder href=\"#\" in weekly-ad.html",
+        "failed request @1280 index.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/e-commerce/open-source/ECOM-08/assets/placeholder.svg",
+        "console error @1280 index.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @1280 shop-all-categories.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/e-commerce/open-source/ECOM-08/assets/placeholder.svg",
+        "console error @1280 shop-all-categories.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @1280 top-deals.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/e-commerce/open-source/ECOM-08/assets/placeholder.svg",
+        "console error @1280 top-deals.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @1280 weekly-ad.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/e-commerce/open-source/ECOM-08/assets/placeholder.svg",
+        "console error @1280 weekly-ad.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @375 index.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/e-commerce/open-source/ECOM-08/assets/placeholder.svg",
+        "console error @375 index.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @375 shop-all-categories.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/e-commerce/open-source/ECOM-08/assets/placeholder.svg",
+        "console error @375 shop-all-categories.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @375 top-deals.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/e-commerce/open-source/ECOM-08/assets/placeholder.svg",
+        "console error @375 top-deals.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @375 weekly-ad.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/e-commerce/open-source/ECOM-08/assets/placeholder.svg",
+        "console error @375 weekly-ad.html: Failed to load resource: net::ERR_FILE_NOT_FOUND"
+      ],
+      "failure_count": 32,
+      "warnings": [],
+      "axe": {},
+      "pages": 8,
+      "files": 14,
+      "qc_tool_sha256": "e9be905d19e7181e30d8291bcb1511d4469bdc9e36c20c0efe21e2d3fcf54513",
+      "report": "qc-initial-2026-11-17T06-47-01-919Z.json",
+      "log": "qc-initial-2026-11-17T06-47-01-919Z.log",
+      "stdout_tail": "FAIL placeholder href=\"#\" in 404.html\nFAIL placeholder href=\"#\" in gift-registry.html\nFAIL placeholder href=\"#\" in index.html\nFAIL placeholder href=\"#\" in shop-all-categories.html\nFAIL placeholder href=\"#\" in store-locator.html\nFAIL placeholder href=\"#\" in target-circle.html\nFAIL placeholder href=\"#\" in top-deals.html\nFAIL placeholder href=\"#\" in weekly-ad.html\nFAIL failed request @1280 index.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/e-commerce/open-source/ECOM-08/assets/placeholder.svg\nFAIL console error @1280 index.html: Failed to load resource: net::ERR_FILE_NOT_FOUND\nFAIL failed request @1280 shop-all-categories.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/e-commerce/open-source/ECOM-08/assets/placeholder.svg\nFAIL console error @1280 shop-all-categories.html: Failed to load resource: net::ERR_FILE_NOT_FOUND\nFAIL failed request @1280 top-deals.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/e-commerce/open-source/ECOM-08/assets/placeholder.svg\nFAIL console error @1280 top-deals.html: Failed to load resource: net::ERR_FILE_NOT_FOUND\nFAIL failed request @1280 weekly-ad.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/e-commerce/open-source/ECOM-08/assets/placeholder.svg\nFAIL console error @1280 weekly-ad.html: Failed to load resource: net::ERR_FILE_NOT_FOUND\nFAIL failed request @375 index.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/e-commerce/open-source/ECOM-08/assets/placeholder.svg\nFAIL console error @375 index.html: Failed to load resource: net::ERR_FILE_NOT_FOUND\nFAIL failed request @375 shop-all-categories.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/e-commerce/open-source/ECOM-08/assets/placeholder.svg\nFAIL console error @375 shop-all-categories.html: Failed to load resource: net::ERR_FILE_NOT_FOUND\nFAIL failed request @375 top-deals.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/e-commerce/open-source/ECOM-08/assets/placeholder.svg\nFAIL console error @375 top-deals.html: Failed to load resource: net::ERR_FILE_NOT_FOUND\nFAIL failed request @375 weekly-ad.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/e-commerce/open-source/ECOM-08/assets/placeholder.svg\nFAIL console error @375 weekly-ad.html: Failed to load resource: net::ERR_FILE_NOT_FOUND\n",
+      "note": null
+    },
+    {
+      "started_at": "2026-11-17T06:49:09.679Z",
+      "completed_at": "2026-11-17T06:49:12.704Z",
+      "exit_code": 1,
+      "executed": true,
+      "passed": false,
+      "outcome": "fail",
+      "failures": [
+        "placeholder href=\"#\" in 404.html",
+        "placeholder href=\"#\" in 404.html",
+        "placeholder href=\"#\" in gift-registry.html",
+        "placeholder href=\"#\" in gift-registry.html",
+        "placeholder href=\"#\" in index.html",
+        "placeholder href=\"#\" in index.html",
+        "placeholder href=\"#\" in shop-all-categories.html",
+        "placeholder href=\"#\" in shop-all-categories.html",
+        "placeholder href=\"#\" in store-locator.html",
+        "placeholder href=\"#\" in store-locator.html",
+        "placeholder href=\"#\" in target-circle.html",
+        "placeholder href=\"#\" in target-circle.html",
+        "placeholder href=\"#\" in top-deals.html",
+        "placeholder href=\"#\" in top-deals.html",
+        "placeholder href=\"#\" in weekly-ad.html",
+        "placeholder href=\"#\" in weekly-ad.html"
+      ],
+      "failure_count": 16,
+      "warnings": [],
+      "axe": {},
+      "pages": 8,
+      "files": 15,
+      "qc_tool_sha256": "e9be905d19e7181e30d8291bcb1511d4469bdc9e36c20c0efe21e2d3fcf54513",
+      "report": "qc-repair-1-2026-11-17T06-49-09-679Z.json",
+      "log": "qc-repair-1-2026-11-17T06-49-09-679Z.log",
+      "stdout_tail": "QC /Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/e-commerce/open-source/ECOM-08\npages=8 files=15 failures=16 warnings=0\nFAIL placeholder href=\"#\" in 404.html\nFAIL placeholder href=\"#\" in gift-registry.html\nFAIL placeholder href=\"#\" in index.html\nFAIL placeholder href=\"#\" in shop-all-categories.html\nFAIL placeholder href=\"#\" in store-locator.html\nFAIL placeholder href=\"#\" in target-circle.html\nFAIL placeholder href=\"#\" in top-deals.html\nFAIL placeholder href=\"#\" in weekly-ad.html\n",
+      "note": null
+    },
+    {
+      "started_at": "2026-11-17T06:51:04.975Z",
+      "completed_at": "2026-11-17T06:51:07.981Z",
+      "exit_code": 0,
+      "executed": true,
+      "passed": true,
+      "outcome": "pass",
+      "failures": [],
+      "failure_count": 0,
+      "warnings": [],
+      "axe": {},
+      "pages": 8,
+      "files": 15,
+      "qc_tool_sha256": "e9be905d19e7181e30d8291bcb1511d4469bdc9e36c20c0efe21e2d3fcf54513",
+      "report": "qc-repair-2-2026-11-17T06-51-04-975Z.json",
+      "log": "qc-repair-2-2026-11-17T06-51-04-975Z.log",
+      "stdout_tail": "QC /Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/e-commerce/open-source/ECOM-08\npages=8 files=15 failures=0 warnings=0\n",
+      "note": null
+    }
+  ],
+  "repair_rounds": [
+    {
+      "round": 1,
+      "before": {
+        "outcome": "fail",
+        "failures": 32
+      },
+      "after": {
+        "outcome": "fail",
+        "failures": 16
+      },
+      "files_changed": [
+        "assets/placeholder.svg",
+        "index.html",
+        "target-circle.html",
+        "gift-registry.html",
+        "weekly-ad.html",
+        "store-locator.html",
+        "shop-all-categories.html",
+        "top-deals.html",
+        "404.html"
+      ],
+      "at": "2026-11-17T06:49:12.704Z"
+    },
+    {
+      "round": 2,
+      "before": {
+        "outcome": "fail",
+        "failures": 16
+      },
+      "after": {
+        "outcome": "pass",
+        "failures": 0
+      },
+      "files_changed": [
+        "index.html",
+        "target-circle.html",
+        "gift-registry.html",
+        "weekly-ad.html",
+        "store-locator.html",
+        "shop-all-categories.html",
+        "top-deals.html",
+        "404.html"
+      ],
+      "at": "2026-11-17T06:51:07.981Z"
+    }
+  ],
+  "retries": [],
+  "human_edits": [
+    {
+      "by": "orchestrator script",
+      "at": "2026-11-17T06:51:07.981Z",
+      "what": "Wrote the model's emitted files, normalized generation-metadata.json provenance fields, and set validation_summary from the recorded QC run. No site markup, style or script was authored or edited by hand."
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 96217,
+    "completion_tokens": 26591,
+    "total_tokens": 122808,
+    "requests": 7,
+    "retries": 0
+  },
+  "errors": [],
+  "outputs": {
+    "site": "e-commerce/open-source/ECOM-08",
+    "transcript": "pipelines/open-source/runs/2026-11-17T06-42-06-379Z-build-ECOM-08/transcript.json"
+  },
+  "delivered": {
+    "files": [
+      "404.html",
+      "README.md",
+      "component-inventory.json",
+      "css/styles.css",
+      "fidelity-notes.md",
+      "generation-metadata.json",
+      "gift-registry.html",
+      "index.html",
+      "js/main.js",
+      "shop-all-categories.html",
+      "store-locator.html",
+      "target-circle.html",
+      "top-deals.html",
+      "weekly-ad.html"
+    ],
+    "file_count": 14,
+    "bytes": 45452,
+    "pages_in_map": 7,
+    "missing_required": [],
+    "model_claimed_complete": true,
+    "delivered_complete": true,
+    "turns_used": 5,
+    "turn_budget": 28
+  },
+  "initial_artifact": "pipelines/open-source/runs/2026-11-17T06-42-06-379Z-build-ECOM-08/initial",
+  "provenance": {
+    "wrote": true,
+    "modelEmittedValidMetadata": true
+  },
+  "acceptance": "not accepted: a QC result is not acceptance, and interaction review plus human acceptance happen outside this script"
+}

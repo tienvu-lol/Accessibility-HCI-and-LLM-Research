@@ -1,0 +1,122 @@
+/* Global reset and box-sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Typography */
+html {
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+  color: #222;
+  background: #fafafa;
+}
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 0.5em;
+}
+
+/* Focus outline – respects prefers-reduced-motion */
+@media (prefers-reduced-motion: no-preference) {
+  :focus-visible {
+    outline: 3px solid #0066cc;
+    outline-offset: 2px;
+  }
+}
+
+/* Layout containers */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+header, footer {
+  background: #004080;
+  color: #fff;
+  padding: 1rem;
+}
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 1rem;
+}
+nav a:focus-visible {
+  outline: 2px solid #ffdd00;
+}
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #000;
+  color: #fff;
+  padding: 8px;
+  z-index: 100;
+}
+.skip-link:focus-visible {
+  top: 0;
+}
+
+/* Main content */
+main {
+  flex: 1;
+  padding: 1rem;
+}
+
+/* Grid utilities */
+.grid {
+  display: grid;
+  gap: 1rem;
+}
+.card-grid {
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+/* Card component */
+.card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 1rem;
+}
+.card img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Form styles */
+form {
+  max-width: 600px;
+}
+label {
+  display: block;
+  margin-bottom: 0.25rem;
+}
+input, select, textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+}
+.error {
+  color: #d8000c;
+  font-size: 0.9rem;
+}
+.error-summary {
+  border: 2px solid #d8000c;
+  background: #ffefef;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 375px) {
+  nav a {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+}

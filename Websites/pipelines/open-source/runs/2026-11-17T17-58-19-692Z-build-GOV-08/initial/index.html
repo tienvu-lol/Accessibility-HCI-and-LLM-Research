@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Massachusetts State Government – Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="site-header" data-section="header" data-component="site-header">
+        <div class="logo" aria-label="Fictional Massachusetts Government">MassGov</div>
+        <nav aria-label="Language selection">
+            <div class="demo-lang">
+                <label for="lang-select" id="lang-demo">Language selection: English (demo)</label>
+                <select id="lang-select" aria-label="Demo language selector">
+                    <option value="en">English</option>
+                    <option value="es">Español</option>
+                </select>
+            </div>
+        </nav>
+    </header>
+
+    <nav class="primary-nav" aria-label="Primary" data-section="navigation" data-component="primary-nav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="health-social-services.html">Health & Social Services</a></li>
+            <li><a href="families-children.html">Families & Children</a></li>
+            <li><a href="transportation.html">Transportation</a></li>
+            <li><a href="apply-unemployment-benefits.html">Unemployment Benefits</a></li>
+            <li><a href="renew-vehicle-registration.html">Vehicle Registration</a></li>
+            <li><a href="search-court-dockets.html">Court Dockets</a></li>
+            <li><a href="state-organizations-a-to-z.html">State Organizations A‑Z</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero-banner" data-section="hero" data-component="hero-banner">
+        <h1>Welcome to MassGov</h1>
+        <p>Find services, information, and resources for Massachusetts residents and businesses.</p>
+    </section>
+
+    <!-- Alert banner (demo) -->
+    <div id="alert-banner" class="alert-banner" data-section="alert" data-component="alert-banner" role="alert">
+        <span id="alert-message"></span>
+        <button id="alert-dismiss">Dismiss</button>
+    </div>
+
+    <!-- Search form (demo) -->
+    <form id="search-form" class="search-form" data-section="search" data-component="search-form" aria-label="Site search">
+        <label for="search-input">Search services</label>
+        <input type="search" id="search-input" placeholder="Enter keywords…" aria-label="Search services">
+        <button type="submit">Search</button>
+    </form>
+    <div id="search-results" aria-live="polite"></div>
+
+    <main id="main-content" class="content-band" data-section="main">
+        <h2>Popular Services</h2>
+        <p>Explore commonly used services below. Each link goes to a topic page with more details.</p>
+        <ul>
+            <li><a href="health-social-services.html">Health & Social Services</a></li>
+            <li><a href="families-children.html">Families & Children</a></li>
+            <li><a href="transportation.html">Transportation</a></li>
+        </ul>
+    </main>
+
+    <!-- Report a problem form (demo) -->
+    <section class="content-band" data-section="report" data-component="report-form">
+        <h2>Report a Problem</h2>
+        <p>Use this form to non‑functionally demo reporting an issue.</p>
+        <form id="report-form" class="report-form" novalidate>
+            <label for="report-name">Name</label>
+            <input type="text" id="report-name" required>
+            <span class="error-message" id="name-error" aria-live="polite"></span>
+
+            <label for="report-email">Email</label>
+            <input type="email" id="report-email" required>
+            <span class="error-message" id="email-error" aria-live="polite"></span>
+
+            <label for="report-desc">Description</label>
+            <textarea id="report-desc" rows="4" required></textarea>
+            <span class="error-message" id="desc-error" aria-live="polite"></span>
+
+            <button type="submit">Submit (demo)</button>
+        </form>
+        <div id="error-summary" class="error-summary" role="alert">
+            <h3>Please fix the errors below</h3>
+            <ul id="error-list"></ul>
+        </div>
+        <div id="form-success" hidden role="status">
+            <p>Thank you! Your report has been submitted (demo).</p>
+        </div>
+    </section>
+
+    <!-- Calendar widget demo (placeholder for service detail pages) -->
+    <section class="content-band" data-section="calendar" data-component="calendar-widget">
+        <h2>Calendar Navigation (demo)</h2>
+        <p>This widget demonstrates a month picker; no real date logic is implemented.</p>
+        <div class="calendar-widget">
+            <button id="prev-month">&#9664; Previous</button>
+            <span id="month-display"></span>
+            <button id="next-month">Next &#9654;</button>
+        </div>
+    </section>
+
+    <footer class="site-footer" data-section="footer" data-component="site-footer">
+        &copy; 2026 Massachusetts State Government (fictional). All demo content.
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

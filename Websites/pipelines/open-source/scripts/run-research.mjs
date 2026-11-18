@@ -15,11 +15,13 @@ import {fetchAll, evidenceSummary} from './verify-sources.mjs';
 
 const isMain = meta => process.argv[1] && fileURLToPath(meta.url) === path.resolve(process.argv[1]);
 
-const USAGE = `Usage: node run-research.mjs <PREFIX|category> [--slot 7] [--model-slot 7] [--dry-run] [--candidates 3]
+const USAGE = `Usage: node run-research.mjs <PREFIX|category> [--slot 7] [--model-slot 7] [--dry-run] [--candidates 3] [--source <url>|<slot>:<url>,...]
 
   --slot         research one slot only, or a comma list (default: all of ${SLOTS.join(', ')})
   --model-slot   which declared slot's model does the research (default: the lowest researched slot)
   --candidates   candidate sites per slot in exchange 1 (default 3)
+  --source       pin the reference URL for every slot in the run; the model then does not choose
+                 the site, only the page mapping. Recorded as an operator-pinned deviation.
   --compact      trim the evidence for a small served context window (recommended under ~32k)
   --max-pages    cap the proposed page map (default config max, currently 16)
   --dry-run      print the exchange-1 prompt and exit; no API call, no files written`;
@@ -125,7 +127,7 @@ Then, after the block${ids.length > 1 ? 's' : ''}, emit one fenced JSON object w
 ${ids.length > 1 ? `One row per slot, ${ids.length} rows.` : 'Exactly one row.'} Leave evidence_reference as an empty string — I fill it with the evidence file path. Do not include model_id, approved_at, approved_by or approval_reference: the model is recorded by me, and approval is the project lead's decision, not ours.`;
 }
 
-export async function runResearch({target, modelSlot, slots = SLOTS, candidates = 3, dryRun = false, compact = false, maxPages, root} = {}) {
+export async function runResearch({target, modelSlot, slots = SLOTS, candidates = 3, dryRun = false, compact = false, maxPages, root, sources = {}} = {}) {
   const setup = loadSetup(root);
   const setupErrors = validateSetup(setup);
   if (setupErrors.length) throw new Error('Pipeline validation failed:\n' + setupErrors.join('\n'));
@@ -219,27 +221,44 @@ export async function runResearch({target, modelSlot, slots = SLOTS, candidates 
   };
 
   try {
-    // Exchange 1 — candidates.
-    await agent.ask(prompt1, {label: 'candidates'});
-    let parsed = extractJSON(agent.turns.at(-1).response);
-    if (!parsed?.candidates) {
-      await agent.ask('That reply did not contain a parseable JSON object. Resend only the fenced ```json object with the "candidates" key, nothing else.', {label: 'candidates-retry'});
-      parsed = extractJSON(agent.turns.at(-1).response);
-    }
-    if (!parsed?.candidates) fail('The model did not return parseable candidates after a retry; see the transcript.');
-
+    // Exchange 1 — candidates. The project lead may pin a slot's reference with --source, in which
+    // case the model is not asked to choose for that slot: the pinned URL goes straight to the HTTP
+    // rounds and the model still performs every evidence interpretation in exchanges 2 and 3. This is
+    // a deviation from model-chosen references and is recorded as such in the run and the proposal.
+    const pinned = new Map(Object.entries(sources).map(([slot, url]) => [Number(slot), String(url).trim()]));
+    if (pinned.size && researched.some(slot => !pinned.has(slot)))
+      fail('--source must pin a reference for every slot in the run, or for none of them');
     const wanted = [];
-    for (const slot of researched) {
-      const list = parsed.candidates[String(slot)] ?? parsed.candidates[slot];
-      if (!Array.isArray(list) || !list.length) fail(`No candidates proposed for slot ${slot}`);
-      for (const item of list.slice(0, candidates)) if (item?.url) wanted.push({slot, name: item.name ?? null, url: String(item.url).trim()});
+    if (pinned.size) {
+      for (const slot of researched) wanted.push({slot, name: null, url: pinned.get(slot)});
+      run.source_selection = {
+        mode: 'operator-pinned',
+        note: 'The project lead named the reference URL for each slot in this run; the model did not choose it. Page mapping, region and interaction analysis in exchanges 2 and 3 remain the model\'s work from orchestrator-fetched evidence.',
+        pinned: Object.fromEntries([...pinned].map(([slot, url]) => [padSlot(slot), url])),
+      };
+      run.exchanges.push({exchange: 1, label: 'candidates-skipped-operator-pinned', proposed: wanted.length, pinned: [...pinned.values()]});
+      save();
+    } else {
+      await agent.ask(prompt1, {label: 'candidates'});
+      let parsed = extractJSON(agent.turns.at(-1).response);
+      if (!parsed?.candidates) {
+        await agent.ask('That reply did not contain a parseable JSON object. Resend only the fenced ```json object with the "candidates" key, nothing else.', {label: 'candidates-retry'});
+        parsed = extractJSON(agent.turns.at(-1).response);
+      }
+      if (!parsed?.candidates) fail('The model did not return parseable candidates after a retry; see the transcript.');
+
+      for (const slot of researched) {
+        const list = parsed.candidates[String(slot)] ?? parsed.candidates[slot];
+        if (!Array.isArray(list) || !list.length) fail(`No candidates proposed for slot ${slot}`);
+        for (const item of list.slice(0, candidates)) if (item?.url) wanted.push({slot, name: item.name ?? null, url: String(item.url).trim()});
+      }
     }
     const held = reservedUrls(inventory, researched);
     const collisions = wanted.filter(c => {
       const owner = held.get(normalizeUrl(c.url));
       return owner && !owner.ours;
     });
-    run.exchanges.push({exchange: 1, label: 'candidates', proposed: wanted.length, collisions: collisions.map(c => c.url)});
+    if (!pinned.size) run.exchanges.push({exchange: 1, label: 'candidates', proposed: wanted.length, collisions: collisions.map(c => c.url)});
     save();
 
     // HTTP round 1 — homepages.
@@ -374,6 +393,8 @@ export async function runResearch({target, modelSlot, slots = SLOTS, candidates 
 - **Evidence:** \`${evidenceRef}\`
 - **Status:** proposals only. No source is approved and no row has been written to \`metadata/\`. The Claude group's Phase A waiver does not apply here.
 
+## Proposed sources
+
 `;
     fs.writeFileSync(notesPath, header + redact(notesReply).trim() + '\n');
 
@@ -427,7 +448,7 @@ if (isMain(import.meta)) {
   try {
     const {positional, flags} = cliArgs(process.argv.slice(2), {
       'model-slot': 'value', 'dry-run': 'boolean', candidates: 'value', slot: 'value',
-      compact: 'boolean', 'max-pages': 'value',
+      compact: 'boolean', 'max-pages': 'value', source: 'value',
     });
     if (positional.length !== 1) throw new Error(USAGE);
     const result = await runResearch({
@@ -438,6 +459,16 @@ if (isMain(import.meta)) {
       dryRun: Boolean(flags['dry-run']),
       compact: Boolean(flags.compact),
       maxPages: flags['max-pages'] ? Number(flags['max-pages']) : undefined,
+      // --source pins the reference: "<url>" for a single-slot run, or "7:<url>,8:<url>" for several.
+      sources: flags.source ? Object.fromEntries(flags.source.split(',').map(part => {
+        const text = part.trim();
+        const m = /^(\d+)\s*:\s*(https?:\/\/.+)$/.exec(text);
+        if (m) return [Number(m[1]), m[2].trim()];
+        if (!/^https?:\/\//.test(text)) throw new Error(`--source expects "<url>" or "<slot>:<url>" (got "${text}")`);
+        const only = flags.slot ? flags.slot.split(',').map(x => Number(x.trim())) : SLOTS;
+        if (only.length !== 1) throw new Error('--source without a slot prefix needs a single --slot');
+        return [only[0], text];
+      })) : {},
     });
     if (result.dryRun) {
       console.log(`--- system (${result.model.model_id}) ---\n${result.system}\n--- exchange 1 prompt ---\n${result.prompt}`);

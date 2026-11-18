@@ -1,0 +1,167 @@
+{
+  "components": [
+    {
+      "name": "site-header",
+      "selector": "header[data-component=\"site-header\"]",
+      "pages": [
+        "index.html",
+        "academic-life.html",
+        "departments.html",
+        "college-catalog.html",
+        "admission.html",
+        "apply.html",
+        "visiting.html",
+        "news.html",
+        "404.html"
+      ],
+      "behaviors": "Displays the site name/logo; remains static across pages.",
+      "keyboardExpectations": "None; purely visual landmark.",
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "name": "primary-nav",
+      "selector": "nav[data-component=\"primary-nav\"]",
+      "pages": [
+        "index.html",
+        "academic-life.html",
+        "departments.html",
+        "college-catalog.html",
+        "admission.html",
+        "apply.html",
+        "visiting.html",
+        "news.html",
+        "404.html"
+      ],
+      "behaviors": "Horizontal link list; collapses to a hamburger button on viewports ≤ 600 px. ARIA‑expanded toggles visibility; ESC closes mobile menu and returns focus to the button.",
+      "keyboardExpectations": "Enter/Space on hamburger toggles menu; Escape closes menu and focuses hamburger.",
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "name": "hero-banner",
+      "selector": "section[data-component=\"hero-banner\"]",
+      "pages": [
+        "index.html",
+        "academic-life.html"
+      ],
+      "behaviors": "Prominent introductory section with heading and optional text.",
+      "keyboardExpectations": "None.",
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "name": "site-footer",
+      "selector": "footer[data-component=\"site-footer\"]",
+      "pages": [
+        "index.html",
+        "academic-life.html",
+        "departments.html",
+        "college-catalog.html",
+        "admission.html",
+        "apply.html",
+        "visiting.html",
+        "news.html",
+        "404.html"
+      ],
+      "behaviors": "Contains copyright information and simple navigation links.",
+      "keyboardExpectations": "None.",
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "name": "card-grid",
+      "selector": "section[data-component=\"card-grid\"] > .card-grid, section[data-component=\"card-grid\"]",
+      "pages": [
+        "academic-life.html",
+        "departments.html",
+        "college-catalog.html",
+        "visiting.html",
+        "news.html"
+      ],
+      "behaviors": "Responsive grid of cards displaying items (programs, courses, news, visit options). Cards can be hidden via JavaScript search or filter.",
+      "keyboardExpectations": "None; keyboard interaction occurs via associated inputs (search, filter buttons).",
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "name": "sidebar",
+      "selector": "aside[data-component=\"sidebar\"], section[data-component=\"sidebar\"]",
+      "pages": [
+        "academic-life.html"
+      ],
+      "behaviors": "Secondary content area; in this replica shows a list of faculty/staff.",
+      "keyboardExpectations": "None.",
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "name": "contact-form",
+      "selector": "form[data-component=\"contact-form\"]",
+      "pages": [
+        "visiting.html",
+        "admission.html"
+      ],
+      "behaviors": "Collects name, email, and message; on submit shows a toast thank‑you message and resets the form (demo only).",
+      "keyboardExpectations": "Enter on a focused field submits the form; focus moves to toast after submit (simulated).",
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "name": "filter-bar",
+      "selector": "section[data-component=\"filter-bar\"]",
+      "pages": [
+        "news.html"
+      ],
+      "behaviors": "Set of buttons that filter the news card grid by category; ARIA‑pressed indicates active button.",
+      "keyboardExpectations": "Enter/Space on a button toggles its pressed state and updates the filter.",
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "name": "faq",
+      "selector": "section[data-component=\"faq\"]",
+      "pages": [
+        "admission.html"
+      ],
+      "behaviors": "Definition list of questions and answers.",
+      "keyboardExpectations": "None.",
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "name": "application-form",
+      "selector": "form[data-component=\"application-form\"]",
+      "pages": [
+        "apply.html"
+      ],
+      "behaviors": "Demo application form; on submit shows a toast and resets the form (no data stored).",
+      "keyboardExpectations": "Enter on a focused field submits the form.",
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "name": "program-search",
+      "selector": "input#program-search",
+      "pages": [
+        "academic-life.html",
+        "departments.html"
+      ],
+      "behaviors": "Filters the program card grid in real time based on entered text (case‑insensitive substring match).",
+      "keyboardExpectations": "Typing updates results immediately; Escape clears the input and shows all items.",
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "name": "course-search",
+      "selector": "input#course-search",
+      "pages": [
+        "college-catalog.html"
+      ],
+      "behaviors": "Filters the course card grid in real time based on entered text (case‑insensitive substring match).",
+      "keyboardExpectations": "Typing updates results immediately; Escape clears the input and shows all items.",
+      "status": "implemented",
+      "validationState": "not-tested"
+    }
+  ]
+}

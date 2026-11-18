@@ -1,0 +1,300 @@
+{
+  "components": [
+    {
+      "name": "site-header",
+      "selector": "[data-component=\"site-header\"]",
+      "pages": [
+        "index.html",
+        "today.html",
+        "radar.html",
+        "news.html",
+        "login.html",
+        "hourly.html",
+        "tenday.html",
+        "monthly.html",
+        "allergy.html",
+        "404.html"
+      ],
+      "behaviors": [
+        "Contains site logo (fictional), skip link, location search form",
+        "Always visible at top of viewport",
+        "Contains demo premium banner (non‑functional) as an intentional addition"
+      ],
+      "keyboard_expectations": [
+        "Skip link is first focusable element and visible on focus",
+        "Location search input and button are reachable via Tab",
+        "All header links are focusable in DOM order"
+      ],
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "primary-nav",
+      "selector": "[data-component=\"primary-nav\"]",
+      "pages": [
+        "index.html",
+        "today.html",
+        "radar.html",
+        "news.html",
+        "login.html",
+        "hourly.html",
+        "tenday.html",
+        "monthly.html",
+        "allergy.html",
+        "404.html"
+      ],
+      "behaviors": [
+        "Horizontal list of links to major site sections",
+        "Current page indicated by aria-current=\"page\" where applicable"
+      ],
+      "keyboard_expectations": [
+        "Each link is focusable via Tab",
+        "Enter activates link"
+      ],
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "site-footer",
+      "selector": "[data-component=\"site-footer\"]",
+      "pages": [
+        "index.html",
+        "today.html",
+        "radar.html",
+        "news.html",
+        "login.html",
+        "hourly.html",
+        "tenday.html",
+        "monthly.html",
+        "allergy.html",
+        "404.html"
+      ],
+      "behaviors": [
+        "Contains copyright notice, fictional brand name, and links to Help/About"
+      ],
+      "keyboard_expectations": [
+        "Links are focusable via Tab"
+      ],
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "location-search",
+      "selector": "[data-component=\"location-search\"] form",
+      "pages": [
+        "index.html",
+        "today.html",
+        "radar.html",
+        "news.html",
+        "login.html",
+        "hourly.html",
+        "tenday.html",
+        "monthly.html",
+        "allergy.html",
+        "404.html"
+      ],
+      "behaviors": [
+        "Text input for location entry",
+        "Button to submit search (demo)",
+        "On submit shows a demo alert (no real lookup)"
+      ],
+      "keyboard_expectations": [
+        "Input receives focus via Tab",
+        "Button reachable via Tab, activates on Enter or Space",
+        "Escape closes any demo alert (if implemented)"
+      ],
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "forecast-tabs",
+      "selector": "[data-component=\"forecast-tabs\"]",
+      "pages": [
+        "today.html",
+        "hourly.html",
+        "tenday.html",
+        "monthly.html"
+      ],
+      "behaviors": [
+        "ARIA tablist with tabs for Today, Hourly, 10‑Day, Monthly",
+        "Shows associated tabpanel when tab selected",
+        "Persists active tab in localStorage (demo only)"
+      ],
+      "keyboard_expectations": [
+        "Tab list is reachable via Tab",
+        "Left/Right arrow moves focus between tabs",
+        "Tab or Enter activates selected tab",
+        "Home/End move to first/last tab",
+        "Tabpanel receives focus when activated"
+      ],
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "unit-toggle",
+      "selector": "[id^=\"unit-toggle\"]",
+      "pages": [
+        "today.html",
+        "hourly.html",
+        "tenday.html",
+        "monthly.html"
+      ],
+      "behaviors": [
+        "Button toggles label between °C and °F",
+        "Demo only – no actual temperature conversion performed"
+      ],
+      "keyboard_expectations": [
+        "Button focusable via Tab",
+        "Space or Enter toggles state",
+        "aria‑changed reflects pressed state"
+      ],
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "radar-placeholder",
+      "selector": "[data-component=\"radar-placeholder\"]",
+      "pages": [
+        "radar.html"
+      ],
+      "behaviors": [
+        "Static SVG representing radar returns with title and description",
+        "Non‑functional Refresh button"
+      ],
+      "keyboard_expectations": [
+        "SVG is focusable (if tabindex added) – not required as it is decorative",
+        "Button focusable via Tab, activates on Enter/Space"
+      ],
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "alert-filters",
+      "selector": "[data-component=\"alert-filters\"]",
+      "pages": [
+        "index.html",
+        "today.html",
+        "radar.html",
+        "news.html",
+        "login.html",
+        "hourly.html",
+        "tenday.html",
+        "monthly.html",
+        "allergy.html"
+      ],
+      "behaviors": [
+        "Checkbox group for alert type selection",
+        "When any checkbox checked, a demo alert banner appears",
+        "Banner dismissible via close button"
+      ],
+      "keyboard_expectations": [
+        "Each checkbox reachable via Tab",
+        "Space toggles checked state",
+        "When state changes, alert banner visibility updates",
+        "Close button focusable via Tab, activates on Enter/Space"
+      ],
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "news-card",
+      "selector": "[data-component=\"news-card\"] article",
+      "pages": [
+        "news.html"
+      ],
+      "behaviors": [
+        "Displays a weather news item with title, summary, timestamp"
+      ],
+      "keyboard_expectations": [
+        "Article is focusable if made interactive (not required)",
+        "Any links inside would be reachable via Tab"
+      ],
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "login-form",
+      "selector": "[data-component=\"login-form\"] form",
+      "pages": [
+        "login.html"
+      ],
+      "behaviors": [
+        "Email and password fields with client‑side validation",
+        "On submit shows demo success or error message",
+        "Form resets after successful demo login"
+      ],
+      "keyboard_expectations": [
+        "Each input reachable via Tab",
+        "Submit button reachable via Tab, activates on Enter",
+        "Error messages are live‑region announced",
+        "Success message receives focus after submit"
+      ],
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "pollen-indicator",
+      "selector": "[data-component=\"pollen-indicator\"]",
+      "pages": [
+        "allergy.html"
+      ],
+      "behaviors": [
+        "Shows pollen level (low/moderate/high) for tree, grass, weed for each day using colored blocks"
+      ],
+      "keyboard_expectations": [
+        "Blocks are decorative; no keyboard interaction expected",
+        "If made focusable, would receive focus via Tab"
+      ],
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "hero",
+      "selector": "[data-component=\"hero\"]",
+      "pages": [
+        "index.html",
+        "today.html",
+        "radar.html",
+        "news.html",
+        "login.html",
+        "hourly.html",
+        "tenday.html",
+        "monthly.html",
+        "allergy.html"
+      ],
+      "behaviors": [
+        "Contains page heading and introductory text or forecast summary"
+      ],
+      "keyboard_expectations": [
+        "Heading is perceivable by screen readers",
+        "Any links inside are reachable via Tab"
+      ],
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "demo-premium-banner",
+      "selector": ".demo-premium-banner",
+      "pages": [
+        "index.html",
+        "today.html",
+        "radar.html",
+        "news.html",
+        "login.html",
+        "hourly.html",
+        "tenday.html",
+        "monthly.html",
+        "allergy.html"
+      ],
+      "behaviors": [
+        "Non‑functional banner indicating demo premium upsell",
+        "Clearly labeled as demo and not functional"
+      ],
+      "keyboard_expectations": [
+        "Banner is not interactive; no keyboard expectations"
+      ],
+      "status": "intentionally_added",
+      "validation_state": "not-tested"
+    }
+  ]
+}

@@ -8,3 +8,7 @@ runs/**/transcript-raw/
 .worktrees/
 .env
 .DS_Store
+
+# transient lock and temp files from atomic writes
+*.lock
+*.tmp-*

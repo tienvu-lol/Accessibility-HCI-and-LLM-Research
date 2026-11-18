@@ -1,0 +1,218 @@
+{
+  "components": [
+    {
+      "name": "site-header",
+      "selector": ".site-header",
+      "appearsOn": [
+        "index.html",
+        "404.html",
+        "seattle-news.html",
+        "business.html",
+        "sports.html",
+        "nation-world.html",
+        "seattle-i-5-express-lanes-closed.html",
+        "subscribe-signup-offers-subsource-voluntary.html",
+        "help.html",
+        "newsroom-staff.html",
+        "rss-feeds.html"
+      ],
+      "behaviors": "Contains site title, skip link, and optional search form. Fixed position at top of page.",
+      "keyboardExpectations": "Skip link receives focus first and is visible on focus; search form inputs are tabbable.",
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "name": "primary-nav",
+      "selector": ".primary-nav",
+      "appearsOn": [
+        "index.html",
+        "404.html",
+        "seattle-news.html",
+        "business.html",
+        "sports.html",
+        "nation-world.html",
+        "seattle-i-5-express-lanes-closed.html",
+        "subscribe-signup-offers-subsource-voluntary.html",
+        "help.html",
+        "newsroom-staff.html",
+        "rss-feeds.html"
+      ],
+      "behaviors": "Horizontal list of links to major sections and pages; indicates current page with aria-current.",
+      "keyboardExpectations": "Each link is focusable in tab order; Enter activates navigation.",
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "name": "site-footer",
+      "selector": ".site-footer",
+      "appearsOn": [
+        "index.html",
+        "404.html",
+        "seattle-news.html",
+        "business.html",
+        "sports.html",
+        "nation-world.html",
+        "seattle-i-5-express-lanes-closed.html",
+        "subscribe-signup-offers-subsource-voluntary.html",
+        "help.html",
+        "newsroom-staff.html",
+        "rss-feeds.html"
+      ],
+      "behaviors": "Contains copyright, fictional address, and placeholder policy links.",
+      "keyboardExpectations": "Links are tabbable; Enter activates.",
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "name": "breadcrumb",
+      "selector": ".breadcrumb",
+      "appearsOn": [
+        "seattle-news.html",
+        "business.html",
+        "sports.html",
+        "nation-world.html",
+        "seattle-i-5-express-lanes-closed.html"
+      ],
+      "behaviors": "Shows hierarchical path from homepage to current page.",
+      "keyboardExpectations": "Links are tabbable; Enter activates.",
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "name": "article-card",
+      "selector": ".article-card",
+      "appearsOn": [
+        "index.html",
+        "seattle-news.html",
+        "business.html",
+        "sports.html",
+        "nation-world.html",
+        "rss-feeds.html"
+      ],
+      "behaviors": "Displays a preview of an article with image, title, timestamp, summary, and read‑more link.",
+      "keyboardExpectations": "Read‑more link is focusable; Enter activates.",
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "name": "latest-tabs",
+      "selector": ".latest-tabs",
+      "appearsOn": [
+        "index.html",
+        "seattle-news.html",
+        "business.html",
+        "sports.html",
+        "nation-world.html"
+      ],
+      "behaviors": "Two tabs (Latest / Most Read) that toggle visibility of associated article lists.",
+      "keyboardExpectations": "Each tab button is focusable; Space or Enter activates; arrow keys move between tabs.",
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "name": "newsletter-signup",
+      "selector": ".newsletter-signup",
+      "appearsOn": [
+        "index.html",
+        "seattle-news.html",
+        "business.html",
+        "sports.html",
+        "nation-world.html",
+        "subscribe-signup-offers-subsource-voluntary.html",
+        "help.html",
+        "rss-feeds.html"
+      ],
+      "behaviors": "Email input with submit button; validates format and shows inline success/error messages.",
+      "keyboardExpectations": "Input and button are tabbable; Enter on button submits; focus moves to message after submit.",
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "name": "subscription-form",
+      "selector": ".subscription-form",
+      "appearsOn": [
+        "subscribe-signup-offers-subsource-voluntary.html"
+      ],
+      "behaviors": "Plan selection, name and email fields, submit button; shows modal confirmation on submit.",
+      "keyboardExpectations": "All fields and button are tabbable; Enter on button submits; focus moves to modal close button.",
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "name": "search-form",
+      "selector": ".search-form",
+      "appearsOn": [
+        "index.html",
+        "404.html",
+        "seattle-news.html",
+        "business.html",
+        "sports.html",
+        "nation-world.html",
+        "seattle-i-5-express-lanes-closed.html",
+        "subscribe-signup-offers-subsource-voluntary.html",
+        "help.html",
+        "newsroom-staff.html",
+        "rss-feeds.html"
+      ],
+      "behaviors": "Site‑wide search; filters inline article data and displays results in a live region.",
+      "keyboardExpectations": "Input and button are tabbable; Enter submits; results are announced via live region.",
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "name": "staff-card",
+      "selector": ".staff-card",
+      "appearsOn": [
+        "newsroom-staff.html"
+      ],
+      "behaviors": "Displays staff member placeholder photo, name, role, and short bio.",
+      "keyboardExpectations": "None beyond standard tab order; content is static.",
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "name": "rss-item",
+      "selector": ".rss-item",
+      "appearsOn": [
+        "rss-feeds.html"
+      ],
+      "behaviors": "Shows RSS feed title, URL, description, and subscribe link.",
+      "keyboardExpectations": "Subscribe link is focusable; Enter activates (simulated).",
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "name": "faq-item",
+      "selector": ".faq-item",
+      "appearsOn": [
+        "help.html"
+      ],
+      "behaviors": "Presents a question and its answer.",
+      "keyboardExpectations": "None beyond standard tab order.",
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "name": "contact-info",
+      "selector": ".contact-info",
+      "appearsOn": [
+        "help.html"
+      ],
+      "behaviors": "Provides contact email addresses and mailing address.",
+      "keyboardExpectations": "Email links are focusable; Enter activates mailto.",
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "name": "modal",
+      "selector": ".modal",
+      "appearsOn": [
+        "subscribe-signup-offers-subsource-voluntary.html"
+      ],
+      "behaviors": "Dialog that appears after subscription submission, showing fictional confirmation.",
+      "keyboardExpectations": "Focus traps inside modal on open; close button is focusable; Escape closes and returns focus to trigger.",
+      "status": "implemented",
+      "validationState": "not-tested"
+    }
+  ]
+}

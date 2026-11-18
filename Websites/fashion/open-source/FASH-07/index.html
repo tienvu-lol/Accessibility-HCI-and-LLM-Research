@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lumina Magazine — Fashion, Beauty, Culture</title>
+  <meta name="description" content="Lumina Magazine: Your source for the latest in fashion, beauty, and culture.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="site-header" data-component="site-header">
+    <div class="container">
+      <a href="index.html" class="site-logo" aria-label="Lumina Magazine Home">LUMINA</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation menu">
+        <span aria-hidden="true">☰</span>
+      </button>
+      <nav class="primary-nav" id="primary-nav" data-component="primary-nav">
+        <a href="fashion.html">Fashion</a>
+        <a href="beauty.html">Beauty</a>
+        <a href="culture.html">Culture</a>
+        <a href="shopping.html">Shopping</a>
+        <a href="fashion-shows.html">Shows</a>
+        <a href="business.html">Business</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" data-section="home">
+    <!-- Hero Section -->
+    <section class="hero" data-component="hero-banner">
+      <div class="container">
+        <div class="hero-content">
+          <p class="hero-meta">Trending Now</p>
+          <h1>The Return of the Maximalist Wardrobe</h1>
+          <p class="hero-excerpt">Why designers are embracing bold patterns, rich textures, and unapologetic volume this season.</p>
+          <a href="fashion-trends.html" class="hero-link">Read the Full Story</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Latest Stories -->
+    <section class="container mt-2" data-section="latest-stories">
+      <h2 class="sr-only">Latest Stories</h2>
+      <div class="grid grid-3">
+        <!-- Card 1 -->
+        <article class="card" data-component="card">
+          <div class="card-image">
+            <svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="100" height="100" fill="#e0e0e0"/>
+              <text x="50" y="50" font-family="sans-serif" font-size="12" fill="#999" text-anchor="middle" dy=".3em">Image</text>
+            </svg>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title"><a href="article-faux-fur-trim-robe-coat-trend.html">The Faux Fur-Trimmed Coat Is the Coat of the Season</a></h3>
+            <p class="card-excerpt">Data shows it: the oversized, cozy silhouette is dominating street style from Milan to New York.</p>
+            <p class="card-meta">By Elena Rostova • 2 hours ago</p>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="card" data-component="card">
+          <div class="card-image">
+            <svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="100" height="100" fill="#e0e0e0"/>
+              <text x="50" y="50" font-family="sans-serif" font-size="12" fill="#999" text-anchor="middle" dy=".3em">Image</text>
+            </svg>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title"><a href="slideshow-best-dressed-stars.html">The Best Dressed Stars of the Week</a></h3>
+            <p class="card-excerpt">From Zendaya to Mikey Madison, see who proved formal can be fun at the Met Gala afterparties.</p>
+            <p class="card-meta">By Sarah Jenkins • 5 hours ago</p>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="card" data-component="card">
+          <div class="card-image">
+            <svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="100" height="100" fill="#e0e0e0"/>
+              <text x="50" y="50" font-family="sans-serif" font-size="12" fill="#999" text-anchor="middle" dy=".3em">Image</text>
+            </svg>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title"><a href="beauty.html">The New Rule of Skincare: Less is More</a></h3>
+            <p class="card-excerpt">Dermatologists weigh in on the "skinimalism" trend taking over bathroom counters worldwide.</p>
+            <p class="card-meta">By Dr. A. Patel • 1 day ago</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Fashion Shows Preview -->
+    <section class="container mt-2" data-section="fashion-shows">
+      <h2 class="mb-2">Upcoming Shows</h2>
+      <div class="grid grid-2">
+        <div class="card" data-component="card">
+          <div class="card-body">
+            <h3 class="card-title">Paris Fashion Week: Day 1</h3>
+            <p class="card-meta">Sept 28, 2026 • Chanel, Dior, Saint Laurent</p>
+            <a href="fashion-shows.html">View Schedule</a>
+          </div>
+        </div>
+        <div class="card" data-component="card">
+          <div class="card-body">
+            <h3 class="card-title">Milan Fashion Week: Preview</h3>
+            <p class="card-meta">Sept 20, 2026 • Gucci, Prada, Versace</p>
+            <a href="fashion-shows.html">View Schedule</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="container mt-2 text-center" data-section="newsletter" data-component="newsletter-form">
+      <h2>Stay in the Loop</h2>
+      <p>Get the latest trends, beauty tips, and culture news delivered to your inbox.</p>
+      <form class="newsletter-form" aria-label="Newsletter signup">
+        <label for="email-input" class="sr-only">Email address</label>
+        <input type="email" id="email-input" name="email" placeholder="Enter your email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+      <p class="sr-only" role="alert" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <footer class="site-footer" data-component="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h3>Lumina Magazine</h3>
+          <p>Your trusted source for fashion, beauty, and culture since 2026.</p>
+        </div>
+        <div>
+          <h3>Sections</h3>
+          <ul>
+            <li><a href="fashion.html">Fashion</a></li>
+            <li><a href="beauty.html">Beauty</a></li>
+            <li><a href="culture.html">Culture</a></li>
+            <li><a href="shopping.html">Shopping</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Company</h3>
+          <ul>
+            <li><a href="index.html">About Us</a></li>
+            <li><a href="index.html">Careers</a></li>
+            <li><a href="index.html">Contact</a></li>
+            <li><a href="index.html">Advertise</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Legal</h3>
+          <ul>
+            <li><a href="index.html">Privacy Policy</a></li>
+            <li><a href="index.html">Terms of Service</a></li>
+            <li><a href="index.html">Cookie Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-2 text-center">
+        <p>&copy; 2026 Lumina Magazine. All rights reserved. This is a fictional replica for research purposes.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

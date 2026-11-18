@@ -1,0 +1,593 @@
+{
+  "run_id": "2026-11-17T05-53-22-806Z-build-UNI-08",
+  "phase": "build",
+  "target": "UNI-08",
+  "category": "university",
+  "slot": 8,
+  "model_group": "open-source",
+  "model": {
+    "model_id": "unsloth/NVIDIA-Nemotron-3-Super-120B-A12B-GGUF",
+    "model_version": "MXFP4_MOE",
+    "model_provider_or_runtime": "vt-arc-falcon-llamacpp (OpenAI-compatible chat completions at http://localhost:8081/v1)",
+    "weights_url": "https://huggingface.co/unsloth/NVIDIA-Nemotron-3-Super-120B-A12B-GGUF",
+    "license": "nvidia-nemotron-open-model-license",
+    "open_weights": true,
+    "eligibility_note": "Open weights. Licence is the NVIDIA Nemotron Open Model License (HF tag nvidia-nemotron-open-model-license), as published on huggingface.co/unsloth/NVIDIA-Nemotron-3-Super-120B-A12B-GGUF and on the base model card nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-BF16, both read 2026-11-17 by the orchestrator. This is a vendor open-model licence, NOT an OSI-approved open-source licence: this slot is open-weight but should not be described as open-source without checking the licence text against the study's definition. Quantisation MXFP4_MOE. Served self-hosted via llama.cpp on VT ARC Falcon node fal052:50413 over an SSH tunnel on localhost:8081; no third-party inference provider.",
+    "params": {
+      "temperature": 0.3,
+      "max_tokens": 32000
+    }
+  },
+  "operator": "Samhith Varma Yallamraju",
+  "status": "completed",
+  "prepared_at": "2026-11-17T05:53:22.813Z",
+  "generation_started_at": "2026-11-17T05:53:22.813Z",
+  "generation_completed_at": "2026-11-17T06:06:43.645Z",
+  "tool_access": "chat-completions API only: no browsing, no shell, no filesystem. The orchestrator wrote every file and ran every check.",
+  "budget": {
+    "max_build_turns": 28,
+    "max_repair_rounds": 3,
+    "max_tokens_per_request": 32000,
+    "temperature": 0.3
+  },
+  "approved_source": {
+    "source_name": "Amherst College",
+    "source_url": "https://www.amherst.edu/",
+    "verified_at": "2025-09-16",
+    "verification_method": "HTTP GET by the orchestrator",
+    "verification_result": "verified",
+    "evidence_reference": "pipelines/open-source/research/evidence/UNI-08-http-2026-11-17.json",
+    "complexity": "medium",
+    "stack_clues": "unknown",
+    "limitations": "Verified_at date is inferred (not in evidence); header, hero, content bands, sidebar, footer not directly observed; all requested pages fetched successfully.",
+    "approved_at": "2026-11-17",
+    "approved_by": "Samhith Varma Yallamraju",
+    "approval_reference": "Project lead approval of all slot-08 sources given 2026-11-17 in the Claude Code orchestration session; see research/UNI-08.md and research/proposals/UNI-rows.json"
+  },
+  "approved_page_map": [
+    {
+      "url": "https://www.amherst.edu/",
+      "title": "Home | Amherst College",
+      "local_file": "index.html"
+    },
+    {
+      "url": "https://www.amherst.edu/academiclife",
+      "title": "Academics | Academics | Amherst College",
+      "local_file": "academic-life.html"
+    },
+    {
+      "url": "https://www.amherst.edu/academiclife/departments",
+      "title": "Majors | Academics | Majors | Amherst College",
+      "local_file": "departments.html"
+    },
+    {
+      "url": "https://www.amherst.edu/academiclife/college-catalog",
+      "title": "Course Catalog | Academics | Course Catalog | Amherst College",
+      "local_file": "college-catalog.html"
+    },
+    {
+      "url": "https://www.amherst.edu/admission",
+      "title": "Admission & Financial Aid | Admission & Financial Aid | Amherst College",
+      "local_file": "admission.html"
+    },
+    {
+      "url": "https://www.amherst.edu/admission/apply",
+      "title": "Applying to Amherst | Admission & Financial Aid | Applying to Amherst | Amherst College",
+      "local_file": "apply.html"
+    },
+    {
+      "url": "https://www.amherst.edu/visiting",
+      "title": "Visiting | Visiting | Amherst College",
+      "local_file": "visiting.html"
+    },
+    {
+      "url": "https://www.amherst.edu/news",
+      "title": "News & Events | News & Events | Amherst College",
+      "local_file": "news.html"
+    }
+  ],
+  "protocol_snapshots": [
+    {
+      "path": "Rules.md",
+      "sha256": "04b1c3e38b76f2aff3aef869d67370bb4532cd8f9ab5e22ac8276f26cbb859bf"
+    },
+    {
+      "path": "MODEL_ALLOCATION.md",
+      "sha256": "7e9487530a6e80b35af48d0691951dafc2fffea39798c81a3c49203909148d30"
+    },
+    {
+      "path": "pipelines/open-source/config.json",
+      "sha256": "e5c7666dbdc7c302e54c0c94c946dcd01d64992b89a56df7ce1ee272dd488edf"
+    },
+    {
+      "path": "pipelines/open-source/categories.json",
+      "sha256": "8180966e55daa24799e51106645e93fd5807dde470765ab8b3b38d3f922c867b"
+    },
+    {
+      "path": "pipelines/open-source/prompts/system.md",
+      "sha256": "61bc24a57de14bd6a662cd6b5f98d0cfc57bf47e187fc58a97831bf1f272b4ee"
+    },
+    {
+      "path": "pipelines/open-source/prompts/build.md",
+      "sha256": "6096ab8b698af7a99d8ddaf1534cc95f41844d1d00cdd1fce740123b3146ab6a"
+    },
+    {
+      "path": "pipelines/open-source/prompts/repair.md",
+      "sha256": "8a84e51995736607b3efa6f5b2d76e52692423c2c26b03409afb4afa3c6586d6"
+    },
+    {
+      "path": "pipelines/open-source/models.json",
+      "sha256": "f02e4efcab2732e1736a96e02459eef895400d01c2888b63c7cded93435f36c4"
+    },
+    {
+      "path": "metadata/source-inventories/university.csv",
+      "sha256": "b1ae5b5ca514623c28b036910261e1e230cafadbb8db79f6bc81120fc040eed9"
+    },
+    {
+      "path": "metadata/assignments.csv",
+      "sha256": "dfedc1b7cf6b30895f785bd27cd54f2d4ae25f04c9a5613d0fea5a36b081526b"
+    }
+  ],
+  "turns": [
+    {
+      "turn": 1,
+      "label": "plan",
+      "status_line": "CONTINUE",
+      "prose_chars": 3275,
+      "files_written": [],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 1191,
+        "prompt_tokens": 5042,
+        "total_tokens": 6233,
+        "prompt_tokens_details": {
+          "cached_tokens": 541
+        }
+      },
+      "at": "2026-11-17T05:53:48.064Z"
+    },
+    {
+      "turn": 2,
+      "label": "files-2",
+      "status_line": "CONTINUE",
+      "prose_chars": 0,
+      "files_written": [
+        "css/styles.css",
+        "js/main.js",
+        "index.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 3443,
+        "prompt_tokens": 6011,
+        "total_tokens": 9454,
+        "prompt_tokens_details": {
+          "cached_tokens": 5038
+        }
+      },
+      "at": "2026-11-17T05:54:55.894Z"
+    },
+    {
+      "turn": 3,
+      "label": "files-3",
+      "status_line": "CONTINUE",
+      "prose_chars": 0,
+      "files_written": [
+        "404.html",
+        "academic-life.html",
+        "departments.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 3556,
+        "prompt_tokens": 8987,
+        "total_tokens": 12543,
+        "prompt_tokens_details": {
+          "cached_tokens": 6007
+        }
+      },
+      "at": "2026-11-17T05:56:06.486Z"
+    },
+    {
+      "turn": 4,
+      "label": "files-4",
+      "status_line": "CONTINUE",
+      "prose_chars": 0,
+      "files_written": [
+        "college-catalog.html",
+        "admission.html",
+        "apply.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 3931,
+        "prompt_tokens": 12185,
+        "total_tokens": 16116,
+        "prompt_tokens_details": {
+          "cached_tokens": 8983
+        }
+      },
+      "at": "2026-11-17T05:57:24.612Z"
+    },
+    {
+      "turn": 5,
+      "label": "files-5",
+      "status_line": "CONTINUE",
+      "prose_chars": 0,
+      "files_written": [
+        "visiting.html",
+        "news.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 2358,
+        "prompt_tokens": 16090,
+        "total_tokens": 18448,
+        "prompt_tokens_details": {
+          "cached_tokens": 12181
+        }
+      },
+      "at": "2026-11-17T05:58:12.630Z"
+    },
+    {
+      "turn": 6,
+      "label": "files-6",
+      "status_line": "COMPLETE",
+      "prose_chars": 0,
+      "files_written": [
+        "README.md",
+        "fidelity-notes.md",
+        "component-inventory.json",
+        "generation-metadata.json"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 5824,
+        "prompt_tokens": 18448,
+        "total_tokens": 24272,
+        "prompt_tokens_details": {
+          "cached_tokens": 16086
+        }
+      },
+      "at": "2026-11-17T06:00:08.022Z"
+    },
+    {
+      "turn": 7,
+      "label": "repair-1",
+      "status_line": "COMPLETE",
+      "prose_chars": 1538,
+      "files_written": [
+        "404.html",
+        "academic-life.html",
+        "admission.html",
+        "apply.html",
+        "college-catalog.html",
+        "departments.html",
+        "index.html",
+        "news.html",
+        "visiting.html",
+        "css/styles.css"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 13731,
+        "prompt_tokens": 25082,
+        "total_tokens": 38813,
+        "prompt_tokens_details": {
+          "cached_tokens": 18444
+        }
+      },
+      "at": "2026-11-17T06:04:44.523Z"
+    },
+    {
+      "turn": 8,
+      "label": "repair-2",
+      "status_line": "COMPLETE",
+      "prose_chars": 405,
+      "files_written": [
+        "css/styles.css"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 2737,
+        "prompt_tokens": 37664,
+        "total_tokens": 40401,
+        "prompt_tokens_details": {
+          "cached_tokens": 25078
+        }
+      },
+      "at": "2026-11-17T06:05:47.321Z"
+    },
+    {
+      "turn": 9,
+      "label": "repair-3",
+      "status_line": "COMPLETE",
+      "prose_chars": 420,
+      "files_written": [
+        "css/styles.css"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 2365,
+        "prompt_tokens": 40259,
+        "total_tokens": 42624,
+        "prompt_tokens_details": {
+          "cached_tokens": 37660
+        }
+      },
+      "at": "2026-11-17T06:06:39.753Z"
+    }
+  ],
+  "rejected_files": [],
+  "qc_runs": [
+    {
+      "started_at": "2026-11-17T06:00:08.034Z",
+      "completed_at": "2026-11-17T06:00:11.285Z",
+      "exit_code": 1,
+      "executed": true,
+      "passed": false,
+      "outcome": "fail",
+      "failures": [
+        "placeholder href=\"#\" in 404.html",
+        "placeholder href=\"#\" in 404.html",
+        "placeholder href=\"#\" in 404.html",
+        "placeholder href=\"#\" in academic-life.html",
+        "placeholder href=\"#\" in academic-life.html",
+        "placeholder href=\"#\" in academic-life.html",
+        "placeholder href=\"#\" in admission.html",
+        "placeholder href=\"#\" in admission.html",
+        "placeholder href=\"#\" in admission.html",
+        "placeholder href=\"#\" in apply.html",
+        "placeholder href=\"#\" in apply.html",
+        "placeholder href=\"#\" in apply.html",
+        "placeholder href=\"#\" in college-catalog.html",
+        "placeholder href=\"#\" in college-catalog.html",
+        "placeholder href=\"#\" in college-catalog.html",
+        "placeholder href=\"#\" in departments.html",
+        "placeholder href=\"#\" in departments.html",
+        "placeholder href=\"#\" in departments.html",
+        "placeholder href=\"#\" in index.html",
+        "placeholder href=\"#\" in index.html",
+        "placeholder href=\"#\" in index.html",
+        "placeholder href=\"#\" in news.html",
+        "placeholder href=\"#\" in news.html",
+        "placeholder href=\"#\" in news.html",
+        "placeholder href=\"#\" in visiting.html",
+        "placeholder href=\"#\" in visiting.html",
+        "placeholder href=\"#\" in visiting.html",
+        "axe landmark-unique (moderate) @1280 404.html: 1 node(s) e.g. nav[data-section=\"navigation\"]",
+        "axe landmark-unique (moderate) @1280 academic-life.html: 1 node(s) e.g. nav[data-section=\"navigation\"]",
+        "axe landmark-unique (moderate) @1280 admission.html: 1 node(s) e.g. nav[data-section=\"navigation\"]",
+        "axe landmark-unique (moderate) @1280 apply.html: 1 node(s) e.g. nav[data-section=\"navigation\"]",
+        "axe heading-order (moderate) @1280 college-catalog.html: 1 node(s) e.g. .card[data-component=\"course-card\"]:nth-child(1) > h3",
+        "axe landmark-unique (moderate) @1280 college-catalog.html: 1 node(s) e.g. nav[data-section=\"navigation\"]",
+        "axe heading-order (moderate) @1280 departments.html: 1 node(s) e.g. .card[data-component=\"program-card\"]:nth-child(1) > h3",
+        "axe landmark-unique (moderate) @1280 departments.html: 1 node(s) e.g. nav[data-section=\"navigation\"]",
+        "axe landmark-unique (moderate) @1280 index.html: 1 node(s) e.g. nav[data-section=\"navigation\"]",
+        "axe region (moderate) @1280 index.html: 1 node(s) e.g. section",
+        "axe landmark-unique (moderate) @1280 news.html: 1 node(s) e.g. nav[data-section=\"navigation\"]",
+        "axe landmark-unique (moderate) @1280 visiting.html: 1 node(s) e.g. nav[data-section=\"navigation\"]",
+        "axe landmark-unique (moderate) @375 404.html: 1 node(s) e.g. nav[data-section=\"navigation\"]",
+        "axe landmark-unique (moderate) @375 academic-life.html: 1 node(s) e.g. nav[data-section=\"navigation\"]",
+        "axe landmark-unique (moderate) @375 admission.html: 1 node(s) e.g. nav[data-section=\"navigation\"]",
+        "axe landmark-unique (moderate) @375 apply.html: 1 node(s) e.g. nav[data-section=\"navigation\"]",
+        "axe target-size (serious) @375 apply.html: 1 node(s) e.g. #app-level",
+        "axe heading-order (moderate) @375 college-catalog.html: 1 node(s) e.g. .card[data-component=\"course-card\"]:nth-child(1) > h3",
+        "axe landmark-unique (moderate) @375 college-catalog.html: 1 node(s) e.g. nav[data-section=\"navigation\"]",
+        "axe heading-order (moderate) @375 departments.html: 1 node(s) e.g. .card[data-component=\"program-card\"]:nth-child(1) > h3",
+        "axe landmark-unique (moderate) @375 departments.html: 1 node(s) e.g. nav[data-section=\"navigation\"]",
+        "axe landmark-unique (moderate) @375 index.html: 1 node(s) e.g. nav[data-section=\"navigation\"]",
+        "axe region (moderate) @375 index.html: 1 node(s) e.g. section",
+        "axe landmark-unique (moderate) @375 news.html: 1 node(s) e.g. nav[data-section=\"navigation\"]",
+        "axe landmark-unique (moderate) @375 visiting.html: 1 node(s) e.g. nav[data-section=\"navigation\"]"
+      ],
+      "failure_count": 52,
+      "warnings": [],
+      "axe": {
+        "landmark-unique": 18,
+        "heading-order": 4,
+        "region": 2,
+        "target-size": 1
+      },
+      "pages": 9,
+      "files": 15,
+      "qc_tool_sha256": "e9be905d19e7181e30d8291bcb1511d4469bdc9e36c20c0efe21e2d3fcf54513",
+      "report": "qc-initial-2026-11-17T06-00-08-034Z.json",
+      "log": "qc-initial-2026-11-17T06-00-08-034Z.log",
+      "stdout_tail": "FAIL axe landmark-unique (moderate) @1280 academic-life.html: 1 node(s) e.g. nav[data-section=\"navigation\"]\nFAIL axe landmark-unique (moderate) @1280 admission.html: 1 node(s) e.g. nav[data-section=\"navigation\"]\nFAIL axe landmark-unique (moderate) @1280 apply.html: 1 node(s) e.g. nav[data-section=\"navigation\"]\nFAIL axe heading-order (moderate) @1280 college-catalog.html: 1 node(s) e.g. .card[data-component=\"course-card\"]:nth-child(1) > h3\nFAIL axe landmark-unique (moderate) @1280 college-catalog.html: 1 node(s) e.g. nav[data-section=\"navigation\"]\nFAIL axe heading-order (moderate) @1280 departments.html: 1 node(s) e.g. .card[data-component=\"program-card\"]:nth-child(1) > h3\nFAIL axe landmark-unique (moderate) @1280 departments.html: 1 node(s) e.g. nav[data-section=\"navigation\"]\nFAIL axe landmark-unique (moderate) @1280 index.html: 1 node(s) e.g. nav[data-section=\"navigation\"]\nFAIL axe region (moderate) @1280 index.html: 1 node(s) e.g. section\nFAIL axe landmark-unique (moderate) @1280 news.html: 1 node(s) e.g. nav[data-section=\"navigation\"]\nFAIL axe landmark-unique (moderate) @1280 visiting.html: 1 node(s) e.g. nav[data-section=\"navigation\"]\nFAIL axe landmark-unique (moderate) @375 404.html: 1 node(s) e.g. nav[data-section=\"navigation\"]\nFAIL axe landmark-unique (moderate) @375 academic-life.html: 1 node(s) e.g. nav[data-section=\"navigation\"]\nFAIL axe landmark-unique (moderate) @375 admission.html: 1 node(s) e.g. nav[data-section=\"navigation\"]\nFAIL axe landmark-unique (moderate) @375 apply.html: 1 node(s) e.g. nav[data-section=\"navigation\"]\nFAIL axe target-size (serious) @375 apply.html: 1 node(s) e.g. #app-level\nFAIL axe heading-order (moderate) @375 college-catalog.html: 1 node(s) e.g. .card[data-component=\"course-card\"]:nth-child(1) > h3\nFAIL axe landmark-unique (moderate) @375 college-catalog.html: 1 node(s) e.g. nav[data-section=\"navigation\"]\nFAIL axe heading-order (moderate) @375 departments.html: 1 node(s) e.g. .card[data-component=\"program-card\"]:nth-child(1) > h3\nFAIL axe landmark-unique (moderate) @375 departments.html: 1 node(s) e.g. nav[data-section=\"navigation\"]\nFAIL axe landmark-unique (moderate) @375 index.html: 1 node(s) e.g. nav[data-section=\"navigation\"]\nFAIL axe region (moderate) @375 index.html: 1 node(s) e.g. section\nFAIL axe landmark-unique (moderate) @375 news.html: 1 node(s) e.g. nav[data-section=\"navigation\"]\nFAIL axe landmark-unique (moderate) @375 visiting.html: 1 node(s) e.g. nav[data-section=\"navigation\"]\n",
+      "note": null
+    },
+    {
+      "started_at": "2026-11-17T06:04:44.524Z",
+      "completed_at": "2026-11-17T06:04:48.230Z",
+      "exit_code": 1,
+      "executed": true,
+      "passed": false,
+      "outcome": "fail",
+      "failures": [
+        "axe target-size (serious) @375 apply.html: 1 node(s) e.g. #app-level"
+      ],
+      "failure_count": 1,
+      "warnings": [],
+      "axe": {
+        "target-size": 1
+      },
+      "pages": 9,
+      "files": 15,
+      "qc_tool_sha256": "e9be905d19e7181e30d8291bcb1511d4469bdc9e36c20c0efe21e2d3fcf54513",
+      "report": "qc-repair-1-2026-11-17T06-04-44-524Z.json",
+      "log": "qc-repair-1-2026-11-17T06-04-44-524Z.log",
+      "stdout_tail": "QC /Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/university/open-source/UNI-08\npages=9 files=15 failures=1 warnings=0\nFAIL axe target-size (serious) @375 apply.html: 1 node(s) e.g. #app-level\n",
+      "note": null
+    },
+    {
+      "started_at": "2026-11-17T06:05:47.322Z",
+      "completed_at": "2026-11-17T06:05:50.964Z",
+      "exit_code": 1,
+      "executed": true,
+      "passed": false,
+      "outcome": "fail",
+      "failures": [
+        "axe target-size (serious) @375 apply.html: 1 node(s) e.g. #app-level"
+      ],
+      "failure_count": 1,
+      "warnings": [],
+      "axe": {
+        "target-size": 1
+      },
+      "pages": 9,
+      "files": 15,
+      "qc_tool_sha256": "e9be905d19e7181e30d8291bcb1511d4469bdc9e36c20c0efe21e2d3fcf54513",
+      "report": "qc-repair-2-2026-11-17T06-05-47-322Z.json",
+      "log": "qc-repair-2-2026-11-17T06-05-47-322Z.log",
+      "stdout_tail": "QC /Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/university/open-source/UNI-08\npages=9 files=15 failures=1 warnings=0\nFAIL axe target-size (serious) @375 apply.html: 1 node(s) e.g. #app-level\n",
+      "note": null
+    },
+    {
+      "started_at": "2026-11-17T06:06:39.754Z",
+      "completed_at": "2026-11-17T06:06:43.644Z",
+      "exit_code": 0,
+      "executed": true,
+      "passed": true,
+      "outcome": "pass",
+      "failures": [],
+      "failure_count": 0,
+      "warnings": [],
+      "axe": {},
+      "pages": 9,
+      "files": 15,
+      "qc_tool_sha256": "e9be905d19e7181e30d8291bcb1511d4469bdc9e36c20c0efe21e2d3fcf54513",
+      "report": "qc-repair-3-2026-11-17T06-06-39-754Z.json",
+      "log": "qc-repair-3-2026-11-17T06-06-39-754Z.log",
+      "stdout_tail": "QC /Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/university/open-source/UNI-08\npages=9 files=15 failures=0 warnings=0\n",
+      "note": null
+    }
+  ],
+  "repair_rounds": [
+    {
+      "round": 1,
+      "before": {
+        "outcome": "fail",
+        "failures": 52
+      },
+      "after": {
+        "outcome": "fail",
+        "failures": 1
+      },
+      "files_changed": [
+        "404.html",
+        "academic-life.html",
+        "admission.html",
+        "apply.html",
+        "college-catalog.html",
+        "departments.html",
+        "index.html",
+        "news.html",
+        "visiting.html",
+        "css/styles.css"
+      ],
+      "at": "2026-11-17T06:04:48.230Z"
+    },
+    {
+      "round": 2,
+      "before": {
+        "outcome": "fail",
+        "failures": 1
+      },
+      "after": {
+        "outcome": "fail",
+        "failures": 1
+      },
+      "files_changed": [
+        "css/styles.css"
+      ],
+      "at": "2026-11-17T06:05:50.964Z"
+    },
+    {
+      "round": 3,
+      "before": {
+        "outcome": "fail",
+        "failures": 1
+      },
+      "after": {
+        "outcome": "pass",
+        "failures": 0
+      },
+      "files_changed": [
+        "css/styles.css"
+      ],
+      "at": "2026-11-17T06:06:43.644Z"
+    }
+  ],
+  "retries": [],
+  "human_edits": [
+    {
+      "by": "orchestrator script",
+      "at": "2026-11-17T06:06:43.647Z",
+      "what": "Wrote the model's emitted files, normalized generation-metadata.json provenance fields, and set validation_summary from the recorded QC run. No site markup, style or script was authored or edited by hand."
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 169768,
+    "completion_tokens": 39136,
+    "total_tokens": 208904,
+    "requests": 9,
+    "retries": 0
+  },
+  "errors": [],
+  "outputs": {
+    "site": "university/open-source/UNI-08",
+    "transcript": "pipelines/open-source/runs/2026-11-17T05-53-22-806Z-build-UNI-08/transcript.json"
+  },
+  "delivered": {
+    "files": [
+      "404.html",
+      "README.md",
+      "academic-life.html",
+      "admission.html",
+      "apply.html",
+      "college-catalog.html",
+      "component-inventory.json",
+      "css/styles.css",
+      "departments.html",
+      "fidelity-notes.md",
+      "generation-metadata.json",
+      "index.html",
+      "js/main.js",
+      "news.html",
+      "visiting.html"
+    ],
+    "file_count": 15,
+    "bytes": 60478,
+    "pages_in_map": 8,
+    "missing_required": [],
+    "model_claimed_complete": true,
+    "delivered_complete": true,
+    "turns_used": 6,
+    "turn_budget": 28
+  },
+  "initial_artifact": "pipelines/open-source/runs/2026-11-17T05-53-22-806Z-build-UNI-08/initial",
+  "provenance": {
+    "wrote": true,
+    "modelEmittedValidMetadata": true
+  },
+  "acceptance": "not accepted: a QC result is not acceptance, and interaction review plus human acceptance happen outside this script"
+}

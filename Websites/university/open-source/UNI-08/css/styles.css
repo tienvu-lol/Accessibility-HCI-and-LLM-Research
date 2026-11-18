@@ -1,0 +1,272 @@
+:root {
+  --color-bg: #fafafa;
+  --color-fg: #222;
+  --color-primary: #0066cc;
+  --color-primary-dark: #004c99;
+  --color-muted: #666;
+  --color-border: #ddd;
+  --color-success: #28a745;
+  --color-toast-bg: #333;
+  --color-toast-fg: #fff;
+  --font-sans: system-ui, sans-serif;
+}
+
+/* Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-size: 100%;
+}
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  line-height: 1.5;
+  background-color: var(--color-bg);
+  color: var(--color-fg);
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+a {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+a:hover,
+a:focus {
+  color: var(--color-primary-dark);
+}
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+  background: #fff;
+  color: #000;
+  padding: .5rem 1rem;
+  z-index: 100;
+}
+
+/* Layout */
+header,
+footer {
+  background: var(--color-primary);
+  color: #fff;
+}
+header {
+  padding: 1rem;
+}
+.site-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+nav {
+  background: #fff;
+}
+.nav-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  padding: .5rem 1rem;
+}
+.nav-list a {
+  padding: .25rem .5rem;
+  border-radius: .25rem;
+  text-decoration: none;
+  color: var(--color-fg);
+}
+.nav-list a:hover,
+.nav-list a:focus {
+  background: var(--color-bg);
+}
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: .5rem;
+}
+@media (max-width: 600px) {
+  .nav-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #fff;
+    flex-direction: column;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .3s ease;
+  }
+  .nav-list[aria-expanded="true"] {
+    max-height: 20rem;
+  }
+  .hamburger {
+    display: block;
+  }
+}
+
+/* Main */
+main {
+  padding: 2rem;
+}
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+h2 {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: .5rem;
+}
+section {
+  margin-bottom: 2rem;
+}
+
+/* Hero */
+.hero {
+  background: var(--color-muted);
+  color: #fff;
+  text-align: center;
+  padding: 3rem 1rem;
+}
+.hero h1 {
+  margin-top: 0;
+}
+
+/* Card grid */
+.card-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+.card {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: .5rem;
+  padding: 1rem;
+}
+.card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: .25rem;
+  margin-bottom: .5rem;
+}
+.card h3 {
+  margin-top: 0;
+  margin-bottom: .5rem;
+  font-size: 1.25rem;
+}
+.card p {
+  margin: 0;
+  font-size: .9rem;
+  color: var(--color-muted);
+}
+
+/* Sidebar */
+.sidebar {
+  background: #f0f0f0;
+  padding: 1rem;
+  border-radius: .5rem;
+}
+.sidebar h2 {
+  margin-top: 0;
+}
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+.sidebar li {
+  margin-bottom: .5rem;
+}
+
+/* Forms */
+form {
+  display: grid;
+  gap: .75rem;
+}
+label {
+  font-weight: 600;
+}
+input,
+select,
+textarea {
+  width: 100%;
+  padding: .8rem;
+  border: 1px solid var(--color-border);
+  border-radius: .25rem;
+  min-height: 44px;
+}
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid var(--color-primary);
+}
+button {
+  background: var(--color-primary);
+  color: #fff;
+  border: none;
+  padding: .5rem 1rem;
+  border-radius: .25rem;
+  cursor: pointer;
+}
+button:hover,
+button:focus {
+  background: var(--color-primary-dark);
+}
+
+/* Toast */
+#toast {
+  position: fixed;
+  inset-inline: 1rem;
+  bottom: 1rem;
+  background: var(--color-toast-bg);
+  color: var(--color-toast-fg);
+  padding: .75rem 1rem;
+  border-radius: .25rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s;
+}
+#toast.show {
+  opacity: .9;
+  pointer-events: auto;
+}
+
+/* Focus visible */
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

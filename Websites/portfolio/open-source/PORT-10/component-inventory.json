@@ -1,0 +1,76 @@
+{
+  "components": [
+    {
+      "name": "site-header",
+      "selector": "header[data-component=\"site-header\"]",
+      "pages": ["index.html","blog.html","talks.html","courses.html","about.html","contact.html","resume.html","office-hours.html","transparency.html","testimonials.html","404.html"],
+      "behaviors": ["contains logo link", "contains primary navigation"],
+      "keyboard": ["focusable logo link", "focusable nav toggle button"],
+      "status": "implemented"
+    },
+    {
+      "name": "primary-nav",
+      "selector": "nav[data-component=\"primary-nav\"]",
+      "pages": ["index.html","blog.html","talks.html","courses.html","about.html","contact.html","resume.html","office-hours.html","transparency.html","testimonials.html","404.html"],
+      "behaviors": ["responsive menu list", "aria-expanded toggling"],
+      "keyboard": ["Tab navigation", "Escape to close"],
+      "status": "implemented"
+    },
+    {
+      "name": "nav-toggle",
+      "selector": "button[data-component=\"nav-toggle\"]",
+      "pages": ["index.html","blog.html","talks.html","courses.html","about.html","contact.html","resume.html","office-hours.html","transparency.html","testimonials.html","404.html"],
+      "behaviors": ["toggles primary-nav open/close"],
+      "keyboard": ["Enter/Space activates", "Escape closes menu"],
+      "status": "implemented"
+    },
+    {
+      "name": "hero",
+      "selector": "section[data-component=\"hero\"]",
+      "pages": ["index.html"],
+      "behaviors": ["display headline and call‑to‑action"],
+      "keyboard": ["focusable link button"],
+      "status": "placeholder"
+    },
+    {
+      "name": "card-grid",
+      "selector": ".card-grid[data-component=\"card-grid\"]",
+      "pages": ["index.html"],
+      "behaviors": ["layout of featured cards"],
+      "keyboard": ["focusable cards via native headings/links"],
+      "status": "placeholder"
+    },
+    {
+      "name": "contact-form",
+      "selector": "form[data-component=\"contact-form\"]",
+      "pages": ["contact.html"],
+      "behaviors": ["client‑side validation", "simulated success message"],
+      "keyboard": ["Tab through fields, Enter to submit"],
+      "status": "implemented"
+    },
+    {
+      "name": "list",
+      "selector": "ul[data-component=\"list\"]",
+      "pages": ["blog.html","talks.html","courses.html","testimonials.html"],
+      "behaviors": ["populated via inline JS sample data"],
+      "keyboard": ["standard list navigation"],
+      "status": "implemented"
+    },
+    {
+      "name": "table",
+      "selector": "table[data-component=\"table\"]",
+      "pages": ["office-hours.html"],
+      "behaviors": ["display office‑hours schedule"],
+      "keyboard": ["standard table navigation"],
+      "status": "implemented"
+    },
+    {
+      "name": "site-footer",
+      "selector": "footer[data-component=\"site-footer\"]",
+      "pages": ["index.html","blog.html","talks.html","courses.html","about.html","contact.html","resume.html","office-hours.html","transparency.html","testimonials.html","404.html"],
+      "behaviors": ["contains copyright and footer nav"],
+      "keyboard": ["focusable footer links"],
+      "status": "implemented"
+    }
+  ]
+}

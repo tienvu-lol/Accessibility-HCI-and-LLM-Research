@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>WeatherWise – National and Local Weather</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header data-section="header" data-component="site-header">
+    <h1>WeatherWise</h1>
+    <p class="promo-banner">Get Premium for ad‑free radar and alerts (demo)</p>
+  </header>
+
+  <nav data-section="navigation" data-component="primary-nav" aria-label="Primary">
+    <ul>
+      <li><a href="index.html" data-instance="home-link">Home</a></li>
+      <li><a href="today.html" data-instance="today-link">Today</a></li>
+      <li><a href="hourly.html" data-instance="hourly-link">Hourly</a></li>
+      <li><a href="tenday.html" data-instance="10day-link">10‑Day</a></li>
+      <li><a href="monthly.html" data-instance="monthly-link">Monthly</a></li>
+      <li><a href="allergy.html" data-instance="allergy-link">Allergies</a></li>
+      <li><a href="radar.html" data-instance="radar-link">Radar</a></li>
+      <li><a href="news.html" data-instance="news-link">News</a></li>
+      <li><a href="login.html" data-instance="login-link">Sign In</a></li>
+    </ul>
+  </nav>
+
+  <main id="main-content" data-section="main">
+    <section data-component="location-search" aria-label="Location search">
+      <form id="location-search-form" class="form-group">
+        <label for="location-search-input">Search location</label>
+        <input type="search" id="location-search-input" placeholder="e.g., Ashburn, VA" aria-label="Location search">
+        <button type="submit">Search</button>
+      </form>
+    </section>
+
+    <section data-component="alert-filters" aria-label="Alert filters">
+      <form id="alert-filter-form">
+        <fieldset>
+          <legend>Alert types</legend>
+          <div class="alert-filters">
+            <label><input type="checkbox" value="severe" checked> Severe Weather</label>
+            <label><input type="checkbox" value="pollen"> Pollen</label>
+            <label><input type="checkbox" value="air"> Air Quality</label>
+            <label><input type="checkbox" value="cold"> Cold & Flu</label>
+          </div>
+          <button type="submit">Apply Filters</button>
+        </fieldset>
+      </form>
+    </section>
+
+    <section data-component="forecast-tabs" aria-label="Forecast tabs">
+      <div role="tablist" aria-label="Forecast periods">
+        <button role="tab" aria-selected="true" aria-controls="today-tabpanel" id="today-tab" data-instance="today-tab">Today</button>
+        <button role="tab" aria-selected="false" aria-controls="hourly-tabpanel" id="hourly-tab" data-instance="hourly-tab">Hourly</button>
+        <button role="tab" aria-selected="false" aria-controls="tenday-tabpanel" id="tenday-tab" data-instance="tenday-tab">10‑Day</button>
+        <button role="tab" aria-selected="false" aria-controls="monthly-tabpanel" id="monthly-tab" data-instance="monthly-tab">Monthly</button>
+      </div>
+
+      <div id="today-tabpanel" role="tabpanel" data-instance="today-panel">
+        <h2>Today’s Forecast for Ashburn, VA</h2>
+        <p>Temperature: <span class="temp" data-f="74">74°F</span>, Partly cloudy</p>
+        <p>Chance of precipitation: 10%</p>
+        <button id="unit-toggle" class="toggle"><input type="checkbox" aria-label="Toggle Celsius"> Show °C</button>
+      </div>
+
+      <div id="hourly-tabpanel" role="tabpanel" hidden data-instance="hourly-panel">
+        <h2>Hourly Forecast</h2>
+        <div class="card-grid">
+          <!-- hours will be injected by JS; placeholder -->
+          <div class="card"><div class="card-body">Hourly data loading…</div></div>
+        </div>
+      </div>
+
+      <div id="tenday-tabpanel" role="tabpanel" hidden data-instance="tenday-panel">
+        <h2>10‑Day Forecast</h2>
+        <div class="card-grid">
+          <!-- days placeholder -->
+          <div class="card"><div class="card-body">10‑day data loading…</div></div>
+        </div>
+      </div>
+
+      <div id="monthly-tabpanel" role="tabpanel" hidden data-instance="monthly-panel">
+        <h2>Monthly Averages</h2>
+        <div class="card-grid">
+          <!-- months placeholder -->
+          <div class="card"><div class="card-body">Monthly data loading…</div></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer data-section="footer" data-component="site-footer">
+    <p>&copy; 2026 WeatherWise. All rights reserved.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

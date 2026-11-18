@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World News - The Metropolitan Herald</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header class="site-header" role="banner">
+        <div class="container header-inner">
+            <a href="index.html" class="logo">The Metropolitan Herald</a>
+            <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
+                <span class="sr-only">Toggle navigation</span>
+                ☰
+            </button>
+            <nav id="primary-nav" class="primary-nav" role="navigation" aria-label="Primary">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="nz.html" class="nav-link">NZ</a></li>
+                    <li><a href="world.html" class="nav-link" aria-current="page">World</a></li>
+                    <li><a href="business.html" class="nav-link">Business</a></li>
+                    <li><a href="sport.html" class="nav-link">Sport</a></li>
+                    <li><a href="entertainment.html" class="nav-link">Entertainment</a></li>
+                    <li><a href="politics.html" class="nav-link">Politics</a></li>
+                    <li><a href="crime.html" class="nav-link">Crime</a></li>
+                    <li><a href="election-2026.html" class="nav-link">Election 2026</a></li>
+                    <li><a href="video.html" class="nav-link">Video</a></li>
+                    <li><a href="opinion.html" class="nav-link">Opinion</a></li>
+                    <li><a href="lifestyle.html" class="nav-link">Lifestyle</a></li>
+                    <li><a href="weather.html" class="nav-link">Weather</a></li>
+                    <li><a href="premium.html" class="nav-link">Premium</a></li>
+                    <li><a href="podcasts.html" class="nav-link">Podcasts</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section class="hero-section" data-section="hero">
+            <div class="container hero-grid">
+                <article class="hero-main" data-component="hero-article">
+                    <img src="assets/hero-placeholder.svg" alt="World News featured image" class="hero-image">
+                    <div class="hero-content">
+                        <span class="article-category">World</span>
+                        <h1 class="hero-title"><a href="javascript:void(0)">Global Climate Summit Reaches Historic Agreement</a></h1>
+                        <p class="hero-summary">World leaders have unanimously agreed to new carbon reduction targets in a landmark deal signed in Geneva.</p>
+                    </div>
+                </article>
+                <aside class="hero-side" data-component="hero-side-stories">
+                    <article class="side-story">
+                        <h2><a href="javascript:void(0)">EU Announces New Trade Policy Framework</a></h2>
+                        <p class="article-meta">1 hour ago</p>
+                    </article>
+                    <article class="side-story">
+                        <h2><a href="javascript:void(0)">Peace Talks Resume in Middle East</a></h2>
+                        <p class="article-meta">3 hours ago</p>
+                    </article>
+                    <article class="side-story">
+                        <h2><a href="javascript:void(0)">Asian Markets React to US Interest Rate Decision</a></h2>
+                        <p class="article-meta">5 hours ago</p>
+                    </article>
+                </aside>
+            </div>
+        </section>
+
+        <section class="container mt-lg" data-section="latest-news">
+            <div class="tabs" role="tablist" aria-label="World News feeds">
+                <button class="tab-btn" role="tab" aria-selected="true" aria-controls="world-latest-panel" id="world-latest-tab">Latest</button>
+                <button class="tab-btn" role="tab" aria-selected="false" aria-controls="world-most-read-panel" id="world-most-read-tab">Most Read</button>
+            </div>
+
+            <div id="world-latest-panel" class="tab-panel is-active" role="tabpanel" aria-labelledby="world-latest-tab">
+                <div class="article-grid" data-component="article-card-grid">
+                    <!-- Articles injected via JS -->
+                </div>
+            </div>
+
+            <div id="world-most-read-panel" class="tab-panel" role="tabpanel" aria-labelledby="world-most-read-tab">
+                <div class="article-grid" data-component="article-card-grid">
+                    <!-- Articles injected via JS -->
+                </div>
+            </div>
+        </section>
+
+        <aside class="container mt-lg" data-section="sidebar">
+            <div class="sidebar">
+                <h3>Trending in World</h3>
+                <ul class="trending-list" data-component="trending-list">
+                    <li class="trending-item">
+                        <span class="trending-number">1</span>
+                        <a href="javascript:void(0)" class="trending-title">Global Climate Summit Reaches Historic Agreement</a>
+                    </li>
+                    <li class="trending-item">
+                        <span class="trending-number">2</span>
+                        <a href="javascript:void(0)" class="trending-title">EU Announces New Trade Policy Framework</a>
+                    </li>
+                    <li class="trending-item">
+                        <span class="trending-number">3</span>
+                        <a href="javascript:void(0)" class="trending-title">Peace Talks Resume in Middle East</a>
+                    </li>
+                    <li class="trending-item">
+                        <span class="trending-number">4</span>
+                        <a href="javascript:void(0)" class="trending-title">Asian Markets React to US Interest Rate Decision</a>
+                    </li>
+                    <li class="trending-item">
+                        <span class="trending-number">5</span>
+                        <a href="javascript:void(0)" class="trending-title">UN Report Highlights Global Food Insecurity</a>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+    </main>
+
+    <footer class="site-footer" role="contentinfo" data-section="footer" data-component="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h2>The Metropolitan Herald</h2>
+                    <p>Truth in Every Story. Your trusted source for local and global news.</p>
+                </div>
+                <div class="footer-col">
+                    <h2>Sections</h2>
+                    <ul class="footer-links">
+                        <li><a href="nz.html">NZ</a></li>
+                        <li><a href="world.html">World</a></li>
+                        <li><a href="business.html">Business</a></li>
+                        <li><a href="sport.html">Sport</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h2>Company</h2>
+                    <ul class="footer-links">
+                        <li><a href="javascript:void(0)">About Us</a></li>
+                        <li><a href="javascript:void(0)">Contact</a></li>
+                        <li><a href="javascript:void(0)">Careers</a></li>
+                        <li><a href="javascript:void(0)">Advertise</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h2>Legal</h2>
+                    <ul class="footer-links">
+                        <li><a href="javascript:void(0)">Terms of Use</a></li>
+                        <li><a href="javascript:void(0)">Privacy Policy</a></li>
+                        <li><a href="javascript:void(0)">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 The Metropolitan Herald. All rights reserved. This is a fictional replica for research purposes.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        const worldArticles = [
+            { id: 1, category: "World", title: "Global Climate Summit Reaches Historic Agreement", excerpt: "World leaders have unanimously agreed to new carbon reduction targets in a landmark deal signed in Geneva.", date: "1 hour ago", isPremium: false },
+            { id: 2, category: "World", title: "EU Announces New Trade Policy Framework", excerpt: "The European Union has unveiled a comprehensive new trade policy aimed at strengthening global partnerships.", date: "3 hours ago", isPremium: false },
+            { id: 3, category: "World", title: "Peace Talks Resume in Middle East", excerpt: "Diplomatic efforts intensify as key stakeholders return to the negotiating table.", date: "5 hours ago", isPremium: false },
+            { id: 4, category: "World", title: "Asian Markets React to US Interest Rate Decision", excerpt: "Stock markets across Asia showed mixed reactions following the Federal Reserve's latest rate announcement.", date: "6 hours ago", isPremium: false },
+            { id: 5, category: "World", title: "UN Report Highlights Global Food Insecurity", excerpt: "A new UN report warns of increasing food insecurity in developing nations due to climate change.", date: "8 hours ago", isPremium: false },
+            { id: 6, category: "World", title: "G7 Leaders Discuss Global Economic Recovery", excerpt: "Leaders of the G7 nations met to discuss strategies for post-pandemic economic recovery.", date: "10 hours ago", isPremium: false },
+            { id: 7, category: "World", title: "Humanitarian Crisis Deepens in Region", excerpt: "Aid organizations call for increased support as the humanitarian situation worsens.", date: "12 hours ago", isPremium: false },
+            { id: 8, category: "World", title: "International Space Station Celebrates 25 Years", excerpt: "The ISS marks a quarter-century of continuous human presence in space.", date: "14 hours ago", isPremium: false },
+            { id: 9, category: "World", title: "Global Health Organization Launches New Initiative", excerpt: "The WHO has launched a new initiative to combat emerging infectious diseases.", date: "1 day ago", isPremium: false }
+        ];
+
+        const worldMostRead = [
+            { id: 10, category: "World", title: "Global Climate Summit Reaches Historic Agreement", excerpt: "World leaders have unanimously agreed to new carbon reduction targets in a landmark deal signed in Geneva.", date: "2 hours ago", isPremium: false },
+            { id: 11, category: "World", title: "EU Announces New Trade Policy Framework", excerpt: "The European Union has unveiled a comprehensive new trade policy aimed at strengthening global partnerships.", date: "4 hours ago", isPremium: false },
+            { id: 12, category: "World", title: "Peace Talks Resume in Middle East", excerpt: "Diplomatic efforts intensify as key stakeholders return to the negotiating table.", date: "6 hours ago", isPremium: false },
+            { id: 13, category: "World", title: "Asian Markets React to US Interest Rate Decision", excerpt: "Stock markets across Asia showed mixed reactions following the Federal Reserve's latest rate announcement.", date: "8 hours ago", isPremium: false },
+            { id: 14, category: "World", title: "UN Report Highlights Global Food Insecurity", excerpt: "A new UN report warns of increasing food insecurity in developing nations due to climate change.", date: "10 hours ago", isPremium: false }
+        ];
+
+        function renderArticleCard(article) {
+            const premiumBadge = article.isPremium ? '<span class="premium-badge">Premium</span>' : '';
+            return `
+                <article class="article-card ${article.isPremium ? 'premium-overlay' : ''}">
+                    <img src="assets/article-placeholder.svg" alt="" class="article-image">
+                    <div class="article-body">
+                        ${premiumBadge}
+                        <span class="article-category">${article.category}</span>
+                        <h3 class="article-title"><a href="javascript:void(0)">${article.title}</a></h3>
+                        <p class="article-excerpt">${article.excerpt}</p>
+                        <p class="article-meta">${article.date}</p>
+                    </div>
+                </article>
+            `;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const latestGrid = document.querySelector('#world-latest-panel .article-grid');
+            const mostReadGrid = document.querySelector('#world-most-read-panel .article-grid');
+
+            if (latestGrid) {
+                latestGrid.innerHTML = worldArticles.map(renderArticleCard).join('');
+            }
+            if (mostReadGrid) {
+                mostReadGrid.innerHTML = worldMostRead.map(renderArticleCard).join('');
+            }
+        });
+    </script>
+</body>
+</html>

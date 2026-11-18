@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Locations – Xi'an Famous Foods</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header data-section="header" data-component="site-header" class="site-header container">
+    <a href="index.html" class="site-logo" aria-label="Home">Xi'an Famous Foods</a>
+    <button class="nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Open menu">☰</button>
+    <button class="age-gate-trigger" aria-label="Age verification">Enter</button>
+  </header>
+
+  <nav data-section="navigation" data-component="primary-nav" class="primary-nav">
+    <div class="container nav-container">
+      <button class="nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Open menu">☰</button>
+      <ul class="nav-menu" id="primary-nav" aria-expanded="false">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="our-story.html">Our Story</a></li>
+        <li><a href="locations.html" aria-current="page">Locations</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="press.html">Press</a></li>
+        <li><a href="accessibility.html">Accessibility</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main-content" data-section="main">
+    <section data-component="content-band" class="content-band container">
+      <h1>Our Locations</h1>
+      <p>Visit any of our restaurants to experience the same authentic flavors, no matter which neighborhood you’re in.</p>
+
+      <!-- Location cards -->
+      <section class="locations-grid" data-component="locations-grid">
+        <!-- Cards will be populated by JavaScript using inline data -->
+      </section>
+
+      <!-- Reservation form (simulated) -->
+      <section class="content-band" data-component="reservation-form">
+        <h2>Make a Reservation</h2>
+        <p>Select a location, date, time, and party size. This is a demo — no actual reservation is stored.</p>
+        <form class="reservation-form" data-component="reservation-form">
+          <label>
+            <span>Name</span>
+            <input type="text" name="name" required placeholder="Your name">
+          </label>
+          <label>
+            <span>Email</span>
+            <input type="email" name="email" required placeholder="you@example.com">
+          </label>
+          <label>
+            <span>Location</span>
+            <select name="location" required>
+              <option value="">-- Choose a location --</option>
+              <!-- Options will be filled by script -->
+            </select>
+          </label>
+          <label>
+            <span>Date</span>
+            <input type="date" name="date" required>
+          </label>
+          <label>
+            <span>Time</span>
+            <input type="time" name="time" required>
+          </label>
+          <label>
+            <span>Party size</span>
+            <input type="number" name="party" min="1" max="20" required placeholder="1">
+          </label>
+          <button type="submit">Submit Reservation</button>
+        </form>
+      </section>
+    </section>
+  </main>
+
+  <footer data-section="footer" data-component="site-footer" class="site-footer">
+    <div class="container footer-container">
+      <div data-component="footer-info" class="footer-section">
+        <h4>About</h4>
+        <p>Family‑owned restaurant serving authentic Xi’an cuisine since 2005.</p>
+      </div>
+      <div data-component="footer-links" class="footer-section">
+        <h4>Quick links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="our-story.html">Our Story</a></li>
+          <li><a href="locations.html" aria-current="page">Locations</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="press.html">Press</a></li>
+          <li><a href="accessibility.html">Accessibility</a></li>
+        </ul>
+      </div>
+      <div data-component="footer-newsletter" class="footer-section">
+        <h4>Stay updated</h4>
+        <form class="newsletter-form" data-component="newsletter-signup">
+          <label>
+            <span>Email address</span>
+            <input type="email" name="email" required placeholder="you@example.com">
+          </label>
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Age gate modal (hidden by default) -->
+  <div id="age-gate-modal" data-component="age-gate" aria-hidden="true">
+    <div class="age-gate-dialog" role="dialog" aria-modal="true" aria-labelledby="age-gate-title">
+      <h2 id="age-gate-title">Age verification</h2>
+      <p>Our menu includes items that may contain alcohol. By entering you confirm you are of legal drinking age.</p>
+      <button type="button">Enter site</button>
+    </div>
+  </div>
+
+  <script>
+    // Inline sample dataset for locations
+    const locations = [
+      { id: 1, name: "Flushing – Main Street", address: "42-08 Main St, Flushing, NY 11355", hours: "Mon–Thu 11:00–22:00, Fri–Sun 11:00–23:00", phone: "(718) 555-0101", lat: 40.765, lng: -73.830 },
+      { id: 2, name: "Midtown – 42nd St", address: "138 W 42nd St, New York, NY 10036", hours: "Mon–Sun 11:00–22:00", phone: "(212) 555-0102", lat: 40.755, lng: -73.989 },
+      { id: 3, name: "East Village – St Marks", address: "81 St Marks Pl, New York, NY 10003", hours: "Mon–Thu 12:00–21:00, Fri–Sun 12:00–22:00", phone: "(212) 555-0103", lat: 40.730, lng: -73.985 },
+      { id: 4, name: "Upper West Side – Broadway", address: "2500 Broadway, New York, NY 10025", hours: "Mon–Sun 11:00–22:00", phone: "(212) 555-0104", lat: 40.800, lng: -73.965 }
+    ];
+
+    // Populate location cards
+    const grid = document.querySelector('.locations-grid');
+    locations.forEach(loc => {
+      const card = document.createElement('article');
+      card.className = 'location-card';
+      card.dataset.open = loc.hours.split(' ')[0]; // simplified: first time
+      card.dataset.close = loc.hours.split(' ')[2]; // simplified: second time (assuming format)
+      card.innerHTML = `
+        <h3>${loc.name}</h3>
+        <p>${loc.address}</p>
+        <p>📞 ${loc.phone}</p>
+        <p class="hours">${loc.hours}</p>
+        <div class="status"></div>
+      `;
+      grid.appendChild(card);
+    });
+
+    // Populate reservation location select
+    const locationSelect = document.querySelector('select[name="location"]');
+    locations.forEach(loc => {
+      const opt = document.createElement('option');
+      opt.value = loc.name;
+      opt.textContent = loc.name;
+      locationSelect.appendChild(opt);
+    });
+  </script>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

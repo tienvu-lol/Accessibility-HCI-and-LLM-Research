@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>WeatherNow – 10‑Day Forecast for Ashburn, VA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <header data-section="header" data-component="site-header">
+    <div class="demo-premium-banner" aria-label="Demo Premium – Not functional" style="background:#ffeb3b;color:#222;padding:.5rem;text-align:center;font-size:.875rem;">
+      Demo Premium – Not functional
+    </div>
+    <h1>WeatherNow</h1>
+    <form class="location-search" data-component="location-search">
+      <label for="location-input-tenday" class="visually-hidden">Location search</label>
+      <input type="text" id="location-input-tenday" placeholder="Enter location (e.g., Ashburn, VA)" aria-label="Location search">
+      <button type="button">Search</button>
+    </form>
+  </header>
+  <nav data-section="navigation" data-component="primary-nav">
+    <ul class="nav-list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="today.html">Today</a></li>
+      <li><a href="radar.html">Radar</a></li>
+      <li><a href="news.html">News</a></li>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="hourly.html">Hourly</a></li>
+      <li><a href="tenday.html" aria-current="page">10‑Day</a></li>
+      <li><a href="monthly.html">Monthly</a></li>
+      <li><a href="allergy.html">Allergies</a></li>
+    </ul>
+  </nav>
+  <main id="main-content" data-section="main" class="main-content">
+    <section data-section="tenday-forecast" data-component="hero">
+      <h2>10‑Day Forecast</h2>
+      <div id="tenday-container">Loading&hellip;</div>
+      <button id="unit-toggle-tenday" aria-pressed="false">°C</button>
+    </section>
+
+    <section data-section="alerts" data-component="alert-filters">
+      <h3>Alert Filters</h3>
+      <div class="alert-filter-group">
+        <label><input type="checkbox" class="alert-filter" value="thunderstorm"> Thunderstorm</label>
+        <label><input type="checkbox" class="alert-filter" value="flood"> Flood</label>
+        <label><input type="checkbox" class="alert-filter" value="heat"> Heat</label>
+        <label><input type="checkbox" class="alert-filter" value="winter"> Winter</label>
+      </div>
+      <div id="demo-alert-banner" role="alert" aria-live="assertive" style="display:none;background:#ffeb3b;color:#222;padding:1rem;margin-top:1rem;">
+        <strong>Demo Alert:</strong> Selected conditions are active. <button id="close-alert-banner">Close</button>
+      </div>
+    </section>
+  </main>
+  <footer data-section="footer" data-component="site-footer">
+    &copy; 2026 WeatherNow. All rights reserved. <a href="help.html">Help</a> | <a href="about.html">About</a>
+  </footer>
+  <script>
+    // 10‑day demo data (same as used in today.html)
+    const tendayData = [
+      {day: "Today", highF: 72, lowF: 54, condition: "Partly Cloudy", precip: 10},
+      {day: "Thu", highF: 74, lowF: 55, condition: "Mostly Sunny", precip: 0},
+      {day: "Fri", highF: 76, lowF: 57, condition: "Sunny", precip: 0},
+      {day: "Sat", highF: 78, lowF: 59, condition: "Sunny", precip: 0},
+      {day: "Sun", highF: 80, lowF: 61, condition: "Mostly Sunny", precip: 10},
+      {day: "Mon", highF: 82, lowF: 63, condition: "Partly Cloudy", precip: 20},
+      {day: "Tue", highF: 81, lowF: 62, condition: "Partly Cloudy", precip: 30},
+      {day: "Wed", highF: 79, lowF: 60, condition: "Mostly Cloudy", precip: 40},
+      {day: "Thu", highF: 77, lowF: 58, condition: "Mostly Cloudy", precip: 30},
+      {day: "Fri", highF: 75, lowF: 56, condition: "Partly Cloudy", precip: 20}
+    ];
+
+    function renderTenday() {
+      const container = document.getElementById('tenday-container');
+      container.innerHTML = '';
+      tendayData.forEach(d => {
+        const div = document.createElement('div');
+        div.style.display = 'inline-block';
+        div.style.minWidth = '80px';
+        div.style.textAlign = 'center';
+        div.style.margin = '0.5rem';
+        div.style.padding = '0.5rem';
+        div.style.border = '1px solid #ccc';
+        div.style.borderRadius = '0.25rem';
+        div.innerHTML = `<strong>${d.day}</strong><br>${d.highF}°/${d.lowF}°<br>${d.condition}<br>${d.precip}%`;
+        container.appendChild(div);
+      });
+    }
+
+    // Unit toggle demo
+    const unitBtn = document.getElementById('unit-toggle-tenday');
+    let isC = false;
+    unitBtn.addEventListener('click', () => {
+      isC = !isC;
+      unitBtn.textContent = isC ? '°F' : '°C';
+      unitBtn.setAttribute('aria-pressed', isC);
+    });
+
+    // Location search demo
+    const searchForm = document.querySelector('.location-search form');
+    if (searchForm) {
+      searchForm.addEventListener('submit', e => {
+        e.preventDefault();
+        const input = searchForm.querySelector('input');
+        const val = input.value.trim();
+        if (val) {
+          alert(`Demo: showing forecast for "${val}". (No real data)`);
+          input.value = '';
+        }
+      });
+    }
+
+    // Alert filters demo
+    const alertCheckboxes = document.querySelectorAll('.alert-filter input[type="checkbox"]');
+    const alertBanner = document.getElementById('demo-alert-banner');
+    if (alertCheckboxes.length && alertBanner) {
+      alertCheckboxes.forEach(cb => {
+        cb.addEventListener('change', () => {
+          const anyChecked = Array.from(alertCheckboxes).some(c => c.checked);
+          alertBanner.style.display = anyChecked ? 'block' : 'none';
+        });
+      });
+    }
+    const closeBanner = document.getElementById('close-alert-banner');
+    if (closeBanner) {
+      closeBanner.addEventListener('click', () => {
+        document.getElementById('demo-alert-banner').style.display = 'none';
+      });
+    }
+
+    // Initial render
+    renderTenday();
+  </script>
+  <script src="js/main.js"></script>
+</body>
+</html>

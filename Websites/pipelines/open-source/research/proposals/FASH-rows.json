@@ -1,0 +1,463 @@
+{
+  "category": "fashion",
+  "prefix": "FASH",
+  "updated_at": "2026-11-17T05:20:05.611Z",
+  "slots_proposed": [
+    7,
+    8,
+    9,
+    10
+  ],
+  "slots_outstanding": [],
+  "approval_state": "unapproved: approval cells are left empty for the project lead",
+  "runs": [
+    "2026-11-16T21-43-57-698Z-research-FASH-07",
+    "2026-11-17T05-07-14-550Z-research-FASH-09",
+    "2026-11-17T05-14-14-976Z-research-FASH-10",
+    "2026-11-17T05-18-11-014Z-research-FASH-08"
+  ],
+  "rows": [
+    {
+      "source_id": "FASH-07",
+      "subcategory": "fashion magazine",
+      "source_name": "Vogue",
+      "source_url": "https://www.vogue.com",
+      "verified_at": "2026-11-16",
+      "verification_method": "HTTP GET by the orchestrator",
+      "verification_result": "verified",
+      "evidence_reference": "pipelines/open-source/research/evidence/FASH-07-http-2026-11-16.json",
+      "source_pages": [
+        {
+          "url": "https://www.vogue.com/",
+          "title": "Vogue: Fashion, Beauty, Celebrity, Fashion Shows | Vogue",
+          "local_file": "index.html"
+        },
+        {
+          "url": "https://www.vogue.com/fashion",
+          "title": "Fashion News and Trends: Designers, Models, Style Guides | Vogue",
+          "local_file": "fashion.html"
+        },
+        {
+          "url": "https://www.vogue.com/fashion-shows",
+          "title": "Fashion Shows: Fashion Week, Runway, Designer Collections | Vogue",
+          "local_file": "fashion-shows.html"
+        },
+        {
+          "url": "https://www.vogue.com/shopping",
+          "title": "Shop Top Fashion, Beauty & Home Products | Vogue",
+          "local_file": "shopping.html"
+        },
+        {
+          "url": "https://www.vogue.com/beauty",
+          "title": "Beauty: Tips and Trends, Beauty Product Reviews | Vogue",
+          "local_file": "beauty.html"
+        },
+        {
+          "url": "https://www.vogue.com/culture",
+          "title": "Culture: News, Reviews and Opinion | Vogue",
+          "local_file": "culture.html"
+        },
+        {
+          "url": "https://www.vogue.com/fashion/trends",
+          "title": "Fashion Trends: What's In For Spring, Summer, Fall, and Winter | Vogue",
+          "local_file": "fashion-trends.html"
+        },
+        {
+          "url": "https://www.vogue.com/slideshow/10-best-dressed-stars-zendaya-mikey-madison-ayo-edebiri",
+          "title": "The Best Dressed Stars of the Week Proved Formal Can Be Fun | Vogue",
+          "local_file": "slideshow-best-dressed-stars.html"
+        },
+        {
+          "url": "https://www.vogue.com/shopping/vogue-shopping-lookbook",
+          "title": "The Editor Lookbook | Vogue",
+          "local_file": "shopping-lookbook.html"
+        },
+        {
+          "url": "https://www.vogue.com/article/faux-fur-trim-robe-coat-trend",
+          "title": "The Data Shows It: The Faux Fur-Trimmed Coat Is the Coat of the Season | Vogue",
+          "local_file": "article-faux-fur-trim-robe-coat-trend.html"
+        },
+        {
+          "url": "https://www.vogue.com/business",
+          "title": "Vogue Business: Fashion Industry Expertise From an Insider's Perspective | Vogue",
+          "local_file": "business.html"
+        }
+      ],
+      "key_regions": [
+        "Header",
+        "Navigation",
+        "Hero",
+        "Content Bands",
+        "Sidebar",
+        "Footer"
+      ],
+      "key_interactions": [
+        {
+          "name": "Editorial Navigation",
+          "evidence": "observed",
+          "notes": "nav_links present in all fetched pages"
+        },
+        {
+          "name": "Article Search",
+          "evidence": "inferred",
+          "notes": "search link present in navigation, but search page itself failed to fetch"
+        },
+        {
+          "name": "Newsletter Simulation",
+          "evidence": "inferred",
+          "notes": "newsletter links present in footer and navigation"
+        },
+        {
+          "name": "Gallery/Lightbox",
+          "evidence": "inferred",
+          "notes": "slideshow pages present, markup shows slideshow structure"
+        }
+      ],
+      "complexity": "high",
+      "stack_clues": "unknown",
+      "limitations": "Search page blocked by robots.txt.",
+      "slot": 7,
+      "category": "fashion",
+      "model_group": "open-source",
+      "model_id": "unsloth/Qwen3.6-35B-A3B-GGUF",
+      "model_version": "Q4_K_M",
+      "approved_at": "",
+      "approved_by": "",
+      "approval_reference": "",
+      "researched_by": {
+        "model_id": "unsloth/Qwen3.6-35B-A3B-GGUF",
+        "slot": 7
+      },
+      "orchestrator_checks": {
+        "pages_proposed": 11,
+        "pages_without_successful_fetch": [],
+        "page_map_has_index": true,
+        "source_url_fetched_ok": true,
+        "meets_min_pages": true
+      }
+    },
+    {
+      "source_id": "FASH-08",
+      "subcategory": "brand editorial/lookbook",
+      "source_name": "Refinery29",
+      "source_url": "https://www.refinery29.com/en-us",
+      "verified_at": "2026-11-17",
+      "verification_method": "HTTP GET by the orchestrator",
+      "verification_result": "verified",
+      "evidence_reference": "pipelines/open-source/research/evidence/FASH-08-http-2026-11-17.json",
+      "source_pages": [
+        {
+          "url": "https://www.refinery29.com/en-us",
+          "title": "Refinery29",
+          "local_file": "index.html"
+        },
+        {
+          "url": "https://www.refinery29.com/en-us/fashion/",
+          "title": "Fashion: What To Wear, Trends, Styling Tips - Refinery29",
+          "local_file": "fashion.html"
+        },
+        {
+          "url": "https://www.refinery29.com/en-us/beauty/",
+          "title": "Beauty: Skincare Tips, Hair & Makeup Trends - Refinery29",
+          "local_file": "beauty.html"
+        },
+        {
+          "url": "https://www.refinery29.com/en-us/shopping/",
+          "title": "Shop The Best Beauty, Fashion & Homeware - Refinery29",
+          "local_file": "shopping.html"
+        },
+        {
+          "url": "https://www.refinery29.com/en-us/summer-lookbook-2026",
+          "title": "The R29 Lookbook: The Making of a Summer Star",
+          "local_file": "summer-lookbook-2026.html"
+        },
+        {
+          "url": "https://www.refinery29.com/en-us/money-diary",
+          "title": "Money Diaries - Refinery29",
+          "local_file": "money-diary.html"
+        },
+        {
+          "url": "https://www.refinery29.com/en-us/horoscope",
+          "title": "Horoscopes & Zodiac Star Sign Predictions - Refinery29",
+          "local_file": "horoscope.html"
+        },
+        {
+          "url": "https://www.refinery29.com/en-us/podcasts",
+          "title": "Refinery29 Podcasts",
+          "local_file": "podcasts.html"
+        }
+      ],
+      "key_regions": [
+        "header",
+        "navigation",
+        "hero",
+        "content bands",
+        "sidebar",
+        "footer groups"
+      ],
+      "key_interactions": [
+        {
+          "name": "editorial navigation",
+          "evidence": "observed",
+          "notes": "Navigation links present in fetched markup"
+        },
+        {
+          "name": "gallery/lightbox or carousel",
+          "evidence": "inferred",
+          "notes": "Lookbook page suggests an image gallery"
+        },
+        {
+          "name": "article search",
+          "evidence": "observed",
+          "notes": "Search link present in navigation"
+        },
+        {
+          "name": "newsletter simulation",
+          "evidence": "inferred",
+          "notes": "Typical for editorial sites but not seen in markup"
+        }
+      ],
+      "complexity": "medium",
+      "stack_clues": "unknown",
+      "limitations": "Verified_at date not supplied in evidence; deeper article pages not requested; JavaScript‑driven content cannot be confirmed.",
+      "slot": 8,
+      "category": "fashion",
+      "model_group": "open-source",
+      "model_id": "unsloth/NVIDIA-Nemotron-3-Super-120B-A12B-GGUF",
+      "model_version": "MXFP4_MOE",
+      "approved_at": "",
+      "approved_by": "",
+      "approval_reference": "",
+      "researched_by": {
+        "model_id": "unsloth/NVIDIA-Nemotron-3-Super-120B-A12B-GGUF",
+        "slot": 8
+      },
+      "orchestrator_checks": {
+        "pages_proposed": 8,
+        "pages_without_successful_fetch": [],
+        "page_map_has_index": true,
+        "source_url_fetched_ok": true,
+        "meets_min_pages": true
+      }
+    },
+    {
+      "source_id": "FASH-09",
+      "subcategory": "fashion blog or trend publication",
+      "source_name": "The Zoe Report",
+      "source_url": "https://www.thezoereport.com",
+      "verified_at": "2026-11-17",
+      "verification_method": "HTTP GET",
+      "verification_result": "verified",
+      "evidence_reference": "pipelines/open-source/research/evidence/FASH-09-http-2026-11-17.json",
+      "source_pages": [
+        {
+          "url": "https://www.thezoereport.com/",
+          "title": "The Zoe Report",
+          "local_file": "index.html"
+        },
+        {
+          "url": "https://www.thezoereport.com/fashion",
+          "title": "Fashion",
+          "local_file": "fashion.html"
+        },
+        {
+          "url": "https://www.thezoereport.com/trends",
+          "title": "Trends",
+          "local_file": "trends.html"
+        },
+        {
+          "url": "https://www.thezoereport.com/style",
+          "title": "Style",
+          "local_file": "style.html"
+        },
+        {
+          "url": "https://www.thezoereport.com/designers",
+          "title": "Designers",
+          "local_file": "designers.html"
+        },
+        {
+          "url": "https://www.thezoereport.com/beauty",
+          "title": "Beauty",
+          "local_file": "beauty.html"
+        },
+        {
+          "url": "https://www.thezoereport.com/skin",
+          "title": "Skin",
+          "local_file": "skin.html"
+        },
+        {
+          "url": "https://www.thezoereport.com/hair",
+          "title": "Hair",
+          "local_file": "hair.html"
+        },
+        {
+          "url": "https://www.thezoereport.com/makeup",
+          "title": "Makeup",
+          "local_file": "makeup.html"
+        },
+        {
+          "url": "https://www.thezoereport.com/latest",
+          "title": "Latest",
+          "local_file": "latest.html"
+        },
+        {
+          "url": "https://www.thezoereport.com/newsletter",
+          "title": "Subscribe to TZR's Newsletters",
+          "local_file": "newsletter.html"
+        }
+      ],
+      "key_regions": [
+        "Header",
+        "Navigation",
+        "Hero",
+        "Content bands",
+        "Sidebar",
+        "Footer"
+      ],
+      "key_interactions": [
+        {
+          "name": "Editorial navigation",
+          "evidence": "observed",
+          "notes": "Navigation menu is present"
+        },
+        {
+          "name": "Gallery/lightbox or carousel",
+          "evidence": "inferred",
+          "notes": "Not observed in the fetched markup"
+        },
+        {
+          "name": "Article search",
+          "evidence": "inferred",
+          "notes": "No search functionality observed"
+        },
+        {
+          "name": "Newsletter simulation",
+          "evidence": "observed",
+          "notes": "Newsletter subscription form is present"
+        }
+      ],
+      "complexity": "medium",
+      "stack_clues": "unknown",
+      "limitations": "Potential limitations due to JavaScript rendering and unobserved functionalities",
+      "slot": 9,
+      "category": "fashion",
+      "model_group": "open-source",
+      "model_id": "unsloth/Llama-3.3-70B-Instruct-GGUF",
+      "model_version": "Q8_0",
+      "approved_at": "",
+      "approved_by": "",
+      "approval_reference": "",
+      "researched_by": {
+        "model_id": "unsloth/Llama-3.3-70B-Instruct-GGUF",
+        "slot": 9
+      },
+      "orchestrator_checks": {
+        "pages_proposed": 11,
+        "pages_without_successful_fetch": [],
+        "page_map_has_index": true,
+        "source_url_fetched_ok": true,
+        "meets_min_pages": true
+      }
+    },
+    {
+      "source_id": "FASH-10",
+      "subcategory": "complexity-matched reserve",
+      "source_name": "Harper's Bazaar",
+      "source_url": "https://www.harpersbazaar.com/",
+      "verified_at": "2026-11-17",
+      "verification_method": "HTTP GET by the orchestrator",
+      "verification_result": "verified",
+      "evidence_reference": "pipelines/open-source/research/evidence/FASH-10-http-2026-11-17.json",
+      "source_pages": [
+        {
+          "url": "https://www.harpersbazaar.com/",
+          "title": "Harper's BAZAAR - Your Source for Fashion Trends, Beauty Tips, Pop Culture News, and Celebrity Style",
+          "local_file": "index.html"
+        },
+        {
+          "url": "https://www.harpersbazaar.com/fashion/",
+          "title": "Fashion 2026 - Runway Trends, Fashion Designers, and Style Tips",
+          "local_file": "fashion-index.html"
+        },
+        {
+          "url": "https://www.harpersbazaar.com/beauty/",
+          "title": "Beauty Tips 2026 - Latest Hair, Makeup, and Beauty Advice",
+          "local_file": "beauty-index.html"
+        },
+        {
+          "url": "https://www.harpersbazaar.com/email/harpersbazaar-newsletter",
+          "title": "Harper’s BAZAAR Newsletter: Sign Up for Free",
+          "local_file": "newsletter-index.html"
+        },
+        {
+          "url": "https://www.harpersbazaar.com/culture/travel-dining/",
+          "title": "Bazaar's Guide to Travel: Best Travel Destinations, Tips, and more",
+          "local_file": "travel-dining-index.html"
+        },
+        {
+          "url": "https://www.harpersbazaar.com/celebrity/red-carpet-dresses/a74434344/all-the-red-carpet-looks-2026-governors-awards-photos/",
+          "title": "All the Red-Carpet Looks From the 2026 Governors Awards",
+          "local_file": "red-carpet-index.html"
+        }
+      ],
+      "key_regions": [
+        "header",
+        "navigation",
+        "hero",
+        "content band 1",
+        "content band 2",
+        "footer"
+      ],
+      "key_interactions": [
+        {
+          "name": "editorial navigation",
+          "evidence": "observed",
+          "notes": "navigation links appear in the fetched markup"
+        },
+        {
+          "name": "gallery / lightbox carousel",
+          "evidence": "inferred",
+          "notes": "typical for fashion editorial sites but no gallery markup seen in the fetched pages"
+        },
+        {
+          "name": "article search",
+          "evidence": "inferred",
+          "notes": "search endpoint exists but was blocked by robots.txt, so not observed"
+        },
+        {
+          "name": "newsletter sign-up",
+          "evidence": "observed",
+          "notes": "newsletter page contains a sign‑up form in the markup"
+        }
+      ],
+      "complexity": "medium",
+      "stack_clues": "unknown",
+      "limitations": "Search page (https://www.harpersbazaar.com/search/) blocked by robots.txt; status unknown",
+      "slot": 10,
+      "category": "fashion",
+      "model_group": "open-source",
+      "model_id": "unsloth/gpt-oss-120b-GGUF",
+      "model_version": "F16",
+      "approved_at": "",
+      "approved_by": "",
+      "approval_reference": "",
+      "researched_by": {
+        "model_id": "unsloth/gpt-oss-120b-GGUF",
+        "slot": 10
+      },
+      "orchestrator_checks": {
+        "pages_proposed": 6,
+        "pages_without_successful_fetch": [],
+        "page_map_has_index": false,
+        "source_url_fetched_ok": true,
+        "meets_min_pages": true
+      }
+    }
+  ],
+  "orchestrator_corrections": [
+    "2026-11-17: homepage page-map entry renamed to index.html; see CORRECTIONS-2026-11-17-index.json",
+    "2026-11-17: FASH-10 verified_at normalised; see CORRECTIONS-2026-11-17-slot10.json",
+    "2026-11-17: FASH-08 verified_at normalised; see CORRECTIONS-2026-11-17-slot08.json",
+    "2026-11-17: verified_at reset to the HTTP evidence date; see CORRECTIONS-2026-11-17-dates.json"
+  ]
+}

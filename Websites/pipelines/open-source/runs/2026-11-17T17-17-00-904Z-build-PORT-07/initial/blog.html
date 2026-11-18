@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Posts - Atlas Digital Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header class="site-header" data-section="header">
+        <div class="container">
+            <a href="index.html" class="site-logo">Atlas Digital</a>
+            <nav class="primary-nav" data-component="primary-nav" aria-label="Main navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="mini-tools.html">Mini-Tools</a></li>
+                    <li><a href="blog.html" aria-current="page">Blog</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content" data-section="main">
+        <div class="container">
+            <h1>Blog Posts</h1>
+            <p>Thoughts on development, electronics, and digital design.</p>
+
+            <div data-component="filter-controls" role="group" aria-label="Filter blog posts" style="margin-bottom: var(--spacing-md);">
+                <label for="year-filter" class="sr-only">Filter by year</label>
+                <select id="year-filter" data-filter-group="blog" aria-label="Filter by year">
+                    <option value="all">All Years</option>
+                    <option value="2024">2024</option>
+                    <option value="2023">2023</option>
+                    <option value="2022">2022</option>
+                    <option value="2021">2021</option>
+                </select>
+            </div>
+
+            <ul class="card-grid" id="blog-list" data-component="card-grid" data-section="blog-list">
+                <!-- Blog posts will be injected by js/main.js -->
+            </ul>
+        </div>
+    </main>
+
+    <footer class="site-footer" data-section="footer">
+        <div class="container">
+            <p>&copy; 2026 Atlas Digital. All rights reserved.</p>
+            <p>
+                <a href="index.html">Home</a> | 
+                <a href="projects.html">Projects</a> | 
+                <a href="blog.html">Blog</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

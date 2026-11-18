@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en" data-section="bakery">
+<head>
+  <meta charset="utf-8">
+  <title>The Bakery – Sunrise Bakery</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <a href="#main-content" id="skip-link">Skip to main content</a>
+
+  <header data-component="site-header">
+    <h1 data-component="site-logo">Sunrise Bakery</h1>
+    <nav data-component="primary-nav" aria-label="Main navigation">
+      <button id="nav-toggle" aria-controls="primary-nav-list" aria-expanded="false" aria-label="Toggle menu">☰</button>
+      <ul id="primary-nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="cities-index.html">Locations</a></li>
+        <li><a href="bakery-index.html">Bakery</a></li>
+        <li><a href="about-index.html">About</a></li>
+        <li><a href="press-index.html">Press</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section data-component="hero" aria-label="Bakery hero">
+    <h1>The Bakery</h1>
+    <p>Our handcrafted breads and pastries.</p>
+  </section>
+
+  <main id="main-content" data-component="main-content">
+    <section>
+      <h2>Menu</h2>
+      <p>Download our full menu (PDF):</p>
+      <a href="assets/menu.pdf" download class="menu-download" data-component="menu-download">
+        <button type="button">Download Menu</button>
+      </a>
+    </section>
+
+    <section>
+      <h2>Reserve a Table (Demo)</h2>
+      <form id="reservation-form" aria-labelledby="reservation-heading">
+        <div id="form-errors" class="hidden" tabindex="-1" aria-live="assertive"></div>
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="date">Date</label>
+        <input type="date" id="date" name="date" required>
+
+        <button type="submit">Submit Reservation</button>
+      </form>
+    </section>
+  </main>
+
+  <footer data-component="site-footer">
+    <p>&copy; 2024 Sunrise Bakery.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Blog – Fictional Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <header data-section="header" data-component="site-header">
+    <div class="site-logo">Fictional Dev</div>
+    <nav class="primary-nav" data-component="primary-nav" aria-label="Primary">
+      <button aria-controls="primary-menu" aria-expanded="false">Menu</button>
+      <ul id="primary-menu" class="primary-nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="tips.html">Tips</a></li>
+        <li><a href="javascript.html">JS Notes</a></li>
+        <li><a href="speaking-and-training.html">Speaking</a></li>
+        <li><a href="uses.html">Uses</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content" data-section="main">
+    <h1>Blog</h1>
+    <p>Recent articles and tutorials.</p>
+
+    <section data-component="card-grid" data-section="blog-list">
+      <h2>Latest Posts</h2>
+      <div id="blog-container" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <footer data-section="footer" data-component="site-footer">
+    <p>&copy; 2026 Fictional Dev. All rights reserved.</p>
+    <nav aria-label="Footer">
+      <a href="index.html">Home</a> |
+      <a href="about.html">About</a> |
+      <a href="contact.html">Contact</a>
+    </nav>
+  </footer>
+
+  <script>
+    // Inline dataset for blog posts
+    const blogData = [
+      {title: "Getting Started with CSS Grid", excerpt: "A practical guide to laying out pages with CSS Grid.", date: "2026-10-01", tags: ["css", "layout"], readingTime: "5 min"},
+      {title: "JavaScript Async/Await Deep Dive", excerpt: "Mastering asynchronous code in modern JavaScript.", date: "2026-09-15", tags: ["js", "async"], readingTime: "8 min"},
+      {title: "Building a Accessible Modal", excerpt: "How to create a modal dialog that works for everyone.", date: "2026-08-22", tags: ["accessibility", "js"], readingTime: "6 min"},
+      {title: "Tips for Effective Code Reviews", excerpt: "Practices that make code reviews helpful and kind.", date: "2026-07-30", tags: ["process", "teamwork"], readingTime: "4 min"},
+      {title: "Introduction to Web Vitals", excerpt: "Measuring and improving user‑centric performance metrics.", date: "2026-07-10", tags: ["performance", "web-vitals"], readingTime: "7 min"},
+      {title: "Using CSS Custom Properties for Theming", excerpt: "Leverage CSS variables to create dark/light themes.", date: "2026-06-25", tags: ["css", "theming"], readingTime: "5 min"},
+      {title: "Deploying Static Sites to GitHub Pages", excerpt: "A step‑by‑step guide to publishing your portfolio for free.", date: "2026-06-05", tags: ["deployment", "github"], readingTime: "6 min"},
+      {title: "JavaScript Array Methods You Should Know", excerpt: "From map to reduce, practical examples.", date: "2026-05-18", tags: ["js", "arrays"], readingTime: "5 min"}
+    ];
+
+    function renderBlog(container, items) {
+      container.innerHTML = '';
+      if (items.length === 0) {
+        const msg = document.createElement('p');
+        msg.textContent = 'No posts to show.';
+        container.appendChild(msg);
+        return;
+      }
+      const grid = document.createElement('div');
+      grid.className = 'card-grid';
+      items.forEach(post => {
+        const card = document.createElement('article');
+        card.className = 'card';
+        card.dataset.component = 'blog-post-card';
+        card.dataset.instance = Math.random().toString(36).substr(2,9);
+        // Simulate thumbnail with placeholder
+        card.innerHTML = `
+          <img src="assets/placeholder.svg" alt="${post.title} thumbnail">
+          <div class="card-body">
+            <h3>${post.title}</h3>
+            <p>${post.excerpt}</p>
+            <div class="meta">
+              <span>${post.date}</span> ·
+              <span>${post.readingTime}</span>
+            </div>
+            <div class="tags">
+              ${post.tags.map(t => `<span class="tag">${t}</span>`).join('')}
+            </div>
+            <button class="cta secondary" data-lightbox-trigger data-title="${post.title}" data-excerpt="${post.excerpt}" data-date="${post.date}" data-tags="${post.tags.join(', ')}">
+              Read more
+            </button>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+      container.appendChild(grid);
+    }
+
+    // Lightbox trigger handling
+    document.addEventListener('DOMContentLoaded', () => {
+      const container = document.getElementById('blog-container');
+      if (typeof renderBlog === 'function') {
+        renderBlog(container, blogData);
+      }
+      // Delegated click for lightbox triggers
+      container.addEventListener('click', (e) => {
+        const btn = e.target.closest('[data-lightbox-trigger]');
+        if (!btn) return;
+        const title = btn.dataset.title;
+        const excerpt = btn.dataset.excerpt;
+        const date = btn.dataset.date;
+        const tags = btn.dataset.tags.split(', ').map(t => `<span class="tag">${t}</span>`).join('');
+        const contentHTML = `
+          <h2>${title}</h2>
+          <p><em>${excerpt}</em></p>
+          <p><strong>Date:</strong> ${date}</p>
+          <p><strong>Tags:</strong> ${tags}</p>
+          <p>This is a simulated lightbox. In a real site this would open the full article.</p>
+        `;
+        if (typeof window.openLightbox === 'function') {
+          window.openLightbox(contentHTML);
+        }
+      });
+    });
+  </script>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

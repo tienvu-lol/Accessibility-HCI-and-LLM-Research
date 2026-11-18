@@ -26,12 +26,16 @@ A category is **deliverable at its active scope** when every slot in its active 
 | --- | ---: | --- | ---: |
 | Claude | 3 | 01–03 | 30% |
 | Codex | 3 | 04–06 | 30% |
-| Open-source models | 4 | 07–10 | 40% |
+| Open-weight models | 4 | 07–10 | 40% |
 | **Total** | **10** | **01–10** | **100%** |
 
 - **Claude** means generation performed by an explicitly recorded Claude model/version.
 - **Codex** means generation performed by an explicitly recorded Codex model/version or coding-agent configuration; log the actual underlying model if identifiable.
-- **Open-source** is an allocation group, **not one specific model**. Record the exact model, release/commit, and serving environment for each of the four slots. Confirm the selected model qualifies under the study's documented open-source/open-weight definition; these terms are not automatically interchangeable.
+- **Open-weight** is an allocation group, **not one specific model**. Record the exact model, release/commit, and serving environment for each of the four slots. Confirm the selected model qualifies under the study's documented open-source/open-weight definition; these terms are not automatically interchangeable.
+
+  **Terminology, settled 2026-11-17 (clarification, not a protocol amendment).** This group is described as **open-weight**, not open-source. The models declared for slots 07–10 are: 07 Qwen3.6-35B-A3B (Apache-2.0), 08 NVIDIA Nemotron-3-Super-120B-A12B (NVIDIA Nemotron Open Model License), 09 Llama-3.3-70B-Instruct (Llama 3.3 Community License), 10 gpt-oss-120b (Apache-2.0). Slots 07 and 10 are open-source in the OSI sense; slots 08 and 09 are open-weight under vendor licences with acceptable-use and scale conditions and are **not** OSI-approved. Each slot's `eligibility_note` in `pipelines/open-source/models.json` states which it is. Authorized by Samhith Varma Yallamraju; see `metadata/change-log.md`.
+
+  **The machine identifier is unchanged.** `open-source` remains the exact value for model-group directory names (per the naming rules below), the `model_group` column in every source inventory and the assignment register, the `pipelines/open-source/` path, and the config keys. Renaming it would invalidate existing rows and delivered paths; only the human-readable description changed.
 - The four open-source replicas **may use one or multiple eligible models**. The project lead must declare the precise model-to-slot mapping before generation; do not silently assume four different models.
 - Model assignment is fixed when the Phase A source inventory is approved. Changes must be logged, with the original and replacement model, reason, date, and approval.
 
@@ -45,10 +49,10 @@ A category is **deliverable at its active scope** when every slot in its active 
 | 04 | REST-04 | Codex |
 | 05 | REST-05 | Codex |
 | 06 | REST-06 | Codex |
-| 07 | REST-07 | Open-source |
-| 08 | REST-08 | Open-source |
-| 09 | REST-09 | Open-source |
-| 10 | REST-10 | Open-source |
+| 07 | REST-07 | Open-weight |
+| 08 | REST-08 | Open-weight |
+| 09 | REST-09 | Open-weight |
+| 10 | REST-10 | Open-weight |
 
 Use each category's actual approved `source_id` prefix; `REST` is illustrative. Do not duplicate one reference site merely to fill a quota.
 

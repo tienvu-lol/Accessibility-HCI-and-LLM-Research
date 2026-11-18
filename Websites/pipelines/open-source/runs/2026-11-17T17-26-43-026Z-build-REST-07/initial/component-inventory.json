@@ -1,0 +1,110 @@
+[
+  {
+    "component": "site-header",
+    "selector": "header.site-header",
+    "pages": ["index.html", "home.html", "menu.html", "locations.html", "gift-cards.html", "about.html", "values.html", "press.html", "community.html", "support.html", "404.html"],
+    "behaviours": ["Sticky header", "Responsive navigation toggle"],
+    "keyboard_expectations": ["Tab to navigate links", "Enter/Space to toggle mobile menu", "Escape to close mobile menu"],
+    "status": "implemented",
+    "validation_state": "not-tested"
+  },
+  {
+    "component": "primary-nav",
+    "selector": "nav.primary-nav",
+    "pages": ["index.html", "home.html", "menu.html", "locations.html", "gift-cards.html", "about.html", "values.html", "press.html", "community.html", "support.html", "404.html"],
+    "behaviours": ["Responsive menu toggle", "Focus management"],
+    "keyboard_expectations": ["Tab to navigate links", "Enter/Space to toggle mobile menu", "Escape to close mobile menu"],
+    "status": "implemented",
+    "validation_state": "not-tested"
+  },
+  {
+    "component": "hero-banner",
+    "selector": "section.hero",
+    "pages": ["index.html", "home.html", "menu.html", "locations.html", "gift-cards.html", "about.html", "values.html", "press.html", "community.html", "support.html", "404.html"],
+    "behaviours": ["Displays hero content"],
+    "keyboard_expectations": ["Tab to navigate links"],
+    "status": "implemented",
+    "validation_state": "not-tested"
+  },
+  {
+    "component": "card-grid",
+    "selector": "div.card-grid",
+    "pages": ["index.html", "home.html", "menu.html", "locations.html", "about.html", "values.html", "press.html", "community.html"],
+    "behaviours": ["Responsive grid layout"],
+    "keyboard_expectations": ["Tab to navigate links"],
+    "status": "implemented",
+    "validation_state": "not-tested"
+  },
+  {
+    "component": "location-list",
+    "selector": "section#location-list",
+    "pages": ["locations.html"],
+    "behaviours": ["Location search filtering"],
+    "keyboard_expectations": ["Tab to navigate inputs", "Enter to submit search"],
+    "status": "implemented",
+    "validation_state": "not-tested"
+  },
+  {
+    "component": "contact-form",
+    "selector": "form#contact-form",
+    "pages": ["support.html"],
+    "behaviours": ["Form validation", "Demo submission"],
+    "keyboard_expectations": ["Tab to navigate fields", "Enter to submit"],
+    "status": "implemented",
+    "validation_state": "not-tested"
+  },
+  {
+    "component": "site-footer",
+    "selector": "footer.site-footer",
+    "pages": ["index.html", "home.html", "menu.html", "locations.html", "gift-cards.html", "about.html", "values.html", "press.html", "community.html", "support.html", "404.html"],
+    "behaviours": ["Newsletter signup simulation"],
+    "keyboard_expectations": ["Tab to navigate links", "Enter to submit newsletter form"],
+    "status": "implemented",
+    "validation_state": "not-tested"
+  },
+  {
+    "component": "menu-filter",
+    "selector": "div.menu-filters",
+    "pages": ["menu.html"],
+    "behaviours": ["Category filtering"],
+    "keyboard_expectations": ["Tab to navigate buttons", "Enter/Space to filter", "Arrow keys to navigate buttons"],
+    "status": "implemented",
+    "validation_state": "not-tested"
+  },
+  {
+    "component": "gift-card-balance-check",
+    "selector": "form#gift-card-balance-form",
+    "pages": ["gift-cards.html"],
+    "behaviours": ["Balance check simulation"],
+    "keyboard_expectations": ["Tab to navigate fields", "Enter to submit"],
+    "status": "implemented",
+    "validation_state": "not-tested"
+  },
+  {
+    "component": "reservation-form",
+    "selector": "form#reservation-form",
+    "pages": ["home.html"],
+    "behaviours": ["Reservation simulation"],
+    "keyboard_expectations": ["Tab to navigate fields", "Enter to submit"],
+    "status": "implemented",
+    "validation_state": "not-tested"
+  },
+  {
+    "component": "newsletter-signup",
+    "selector": "form#newsletter-form",
+    "pages": ["index.html", "home.html", "menu.html", "locations.html", "gift-cards.html", "about.html", "values.html", "press.html", "community.html", "support.html", "404.html"],
+    "behaviours": ["Newsletter signup simulation"],
+    "keyboard_expectations": ["Tab to navigate fields", "Enter to submit"],
+    "status": "implemented",
+    "validation_state": "not-tested"
+  },
+  {
+    "component": "support-search",
+    "selector": "form#support-search",
+    "pages": ["support.html"],
+    "behaviours": ["FAQ search filtering"],
+    "keyboard_expectations": ["Tab to navigate input", "Input event triggers filter"],
+    "status": "implemented",
+    "validation_state": "not-tested"
+  }
+]

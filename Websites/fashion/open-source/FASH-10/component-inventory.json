@@ -1,0 +1,68 @@
+{
+  "components": [
+    {
+      "name": "site-header",
+      "selector": ".site-header",
+      "pages": ["index.html","fashion-index.html","beauty-index.html","travel-dining-index.html","red-carpet-index.html","newsletter-index.html","404.html"],
+      "behaviors": ["contains logo and primary navigation"],
+      "keyboard": ["focusable links, menu button reachable via Tab"],
+      "status": "implemented"
+    },
+    {
+      "name": "primary-nav",
+      "selector": "nav[data-component=\"primary-nav\"]",
+      "pages": ["index.html","fashion-index.html","beauty-index.html","travel-dining-index.html","red-carpet-index.html","newsletter-index.html","404.html"],
+      "behaviors": ["horizontal list of links, collapsible on small screens, aria‑expanded toggling"],
+      "keyboard": ["Tab navigation, Escape closes expanded menu, focus returns to button"],
+      "status": "implemented"
+    },
+    {
+      "name": "hero",
+      "selector": "section[data-component=\"hero\"]",
+      "pages": ["index.html","fashion-index.html","beauty-index.html","travel-dining-index.html","red-carpet-index.html","newsletter-index.html","404.html"],
+      "behaviors": ["large banner with heading and optional paragraph"],
+      "keyboard": ["none (static)"],
+      "status": "implemented"
+    },
+    {
+      "name": "content-band",
+      "selector": "section[data-component=\"content-band\"]",
+      "pages": ["index.html","fashion-index.html","beauty-index.html","travel-dining-index.html","red-carpet-index.html","newsletter-index.html","404.html"],
+      "behaviors": ["container for cards or forms"],
+      "keyboard": ["focusable form elements where present"],
+      "status": "implemented"
+    },
+    {
+      "name": "card-grid",
+      "selector": ".card-grid",
+      "pages": ["index.html","fashion-index.html","beauty-index.html","travel-dining-index.html","red-carpet-index.html"],
+      "behaviors": ["CSS grid layout of .card items"],
+      "keyboard": ["none (visual)"],
+      "status": "implemented"
+    },
+    {
+      "name": "newsletter-form",
+      "selector": "#newsletter-form",
+      "pages": ["newsletter-index.html"],
+      "behaviors": ["client‑side validation, error summary, demo success message"],
+      "keyboard": ["focus moves to first error, submit button reachable"],
+      "status": "implemented"
+    },
+    {
+      "name": "lightbox",
+      "selector": "dialog[data-component=\"lightbox\"]",
+      "pages": ["red-carpet-index.html"],
+      "behaviors": ["opens on button click, next/prev navigation, Escape to close, focus trap"],
+      "keyboard": ["Arrow keys not required; buttons reachable via Tab, Escape closes"],
+      "status": "simulated"
+    },
+    {
+      "name": "skip-link",
+      "selector": ".skip-link",
+      "pages": ["index.html","fashion-index.html","beauty-index.html","travel-dining-index.html","red-carpet-index.html","newsletter-index.html","404.html"],
+      "behaviors": ["first focusable element, jumps to #main-content"],
+      "keyboard": ["visible on focus, activates with Enter/Space"],
+      "status": "implemented"
+    }
+  ]
+}

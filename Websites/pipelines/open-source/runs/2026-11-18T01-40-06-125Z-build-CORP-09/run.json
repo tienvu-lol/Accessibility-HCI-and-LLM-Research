@@ -1,0 +1,439 @@
+{
+  "run_id": "2026-11-18T01-40-06-125Z-build-CORP-09",
+  "phase": "build",
+  "target": "CORP-09",
+  "category": "company",
+  "slot": 9,
+  "model_group": "open-source",
+  "model": {
+    "model_id": "unsloth/Llama-3.3-70B-Instruct-GGUF",
+    "model_version": "Q8_0",
+    "model_provider_or_runtime": "vt-arc-falcon-llamacpp (OpenAI-compatible chat completions at http://localhost:8082/v1)",
+    "weights_url": "https://huggingface.co/unsloth/Llama-3.3-70B-Instruct-GGUF",
+    "license": "llama3.3-community",
+    "open_weights": true,
+    "eligibility_note": "Open weights. Licence is the Llama 3.3 Community License Agreement (HF licence tag llama3.3), read 2026-11-17 by the orchestrator on the quant repo and the Meta Llama 3.3 model card. A custom community licence with acceptable-use and scale conditions, NOT OSI-approved: this slot is open-weight, not open-source. Quantisation Q8_0. Served self-hosted via llama.cpp on VT ARC Falcon over an SSH tunnel on localhost:8082; serving history, same model and quant: fal034:42003 (2026-11-17, twelve slot-09 research runs and one build), fal052:49161 (2026-11-17, current). max_tokens is 16000 for this slot, not the 32000 used by slots 07, 08 and 10: this server reports n_ctx 48128 per slot, so a 32000-token output cap left only about 16000 tokens for the prompt, and every slot-09 build failed at the correction stage, where the conversation carries the build history plus the QC failure list. Recorded as a deliberate per-slot difference in generation parameters.",
+    "params": {
+      "temperature": 0.3,
+      "max_tokens": 16000
+    }
+  },
+  "operator": "Samhith Varma Yallamraju",
+  "status": "completed",
+  "prepared_at": "2026-11-18T01:40:06.129Z",
+  "generation_started_at": "2026-11-18T01:40:06.129Z",
+  "generation_completed_at": "2026-11-18T01:50:12.730Z",
+  "tool_access": "chat-completions API only: no browsing, no shell, no filesystem. The orchestrator wrote every file and ran every check.",
+  "budget": {
+    "max_build_turns": 28,
+    "max_repair_rounds": 0,
+    "max_tokens_per_request": 16000,
+    "temperature": 0.3,
+    "history_exchanges_kept": 3
+  },
+  "approved_source": {
+    "source_name": "Microsoft",
+    "source_url": "https://www.microsoft.com/en-us",
+    "verified_at": "2026-11-17",
+    "verification_method": "HTTP GET by the orchestrator",
+    "verification_result": "verified",
+    "evidence_reference": "pipelines/open-source/research/evidence/CORP-09-http-2026-11-17.json",
+    "complexity": "medium",
+    "stack_clues": "unknown",
+    "limitations": "None of the pages failed to load, but some interactions (like search and help search) were not found in the fetched markup.",
+    "approved_at": "2026-11-17",
+    "approved_by": "Samhith Varma Yallamraju",
+    "approval_reference": "Project lead approval of all slot-09 sources given 2026-11-17 in the Claude Code orchestration session; see research/CORP-09.md"
+  },
+  "approved_page_map": [
+    {
+      "url": "https://www.microsoft.com/en-us",
+      "title": "Microsoft – AI, Cloud, Productivity, Computing, Gaming & Apps",
+      "local_file": "index.html"
+    },
+    {
+      "url": "https://www.microsoft.com/microsoft-365",
+      "title": "Microsoft 365 for Individuals: Subscription for Productivity Apps",
+      "local_file": "microsoft-365.html"
+    },
+    {
+      "url": "https://www.microsoft.com/en-us/windows/",
+      "title": "Experience the Windows difference with Windows 11 OS, Laptops, PCs & Apps | Microsoft Windows",
+      "local_file": "windows.html"
+    },
+    {
+      "url": "https://www.microsoft.com/surface",
+      "title": "Microsoft Surface: Laptops, Tablets & Computers | Microsoft Surface",
+      "local_file": "surface.html"
+    },
+    {
+      "url": "https://www.microsoft.com/en-us/store/b/sale?icid=DSM_TopNavDeals",
+      "title": "Microsoft Store - Deals on Laptops, Windows Computers & Other Sales",
+      "local_file": "sale.html"
+    },
+    {
+      "url": "https://www.microsoft.com/en-us/microsoft-365/outlook/email-and-calendar-software-microsoft-outlook",
+      "title": "Microsoft Outlook Personal Email and Calendar | Microsoft 365",
+      "local_file": "outlook.html"
+    },
+    {
+      "url": "https://www.microsoft.com/en-us/microsoft-365/onedrive/online-cloud-storage",
+      "title": "Personal File Sharing & Cloud Storage | Microsoft OneDrive",
+      "local_file": "onedrive.html"
+    },
+    {
+      "url": "https://www.microsoft.com/en-us/microsoft-teams/group-chat-software",
+      "title": "Video Conferencing, Meetings, Calling | Microsoft Teams",
+      "local_file": "teams.html"
+    },
+    {
+      "url": "https://www.microsoft.com/en-us/education",
+      "title": "Education Technology Solutions with AI | Microsoft for Education",
+      "local_file": "education.html"
+    },
+    {
+      "url": "https://www.microsoft.com/en-us/store/b/gift-cards?icid=DSM_All_GiftCards",
+      "title": "Gift Cards: XBOX Gift Cards for Gamers & More - Microsoft Store",
+      "local_file": "gift-cards.html"
+    },
+    {
+      "url": "https://www.microsoft.com/en-us/sitemap",
+      "title": "Microsoft.com Site Map",
+      "local_file": "sitemap.html"
+    }
+  ],
+  "protocol_snapshots": [
+    {
+      "path": "Rules.md",
+      "sha256": "04b1c3e38b76f2aff3aef869d67370bb4532cd8f9ab5e22ac8276f26cbb859bf"
+    },
+    {
+      "path": "MODEL_ALLOCATION.md",
+      "sha256": "7e9487530a6e80b35af48d0691951dafc2fffea39798c81a3c49203909148d30"
+    },
+    {
+      "path": "pipelines/open-source/config.json",
+      "sha256": "8c24eaf19a0efcde9dcf52301b49880c7f6330a2a407ae046d52a574085653e2"
+    },
+    {
+      "path": "pipelines/open-source/categories.json",
+      "sha256": "8180966e55daa24799e51106645e93fd5807dde470765ab8b3b38d3f922c867b"
+    },
+    {
+      "path": "pipelines/open-source/prompts/system.md",
+      "sha256": "61bc24a57de14bd6a662cd6b5f98d0cfc57bf47e187fc58a97831bf1f272b4ee"
+    },
+    {
+      "path": "pipelines/open-source/prompts/build.md",
+      "sha256": "6096ab8b698af7a99d8ddaf1534cc95f41844d1d00cdd1fce740123b3146ab6a"
+    },
+    {
+      "path": "pipelines/open-source/prompts/repair.md",
+      "sha256": "8a84e51995736607b3efa6f5b2d76e52692423c2c26b03409afb4afa3c6586d6"
+    },
+    {
+      "path": "pipelines/open-source/models.json",
+      "sha256": "582c3bcd03420379259f8896d72dd3a1be5cff7ecfb3700fe6c9302ae958c83a"
+    },
+    {
+      "path": "metadata/source-inventories/company.csv",
+      "sha256": "065394ce000e013f5420538f94a76589ab5109c2397b7281119c4c894b64d74d"
+    },
+    {
+      "path": "metadata/assignments.csv",
+      "sha256": "75aa44ee9046372a60e2b9bafe18f1e0dbb3f7c5bd80c29f49f4c060050bca06"
+    }
+  ],
+  "turns": [
+    {
+      "turn": 1,
+      "label": "plan",
+      "status_line": "CONTINUE",
+      "prose_chars": 2051,
+      "files_written": [],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 517,
+        "prompt_tokens": 4767,
+        "total_tokens": 5284,
+        "prompt_tokens_details": {
+          "cached_tokens": 2403
+        }
+      },
+      "at": "2026-11-18T01:41:07.331Z"
+    },
+    {
+      "turn": 2,
+      "label": "files-2",
+      "status_line": "CONTINUE",
+      "prose_chars": 82,
+      "files_written": [
+        "css/styles.css",
+        "js/main.js",
+        "index.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 610,
+        "prompt_tokens": 5435,
+        "total_tokens": 6045,
+        "prompt_tokens_details": {
+          "cached_tokens": 5283
+        }
+      },
+      "at": "2026-11-18T01:42:19.476Z"
+    },
+    {
+      "turn": 3,
+      "label": "files-3",
+      "status_line": "CONTINUE",
+      "prose_chars": 46,
+      "files_written": [
+        "404.html",
+        "microsoft-365.html",
+        "windows.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 1075,
+        "prompt_tokens": 6199,
+        "total_tokens": 7274,
+        "prompt_tokens_details": {
+          "cached_tokens": 6044
+        }
+      },
+      "at": "2026-11-18T01:44:22.967Z"
+    },
+    {
+      "turn": 4,
+      "label": "files-4",
+      "status_line": "CONTINUE",
+      "prose_chars": 46,
+      "files_written": [
+        "surface.html",
+        "sale.html",
+        "outlook.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 976,
+        "prompt_tokens": 7425,
+        "total_tokens": 8401,
+        "prompt_tokens_details": {
+          "cached_tokens": 7273
+        }
+      },
+      "at": "2026-11-18T01:46:10.192Z"
+    },
+    {
+      "turn": 5,
+      "label": "files-5",
+      "status_line": "CONTINUE",
+      "prose_chars": 46,
+      "files_written": [
+        "onedrive.html",
+        "teams.html",
+        "education.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 868,
+        "prompt_tokens": 3819,
+        "total_tokens": 4687,
+        "prompt_tokens_details": {
+          "cached_tokens": 560
+        }
+      },
+      "at": "2026-11-18T01:47:46.141Z"
+    },
+    {
+      "turn": 6,
+      "label": "files-6",
+      "status_line": "CONTINUE",
+      "prose_chars": 46,
+      "files_written": [
+        "gift-cards.html",
+        "sitemap.html",
+        "README.md"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 776,
+        "prompt_tokens": 4071,
+        "total_tokens": 4847,
+        "prompt_tokens_details": {
+          "cached_tokens": 563
+        }
+      },
+      "at": "2026-11-18T01:49:12.063Z"
+    },
+    {
+      "turn": 7,
+      "label": "files-7",
+      "status_line": "COMPLETE",
+      "prose_chars": 46,
+      "files_written": [
+        "fidelity-notes.md",
+        "component-inventory.json",
+        "generation-metadata.json"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 509,
+        "prompt_tokens": 3761,
+        "total_tokens": 4270,
+        "prompt_tokens_details": {
+          "cached_tokens": 563
+        }
+      },
+      "at": "2026-11-18T01:50:09.066Z"
+    }
+  ],
+  "rejected_files": [],
+  "qc_runs": [
+    {
+      "started_at": "2026-11-18T01:50:09.097Z",
+      "completed_at": "2026-11-18T01:50:12.730Z",
+      "exit_code": 1,
+      "executed": true,
+      "passed": false,
+      "outcome": "fail",
+      "failures": [
+        "no skip link to #main-content in 404.html",
+        "no data-section/data-component metadata in 404.html",
+        "no skip link to #main-content in education.html",
+        "no data-section/data-component metadata in education.html",
+        "no skip link to #main-content in gift-cards.html",
+        "no data-section/data-component metadata in gift-cards.html",
+        "no skip link to #main-content in index.html",
+        "no data-section/data-component metadata in index.html",
+        "no skip link to #main-content in microsoft-365.html",
+        "no data-section/data-component metadata in microsoft-365.html",
+        "no skip link to #main-content in onedrive.html",
+        "no data-section/data-component metadata in onedrive.html",
+        "no skip link to #main-content in outlook.html",
+        "no data-section/data-component metadata in outlook.html",
+        "no skip link to #main-content in sale.html",
+        "no data-section/data-component metadata in sale.html",
+        "no skip link to #main-content in sitemap.html",
+        "no data-section/data-component metadata in sitemap.html",
+        "no skip link to #main-content in surface.html",
+        "no data-section/data-component metadata in surface.html",
+        "no skip link to #main-content in teams.html",
+        "no data-section/data-component metadata in teams.html",
+        "no skip link to #main-content in windows.html",
+        "no data-section/data-component metadata in windows.html",
+        "axe color-contrast (serious) @1280 404.html: 4 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @1280 education.html: 4 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @1280 gift-cards.html: 4 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @1280 index.html: 4 node(s) e.g. a[href$=\"microsoft-365.html\"]",
+        "axe color-contrast (serious) @1280 microsoft-365.html: 4 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @1280 onedrive.html: 4 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @1280 outlook.html: 4 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @1280 sale.html: 4 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @1280 sitemap.html: 4 node(s) e.g. nav > ul > li:nth-child(1) > a[href=\"index.html\"]",
+        "axe target-size (serious) @1280 sitemap.html: 10 node(s) e.g. #main-content > ul > li:nth-child(1) > a[href=\"index.html\"]",
+        "axe color-contrast (serious) @1280 surface.html: 4 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @1280 teams.html: 4 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @1280 windows.html: 4 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @375 404.html: 4 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @375 education.html: 4 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @375 gift-cards.html: 4 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @375 index.html: 4 node(s) e.g. a[href$=\"microsoft-365.html\"]",
+        "axe color-contrast (serious) @375 microsoft-365.html: 4 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @375 onedrive.html: 4 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @375 outlook.html: 4 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @375 sale.html: 4 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @375 sitemap.html: 4 node(s) e.g. nav > ul > li:nth-child(1) > a[href=\"index.html\"]",
+        "axe target-size (serious) @375 sitemap.html: 10 node(s) e.g. #main-content > ul > li:nth-child(1) > a[href=\"index.html\"]",
+        "axe color-contrast (serious) @375 surface.html: 4 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @375 teams.html: 4 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @375 windows.html: 4 node(s) e.g. a[href=\"index.html\"]"
+      ],
+      "failure_count": 50,
+      "warnings": [],
+      "axe": {
+        "color-contrast": 96,
+        "target-size": 20
+      },
+      "pages": 12,
+      "files": 18,
+      "qc_tool_sha256": "e9be905d19e7181e30d8291bcb1511d4469bdc9e36c20c0efe21e2d3fcf54513",
+      "report": "qc-initial-2026-11-18T01-50-09-097Z.json",
+      "log": "qc-initial-2026-11-18T01-50-09-097Z.log",
+      "stdout_tail": "FAIL axe color-contrast (serious) @1280 gift-cards.html: 4 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @1280 index.html: 4 node(s) e.g. a[href$=\"microsoft-365.html\"]\nFAIL axe color-contrast (serious) @1280 microsoft-365.html: 4 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @1280 onedrive.html: 4 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @1280 outlook.html: 4 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @1280 sale.html: 4 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @1280 sitemap.html: 4 node(s) e.g. nav > ul > li:nth-child(1) > a[href=\"index.html\"]\nFAIL axe target-size (serious) @1280 sitemap.html: 10 node(s) e.g. #main-content > ul > li:nth-child(1) > a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @1280 surface.html: 4 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @1280 teams.html: 4 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @1280 windows.html: 4 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @375 404.html: 4 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @375 education.html: 4 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @375 gift-cards.html: 4 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @375 index.html: 4 node(s) e.g. a[href$=\"microsoft-365.html\"]\nFAIL axe color-contrast (serious) @375 microsoft-365.html: 4 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @375 onedrive.html: 4 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @375 outlook.html: 4 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @375 sale.html: 4 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @375 sitemap.html: 4 node(s) e.g. nav > ul > li:nth-child(1) > a[href=\"index.html\"]\nFAIL axe target-size (serious) @375 sitemap.html: 10 node(s) e.g. #main-content > ul > li:nth-child(1) > a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @375 surface.html: 4 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @375 teams.html: 4 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @375 windows.html: 4 node(s) e.g. a[href=\"index.html\"]\n",
+      "note": null
+    }
+  ],
+  "repair_rounds": [],
+  "retries": [],
+  "human_edits": [
+    {
+      "by": "orchestrator script",
+      "at": "2026-11-18T01:50:12.731Z",
+      "what": "Wrote the model's emitted files, normalized generation-metadata.json provenance fields, and set validation_summary from the recorded QC run. No site markup, style or script was authored or edited by hand."
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 35477,
+    "completion_tokens": 5331,
+    "total_tokens": 40808,
+    "requests": 7,
+    "retries": 0
+  },
+  "errors": [],
+  "outputs": {
+    "site": "company/open-source/CORP-09",
+    "transcript": "pipelines/open-source/runs/2026-11-18T01-40-06-125Z-build-CORP-09/transcript.json"
+  },
+  "delivered": {
+    "files": [
+      "404.html",
+      "README.md",
+      "component-inventory.json",
+      "css/styles.css",
+      "education.html",
+      "fidelity-notes.md",
+      "generation-metadata.json",
+      "gift-cards.html",
+      "index.html",
+      "js/main.js",
+      "microsoft-365.html",
+      "onedrive.html",
+      "outlook.html",
+      "sale.html",
+      "sitemap.html",
+      "surface.html",
+      "teams.html",
+      "windows.html"
+    ],
+    "file_count": 18,
+    "bytes": 15096,
+    "pages_in_map": 11,
+    "missing_required": [],
+    "model_claimed_complete": true,
+    "delivered_complete": true,
+    "turns_used": 7,
+    "turn_budget": 28
+  },
+  "initial_artifact": "pipelines/open-source/runs/2026-11-18T01-40-06-125Z-build-CORP-09/initial",
+  "provenance": {
+    "wrote": true,
+    "modelEmittedValidMetadata": true
+  },
+  "acceptance": "not accepted: a QC result is not acceptance, and interaction review plus human acceptance happen outside this script"
+}

@@ -1,0 +1,253 @@
+{
+  "components": [
+    {
+      "component": "site-header",
+      "selector": "header.site-header",
+      "pages": [
+        "index.html",
+        "fashion.html",
+        "fashion-shows.html",
+        "shopping.html",
+        "beauty.html",
+        "culture.html",
+        "fashion-trends.html",
+        "slideshow-best-dressed-stars.html",
+        "shopping-lookbook.html",
+        "article-faux-fur-trim-robe-coat-trend.html",
+        "business.html",
+        "404.html"
+      ],
+      "behaviors": [
+        "Sticky positioning at top of viewport",
+        "Contains logo and primary navigation"
+      ],
+      "keyboard_expectations": [
+        "Logo link focusable",
+        "Nav links focusable via Tab"
+      ],
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "component": "primary-nav",
+      "selector": "nav.primary-nav",
+      "pages": [
+        "index.html",
+        "fashion.html",
+        "fashion-shows.html",
+        "shopping.html",
+        "beauty.html",
+        "culture.html",
+        "fashion-trends.html",
+        "slideshow-best-dressed-stars.html",
+        "shopping-lookbook.html",
+        "article-faux-fur-trim-robe-coat-trend.html",
+        "business.html",
+        "404.html"
+      ],
+      "behaviors": [
+        "Horizontal on desktop, vertical on mobile",
+        "Toggle button expands/collapses menu on mobile",
+        "Escape key closes mobile menu and returns focus to toggle"
+      ],
+      "keyboard_expectations": [
+        "Tab through links",
+        "Escape closes mobile menu",
+        "Focus trapped within menu when open on mobile"
+      ],
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "component": "hero-banner",
+      "selector": "section.hero",
+      "pages": [
+        "index.html",
+        "fashion.html",
+        "fashion-shows.html",
+        "shopping.html",
+        "beauty.html",
+        "culture.html",
+        "fashion-trends.html",
+        "slideshow-best-dressed-stars.html",
+        "shopping-lookbook.html",
+        "article-faux-fur-trim-robe-coat-trend.html"
+      ],
+      "behaviors": [
+        "Large visual banner with overlay text",
+        "Contains headline and excerpt"
+      ],
+      "keyboard_expectations": [
+        "Links within hero focusable"
+      ],
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "component": "card",
+      "selector": "article.card",
+      "pages": [
+        "index.html",
+        "fashion.html",
+        "fashion-shows.html",
+        "shopping.html",
+        "beauty.html",
+        "culture.html",
+        "fashion-trends.html",
+        "slideshow-best-dressed-stars.html",
+        "shopping-lookbook.html",
+        "article-faux-fur-trim-robe-coat-trend.html",
+        "business.html"
+      ],
+      "behaviors": [
+        "Displays image, title, excerpt, and metadata",
+        "Hover effect with box-shadow"
+      ],
+      "keyboard_expectations": [
+        "Links within card focusable"
+      ],
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "component": "sidebar",
+      "selector": "aside.sidebar",
+      "pages": [
+        "fashion.html",
+        "shopping.html",
+        "beauty.html",
+        "culture.html",
+        "fashion-trends.html",
+        "business.html"
+      ],
+      "behaviors": [
+        "Displays trending topics or related links"
+      ],
+      "keyboard_expectations": [
+        "Links within sidebar focusable"
+      ],
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "component": "site-footer",
+      "selector": "footer.site-footer",
+      "pages": [
+        "index.html",
+        "fashion.html",
+        "fashion-shows.html",
+        "shopping.html",
+        "beauty.html",
+        "culture.html",
+        "fashion-trends.html",
+        "slideshow-best-dressed-stars.html",
+        "shopping-lookbook.html",
+        "article-faux-fur-trim-robe-coat-trend.html",
+        "business.html",
+        "404.html"
+      ],
+      "behaviors": [
+        "Multi-column layout with links and copyright"
+      ],
+      "keyboard_expectations": [
+        "Links within footer focusable"
+      ],
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "component": "newsletter-form",
+      "selector": "form.newsletter-form",
+      "pages": [
+        "index.html",
+        "404.html"
+      ],
+      "behaviors": [
+        "Email input with validation",
+        "Submit button triggers demo success state",
+        "Inline error messages"
+      ],
+      "keyboard_expectations": [
+        "Tab through input and button",
+        "Enter submits form",
+        "Focus moved to error message on invalid input"
+      ],
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "component": "slideshow-lightbox",
+      "selector": "div.slideshow-container",
+      "pages": [
+        "slideshow-best-dressed-stars.html"
+      ],
+      "behaviors": [
+        "Displays one slide at a time",
+        "Previous/Next buttons navigate slides",
+        "Keyboard arrows navigate slides",
+        "Escape key closes slideshow"
+      ],
+      "keyboard_expectations": [
+        "Tab to buttons",
+        "Arrow keys navigate slides",
+        "Escape closes slideshow"
+      ],
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "component": "filter-bar",
+      "selector": "form.filter-bar",
+      "pages": [
+        "fashion.html",
+        "shopping.html",
+        "beauty.html",
+        "culture.html",
+        "fashion-trends.html",
+        "business.html"
+      ],
+      "behaviors": [
+        "Search input filters content",
+        "Dropdown selects filter by category/sector"
+      ],
+      "keyboard_expectations": [
+        "Tab through input and select",
+        "Enter submits search"
+      ],
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "component": "article-template",
+      "selector": "article.article-template",
+      "pages": [
+        "article-faux-fur-trim-robe-coat-trend.html"
+      ],
+      "behaviors": [
+        "Displays full article content",
+        "Includes hero image, title, author, and related articles"
+      ],
+      "keyboard_expectations": [
+        "All links and images focusable"
+      ],
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "component": "error-page",
+      "selector": "section.error-page",
+      "pages": [
+        "404.html"
+      ],
+      "behaviors": [
+        "Displays 404 message",
+        "Includes search input and popular links"
+      ],
+      "keyboard_expectations": [
+        "Tab through search input and links"
+      ],
+      "status": "implemented",
+      "validation_state": "not-tested"
+    }
+  ]
+}

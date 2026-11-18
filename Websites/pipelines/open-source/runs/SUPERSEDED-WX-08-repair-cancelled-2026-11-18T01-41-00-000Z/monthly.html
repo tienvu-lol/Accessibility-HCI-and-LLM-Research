@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Monthly Forecast – WeatherWise</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header data-section="header" data-component="site-header">
+    <h1>WeatherWise</h1>
+  </header>
+
+  <nav data-section="navigation" data-component="primary-nav" aria-label="Primary">
+    <ul>
+      <li><a href="index.html" data-instance="home-link">Home</a></li>
+      <li><a href="today.html" data-instance="today-link">Today</a></li>
+      <li><a href="hourly.html" data-instance="hourly-link">Hourly</a></li>
+      <li><a href="tenday.html" data-instance="10day-link">10‑Day</a></li>
+      <li><a href="monthly.html" data-instance="monthly-link" aria-current="page">Monthly</a></li>
+      <li><a href="allergy.html" data-instance="allergy-link">Allergies</a></li>
+      <li><a href="radar.html" data-instance="radar-link">Radar</a></li>
+      <li><a href="news.html" data-instance="news-link">News</a></li>
+      <li><a href="login.html" data-instance="login-link">Sign In</a></li>
+    </ul>
+  </nav>
+
+  <main id="main-content" data-section="main">
+    <section data-component="location-search" aria-label="Location search">
+      <form id="location-search-form" class="form-group">
+        <label for="location-search-input">Search location</label>
+        <input type="search" id="location-search-input" placeholder="e.g., Ashburn, VA" aria-label="Location search">
+        <button type="submit">Search</button>
+      </form>
+    </section>
+
+    <section data-component="alert-filters" aria-label="Alert filters">
+      <form id="alert-filter-form">
+        <fieldset>
+          <legend>Alert types</legend>
+          <div class="alert-filters">
+            <label><input type="checkbox" value="severe" checked> Severe Weather</label>
+            <label><input type="checkbox" value="pollen"> Pollen</label>
+            <label><input type="checkbox" value="air"> Air Quality</label>
+            <label><input type="checkbox" value="cold"> Cold & Flu</label>
+          </div>
+          <button type="submit">Apply Filters</button>
+        </fieldset>
+      </form>
+    </section>
+
+    <section data-component="monthly-averages" aria-label="Monthly averages">
+      <h2>Monthly Averages for Ashburn, VA</h2>
+      <div class="card-grid">
+        <div class="card" data-component="month-card" data-instance="m1">
+          <h3>January</h3>
+          <p class="temp-high" data-f="42">42°F</p>
+          <p class="temp-low" data-f="26">26°F</p>
+          <p>Precip: 2.8"</p>
+        </div>
+        <div class="card" data-component="month-card" data-instance="m2">
+          <h3>February</h3>
+          <p class="temp-high" data-f="46">46°F</p>
+          <p class="temp-low" data-f="29">29°F</p>
+          <p>Precip: 2.5"</p>
+        </div>
+        <div class="card" data-component="month-card" data-instance="m3">
+          <h3>March</h3>
+          <p class="temp-high" data-f="55">55°F</p>
+          <p class="temp-low" data-f="36">36°F</p>
+          <p>Precip: 3.2"</p>
+        </div>
+        <div class="card" data-component="month-card" data-instance="m4">
+          <h3>April</h3>
+          <p class="temp-high" data-f="66">66°F</p>
+          <p class="temp-low" data-f="45">45°F</p>
+          <p>Precip: 3.0"</p>
+        </div>
+        <div class="card" data-component="month-card" data-instance="m5">
+          <h3>May</h3>
+          <p class="temp-high" data-f="75">75°F</p>
+          <p class="temp-low" data-f="55">55°F</p>
+          <p>Precip: 3.8"</p>
+        </div>
+        <div class="card" data-component="month-card" data-instance="m6">
+          <h3>June</h3>
+          <p class="temp-high" data-f="83">83°F</p>
+          <p class="temp-low" data-f="63">63°F</p>
+          <p>Precip: 3.5"</p>
+        </div>
+        <div class="card" data-component="month-card" data-instance="m7">
+          <h3>July</h3>
+          <p class="temp-high" data-f="87">87°F</p>
+          <p class="temp-low" data-f="68">68°F</p>
+          <p>Precip: 4.0"</p>
+        </div>
+        <div class="card" data-component="month-card" data-instance="m8">
+          <h3>August</h3>
+          <p class="temp-high" data-f="85">85°F</p>
+          <p class="temp-low" data-f="66">66°F</p>
+          <p>Precip: 3.8"</p>
+        </div>
+        <div class="card" data-component="month-card" data-instance="m9">
+          <h3>September</h3>
+          <p class="temp-high" data-f="79">79°F</p>
+          <p class="temp-low" data-f="61">61°F</p>
+          <p>Precip: 3.2"</p>
+        </div>
+        <div class="card" data-component="month-card" data-instance="m10">
+          <h3>October</h3>
+          <p class="temp-high" data-f="68">68°F</p>
+          <p class="temp-low" data-f="51">51°F</p>
+          <p>Precip: 3.0"</p>
+        </div>
+        <div class="card" data-component="month-card" data-instance="m11">
+          <h3>November</h3>
+          <p class="temp-high" data-f="57">57°F</p>
+          <p class="temp-low" data-f="41">41°F</p>
+          <p>Precip: 2.9"</p>
+        </div>
+        <div class="card" data-component="month-card" data-instance="m12">
+          <h3>December</h3>
+          <p class="temp-high" data-f="47">47°F</p>
+          <p class="temp-low" data-f="31">31°F</p>
+          <p>Precip: 3.1"</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer data-section="footer" data-component="site-footer">
+    <p>&copy; 2026 WeatherWise. All rights reserved.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

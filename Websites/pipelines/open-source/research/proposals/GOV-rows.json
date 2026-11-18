@@ -1,0 +1,471 @@
+{
+  "category": "government",
+  "prefix": "GOV",
+  "updated_at": "2026-11-17T06:15:06.064Z",
+  "slots_proposed": [
+    7,
+    8,
+    9,
+    10
+  ],
+  "slots_outstanding": [],
+  "approval_state": "unapproved: approval cells are left empty for the project lead",
+  "runs": [
+    "2026-11-16T21-31-49-701Z-research-GOV-07",
+    "2026-11-17T05-04-57-825Z-research-GOV-09",
+    "2026-11-17T05-13-23-711Z-research-GOV-10",
+    "2026-11-17T05-16-32-358Z-research-GOV-08",
+    "2026-11-17T05-53-52-900Z-research-GOV-09",
+    "2026-11-17T06-12-27-727Z-research-GOV-09"
+  ],
+  "rows": [
+    {
+      "source_id": "GOV-07",
+      "subcategory": "municipal government",
+      "source_name": "City of Austin",
+      "source_url": "https://www.austintexas.gov",
+      "verified_at": "2026-11-16",
+      "verification_method": "HTTP GET by the orchestrator",
+      "verification_result": "verified",
+      "evidence_reference": "pipelines/open-source/research/evidence/GOV-07-http-2026-11-16.json",
+      "source_pages": [
+        {
+          "url": "https://www.austintexas.gov/",
+          "title": "City of Austin | AustinTexas.gov",
+          "local_file": "index.html"
+        },
+        {
+          "url": "https://www.austintexas.gov/services",
+          "title": "All City Services | AustinTexas.gov",
+          "local_file": "services.html"
+        },
+        {
+          "url": "https://www.austintexas.gov/departments",
+          "title": "Departments | AustinTexas.gov",
+          "local_file": "departments.html"
+        },
+        {
+          "url": "https://www.austintexas.gov/news",
+          "title": "News | AustinTexas.gov",
+          "local_file": "news.html"
+        },
+        {
+          "url": "https://www.austintexas.gov/events",
+          "title": "Events | AustinTexas.gov",
+          "local_file": "events.html"
+        },
+        {
+          "url": "https://www.austintexas.gov/311",
+          "title": "Service Request",
+          "local_file": "service-request.html"
+        },
+        {
+          "url": "https://www.austintexas.gov/services/pay-utility-bill",
+          "title": "Pay a City of Austin utility bill | AustinTexas.gov",
+          "local_file": "pay-utility-bill.html"
+        },
+        {
+          "url": "https://www.austintexas.gov/housing",
+          "title": "Austin Housing | City of Austin | AustinTexas.gov",
+          "local_file": "housing.html"
+        },
+        {
+          "url": "https://www.austintexas.gov/parks/locations/park-directory",
+          "title": "Park Directory | Austin Parks and Recreation | AustinTexas.gov",
+          "local_file": "park-directory.html"
+        },
+        {
+          "url": "https://www.austintexas.gov/police",
+          "title": "Austin Police | City of Austin | AustinTexas.gov",
+          "local_file": "police.html"
+        },
+        {
+          "url": "https://www.austintexas.gov/development-services/types-permits",
+          "title": "Types of Permits | Austin Development Services | AustinTexas.gov",
+          "local_file": "permits.html"
+        },
+        {
+          "url": "https://www.austintexas.gov/animal-services",
+          "title": "Austin Animal Services | City of Austin | AustinTexas.gov",
+          "local_file": "animal-services.html"
+        }
+      ],
+      "key_regions": [
+        "Header",
+        "Navigation",
+        "Hero",
+        "Content Bands",
+        "Footer"
+      ],
+      "key_interactions": [
+        {
+          "name": "Service Search",
+          "evidence": "inferred",
+          "notes": "Common for this site type, not explicitly in nav_links"
+        },
+        {
+          "name": "Alerts",
+          "evidence": "inferred",
+          "notes": "News and events suggest alert functionality"
+        },
+        {
+          "name": "Calendar Navigation",
+          "evidence": "inferred",
+          "notes": "Events page has dates"
+        },
+        {
+          "name": "Report-a-Problem Form",
+          "evidence": "observed",
+          "notes": "311 link present"
+        },
+        {
+          "name": "Language Control",
+          "evidence": "inferred",
+          "notes": "[orchestrator: evidence value \"not observed\" is not permitted; recorded as inferred] Not found in markup"
+        }
+      ],
+      "complexity": "high",
+      "stack_clues": "unknown",
+      "limitations": "311 page redirects to external site",
+      "slot": 7,
+      "category": "government",
+      "model_group": "open-source",
+      "model_id": "unsloth/Qwen3.6-35B-A3B-GGUF",
+      "model_version": "Q4_K_M",
+      "approved_at": "",
+      "approved_by": "",
+      "approval_reference": "",
+      "researched_by": {
+        "model_id": "unsloth/Qwen3.6-35B-A3B-GGUF",
+        "slot": 7
+      },
+      "orchestrator_checks": {
+        "pages_proposed": 12,
+        "pages_without_successful_fetch": [
+          "https://www.austintexas.gov/311"
+        ],
+        "page_map_has_index": true,
+        "source_url_fetched_ok": true,
+        "meets_min_pages": true
+      }
+    },
+    {
+      "source_id": "GOV-08",
+      "subcategory": "state portal/agency",
+      "source_name": "Massachusetts State Government",
+      "source_url": "https://www.mass.gov/",
+      "verified_at": "2026-11-17",
+      "verification_method": "HTTP GET by the orchestrator",
+      "verification_result": "verified",
+      "evidence_reference": "pipelines/open-source/research/evidence/GOV-08-http-2026-11-17.json",
+      "source_pages": [
+        {
+          "url": "https://www.mass.gov/",
+          "title": "Mass.gov",
+          "local_file": "index.html"
+        },
+        {
+          "url": "https://www.mass.gov/topics/health-social-services",
+          "title": "Health & Social Services | Mass.gov",
+          "local_file": "health-social-services.html"
+        },
+        {
+          "url": "https://www.mass.gov/topics/families-children",
+          "title": "Families & Children | Mass.gov",
+          "local_file": "families-children.html"
+        },
+        {
+          "url": "https://www.mass.gov/topics/transportation",
+          "title": "Transportation | Mass.gov",
+          "local_file": "transportation.html"
+        },
+        {
+          "url": "https://www.mass.gov/how-to/apply-for-unemployment-insurance-benefits",
+          "title": "Apply for unemployment insurance benefits | Mass.gov",
+          "local_file": "apply-unemployment-benefits.html"
+        },
+        {
+          "url": "https://www.mass.gov/how-to/renew-your-vehicle-or-trailer-registration",
+          "title": "Renew your vehicle or trailer registration | Mass.gov",
+          "local_file": "renew-vehicle-registration.html"
+        },
+        {
+          "url": "https://www.mass.gov/search-court-dockets-calendars-and-case-information",
+          "title": "Search Court Dockets, Calendars and Case Information | Mass.gov",
+          "local_file": "search-court-dockets.html"
+        },
+        {
+          "url": "https://www.mass.gov/info-details/massachusetts-state-organizations-a-to-z",
+          "title": "Massachusetts State Organizations | Mass.gov",
+          "local_file": "state-organizations-a-to-z.html"
+        }
+      ],
+      "key_regions": [
+        "header",
+        "navigation and its structure",
+        "hero",
+        "content band",
+        "footer groups"
+      ],
+      "key_interactions": [
+        {
+          "name": "service/department search",
+          "evidence": "inferred",
+          "notes": "No search form observed in fetched markup."
+        },
+        {
+          "name": "alerts",
+          "evidence": "inferred",
+          "notes": "No alert banner observed in fetched markup."
+        },
+        {
+          "name": "calendar navigation",
+          "evidence": "inferred",
+          "notes": "No calendar widget observed in fetched markup."
+        },
+        {
+          "name": "report-a-problem form",
+          "evidence": "inferred",
+          "notes": "No report-a-problem form observed in fetched markup."
+        },
+        {
+          "name": "language control",
+          "evidence": "inferred",
+          "notes": "No language selector observed in fetched markup."
+        }
+      ],
+      "complexity": "medium",
+      "stack_clues": "unknown",
+      "limitations": "Verification date not provided in evidence; markup structure not inspected, so regions and interactions are inferred; all requested pages returned 2xx and were mapped.",
+      "slot": 8,
+      "category": "government",
+      "model_group": "open-source",
+      "model_id": "unsloth/NVIDIA-Nemotron-3-Super-120B-A12B-GGUF",
+      "model_version": "MXFP4_MOE",
+      "approved_at": "",
+      "approved_by": "",
+      "approval_reference": "",
+      "researched_by": {
+        "model_id": "unsloth/NVIDIA-Nemotron-3-Super-120B-A12B-GGUF",
+        "slot": 8
+      },
+      "orchestrator_checks": {
+        "pages_proposed": 8,
+        "pages_without_successful_fetch": [
+          "https://www.mass.gov/info-details/massachusetts-state-organizations-a-to-z"
+        ],
+        "page_map_has_index": true,
+        "source_url_fetched_ok": true,
+        "meets_min_pages": true
+      }
+    },
+    {
+      "source_id": "GOV-09",
+      "subcategory": "Government Services",
+      "source_name": "General Services Administration",
+      "source_url": "https://www.gsa.gov",
+      "verified_at": "2026-11-17",
+      "verification_method": "HTTP GET requests",
+      "verification_result": "verified",
+      "evidence_reference": "pipelines/open-source/research/evidence/GOV-09-http-2026-11-17.json",
+      "source_pages": [
+        {
+          "url": "https://www.gsa.gov",
+          "title": "Home | GSA",
+          "local_file": "index.html"
+        },
+        {
+          "url": "https://www.gsa.gov/buy-through-us",
+          "title": "Buy through us | GSA",
+          "local_file": "buy-through-us.html"
+        },
+        {
+          "url": "https://www.gsa.gov/buy-through-us/category-management",
+          "title": "Category management | GSA",
+          "local_file": "category-management.html"
+        },
+        {
+          "url": "https://www.gsa.gov/sell-to-government",
+          "title": "Sell to government | GSA",
+          "local_file": "sell-to-government.html"
+        },
+        {
+          "url": "https://www.gsa.gov/sell-to-government/step-1-learn-about-government-contracting",
+          "title": "Step 1: Learn about government contracting | GSA",
+          "local_file": "step-1-learn-about-government-contracting.html"
+        },
+        {
+          "url": "https://www.gsa.gov/sell-to-government/step-2-compete-for-a-contract",
+          "title": "Step 2: Compete for a contract | GSA",
+          "local_file": "step-2-compete-for-a-contract.html"
+        },
+        {
+          "url": "https://www.gsa.gov/buy-through-us/products-and-services",
+          "title": "Products and services | GSA",
+          "local_file": "products-and-services.html"
+        },
+        {
+          "url": "https://www.gsa.gov/buy-through-us/purchasing-programs",
+          "title": "Purchasing programs | GSA",
+          "local_file": "purchasing-programs.html"
+        },
+        {
+          "url": "https://www.gsa.gov/assisted-acquisition-services",
+          "title": "Assisted Acquisition Services | GSA",
+          "local_file": "assisted-acquisition-services.html"
+        }
+      ],
+      "key_regions": [
+        "Homepage",
+        "Buying and Selling Services",
+        "Assisted Acquisition Services"
+      ],
+      "key_interactions": [
+        {
+          "name": "Navigating through the website",
+          "evidence": "observed",
+          "notes": "The website has a clear navigation menu."
+        },
+        {
+          "name": "Accessing buying and selling services",
+          "evidence": "observed",
+          "notes": "The buying and selling services are accessible through the navigation menu."
+        },
+        {
+          "name": "Accessing assisted acquisition services",
+          "evidence": "observed",
+          "notes": "The assisted acquisition services are accessible through the navigation menu."
+        }
+      ],
+      "complexity": "medium",
+      "stack_clues": "HTML, CSS, JavaScript",
+      "limitations": "Lack of verification for page rendering, script execution, and user interaction.",
+      "slot": 9,
+      "category": "government",
+      "model_group": "open-source",
+      "model_id": "unsloth/Llama-3.3-70B-Instruct-GGUF",
+      "model_version": "Q8_0",
+      "approved_at": "",
+      "approved_by": "",
+      "approval_reference": "",
+      "researched_by": {
+        "model_id": "unsloth/Llama-3.3-70B-Instruct-GGUF",
+        "slot": 9
+      },
+      "orchestrator_checks": {
+        "pages_proposed": 9,
+        "pages_without_successful_fetch": [],
+        "page_map_has_index": true,
+        "source_url_fetched_ok": true,
+        "meets_min_pages": true
+      }
+    },
+    {
+      "source_id": "GOV-10",
+      "subcategory": "additional distinct municipal government (complexity-matched reserve)",
+      "source_name": "City of San Diego",
+      "source_url": "https://www.sandiego.gov/",
+      "verified_at": "2026-11-17",
+      "verification_method": "HTTP GET by the orchestrator",
+      "verification_result": "verified",
+      "evidence_reference": "pipelines/open-source/research/evidence/GOV-10-http-2026-11-17.json",
+      "source_pages": [
+        {
+          "url": "https://www.sandiego.gov/",
+          "title": "City of San Diego Official Website",
+          "local_file": "index.html"
+        },
+        {
+          "url": "https://www.sandiego.gov/parks-and-recreation",
+          "title": "Parks and Recreation | City of San Diego Official Website",
+          "local_file": "parks-and-recreation.html"
+        },
+        {
+          "url": "https://www.sandiego.gov/park-and-recreation/parks/permits",
+          "title": "Park Use Permits and Applications | City of San Diego Official Website",
+          "local_file": "park-permits.html"
+        },
+        {
+          "url": "https://www.sandiego.gov/street-div/services/street-resurfacing-pothole-repair",
+          "title": "Street Resurfacing and Pothole Repair | City of San Diego Official Website",
+          "local_file": "pothole-repair.html"
+        },
+        {
+          "url": "https://www.sandiego.gov/public-utilities/customer-support/pay-your-bill",
+          "title": "Pay Your Bill | City of San Diego Official Website",
+          "local_file": "pay-bill.html"
+        },
+        {
+          "url": "https://www.sandiego.gov/cpp/filing/complaint-form",
+          "title": "File a Complaint | City of San Diego Official Website",
+          "local_file": "complaint-form.html"
+        }
+      ],
+      "key_regions": [
+        "header",
+        "primary navigation",
+        "hero/banner",
+        "service listings",
+        "sidebar",
+        "footer"
+      ],
+      "key_interactions": [
+        {
+          "name": "search",
+          "evidence": "inferred",
+          "notes": "Search functionality typical but not visible in static markup."
+        },
+        {
+          "name": "alerts",
+          "evidence": "inferred",
+          "notes": "No explicit alerts link observed."
+        },
+        {
+          "name": "calendar navigation",
+          "evidence": "observed",
+          "notes": "Event Calendar link present."
+        },
+        {
+          "name": "report‑a‑problem form",
+          "evidence": "observed",
+          "notes": "Complaint form page available."
+        },
+        {
+          "name": "language control",
+          "evidence": "observed",
+          "notes": "Language Translation link present."
+        },
+        {
+          "name": "payment form",
+          "evidence": "observed",
+          "notes": "Pay Your Bill page provides payment interface."
+        }
+      ],
+      "complexity": "medium",
+      "stack_clues": "unknown",
+      "limitations": "[orchestrator-authored: the research model stated no limitations] All 6 mapped pages were confirmed by HTTP GET on 2026-11-17. All evidence is HTTP-fetched markup; no page was rendered, so appearance and script-driven behaviour are unverified, and interactions marked \"inferred\" were not observed in the markup.",
+      "slot": 10,
+      "category": "government",
+      "model_group": "open-source",
+      "model_id": "unsloth/gpt-oss-120b-GGUF",
+      "model_version": "F16",
+      "approved_at": "",
+      "approved_by": "",
+      "approval_reference": "",
+      "researched_by": {
+        "model_id": "unsloth/gpt-oss-120b-GGUF",
+        "slot": 10
+      },
+      "orchestrator_checks": {
+        "pages_proposed": 6,
+        "pages_without_successful_fetch": [],
+        "page_map_has_index": true,
+        "source_url_fetched_ok": true,
+        "meets_min_pages": true
+      }
+    }
+  ],
+  "orchestrator_corrections": [
+    "2026-11-17: verified_at reset to the HTTP evidence date; see CORRECTIONS-2026-11-17-dates.json"
+  ]
+}

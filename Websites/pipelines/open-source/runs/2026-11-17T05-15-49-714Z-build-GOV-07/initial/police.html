@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Austin Police | City of Oakhaven</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header class="site-header" data-component="site-header">
+        <div class="header-container">
+            <a href="index.html" class="site-logo">City of Oakhaven</a>
+            <div class="header-controls">
+                <button id="lang-toggle" class="btn" data-lang="en" aria-label="Switch language">Español</button>
+                <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
+                    <span aria-hidden="true">☰</span>
+                </button>
+            </div>
+        </div>
+        <nav id="primary-nav" class="primary-nav" data-component="primary-nav" aria-label="Primary Navigation">
+            <ul>
+                <li class="has-dropdown">
+                    <a href="services.html" aria-haspopup="true" aria-expanded="false">Services</a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li role="none"><a href="services.html" role="menuitem">All Services</a></li>
+                        <li role="none"><a href="pay-utility-bill.html" role="menuitem">Pay Bills</a></li>
+                        <li role="none"><a href="permits.html" role="menuitem">Permits</a></li>
+                    </ul>
+                </li>
+                <li><a href="departments.html">Departments</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="service-request.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <section class="hero" data-section="hero" data-component="hero">
+            <h1>Oakhaven Police Department</h1>
+            <p>Serving and protecting our community with integrity and respect.</p>
+            <a href="service-request.html" class="btn">Report a Crime</a>
+        </section>
+
+        <section class="content-bands" data-section="police-services" data-component="content-bands">
+            <h2 class="section-title">Services & Resources</h2>
+            <div class="card-grid">
+                <article class="card">
+                    <h3>Crime Reports</h3>
+                    <p>View recent crime reports and safety alerts for your neighborhood.</p>
+                    <a href="#">View Map</a>
+                </article>
+                <article class="card">
+                    <h3>Community Policing</h3>
+                    <p>Join neighborhood watch programs and community meetings.</p>
+                    <a href="#">Learn More</a>
+                </article>
+                <article class="card">
+                    <h3>Job Opportunities</h3>
+                    <p>Explore career opportunities with the Oakhaven Police Department.</p>
+                    <a href="#">Apply Now</a>
+                </article>
+                <article class="card">
+                    <h3>Victim Services</h3>
+                    <p>Support and resources for victims of crime.</p>
+                    <a href="#">Get Help</a>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer" data-component="site-footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <p>123 City Hall Blvd, Oakhaven, CA 90210</p>
+                <p>Phone: (555) 123-4567</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="departments.html">Departments</a></li>
+                    <li><a href="news.html">News</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Use</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

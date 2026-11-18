@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Menu – Xi'an Famous Foods</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="site-header" data-section="header" data-component="site-header">
+    <h1>Xi'an Famous Foods</h1>
+    <button class="nav-toggle" aria-controls="primary-nav" aria-expanded="false">☰</button>
+    <nav class="primary-nav" id="primary-nav" aria-label="Primary" data-component="primary-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html" aria-current="page">Menu</a></li>
+        <li><a href="our-story.html">Our Story</a></li>
+        <li><a href="locations.html">Locations</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content" data-section="main">
+    <section class="content-band" data-section="content-band" data-component="content-band">
+      <h1>Our Menu</h1>
+      <p>Explore our specialty dishes, filter by category, and make a reservation.</p>
+
+      <!-- Reservation callout -->
+      <section aria-labelledby="menu-reservation-heading" data-section="menu-reservation" data-component="reservation-form">
+        <h2 id="menu-reservation-heading">Make a Reservation</h2>
+        <form id="menu-reservation-form">
+          <div>
+            <label for="menu-res-date">Date</label>
+            <input type="date" id="menu-res-date" name="menu-res-date" required>
+          </div>
+          <div>
+            <label for="menu-res-time">Time</label>
+            <input type="time" id="menu-res-time" name="menu-res-time" required>
+          </div>
+          <div>
+            <label for="menu-res-party">Party size</label>
+            <input type="number" id="menu-res-party" name="menu-res-party" min="1" max="20" required>
+          </div>
+          <div class="button-group">
+            <button type="submit" class="btn">Submit</button>
+            <button type="reset" class="btn secondary">Reset</button>
+          </div>
+        </form>
+        <div id="menu-res-confirmation" aria-live="off"></div>
+      </section>
+
+      <!-- Filter controls -->
+      <fieldset data-section="filter-controls" data-component="filter-controls">
+        <legend>Filter by category</legend>
+        <label><input type="checkbox" class="filter-input" value="noodles"> Noodles</label>
+        <label><input type="checkbox" class="filter-input" value="rice"> Rice</label>
+        <label><input type="checkbox" class="filter-input" value="meat"> Meat</label>
+        <label><input type="checkbox" class="filter-input" value="vegetarian"> Vegetarian</label>
+        <label><input type="checkbox" class="filter-input" value="spicy"> Spicy</label>
+      </fieldset>
+      <p id="menu-count" data-section="menu-count" data-component="menu-count">12 items shown</p>
+
+      <!-- Menu cards -->
+      <section class="card-grid" data-section="menu-grid" data-component="card-grid">
+        <!-- Items will be populated by JS; placeholder structure -->
+        <article class="menu-card" data-component="menu-card" data-category="noodles,spicy">
+          <h3>Spicy Lamb Noodles</h3>
+          <p>Hand‑pulled noodles topped with cumin‑spiced lamb, chili oil, and fresh cilantro.</p>
+          <p><strong>$12.50</strong></p>
+        </article>
+        <article class="menu-card" data-component="menu-card" data-category="rice,vegetarian">
+          <h3>Steamed Rice Bowl</h3>
+          <p>Fragrant jasmine rice with seasonal vegetables and garlic soy sauce.</p>
+          <p><strong>$9.00</strong></p>
+        </article>
+        <article class="menu-card" data-component="menu-card" data-category="meat">
+          <h3>Braised Pork Belly</h3>
+          <p>Slow‑cooked pork belly in soy‑ginger broth, served with steamed buns.</p>
+          <p><strong>$14.00</strong></p>
+        </article>
+        <article class="menu-card" data-component="menu-card" data-category="noodles,vegetarian">
+          <h3>Cold Sesame Noodles</h3>
+          <p>Sesame‑tossed noodles with cucumber, carrots, and a hint of vinegar.</p>
+          <p><strong>$10.50</strong></p>
+        </article>
+        <article class="menu-card" data-component="menu-card" data-category="rice,spicy">
+          <h3>Spicy Beef Rice</h3>
+          <p>Ground beef with chili bean paste over rice, topped with scallions.</p>
+          <p><strong>$11.00</strong></p>
+        </article>
+        <article class="menu-card" data-component="menu-card" data-category="meat">
+          <h3>Cumin Lamb Burger</h3>
+          <p>Ground lamb patty with cumin, pickled vegetables, and herb aioli on a sesame bun.</p>
+          <p><strong>$13.00</strong></p>
+        </article>
+      </section>
+    </section>
+  </main>
+
+  <footer class="site-footer" data-section="footer" data-component="site-footer">
+    <p>&copy; 2026 Xi'an Famous Foods. All rights reserved.</p>
+    <ul class="social-list" data-component="social-links">
+      <li><a href="#" aria-label="Facebook">FB</a></li>
+      <li><a href="#" aria-label="Twitter">TW</a></li>
+      <li><a href="#" aria-label="Instagram">IG</a></li>
+    </ul>
+    <section data-component="newsletter-signup">
+      <h3>Stay updated</h3>
+      <form>
+        <label for="newsletter-email">Email address</label>
+        <input type="email" id="newsletter-email" placeholder="you@example.com" required>
+        <button type="submit" class="btn">Subscribe</button>
+      </form>
+      <p class="note">We’ll never share your address.</p>
+    </section>
+  </footer>
+
+  <!-- Age gate modal (same as index) -->
+  <div id="age-gate-backdrop" class="modal-backdrop" aria-hidden="true">
+    <div id="age-gate-modal" class="modal" aria-hidden="false" role="dialog" aria-modal="true">
+      <h2>Age verification</h2>
+      <p>Please confirm you are 18 years or older.</p>
+      <form id="age-gate-form">
+        <label for="age-gate-input">Date of birth (MM/DD/YYYY)</label>
+        <input type="text" id="age-gate-input" name="age-gate-input" placeholder="01/01/1990" required pattern="(0[1-9]|1[0-2])\/(0[1-9]|[12][0-9]|3[01])\/\d{4}">
+        <button type="submit" class="btn">Enter</button>
+      </form>
+      <p id="age-gate-message" style="color:#c00;display:none;"></p>
+      <button class="modal-close" aria-label="Close">×</button>
+    </div>
+  </div>
+
+  <!-- Toast container -->
+  <div id="toast" aria-live="off"></div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

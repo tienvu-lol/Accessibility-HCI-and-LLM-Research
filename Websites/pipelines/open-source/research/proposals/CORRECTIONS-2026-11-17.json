@@ -1,0 +1,74 @@
+{
+  "corrected_at": "2026-11-17T04:26:28.711Z",
+  "corrected_by": "orchestrator (Claude), disclosed post-hoc correction of Phase A metadata",
+  "reason": "Second corrective pass. (1) verified_at values the model fabricated or combined with the method string were reset to the HTTP evidence date. (2) complexity values were lowercased. (3) key_interactions entries carrying an evidence value other than observed/inferred were recorded as inferred, with the original value preserved in the entry notes. (4) source_pages local_file values given as nested paths were flattened to the schema-required flat kebab-case filenames. No source URL, page URL, title or verification_result was altered. Where the row had already been synced to the inventory CSV, the same correction was mirrored there using the pipeline CSV editor so all other rows keep their exact bytes.",
+  "corrections": [
+    {
+      "source_id": "GOV-07",
+      "fields": {
+        "key_interactions": [
+          "non-permitted evidence value(s)",
+          "inferred, original value preserved in notes"
+        ]
+      }
+    },
+    {
+      "source_id": "FASH-07",
+      "fields": {
+        "verified_at": [
+          "2024-05-22 HTTP GET by the orchestrator",
+          "2026-11-16"
+        ]
+      }
+    },
+    {
+      "source_id": "WX-07",
+      "fields": {
+        "verified_at": [
+          "2024-05-22",
+          "2026-11-16"
+        ]
+      }
+    },
+    {
+      "source_id": "NPO-07",
+      "fields": {
+        "verified_at": [
+          "2026-08-26",
+          "2026-11-17"
+        ]
+      }
+    },
+    {
+      "source_id": "CHUR-07",
+      "fields": {
+        "verified_at": [
+          "2024-05-22",
+          "2026-11-16"
+        ]
+      }
+    },
+    {
+      "source_id": "PORT-07",
+      "fields": {
+        "verified_at": [
+          "2024-05-22",
+          "2026-11-16"
+        ],
+        "source_pages": [
+          "13 nested path(s)",
+          "flattened to kebab-case filenames"
+        ]
+      }
+    },
+    {
+      "source_id": "REST-07",
+      "fields": {
+        "verified_at": [
+          "2024-05-20T12:00:00Z",
+          "2026-11-16"
+        ]
+      }
+    }
+  ]
+}

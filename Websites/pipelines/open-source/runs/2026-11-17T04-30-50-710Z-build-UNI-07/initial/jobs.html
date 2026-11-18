@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jobs | Lone Star University</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a href="index.html" class="site-logo" data-component="site-logo">Lone Star University</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
+        &#9776;
+      </button>
+      <nav class="primary-nav" id="primary-nav" role="navigation" aria-label="Primary">
+        <a href="about-texas.html">About</a>
+        <a href="academics-colleges-schools.html">Academics</a>
+        <a href="campus-life-housing-and-dining.html">Campus Life</a>
+        <a href="research.html">Research</a>
+        <a href="contact-us.html">Contact</a>
+        <a href="apply.html" class="apply-cta" data-component="apply-cta">Apply to Texas</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <div class="container">
+      <nav aria-label="Breadcrumb">
+        <ol>
+          <li><a href="index.html">Home</a></li>
+          <li aria-current="page">Jobs</li>
+        </ol>
+      </nav>
+
+      <section class="hero" data-section="hero">
+        <h1>Career Opportunities</h1>
+        <p>Join our team of educators, researchers, and staff.</p>
+      </section>
+
+      <section data-section="job-search" class="container">
+        <h2>Search Jobs</h2>
+        <form role="search" aria-label="Job search">
+          <label for="job-search-input" class="visually-hidden">Search jobs</label>
+          <input type="search" id="job-search-input" placeholder="Search by title or department...">
+          <button type="button" class="apply-cta">Search</button>
+        </form>
+      </section>
+
+      <section data-section="job-listings" class="container">
+        <h2>Current Openings</h2>
+        <div class="card-grid" data-component="card-grid" id="jobs-grid">
+          <!-- Populated by JS -->
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer" role="contentinfo" data-component="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h4>Contact Us</h4>
+        <p>123 University Ave<br>Austin, TX 78712<br>(512) 555-0100</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <a href="about-texas.html">About</a>
+        <a href="academics-colleges-schools.html">Academics</a>
+        <a href="apply.html">Apply</a>
+      </div>
+      <div>
+        <h4>Follow Us</h4>
+        <a href="#">Facebook</a>
+        <a href="#">Twitter</a>
+        <a href="#">Instagram</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    const jobs = [
+      { title: "Professor of Computer Science", dept: "College of Natural Sciences", url: "#" },
+      { title: "Research Assistant", dept: "Engineering", url: "#" },
+      { title: "Administrative Assistant", dept: "Office of the President", url: "#" },
+      { title: "Librarian", dept: "Library Services", url: "#" },
+      { title: "Campus Police Officer", dept: "Public Safety", url: "#" },
+      { title: "Dining Services Manager", dept: "Housing & Dining", url: "#" },
+      { title: "IT Support Specialist", dept: "Information Technology", url: "#" },
+      { title: "Marketing Coordinator", dept: "Communications", url: "#" },
+      { title: "Financial Aid Counselor", dept: "Financial Aid", url: "#" },
+      { title: "Student Affairs Director", dept: "Student Involvement", url: "#" }
+    ];
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const grid = document.getElementById('jobs-grid');
+      if (grid) {
+        jobs.forEach(job => {
+          const card = document.createElement('div');
+          card.className = 'card';
+          card.innerHTML = `<h3>${job.title}</h3><p>Department: ${job.dept}</p><a href="${job.url}">Apply Now</a>`;
+          grid.appendChild(card);
+        });
+      }
+    });
+  </script>
+</body>
+</html>

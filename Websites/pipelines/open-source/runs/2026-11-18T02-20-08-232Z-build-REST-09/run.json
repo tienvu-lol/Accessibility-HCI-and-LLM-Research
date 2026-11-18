@@ -1,0 +1,363 @@
+{
+  "run_id": "2026-11-18T02-20-08-232Z-build-REST-09",
+  "phase": "build",
+  "target": "REST-09",
+  "category": "restaurant",
+  "slot": 9,
+  "model_group": "open-source",
+  "model": {
+    "model_id": "unsloth/Llama-3.3-70B-Instruct-GGUF",
+    "model_version": "Q8_0",
+    "model_provider_or_runtime": "vt-arc-falcon-llamacpp (OpenAI-compatible chat completions at http://localhost:8082/v1)",
+    "weights_url": "https://huggingface.co/unsloth/Llama-3.3-70B-Instruct-GGUF",
+    "license": "llama3.3-community",
+    "open_weights": true,
+    "eligibility_note": "Open weights. Licence is the Llama 3.3 Community License Agreement (HF licence tag llama3.3), read 2026-11-17 by the orchestrator on the quant repo and the Meta Llama 3.3 model card. A custom community licence with acceptable-use and scale conditions, NOT OSI-approved: this slot is open-weight, not open-source. Quantisation Q8_0. Served self-hosted via llama.cpp on VT ARC Falcon over an SSH tunnel on localhost:8082; serving history, same model and quant: fal034:42003 (2026-11-17, twelve slot-09 research runs and one build), fal052:49161 (2026-11-17, current). max_tokens is 16000 for this slot, not the 32000 used by slots 07, 08 and 10: this server reports n_ctx 48128 per slot, so a 32000-token output cap left only about 16000 tokens for the prompt, and every slot-09 build failed at the correction stage, where the conversation carries the build history plus the QC failure list. Recorded as a deliberate per-slot difference in generation parameters.",
+    "params": {
+      "temperature": 0.3,
+      "max_tokens": 16000
+    }
+  },
+  "operator": "Samhith Varma Yallamraju",
+  "status": "completed",
+  "prepared_at": "2026-11-18T02:20:08.239Z",
+  "generation_started_at": "2026-11-18T02:20:08.239Z",
+  "generation_completed_at": "2026-11-18T02:31:23.791Z",
+  "tool_access": "chat-completions API only: no browsing, no shell, no filesystem. The orchestrator wrote every file and ran every check.",
+  "budget": {
+    "max_build_turns": 28,
+    "max_repair_rounds": 0,
+    "max_tokens_per_request": 16000,
+    "temperature": 0.3,
+    "history_exchanges_kept": 3
+  },
+  "approved_source": {
+    "source_name": "Firestone Walker Brewing Company",
+    "source_url": "https://www.firestonewalker.com/",
+    "verified_at": "2026-11-17",
+    "verification_method": "HTTP GET by the orchestrator",
+    "verification_result": "verified",
+    "evidence_reference": "pipelines/open-source/research/evidence/REST-09-http-2026-11-17.json",
+    "complexity": "medium",
+    "stack_clues": "unknown",
+    "limitations": "Some interactions are inferred due to lack of direct observation in the fetched markup",
+    "approved_at": "2026-11-17",
+    "approved_by": "Samhith Varma Yallamraju",
+    "approval_reference": "Project lead approval of all slot-09 sources given 2026-11-17 in the Claude Code orchestration session; see research/REST-09.md"
+  },
+  "approved_page_map": [
+    {
+      "url": "https://www.firestonewalker.com/",
+      "title": "Firestone Walker Brewing Company",
+      "local_file": "index.html"
+    },
+    {
+      "url": "https://www.firestonewalker.com/our-beers/",
+      "title": "Our Beers - Firestone Walker Brewing Company",
+      "local_file": "our-beers.html"
+    },
+    {
+      "url": "https://www.firestonewalker.com/about-us/",
+      "title": "About Us - Firestone Walker Brewing Company",
+      "local_file": "about-us.html"
+    },
+    {
+      "url": "https://www.firestonewalker.com/stories/",
+      "title": "Stories - Firestone Walker Brewing Company",
+      "local_file": "stories.html"
+    },
+    {
+      "url": "https://www.firestonewalker.com/paso-robles-taproom/",
+      "title": "Paso Robles - Firestone Walker Brewing Company",
+      "local_file": "paso-robles-taproom.html"
+    },
+    {
+      "url": "https://www.firestonewalker.com/find-beer/",
+      "title": "Find Beer - Firestone Walker Brewing Company",
+      "local_file": "find-beer.html"
+    },
+    {
+      "url": "https://www.firestonewalker.com/contact/",
+      "title": "Contact - Firestone Walker Brewing Company",
+      "local_file": "contact.html"
+    },
+    {
+      "url": "https://www.firestonewalker.com/accessibility/",
+      "title": "Accessibility Statement - Firestone Walker Brewing Company",
+      "local_file": "accessibility.html"
+    }
+  ],
+  "protocol_snapshots": [
+    {
+      "path": "Rules.md",
+      "sha256": "04b1c3e38b76f2aff3aef869d67370bb4532cd8f9ab5e22ac8276f26cbb859bf"
+    },
+    {
+      "path": "MODEL_ALLOCATION.md",
+      "sha256": "7e9487530a6e80b35af48d0691951dafc2fffea39798c81a3c49203909148d30"
+    },
+    {
+      "path": "pipelines/open-source/config.json",
+      "sha256": "8c24eaf19a0efcde9dcf52301b49880c7f6330a2a407ae046d52a574085653e2"
+    },
+    {
+      "path": "pipelines/open-source/categories.json",
+      "sha256": "8180966e55daa24799e51106645e93fd5807dde470765ab8b3b38d3f922c867b"
+    },
+    {
+      "path": "pipelines/open-source/prompts/system.md",
+      "sha256": "61bc24a57de14bd6a662cd6b5f98d0cfc57bf47e187fc58a97831bf1f272b4ee"
+    },
+    {
+      "path": "pipelines/open-source/prompts/build.md",
+      "sha256": "6096ab8b698af7a99d8ddaf1534cc95f41844d1d00cdd1fce740123b3146ab6a"
+    },
+    {
+      "path": "pipelines/open-source/prompts/repair.md",
+      "sha256": "8a84e51995736607b3efa6f5b2d76e52692423c2c26b03409afb4afa3c6586d6"
+    },
+    {
+      "path": "pipelines/open-source/models.json",
+      "sha256": "582c3bcd03420379259f8896d72dd3a1be5cff7ecfb3700fe6c9302ae958c83a"
+    },
+    {
+      "path": "metadata/source-inventories/restaurant.csv",
+      "sha256": "bd938ae12db4078a7be7c743bec45cfbe183d9a9e26c722b500c44b2dc7ce0c6"
+    },
+    {
+      "path": "metadata/assignments.csv",
+      "sha256": "75aa44ee9046372a60e2b9bafe18f1e0dbb3f7c5bd80c29f49f4c060050bca06"
+    }
+  ],
+  "turns": [
+    {
+      "turn": 1,
+      "label": "plan",
+      "status_line": "CONTINUE",
+      "prose_chars": 2662,
+      "files_written": [],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 636,
+        "prompt_tokens": 4573,
+        "total_tokens": 5209,
+        "prompt_tokens_details": {
+          "cached_tokens": 2403
+        }
+      },
+      "at": "2026-11-18T02:21:32.420Z"
+    },
+    {
+      "turn": 2,
+      "label": "files-2",
+      "status_line": "CONTINUE",
+      "prose_chars": 95,
+      "files_written": [
+        "css/styles.css",
+        "js/main.js",
+        "index.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 857,
+        "prompt_tokens": 5354,
+        "total_tokens": 6211,
+        "prompt_tokens_details": {
+          "cached_tokens": 5208
+        }
+      },
+      "at": "2026-11-18T02:23:19.354Z"
+    },
+    {
+      "turn": 3,
+      "label": "files-3",
+      "status_line": "CONTINUE",
+      "prose_chars": 79,
+      "files_written": [
+        "our-beers.html",
+        "about-us.html",
+        "404.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 1236,
+        "prompt_tokens": 6359,
+        "total_tokens": 7595,
+        "prompt_tokens_details": {
+          "cached_tokens": 6210
+        }
+      },
+      "at": "2026-11-18T02:25:45.681Z"
+    },
+    {
+      "turn": 4,
+      "label": "files-4",
+      "status_line": "CONTINUE",
+      "prose_chars": 79,
+      "files_written": [
+        "stories.html",
+        "paso-robles-taproom.html",
+        "find-beer.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 1257,
+        "prompt_tokens": 7741,
+        "total_tokens": 8998,
+        "prompt_tokens_details": {
+          "cached_tokens": 7594
+        }
+      },
+      "at": "2026-11-18T02:28:11.416Z"
+    },
+    {
+      "turn": 5,
+      "label": "files-5",
+      "status_line": "CONTINUE",
+      "prose_chars": 79,
+      "files_written": [
+        "contact.html",
+        "accessibility.html",
+        "README.md"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 1012,
+        "prompt_tokens": 4487,
+        "total_tokens": 5499,
+        "prompt_tokens_details": {
+          "cached_tokens": 563
+        }
+      },
+      "at": "2026-11-18T02:30:03.484Z"
+    },
+    {
+      "turn": 6,
+      "label": "files-6",
+      "status_line": "COMPLETE",
+      "prose_chars": 70,
+      "files_written": [
+        "fidelity-notes.md",
+        "component-inventory.json",
+        "generation-metadata.json"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 692,
+        "prompt_tokens": 4635,
+        "total_tokens": 5327,
+        "prompt_tokens_details": {
+          "cached_tokens": 563
+        }
+      },
+      "at": "2026-11-18T02:31:20.688Z"
+    }
+  ],
+  "rejected_files": [],
+  "qc_runs": [
+    {
+      "started_at": "2026-11-18T02:31:20.709Z",
+      "completed_at": "2026-11-18T02:31:23.790Z",
+      "exit_code": 1,
+      "executed": true,
+      "passed": false,
+      "outcome": "fail",
+      "failures": [
+        "no data-section/data-component metadata in 404.html",
+        "no data-section/data-component metadata in about-us.html",
+        "no data-section/data-component metadata in accessibility.html",
+        "no data-section/data-component metadata in contact.html",
+        "no data-section/data-component metadata in find-beer.html",
+        "no data-section/data-component metadata in index.html",
+        "no data-section/data-component metadata in our-beers.html",
+        "no data-section/data-component metadata in paso-robles-taproom.html",
+        "no data-section/data-component metadata in stories.html",
+        "horizontal scroll @375 404.html: 187px",
+        "horizontal scroll @375 about-us.html: 187px",
+        "horizontal scroll @375 accessibility.html: 187px",
+        "horizontal scroll @375 contact.html: 187px",
+        "horizontal scroll @375 find-beer.html: 187px",
+        "horizontal scroll @375 index.html: 187px",
+        "horizontal scroll @375 our-beers.html: 187px",
+        "horizontal scroll @375 paso-robles-taproom.html: 187px",
+        "horizontal scroll @375 stories.html: 187px"
+      ],
+      "failure_count": 18,
+      "warnings": [],
+      "axe": {},
+      "pages": 9,
+      "files": 15,
+      "qc_tool_sha256": "e9be905d19e7181e30d8291bcb1511d4469bdc9e36c20c0efe21e2d3fcf54513",
+      "report": "qc-initial-2026-11-18T02-31-20-709Z.json",
+      "log": "qc-initial-2026-11-18T02-31-20-709Z.log",
+      "stdout_tail": "QC /Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/restaurant/open-source/REST-09\npages=9 files=15 failures=18 warnings=0\nFAIL no data-section/data-component metadata in 404.html\nFAIL no data-section/data-component metadata in about-us.html\nFAIL no data-section/data-component metadata in accessibility.html\nFAIL no data-section/data-component metadata in contact.html\nFAIL no data-section/data-component metadata in find-beer.html\nFAIL no data-section/data-component metadata in index.html\nFAIL no data-section/data-component metadata in our-beers.html\nFAIL no data-section/data-component metadata in paso-robles-taproom.html\nFAIL no data-section/data-component metadata in stories.html\nFAIL horizontal scroll @375 404.html: 187px\nFAIL horizontal scroll @375 about-us.html: 187px\nFAIL horizontal scroll @375 accessibility.html: 187px\nFAIL horizontal scroll @375 contact.html: 187px\nFAIL horizontal scroll @375 find-beer.html: 187px\nFAIL horizontal scroll @375 index.html: 187px\nFAIL horizontal scroll @375 our-beers.html: 187px\nFAIL horizontal scroll @375 paso-robles-taproom.html: 187px\nFAIL horizontal scroll @375 stories.html: 187px\n",
+      "note": null
+    }
+  ],
+  "repair_rounds": [],
+  "retries": [],
+  "human_edits": [
+    {
+      "by": "orchestrator script",
+      "at": "2026-11-18T02:31:23.791Z",
+      "what": "Wrote the model's emitted files, normalized generation-metadata.json provenance fields, and set validation_summary from the recorded QC run. No site markup, style or script was authored or edited by hand."
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 33149,
+    "completion_tokens": 5690,
+    "total_tokens": 38839,
+    "requests": 6,
+    "retries": 0
+  },
+  "errors": [],
+  "outputs": {
+    "site": "restaurant/open-source/REST-09",
+    "transcript": "pipelines/open-source/runs/2026-11-18T02-20-08-232Z-build-REST-09/transcript.json"
+  },
+  "delivered": {
+    "files": [
+      "404.html",
+      "README.md",
+      "about-us.html",
+      "accessibility.html",
+      "component-inventory.json",
+      "contact.html",
+      "css/styles.css",
+      "fidelity-notes.md",
+      "find-beer.html",
+      "generation-metadata.json",
+      "index.html",
+      "js/main.js",
+      "our-beers.html",
+      "paso-robles-taproom.html",
+      "stories.html"
+    ],
+    "file_count": 15,
+    "bytes": 15537,
+    "pages_in_map": 8,
+    "missing_required": [],
+    "model_claimed_complete": true,
+    "delivered_complete": true,
+    "turns_used": 6,
+    "turn_budget": 28
+  },
+  "initial_artifact": "pipelines/open-source/runs/2026-11-18T02-20-08-232Z-build-REST-09/initial",
+  "provenance": {
+    "wrote": true,
+    "modelEmittedValidMetadata": true
+  },
+  "acceptance": "not accepted: a QC result is not acceptance, and interaction review plus human acceptance happen outside this script"
+}

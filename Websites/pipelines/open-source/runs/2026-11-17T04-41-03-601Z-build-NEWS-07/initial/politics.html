@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Politics News - The Metropolitan Herald</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header class="site-header" role="banner">
+        <div class="container header-inner">
+            <a href="index.html" class="logo">The Metropolitan Herald</a>
+            <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
+                <span class="sr-only">Toggle navigation</span>
+                ☰
+            </button>
+            <nav id="primary-nav" class="primary-nav" role="navigation" aria-label="Primary">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="nz.html" class="nav-link">NZ</a></li>
+                    <li><a href="world.html" class="nav-link">World</a></li>
+                    <li><a href="business.html" class="nav-link">Business</a></li>
+                    <li><a href="sport.html" class="nav-link">Sport</a></li>
+                    <li><a href="entertainment.html" class="nav-link">Entertainment</a></li>
+                    <li><a href="politics.html" class="nav-link" aria-current="page">Politics</a></li>
+                    <li><a href="crime.html" class="nav-link">Crime</a></li>
+                    <li><a href="election-2026.html" class="nav-link">Election 2026</a></li>
+                    <li><a href="video.html" class="nav-link">Video</a></li>
+                    <li><a href="opinion.html" class="nav-link">Opinion</a></li>
+                    <li><a href="lifestyle.html" class="nav-link">Lifestyle</a></li>
+                    <li><a href="weather.html" class="nav-link">Weather</a></li>
+                    <li><a href="premium.html" class="nav-link">Premium</a></li>
+                    <li><a href="podcasts.html" class="nav-link">Podcasts</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section class="hero-section" data-section="hero">
+            <div class="container hero-grid">
+                <article class="hero-main" data-component="hero-article">
+                    <img src="assets/hero-placeholder.svg" alt="Politics News featured image" class="hero-image">
+                    <div class="hero-content">
+                        <span class="article-category">Parliament</span>
+                        <h1 class="hero-title"><a href="#">Parliament Debates Education Reform</a></h1>
+                        <p class="hero-summary">New proposals for school funding spark heated debate in parliament.</p>
+                    </div>
+                </article>
+                <aside class="hero-side" data-component="hero-side-stories">
+                    <article class="side-story">
+                        <h3><a href="#">Opposition Calls for Vote of No Confidence</a></h3>
+                        <p class="article-meta">1 hour ago</p>
+                    </article>
+                    <article class="side-story">
+                        <h3><a href="#">Government Announces New Policy Initiative</a></h3>
+                        <p class="article-meta">3 hours ago</p>
+                    </article>
+                    <article class="side-story">
+                        <h3><a href="#">Local Elections: Key Races to Watch</a></h3>
+                        <p class="article-meta">5 hours ago</p>
+                    </article>
+                </aside>
+            </div>
+        </section>
+
+        <section class="container mt-lg" data-section="latest-news">
+            <div class="tabs" role="tablist" aria-label="Politics News feeds">
+                <button class="tab-btn" role="tab" aria-selected="true" aria-controls="politics-latest-panel" id="politics-latest-tab">Latest</button>
+                <button class="tab-btn" role="tab" aria-selected="false" aria-controls="politics-most-read-panel" id="politics-most-read-tab">Most Read</button>
+            </div>
+
+            <div id="politics-latest-panel" class="tab-panel is-active" role="tabpanel" aria-labelledby="politics-latest-tab">
+                <div class="article-grid" data-component="article-card-grid">
+                    <!-- Articles injected via JS -->
+                </div>
+            </div>
+
+            <div id="politics-most-read-panel" class="tab-panel" role="tabpanel" aria-labelledby="politics-most-read-tab">
+                <div class="article-grid" data-component="article-card-grid">
+                    <!-- Articles injected via JS -->
+                </div>
+            </div>
+        </section>
+
+        <aside class="container mt-lg" data-section="sidebar">
+            <div class="sidebar">
+                <h3>Trending in Politics</h3>
+                <ul class="trending-list" data-component="trending-list">
+                    <li class="trending-item">
+                        <span class="trending-number">1</span>
+                        <a href="#" class="trending-title">Parliament Debates Education Reform</a>
+                    </li>
+                    <li class="trending-item">
+                        <span class="trending-number">2</span>
+                        <a href="#" class="trending-title">Opposition Calls for Vote of No Confidence</a>
+                    </li>
+                    <li class="trending-item">
+                        <span class="trending-number">3</span>
+                        <a href="#" class="trending-title">Government Announces New Policy Initiative</a>
+                    </li>
+                    <li class="trending-item">
+                        <span class="trending-number">4</span>
+                        <a href="#" class="trending-title">Local Elections: Key Races to Watch</a>
+                    </li>
+                    <li class="trending-item">
+                        <span class="trending-number">5</span>
+                        <a href="#" class="trending-title">Prime Minister Addresses Nation</a>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>The Metropolitan Herald</h4>
+                    <p>Truth in Every Story. Your trusted source for local and global news.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Sections</h4>
+                    <ul class="footer-links">
+                        <li><a href="nz.html">NZ</a></li>
+                        <li><a href="world.html">World</a></li>
+                        <li><a href="business.html">Business</a></li>
+                        <li><a href="sport.html">Sport</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Advertise</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Terms of Use</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 The Metropolitan Herald. All rights reserved. This is a fictional replica for research purposes.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        const politicsArticles = [
+            { id: 1, category: "Parliament", title: "Parliament Debates Education Reform", excerpt: "New proposals for school funding spark heated debate in parliament.", date: "1 hour ago", isPremium: false },
+            { id: 2, category: "Politics", title: "Opposition Calls for Vote of No Confidence", excerpt: "The opposition party has called for a vote of no confidence in the government.", date: "3 hours ago", isPremium: false },
+            { id: 3, category: "Policy", title: "Government Announces New Policy Initiative", excerpt: "The government has announced a new policy initiative aimed at economic growth.", date: "5 hours ago", isPremium: false },
+            { id: 4, category: "Elections", title: "Local Elections: Key Races to Watch", excerpt: "A look at the key races in the upcoming local elections.", date: "6 hours ago", isPremium: false },
+            { id: 5, category: "Parliament", title: "Prime Minister Addresses Nation", excerpt: "The Prime Minister has addressed the nation on a critical issue.", date: "8 hours ago", isPremium: false },
+            { id: 6, category: "Politics", title: "Coalition Talks Continue", excerpt: "Talks between coalition partners continue as they negotiate policy agreements.", date: "10 hours ago", isPremium: false },
+            { id: 7, category: "Policy", title: "New Environmental Regulations Proposed", excerpt: "The government has proposed new environmental regulations to combat climate change.", date: "12 hours ago", isPremium: false },
+            { id: 8, category: "Elections", title: "Voter Registration Deadline Approaches", excerpt: "The deadline for voter registration is approaching for the upcoming election.", date: "14 hours ago", isPremium: false },
+            { id: 9, category: "Parliament", title: "Budget Debate Heats Up", excerpt: "The debate over the national budget has heated up in parliament.", date: "1 day ago", isPremium: false }
+        ];
+
+        const politicsMostRead = [
+            { id: 10, category: "Parliament", title: "Parliament Debates Education Reform", excerpt: "New proposals for school funding spark heated debate in parliament.", date: "2 hours ago", isPremium: false },
+            { id: 11, category: "Politics", title: "Opposition Calls for Vote of No Confidence", excerpt: "The opposition party has called for a vote of no confidence in the government.", date: "4 hours ago", isPremium: false },
+            { id: 12, category: "Policy", title: "Government Announces New Policy Initiative", excerpt: "The government has announced a new policy initiative aimed at economic growth.", date: "6 hours ago", isPremium: false },
+            { id: 13, category: "Elections", title: "Local Elections: Key Races to Watch", excerpt: "A look at the key races in the upcoming local elections.", date: "8 hours ago", isPremium: false },
+            { id: 14, category: "Parliament", title: "Prime Minister Addresses Nation", excerpt: "The Prime Minister has addressed the nation on a critical issue.", date: "10 hours ago", isPremium: false }
+        ];
+
+        function renderArticleCard(article) {
+            const premiumBadge = article.isPremium ? '<span class="premium-badge">Premium</span>' : '';
+            return `
+                <article class="article-card ${article.isPremium ? 'premium-overlay' : ''}">
+                    <img src="assets/article-placeholder.svg" alt="" class="article-image">
+                    <div class="article-body">
+                        ${premiumBadge}
+                        <span class="article-category">${article.category}</span>
+                        <h3 class="article-title"><a href="#">${article.title}</a></h3>
+                        <p class="article-excerpt">${article.excerpt}</p>
+                        <p class="article-meta">${article.date}</p>
+                    </div>
+                </article>
+            `;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const latestGrid = document.querySelector('#politics-latest-panel .article-grid');
+            const mostReadGrid = document.querySelector('#politics-most-read-panel .article-grid');
+
+            if (latestGrid) {
+                latestGrid.innerHTML = politicsArticles.map(renderArticleCard).join('');
+            }
+            if (mostReadGrid) {
+                mostReadGrid.innerHTML = politicsMostRead.map(renderArticleCard).join('');
+            }
+        });
+    </script>
+</body>
+</html>

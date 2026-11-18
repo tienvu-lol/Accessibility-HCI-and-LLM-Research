@@ -1,0 +1,244 @@
+{
+  "components": [
+    {
+      "name": "site-header",
+      "selector": "[data-component=\"site-header\"]",
+      "pages": [
+        "index.html",
+        "fashion.html",
+        "beauty.html",
+        "shopping.html",
+        "summer-lookbook-2026.html",
+        "money-diary.html",
+        "horoscope.html",
+        "podcasts.html",
+        "404.html"
+      ],
+      "behaviors": "Contains site logo and search form; remains fixed at top of page.",
+      "keyboard_expectations": "Tab focus moves into logo (if link) then into search input; Enter activates logo link or search submit.",
+      "real_status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "primary-nav",
+      "selector": "[data-component=\"primary-nav\"]",
+      "pages": [
+        "index.html",
+        "fashion.html",
+        "beauty.html",
+        "shopping.html",
+        "summer-lookbook-2026.html",
+        "money-diary.html",
+        "horoscope.html",
+        "podcasts.html",
+        "404.html"
+      ],
+      "behaviors": "Horizontal list of navigation links; indicates current page via aria-current=\"page\".",
+      "keyboard_expectations": "Tab focus moves through each link; Enter activates link.",
+      "real_status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "search-form",
+      "selector": "[data-component=\"search-form\"]",
+      "pages": [
+        "index.html",
+        "fashion.html",
+        "beauty.html",
+        "shopping.html",
+        "summer-lookbook-2026.html",
+        "money-diary.html",
+        "horoscope.html",
+        "podcasts.html",
+        "404.html"
+      ],
+      "behaviors": "Accepts a search term and filters the relevant dataset (fashionArticles, beautyArticles, shoppingItems, or combined) showing results in‑place; displays empty state or message when no matches.",
+      "keyboard_expectations": "Tab to input, type, Tab to submit button, Enter to submit; Escape clears input (not implemented but allowed).",
+      "real_status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "hero-band",
+      "selector": "[data-component=\"hero-band\"]",
+      "pages": [
+        "index.html",
+        "fashion.html",
+        "beauty.html",
+        "shopping.html",
+        "summer-lookbook-2026.html",
+        "money-diary.html",
+        "horoscope.html",
+        "podcasts.html"
+      ],
+      "behaviors": "Displays a prominent image at the top of the main content area.",
+      "keyboard_expectations": "None (image is decorative; if made focusable would require tabindex).",
+      "real_status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "content-band",
+      "selector": "[data-component=\"content-band\"]",
+      "pages": [
+        "index.html",
+        "fashion.html",
+        "beauty.html",
+        "shopping.html",
+        "summer-lookbook-2026.html",
+        "money-diary.html",
+        "horoscope.html",
+        "podcasts.html",
+        "404.html"
+      ],
+      "behaviors": "Wrapper for primary content sections; provides consistent spacing and heading structure.",
+      "keyboard_expectations": "None structural; inner elements follow normal tab order.",
+      "real_status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "card-grid",
+      "selector": "[data-component=\"card-grid\"]",
+      "pages": [
+        "index.html",
+        "fashion.html",
+        "beauty.html",
+        "shopping.html",
+        "money-diary.html",
+        "horoscope.html",
+        "podcasts.html"
+      ],
+      "behaviors": "Responsive grid displaying cards (articles, products, diary entries, etc.). Each card contains an image placeholder, title, and short description.",
+      "keyboard_expectations": "Tab focus moves into each card; links inside cards follow normal tab order.",
+      "real_status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "sidebar",
+      "selector": "[data-component=\"sidebar\"]",
+      "pages": [
+        "fashion.html",
+        "beauty.html",
+        "shopping.html",
+        "money-diary.html",
+        "horoscope.html",
+        "podcasts.html"
+      ],
+      "behaviors": "Vertical aside containing lists of links (categories, popular, trending, etc.).",
+      "keyboard_expectations": "Tab focus moves into the sidebar; links inside follow normal tab order.",
+      "real_status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "modal-backdrop",
+      "selector": "[data-component=\"modal-backdrop\"]",
+      "pages": [
+        "summer-lookbook-2026.html"
+      ],
+      "behaviors": "Full‑screen backdrop that appears when an image in the lookbook carousel is clicked; traps focus within the modal.",
+      "keyboard_expectations": "Escape closes modal and returns focus to the triggering image; Tab moves focus within modal content.",
+      "real_status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "modal-content",
+      "selector": "[data-component=\"modal-content\"]",
+      "pages": [
+        "summer-lookbook-2026.html"
+      ],
+      "behaviors": "Contains the enlarged image and close button; centered over backdrop.",
+      "keyboard_expectations": "Tab focus moves to close button; Enter activates close.",
+      "real_status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "modal-close",
+      "selector": "[data-component=\"modal-close\"]",
+      "pages": [
+        "summer-lookbook-2026.html"
+      ],
+      "behaviors": "Button that closes the modal lightbox.",
+      "keyboard_expectations": "Tab focus reachable; Enter or Space activates close.",
+      "real_status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "newsletter-form",
+      "selector": "[data-component=\"newsletter-form\"]",
+      "pages": [
+        "index.html",
+        "fashion.html",
+        "beauty.html",
+        "shopping.html"
+      ],
+      "behaviors": "Email input and submit button; on submit shows a toast confirmation and clears the input (no actual submission).",
+      "keyboard_expectations": "Tab to input, type, Tab to submit, Enter to submit.",
+      "real_status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "toast",
+      "selector": "[data-component=\"toast\"]",
+      "pages": [
+        "index.html",
+        "fashion.html",
+        "beauty.html",
+        "shopping.html"
+      ],
+      "behaviors": "Live region that appears temporarily to confirm newsletter submission.",
+      "keyboard_expectations": "None (passive live region).",
+      "real_status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "lookbook-carousel",
+      "selector": "[data-component=\"lookbook-carousel\"]",
+      "pages": [
+        "summer-lookbook-2026.html"
+      ],
+      "behaviors": "Displays a series of images; user can navigate via previous/next buttons or keyboard arrows.",
+      "keyboard_expectations": "When carousel has focus, ArrowLeft/Right change slide; also works when modal is open (arrows change zoomed image).",
+      "real_status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "carousel-prev",
+      "selector": "[data-component=\"carousel-prev\"]",
+      "pages": [
+        "summer-lookbook-2026.html"
+      ],
+      "behaviors": "Button to navigate to the previous slide in the carousel.",
+      "keyboard_expectations": "Tab focus reachable; Enter or Space activates previous slide.",
+      "real_status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "carousel-next",
+      "selector": "[data-component=\"carousel-next\"]",
+      "pages": [
+        "summer-lookbook-2026.html"
+      ],
+      "behaviors": "Button to navigate to the next slide in the carousel.",
+      "keyboard_expectations": "Tab focus reachable; Enter or Space activates next slide.",
+      "real_status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "site-footer",
+      "selector": "[data-component=\"site-footer\"]",
+      "pages": [
+        "index.html",
+        "fashion.html",
+        "beauty.html",
+        "shopping.html",
+        "summer-lookbook-2026.html",
+        "money-diary.html",
+        "horoscope.html",
+        "podcasts.html",
+        "404.html"
+      ],
+      "behaviors": "Contains copyright notice and simple text links.",
+      "keyboard_expectations": "Tab focus moves through each link; Enter activates link.",
+      "real_status": "implemented",
+      "validation_state": "not-tested"
+    }
+  ]
+}

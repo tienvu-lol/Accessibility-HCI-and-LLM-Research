@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Find a Location</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link" id="skip-link">Skip to main content</a>
+  <header>
+    <h1>Find a Location</h1>
+  </header>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="find-a-location.html">Find a Location</a>
+  </nav>
+  <main id="main-content">
+    <h2>Find a Location</h2>
+    <form>
+      <label for="location-name">Location Name:</label>
+      <input type="text" id="location-name" name="location-name"><br><br>
+      <label for="city">City:</label>
+      <input type="text" id="city" name="city"><br><br>
+      <label for="state">State:</label>
+      <select id="state" name="state">
+        <option value="">Select a state</option>
+        <option value="CA">California</option>
+        <option value="NY">New York</option>
+        <option value="FL">Florida</option>
+      </select><br><br>
+      <input type="submit" value="Search">
+    </form>
+    <h3>Search Results:</h3>
+    <ul>
+      <li>Location 1 - California</li>
+      <li>Location 2 - New York</li>
+      <li>Location 3 - Florida</li>
+    </ul>
+  </main>
+  <footer>
+    <p>&copy; 2024 Healthcare Website</p>
+  </footer>
+  <script src="js/main.js"></script>
+</body>
+</html>

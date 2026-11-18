@@ -1,0 +1,310 @@
+{
+  "components": [
+    {
+      "component": "site-header",
+      "selector": ".site-header",
+      "pages": [
+        "index.html",
+        "404.html",
+        "menu.html",
+        "our-story.html",
+        "locations.html",
+        "contact.html",
+        "order-acknowledgment.html",
+        "press.html",
+        "accessibility.html"
+      ],
+      "behaviors": "Contains site logo (text), skip link, and navigation toggle button.",
+      "keyboardExpectations": "Toggle button operable with Enter or Space; ESC closes mobile navigation and returns focus to toggle.",
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "component": "primary-nav",
+      "selector": ".primary-nav",
+      "pages": [
+        "index.html",
+        "404.html",
+        "menu.html",
+        "our-story.html",
+        "locations.html",
+        "contact.html",
+        "order-acknowledgment.html",
+        "press.html",
+        "accessibility.html"
+      ],
+      "behaviors": "Horizontal list of navigation links; collapses to vertical drawer on narrow viewport.",
+      "keyboardExpectations": "Tab moves focus between links; Enter activates link; Arrow keys move focus within list; ESC closes drawer and returns focus to toggle.",
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "component": "hero",
+      "selector": ".hero",
+      "pages": [
+        "index.html"
+      ],
+      "behaviors": "Full‑width banner with tagline and primary call‑to‑action buttons.",
+      "keyboardExpectations": "Buttons operable with Enter or Space.",
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "component": "content-band",
+      "selector": ".content-band",
+      "pages": [
+        "menu.html",
+        "our-story.html",
+        "locations.html",
+        "contact.html",
+        "order-acknowledgment.html",
+        "press.html",
+        "accessibility.html"
+      ],
+      "behaviors": "Generic section wrapper providing consistent padding and max‑width for main content.",
+      "keyboardExpectations": "None specific; inherits tab order of contained elements.",
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "component": "card-grid",
+      "selector": ".card-grid",
+      "pages": [
+        "menu.html",
+        "locations.html",
+        "press.html"
+      ],
+      "behaviors": "Responsive grid layout for presenting cards (menu items, locations, press articles).",
+      "keyboardExpectations": "None specific; inherits tab order of card elements.",
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "component": "menu-card",
+      "selector": ".menu-card",
+      "pages": [
+        "menu.html"
+      ],
+      "behaviors": "Displays a single menu item with name, description, price, and dietary tags.",
+      "keyboardExpectations": "None (non‑interactive display).",
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "component": "location-card",
+      "selector": ".location-card",
+      "pages": [
+        "locations.html"
+      ],
+      "behaviors": "Shows location name, address, phone, and hours badge.",
+      "keyboardExpectations": "None (non‑interactive display).",
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "component": "press-card",
+      "selector": ".press-card",
+      "pages": [
+        "press.html"
+      ],
+      "behaviors": "Presents a press outlet name, date, and excerpt.",
+      "keyboardExpectations": "None (non‑interactive display).",
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "component": "contact-form",
+      "selector": "#contact-form",
+      "pages": [
+        "contact.html"
+      ],
+      "behaviors": "Collects name, email, phone, subject, and message; shows toast confirmation on submit.",
+      "keyboardExpectations": "Tab moves between fields; Enter on a focused submit button submits the form; Escape does not submit (may reset if bound).",
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "component": "reservation-form",
+      "selector": "#reservation-form, #menu-reservation-form",
+      "pages": [
+        "index.html",
+        "menu.html"
+      ],
+      "behaviors": "Collects reservation date, time, party size, and optional special requests; shows toast confirmation on submit.",
+      "keyboardExpectations": "Tab moves between fields; Enter on submit button submits; Escape does not submit.",
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "component": "newsletter-signup",
+      "selector": "[data-component=\"newsletter-signup\"] form",
+      "pages": [
+        "index.html",
+        "404.html",
+        "menu.html",
+        "our-story.html",
+        "locations.html",
+        "contact.html",
+        "order-acknowledgment.html",
+        "press.html",
+        "accessibility.html"
+      ],
+      "behaviors": "Simple email input with pattern validation; shows thank‑you message on submit.",
+      "keyboardExpectations": "Tab to input; Enter on submit button submits.",
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "component": "age-gate-modal",
+      "selector": "#age-gate-modal",
+      "pages": [
+        "index.html",
+        "404.html",
+        "menu.html",
+        "our-story.html",
+        "locations.html",
+        "contact.html",
+        "order-acknowledgment.html",
+        "press.html",
+        "accessibility.html"
+      ],
+      "behaviors": "Modal dialog requesting date of birth to verify age ≥ 18; stores pass in sessionStorage.",
+      "keyboardExpectations": "Tab to input; Enter on submit button validates; ESC closes modal and returns focus to the page body.",
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "component": "filter-controls",
+      "selector": "[data-component=\"filter-controls\"]",
+      "pages": [
+        "menu.html"
+      ],
+      "behaviors": "Set of checkboxes that filter the displayed menu cards by category in real time.",
+      "keyboardExpectations": "Tab moves between checkboxes; Space toggles checkbox state.",
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "component": "site-footer",
+      "selector": ".site-footer",
+      "pages": [
+        "index.html",
+        "404.html",
+        "menu.html",
+        "our-story.html",
+        "locations.html",
+        "contact.html",
+        "order-acknowledgment.html",
+        "press.html",
+        "accessibility.html"
+      ],
+      "behaviors": "Contains copyright text, placeholder social‑media links, and newsletter signup.",
+      "keyboardExpectations": "Tab moves through links and form; Enter activates links or submits form.",
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "component": "social-links",
+      "selector": ".social-list a",
+      "pages": [
+        "index.html",
+        "404.html",
+        "menu.html",
+        "our-story.html",
+        "locations.html",
+        "contact.html",
+        "order-acknowledgment.html",
+        "press.html",
+        "accessibility.html"
+      ],
+      "behaviors": "Placeholder icons representing social‑media profiles (Facebook, Twitter, Instagram).",
+      "keyboardExpectations": "Tab focuses each link; Enter activates (navigates to placeholder href=\"#\").",
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "component": "breadcrumb",
+      "selector": "[data-component=\"breadcrumb\"]",
+      "pages": [
+        "our-story.html",
+        "locations.html",
+        "contact.html",
+        "order-acknowledgment.html",
+        "press.html",
+        "accessibility.html"
+      ],
+      "behaviors": "Shows hierarchical path from home to current page.",
+      "keyboardExpectations": "Tab focuses each link; Enter activates link.",
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "component": "modal-backdrop",
+      "selector": ".modal-backdrop",
+      "pages": [
+        "index.html",
+        "404.html",
+        "menu.html",
+        "our-story.html",
+        "locations.html",
+        "contact.html",
+        "order-acknowledgment.html",
+        "press.html",
+        "accessibility.html"
+      ],
+      "behaviors": "Dark overlay that blocks interaction with page content when a modal is open.",
+      "keyboardExpectations": "None; works in tandem with modal.",
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "component": "modal",
+      "selector": ".modal",
+      "pages": [
+        "index.html",
+        "404.html",
+        "menu.html",
+        "our-story.html",
+        "locations.html",
+        "contact.html",
+        "order-acknowledgment.html",
+        "press.html",
+        "accessibility.html"
+      ],
+      "behaviors": "Dialog container for age gate; centered over backdrop.",
+      "keyboardExpectations": "Tab traps focus inside modal; ESC closes modal and returns focus to trigger (page load -> body).",
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "component": "toast",
+      "selector": "[aria-live]",
+      "pages": [
+        "index.html",
+        "404.html",
+        "menu.html",
+        "our-story.html",
+        "locations.html",
+        "contact.html",
+        "order-acknowledgment.html",
+        "press.html",
+        "accessibility.html"
+      ],
+      "behaviors": "Live region that announces temporary messages (e.g., reservation confirmation).",
+      "keyboardExpectations": "None; intended for screen‑reader announcement only.",
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "component": "order-summary",
+      "selector": "[data-component=\"order-summary\"]",
+      "pages": [
+        "order-acknowledgment.html"
+      ],
+      "behaviors": "Displays details of a simulated order: items, totals, pickup info.",
+      "keyboardExpectations": "None specific; inherits tab order of any interactive elements inside (none).",
+      "status": "implemented",
+      "validationState": "not-tested"
+    }
+  ]
+}

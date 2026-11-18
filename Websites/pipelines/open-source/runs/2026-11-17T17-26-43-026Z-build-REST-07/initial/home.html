@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home | Harvest Table</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="site-header" data-component="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">Harvest Table</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav-menu">
+        Menu
+      </button>
+      <nav class="primary-nav" id="primary-nav-menu" data-component="primary-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="locations.html">Locations</a></li>
+          <li><a href="gift-cards.html">Gift Cards</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="support.html">Support</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" data-section="home-content">
+    <section class="hero">
+      <div class="container">
+        <h1>Welcome to Harvest Table</h1>
+        <p>Your neighborhood spot for fresh, wholesome meals. Whether you're grabbing a quick lunch or settling in for dinner, we have something for everyone.</p>
+        <a href="menu.html" class="btn">Explore Our Menu</a>
+      </div>
+    </section>
+
+    <section class="container" data-section="promotions">
+      <h2>Current Promotions</h2>
+      <div class="card-grid" data-component="card-grid">
+        <article class="card">
+          <div class="card-img-placeholder" role="img" aria-label="Lunch Special">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Lunch Combo</h3>
+            <p>Get a sandwich, side, and drink for just $12.99. Available 11am - 2pm.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-img-placeholder" role="img" aria-label="Family Feast">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Family Feast</h3>
+            <p>Feed the whole family with our family-sized bowls and platters. Order online for pickup.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="container" data-section="reservation-simulation">
+      <h2>Reserve a Table</h2>
+      <p>Planning a visit? Reserve your table online. (Simulation)</p>
+      <form id="reservation-form" data-component="reservation-form">
+        <div class="form-group">
+          <label for="reservation-name">Name</label>
+          <input type="text" id="reservation-name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="reservation-date">Date</label>
+          <input type="date" id="reservation-date" name="date" required>
+        </div>
+        <div class="form-group">
+          <label for="reservation-time">Time</label>
+          <input type="time" id="reservation-time" name="time" required>
+        </div>
+        <div class="form-group">
+          <label for="reservation-guests">Number of Guests</label>
+          <input type="number" id="reservation-guests" name="guests" min="1" max="10" required>
+        </div>
+        <button type="submit" class="btn">Reserve Now</button>
+        <div id="reservation-result" role="status" aria-live="polite"></div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer" data-component="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-section">
+        <h3>Harvest Table</h3>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="values.html">Our Values</a></li>
+          <li><a href="press.html">Press</a></li>
+          <li><a href="community.html">Community</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Customer Care</h3>
+        <ul>
+          <li><a href="support.html">Support</a></li>
+          <li><a href="gift-cards.html">Gift Cards</a></li>
+          <li><a href="locations.html">Locations</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Newsletter</h3>
+        <form id="newsletter-form" data-component="newsletter-signup">
+          <label for="newsletter-email">Subscribe to our newsletter</label>
+          <input type="email" id="newsletter-email" name="email" required aria-describedby="newsletter-result">
+          <button type="submit" class="btn">Subscribe</button>
+          <div id="newsletter-result" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+    </div>
+    <div class="container" style="margin-top: var(--spacing-md); text-align: center;">
+      <p>&copy; 2026 Harvest Table. All rights reserved. (Fictional Replica)</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

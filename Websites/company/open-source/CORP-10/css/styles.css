@@ -1,0 +1,124 @@
+/* Global reset & box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Typography */
+html {
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+  color: #222;
+}
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 0.5rem;
+}
+
+/* Layout */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+header, footer {
+  background: #004080;
+  color: #fff;
+  padding: 1rem;
+}
+nav {
+  display: flex;
+  gap: 1rem;
+}
+nav a {
+  color: #fff;               /* ensure sufficient contrast on dark header */
+  text-decoration: none;
+}
+nav a:hover,
+nav a:focus {
+  text-decoration: underline;
+}
+main {
+  flex: 1;
+  padding: 1rem;
+}
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: -999px;
+  background: #fff;
+  color: #004080;
+  padding: .5rem 1rem;
+  border: 2px solid #004080;
+  z-index: 1000;
+}
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+}
+
+/* Focus outline – WCAG visible focus */
+:focus-visible {
+  outline: 3px solid #ffbf47;
+  outline-offset: 2px;
+}
+
+/* Hero banner */
+[data-component="hero-banner"] {
+  background: #e0f0ff;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+/* Content band */
+[data-component="content-band"] {
+  margin: 2rem 0;
+}
+
+/* Buttons */
+button {
+  background: #004080;
+  color: #fff;
+  border: none;
+  padding: .5rem 1rem;
+  cursor: pointer;
+}
+button:hover,
+button:focus {
+  background: #003060;
+}
+
+/* Form styles */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+}
+label {
+  font-weight: 600;
+}
+input, select, textarea {
+  padding: .4rem;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+}
+.error {
+  color: #d8000c;
+  font-size: .9rem;
+}
+.error-summary {
+  border: 2px solid #d8000c;
+  background: #ffdddd;
+  padding: .75rem;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  nav {
+    flex-direction: column;
+  }
+}

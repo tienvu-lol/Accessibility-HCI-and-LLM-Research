@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Subscribe | Cascadia Chronicle</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="site-header" data-section="header" data-component="site-header">
+    <div class="container">
+      <h1 class="site-title">Cascadia Chronicle</h1>
+      <form class="search-form" aria-label="Site search">
+        <label for="site-search-subscribe" class="visually-hidden">Search</label>
+        <input type="search" id="site-search-subscribe" placeholder="Search…" aria-label="Search">
+        <button type="submit">Search</button>
+      </form>
+    </div>
+  </header>
+
+  <nav class="primary-nav" aria-label="Primary" data-section="navigation" data-component="primary-nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="seattle-news.html">Local News</a></li>
+      <li><a href="business.html">Business</a></li>
+      <li><a href="sports.html">Sports</a></li>
+      <li><a href="nation-world.html">Nation &amp; World</a></li>
+      <li><a href="subscribe-signup-offers-subsource-voluntary.html" aria-current="page">Subscribe</a></li>
+      <li><a href="help.html">Help</a></li>
+      <li><a href="newsroom-staff.html">Newsroom Staff</a></li>
+      <li><a href="rss-feeds.html">RSS Feeds</a></li>
+    </ul>
+  </nav>
+
+  <main id="main-content" class="main-content" data-section="main">
+    <h1>Subscribe to Cascadia Chronicle</h1>
+
+    <section aria-label="Newsletter signup" data-component="newsletter-signup">
+      <h2>Get our free newsletter</h2>
+      <p>Stay up to date with the latest Seattle news, sports, and events.</p>
+      <form class="newsletter-signup" aria-label="Newsletter signup">
+        <label for="newsletter-email-sub">Email address</label>
+        <input type="email" id="newsletter-email-sub" placeholder="you@example.com" required>
+        <button type="submit">Subscribe</button>
+      </form>
+      <p class="error-message"></p>
+      <p class="success-message"></p>
+    </section>
+
+    <section aria-label="Subscription plans" data-component="subscription-form">
+      <h2>Digital subscription plans</h2>
+      <p>Choose the plan that best fits your needs.</p>
+      <form class="subscription-form" aria-label="Subscription form">
+        <div>
+          <label for="plan-select">Select a plan</label>
+          <select id="plan-select" name="plan" required>
+            <option value="">-- Choose a plan --</option>
+            <option value="digital-basic">Digital Basic – $9.99/month</option>
+            <option value="digital-plus">Digital Plus – $19.99/month</option>
+            <option value="digital-premium">Digital Premium – $29.99/month</option>
+          </select>
+        </div>
+        <div>
+          <label for="sub-name">Full name</label>
+          <input type="text" id="sub-name" placeholder="Your name" required>
+        </div>
+        <div>
+          <label for="sub-email">Email address</label>
+          <input type="email" id="sub-email" placeholder="you@example.com" required>
+        </div>
+        <div>
+          <input type="submit" value="Start Subscription">
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer" data-section="footer" data-component="site-footer">
+    <div>
+      &copy; 2026 Cascadia Chronicle. All rights reserved. <br>
+      123 Fiction Ave, Seattle, WA 98101 <br>
+      <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a>
+    </div>
+  </footer>
+
+  <div id="subscription-modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-content">
+      <button class="modal-close" data-modal-close aria-label="Close modal">&times;</button>
+      <div class="modal-body">
+        <!-- content injected by JS -->
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Inline sample data for subscription offers (used if we wanted to display cards)
+    window.newsletterOffers = [
+      { name: "Morning Briefing", price: "Free", benefits: ["Top headlines each morning", "Weather forecast", "Traffic updates"] },
+      { name: "Sports Insider", price: "Free", benefits: ["Seattle sports scores", "In‑depth analysis", "Weekend preview"] },
+      { name: "Arts & Culture", price: "Free", benefits: ["Event listings", "Reviews", "Artist interviews"] }
+    ];
+  </script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

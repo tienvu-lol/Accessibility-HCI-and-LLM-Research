@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Posts - Alex Morgan's Portfolio</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  
+  <header class="site-header" data-component="site-header">
+    <div class="container nav-wrapper">
+      <a href="index.html" class="logo">Alex Morgan</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
+        <span class="sr-only">Toggle navigation</span>
+        &#9776;
+      </button>
+      <nav class="primary-nav" id="primary-nav" data-component="primary-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="mini-tools.html">Mini-Tools</a></li>
+          <li><a href="all-posts.html" aria-current="page">All Posts</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" data-section="all-posts">
+    <div class="container">
+      <h1>All Posts</h1>
+      
+      <section data-component="blog-archive">
+        <h2>2023</h2>
+        <ul style="list-style: none; padding: 0;">
+          <li style="margin-bottom: 1rem;">
+            <a href="posts-2023-what-makes-svelte-so-great-features-and-comparisons.html">What Makes Svelte So Great</a>
+            <time datetime="2023-01-15" style="display: block; color: var(--color-secondary);">Jan 15, 2023</time>
+          </li>
+          <li style="margin-bottom: 1rem;">
+            <a href="posts-2023-shell-heredocs-productive-fun-bash-and-beyond.html">Shell Heredocs</a>
+            <time datetime="2023-02-20" style="display: block; color: var(--color-secondary);">Feb 20, 2023</time>
+          </li>
+          <li style="margin-bottom: 1rem;">
+            <a href="#">CSS Grid Basics</a>
+            <time datetime="2023-03-10" style="display: block; color: var(--color-secondary);">Mar 10, 2023</time>
+          </li>
+          <li style="margin-bottom: 1rem;">
+            <a href="#">JavaScript Async</a>
+            <time datetime="2023-04-05" style="display: block; color: var(--color-secondary);">Apr 5, 2023</time>
+          </li>
+          <li style="margin-bottom: 1rem;">
+            <a href="#">Web Accessibility</a>
+            <time datetime="2023-05-12" style="display: block; color: var(--color-secondary);">May 12, 2023</time>
+          </li>
+          <li style="margin-bottom: 1rem;">
+            <a href="#">Node.js Streams</a>
+            <time datetime="2023-06-18" style="display: block; color: var(--color-secondary);">Jun 18, 2023</time>
+          </li>
+          <li style="margin-bottom: 1rem;">
+            <a href="#">React vs Vue</a>
+            <time datetime="2023-07-22" style="display: block; color: var(--color-secondary);">Jul 22, 2023</time>
+          </li>
+          <li style="margin-bottom: 1rem;">
+            <a href="#">TypeScript Tips</a>
+            <time datetime="2023-08-30" style="display: block; color: var(--color-secondary);">Aug 30, 2023</time>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer" data-component="site-footer">
+    <div class="container">
+      <p>&copy; 2026 Alex Morgan. All rights reserved.</p>
+      <p>Built with semantic HTML, CSS, and vanilla JS.</p>
+    </div>
+  </footer>
+
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top">&#8679;</button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

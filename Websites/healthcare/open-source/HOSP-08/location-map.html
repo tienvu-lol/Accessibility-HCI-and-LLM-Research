@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Location Map – Community Health Center</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <header data-section="header" data-component="site-header">
+    <h1>Community Health Center</h1>
+    <p>Find our facilities on the map.</p>
+  </header>
+  <nav data-section="navigation" data-component="primary-nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="get-care-now.html">Get Care Now</a></li>
+      <li><a href="pay-a-bill.html">Pay a Bill</a></li>
+      <li><a href="find-a-doctor.html">Find a Doctor</a></li>
+      <li><a href="health-care-services.html">Services</a></li>
+      <li><a href="location-map.html" aria-current="page">Locations</a></li>
+      <li><a href="patient-resources.html">Patient Resources</a></li>
+    </ul>
+  </nav>
+  <main id="main-content" data-section="location-map">
+    <h1>Our Locations</h1>
+    <p>Use the filter below to show facilities near you.</p>
+    <div>
+      <label for="location-filter">Filter by area <span aria-hidden="true">(select)</span></label>
+      <select id="location-filter" data-component="location-filter">
+        <option value="all">All areas</option>
+        <option value="downtown">Downtown</option>
+        <option value="westside">Westside</option>
+        <option value="eastend">East End</option>
+        <option value="northgate">Northgate</option>
+      </select>
+    </div>
+    <section data-section="location-map-band" data-component="location-map-band">
+      <!-- Static SVG placeholder map -->
+      <svg width="100%" height="300" aria-label="Map placeholder" role="img">
+        <rect width="100%" height="100%" fill="#e0e0e0"/>
+        <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#555" font-size="14">
+          Map placeholder – facilities shown as markers
+        </text>
+        <!-- Example marker circles -->
+        <circle cx="20%" cy="30%" r="6" fill="#0066cc"/>
+        <circle cx="50%" cy="40%" r="6" fill="#0066cc"/>
+        <circle cx="80%" cy="20%" r="6" fill="#0066cc"/>
+        <circle cx="30%" cy="70%" r="6" fill="#0066cc"/>
+        <circle cx="70%" cy="80%" r="6" fill="#0066cc"/>
+      </svg>
+      <p>Select a facility from the list below for details.</p>
+      <ul data-component="location-list">
+        <!-- location items will be injected by script -->
+      </ul>
+    </section>
+  </main>
+  <footer data-section="footer" data-component="site-footer">
+    <p>&copy; 2026 Community Health Center. All rights reserved.</p>
+  </footer>
+  <script src="js/main.js"></script>
+  <script>
+    // Inline sample data for locations (clinics)
+    const locations = [
+      { id: 1, name: 'Downtown Clinic', address: '100 Main St', city: 'Downtown', phone: '555-1001', hospitalId: 1 },
+      { id: 2, name: 'Westside Health Center', address: '200 Oak Ave', city: 'Westside', phone: '555-2001', hospitalId: 2 },
+      { id: 3, name: 'East End Medical', address: '300 Pine Rd', city: 'East End', phone: '555-3001', hospitalId: 3 },
+      { id: 4, name: 'Northgate Clinic', address: '400 Elm St', city: 'Northgate', phone: '555-4001', hospitalId: 4 },
+      { id: 5, name: 'Riverbend Outpatient', address: '500 River Rd', city: 'Westside', phone: '555-5001', hospitalId: 2 },
+      { id: 6, name: 'Hilltop Family Health', address: '600 Hill St', city: 'East End', phone: '555-6001', hospitalId: 3 }
+    ];
+    const hospitals = [
+      { id: 1, name: 'Mercy General Hospital', address: '1000 Healthway', phone: '555-1000' },
+      { id: 2, name: 'St. Luke’s Medical Center', address: '2000 Care Blvd', phone: '555-2000' },
+      { id: 3, name: 'Community Regional Hospital', address: '3000 Wellness St', phone: '555-3000' },
+      { id: 4, name: 'Valley Health Institute', address: '4000 Healing Ave', phone: '555-4000' }
+    ];
+    const list = document.querySelector('[data-component="location-list"]');
+    function renderLocations(filterValue) {
+      list.innerHTML = '';
+      const filtered = filterValue === 'all'
+        ? locations
+        : locations.filter(loc => loc.city.toLowerCase() === filterValue);
+      filtered.forEach(loc => {
+        const hosp = hospitals.find(h => h.id === loc.hospitalId) || {};
+        const li = document.createElement('li');
+        li.className = 'location-item';
+        li.setAttribute('data-component', 'location-item');
+        li.dataset.locationCategory = loc.city.toLowerCase();
+        li.innerHTML = `
+          <strong>${loc.name}</strong><br>
+          ${loc.address}<br>
+          ${loc.city}<br>
+          Phone: ${loc.phone}<br>
+          Associated hospital: ${hosp.name || 'N/A'}
+        `;
+        list.appendChild(li);
+      });
+    }
+    renderLocations('all');
+    const filterSelect = document.querySelector('[data-component="location-filter"]');
+    filterSelect.addEventListener('change', () => {
+      renderLocations(filterSelect.value);
+    });
+  </script>
+</body>
+</html>

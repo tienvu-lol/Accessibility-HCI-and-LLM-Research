@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Riverbank Community Bank – Digital Banking</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <header data-section="site-header" data-component="site-header" class="site-header">
+    <div class="logo">Riverbank Community Bank</div>
+    <button id="nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Open main menu">
+      ☰
+    </button>
+    <nav data-section="primary-nav" data-component="primary-nav" class="primary-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="learning.html">Learning Center</a></li>
+        <li><a href="support.html">Support</a></li>
+        <li><a href="checking.html">Checking & Savings</a></li>
+        <li><a href="loans.html">Loans</a></li>
+        <li><a href="digital.html" aria-current="page">Digital Banking</a></li>
+        <li><a href="careers.html">Careers</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section data-section="hero" data-component="hero-banner" class="hero">
+    <h1>Digital Banking</h1>
+    <p>Manage your money anytime, anywhere with our secure online and mobile tools.</p>
+  </section>
+
+  <main id="main-content" data-section="main-content">
+    <section data-section="content-band" data-component="content-band-product" class="content-band">
+      <h2>Digital Features</h2>
+      <div class="card-grid" data-instance="digital-features">
+        <!-- Inline sample data will be rendered by script -->
+      </div>
+    </section>
+  </main>
+
+  <footer data-section="site-footer" data-component="site-footer" class="site-footer">
+    <div>
+      <a href="index.html">Home</a> |
+      <a href="about.html">About</a> |
+      <a href="learning.html">Learning Center</a> |
+      <a href="support.html">Support</a> |
+      <a href="careers.html">Careers</a>
+    </div>
+    <div>&copy; 2026 Riverbank Community Bank. All rights reserved.</div>
+  </footer>
+
+  <script>
+    // Sample digital features (4 items)
+    const sampleDigitalFeatures = [
+      {name: "Mobile App", description: "Check balances, deposit checks, transfer funds, and pay bills from your smartphone."},
+      {name: "Online Banking", description: "Full-featured web access to accounts, statements, and loan management."},
+      {name: "Text Alerts", description: "Receive real-time notifications for low balances, large transactions, and payment due dates."},
+      {name: "eStatements", description: "Secure, paper‑free statements available for download anytime."}
+    ];
+    const grid = document.querySelector('[data-instance="digital-features"]');
+    sampleDigitalFeatures.forEach(item => {
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.setAttribute('data-component', 'feature-card');
+      card.innerHTML = `
+        <h3>${item.name}</h3>
+        <p>${item.description}</p>
+      `;
+      grid.appendChild(card);
+    });
+  </script>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

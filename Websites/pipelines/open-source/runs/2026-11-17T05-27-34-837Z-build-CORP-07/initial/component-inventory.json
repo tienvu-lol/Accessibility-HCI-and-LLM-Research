@@ -1,0 +1,74 @@
+[
+  {
+    "component": "site-header",
+    "selector": "header.site-header",
+    "pages": ["index.html", "checking.html", "checking-compare.html", "savings-cds.html", "savings-rates.html", "mortgage.html", "mortgage-calculators.html", "auto-loans.html", "help.html", "help-routing.html", "about.html", "about-inclusion.html", "404.html"],
+    "behaviours": ["Mobile menu toggle"],
+    "keyboard": ["Tab to toggle", "Enter/Space to toggle"],
+    "status": "implemented",
+    "validation": "not-tested"
+  },
+  {
+    "component": "primary-nav",
+    "selector": "nav.primary-nav",
+    "pages": ["index.html", "checking.html", "checking-compare.html", "savings-cds.html", "savings-rates.html", "mortgage.html", "mortgage-calculators.html", "auto-loans.html", "help.html", "help-routing.html", "about.html", "about-inclusion.html", "404.html"],
+    "behaviours": ["Responsive display"],
+    "keyboard": ["Tab to link"],
+    "status": "implemented",
+    "validation": "not-tested"
+  },
+  {
+    "component": "hero-promo",
+    "selector": "section.hero",
+    "pages": ["index.html", "checking.html", "checking-compare.html", "savings-cds.html", "savings-rates.html", "mortgage.html", "mortgage-calculators.html", "auto-loans.html", "help.html", "help-routing.html", "about.html", "about-inclusion.html", "404.html"],
+    "behaviours": ["Static content"],
+    "keyboard": ["Tab to link"],
+    "status": "implemented",
+    "validation": "not-tested"
+  },
+  {
+    "component": "product-card",
+    "selector": "article.card",
+    "pages": ["index.html", "checking.html", "savings-cds.html", "mortgage.html", "auto-loans.html", "about.html", "about-inclusion.html"],
+    "behaviours": ["Hover effect"],
+    "keyboard": ["Tab to link"],
+    "status": "implemented",
+    "validation": "not-tested"
+  },
+  {
+    "component": "rate-table",
+    "selector": "table.rate-table",
+    "pages": ["checking-compare.html", "savings-rates.html", "auto-loans.html"],
+    "behaviours": ["Sortable columns"],
+    "keyboard": ["Tab to cell", "Enter to sort"],
+    "status": "implemented",
+    "validation": "not-tested"
+  },
+  {
+    "component": "loan-calculator",
+    "selector": "form#mortgage-calc-form",
+    "pages": ["mortgage-calculators.html"],
+    "behaviours": ["Calculate monthly payment"],
+    "keyboard": ["Tab to input", "Enter to submit"],
+    "status": "implemented",
+    "validation": "not-tested"
+  },
+  {
+    "component": "search-form",
+    "selector": "form#help-search-form",
+    "pages": ["help.html"],
+    "behaviours": ["Client-side filtering"],
+    "keyboard": ["Tab to input", "Type to filter"],
+    "status": "implemented",
+    "validation": "not-tested"
+  },
+  {
+    "component": "site-footer",
+    "selector": "footer.site-footer",
+    "pages": ["index.html", "checking.html", "checking-compare.html", "savings-cds.html", "savings-rates.html", "mortgage.html", "mortgage-calculators.html", "auto-loans.html", "help.html", "help-routing.html", "about.html", "about-inclusion.html", "404.html"],
+    "behaviours": ["Static content"],
+    "keyboard": ["Tab to link"],
+    "status": "implemented",
+    "validation": "not-tested"
+  }
+]

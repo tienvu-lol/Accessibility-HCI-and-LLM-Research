@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Press – Xi'an Famous Foods</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header data-section="header" data-component="site-header" class="site-header container">
+    <a href="index.html" class="site-logo" aria-label="Home">Xi'an Famous Foods</a>
+    <button class="nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Open menu">☰</button>
+    <button class="age-gate-trigger" aria-label="Age verification">Enter</button>
+  </header>
+
+  <nav data-section="navigation" data-component="primary-nav" class="primary-nav">
+    <div class="container nav-container">
+      <button class="nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Open menu">☰</button>
+      <ul class="nav-menu" id="primary-nav" aria-expanded="false">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="our-story.html">Our Story</a></li>
+        <li><a href="locations.html">Locations</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="press.html" aria-current="page">Press</a></li>
+        <li><a href="accessibility.html">Accessibility</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main-content" data-section="main">
+    <section data-component="content-band" class="content-band container">
+      <h1>In the Press</h1>
+      <p>See what critics and writers are saying about our dishes and story.</p>
+
+      <!-- Press list -->
+      <section class="press-list" data-component="press-list">
+        <!-- Items will be populated by JavaScript using inline data -->
+      </section>
+    </section>
+  </main>
+
+  <footer data-section="footer" data-component="site-footer" class="site-footer">
+    <div class="container footer-container">
+      <div data-component="footer-info" class="footer-section">
+        <h4>About</h4>
+        <p>Family‑owned restaurant serving authentic Xi’an cuisine since 2005.</p>
+      </div>
+      <div data-component="footer-links" class="footer-section">
+        <h4>Quick links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="our-story.html">Our Story</a></li>
+          <li><a href="locations.html">Locations</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="press.html" aria-current="page">Press</a></li>
+          <li><a href="accessibility.html">Accessibility</a></li>
+        </ul>
+      </div>
+      <div data-component="footer-newsletter" class="footer-section">
+        <h4>Stay updated</h4>
+        <form class="newsletter-form" data-component="newsletter-signup">
+          <label>
+            <span>Email address</span>
+            <input type="email" name="email" required placeholder="you@example.com">
+          </label>
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Age gate modal (hidden by default) -->
+  <div id="age-gate-modal" data-component="age-gate" aria-hidden="true">
+    <div class="age-gate-dialog" role="dialog" aria-modal="true" aria-labelledby="age-gate-title">
+      <h2 id="age-gate-title">Age verification</h2>
+      <p>Our menu includes items that may contain alcohol. By entering you confirm you are of legal drinking age.</p>
+      <button type="button">Enter site</button>
+    </div>
+  </div>
+
+  <script>
+    // Inline sample dataset for press articles
+    const pressArticles = [
+      { title: "NY Times: A Taste of Xi’an in Queens", date: "2024-03-12", excerpt: "The noodles are hand‑pulled fresh each morning, delivering a chew that’s rare outside China.", source: "The New York Times" },
+      { title: "Eater NYC: Best Spicy Noodles 2024", date: "2024-06-05", excerpt: "If you crave heat, the cumin‑lamb noodles deliver a lingering kick that keeps you coming back.", source: "Eater" },
+      { title: "Food & Wine: Hidden Gem", date: "2023-11-20", excerpt: "A modest storefront with flavors that punch above its weight.", source: "Food & Wine" },
+      { title: "CBS New York: Lunar New Year Feast", date: "2024-02-01", excerpt: "Special menu items celebrate the Year of the Dragon with traditional symbols.", source: "CBS New York" },
+      { title: "Thrillist: Best Burger in NY", date: "2023-09-14", excerpt: "The Xi’an Famous Burger blends Chinese spices with a classic American patty.", source: "Thrillist" },
+      { title: "OpenTable Diners’ Choice 2024", date: "2024-01-10", excerpt: "Highly rated for service, atmosphere, and authentic cuisine.", source: "OpenTable" }
+    ];
+
+    // Populate press list
+    const list = document.querySelector('.press-list');
+    pressArticles.forEach(art => {
+      const item = document.createElement('article');
+      item.className = 'press-item';
+      item.innerHTML = `
+        <h3>${art.title}</h3>
+        <p class="date">${new Date(art.date).toLocaleDateString(undefined, {year:'numeric', month:'long', day:'numeric'})} – ${art.source}</p>
+        <p>${art.excerpt}</p>
+      `;
+      list.appendChild(item);
+    });
+  </script>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

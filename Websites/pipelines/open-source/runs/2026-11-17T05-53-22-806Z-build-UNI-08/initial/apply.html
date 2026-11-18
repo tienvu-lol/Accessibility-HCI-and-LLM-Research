@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Apply | Liberal Arts College</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <header data-section="banner" data-component="site-header">
+    <div class="site-name">Liberal Arts College</div>
+    <button id="nav-toggle" class="hamburger" aria-controls="primary-nav-list" aria-expanded="false" aria-label="Open main menu">☰</button>
+    <nav data-section="navigation" data-component="primary-nav">
+      <ul id="primary-nav-list" class="nav-list" aria-expanded="false">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="academic-life.html">Academics</a></li>
+        <li><a href="departments.html">Majors</a></li>
+        <li><a href="college-catalog.html">Course Catalog</a></li>
+        <li><a href="admission.html">Admission &amp; Aid</a></li>
+        <li><a href="apply.html">Apply</a></li>
+        <li><a href="visiting.html">Visit</a></li>
+        <li><a href="news.html">News &amp; Events</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content" data-section="main">
+    <h1>Apply to Liberal Arts College</h1>
+    <p>Our application is a simulated demonstration. In a real site this would collect personal information, transcripts, recommendations, and essays.</p>
+
+    <section data-section="application-form" data-component="application-form">
+      <h2>Application (Demo)</h2>
+      <p>Fill out the form below to see how the application would work. No data is stored or submitted.</p>
+      <form>
+        <label for="app-first">First Name</label>
+        <input type="text" id="app-first" name="first" placeholder="Enter your first name" required aria-required="true">
+        <label for="app-last">Last Name</label>
+        <input type="text" id="app-last" name="last" placeholder="Enter your last name" required aria-required="true">
+        <label for="app-email">Email Address</label>
+        <input type="email" id="app-email" name="email" placeholder="you@example.com" required aria-required="true">
+        <label for="app-dob">Date of Birth</label>
+        <input type="date" id="app-dob" name="dob" required aria-required="true">
+        <label for="app-level">Intended Enrollment</label>
+        <select id="app-level" name="level" required aria-required="true">
+          <option value="">Select one</option>
+          <option value="fall">Fall</option>
+          <option value="spring">Spring</option>
+        </select>
+        <label for="app-essay">Personal Statement (optional)</label>
+        <textarea id="app-essay" name="essay" rows="4" placeholder="Tell us about yourself…"></textarea>
+        <button type="submit">Submit Application (Demo)</button>
+      </form>
+      <p class="note">Note: This is a demonstration only. No actual application is transmitted or stored.</p>
+    </section>
+  </main>
+
+  <footer data-section="footer" data-component="site-footer">
+    <p>&copy; 2026 Liberal Arts College. All rights reserved.</p>
+    <nav>
+      <ul>
+        <li><a href="#">Privacy</a></li>
+        <li><a href="#">Terms</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </footer>
+
+  <div id="toast" aria-live="polite"></div>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Handle demo application form
+    const forms = document.querySelectorAll('[data-component="application-form"] form');
+    forms.forEach(form => {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        showToast('Application submitted (demo) – no data was stored.');
+        form.reset();
+      });
+    });
+  </script>
+</body>
+</html>

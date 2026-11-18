@@ -1,0 +1,1164 @@
+{
+  "schema_version": "1.0",
+  "model_group": "open-source",
+  "slots": [
+    7,
+    8,
+    9,
+    10
+  ],
+  "categories": [
+    {
+      "category": "university",
+      "prefix": "UNI",
+      "name": "Universities and colleges",
+      "sampling_strata": [
+        {
+          "slot": 1,
+          "source_id": "UNI-01",
+          "model_group": "claude",
+          "stratum": "large public research university",
+          "authority": "other group's slot; shown for the ten-slot category plan only, never edited here"
+        },
+        {
+          "slot": 2,
+          "source_id": "UNI-02",
+          "model_group": "claude",
+          "stratum": "small private liberal-arts college",
+          "authority": "other group's slot; shown for the ten-slot category plan only, never edited here"
+        },
+        {
+          "slot": 3,
+          "source_id": "UNI-03",
+          "model_group": "claude",
+          "stratum": "community college",
+          "authority": "other group's slot; shown for the ten-slot category plan only, never edited here"
+        },
+        {
+          "slot": 4,
+          "source_id": "UNI-04",
+          "model_group": "codex",
+          "stratum": "large public research university",
+          "authority": "other group's slot; shown for the ten-slot category plan only, never edited here"
+        },
+        {
+          "slot": 5,
+          "source_id": "UNI-05",
+          "model_group": "codex",
+          "stratum": "small private liberal-arts college",
+          "authority": "other group's slot; shown for the ten-slot category plan only, never edited here"
+        },
+        {
+          "slot": 6,
+          "source_id": "UNI-06",
+          "model_group": "codex",
+          "stratum": "community college",
+          "authority": "other group's slot; shown for the ten-slot category plan only, never edited here"
+        },
+        {
+          "slot": 7,
+          "source_id": "UNI-07",
+          "model_group": "open-source",
+          "stratum": "large public research university",
+          "authority": "open-source assignment"
+        },
+        {
+          "slot": 8,
+          "source_id": "UNI-08",
+          "model_group": "open-source",
+          "stratum": "small private liberal-arts college",
+          "authority": "open-source assignment"
+        },
+        {
+          "slot": 9,
+          "source_id": "UNI-09",
+          "model_group": "open-source",
+          "stratum": "community college",
+          "authority": "open-source assignment"
+        },
+        {
+          "slot": 10,
+          "source_id": "UNI-10",
+          "model_group": "open-source",
+          "stratum": "additional distinct large public research university (complexity-matched reserve)",
+          "authority": "open-source assignment"
+        }
+      ],
+      "representative_pages": [
+        "home",
+        "academics/program listing",
+        "program detail when present",
+        "admissions/apply",
+        "tuition and aid",
+        "visit",
+        "news/events",
+        "directory",
+        "404"
+      ],
+      "conditional_interactions": [
+        "program or directory search on inline data",
+        "responsive navigation",
+        "visit/information inquiry",
+        "events filtering where observed"
+      ],
+      "simulation_notes": "Applications, student portals, and login are labeled simulations only.",
+      "scope_rule": "Use only observed source pages/features; label inferred behavior and intentional additions. Page count follows approved scope, not a fixed quota."
+    },
+    {
+      "category": "healthcare",
+      "prefix": "HOSP",
+      "name": "Hospitals and healthcare",
+      "sampling_strata": [
+        {
+          "slot": 1,
+          "source_id": "HOSP-01",
+          "model_group": "claude",
+          "stratum": "academic medical center",
+          "authority": "other group's slot; shown for the ten-slot category plan only, never edited here"
+        },
+        {
+          "slot": 2,
+          "source_id": "HOSP-02",
+          "model_group": "claude",
+          "stratum": "community/regional hospital",
+          "authority": "other group's slot; shown for the ten-slot category plan only, never edited here"
+        },
+        {
+          "slot": 3,
+          "source_id": "HOSP-03",
+          "model_group": "claude",
+          "stratum": "children’s hospital",
+          "authority": "other group's slot; shown for the ten-slot category plan only, never edited here"
+        },
+        {
+          "slot": 4,
+          "source_id": "HOSP-04",
+          "model_group": "codex",
+          "stratum": "academic medical center",
+          "authority": "other group's slot; shown for the ten-slot category plan only, never edited here"
+        },
+        {
+          "slot": 5,
+          "source_id": "HOSP-05",
+          "model_group": "codex",
+          "stratum": "community/regional hospital",
+          "authority": "other group's slot; shown for the ten-slot category plan only, never edited here"
+        },
+        {
+          "slot": 6,
+          "source_id": "HOSP-06",
+          "model_group": "codex",
+          "stratum": "children’s hospital",
+          "authority": "other group's slot; shown for the ten-slot category plan only, never edited here"
+        },
+        {
+          "slot": 7,
+          "source_id": "HOSP-07",
+          "model_group": "open-source",
+          "stratum": "academic medical center",
+          "authority": "open-source assignment"
+        },
+        {
+          "slot": 8,
+          "source_id": "HOSP-08",
+          "model_group": "open-source",
+          "stratum": "community/regional hospital",
+          "authority": "open-source assignment"
+        },
+        {
+          "slot": 9,
+          "source_id": "HOSP-09",
+          "model_group": "open-source",
+          "stratum": "children’s hospital",
+          "authority": "open-source assignment"
+        },
+        {
+          "slot": 10,
+          "source_id": "HOSP-10",
+          "model_group": "open-source",
+          "stratum": "additional distinct academic medical center (complexity-matched reserve)",
+          "authority": "open-source assignment"
+        }
+      ],
+      "representative_pages": [
+        "home",
+        "services",
+        "service detail",
+        "providers",
+        "provider detail",
+        "locations",
+        "patients and visitors",
+        "appointment inquiry",
+        "404"
+      ],
+      "conditional_interactions": [
+        "doctor and location filters",
+        "service navigation",
+        "appointment-request validation",
+        "billing/insurance information"
+      ],
+      "simulation_notes": "No real health advice, triage, emergency response, appointments, or patient access. Use fictional directory data.",
+      "scope_rule": "Use only observed source pages/features; label inferred behavior and intentional additions. Page count follows approved scope, not a fixed quota."
+    },
+    {
+      "category": "company",
+      "prefix": "CORP",
+      "name": "Banking and technology companies",
+      "sampling_strata": [
+        {
+          "slot": 1,
+          "source_id": "CORP-01",
+          "model_group": "claude",
+          "stratum": "national retail bank",
+          "authority": "other group's slot; shown for the ten-slot category plan only, never edited here"
+        },
+        {
+          "slot": 2,
+          "source_id": "CORP-02",
+          "model_group": "claude",
+          "stratum": "regional bank or credit union",
+          "authority": "other group's slot; shown for the ten-slot category plan only, never edited here"
+        },
+        {
+          "slot": 3,
+          "source_id": "CORP-03",
+          "model_group": "claude",
+          "stratum": "technology/software company",
+          "authority": "other group's slot; shown for the ten-slot category plan only, never edited here"
+        },
+        {
+          "slot": 4,
+          "source_id": "CORP-04",
+          "model_group": "codex",
+          "stratum": "national retail bank",
+          "authority": "other group's slot; shown for the ten-slot category plan only, never edited here"
+        },
+        {
+          "slot": 5,
+          "source_id": "CORP-05",
+          "model_group": "codex",
+          "stratum": "regional bank or credit union",
+          "authority": "other group's slot; shown for the ten-slot category plan only, never edited here"
+        },
+        {
+          "slot": 6,
+          "source_id": "CORP-06",
+          "model_group": "codex",
+          "stratum": "technology/software company",
+          "authority": "other group's slot; shown for the ten-slot category plan only, never edited here"
+        },
+        {
+          "slot": 7,
+          "source_id": "CORP-07",
+          "model_group": "open-source",
+          "stratum": "national retail bank",
+          "authority": "open-source assignment"
+        },
+        {
+          "slot": 8,
+          "source_id": "CORP-08",
+          "model_group": "open-source",
+          "stratum": "regional bank or credit union",
+          "authority": "open-source assignment"
+        },
+        {
+          "slot": 9,
+          "source_id": "CORP-09",
+          "model_group": "open-source",
+          "stratum": "technology/software company",
+          "authority": "open-source assignment"
+        },
+        {
+          "slot": 10,
+          "source_id": "CORP-10",
+          "model_group": "open-source",
+          "stratum": "additional distinct national retail bank (complexity-matched reserve)",
+          "authority": "open-source assignment"
+        }
+      ],
+      "representative_pages": [
+        "home",
+        "products/services",
+        "product detail",
+        "help",
+        "contact",
+        "about",
+        "careers or pricing when present",
+        "404"
+      ],
+      "conditional_interactions": [
+        "bank: sample rate table, loan calculator, branch search",
+        "technology: pricing toggle, careers filters, help search",
+        "contact inquiry"
+      ],
+      "simulation_notes": "No real financial quotes, transactions, banking access, sales submissions, or login. Clearly label sample rates.",
+      "scope_rule": "Use only observed source pages/features; label inferred behavior and intentional additions. Page count follows approved scope, not a fixed quota."
+    },
+    {
+      "category": "e-commerce",
+      "prefix": "ECOM",
+      "name": "E-commerce",
+      "sampling_strata": [
+        {
+          "slot": 1,
+          "source_id": "ECOM-01",
+          "model_group": "claude",
+          "stratum": "single-brand direct-to-consumer store",
+          "authority": "other group's slot; shown for the ten-slot category plan only, never edited here"
+        },
+        {
+          "slot": 2,
+          "source_id": "ECOM-02",
+          "model_group": "claude",
+          "stratum": "multi-category retailer",
+          "authority": "other group's slot; shown for the ten-slot category plan only, never edited here"
+        },
+        {
+          "slot": 3,
+          "source_id": "ECOM-03",
+          "model_group": "claude",
+          "stratum": "specialty retailer",
+          "authority": "other group's slot; shown for the ten-slot category plan only, never edited here"
+        },
+        {
+          "slot": 4,
+          "source_id": "ECOM-04",
+          "model_group": "codex",
+          "stratum": "single-brand direct-to-consumer store",
+          "authority": "other group's slot; shown for the ten-slot category plan only, never edited here"
+        },
+        {
+          "slot": 5,
+          "source_id": "ECOM-05",
+          "model_group": "codex",
+          "stratum": "multi-category retailer",
+          "authority": "other group's slot; shown for the ten-slot category plan only, never edited here"
+        },
+        {
+          "slot": 6,
+          "source_id": "ECOM-06",
+          "model_group": "codex",
+          "stratum": "specialty retailer",
+          "authority": "other group's slot; shown for the ten-slot category plan only, never edited here"
+        },
+        {
+          "slot": 7,
+          "source_id": "ECOM-07",
+          "model_group": "open-source",
+          "stratum": "single-brand direct-to-consumer store",
+          "authority": "open-source assignment"
+        },
+        {
+          "slot": 8,
+          "source_id": "ECOM-08",
+          "model_group": "open-source",
+          "stratum": "multi-category retailer",
+          "authority": "open-source assignment"
+        },
+        {
+          "slot": 9,
+          "source_id": "ECOM-09",
+          "model_group": "open-source",
+          "stratum": "specialty retailer",
+          "authority": "open-source assignment"
+        },
+        {
+          "slot": 10,
+          "source_id": "ECOM-10",
+          "model_group": "open-source",
+          "stratum": "additional distinct single-brand direct-to-consumer store (complexity-matched reserve)",
+          "authority": "open-source assignment"
+        }
+      ],
+      "representative_pages": [
+        "home",
+        "collection/listing",
+        "product detail",
+        "cart",
+        "demo checkout",
+        "search",
+        "help/returns",
+        "404"
+      ],
+      "conditional_interactions": [
+        "product category/price filters",
+        "sort",
+        "variant selection",
+        "cart quantity/removal",
+        "checkout validation"
+      ],
+      "simulation_notes": "No real purchases, card details, payment processing, shipping or accounts. Storage is browser-local only if justified; record its use.",
+      "scope_rule": "Use only observed source pages/features; label inferred behavior and intentional additions. Page count follows approved scope, not a fixed quota."
+    },
+    {
+      "category": "news",
+      "prefix": "NEWS",
+      "name": "News publishers",
+      "sampling_strata": [
+        {
+          "slot": 1,
+          "source_id": "NEWS-01",
+          "model_group": "claude",
+          "stratum": "national daily newspaper",
+          "authority": "other group's slot; shown for the ten-slot category plan only, never edited here"
+        },
+        {
+          "slot": 2,
+          "source_id": "NEWS-02",
+          "model_group": "claude",
+          "stratum": "local/regional newsroom",
+          "authority": "other group's slot; shown for the ten-slot category plan only, never edited here"
+        },
+        {
+          "slot": 3,
+          "source_id": "NEWS-03",
+          "model_group": "claude",
+          "stratum": "public broadcaster or nonprofit newsroom",
+          "authority": "other group's slot; shown for the ten-slot category plan only, never edited here"
+        },
+        {
+          "slot": 4,
+          "source_id": "NEWS-04",
+          "model_group": "codex",
+          "stratum": "national daily newspaper",
+          "authority": "other group's slot; shown for the ten-slot category plan only, never edited here"
+        },
+        {
+          "slot": 5,
+          "source_id": "NEWS-05",
+          "model_group": "codex",
+          "stratum": "local/regional newsroom",
+          "authority": "other group's slot; shown for the ten-slot category plan only, never edited here"
+        },
+        {
+          "slot": 6,
+          "source_id": "NEWS-06",
+          "model_group": "codex",
+          "stratum": "public broadcaster or nonprofit newsroom",
+          "authority": "other group's slot; shown for the ten-slot category plan only, never edited here"
+        },
+        {
+          "slot": 7,
+          "source_id": "NEWS-07",
+          "model_group": "open-source",
+          "stratum": "national daily newspaper",
+          "authority": "open-source assignment"
+        },
+        {
+          "slot": 8,
+          "source_id": "NEWS-08",
+          "model_group": "open-source",
+          "stratum": "local/regional newsroom",
+          "authority": "open-source assignment"
+        },
+        {
+          "slot": 9,
+          "source_id": "NEWS-09",
+          "model_group": "open-source",
+          "stratum": "public broadcaster or nonprofit newsroom",
+          "authority": "open-source assignment"
+        },
+        {
+          "slot": 10,
+          "source_id": "NEWS-10",
+          "model_group": "open-source",
+          "stratum": "additional distinct national daily newspaper (complexity-matched reserve)",
+          "authority": "open-source assignment"
+        }
+      ],
+      "representative_pages": [
+        "home",
+        "section front",
+        "article",
+        "search",
+        "newsletter",
+        "subscription information",
+        "about",
+        "404"
+      ],
+      "conditional_interactions": [
+        "section navigation",
+        "local article search",
+        "latest/most-read tabs when observed",
+        "newsletter simulation"
+      ],
+      "simulation_notes": "All articles original and fictional. No live financial/weather widgets, real subscription, or embedded player dependencies.",
+      "scope_rule": "Use only observed source pages/features; label inferred behavior and intentional additions. Page count follows approved scope, not a fixed quota."
+    },
+    {
+      "category": "government",
+      "prefix": "GOV",
+      "name": "Public and government",
+      "sampling_strata": [
+        {
+          "slot": 1,
+          "source_id": "GOV-01",
+          "model_group": "claude",
+          "stratum": "municipal government",
+          "authority": "other group's slot; shown for the ten-slot category plan only, never edited here"
+        },
+        {
+          "slot": 2,
+          "source_id": "GOV-02",
+          "model_group": "claude",
+          "stratum": "state portal/agency",
+          "authority": "other group's slot; shown for the ten-slot category plan only, never edited here"
+        },
+        {
+          "slot": 3,
+          "source_id": "GOV-03",
+          "model_group": "claude",
+          "stratum": "federal agency",
+          "authority": "other group's slot; shown for the ten-slot category plan only, never edited here"
+        },
+        {
+          "slot": 4,
+          "source_id": "GOV-04",
+          "model_group": "codex",
+          "stratum": "municipal government",
+          "authority": "other group's slot; shown for the ten-slot category plan only, never edited here"
+        },
+        {
+          "slot": 5,
+          "source_id": "GOV-05",
+          "model_group": "codex",
+          "stratum": "state portal/agency",
+          "authority": "other group's slot; shown for the ten-slot category plan only, never edited here"
+        },
+        {
+          "slot": 6,
+          "source_id": "GOV-06",
+          "model_group": "codex",
+          "stratum": "federal agency",
+          "authority": "other group's slot; shown for the ten-slot category plan only, never edited here"
+        },
+        {
+          "slot": 7,
+          "source_id": "GOV-07",
+          "model_group": "open-source",
+          "stratum": "municipal government",
+          "authority": "open-source assignment"
+        },
+        {
+          "slot": 8,
+          "source_id": "GOV-08",
+          "model_group": "open-source",
+          "stratum": "state portal/agency",
+          "authority": "open-source assignment"
+        },
+        {
+          "slot": 9,
+          "source_id": "GOV-09",
+          "model_group": "open-source",
+          "stratum": "federal agency",
+          "authority": "open-source assignment"
+        },
+        {
+          "slot": 10,
+          "source_id": "GOV-10",
+          "model_group": "open-source",
+          "stratum": "additional distinct municipal government (complexity-matched reserve)",
+          "authority": "open-source assignment"
+        }
+      ],
+      "representative_pages": [
+        "home",
+        "service directory",
+        "service detail/how-to",
+        "departments",
+        "meetings/events",
+        "news/alerts",
+        "contact/report form",
+        "404"
+      ],
+      "conditional_interactions": [
+        "service/department search",
+        "alerts",
+        "calendar navigation",
+        "report-a-problem form",
+        "language control only if observed"
+      ],
+      "simulation_notes": "No official seals or claims of governmental authority. Reports, applications, translations and portal access are labeled demos.",
+      "scope_rule": "Use only observed source pages/features; label inferred behavior and intentional additions. Page count follows approved scope, not a fixed quota."
+    },
+    {
+      "category": "fashion",
+      "prefix": "FASH",
+      "name": "Fashion editorial",
+      "sampling_strata": [
+        {
+          "slot": 1,
+          "source_id": "FASH-01",
+          "model_group": "claude",
+          "stratum": "fashion magazine",
+          "authority": "other group's slot; shown for the ten-slot category plan only, never edited here"
+        },
+        {
+          "slot": 2,
+          "source_id": "FASH-02",
+          "model_group": "claude",
+          "stratum": "brand editorial/lookbook",
+          "authority": "other group's slot; shown for the ten-slot category plan only, never edited here"
+        },
+        {
+          "slot": 3,
+          "source_id": "FASH-03",
+          "model_group": "claude",
+          "stratum": "fashion blog or trend publication",
+          "authority": "other group's slot; shown for the ten-slot category plan only, never edited here"
+        },
+        {
+          "slot": 4,
+          "source_id": "FASH-04",
+          "model_group": "codex",
+          "stratum": "fashion magazine",
+          "authority": "other group's slot; shown for the ten-slot category plan only, never edited here"
+        },
+        {
+          "slot": 5,
+          "source_id": "FASH-05",
+          "model_group": "codex",
+          "stratum": "brand editorial/lookbook",
+          "authority": "other group's slot; shown for the ten-slot category plan only, never edited here"
+        },
+        {
+          "slot": 6,
+          "source_id": "FASH-06",
+          "model_group": "codex",
+          "stratum": "fashion blog or trend publication",
+          "authority": "other group's slot; shown for the ten-slot category plan only, never edited here"
+        },
+        {
+          "slot": 7,
+          "source_id": "FASH-07",
+          "model_group": "open-source",
+          "stratum": "fashion magazine",
+          "authority": "open-source assignment"
+        },
+        {
+          "slot": 8,
+          "source_id": "FASH-08",
+          "model_group": "open-source",
+          "stratum": "brand editorial/lookbook",
+          "authority": "open-source assignment"
+        },
+        {
+          "slot": 9,
+          "source_id": "FASH-09",
+          "model_group": "open-source",
+          "stratum": "fashion blog or trend publication",
+          "authority": "open-source assignment"
+        },
+        {
+          "slot": 10,
+          "source_id": "FASH-10",
+          "model_group": "open-source",
+          "stratum": "additional distinct fashion magazine (complexity-matched reserve)",
+          "authority": "open-source assignment"
+        }
+      ],
+      "representative_pages": [
+        "home",
+        "category/trend",
+        "story",
+        "lookbook/gallery",
+        "author when present",
+        "search",
+        "newsletter",
+        "404"
+      ],
+      "conditional_interactions": [
+        "editorial navigation",
+        "gallery/lightbox or carousel",
+        "article search",
+        "newsletter simulation"
+      ],
+      "simulation_notes": "Original placeholder imagery; no real purchases, copyrighted photographs, external embeds, or invented endorsement.",
+      "scope_rule": "Use only observed source pages/features; label inferred behavior and intentional additions. Page count follows approved scope, not a fixed quota."
+    },
+    {
+      "category": "weather",
+      "prefix": "WX",
+      "name": "Weather information",
+      "sampling_strata": [
+        {
+          "slot": 1,
+          "source_id": "WX-01",
+          "model_group": "claude",
+          "stratum": "national meteorological service",
+          "authority": "other group's slot; shown for the ten-slot category plan only, never edited here"
+        },
+        {
+          "slot": 2,
+          "source_id": "WX-02",
+          "model_group": "claude",
+          "stratum": "commercial weather portal",
+          "authority": "other group's slot; shown for the ten-slot category plan only, never edited here"
+        },
+        {
+          "slot": 3,
+          "source_id": "WX-03",
+          "model_group": "claude",
+          "stratum": "local TV weather or specialized forecast site",
+          "authority": "other group's slot; shown for the ten-slot category plan only, never edited here"
+        },
+        {
+          "slot": 4,
+          "source_id": "WX-04",
+          "model_group": "codex",
+          "stratum": "national meteorological service",
+          "authority": "other group's slot; shown for the ten-slot category plan only, never edited here"
+        },
+        {
+          "slot": 5,
+          "source_id": "WX-05",
+          "model_group": "codex",
+          "stratum": "commercial weather portal",
+          "authority": "other group's slot; shown for the ten-slot category plan only, never edited here"
+        },
+        {
+          "slot": 6,
+          "source_id": "WX-06",
+          "model_group": "codex",
+          "stratum": "local TV weather or specialized forecast site",
+          "authority": "other group's slot; shown for the ten-slot category plan only, never edited here"
+        },
+        {
+          "slot": 7,
+          "source_id": "WX-07",
+          "model_group": "open-source",
+          "stratum": "national meteorological service",
+          "authority": "open-source assignment"
+        },
+        {
+          "slot": 8,
+          "source_id": "WX-08",
+          "model_group": "open-source",
+          "stratum": "commercial weather portal",
+          "authority": "open-source assignment"
+        },
+        {
+          "slot": 9,
+          "source_id": "WX-09",
+          "model_group": "open-source",
+          "stratum": "local TV weather or specialized forecast site",
+          "authority": "open-source assignment"
+        },
+        {
+          "slot": 10,
+          "source_id": "WX-10",
+          "model_group": "open-source",
+          "stratum": "additional distinct national meteorological service (complexity-matched reserve)",
+          "authority": "open-source assignment"
+        }
+      ],
+      "representative_pages": [
+        "home",
+        "location forecast",
+        "hourly/daily forecast",
+        "radar/map placeholder",
+        "alerts",
+        "weather article",
+        "about/help",
+        "404"
+      ],
+      "conditional_interactions": [
+        "inline location search",
+        "forecast tabs",
+        "F/C conversion",
+        "labeled static radar/map",
+        "alert filters where observed"
+      ],
+      "simulation_notes": "ALL conditions and alerts are fictional samples, never live warnings. No external maps or weather APIs.",
+      "scope_rule": "Use only observed source pages/features; label inferred behavior and intentional additions. Page count follows approved scope, not a fixed quota."
+    },
+    {
+      "category": "nonprofit",
+      "prefix": "NPO",
+      "name": "Nonprofits and charities",
+      "sampling_strata": [
+        {
+          "slot": 1,
+          "source_id": "NPO-01",
+          "model_group": "claude",
+          "stratum": "international humanitarian charity",
+          "authority": "other group's slot; shown for the ten-slot category plan only, never edited here"
+        },
+        {
+          "slot": 2,
+          "source_id": "NPO-02",
+          "model_group": "claude",
+          "stratum": "local community nonprofit",
+          "authority": "other group's slot; shown for the ten-slot category plan only, never edited here"
+        },
+        {
+          "slot": 3,
+          "source_id": "NPO-03",
+          "model_group": "claude",
+          "stratum": "cause-focused charity",
+          "authority": "other group's slot; shown for the ten-slot category plan only, never edited here"
+        },
+        {
+          "slot": 4,
+          "source_id": "NPO-04",
+          "model_group": "codex",
+          "stratum": "international humanitarian charity",
+          "authority": "other group's slot; shown for the ten-slot category plan only, never edited here"
+        },
+        {
+          "slot": 5,
+          "source_id": "NPO-05",
+          "model_group": "codex",
+          "stratum": "local community nonprofit",
+          "authority": "other group's slot; shown for the ten-slot category plan only, never edited here"
+        },
+        {
+          "slot": 6,
+          "source_id": "NPO-06",
+          "model_group": "codex",
+          "stratum": "cause-focused charity",
+          "authority": "other group's slot; shown for the ten-slot category plan only, never edited here"
+        },
+        {
+          "slot": 7,
+          "source_id": "NPO-07",
+          "model_group": "open-source",
+          "stratum": "international humanitarian charity",
+          "authority": "open-source assignment"
+        },
+        {
+          "slot": 8,
+          "source_id": "NPO-08",
+          "model_group": "open-source",
+          "stratum": "local community nonprofit",
+          "authority": "open-source assignment"
+        },
+        {
+          "slot": 9,
+          "source_id": "NPO-09",
+          "model_group": "open-source",
+          "stratum": "cause-focused charity",
+          "authority": "open-source assignment"
+        },
+        {
+          "slot": 10,
+          "source_id": "NPO-10",
+          "model_group": "open-source",
+          "stratum": "additional distinct international humanitarian charity (complexity-matched reserve)",
+          "authority": "open-source assignment"
+        }
+      ],
+      "representative_pages": [
+        "home",
+        "mission/about",
+        "programs",
+        "program detail",
+        "donate demo",
+        "volunteer",
+        "events/stories",
+        "contact",
+        "404"
+      ],
+      "conditional_interactions": [
+        "donation amount and frequency",
+        "volunteer form",
+        "program/chapter search",
+        "event filters"
+      ],
+      "simulation_notes": "No real donations, payment information, volunteer applications, impact claims, or operational availability.",
+      "scope_rule": "Use only observed source pages/features; label inferred behavior and intentional additions. Page count follows approved scope, not a fixed quota."
+    },
+    {
+      "category": "church",
+      "prefix": "CHUR",
+      "name": "Churches and congregations",
+      "sampling_strata": [
+        {
+          "slot": 1,
+          "source_id": "CHUR-01",
+          "model_group": "claude",
+          "stratum": "large or multisite church",
+          "authority": "other group's slot; shown for the ten-slot category plan only, never edited here"
+        },
+        {
+          "slot": 2,
+          "source_id": "CHUR-02",
+          "model_group": "claude",
+          "stratum": "historic cathedral/parish",
+          "authority": "other group's slot; shown for the ten-slot category plan only, never edited here"
+        },
+        {
+          "slot": 3,
+          "source_id": "CHUR-03",
+          "model_group": "claude",
+          "stratum": "small community congregation",
+          "authority": "other group's slot; shown for the ten-slot category plan only, never edited here"
+        },
+        {
+          "slot": 4,
+          "source_id": "CHUR-04",
+          "model_group": "codex",
+          "stratum": "large or multisite church",
+          "authority": "other group's slot; shown for the ten-slot category plan only, never edited here"
+        },
+        {
+          "slot": 5,
+          "source_id": "CHUR-05",
+          "model_group": "codex",
+          "stratum": "historic cathedral/parish",
+          "authority": "other group's slot; shown for the ten-slot category plan only, never edited here"
+        },
+        {
+          "slot": 6,
+          "source_id": "CHUR-06",
+          "model_group": "codex",
+          "stratum": "small community congregation",
+          "authority": "other group's slot; shown for the ten-slot category plan only, never edited here"
+        },
+        {
+          "slot": 7,
+          "source_id": "CHUR-07",
+          "model_group": "open-source",
+          "stratum": "large or multisite church",
+          "authority": "open-source assignment"
+        },
+        {
+          "slot": 8,
+          "source_id": "CHUR-08",
+          "model_group": "open-source",
+          "stratum": "historic cathedral/parish",
+          "authority": "open-source assignment"
+        },
+        {
+          "slot": 9,
+          "source_id": "CHUR-09",
+          "model_group": "open-source",
+          "stratum": "small community congregation",
+          "authority": "open-source assignment"
+        },
+        {
+          "slot": 10,
+          "source_id": "CHUR-10",
+          "model_group": "open-source",
+          "stratum": "additional distinct large or multisite church (complexity-matched reserve)",
+          "authority": "open-source assignment"
+        }
+      ],
+      "representative_pages": [
+        "home",
+        "plan a visit",
+        "beliefs/about",
+        "ministries/groups",
+        "sermon archive",
+        "events",
+        "staff",
+        "giving/prayer-request demo",
+        "404"
+      ],
+      "conditional_interactions": [
+        "sermon search/filters",
+        "groups finder",
+        "events",
+        "prayer/inquiry validation",
+        "giving simulation"
+      ],
+      "simulation_notes": "No real prayer requests, personal/sensitive submissions, giving, external video widgets, or live service-status claims.",
+      "scope_rule": "Use only observed source pages/features; label inferred behavior and intentional additions. Page count follows approved scope, not a fixed quota."
+    },
+    {
+      "category": "portfolio",
+      "prefix": "PORT",
+      "name": "Personal and creative portfolios",
+      "sampling_strata": [
+        {
+          "slot": 1,
+          "source_id": "PORT-01",
+          "model_group": "claude",
+          "stratum": "minimal one-page personal site",
+          "authority": "other group's slot; shown for the ten-slot category plan only, never edited here"
+        },
+        {
+          "slot": 2,
+          "source_id": "PORT-02",
+          "model_group": "claude",
+          "stratum": "software developer / engineer",
+          "authority": "other group's slot; shown for the ten-slot category plan only, never edited here"
+        },
+        {
+          "slot": 3,
+          "source_id": "PORT-03",
+          "model_group": "claude",
+          "stratum": "motion / 3D designer",
+          "authority": "other group's slot; shown for the ten-slot category plan only, never edited here"
+        },
+        {
+          "slot": 4,
+          "source_id": "PORT-04",
+          "model_group": "codex",
+          "stratum": "software developer / engineer",
+          "authority": "other group's slot; shown for the ten-slot category plan only, never edited here"
+        },
+        {
+          "slot": 5,
+          "source_id": "PORT-05",
+          "model_group": "codex",
+          "stratum": "designer / developer hybrid",
+          "authority": "other group's slot; shown for the ten-slot category plan only, never edited here"
+        },
+        {
+          "slot": 6,
+          "source_id": "PORT-06",
+          "model_group": "codex",
+          "stratum": "photographer / visual artist",
+          "authority": "other group's slot; shown for the ten-slot category plan only, never edited here"
+        },
+        {
+          "slot": 7,
+          "source_id": "PORT-07",
+          "model_group": "open-source",
+          "stratum": "minimal one-page personal site",
+          "authority": "open-source assignment"
+        },
+        {
+          "slot": 8,
+          "source_id": "PORT-08",
+          "model_group": "open-source",
+          "stratum": "software developer / engineer",
+          "authority": "open-source assignment"
+        },
+        {
+          "slot": 9,
+          "source_id": "PORT-09",
+          "model_group": "open-source",
+          "stratum": "motion / 3D designer",
+          "authority": "open-source assignment"
+        },
+        {
+          "slot": 10,
+          "source_id": "PORT-10",
+          "model_group": "open-source",
+          "stratum": "additional distinct software developer / engineer (complexity-matched reserve)",
+          "authority": "open-source assignment"
+        }
+      ],
+      "representative_pages": [
+        "home",
+        "work/project index",
+        "project detail",
+        "about",
+        "services or process when present",
+        "writing/journal when present",
+        "contact",
+        "404"
+      ],
+      "conditional_interactions": [
+        "project filtering on inline data",
+        "gallery or lightbox navigation",
+        "responsive navigation",
+        "contact inquiry on inline data",
+        "reduced-motion handling where observed"
+      ],
+      "simulation_notes": "Contact submissions, commission requests, and any commerce are labeled simulations only.",
+      "scope_rule": "Use only observed source pages/features; label inferred behavior and intentional additions. Page count follows approved scope, not a fixed quota."
+    },
+    {
+      "category": "restaurant",
+      "prefix": "REST",
+      "name": "Restaurants and food service",
+      "sampling_strata": [
+        {
+          "slot": 1,
+          "source_id": "REST-01",
+          "model_group": "claude",
+          "stratum": "small local independent",
+          "authority": "other group's slot; shown for the ten-slot category plan only, never edited here"
+        },
+        {
+          "slot": 2,
+          "source_id": "REST-02",
+          "model_group": "claude",
+          "stratum": "BBQ / smokehouse",
+          "authority": "other group's slot; shown for the ten-slot category plan only, never edited here"
+        },
+        {
+          "slot": 3,
+          "source_id": "REST-03",
+          "model_group": "claude",
+          "stratum": "fine dining",
+          "authority": "other group's slot; shown for the ten-slot category plan only, never edited here"
+        },
+        {
+          "slot": 4,
+          "source_id": "REST-04",
+          "model_group": "codex",
+          "stratum": "vegan / health",
+          "authority": "other group's slot; shown for the ten-slot category plan only, never edited here"
+        },
+        {
+          "slot": 5,
+          "source_id": "REST-05",
+          "model_group": "codex",
+          "stratum": "multi-location group",
+          "authority": "other group's slot; shown for the ten-slot category plan only, never edited here"
+        },
+        {
+          "slot": 6,
+          "source_id": "REST-06",
+          "model_group": "codex",
+          "stratum": "pizzeria",
+          "authority": "other group's slot; shown for the ten-slot category plan only, never edited here"
+        },
+        {
+          "slot": 7,
+          "source_id": "REST-07",
+          "model_group": "open-source",
+          "stratum": "fast-casual chain",
+          "authority": "open-source assignment"
+        },
+        {
+          "slot": 8,
+          "source_id": "REST-08",
+          "model_group": "open-source",
+          "stratum": "ethnic (Xi'an Chinese)",
+          "authority": "open-source assignment"
+        },
+        {
+          "slot": 9,
+          "source_id": "REST-09",
+          "model_group": "open-source",
+          "stratum": "brewery (age gate)",
+          "authority": "open-source assignment"
+        },
+        {
+          "slot": 10,
+          "source_id": "REST-10",
+          "model_group": "open-source",
+          "stratum": "cafe / bakery",
+          "authority": "open-source assignment"
+        }
+      ],
+      "representative_pages": [
+        "home",
+        "menu index",
+        "menu detail when present",
+        "reservations",
+        "about/story",
+        "locations or visit",
+        "private events or catering",
+        "news/journal when present",
+        "contact",
+        "404"
+      ],
+      "conditional_interactions": [
+        "menu filtering on inline data",
+        "reservation request on inline data",
+        "responsive navigation",
+        "open/closed hours display",
+        "age gate where observed",
+        "newsletter signup where observed"
+      ],
+      "simulation_notes": "Reservations, online ordering, delivery, payment and gift cards are labeled simulations only.",
+      "scope_rule": "Use only observed source pages/features; label inferred behavior and intentional additions. Page count follows approved scope, not a fixed quota."
+    }
+  ]
+}

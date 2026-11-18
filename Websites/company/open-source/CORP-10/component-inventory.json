@@ -1,0 +1,144 @@
+{
+  "components": [
+    {
+      "name": "site-header",
+      "selector": "header[data-component=\"site-header\"]",
+      "pages": [
+        "index.html",
+        "checking-index.html",
+        "savings-index.html",
+        "credit-cards-index.html",
+        "mortgage-index.html",
+        "auto-loans-index.html",
+        "smallbusiness-index.html",
+        "student-banking-index.html",
+        "help-index.html",
+        "contact-us-index.html",
+        "404.html"
+      ],
+      "behaviors": ["contains logo image", "contains primary navigation"],
+      "keyboard": ["Tab navigation through logo and nav links"],
+      "status": "implemented"
+    },
+    {
+      "name": "primary-nav",
+      "selector": "nav[data-component=\"primary-nav\"]",
+      "pages": [
+        "index.html",
+        "checking-index.html",
+        "savings-index.html",
+        "credit-cards-index.html",
+        "mortgage-index.html",
+        "auto-loans-index.html",
+        "smallbusiness-index.html",
+        "student-banking-index.html",
+        "help-index.html",
+        "contact-us-index.html",
+        "404.html"
+      ],
+      "behaviors": ["list of internal links"],
+      "keyboard": ["Arrow keys not required; standard tab order"],
+      "status": "implemented"
+    },
+    {
+      "name": "hero-banner",
+      "selector": "[data-component=\"hero-banner\"]",
+      "pages": [
+        "index.html",
+        "checking-index.html",
+        "savings-index.html",
+        "credit-cards-index.html",
+        "mortgage-index.html",
+        "auto-loans-index.html",
+        "smallbusiness-index.html",
+        "student-banking-index.html",
+        "help-index.html",
+        "contact-us-index.html",
+        "404.html"
+      ],
+      "behaviors": ["contains page‑specific <h1> and tagline"],
+      "keyboard": [],
+      "status": "implemented"
+    },
+    {
+      "name": "content-band",
+      "selector": "[data-component=\"content-band\"]",
+      "pages": [
+        "index.html",
+        "checking-index.html",
+        "savings-index.html",
+        "credit-cards-index.html",
+        "mortgage-index.html",
+        "auto-loans-index.html",
+        "smallbusiness-index.html",
+        "student-banking-index.html",
+        "help-index.html",
+        "contact-us-index.html",
+        "404.html"
+      ],
+      "behaviors": ["wraps main content"],
+      "keyboard": [],
+      "status": "implemented"
+    },
+    {
+      "name": "branch-locator",
+      "selector": "form[data-component=\"branch-locator\"]",
+      "pages": ["index.html"],
+      "behaviors": ["search input filters static branch list"],
+      "keyboard": ["Enter key submits form; focus moves to results"],
+      "status": "implemented"
+    },
+    {
+      "name": "account-opening-form",
+      "selector": "form[data-component=\"account-opening-form\"]",
+      "pages": ["checking-index.html", "savings-index.html"],
+      "behaviors": ["client‑side required field validation, error summary"],
+      "keyboard": ["Tab navigation, Escape does not close (no dialog)"],
+      "status": "implemented"
+    },
+    {
+      "name": "loan-calculator",
+      "selector": "form[data-component=\"loan-calculator\"]",
+      "pages": ["mortgage-index.html", "auto-loans-index.html"],
+      "behaviors": ["calculates mock monthly payment using static rate table"],
+      "keyboard": ["Enter submits; results announced via aria‑live"],
+      "status": "implemented"
+    },
+    {
+      "name": "help-search",
+      "selector": "form[data-component=\"help-search\"]",
+      "pages": ["help-index.html"],
+      "behaviors": ["displays placeholder no‑results message"],
+      "keyboard": ["Enter submits; results announced via aria‑live"],
+      "status": "implemented"
+    },
+    {
+      "name": "contact-form",
+      "selector": "form[data-component=\"contact-form\"]",
+      "pages": ["contact-us-index.html"],
+      "behaviors": ["required field validation, error summary, demo success message"],
+      "keyboard": ["Tab navigation, Enter submits"],
+      "status": "implemented"
+    },
+    {
+      "name": "site-footer",
+      "selector": "footer[data-component=\"site-footer\"]",
+      "pages": [
+        "index.html",
+        "checking-index.html",
+        "savings-index.html",
+        "credit-cards-index.html",
+        "mortgage-index.html",
+        "auto-loans-index.html",
+        "smallbusiness-index.html",
+        "student-banking-index.html",
+        "help-index.html",
+        "contact-us-index.html",
+        "404.html"
+      ],
+      "behaviors": ["copyright notice"],
+      "keyboard": [],
+      "status": "implemented"
+    }
+  ]
+}

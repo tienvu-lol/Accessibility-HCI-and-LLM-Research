@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Blog – Ava Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header data-section="header" data-component="site-header" class="site-width">
+    <h1 class="logo" data-component="site-logo">Ava Portfolio</h1>
+    <button id="nav-toggle" class="nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Open main menu">☰</button>
+    <nav id="primary-nav" data-section="navigation" data-component="primary-nav" class="site-width">
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="tips.html">Tips</a></li>
+        <li><a href="javascript.html">JavaScript</a></li>
+        <li><a href="speaking-and-training.html">Speaking &amp; Training</a></li>
+        <li><a href="uses.html">Uses</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content" data-section="main">
+    <section data-component="page-title">
+      <h1>Blog</h1>
+    </section>
+
+    <section data-component="post-list">
+      <h2>Recent Posts</h2>
+      <ul class="card-grid" data-component="card-grid">
+        <!-- Content injected by JS -->
+      </ul>
+    </section>
+  </main>
+
+  <footer data-section="footer" data-component="site-footer" class="site-width">
+    <p>&copy; 2026 Ava Portfolio. All rights reserved.</p>
+  </footer>
+
+  <!-- Inline sample dataset -->
+  <script>
+    window.BLOG_POSTS = [
+      {id:1, title:"Why Semantic HTML Matters", date:"2026-10-01", excerpt:"Using the right HTML elements improves accessibility, SEO, and maintainability."},
+      {id:2, title:"CSS Grid vs Flexbox: When to Use Which", date:"2026-09-15", excerpt:"A practical guide to choosing the right layout tool for your design."},
+      {id:3, title:"Writing Accessible JavaScript Components", date:"2026-08-20", excerpt:"Tips for ensuring your custom widgets work with keyboard and screen readers."},
+      {id:4, title:"Performance Budgets for Small Teams", date:"2026-07-10", excerpt:"How to set and enforce realistic performance goals without slowing down development."},
+      {id:5, title:"The Power of CSS Custom Properties", date:"2026-06-05", excerpt:"Leveraging CSS variables for theming, spacing, and responsive design."},
+      {id:6, title:"Testing Keyboard Navigation Automatically", date:"2026-05-18", excerpt:"Using simple scripts to verify tab order and focus management in your UI."},
+      {id:7, title:"Building a Dark Mode Toggle that Respects User Preferences", date:"2026-04-22", excerpt:"Combines prefers‑reduced‑motion and prefers‑color‑scheme for a polished experience."},
+      {id:8, title:"Accessible Form Validation with ARIA Live Regions", date:"2026-03-30", excerpt:"Providing inline error messages that screen readers announce promptly."}
+    ];
+  </script>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

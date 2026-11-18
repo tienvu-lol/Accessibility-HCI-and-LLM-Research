@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Visit | Liberal Arts College</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <header data-section="banner" data-component="site-header">
+    <div class="site-name">Liberal Arts College</div>
+    <button id="nav-toggle" class="hamburger" aria-controls="primary-nav-list" aria-expanded="false" aria-label="Open main menu">☰</button>
+    <nav data-section="navigation" data-component="primary-nav">
+      <ul id="primary-nav-list" class="nav-list" aria-expanded="false">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="academic-life.html">Academics</a></li>
+        <li><a href="departments.html">Majors</a></li>
+        <li><a href="college-catalog.html">Course Catalog</a></li>
+        <li><a href="admission.html">Admission &amp; Aid</a></li>
+        <li><a href="apply.html">Apply</a></li>
+        <li><a href="visiting.html">Visit</a></li>
+        <li><a href="news.html">News &amp; Events</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content" data-section="main">
+    <h1>Visit Our Campus</h1>
+    <p>We welcome prospective students and guests to tour our beautiful campus, attend information sessions, and experience college life.</p>
+
+    <section data-section="visit-info" data-component="card-grid">
+      <h2>Visit Options</h2>
+      <div class="card-grid">
+        <div class="card">
+          <h3>Campus Tour</h3>
+          <p>Guided walking tours led by current students. Offered weekdays at 10 am and 2 pm.</p>
+        </div>
+        <div class="card">
+          <h3>Information Session</h3>
+          <p>Overview of academics, admission, and financial aid. Held Tuesdays and Thursdays at 4 pm.</p>
+        </div>
+        <div class="card">
+          <h3>Open House</h3>
+          <p>Explore classrooms, meet faculty, and learn about student life. Select Saturdays each semester.</p>
+        </div>
+      </div>
+    </section>
+
+    <section data-section="visit-form" data-component="contact-form">
+      <h2>Schedule a Visit</h2>
+      <p>Let us know your preferred date and any special requests.</p>
+      <form>
+        <label for="vis-name">Name</label>
+        <input type="text" id="vis-name" name="name" required aria-required="true">
+        <label for="vis-email">Email</label>
+        <input type="email" id="vis-email" name="email" required aria-required="true">
+        <label for="vis-date">Preferred Date</label>
+        <input type="date" id="vis-date" name="date" required aria-required="true">
+        <label for="vis-message">Message or Questions</label>
+        <textarea id="vis-message" name="message" rows="4"></textarea>
+        <button type="submit">Request Visit</button>
+      </form>
+    </section>
+  </main>
+
+  <footer data-section="footer" data-component="site-footer">
+    <p>&copy; 2026 Liberal Arts College. All rights reserved.</p>
+    <ul>
+      <li><a href="#main-content">Privacy</a></li>
+      <li><a href="#main-content">Terms</a></li>
+      <li><a href="#main-content">Contact</a></li>
+    </ul>
+  </footer>
+
+  <div id="toast" aria-live="polite"></div>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Reuse contact form simulation from main.js (already attached)
+  </script>
+</body>
+</html>

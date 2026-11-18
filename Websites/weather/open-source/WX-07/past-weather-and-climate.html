@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Past weather and climate | Aurora Meteorological Bureau</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  
+  <header class="site-header" data-section="header" data-component="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="site-logo" aria-label="Aurora Met Bureau">Aurora Met Bureau</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+      <nav class="primary-nav" id="primary-nav" data-component="primary-nav">
+        <ul>
+          <li><a href="location-australia.html">Forecasts</a></li>
+          <li><a href="warnings-and-alerts.html">Warnings & Alerts</a></li>
+          <li><a href="rain-radar-and-weather-maps.html">Radar & Maps</a></li>
+          <li><a href="tropical-cyclone.html">Tropical Cyclones</a></li>
+          <li><a href="water-data-and-forecasts.html">Water Data</a></li>
+          <li><a href="past-weather-and-climate.html">Past Weather</a></li>
+          <li><a href="about-the-bureau.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="hero" data-section="hero" data-component="hero-banner">
+      <div class="container">
+        <h1>Past weather and climate</h1>
+        <p>Access historical weather data and climate trends.</p>
+      </div>
+    </section>
+
+    <section class="container" data-section="search" data-component="search-form">
+      <h2>Search Historical Data</h2>
+      <form class="search-form" aria-label="Search historical weather data">
+        <label for="date-from" class="sr-only">From Date</label>
+        <input type="date" id="date-from" class="search-input">
+        <label for="date-to" class="sr-only">To Date</label>
+        <input type="date" id="date-to" class="search-input">
+        <label for="location-select" class="sr-only">Location</label>
+        <select id="location-select" class="search-input">
+          <option value="capital-city">Capital City</option>
+          <option value="port-haven">Port Haven</option>
+          <option value="highland-valley">Highland Valley</option>
+        </select>
+        <button type="button" class="btn">Search</button>
+      </form>
+    </section>
+
+    <section class="container" data-section="records" data-component="data-table">
+      <h2>Recent Records</h2>
+      <div style="overflow-x: auto; width: 100%; box-sizing: border-box;">
+        <table border="1" cellpadding="8" cellspacing="0" style="width: 100%; min-width: 600px; border-collapse: collapse;">
+          <thead>
+            <tr style="background: var(--color-bg-alt);">
+              <th>Date</th>
+              <th>Max Temp (°C)</th>
+              <th>Min Temp (°C)</th>
+              <th>Rainfall (mm)</th>
+              <th>Wind (km/h)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2026-11-15</td>
+              <td>28.5</td>
+              <td>18.2</td>
+              <td>0.0</td>
+              <td>12</td>
+            </tr>
+            <tr>
+              <td>2026-11-14</td>
+              <td>26.1</td>
+              <td>17.5</td>
+              <td>5.2</td>
+              <td>18</td>
+            </tr>
+            <tr>
+              <td>2026-11-13</td>
+              <td>24.8</td>
+              <td>16.9</td>
+              <td>12.5</td>
+              <td>22</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" data-section="footer" data-component="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>Aurora Met Bureau</h3>
+        <p>Providing accurate weather information since 1901.</p>
+      </div>
+      <div>
+        <h3>Quick Links</h3>
+        <a href="index.html">Home</a>
+        <a href="warnings-and-alerts.html">Warnings</a>
+        <a href="about-the-bureau.html">About Us</a>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <p>Email: info@auroramet.sim</p>
+        <p>Phone: 1300 000 000</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

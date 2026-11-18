@@ -161,7 +161,9 @@ test('build readiness blocks an unapproved, unverified or unsynchronized source'
   process.env.OS_FIXTURE_KEY = 'fixture-key-value';
   try {
     const blocked = buildReadiness(loadSetup(root), 'UNI-07');
-    assert.ok(blocked.length >= 4);
+    // Readiness is slot-scoped since 2026-11-16, so this reports the target slot's own defects
+    // rather than one per open-source row; the point of the test is that it still blocks.
+    assert.ok(blocked.length >= 1);
     assert.ok(blocked.some(e => /missing source_url|missing source_name/.test(e)));
     assert.ok(buildReadiness(loadSetup(root), 'UNI-03').some(e => /must be an allocated open-source ID/.test(e)));
     assert.ok(buildReadiness(loadSetup(root), 'UNI-04').some(e => /must be an allocated open-source ID/.test(e)));

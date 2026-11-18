@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Accessibility Statement – Xi'an Famous Foods</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="site-header" data-section="header" data-component="site-header">
+    <h1>Xi'an Famous Foods</h1>
+    <button class="nav-toggle" aria-controls="primary-nav" aria-expanded="false">☰</button>
+    <nav class="primary-nav" id="primary-nav" aria-label="Primary" data-component="primary-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="our-story.html">Our Story</a></li>
+        <li><a href="locations.html">Locations</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="press.html">Press</a></li>
+        <li><a href="accessibility.html" aria-current="page">Accessibility</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content" data-section="main">
+    <nav aria-label="Breadcrumb" data-section="breadcrumb" data-component="breadcrumb">
+      <ol>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="accessibility.html" aria-current="page">Accessibility Statement</a></li>
+      </ol>
+    </nav>
+
+    <section class="content-band" data-section="content-band" data-component="content-band">
+      <h1>Accessibility Statement</h1>
+      <p>We are committed to ensuring that our website is accessible to everyone, including individuals with disabilities. This statement outlines our ongoing efforts to conform to the Web Content Accessibility Guidelines (WCAG) 2.2 Level AA.</p>
+
+      <h2>Measures to support accessibility</h2>
+      <ul>
+        <li>We integrate accessibility considerations into our design and development process.</li>
+        <li>All pages are built with semantic HTML5 and are navigable via keyboard.</li>
+        <li>We provide text alternatives for non‑text content and ensure sufficient color contrast.</li>
+        <li>Forms include associated labels, clear error messages, and focus management.</li>
+        <li>We respect user preferences for reduced motion and provide a visible focus indicator.</li>
+        <li>Skip links and ARIA landmarks are present to aid navigation.</li>
+      </ul>
+
+      <h2>Feedback</h2>
+      <p>We welcome your feedback on the accessibility of this site. Please contact us if you encounter any barriers:</p>
+      <ul>
+        <li>Email: <a href="mailto:accessibility@xianfoods.example">accessibility@xianfoods.example</a></li>
+        <li>Phone: <a href="tel:+12125550199">(212) 555-0199</a></li>
+      </ul>
+
+      <h2>Technical details</h2>
+      <p>This website is built using only HTML, CSS, and JavaScript. It is designed to work in modern browsers and when opened as a local file (<code>file://</code>). No external libraries or frameworks are used.</p>
+
+      <h2>Limitations</h2>
+      <p>While we strive for accessibility, some third‑party content (e.g., embedded social media feeds) may not fully conform. We encourage users to reach out if they encounter issues.</p>
+
+      <p><em>Last reviewed: November 2026</em></p>
+    </section>
+  </main>
+
+  <footer class="site-footer" data-section="footer" data-component="site-footer">
+    <p>&copy; 2026 Xi'an Famous Foods. All rights reserved.</p>
+    <ul class="social-list" data-component="social-links">
+      <li><a href="#" aria-label="Facebook">FB</a></li>
+      <li><a href="#" aria-label="Twitter">TW</a></li>
+      <li><a href="#" aria-label="Instagram">IG</a></li>
+    </ul>
+    <section data-component="newsletter-signup">
+      <h3>Stay updated</h3>
+      <form>
+        <label for="newsletter-email">Email address</label>
+        <input type="email" id="newsletter-email" placeholder="you@example.com" required>
+        <button type="submit" class="btn">Subscribe</button>
+      </form>
+      <p class="note">We’ll never share your address.</p>
+    </section>
+  </footer>
+
+  <!-- Age gate modal (same as index) -->
+  <div id="age-gate-backdrop" class="modal-backdrop" aria-hidden="true">
+    <div id="age-gate-modal" class="modal" aria-hidden="false" role="dialog" aria-modal="true">
+      <h2>Age verification</h2>
+      <p>Please confirm you are 18 years or older.</p>
+      <form id="age-gate-form">
+        <label for="age-gate-input">Date of birth (MM/DD/YYYY)</label>
+        <input type="text" id="age-gate-input" name="age-gate-input" placeholder="01/01/1990" required pattern="(0[1-9]|1[0-2])\/(0[1-9]|[12][0-9]|3[01])\/\d{4}">
+        <button type="submit" class="btn">Enter</button>
+      </form>
+      <p id="age-gate-message" style="color:#c00;display:none;"></p>
+      <button class="modal-close" aria-label="Close">×</button>
+    </div>
+  </div>
+
+  <!-- Toast container -->
+  <div id="toast" aria-live="off"></div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

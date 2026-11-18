@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects - Web Stuff - Alex Mercer</title>
+  <meta name="description" content="Web development projects, mini-sites, and tools.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="site-header" data-section="header" data-component="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">Alex Mercer</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
+        <span class="sr-only">Menu</span>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+      </button>
+      <nav class="primary-nav" id="primary-nav" data-component="primary-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projects.html" aria-current="page">Projects</a></li>
+          <li><a href="mini-tools.html">Mini-Tools</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="all-posts.html">All Posts</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="section" data-section="category-overview">
+      <div class="container">
+        <h1 class="section-title">Web Stuff</h1>
+        <p style="text-align: center; margin-bottom: 2rem; color: var(--color-text-light);">Web development projects, mini-sites, and developer tools.</p>
+        
+        <div class="card-grid" data-component="card-grid">
+          <article class="card" data-category="web-stuff">
+            <div class="card-image" aria-hidden="true">Project Image</div>
+            <div class="card-content">
+              <h3 class="card-title"><a href="projects-web-stuff-cheatsheets-and-snippets-markdown-powered-gatsby-mini-site.html">Cheatsheets Mini-Site</a></h3>
+              <p class="card-meta">Mini-Site</p>
+              <p>Markdown powered Gatsby mini site for developer cheatsheets.</p>
+            </div>
+          </article>
+          <article class="card" data-category="web-stuff">
+            <div class="card-image" aria-hidden="true">Project Image</div>
+            <div class="card-content">
+              <h3 class="card-title"><a href="#">Portfolio V1</a></h3>
+              <p class="card-meta">Portfolio</p>
+              <p>First version of this portfolio built with Hugo.</p>
+            </div>
+          </article>
+          <article class="card" data-category="web-stuff">
+            <div class="card-image" aria-hidden="true">Project Image</div>
+            <div class="card-content">
+              <h3 class="card-title"><a href="#">Weather Widget</a></h3>
+              <p class="card-meta">Widget</p>
+              <p>Simple weather widget using OpenWeatherMap API.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" data-section="footer" data-component="site-footer">
+    <div class="container">
+      <p>&copy; 2026 Alex Mercer. All rights reserved.</p>
+      <p style="margin-top: 0.5rem; font-size: 0.875rem;">
+        <a href="#" style="color: var(--color-text-light);">Contact</a> | 
+        <a href="#" style="color: var(--color-text-light);">GitHub</a> | 
+        <a href="#" style="color: var(--color-text-light);">Twitter</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

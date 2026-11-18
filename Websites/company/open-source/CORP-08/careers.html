@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Riverbank Community Bank – Careers</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <header data-section="site-header" data-component="site-header" class="site-header">
+    <div class="logo">Riverbank Community Bank</div>
+    <button id="nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Open main menu">
+      ☰
+    </button>
+    <nav data-section="primary-nav" data-component="primary-nav" class="primary-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="learning.html">Learning Center</a></li>
+        <li><a href="support.html">Support</a></li>
+        <li><a href="checking.html">Checking & Savings</a></li>
+        <li><a href="loans.html">Loans</a></li>
+        <li><a href="digital.html">Digital Banking</a></li>
+        <li><a href="careers.html" aria-current="page">Careers</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section data-section="hero" data-component="hero-banner" class="hero" aria-label="Hero banner">
+    <h1>Join Our Team</h1>
+    <p>Explore current openings and learn about our culture.</p>
+  </section>
+
+  <main id="main-content" data-section="main-content">
+    <section data-section="content-band" data-component="content-band-careers" class="content-band">
+      <h2>Current Openings</h2>
+      <div class="card-grid" data-instance="career-listings">
+        <!-- Inline sample data will be rendered by script -->
+      </div>
+    </section>
+
+    <section data-section="content-band" data-component="content-band-culture" class="content-band">
+      <h2>Our Culture</h2>
+      <p>At Riverbank Community Bank, we value integrity, service, and continuous learning. We offer competitive benefits, professional development, and a supportive environment where every employee can grow.</p>
+    </section>
+  </main>
+
+  <footer data-section="site-footer" data-component="site-footer" class="site-footer">
+    <div>
+      <a href="index.html">Home</a> |
+      <a href="about.html">About</a> |
+      <a href="learning.html">Learning Center</a> |
+      <a href="support.html">Support</a> |
+      <a href="careers.html">Careers</a>
+    </div>
+    <div>&copy; 2026 Riverbank Community Bank. All rights reserved.</div>
+  </footer>
+
+  <script>
+    // Sample career listings (4 items)
+    const sampleCareers = [
+      {title: "Personal Banker", location: "Anytown, ST", department: "Retail Banking", type: "Full‑time"},
+      {title: "Loan Officer", location: "Midcity, ST", department: "Lending", type: "Full‑time"},
+      {title: "IT Support Specialist", location: "Anytown, ST", department: "Technology", type: "Full‑time"},
+      {title: "Branch Manager", location: "Westside, ST", department: "Branch Management", type: "Full‑time"}
+    ];
+    const grid = document.querySelector('[data-instance="career-listings"]');
+    sampleCareers.forEach(item => {
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.setAttribute('data-component', 'career-card');
+      card.innerHTML = `
+        <h3>${item.title}</h3>
+        <p><strong>Location:</strong> ${item.location}</p>
+        <p><strong>Department:</strong> ${item.department}</p>
+        <p><strong>Type:</strong> ${item.type}</p>
+      `;
+      grid.appendChild(card);
+    });
+  </script>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

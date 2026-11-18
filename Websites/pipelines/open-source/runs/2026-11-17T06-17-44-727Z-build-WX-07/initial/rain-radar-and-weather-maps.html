@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rain radar and weather maps | Aurora Meteorological Bureau</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  
+  <header class="site-header" data-section="header" data-component="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="site-logo" aria-label="Aurora Meteorological Bureau Home">Aurora Met Bureau</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+      <nav class="primary-nav" id="primary-nav" data-component="primary-nav">
+        <ul>
+          <li><a href="location-australia.html">Forecasts</a></li>
+          <li><a href="warnings-and-alerts.html">Warnings & Alerts</a></li>
+          <li><a href="rain-radar-and-weather-maps.html">Radar & Maps</a></li>
+          <li><a href="tropical-cyclone.html">Tropical Cyclones</a></li>
+          <li><a href="water-data-and-forecasts.html">Water Data</a></li>
+          <li><a href="past-weather-and-climate.html">Past Weather</a></li>
+          <li><a href="about-the-bureau.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="hero" data-section="hero" data-component="hero-banner">
+      <div class="container">
+        <h1>Rain radar and weather maps</h1>
+        <p>Visualize current weather patterns and forecasts with interactive maps.</p>
+      </div>
+    </section>
+
+    <section class="container" data-section="radar" data-component="radar-map">
+      <h2>Radar Layers</h2>
+      <div class="tabs">
+        <ul class="tab-list" role="tablist">
+          <li role="presentation">
+            <button class="tab-btn radar-layer-btn" role="tab" aria-selected="true" aria-controls="radar-rain" id="tab-rain" data-layer="rain">Rain</button>
+          </li>
+          <li role="presentation">
+            <button class="tab-btn radar-layer-btn" role="tab" aria-selected="false" aria-controls="radar-wind" id="tab-wind" data-layer="wind">Wind</button>
+          </li>
+          <li role="presentation">
+            <button class="tab-btn radar-layer-btn" role="tab" aria-selected="false" aria-controls="radar-satellite" id="tab-satellite" data-layer="satellite">Satellite</button>
+          </li>
+        </ul>
+      </div>
+
+      <div class="radar-display" id="radar-map-display">
+        <figure>
+          <!-- Static SVG Placeholder for Radar Map -->
+          <svg width="100%" height="300" viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="radar-title">
+            <title id="radar-title">Static Radar Map</title>
+            <rect width="100%" height="100%" fill="#e0e0e0"/>
+            <path d="M100,150 Q200,50 300,150 T500,150 T700,150" fill="none" stroke="#005a9c" stroke-width="2"/>
+            <circle cx="200" cy="150" r="20" fill="#d32f2f" opacity="0.5"/>
+            <circle cx="400" cy="150" r="30" fill="#f57c00" opacity="0.5"/>
+            <circle cx="600" cy="150" r="20" fill="#fbc02d" opacity="0.5"/>
+          </svg>
+          <figcaption>Current radar imagery. <span id="radar-layer-label">Rain</span> layer selected.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="container" data-section="weather-maps" data-component="static-map">
+      <h2>Weather Maps</h2>
+      <div class="card-grid">
+        <article class="card">
+          <h3>Synoptic Chart</h3>
+          <figure>
+            <svg width="100%" height="150" viewBox="0 0 400 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Synoptic Chart Placeholder">
+              <rect width="100%" height="100%" fill="#f4f7f9"/>
+              <text x="50%" y="50%" text-anchor="middle" fill="#555">Synoptic Chart Image</text>
+            </svg>
+            <figcaption>High and low-pressure systems.</figcaption>
+          </figure>
+        </article>
+        <article class="card">
+          <h3>Temperature Map</h3>
+          <figure>
+            <svg width="100%" height="150" viewBox="0 0 400 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Temperature Map Placeholder">
+              <rect width="100%" height="100%" fill="#f4f7f9"/>
+              <text x="50%" y="50%" text-anchor="middle" fill="#555">Temperature Map Image</text>
+            </svg>
+            <figcaption>Regional temperature distribution.</figcaption>
+          </figure>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" data-section="footer" data-component="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h4>Aurora Met Bureau</h4>
+        <p>Providing accurate weather information since 1901.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <a href="index.html">Home</a>
+        <a href="warnings-and-alerts.html">Warnings</a>
+        <a href="about-the-bureau.html">About Us</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>Email: info@auroramet.sim</p>
+        <p>Phone: 1300 000 000</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

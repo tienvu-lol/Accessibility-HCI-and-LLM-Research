@@ -1,0 +1,1319 @@
+{
+  "run_id": "2026-11-17T17-17-00-904Z-build-FASH-08",
+  "phase": "build",
+  "target": "FASH-08",
+  "category": "fashion",
+  "slot": 8,
+  "model_group": "open-source",
+  "model": {
+    "model_id": "unsloth/NVIDIA-Nemotron-3-Super-120B-A12B-GGUF",
+    "model_version": "MXFP4_MOE",
+    "model_provider_or_runtime": "vt-arc-falcon-llamacpp (OpenAI-compatible chat completions at http://localhost:8081/v1)",
+    "weights_url": "https://huggingface.co/unsloth/NVIDIA-Nemotron-3-Super-120B-A12B-GGUF",
+    "license": "nvidia-nemotron-open-model-license",
+    "open_weights": true,
+    "eligibility_note": "Open weights. Licence is the NVIDIA Nemotron Open Model License (HF tag nvidia-nemotron-open-model-license), read 2026-11-17 by the orchestrator on the quant repo and the base model card nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-BF16. A vendor open-model licence, NOT OSI-approved: this slot is open-weight, not open-source. Quantisation MXFP4_MOE. Served self-hosted via llama.cpp on VT ARC Falcon over an SSH tunnel on localhost:8081. Serving history, same model and quant: fal052:50413 (2026-11-17, twelve slot-08 research runs and four builds; session ended), fal039:43471 (current).",
+    "params": {
+      "temperature": 0.3,
+      "max_tokens": 32000
+    }
+  },
+  "operator": "Samhith Varma Yallamraju",
+  "status": "completed",
+  "prepared_at": "2026-11-17T17:17:00.909Z",
+  "generation_started_at": "2026-11-17T17:17:00.909Z",
+  "generation_completed_at": "2026-11-17T17:58:19.565Z",
+  "tool_access": "chat-completions API only: no browsing, no shell, no filesystem. The orchestrator wrote every file and ran every check.",
+  "budget": {
+    "max_build_turns": 48,
+    "max_repair_rounds": 3,
+    "max_tokens_per_request": 32000,
+    "temperature": 0.3
+  },
+  "approved_source": {
+    "source_name": "Refinery29",
+    "source_url": "https://www.refinery29.com/en-us",
+    "verified_at": "2026-11-17",
+    "verification_method": "HTTP GET by the orchestrator",
+    "verification_result": "verified",
+    "evidence_reference": "pipelines/open-source/research/evidence/FASH-08-http-2026-11-17.json",
+    "complexity": "medium",
+    "stack_clues": "unknown",
+    "limitations": "Verified_at date not supplied in evidence; deeper article pages not requested; JavaScript‑driven content cannot be confirmed.",
+    "approved_at": "2026-11-17",
+    "approved_by": "Samhith Varma Yallamraju",
+    "approval_reference": "Project lead approval of all slot-08 sources given 2026-11-17 in the Claude Code orchestration session; see research/FASH-08.md and research/proposals/FASH-rows.json"
+  },
+  "approved_page_map": [
+    {
+      "url": "https://www.refinery29.com/en-us",
+      "title": "Refinery29",
+      "local_file": "index.html"
+    },
+    {
+      "url": "https://www.refinery29.com/en-us/fashion/",
+      "title": "Fashion: What To Wear, Trends, Styling Tips - Refinery29",
+      "local_file": "fashion.html"
+    },
+    {
+      "url": "https://www.refinery29.com/en-us/beauty/",
+      "title": "Beauty: Skincare Tips, Hair & Makeup Trends - Refinery29",
+      "local_file": "beauty.html"
+    },
+    {
+      "url": "https://www.refinery29.com/en-us/shopping/",
+      "title": "Shop The Best Beauty, Fashion & Homeware - Refinery29",
+      "local_file": "shopping.html"
+    },
+    {
+      "url": "https://www.refinery29.com/en-us/summer-lookbook-2026",
+      "title": "The R29 Lookbook: The Making of a Summer Star",
+      "local_file": "summer-lookbook-2026.html"
+    },
+    {
+      "url": "https://www.refinery29.com/en-us/money-diary",
+      "title": "Money Diaries - Refinery29",
+      "local_file": "money-diary.html"
+    },
+    {
+      "url": "https://www.refinery29.com/en-us/horoscope",
+      "title": "Horoscopes & Zodiac Star Sign Predictions - Refinery29",
+      "local_file": "horoscope.html"
+    },
+    {
+      "url": "https://www.refinery29.com/en-us/podcasts",
+      "title": "Refinery29 Podcasts",
+      "local_file": "podcasts.html"
+    }
+  ],
+  "protocol_snapshots": [
+    {
+      "path": "Rules.md",
+      "sha256": "04b1c3e38b76f2aff3aef869d67370bb4532cd8f9ab5e22ac8276f26cbb859bf"
+    },
+    {
+      "path": "MODEL_ALLOCATION.md",
+      "sha256": "7e9487530a6e80b35af48d0691951dafc2fffea39798c81a3c49203909148d30"
+    },
+    {
+      "path": "pipelines/open-source/config.json",
+      "sha256": "e5c7666dbdc7c302e54c0c94c946dcd01d64992b89a56df7ce1ee272dd488edf"
+    },
+    {
+      "path": "pipelines/open-source/categories.json",
+      "sha256": "8180966e55daa24799e51106645e93fd5807dde470765ab8b3b38d3f922c867b"
+    },
+    {
+      "path": "pipelines/open-source/prompts/system.md",
+      "sha256": "61bc24a57de14bd6a662cd6b5f98d0cfc57bf47e187fc58a97831bf1f272b4ee"
+    },
+    {
+      "path": "pipelines/open-source/prompts/build.md",
+      "sha256": "6096ab8b698af7a99d8ddaf1534cc95f41844d1d00cdd1fce740123b3146ab6a"
+    },
+    {
+      "path": "pipelines/open-source/prompts/repair.md",
+      "sha256": "8a84e51995736607b3efa6f5b2d76e52692423c2c26b03409afb4afa3c6586d6"
+    },
+    {
+      "path": "pipelines/open-source/models.json",
+      "sha256": "c9030eb15c275da3e978e64cf2a9e508788095ad3a9170258f24b9e3dc9db17b"
+    },
+    {
+      "path": "metadata/source-inventories/fashion.csv",
+      "sha256": "c132d9eb91495d04d79d9506e6ebc45b1b635bfc56a3eeeda7994c50d8f8435d"
+    },
+    {
+      "path": "metadata/assignments.csv",
+      "sha256": "75aa44ee9046372a60e2b9bafe18f1e0dbb3f7c5bd80c29f49f4c060050bca06"
+    }
+  ],
+  "turns": [
+    {
+      "turn": 1,
+      "label": "plan",
+      "status_line": "CONTINUE",
+      "prose_chars": 2899,
+      "files_written": [],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 1461,
+        "prompt_tokens": 5046,
+        "total_tokens": 6507,
+        "prompt_tokens_details": {
+          "cached_tokens": 541
+        }
+      },
+      "at": "2026-11-17T17:17:31.290Z"
+    },
+    {
+      "turn": 2,
+      "label": "files-2",
+      "status_line": "CONTINUE",
+      "prose_chars": 0,
+      "files_written": [
+        "css/styles.css",
+        "js/main.js",
+        "index.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 5828,
+        "prompt_tokens": 5956,
+        "total_tokens": 11784,
+        "prompt_tokens_details": {
+          "cached_tokens": 5042
+        }
+      },
+      "at": "2026-11-17T17:19:24.710Z"
+    },
+    {
+      "turn": 3,
+      "label": "files-3",
+      "status_line": "CONTINUE",
+      "prose_chars": 0,
+      "files_written": [
+        "404.html",
+        "fashion.html",
+        "beauty.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 2739,
+        "prompt_tokens": 11748,
+        "total_tokens": 14487,
+        "prompt_tokens_details": {
+          "cached_tokens": 5952
+        }
+      },
+      "at": "2026-11-17T17:20:20.315Z"
+    },
+    {
+      "turn": 4,
+      "label": "files-4",
+      "status_line": "CONTINUE",
+      "prose_chars": 0,
+      "files_written": [
+        "shopping.html",
+        "summer-lookbook-2026.html",
+        "money-diary.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 2892,
+        "prompt_tokens": 14418,
+        "total_tokens": 17310,
+        "prompt_tokens_details": {
+          "cached_tokens": 11744
+        }
+      },
+      "at": "2026-11-17T17:21:18.031Z"
+    },
+    {
+      "turn": 5,
+      "label": "files-5",
+      "status_line": "CONTINUE",
+      "prose_chars": 0,
+      "files_written": [
+        "horoscope.html",
+        "podcasts.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 1979,
+        "prompt_tokens": 17279,
+        "total_tokens": 19258,
+        "prompt_tokens_details": {
+          "cached_tokens": 14414
+        }
+      },
+      "at": "2026-11-17T17:21:58.199Z"
+    },
+    {
+      "turn": 6,
+      "label": "files-6",
+      "status_line": "COMPLETE",
+      "prose_chars": 0,
+      "files_written": [
+        "README.md",
+        "fidelity-notes.md",
+        "component-inventory.json",
+        "generation-metadata.json"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 5978,
+        "prompt_tokens": 19285,
+        "total_tokens": 25263,
+        "prompt_tokens_details": {
+          "cached_tokens": 17275
+        }
+      },
+      "at": "2026-11-17T17:23:56.200Z"
+    },
+    {
+      "turn": 7,
+      "label": "repair-1",
+      "status_line": "CONTINUE",
+      "prose_chars": 0,
+      "files_written": [
+        "css/styles.css",
+        "index.html",
+        "404.html",
+        "fashion.html",
+        "beauty.html",
+        "shopping.html",
+        "summer-lookbook-2026.html",
+        "money-diary.html",
+        "horoscope.html",
+        "podcasts.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 12358,
+        "prompt_tokens": 27680,
+        "total_tokens": 40038,
+        "prompt_tokens_details": {
+          "cached_tokens": 27676
+        }
+      },
+      "at": "2026-11-17T17:38:12.050Z"
+    },
+    {
+      "turn": 8,
+      "label": "repair-1-cont-1",
+      "status_line": "COMPLETE",
+      "prose_chars": 1872,
+      "files_written": [
+        "README.md",
+        "fidelity-notes.md",
+        "component-inventory.json",
+        "generation-metadata.json"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 5949,
+        "prompt_tokens": 38303,
+        "total_tokens": 44252,
+        "prompt_tokens_details": {
+          "cached_tokens": 27676
+        }
+      },
+      "at": "2026-11-17T17:40:14.012Z"
+    },
+    {
+      "turn": 9,
+      "label": "repair-2",
+      "status_line": "CONTINUE",
+      "prose_chars": 0,
+      "files_written": [],
+      "files_rejected": [
+        {
+          "path": "assets/img/hero1.svg",
+          "reason": "directory \"assets/img\" is not one of: css, js, assets, data or the site root"
+        },
+        {
+          "path": "assets/img/hero-fashion.svg",
+          "reason": "directory \"assets/img\" is not one of: css, js, assets, data or the site root"
+        },
+        {
+          "path": "assets/img/hero-beauty.svg",
+          "reason": "directory \"assets/img\" is not one of: css, js, assets, data or the site root"
+        },
+        {
+          "path": "assets/img/hero-shopping.svg",
+          "reason": "directory \"assets/img\" is not one of: css, js, assets, data or the site root"
+        },
+        {
+          "path": "assets/img/hero-lookbook.svg",
+          "reason": "directory \"assets/img\" is not one of: css, js, assets, data or the site root"
+        },
+        {
+          "path": "assets/img/hero-diary.svg",
+          "reason": "directory \"assets/img\" is not one of: css, js, assets, data or the site root"
+        },
+        {
+          "path": "assets/img/hero-horoscope.svg",
+          "reason": "directory \"assets/img\" is not one of: css, js, assets, data or the site root"
+        },
+        {
+          "path": "assets/img/hero-podcasts.svg",
+          "reason": "directory \"assets/img\" is not one of: css, js, assets, data or the site root"
+        },
+        {
+          "path": "assets/img/look1.svg",
+          "reason": "directory \"assets/img\" is not one of: css, js, assets, data or the site root"
+        },
+        {
+          "path": "assets/img/look2.svg",
+          "reason": "directory \"assets/img\" is not one of: css, js, assets, data or the site root"
+        },
+        {
+          "path": "assets/img/look3.svg",
+          "reason": "directory \"assets/img\" is not one of: css, js, assets, data or the site root"
+        },
+        {
+          "path": "assets/img/look4.svg",
+          "reason": "directory \"assets/img\" is not one of: css, js, assets, data or the site root"
+        },
+        {
+          "path": "assets/img/look5.svg",
+          "reason": "directory \"assets/img\" is not one of: css, js, assets, data or the site root"
+        },
+        {
+          "path": "assets/img/look6.svg",
+          "reason": "directory \"assets/img\" is not one of: css, js, assets, data or the site root"
+        },
+        {
+          "path": "assets/img/look7.svg",
+          "reason": "directory \"assets/img\" is not one of: css, js, assets, data or the site root"
+        },
+        {
+          "path": "assets/img/look8.svg",
+          "reason": "directory \"assets/img\" is not one of: css, js, assets, data or the site root"
+        },
+        {
+          "path": "assets/img/look9.svg",
+          "reason": "directory \"assets/img\" is not one of: css, js, assets, data or the site root"
+        },
+        {
+          "path": "assets/img/look10.svg",
+          "reason": "directory \"assets/img\" is not one of: css, js, assets, data or the site root"
+        },
+        {
+          "path": "assets/img/look11.svg",
+          "reason": "directory \"assets/img\" is not one of: css, js, assets, data or the site root"
+        },
+        {
+          "path": "assets/img/look12.svg",
+          "reason": "directory \"assets/img\" is not one of: css, js, assets, data or the site root"
+        },
+        {
+          "path": "assets/img/look13.svg",
+          "reason": "directory \"assets/img\" is not one of: css, js, assets, data or the site root"
+        },
+        {
+          "path": "assets/img/look14.svg",
+          "reason": "directory \"assets/img\" is not one of: css, js, assets, data or the site root"
+        },
+        {
+          "path": "assets/img/look15.svg",
+          "reason": "directory \"assets/img\" is not one of: css, js, assets, data or the site root"
+        }
+      ],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 4282,
+        "prompt_tokens": 47097,
+        "total_tokens": 51379,
+        "prompt_tokens_details": {
+          "cached_tokens": 47093
+        }
+      },
+      "at": "2026-11-17T17:46:50.612Z"
+    },
+    {
+      "turn": 10,
+      "label": "repair-2-cont-1",
+      "status_line": "CONTINUE",
+      "prose_chars": 0,
+      "files_written": [
+        "assets/hero1.svg",
+        "assets/hero-fashion.svg",
+        "assets/hero-beauty.svg",
+        "assets/hero-shopping.svg",
+        "assets/hero-lookbook.svg",
+        "assets/hero-diary.svg",
+        "assets/hero-horoscope.svg",
+        "assets/hero-podcasts.svg",
+        "assets/look1.svg",
+        "assets/look2.svg",
+        "assets/look3.svg",
+        "assets/look4.svg",
+        "assets/look5.svg",
+        "assets/look6.svg",
+        "assets/look7.svg",
+        "assets/look8.svg",
+        "assets/look9.svg",
+        "assets/look10.svg",
+        "assets/look11.svg",
+        "assets/look12.svg",
+        "assets/look13.svg",
+        "assets/look14.svg",
+        "assets/look15.svg",
+        "js/main.js"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 6191,
+        "prompt_tokens": 50426,
+        "total_tokens": 56617,
+        "prompt_tokens_details": {
+          "cached_tokens": 50422
+        }
+      },
+      "at": "2026-11-17T17:53:57.584Z"
+    },
+    {
+      "turn": 11,
+      "label": "repair-2-cont-2",
+      "status_line": "COMPLETE",
+      "prose_chars": 1615,
+      "files_written": [],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 508,
+        "prompt_tokens": 56348,
+        "total_tokens": 56856,
+        "prompt_tokens_details": {
+          "cached_tokens": 50422
+        }
+      },
+      "at": "2026-11-17T17:54:10.629Z"
+    },
+    {
+      "turn": 12,
+      "label": "repair-3",
+      "status_line": "CONTINUE",
+      "prose_chars": 0,
+      "files_written": [
+        "index.html",
+        "404.html",
+        "fashion.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 3452,
+        "prompt_tokens": 59555,
+        "total_tokens": 63007,
+        "prompt_tokens_details": {
+          "cached_tokens": 56344
+        }
+      },
+      "at": "2026-11-17T17:55:25.795Z"
+    },
+    {
+      "turn": 13,
+      "label": "repair-3-cont-1",
+      "status_line": "CONTINUE",
+      "prose_chars": 0,
+      "files_written": [
+        "beauty.html",
+        "shopping.html",
+        "summer-lookbook-2026.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 3167,
+        "prompt_tokens": 62546,
+        "total_tokens": 65713,
+        "prompt_tokens_details": {
+          "cached_tokens": 59551
+        }
+      },
+      "at": "2026-11-17T17:56:31.339Z"
+    },
+    {
+      "turn": 14,
+      "label": "repair-3-cont-2",
+      "status_line": "COMPLETE",
+      "prose_chars": 979,
+      "files_written": [
+        "horoscope.html",
+        "podcasts.html",
+        "money-diary.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 5059,
+        "prompt_tokens": 65875,
+        "total_tokens": 70934,
+        "prompt_tokens_details": {
+          "cached_tokens": 62542
+        }
+      },
+      "at": "2026-11-17T17:58:15.556Z"
+    }
+  ],
+  "rejected_files": [
+    {
+      "turn": 9,
+      "path": "assets/img/hero1.svg",
+      "reason": "directory \"assets/img\" is not one of: css, js, assets, data or the site root"
+    },
+    {
+      "turn": 9,
+      "path": "assets/img/hero-fashion.svg",
+      "reason": "directory \"assets/img\" is not one of: css, js, assets, data or the site root"
+    },
+    {
+      "turn": 9,
+      "path": "assets/img/hero-beauty.svg",
+      "reason": "directory \"assets/img\" is not one of: css, js, assets, data or the site root"
+    },
+    {
+      "turn": 9,
+      "path": "assets/img/hero-shopping.svg",
+      "reason": "directory \"assets/img\" is not one of: css, js, assets, data or the site root"
+    },
+    {
+      "turn": 9,
+      "path": "assets/img/hero-lookbook.svg",
+      "reason": "directory \"assets/img\" is not one of: css, js, assets, data or the site root"
+    },
+    {
+      "turn": 9,
+      "path": "assets/img/hero-diary.svg",
+      "reason": "directory \"assets/img\" is not one of: css, js, assets, data or the site root"
+    },
+    {
+      "turn": 9,
+      "path": "assets/img/hero-horoscope.svg",
+      "reason": "directory \"assets/img\" is not one of: css, js, assets, data or the site root"
+    },
+    {
+      "turn": 9,
+      "path": "assets/img/hero-podcasts.svg",
+      "reason": "directory \"assets/img\" is not one of: css, js, assets, data or the site root"
+    },
+    {
+      "turn": 9,
+      "path": "assets/img/look1.svg",
+      "reason": "directory \"assets/img\" is not one of: css, js, assets, data or the site root"
+    },
+    {
+      "turn": 9,
+      "path": "assets/img/look2.svg",
+      "reason": "directory \"assets/img\" is not one of: css, js, assets, data or the site root"
+    },
+    {
+      "turn": 9,
+      "path": "assets/img/look3.svg",
+      "reason": "directory \"assets/img\" is not one of: css, js, assets, data or the site root"
+    },
+    {
+      "turn": 9,
+      "path": "assets/img/look4.svg",
+      "reason": "directory \"assets/img\" is not one of: css, js, assets, data or the site root"
+    },
+    {
+      "turn": 9,
+      "path": "assets/img/look5.svg",
+      "reason": "directory \"assets/img\" is not one of: css, js, assets, data or the site root"
+    },
+    {
+      "turn": 9,
+      "path": "assets/img/look6.svg",
+      "reason": "directory \"assets/img\" is not one of: css, js, assets, data or the site root"
+    },
+    {
+      "turn": 9,
+      "path": "assets/img/look7.svg",
+      "reason": "directory \"assets/img\" is not one of: css, js, assets, data or the site root"
+    },
+    {
+      "turn": 9,
+      "path": "assets/img/look8.svg",
+      "reason": "directory \"assets/img\" is not one of: css, js, assets, data or the site root"
+    },
+    {
+      "turn": 9,
+      "path": "assets/img/look9.svg",
+      "reason": "directory \"assets/img\" is not one of: css, js, assets, data or the site root"
+    },
+    {
+      "turn": 9,
+      "path": "assets/img/look10.svg",
+      "reason": "directory \"assets/img\" is not one of: css, js, assets, data or the site root"
+    },
+    {
+      "turn": 9,
+      "path": "assets/img/look11.svg",
+      "reason": "directory \"assets/img\" is not one of: css, js, assets, data or the site root"
+    },
+    {
+      "turn": 9,
+      "path": "assets/img/look12.svg",
+      "reason": "directory \"assets/img\" is not one of: css, js, assets, data or the site root"
+    },
+    {
+      "turn": 9,
+      "path": "assets/img/look13.svg",
+      "reason": "directory \"assets/img\" is not one of: css, js, assets, data or the site root"
+    },
+    {
+      "turn": 9,
+      "path": "assets/img/look14.svg",
+      "reason": "directory \"assets/img\" is not one of: css, js, assets, data or the site root"
+    },
+    {
+      "turn": 9,
+      "path": "assets/img/look15.svg",
+      "reason": "directory \"assets/img\" is not one of: css, js, assets, data or the site root"
+    }
+  ],
+  "qc_runs": [
+    {
+      "started_at": "2026-11-17T17:23:56.212Z",
+      "completed_at": "2026-11-17T17:24:00.394Z",
+      "exit_code": 1,
+      "executed": true,
+      "passed": false,
+      "outcome": "fail",
+      "failures": [
+        "placeholder href=\"#\" in 404.html",
+        "placeholder href=\"#\" in 404.html",
+        "placeholder href=\"#\" in 404.html",
+        "placeholder href=\"#\" in beauty.html",
+        "placeholder href=\"#\" in beauty.html",
+        "placeholder href=\"#\" in beauty.html",
+        "placeholder href=\"#\" in beauty.html",
+        "placeholder href=\"#\" in beauty.html",
+        "placeholder href=\"#\" in beauty.html",
+        "placeholder href=\"#\" in beauty.html",
+        "placeholder href=\"#\" in beauty.html",
+        "placeholder href=\"#\" in beauty.html",
+        "placeholder href=\"#\" in beauty.html",
+        "placeholder href=\"#\" in beauty.html",
+        "broken asset in beauty.html: assets/img/hero-beauty.svg",
+        "placeholder href=\"#\" in fashion.html",
+        "placeholder href=\"#\" in fashion.html",
+        "placeholder href=\"#\" in fashion.html",
+        "placeholder href=\"#\" in fashion.html",
+        "placeholder href=\"#\" in fashion.html",
+        "placeholder href=\"#\" in fashion.html",
+        "placeholder href=\"#\" in fashion.html",
+        "placeholder href=\"#\" in fashion.html",
+        "placeholder href=\"#\" in fashion.html",
+        "placeholder href=\"#\" in fashion.html",
+        "placeholder href=\"#\" in fashion.html",
+        "broken asset in fashion.html: assets/img/hero-fashion.svg",
+        "placeholder href=\"#\" in horoscope.html",
+        "placeholder href=\"#\" in horoscope.html",
+        "placeholder href=\"#\" in horoscope.html",
+        "placeholder href=\"#\" in horoscope.html",
+        "placeholder href=\"#\" in horoscope.html",
+        "placeholder href=\"#\" in horoscope.html",
+        "placeholder href=\"#\" in horoscope.html",
+        "placeholder href=\"#\" in horoscope.html",
+        "placeholder href=\"#\" in horoscope.html",
+        "placeholder href=\"#\" in horoscope.html",
+        "broken asset in horoscope.html: assets/img/hero-horoscope.svg",
+        "placeholder href=\"#\" in index.html",
+        "placeholder href=\"#\" in index.html",
+        "placeholder href=\"#\" in index.html",
+        "broken asset in index.html: assets/img/hero1.svg",
+        "placeholder href=\"#\" in money-diary.html",
+        "placeholder href=\"#\" in money-diary.html",
+        "placeholder href=\"#\" in money-diary.html",
+        "placeholder href=\"#\" in money-diary.html",
+        "placeholder href=\"#\" in money-diary.html",
+        "placeholder href=\"#\" in money-diary.html",
+        "placeholder href=\"#\" in money-diary.html",
+        "placeholder href=\"#\" in money-diary.html",
+        "placeholder href=\"#\" in money-diary.html",
+        "broken asset in money-diary.html: assets/img/hero-diary.svg",
+        "placeholder href=\"#\" in podcasts.html",
+        "placeholder href=\"#\" in podcasts.html",
+        "placeholder href=\"#\" in podcasts.html",
+        "placeholder href=\"#\" in podcasts.html",
+        "placeholder href=\"#\" in podcasts.html",
+        "placeholder href=\"#\" in podcasts.html",
+        "placeholder href=\"#\" in podcasts.html",
+        "placeholder href=\"#\" in podcasts.html",
+        "placeholder href=\"#\" in podcasts.html",
+        "placeholder href=\"#\" in podcasts.html",
+        "broken asset in podcasts.html: assets/img/hero-podcasts.svg",
+        "placeholder href=\"#\" in shopping.html",
+        "placeholder href=\"#\" in shopping.html",
+        "placeholder href=\"#\" in shopping.html",
+        "placeholder href=\"#\" in shopping.html",
+        "placeholder href=\"#\" in shopping.html",
+        "placeholder href=\"#\" in shopping.html",
+        "placeholder href=\"#\" in shopping.html",
+        "placeholder href=\"#\" in shopping.html",
+        "placeholder href=\"#\" in shopping.html",
+        "placeholder href=\"#\" in shopping.html",
+        "placeholder href=\"#\" in shopping.html",
+        "broken asset in shopping.html: assets/img/hero-shopping.svg",
+        "placeholder href=\"#\" in summer-lookbook-2026.html",
+        "placeholder href=\"#\" in summer-lookbook-2026.html",
+        "placeholder href=\"#\" in summer-lookbook-2026.html",
+        "broken asset in summer-lookbook-2026.html: assets/img/hero-lookbook.svg",
+        "axe landmark-unique (moderate) @1280 404.html: 1 node(s) e.g. nav[data-section=\"navigation\"]",
+        "failed request @1280 beauty.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-08/assets/img/hero-beauty.svg",
+        "console error @1280 beauty.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "axe landmark-unique (moderate) @1280 beauty.html: 1 node(s) e.g. nav[data-section=\"navigation\"]",
+        "axe page-has-heading-one (moderate) @1280 beauty.html: 1 node(s) e.g. html",
+        "failed request @1280 fashion.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-08/assets/img/hero-fashion.svg",
+        "console error @1280 fashion.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "axe landmark-unique (moderate) @1280 fashion.html: 1 node(s) e.g. nav[data-section=\"navigation\"]",
+        "axe page-has-heading-one (moderate) @1280 fashion.html: 1 node(s) e.g. html",
+        "failed request @1280 horoscope.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-08/assets/img/hero-horoscope.svg",
+        "console error @1280 horoscope.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "axe landmark-unique (moderate) @1280 horoscope.html: 1 node(s) e.g. nav[data-section=\"navigation\"]",
+        "axe page-has-heading-one (moderate) @1280 horoscope.html: 1 node(s) e.g. html",
+        "failed request @1280 index.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-08/assets/img/hero1.svg",
+        "console error @1280 index.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "axe landmark-unique (moderate) @1280 index.html: 1 node(s) e.g. nav[data-section=\"navigation\"]",
+        "axe page-has-heading-one (moderate) @1280 index.html: 1 node(s) e.g. html",
+        "failed request @1280 money-diary.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-08/assets/img/hero-diary.svg",
+        "console error @1280 money-diary.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "axe landmark-unique (moderate) @1280 money-diary.html: 1 node(s) e.g. nav[data-section=\"navigation\"]",
+        "axe page-has-heading-one (moderate) @1280 money-diary.html: 1 node(s) e.g. html",
+        "failed request @1280 podcasts.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-08/assets/img/hero-podcasts.svg",
+        "console error @1280 podcasts.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "axe landmark-unique (moderate) @1280 podcasts.html: 1 node(s) e.g. nav[data-section=\"navigation\"]",
+        "axe page-has-heading-one (moderate) @1280 podcasts.html: 1 node(s) e.g. html",
+        "failed request @1280 shopping.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-08/assets/img/hero-shopping.svg",
+        "console error @1280 shopping.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "axe landmark-unique (moderate) @1280 shopping.html: 1 node(s) e.g. nav[data-section=\"navigation\"]",
+        "axe page-has-heading-one (moderate) @1280 shopping.html: 1 node(s) e.g. html",
+        "failed request @1280 summer-lookbook-2026.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-08/assets/img/hero-lookbook.svg",
+        "console error @1280 summer-lookbook-2026.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @1280 summer-lookbook-2026.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-08/assets/img/look1.svg",
+        "console error @1280 summer-lookbook-2026.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "axe landmark-unique (moderate) @1280 summer-lookbook-2026.html: 1 node(s) e.g. nav[data-section=\"navigation\"]",
+        "axe page-has-heading-one (moderate) @1280 summer-lookbook-2026.html: 1 node(s) e.g. html",
+        "axe target-size (serious) @1280 summer-lookbook-2026.html: 2 node(s) e.g. .carousel-prev",
+        "axe landmark-unique (moderate) @375 404.html: 1 node(s) e.g. nav[data-section=\"navigation\"]",
+        "failed request @375 beauty.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-08/assets/img/hero-beauty.svg",
+        "console error @375 beauty.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "axe landmark-unique (moderate) @375 beauty.html: 1 node(s) e.g. nav[data-section=\"navigation\"]",
+        "axe page-has-heading-one (moderate) @375 beauty.html: 1 node(s) e.g. html",
+        "failed request @375 fashion.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-08/assets/img/hero-fashion.svg",
+        "console error @375 fashion.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "axe landmark-unique (moderate) @375 fashion.html: 1 node(s) e.g. nav[data-section=\"navigation\"]",
+        "axe page-has-heading-one (moderate) @375 fashion.html: 1 node(s) e.g. html",
+        "failed request @375 horoscope.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-08/assets/img/hero-horoscope.svg",
+        "console error @375 horoscope.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "axe landmark-unique (moderate) @375 horoscope.html: 1 node(s) e.g. nav[data-section=\"navigation\"]",
+        "axe page-has-heading-one (moderate) @375 horoscope.html: 1 node(s) e.g. html",
+        "failed request @375 index.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-08/assets/img/hero1.svg",
+        "console error @375 index.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "axe landmark-unique (moderate) @375 index.html: 1 node(s) e.g. nav[data-section=\"navigation\"]",
+        "axe page-has-heading-one (moderate) @375 index.html: 1 node(s) e.g. html",
+        "failed request @375 money-diary.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-08/assets/img/hero-diary.svg",
+        "console error @375 money-diary.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "axe landmark-unique (moderate) @375 money-diary.html: 1 node(s) e.g. nav[data-section=\"navigation\"]",
+        "axe page-has-heading-one (moderate) @375 money-diary.html: 1 node(s) e.g. html",
+        "failed request @375 podcasts.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-08/assets/img/hero-podcasts.svg",
+        "console error @375 podcasts.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "axe landmark-unique (moderate) @375 podcasts.html: 1 node(s) e.g. nav[data-section=\"navigation\"]",
+        "axe page-has-heading-one (moderate) @375 podcasts.html: 1 node(s) e.g. html",
+        "failed request @375 shopping.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-08/assets/img/hero-shopping.svg",
+        "console error @375 shopping.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "axe landmark-unique (moderate) @375 shopping.html: 1 node(s) e.g. nav[data-section=\"navigation\"]",
+        "axe page-has-heading-one (moderate) @375 shopping.html: 1 node(s) e.g. html",
+        "failed request @375 summer-lookbook-2026.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-08/assets/img/hero-lookbook.svg",
+        "console error @375 summer-lookbook-2026.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @375 summer-lookbook-2026.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-08/assets/img/look1.svg",
+        "console error @375 summer-lookbook-2026.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "axe landmark-unique (moderate) @375 summer-lookbook-2026.html: 1 node(s) e.g. nav[data-section=\"navigation\"]",
+        "axe page-has-heading-one (moderate) @375 summer-lookbook-2026.html: 1 node(s) e.g. html",
+        "axe target-size (serious) @375 summer-lookbook-2026.html: 2 node(s) e.g. .carousel-prev"
+      ],
+      "failure_count": 151,
+      "warnings": [],
+      "axe": {
+        "landmark-unique": 18,
+        "page-has-heading-one": 16,
+        "target-size": 4
+      },
+      "pages": 9,
+      "files": 15,
+      "qc_tool_sha256": "e9be905d19e7181e30d8291bcb1511d4469bdc9e36c20c0efe21e2d3fcf54513",
+      "report": "qc-initial-2026-11-17T17-23-56-212Z.json",
+      "log": "qc-initial-2026-11-17T17-23-56-212Z.log",
+      "stdout_tail": "FAIL axe page-has-heading-one (moderate) @375 beauty.html: 1 node(s) e.g. html\nFAIL failed request @375 fashion.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-08/assets/img/hero-fashion.svg\nFAIL console error @375 fashion.html: Failed to load resource: net::ERR_FILE_NOT_FOUND\nFAIL axe landmark-unique (moderate) @375 fashion.html: 1 node(s) e.g. nav[data-section=\"navigation\"]\nFAIL axe page-has-heading-one (moderate) @375 fashion.html: 1 node(s) e.g. html\nFAIL failed request @375 horoscope.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-08/assets/img/hero-horoscope.svg\nFAIL console error @375 horoscope.html: Failed to load resource: net::ERR_FILE_NOT_FOUND\nFAIL axe landmark-unique (moderate) @375 horoscope.html: 1 node(s) e.g. nav[data-section=\"navigation\"]\nFAIL axe page-has-heading-one (moderate) @375 horoscope.html: 1 node(s) e.g. html\nFAIL failed request @375 index.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-08/assets/img/hero1.svg\nFAIL console error @375 index.html: Failed to load resource: net::ERR_FILE_NOT_FOUND\nFAIL axe landmark-unique (moderate) @375 index.html: 1 node(s) e.g. nav[data-section=\"navigation\"]\nFAIL axe page-has-heading-one (moderate) @375 index.html: 1 node(s) e.g. html\nFAIL failed request @375 money-diary.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-08/assets/img/hero-diary.svg\nFAIL console error @375 money-diary.html: Failed to load resource: net::ERR_FILE_NOT_FOUND\nFAIL axe landmark-unique (moderate) @375 money-diary.html: 1 node(s) e.g. nav[data-section=\"navigation\"]\nFAIL axe page-has-heading-one (moderate) @375 money-diary.html: 1 node(s) e.g. html\nFAIL failed request @375 podcasts.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-08/assets/img/hero-podcasts.svg\nFAIL console error @375 podcasts.html: Failed to load resource: net::ERR_FILE_NOT_FOUND\nFAIL axe landmark-unique (moderate) @375 podcasts.html: 1 node(s) e.g. nav[data-section=\"navigation\"]\nFAIL axe page-has-heading-one (moderate) @375 podcasts.html: 1 node(s) e.g. html\nFAIL failed request @375 shopping.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-08/assets/img/hero-shopping.svg\nFAIL console error @375 shopping.html: Failed to load resource: net::ERR_FILE_NOT_FOUND\nFAIL axe landmark-unique (moderate) @375 shopping.html: 1 node(s) e.g. nav[data-section=\"navigation\"]\n",
+      "note": null
+    },
+    {
+      "started_at": "2026-11-17T17:40:14.014Z",
+      "completed_at": "2026-11-17T17:40:22.033Z",
+      "exit_code": 1,
+      "executed": true,
+      "passed": false,
+      "outcome": "fail",
+      "failures": [
+        "placeholder href=\"#\" in 404.html",
+        "placeholder href=\"#\" in 404.html",
+        "placeholder href=\"#\" in 404.html",
+        "placeholder href=\"#\" in beauty.html",
+        "placeholder href=\"#\" in beauty.html",
+        "placeholder href=\"#\" in beauty.html",
+        "placeholder href=\"#\" in beauty.html",
+        "placeholder href=\"#\" in beauty.html",
+        "placeholder href=\"#\" in beauty.html",
+        "placeholder href=\"#\" in beauty.html",
+        "placeholder href=\"#\" in beauty.html",
+        "placeholder href=\"#\" in beauty.html",
+        "placeholder href=\"#\" in beauty.html",
+        "placeholder href=\"#\" in beauty.html",
+        "broken asset in beauty.html: assets/img/hero-beauty.svg",
+        "placeholder href=\"#\" in fashion.html",
+        "placeholder href=\"#\" in fashion.html",
+        "placeholder href=\"#\" in fashion.html",
+        "placeholder href=\"#\" in fashion.html",
+        "placeholder href=\"#\" in fashion.html",
+        "placeholder href=\"#\" in fashion.html",
+        "placeholder href=\"#\" in fashion.html",
+        "placeholder href=\"#\" in fashion.html",
+        "placeholder href=\"#\" in fashion.html",
+        "placeholder href=\"#\" in fashion.html",
+        "placeholder href=\"#\" in fashion.html",
+        "broken asset in fashion.html: assets/img/hero-fashion.svg",
+        "placeholder href=\"#\" in horoscope.html",
+        "placeholder href=\"#\" in horoscope.html",
+        "placeholder href=\"#\" in horoscope.html",
+        "placeholder href=\"#\" in horoscope.html",
+        "placeholder href=\"#\" in horoscope.html",
+        "placeholder href=\"#\" in horoscope.html",
+        "placeholder href=\"#\" in horoscope.html",
+        "placeholder href=\"#\" in horoscope.html",
+        "placeholder href=\"#\" in horoscope.html",
+        "placeholder href=\"#\" in horoscope.html",
+        "broken asset in horoscope.html: assets/img/hero-horoscope.svg",
+        "placeholder href=\"#\" in index.html",
+        "placeholder href=\"#\" in index.html",
+        "placeholder href=\"#\" in index.html",
+        "broken asset in index.html: assets/img/hero1.svg",
+        "placeholder href=\"#\" in money-diary.html",
+        "placeholder href=\"#\" in money-diary.html",
+        "placeholder href=\"#\" in money-diary.html",
+        "placeholder href=\"#\" in money-diary.html",
+        "placeholder href=\"#\" in money-diary.html",
+        "placeholder href=\"#\" in money-diary.html",
+        "placeholder href=\"#\" in money-diary.html",
+        "placeholder href=\"#\" in money-diary.html",
+        "placeholder href=\"#\" in money-diary.html",
+        "broken asset in money-diary.html: assets/img/hero-diary.svg",
+        "placeholder href=\"#\" in podcasts.html",
+        "placeholder href=\"#\" in podcasts.html",
+        "placeholder href=\"#\" in podcasts.html",
+        "placeholder href=\"#\" in podcasts.html",
+        "placeholder href=\"#\" in podcasts.html",
+        "placeholder href=\"#\" in podcasts.html",
+        "placeholder href=\"#\" in podcasts.html",
+        "placeholder href=\"#\" in podcasts.html",
+        "placeholder href=\"#\" in podcasts.html",
+        "placeholder href=\"#\" in podcasts.html",
+        "broken asset in podcasts.html: assets/img/hero-podcasts.svg",
+        "placeholder href=\"#\" in shopping.html",
+        "placeholder href=\"#\" in shopping.html",
+        "placeholder href=\"#\" in shopping.html",
+        "placeholder href=\"#\" in shopping.html",
+        "placeholder href=\"#\" in shopping.html",
+        "placeholder href=\"#\" in shopping.html",
+        "placeholder href=\"#\" in shopping.html",
+        "placeholder href=\"#\" in shopping.html",
+        "placeholder href=\"#\" in shopping.html",
+        "placeholder href=\"#\" in shopping.html",
+        "placeholder href=\"#\" in shopping.html",
+        "broken asset in shopping.html: assets/img/hero-shopping.svg",
+        "placeholder href=\"#\" in summer-lookbook-2026.html",
+        "placeholder href=\"#\" in summer-lookbook-2026.html",
+        "placeholder href=\"#\" in summer-lookbook-2026.html",
+        "broken asset in summer-lookbook-2026.html: assets/img/hero-lookbook.svg",
+        "failed request @1280 beauty.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-08/assets/img/hero-beauty.svg",
+        "console error @1280 beauty.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @1280 fashion.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-08/assets/img/hero-fashion.svg",
+        "console error @1280 fashion.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @1280 horoscope.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-08/assets/img/hero-horoscope.svg",
+        "console error @1280 horoscope.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @1280 index.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-08/assets/img/hero1.svg",
+        "console error @1280 index.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @1280 money-diary.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-08/assets/img/hero-diary.svg",
+        "console error @1280 money-diary.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @1280 podcasts.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-08/assets/img/hero-podcasts.svg",
+        "console error @1280 podcasts.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @1280 shopping.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-08/assets/img/hero-shopping.svg",
+        "console error @1280 shopping.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @1280 summer-lookbook-2026.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-08/assets/img/hero-lookbook.svg",
+        "console error @1280 summer-lookbook-2026.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @1280 summer-lookbook-2026.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-08/assets/img/look1.svg",
+        "console error @1280 summer-lookbook-2026.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @375 beauty.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-08/assets/img/hero-beauty.svg",
+        "console error @375 beauty.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @375 fashion.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-08/assets/img/hero-fashion.svg",
+        "console error @375 fashion.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @375 horoscope.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-08/assets/img/hero-horoscope.svg",
+        "console error @375 horoscope.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @375 index.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-08/assets/img/hero1.svg",
+        "console error @375 index.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @375 money-diary.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-08/assets/img/hero-diary.svg",
+        "console error @375 money-diary.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @375 podcasts.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-08/assets/img/hero-podcasts.svg",
+        "console error @375 podcasts.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @375 shopping.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-08/assets/img/hero-shopping.svg",
+        "console error @375 shopping.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @375 summer-lookbook-2026.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-08/assets/img/hero-lookbook.svg",
+        "console error @375 summer-lookbook-2026.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @375 summer-lookbook-2026.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-08/assets/img/look1.svg",
+        "console error @375 summer-lookbook-2026.html: Failed to load resource: net::ERR_FILE_NOT_FOUND"
+      ],
+      "failure_count": 115,
+      "warnings": [],
+      "axe": {},
+      "pages": 9,
+      "files": 15,
+      "qc_tool_sha256": "e9be905d19e7181e30d8291bcb1511d4469bdc9e36c20c0efe21e2d3fcf54513",
+      "report": "qc-repair-1-2026-11-17T17-40-14-014Z.json",
+      "log": "qc-repair-1-2026-11-17T17-40-14-014Z.log",
+      "stdout_tail": "FAIL failed request @1280 podcasts.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-08/assets/img/hero-podcasts.svg\nFAIL console error @1280 podcasts.html: Failed to load resource: net::ERR_FILE_NOT_FOUND\nFAIL failed request @1280 shopping.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-08/assets/img/hero-shopping.svg\nFAIL console error @1280 shopping.html: Failed to load resource: net::ERR_FILE_NOT_FOUND\nFAIL failed request @1280 summer-lookbook-2026.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-08/assets/img/hero-lookbook.svg\nFAIL console error @1280 summer-lookbook-2026.html: Failed to load resource: net::ERR_FILE_NOT_FOUND\nFAIL failed request @1280 summer-lookbook-2026.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-08/assets/img/look1.svg\nFAIL failed request @375 beauty.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-08/assets/img/hero-beauty.svg\nFAIL console error @375 beauty.html: Failed to load resource: net::ERR_FILE_NOT_FOUND\nFAIL failed request @375 fashion.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-08/assets/img/hero-fashion.svg\nFAIL console error @375 fashion.html: Failed to load resource: net::ERR_FILE_NOT_FOUND\nFAIL failed request @375 horoscope.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-08/assets/img/hero-horoscope.svg\nFAIL console error @375 horoscope.html: Failed to load resource: net::ERR_FILE_NOT_FOUND\nFAIL failed request @375 index.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-08/assets/img/hero1.svg\nFAIL console error @375 index.html: Failed to load resource: net::ERR_FILE_NOT_FOUND\nFAIL failed request @375 money-diary.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-08/assets/img/hero-diary.svg\nFAIL console error @375 money-diary.html: Failed to load resource: net::ERR_FILE_NOT_FOUND\nFAIL failed request @375 podcasts.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-08/assets/img/hero-podcasts.svg\nFAIL console error @375 podcasts.html: Failed to load resource: net::ERR_FILE_NOT_FOUND\nFAIL failed request @375 shopping.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-08/assets/img/hero-shopping.svg\nFAIL console error @375 shopping.html: Failed to load resource: net::ERR_FILE_NOT_FOUND\nFAIL failed request @375 summer-lookbook-2026.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-08/assets/img/hero-lookbook.svg\nFAIL console error @375 summer-lookbook-2026.html: Failed to load resource: net::ERR_FILE_NOT_FOUND\nFAIL failed request @375 summer-lookbook-2026.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-08/assets/img/look1.svg\n",
+      "note": null
+    },
+    {
+      "started_at": "2026-11-17T17:54:10.630Z",
+      "completed_at": "2026-11-17T17:54:14.487Z",
+      "exit_code": 1,
+      "executed": true,
+      "passed": false,
+      "outcome": "fail",
+      "failures": [
+        "placeholder href=\"#\" in 404.html",
+        "placeholder href=\"#\" in 404.html",
+        "placeholder href=\"#\" in 404.html",
+        "placeholder href=\"#\" in beauty.html",
+        "placeholder href=\"#\" in beauty.html",
+        "placeholder href=\"#\" in beauty.html",
+        "placeholder href=\"#\" in beauty.html",
+        "placeholder href=\"#\" in beauty.html",
+        "placeholder href=\"#\" in beauty.html",
+        "placeholder href=\"#\" in beauty.html",
+        "placeholder href=\"#\" in beauty.html",
+        "placeholder href=\"#\" in beauty.html",
+        "placeholder href=\"#\" in beauty.html",
+        "placeholder href=\"#\" in beauty.html",
+        "broken asset in beauty.html: assets/img/hero-beauty.svg",
+        "placeholder href=\"#\" in fashion.html",
+        "placeholder href=\"#\" in fashion.html",
+        "placeholder href=\"#\" in fashion.html",
+        "placeholder href=\"#\" in fashion.html",
+        "placeholder href=\"#\" in fashion.html",
+        "placeholder href=\"#\" in fashion.html",
+        "placeholder href=\"#\" in fashion.html",
+        "placeholder href=\"#\" in fashion.html",
+        "placeholder href=\"#\" in fashion.html",
+        "placeholder href=\"#\" in fashion.html",
+        "placeholder href=\"#\" in fashion.html",
+        "broken asset in fashion.html: assets/img/hero-fashion.svg",
+        "placeholder href=\"#\" in horoscope.html",
+        "placeholder href=\"#\" in horoscope.html",
+        "placeholder href=\"#\" in horoscope.html",
+        "placeholder href=\"#\" in horoscope.html",
+        "placeholder href=\"#\" in horoscope.html",
+        "placeholder href=\"#\" in horoscope.html",
+        "placeholder href=\"#\" in horoscope.html",
+        "placeholder href=\"#\" in horoscope.html",
+        "placeholder href=\"#\" in horoscope.html",
+        "placeholder href=\"#\" in horoscope.html",
+        "broken asset in horoscope.html: assets/img/hero-horoscope.svg",
+        "placeholder href=\"#\" in index.html",
+        "placeholder href=\"#\" in index.html",
+        "placeholder href=\"#\" in index.html",
+        "broken asset in index.html: assets/img/hero1.svg",
+        "placeholder href=\"#\" in money-diary.html",
+        "placeholder href=\"#\" in money-diary.html",
+        "placeholder href=\"#\" in money-diary.html",
+        "placeholder href=\"#\" in money-diary.html",
+        "placeholder href=\"#\" in money-diary.html",
+        "placeholder href=\"#\" in money-diary.html",
+        "placeholder href=\"#\" in money-diary.html",
+        "placeholder href=\"#\" in money-diary.html",
+        "placeholder href=\"#\" in money-diary.html",
+        "broken asset in money-diary.html: assets/img/hero-diary.svg",
+        "placeholder href=\"#\" in podcasts.html",
+        "placeholder href=\"#\" in podcasts.html",
+        "placeholder href=\"#\" in podcasts.html",
+        "placeholder href=\"#\" in podcasts.html",
+        "placeholder href=\"#\" in podcasts.html",
+        "placeholder href=\"#\" in podcasts.html",
+        "placeholder href=\"#\" in podcasts.html",
+        "placeholder href=\"#\" in podcasts.html",
+        "placeholder href=\"#\" in podcasts.html",
+        "placeholder href=\"#\" in podcasts.html",
+        "broken asset in podcasts.html: assets/img/hero-podcasts.svg",
+        "placeholder href=\"#\" in shopping.html",
+        "placeholder href=\"#\" in shopping.html",
+        "placeholder href=\"#\" in shopping.html",
+        "placeholder href=\"#\" in shopping.html",
+        "placeholder href=\"#\" in shopping.html",
+        "placeholder href=\"#\" in shopping.html",
+        "placeholder href=\"#\" in shopping.html",
+        "placeholder href=\"#\" in shopping.html",
+        "placeholder href=\"#\" in shopping.html",
+        "placeholder href=\"#\" in shopping.html",
+        "placeholder href=\"#\" in shopping.html",
+        "broken asset in shopping.html: assets/img/hero-shopping.svg",
+        "placeholder href=\"#\" in summer-lookbook-2026.html",
+        "placeholder href=\"#\" in summer-lookbook-2026.html",
+        "placeholder href=\"#\" in summer-lookbook-2026.html",
+        "broken asset in summer-lookbook-2026.html: assets/img/hero-lookbook.svg",
+        "failed request @1280 beauty.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-08/assets/img/hero-beauty.svg",
+        "console error @1280 beauty.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @1280 fashion.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-08/assets/img/hero-fashion.svg",
+        "console error @1280 fashion.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @1280 horoscope.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-08/assets/img/hero-horoscope.svg",
+        "console error @1280 horoscope.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @1280 index.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-08/assets/img/hero1.svg",
+        "console error @1280 index.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @1280 money-diary.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-08/assets/img/hero-diary.svg",
+        "console error @1280 money-diary.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @1280 podcasts.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-08/assets/img/hero-podcasts.svg",
+        "console error @1280 podcasts.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @1280 shopping.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-08/assets/img/hero-shopping.svg",
+        "console error @1280 shopping.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @1280 summer-lookbook-2026.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-08/assets/img/hero-lookbook.svg",
+        "console error @1280 summer-lookbook-2026.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @375 beauty.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-08/assets/img/hero-beauty.svg",
+        "console error @375 beauty.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @375 fashion.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-08/assets/img/hero-fashion.svg",
+        "console error @375 fashion.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @375 horoscope.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-08/assets/img/hero-horoscope.svg",
+        "console error @375 horoscope.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @375 index.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-08/assets/img/hero1.svg",
+        "console error @375 index.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @375 money-diary.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-08/assets/img/hero-diary.svg",
+        "console error @375 money-diary.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @375 podcasts.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-08/assets/img/hero-podcasts.svg",
+        "console error @375 podcasts.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @375 shopping.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-08/assets/img/hero-shopping.svg",
+        "console error @375 shopping.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @375 summer-lookbook-2026.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-08/assets/img/hero-lookbook.svg",
+        "console error @375 summer-lookbook-2026.html: Failed to load resource: net::ERR_FILE_NOT_FOUND"
+      ],
+      "failure_count": 111,
+      "warnings": [],
+      "axe": {},
+      "pages": 9,
+      "files": 38,
+      "qc_tool_sha256": "e9be905d19e7181e30d8291bcb1511d4469bdc9e36c20c0efe21e2d3fcf54513",
+      "report": "qc-repair-2-2026-11-17T17-54-10-630Z.json",
+      "log": "qc-repair-2-2026-11-17T17-54-10-630Z.log",
+      "stdout_tail": "FAIL failed request @1280 money-diary.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-08/assets/img/hero-diary.svg\nFAIL console error @1280 money-diary.html: Failed to load resource: net::ERR_FILE_NOT_FOUND\nFAIL failed request @1280 podcasts.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-08/assets/img/hero-podcasts.svg\nFAIL console error @1280 podcasts.html: Failed to load resource: net::ERR_FILE_NOT_FOUND\nFAIL failed request @1280 shopping.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-08/assets/img/hero-shopping.svg\nFAIL console error @1280 shopping.html: Failed to load resource: net::ERR_FILE_NOT_FOUND\nFAIL failed request @1280 summer-lookbook-2026.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-08/assets/img/hero-lookbook.svg\nFAIL console error @1280 summer-lookbook-2026.html: Failed to load resource: net::ERR_FILE_NOT_FOUND\nFAIL failed request @375 beauty.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-08/assets/img/hero-beauty.svg\nFAIL console error @375 beauty.html: Failed to load resource: net::ERR_FILE_NOT_FOUND\nFAIL failed request @375 fashion.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-08/assets/img/hero-fashion.svg\nFAIL console error @375 fashion.html: Failed to load resource: net::ERR_FILE_NOT_FOUND\nFAIL failed request @375 horoscope.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-08/assets/img/hero-horoscope.svg\nFAIL console error @375 horoscope.html: Failed to load resource: net::ERR_FILE_NOT_FOUND\nFAIL failed request @375 index.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-08/assets/img/hero1.svg\nFAIL console error @375 index.html: Failed to load resource: net::ERR_FILE_NOT_FOUND\nFAIL failed request @375 money-diary.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-08/assets/img/hero-diary.svg\nFAIL console error @375 money-diary.html: Failed to load resource: net::ERR_FILE_NOT_FOUND\nFAIL failed request @375 podcasts.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-08/assets/img/hero-podcasts.svg\nFAIL console error @375 podcasts.html: Failed to load resource: net::ERR_FILE_NOT_FOUND\nFAIL failed request @375 shopping.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-08/assets/img/hero-shopping.svg\nFAIL console error @375 shopping.html: Failed to load resource: net::ERR_FILE_NOT_FOUND\nFAIL failed request @375 summer-lookbook-2026.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-08/assets/img/hero-lookbook.svg\nFAIL console error @375 summer-lookbook-2026.html: Failed to load resource: net::ERR_FILE_NOT_FOUND\n",
+      "note": null
+    },
+    {
+      "started_at": "2026-11-17T17:58:15.558Z",
+      "completed_at": "2026-11-17T17:58:19.564Z",
+      "exit_code": 1,
+      "executed": true,
+      "passed": false,
+      "outcome": "fail",
+      "failures": [
+        "placeholder href=\"#\" in 404.html",
+        "placeholder href=\"#\" in 404.html",
+        "placeholder href=\"#\" in 404.html",
+        "placeholder href=\"#\" in beauty.html",
+        "placeholder href=\"#\" in beauty.html",
+        "placeholder href=\"#\" in beauty.html",
+        "placeholder href=\"#\" in beauty.html",
+        "placeholder href=\"#\" in beauty.html",
+        "placeholder href=\"#\" in beauty.html",
+        "placeholder href=\"#\" in beauty.html",
+        "placeholder href=\"#\" in beauty.html",
+        "placeholder href=\"#\" in beauty.html",
+        "placeholder href=\"#\" in beauty.html",
+        "placeholder href=\"#\" in beauty.html",
+        "placeholder href=\"#\" in fashion.html",
+        "placeholder href=\"#\" in fashion.html",
+        "placeholder href=\"#\" in fashion.html",
+        "placeholder href=\"#\" in fashion.html",
+        "placeholder href=\"#\" in fashion.html",
+        "placeholder href=\"#\" in fashion.html",
+        "placeholder href=\"#\" in fashion.html",
+        "placeholder href=\"#\" in fashion.html",
+        "placeholder href=\"#\" in fashion.html",
+        "placeholder href=\"#\" in fashion.html",
+        "placeholder href=\"#\" in fashion.html",
+        "placeholder href=\"#\" in horoscope.html",
+        "placeholder href=\"#\" in horoscope.html",
+        "placeholder href=\"#\" in horoscope.html",
+        "placeholder href=\"#\" in horoscope.html",
+        "placeholder href=\"#\" in horoscope.html",
+        "placeholder href=\"#\" in horoscope.html",
+        "placeholder href=\"#\" in horoscope.html",
+        "placeholder href=\"#\" in horoscope.html",
+        "placeholder href=\"#\" in horoscope.html",
+        "placeholder href=\"#\" in horoscope.html",
+        "placeholder href=\"#\" in index.html",
+        "placeholder href=\"#\" in index.html",
+        "placeholder href=\"#\" in index.html",
+        "placeholder href=\"#\" in money-diary.html",
+        "placeholder href=\"#\" in money-diary.html",
+        "placeholder href=\"#\" in money-diary.html",
+        "placeholder href=\"#\" in money-diary.html",
+        "placeholder href=\"#\" in money-diary.html",
+        "placeholder href=\"#\" in money-diary.html",
+        "placeholder href=\"#\" in money-diary.html",
+        "placeholder href=\"#\" in money-diary.html",
+        "placeholder href=\"#\" in money-diary.html",
+        "placeholder href=\"#\" in podcasts.html",
+        "placeholder href=\"#\" in podcasts.html",
+        "placeholder href=\"#\" in podcasts.html",
+        "placeholder href=\"#\" in podcasts.html",
+        "placeholder href=\"#\" in podcasts.html",
+        "placeholder href=\"#\" in podcasts.html",
+        "placeholder href=\"#\" in podcasts.html",
+        "placeholder href=\"#\" in podcasts.html",
+        "placeholder href=\"#\" in podcasts.html",
+        "placeholder href=\"#\" in podcasts.html",
+        "placeholder href=\"#\" in shopping.html",
+        "placeholder href=\"#\" in shopping.html",
+        "placeholder href=\"#\" in shopping.html",
+        "placeholder href=\"#\" in shopping.html",
+        "placeholder href=\"#\" in shopping.html",
+        "placeholder href=\"#\" in shopping.html",
+        "placeholder href=\"#\" in shopping.html",
+        "placeholder href=\"#\" in shopping.html",
+        "placeholder href=\"#\" in shopping.html",
+        "placeholder href=\"#\" in shopping.html",
+        "placeholder href=\"#\" in shopping.html",
+        "placeholder href=\"#\" in summer-lookbook-2026.html",
+        "placeholder href=\"#\" in summer-lookbook-2026.html",
+        "placeholder href=\"#\" in summer-lookbook-2026.html"
+      ],
+      "failure_count": 71,
+      "warnings": [],
+      "axe": {},
+      "pages": 9,
+      "files": 38,
+      "qc_tool_sha256": "e9be905d19e7181e30d8291bcb1511d4469bdc9e36c20c0efe21e2d3fcf54513",
+      "report": "qc-repair-3-2026-11-17T17-58-15-558Z.json",
+      "log": "qc-repair-3-2026-11-17T17-58-15-558Z.log",
+      "stdout_tail": "QC /Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-08\npages=9 files=38 failures=71 warnings=0\nFAIL placeholder href=\"#\" in 404.html\nFAIL placeholder href=\"#\" in beauty.html\nFAIL placeholder href=\"#\" in fashion.html\nFAIL placeholder href=\"#\" in horoscope.html\nFAIL placeholder href=\"#\" in index.html\nFAIL placeholder href=\"#\" in money-diary.html\nFAIL placeholder href=\"#\" in podcasts.html\nFAIL placeholder href=\"#\" in shopping.html\nFAIL placeholder href=\"#\" in summer-lookbook-2026.html\n",
+      "note": null
+    }
+  ],
+  "repair_rounds": [
+    {
+      "round": 1,
+      "before": {
+        "outcome": "fail",
+        "failures": 151
+      },
+      "after": {
+        "outcome": "fail",
+        "failures": 115
+      },
+      "files_changed": [
+        "README.md",
+        "fidelity-notes.md",
+        "component-inventory.json",
+        "generation-metadata.json"
+      ],
+      "at": "2026-11-17T17:40:22.035Z"
+    },
+    {
+      "round": 2,
+      "before": {
+        "outcome": "fail",
+        "failures": 115
+      },
+      "after": {
+        "outcome": "fail",
+        "failures": 111
+      },
+      "files_changed": [],
+      "at": "2026-11-17T17:54:14.488Z"
+    },
+    {
+      "round": 3,
+      "before": {
+        "outcome": "fail",
+        "failures": 111
+      },
+      "after": {
+        "outcome": "fail",
+        "failures": 71
+      },
+      "files_changed": [
+        "horoscope.html",
+        "podcasts.html",
+        "money-diary.html"
+      ],
+      "at": "2026-11-17T17:58:19.564Z"
+    }
+  ],
+  "retries": [],
+  "human_edits": [
+    {
+      "by": "orchestrator script",
+      "at": "2026-11-17T17:58:19.566Z",
+      "what": "Wrote the model's emitted files, normalized generation-metadata.json provenance fields, and set validation_summary from the recorded QC run. No site markup, style or script was authored or edited by hand."
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 481562,
+    "completion_tokens": 61843,
+    "total_tokens": 543405,
+    "requests": 14,
+    "retries": 4
+  },
+  "errors": [],
+  "outputs": {
+    "site": "fashion/open-source/FASH-08",
+    "transcript": "pipelines/open-source/runs/2026-11-17T17-17-00-904Z-build-FASH-08/transcript.json"
+  },
+  "delivered": {
+    "files": [
+      "404.html",
+      "README.md",
+      "beauty.html",
+      "component-inventory.json",
+      "css/styles.css",
+      "fashion.html",
+      "fidelity-notes.md",
+      "generation-metadata.json",
+      "horoscope.html",
+      "index.html",
+      "js/main.js",
+      "money-diary.html",
+      "podcasts.html",
+      "shopping.html",
+      "summer-lookbook-2026.html"
+    ],
+    "file_count": 15,
+    "bytes": 63213,
+    "pages_in_map": 8,
+    "missing_required": [],
+    "model_claimed_complete": true,
+    "delivered_complete": true,
+    "turns_used": 6,
+    "turn_budget": 48
+  },
+  "initial_artifact": "pipelines/open-source/runs/2026-11-17T17-17-00-904Z-build-FASH-08/initial",
+  "provenance": {
+    "wrote": true,
+    "modelEmittedValidMetadata": true
+  },
+  "acceptance": "not accepted: a QC result is not acceptance, and interaction review plus human acceptance happen outside this script"
+}

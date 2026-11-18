@@ -1,0 +1,25 @@
+/* Reset */
+*, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+html { font-size: 100%; scroll-behavior: smooth; }
+body { line-height: 1.5; font-family: system-ui, sans-serif; background:#fafafa; color:#222; }
+a { color: inherit; text-decoration: none; }
+a:hover, a:focus { text-decoration: underline; }
+button, input, select, textarea { font: inherit; }
+:focus-visible { outline: 2px solid #0066cc; outline-offset: 2px; }
+.skip-link { position:absolute; left:-999px; top:auto; width:1px; height:1px; overflow:hidden; }
+.skip-link:focus { left:1rem; top:1rem; background:#fff; color:#000; padding:.5rem 1rem; z-index:100; }
+header, nav, main, footer { display:block; }
+.site-header { background:#0066cc; color:#fff; padding:1rem; }
+.site-header .logo { font-size:1.5rem; font-weight:bold; }
+.primary-nav { background:#eee; }
+.primary-nav a { display:block; padding:.5rem 1rem; color:#0066cc; }
+.primary-nav a:hover, .primary-nav a:focus { background:#ddd; }
+.hero { background:#e0f2ff; padding:2rem; text-align:center; }
+.content-band { padding:2rem; }
+.content-band h2 { margin-top:0; margin-bottom:1rem; }
+.card-grid { display:grid; gap:1rem; margin-top:1rem; }
+@media (min-width:480px) { .card-grid { grid-template-columns:repeat(auto-fit, minmax(180px,1fr)); } }
+.card { background:#fff; border:1px solid #ddd; padding:1rem; }
+footer { background:#333; color:#ccc; padding:1.5rem; font-size:.9rem; }
+footer a { color:#ccc; }
+footer a:hover, footer a:focus { color:#fff; }

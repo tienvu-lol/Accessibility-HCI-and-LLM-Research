@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>News &amp; Events | Liberal Arts College</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <header data-section="banner" data-component="site-header">
+    <div class="site-name">Liberal Arts College</div>
+    <button id="nav-toggle" class="hamburger" aria-controls="primary-nav-list" aria-expanded="false" aria-label="Open main menu">☰</button>
+    <nav data-section="navigation" data-component="primary-nav">
+      <ul id="primary-nav-list" class="nav-list" aria-expanded="false">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="academic-life.html">Academics</a></li>
+        <li><a href="departments.html">Majors</a></li>
+        <li><a href="college-catalog.html">Course Catalog</a></li>
+        <li><a href="admission.html">Admission &amp; Aid</a></li>
+        <li><a href="apply.html">Apply</a></li>
+        <li><a href="visiting.html">Visit</a></li>
+        <li><a href="news.html">News &amp; Events</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content" data-section="main">
+    <h1>News &amp; Events</h1>
+    <p>Stay updated with the latest happenings at Liberal Arts College.</p>
+
+    <section data-section="news-filter" data-component="filter-bar">
+      <h2>Filter by Category</h2>
+      <div>
+        <button data-filter-category="all" aria-pressed="true">All</button>
+        <button data-filter-category="academics">Academics</button>
+        <button data-filter-category="arts">Arts</button>
+        <button data-filter-category="athletics">Athletics</button>
+        <button data-filter-category="campus-life">Campus Life</button>
+      </div>
+    </section>
+
+    <section data-section="news-list" data-component="card-grid">
+      <div class="card-grid" id="news-grid">
+        <!-- news cards will be inserted by script -->
+      </div>
+    </section>
+  </main>
+
+  <footer data-section="footer" data-component="site-footer">
+    <p>&copy; 2026 Liberal Arts College. All rights reserved.</p>
+    <ul>
+      <li><a href="#main-content">Privacy</a></li>
+      <li><a href="#main-content">Terms</a></li>
+      <li><a href="#main-content">Contact</a></li>
+    </ul>
+  </footer>
+
+  <div id="toast" aria-live="polite"></div>
+
+  <!-- Inline sample data -->
+  <script>
+    const newsData = [
+      {date: "2026-10-12", title: "Faculty Receive National Grant", summary: "Three professors awarded funding for interdisciplinary research.", category: "academics"},
+      {date: "2026-10-05", title: "Fall Concert Series Begins", summary: "Student musicians perform a variety of genres over four weekends.", category: "arts"},
+      {date: "2026-09-28", title: "Women's Soccer Wins Championship", summary: "The team clinched the conference title after a thrilling final match.", category: "athletics"},
+      {date: "2026-09-20", title: "Sustainability Fair", summary: "Campus groups showcased eco‑friendly initiatives and student projects.", category: "campus-life"},
+      {date: "2026-09-15", title: "New Data Science Lab Opens", summary: "State‑of‑the‑art computing facility now available for coursework and research.", category: "academics"},
+      {date: "2026-09-01", title: "Welcome Back Convocation", summary: "President addressed the incoming class and highlighted academic opportunities.", category: "campus-life"},
+      {date: "2026-08-25", title: "Alumni Art Exhibition", summary: "Graduates showcase recent works in the campus gallery.", category: "arts"},
+      {date: "2026-08-10", title: "Summer Research Symposium", summary: "Underpresented students shared findings from summer projects.", category: "academics"}
+    ];
+  </script>
+  <script src="js/main.js"></script>
+  <script>
+    const grid = document.getElementById('news-grid');
+    newsData.forEach(item => {
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.setAttribute('data-component', 'news-card');
+      card.setAttribute('data-category', item.category);
+      card.innerHTML = `
+        <h3>${item.title}</h3>
+        <p><time datetime="${item.date}">${new Date(item.date).toLocaleDateString()}</time></p>
+        <p>${item.summary}</p>
+      `;
+      grid.appendChild(card);
+    });
+  </script>
+</body>
+</html>

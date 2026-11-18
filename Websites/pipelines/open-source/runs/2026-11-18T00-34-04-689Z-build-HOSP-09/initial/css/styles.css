@@ -1,0 +1,65 @@
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header, footer {
+  background-color: #333;
+  color: #fff;
+  padding: 1em;
+  text-align: center;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2em;
+}
+
+/* Navigation Styles */
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+nav li {
+  margin-right: 20px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Hero Styles */
+.hero {
+  background-image: linear-gradient(to bottom, #333, #555);
+  background-size: 100% 300px;
+  background-position: 0% 100%;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+/* Content Bands Styles */
+.content-band {
+  background-color: #f7f7f7;
+  padding: 2em;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer Styles */
+footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}

@@ -1,0 +1,507 @@
+{
+  "category": "company",
+  "prefix": "CORP",
+  "updated_at": "2026-11-17T05:44:23.909Z",
+  "slots_proposed": [
+    7,
+    8,
+    9,
+    10
+  ],
+  "slots_outstanding": [],
+  "approval_state": "unapproved: approval cells are left empty for the project lead",
+  "runs": [
+    "2026-11-16T21-28-20-740Z-research-CORP-07",
+    "2026-11-17T05-09-03-841Z-research-CORP-08",
+    "2026-11-17T05-10-37-224Z-research-CORP-10",
+    "2026-11-17T05-40-06-132Z-research-CORP-09"
+  ],
+  "rows": [
+    {
+      "source_id": "CORP-07",
+      "subcategory": "national retail bank",
+      "source_name": "Wells Fargo",
+      "source_url": "https://www.wellsfargo.com",
+      "verified_at": "2026-11-16",
+      "verification_method": "HTTP GET by the orchestrator",
+      "verification_result": "verified",
+      "evidence_reference": "pipelines/open-source/research/evidence/CORP-07-http-2026-11-16.json",
+      "source_pages": [
+        {
+          "url": "https://www.wellsfargo.com",
+          "title": "Wells Fargo Bank | Financial Services & Online Banking",
+          "local_file": "index.html"
+        },
+        {
+          "url": "https://www.wellsfargo.com/checking/",
+          "title": "Apply & Open a Checking Account Online Today | Wells Fargo",
+          "local_file": "checking.html"
+        },
+        {
+          "url": "https://www.wellsfargo.com/checking/compare-checking-accounts/",
+          "title": "Compare Checking Accounts | Wells Fargo",
+          "local_file": "checking-compare.html"
+        },
+        {
+          "url": "https://www.wellsfargo.com/savings-cds/",
+          "title": "Open a Savings Account Online | Wells Fargo",
+          "local_file": "savings-cds.html"
+        },
+        {
+          "url": "https://www.wellsfargo.com/savings-cds/rates/",
+          "title": "Savings and Certificate of Deposit (CD) Interest Rates | Wells Fargo",
+          "local_file": "savings-rates.html"
+        },
+        {
+          "url": "https://www.wellsfargo.com/mortgage/",
+          "title": "Home Mortgage Loans & Financing | Wells Fargo",
+          "local_file": "mortgage.html"
+        },
+        {
+          "url": "https://www.wellsfargo.com/mortgage/calculators/",
+          "title": "Mortgage Calculators | Wells Fargo",
+          "local_file": "mortgage-calculators.html"
+        },
+        {
+          "url": "https://www.wellsfargo.com/auto-loans/",
+          "title": "Auto loans and financing | Wells Fargo",
+          "local_file": "auto-loans.html"
+        },
+        {
+          "url": "https://www.wellsfargo.com/help/",
+          "title": "Customer Service – Wells Fargo",
+          "local_file": "help.html"
+        },
+        {
+          "url": "https://www.wellsfargo.com/help/routing-number/",
+          "title": "Routing & Account Number Information for Your Wells Fargo Accounts",
+          "local_file": "help-routing.html"
+        },
+        {
+          "url": "https://www.wellsfargo.com/about/",
+          "title": "About Wells Fargo",
+          "local_file": "about.html"
+        },
+        {
+          "url": "https://www.wellsfargo.com/about/inclusion/",
+          "title": "Inclusion and accessibility: Building an inclusive workplace | Wells Fargo",
+          "local_file": "about-inclusion.html"
+        }
+      ],
+      "key_regions": [
+        "Header with global navigation and language switch",
+        "Hero section with promotional tiles",
+        "Product category links (Checking, Savings, Mortgages, Auto)",
+        "Educational content bands",
+        "Footer with sitemap, legal links, and social media"
+      ],
+      "key_interactions": [
+        {
+          "name": "Savings Rate Table",
+          "evidence": "observed",
+          "notes": "Table of rates on /savings-cds/rates/ page"
+        },
+        {
+          "name": "Mortgage Calculator",
+          "evidence": "observed",
+          "notes": "Calculator tools on /mortgage/calculators/ page"
+        },
+        {
+          "name": "Help Search",
+          "evidence": "observed",
+          "notes": "Search input on /help/ and /help/routing-number/ pages"
+        },
+        {
+          "name": "Branch Locator",
+          "evidence": "inferred",
+          "notes": "Link present in navigation (/locator/) but page not mapped"
+        }
+      ],
+      "complexity": "high",
+      "stack_clues": "Server-rendered HTML, standard meta tags, no obvious client-side framework indicators in initial markup",
+      "limitations": "None. All 12 requested pages returned 200 status.",
+      "slot": 7,
+      "category": "company",
+      "model_group": "open-source",
+      "model_id": "unsloth/Qwen3.6-35B-A3B-GGUF",
+      "model_version": "Q4_K_M",
+      "approved_at": "",
+      "approved_by": "",
+      "approval_reference": "",
+      "researched_by": {
+        "model_id": "unsloth/Qwen3.6-35B-A3B-GGUF",
+        "slot": 7
+      },
+      "orchestrator_checks": {
+        "pages_proposed": 12,
+        "pages_without_successful_fetch": [],
+        "page_map_has_index": true,
+        "source_url_fetched_ok": true,
+        "meets_min_pages": true
+      }
+    },
+    {
+      "source_id": "CORP-08",
+      "subcategory": "regional bank or credit union",
+      "source_name": "First Horizon Bank",
+      "source_url": "https://www.firsthorizon.com/",
+      "verified_at": "2026-11-17",
+      "verification_method": "HTTP GET by the orchestrator",
+      "verification_result": "verified",
+      "evidence_reference": "pipelines/open-source/research/evidence/CORP-08-http-2026-11-17.json",
+      "source_pages": [
+        {
+          "url": "https://www.firsthorizon.com/",
+          "title": "First Horizon Bank - A Trusted Choice for Financial Services",
+          "local_file": "index.html"
+        },
+        {
+          "url": "https://www.firsthorizon.com/first-horizon-corporation",
+          "title": "First Horizon Corporation",
+          "local_file": "about.html"
+        },
+        {
+          "url": "https://www.firsthorizon.com/learning-center",
+          "title": "Learning Center - First Horizon Bank",
+          "local_file": "learning.html"
+        },
+        {
+          "url": "https://www.firsthorizon.com/personal/support/contact-us",
+          "title": "Find a Bank or ATM - First Horizon Bank",
+          "local_file": "contact.html"
+        },
+        {
+          "url": "https://www.firsthorizon.com/personal/support",
+          "title": "Support - First Horizon Bank",
+          "local_file": "support.html"
+        },
+        {
+          "url": "https://www.firsthorizon.com/personal/checking-and-savings",
+          "title": "Banking With First Horizon Bank - First Horizon Bank",
+          "local_file": "checking.html"
+        },
+        {
+          "url": "https://www.firsthorizon.com/personal/personal-loans",
+          "title": "Borrowing, lending and credit solutions - First Horizon Bank",
+          "local_file": "loans.html"
+        },
+        {
+          "url": "https://www.firsthorizon.com/personal/digital-banking",
+          "title": "Online and Digital Banking - First Horizon Bank",
+          "local_file": "digital.html"
+        },
+        {
+          "url": "https://www.firsthorizon.com/personal/support/calculators",
+          "title": "Money Management Calculators - First Horizon Bank",
+          "local_file": "calculators.html"
+        },
+        {
+          "url": "https://www.firsthorizon.com/first-horizon-corporation/Careers",
+          "title": "Careers – First Horizon",
+          "local_file": "careers.html"
+        }
+      ],
+      "key_regions": [
+        "header (inferred)",
+        "navigation (observed)",
+        "hero (inferred)",
+        "content band: product listings (observed)",
+        "content band: educational resources (observed)",
+        "sidebar (not observed)",
+        "footer groups (inferred)"
+      ],
+      "key_interactions": [
+        {
+          "name": "sample rate table",
+          "evidence": "inferred",
+          "notes": "Typical regional bank site includes rate tables; not seen in fetched markup."
+        },
+        {
+          "name": "loan calculator",
+          "evidence": "observed",
+          "notes": "Calculators page shows various loan and mortgage calculators."
+        },
+        {
+          "name": "branch search",
+          "evidence": "inferred",
+          "notes": "Contact‑us page offers “Find a Bank or ATM” indicating a branch locator."
+        },
+        {
+          "name": "contact inquiry",
+          "evidence": "inferred",
+          "notes": "Contact‑us page likely contains a form for inquiries."
+        }
+      ],
+      "complexity": "medium",
+      "stack_clues": "unknown",
+      "limitations": "Login page (personal/login) returns 200 but is behind authentication and was excluded; some deeper product detail pages were not requested; verification date not provided in evidence.",
+      "slot": 8,
+      "category": "company",
+      "model_group": "open-source",
+      "model_id": "unsloth/NVIDIA-Nemotron-3-Super-120B-A12B-GGUF",
+      "model_version": "MXFP4_MOE",
+      "approved_at": "",
+      "approved_by": "",
+      "approval_reference": "",
+      "researched_by": {
+        "model_id": "unsloth/NVIDIA-Nemotron-3-Super-120B-A12B-GGUF",
+        "slot": 8
+      },
+      "orchestrator_checks": {
+        "pages_proposed": 10,
+        "pages_without_successful_fetch": [],
+        "page_map_has_index": true,
+        "source_url_fetched_ok": true,
+        "meets_min_pages": true
+      }
+    },
+    {
+      "source_id": "CORP-09",
+      "subcategory": "technology/software company",
+      "source_name": "Microsoft",
+      "source_url": "https://www.microsoft.com/en-us",
+      "verified_at": "2026-11-17",
+      "verification_method": "HTTP GET by the orchestrator",
+      "verification_result": "verified",
+      "evidence_reference": "pipelines/open-source/research/evidence/CORP-09-http-2026-11-17.json",
+      "source_pages": [
+        {
+          "url": "https://www.microsoft.com/en-us",
+          "title": "Microsoft – AI, Cloud, Productivity, Computing, Gaming & Apps",
+          "local_file": "index.html"
+        },
+        {
+          "url": "https://www.microsoft.com/microsoft-365",
+          "title": "Microsoft 365 for Individuals: Subscription for Productivity Apps",
+          "local_file": "microsoft-365.html"
+        },
+        {
+          "url": "https://www.microsoft.com/en-us/windows/",
+          "title": "Experience the Windows difference with Windows 11 OS, Laptops, PCs & Apps | Microsoft Windows",
+          "local_file": "windows.html"
+        },
+        {
+          "url": "https://www.microsoft.com/surface",
+          "title": "Microsoft Surface: Laptops, Tablets & Computers | Microsoft Surface",
+          "local_file": "surface.html"
+        },
+        {
+          "url": "https://www.microsoft.com/en-us/store/b/sale?icid=DSM_TopNavDeals",
+          "title": "Microsoft Store - Deals on Laptops, Windows Computers & Other Sales",
+          "local_file": "sale.html"
+        },
+        {
+          "url": "https://www.microsoft.com/en-us/microsoft-365/outlook/email-and-calendar-software-microsoft-outlook",
+          "title": "Microsoft Outlook Personal Email and Calendar | Microsoft 365",
+          "local_file": "outlook.html"
+        },
+        {
+          "url": "https://www.microsoft.com/en-us/microsoft-365/onedrive/online-cloud-storage",
+          "title": "Personal File Sharing & Cloud Storage | Microsoft OneDrive",
+          "local_file": "onedrive.html"
+        },
+        {
+          "url": "https://www.microsoft.com/en-us/microsoft-teams/group-chat-software",
+          "title": "Video Conferencing, Meetings, Calling | Microsoft Teams",
+          "local_file": "teams.html"
+        },
+        {
+          "url": "https://www.microsoft.com/en-us/education",
+          "title": "Education Technology Solutions with AI | Microsoft for Education",
+          "local_file": "education.html"
+        },
+        {
+          "url": "https://www.microsoft.com/en-us/store/b/gift-cards?icid=DSM_All_GiftCards",
+          "title": "Gift Cards: XBOX Gift Cards for Gamers & More - Microsoft Store",
+          "local_file": "gift-cards.html"
+        },
+        {
+          "url": "https://www.microsoft.com/en-us/sitemap",
+          "title": "Microsoft.com Site Map",
+          "local_file": "sitemap.html"
+        }
+      ],
+      "key_regions": [
+        "header",
+        "navigation",
+        "hero",
+        "content bands",
+        "sidebar",
+        "footer"
+      ],
+      "key_interactions": [
+        {
+          "name": "search",
+          "evidence": "inferred",
+          "notes": "No search form was found in the fetched markup."
+        },
+        {
+          "name": "pricing toggle",
+          "evidence": "observed",
+          "notes": "Pricing information and toggles were found on the Microsoft 365 page."
+        },
+        {
+          "name": "help search",
+          "evidence": "inferred",
+          "notes": "No help search form was found in the fetched markup."
+        },
+        {
+          "name": "product filters",
+          "evidence": "observed",
+          "notes": "Product filters were found on the Surface and Windows pages."
+        }
+      ],
+      "complexity": "medium",
+      "stack_clues": "unknown",
+      "limitations": "None of the pages failed to load, but some interactions (like search and help search) were not found in the fetched markup.",
+      "slot": 9,
+      "category": "company",
+      "model_group": "open-source",
+      "model_id": "unsloth/Llama-3.3-70B-Instruct-GGUF",
+      "model_version": "Q8_0",
+      "approved_at": "",
+      "approved_by": "",
+      "approval_reference": "",
+      "researched_by": {
+        "model_id": "unsloth/Llama-3.3-70B-Instruct-GGUF",
+        "slot": 9
+      },
+      "orchestrator_checks": {
+        "pages_proposed": 11,
+        "pages_without_successful_fetch": [
+          "https://www.microsoft.com/microsoft-365",
+          "https://www.microsoft.com/surface"
+        ],
+        "page_map_has_index": true,
+        "source_url_fetched_ok": true,
+        "meets_min_pages": true
+      }
+    },
+    {
+      "source_id": "CORP-10",
+      "subcategory": "additional distinct national retail bank (complexity-matched reserve)",
+      "source_name": "Bank of America",
+      "source_url": "https://www.bankofamerica.com/",
+      "verified_at": "2026-11-17",
+      "verification_method": "HTTP GET by the orchestrator",
+      "verification_result": "verified",
+      "evidence_reference": "pipelines/open-source/research/evidence/CORP-10-http-2026-11-17.json",
+      "source_pages": [
+        {
+          "url": "https://www.bankofamerica.com/",
+          "title": "Bank of America - Banking, Credit Cards, Loans and Merrill Investing",
+          "local_file": "index.html"
+        },
+        {
+          "url": "https://www.bankofamerica.com/deposits/checking/checking-accounts/",
+          "title": "Bank of America Advantage Banking: Open a Checking Account Today",
+          "local_file": "checking-index.html"
+        },
+        {
+          "url": "https://www.bankofamerica.com/deposits/savings/savings-accounts/",
+          "title": "Open a Bank of America Advantage Savings Account Online",
+          "local_file": "savings-index.html"
+        },
+        {
+          "url": "https://www.bankofamerica.com/credit-cards/",
+          "title": "Credit Cards: Find & Apply for a Credit Card Online at Bank of America",
+          "local_file": "credit-cards-index.html"
+        },
+        {
+          "url": "https://www.bankofamerica.com/mortgage/home-mortgage/",
+          "title": "Mortgages - Home Mortgage Loans from Bank of America",
+          "local_file": "mortgage-index.html"
+        },
+        {
+          "url": "https://www.bankofamerica.com/auto-loans/",
+          "title": "Auto Loans & Car Financing from Bank of America",
+          "local_file": "auto-loans-index.html"
+        },
+        {
+          "url": "https://www.bankofamerica.com/smallbusiness/",
+          "title": "Business Banking, Credit Cards & Loans - Bank of America",
+          "local_file": "smallbusiness-index.html"
+        },
+        {
+          "url": "https://www.bankofamerica.com/student-banking/",
+          "title": "Financial Products & Services for Students & Young Adults",
+          "local_file": "student-banking-index.html"
+        },
+        {
+          "url": "https://www.bankofamerica.com/help/overview/",
+          "title": "Bank of America Help Center - Get Your Questions Answered",
+          "local_file": "help-index.html"
+        },
+        {
+          "url": "https://www.bankofamerica.com/customer-service/contact-us/",
+          "title": "Bank of America Customer Service & Contact Numbers",
+          "local_file": "contact-us-index.html"
+        }
+      ],
+      "key_regions": [
+        "header",
+        "navigation",
+        "hero banner (inferred)",
+        "content bands",
+        "footer"
+      ],
+      "key_interactions": [
+        {
+          "name": "Loan calculator",
+          "evidence": "inferred",
+          "notes": "Typical mortgage and auto‑loan pages include calculators; markup does not expose a form element."
+        },
+        {
+          "name": "Branch/ATM locator",
+          "evidence": "inferred",
+          "notes": "Retail banks usually provide a location search; not visible in fetched markup."
+        },
+        {
+          "name": "Account opening form",
+          "evidence": "inferred",
+          "notes": "Product detail pages normally link to an application form; no form markup captured."
+        },
+        {
+          "name": "Help search",
+          "evidence": "inferred",
+          "notes": "Help center page lists many FAQs but no explicit search input in the HTML."
+        },
+        {
+          "name": "Contact form",
+          "evidence": "inferred",
+          "notes": "Contact‑us page lists contact options; no HTML form element observed."
+        }
+      ],
+      "complexity": "medium",
+      "stack_clues": "Java/JSP backend suggested by '.go' URL extensions and typical Bank of America server patterns.",
+      "limitations": "[orchestrator-authored: the research model stated no limitations] 3 of 10 mapped pages were not confirmed by a successful HTTP GET: https://www.bankofamerica.com/deposits/checking/checking-accounts/, https://www.bankofamerica.com/smallbusiness/, https://www.bankofamerica.com/student-banking/. All evidence is HTTP-fetched markup; no page was rendered, so appearance and script-driven behaviour are unverified.",
+      "slot": 10,
+      "category": "company",
+      "model_group": "open-source",
+      "model_id": "unsloth/gpt-oss-120b-GGUF",
+      "model_version": "F16",
+      "approved_at": "",
+      "approved_by": "",
+      "approval_reference": "",
+      "researched_by": {
+        "model_id": "unsloth/gpt-oss-120b-GGUF",
+        "slot": 10
+      },
+      "orchestrator_checks": {
+        "pages_proposed": 10,
+        "pages_without_successful_fetch": [
+          "https://www.bankofamerica.com/deposits/checking/checking-accounts/",
+          "https://www.bankofamerica.com/smallbusiness/",
+          "https://www.bankofamerica.com/student-banking/"
+        ],
+        "page_map_has_index": false,
+        "source_url_fetched_ok": true,
+        "meets_min_pages": true
+      }
+    }
+  ],
+  "orchestrator_corrections": [
+    "2026-11-17: CORP-08 verified_at normalised; see CORRECTIONS-2026-11-17-slot08.json",
+    "2026-11-17: verified_at reset to the HTTP evidence date; see CORRECTIONS-2026-11-17-dates.json"
+  ]
+}

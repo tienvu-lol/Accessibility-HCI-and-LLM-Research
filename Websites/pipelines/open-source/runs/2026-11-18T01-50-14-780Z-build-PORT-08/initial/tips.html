@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Tips – Fictional Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <header data-section="header" data-component="site-header">
+    <div class="site-logo">Fictional Dev</div>
+    <nav class="primary-nav" data-component="primary-nav" aria-label="Primary">
+      <button aria-controls="primary-menu" aria-expanded="false">Menu</button>
+      <ul id="primary-menu" class="primary-nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="tips.html">Tips</a></li>
+        <li><a href="javascript.html">JS Notes</a></li>
+        <li><a href="speaking-and-training.html">Speaking</a></li>
+        <li><a href="uses.html">Uses</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content" data-section="main">
+    <h1>Tips</h1>
+    <p>Quick, bite‑sized advice for web developers.</p>
+
+    <section data-component="card-grid" data-section="tips-list">
+      <h2>Latest Tips</h2>
+      <div id="tips-container" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <footer data-section="footer" data-component="site-footer">
+    <p>&copy; 2026 Fictional Dev. All rights reserved.</p>
+    <nav aria-label="Footer">
+      <a href="index.html">Home</a> |
+      <a href="about.html">About</a> |
+      <a href="contact.html">Contact</a>
+    </nav>
+  </footer>
+
+  <script>
+    // Inline dataset for tips
+    const tipsData = [
+      {title: "Use CSS :focus-visible", tip: "Outline only appears for keyboard users, preserving aesthetics for mouse users.", category: "CSS"},
+      {title: "Lazy‑load images with loading=\"lazy\"", tip: "Native lazy loading reduces bandwidth without JavaScript.", category: "Performance"},
+      {title: "Prefer semantic HTML over divs", tip: "Headers, lists, and landmarks improve accessibility and SEO.", category: "HTML"},
+      {title: "Always label form fields", tip: "Use <label> elements or aria-label so screen readers know the purpose.", category: "Accessibility"},
+      {title: "Check contrast early", tip: "Use a contrast checker to ensure text meets WCAG AA.", category: "Accessibility"},
+      {title: "Keep JavaScript bundles small", tip: "Split code and load only what’s needed for the current route.", category: "Performance"},
+      {title: "Use CSS custom properties for theming", tip: "Define --color-primary etc. and switch themes by changing a class on <html>.", category: "CSS"},
+      {title: "Validate HTML regularly", tip: "Run the W3C validator to catch markup errors early.", category: "Quality"},
+      {title: "Write meaningful commit messages", tip: "Explain why a change was made, not just what changed.", category: "Workflow"},
+      {title: "Test keyboard navigation", tip: "Navigate your site with Tab only; ensure all interactive elements are reachable.", category: "Accessibility"}
+    ];
+
+    function renderTips(container, items) {
+      container.innerHTML = '';
+      if (items.length === 0) {
+        const msg = document.createElement('p');
+        msg.textContent = 'No tips to show.';
+        container.appendChild(msg);
+        return;
+      }
+      const grid = document.createElement('div');
+      grid.className = 'card-grid';
+      items.forEach(tip => {
+        const card = document.createElement('article');
+        card.className = 'card';
+        card.dataset.component = 'blog-post-card'; // reuse same component type for simplicity
+        card.dataset.instance = Math.random().toString(36).substr(2,9);
+        card.innerHTML = `
+          <img src="assets/placeholder.svg" alt="${tip.title} thumbnail">
+          <div class="card-body">
+            <h3>${tip.title}</h3>
+            <p>${tip.tip}</p>
+            <div class="tags">
+              <span class="tag">${tip.category}</span>
+            </div>
+            <button class="cta secondary" data-lightbox-trigger data-title="${tip.title}" data-tip="${tip.tip}" data-category="${tip.category}">
+              More details
+            </button>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+      container.appendChild(grid);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const container = document.getElementById('tips-container');
+      if (typeof renderTips === 'function') {
+        renderTips(container, tipsData);
+      }
+      container.addEventListener('click', (e) => {
+        const btn = e.target.closest('[data-lightbox-trigger]');
+        if (!btn) return;
+        const title = btn.dataset.title;
+        const tip = btn.dataset.tip;
+        const category = btn.dataset.category;
+        const contentHTML = `
+          <h2>${title}</h2>
+          <p><em>${tip}</em></p>
+          <p><strong>Category:</strong> ${category}</p>
+          <p>This is a simulated lightbox showing the full tip.</p>
+        `;
+        if (typeof window.openLightbox === 'function') {
+          window.openLightbox(contentHTML);
+        }
+      });
+    });
+  </script>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

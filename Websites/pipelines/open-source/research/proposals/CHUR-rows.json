@@ -1,0 +1,527 @@
+{
+  "category": "church",
+  "prefix": "CHUR",
+  "updated_at": "2026-11-17T05:26:45.864Z",
+  "slots_proposed": [
+    7,
+    8,
+    9,
+    10
+  ],
+  "slots_outstanding": [],
+  "approval_state": "unapproved: approval cells are left empty for the project lead",
+  "runs": [
+    "2026-11-16T21-45-45-988Z-research-CHUR-07",
+    "2026-11-17T05-06-00-487Z-research-CHUR-10",
+    "2026-11-17T05-20-21-701Z-research-CHUR-09",
+    "2026-11-17T05-24-17-819Z-research-CHUR-08"
+  ],
+  "rows": [
+    {
+      "source_id": "CHUR-07",
+      "subcategory": "large or multisite church",
+      "source_name": "Saddleback Church",
+      "source_url": "https://saddleback.com/",
+      "verified_at": "2026-11-16",
+      "verification_method": "HTTP GET by the orchestrator",
+      "verification_result": "verified",
+      "evidence_reference": "pipelines/open-source/research/evidence/CHUR-07-http-2026-11-16.json",
+      "source_pages": [
+        {
+          "url": "https://saddleback.com/",
+          "title": "Saddleback Church",
+          "local_file": "index.html"
+        },
+        {
+          "url": "https://saddleback.com/locations/",
+          "title": "Locations | Saddleback Church",
+          "local_file": "locations.html"
+        },
+        {
+          "url": "https://saddleback.com/watch/",
+          "title": "Watch Saddleback Online",
+          "local_file": "watch.html"
+        },
+        {
+          "url": "https://saddleback.com/about/",
+          "title": "About Us",
+          "local_file": "about.html"
+        },
+        {
+          "url": "https://saddleback.com/care/",
+          "title": "Saddleback Cares",
+          "local_file": "care.html"
+        },
+        {
+          "url": "https://saddleback.com/giving/",
+          "title": "Giving | Saddleback Church",
+          "local_file": "giving.html"
+        },
+        {
+          "url": "https://saddleback.com/events",
+          "title": "Events | Saddleback Church",
+          "local_file": "events.html"
+        },
+        {
+          "url": "https://saddleback.com/sections/get-involved/adults/small-groups/",
+          "title": "Small Groups | Saddleback Church",
+          "local_file": "small-groups.html"
+        },
+        {
+          "url": "https://saddleback.com/sections/get-care/prayer/",
+          "title": "Prayer | Saddleback Church",
+          "local_file": "prayer.html"
+        },
+        {
+          "url": "https://saddleback.com/sections/pursue-growth/resources/",
+          "title": "Resources | Saddleback Church",
+          "local_file": "resources.html"
+        },
+        {
+          "url": "https://saddleback.com/sections/more/careers/",
+          "title": "Careers | Saddleback Church",
+          "local_file": "careers.html"
+        },
+        {
+          "url": "https://saddleback.com/sections/more/contact-us/",
+          "title": "Contact Us | Saddleback Church",
+          "local_file": "contact-us.html"
+        }
+      ],
+      "key_regions": [
+        "Header Navigation",
+        "Footer",
+        "Sermon Listings",
+        "Giving Section",
+        "Event Listings",
+        "Small Groups Directory",
+        "Prayer Resources",
+        "Resource Library",
+        "Career Opportunities",
+        "Contact Directory"
+      ],
+      "key_interactions": [
+        {
+          "name": "Find Your Group",
+          "evidence": "observed",
+          "notes": "Link to /groups/find-a-group present on Small Groups page."
+        },
+        {
+          "name": "Give Now",
+          "evidence": "observed",
+          "notes": "Tithely links with 'Give Now' text present on Giving page."
+        },
+        {
+          "name": "Language Switch",
+          "evidence": "observed",
+          "notes": "Links to /es, /fil-ph, /zh-hans, /zh-hant present in footer and other links."
+        },
+        {
+          "name": "Sermon View",
+          "evidence": "observed",
+          "notes": "Links to specific sermon pages present on Watch page."
+        },
+        {
+          "name": "Prayer Request",
+          "evidence": "inferred",
+          "notes": "Prayer page exists; form structure not visible in fetched markup."
+        },
+        {
+          "name": "Event Search",
+          "evidence": "inferred",
+          "notes": "Events page exists; search interface not visible in fetched markup."
+        }
+      ],
+      "complexity": "medium",
+      "stack_clues": "unknown",
+      "limitations": "None. All requested pages returned 200 OK.",
+      "slot": 7,
+      "category": "church",
+      "model_group": "open-source",
+      "model_id": "unsloth/Qwen3.6-35B-A3B-GGUF",
+      "model_version": "Q4_K_M",
+      "approved_at": "",
+      "approved_by": "",
+      "approval_reference": "",
+      "researched_by": {
+        "model_id": "unsloth/Qwen3.6-35B-A3B-GGUF",
+        "slot": 7
+      },
+      "orchestrator_checks": {
+        "pages_proposed": 12,
+        "pages_without_successful_fetch": [],
+        "page_map_has_index": true,
+        "source_url_fetched_ok": true,
+        "meets_min_pages": true
+      }
+    },
+    {
+      "source_id": "CHUR-08",
+      "subcategory": "historic cathedral/parish",
+      "source_name": "York Minster",
+      "source_url": "https://yorkminster.org/",
+      "verified_at": "2026-11-17",
+      "verification_method": "HTTP GET by the orchestrator",
+      "verification_result": "verified",
+      "evidence_reference": "pipelines/open-source/research/evidence/CHUR-08-http-2026-11-17.json",
+      "source_pages": [
+        {
+          "url": "https://yorkminster.org/",
+          "title": "Homepage | York Minster",
+          "local_file": "index.html"
+        },
+        {
+          "url": "https://yorkminster.org/discover/",
+          "title": "Discover | York Minster",
+          "local_file": "discover.html"
+        },
+        {
+          "url": "https://yorkminster.org/discover/collections-archive-library/",
+          "title": "Collections, Archive and Library | York Minster",
+          "local_file": "collections-archive-library.html"
+        },
+        {
+          "url": "https://yorkminster.org/discover/interactive-map/",
+          "title": "Interactive Map | York Minster",
+          "local_file": "interactive-map.html"
+        },
+        {
+          "url": "https://yorkminster.org/worship/sermons/",
+          "title": "Sermons | York Minster",
+          "local_file": "sermons.html"
+        },
+        {
+          "url": "https://yorkminster.org/visit/plan-your-visit/",
+          "title": "Plan your visit | York Minster",
+          "local_file": "plan-your-visit.html"
+        },
+        {
+          "url": "https://yorkminster.org/whats-on/",
+          "title": "What's on | York Minster",
+          "local_file": "whats-on.html"
+        },
+        {
+          "url": "https://yorkminster.org/donate-to-york-minster/",
+          "title": "Donate to York Minster | York Minster",
+          "local_file": "donate.html"
+        }
+      ],
+      "key_regions": [
+        "navigation"
+      ],
+      "key_interactions": [
+        {
+          "name": "Sermon archive",
+          "evidence": "inferred",
+          "notes": "Page lists sermons but no search/filter observed in markup."
+        },
+        {
+          "name": "Events listing",
+          "evidence": "inferred",
+          "notes": "Whats-on page likely contains event list; not verified in fetched markup."
+        },
+        {
+          "name": "Groups finder",
+          "evidence": "inferred",
+          "notes": "Visit/groups link suggests group visits but no finder observed."
+        },
+        {
+          "name": "Donation/giving",
+          "evidence": "inferred",
+          "notes": "Donate page supports giving but no simulation observed."
+        },
+        {
+          "name": "Visit planning",
+          "evidence": "inferred",
+          "notes": "Plan your visit page provides information but no interactive planner observed."
+        }
+      ],
+      "complexity": "medium",
+      "stack_clues": "unknown",
+      "limitations": "Verification date not present in evidence (approximated); deeper pages such as individual sermon details, specific event instances, group finder forms, prayer request forms, and live service status were not fetched; any JavaScript‑driven navigation is not visible in the raw HTML.",
+      "slot": 8,
+      "category": "church",
+      "model_group": "open-source",
+      "model_id": "unsloth/NVIDIA-Nemotron-3-Super-120B-A12B-GGUF",
+      "model_version": "MXFP4_MOE",
+      "approved_at": "",
+      "approved_by": "",
+      "approval_reference": "",
+      "researched_by": {
+        "model_id": "unsloth/NVIDIA-Nemotron-3-Super-120B-A12B-GGUF",
+        "slot": 8
+      },
+      "orchestrator_checks": {
+        "pages_proposed": 8,
+        "pages_without_successful_fetch": [],
+        "page_map_has_index": true,
+        "source_url_fetched_ok": true,
+        "meets_min_pages": true
+      }
+    },
+    {
+      "source_id": "CHUR-09",
+      "subcategory": "small community congregation",
+      "source_name": "The Village Church",
+      "source_url": "https://www.thevillagechurch.net",
+      "verified_at": "2026-11-17",
+      "verification_method": "HTTP GET",
+      "verification_result": "verified",
+      "evidence_reference": "pipelines/open-source/research/evidence/CHUR-09-http-2026-11-17.json",
+      "source_pages": [
+        {
+          "url": "https://www.thevillagechurch.net/",
+          "title": "The Village Church",
+          "local_file": "index.html"
+        },
+        {
+          "url": "https://www.thevillagechurch.net/about",
+          "title": "About | The Village Church",
+          "local_file": "about.html"
+        },
+        {
+          "url": "https://www.thevillagechurch.net/our-beliefs",
+          "title": "Our Beliefs | The Village Church",
+          "local_file": "beliefs.html"
+        },
+        {
+          "url": "https://www.thevillagechurch.net/staff-and-elders",
+          "title": "Staff & Elders | The Village Church",
+          "local_file": "staff.html"
+        },
+        {
+          "url": "https://www.thevillagechurch.net/ministries",
+          "title": "Ministries | The Village Church",
+          "local_file": "ministries.html"
+        },
+        {
+          "url": "https://www.thevillagechurch.net/events/featured",
+          "title": "Events | The Village Church",
+          "local_file": "events.html"
+        },
+        {
+          "url": "https://www.thevillagechurch.net/giving",
+          "title": "Giving | The Village Church",
+          "local_file": "giving.html"
+        },
+        {
+          "url": "https://www.thevillagechurch.net/contact-us",
+          "title": "Contact Us | The Village Church",
+          "local_file": "contact.html"
+        },
+        {
+          "url": "https://www.thevillagechurch.net/resources",
+          "title": "Resources | The Village Church",
+          "local_file": "resources.html"
+        },
+        {
+          "url": "https://www.thevillagechurch.net/ministries/kids",
+          "title": "Kids | The Village Church | The Village Church",
+          "local_file": "kids.html"
+        },
+        {
+          "url": "https://www.thevillagechurch.net/ministries/students",
+          "title": "Students | The Village Church | The Village Church",
+          "local_file": "students.html"
+        },
+        {
+          "url": "https://www.thevillagechurch.net/young-adults",
+          "title": "Young Adults | The Village Church | The Village Church",
+          "local_file": "young-adults.html"
+        }
+      ],
+      "key_regions": [
+        "header",
+        "navigation",
+        "hero",
+        "content",
+        "sidebar",
+        "footer"
+      ],
+      "key_interactions": [
+        {
+          "name": "sermon search",
+          "evidence": "inferred"
+        },
+        {
+          "name": "groups finder",
+          "evidence": "inferred"
+        },
+        {
+          "name": "events",
+          "evidence": "observed"
+        },
+        {
+          "name": "prayer/inquiry validation",
+          "evidence": "inferred"
+        },
+        {
+          "name": "giving simulation",
+          "evidence": "inferred"
+        }
+      ],
+      "complexity": "medium",
+      "stack_clues": "unknown",
+      "limitations": "No limitations found for the fetched pages.",
+      "slot": 9,
+      "category": "church",
+      "model_group": "open-source",
+      "model_id": "unsloth/Llama-3.3-70B-Instruct-GGUF",
+      "model_version": "Q8_0",
+      "approved_at": "",
+      "approved_by": "",
+      "approval_reference": "",
+      "researched_by": {
+        "model_id": "unsloth/Llama-3.3-70B-Instruct-GGUF",
+        "slot": 9
+      },
+      "orchestrator_checks": {
+        "pages_proposed": 12,
+        "pages_without_successful_fetch": [],
+        "page_map_has_index": true,
+        "source_url_fetched_ok": true,
+        "meets_min_pages": true
+      }
+    },
+    {
+      "source_id": "CHUR-10",
+      "subcategory": "additional distinct large or multisite church (complexity-matched reserve)",
+      "source_name": "Elevation Church",
+      "source_url": "https://www.elevationchurch.org/",
+      "verified_at": "2026-11-17",
+      "verification_method": "HTTP GET by the orchestrator",
+      "verification_result": "verified",
+      "evidence_reference": "pipelines/open-source/research/evidence/CHUR-10-http-2026-11-17.json",
+      "source_pages": [
+        {
+          "url": "https://www.elevationchurch.org/",
+          "title": "Welcome Home - Elevation Church",
+          "local_file": "index.html"
+        },
+        {
+          "url": "https://www.elevationchurch.org/giving",
+          "title": "Giving - Elevation Church",
+          "local_file": "giving-index.html"
+        },
+        {
+          "url": "https://www.elevationchurch.org/events",
+          "title": "Events at Elevation Church",
+          "local_file": "events-index.html"
+        },
+        {
+          "url": "https://www.elevationchurch.org/about",
+          "title": "About Us - Elevation Church",
+          "local_file": "about-index.html"
+        },
+        {
+          "url": "https://www.elevationchurch.org/sermons",
+          "title": "Sermons - Elevation Church",
+          "local_file": "sermons-index.html"
+        },
+        {
+          "url": "https://www.elevationchurch.org/locations",
+          "title": "All Locations",
+          "local_file": "locations-index.html"
+        },
+        {
+          "url": "https://www.elevationchurch.org/store",
+          "title": "Elevation Church Store – Elevation Church Resources",
+          "local_file": "store-index.html"
+        },
+        {
+          "url": "https://www.elevationchurch.org/streaming",
+          "title": "Streaming - Elevation Church",
+          "local_file": "streaming-index.html"
+        },
+        {
+          "url": "https://www.elevationchurch.org/connect",
+          "title": "Get Connected at Elevation Church",
+          "local_file": "connect-index.html"
+        },
+        {
+          "url": "https://www.elevationchurch.org/sermons/you-get-to-choose",
+          "title": "Welcome Home - Elevation Church",
+          "local_file": "you-get-to-choose-index.html"
+        }
+      ],
+      "key_regions": [
+        "header (observed via nav_links)",
+        "navigation (observed)",
+        "footer (observed via repeated nav_links on pages)",
+        "hero (inferred)",
+        "content bands (inferred)",
+        "sidebar (inferred)"
+      ],
+      "key_interactions": [
+        {
+          "name": "Giving form",
+          "evidence": "observed",
+          "notes": "Link labeled “Give” present in navigation on every page"
+        },
+        {
+          "name": "Groups finder",
+          "evidence": "observed",
+          "notes": "Link labeled “Groups” (eGroups) present in navigation"
+        },
+        {
+          "name": "Events calendar",
+          "evidence": "observed",
+          "notes": "Link labeled “Events” present in navigation"
+        },
+        {
+          "name": "Prayer / contact form",
+          "evidence": "observed",
+          "notes": "Link labeled “Get Connected” leads to a page with a “Submit a prayer” link"
+        },
+        {
+          "name": "Streaming / live video",
+          "evidence": "observed",
+          "notes": "Link labeled “Streaming” present in navigation"
+        },
+        {
+          "name": "Sermon archive browsing",
+          "evidence": "observed",
+          "notes": "Sermons page with many individual sermon URLs"
+        },
+        {
+          "name": "Store search / cart",
+          "evidence": "observed",
+          "notes": "Store page includes a search link and cart link"
+        },
+        {
+          "name": "Sermon search / filters",
+          "evidence": "inferred",
+          "notes": "Typical for large sermon archives but not directly visible in fetched markup"
+        }
+      ],
+      "complexity": "high",
+      "stack_clues": "Main site appears to be a custom CMS (no explicit framework clues in markup). Store subdomain uses Shopify (evident from URL pattern and collection routes).",
+      "limitations": "Pages such as /egroups and /eteams are omitted from the map because title metadata was not present in the fetched evidence. All listed pages returned 2xx; no failed requests.",
+      "slot": 10,
+      "category": "church",
+      "model_group": "open-source",
+      "model_id": "unsloth/gpt-oss-120b-GGUF",
+      "model_version": "F16",
+      "approved_at": "",
+      "approved_by": "",
+      "approval_reference": "",
+      "researched_by": {
+        "model_id": "unsloth/gpt-oss-120b-GGUF",
+        "slot": 10
+      },
+      "orchestrator_checks": {
+        "pages_proposed": 10,
+        "pages_without_successful_fetch": [
+          "https://www.elevationchurch.org/store"
+        ],
+        "page_map_has_index": false,
+        "source_url_fetched_ok": true,
+        "meets_min_pages": true
+      }
+    }
+  ],
+  "orchestrator_corrections": [
+    "2026-11-17: CHUR-10 verified_at normalised; see CORRECTIONS-2026-11-17-slot10.json",
+    "2026-11-17: verified_at reset to the HTTP evidence date; see CORRECTIONS-2026-11-17-dates.json"
+  ]
+}

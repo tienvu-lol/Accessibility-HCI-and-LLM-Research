@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Savings and CD Rates | Meridian Valley Bank</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  
+  <header class="site-header" data-component="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" data-component="logo">Meridian Valley Bank</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+      <nav class="primary-nav" id="primary-nav" data-component="primary-nav">
+        <ul>
+          <li><a href="checking.html">Checking</a></li>
+          <li><a href="savings-cds.html">Savings & CDs</a></li>
+          <li><a href="mortgage.html">Mortgages</a></li>
+          <li><a href="auto-loans.html">Auto Loans</a></li>
+          <li><a href="help.html">Help</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="hero" data-section="hero">
+      <div class="container">
+        <h1>Savings and CD Rates</h1>
+        <p>Competitive rates to help your money grow.</p>
+      </div>
+    </section>
+
+    <section class="container mt-2" data-section="rates">
+      <h2 class="text-center">Current Rates</h2>
+      <p class="text-center mb-2">Rates are subject to change. Last updated: 2026-11-17.</p>
+      
+      <div class="table-responsive">
+        <table class="rate-table" data-component="rate-table" id="rates-table">
+          <thead>
+            <tr>
+              <th data-sort="string">Product</th>
+              <th data-sort="number">APY</th>
+              <th data-sort="number">Min. Balance</th>
+              <th data-sort="string">Term</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>High-Yield Savings</td>
+              <td>4.25%</td>
+              <td>$0</td>
+              <td>Variable</td>
+            </tr>
+            <tr>
+              <td>12-Month CD</td>
+              <td>4.50%</td>
+              <td>$1,000</td>
+              <td>12 Months</td>
+            </tr>
+            <tr>
+              <td>24-Month CD</td>
+              <td>4.75%</td>
+              <td>$1,000</td>
+              <td>24 Months</td>
+            </tr>
+            <tr>
+              <td>36-Month CD</td>
+              <td>4.85%</td>
+              <td>$1,000</td>
+              <td>36 Months</td>
+            </tr>
+            <tr>
+              <td>60-Month CD</td>
+              <td>5.00%</td>
+              <td>$1,000</td>
+              <td>60 Months</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+      <div class="text-center mt-2">
+        <a href="savings-cds.html" class="btn">Open an Account</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" data-component="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-section">
+          <h4>Products</h4>
+          <ul>
+            <li><a href="checking.html">Checking</a></li>
+            <li><a href="savings-cds.html">Savings</a></li>
+            <li><a href="mortgage.html">Mortgages</a></li>
+            <li><a href="auto-loans.html">Auto Loans</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="help.html">Help Center</a></li>
+            <li><a href="help-routing.html">Routing Numbers</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>About</h4>
+          <ul>
+            <li><a href="about.html">Our Story</a></li>
+            <li><a href="about-inclusion.html">Inclusion</a></li>
+            <li><a href="#">Careers</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        &copy; 2026 Meridian Valley Bank. All rights reserved. FDIC Equal Housing Lender.
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Inline sort for rate table
+    document.addEventListener('DOMContentLoaded', () => {
+      const table = document.getElementById('rates-table');
+      if (table) {
+        const headers = table.querySelectorAll('th[data-sort]');
+        headers.forEach((header, index) => {
+          header.style.cursor = 'pointer';
+          header.addEventListener('click', () => {
+            const type = header.getAttribute('data-sort');
+            const tbody = table.querySelector('tbody');
+            const rows = Array.from(tbody.querySelectorAll('tr'));
+            
+            rows.sort((a, b) => {
+              let aVal = a.children[index].textContent.trim();
+              let bVal = b.children[index].textContent.trim();
+              
+              if (type === 'number') {
+                aVal = parseFloat(aVal.replace(/[^0-9.-]+/g,""));
+                bVal = parseFloat(bVal.replace(/[^0-9.-]+/g,""));
+                return aVal - bVal;
+              } else {
+                return aVal.localeCompare(bVal);
+              }
+            });
+            
+            rows.forEach(row => tbody.appendChild(row));
+          });
+        });
+      }
+    });
+  </script>
+</body>
+</html>

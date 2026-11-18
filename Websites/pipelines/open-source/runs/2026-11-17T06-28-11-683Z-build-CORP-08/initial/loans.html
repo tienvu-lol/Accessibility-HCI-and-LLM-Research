@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Riverbank Community Bank – Loans</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <header data-section="site-header" data-component="site-header" class="site-header">
+    <div class="logo">Riverbank Community Bank</div>
+    <button id="nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Open main menu">
+      ☰
+    </button>
+    <nav data-section="primary-nav" data-component="primary-nav" class="primary-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="learning.html">Learning Center</a></li>
+        <li><a href="support.html">Support</a></li>
+        <li><a href="checking.html">Checking & Savings</a></li>
+        <li><a href="loans.html" aria-current="page">Loans</a></li>
+        <li><a href="digital.html">Digital Banking</a></li>
+        <li><a href="careers.html">Careers</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section data-section="hero" data-component="hero-banner" class="hero">
+    <h1>Loans & Credit</h1>
+    <p>Borrowing solutions for home, auto, and personal needs.</p>
+  </section>
+
+  <main id="main-content" data-section="main-content">
+    <section data-section="content-band" data-component="content-band-product" class="content-band">
+      <h2>Loan Products</h2>
+      <div class="card-grid" data-instance="loan-products">
+        <!-- Inline sample data will be rendered by script -->
+      </div>
+    </section>
+  </main>
+
+  <footer data-section="site-footer" data-component="site-footer" class="site-footer">
+    <div>
+      <a href="index.html">Home</a> |
+      <a href="about.html">About</a> |
+      <a href="learning.html">Learning Center</a> |
+      <a href="support.html">Support</a> |
+      <a href="careers.html">Careers</a>
+    </div>
+    <div>&copy; 2026 Riverbank Community Bank. All rights reserved.</div>
+  </footer>
+
+  <script>
+    // Sample loan products (3 items)
+    const sampleLoanProducts = [
+      {type: "Auto Loan", aprRange: "3.9% - 5.9% APR", term: "24-72 months", typicalAmount: "$5,000 - $50,000"},
+      {type: "Home Mortgage", aprRange: "4.5% - 6.0% APR", term: "15-30 years", typicalAmount: "$100,000 - $500,000"},
+      {type: "Personal Loan", aprRange: "6.9% - 12.0% APR", term: "12-60 months", typicalAmount: "$1,000 - $35,000"}
+    ];
+    const grid = document.querySelector('[data-instance="loan-products"]');
+    sampleLoanProducts.forEach(item => {
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.setAttribute('data-component', 'product-card');
+      card.innerHTML = `
+        <h3>${item.type}</h3>
+        <p><strong>APR Range:</strong> ${item.aprRange}</p>
+        <p><strong>Term:</strong> ${item.term}</p>
+        <p><strong>Typical Amount:</strong> ${item.typicalAmount}</p>
+      `;
+      grid.appendChild(card);
+    });
+  </script>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

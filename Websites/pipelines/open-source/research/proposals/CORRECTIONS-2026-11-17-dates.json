@@ -1,0 +1,157 @@
+{
+  "corrected_at": "2026-11-17T06:26:16.553Z",
+  "corrected_by": "orchestrator (Claude), disclosed post-hoc correction",
+  "reason": "Sweep of every proposal row: verified_at was reset to the date of the HTTP evidence file wherever it differed. An earlier pass only repaired dates that were malformed, which let structurally valid but fabricated dates through (e.g. GOV-09 carried 2024-09-16 for fetches performed on 2026-11-17). Only the date changed; no URL, page map or verification result was altered, and the same value was mirrored into any inventory row that already held the source.",
+  "corrections": [
+    {
+      "source_id": "UNI-08",
+      "fields": {
+        "verified_at": {
+          "model_emitted": "2025-09-16",
+          "corrected_to": "2026-11-17",
+          "source": "HTTP evidence file date"
+        }
+      }
+    },
+    {
+      "source_id": "UNI-09",
+      "fields": {
+        "verified_at": {
+          "model_emitted": "2024-09-16",
+          "corrected_to": "2026-11-17",
+          "source": "HTTP evidence file date"
+        }
+      }
+    },
+    {
+      "source_id": "HOSP-09",
+      "fields": {
+        "verified_at": {
+          "model_emitted": "2024-09-16",
+          "corrected_to": "2026-11-17",
+          "source": "HTTP evidence file date"
+        }
+      }
+    },
+    {
+      "source_id": "CORP-09",
+      "fields": {
+        "verified_at": {
+          "model_emitted": "2024-09-16",
+          "corrected_to": "2026-11-17",
+          "source": "HTTP evidence file date"
+        }
+      }
+    },
+    {
+      "source_id": "ECOM-09",
+      "fields": {
+        "verified_at": {
+          "model_emitted": "2024-09-16",
+          "corrected_to": "2026-11-17",
+          "source": "HTTP evidence file date"
+        }
+      }
+    },
+    {
+      "source_id": "NEWS-09",
+      "fields": {
+        "verified_at": {
+          "model_emitted": "2026-11-16",
+          "corrected_to": "2026-11-17",
+          "source": "HTTP evidence file date"
+        }
+      }
+    },
+    {
+      "source_id": "GOV-09",
+      "fields": {
+        "verified_at": {
+          "model_emitted": "2024-09-16",
+          "corrected_to": "2026-11-17",
+          "source": "HTTP evidence file date"
+        }
+      }
+    },
+    {
+      "source_id": "FASH-09",
+      "fields": {
+        "verified_at": {
+          "model_emitted": "2024-09-16",
+          "corrected_to": "2026-11-17",
+          "source": "HTTP evidence file date"
+        }
+      }
+    },
+    {
+      "source_id": "WX-09",
+      "fields": {
+        "verified_at": {
+          "model_emitted": "2024-09-16",
+          "corrected_to": "2026-11-17",
+          "source": "HTTP evidence file date"
+        }
+      }
+    },
+    {
+      "source_id": "NPO-09",
+      "fields": {
+        "verified_at": {
+          "model_emitted": "2024-09-16",
+          "corrected_to": "2026-11-17",
+          "source": "HTTP evidence file date"
+        }
+      }
+    },
+    {
+      "source_id": "CHUR-08",
+      "fields": {
+        "verified_at": {
+          "model_emitted": "2025-08-27",
+          "corrected_to": "2026-11-17",
+          "source": "HTTP evidence file date"
+        }
+      }
+    },
+    {
+      "source_id": "CHUR-09",
+      "fields": {
+        "verified_at": {
+          "model_emitted": "2024-09-16",
+          "corrected_to": "2026-11-17",
+          "source": "HTTP evidence file date"
+        }
+      }
+    },
+    {
+      "source_id": "PORT-08",
+      "fields": {
+        "verified_at": {
+          "model_emitted": "date not provided in evidence; method: HTTP GET by the orchestrator",
+          "corrected_to": "2026-11-17",
+          "source": "HTTP evidence file date"
+        }
+      }
+    },
+    {
+      "source_id": "PORT-09",
+      "fields": {
+        "verified_at": {
+          "model_emitted": "2024-09-16",
+          "corrected_to": "2026-11-17",
+          "source": "HTTP evidence file date"
+        }
+      }
+    },
+    {
+      "source_id": "REST-09",
+      "fields": {
+        "verified_at": {
+          "model_emitted": "2026-03-08",
+          "corrected_to": "2026-11-17",
+          "source": "HTTP evidence file date"
+        }
+      }
+    }
+  ]
+}

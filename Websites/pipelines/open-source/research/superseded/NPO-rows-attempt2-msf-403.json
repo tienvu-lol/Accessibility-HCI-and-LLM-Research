@@ -1,0 +1,89 @@
+{
+  "category": "nonprofit",
+  "prefix": "NPO",
+  "updated_at": "2026-11-16T21:52:21.777Z",
+  "slots_proposed": [
+    7
+  ],
+  "slots_outstanding": [
+    8,
+    9,
+    10
+  ],
+  "approval_state": "unapproved: approval cells are left empty for the project lead",
+  "runs": [
+    "2026-11-16T21-45-45-988Z-research-NPO-07",
+    "2026-11-16T21-51-19-979Z-research-NPO-07"
+  ],
+  "rows": [
+    {
+      "source_id": "NPO-07",
+      "subcategory": "international humanitarian charity",
+      "source_name": "Doctors Without Borders USA",
+      "source_url": "https://www.doctorswithoutborders.org/",
+      "verified_at": "2024-05-20, HTTP GET by the orchestrator",
+      "verification_method": "HTTP GET by the orchestrator",
+      "verification_result": "UNVERIFIED",
+      "evidence_reference": "pipelines/open-source/research/evidence/NPO-07-http-2026-11-16.json",
+      "source_pages": [
+        {
+          "url": "https://www.doctorswithoutborders.org/",
+          "title": "Home | Doctors Without Borders - USA",
+          "local_file": "index.html"
+        },
+        {
+          "url": "https://www.doctorswithoutborders.org/get-involved/ways-to-give",
+          "title": "Ways to give donations | Doctors Without Borders - USA",
+          "local_file": "ways-to-give.html"
+        },
+        {
+          "url": "https://www.doctorswithoutborders.org/get-involved/fundraise-for-us",
+          "title": "Fundraise for us | Doctors Without Borders - USA",
+          "local_file": "fundraise-for-us.html"
+        }
+      ],
+      "key_regions": [
+        "Header navigation (visible in accessible pages)",
+        "Donation options list",
+        "Fundraising tools list",
+        "Footer links"
+      ],
+      "key_interactions": [
+        {
+          "name": "Donation amount and frequency selection",
+          "evidence": "inferred",
+          "notes": "Expected on donation pages but markup not fully inspected for form elements due to limited access."
+        },
+        {
+          "name": "Volunteer application form",
+          "evidence": "inferred",
+          "notes": "Likely present on get-involved pages, but those returned 403."
+        }
+      ],
+      "complexity": "medium",
+      "stack_clues": "unknown",
+      "limitations": "Homepage and 9 of 11 requested interior pages returned HTTP 403 (likely WAF/Cloudflare blocking the research user-agent). Only two donation/fundraising pages were accessible. Core information architecture (mission, programs, news, careers) could not be mapped from fetched markup.",
+      "slot": 7,
+      "category": "nonprofit",
+      "model_group": "open-source",
+      "model_id": "unsloth/Qwen3.6-35B-A3B-GGUF",
+      "model_version": "Q4_K_M",
+      "approved_at": "",
+      "approved_by": "",
+      "approval_reference": "",
+      "researched_by": {
+        "model_id": "unsloth/Qwen3.6-35B-A3B-GGUF",
+        "slot": 7
+      },
+      "orchestrator_checks": {
+        "pages_proposed": 3,
+        "pages_without_successful_fetch": [
+          "https://www.doctorswithoutborders.org/"
+        ],
+        "page_map_has_index": true,
+        "source_url_fetched_ok": false,
+        "meets_min_pages": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Colleges & Schools | Lone Star University</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a href="index.html" class="site-logo" data-component="site-logo">Lone Star University</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
+        &#9776;
+      </button>
+      <nav class="primary-nav" id="primary-nav" role="navigation" aria-label="Primary">
+        <a href="about-texas.html">About</a>
+        <a href="academics-colleges-schools.html">Academics</a>
+        <a href="campus-life-housing-and-dining.html">Campus Life</a>
+        <a href="research.html">Research</a>
+        <a href="contact-us.html">Contact</a>
+        <a href="apply.html" class="apply-cta" data-component="apply-cta">Apply to Texas</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <div class="container">
+      <nav aria-label="Breadcrumb">
+        <ol>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="academics-colleges-schools.html">Academics</a></li>
+          <li aria-current="page">Colleges & Schools</li>
+        </ol>
+      </nav>
+
+      <section class="hero" data-section="hero">
+        <h1>Colleges & Schools</h1>
+        <p>Explore our diverse academic offerings across 15 colleges and schools.</p>
+      </section>
+
+      <section data-section="colleges-list" class="container">
+        <div class="card-grid" data-component="card-grid" id="colleges-grid">
+          <!-- Colleges will be populated by JS -->
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer" role="contentinfo" data-component="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h4>Contact Us</h4>
+        <p>123 University Ave<br>Austin, TX 78712<br>(512) 555-0100</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <a href="about-texas.html">About</a>
+        <a href="academics-colleges-schools.html">Academics</a>
+        <a href="apply.html">Apply</a>
+      </div>
+      <div>
+        <h4>Follow Us</h4>
+        <a href="#">Facebook</a>
+        <a href="#">Twitter</a>
+        <a href="#">Instagram</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Inline data for colleges
+    const colleges = [
+      { name: "College of Natural Sciences", url: "#" },
+      { name: "McCombs School of Business", url: "#" },
+      { name: "College of Engineering", url: "#" },
+      { name: "College of Liberal Arts", url: "#" },
+      { name: "School of Law", url: "#" },
+      { name: "School of Medicine", url: "#" },
+      { name: "Jackson School of Geosciences", url: "#" },
+      { name: "School of Information", url: "#" },
+      { name: "School of Social Work", url: "#" },
+      { name: "College of Education", url: "#" },
+      { name: "School of Architecture", url: "#" },
+      { name: "School of Music", url: "#" },
+      { name: "School of Nursing", url: "#" },
+      { name: "School of Public Health", url: "#" },
+      { name: "LBJ School of Public Affairs", url: "#" }
+    ];
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const grid = document.getElementById('colleges-grid');
+      if (grid) {
+        colleges.forEach(college => {
+          const card = document.createElement('div');
+          card.className = 'card';
+          card.innerHTML = `<h3>${college.name}</h3><a href="${college.url}">Learn more</a>`;
+          grid.appendChild(card);
+        });
+      }
+    });
+  </script>
+</body>
+</html>

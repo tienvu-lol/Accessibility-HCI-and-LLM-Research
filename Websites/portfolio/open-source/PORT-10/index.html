@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en" data-section="page-home">
+<head>
+  <meta charset="utf-8">
+  <title>Creative Portfolio – Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/styles.css">
+  <script defer src="js/main.js"></script>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header -->
+  <header data-component="site-header" data-section="header">
+    <nav data-component="primary-nav" aria-label="Main navigation" data-open="false">
+      <a href="index.html" class="logo" aria-label="Home">
+        <svg width="120" height="30" aria-hidden="true"><rect width="120" height="30" fill="#555"/></svg>
+      </a>
+      <button data-component="nav-toggle" aria-controls="primary-menu" aria-expanded="false" aria-label="Menu">
+        ☰
+      </button>
+      <ul id="primary-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="talks.html">Talks</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section data-component="hero" role="region" aria-label="hero" data-section="hero">
+    <h1>Welcome to My Creative Portfolio</h1>
+    <p>Showcasing projects, talks, and writings.</p>
+    <a href="about.html" class="button">Learn More About Me</a>
+  </section>
+
+  <!-- Main Content -->
+  <main id="main-content" data-section="content-band">
+    <section data-section="intro">
+      <h2>Featured Work</h2>
+      <p>Explore a selection of highlighted projects and contributions.</p>
+      <!-- Placeholder cards -->
+      <div class="card-grid" data-component="card-grid">
+        <article class="card" data-component="card" data-instance="1">
+          <h3>Project Alpha</h3>
+          <p>Brief description of a notable project.</p>
+        </article>
+        <article class="card" data-component="card" data-instance="2">
+          <h3>Project Beta</h3>
+          <p>Another example of work.</p>
+        </article>
+        <article class="card" data-component="card" data-instance="3">
+          <h3>Project Gamma</h3>
+          <p>Yet another showcase.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer data-component="site-footer" data-section="footer">
+    <p>&copy; 2024 Creative Portfolio. All rights reserved.</p>
+    <nav aria-label="Footer navigation">
+      <a href="privacy.html">Privacy</a> |
+      <a href="terms.html">Terms</a>
+    </nav>
+  </footer>
+</body>
+</html>

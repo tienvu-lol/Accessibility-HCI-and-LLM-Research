@@ -1,5 +1,5 @@
 // Static integrity of this pipeline, and optionally the prerequisites for one build.
-import {loadSetup, validateSetup, validateModels, buildReadiness, cliArgs, SLOTS} from './lib.mjs';
+import {loadSetup, validateSetup, validateModels, buildReadiness, cliArgs, SLOTS, slotOf} from './lib.mjs';
 try {
   const {positional, flags} = cliArgs(process.argv.slice(2), {ready: 'value', models: 'boolean', 'skip-keys': 'boolean'});
   if (positional.length) throw new Error('Usage: node validate.mjs [--models] [--ready UNI-07 [--skip-keys]]');
@@ -7,7 +7,12 @@ try {
   const errors = validateSetup(setup);
   const notes = [];
   if ((flags.models || flags.ready) && !errors.length) {
-    const modelErrors = validateModels(setup, {requireKeys: Boolean(flags.ready) && !flags['skip-keys']});
+    // With --ready, only the slot being built must be declared; sibling slots are reported as a
+    // note by validateModels, not an error (operator decision, 2026-11-16: slots build independently).
+    const modelErrors = validateModels(setup, {
+      requireKeys: Boolean(flags.ready) && !flags['skip-keys'],
+      ...(flags.ready ? {needSlots: [slotOf(flags.ready)]} : {}),
+    });
     notes.push(...modelErrors.filter(e => e.startsWith('Note:')));
     errors.push(...modelErrors.filter(e => !e.startsWith('Note:')));
   }

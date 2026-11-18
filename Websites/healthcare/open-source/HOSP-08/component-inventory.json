@@ -1,0 +1,338 @@
+{
+  "components": [
+    {
+      "name": "site-header",
+      "selector": "header[data-component=\"site-header\"]",
+      "appears_on": [
+        "index.html",
+        "get-care-now.html",
+        "pay-a-bill.html",
+        "find-a-doctor.html",
+        "find-a-doctor-primary-care.html",
+        "health-care-services.html",
+        "conditions-and-treatments.html",
+        "location-map.html",
+        "locations-hospitals.html",
+        "patient-resources.html",
+        "404.html"
+      ],
+      "behaviors": "Contains site name and tagline; static.",
+      "keyboard_expectations": "None (purely landmark).",
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "primary-nav",
+      "selector": "nav[data-component=\"primary-nav\"]",
+      "appears_on": [
+        "index.html",
+        "get-care-now.html",
+        "pay-a-bill.html",
+        "find-a-doctor.html",
+        "find-a-doctor-primary-care.html",
+        "health-care-services.html",
+        "conditions-and-treatments.html",
+        "location-map.html",
+        "locations-hospitals.html",
+        "patient-resources.html",
+        "404.html"
+      ],
+      "behaviors": "Horizontal list of links to main sections; indicates current page via aria-current.",
+      "keyboard_expectations": "Tab focus moves through links; Enter activates.",
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "skip-link",
+      "selector": "a.skip-link",
+      "appears_on": [
+        "index.html",
+        "get-care-now.html",
+        "pay-a-bill.html",
+        "find-a-doctor.html",
+        "find-a-doctor-primary-care.html",
+        "health-care-services.html",
+        "conditions-and-treatments.html",
+        "location-map.html",
+        "locations-hospitals.html",
+        "patient-resources.html",
+        "404.html"
+      ],
+      "behaviors": "Initially hidden; becomes visible when focused; jumps to #main-content.",
+      "keyboard_expectations": "Receives focus first; Enter activates link.",
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "hero-banner",
+      "selector": "section[data-component=\"hero-banner\"]",
+      "appears_on": [
+        "index.html"
+      ],
+      "behaviors": "Prominent call‑to‑action with heading, paragraph, and button.",
+      "keyboard_expectations": "Button is tab‑focusable; Enter/Space activates.",
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "service-bands",
+      "selector": "section[data-component=\"service-bands\"]",
+      "appears_on": [
+        "index.html",
+        "health-care-services.html"
+      ],
+      "behaviors": "Container for service-band components; responsive grid.",
+      "keyboard_expectations": "None.",
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "service-band",
+      "selector": "div[data-component=\"service-band\"]",
+      "appears_on": [
+        "index.html",
+        "health-care-services.html"
+      ],
+      "behaviors": "Displays service title and toggle button; hides/shows details.",
+      "keyboard_expectations": "Button receives tab focus; Enter/Space toggles panel.",
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "service-band-toggle",
+      "selector": "button[data-component=\"service-band-toggle\"]",
+      "appears_on": [
+        "index.html",
+        "health-care-services.html"
+      ],
+      "behaviors": "Toggles aria‑expanded on parent service-band; shows/hides service-details.",
+      "keyboard_expectations": "Enter or Space activates toggle.",
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "service-details",
+      "selector": "div[data-component=\"service-details\"]",
+      "appears_on": [
+        "index.html",
+        "health-care-services.html"
+      ],
+      "behaviors": "Shows service description when parent service-band has aria-expanded=\"true\".",
+      "keyboard_expectations": "None (content is revealed).",
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "provider-listing-band",
+      "selector": "section[data-component=\"provider-listing-band\"]",
+      "appears_on": [
+        "find-a-doctor.html",
+        "find-a-doctor-primary-care.html"
+      ],
+      "behaviors": "Contains filter input and provider grid.",
+      "keyboard_expectations": "None.",
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "provider-grid",
+      "selector": "div[data-component=\"provider-grid\"]",
+      "appears_on": [
+        "find-a-doctor.html",
+        "find-a-doctor-primary-care.html"
+      ],
+      "behaviors": "Grid of doctor-card items; responsive columns.",
+      "keyboard_expectations": "None.",
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "doctor-card",
+      "selector": "div[data-component=\"doctor-card\"]",
+      "appears_on": [
+        "find-a-doctor.html",
+        "find-a-doctor-primary-care.html"
+      ],
+      "behaviors": "Displays doctor name, specialty, accepting status, location, hospital.",
+      "keyboard_expectations": "None.",
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "doctor-filter",
+      "selector": "input[data-component=\"doctor-filter\"]",
+      "appears_on": [
+        "find-a-doctor.html",
+        "find-a-doctor-primary-care.html"
+      ],
+      "behaviors": "Text input that filters doctor cards by name or specialty; Escape clears.",
+      "keyboard_expectations": "Type to filter; Escape clears input and resets list.",
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "location-map-band",
+      "selector": "section[data-component=\"location-map-band\"]",
+      "appears_on": [
+        "location-map.html"
+      ],
+      "behaviors": "Contains static SVG map placeholder, filter dropdown, and location list.",
+      "keyboard_expectations": "None.",
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "location-filter",
+      "selector": "select[data-component=\"location-filter\"]",
+      "appears_on": [
+        "location-map.html",
+        "locations-hospitals.html"
+      ],
+      "behaviors": "Dropdown to filter locations by area; change updates list display.",
+      "keyboard_expectations": "Navigate options with ArrowUp/Down; Enter to select.",
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "location-item",
+      "selector": "li[data-component=\"location-item\"]",
+      "appears_on": [
+        "location-map.html",
+        "locations-hospitals.html"
+      ],
+      "behaviors": "Shows location/hospital name, address, phone, and associated info.",
+      "keyboard_expectations": "None.",
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "site-footer",
+      "selector": "footer[data-component=\"site-footer\"]",
+      "appears_on": [
+        "index.html",
+        "get-care-now.html",
+        "pay-a-bill.html",
+        "find-a-doctor.html",
+        "find-a-doctor-primary-care.html",
+        "health-care-services.html",
+        "conditions-and-treatments.html",
+        "location-map.html",
+        "locations-hospitals.html",
+        "patient-resources.html",
+        "404.html"
+      ],
+      "behaviors": "Contains copyright text; static.",
+      "keyboard_expectations": "None.",
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "breadcrumb",
+      "selector": "nav[aria-label=\"breadcrumb\"]",
+      "appears_on": [],
+      "behaviors": "Not implemented; omitted as source did not show breadcrumbs.",
+      "keyboard_expectations": "N/A",
+      "status": "omitted",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "error-summary",
+      "selector": "div[data-component=\"error-summary\"]",
+      "appears_on": [
+        "get-care-now.html"
+      ],
+      "behaviors": "Displays list of validation errors when form submission fails; role=\"alert\".",
+      "keyboard_expectations": "Receives focus when displayed; screen reader announces.",
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "appointment-form",
+      "selector": "form[data-component=\"appointment-form\"]",
+      "appears_on": [
+        "get-care-now.html"
+      ],
+      "behaviors": "Collects appointment request data; performs client‑side validation; shows simulated success.",
+      "keyboard_expectations": "Tab through fields; Enter on submit button triggers validation.",
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "insurance-modal-backdrop",
+      "selector": "div[data-component=\"insurance-modal-backdrop\"]",
+      "appears_on": [
+        "pay-a-bill.html"
+      ],
+      "behaviors": "Dark backdrop that covers viewport when modal is open; traps focus.",
+      "keyboard_expectations": "Escape closes modal and returns focus to trigger button.",
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "insurance-modal",
+      "selector": "div[data-component=\"insurance-modal\"]",
+      "appears_on": [
+        "pay-a-bill.html"
+      ],
+      "behaviors": "Dialog containing list of accepted insurance plans; aria‑modal=\"true\".",
+      "keyboard_expectations": "Tab moves focus inside; Escape closes.",
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "modal-close",
+      "selector": "button[data-component=\"modal-close\"]",
+      "appears_on": [
+        "pay-a-bill.html"
+      ],
+      "behaviors": "Closes the insurance modal; restores focus to trigger button.",
+      "keyboard_expectations": "Enter or Space activates.",
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "condition-list",
+      "selector": "section[data-component=\"condition-list\"]",
+      "appears_on": [
+        "conditions-and-treatments.html"
+      ],
+      "behaviors": "Container for condition-item elements.",
+      "keyboard_expectations": "None.",
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "condition-item",
+      "selector": "div[data-component=\"condition-item\"]",
+      "appears_on": [
+        "conditions-and-treatments.html"
+      ],
+      "behaviors": "Shows condition name, typical treatment, related service.",
+      "keyboard_expectations": "None.",
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "resource-list",
+      "selector": "ul[data-component=\"resource-list\"]",
+      "appears_on": [
+        "patient-resources.html"
+      ],
+      "behaviors": "Container for resource-item elements.",
+      "keyboard_expectations": "None.",
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "resource-item",
+      "selector": "li[data-component=\"resource-item\"]",
+      "appears_on": [
+        "patient-resources.html"
+      ],
+      "behaviors": "Shows resource title, link, and category.",
+      "keyboard_expectations": "None.",
+      "status": "implemented",
+      "validation_state": "not-tested"
+    }
+  ]
+}

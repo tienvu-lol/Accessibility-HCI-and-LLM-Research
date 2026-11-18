@@ -1,0 +1,68 @@
+{
+  "components": [
+    {
+      "name": "site-header",
+      "selector": "[data-component=\"site-header\"]",
+      "pages": ["index.html","admissions-index.html","academics-index.html","schools-colleges-index.html","directory-index.html","research-index.html","events-index.html","by-the-numbers-index.html","404.html"],
+      "behaviors": ["contains logo text, skip link, primary navigation"],
+      "keyboard": ["focusable links, menu toggle button"],
+      "status": "implemented"
+    },
+    {
+      "name": "primary-nav",
+      "selector": "[data-component=\"primary-nav\"]",
+      "pages": ["index.html","admissions-index.html","academics-index.html","schools-colleges-index.html","directory-index.html","research-index.html","events-index.html","by-the-numbers-index.html","404.html"],
+      "behaviors": ["responsive hamburger toggle, aria-expanded, focus management"],
+      "keyboard": ["Enter/Space activates links, Escape closes menu"],
+      "status": "implemented"
+    },
+    {
+      "name": "skip-link",
+      "selector": "[data-component=\"skip-link\"]",
+      "pages": ["index.html","admissions-index.html","academics-index.html","schools-colleges-index.html","directory-index.html","research-index.html","events-index.html","by-the-numbers-index.html","404.html"],
+      "behaviors": ["visible on focus, jumps to #main-content"],
+      "keyboard": ["focusable via Tab, activates on Enter/Space"],
+      "status": "implemented"
+    },
+    {
+      "name": "card-grid",
+      "selector": "[data-component=\"card-grid\"]",
+      "pages": ["index.html","admissions-index.html","academics-index.html","schools-colleges-index.html","research-index.html","events-index.html","by-the-numbers-index.html"],
+      "behaviors": ["CSS grid layout for cards"],
+      "keyboard": ["cards contain native <a> links, focusable"],
+      "status": "implemented"
+    },
+    {
+      "name": "card",
+      "selector": "[data-component=\"card\"]",
+      "pages": ["index.html","admissions-index.html","academics-index.html","schools-colleges-index.html","research-index.html","events-index.html","by-the-numbers-index.html"],
+      "behaviors": ["visual container, may contain link or text"],
+      "keyboard": ["if contains <a>, native focus; otherwise no interactive behavior"],
+      "status": "implemented"
+    },
+    {
+      "name": "search-form",
+      "selector": "#directory-search-form",
+      "pages": ["directory-index.html"],
+      "behaviors": ["client‑side filter of directoryData, error summary"],
+      "keyboard": ["Tab navigation, Enter submits, Escape does not close (no dialog)"],
+      "status": "implemented"
+    },
+    {
+      "name": "events-filter",
+      "selector": "#events-filter-form",
+      "pages": ["events-index.html"],
+      "behaviors": ["filter eventsData on change, render card grid"],
+      "keyboard": ["Tab navigation, Arrow keys in selects, Escape does not close"],
+      "status": "implemented"
+    },
+    {
+      "name": "site-footer",
+      "selector": "[data-component=\"site-footer\"]",
+      "pages": ["index.html","admissions-index.html","academics-index.html","schools-colleges-index.html","directory-index.html","research-index.html","events-index.html","by-the-numbers-index.html","404.html"],
+      "behaviors": ["copyright notice"],
+      "keyboard": ["none (static)"],
+      "status": "implemented"
+    }
+  ]
+}

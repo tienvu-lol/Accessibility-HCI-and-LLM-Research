@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Speaking And Training – Fictional Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <header data-section="header" data-component="site-header">
+    <div class="site-logo">Fictional Dev</div>
+    <nav class="primary-nav" data-component="primary-nav" aria-label="Primary">
+      <button aria-controls="primary-menu" aria-expanded="false">Menu</button>
+      <ul id="primary-menu" class="primary-nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="tips.html">Tips</a></li>
+        <li><a href="javascript.html">JS Notes</a></li>
+        <li><a href="speaking-and-training.html">Speaking</a></li>
+        <li><a href="uses.html">Uses</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content" data-section="main">
+    <h1>Speaking And Training</h1>
+    <p>Upcoming and past talks, workshops, and training sessions.</p>
+
+    <section data-component="card-grid" data-section="speaking-list">
+      <h2>Events</h2>
+      <div id="speaking-container" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <footer data-section="footer" data-component="site-footer">
+    <p>&copy; 2026 Fictional Dev. All rights reserved.</p>
+    <nav aria-label="Footer">
+      <a href="index.html">Home</a> |
+      <a href="about.html">About</a> |
+      <a href="contact.html">Contact</a>
+    </nav>
+  </footer>
+
+  <script>
+    // Inline dataset for speaking events
+    const speakingData = [
+      {event: "Frontend Conference 2026", date: "2026-05-12", location: "Online", slides: "https://example.com/talk1"},
+      {event: "JavaScript Summit", date: "2026-08-03", location: "Berlin, Germany", slides: "https://example.com/talk2"},
+      {event: "CSS Dev Workshop", date: "2026-11-20", location: "Toronto, Canada", slides: "https://example.com/talk3"},
+      {event: "Accessibility Awareness Talk", date: "2027-02-14", location: "Remote", slides: "https://example.com/talk4"}
+    ];
+
+    function renderSpeaking(container, items) {
+      container.innerHTML = '';
+      if (items.length === 0) {
+        const msg = document.createElement('p');
+        msg.textContent = 'No events to show.';
+        container.appendChild(msg);
+        return;
+      }
+      const grid = document.createElement('div');
+      grid.className = 'card-grid';
+      items.forEach(ev => {
+        const card = document.createElement('article');
+        card.className = 'card';
+        card.dataset.component = 'project-card';
+        card.dataset.instance = Math.random().toString(36).substr(2,9);
+        card.innerHTML = `
+          <img src="assets/placeholder.svg" alt="${ev.event} thumbnail">
+          <div class="card-body">
+            <h3>${ev.event}</h3>
+            <p><strong>Date:</strong> ${ev.date}</p>
+            <p><strong>Location:</strong> ${ev.location}</p>
+            <a href="${ev.slides}" class="cta secondary" target="_blank" rel="noopener">Slides</a>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+      container.appendChild(grid);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const container = document.getElementById('speaking-container');
+      if (typeof renderSpeaking === 'function') {
+        renderSpeaking(container, speakingData);
+      }
+    });
+  </script>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

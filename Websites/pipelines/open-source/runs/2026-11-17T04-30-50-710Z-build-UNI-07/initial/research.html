@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TEXAS Research | Lone Star University</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a href="index.html" class="site-logo" data-component="site-logo">Lone Star University</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
+        &#9776;
+      </button>
+      <nav class="primary-nav" id="primary-nav" role="navigation" aria-label="Primary">
+        <a href="about-texas.html">About</a>
+        <a href="academics-colleges-schools.html">Academics</a>
+        <a href="campus-life-housing-and-dining.html">Campus Life</a>
+        <a href="research.html">Research</a>
+        <a href="contact-us.html">Contact</a>
+        <a href="apply.html" class="apply-cta" data-component="apply-cta">Apply to Texas</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <div class="container">
+      <nav aria-label="Breadcrumb">
+        <ol>
+          <li><a href="index.html">Home</a></li>
+          <li aria-current="page">Research</li>
+        </ol>
+      </nav>
+
+      <section class="hero" data-section="hero">
+        <h1>TEXAS Research</h1>
+        <p>Advancing knowledge and solving global challenges.</p>
+      </section>
+
+      <section data-section="research-overview" class="container">
+        <h2>Our Impact</h2>
+        <p>Lone Star University is a leading research institution, with over $500 million in annual research expenditures. Our faculty and students are tackling some of the world's most pressing issues.</p>
+      </section>
+
+      <section data-section="research-areas" class="container">
+        <h2>Key Research Areas</h2>
+        <div class="card-grid" data-component="card-grid" id="research-grid">
+          <!-- Populated by JS -->
+        </div>
+      </section>
+
+      <section data-section="facilities" class="container">
+        <h2>Research Facilities</h2>
+        <p>Our state-of-the-art facilities support cutting-edge research across all disciplines.</p>
+        <ul>
+          <li>Nanotechnology Laboratory</li>
+          <li>Genomics Center</li>
+          <li>High-Performance Computing Cluster</li>
+          <li>Artificial Intelligence Institute</li>
+        </ul>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer" role="contentinfo" data-component="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h4>Contact Us</h4>
+        <p>123 University Ave<br>Austin, TX 78712<br>(512) 555-0100</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <a href="about-texas.html">About</a>
+        <a href="academics-colleges-schools.html">Academics</a>
+        <a href="apply.html">Apply</a>
+      </div>
+      <div>
+        <h4>Follow Us</h4>
+        <a href="#">Facebook</a>
+        <a href="#">Twitter</a>
+        <a href="#">Instagram</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    const researchAreas = [
+      { name: "Energy & Sustainability", desc: "Developing clean energy solutions." },
+      { name: "Health Sciences", desc: "Improving human health and well-being." },
+      { name: "Data Science", desc: "Harnessing the power of big data." },
+      { name: "Cybersecurity", desc: "Protecting digital infrastructure." },
+      { name: "Space Exploration", desc: "Advancing our understanding of the universe." },
+      { name: "Social Sciences", desc: "Understanding human behavior and society." },
+      { name: "Materials Science", desc: "Creating new materials for the future." },
+      { name: "Agriculture", desc: "Sustainable farming practices." }
+    ];
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const grid = document.getElementById('research-grid');
+      if (grid) {
+        researchAreas.forEach(area => {
+          const card = document.createElement('div');
+          card.className = 'card';
+          card.innerHTML = `<h3>${area.name}</h3><p>${area.desc}</p>`;
+          grid.appendChild(card);
+        });
+      }
+    });
+  </script>
+</body>
+</html>

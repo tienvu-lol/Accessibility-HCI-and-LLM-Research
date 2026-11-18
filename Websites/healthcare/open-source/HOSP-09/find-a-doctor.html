@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Find a Doctor</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link" id="skip-link">Skip to main content</a>
+  <header>
+    <h1>Find a Doctor</h1>
+  </header>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="find-a-doctor.html">Find a Doctor</a>
+  </nav>
+  <main id="main-content">
+    <h2>Find a Doctor</h2>
+    <form>
+      <label for="doctor-name">Doctor's Name:</label>
+      <input type="text" id="doctor-name" name="doctor-name"><br><br>
+      <label for="specialty">Specialty:</label>
+      <select id="specialty" name="specialty">
+        <option value="">Select a specialty</option>
+        <option value="cardiology">Cardiology</option>
+        <option value="dermatology">Dermatology</option>
+        <option value="gastroenterology">Gastroenterology</option>
+      </select><br><br>
+      <input type="submit" value="Search">
+    </form>
+    <h3>Search Results:</h3>
+    <ul>
+      <li>Doctor 1 - Cardiology</li>
+      <li>Doctor 2 - Dermatology</li>
+      <li>Doctor 3 - Gastroenterology</li>
+    </ul>
+  </main>
+  <footer>
+    <p>&copy; 2024 Healthcare Website</p>
+  </footer>
+  <script src="js/main.js"></script>
+</body>
+</html>

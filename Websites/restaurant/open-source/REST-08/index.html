@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Xi'an Famous Foods – Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="site-header" data-section="header" data-component="site-header">
+    <h1>Xi'an Famous Foods</h1>
+    <button class="nav-toggle" aria-controls="primary-nav" aria-expanded="false">☰</button>
+    <nav class="primary-nav" id="primary-nav" aria-label="Primary" data-component="primary-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="our-story.html">Our Story</a></li>
+        <li><a href="locations.html">Locations</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero" data-section="hero" data-component="hero">
+    <h2>Specialty Chinese dishes from family recipes</h2>
+    <p>Explore our menu, find a location, or make a reservation.</p>
+    <a href="#reservation-section" class="btn">Make a Reservation</a>
+    <a href="menu.html" class="btn secondary">View Menu</a>
+  </section>
+
+  <main id="main-content" data-section="main">
+    <section aria-labelledby="reservation-heading" data-section="reservation" data-component="reservation-form">
+      <h2 id="reservation-heading">Reservation Request</h2>
+      <form id="reservation-form">
+        <div>
+          <label for="reservation_date">Date</label>
+          <input type="date" id="reservation_date" name="reservation_date" required>
+        </div>
+        <div>
+          <label for="reservation_time">Time</label>
+          <input type="time" id="reservation_time" name="reservation_time" required>
+        </div>
+        <div>
+          <label for="party_size">Party size</label>
+          <input type="number" id="party_size" name="party_size" min="1" max="20" required>
+        </div>
+        <div>
+          <label for="special_requests">Special requests (optional)</label>
+          <textarea id="special_requests" name="special_requests" rows="2"></textarea>
+        </div>
+        <div class="button-group">
+          <button type="submit" class="btn">Submit</button>
+          <button type="reset" class="btn secondary">Reset</button>
+        </div>
+      </form>
+      <div id="reservation-confirmation" aria-live="off"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer" data-section="footer" data-component="site-footer">
+    <p>&copy; 2026 Xi'an Famous Foods. All rights reserved.</p>
+    <ul class="social-list" data-component="social-links">
+      <li><a href="#" aria-label="Facebook">FB</a></li>
+      <li><a href="#" aria-label="Twitter">TW</a></li>
+      <li><a href="#" aria-label="Instagram">IG</a></li>
+    </ul>
+    <section data-component="newsletter-signup">
+      <h3>Stay updated</h3>
+      <form>
+        <label for="newsletter-email">Email address</label>
+        <input type="email" id="newsletter-email" placeholder="you@example.com" required>
+        <button type="submit" class="btn">Subscribe</button>
+      </form>
+      <p class="note">We’ll never share your address.</p>
+    </section>
+  </footer>
+
+  <!-- Age gate modal -->
+  <div id="age-gate-backdrop" class="modal-backdrop" aria-hidden="true">
+    <div id="age-gate-modal" class="modal" aria-hidden="false" role="dialog" aria-modal="true">
+      <h2>Age verification</h2>
+      <p>Please confirm you are 18 years or older.</p>
+      <form id="age-gate-form">
+        <label for="age-gate-input">Date of birth (MM/DD/YYYY)</label>
+        <input type="text" id="age-gate-input" name="age-gate-input" placeholder="01/01/1990" required pattern="(0[1-9]|1[0-2])\/(0[1-9]|[12][0-9]|3[01])\/\d{4}">
+        <button type="submit" class="btn">Enter</button>
+      </form>
+      <p id="age-gate-message" style="color:#c00;display:none;"></p>
+      <button class="modal-close" aria-label="Close">×</button>
+    </div>
+  </div>
+
+  <!-- Toast container -->
+  <div id="toast" aria-live="off"></div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,458 @@
+{
+  "category": "restaurant",
+  "prefix": "REST",
+  "updated_at": "2026-11-17T05:31:35.344Z",
+  "slots_proposed": [
+    7,
+    8,
+    9,
+    10
+  ],
+  "slots_outstanding": [],
+  "approval_state": "unapproved: approval cells are left empty for the project lead",
+  "runs": [
+    "2026-11-16T21-47-24-007Z-research-REST-07",
+    "2026-11-17T05-08-04-495Z-research-REST-10",
+    "2026-11-17T05-28-44-974Z-research-REST-08",
+    "2026-11-17T05-28-01-311Z-research-REST-09"
+  ],
+  "rows": [
+    {
+      "source_id": "REST-07",
+      "subcategory": "fast-casual chain",
+      "source_name": "Panera Bread",
+      "source_url": "https://www.panerabread.com",
+      "verified_at": "2026-11-16",
+      "verification_method": "HTTP GET by the orchestrator",
+      "verification_result": "verified",
+      "evidence_reference": "pipelines/open-source/research/evidence/REST-07-http-2026-11-16.json",
+      "source_pages": [
+        {
+          "url": "https://www.panerabread.com",
+          "title": "Home | Panera Bread",
+          "local_file": "index.html"
+        },
+        {
+          "url": "https://www.panerabread.com/en-us/home.html",
+          "title": "Home | Panera Bread",
+          "local_file": "home.html"
+        },
+        {
+          "url": "https://www.panerabread.com/en-us/menu.html",
+          "title": "Panerabread App | Panera Bread",
+          "local_file": "menu.html"
+        },
+        {
+          "url": "https://www.panerabread.com/en-us/cafe-locator.html",
+          "title": "Panerabread App | Panera Bread",
+          "local_file": "locations.html"
+        },
+        {
+          "url": "https://www.panerabread.com/en-us/gift-cards.html",
+          "title": "Buy Gift Cards Online For Friends, Family & Co-Workers | Panera Bread",
+          "local_file": "gift-cards.html"
+        },
+        {
+          "url": "https://www.panerabread.com/en-us/company/about-panera.html",
+          "title": "About Panera | Panera Bread",
+          "local_file": "about.html"
+        },
+        {
+          "url": "https://www.panerabread.com/en-us/food-values/our-values.html",
+          "title": "Corporate Responsibility | Panera Bread",
+          "local_file": "values.html"
+        },
+        {
+          "url": "https://www.panerabread.com/en-us/press/press-room.html",
+          "title": "Press Room & Featured News | Panera Bread",
+          "local_file": "press.html"
+        },
+        {
+          "url": "https://www.panerabread.com/en-us/food-values/community.html",
+          "title": "Our Communities | Panera Bread",
+          "local_file": "community.html"
+        },
+        {
+          "url": "https://www.panerabread.com/customercare",
+          "title": "Customer Support",
+          "local_file": "support.html"
+        }
+      ],
+      "key_regions": [
+        "Header",
+        "Navigation",
+        "Hero",
+        "Content Sections",
+        "Footer"
+      ],
+      "key_interactions": [
+        {
+          "name": "Main Navigation",
+          "evidence": "observed",
+          "notes": "Links present in markup for all major sections."
+        },
+        {
+          "name": "Menu Filtering",
+          "evidence": "inferred",
+          "notes": "Title 'Panerabread App' suggests app integration; no filtering form observed in markup."
+        },
+        {
+          "name": "Gift Card Balance Check",
+          "evidence": "observed",
+          "notes": "Link to '/en-us/gift-cards/balance.html' present."
+        },
+        {
+          "name": "Support Search",
+          "evidence": "inferred",
+          "notes": "Support page redirects to external Salesforce site; search interaction inferred."
+        }
+      ],
+      "complexity": "medium",
+      "stack_clues": "Salesforce Service Cloud, Mobile App promotion",
+      "limitations": "Redirects for locations and support; no body content analyzed.",
+      "slot": 7,
+      "category": "restaurant",
+      "model_group": "open-source",
+      "model_id": "unsloth/Qwen3.6-35B-A3B-GGUF",
+      "model_version": "Q4_K_M",
+      "approved_at": "",
+      "approved_by": "",
+      "approval_reference": "",
+      "researched_by": {
+        "model_id": "unsloth/Qwen3.6-35B-A3B-GGUF",
+        "slot": 7
+      },
+      "orchestrator_checks": {
+        "pages_proposed": 10,
+        "pages_without_successful_fetch": [
+          "https://www.panerabread.com",
+          "https://www.panerabread.com/en-us/cafe-locator.html",
+          "https://www.panerabread.com/customercare"
+        ],
+        "page_map_has_index": true,
+        "source_url_fetched_ok": false,
+        "meets_min_pages": true
+      }
+    },
+    {
+      "source_id": "REST-08",
+      "subcategory": "ethnic (Xi'an Chinese)",
+      "source_name": "Xi'an Famous Foods",
+      "source_url": "https://www.xianfoods.com",
+      "verified_at": "2026-11-17",
+      "verification_method": "HTTP GET by the orchestrator",
+      "verification_result": "verified",
+      "evidence_reference": "pipelines/open-source/research/evidence/REST-08-http-2026-11-17.json",
+      "source_pages": [
+        {
+          "url": "https://www.xianfoods.com/",
+          "title": "Xi'an Famous Foods: specialty Chinese restaurants serving Xi'an dishes based on family recipes",
+          "local_file": "index.html"
+        },
+        {
+          "url": "https://www.xianfoods.com/menu",
+          "title": "Menu-Xi'an Famous Foods: specialty Chinese restaurants serving Xi'an dishes based on family recipes",
+          "local_file": "menu.html"
+        },
+        {
+          "url": "https://www.xianfoods.com/our-story",
+          "title": "Our Story-Xi'an Famous Foods: specialty Chinese restaurants serving Xi'an dishes based on family recipes",
+          "local_file": "our-story.html"
+        },
+        {
+          "url": "https://www.xianfoods.com/locations",
+          "title": "Locations-Xi'an Famous Foods: specialty Chinese restaurants serving Xi'an dishes based on family recipes",
+          "local_file": "locations.html"
+        },
+        {
+          "url": "https://www.xianfoods.com/contact",
+          "title": "Contact-Xi'an Famous Foods: specialty Chinese restaurants serving Xi'an dishes based on family recipes",
+          "local_file": "contact.html"
+        },
+        {
+          "url": "https://www.xianfoods.com/order-acknowledgment",
+          "title": "Pickup/Delivery Acknowledgment",
+          "local_file": "order-acknowledgment.html"
+        },
+        {
+          "url": "https://www.xianfoods.com/press",
+          "title": "Press-Xi'an Famous Foods: specialty Chinese restaurants serving Xi'an dishes based on family recipes",
+          "local_file": "press.html"
+        },
+        {
+          "url": "https://www.xianfoods.com/accessibility",
+          "title": "Accessibility",
+          "local_file": "accessibility.html"
+        }
+      ],
+      "key_regions": [
+        "header",
+        "navigation",
+        "hero",
+        "content band (menu)",
+        "content band (our story)",
+        "content band (locations)",
+        "content band (contact)",
+        "footer"
+      ],
+      "key_interactions": [
+        {
+          "name": "menu filtering on inline data",
+          "evidence": "inferred",
+          "notes": ""
+        },
+        {
+          "name": "reservation request on inline data",
+          "evidence": "inferred",
+          "notes": ""
+        },
+        {
+          "name": "responsive navigation",
+          "evidence": "inferred",
+          "notes": ""
+        },
+        {
+          "name": "open/closed hours display",
+          "evidence": "inferred",
+          "notes": ""
+        },
+        {
+          "name": "age gate",
+          "evidence": "inferred",
+          "notes": ""
+        },
+        {
+          "name": "newsletter signup",
+          "evidence": "inferred",
+          "notes": ""
+        }
+      ],
+      "complexity": "medium",
+      "stack_clues": "unknown",
+      "limitations": "Verified_at date not provided in evidence; interactive components (filtering, reservation, age gate, newsletter) could not be observed in markup and are marked inferred.",
+      "slot": 8,
+      "category": "restaurant",
+      "model_group": "open-source",
+      "model_id": "unsloth/NVIDIA-Nemotron-3-Super-120B-A12B-GGUF",
+      "model_version": "MXFP4_MOE",
+      "approved_at": "",
+      "approved_by": "",
+      "approval_reference": "",
+      "researched_by": {
+        "model_id": "unsloth/NVIDIA-Nemotron-3-Super-120B-A12B-GGUF",
+        "slot": 8
+      },
+      "orchestrator_checks": {
+        "pages_proposed": 8,
+        "pages_without_successful_fetch": [],
+        "page_map_has_index": true,
+        "source_url_fetched_ok": true,
+        "meets_min_pages": true
+      }
+    },
+    {
+      "source_id": "REST-09",
+      "subcategory": "brewery",
+      "source_name": "Firestone Walker Brewing Company",
+      "source_url": "https://www.firestonewalker.com/",
+      "verified_at": "2026-11-17",
+      "verification_method": "HTTP GET by the orchestrator",
+      "verification_result": "verified",
+      "evidence_reference": "pipelines/open-source/research/evidence/REST-09-http-2026-11-17.json",
+      "source_pages": [
+        {
+          "url": "https://www.firestonewalker.com/",
+          "title": "Firestone Walker Brewing Company",
+          "local_file": "index.html"
+        },
+        {
+          "url": "https://www.firestonewalker.com/our-beers/",
+          "title": "Our Beers - Firestone Walker Brewing Company",
+          "local_file": "our-beers.html"
+        },
+        {
+          "url": "https://www.firestonewalker.com/about-us/",
+          "title": "About Us - Firestone Walker Brewing Company",
+          "local_file": "about-us.html"
+        },
+        {
+          "url": "https://www.firestonewalker.com/stories/",
+          "title": "Stories - Firestone Walker Brewing Company",
+          "local_file": "stories.html"
+        },
+        {
+          "url": "https://www.firestonewalker.com/paso-robles-taproom/",
+          "title": "Paso Robles - Firestone Walker Brewing Company",
+          "local_file": "paso-robles-taproom.html"
+        },
+        {
+          "url": "https://www.firestonewalker.com/find-beer/",
+          "title": "Find Beer - Firestone Walker Brewing Company",
+          "local_file": "find-beer.html"
+        },
+        {
+          "url": "https://www.firestonewalker.com/contact/",
+          "title": "Contact - Firestone Walker Brewing Company",
+          "local_file": "contact.html"
+        },
+        {
+          "url": "https://www.firestonewalker.com/accessibility/",
+          "title": "Accessibility Statement - Firestone Walker Brewing Company",
+          "local_file": "accessibility.html"
+        }
+      ],
+      "key_regions": [
+        "Header",
+        "Navigation",
+        "Hero",
+        "Content bands",
+        "Footer"
+      ],
+      "key_interactions": [
+        {
+          "name": "Menu filtering",
+          "evidence": "inferred",
+          "notes": "Not directly observable from the fetched markup"
+        },
+        {
+          "name": "Responsive navigation",
+          "evidence": "observed",
+          "notes": "Observed in the fetched markup"
+        },
+        {
+          "name": "Open/closed hours display",
+          "evidence": "inferred",
+          "notes": "Not directly observable from the fetched markup"
+        },
+        {
+          "name": "Newsletter signup",
+          "evidence": "inferred",
+          "notes": "Not directly observable from the fetched markup"
+        }
+      ],
+      "complexity": "medium",
+      "stack_clues": "unknown",
+      "limitations": "Some interactions are inferred due to lack of direct observation in the fetched markup",
+      "slot": 9,
+      "category": "restaurant",
+      "model_group": "open-source",
+      "model_id": "unsloth/Llama-3.3-70B-Instruct-GGUF",
+      "model_version": "Q8_0",
+      "approved_at": "",
+      "approved_by": "",
+      "approval_reference": "",
+      "researched_by": {
+        "model_id": "unsloth/Llama-3.3-70B-Instruct-GGUF",
+        "slot": 9
+      },
+      "orchestrator_checks": {
+        "pages_proposed": 8,
+        "pages_without_successful_fetch": [
+          "https://www.firestonewalker.com/paso-robles-taproom/",
+          "https://www.firestonewalker.com/accessibility/"
+        ],
+        "page_map_has_index": true,
+        "source_url_fetched_ok": true,
+        "meets_min_pages": true
+      }
+    },
+    {
+      "source_id": "REST-10",
+      "subcategory": "cafe / bakery",
+      "source_name": "Tartine Bakery",
+      "source_url": "https://tartinebakery.com/",
+      "verified_at": "2026-11-17",
+      "verification_method": "HTTP GET by the orchestrator",
+      "verification_result": "verified",
+      "evidence_reference": "pipelines/open-source/research/evidence/REST-10-http-2026-11-17.json",
+      "source_pages": [
+        {
+          "url": "https://tartinebakery.com",
+          "title": "Tartine Bakery – Tartine is a thoughtful expression of modern craft through good food and warm experiences. We are a product of our communities and our friends.",
+          "local_file": "index.html"
+        },
+        {
+          "url": "https://tartinebakery.com/cities",
+          "title": "Locations – Tartine Bakery",
+          "local_file": "cities-index.html"
+        },
+        {
+          "url": "https://tartinebakery.com/san-francisco/bakery",
+          "title": "The Bakery – Tartine Bakery",
+          "local_file": "bakery-index.html"
+        },
+        {
+          "url": "https://tartinebakery.com/about",
+          "title": "About Us – Tartine Bakery",
+          "local_file": "about-index.html"
+        },
+        {
+          "url": "https://tartinebakery.com/about/our-story",
+          "title": "Our Story – Tartine Bakery",
+          "local_file": "our-story-index.html"
+        },
+        {
+          "url": "https://tartinebakery.com/press",
+          "title": "Press – Tartine Bakery",
+          "local_file": "press-index.html"
+        }
+      ],
+      "key_regions": [
+        "header",
+        "navigation",
+        "hero",
+        "main-content",
+        "footer"
+      ],
+      "key_interactions": [
+        {
+          "name": "navigation",
+          "evidence": "observed",
+          "notes": "nav_links array present on every fetched page"
+        },
+        {
+          "name": "menu download",
+          "evidence": "observed",
+          "notes": "PDF link to bakery menu on the bakery page"
+        },
+        {
+          "name": "location directory",
+          "evidence": "inferred",
+          "notes": "multiple city/store pages linked from navigation"
+        },
+        {
+          "name": "reservation request",
+          "evidence": "inferred",
+          "notes": "no reservation form observed in fetched markup"
+        }
+      ],
+      "complexity": "medium",
+      "stack_clues": "WordPress (wp-content path in PDF URL), Cloudflare (cdn-cgi email protection)",
+      "limitations": "[orchestrator-authored: the research model stated no limitations] All 6 mapped pages were confirmed by HTTP GET on 2026-11-17. All evidence is HTTP-fetched markup; no page was rendered, so appearance and script-driven behaviour are unverified, and interactions marked \"inferred\" were not observed in the markup.",
+      "slot": 10,
+      "category": "restaurant",
+      "model_group": "open-source",
+      "model_id": "unsloth/gpt-oss-120b-GGUF",
+      "model_version": "F16",
+      "approved_at": "",
+      "approved_by": "",
+      "approval_reference": "",
+      "researched_by": {
+        "model_id": "unsloth/gpt-oss-120b-GGUF",
+        "slot": 10
+      },
+      "orchestrator_checks": {
+        "pages_proposed": 6,
+        "pages_without_successful_fetch": [],
+        "page_map_has_index": false,
+        "source_url_fetched_ok": true,
+        "meets_min_pages": true
+      }
+    }
+  ],
+  "orchestrator_corrections": [
+    "2026-11-17: REST-10 limitations normalised; see CORRECTIONS-2026-11-17-slot10.json",
+    "2026-11-17: REST-08 verified_at normalised; see CORRECTIONS-2026-11-17-slot08.json",
+    "2026-11-17: verified_at reset to the HTTP evidence date; see CORRECTIONS-2026-11-17-dates.json"
+  ]
+}

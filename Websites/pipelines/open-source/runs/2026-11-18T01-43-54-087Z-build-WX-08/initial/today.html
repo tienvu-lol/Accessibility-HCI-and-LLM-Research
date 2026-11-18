@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>WeatherNow – Today’s Forecast for Ashburn, VA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <header data-section="header" data-component="site-header">
+    <div class="demo-premium-banner" aria-label="Demo Premium – Not functional" style="background:#ffeb3b;color:#222;padding:.5rem;text-align:center;font-size:.875rem;">
+      Demo Premium – Not functional
+    </div>
+    <h1>WeatherNow</h1>
+    <form class="location-search" data-component="location-search">
+      <label for="location-input-today" class="visually-hidden">Location search</label>
+      <input type="text" id="location-input-today" placeholder="Enter location (e.g., Ashburn, VA)" aria-label="Location search">
+      <button type="button">Search</button>
+    </form>
+  </header>
+  <nav data-section="navigation" data-component="primary-nav">
+    <ul class="nav-list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="today.html" aria-current="page">Today</a></li>
+      <li><a href="radar.html">Radar</a></li>
+      <li><a href="news.html">News</a></li>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="hourly.html">Hourly</a></li>
+      <li><a href="tenday.html">10‑Day</a></li>
+      <li><a href="monthly.html">Monthly</a></li>
+      <li><a href="allergy.html">Allergies</a></li>
+    </ul>
+  </nav>
+  <main id="main-content" data-section="main" class="main-content">
+    <section data-section="current" data-component="hero">
+      <h2>Today in Ashburn, VA</h2>
+      <p id="current-condition">Loading&hellip;</p>
+      <div id="current-details">
+        <p>Temperature: <span id="current-temp">--</span>°</p>
+        <p>Feels like: <span id="current-feels">--</span>°</p>
+        <p>Humidity: <span id="current-hum">--</span>%</p>
+        <p>Wind: <span id="current-wind">--</span> mph</p>
+      </div>
+      <button id="unit-toggle" aria-pressed="false">°C</button>
+    </section>
+
+    <section data-section="alerts" data-component="alert-filters">
+      <h3>Alert Filters</h3>
+      <div class="alert-filter-group">
+        <label><input type="checkbox" class="alert-filter" value="thunderstorm"> Thunderstorm</label>
+        <label><input type="checkbox" class="alert-filter" value="flood"> Flood</label>
+        <label><input type="checkbox" class="alert-filter" value="heat"> Heat</label>
+        <label><input type="checkbox" class="alert-filter" value="winter"> Winter</label>
+      </div>
+      <div id="demo-alert-banner" role="alert" aria-live="assertive" style="display:none;background:#ffeb3b;color:#222;padding:1rem;margin-top:1rem;">
+        <strong>Demo Alert:</strong> Selected conditions are active. <button id="close-alert-banner">Close</button>
+      </div>
+    </section>
+
+    <section data-section="forecast-tabs" data-component="forecast-tabs">
+      <h3>Forecast</h3>
+      <div role="tablist" aria-label="Forecast tabs">
+        <button role="tab" aria-selected="true" aria-controls="tab-today" class="tab-button">Today</button>
+        <button role="tab" aria-selected="false" aria-controls="tab-hourly" class="tab-button">Hourly</button>
+        <button role="tab" aria-selected="false" aria-controls="tab-tenday" class="tab-button">10‑Day</button>
+        <button role="tab" aria-selected="false" aria-controls="tab-monthly" class="tab-button">Monthly</button>
+      </div>
+      <div id="tab-today" role="tabpanel" aria-labelledby="tab-today" class="tabpanel">
+        <h4>Today’s Details</h4>
+        <p id="today-summary">Loading&hellip;</p>
+      </div>
+      <div id="tab-hourly" role="tabpanel" aria-labelledby="tab-hourly" class="tabpanel" hidden>
+        <h4>Hourly Forecast</h4>
+        <div id="hourly-list">Loading&hellip;</div>
+      </div>
+      <div id="tab-tenday" role="tabpanel" aria-labelledby="tab-tenday" class="tabpanel" hidden>
+        <h4>10‑Day Forecast</h4>
+        <div id="tenday-list">Loading&hellip;</div>
+      </div>
+      <div id="tab-monthly" role="tabpanel" aria-labelledby="tab-monthly" class="tabpanel" hidden>
+        <h4>Monthly Overview</h4>
+        <div id="monthly-list">Loading&hellip;</div>
+      </div>
+    </section>
+  </main>
+  <footer data-section="footer" data-component="site-footer">
+    &copy; 2026 WeatherNow. All rights reserved. <a href="help.html">Help</a> | <a href="about.html">About</a>
+  </footer>
+  <script>
+    // Inline demo data for today page
+    const todayData = {
+      condition: "Partly Cloudy",
+      tempF: 72,
+      feelsLikeF: 70,
+      humidity: 55,
+      windMph: 8,
+      summary: "Partly cloudy skies with a high of 72°F and low of 54°F.",
+      hourly: [
+        {time: "00:00", tempF: 58, condition: "Clear", precip: 0},
+        {time: "01:00", tempF: 57, condition: "Clear", precip: 0},
+        {time: "02:00", tempF: 56, condition: "Clear", precip: 0},
+        {time: "03:00", tempF: 55, condition: "Clear", precip: 0},
+        {time: "04:00", tempF: 55, condition: "Clear", precip: 0},
+        {time: "05:00", tempF: 56, condition: "Clear", precip: 0},
+        {time: "06:00", tempF: 58, condition: "Mostly Clear", precip: 0},
+        {time: "07:00", tempF: 62, condition: "Mostly Sunny", precip: 0},
+        {time: "08:00", tempF: 66, condition: "Mostly Sunny", precip: 0},
+        {time: "09:00", tempF: 69, condition: "Partly Cloudy", precip: 0},
+        {time: "10:00", tempF: 71, condition: "Partly Cloudy", precip: 0},
+        {time: "11:00", tempF: 72, condition: "Partly Cloudy", precip: 0},
+        {time: "12:00", tempF: 72, condition: "Partly Cloudy", precip: 0},
+        {time: "13:00", tempF: 71, condition: "Partly Cloudy", precip: 0},
+        {time: "14:00", tempF: 70, condition: "Partly Cloudy", precip: 0},
+        {time: "15:00", tempF: 69, condition: "Partly Cloudy", precip: 0},
+        {time: "16:00", tempF: 68, condition: "Partly Cloudy", precip: 0},
+        {time: "17:00", tempF: 66, condition: "Partly Cloudy", precip: 0},
+        {time: "18:00", tempF: 64, condition: "Partly Cloudy", precip: 0},
+        {time: "19:00", tempF: 62, condition: "Partly Cloudy", precip: 0},
+        {time: "20:00", tempF: 60, condition: "Clear", precip: 0},
+        {time: "21:00", tempF: 59, condition: "Clear", precip: 0},
+        {time: "22:00", tempF: 58, condition: "Clear", precip: 0},
+        {time: "23:00", tempF: 57, condition: "Clear", precip: 0}
+      ],
+      tenday: [
+        {day: "Today", highF: 72, lowF: 54, condition: "Partly Cloudy", precip: 10},
+        {day: "Thu", highF: 74, lowF: 55, condition: "Mostly Sunny", precip: 0},
+        {day: "Fri", highF: 76, lowF: 57, condition: "Sunny", precip: 0},
+        {day: "Sat", highF: 78, lowF: 59, condition: "Sunny", precip: 0},
+        {day: "Sun", highF: 80, lowF: 61, condition: "Mostly Sunny", precip: 10},
+        {day: "Mon", highF: 82, lowF: 63, condition: "Partly Cloudy", precip: 20},
+        {day: "Tue", highF: 81, lowF: 62, condition: "Partly Cloudy", precip: 30},
+        {day: "Wed", highF: 79, lowF: 60, condition: "Mostly Cloudy", precip: 40},
+        {day: "Thu", highF: 77, lowF: 58, condition: "Mostly Cloudy", precip: 30},
+        {day: "Fri", highF: 75, lowF: 56, condition: "Partly Cloudy", precip: 20}
+      ],
+      monthly: Array.from({length: 30}, (_, i) => ({
+        day: i+1,
+        highF: Math.round(70 + Math.sin(i/5)*5),
+        lowF: Math.round(50 + Math.sin(i/5)*5),
+        condition: ["Sunny","Partly Cloudy","Cloudy","Rain"][i%4],
+        precip: Math.round(Math.random()*30)
+      }))
+    };
+
+    function renderCurrent() {
+      document.getElementById('current-condition').textContent = todayData.condition;
+      document.getElementById('current-temp').textContent = todayData.tempF;
+      document.getElementById('current-feels').textContent = todayData.feelsLikeF;
+      document.getElementById('current-hum').textContent = todayData.humidity;
+      document.getElementById('current-wind').textContent = todayData.windMph;
+    }
+    function renderTodaySummary() {
+      document.getElementById('today-summary').textContent = todayData.summary;
+    }
+    function renderHourly() {
+      const container = document.getElementById('hourly-list');
+      container.innerHTML = '';
+      todayData.hourly.forEach(h => {
+        const div = document.createElement('div');
+        div.style.display = 'inline-block'; 
+        div.style.minWidth = '60px';
+        div.style.textAlign = 'center';
+        div.style.margin = '0.5rem';
+        div.style.padding = '0.5rem';
+        div.style.border = '1px solid #ccc';
+        div.style.borderRadius = '0.25rem';
+        div.innerHTML = `<strong>${h.time}</strong><br>${h.tempF}°<br>${h.condition}<br>${h.precip}%`;
+        container.appendChild(div);
+      });
+    }
+    function renderTenday() {
+      const container = document.getElementById('tenday-list');
+      container.innerHTML = '';
+      todayData.tenday.forEach(d => {
+        const div = document.createElement('div');
+        div.style.display = 'inline-block';
+        div.style.minWidth = '80px';
+        div.style.textAlign = 'center';
+        div.style.margin = '0.5rem';
+        div.style.padding = '0.5rem';
+        div.style.border = '1px solid #ccc';
+        div.style.borderRadius = '0.25rem';
+        div.innerHTML = `<strong>${d.day}</strong><br>${d.highF}°/${d.lowF}°<br>${d.condition}<br>${d.precip}%`;
+        container.appendChild(div);
+      });
+    }
+    function renderMonthly() {
+      const container = document.getElementById('monthly-list');
+      container.innerHTML = '';
+      // Show as a simple list
+      todayData.monthly.forEach(d => {
+        const div = document.createElement('div');
+        div.style.margin = '0.25rem 0';
+        div.innerHTML = `Day ${d.day}: ${d.highF}°/${d.lowF}° ${d.condition} (${d.precip}% precip)`;
+        container.appendChild(div);
+      });
+    }
+
+    // Unit toggle
+    const unitBtn = document.getElementById('unit-toggle');
+    let isC = false;
+    unitBtn.addEventListener('click', () => {
+      isC = !isC;
+      unitBtn.textContent = isC ? '°F' : '°C';
+      unitBtn.setAttribute('aria-pressed', isC);
+      // For demo, we just toggle label; actual conversion would happen here.
+    });
+
+    // Location search demo
+    const searchForm = document.querySelector('.location-search form');
+    if (searchForm) {
+      searchForm.addEventListener('submit', e => {
+        e.preventDefault();
+        const input = searchForm.querySelector('input');
+        const val = input.value.trim();
+        if (val) {
+          alert(`Demo: showing forecast for "${val}". (No real data)`);
+          input.value = '';
+        }
+      });
+    }
+
+    // Alert filters demo
+    const alertCheckboxes = document.querySelectorAll('.alert-filter input[type="checkbox"]');
+    const alertBanner = document.getElementById('demo-alert-banner');
+    if (alertCheckboxes.length && alertBanner) {
+      alertCheckboxes.forEach(cb => {
+        cb.addEventListener('change', () => {
+          const anyChecked = Array.from(alertCheckboxes).some(c => c.checked);
+          alertBanner.style.display = anyChecked ? 'block' : 'none';
+        });
+      });
+    }
+    const closeBanner = document.getElementById('close-alert-banner');
+    if (closeBanner) {
+      closeBanner.addEventListener('click', () => {
+        document.getElementById('demo-alert-banner').style.display = 'none';
+      });
+    }
+
+    // Forecast tabs demo
+    const tabButtons = document.querySelectorAll('[role="tab"]');
+    const tabPanels = document.querySelectorAll('[role="tabpanel"]');
+    if (tabButtons.length) {
+      tabButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const target = btn.getAttribute('aria-controls');
+          tabButtons.forEach(b => b.setAttribute('aria-selected', 'false'));
+          tabPanels.forEach(p => p.hidden = true);
+          btn.setAttribute('aria-selected', 'true');
+          document.getElementById(target).hidden = false;
+        });
+      });
+    }
+
+    // Initial render
+    renderCurrent();
+    renderTodaySummary();
+    renderHourly();
+    renderTenday();
+    renderMonthly();
+  </script>
+  <script src="js/main.js"></script>
+</body>
+</html>

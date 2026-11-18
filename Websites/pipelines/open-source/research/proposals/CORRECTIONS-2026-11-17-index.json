@@ -1,0 +1,91 @@
+{
+  "corrected_at": "2026-11-17T05:24:17.418Z",
+  "corrected_by": "orchestrator (Claude), disclosed post-hoc correction of Phase A page maps",
+  "reason": "Several rows mapped the reference homepage as \"home-index.html\" (or similar) and therefore had no index.html, which the schema requires and build readiness enforces. The homepage was present in every corrected map and verified in the evidence; only the local filename changed. No URL, title or verification result was altered. Rows where no page entry matched the source URL were left alone and are listed as skipped.",
+  "corrections": [
+    {
+      "source_id": "CHUR-10",
+      "fields": {
+        "source_pages": {
+          "model_emitted": "homepage mapped as \"home-index.html\", no index.html in the map",
+          "corrected_to": "that entry renamed to index.html",
+          "source": "row.source_url matched the page URL"
+        }
+      }
+    },
+    {
+      "source_id": "CORP-10",
+      "fields": {
+        "source_pages": {
+          "model_emitted": "homepage mapped as \"home-index.html\", no index.html in the map",
+          "corrected_to": "that entry renamed to index.html",
+          "source": "row.source_url matched the page URL"
+        }
+      }
+    },
+    {
+      "source_id": "ECOM-10",
+      "fields": {
+        "source_pages": {
+          "model_emitted": "homepage mapped as \"home-index.html\", no index.html in the map",
+          "corrected_to": "that entry renamed to index.html",
+          "source": "row.source_url matched the page URL"
+        }
+      }
+    },
+    {
+      "source_id": "FASH-10",
+      "fields": {
+        "source_pages": {
+          "model_emitted": "homepage mapped as \"home-index.html\", no index.html in the map",
+          "corrected_to": "that entry renamed to index.html",
+          "source": "row.source_url matched the page URL"
+        }
+      }
+    },
+    {
+      "source_id": "GOV-09",
+      "skipped": "no page entry matches the source URL; needs a human look"
+    },
+    {
+      "source_id": "NEWS-10",
+      "fields": {
+        "source_pages": {
+          "model_emitted": "homepage mapped as \"home-index.html\", no index.html in the map",
+          "corrected_to": "that entry renamed to index.html",
+          "source": "row.source_url matched the page URL"
+        }
+      }
+    },
+    {
+      "source_id": "NPO-10",
+      "fields": {
+        "source_pages": {
+          "model_emitted": "homepage mapped as \"home-index.html\", no index.html in the map",
+          "corrected_to": "that entry renamed to index.html",
+          "source": "row.source_url matched the page URL"
+        }
+      }
+    },
+    {
+      "source_id": "REST-10",
+      "fields": {
+        "source_pages": {
+          "model_emitted": "homepage mapped as \"home-index.html\", no index.html in the map",
+          "corrected_to": "that entry renamed to index.html",
+          "source": "row.source_url matched the page URL"
+        }
+      }
+    },
+    {
+      "source_id": "UNI-10",
+      "fields": {
+        "source_pages": {
+          "model_emitted": "homepage mapped as \"home-index.html\", no index.html in the map",
+          "corrected_to": "that entry renamed to index.html",
+          "source": "row.source_url matched the page URL"
+        }
+      }
+    }
+  ]
+}

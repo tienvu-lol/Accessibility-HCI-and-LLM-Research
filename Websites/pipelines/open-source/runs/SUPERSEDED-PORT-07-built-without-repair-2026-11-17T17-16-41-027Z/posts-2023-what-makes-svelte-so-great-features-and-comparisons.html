@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What Makes Svelte So Great - Features and Comparisons - Alex Morgan's Portfolio</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  
+  <header class="site-header" data-component="site-header">
+    <div class="container nav-wrapper">
+      <a href="index.html" class="logo">Alex Morgan</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
+        <span class="sr-only">Toggle navigation</span>
+        &#9776;
+      </button>
+      <nav class="primary-nav" id="primary-nav" data-component="primary-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="blog.html" aria-current="page">Blog</a></li>
+          <li><a href="mini-tools.html">Mini-Tools</a></li>
+          <li><a href="all-posts.html">All Posts</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" data-section="blog-post">
+    <div class="container">
+      <article data-component="blog-post-layout">
+        <h1>What Makes Svelte So Great - Features and Comparisons</h1>
+        <time datetime="2023-01-15">January 15, 2023</time>
+        
+        <section data-section="content">
+          <p>Svelte has gained significant traction in the web development community for its unique approach to building user interfaces. Unlike traditional frameworks that do most of their work in the browser, Svelte shifts that work into a compile step that happens when you build your app.</p>
+          
+          <h2>Key Features</h2>
+          <ul>
+            <li><strong>No Virtual DOM:</strong> Svelte compiles components into highly efficient imperative code that updates the DOM.</li>
+            <li><strong>Reactivity:</strong> Built-in reactivity system makes state management intuitive and concise.</li>
+            <li><strong>Small Bundle Size:</strong> The compiled output is often significantly smaller than equivalent React or Vue applications.</li>
+          </ul>
+
+          <h2>Comparison with React</h2>
+          <p>While React relies on a virtual DOM to optimize updates, Svelte's compiler generates code that only updates the specific parts of the DOM that need changing. This results in faster initial loads and smoother interactions.</p>
+
+          <h2>Comparison with Vue</h2>
+          <p>Vue also uses a virtual DOM, but Svelte's approach eliminates the overhead of the DOM diffing process entirely. This makes Svelte particularly well-suited for performance-critical applications.</p>
+        </section>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer" data-component="site-footer">
+    <div class="container">
+      <p>&copy; 2026 Alex Morgan. All rights reserved.</p>
+      <p>Built with semantic HTML, CSS, and vanilla JS.</p>
+    </div>
+  </footer>
+
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top">&#8679;</button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+{
+  "components": [
+    {
+      "name": "site-header",
+      "selector": "header[data-component='site-header']",
+      "pages": ["index.html", "home.html", "menu.html", "locations.html", "gift-cards.html", "about.html", "values.html", "press.html", "community.html", "support.html", "404.html"],
+      "behaviors": ["Sticky positioning", "Responsive navigation toggle"],
+      "keyboard": ["Tab to nav links", "Escape closes mobile menu"],
+      "status": "implemented",
+      "validation": "not-tested"
+    },
+    {
+      "name": "primary-nav",
+      "selector": "nav[data-component='primary-nav']",
+      "pages": ["index.html", "home.html", "menu.html", "locations.html", "gift-cards.html", "about.html", "values.html", "press.html", "community.html", "support.html", "404.html"],
+      "behaviors": ["Mobile menu toggle", "Smooth scroll"],
+      "keyboard": ["Arrow keys for menu items", "Escape closes menu"],
+      "status": "implemented",
+      "validation": "not-tested"
+    },
+    {
+      "name": "card-grid",
+      "selector": "div.card-grid",
+      "pages": ["index.html", "home.html", "menu.html", "gift-cards.html", "about.html", "press.html", "community.html"],
+      "behaviors": ["Responsive grid layout"],
+      "keyboard": ["Tab to cards"],
+      "status": "implemented",
+      "validation": "not-tested"
+    },
+    {
+      "name": "menu-filter",
+      "selector": "div.filter-buttons",
+      "pages": ["menu.html"],
+      "behaviors": ["Filters menu items by category"],
+      "keyboard": ["Enter/Space to filter", "Arrow keys for tabs"],
+      "status": "implemented",
+      "validation": "not-tested"
+    },
+    {
+      "name": "reservation-form",
+      "selector": "form#reservation-form",
+      "pages": ["menu.html"],
+      "behaviors": ["Simulates reservation submission"],
+      "keyboard": ["Tab through fields", "Enter to submit"],
+      "status": "simulated",
+      "validation": "not-tested"
+    },
+    {
+      "name": "gift-card-form",
+      "selector": "form#gift-card-form",
+      "pages": ["gift-cards.html"],
+      "behaviors": ["Simulates balance check"],
+      "keyboard": ["Tab through fields", "Enter to submit"],
+      "status": "simulated",
+      "validation": "not-tested"
+    },
+    {
+      "name": "support-search",
+      "selector": "form#support-search-form",
+      "pages": ["support.html"],
+      "behaviors": ["Filters support articles by keyword"],
+      "keyboard": ["Type to filter"],
+      "status": "implemented",
+      "validation": "not-tested"
+    },
+    {
+      "name": "contact-form",
+      "selector": "form#contact-form",
+      "pages": ["support.html"],
+      "behaviors": ["Simulates contact message submission"],
+      "keyboard": ["Tab through fields", "Enter to submit"],
+      "status": "simulated",
+      "validation": "not-tested"
+    }
+  ]
+}

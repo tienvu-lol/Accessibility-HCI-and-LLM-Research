@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>About – Fictional Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <header data-section="header" data-component="site-header">
+    <div class="site-logo">Fictional Dev</div>
+    <nav class="primary-nav" data-component="primary-nav" aria-label="Primary">
+      <button aria-controls="primary-menu" aria-expanded="false">Menu</button>
+      <ul id="primary-menu" class="primary-nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="tips.html">Tips</a></li>
+        <li><a href="javascript.html">JS Notes</a></li>
+        <li><a href="speaking-and-training.html">Speaking</a></li>
+        <li><a href="uses.html">Uses</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content" data-section="main">
+    <h1>About Me</h1>
+    <p>I am a fictional software developer passionate about teaching, open source, and building useful web tools.</p>
+
+    <section data-component="card-grid" data-section="about-details">
+      <h2>What I Do</h2>
+      <div class="card" data-component="project-card" data-instance="1">
+        <img src="assets/placeholder.svg" alt="Coding illustration">
+        <div class="card-body">
+          <h3>Teaching & Mentoring</h3>
+          <p>I create tutorials, courses, and blog posts to help others learn web development.</p>
+          <div class="tags">
+            <span class="tag">Teaching</span>
+            <span class="tag">Mentoring</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-component="project-card" data-instance="2">
+        <img src="assets/placeholder.svg" alt="Open source illustration">
+        <div class="card-body">
+          <h3>Open Source Contributions</h3>
+          <p>Maintaining small libraries and contributing to community projects.</p>
+          <div class="tags">
+            <span class="tag">Open Source</span>
+            <span class="tag">JavaScript</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-component="project-card" data-instance="3">
+        <img src="assets/placeholder.svg" alt="Freelance illustration">
+        <div class="card-body">
+          <h3>Freelance Projects</h3>
+          <p>Building custom websites and web apps for clients around the world.</p>
+          <div class="tags">
+            <span class="tag">Freelance</span>
+            <span class="tag">Web Development</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <aside data-section="sidebar" aria-label="More about me">
+      <h2>Quick Facts</h2>
+      <ul>
+        <li>Based in a fictional town.</li>
+        <li>Favorite language: JavaScript.</li>
+        <li>Loves hiking and coffee.</li>
+        <li>Available for workshops and talks.</li>
+      </ul>
+    </aside>
+  </main>
+
+  <footer data-section="footer" data-component="site-footer">
+    <p>&copy; 2026 Fictional Dev. All rights reserved.</p>
+    <nav aria-label="Footer">
+      <a href="index.html">Home</a> |
+      <a href="about.html">About</a> |
+      <a href="contact.html">Contact</a>
+    </nav>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,482 @@
+{
+  "category": "nonprofit",
+  "prefix": "NPO",
+  "updated_at": "2026-11-17T05:24:17.680Z",
+  "slots_proposed": [
+    7,
+    8,
+    9,
+    10
+  ],
+  "slots_outstanding": [],
+  "approval_state": "unapproved: approval cells are left empty for the project lead",
+  "runs": [
+    "2026-11-16T21-45-45-988Z-research-NPO-07",
+    "2026-11-16T21-51-19-979Z-research-NPO-07",
+    "2026-11-17T04-08-03-770Z-research-NPO-07",
+    "2026-11-17T05-04-57-740Z-research-NPO-10",
+    "2026-11-17T05-16-09-175Z-research-NPO-09",
+    "2026-11-17T05-22-25-232Z-research-NPO-08"
+  ],
+  "rows": [
+    {
+      "source_id": "NPO-07",
+      "subcategory": "Non-Profit / NGO",
+      "source_name": "Oxfam International",
+      "source_url": "https://www.oxfam.org/en",
+      "verified_at": "2026-11-17",
+      "verification_method": "HTTP GET",
+      "verification_result": "verified",
+      "evidence_reference": "pipelines/open-source/research/evidence/NPO-07-http-2026-11-17.json",
+      "source_pages": [
+        {
+          "url": "https://www.oxfam.org/en",
+          "title": "The future is equal | Oxfam International",
+          "local_file": "index.html"
+        },
+        {
+          "url": "https://www.oxfam.org/en/blogs",
+          "title": "Blogs | Oxfam International",
+          "local_file": "blogs.html"
+        },
+        {
+          "url": "https://www.oxfam.org/en/research",
+          "title": "Policy Papers | Oxfam International",
+          "local_file": "research.html"
+        },
+        {
+          "url": "https://www.oxfam.org/en/press-releases",
+          "title": "Press releases | Oxfam International",
+          "local_file": "press-releases.html"
+        },
+        {
+          "url": "https://www.oxfam.org/en/what-we-do/issues/water-and-sanitation",
+          "title": "Water and Sanitation | Oxfam International",
+          "local_file": "water-and-sanitation.html"
+        },
+        {
+          "url": "https://www.oxfam.org/en/what-we-do/issues/food-climate-and-natural-resources",
+          "title": "Food, Climate, and Natural Resources | Oxfam International",
+          "local_file": "food-climate-natural-resources.html"
+        },
+        {
+          "url": "https://www.oxfam.org/en/what-we-do/emergencies/gaza-crisis-appeal",
+          "title": "Gaza Crisis Appeal | Oxfam International",
+          "local_file": "gaza-crisis-appeal.html"
+        },
+        {
+          "url": "https://www.oxfam.org/en/what-we-do/about",
+          "title": "About Us | Oxfam International",
+          "local_file": "about.html"
+        },
+        {
+          "url": "https://www.oxfam.org/en/take-action/campaigns",
+          "title": "Campaign With Us | Oxfam International",
+          "local_file": "campaigns.html"
+        },
+        {
+          "url": "https://www.oxfam.org/en/take-action/jobs",
+          "title": "Work With Us | Oxfam International",
+          "local_file": "jobs.html"
+        },
+        {
+          "url": "https://www.oxfam.org/en/take-action/volunteer-us",
+          "title": "Volunteer With Us | Oxfam International",
+          "local_file": "volunteer-us.html"
+        },
+        {
+          "url": "https://www.oxfam.org/en?form=general",
+          "title": "The future is equal | Oxfam International",
+          "local_file": "donate.html"
+        },
+        {
+          "url": "https://www.oxfam.org/en/what-we-do/about/our-finances-and-accountability/annual-reports-and-financial-statements",
+          "title": "Annual Reports and Financial Statements | Oxfam International",
+          "local_file": "annual-reports.html"
+        }
+      ],
+      "key_regions": [
+        "Global",
+        "Gaza",
+        "South Sudan",
+        "Nepal",
+        "East Africa"
+      ],
+      "key_interactions": [
+        {
+          "name": "Donation Form",
+          "evidence": "observed",
+          "notes": "URL parameter ?form=general present on multiple pages"
+        },
+        {
+          "name": "Job Application",
+          "evidence": "observed",
+          "notes": "Dedicated /jobs section"
+        },
+        {
+          "name": "Volunteer Sign-up",
+          "evidence": "observed",
+          "notes": "Dedicated /volunteer-us section"
+        },
+        {
+          "name": "Content Filtering",
+          "evidence": "observed",
+          "notes": "URL parameters like ?f[0]= and ?facets_query="
+        },
+        {
+          "name": "Pagination",
+          "evidence": "observed",
+          "notes": "?page=... parameters"
+        },
+        {
+          "name": "Language Switching",
+          "evidence": "observed",
+          "notes": "Links to /fr, /es"
+        }
+      ],
+      "complexity": "medium",
+      "stack_clues": "URL structure includes /node/ paths and query parameters like ?f[0]= and ?form=, consistent with a Drupal CMS.",
+      "limitations": "Markup inspection only. No JavaScript execution, form submission, or visual rendering was performed. Dynamic content loading via AJAX cannot be verified.",
+      "slot": 7,
+      "category": "nonprofit",
+      "model_group": "open-source",
+      "model_id": "unsloth/Qwen3.6-35B-A3B-GGUF",
+      "model_version": "Q4_K_M",
+      "approved_at": "",
+      "approved_by": "",
+      "approval_reference": "",
+      "researched_by": {
+        "model_id": "unsloth/Qwen3.6-35B-A3B-GGUF",
+        "slot": 7
+      },
+      "orchestrator_checks": {
+        "pages_proposed": 13,
+        "pages_without_successful_fetch": [],
+        "page_map_has_index": true,
+        "source_url_fetched_ok": true,
+        "meets_min_pages": true
+      }
+    },
+    {
+      "source_id": "NPO-08",
+      "subcategory": "local community nonprofit",
+      "source_name": "Seattle Humane Society",
+      "source_url": "https://www.seattlehumane.org/",
+      "verified_at": "2026-11-17",
+      "verification_method": "HTTP GET by the orchestrator",
+      "verification_result": "verified",
+      "evidence_reference": "pipelines/open-source/research/evidence/NPO-08-http-2026-11-17.json",
+      "source_pages": [
+        {
+          "url": "https://www.seattlehumane.org/",
+          "title": "Seattle Humane Supports Pets and Their Owners - Seattle Humane",
+          "local_file": "index.html"
+        },
+        {
+          "url": "https://www.seattlehumane.org/adoption/",
+          "title": "Adoption - Seattle Humane",
+          "local_file": "adoption.html"
+        },
+        {
+          "url": "https://www.seattlehumane.org/adoption/find-a-pet/",
+          "title": "Find a Pet - Seattle Humane",
+          "local_file": "find-a-pet.html"
+        },
+        {
+          "url": "https://www.seattlehumane.org/services/",
+          "title": "Services - Seattle Humane",
+          "local_file": "services.html"
+        },
+        {
+          "url": "https://www.seattlehumane.org/services/veterinary-care-center/",
+          "title": "Veterinary Care Center - Seattle Humane",
+          "local_file": "veterinary-care-center.html"
+        },
+        {
+          "url": "https://www.seattlehumane.org/get-involved",
+          "title": "Get Involved - Seattle Humane",
+          "local_file": "get-involved.html"
+        },
+        {
+          "url": "https://www.seattlehumane.org/get-involved/volunteer/",
+          "title": "Volunteer - Seattle Humane",
+          "local_file": "volunteer.html"
+        },
+        {
+          "url": "https://www.seattlehumane.org/ways-to-give/",
+          "title": "Ways to Give - Seattle Humane",
+          "local_file": "ways-to-give.html"
+        }
+      ],
+      "key_regions": [],
+      "key_interactions": [
+        {
+          "name": "donation amount and frequency",
+          "evidence": "inferred",
+          "notes": "Not visible in fetched markup; expected based on site type."
+        },
+        {
+          "name": "volunteer form",
+          "evidence": "inferred",
+          "notes": "Not visible in fetched markup; expected based on site type."
+        },
+        {
+          "name": "program/chapter search",
+          "evidence": "inferred",
+          "notes": "Not visible in fetched markup; expected based on site type."
+        },
+        {
+          "name": "event filters",
+          "evidence": "inferred",
+          "notes": "Not visible in fetched markup; expected based on site type."
+        }
+      ],
+      "complexity": "medium",
+      "stack_clues": "unknown",
+      "limitations": "Verification date not provided in evidence; region detection (header, navigation, hero, content bands, sidebar, footer) cannot be determined from raw HTML alone; all requested interior pages returned 2xx and were mapped.",
+      "slot": 8,
+      "category": "nonprofit",
+      "model_group": "open-source",
+      "model_id": "unsloth/NVIDIA-Nemotron-3-Super-120B-A12B-GGUF",
+      "model_version": "MXFP4_MOE",
+      "approved_at": "",
+      "approved_by": "",
+      "approval_reference": "",
+      "researched_by": {
+        "model_id": "unsloth/NVIDIA-Nemotron-3-Super-120B-A12B-GGUF",
+        "slot": 8
+      },
+      "orchestrator_checks": {
+        "pages_proposed": 8,
+        "pages_without_successful_fetch": [],
+        "page_map_has_index": true,
+        "source_url_fetched_ok": true,
+        "meets_min_pages": true
+      }
+    },
+    {
+      "source_id": "NPO-09",
+      "subcategory": "cause-focused charity",
+      "source_name": "American Red Cross",
+      "source_url": "https://www.redcross.org",
+      "verified_at": "2026-11-17",
+      "verification_method": "HTTP GET",
+      "verification_result": "verified",
+      "evidence_reference": "pipelines/open-source/research/evidence/NPO-09-http-2026-11-17.json",
+      "source_pages": [
+        {
+          "url": "https://www.redcross.org",
+          "title": "American Red Cross | Help Those Affected by Disasters",
+          "local_file": "index.html"
+        },
+        {
+          "url": "https://www.redcross.org/donate/donation.html",
+          "title": "Donate Now - Online Donations | American Red Cross",
+          "local_file": "donate.html"
+        },
+        {
+          "url": "https://www.redcross.org/take-a-class/first-aid",
+          "title": "First Aid | Learn How to Perform First Aid | Red Cross",
+          "local_file": "first-aid.html"
+        },
+        {
+          "url": "https://www.redcross.org/take-a-class/cpr",
+          "title": "Red Cross CPR Training",
+          "local_file": "cpr.html"
+        },
+        {
+          "url": "https://www.redcross.org/get-help/how-to-prepare-for-emergencies/types-of-emergencies/fire.html",
+          "title": "Home Fire Prevention & Safety Tips | American Red Cross",
+          "local_file": "fire-safety.html"
+        },
+        {
+          "url": "https://www.redcross.org/about-us/news-and-events/news/2026/holiday-decorating-fire-safety-tips.html",
+          "title": "Help Prevent Home Fires with These Holiday Decorating Safety Tips",
+          "local_file": "holiday-decorating-fire-safety-tips.html"
+        },
+        {
+          "url": "https://www.redcross.org/find-your-local-chapter.html",
+          "title": "American Red Cross Locations | Find Your Local Red Cross",
+          "local_file": "find-local-chapter.html"
+        },
+        {
+          "url": "https://www.redcross.org/donations/where-your-money-goes.html",
+          "title": "Where Does the Money Go? | American Red Cross",
+          "local_file": "where-your-money-goes.html"
+        },
+        {
+          "url": "https://www.redcross.org/volunteer",
+          "title": "Become a Volunteer | American Red Cross",
+          "local_file": "volunteer.html"
+        }
+      ],
+      "key_regions": [
+        "header",
+        "navigation",
+        "hero",
+        "content bands",
+        "sidebar",
+        "footer"
+      ],
+      "key_interactions": [
+        {
+          "name": "Donation form",
+          "evidence": "inferred",
+          "notes": "No donation form found in the fetched markup"
+        },
+        {
+          "name": "Volunteer sign-up",
+          "evidence": "inferred",
+          "notes": "No volunteer sign-up form found in the fetched markup"
+        },
+        {
+          "name": "Class registration",
+          "evidence": "inferred",
+          "notes": "No class registration form found in the fetched markup"
+        },
+        {
+          "name": "Search functionality",
+          "evidence": "observed",
+          "notes": "Search bar found in the navigation menu"
+        },
+        {
+          "name": "Navigation menu",
+          "evidence": "observed",
+          "notes": "Navigation menu found at the top of the page"
+        }
+      ],
+      "complexity": "medium",
+      "stack_clues": "unknown",
+      "limitations": "https://www.redcross.org/donate/dr/new-mexico-floods.html (give now, failed to fetch), https://www.redcross.org/donate/holiday-giving.html (give now, failed to fetch)",
+      "slot": 9,
+      "category": "nonprofit",
+      "model_group": "open-source",
+      "model_id": "unsloth/Llama-3.3-70B-Instruct-GGUF",
+      "model_version": "Q8_0",
+      "approved_at": "",
+      "approved_by": "",
+      "approval_reference": "",
+      "researched_by": {
+        "model_id": "unsloth/Llama-3.3-70B-Instruct-GGUF",
+        "slot": 9
+      },
+      "orchestrator_checks": {
+        "pages_proposed": 9,
+        "pages_without_successful_fetch": [
+          "https://www.redcross.org/volunteer"
+        ],
+        "page_map_has_index": true,
+        "source_url_fetched_ok": true,
+        "meets_min_pages": true
+      }
+    },
+    {
+      "source_id": "NPO-10",
+      "subcategory": "international humanitarian charity",
+      "source_name": "Doctors Without Borders (Médecins Sans Frontières)",
+      "source_url": "https://www.msf.org/",
+      "verified_at": "2026-11-17",
+      "verification_method": "HTTP GET by the orchestrator",
+      "verification_result": "verified",
+      "evidence_reference": "pipelines/open-source/research/evidence/NPO-10-http-2026-11-17.json",
+      "source_pages": [
+        {
+          "url": "https://www.msf.org/",
+          "title": "MSF - Médecins Sans Frontières | Medical humanitarian organisation",
+          "local_file": "index.html"
+        },
+        {
+          "url": "https://www.msf.org/donate",
+          "title": "Donate",
+          "local_file": "donate-index.html"
+        },
+        {
+          "url": "https://www.msf.org/work-msf",
+          "title": "Work with MSF",
+          "local_file": "work-with-msf-index.html"
+        },
+        {
+          "url": "https://www.msf.org/resource-centre",
+          "title": "Resources",
+          "local_file": "resource-centre-index.html"
+        },
+        {
+          "url": "https://www.msf.org/latest-portal",
+          "title": "Latest",
+          "local_file": "latest-index.html"
+        },
+        {
+          "url": "https://www.msf.org/where-we-work",
+          "title": "Where we work",
+          "local_file": "where-we-work-index.html"
+        },
+        {
+          "url": "https://www.msf.org/who-we-are",
+          "title": "Who we are",
+          "local_file": "who-we-are-index.html"
+        },
+        {
+          "url": "https://www.msf.org/contact-us",
+          "title": "Contact us",
+          "local_file": "contact-us-index.html"
+        }
+      ],
+      "key_regions": [
+        "header",
+        "navigation",
+        "hero",
+        "content",
+        "footer"
+      ],
+      "key_interactions": [
+        {
+          "name": "navigation menu",
+          "evidence": "observed",
+          "notes": "Links listed in nav_links"
+        },
+        {
+          "name": "donation form",
+          "evidence": "inferred",
+          "notes": "Donate page likely contains amount and frequency fields"
+        },
+        {
+          "name": "volunteer application form",
+          "evidence": "inferred",
+          "notes": "“Work With MSF” page likely includes volunteer information"
+        },
+        {
+          "name": "program/region search",
+          "evidence": "inferred",
+          "notes": "Site likely offers a search or filter for programs and locations"
+        }
+      ],
+      "complexity": "medium",
+      "stack_clues": "unknown",
+      "limitations": "[orchestrator-authored: the research model stated no limitations] All 8 mapped pages were confirmed by HTTP GET on 2026-11-17. All evidence is HTTP-fetched markup; no page was rendered, so appearance and script-driven behaviour are unverified, and interactions marked \"inferred\" were not observed in the markup.",
+      "slot": 10,
+      "category": "nonprofit",
+      "model_group": "open-source",
+      "model_id": "unsloth/gpt-oss-120b-GGUF",
+      "model_version": "F16",
+      "approved_at": "",
+      "approved_by": "",
+      "approval_reference": "",
+      "researched_by": {
+        "model_id": "unsloth/gpt-oss-120b-GGUF",
+        "slot": 10
+      },
+      "orchestrator_checks": {
+        "pages_proposed": 8,
+        "pages_without_successful_fetch": [],
+        "page_map_has_index": false,
+        "source_url_fetched_ok": true,
+        "meets_min_pages": true
+      }
+    }
+  ],
+  "orchestrator_corrections": [
+    "2026-11-17: NPO-10 verified_at, limitations normalised; see CORRECTIONS-2026-11-17-slot10.json",
+    "2026-11-17: NPO-08 verified_at normalised; see CORRECTIONS-2026-11-17-slot08.json",
+    "2026-11-17: verified_at reset to the HTTP evidence date; see CORRECTIONS-2026-11-17-dates.json"
+  ]
+}

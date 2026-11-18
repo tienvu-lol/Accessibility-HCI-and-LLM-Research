@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Search Court Dockets – Commonwealth Services</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="site-header" data-section="header" data-component="site-header">
+    <a href="index.html" class="site-name" aria-label="Commonwealth Services home">Commonwealth Services</a>
+    <button class="nav-toggle" aria-controls="primary-navigation" aria-expanded="false" data-component="nav-toggle">☰ Menu</button>
+    <nav>
+      <ul class="primary-nav" id="primary-navigation" data-section="navigation" data-component="primary-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="health-social-services.html">Health & Social Services</a></li>
+        <li><a href="families-children.html">Families & Children</a></li>
+        <li><a href="transportation.html">Transportation</a></li>
+        <li><a href="apply-unemployment-benefits.html">Apply for Unemployment</a></li>
+        <li><a href="renew-vehicle-registration.html">Renew Vehicle Registration</a></li>
+        <li><a href="search-court-dockets.html" aria-current="page">Court Dockets</a></li>
+        <li><a href="state-organizations-a-to-z.html">State Organizations</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content" data-section="main">
+    <section data-section="content-band" data-component="content-band">
+      <h1>Search Court Dockets, Calendars and Case Information</h1>
+      <p>Use the demo search below to see how docket results would be presented. No real data is queried.</p>
+
+      <form action="#" method="GET" data-component="demo-form">
+        <div class="form-group">
+          <label for="docket-search">Search by case number or party name</label>
+          <input type="text" id="docket-search" name="q" placeholder="e.g., 2024-CV-01234">
+        </div>
+        <button type="submit" class="demo-btn">Search (Demo)</button>
+      </form>
+
+      <h2>Recent docket entries (sample data)</h2>
+      <table data-component="docket-results">
+        <thead>
+          <tr>
+            <th>Case Number</th>
+            <th>Date</th>
+            <th>Parties</th>
+            <th>Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Rows will be injected by js/main.js -->
+        </tbody>
+      </table>
+      <p><em>This table is populated with sample data for demonstration only.</em></p>
+    </section>
+  </main>
+
+  <footer class="site-footer" data-section="footer" data-component="site-footer">
+    <div>
+      <h3>About</h3>
+      <ul>
+        <li><a href="#">Our Mission</a></li>
+        <li><a href="#">Leadership</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Resources</h3>
+      <ul>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">Accessibility</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Stay Connected</h3>
+      <ul>
+        <li><a href="#">Newsletter</a></li>
+        <li><a href="#">Twitter</a></li>
+        <li><a href="#">Facebook</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

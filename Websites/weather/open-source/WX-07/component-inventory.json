@@ -1,0 +1,240 @@
+{
+  "components": [
+    {
+      "name": "site-header",
+      "selector": "header.site-header",
+      "pages": [
+        "index.html",
+        "location-australia.html",
+        "warnings-and-alerts.html",
+        "rain-radar-and-weather-maps.html",
+        "tropical-cyclone.html",
+        "water-data-and-forecasts.html",
+        "past-weather-and-climate.html",
+        "about-the-bureau.html",
+        "learn-and-explore.html",
+        "indigenous-weather-knowledge.html",
+        "404.html"
+      ],
+      "behaviors": [
+        "Contains logo and primary navigation",
+        "Responsive layout"
+      ],
+      "keyboard_expectations": [
+        "Tab to logo or nav links",
+        "Escape closes mobile nav if open"
+      ],
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "primary-nav",
+      "selector": "nav.primary-nav",
+      "pages": [
+        "index.html",
+        "location-australia.html",
+        "warnings-and-alerts.html",
+        "rain-radar-and-weather-maps.html",
+        "tropical-cyclone.html",
+        "water-data-and-forecasts.html",
+        "past-weather-and-climate.html",
+        "about-the-bureau.html",
+        "learn-and-explore.html",
+        "indigenous-weather-knowledge.html",
+        "404.html"
+      ],
+      "behaviors": [
+        "Horizontal on desktop, vertical on mobile",
+        "Toggle button for mobile view"
+      ],
+      "keyboard_expectations": [
+        "Arrow keys navigate links",
+        "Escape closes mobile menu"
+      ],
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "site-footer",
+      "selector": "footer.site-footer",
+      "pages": [
+        "index.html",
+        "location-australia.html",
+        "warnings-and-alerts.html",
+        "rain-radar-and-weather-maps.html",
+        "tropical-cyclone.html",
+        "water-data-and-forecasts.html",
+        "past-weather-and-climate.html",
+        "about-the-bureau.html",
+        "learn-and-explore.html",
+        "indigenous-weather-knowledge.html",
+        "404.html"
+      ],
+      "behaviors": [
+        "Contains quick links and contact info"
+      ],
+      "keyboard_expectations": [
+        "Tab to links"
+      ],
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "hero-banner",
+      "selector": "section.hero",
+      "pages": [
+        "index.html",
+        "location-australia.html",
+        "warnings-and-alerts.html",
+        "rain-radar-and-weather-maps.html",
+        "tropical-cyclone.html",
+        "water-data-and-forecasts.html",
+        "past-weather-and-climate.html",
+        "about-the-bureau.html",
+        "learn-and-explore.html",
+        "indigenous-weather-knowledge.html"
+      ],
+      "behaviors": [
+        "Displays page title and description"
+      ],
+      "keyboard_expectations": [],
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "card-grid",
+      "selector": "div.card-grid",
+      "pages": [
+        "index.html",
+        "location-australia.html",
+        "warnings-and-alerts.html",
+        "rain-radar-and-weather-maps.html",
+        "tropical-cyclone.html",
+        "water-data-and-forecasts.html",
+        "about-the-bureau.html",
+        "learn-and-explore.html",
+        "indigenous-weather-knowledge.html",
+        "404.html"
+      ],
+      "behaviors": [
+        "Responsive grid layout for cards"
+      ],
+      "keyboard_expectations": [
+        "Tab to card contents"
+      ],
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "forecast-tabs",
+      "selector": "div.tabs [role=\"tablist\"]",
+      "pages": [
+        "location-australia.html",
+        "rain-radar-and-weather-maps.html"
+      ],
+      "behaviors": [
+        "Switches between daily and hourly forecasts"
+      ],
+      "keyboard_expectations": [
+        "Arrow keys switch tabs",
+        "Enter/Space activates tab"
+      ],
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "location-search",
+      "selector": "form.search-form#location-search",
+      "pages": [
+        "location-australia.html"
+      ],
+      "behaviors": [
+        "Filters location cards by input"
+      ],
+      "keyboard_expectations": [
+        "Type to filter"
+      ],
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "alert-list",
+      "selector": "div#alerts-container",
+      "pages": [
+        "index.html",
+        "warnings-and-alerts.html"
+      ],
+      "behaviors": [
+        "Displays active weather alerts"
+      ],
+      "keyboard_expectations": [
+        "Tab to alert items"
+      ],
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "alert-filters",
+      "selector": "form.search-form#alert-filter",
+      "pages": [
+        "warnings-and-alerts.html"
+      ],
+      "behaviors": [
+        "Filters alerts by severity"
+      ],
+      "keyboard_expectations": [
+        "Select option to filter"
+      ],
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "radar-map",
+      "selector": "div.radar-display",
+      "pages": [
+        "rain-radar-and-weather-maps.html"
+      ],
+      "behaviors": [
+        "Displays static radar SVG",
+        "Layer buttons toggle content"
+      ],
+      "keyboard_expectations": [
+        "Click or Enter to select layer"
+      ],
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "unit-toggle",
+      "selector": "select#unit-toggle",
+      "pages": [
+        "location-australia.html",
+        "rain-radar-and-weather-maps.html"
+      ],
+      "behaviors": [
+        "Converts temperatures between °C and °F"
+      ],
+      "keyboard_expectations": [
+        "Select option to convert"
+      ],
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "data-table",
+      "selector": "table",
+      "pages": [
+        "water-data-and-forecasts.html",
+        "past-weather-and-climate.html"
+      ],
+      "behaviors": [
+        "Displays structured data"
+      ],
+      "keyboard_expectations": [
+        "Tab to table cells"
+      ],
+      "status": "implemented",
+      "validation_state": "not-tested"
+    }
+  ]
+}

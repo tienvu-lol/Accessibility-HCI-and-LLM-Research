@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Atlas Digital Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header class="site-header" data-section="header">
+        <div class="container">
+            <a href="index.html" class="site-logo">Atlas Digital</a>
+            <nav class="primary-nav" data-component="primary-nav" aria-label="Main navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="projects.html" aria-current="page">Projects</a></li>
+                    <li><a href="mini-tools.html">Mini-Tools</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content" data-section="main">
+        <div class="container">
+            <h1>Projects</h1>
+            <p>Browse my portfolio of work across various categories.</p>
+
+            <div data-component="filter-controls" role="group" aria-label="Filter projects" style="margin-bottom: var(--spacing-md);">
+                <button class="btn btn-secondary" data-filter-group="projects" data-category="all">All</button>
+                <button class="btn btn-secondary" data-filter-group="projects" data-category="applications">Applications</button>
+                <button class="btn btn-secondary" data-filter-group="projects" data-category="electronics">Electronics</button>
+                <button class="btn btn-secondary" data-filter-group="projects" data-category="marketing">Marketing</button>
+                <button class="btn btn-secondary" data-filter-group="projects" data-category="other">Other</button>
+                <button class="btn btn-secondary" data-filter-group="projects" data-category="web-stuff">Web Stuff</button>
+            </div>
+
+            <ul class="card-grid" id="projects-grid" data-component="card-grid" data-section="project-list">
+                <!-- Projects will be injected by js/main.js -->
+            </ul>
+        </div>
+    </main>
+
+    <footer class="site-footer" data-section="footer">
+        <div class="container">
+            <p>&copy; 2026 Atlas Digital. All rights reserved.</p>
+            <p>
+                <a href="index.html">Home</a> | 
+                <a href="projects.html">Projects</a> | 
+                <a href="blog.html">Blog</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

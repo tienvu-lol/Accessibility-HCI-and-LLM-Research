@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Find a Primary Care Provider – Community Health Center</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <header data-section="header" data-component="site-header">
+    <h1>Community Health Center</h1>
+    <p>Search for a primary care provider.</p>
+  </header>
+  <nav data-section="navigation" data-component="primary-nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="get-care-now.html">Get Care Now</a></li>
+      <li><a href="pay-a-bill.html">Pay a Bill</a></li>
+      <li><a href="find-a-doctor.html">Find a Doctor (All)</a></li>
+      <li><a href="find-a-doctor-primary-care.html" aria-current="page">Primary Care Providers</a></li>
+      <li><a href="health-care-services.html">Services</a></li>
+      <li><a href="location-map.html">Locations</a></li>
+      <li><a href="patient-resources.html">Patient Resources</a></li>
+    </ul>
+  </nav>
+  <main id="main-content" data-section="provider-search">
+    <h1>Primary Care Providers</h1>
+    <p>Filter results to find a primary care doctor accepting new patients.</p>
+    <div>
+      <label for="doctor-filter-pc">Filter doctors <span aria-hidden="true">(type to search)</span></label>
+      <input type="text" id="doctor-filter-pc" data-component="doctor-filter" placeholder="e.g., family, internal">
+    </div>
+    <section data-section="provider-listing-band" data-component="provider-listing-band">
+      <div class="provider-grid" data-component="provider-grid">
+        <!-- doctor cards will be injected by script -->
+      </div>
+    </section>
+  </main>
+  <footer data-section="footer" data-component="site-footer">
+    <p>&copy; 2026 Community Health Center. All rights reserved.</p>
+  </footer>
+  <script src="js/main.js"></script>
+  <script>
+    // Inline sample data for doctors (same as full list)
+    const doctors = [
+      { id: 1, name: 'Dr. Amanda Lee', specialty: 'Family Medicine', acceptingNewPatients: true, locationId: 1 },
+      { id: 2, name: 'Dr. Benjamin Cruz', specialty: 'Cardiology', acceptingNewPatients: false, locationId: 2 },
+      { id: 3, name: 'Dr. Priya Patel', specialty: 'Pediatrics', acceptingNewPatients: true, locationId: 3 },
+      { id: 4, name: 'Dr. Daniel Kim', specialty: 'Orthopedics', acceptingNewPatients: true, locationId: 1 },
+      { id: 5, name: 'Dr. Elena Rodriguez', specialty: 'Dermatology', acceptingNewPatients: false, locationId: 4 },
+      { id: 6, name: 'Dr. Faisal Hassan', specialty: 'Internal Medicine', acceptingNewPatients: true, locationId: 2 },
+      { id: 7, name: 'Dr. Grace Nguyen', specialty: 'OB/GYN', acceptingNewPatients: true, locationId: 3 },
+      { id: 8, name: 'Dr. Henry Okafor', specialty: 'Neurology', acceptingNewPatients: false, locationId: 1 },
+      { id: 9, name: 'Dr. Isabella Rossi', specialty: 'Gastroenterology', acceptingNewPatients: true, locationId: 4 },
+      { id: 10, name: 'Dr. Jack Wu', specialty: 'Urology', acceptingNewPatients: true, locationId: 2 },
+      { id: 11, name: 'Dr. Karen Martinez', specialty: 'Psychiatry', acceptingNewPatients: false, locationId: 3 },
+      { id: 12, name: 'Dr. Luis Sanchez', specialty: 'Oncology', acceptingNewPatients: true, locationId: 4 }
+    ];
+    const locations = [
+      { id: 1, name: 'Downtown Clinic', address: '100 Main St', hospitalId: 1 },
+      { id: 2, name: 'Westside Health Center', address: '200 Oak Ave', hospitalId: 2 },
+      { id: 3, name: 'East End Medical', address: '300 Pine Rd', hospitalId: 3 },
+      { id: 4, name: 'Northgate Clinic', address: '400 Elm St', hospitalId: 4 }
+    ];
+    const hospitals = [
+      { id: 1, name: 'Mercy General Hospital', address: '1000 Healthway', phone: '555-1000', website: '#' },
+      { id: 2, name: 'St. Luke’s Medical Center', address: '2000 Care Blvd', phone: '555-2000', website: '#' },
+      { id: 3, name: 'Community Regional Hospital', address: '3000 Wellness St', phone: '555-3000', website: '#' },
+      { id: 4, name: 'Valley Health Institute', address: '4000 Healing Ave', phone: '555-4000', website: '#' }
+    ];
+    const grid = document.querySelector('[data-component="provider-grid"]');
+    function renderDoctors(list) {
+      grid.innerHTML = '';
+      list.forEach(doc => {
+        const loc = locations.find(l => l.id === doc.locationId) || {};
+        const hosp = hospitals.find(h => h.id === loc.hospitalId) || {};
+        const card = document.createElement('div');
+        card.className = 'provider-card';
+        card.setAttribute('data-component', 'doctor-card');
+        card.innerHTML = `
+          <h3>${doc.name}</h3>
+          <p><strong>Specialty:</strong> ${doc.specialty}</p>
+          <p><strong>Accepting new patients:</strong> ${doc.acceptingNewPatients ? 'Yes' : 'No'}</p>
+          <p><strong>Location:</strong> ${loc.name || 'N/A'}</p>
+          <p><strong>Hospital:</strong> ${hosp.name || 'N/A'}</p>
+        `;
+        grid.appendChild(card);
+      });
+    }
+    // Initially filter to primary care specialties (Family Medicine, Internal Medicine, Pediatrics)
+    const primarySpecialties = ['Family Medicine', 'Internal Medicine', 'Pediatrics'];
+    let displayed = doctors.filter(d => primarySpecialties.includes(d.specialty));
+    renderDoctors(displayed);
+    const filterInput = document.querySelector('[data-component="doctor-filter"]');
+    filterInput.addEventListener('input', () => {
+      const term = filterInput.value.trim().toLowerCase();
+      const filtered = displayed.filter(d =>
+        d.name.toLowerCase().includes(term) ||
+        d.specialty.toLowerCase().includes(term)
+      );
+      renderDoctors(filtered);
+    });
+    filterInput.addEventListener('keydown', e => {
+      if (e.key === 'Escape') {
+        filterInput.value = '';
+        filterInput.dispatchEvent(new Event('input'));
+        // reset to primary care list
+        displayed = doctors.filter(d => primarySpecialties.includes(d.specialty));
+        renderDoctors(displayed);
+      }
+    });
+  </script>
+</body>
+</html>

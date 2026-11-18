@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Academics | Liberal Arts College</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <header data-section="banner" data-component="site-header">
+    <div class="site-name">Liberal Arts College</div>
+    <button id="nav-toggle" class="hamburger" aria-controls="primary-nav-list" aria-expanded="false" aria-label="Open main menu">☰</button>
+    <nav data-section="navigation" data-component="primary-nav">
+      <ul id="primary-nav-list" class="nav-list" aria-expanded="false">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="academic-life.html">Academics</a></li>
+        <li><a href="departments.html">Majors</a></li>
+        <li><a href="college-catalog.html">Course Catalog</a></li>
+        <li><a href="admission.html">Admission &amp; Aid</a></li>
+        <li><a href="apply.html">Apply</a></li>
+        <li><a href="visiting.html">Visit</a></li>
+        <li><a href="news.html">News &amp; Events</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content" data-section="main">
+    <h1>Academics</h1>
+    <p>Our curriculum emphasizes interdisciplinary study, close faculty mentorship, and opportunities for independent research.</p>
+
+    <div class="sidebar" data-section="sidebar" data-component="sidebar">
+      <h2>Featured Faculty</h2>
+      <ul>
+        <!-- staff data will be inserted by script -->
+      </ul>
+    </div>
+
+    <section data-section="featured-programs" data-component="card-grid">
+      <h2>Popular Programs</h2>
+      <input type="search" id="program-search" placeholder="Search programs…" aria-label="Search programs">
+      <div class="card-grid" id="program-grid">
+        <!-- program cards will be inserted by script -->
+      </div>
+    </section>
+  </main>
+
+  <footer data-section="footer" data-component="site-footer">
+    <p>&copy; 2026 Liberal Arts College. All rights reserved.</p>
+    <nav>
+      <ul>
+        <li><a href="#">Privacy</a></li>
+        <li><a href="#">Terms</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </footer>
+
+  <div id="toast" aria-live="polite"></div>
+
+  <!-- Inline sample data -->
+  <script>
+    const programsData = [
+      {title: "Biology", description: "Study of life and living organisms.", icon: "🧬"},
+      {title: "English", description: "Literature, writing, and critical analysis.", icon: "📚"},
+      {title: "Computer Science", description: "Algorithms, software development, and theory.", icon: "💻"},
+      {title: "History", description: "Exploration of past events and societies.", icon: "🏛️"},
+      {title: "Mathematics", description: "Abstract science of number, quantity, and space.", icon: "➕"},
+      {title: "Physics", description: "Study of matter, energy, and fundamental forces.", icon: "⚛️"},
+      {title: "Psychology", description: "Science of mind and behavior.", icon: "🧠"},
+      {title: "Economics", description: "Production, distribution, and consumption of goods.", icon: "📈"},
+      {title: "Environmental Studies", description: "Interaction between humans and the environment.", icon: "🌱"},
+      {title: "Philosophy", description: "Examination of fundamental questions about existence.", icon: "🤔"},
+      {title: "Art History", description: "Study of visual art across cultures and periods.", icon: "🎨"},
+      {title: "Music", description: "Theory, performance, and history of music.", icon: "🎵"}
+    ];
+
+    const staffData = [
+      {name: "Dr. Ada Lopez", title: "Professor of Biology", photo: "assets/placeholder.svg"},
+      {name: "Prof. James Chen", title: "Associate Professor of English", photo: "assets/placeholder.svg"},
+      {name: "Dr. Leila Khan", title: "Assistant Professor of Computer Science", photo: "assets/placeholder.svg"},
+      {name: "Prof. Marcus Greene", title: "Professor of History", photo: "assets/placeholder.svg"},
+      {name: "Dr. Priya Desai", title: "Associate Professor of Mathematics", photo: "assets/placeholder.svg"},
+      {name: "Prof. Samuel Ortiz", title: "Professor of Physics", photo: "assets/placeholder.svg"}
+    ];
+  </script>
+  <script src="js/main.js"></script>
+  <script>
+    // Populate staff list
+    const staffList = document.querySelector('.sidebar ul');
+    staffData.forEach(p => {
+      const li = document.createElement('li');
+      li.innerHTML = `<strong>${p.name}</strong><br>${p.title}`;
+      staffList.appendChild(li);
+    });
+
+    // Populate program cards
+    const programGrid = document.getElementById('program-grid');
+    programsData.forEach(p => {
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.setAttribute('data-component', 'program-card');
+      card.innerHTML = `
+        <h3>${p.title} ${p.icon}</h3>
+        <p>${p.description}</p>
+      `;
+      programGrid.appendChild(card);
+    });
+
+    // Reuse search logic from main.js (already attached to input)
+  </script>
+</body>
+</html>

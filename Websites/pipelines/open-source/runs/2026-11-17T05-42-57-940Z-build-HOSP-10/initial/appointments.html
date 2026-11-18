@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en" data-section="appointments">
+<head>
+  <meta charset="utf-8">
+  <title>Appointment Inquiry – Fictional Health Center</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script defer src="js/main.js"></script>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header data-component="site-header">
+    <h1>Fictional Health Center</h1>
+    <nav data-component="primary-nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="appointments.html">Appointments</a>
+      <a href="find-a-doctor.html">Find a Doctor</a>
+      <a href="locations.html">Locations</a>
+    </nav>
+  </header>
+
+  <main id="main-content" data-section="appointments-main">
+    <h1>Request an Appointment (Demo)</h1>
+
+    <form id="appointment-form" data-component="appointment-form" novalidate>
+      <div id="error-summary" class="error-summary" tabindex="-1" aria-live="assertive"></div>
+
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" required aria-required="true">
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" required aria-required="true">
+
+      <label for="date">Preferred Date</label>
+      <input type="date" id="date" name="date" required aria-required="true">
+
+      <button type="submit">Submit Request</button>
+    </form>
+  </main>
+
+  <footer data-component="site-footer">
+    <p>&copy; 2024 Fictional Health Center.</p>
+  </footer>
+</body>
+</html>

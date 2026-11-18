@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>News – WeatherWise</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header data-section="header" data-component="site-header">
+    <h1>WeatherWise</h1>
+  </header>
+
+  <nav data-section="navigation" data-component="primary-nav" aria-label="Primary">
+    <ul>
+      <li><a href="index.html" data-instance="home-link">Home</a></li>
+      <li><a href="today.html" data-instance="today-link">Today</a></li>
+      <li><a href="hourly.html" data-instance="hourly-link">Hourly</a></li>
+      <li><a href="tenday.html" data-instance="10day-link">10‑Day</a></li>
+      <li><a href="monthly.html" data-instance="monthly-link">Monthly</a></li>
+      <li><a href="allergy.html" data-instance="allergy-link">Allergies</a></li>
+      <li><a href="radar.html" data-instance="radar-link">Radar</a></li>
+      <li><a href="news.html" data-instance="news-link" aria-current="page">News</a></li>
+      <li><a href="login.html" data-instance="login-link">Sign In</a></li>
+    </ul>
+  </nav>
+
+  <main id="main-content" data-section="main">
+    <header data-component="page-header">
+      <h1>Latest Weather News</h1>
+    </header>
+
+    <section data-component="news-list" aria-label="Weather news articles">
+      <div class="card-grid">
+        <!-- News items – sample data -->
+        <article class="card" data-component="news-card" data-instance="news-1">
+          <img src="assets/placeholder.svg" alt="Placeholder image for news story">
+          <div class="card-body">
+            <h3>Heat Wave Expected Across the Midwest</h3>
+            <p>Temperatures could reach well above 100°F in the coming days.</p>
+            <time datetime="2026-09-15">September 15, 2026</time>
+          </div>
+        </article>
+        <article class="card" data-component="news-card" data-instance="news-2">
+          <img src="assets/placeholder.svg" alt="Placeholder image for news story">
+          <div class="card-body">
+            <h3>Tropical Storm Forms in the Atlantic</h3>
+            <p>Early season storm may bring heavy rain to the Caribbean.</p>
+            <time datetime="2026-09-14">September 14, 2026</time>
+          </div>
+        </article>
+        <article class="card" data-component="news-card" data-instance="news-3">
+          <img src="assets/placeholder.svg" alt="Placeholder image for news story">
+          <div class="card-body">
+            <h3>Wildfire Smoke Affects Air Quality in the West</h3>
+            <p>Residents advised to limit outdoor activity.</p>
+            <time datetime="2026-09-13">September 13, 2026</time>
+          </div>
+        </article>
+        <article class="card" data-component="news-card" data-instance="news-4">
+          <img src="assets/placeholder.svg" alt="Placeholder image for news story">
+          <div class="card-body">
+            <h3>First Snow of the Season Hits the Rockies</h3>
+            <p>Early accumulation reported at higher elevations.</p>
+            <time datetime="2026-09-12">September 12, 2026</time>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer data-section="footer" data-component="site-footer">
+    <p>&copy; 2026 WeatherWise. All rights reserved.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en" data-section="directory">
+<head>
+  <meta charset="utf-8">
+  <title>Directory – Rivergate University</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <a href="#main-content" class="skip-link" data-component="skip-link">Skip to main content</a>
+
+  <header data-component="site-header" data-section="header">
+    <h1>Rivergate University</h1>
+    <nav aria-label="Primary navigation" data-component="primary-nav">
+      <button class="menu-toggle" aria-controls="primary-nav" aria-expanded="false" data-component="menu-toggle">☰</button>
+      <a href="index.html">Home</a>
+      <a href="admissions-index.html">Admissions</a>
+      <a href="academics-index.html">Academics</a>
+      <a href="schools-colleges-index.html">Schools &amp; Colleges</a>
+      <a href="directory-index.html">Directory</a>
+      <a href="research-index.html">Research</a>
+      <a href="events-index.html">Events</a>
+      <a href="by-the-numbers-index.html">By the Numbers</a>
+    </nav>
+  </header>
+
+  <main id="main-content" data-component="page-main">
+    <h1>Campus Directory</h1>
+
+    <section data-section="search">
+      <h2>Search Staff &amp; Faculty</h2>
+      <form id="directory-search-form" aria-labelledby="search-label">
+        <label id="search-label" for="search">Name or department</label>
+        <input type="text" id="search" name="search" required>
+        <button type="submit">Search</button>
+        <div id="directory-error-summary" role="alert" aria-live="assertive" style="color:red;"></div>
+      </form>
+    </section>
+
+    <section id="directory-results" data-section="results">
+      <!-- Results will be injected here -->
+    </section>
+  </main>
+
+  <footer data-component="site-footer" data-section="footer">
+    <p>&copy; 2024 Rivergate University.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,286 @@
+{
+  "components": [
+    {
+      "component": "site-header",
+      "selector": "[data-component=\"site-header\"]",
+      "pages": [
+        "index.html",
+        "about.html",
+        "learning.html",
+        "contact.html",
+        "support.html",
+        "checking.html",
+        "loans.html",
+        "digital.html",
+        "calculators.html",
+        "careers.html",
+        "404.html"
+      ],
+      "behaviors": "Contains site logo, skip link, and mobile menu toggle. Fixed positioning at top of viewport.",
+      "keyboardExpectations": "Mobile toggle button is focusable and operable with Enter/Space; skip link is first focusable element and visible on focus.",
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "component": "primary-nav",
+      "selector": "[data-component=\"primary-nav\"]",
+      "pages": [
+        "index.html",
+        "about.html",
+        "learning.html",
+        "contact.html",
+        "support.html",
+        "checking.html",
+        "loans.html",
+        "digital.html",
+        "calculators.html",
+        "careers.html",
+        "404.html"
+      ],
+      "behaviors": "Horizontal list of navigation links; collapses to a vertical menu on narrow screens via toggle button.",
+      "keyboardExpectations": "All links are focusable in tab order; mobile toggle controls visibility of menu panel.",
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "component": "hero-banner",
+      "selector": "[data-component=\"hero-banner\"]",
+      "pages": [
+        "index.html",
+        "about.html",
+        "learning.html",
+        "checking.html",
+        "loans.html",
+        "digital.html",
+        "careers.html"
+      ],
+      "behaviors": "Prominent section with heading, brief description, and primary call‑to‑action button.",
+      "keyboardExpectations": "CTA button is focusable and operable.",
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "component": "content-band-product",
+      "selector": "[data-component=\"content-band-product\"]",
+      "pages": [
+        "checking.html",
+        "loans.html",
+        "digital.html"
+      ],
+      "behaviors": "Displays a grid of cards representing products, features, or services.",
+      "keyboardExpectations": "Each card is focusable via tab order; interior controls (if any) follow native expectations.",
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "component": "content-band-educational",
+      "selector": "[data-component=\"content-band-educational\"]",
+      "pages": [
+        "learning.html"
+      ],
+      "behaviors": "Shows a grid of educational resources (articles, videos, guides).",
+      "keyboardExpectations": "Each resource card is focusable.",
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "component": "content-band-about",
+      "selector": "[data-component=\"content-band-about\"]",
+      "pages": [
+        "about.html"
+      ],
+      "behaviors": "Presents the bank’s story in paragraph form.",
+      "keyboardExpectations": "No interactive controls; reading order follows DOM.",
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "component": "content-band-leadership",
+      "selector": "[data-component=\"content-band-leadership\"]",
+      "pages": [
+        "about.html"
+      ],
+      "behaviors": "Grid of leadership cards with name and title.",
+      "keyboardExpectations": "Each card is focusable.",
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "component": "content-band-learning",
+      "selector": "[data-component=\"content-band-learning\"]",
+      "pages": [
+        "learning.html"
+      ],
+      "behaviors": "Introductory text and heading for the Learning Center section.",
+      "keyboardExpectations": "No interactive controls.",
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "component": "content-band-branch-search",
+      "selector": "[data-component=\"content-band-branch-search\"]",
+      "pages": [
+        "contact.html"
+      ],
+      "behaviors": "Allows user to search for branches/ATMs via text input; results displayed in a list.",
+      "keyboardExpectations": "Input is focusable; search button operable with Enter/Space; results announced via aria-live region.",
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "component": "content-band-contact-form",
+      "selector": "[data-component=\"content-band-contact-form\"]",
+      "pages": [
+        "contact.html"
+      ],
+      "behaviors": "Form for submitting an inquiry; validates fields and shows a demo submission message.",
+      "keyboardExpectations": "All fields have associated labels; error messages appear inline and are aria‑described; focus moves to status message on successful submit.",
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "component": "content-band-faq",
+      "selector": "[data-component=\"content-band-faq\"]",
+      "pages": [
+        "support.html"
+      ],
+      "behaviors": "Accordion list of frequently asked questions; each panel expands/collapses on button click.",
+      "keyboardExpectations": "Accordion button is focusable, expands/contracts with Enter/Space, and aria‑expanded reflects state; panel receives focus when expanded.",
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "component": "content-band-contact-support",
+      "selector": "[data-component=\"content-band-contact-support\"]",
+      "pages": [
+        "support.html"
+      ],
+      "behaviors": "Provides phone, email, and location contact information.",
+      "keyboardExpectations": "Links are focusable; no additional controls.",
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "component": "accordion-item",
+      "selector": "[data-component=\"accordion-item\"]",
+      "pages": [
+        "support.html"
+      ],
+      "behaviors": "Wraps an accordion trigger and its associated panel.",
+      "keyboardExpectations": "None; semantics come from trigger and panel.",
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "component": "accordion-trigger",
+      "selector": ".accordion-trigger",
+      "pages": [
+        "support.html"
+      ],
+      "behaviors": "Button that toggles visibility of the associated panel.",
+      "keyboardExpectations": "Focusable; operable with Enter/Space; aria‑expanded toggles true/false.",
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "component": "accordion-panel",
+      "selector": ".accordion-panel",
+      "pages": [
+        "support.html"
+      ],
+      "behaviors": "Collapsible region that shows/hides answer content.",
+      "keyboardExpectations": "When visible, can be tabbed through; hidden panels are inert.",
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "component": "product-card",
+      "selector": "[data-component=\"product-card\"]",
+      "pages": [
+        "checking.html",
+        "loans.html",
+        "digital.html"
+      ],
+      "behaviors": "Displays key information about a product or feature in a card layout.",
+      "keyboardExpectations": "Entire card is focusable via tab order; no interactive inner elements unless specified.",
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "component": "learning-card",
+      "selector": "[data-component=\"learning-card\"]",
+      "pages": [
+        "learning.html"
+      ],
+      "behaviors": "Shows metadata for a learning resource (title, type, length, topic).",
+      "keyboardExpectations": "Focusable as part of tab order.",
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "component": "feature-card",
+      "selector": "[data-component=\"feature-card\"]",
+      "pages": [
+        "digital.html"
+      ],
+      "behaviors": "Describes a digital banking feature.",
+      "keyboardExpectations": "Focusable.",
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "component": "career-card",
+      "selector": "[data-component=\"career-card\"]",
+      "pages": [
+        "careers.html"
+      ],
+      "behaviors": "Lists a job opening with title, location, department, and employment type.",
+      "keyboardExpectations": "Focusable.",
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "component": "loan-calculator-form",
+      "selector": "#loan-calc-form",
+      "pages": [
+        "calculators.html"
+      ],
+      "behaviors": "Accepts loan amount, term, and interest rate; computes and displays estimated monthly payment.",
+      "keyboardExpectations": "Each input is focusable and labeled; submit button operable; on success, focus moves to result region.",
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "component": "savings-calculator-form",
+      "selector": "#savings-calc-form",
+      "pages": [
+        "calculators.html"
+      ],
+      "behaviors": "Accepts goal amount and time period; computes required monthly savings.",
+      "keyboardExpectations": "Each input is focusable and labeled; submit button operable; on success, focus moves to result region.",
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "component": "skip-link",
+      "selector": ".skip-link",
+      "pages": [
+        "index.html",
+        "about.html",
+        "learning.html",
+        "contact.html",
+        "support.html",
+        "checking.html",
+        "loans.html",
+        "digital.html",
+        "calculators.html",
+        "careers.html",
+        "404.html"
+      ],
+      "behaviors": "Allows keyboard users to bypass repetitive navigation and go directly to main content.",
+      "keyboardExpectations": "Appears when focused; activating moves focus to element with id=\"main-content\".",
+      "status": "implemented",
+      "validationState": "not-tested"
+    }
+  ]
+}

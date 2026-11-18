@@ -1,0 +1,267 @@
+{
+  "components": [
+    {
+      "selector": "[data-component=\"site-header\"]",
+      "pages": [
+        "index.html",
+        "404.html",
+        "seattle-news.html",
+        "business.html",
+        "sports.html",
+        "nation-world.html",
+        "seattle-i-5-express-lanes-closed.html",
+        "subscribe-signup-offers-subsource-voluntary.html",
+        "help.html",
+        "newsroom-staff.html",
+        "rss-feeds.html"
+      ],
+      "behaviors": [
+        "Contains site logo, search form, and menu button.",
+        "Menu button toggles primary navigation visibility on click.",
+        "Search form submit triggers simulated results (toast/inline)."
+      ],
+      "keyboardExpectations": [
+        "Menu button reachable via Tab, activates with Enter/Space.",
+        "Search input receives focus, allows typing, Submit button activatable via Enter."
+      ],
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "selector": "[data-component=\"primary-nav\"]",
+      "pages": [
+        "index.html",
+        "404.html",
+        "seattle-news.html",
+        "business.html",
+        "sports.html",
+        "nation-world.html",
+        "seattle-i-5-express-lanes-closed.html",
+        "subscribe-signup-offers-subsource-voluntary.html",
+        "help.html",
+        "newsroom-staff.html",
+        "rss-feeds.html"
+      ],
+      "behaviors": [
+        "Horizontal list of section links.",
+        "Link for current page gets aria-current=\"page\".",
+        "Hidden by default, revealed when menu button aria-expanded=\"true\"."
+      ],
+      "keyboardExpectations": [
+        "Each link reachable via Tab, activatable via Enter.",
+        "Focus visible on keyboard focus."
+      ],
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "selector": "[data-component=\"site-footer\"]",
+      "pages": [
+        "index.html",
+        "404.html",
+        "seattle-news.html",
+        "business.html",
+        "sports.html",
+        "nation-world.html",
+        "seattle-i-5-express-lanes-closed.html",
+        "subscribe-signup-offers-subsource-voluntary.html",
+        "help.html",
+        "newsroom-staff.html",
+        "rss-feeds.html"
+      ],
+      "behaviors": [
+        "Three‑column layout on wider screens, stacking on narrow.",
+        "Contains links to sections and additional pages."
+      ],
+      "keyboardExpectations": [
+        "All links in tab order, visible focus."
+      ],
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "selector": "[data-component=\"breadcrumb\"]",
+      "pages": [
+        "seattle-i-5-express-lanes-closed.html",
+        "help.html",
+        "newsroom-staff.html",
+        "rss-feeds.html",
+        "subscribe-signup-offers-subsource-voluntary.html"
+      ],
+      "behaviors": [
+        "Shows hierarchical path from home to current page.",
+        "Current page item is not a link."
+      ],
+      "keyboardExpectations": [
+        "Links in breadcrumb are tab‑navigable."
+      ],
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "selector": "[data-component=\"article-card\"]",
+      "pages": [
+        "index.html",
+        "seattle-news.html",
+        "business.html",
+        "sports.html",
+        "nation-world.html",
+        "seattle-i-5-express-lanes-closed.html",
+        "subscribe-signup-offers-subsource-voluntary.html",
+        "newsroom-staff.html"
+      ],
+      "behaviors": [
+        "Displays placeholder image, title, and short excerpt.",
+        "Wrap entire card in a link to the article destination."
+      ],
+      "keyboardExpectations": [
+        "Card link reachable via Tab, activatable via Enter."
+      ],
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "selector": "[data-component=\"tabs\"]",
+      "pages": [
+        "index.html",
+        "seattle-news.html",
+        "business.html",
+        "sports.html",
+        "nation-world.html"
+      ],
+      "behaviors": [
+        "Tabset with two tabs: Latest and Most Read.",
+        "Clicking a tab shows its associated panel and hides the other.",
+        "Uses ARIA attributes aria-selected and aria-hidden."
+      ],
+      "keyboardExpectations": [
+        "Each tab button reachable via Tab, activatable via Enter/Space.",
+        "When a tab is selected, focus moves to it."
+      ],
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "selector": "[data-component=\"newsletter-signup\"], [data-component=\"subscription-form\"]",
+      "pages": [
+        "index.html",
+        "seattle-news.html",
+        "business.html",
+        "sports.html",
+        "nation-world.html",
+        "subscribe-signup-offers-subsource-voluntary.html"
+      ],
+      "behaviors": [
+        "Email input with label and required attribute.",
+        "Submit button prevents default and shows simulated outcome.",
+        "Newsletter version shows a toast; subscription version shows a modal."
+      ],
+      "keyboardExpectations": [
+        "Input reachable via Tab, accepts text.",
+        "Button reachable via Tab, activatable via Enter/Space.",
+        "Error handling (if any) would move focus to problematic field."
+      ],
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "selector": "[data-component=\"modal-backdrop\"], [data-component=\"subscription-modal\"], [data-component=\"modal-close\"]",
+      "pages": [
+        "index.html",
+        "seattle-news.html",
+        "business.html",
+        "sports.html",
+        "nation-world.html",
+        "subscribe-signup-offers-subsource-voluntary.html"
+      ],
+      "behaviors": [
+        "Backdrop covers viewport; modal centered.",
+        "Modal contains confirmation message and close button.",
+        "Close button and backdrop click hide modal.",
+        "Escape key hides modal and returns focus to trigger."
+      ],
+      "keyboardExpectations": [
+        "Modal trap focus while open (simple implementation).",
+        "Close button reachable via Tab, activatable via Enter/Space.",
+        "Escape key closes modal."
+      ],
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "selector": "[data-component=\"newsletter-toast\"]",
+      "pages": [
+        "index.html",
+        "seattle-news.html",
+        "business.html",
+        "sports.html",
+        "nation-world.html",
+        "subscribe-signup-offers-subsource-voluntary.html"
+      ],
+      "behaviors": [
+        "Appears on successful newsletter submit.",
+        "Auto‑hides after a timeout.",
+        "Live region for screen readers."
+      ],
+      "keyboardExpectations": [
+        "Not focusable; appears as status update."
+      ],
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "selector": "[data-component=\"site-search\"]",
+      "pages": [
+        "index.html",
+        "404.html",
+        "seattle-news.html",
+        "business.html",
+        "sports.html",
+        "nation-world.html",
+        "seattle-i-5-express-lanes-closed.html",
+        "subscribe-signup-offers-subsource-voluntary.html",
+        "help.html",
+        "newsroom-staff.html",
+        "rss-feeds.html"
+      ],
+      "behaviors": [
+        "Search input with label (visually hidden) and submit button.",
+        "Submit prevents default and shows simulated results."
+      ],
+      "keyboardExpectations": [
+        "Input reachable via Tab, accepts text.",
+        "Button reachable via Tab, activatable via Enter/Space."
+      ],
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "selector": "[data-component=\"staff-card\"]",
+      "pages": [
+        "newsroom-staff.html"
+      ],
+      "behaviors": [
+        "Shows placeholder image, staff name, and title."
+      ],
+      "keyboardExpectations": [
+        "Card itself is not interactive; no special keyboard expectations."
+      ],
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "selector": "[data-component=\"feed-list\"]",
+      "pages": [
+        "rss-feeds.html"
+      ],
+      "behaviors": [
+        "Unordered list of example RSS feed URLs."
+      ],
+      "keyboardExpectations": [
+        "Each link reachable via Tab, activatable via Enter."
+      ],
+      "status": "implemented",
+      "validationState": "not-tested"
+    }
+  ]
+}

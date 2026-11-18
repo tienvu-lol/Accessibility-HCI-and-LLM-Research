@@ -1,0 +1,131 @@
+[
+  {
+    "selector": "[data-component=\"site-header\"]",
+    "pages": [
+      "index.html",
+      "courses.html",
+      "about.html",
+      "blog.html",
+      "tips.html",
+      "javascript.html",
+      "speaking-and-training.html",
+      "uses.html",
+      "contact.html",
+      "404.html"
+    ],
+    "behaviors": "Contains site logo and primary navigation; remains fixed at top of page.",
+    "keyboardExpectations": "Navigation links are focusable in tab order; skip link precedes header.",
+    "status": "implemented",
+    "validationState": "not-tested"
+  },
+  {
+    "selector": "[data-component=\"primary-nav\"]",
+    "pages": [
+      "index.html",
+      "courses.html",
+      "about.html",
+      "blog.html",
+      "tips.html",
+      "javascript.html",
+      "speaking-and-training.html",
+      "uses.html",
+      "contact.html",
+      "404.html"
+    ],
+    "behaviors": "Horizontal list at breakpoint >=48em; collapses to vertical menu with hamburger button below. Button toggles aria-expanded and shows/hides menu.",
+    "keyboardExpectations": "Hamburger button is focusable; activates with Enter or Space. Escape closes menu and returns focus to button. Menu items are focusable in tab order.",
+    "status": "implemented",
+    "validationState": "not-tested"
+  },
+  {
+    "selector": "[data-component=\"site-footer\"]",
+    "pages": [
+      "index.html",
+      "courses.html",
+      "about.html",
+      "blog.html",
+      "tips.html",
+      "javascript.html",
+      "speaking-and-training.html",
+      "uses.html",
+      "contact.html",
+      "404.html"
+    ],
+    "behaviors": "Contains copyright text and minimal site footer navigation; flows after main content.",
+    "keyboardExpectations": "Links are focusable in tab order.",
+    "status": "implemented",
+    "validationState": "not-tested"
+  },
+  {
+    "selector": "[data-component=\"hero-section\"]",
+    "pages": [
+      "index.html"
+    ],
+    "behaviors": "Shows site tagline, description, and primary call‑to‑action button; centered text.",
+    "keyboardExpectations": "CTA button is focusable; activates with Enter or Space.",
+    "status": "implemented",
+    "validationState": "not-tested"
+  },
+  {
+    "selector": "[data-component=\"card-grid\"]",
+    "pages": [
+      "courses.html",
+      "blog.html",
+      "tips.html",
+      "javascript.html",
+      "speaking-and-training.html",
+      "uses.html"
+    ],
+    "behaviors": "CSS grid layout with auto‑fit columns (minmax 200px, 1fr) and gap; wraps cards responsively.",
+    "keyboardExpectations": "Inherits focus order from child card elements.",
+    "status": "implemented",
+    "validationState": "not-tested"
+  },
+  {
+    "selector": "[data-component=\"project-card\"]",
+    "pages": [
+      "index.html",
+      "courses.html",
+      "about.html",
+      "speaking-and-training.html",
+      "javascript.html",
+      "uses.html"
+    ],
+    "behaviors": "Displays thumbnail image, title, description or summary, and tag list; consistent card styling.",
+    "keyboardExpectations": "Entire card is not interactive; internal links (if any) are focusable.",
+    "status": "implemented",
+    "validationState": "not-tested"
+  },
+  {
+    "selector": "[data-component=\"blog-post-card\"]",
+    "pages": [
+      "blog.html",
+      "tips.html"
+    ],
+    "behaviors": "Shows thumbnail image, title, excerpt or tip, meta (date, reading‑time or category), tag list, and a button that triggers a simulated lightbox.",
+    "keyboardExpectations": "Button is focusable; activates with Enter or Space to open lightbox.",
+    "status": "implemented",
+    "validationState": "not-tested"
+  },
+  {
+    "selector": "[data-component=\"filter-group\"]",
+    "pages": [
+      "courses.html",
+      "uses.html"
+    ],
+    "behaviors": "Fieldset containing checkboxes for filtering displayed items; changes trigger re‑render of card grid.",
+    "keyboardExpectations": "Each checkbox is focusable; toggles with Space. Change event fires on interaction.",
+    "status": "implemented",
+    "validationState": "not-tested"
+  },
+  {
+    "selector": "[data-component=\"contact-form\"]",
+    "pages": [
+      "contact.html"
+    ],
+    "behaviors": "Collects name, email, and message; validates required fields and email format; shows inline errors and error summary; on submit displays simulated thank‑you message.",
+    "keyboardExpectations": "All inputs and textarea are focusable; submit button activates with Enter or Space. Focus moves to first error or thank‑you message after submit.",
+    "status": "implemented",
+    "validationState": "not-tested"
+  }
+]

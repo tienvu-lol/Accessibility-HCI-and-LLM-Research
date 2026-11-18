@@ -1,0 +1,83 @@
+[
+  {
+    "component": "site-header",
+    "selector": "header.site-header",
+    "pages": ["index.html", "doctors.html", "conditions.html", "locations.html", "care-services.html", "insurance-billing.html", "patient-forms.html", "brain-care.html", "cancer-care.html", "womens-health.html", "contact-us.html", "404.html"],
+    "behaviors": ["Displays logo and primary navigation"],
+    "keyboard": ["Tab to navigate links"],
+    "status": "implemented",
+    "validation": "not-tested"
+  },
+  {
+    "component": "primary-nav",
+    "selector": "nav.primary-nav",
+    "pages": ["index.html", "doctors.html", "conditions.html", "locations.html", "care-services.html", "insurance-billing.html", "patient-forms.html", "brain-care.html", "cancer-care.html", "womens-health.html", "contact-us.html", "404.html"],
+    "behaviors": ["Horizontal navigation on desktop, vertical on mobile"],
+    "keyboard": ["Tab to navigate links"],
+    "status": "implemented",
+    "validation": "not-tested"
+  },
+  {
+    "component": "hero-banner",
+    "selector": "section.hero",
+    "pages": ["index.html", "doctors.html", "conditions.html", "locations.html", "care-services.html", "insurance-billing.html", "patient-forms.html", "brain-care.html", "cancer-care.html", "womens-health.html", "contact-us.html", "404.html"],
+    "behaviors": ["Displays page title and description"],
+    "keyboard": ["Tab to navigate links"],
+    "status": "implemented",
+    "validation": "not-tested"
+  },
+  {
+    "component": "service-card-grid",
+    "selector": "div.card-grid",
+    "pages": ["index.html", "care-services.html", "brain-care.html", "cancer-care.html", "womens-health.html"],
+    "behaviors": ["Displays service cards in a grid"],
+    "keyboard": ["Tab to navigate links"],
+    "status": "implemented",
+    "validation": "not-tested"
+  },
+  {
+    "component": "doctor-search",
+    "selector": "section#doctor-search",
+    "pages": ["doctors.html"],
+    "behaviors": ["Filters doctors by name/specialty"],
+    "keyboard": ["Tab to input/select, Enter to filter"],
+    "status": "implemented",
+    "validation": "not-tested"
+  },
+  {
+    "component": "location-filter",
+    "selector": "section#location-filter",
+    "pages": ["locations.html"],
+    "behaviors": ["Filters locations by region"],
+    "keyboard": ["Tab to select, Enter to filter"],
+    "status": "implemented",
+    "validation": "not-tested"
+  },
+  {
+    "component": "document-list",
+    "selector": "ul.document-list",
+    "pages": ["insurance-billing.html", "patient-forms.html"],
+    "behaviors": ["Displays list of documents"],
+    "keyboard": ["Tab to navigate links"],
+    "status": "implemented",
+    "validation": "not-tested"
+  },
+  {
+    "component": "contact-form",
+    "selector": "form#contact-form",
+    "pages": ["contact-us.html"],
+    "behaviors": ["Validates input, shows alert on submit"],
+    "keyboard": ["Tab to fields, Enter to submit"],
+    "status": "implemented",
+    "validation": "not-tested"
+  },
+  {
+    "component": "site-footer",
+    "selector": "footer.site-footer",
+    "pages": ["index.html", "doctors.html", "conditions.html", "locations.html", "care-services.html", "insurance-billing.html", "patient-forms.html", "brain-care.html", "cancer-care.html", "womens-health.html", "contact-us.html", "404.html"],
+    "behaviors": ["Displays footer links and info"],
+    "keyboard": ["Tab to navigate links"],
+    "status": "implemented",
+    "validation": "not-tested"
+  }
+]

@@ -1,0 +1,92 @@
+[
+  {
+    "component": "site-header",
+    "selector": ".site-header",
+    "pages": ["index.html", "services.html", "departments.html", "news.html", "events.html", "service-request.html", "pay-utility-bill.html", "housing.html", "park-directory.html", "police.html", "permits.html", "animal-services.html", "404.html"],
+    "behaviours": ["Mobile nav toggle", "Language toggle (demo)"],
+    "keyboard_expectations": ["Tab to logo", "Tab to nav toggle", "Enter/Space to toggle nav", "Tab to language toggle", "Enter/Space to toggle language"],
+    "status": "implemented",
+    "validation_state": "not-tested"
+  },
+  {
+    "component": "primary-nav",
+    "selector": ".primary-nav",
+    "pages": ["index.html", "services.html", "departments.html", "news.html", "events.html", "service-request.html", "pay-utility-bill.html", "housing.html", "park-directory.html", "police.html", "permits.html", "animal-services.html", "404.html"],
+    "behaviours": ["Dropdown menus", "Mobile slide-in"],
+    "keyboard_expectations": ["Tab to links", "Enter/Space to open dropdowns", "Arrow keys to navigate dropdowns", "Escape to close dropdowns"],
+    "status": "implemented",
+    "validation_state": "not-tested"
+  },
+  {
+    "component": "hero",
+    "selector": ".hero",
+    "pages": ["index.html", "housing.html", "police.html", "animal-services.html"],
+    "behaviours": ["Static content display"],
+    "keyboard_expectations": ["Tab to CTA button"],
+    "status": "implemented",
+    "validation_state": "not-tested"
+  },
+  {
+    "component": "content-bands",
+    "selector": ".content-bands",
+    "pages": ["index.html", "services.html", "departments.html", "news.html", "events.html", "park-directory.html", "police.html", "permits.html", "animal-services.html", "pay-utility-bill.html", "service-request.html"],
+    "behaviours": ["Card grid layout"],
+    "keyboard_expectations": ["Tab to links within cards"],
+    "status": "implemented",
+    "validation_state": "not-tested"
+  },
+  {
+    "component": "alert-banner",
+    "selector": ".alert-banner",
+    "pages": ["news.html", "index.html"],
+    "behaviours": ["Dismissal", "Session storage persistence"],
+    "keyboard_expectations": ["Tab to close button", "Enter/Space to dismiss"],
+    "status": "implemented",
+    "validation_state": "not-tested"
+  },
+  {
+    "component": "site-footer",
+    "selector": ".site-footer",
+    "pages": ["index.html", "services.html", "departments.html", "news.html", "events.html", "service-request.html", "pay-utility-bill.html", "housing.html", "park-directory.html", "police.html", "permits.html", "animal-services.html", "404.html"],
+    "behaviours": ["Static content display"],
+    "keyboard_expectations": ["Tab to links"],
+    "status": "implemented",
+    "validation_state": "not-tested"
+  },
+  {
+    "component": "service-search",
+    "selector": "#service-search",
+    "pages": ["services.html"],
+    "behaviours": ["Live filtering of service cards"],
+    "keyboard_expectations": ["Type to filter"],
+    "status": "implemented",
+    "validation_state": "not-tested"
+  },
+  {
+    "component": "calendar-nav",
+    "selector": ".calendar-nav",
+    "pages": ["events.html"],
+    "behaviours": ["Month navigation", "Event list update (demo)"],
+    "keyboard_expectations": ["Tab to prev/next buttons", "Enter/Space to change month"],
+    "status": "implemented",
+    "validation_state": "not-tested"
+  },
+  {
+    "component": "report-form",
+    "selector": "#service-request-form",
+    "pages": ["service-request.html"],
+    "behaviours": ["Client-side validation", "Submission simulation"],
+    "keyboard_expectations": ["Tab to fields", "Enter/Space to submit", "Focus moved to first error on invalid"],
+    "status": "implemented",
+    "validation_state": "not-tested"
+  },
+  {
+    "component": "pay-bill-form",
+    "selector": "#pay-bill-form",
+    "pages": ["pay-utility-bill.html"],
+    "behaviours": ["Client-side validation", "Submission simulation"],
+    "keyboard_expectations": ["Tab to fields", "Enter/Space to submit", "Focus moved to first error on invalid"],
+    "status": "implemented",
+    "validation_state": "not-tested"
+  }
+]

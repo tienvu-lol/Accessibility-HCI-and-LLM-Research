@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Microsoft 365</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Microsoft Replica</h1>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="microsoft-365.html">Microsoft 365</a></li>
+      <li><a href="windows.html">Windows</a></li>
+    </ul>
+  </nav>
+  <main id="main-content">
+    <h2>Microsoft 365</h2>
+    <p>Get the latest version of Microsoft Office and more.</p>
+    <button id="pricing-toggle">Show Pricing</button>
+    <div id="pricing-plans" style="display: none;">
+      <h3>Pricing Plans</h3>
+      <ul>
+        <li>Personal: $6.99/month</li>
+        <li>Family: $8.99/month</li>
+        <li>Business: $12.99/month</li>
+      </ul>
+    </div>
+  </main>
+  <footer>
+    <p>&copy; 2024 Microsoft Replica</p>
+  </footer>
+  <script src="js/main.js"></script>
+  <script>
+    const pricingToggle = document.getElementById("pricing-toggle");
+    const pricingPlans = document.getElementById("pricing-plans");
+    pricingToggle.addEventListener("click", function() {
+      if (pricingPlans.style.display === "none") {
+        pricingPlans.style.display = "block";
+      } else {
+        pricingPlans.style.display = "none";
+      }
+    });
+  </script>

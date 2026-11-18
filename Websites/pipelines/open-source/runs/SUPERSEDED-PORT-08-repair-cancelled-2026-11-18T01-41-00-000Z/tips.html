@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Tips – Ava Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header data-section="header" data-component="site-header" class="site-width">
+    <h1 class="logo" data-component="site-logo">Ava Portfolio</h1>
+    <button id="nav-toggle" class="nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Open main menu">☰</button>
+    <nav id="primary-nav" data-section="navigation" data-component="primary-nav" class="site-width">
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="tips.html">Tips</a></li>
+        <li><a href="javascript.html">JavaScript</a></li>
+        <li><a href="speaking-and-training.html">Speaking &amp; Training</a></li>
+        <li><a href="uses.html">Uses</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content" data-section="main">
+    <section data-component="page-title">
+      <h1>Tips</h1>
+    </section>
+
+    <section data-component="tip-list">
+      <h2>Quick Tips</h2>
+      <ul class="card-grid" data-component="card-grid">
+        <!-- Content injected by JS -->
+      </ul>
+    </section>
+  </main>
+
+  <footer data-section="footer" data-component="site-footer" class="site-width">
+    <p>&copy; 2026 Ava Portfolio. All rights reserved.</p>
+  </footer>
+
+  <!-- Inline sample dataset -->
+  <script>
+    window.TIPS = [
+      {id:1, title:"Use :focus-visible", shortText:"Only show focus outlines for keyboard users, preserving a clean look for mouse users."},
+      {id:2, title:"Prefer rem over px", shortText:"Root‑relative units respect user font‑size preferences and scale better."},
+      {id:3, title:"Label every form control", shortText:"Associate each input with a <label> or use aria-label/aria-labelledby."},
+      {id:4, title:"Keep touch targets ≥44×44 dp", shortText:"Ensures comfortable interaction on touch screens."},
+      {id:5, title:"Avoid color‑only cues", shortText:"Supplement color with icons, text, or patterns for accessibility."},
+      {id:6, title:"Use button for actions, link for navigation", shortText:"Semantic elements convey correct expectations to assistive tech."},
+      {id:7, title:"Validate HTML regularly", shortText:"Catch missing closing tags and stray attributes early."},
+      {id:8, title:"Test with keyboard only", shortText:"Navigate your page using Tab, Shift+Tab, Enter, Space, and Escape."},
+      {id:9, title:"Check contrast early", shortText:"Use tools like WebAIM Contrast Checker during design."},
+      {id:10, title:"Provide skip links", shortText:"Let keyboard users bypass repetitive navigation."},
+      {id:11, title:"Use <main>, <header>, <footer>", shortText:"Landmark regions improve page navigation for screen readers."},
+      {id:12, title:"Avoid automatic carousels", shortText:"If you must, give users pause/play controls and respect reduced motion."},
+      {id:13, title:"Declare language on <html>", shortText:"Helps screen readers switch to the correct pronunciation rules."},
+      {id:14, title:"Use <button type=\"button\"> for non‑submit buttons", shortText:"Prevents accidental form submissions."},
+      {id:15, title:"Keep animations short", shortText:"Motion longer than 500ms can cause discomfort; respect prefers‑reduced‑motion."}
+    ];
+  </script>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

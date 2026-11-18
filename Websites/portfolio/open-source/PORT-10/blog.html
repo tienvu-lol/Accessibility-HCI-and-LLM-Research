@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en" data-section="page-blog">
+<head>
+  <meta charset="utf-8">
+  <title>Blog – Creative Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/styles.css">
+  <script defer src="js/main.js"></script>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header -->
+  <header data-component="site-header" data-section="header">
+    <nav data-component="primary-nav" aria-label="Main navigation" data-open="false">
+      <a href="index.html" class="logo" aria-label="Home">
+        <svg width="120" height="30" aria-hidden="true"><rect width="120" height="30" fill="#555"/></svg>
+      </a>
+      <button data-component="nav-toggle" aria-controls="primary-menu" aria-expanded="false" aria-label="Menu">
+        ☰
+      </button>
+      <ul id="primary-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="talks.html">Talks</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content" data-section="content-band">
+    <h1>Blog</h1>
+    <ul id="blog-list" data-component="list" data-section="blog-list"></ul>
+  </main>
+
+  <footer data-component="site-footer" data-section="footer">
+    <p>&copy; 2024 Creative Portfolio. All rights reserved.</p>
+    <nav aria-label="Footer navigation">
+      <a href="privacy.html">Privacy</a> |
+      <a href="terms.html">Terms</a>
+    </nav>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const list = document.getElementById('blog-list');
+      window.sampleData.blogPosts.forEach(post => {
+        const li = document.createElement('li');
+        li.innerHTML = `<article>
+          <h2>${post.title}</h2>
+          <time datetime="${post.date}">${post.date}</time>
+          <p>${post.excerpt}</p>
+        </article>`;
+        list.appendChild(li);
+      });
+    });
+  </script>
+</body>
+</html>

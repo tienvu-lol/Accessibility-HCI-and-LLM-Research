@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Admission &amp; Financial Aid | Liberal Arts College</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <header data-section="banner" data-component="site-header">
+    <div class="site-name">Liberal Arts College</div>
+    <button id="nav-toggle" class="hamburger" aria-controls="primary-nav-list" aria-expanded="false" aria-label="Open main menu">☰</button>
+    <nav data-section="navigation" data-component="primary-nav">
+      <ul id="primary-nav-list" class="nav-list" aria-expanded="false">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="academic-life.html">Academics</a></li>
+        <li><a href="departments.html">Majors</a></li>
+        <li><a href="college-catalog.html">Course Catalog</a></li>
+        <li><a href="admission.html">Admission &amp; Aid</a></li>
+        <li><a href="apply.html">Apply</a></li>
+        <li><a href="visiting.html">Visit</a></li>
+        <li><a href="news.html">News &amp; Events</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content" data-section="main">
+    <h1>Admission &amp; Financial Aid</h1>
+    <p>Learn about our application process, deadlines, and the aid options available to make college affordable.</p>
+
+    <section data-section="faq" data-component="faq">
+      <h2>Frequently Asked Questions</h2>
+      <dl>
+        <!-- FAQ items will be inserted by script -->
+      </dl>
+    </section>
+
+    <section data-section="contact" data-component="contact-form">
+      <h2>Have a Question?</h2>
+      <p>Send us a message and we’ll get back to you shortly.</p>
+      <form>
+        <label for="adm-name">Name</label>
+        <input type="text" id="adm-name" name="name" required aria-required="true">
+        <label for="adm-email">Email</label>
+        <input type="email" id="adm-email" name="email" required aria-required="true">
+        <label for="adm-message">Message</label>
+        <textarea id="adm-message" name="message" rows="4" required aria-required="true"></textarea>
+        <button type="submit">Send Inquiry</button>
+      </form>
+    </section>
+  </main>
+
+  <footer data-section="footer" data-component="site-footer">
+    <p>&copy; 2026 Liberal Arts College. All rights reserved.</p>
+    <nav>
+      <ul>
+        <li><a href="#">Privacy</a></li>
+        <li><a href="#">Terms</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </footer>
+
+  <div id="toast" aria-live="polite"></div>
+
+  <!-- Inline sample data -->
+  <script>
+    const faqData = [
+      {q: "When is the application deadline?", a: "Regular Decision applications are due January 15. Early Decision is due November 1."},
+      {q: "Is financial aid available for international students?", a: "Yes, we offer need‑based aid to eligible international applicants."},
+      {q: "Do you require standardized test scores?", a: "We are test‑optional; SAT/ACT scores are not required but may be submitted if you wish."},
+      {q: "What is the average financial aid package?", a: "The average need‑based grant covers approximately 60% of tuition and fees."},
+      {q: "Can I apply for a merit scholarship?", a: "All applicants are automatically considered for merit‑based scholarships; no separate application is needed."}
+    ];
+  </script>
+  <script src="js/main.js"></script>
+  <script>
+    // Populate FAQ
+    const faqList = document.querySelector('section[data-component="faq"] dl');
+    faqData.forEach(item => {
+      const dt = document.createElement('dt');
+      dt.textContent = item.q;
+      const dd = document.createElement('dd');
+      dd.textContent = item.a;
+      faqList.appendChild(dt);
+      faqList.appendChild(dd);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Fictional Portfolio – Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <header data-section="header" data-component="site-header">
+    <div class="site-logo">Fictional Dev</div>
+    <nav class="primary-nav" data-component="primary-nav" aria-label="Primary">
+      <button aria-controls="primary-menu" aria-expanded="false">Menu</button>
+      <ul id="primary-menu" class="primary-nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="tips.html">Tips</a></li>
+        <li><a href="javascript.html">JS Notes</a></li>
+        <li><a href="speaking-and-training.html">Speaking</a></li>
+        <li><a href="uses.html">Uses</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content" data-section="main">
+    <section data-component="hero-section">
+      <h1>Welcome to my fictional portfolio</h1>
+      <p>I build things for the web and share what I learn.</p>
+      <a href="#projects" class="cta primary">See my work</a>
+    </section>
+
+    <section data-section="projects" data-component="card-grid" id="projects">
+      <h2>Featured Projects</h2>
+      <!-- Injected by js via inline data in a real build; placeholder static cards -->
+      <article class="card" data-component="project-card" data-instance="1">
+        <img src="assets/placeholder.svg" alt="Project placeholder">
+        <div class="card-body">
+          <h3>Project Alpha</h3>
+          <p>A demo project showcasing responsive design.</p>
+          <div class="tags">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">JS</span>
+          </div>
+        </div>
+      </article>
+      <article class="card" data-component="project-card" data-instance="2">
+        <img src="assets/placeholder.svg" alt="Project placeholder">
+        <div class="card-body">
+          <h3>Project Beta</h3>
+          <p>A small utility library for date handling.</p>
+          <div class="tags">
+            <span class="tag">JS</span>
+            <span class="tag">Utility</span>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer data-section="footer" data-component="site-footer">
+    <p>&copy; 2026 Fictional Dev. All rights reserved.</p>
+    <nav aria-label="Footer">
+      <a href="index.html">Home</a> |
+      <a href="about.html">About</a> |
+      <a href="contact.html">Contact</a>
+    </nav>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

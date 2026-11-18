@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Riverbank Community Bank – Contact Us</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <header data-section="site-header" data-component="site-header" class="site-header">
+    <div class="logo">Riverbank Community Bank</div>
+    <button id="nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Open main menu">
+      ☰
+    </button>
+    <nav data-section="primary-nav" data-component="primary-nav" class="primary-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="learning.html">Learning Center</a></li>
+        <li><a href="support.html">Support</a></li>
+        <li><a href="checking.html">Checking & Savings</a></li>
+        <li><a href="loans.html">Loans</a></li>
+        <li><a href="digital.html">Digital Banking</a></li>
+        <li><a href="careers.html">Careers</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section data-section="hero" data-component="hero-banner" class="hero">
+    <h1>Contact Us</h1>
+    <p>Find a branch, get support, or send us a message.</p>
+  </section>
+
+  <main id="main-content" data-section="main-content">
+    <!-- Branch Search -->
+    <section data-section="content-band" data-component="content-band-branch-search" class="content-band">
+      <h2>Find a Branch or ATM</h2>
+      <label for="branch-search">Search by location:</label>
+      <input type="text" id="branch-search" placeholder="City or ZIP" aria-label="Branch search">
+      <button id="branch-search-btn">Search</button>
+      <div id="branch-results" aria-live="polite"></div>
+    </section>
+
+    <!-- Contact Inquiry -->
+    <section data-section="content-band" data-component="content-band-contact-form" class="content-band">
+      <h2>Send Us a Message</h2>
+      <form id="contact-form" novalidate>
+        <div>
+          <label for="contact-name">Name:</label>
+          <input type="text" id="contact-name" required aria-required="true">
+          <span id="contact-name-error" class="error-message" aria-hidden="true"></span>
+        </div>
+        <div>
+          <label for="contact-email">Email:</label>
+          <input type="email" id="contact-email" required aria-required="true">
+          <span id="contact-email-error" class="error-message" aria-hidden="true"></span>
+        </div>
+        <div>
+          <label for="contact-message">Message:</label>
+          <textarea id="contact-message" rows="4" required aria-required="true"></textarea>
+          <span id="contact-message-error" class="error-message" aria-hidden="true"></span>
+        </div>
+        <button type="submit">Send Message</button>
+      </form>
+      <div id="form-status" aria-live="assertive"></div>
+    </section>
+  </main>
+
+  <footer data-section="site-footer" data-component="site-footer" class="site-footer">
+    <div>
+      <a href="index.html">Home</a> |
+      <a href="about.html">About</a> |
+      <a href="learning.html">Learning Center</a> |
+      <a href="support.html">Support</a> |
+      <a href="careers.html">Careers</a>
+    </div>
+    <div>&copy; 2026 Riverbank Community Bank. All rights reserved.</div>
+  </footer>
+
+  <script>
+    // Sample branch data (5 items)
+    const sampleBranches = [
+      {name: "Downtown Branch", address: "100 Main St, Anytown, ST 12345", phone: "(555) 123-4567", hours: "Mon-Fri 9am-5pm", atm: true},
+      {name: "Westside Branch", address: "2200 West Ave, Anytown, ST 12346", phone: "(555) 234-5678", hours: "Mon-Fri 9am-5pm", atm: false},
+      {name: "North Branch", address: "500 North Rd, Anytown, ST 12347", phone: "(555) 345-6789", hours: "Mon-Fri 9am-5pm", atm: true},
+      {name: "East Branch", address: "77 East Blvd, Anytown, ST 12348", phone: "(555) 456-7890", hours: "Mon-Fri 9am-5pm", atm: true},
+      {name: "South Branch", address: "300 South St, Anytown, ST 12349", phone: "(555) 567-8901", hours: "Mon-Fri 9am-5pm", atm: false}
+    ];
+
+    const searchInput = document.getElementById('branch-search');
+    const searchBtn = document.getElementById('branch-search-btn');
+    const resultsDiv = document.getElementById('branch-results');
+
+    function displayBranches(branches) {
+      if (branches.length === 0) {
+        resultsDiv.textContent = "No branches found.";
+        return;
+      }
+      const list = document.createElement('ul');
+      branches.forEach(b => {
+        const li = document.createElement('li');
+        li.innerHTML = `<strong>${b.name}</strong><br>${b.address}<br>${b.phone}<br>Hours: ${b.hours}<br>ATM: ${b.atm ? 'Yes' : 'No'}`;
+        list.appendChild(li);
+      });
+      resultsDiv.innerHTML = '';
+      resultsDiv.appendChild(list);
+    }
+
+    searchBtn.addEventListener('click', () => {
+      const query = searchInput.value.trim().toLowerCase();
+      if (!query) {
+        displayBranches(sampleBranches);
+        return;
+      }
+      const filtered = sampleBranches.filter(b =>
+        b.address.toLowerCase().includes(query) ||
+        b.name.toLowerCase().includes(query)
+      );
+      displayBranches(filtered);
+    });
+
+    // Allow Enter key to trigger search
+    searchInput.addEventListener('keypress', e => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        searchBtn.click();
+      }
+    });
+
+    // Contact form handling (demo)
+    const form = document.getElementById('contact-form');
+    const statusDiv = document.getElementById('form-status');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      // Simple validation
+      let valid = true;
+      const name = document.getElementById('contact-name');
+      const email = document.getElementById('contact-email');
+      const message = document.getElementById('contact-message');
+      const nameErr = document.getElementById('contact-name-error');
+      const emailErr = document.getElementById('contact-email-error');
+      const msgErr = document.getElementById('contact-message-error');
+
+      if (name.value.trim() === '') {
+        nameErr.textContent = 'Please enter your name.';
+        nameErr.setAttribute('aria-hidden', 'false');
+        valid = false;
+      } else {
+        nameErr.setAttribute('aria-hidden', 'true');
+      }
+      if (!email.value.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+        emailErr.textContent = 'Please enter a valid email address.';
+        emailErr.setAttribute('aria-hidden', 'false');
+        valid = false;
+      } else {
+        emailErr.setAttribute('aria-hidden', 'true');
+      }
+      if (message.value.trim() === '') {
+        msgErr.textContent = 'Please enter a message.';
+        msgErr.setAttribute('aria-hidden', 'false');
+        valid = false;
+      } else {
+        msgErr.setAttribute('aria-hidden', 'true');
+      }
+
+      if (valid) {
+        statusDiv.textContent = 'Demo submission received. (No actual message sent.)';
+        statusDiv.style.color = '#090';
+        form.reset();
+        // Move focus to status message for screen reader users
+        statusDiv.setAttribute('tabindex', '-1');
+        statusDiv.focus();
+      } else {
+        statusDiv.textContent = 'Please correct the errors above.';
+        statusDiv.style.color = '#c00';
+      }
+    });
+  </script>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

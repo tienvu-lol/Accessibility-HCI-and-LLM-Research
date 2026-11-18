@@ -1,0 +1,200 @@
+[
+  {
+    "component": "site-header",
+    "selector": ".site-header",
+    "pages": [
+      "index.html",
+      "health-social-services.html",
+      "families-children.html",
+      "transportation.html",
+      "apply-unemployment-benefits.html",
+      "renew-vehicle-registration.html",
+      "search-court-dockets.html",
+      "state-organizations-a-to-z.html",
+      "404.html"
+    ],
+    "behaviors": "Contains site name, navigation toggle button, and primary navigation wrapper; fixed position at top of viewport.",
+    "keyboard_expectations": "All contained controls (toggle button, nav links) are reachable via Tab; toggle button operable with Enter/Space.",
+    "status": "implemented",
+    "validation_state": "not-tested"
+  },
+  {
+    "component": "primary-nav",
+    "selector": ".primary-nav",
+    "pages": [
+      "index.html",
+      "health-social-services.html",
+      "families-children.html",
+      "transportation.html",
+      "apply-unemployment-benefits.html",
+      "renew-vehicle-registration.html",
+      "search-court-dockets.html",
+      "state-organizations-a-to-z.html",
+      "404.html"
+    ],
+    "behaviors": "Horizontal list of top‑level sections; indicates current page via aria-current='page'.",
+    "keyboard_expectations": "Each link is a tab stop; Enter activates link.",
+    "status": "implemented",
+    "validation_state": "not-tested"
+  },
+  {
+    "component": "nav-toggle",
+    "selector": ".nav-toggle",
+    "pages": [
+      "index.html",
+      "health-social-services.html",
+      "families-children.html",
+      "transportation.html",
+      "apply-unemployment-benefits.html",
+      "renew-vehicle-registration.html",
+      "search-court-dockets.html",
+      "state-organizations-a-to-z.html",
+      "404.html"
+    ],
+    "behaviors": "Button that shows/hides the primary navigation on viewports ≤375px; toggles aria-expanded and manages focus.",
+    "keyboard_expectations": "Tab stop; Enter or Space toggles menu; Escape closes menu and returns focus to button.",
+    "status": "implemented",
+    "validation_state": "not-tested"
+  },
+  {
+    "component": "hero",
+    "selector": ".hero",
+    "pages": [
+      "index.html"
+    ],
+    "behaviors": "Prominent banner with heading, description, and call‑to‑action button.",
+    "keyboard_expectations": "Link inside button is tab operable; Enter/Space activates.",
+    "status": "implemented",
+    "validation_state": "not-tested"
+  },
+  {
+    "component": "content-band",
+    "selector": "main > section[data-component='content-band']",
+    "pages": [
+      "index.html",
+      "health-social-services.html",
+      "families-children.html",
+      "transportation.html",
+      "apply-unemployment-benefits.html",
+      "renew-vehicle-registration.html",
+      "search-court-dockets.html",
+      "state-organizations-a-to-z.html",
+      "404.html"
+    ],
+    "behaviors": "Main content wrapper; holds page‑specific markup.",
+    "keyboard_expectations": "No interactive expectation; contains focusable elements as per page.",
+    "status": "implemented",
+    "validation_state": "not-tested"
+  },
+  {
+    "component": "card-grid",
+    "selector": ".card-grid",
+    "pages": [
+      "index.html",
+      "health-social-services.html",
+      "families-children.html",
+      "transportation.html"
+    ],
+    "behaviors": "Responsive grid of cards; each card contains a heading, description, and link.",
+    "keyboard_expectations": "Each link is a tab stop; Enter activates.",
+    "status": "implemented",
+    "validation_state": "not-tested"
+  },
+  {
+    "component": "footer-groups",
+    "selector": ".site-footer",
+    "pages": [
+      "index.html",
+      "health-social-services.html",
+      "families-children.html",
+      "transportation.html",
+      "apply-unemployment-benefits.html",
+      "renew-vehicle-registration.html",
+      "search-court-dockets.html",
+      "state-organizations-a-to-z.html",
+      "404.html"
+    ],
+    "behaviors": "Three‑column footer with site‑wide links.",
+    "keyboard_expectations": "Each link is a tab stop; Enter activates.",
+    "status": "implemented",
+    "validation_state": "not-tested"
+  },
+  {
+    "component": "demo-form",
+    "selector": "form[data-component='demo-form']",
+    "pages": [
+      "apply-unemployment-benefits.html",
+      "renew-vehicle-registration.html",
+      "search-court-dockets.html"
+    ],
+    "behaviors": "Form with native inputs, labels, and submit button; on submit prevents default and shows an accessible alert message.",
+    "keyboard_expectations": "All fields are tab stops; required fields trigger aria‑invalid on empty; Submit button activated with Enter/Space; focus moves to alert message after successful demo submission.",
+    "status": "implemented",
+    "validation_state": "not-tested"
+  },
+  {
+    "component": "org-filter",
+    "selector": "input[data-component='org-filter']",
+    "pages": [
+      "state-organizations-a-to-z.html"
+    ],
+    "behaviors": "Text input that filters the organization list in real time (client‑side).",
+    "keyboard_expectations": "Tab stop; input updates list on each keystroke; Escape clears input and shows full list.",
+    "status": "implemented",
+    "validation_state": "not-tested"
+  },
+  {
+    "component": "org-list",
+    "selector": "ul[data-component='org-list']",
+    "pages": [
+      "state-organizations-a-to-z.html"
+    ],
+    "behaviors": "List of organization links; visibility of items controlled by org‑filter.",
+    "keyboard_expectations": "Each link is a tab stop; Enter activates.",
+    "status": "implemented",
+    "validation_state": "not-tested"
+  },
+  {
+    "component": "docket-results",
+    "selector": "table[data-component='docket-results']",
+    "pages": [
+      "search-court-dockets.html"
+    ],
+    "behaviors": "Table showing case number, date, parties, and details link; rows injected via JavaScript for demonstration.",
+    "keyboard_expectations": "Each link in the Details column is a tab stop; Enter activates.",
+    "status": "implemented",
+    "validation_state": "not-tested"
+  },
+  {
+    "component": "skip-link",
+    "selector": ".skip-link",
+    "pages": [
+      "index.html",
+      "health-social-services.html",
+      "families-children.html",
+      "transportation.html",
+      "apply-unemployment-benefits.html",
+      "renew-vehicle-registration.html",
+      "search-court-dockets.html",
+      "state-organizations-a-to-z.html",
+      "404.html"
+    ],
+    "behaviors": "In‑page link that jumps to #main‑content; appears only when focused.",
+    "keyboard_expectations": "First tab stop on page; Enter activates link.",
+    "status": "implemented",
+    "validation_state": "not-tested"
+  },
+  {
+    "component": "alert",
+    "selector": ".alert",
+    "pages": [
+      "apply-unemployment-benefits.html",
+      "renew-vehicle-registration.html",
+      "search-court-dockets.html"
+    ],
+    "behaviors": "Live region (role='alert') that displays form validation errors or demo success messages.",
+    "keyboard_expectations": "Receives focus when inserted; readable by screen readers automatically.",
+    "status": "implemented",
+    "validation_state": "not-tested"
+  }
+]
