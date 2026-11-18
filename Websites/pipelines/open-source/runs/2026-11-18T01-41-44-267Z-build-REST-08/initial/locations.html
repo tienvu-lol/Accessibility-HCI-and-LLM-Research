@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Locations – Xi'an Famous Foods</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="site-header" data-section="header" data-component="site-header">
+    <h1>Xi'an Famous Foods</h1>
+    <button class="nav-toggle" aria-controls="primary-nav" aria-expanded="false">☰</button>
+    <nav class="primary-nav" id="primary-nav" aria-label="Primary" data-component="primary-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="our-story.html">Our Story</a></li>
+        <li><a href="locations.html" aria-current="page">Locations</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content" data-section="main">
+    <nav aria-label="Breadcrumb" data-section="breadcrumb" data-component="breadcrumb">
+      <ol>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="locations.html" aria-current="page">Locations</a></li>
+      </ol>
+    </nav>
+
+    <section class="content-band" data-section="content-band" data-component="content-band">
+      <h1>Our Locations</h1>
+      <p>Visit one of our stores to enjoy fresh, hand‑ripped noodles and bold flavors.</p>
+
+      <section class="card-grid" data-section="location-grid" data-component="card-grid">
+        <!-- Location cards will be populated by JS; placeholder structure -->
+        <article class="location-card" data-component="location-card">
+          <h3>Flushing – Main Street</h3>
+          <p class="address">136-39 39th Ave, Flushing, NY 11354</p>
+          <p class="phone">(718) 555-0101</p>
+          <p class="hours">
+            <span class="hours-badge"></span>
+            <br>Mon–Thu: 11:00 AM – 10:00 PM
+            <br>Fri–Sun: 11:00 AM – 11:00 PM
+          </p>
+        </article>
+        <article class="location-card" data-component="location-card">
+          <h3>Manhattan – East Village</h3>
+          <p class="address">88 St Marks Pl, New York, NY 10003</p>
+          <p class="phone">(212) 555-0102</p>
+          <p class="hours">
+            <span class="hours-badge"></span>
+            <br>Mon–Thu: 11:00 AM – 10:00 PM
+            <br>Fri–Sun: 11:00 AM – 11:00 PM
+          </p>
+        </article>
+        <article class="location-card" data-component="location-card">
+          <h3>Brooklyn – Williamsburg</h3>
+          <p class="address">95 N 6th St, Brooklyn, NY 11249</p>
+          <p class="phone">(718) 555-0103</p>
+          <p class="hours">
+            <span class="hours-badge"></span>
+            <br>Mon–Thu: 11:00 AM – 10:00 PM
+            <br>Fri–Sun: 11:00 AM – 11:00 PM
+          </p>
+        </article>
+      </section>
+    </section>
+  </main>
+
+  <footer class="site-footer" data-section="footer" data-component="site-footer">
+    <p>&copy; 2026 Xi'an Famous Foods. All rights reserved.</p>
+    <ul class="social-list" data-component="social-links">
+      <li><a href="#" aria-label="Facebook">FB</a></li>
+      <li><a href="#" aria-label="Twitter">TW</a></li>
+      <li><a href="#" aria-label="Instagram">IG</a></li>
+    </ul>
+    <section data-component="newsletter-signup">
+      <h3>Stay updated</h3>
+      <form>
+        <label for="newsletter-email">Email address</label>
+        <input type="email" id="newsletter-email" placeholder="you@example.com" required>
+        <button type="submit" class="btn">Subscribe</button>
+      </form>
+      <p class="note">We’ll never share your address.</p>
+    </section>
+  </footer>
+
+  <!-- Age gate modal (same as index) -->
+  <div id="age-gate-backdrop" class="modal-backdrop" aria-hidden="true">
+    <div id="age-gate-modal" class="modal" aria-hidden="false" role="dialog" aria-modal="true">
+      <h2>Age verification</h2>
+      <p>Please confirm you are 18 years or older.</p>
+      <form id="age-gate-form">
+        <label for="age-gate-input">Date of birth (MM/DD/YYYY)</label>
+        <input type="text" id="age-gate-input" name="age-gate-input" placeholder="01/01/1990" required pattern="(0[1-9]|1[0-2])\/(0[1-9]|[12][0-9]|3[01])\/\d{4}">
+        <button type="submit" class="btn">Enter</button>
+      </form>
+      <p id="age-gate-message" style="color:#c00;display:none;"></p>
+      <button class="modal-close" aria-label="Close">×</button>
+    </div>
+  </div>
+
+  <!-- Toast container -->
+  <div id="toast" aria-live="off"></div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video News - The Metropolitan Herald</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header class="site-header" role="banner">
+        <div class="container header-inner">
+            <a href="index.html" class="logo">The Metropolitan Herald</a>
+            <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
+                <span class="sr-only">Toggle navigation</span>
+                ☰
+            </button>
+            <nav id="primary-nav" class="primary-nav" role="navigation" aria-label="Primary">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="nz.html" class="nav-link">NZ</a></li>
+                    <li><a href="world.html" class="nav-link">World</a></li>
+                    <li><a href="business.html" class="nav-link">Business</a></li>
+                    <li><a href="sport.html" class="nav-link">Sport</a></li>
+                    <li><a href="entertainment.html" class="nav-link">Entertainment</a></li>
+                    <li><a href="politics.html" class="nav-link">Politics</a></li>
+                    <li><a href="crime.html" class="nav-link">Crime</a></li>
+                    <li><a href="election-2026.html" class="nav-link">Election 2026</a></li>
+                    <li><a href="video.html" class="nav-link" aria-current="page">Video</a></li>
+                    <li><a href="opinion.html" class="nav-link">Opinion</a></li>
+                    <li><a href="lifestyle.html" class="nav-link">Lifestyle</a></li>
+                    <li><a href="weather.html" class="nav-link">Weather</a></li>
+                    <li><a href="premium.html" class="nav-link">Premium</a></li>
+                    <li><a href="podcasts.html" class="nav-link">Podcasts</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section class="hero-section" data-section="hero">
+            <div class="container hero-grid">
+                <article class="hero-main" data-component="hero-article">
+                    <img src="assets/hero-placeholder.svg" alt="Video News featured image" class="hero-image">
+                    <div class="hero-content">
+                        <span class="article-category">Video</span>
+                        <h1 class="hero-title"><a href="#">Watch: Storm Hits Coast</a></h1>
+                        <p class="hero-summary">Dramatic footage shows the impact of a severe storm on the coastline.</p>
+                    </div>
+                </article>
+                <aside class="hero-side" data-component="hero-side-stories">
+                    <article class="side-story">
+                        <h3><a href="#">Interview: Prime Minister on Economy</a></h3>
+                        <p class="article-meta">1 hour ago</p>
+                    </article>
+                    <article class="side-story">
+                        <h3><a href="#">Behind the Scenes: Election Campaign</a></h3>
+                        <p class="article-meta">3 hours ago</p>
+                    </article>
+                    <article class="side-story">
+                        <h3><a href="#">Sports Highlights of the Week</a></h3>
+                        <p class="article-meta">5 hours ago</p>
+                    </article>
+                </aside>
+            </div>
+        </section>
+
+        <section class="container mt-lg" data-section="latest-news">
+            <div class="tabs" role="tablist" aria-label="Video News feeds">
+                <button class="tab-btn" role="tab" aria-selected="true" aria-controls="video-latest-panel" id="video-latest-tab">Latest</button>
+                <button class="tab-btn" role="tab" aria-selected="false" aria-controls="video-most-read-panel" id="video-most-read-tab">Most Read</button>
+            </div>
+
+            <div id="video-latest-panel" class="tab-panel is-active" role="tabpanel" aria-labelledby="video-latest-tab">
+                <div class="article-grid" data-component="article-card-grid">
+                    <!-- Articles injected via JS -->
+                </div>
+            </div>
+
+            <div id="video-most-read-panel" class="tab-panel" role="tabpanel" aria-labelledby="video-most-read-tab">
+                <div class="article-grid" data-component="article-card-grid">
+                    <!-- Articles injected via JS -->
+                </div>
+            </div>
+        </section>
+
+        <aside class="container mt-lg" data-section="sidebar">
+            <div class="sidebar">
+                <h3>Trending in Video</h3>
+                <ul class="trending-list" data-component="trending-list">
+                    <li class="trending-item">
+                        <span class="trending-number">1</span>
+                        <a href="#" class="trending-title">Watch: Storm Hits Coast</a>
+                    </li>
+                    <li class="trending-item">
+                        <span class="trending-number">2</span>
+                        <a href="#" class="trending-title">Interview: Prime Minister on Economy</a>
+                    </li>
+                    <li class="trending-item">
+                        <span class="trending-number">3</span>
+                        <a href="#" class="trending-title">Behind the Scenes: Election Campaign</a>
+                    </li>
+                    <li class="trending-item">
+                        <span class="trending-number">4</span>
+                        <a href="#" class="trending-title">Sports Highlights of the Week</a>
+                    </li>
+                    <li class="trending-item">
+                        <span class="trending-number">5</span>
+                        <a href="#" class="trending-title">Viral Video: Rare Wildlife Sighting</a>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>The Metropolitan Herald</h4>
+                    <p>Truth in Every Story. Your trusted source for local and global news.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Sections</h4>
+                    <ul class="footer-links">
+                        <li><a href="nz.html">NZ</a></li>
+                        <li><a href="world.html">World</a></li>
+                        <li><a href="business.html">Business</a></li>
+                        <li><a href="sport.html">Sport</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Advertise</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Terms of Use</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 The Metropolitan Herald. All rights reserved. This is a fictional replica for research purposes.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        const videoArticles = [
+            { id: 1, category: "Video", title: "Watch: Storm Hits Coast", excerpt: "Dramatic footage shows the impact of a severe storm on the coastline.", date: "1 hour ago", isPremium: false },
+            { id: 2, category: "Video", title: "Interview: Prime Minister on Economy", excerpt: "An exclusive interview with the Prime Minister on the state of the economy.", date: "3 hours ago", isPremium: false },
+            { id: 3, category: "Video", title: "Behind the Scenes: Election Campaign", excerpt: "A behind-the-scenes look at the final days of the election campaign.", date: "5 hours ago", isPremium: false },
+            { id: 4, category: "Video", title: "Sports Highlights of the Week", excerpt: "The best sports moments from the past week.", date: "6 hours ago", isPremium: false },
+            { id: 5, category: "Video", title: "Viral Video: Rare Wildlife Sighting", excerpt: "A rare wildlife sighting has gone viral on social media.", date: "8 hours ago", isPremium: false },
+            { id: 6, category: "Video", title: "Documentary: Life in the Outback", excerpt: "A new documentary explores life in the remote outback.", date: "10 hours ago", isPremium: false },
+            { id: 7, category: "Video", title: "News Recap: Top Stories of the Day", excerpt: "A recap of the top news stories from the day.", date: "12 hours ago", isPremium: false },
+            { id: 8, category: "Video", title: "Opinion: The Future of Technology", excerpt: "An opinion piece on the future of technology and its impact on society.", date: "14 hours ago", isPremium: false },
+            { id: 9, category: "Video", title: "Travel: Hidden Gems of New Zealand", excerpt: "A travel guide to the hidden gems of New Zealand.", date: "1 day ago", isPremium: false }
+        ];
+
+        const videoMostRead = [
+            { id: 10, category: "Video", title: "Watch: Storm Hits Coast", excerpt: "Dramatic footage shows the impact of a severe storm on the coastline.", date: "2 hours ago", isPremium: false },
+            { id: 11, category: "Video", title: "Interview: Prime Minister on Economy", excerpt: "An exclusive interview with the Prime Minister on the state of the economy.", date: "4 hours ago", isPremium: false },
+            { id: 12, category: "Video", title: "Behind the Scenes: Election Campaign", excerpt: "A behind-the-scenes look at the final days of the election campaign.", date: "6 hours ago", isPremium: false },
+            { id: 13, category: "Video", title: "Sports Highlights of the Week", excerpt: "The best sports moments from the past week.", date: "8 hours ago", isPremium: false },
+            { id: 14, category: "Video", title: "Viral Video: Rare Wildlife Sighting", excerpt: "A rare wildlife sighting has gone viral on social media.", date: "10 hours ago", isPremium: false }
+        ];
+
+        function renderArticleCard(article) {
+            const premiumBadge = article.isPremium ? '<span class="premium-badge">Premium</span>' : '';
+            return `
+                <article class="article-card ${article.isPremium ? 'premium-overlay' : ''}">
+                    <img src="assets/article-placeholder.svg" alt="" class="article-image">
+                    <div class="article-body">
+                        ${premiumBadge}
+                        <span class="article-category">${article.category}</span>
+                        <h3 class="article-title"><a href="#">${article.title}</a></h3>
+                        <p class="article-excerpt">${article.excerpt}</p>
+                        <p class="article-meta">${article.date}</p>
+                    </div>
+                </article>
+            `;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const latestGrid = document.querySelector('#video-latest-panel .article-grid');
+            const mostReadGrid = document.querySelector('#video-most-read-panel .article-grid');
+
+            if (latestGrid) {
+                latestGrid.innerHTML = videoArticles.map(renderArticleCard).join('');
+            }
+            if (mostReadGrid) {
+                mostReadGrid.innerHTML = videoMostRead.map(renderArticleCard).join('');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,474 @@
+{
+  "category": "portfolio",
+  "prefix": "PORT",
+  "updated_at": "2026-11-17T05:53:22.672Z",
+  "slots_proposed": [
+    7,
+    8,
+    9,
+    10
+  ],
+  "slots_outstanding": [],
+  "approval_state": "unapproved: approval cells are left empty for the project lead",
+  "runs": [
+    "2026-11-16T21-47-24-007Z-research-PORT-07",
+    "2026-11-17T05-07-10-590Z-research-PORT-10",
+    "2026-11-17T05-24-36-125Z-research-PORT-09",
+    "2026-11-17T05-26-45-965Z-research-PORT-08",
+    "2026-11-17T05-51-36-886Z-research-PORT-08"
+  ],
+  "rows": [
+    {
+      "source_id": "PORT-07",
+      "subcategory": "minimal one-page personal site",
+      "source_name": "Joshua Atkinson",
+      "source_url": "https://joshuatz.com/",
+      "verified_at": "2026-11-16",
+      "verification_method": "HTTP GET by the orchestrator",
+      "verification_result": "verified",
+      "evidence_reference": "pipelines/open-source/research/evidence/PORT-07-http-2026-11-16.json",
+      "source_pages": [
+        {
+          "url": "https://joshuatz.com/",
+          "title": "Home - Joshua Tzucker's Site",
+          "local_file": "index.html"
+        },
+        {
+          "url": "https://joshuatz.com/projects/",
+          "title": "Projects - Joshua Tzucker's Site",
+          "local_file": "projects.html"
+        },
+        {
+          "url": "https://joshuatz.com/projects/applications/",
+          "title": "Projects - applications - Joshua Tzucker's Site",
+          "local_file": "projects-applications.html"
+        },
+        {
+          "url": "https://joshuatz.com/projects/electronics/",
+          "title": "Projects - electronics - Joshua Tzucker's Site",
+          "local_file": "projects-electronics.html"
+        },
+        {
+          "url": "https://joshuatz.com/projects/marketing/",
+          "title": "Projects - marketing - Joshua Tzucker's Site",
+          "local_file": "projects-marketing.html"
+        },
+        {
+          "url": "https://joshuatz.com/projects/other/",
+          "title": "Projects - other - Joshua Tzucker's Site",
+          "local_file": "projects-other.html"
+        },
+        {
+          "url": "https://joshuatz.com/projects/web-stuff/",
+          "title": "Projects - web-stuff - Joshua Tzucker's Site",
+          "local_file": "projects-web-stuff.html"
+        },
+        {
+          "url": "https://joshuatz.com/mini-tools/",
+          "title": "Assorted Mini-Tools - Joshua Tzucker's Site",
+          "local_file": "mini-tools.html"
+        },
+        {
+          "url": "https://joshuatz.com/blog/",
+          "title": "Blog Posts - Joshua Tzucker's Site",
+          "local_file": "blog.html"
+        },
+        {
+          "url": "https://joshuatz.com/projects/applications/git-date-extractor-npm-package-and-cli-tool/",
+          "title": "Git-Date-Extractor NPM Package and CLI Tool",
+          "local_file": "projects-applications-git-date-extractor-npm-package-and-cli-tool.html"
+        },
+        {
+          "url": "https://joshuatz.com/projects/web-stuff/cheatsheets-and-snippets-markdown-powered-gatsby-mini-site/",
+          "title": "Cheatsheets and Snippets - Markdown Powered Gatsby Mini Site",
+          "local_file": "projects-web-stuff-cheatsheets-and-snippets-markdown-powered-gatsby-mini-site.html"
+        },
+        {
+          "url": "https://joshuatz.com/posts/2023/what-makes-svelte-so-great-features-and-comparisons/",
+          "title": "What Makes Svelte So Great - Features and Comparisons",
+          "local_file": "posts-2023-what-makes-svelte-so-great-features-and-comparisons.html"
+        },
+        {
+          "url": "https://joshuatz.com/posts/2023/shell-heredocs-productive-fun-bash-and-beyond/",
+          "title": "Shell Heredocs - for Fun and Profit, in Bash and Beyond",
+          "local_file": "posts-2023-shell-heredocs-productive-fun-bash-and-beyond.html"
+        },
+        {
+          "url": "https://joshuatz.com/all-posts/",
+          "title": "All Posts - Joshua Tzucker's Site",
+          "local_file": "all-posts.html"
+        }
+      ],
+      "key_regions": [
+        "Header",
+        "Navigation",
+        "Content Area",
+        "Footer"
+      ],
+      "key_interactions": [
+        {
+          "name": "Navigation",
+          "evidence": "observed",
+          "notes": "Links present in all fetched pages"
+        },
+        {
+          "name": "Filtering",
+          "evidence": "inferred",
+          "notes": "Category pages exist, but filtering mechanism not explicitly seen in markup snippets"
+        },
+        {
+          "name": "Contact",
+          "evidence": "inferred",
+          "notes": "No form seen, but support-me link exists on detail pages"
+        }
+      ],
+      "complexity": "medium",
+      "stack_clues": "gatsby, svelte, react, nodejs, typescript tags present",
+      "limitations": "None for the mapped pages.",
+      "slot": 7,
+      "category": "portfolio",
+      "model_group": "open-source",
+      "model_id": "unsloth/Qwen3.6-35B-A3B-GGUF",
+      "model_version": "Q4_K_M",
+      "approved_at": "",
+      "approved_by": "",
+      "approval_reference": "",
+      "researched_by": {
+        "model_id": "unsloth/Qwen3.6-35B-A3B-GGUF",
+        "slot": 7
+      },
+      "orchestrator_checks": {
+        "pages_proposed": 14,
+        "pages_without_successful_fetch": [],
+        "page_map_has_index": true,
+        "source_url_fetched_ok": true,
+        "meets_min_pages": true
+      }
+    },
+    {
+      "source_id": "PORT-08",
+      "subcategory": "software developer / engineer",
+      "source_name": "Wes Bos",
+      "source_url": "https://wesbos.com/",
+      "verified_at": "2026-11-17",
+      "verification_method": "HTTP GET by the orchestrator",
+      "verification_result": "verified",
+      "evidence_reference": "pipelines/open-source/research/evidence/PORT-08-http-2026-11-17.json",
+      "source_pages": [
+        {
+          "url": "https://wesbos.com/",
+          "title": "Wes Bos",
+          "local_file": "index.html"
+        },
+        {
+          "url": "https://wesbos.com/courses",
+          "title": "Courses - Wes Bos",
+          "local_file": "courses.html"
+        },
+        {
+          "url": "https://wesbos.com/about",
+          "title": "About - Wes Bos",
+          "local_file": "about.html"
+        },
+        {
+          "url": "https://wesbos.com/blog",
+          "title": "Blog - Wes Bos",
+          "local_file": "blog.html"
+        },
+        {
+          "url": "https://wesbos.com/tips",
+          "title": "Tips - Wes Bos",
+          "local_file": "tips.html"
+        },
+        {
+          "url": "https://wesbos.com/javascript",
+          "title": "Beginner JavaScript Notes & Reference - Wes Bos",
+          "local_file": "javascript.html"
+        },
+        {
+          "url": "https://wesbos.com/speaking-and-training",
+          "title": "Speaking And Training - Wes Bos",
+          "local_file": "speaking-and-training.html"
+        },
+        {
+          "url": "https://wesbos.com/uses",
+          "title": "Uses - Wes Bos",
+          "local_file": "uses.html"
+        },
+        {
+          "url": "https://wesbos.com/contact",
+          "title": "Contact - Wes Bos",
+          "local_file": "contact.html"
+        }
+      ],
+      "key_regions": [
+        "header",
+        "navigation"
+      ],
+      "key_interactions": [
+        {
+          "name": "project filtering on inline data",
+          "evidence": "inferred",
+          "notes": "No filtering controls visible in fetched markup."
+        },
+        {
+          "name": "gallery or lightbox navigation",
+          "evidence": "inferred",
+          "notes": "No gallery markup evident in fetched HTML."
+        },
+        {
+          "name": "responsive navigation",
+          "evidence": "inferred",
+          "notes": "Navigation list present but responsive behavior not verifiable from markup."
+        },
+        {
+          "name": "contact inquiry on inline data",
+          "evidence": "inferred",
+          "notes": "Contact page link present; form not visible in fetched HTML."
+        },
+        {
+          "name": "reduced-motion handling",
+          "evidence": "inferred",
+          "notes": "No prefers-reduced-motion media queries detectable in fetched markup."
+        }
+      ],
+      "complexity": "medium",
+      "stack_clues": "unknown",
+      "limitations": "Hero section, sidebar, and footer groups not visible in the fetched markup; legal pages omitted per guidance; interactive components (filtering, gallery, contact form) not verifiable from static HTML; verification date missing from evidence.",
+      "slot": 8,
+      "category": "portfolio",
+      "model_group": "open-source",
+      "model_id": "unsloth/NVIDIA-Nemotron-3-Super-120B-A12B-GGUF",
+      "model_version": "MXFP4_MOE",
+      "approved_at": "",
+      "approved_by": "",
+      "approval_reference": "",
+      "researched_by": {
+        "model_id": "unsloth/NVIDIA-Nemotron-3-Super-120B-A12B-GGUF",
+        "slot": 8
+      },
+      "orchestrator_checks": {
+        "pages_proposed": 9,
+        "pages_without_successful_fetch": [],
+        "page_map_has_index": true,
+        "source_url_fetched_ok": true,
+        "meets_min_pages": true
+      }
+    },
+    {
+      "source_id": "PORT-09",
+      "subcategory": "motion / 3D designer",
+      "source_name": "Gmunk",
+      "source_url": "https://gmunk.com",
+      "verified_at": "2026-11-17",
+      "verification_method": "HTTP GET by the orchestrator",
+      "verification_result": "verified",
+      "evidence_reference": "pipelines/open-source/research/evidence/PORT-09-http-2026-11-17.json",
+      "source_pages": [
+        {
+          "url": "https://gmunk.com",
+          "title": "GMUNK",
+          "local_file": "index.html"
+        },
+        {
+          "url": "https://gmunk.com/Information",
+          "title": "Information — GMUNK",
+          "local_file": "information.html"
+        },
+        {
+          "url": "https://gmunk.com/Everything",
+          "title": "Everything — GMUNK",
+          "local_file": "everything.html"
+        },
+        {
+          "url": "https://gmunk.com/Collect",
+          "title": "Collect — GMUNK",
+          "local_file": "collect.html"
+        },
+        {
+          "url": "https://gmunk.com/TRON-Ares-Finding-Eve",
+          "title": "TRON: Ares – Finding Eve — GMUNK",
+          "local_file": "tron-ares-finding-eve.html"
+        },
+        {
+          "url": "https://gmunk.com/TRON-Ares-Computer-Vision",
+          "title": "TRON: Ares – Computer Vision — GMUNK",
+          "local_file": "tron-ares-computer-vision.html"
+        },
+        {
+          "url": "https://gmunk.com/Rivian-Borealis-x-Art-Basel",
+          "title": "Rivian – Borealis x Art Basel — GMUNK",
+          "local_file": "rivian-borealis-x-art-basel.html"
+        },
+        {
+          "url": "https://gmunk.com/FUTURE-of-SPACE-Galapagos",
+          "title": "FUTURE of SPACE – Galapagos — GMUNK",
+          "local_file": "future-of-space-galapagos.html"
+        },
+        {
+          "url": "https://gmunk.com/Billie-Eilish-2024-World-Tour",
+          "title": "Billie Eilish – 2024 World Tour — GMUNK",
+          "local_file": "billie-eilish-2024-world-tour.html"
+        }
+      ],
+      "key_regions": [
+        "header",
+        "navigation",
+        "hero",
+        "content bands",
+        "footer"
+      ],
+      "key_interactions": [
+        {
+          "name": "responsive navigation",
+          "evidence": "observed",
+          "notes": ""
+        }
+      ],
+      "complexity": "medium",
+      "stack_clues": "unknown",
+      "limitations": "https://gmunk.com/Work returned a 404 status",
+      "slot": 9,
+      "category": "portfolio",
+      "model_group": "open-source",
+      "model_id": "unsloth/Llama-3.3-70B-Instruct-GGUF",
+      "model_version": "Q8_0",
+      "approved_at": "",
+      "approved_by": "",
+      "approval_reference": "",
+      "researched_by": {
+        "model_id": "unsloth/Llama-3.3-70B-Instruct-GGUF",
+        "slot": 9
+      },
+      "orchestrator_checks": {
+        "pages_proposed": 9,
+        "pages_without_successful_fetch": [],
+        "page_map_has_index": true,
+        "source_url_fetched_ok": true,
+        "meets_min_pages": true
+      }
+    },
+    {
+      "source_id": "PORT-10",
+      "subcategory": "additional distinct software developer / engineer (complexity‑matched reserve)",
+      "source_name": "Kent C. Dodds",
+      "source_url": "https://kentcdodds.com",
+      "verified_at": "2026-11-17",
+      "verification_method": "HTTP GET by the orchestrator",
+      "verification_result": "verified",
+      "evidence_reference": "pipelines/open-source/research/evidence/PORT-10-http-2026-11-17.json",
+      "source_pages": [
+        {
+          "url": "https://kentcdodds.com",
+          "title": "Kent C. Dodds",
+          "local_file": "index.html"
+        },
+        {
+          "url": "https://kentcdodds.com/blog",
+          "title": "The Kent C. Dodds Blog",
+          "local_file": "blog.html"
+        },
+        {
+          "url": "https://kentcdodds.com/talks",
+          "title": "90 talks by Kent all about software development",
+          "local_file": "talks.html"
+        },
+        {
+          "url": "https://kentcdodds.com/courses",
+          "title": "Courses by Kent C. Dodds",
+          "local_file": "courses.html"
+        },
+        {
+          "url": "https://kentcdodds.com/about",
+          "title": "About Kent C. Dodds",
+          "local_file": "about.html"
+        },
+        {
+          "url": "https://kentcdodds.com/contact",
+          "title": "Contact Kent C. Dodds",
+          "local_file": "contact.html"
+        },
+        {
+          "url": "https://kentcdodds.com/resume",
+          "title": "Kent C. Dodds' Resume",
+          "local_file": "resume.html"
+        },
+        {
+          "url": "https://kentcdodds.com/office-hours",
+          "title": "KCD Office Hours",
+          "local_file": "office-hours.html"
+        },
+        {
+          "url": "https://kentcdodds.com/transparency",
+          "title": "Transparency",
+          "local_file": "transparency.html"
+        },
+        {
+          "url": "https://kentcdodds.com/testimonials",
+          "title": "56 testimonials about Kent C. Dodds",
+          "local_file": "testimonials.html"
+        }
+      ],
+      "key_regions": [
+        "header",
+        "navigation",
+        "hero (inferred)",
+        "content band",
+        "sidebar (inferred)",
+        "footer"
+      ],
+      "key_interactions": [
+        {
+          "name": "project filtering",
+          "evidence": "inferred",
+          "notes": "No project‑index page was fetched; cannot confirm."
+        },
+        {
+          "name": "gallery / lightbox navigation",
+          "evidence": "inferred",
+          "notes": "No gallery pages observed in the fetched set."
+        },
+        {
+          "name": "responsive navigation",
+          "evidence": "inferred",
+          "notes": "Responsive behavior not visible in static markup."
+        },
+        {
+          "name": "contact inquiry",
+          "evidence": "inferred",
+          "notes": "Contact page exists but form markup not inspected."
+        },
+        {
+          "name": "reduced‑motion handling",
+          "evidence": "inferred",
+          "notes": "No CSS or script evidence available."
+        }
+      ],
+      "complexity": "medium",
+      "stack_clues": "unknown",
+      "limitations": "Pages such as /search, /login, and other utility endpoints were fetched but are not part of the portfolio content architecture and therefore omitted from the page map.",
+      "slot": 10,
+      "category": "portfolio",
+      "model_group": "open-source",
+      "model_id": "unsloth/gpt-oss-120b-GGUF",
+      "model_version": "F16",
+      "approved_at": "",
+      "approved_by": "",
+      "approval_reference": "",
+      "researched_by": {
+        "model_id": "unsloth/gpt-oss-120b-GGUF",
+        "slot": 10
+      },
+      "orchestrator_checks": {
+        "pages_proposed": 10,
+        "pages_without_successful_fetch": [],
+        "page_map_has_index": true,
+        "source_url_fetched_ok": true,
+        "meets_min_pages": true
+      }
+    }
+  ],
+  "orchestrator_corrections": [
+    "2026-11-17: verified_at reset to the HTTP evidence date; see CORRECTIONS-2026-11-17-dates.json"
+  ]
+}

@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>StyleScout – Shopping</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to content</a>
+<header data-section="header" data-component="site-header">
+  <div class="site-logo">StyleScout</div>
+  <nav data-section="navigation" data-component="primary-nav">
+    <a href="index.html">Home</a>
+    <a href="fashion.html">Fashion</a>
+    <a href="beauty.html">Beauty</a>
+    <a href="shopping.html" aria-current="page">Shopping</a>
+    <a href="summer-lookbook-2026.html">Lookbook</a>
+    <a href="money-diary.html">Money Diary</a>
+    <a href="horoscope.html">Horoscope</a>
+    <a href="podcasts.html">Podcasts</a>
+    <form>
+      <label for="site-search" class="visually-hidden">Search site</label>
+      <input type="search" id="site-search" placeholder="Search…" aria-label="Search site">
+    </form>
+  </nav>
+</header>
+<main id="main-content" data-section="hero">
+  <section data-component="hero" class="hero">
+    <svg aria-label="Placeholder hero image" width="100%" height="200" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg"><rect width="800" height="400" fill="#ccc"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#666" font-size="24">Shopping Hero</text></svg>
+    <h1>Shop the Edit</h1>
+    <p>Curated picks for fashion, beauty, and home.</p>
+  </section>
+</main>
+<section data-section="content-band" data-component="content-band" class="content-band">
+  <h2>Featured Products</h2>
+  <div data-component="card-grid" class="card-grid" id="shopping-grid"></div>
+</section>
+<aside data-section="sidebar" data-component="sidebar">
+  <h3>Shopping Guides</h3>
+  <ul>
+    <li><a href="#">Spring Capsule Wardrobe</a></li>
+    <li><a href="#">Beauty Essentials Under $30</a></li>
+    <li><a href="#">Eco‑Friendly Home Swaps</a></li>
+  </ul>
+</aside>
+<footer data-section="footer" data-component="site-footer">
+  <p>&copy; 2026 StyleScout. All rights reserved.</p>
+  <form class="newsletter-form" aria-label="Subscribe to newsletter">
+    <label for="newsletter-email" class="visually-hidden">Email address</label>
+    <input type="email" id="newsletter-email" placeholder="you@example.com" required>
+    <button type="submit">Subscribe</button>
+  </form>
+</footer>
+<script>
+  window.pageData = {shoppingItems};
+</script>
+<script src="js/main.js"></script>
+</body>
+</html>

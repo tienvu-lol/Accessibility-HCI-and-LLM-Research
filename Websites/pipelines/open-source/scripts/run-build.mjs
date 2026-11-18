@@ -23,8 +23,14 @@ const USAGE = `Usage: node run-build.mjs <ID> --operator "name" [options]
   --dry-run       print the task that would be sent and exit; no API call, no files
   --max-turns N   override config.execution.max_build_turns
   --repairs N     override config.execution.max_repair_rounds (0 disables correction)
+  --trim N        exchanges of build history the model keeps (default 8); lower it for a server
+                  with a small context, which otherwise fails with "Context size has been exceeded"
   --no-qc         generate only, skip QC entirely; gates stay not-tested
   --skip-keys     readiness check without requiring the API key present (dry runs only)`;
+
+// Consecutive turns that may write no files before a build is treated as stalled; see the guard in
+// the build loop. Three gives a model two chances to resume emitting before the run is stopped.
+const STALL_TURNS = 3;
 
 const DOC_FILES = ['README.md', 'fidelity-notes.md', 'component-inventory.json', 'generation-metadata.json'];
 const CORE_FILES = ['index.html', '404.html', 'css/styles.css', 'js/main.js'];
@@ -34,7 +40,7 @@ const gitRevision = root => {
   return r.status === 0 ? r.stdout.trim() : null;
 };
 
-function copyTree(from, to) {
+export function copyTree(from, to) {
   fs.mkdirSync(to, {recursive: true});
   for (const entry of fs.readdirSync(from, {withFileTypes: true})) {
     const src = path.join(from, entry.name), dest = path.join(to, entry.name);
@@ -52,7 +58,7 @@ export function missingDeliverables(siteDir, pageMap) {
   return wanted.filter(f => !present.has(f));
 }
 
-function taskContext(setup, {id, category, row, model, runID, snapshots, operator, revision}) {
+export function taskContext(setup, {id, category, row, model, runID, snapshots, operator, revision}) {
   const slot = slotOf(id);
   const pageMap = JSON.parse(row.source_pages);
   return {
@@ -118,7 +124,7 @@ ${JSON.stringify(context, null, 2)}
 Start with the plan only — no file blocks yet. List: the local pages from \`approved_page_map\` in build order; the shared components and which pages use them; the inline sample datasets with their row counts; the interactions you will implement, each tied to an entry in \`observed_key_interactions\` or marked as an intentional addition; and anything in the page map you think you cannot build and why. Keep it under 400 words and end with \`=== STATUS: CONTINUE ===\`.`;
 }
 
-function continuePrompt({written, rejected, missing, turn, maxTurns}) {
+export function continuePrompt({written, rejected, missing, turn, maxTurns}) {
   const lines = [`## Exchange ${turn} of at most ${maxTurns}`];
   if (written.length) lines.push(`Written so far (${written.length}): ${written.join(', ')}`);
   if (rejected.length) {
@@ -130,7 +136,7 @@ function continuePrompt({written, rejected, missing, turn, maxTurns}) {
   return lines.join('\n');
 }
 
-function repairPrompt(setup, {qc, round, maxRounds}) {
+export function repairPrompt(setup, {qc, round, maxRounds}) {
   const failures = [...new Set(qc.failures)];
   const shown = failures.slice(0, 60);
   return `${fs.readFileSync(path.join(setup.pipeline, 'prompts/repair.md'), 'utf8')}
@@ -149,7 +155,7 @@ ${qc.warnings?.length ? `Warnings (not failures, but worth a look):\n${[...new S
 Resend every file you change, complete. End with \`=== STATUS: COMPLETE ===\` and a list of what you changed.`;
 }
 
-function finalizeProvenance({siteDir, context, qc, usage, runID, interactionsReviewed}) {
+export function finalizeProvenance({siteDir, context, qc, usage, runID, interactionsReviewed}) {
   const file = path.join(siteDir, 'generation-metadata.json');
   let existing = {};
   let wasValid = false;
@@ -184,7 +190,7 @@ function finalizeProvenance({siteDir, context, qc, usage, runID, interactionsRev
   return {wrote: true, modelEmittedValidMetadata: wasValid};
 }
 
-export async function runBuild({id, operator, dryRun = false, maxTurns, repairs, noQC = false, skipKeys = false, root} = {}) {
+export async function runBuild({id, operator, dryRun = false, maxTurns, repairs, noQC = false, skipKeys = false, root, trim} = {}) {
   const setup = loadSetup(root);
   const setupErrors = validateSetup(setup);
   if (setupErrors.length) throw new Error('Pipeline validation failed:\n' + setupErrors.join('\n'));
@@ -209,6 +215,10 @@ export async function runBuild({id, operator, dryRun = false, maxTurns, repairs,
 
   const turnBudget = maxTurns ?? setup.config.execution.max_build_turns;
   const repairBudget = repairs ?? setup.config.execution.max_repair_rounds;
+  // How many exchanges of build history the model keeps. Default 8. A served context smaller than
+  // the conversation forces this down: slot 09's endpoint reports n_ctx 48128 per slot, and every
+  // repair request there failed with HTTP 500 "Context size has been exceeded." Recorded per run.
+  const trimKeep = trim ?? 8;
   const revision = gitRevision(setup.root);
 
   const runID = `${stamp()}-build-${id}`;
@@ -247,7 +257,7 @@ export async function runBuild({id, operator, dryRun = false, maxTurns, repairs,
     model_group: 'open-source', model: modelRecord(model), operator,
     status: 'running', prepared_at: nowISO(), generation_started_at: nowISO(), generation_completed_at: null,
     tool_access: 'chat-completions API only: no browsing, no shell, no filesystem. The orchestrator wrote every file and ran every check.',
-    budget: {max_build_turns: turnBudget, max_repair_rounds: repairBudget, max_tokens_per_request: model.params.max_tokens, temperature: model.params.temperature},
+    budget: {max_build_turns: turnBudget, max_repair_rounds: repairBudget, max_tokens_per_request: model.params.max_tokens, temperature: model.params.temperature, history_exchanges_kept: trimKeep},
     approved_source: context.approved_source, approved_page_map: context.approved_page_map,
     protocol_snapshots: snapshots.map(({source, ...s}) => s),
     turns: [], rejected_files: [], qc_runs: [], repair_rounds: [], retries: [], human_edits: [],
@@ -291,15 +301,30 @@ export async function runBuild({id, operator, dryRun = false, maxTurns, repairs,
 
   try {
     let applied = await emit(task, 'plan');
+    // Stall guard. A model that stops emitting files and never sends the COMPLETE sentinel cannot
+    // finish the loop, so without this the run grinds to turnBudget producing nothing: on
+    // 2026-11-17 one slot-08 build spent 55 turns and 1.9M tokens with 4 productive turns. If
+    // several consecutive turns write no files and nothing required is missing, the deliverable is
+    // as complete as it is going to get, so stop and record the stall instead of burning the budget.
+    let barren = 0;
     for (let turn = 2; turn <= turnBudget; turn++) {
       const missing = missingDeliverables(siteDir, context.approved_page_map);
       const rejected = applied.results.filter(r => !r.ok).map(r => ({path: r.path, reason: r.reason}));
       if (applied.status === 'COMPLETE') claimedComplete = true;
       if (applied.status === 'COMPLETE' && !missing.length && !rejected.length) break;
+      barren = applied.results.some(r => r.ok) ? 0 : barren + 1;
+      if (barren >= STALL_TURNS && !missing.length && !rejected.length) {
+        run.stalled = {
+          at_turn: agent.turns.length, barren_turns: barren,
+          note: `Stopped early: ${barren} consecutive turns wrote no file while no required deliverable was missing and nothing was rejected, and the model never sent the COMPLETE sentinel. The replica is treated as delivered at this point; continuing only consumes the turn budget.`,
+        };
+        save();
+        break;
+      }
       applied = await emit(continuePrompt({
         written: [...state.written.keys()], rejected, missing, turn, maxTurns: turnBudget,
       }), `files-${turn}`);
-      agent.trim(8);
+      agent.trim(trimKeep);
     }
     const missingAtEnd = missingDeliverables(siteDir, context.approved_page_map);
     if (applied.status === 'COMPLETE') claimedComplete = true;
@@ -326,9 +351,11 @@ export async function runBuild({id, operator, dryRun = false, maxTurns, repairs,
       run.qc_runs.push(qc);
       save();
       for (let round = 1; round <= repairBudget && qc.executed && !qc.passed; round++) {
+        agent.trim(trimKeep);
         const applied2 = await emit(repairPrompt(setup, {qc, round, maxRounds: repairBudget}), `repair-${round}`);
         for (let extra = 1; extra <= 4; extra++) {
           if (applied2.status === 'COMPLETE' && !applied2.results.some(r => !r.ok)) break;
+          if (!applied2.results.some(r => r.ok)) break;   // repair turn wrote nothing; asking again does not help
           const rejected = applied2.results.filter(r => !r.ok).map(r => ({path: r.path, reason: r.reason}));
           Object.assign(applied2, await emit(continuePrompt({
             written: [...state.written.keys()], rejected,
@@ -385,7 +412,7 @@ export async function runBuild({id, operator, dryRun = false, maxTurns, repairs,
 if (isMain(import.meta)) {
   try {
     const {positional, flags} = cliArgs(process.argv.slice(2), {
-      operator: 'value', 'dry-run': 'boolean', 'max-turns': 'value', repairs: 'value', 'no-qc': 'boolean', 'skip-keys': 'boolean',
+      operator: 'value', 'dry-run': 'boolean', 'max-turns': 'value', repairs: 'value', 'no-qc': 'boolean', 'skip-keys': 'boolean', trim: 'value',
     });
     if (positional.length !== 1) throw new Error(USAGE);
     const result = await runBuild({
@@ -393,6 +420,7 @@ if (isMain(import.meta)) {
       dryRun: Boolean(flags['dry-run']),
       maxTurns: flags['max-turns'] ? Number(flags['max-turns']) : undefined,
       repairs: flags.repairs !== undefined ? Number(flags.repairs) : undefined,
+      trim: flags.trim !== undefined ? Number(flags.trim) : undefined,
       noQC: Boolean(flags['no-qc']), skipKeys: Boolean(flags['skip-keys']),
     });
     if (result.dryRun) {

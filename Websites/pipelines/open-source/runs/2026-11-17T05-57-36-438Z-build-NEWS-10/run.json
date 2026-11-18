@@ -1,0 +1,351 @@
+{
+  "run_id": "2026-11-17T05-57-36-438Z-build-NEWS-10",
+  "phase": "build",
+  "target": "NEWS-10",
+  "category": "news",
+  "slot": 10,
+  "model_group": "open-source",
+  "model": {
+    "model_id": "unsloth/gpt-oss-120b-GGUF",
+    "model_version": "F16",
+    "model_provider_or_runtime": "vt-arc-falcon-llamacpp (OpenAI-compatible chat completions at http://localhost:8083/v1)",
+    "weights_url": "https://huggingface.co/unsloth/gpt-oss-120b-GGUF",
+    "license": "apache-2.0",
+    "open_weights": true,
+    "eligibility_note": "Open weights; licence apache-2.0 as published on huggingface.co/unsloth/gpt-oss-120b-GGUF and described on the base model card openai/gpt-oss-120b as a permissive Apache 2.0 licence, both read 2026-11-17 by the orchestrator. Apache-2.0 is OSI-approved, so this slot qualifies as open-source as well as open-weight. Quantisation F16. Served self-hosted via llama.cpp on VT ARC Falcon node fal039:53013 over an SSH tunnel on localhost:8083; no third-party inference provider.",
+    "params": {
+      "temperature": 0.3,
+      "max_tokens": 32000
+    }
+  },
+  "operator": "Samhith Varma Yallamraju",
+  "status": "completed",
+  "prepared_at": "2026-11-17T05:57:36.442Z",
+  "generation_started_at": "2026-11-17T05:57:36.442Z",
+  "generation_completed_at": "2026-11-17T06:00:05.332Z",
+  "tool_access": "chat-completions API only: no browsing, no shell, no filesystem. The orchestrator wrote every file and ran every check.",
+  "budget": {
+    "max_build_turns": 28,
+    "max_repair_rounds": 3,
+    "max_tokens_per_request": 32000,
+    "temperature": 0.3
+  },
+  "approved_source": {
+    "source_name": "Los Angeles Times",
+    "source_url": "https://www.latimes.com/",
+    "verified_at": "2026-11-17",
+    "verification_method": "HTTP GET by the orchestrator",
+    "verification_result": "verified",
+    "evidence_reference": "pipelines/open-source/research/evidence/NEWS-10-http-2026-11-17.json",
+    "complexity": "medium",
+    "stack_clues": "unknown",
+    "limitations": "[orchestrator-authored: the research model stated no limitations] All 9 mapped pages were confirmed by HTTP GET on 2026-11-17. All evidence is HTTP-fetched markup; no page was rendered, so appearance and script-driven behaviour are unverified, and interactions marked \"inferred\" were not observed in the markup.",
+    "approved_at": "2026-11-17",
+    "approved_by": "Samhith Varma Yallamraju",
+    "approval_reference": "Project lead approval of all twelve slot-10 sources given 2026-11-17 in the Claude Code orchestration session; see research/NEWS-10.md and research/proposals/NEWS-rows.json"
+  },
+  "approved_page_map": [
+    {
+      "url": "https://www.latimes.com/",
+      "title": "News from California, across the nation and world - Los Angeles Times",
+      "local_file": "index.html"
+    },
+    {
+      "url": "https://www.latimes.com/politics",
+      "title": "Politics - Los Angeles Times",
+      "local_file": "politics-index.html"
+    },
+    {
+      "url": "https://www.latimes.com/business",
+      "title": "Business - Los Angeles Times",
+      "local_file": "business-index.html"
+    },
+    {
+      "url": "https://www.latimes.com/business/technology",
+      "title": "Technology & the Internet - Los Angeles Times",
+      "local_file": "technology-index.html"
+    },
+    {
+      "url": "https://www.latimes.com/world-nation",
+      "title": "World & Nation News: Breaking Stories, Politics & Global Events - Los Angeles Times",
+      "local_file": "world-index.html"
+    },
+    {
+      "url": "https://www.latimes.com/science",
+      "title": "Science & Medicine - Los Angeles Times",
+      "local_file": "science-index.html"
+    },
+    {
+      "url": "https://www.latimes.com/environment",
+      "title": "Climate & Environment - Los Angeles Times",
+      "local_file": "environment-index.html"
+    },
+    {
+      "url": "https://www.latimes.com/entertainment-arts",
+      "title": "Entertainment & Arts - Los Angeles Times",
+      "local_file": "entertainment-arts-index.html"
+    },
+    {
+      "url": "https://www.latimes.com/food",
+      "title": "Food - Los Angeles Times",
+      "local_file": "food-index.html"
+    }
+  ],
+  "protocol_snapshots": [
+    {
+      "path": "Rules.md",
+      "sha256": "04b1c3e38b76f2aff3aef869d67370bb4532cd8f9ab5e22ac8276f26cbb859bf"
+    },
+    {
+      "path": "MODEL_ALLOCATION.md",
+      "sha256": "7e9487530a6e80b35af48d0691951dafc2fffea39798c81a3c49203909148d30"
+    },
+    {
+      "path": "pipelines/open-source/config.json",
+      "sha256": "e5c7666dbdc7c302e54c0c94c946dcd01d64992b89a56df7ce1ee272dd488edf"
+    },
+    {
+      "path": "pipelines/open-source/categories.json",
+      "sha256": "8180966e55daa24799e51106645e93fd5807dde470765ab8b3b38d3f922c867b"
+    },
+    {
+      "path": "pipelines/open-source/prompts/system.md",
+      "sha256": "61bc24a57de14bd6a662cd6b5f98d0cfc57bf47e187fc58a97831bf1f272b4ee"
+    },
+    {
+      "path": "pipelines/open-source/prompts/build.md",
+      "sha256": "6096ab8b698af7a99d8ddaf1534cc95f41844d1d00cdd1fce740123b3146ab6a"
+    },
+    {
+      "path": "pipelines/open-source/prompts/repair.md",
+      "sha256": "8a84e51995736607b3efa6f5b2d76e52692423c2c26b03409afb4afa3c6586d6"
+    },
+    {
+      "path": "pipelines/open-source/models.json",
+      "sha256": "f02e4efcab2732e1736a96e02459eef895400d01c2888b63c7cded93435f36c4"
+    },
+    {
+      "path": "metadata/source-inventories/news.csv",
+      "sha256": "cfcb0a164bc0a130001103edd698d18c5cfd08b2a391d3f3b3bd503a6b5a02b7"
+    },
+    {
+      "path": "metadata/assignments.csv",
+      "sha256": "dfedc1b7cf6b30895f785bd27cd54f2d4ae25f04c9a5613d0fea5a36b081526b"
+    }
+  ],
+  "turns": [
+    {
+      "turn": 1,
+      "label": "plan",
+      "status_line": "CONTINUE",
+      "prose_chars": 3467,
+      "files_written": [],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 1264,
+        "prompt_tokens": 4663,
+        "total_tokens": 5927,
+        "prompt_tokens_details": {
+          "cached_tokens": 597
+        }
+      },
+      "at": "2026-11-17T05:57:49.286Z"
+    },
+    {
+      "turn": 2,
+      "label": "files-2",
+      "status_line": "CONTINUE",
+      "prose_chars": 0,
+      "files_written": [
+        "css/styles.css",
+        "js/main.js",
+        "index.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 4113,
+        "prompt_tokens": 5608,
+        "total_tokens": 9721,
+        "prompt_tokens_details": {
+          "cached_tokens": 4658
+        }
+      },
+      "at": "2026-11-17T05:58:28.705Z"
+    },
+    {
+      "turn": 3,
+      "label": "files-3",
+      "status_line": "COMPLETE",
+      "prose_chars": 0,
+      "files_written": [
+        "404.html",
+        "politics-index.html",
+        "business-index.html",
+        "technology-index.html",
+        "world-index.html",
+        "science-index.html",
+        "environment-index.html",
+        "entertainment-arts-index.html",
+        "food-index.html",
+        "README.md",
+        "fidelity-notes.md",
+        "component-inventory.json",
+        "generation-metadata.json"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 8570,
+        "prompt_tokens": 9641,
+        "total_tokens": 18211,
+        "prompt_tokens_details": {
+          "cached_tokens": 5603
+        }
+      },
+      "at": "2026-11-17T05:59:53.681Z"
+    },
+    {
+      "turn": 4,
+      "label": "repair-1",
+      "status_line": "COMPLETE",
+      "prose_chars": 229,
+      "files_written": [
+        "assets/placeholder.svg"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 279,
+        "prompt_tokens": 19014,
+        "total_tokens": 19293,
+        "prompt_tokens_details": {
+          "cached_tokens": 9636
+        }
+      },
+      "at": "2026-11-17T06:00:02.025Z"
+    }
+  ],
+  "rejected_files": [],
+  "qc_runs": [
+    {
+      "started_at": "2026-11-17T05:59:53.693Z",
+      "completed_at": "2026-11-17T05:59:57.481Z",
+      "exit_code": 1,
+      "executed": true,
+      "passed": false,
+      "outcome": "fail",
+      "failures": [
+        "failed request @1280 index.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-10/assets/placeholder.svg",
+        "console error @1280 index.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @375 index.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-10/assets/placeholder.svg",
+        "console error @375 index.html: Failed to load resource: net::ERR_FILE_NOT_FOUND"
+      ],
+      "failure_count": 4,
+      "warnings": [],
+      "axe": {},
+      "pages": 10,
+      "files": 16,
+      "qc_tool_sha256": "e9be905d19e7181e30d8291bcb1511d4469bdc9e36c20c0efe21e2d3fcf54513",
+      "report": "qc-initial-2026-11-17T05-59-53-693Z.json",
+      "log": "qc-initial-2026-11-17T05-59-53-693Z.log",
+      "stdout_tail": "QC /Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-10\npages=10 files=16 failures=4 warnings=0\nFAIL failed request @1280 index.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-10/assets/placeholder.svg\nFAIL console error @1280 index.html: Failed to load resource: net::ERR_FILE_NOT_FOUND\nFAIL failed request @375 index.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-10/assets/placeholder.svg\nFAIL console error @375 index.html: Failed to load resource: net::ERR_FILE_NOT_FOUND\n",
+      "note": null
+    },
+    {
+      "started_at": "2026-11-17T06:00:02.025Z",
+      "completed_at": "2026-11-17T06:00:05.332Z",
+      "exit_code": 0,
+      "executed": true,
+      "passed": true,
+      "outcome": "pass",
+      "failures": [],
+      "failure_count": 0,
+      "warnings": [],
+      "axe": {},
+      "pages": 10,
+      "files": 17,
+      "qc_tool_sha256": "e9be905d19e7181e30d8291bcb1511d4469bdc9e36c20c0efe21e2d3fcf54513",
+      "report": "qc-repair-1-2026-11-17T06-00-02-025Z.json",
+      "log": "qc-repair-1-2026-11-17T06-00-02-025Z.log",
+      "stdout_tail": "QC /Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-10\npages=10 files=17 failures=0 warnings=0\n",
+      "note": null
+    }
+  ],
+  "repair_rounds": [
+    {
+      "round": 1,
+      "before": {
+        "outcome": "fail",
+        "failures": 4
+      },
+      "after": {
+        "outcome": "pass",
+        "failures": 0
+      },
+      "files_changed": [
+        "assets/placeholder.svg"
+      ],
+      "at": "2026-11-17T06:00:05.332Z"
+    }
+  ],
+  "retries": [],
+  "human_edits": [
+    {
+      "by": "orchestrator script",
+      "at": "2026-11-17T06:00:05.332Z",
+      "what": "Wrote the model's emitted files, normalized generation-metadata.json provenance fields, and set validation_summary from the recorded QC run. No site markup, style or script was authored or edited by hand."
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 38926,
+    "completion_tokens": 14226,
+    "total_tokens": 53152,
+    "requests": 4,
+    "retries": 0
+  },
+  "errors": [],
+  "outputs": {
+    "site": "news/open-source/NEWS-10",
+    "transcript": "pipelines/open-source/runs/2026-11-17T05-57-36-438Z-build-NEWS-10/transcript.json"
+  },
+  "delivered": {
+    "files": [
+      "404.html",
+      "README.md",
+      "business-index.html",
+      "component-inventory.json",
+      "css/styles.css",
+      "entertainment-arts-index.html",
+      "environment-index.html",
+      "fidelity-notes.md",
+      "food-index.html",
+      "generation-metadata.json",
+      "index.html",
+      "js/main.js",
+      "politics-index.html",
+      "science-index.html",
+      "technology-index.html",
+      "world-index.html"
+    ],
+    "file_count": 16,
+    "bytes": 46198,
+    "pages_in_map": 9,
+    "missing_required": [],
+    "model_claimed_complete": true,
+    "delivered_complete": true,
+    "turns_used": 3,
+    "turn_budget": 28
+  },
+  "initial_artifact": "pipelines/open-source/runs/2026-11-17T05-57-36-438Z-build-NEWS-10/initial",
+  "provenance": {
+    "wrote": true,
+    "modelEmittedValidMetadata": true
+  },
+  "acceptance": "not accepted: a QC result is not acceptance, and interaction review plus human acceptance happen outside this script"
+}

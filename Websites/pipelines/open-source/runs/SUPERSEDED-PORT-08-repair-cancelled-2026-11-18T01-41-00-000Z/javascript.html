@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>JavaScript Notes – Ava Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header data-section="header" data-component="site-header" class="site-width">
+    <h1 class="logo" data-component="site-logo">Ava Portfolio</h1>
+    <button id="nav-toggle" class="nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Open main menu">☰</button>
+    <nav id="primary-nav" data-section="navigation" data-component="primary-nav" class="site-width">
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="tips.html">Tips</a></li>
+        <li><a href="javascript.html">JavaScript</a></li>
+        <li><a href="speaking-and-training.html">Speaking &amp; Training</a></li>
+        <li><a href="uses.html">Uses</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content" data-section="main">
+    <section data-component="page-title">
+      <h1>JavaScript Notes &amp; Reference</h1>
+    </section>
+
+    <section data-component="js-reference">
+      <h2>Modern JavaScript Essentials</h2>
+      <article data-component="js-note">
+        <h3>Template Literals</h3>
+        <p>Use back‑ticks for multi‑line strings and embedded expressions.</p>
+        <pre><code>\`Hello, ${name}! You have ${count} messages.\`</code></pre>
+      </article>
+
+      <article data-component="js-note">
+        <h3>Arrow Functions</h3>
+        <p>Shorter syntax; lexical <code>this</code> binding.</p>
+        <pre><code>const double = x => x * 2;</code></pre>
+      </article>
+
+      <article data-component="js-note">
+        <h3>Async / Await</h3>
+        <p>Write asynchronous code that looks synchronous.</p>
+        <pre><code>async function fetchData() {
+  const resp = await fetch('/data.json');
+  return await resp.json();
+}</code></pre>
+      </article>
+
+      <article data-component="js-note">
+        <h3>Destructuring</h3>
+        <p>Extract values from arrays or objects.</p>
+        <pre><code>const [first, second] = [10, 20];
+const {title, author} = book;</code></pre>
+      </article>
+
+      <article data-component="js-note">
+        <h3>Spread &amp; Rest</h3>
+        <p>Expand or collect elements.</p>
+        <pre><code>const copy = [...arr];
+function sum(...nums) { return nums.reduce((a,b)=>a+b,0); }</code></pre>
+      </article>
+
+      <article data-component="js-note">
+        <h3>Modules (ESM)</h3>
+        <p>Export and import code between files.</p>
+        <pre><code>// utils.js
+export function formatDate(d) { /* … */ }
+
+// main.js
+import {formatDate} from './utils.js';
+</code></pre>
+      </article>
+    </section>
+  </main>
+
+  <footer data-section="footer" data-component="site-footer" class="site-width">
+    <p>&copy; 2026 Ava Portfolio. All rights reserved.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

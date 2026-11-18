@@ -1,0 +1,68 @@
+{
+  "schema_version": "1.0",
+  "declared_at": "2026-11-17T15:12:21.284Z",
+  "declared_by": "Samhith Varma Yallamraju",
+  "slots": {
+    "7": {
+      "model_id": "unsloth/Qwen3.6-35B-A3B-GGUF",
+      "model_version": "Q4_K_M",
+      "weights_url": "https://huggingface.co/unsloth/Qwen3.6-35B-A3B-GGUF",
+      "license": "apache-2.0",
+      "open_weights": true,
+      "eligibility_note": "Open weights; licence apache-2.0 as published on huggingface.co/unsloth/Qwen3.6-35B-A3B-GGUF and on the Qwen/Qwen3.6-35B-A3B base model card, both read 2026-11-16 by the orchestrator. Quantisation Q4_K_M (UD-Q4_K_M) as reported by the serving session. Served self-hosted via llama.cpp on the VT ARC Falcon cluster over an SSH tunnel on localhost:8080; no third-party inference provider. Serving history for this slot, same model and quant throughout: node fal039:39247 (2026-11-16, auto-terminated on idle; the eleven slot-07 research runs used it), node fal045:34691 (2026-11-17, nine slot-07 builds; session ended), node fal047:45317 (2026-11-17, current). Thinking/reasoning output left enabled as the model ships, by project decision; max_tokens 32000 because reasoning shares the completion budget. Apache-2.0 is OSI-approved, so this slot is open-source as well as open-weight.",
+      "provider": "vt-arc-falcon-llamacpp",
+      "base_url": "http://localhost:8080/v1",
+      "api_key_env": "OS_SLOT_07_API_KEY",
+      "params": {
+        "temperature": 0.3,
+        "max_tokens": 32000
+      }
+    },
+    "8": {
+      "model_id": "unsloth/NVIDIA-Nemotron-3-Super-120B-A12B-GGUF",
+      "model_version": "MXFP4_MOE",
+      "weights_url": "https://huggingface.co/unsloth/NVIDIA-Nemotron-3-Super-120B-A12B-GGUF",
+      "license": "nvidia-nemotron-open-model-license",
+      "open_weights": true,
+      "eligibility_note": "Open weights. Licence is the NVIDIA Nemotron Open Model License (HF tag nvidia-nemotron-open-model-license), read 2026-11-17 by the orchestrator on the quant repo and the base model card nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-BF16. A vendor open-model licence, NOT OSI-approved: this slot is open-weight, not open-source. Quantisation MXFP4_MOE. Served self-hosted via llama.cpp on VT ARC Falcon over an SSH tunnel on localhost:8081. Serving history, same model and quant: fal052:50413 (2026-11-17, twelve slot-08 research runs and four builds; session ended), fal039:43471 (current).",
+      "provider": "vt-arc-falcon-llamacpp",
+      "base_url": "http://localhost:8081/v1",
+      "api_key_env": "OS_SLOT_08_API_KEY",
+      "params": {
+        "temperature": 0.3,
+        "max_tokens": 32000
+      }
+    },
+    "9": {
+      "model_id": "unsloth/Llama-3.3-70B-Instruct-GGUF",
+      "model_version": "Q8_0",
+      "weights_url": "https://huggingface.co/unsloth/Llama-3.3-70B-Instruct-GGUF",
+      "license": "llama3.3-community",
+      "open_weights": true,
+      "eligibility_note": "Open weights. Licence is the Llama 3.3 Community License Agreement (HF licence tag llama3.3), read 2026-11-17 by the orchestrator on the quant repo and the Meta Llama 3.3 model card. A custom community licence with acceptable-use and scale conditions, NOT OSI-approved: this slot is open-weight, not open-source. Quantisation Q8_0. Served self-hosted via llama.cpp on VT ARC Falcon over an SSH tunnel on localhost:8082. Serving history, same model and quant: fal034:42003 (2026-11-17, twelve slot-09 research runs and one build; session ended), fal052:49161 (current).",
+      "provider": "vt-arc-falcon-llamacpp",
+      "base_url": "http://localhost:8082/v1",
+      "api_key_env": "OS_SLOT_09_API_KEY",
+      "params": {
+        "temperature": 0.3,
+        "max_tokens": 32000
+      }
+    },
+    "10": {
+      "model_id": "unsloth/gpt-oss-120b-GGUF",
+      "model_version": "F16",
+      "weights_url": "https://huggingface.co/unsloth/gpt-oss-120b-GGUF",
+      "license": "apache-2.0",
+      "open_weights": true,
+      "eligibility_note": "Open weights; licence apache-2.0 as published on huggingface.co/unsloth/gpt-oss-120b-GGUF and described on the base model card openai/gpt-oss-120b as a permissive Apache 2.0 licence, both read 2026-11-17 by the orchestrator. Apache-2.0 is OSI-approved, so this slot qualifies as open-source as well as open-weight. Quantisation F16. Served self-hosted via llama.cpp on VT ARC Falcon node fal039:53013 over an SSH tunnel on localhost:8083; no third-party inference provider.",
+      "provider": "vt-arc-falcon-llamacpp",
+      "base_url": "http://localhost:8083/v1",
+      "api_key_env": "OS_SLOT_10_API_KEY",
+      "params": {
+        "temperature": 0.3,
+        "max_tokens": 32000
+      }
+    }
+  },
+  "note": "Operator declaration of the open-weight model used for each slot. Keys live in the environment variables named by api_key_env and are never stored here."
+}

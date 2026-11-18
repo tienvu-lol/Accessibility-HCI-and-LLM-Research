@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gift Cards | FreshBite Cafe</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  
+  <header data-component="site-header" class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">FreshBite Cafe</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
+        &#9776;
+      </button>
+      <nav data-component="primary-nav" id="primary-nav" class="primary-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="locations.html">Locations</a></li>
+          <li><a href="gift-cards.html">Gift Cards</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="support.html">Support</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section data-section="hero" class="hero">
+      <div class="container">
+        <h1>Give the Gift of Freshness</h1>
+        <p>Share the love of healthy, delicious meals with friends and family.</p>
+      </div>
+    </section>
+
+    <section data-section="balance-check" class="container">
+      <h2>Check Your Balance</h2>
+      <form id="gift-card-form">
+        <label for="gift-card-number">Card Number</label>
+        <input type="text" id="gift-card-number" placeholder="Enter card number" required>
+        
+        <label for="gift-card-pin">PIN</label>
+        <input type="password" id="gift-card-pin" placeholder="Enter PIN" required>
+        
+        <button type="submit" class="btn">Check Balance</button>
+      </form>
+      <div id="gift-card-result" role="alert"></div>
+    </section>
+
+    <section data-section="buy-gift-cards" class="container">
+      <h2>Buy Gift Cards</h2>
+      <div class="card-grid">
+        <article class="card">
+          <div class="card-body">
+            <h3 class="card-title">$25 Gift Card</h3>
+            <p>Perfect for a quick lunch or coffee.</p>
+            <p><strong>$25.00</strong></p>
+            <button class="btn">Buy Now</button>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-body">
+            <h3 class="card-title">$50 Gift Card</h3>
+            <p>Great for a family meal.</p>
+            <p><strong>$50.00</strong></p>
+            <button class="btn">Buy Now</button>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-body">
+            <h3 class="card-title">$100 Gift Card</h3>
+            <p>The perfect gift for any occasion.</p>
+            <p><strong>$100.00</strong></p>
+            <button class="btn">Buy Now</button>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer data-component="site-footer" class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <h3>FreshBite Cafe</h3>
+        <p>Fresh, fast, flavorful.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="locations.html">Locations</a></li>
+          <li><a href="gift-cards.html">Gift Cards</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <ul>
+          <li><a href="support.html">Customer Support</a></li>
+          <li><a href="about.html">About Us</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

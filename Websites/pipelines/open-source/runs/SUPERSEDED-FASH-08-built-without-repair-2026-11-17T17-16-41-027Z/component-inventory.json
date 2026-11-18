@@ -1,0 +1,213 @@
+[
+  {
+    "component": "site-header",
+    "selector": "[data-component=\"site-header\"]",
+    "pages": [
+      "index.html",
+      "fashion.html",
+      "beauty.html",
+      "shopping.html",
+      "summer-lookbook-2026.html",
+      "money-diary.html",
+      "horoscope.html",
+      "podcasts.html",
+      "404.html"
+    ],
+    "behaviors": "Contains site name and primary navigation; remains static across pages.",
+    "keyboard_expectations": "Tab moves focus into navigation links; no special handling required.",
+    "status": "implemented",
+    "validation_state": "not-tested"
+  },
+  {
+    "component": "primary-nav",
+    "selector": "[data-component=\"primary-nav\"]",
+    "pages": [
+      "index.html",
+      "fashion.html",
+      "beauty.html",
+      "shopping.html",
+      "summer-lookbook-2026.html",
+      "money-diary.html",
+      "horoscope.html",
+      "podcasts.html",
+      "404.html"
+    ],
+    "behaviors": "Provides navigation links to site sections and a search form; updates aria-current on active link.",
+    "keyboard_expectations": "Enter activates links; typing in search field filters content; Escape clears search (not implemented but field accepts input).",
+    "status": "implemented",
+    "validation_state": "not-tested"
+  },
+  {
+    "component": "hero",
+    "selector": "[data-component=\"hero\"]",
+    "pages": [
+      "index.html",
+      "fashion.html",
+      "beauty.html",
+      "shopping.html",
+      "summer-lookbook-2026.html",
+      "money-diary.html",
+      "horoscope.html",
+      "podcasts.html"
+    ],
+    "behaviors": "Displays a large placeholder image with a heading and short description.",
+    "keyboard_expectations": "None; purely presentational.",
+    "status": "implemented",
+    "validation_state": "not-tested"
+  },
+  {
+    "component": "content-band",
+    "selector": "[data-component=\"content-band\"]",
+    "pages": [
+      "index.html",
+      "fashion.html",
+      "beauty.html",
+      "shopping.html",
+      "summer-lookbook-2026.html",
+      "money-diary.html",
+      "horoscope.html",
+      "podcasts.html"
+    ],
+    "behaviors": "Wraps a heading and main content area (card grid or article list).",
+    "keyboard_expectations": "None.",
+    "status": "implemented",
+    "validation_state": "not-tested"
+  },
+  {
+    "component": "sidebar",
+    "selector": "[data-component=\"sidebar\"]",
+    "pages": [
+      "index.html",
+      "fashion.html",
+      "beauty.html",
+      "shopping.html",
+      "summer-lookbook-2026.html"
+    ],
+    "behaviors": "Shows a heading and a list of supplementary links.",
+    "keyboard_expectations": "Tab moves focus into links.",
+    "status": "implemented",
+    "validation_state": "not-tested"
+  },
+  {
+    "component": "site-footer",
+    "selector": "[data-component=\"site-footer\"]",
+    "pages": [
+      "index.html",
+      "fashion.html",
+      "beauty.html",
+      "shopping.html",
+      "summer-lookbook-2026.html",
+      "money-diary.html",
+      "horoscope.html",
+      "podcasts.html",
+      "404.html"
+    ],
+    "behaviors": "Contains copyright notice and newsletter signup form.",
+    "keyboard_expectations": "Tab moves focus into email input and submit button.",
+    "status": "implemented",
+    "validation_state": "not-tested"
+  },
+  {
+    "component": "newsletter-signup",
+    "selector": ".newsletter-form",
+    "pages": [
+      "index.html",
+      "fashion.html",
+      "beauty.html",
+      "shopping.html",
+      "summer-lookbook-2026.html",
+      "money-diary.html",
+      "horoscope.html",
+      "podcasts.html"
+    ],
+    "behaviors": "Accepts an email address and shows a toast message on submit (simulated).",
+    "keyboard_expectations": "Enter submits form; focus moves to toast after submit.",
+    "status": "implemented",
+    "validation_state": "not-tested"
+  },
+  {
+    "component": "search-form",
+    "selector": ".primary-nav form",
+    "pages": [
+      "index.html",
+      "fashion.html",
+      "beauty.html",
+      "shopping.html",
+      "summer-lookbook-2026.html",
+      "money-diary.html",
+      "horoscope.html",
+      "podcasts.html"
+    ],
+    "behaviors": "Filters inline dataset based on user input and announces results via ARIA live region.",
+    "keyboard_expectations": "Typed characters update results in real time; Escape not implemented but field accepts input.",
+    "status": "implemented",
+    "validation_state": "not-tested"
+  },
+  {
+    "component": "card-grid",
+    "selector": "[data-component=\"card-grid\"]",
+    "pages": [
+      "fashion.html",
+      "beauty.html",
+      "shopping.html",
+      "summer-lookbook-2026.html"
+    ],
+    "behaviors": "Displays responsive grid of cards each containing an image, title, and short description.",
+    "keyboard_expectations": "Tab moves focus into each card; cards are not interactive beyond standard link behavior (none implemented).",
+    "status": "implemented",
+    "validation_state": "not-tested"
+  },
+  {
+    "component": "gallery-carousel",
+    "selector": "[data-component=\"gallery-carousel\"]",
+    "pages": [
+      "summer-lookbook-2026.html"
+    ],
+    "behaviors": "Shows a set of images in a horizontal slider with prev/next buttons; clicking an image opens a simulated lightbox.",
+    "keyboard_expectations": "Left/Right arrow keys change slide; Enter or Space activates buttons; Escape closes lightbox.",
+    "status": "implemented",
+    "validation_state": "not-tested"
+  },
+  {
+    "component": "article-list",
+    "selector": "[data-component=\"article-list\"]",
+    "pages": [
+      "money-diary.html",
+      "horoscope.html",
+      "podcasts.html"
+    ],
+    "behaviors": "Displays a vertical list of articles or entries with title, excerpt, and metadata.",
+    "keyboard_expectations": "Tab moves focus into each entry; entries are not interactive beyond standard link behavior (none implemented).",
+    "status": "implemented",
+    "validation_state": "not-tested"
+  },
+  {
+    "component": "lightbox",
+    "selector": ".lightbox",
+    "pages": [
+      "summer-lookbook-2026.html"
+    ],
+    "behaviors": "Modal overlay that displays an enlarged version of a clicked image; includes close button.",
+    "keyboard_expectations": "Escape closes modal; Tab traps focus inside modal; Shift+Tab reverses.",
+    "status": "implemented",
+    "validation_state": "not-tested"
+  },
+  {
+    "component": "toast",
+    "selector": ".toast",
+    "pages": [
+      "index.html",
+      "fashion.html",
+      "beauty.html",
+      "shopping.html",
+      "summer-lookbook-2026.html",
+      "money-diary.html",
+      "horoscope.html",
+      "podcasts.html"
+    ],
+    "behaviors": "Appears temporarily after newsletter submit to confirm action.",
+    "keyboard_expectations": "Receives focus when appears; Escape not implemented but toast dismisses after timeout.",
+    "status": "implemented",
+    "validation_state": "not-tested"
+  }
+]

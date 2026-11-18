@@ -1,0 +1,474 @@
+{
+  "run_id": "2026-11-17T15-12-50-420Z-build-GOV-08",
+  "phase": "build",
+  "target": "GOV-08",
+  "category": "government",
+  "slot": 8,
+  "model_group": "open-source",
+  "model": {
+    "model_id": "unsloth/NVIDIA-Nemotron-3-Super-120B-A12B-GGUF",
+    "model_version": "MXFP4_MOE",
+    "model_provider_or_runtime": "vt-arc-falcon-llamacpp (OpenAI-compatible chat completions at http://localhost:8081/v1)",
+    "weights_url": "https://huggingface.co/unsloth/NVIDIA-Nemotron-3-Super-120B-A12B-GGUF",
+    "license": "nvidia-nemotron-open-model-license",
+    "open_weights": true,
+    "eligibility_note": "Open weights. Licence is the NVIDIA Nemotron Open Model License (HF tag nvidia-nemotron-open-model-license), read 2026-11-17 by the orchestrator on the quant repo and the base model card nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-BF16. A vendor open-model licence, NOT OSI-approved: this slot is open-weight, not open-source. Quantisation MXFP4_MOE. Served self-hosted via llama.cpp on VT ARC Falcon over an SSH tunnel on localhost:8081. Serving history, same model and quant: fal052:50413 (2026-11-17, twelve slot-08 research runs and four builds; session ended), fal039:43471 (current).",
+    "params": {
+      "temperature": 0.3,
+      "max_tokens": 32000
+    }
+  },
+  "operator": "Samhith Varma Yallamraju",
+  "status": "completed",
+  "prepared_at": "2026-11-17T15:12:50.425Z",
+  "generation_started_at": "2026-11-17T15:12:50.425Z",
+  "generation_completed_at": "2026-11-17T15:19:48.637Z",
+  "tool_access": "chat-completions API only: no browsing, no shell, no filesystem. The orchestrator wrote every file and ran every check.",
+  "budget": {
+    "max_build_turns": 28,
+    "max_repair_rounds": 0,
+    "max_tokens_per_request": 32000,
+    "temperature": 0.3
+  },
+  "approved_source": {
+    "source_name": "Massachusetts State Government",
+    "source_url": "https://www.mass.gov/",
+    "verified_at": "2026-11-17",
+    "verification_method": "HTTP GET by the orchestrator",
+    "verification_result": "verified",
+    "evidence_reference": "pipelines/open-source/research/evidence/GOV-08-http-2026-11-17.json",
+    "complexity": "medium",
+    "stack_clues": "unknown",
+    "limitations": "Verification date not provided in evidence; markup structure not inspected, so regions and interactions are inferred; all requested pages returned 2xx and were mapped.",
+    "approved_at": "2026-11-17",
+    "approved_by": "Samhith Varma Yallamraju",
+    "approval_reference": "Project lead approval of all slot-08 sources given 2026-11-17 in the Claude Code orchestration session; see research/GOV-08.md and research/proposals/GOV-rows.json"
+  },
+  "approved_page_map": [
+    {
+      "url": "https://www.mass.gov/",
+      "title": "Mass.gov",
+      "local_file": "index.html"
+    },
+    {
+      "url": "https://www.mass.gov/topics/health-social-services",
+      "title": "Health & Social Services | Mass.gov",
+      "local_file": "health-social-services.html"
+    },
+    {
+      "url": "https://www.mass.gov/topics/families-children",
+      "title": "Families & Children | Mass.gov",
+      "local_file": "families-children.html"
+    },
+    {
+      "url": "https://www.mass.gov/topics/transportation",
+      "title": "Transportation | Mass.gov",
+      "local_file": "transportation.html"
+    },
+    {
+      "url": "https://www.mass.gov/how-to/apply-for-unemployment-insurance-benefits",
+      "title": "Apply for unemployment insurance benefits | Mass.gov",
+      "local_file": "apply-unemployment-benefits.html"
+    },
+    {
+      "url": "https://www.mass.gov/how-to/renew-your-vehicle-or-trailer-registration",
+      "title": "Renew your vehicle or trailer registration | Mass.gov",
+      "local_file": "renew-vehicle-registration.html"
+    },
+    {
+      "url": "https://www.mass.gov/search-court-dockets-calendars-and-case-information",
+      "title": "Search Court Dockets, Calendars and Case Information | Mass.gov",
+      "local_file": "search-court-dockets.html"
+    },
+    {
+      "url": "https://www.mass.gov/info-details/massachusetts-state-organizations-a-to-z",
+      "title": "Massachusetts State Organizations | Mass.gov",
+      "local_file": "state-organizations-a-to-z.html"
+    }
+  ],
+  "protocol_snapshots": [
+    {
+      "path": "Rules.md",
+      "sha256": "04b1c3e38b76f2aff3aef869d67370bb4532cd8f9ab5e22ac8276f26cbb859bf"
+    },
+    {
+      "path": "MODEL_ALLOCATION.md",
+      "sha256": "7e9487530a6e80b35af48d0691951dafc2fffea39798c81a3c49203909148d30"
+    },
+    {
+      "path": "pipelines/open-source/config.json",
+      "sha256": "36ba2cde671cfe89f211cdca7c47c975281615e97cacb8d06ef247be6e4eb4d9"
+    },
+    {
+      "path": "pipelines/open-source/categories.json",
+      "sha256": "8180966e55daa24799e51106645e93fd5807dde470765ab8b3b38d3f922c867b"
+    },
+    {
+      "path": "pipelines/open-source/prompts/system.md",
+      "sha256": "61bc24a57de14bd6a662cd6b5f98d0cfc57bf47e187fc58a97831bf1f272b4ee"
+    },
+    {
+      "path": "pipelines/open-source/prompts/build.md",
+      "sha256": "6096ab8b698af7a99d8ddaf1534cc95f41844d1d00cdd1fce740123b3146ab6a"
+    },
+    {
+      "path": "pipelines/open-source/prompts/repair.md",
+      "sha256": "8a84e51995736607b3efa6f5b2d76e52692423c2c26b03409afb4afa3c6586d6"
+    },
+    {
+      "path": "pipelines/open-source/models.json",
+      "sha256": "6ea7239c0c70023b44795bf79d26df8c34eae87da6133b61aaca46af58d9a31e"
+    },
+    {
+      "path": "metadata/source-inventories/government.csv",
+      "sha256": "64dbeac032f8378980a12f27a714bc0afab7a180afe6d135c23d1a61b7449aca"
+    },
+    {
+      "path": "metadata/assignments.csv",
+      "sha256": "75aa44ee9046372a60e2b9bafe18f1e0dbb3f7c5bd80c29f49f4c060050bca06"
+    }
+  ],
+  "turns": [
+    {
+      "turn": 1,
+      "label": "plan",
+      "status_line": "CONTINUE",
+      "prose_chars": 2834,
+      "files_written": [],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 1519,
+        "prompt_tokens": 5062,
+        "total_tokens": 6581,
+        "prompt_tokens_details": {
+          "cached_tokens": 541
+        }
+      },
+      "at": "2026-11-17T15:13:21.721Z"
+    },
+    {
+      "turn": 2,
+      "label": "files-2",
+      "status_line": "CONTINUE",
+      "prose_chars": 0,
+      "files_written": [
+        "css/styles.css",
+        "js/main.js",
+        "index.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 4626,
+        "prompt_tokens": 5960,
+        "total_tokens": 10586,
+        "prompt_tokens_details": {
+          "cached_tokens": 5058
+        }
+      },
+      "at": "2026-11-17T15:14:51.955Z"
+    },
+    {
+      "turn": 3,
+      "label": "files-3",
+      "status_line": "CONTINUE",
+      "prose_chars": 0,
+      "files_written": [
+        "404.html",
+        "health-social-services.html",
+        "families-children.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 2918,
+        "prompt_tokens": 10245,
+        "total_tokens": 13163,
+        "prompt_tokens_details": {
+          "cached_tokens": 5956
+        }
+      },
+      "at": "2026-11-17T15:15:50.468Z"
+    },
+    {
+      "turn": 4,
+      "label": "files-4",
+      "status_line": "CONTINUE",
+      "prose_chars": 0,
+      "files_written": [
+        "transportation.html",
+        "apply-unemployment-benefits.html",
+        "renew-vehicle-registration.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 3050,
+        "prompt_tokens": 13105,
+        "total_tokens": 16155,
+        "prompt_tokens_details": {
+          "cached_tokens": 10241
+        }
+      },
+      "at": "2026-11-17T15:16:51.285Z"
+    },
+    {
+      "turn": 5,
+      "label": "files-5",
+      "status_line": "CONTINUE",
+      "prose_chars": 0,
+      "files_written": [
+        "search-court-dockets.html",
+        "state-organizations-a-to-z.html",
+        "README.md"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 3653,
+        "prompt_tokens": 16178,
+        "total_tokens": 19831,
+        "prompt_tokens_details": {
+          "cached_tokens": 13101
+        }
+      },
+      "at": "2026-11-17T15:18:04.155Z"
+    },
+    {
+      "turn": 6,
+      "label": "files-6",
+      "status_line": "COMPLETE",
+      "prose_chars": 0,
+      "files_written": [
+        "fidelity-notes.md",
+        "component-inventory.json",
+        "generation-metadata.json"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 4997,
+        "prompt_tokens": 19432,
+        "total_tokens": 24429,
+        "prompt_tokens_details": {
+          "cached_tokens": 16174
+        }
+      },
+      "at": "2026-11-17T15:19:43.765Z"
+    }
+  ],
+  "rejected_files": [],
+  "qc_runs": [
+    {
+      "started_at": "2026-11-17T15:19:43.779Z",
+      "completed_at": "2026-11-17T15:19:48.636Z",
+      "exit_code": 1,
+      "executed": true,
+      "passed": false,
+      "outcome": "fail",
+      "failures": [
+        "placeholder href=\"#\" in 404.html",
+        "placeholder href=\"#\" in 404.html",
+        "placeholder href=\"#\" in 404.html",
+        "placeholder href=\"#\" in 404.html",
+        "placeholder href=\"#\" in 404.html",
+        "placeholder href=\"#\" in 404.html",
+        "placeholder href=\"#\" in 404.html",
+        "placeholder href=\"#\" in 404.html",
+        "placeholder href=\"#\" in 404.html",
+        "placeholder href=\"#\" in apply-unemployment-benefits.html",
+        "placeholder href=\"#\" in apply-unemployment-benefits.html",
+        "placeholder href=\"#\" in apply-unemployment-benefits.html",
+        "placeholder href=\"#\" in apply-unemployment-benefits.html",
+        "placeholder href=\"#\" in apply-unemployment-benefits.html",
+        "placeholder href=\"#\" in apply-unemployment-benefits.html",
+        "placeholder href=\"#\" in apply-unemployment-benefits.html",
+        "placeholder href=\"#\" in apply-unemployment-benefits.html",
+        "placeholder href=\"#\" in apply-unemployment-benefits.html",
+        "placeholder href=\"#\" in families-children.html",
+        "placeholder href=\"#\" in families-children.html",
+        "placeholder href=\"#\" in families-children.html",
+        "placeholder href=\"#\" in families-children.html",
+        "placeholder href=\"#\" in families-children.html",
+        "placeholder href=\"#\" in families-children.html",
+        "placeholder href=\"#\" in families-children.html",
+        "placeholder href=\"#\" in families-children.html",
+        "placeholder href=\"#\" in families-children.html",
+        "placeholder href=\"#\" in families-children.html",
+        "placeholder href=\"#\" in families-children.html",
+        "placeholder href=\"#\" in families-children.html",
+        "placeholder href=\"#\" in families-children.html",
+        "placeholder href=\"#\" in health-social-services.html",
+        "placeholder href=\"#\" in health-social-services.html",
+        "placeholder href=\"#\" in health-social-services.html",
+        "placeholder href=\"#\" in health-social-services.html",
+        "placeholder href=\"#\" in health-social-services.html",
+        "placeholder href=\"#\" in health-social-services.html",
+        "placeholder href=\"#\" in health-social-services.html",
+        "placeholder href=\"#\" in health-social-services.html",
+        "placeholder href=\"#\" in health-social-services.html",
+        "placeholder href=\"#\" in health-social-services.html",
+        "placeholder href=\"#\" in health-social-services.html",
+        "placeholder href=\"#\" in health-social-services.html",
+        "placeholder href=\"#\" in health-social-services.html",
+        "placeholder href=\"#\" in health-social-services.html",
+        "placeholder href=\"#\" in index.html",
+        "placeholder href=\"#\" in index.html",
+        "placeholder href=\"#\" in index.html",
+        "placeholder href=\"#\" in index.html",
+        "placeholder href=\"#\" in index.html",
+        "placeholder href=\"#\" in index.html",
+        "placeholder href=\"#\" in index.html",
+        "placeholder href=\"#\" in index.html",
+        "placeholder href=\"#\" in index.html",
+        "placeholder href=\"#\" in renew-vehicle-registration.html",
+        "placeholder href=\"#\" in renew-vehicle-registration.html",
+        "placeholder href=\"#\" in renew-vehicle-registration.html",
+        "placeholder href=\"#\" in renew-vehicle-registration.html",
+        "placeholder href=\"#\" in renew-vehicle-registration.html",
+        "placeholder href=\"#\" in renew-vehicle-registration.html",
+        "placeholder href=\"#\" in renew-vehicle-registration.html",
+        "placeholder href=\"#\" in renew-vehicle-registration.html",
+        "placeholder href=\"#\" in renew-vehicle-registration.html",
+        "placeholder href=\"#\" in search-court-dockets.html",
+        "placeholder href=\"#\" in search-court-dockets.html",
+        "placeholder href=\"#\" in search-court-dockets.html",
+        "placeholder href=\"#\" in search-court-dockets.html",
+        "placeholder href=\"#\" in search-court-dockets.html",
+        "placeholder href=\"#\" in search-court-dockets.html",
+        "placeholder href=\"#\" in search-court-dockets.html",
+        "placeholder href=\"#\" in search-court-dockets.html",
+        "placeholder href=\"#\" in search-court-dockets.html",
+        "placeholder href=\"#\" in state-organizations-a-to-z.html",
+        "placeholder href=\"#\" in state-organizations-a-to-z.html",
+        "placeholder href=\"#\" in state-organizations-a-to-z.html",
+        "placeholder href=\"#\" in state-organizations-a-to-z.html",
+        "placeholder href=\"#\" in state-organizations-a-to-z.html",
+        "placeholder href=\"#\" in state-organizations-a-to-z.html",
+        "placeholder href=\"#\" in state-organizations-a-to-z.html",
+        "placeholder href=\"#\" in state-organizations-a-to-z.html",
+        "placeholder href=\"#\" in state-organizations-a-to-z.html",
+        "placeholder href=\"#\" in state-organizations-a-to-z.html",
+        "placeholder href=\"#\" in state-organizations-a-to-z.html",
+        "placeholder href=\"#\" in state-organizations-a-to-z.html",
+        "placeholder href=\"#\" in state-organizations-a-to-z.html",
+        "placeholder href=\"#\" in state-organizations-a-to-z.html",
+        "placeholder href=\"#\" in state-organizations-a-to-z.html",
+        "placeholder href=\"#\" in state-organizations-a-to-z.html",
+        "placeholder href=\"#\" in state-organizations-a-to-z.html",
+        "placeholder href=\"#\" in state-organizations-a-to-z.html",
+        "placeholder href=\"#\" in state-organizations-a-to-z.html",
+        "placeholder href=\"#\" in state-organizations-a-to-z.html",
+        "placeholder href=\"#\" in state-organizations-a-to-z.html",
+        "placeholder href=\"#\" in state-organizations-a-to-z.html",
+        "placeholder href=\"#\" in state-organizations-a-to-z.html",
+        "placeholder href=\"#\" in state-organizations-a-to-z.html",
+        "placeholder href=\"#\" in state-organizations-a-to-z.html",
+        "placeholder href=\"#\" in state-organizations-a-to-z.html",
+        "placeholder href=\"#\" in state-organizations-a-to-z.html",
+        "placeholder href=\"#\" in state-organizations-a-to-z.html",
+        "placeholder href=\"#\" in state-organizations-a-to-z.html",
+        "placeholder href=\"#\" in transportation.html",
+        "placeholder href=\"#\" in transportation.html",
+        "placeholder href=\"#\" in transportation.html",
+        "placeholder href=\"#\" in transportation.html",
+        "placeholder href=\"#\" in transportation.html",
+        "placeholder href=\"#\" in transportation.html",
+        "placeholder href=\"#\" in transportation.html",
+        "placeholder href=\"#\" in transportation.html",
+        "placeholder href=\"#\" in transportation.html",
+        "placeholder href=\"#\" in transportation.html",
+        "placeholder href=\"#\" in transportation.html",
+        "axe heading-order (moderate) @1280 404.html: 1 node(s) e.g. div:nth-child(1) > h3",
+        "axe color-contrast (serious) @1280 apply-unemployment-benefits.html: 1 node(s) e.g. .demo-btn",
+        "axe heading-order (moderate) @1280 apply-unemployment-benefits.html: 1 node(s) e.g. div:nth-child(1) > h3",
+        "axe color-contrast (serious) @1280 renew-vehicle-registration.html: 1 node(s) e.g. .demo-btn",
+        "axe heading-order (moderate) @1280 renew-vehicle-registration.html: 1 node(s) e.g. div:nth-child(1) > h3",
+        "axe color-contrast (serious) @1280 search-court-dockets.html: 1 node(s) e.g. .demo-btn",
+        "axe list (serious) @1280 state-organizations-a-to-z.html: 1 node(s) e.g. ul[data-component=\"org-list\"]",
+        "axe heading-order (moderate) @375 404.html: 1 node(s) e.g. div:nth-child(1) > h3",
+        "axe color-contrast (serious) @375 apply-unemployment-benefits.html: 1 node(s) e.g. .demo-btn",
+        "axe heading-order (moderate) @375 apply-unemployment-benefits.html: 1 node(s) e.g. div:nth-child(1) > h3",
+        "axe color-contrast (serious) @375 renew-vehicle-registration.html: 1 node(s) e.g. .demo-btn",
+        "axe heading-order (moderate) @375 renew-vehicle-registration.html: 1 node(s) e.g. div:nth-child(1) > h3",
+        "axe color-contrast (serious) @375 search-court-dockets.html: 1 node(s) e.g. .demo-btn",
+        "axe list (serious) @375 state-organizations-a-to-z.html: 1 node(s) e.g. ul[data-component=\"org-list\"]"
+      ],
+      "failure_count": 126,
+      "warnings": [],
+      "axe": {
+        "heading-order": 6,
+        "color-contrast": 6,
+        "list": 2
+      },
+      "pages": 9,
+      "files": 15,
+      "qc_tool_sha256": "e9be905d19e7181e30d8291bcb1511d4469bdc9e36c20c0efe21e2d3fcf54513",
+      "report": "qc-initial-2026-11-17T15-19-43-779Z.json",
+      "log": "qc-initial-2026-11-17T15-19-43-779Z.log",
+      "stdout_tail": "pages=9 files=15 failures=126 warnings=0\nFAIL placeholder href=\"#\" in 404.html\nFAIL placeholder href=\"#\" in apply-unemployment-benefits.html\nFAIL placeholder href=\"#\" in families-children.html\nFAIL placeholder href=\"#\" in health-social-services.html\nFAIL placeholder href=\"#\" in index.html\nFAIL placeholder href=\"#\" in renew-vehicle-registration.html\nFAIL placeholder href=\"#\" in search-court-dockets.html\nFAIL placeholder href=\"#\" in state-organizations-a-to-z.html\nFAIL placeholder href=\"#\" in transportation.html\nFAIL axe heading-order (moderate) @1280 404.html: 1 node(s) e.g. div:nth-child(1) > h3\nFAIL axe color-contrast (serious) @1280 apply-unemployment-benefits.html: 1 node(s) e.g. .demo-btn\nFAIL axe heading-order (moderate) @1280 apply-unemployment-benefits.html: 1 node(s) e.g. div:nth-child(1) > h3\nFAIL axe color-contrast (serious) @1280 renew-vehicle-registration.html: 1 node(s) e.g. .demo-btn\nFAIL axe heading-order (moderate) @1280 renew-vehicle-registration.html: 1 node(s) e.g. div:nth-child(1) > h3\nFAIL axe color-contrast (serious) @1280 search-court-dockets.html: 1 node(s) e.g. .demo-btn\nFAIL axe list (serious) @1280 state-organizations-a-to-z.html: 1 node(s) e.g. ul[data-component=\"org-list\"]\nFAIL axe heading-order (moderate) @375 404.html: 1 node(s) e.g. div:nth-child(1) > h3\nFAIL axe color-contrast (serious) @375 apply-unemployment-benefits.html: 1 node(s) e.g. .demo-btn\nFAIL axe heading-order (moderate) @375 apply-unemployment-benefits.html: 1 node(s) e.g. div:nth-child(1) > h3\nFAIL axe color-contrast (serious) @375 renew-vehicle-registration.html: 1 node(s) e.g. .demo-btn\nFAIL axe heading-order (moderate) @375 renew-vehicle-registration.html: 1 node(s) e.g. div:nth-child(1) > h3\nFAIL axe color-contrast (serious) @375 search-court-dockets.html: 1 node(s) e.g. .demo-btn\nFAIL axe list (serious) @375 state-organizations-a-to-z.html: 1 node(s) e.g. ul[data-component=\"org-list\"]\n",
+      "note": null
+    }
+  ],
+  "repair_rounds": [],
+  "retries": [],
+  "human_edits": [
+    {
+      "by": "orchestrator script",
+      "at": "2026-11-17T15:19:48.637Z",
+      "what": "Wrote the model's emitted files, normalized generation-metadata.json provenance fields, and set validation_summary from the recorded QC run. No site markup, style or script was authored or edited by hand."
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 69982,
+    "completion_tokens": 20763,
+    "total_tokens": 90745,
+    "requests": 6,
+    "retries": 0
+  },
+  "errors": [],
+  "outputs": {
+    "site": "government/open-source/GOV-08",
+    "transcript": "pipelines/open-source/runs/2026-11-17T15-12-50-420Z-build-GOV-08/transcript.json"
+  },
+  "delivered": {
+    "files": [
+      "404.html",
+      "README.md",
+      "apply-unemployment-benefits.html",
+      "component-inventory.json",
+      "css/styles.css",
+      "families-children.html",
+      "fidelity-notes.md",
+      "generation-metadata.json",
+      "health-social-services.html",
+      "index.html",
+      "js/main.js",
+      "renew-vehicle-registration.html",
+      "search-court-dockets.html",
+      "state-organizations-a-to-z.html",
+      "transportation.html"
+    ],
+    "file_count": 15,
+    "bytes": 64002,
+    "pages_in_map": 8,
+    "missing_required": [],
+    "model_claimed_complete": true,
+    "delivered_complete": true,
+    "turns_used": 6,
+    "turn_budget": 28
+  },
+  "initial_artifact": "pipelines/open-source/runs/2026-11-17T15-12-50-420Z-build-GOV-08/initial",
+  "provenance": {
+    "wrote": true,
+    "modelEmittedValidMetadata": true
+  },
+  "acceptance": "not accepted: a QC result is not acceptance, and interaction review plus human acceptance happen outside this script"
+}

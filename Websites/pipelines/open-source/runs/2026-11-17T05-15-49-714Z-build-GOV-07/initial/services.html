@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Services | City of Oakhaven</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header class="site-header" data-component="site-header">
+        <div class="header-container">
+            <a href="index.html" class="site-logo">City of Oakhaven</a>
+            <div class="header-controls">
+                <button id="lang-toggle" class="btn" data-lang="en" aria-label="Switch language">Español</button>
+                <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
+                    <span aria-hidden="true">☰</span>
+                </button>
+            </div>
+        </div>
+        <nav id="primary-nav" class="primary-nav" data-component="primary-nav" aria-label="Primary Navigation">
+            <ul>
+                <li class="has-dropdown">
+                    <a href="services.html" aria-haspopup="true" aria-expanded="false">Services</a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li role="none"><a href="services.html" role="menuitem">All Services</a></li>
+                        <li role="none"><a href="pay-utility-bill.html" role="menuitem">Pay Bills</a></li>
+                        <li role="none"><a href="permits.html" role="menuitem">Permits</a></li>
+                    </ul>
+                </li>
+                <li><a href="departments.html">Departments</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="service-request.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <section class="content-bands" data-section="services-directory" data-component="content-bands">
+            <h1 class="section-title">All Services</h1>
+            
+            <div class="form-group">
+                <label for="service-search">Search Services</label>
+                <input type="search" id="service-search" placeholder="Type to search..." aria-describedby="search-help">
+                <span id="search-help" class="error-message" style="display:none;">No services found.</span>
+            </div>
+
+            <div class="card-grid" id="service-list">
+                <article class="card">
+                    <h3>Trash & Recycling</h3>
+                    <p>Schedule pickups, view collection schedules, and report missed pickups.</p>
+                    <a href="#">Learn More</a>
+                </article>
+                <article class="card">
+                    <h3>Water & Sewer</h3>
+                    <p>Pay bills, report leaks, and manage your water account.</p>
+                    <a href="pay-utility-bill.html">Pay Bill</a>
+                </article>
+                <article class="card">
+                    <h3>Building Permits</h3>
+                    <p>Apply for construction, renovation, and demolition permits.</p>
+                    <a href="permits.html">Apply</a>
+                </article>
+                <article class="card">
+                    <h3>Parks & Recreation</h3>
+                    <p>Find parks, register for programs, and reserve facilities.</p>
+                    <a href="park-directory.html">Find Parks</a>
+                </article>
+                <article class="card">
+                    <h3>Animal Services</h3>
+                    <p>Adopt pets, report animal issues, and license your pets.</p>
+                    <a href="animal-services.html">Visit</a>
+                </article>
+                <article class="card">
+                    <h3>Housing Assistance</h3>
+                    <p>Resources for affordable housing, rentals, and homebuyer programs.</p>
+                    <a href="housing.html">Learn More</a>
+                </article>
+                <article class="card">
+                    <h3>Police Department</h3>
+                    <p>Report crimes, view crime maps, and community safety resources.</p>
+                    <a href="police.html">Visit</a>
+                </article>
+                <article class="card">
+                    <h3>Public Works</h3>
+                    <p>Road maintenance, street lighting, and infrastructure projects.</p>
+                    <a href="#">Learn More</a>
+                </article>
+                <article class="card">
+                    <h3>Library Services</h3>
+                    <p>Access books, digital resources, and community programs.</p>
+                    <a href="#">Visit</a>
+                </article>
+                <article class="card">
+                    <h3>Tax & Revenue</h3>
+                    <p>Pay property taxes, business licenses, and utility taxes.</p>
+                    <a href="#">Learn More</a>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer" data-component="site-footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <p>123 City Hall Blvd, Oakhaven, CA 90210</p>
+                <p>Phone: (555) 123-4567</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="departments.html">Departments</a></li>
+                    <li><a href="news.html">News</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Use</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

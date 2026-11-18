@@ -1,0 +1,120 @@
+{
+  "run_id": "2026-11-17T05-31-35-467Z-research-UNI-09",
+  "phase": "research",
+  "target": "UNI",
+  "category": "university",
+  "slots": [
+    9
+  ],
+  "partial_run": true,
+  "evidence_detail": "full",
+  "page_cap": 16,
+  "status": "completed",
+  "started_at": "2026-11-17T05:31:35.471Z",
+  "completed_at": "2026-11-17T05:35:49.601Z",
+  "research_model": {
+    "model_id": "unsloth/Llama-3.3-70B-Instruct-GGUF",
+    "model_version": "Q8_0",
+    "model_provider_or_runtime": "vt-arc-falcon-llamacpp (OpenAI-compatible chat completions at http://localhost:8082/v1)",
+    "weights_url": "https://huggingface.co/unsloth/Llama-3.3-70B-Instruct-GGUF",
+    "license": "llama3.3-community",
+    "open_weights": true,
+    "eligibility_note": "Open weights. Licence is the Llama 3.3 Community License Agreement (HF licence tag llama3.3), as published on huggingface.co/unsloth/Llama-3.3-70B-Instruct-GGUF and the Meta Llama 3.3 model card, read 2026-11-17 by the orchestrator. This is a custom community licence with acceptable-use and scale conditions, NOT an OSI-approved open-source licence: this slot is open-weight but should not be described as open-source without checking the licence text against the study's definition. Quantisation Q8_0. Served self-hosted via llama.cpp on VT ARC Falcon node fal034:42003 over an SSH tunnel on localhost:8082; no third-party inference provider.",
+    "params": {
+      "temperature": 0.3,
+      "max_tokens": 32000
+    }
+  },
+  "research_model_slot": 9,
+  "attribution_note": "Reference selection for this slot was performed by the declared research model, which may differ from the model that builds it.",
+  "tool_access": "no browsing, no shell: the orchestrator performed every HTTP GET and passed the results in",
+  "protocol_snapshots": [
+    {
+      "path": "Rules.md",
+      "sha256": "04b1c3e38b76f2aff3aef869d67370bb4532cd8f9ab5e22ac8276f26cbb859bf"
+    },
+    {
+      "path": "MODEL_ALLOCATION.md",
+      "sha256": "7e9487530a6e80b35af48d0691951dafc2fffea39798c81a3c49203909148d30"
+    },
+    {
+      "path": "pipelines/open-source/config.json",
+      "sha256": "e5c7666dbdc7c302e54c0c94c946dcd01d64992b89a56df7ce1ee272dd488edf"
+    },
+    {
+      "path": "pipelines/open-source/categories.json",
+      "sha256": "8180966e55daa24799e51106645e93fd5807dde470765ab8b3b38d3f922c867b"
+    },
+    {
+      "path": "pipelines/open-source/prompts/system.md",
+      "sha256": "61bc24a57de14bd6a662cd6b5f98d0cfc57bf47e187fc58a97831bf1f272b4ee"
+    },
+    {
+      "path": "pipelines/open-source/prompts/research.md",
+      "sha256": "8e7d6afdfbd6c7d21eecdac15d73b607e6ad799a3008b64a69c585f71bbbb738"
+    },
+    {
+      "path": "pipelines/open-source/models.json",
+      "sha256": "f02e4efcab2732e1736a96e02459eef895400d01c2888b63c7cded93435f36c4"
+    },
+    {
+      "path": "metadata/source-inventories/university.csv",
+      "sha256": "866ee9ef3c5c628a5a3fc5bee17dad8446880d9718afd85918c75b08b3f565e4"
+    },
+    {
+      "path": "metadata/assignments.csv",
+      "sha256": "d6eea5981d9edd3edcb1c75348fa0b9bcda0bd87f7f9487093c4db56f72e58ff"
+    }
+  ],
+  "exchanges": [
+    {
+      "exchange": 1,
+      "label": "candidates",
+      "proposed": 3,
+      "collisions": [
+        "https://www.nvcc.edu"
+      ]
+    },
+    {
+      "exchange": 2,
+      "label": "selection",
+      "selected": [
+        {
+          "source_id": "UNI-09",
+          "url": "https://www.hccs.edu",
+          "pages": 11
+        }
+      ]
+    }
+  ],
+  "http_rounds": [
+    {
+      "round": 1,
+      "kind": "candidate homepages",
+      "requested": 3,
+      "ok": 3,
+      "at": "2026-11-17T05:32:25.198Z"
+    },
+    {
+      "round": 2,
+      "kind": "proposed interior pages",
+      "requested": 11,
+      "ok": 11,
+      "at": "2026-11-17T05:33:06.280Z"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 44446,
+    "completion_tokens": 1901,
+    "total_tokens": 46347,
+    "requests": 3,
+    "retries": 0
+  },
+  "errors": [],
+  "outputs": {
+    "research_notes": "pipelines/open-source/research/UNI-09.md",
+    "proposed_rows": "pipelines/open-source/research/proposals/UNI-rows.json",
+    "evidence": "pipelines/open-source/research/evidence/UNI-09-http-2026-11-17.json",
+    "transcript": "pipelines/open-source/runs/2026-11-17T05-31-35-467Z-research-UNI-09/transcript.json"
+  }
+}

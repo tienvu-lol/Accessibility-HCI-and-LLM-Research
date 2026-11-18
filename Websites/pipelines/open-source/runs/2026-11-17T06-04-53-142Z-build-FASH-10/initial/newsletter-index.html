@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en" data-section="html">
+<head>
+  <meta charset="utf-8">
+  <title>Newsletter Sign‑Up – Vogue Vista</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header -->
+  <header data-section="header">
+    <div class="site-header">
+      <div class="logo" data-component="site-logo">Vogue Vista</div>
+      <nav data-component="primary-nav" aria-label="Main navigation">
+        <button class="hamburger" aria-controls="primary-menu" aria-expanded="false" aria-label="Menu">
+          ☰
+        </button>
+        <ul id="primary-menu" aria-hidden="true">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="fashion-index.html">Fashion</a></li>
+          <li><a href="beauty-index.html">Beauty</a></li>
+          <li><a href="travel-dining-index.html">Travel &amp; Dining</a></li>
+          <li><a href="red-carpet-index.html">Red Carpet</a></li>
+          <li><a href="newsletter-index.html">Newsletter</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section data-component="hero" aria-label="Newsletter hero">
+    <h1>Stay Updated</h1>
+    <p>Subscribe to the Vogue Vista newsletter for the latest fashion & beauty insights.</p>
+  </section>
+
+  <main id="main-content" data-section="main">
+    <section data-component="content-band" aria-label="Newsletter sign‑up form">
+      <h2>Sign Up for Our Newsletter</h2>
+      <form id="newsletter-form" novalidate>
+        <div id="error-summary" aria-live="assertive"></div>
+
+        <label for="email">Email address</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="first-name">First name</label>
+        <input type="text" id="first-name" name="first-name" required>
+
+        <label>
+          <input type="checkbox" name="consent" required>
+          I agree to receive the newsletter.
+        </label>
+
+        <button type="submit">Subscribe</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer data-section="footer">
+    <p>&copy; 2026 Vogue Vista. All rights reserved.</p>
+  </footer>
+</body>
+</html>

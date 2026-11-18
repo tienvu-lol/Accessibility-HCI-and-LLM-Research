@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Menu – Jade Dragon Kitchen</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header data-section="header" data-component="site-header" class="site-header container">
+    <a href="index.html" class="site-logo">Jade Dragon Kitchen</a>
+    <button class="nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Open menu">☰</button>
+    <button class="age-gate-trigger" aria-label="Age verification">Enter</button>
+  </header>
+
+  <nav data-section="navigation" data-component="primary-nav" class="primary-nav">
+    <div class="container nav-container">
+      <button class="nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Open menu">☰</button>
+      <ul class="nav-menu" id="primary-nav" aria-expanded="false">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html" aria-current="page">Menu</a></li>
+        <li><a href="our-story.html">Our Story</a></li>
+        <li><a href="locations.html">Locations</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="press.html">Press</a></li>
+        <li><a href="accessibility.html">Accessibility</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main-content" data-section="main">
+    <section data-component="content-band" class="content-band container">
+      <h1>Menu</h1>
+      <p class="menu-intro">Explore our signature dishes, organized by cuisine and spice level.</p>
+
+      <!-- Menu filter -->
+      <form class="menu-filter" data-component="menu-filter">
+        <fieldset>
+          <legend>Cuisine</legend>
+          <label><input type="checkbox" name="cuisine" value="noodles"> Noodles</label>
+          <label><input type="checkbox" name="cuisine" value="burger"> Burgers</label>
+          <label><input type="checkbox" name="cuisine" value="small-plates"> Small Plates</label>
+          <label><input type="checkbox" name="cuisine" value="rice"> Rice</label>
+        </fieldset>
+        <fieldset>
+          <legend>Spice level</legend>
+          <label><input type="checkbox" name="spice" value="mild"> Mild</label>
+          <label><input type="checkbox" name="spice" value="medium"> Medium</label>
+          <label><input type="checkbox" name="spice" value="hot"> Hot</label>
+          <label><input type="checkbox" name="spice" value="extra-hot"> Extra Hot</label>
+        </fieldset>
+      </form>
+
+      <!-- Menu grid -->
+      <section class="menu-grid" data-component="menu-grid">
+        <!-- Menu items will be populated by JavaScript using inline data -->
+      </section>
+    </section>
+  </main>
+
+  <footer data-section="footer" data-component="site-footer" class="site-footer">
+    <div class="container footer-container">
+      <div data-component="footer-info" class="footer-section">
+        <h2>About</h2>
+        <p>Family‑owned restaurant serving authentic Northwestern Chinese cuisine since 2008.</p>
+      </div>
+      <div data-component="footer-links" class="footer-section">
+        <h2>Quick links</h2>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html" aria-current="page">Menu</a></li>
+          <li><a href="our-story.html">Our Story</a></li>
+          <li><a href="locations.html">Locations</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="press.html">Press</a></li>
+          <li><a href="accessibility.html">Accessibility</a></li>
+        </ul>
+      </div>
+      <div data-component="footer-newsletter" class="footer-section">
+        <h2>Stay updated</h2>
+        <form class="newsletter-form" data-component="newsletter-signup">
+          <label>
+            <span>Email address</span>
+            <input type="email" name="email" required placeholder="you@example.com">
+          </label>
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Age gate modal (hidden by default) -->
+  <div id="age-gate-modal" data-component="age-gate" aria-hidden="true">
+    <div class="age-gate-dialog" role="dialog" aria-modal="true" aria-labelledby="age-gate-title">
+      <h2 id="age-gate-title">Age verification</h2>
+      <p>Our menu includes items that may contain alcohol. By entering you confirm you are of legal drinking age.</p>
+      <button type="button">Enter site</button>
+    </div>
+  </div>
+
+  <script>
+    // Inline sample dataset for menu items
+    const menuItems = [
+      { name: "Spicy Cumin Lamb Noodles", description: "Hand‑pulled noodles topped with cumin‑spiced lamb and chili oil.", price: "$13.95", cuisine: "noodles", spice: "extra-hot" },
+      { name: "Jade Dragon Burger", description: "Beef patty with pickled vegetables, spicy sauce, and sesame bun.", price: "$12.50", cuisine: "burger", spice: "medium" },
+      { name: "Cold Skin Noodles", description: "Wide rice noodles with sesame‑peanut sauce, cucumber, and chili.", price: "$11.95", cuisine: "noodles", spice: "hot" },
+      { name: "Spicy Lamb Burger", description: "Lamb patty with cumin, chili, and fresh herbs.", price: "$13.00", cuisine: "burger", spice: "hot" },
+      { name: "Steamed Pork Dumplings", description: "Juicy pork dumplings served with black vinegar and ginger.", price: "$9.95", cuisine: "small-plates", spice: "mild" },
+      { name: "Sichuan String Beans", description: "Dry‑fried green beans with garlic and chili.", price: "$10.50", cuisine: "small-plates", spice: "medium" },
+      { name: "Braised Beef Noodle Soup", description: "Rich broth with tender beef slices and noodles.", price: "$14.25", cuisine: "noodles", spice: "mild" },
+      { name: "Sesame Noodles", description: "Warm noodles tossed in sesame‑peanut sauce and scallions.", price: "$10.95", cuisine: "noodles", spice: "mild" },
+      { name: "Spicy Chicken Ribs", description: "Crispy chicken ribs tossed in chili‑garlic glaze.", price: "$12.75", cuisine: "small-plates", spice: "hot" },
+      { name: "Pork Belly Bun", description: "Steamed bun with braised pork belly, pickles, and hoisin.", price: "$11.50", cuisine: "burger", spice: "mild" },
+      { name: "Fried Rice with Egg", description: "Classic egg fried rice with peas and carrots.", price: "$10.25", cuisine: "rice", spice: "mild" },
+      { name: "Spicy Tofu Rice Bowl", description: "Tofu, vegetables, and chili sauce over steamed rice.", price: "$11.00", cuisine: "rice", spice: "medium" }
+    ];
+
+    // Populate menu grid
+    const grid = document.querySelector('.menu-grid');
+    menuItems.forEach(item => {
+      const card = document.createElement('article');
+      card.className = 'menu-card';
+      card.dataset.cuisine = item.cuisine;
+      card.dataset.spice = item.spic;
+      card.innerHTML = `
+        <h3>${item.name}</h3>
+        <p>${item.description}</p>
+        <div class="price">${item.price}</div>
+        <div class="tags">
+          <span>${item.cuisine}</span>
+          <span>${item.spice}</span>
+        </div>
+      `;
+      grid.appendChild(card);
+    });
+  </script>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

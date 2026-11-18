@@ -1,0 +1,1303 @@
+{
+  "tool": "pipelines/open-source/scripts/verify-sources.mjs",
+  "run_id": "2026-11-17T05-08-04-495Z-research-REST-10",
+  "model_group": "open-source",
+  "category": "restaurant",
+  "slots": [
+    10
+  ],
+  "fetched_at": "2026-11-17T05:08:27.553Z",
+  "method": "HTTP GET",
+  "rendered": false,
+  "interactions_tested": false,
+  "user_agent": "Mozilla/5.0 (compatible; accessibility-research-replica-study/1.0)",
+  "rounds": [
+    {
+      "round": 1,
+      "kind": "candidate homepages",
+      "records": [
+        {
+          "url": "https://magnoliabakery.com",
+          "fetched_at": "2026-11-17T05:08:10.176Z",
+          "method": "HTTP GET",
+          "ok": true,
+          "status": 200,
+          "final_url": "https://www.magnoliabakery.com/",
+          "redirected": true,
+          "content_type": "text/html; charset=utf-8",
+          "bytes": 326898,
+          "title": "Magnolia Bakery | Home",
+          "robots": {
+            "allowed": true,
+            "matched": "/",
+            "note": "robots.txt read for user-agent *"
+          },
+          "error": null,
+          "links": [
+            {
+              "url": "https://www.magnoliabakery.com/pages/thanksgiving",
+              "text": "Menu",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.magnoliabakery.com/pages/catering-events",
+              "text": "Catering Delivery",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.magnoliabakery.com/collections?delivery=Local",
+              "text": "Advanced Pick Up",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.magnoliabakery.com/collections?delivery=Nationwide",
+              "text": "Nationwide Shipping",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.magnoliabakery.com/pages/our-story",
+              "text": "LEARN MORE",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.magnoliabakery.com/products/%7B%7Bhandle%7D%7D",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.magnoliabakery.com/%7B%7B%7Bclick_here%7D%7D%7D",
+              "text": "Click here to browse all choices",
+              "in_nav": false
+            }
+          ]
+        },
+        {
+          "url": "https://lepainquotidien.com",
+          "fetched_at": "2026-11-17T05:08:11.772Z",
+          "method": "HTTP GET",
+          "ok": true,
+          "status": 200,
+          "final_url": "https://www.lepainquotidien.com/us/en",
+          "redirected": true,
+          "content_type": "text/html; charset=utf-8",
+          "bytes": 245363,
+          "title": "Home - Le Pain Quotidien",
+          "robots": {
+            "allowed": true,
+            "matched": "/",
+            "note": "robots.txt read for user-agent *"
+          },
+          "error": null,
+          "links": [
+            {
+              "url": "https://www.lepainquotidien.com/us/en/stores",
+              "text": "Locations",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.lepainquotidien.com/us/en",
+              "text": "Home",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.lepainquotidien.com/us/en/atelier",
+              "text": "Atelier",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.lepainquotidien.com/us/en/magazines",
+              "text": "Magazine",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.lepainquotidien.com/us/en/franchise",
+              "text": "Franchise",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.lepainquotidien.com/us/en/menu",
+              "text": "Menu",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.lepainquotidien.com/us/en/order-online",
+              "text": "Order Online",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.lepainquotidien.com/us/en/magazines/enjoy-the-taste-of-living-better",
+              "text": "Learn more",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.lepainquotidien.com/us/en/magazines/better-choices",
+              "text": "Read article",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.lepainquotidien.com/us/en/magazines/relationships-forged-around-our-communal-table",
+              "text": "Read article",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.lepainquotidien.com/us/en/magazines/our-history",
+              "text": "Read article",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.lepainquotidien.com/us/en/contact",
+              "text": "Contact",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.lepainquotidien.com/us/en/tartine-club",
+              "text": "More information",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.lepainquotidien.com/us/en/careers",
+              "text": "Careers",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.lepainquotidien.com/us/en/faq",
+              "text": "FAQ",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.lepainquotidien.com/us/en/allergen-statement",
+              "text": "Allergen Statement",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.lepainquotidien.com/us/en/accessibility-statement",
+              "text": "Accessibility Statement",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.lepainquotidien.com/us/en/terms-of-service",
+              "text": "Terms of service",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.lepainquotidien.com/us/en/catering",
+              "text": "Catering",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.lepainquotidien.com/us/en/privacy-policy",
+              "text": "Privacy Policy",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.lepainquotidien.com/us/en/cookie-policy",
+              "text": "Cookie Policy",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.lepainquotidien.com/us/en/sitemap",
+              "text": "Sitemap",
+              "in_nav": false
+            }
+          ]
+        },
+        {
+          "url": "https://tartinebakery.com",
+          "fetched_at": "2026-11-17T05:08:13.917Z",
+          "method": "HTTP GET",
+          "ok": true,
+          "status": 200,
+          "final_url": "https://tartinebakery.com/",
+          "redirected": true,
+          "content_type": "text/html; charset=UTF-8",
+          "bytes": 117001,
+          "title": "Tartine Bakery – Tartine is a thoughtful expression of modern craft through good food and warm experiences. We are a product of our communities and our friends.",
+          "robots": {
+            "allowed": true,
+            "matched": null,
+            "note": "robots.txt read for user-agent *"
+          },
+          "error": null,
+          "links": [
+            {
+              "url": "https://tartinebakery.com/stories/holiday",
+              "text": "Click here",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/cities",
+              "text": "Locations",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/san-francisco/bakery",
+              "text": "The Bakery",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/san-francisco/manufactory",
+              "text": "Tartine Manufactory",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/san-francisco/inner-sunset",
+              "text": "Inner Sunset SF",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/san-francisco/mill-valley",
+              "text": "Mill Valley",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/los-angeles/santa-monica",
+              "text": "Santa Monica",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/los-angeles/sycamore",
+              "text": "Sycamore",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/los-angeles/silverlake",
+              "text": "Silver Lake",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/los-angeles/west-adams",
+              "text": "West Adams",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/los-angeles/tartine-pasadena",
+              "text": "Pasadena",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/los-angeles/venice",
+              "text": "Venice",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/los-angeles/encino",
+              "text": "Encino",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/korea",
+              "text": "Korea",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/about",
+              "text": "About Us",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/about/our-story",
+              "text": "Our Story",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/about/tartine-bread",
+              "text": "Our Bread",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/about/join-the-team",
+              "text": "Join Tartine",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/press",
+              "text": "Press",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/cdn-cgi/l/email-protection",
+              "text": "[email protected]",
+              "in_nav": false
+            },
+            {
+              "url": "https://tartinebakery.com/privacy-policy",
+              "text": "Privacy Policy",
+              "in_nav": false
+            },
+            {
+              "url": "https://tartinebakery.com/site-map",
+              "text": "Site Map",
+              "in_nav": false
+            },
+            {
+              "url": "https://tartinebakery.com/terms-of-service",
+              "text": "Terms of Service",
+              "in_nav": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "kind": "interior pages",
+      "records": [
+        {
+          "url": "https://tartinebakery.com",
+          "fetched_at": "2026-11-17T05:08:22.791Z",
+          "method": "HTTP GET",
+          "ok": true,
+          "status": 200,
+          "final_url": "https://tartinebakery.com/",
+          "redirected": true,
+          "content_type": "text/html; charset=UTF-8",
+          "bytes": 117001,
+          "title": "Tartine Bakery – Tartine is a thoughtful expression of modern craft through good food and warm experiences. We are a product of our communities and our friends.",
+          "robots": {
+            "allowed": true,
+            "matched": null,
+            "note": "robots.txt read for user-agent *"
+          },
+          "error": null,
+          "links": [
+            {
+              "url": "https://tartinebakery.com/stories/holiday",
+              "text": "Click here",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/cities",
+              "text": "Locations",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/san-francisco/bakery",
+              "text": "The Bakery",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/san-francisco/manufactory",
+              "text": "Tartine Manufactory",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/san-francisco/inner-sunset",
+              "text": "Inner Sunset SF",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/san-francisco/mill-valley",
+              "text": "Mill Valley",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/los-angeles/santa-monica",
+              "text": "Santa Monica",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/los-angeles/sycamore",
+              "text": "Sycamore",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/los-angeles/silverlake",
+              "text": "Silver Lake",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/los-angeles/west-adams",
+              "text": "West Adams",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/los-angeles/tartine-pasadena",
+              "text": "Pasadena",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/los-angeles/venice",
+              "text": "Venice",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/los-angeles/encino",
+              "text": "Encino",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/korea",
+              "text": "Korea",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/about",
+              "text": "About Us",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/about/our-story",
+              "text": "Our Story",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/about/tartine-bread",
+              "text": "Our Bread",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/about/join-the-team",
+              "text": "Join Tartine",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/press",
+              "text": "Press",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/cdn-cgi/l/email-protection",
+              "text": "[email protected]",
+              "in_nav": false
+            },
+            {
+              "url": "https://tartinebakery.com/privacy-policy",
+              "text": "Privacy Policy",
+              "in_nav": false
+            },
+            {
+              "url": "https://tartinebakery.com/site-map",
+              "text": "Site Map",
+              "in_nav": false
+            },
+            {
+              "url": "https://tartinebakery.com/terms-of-service",
+              "text": "Terms of Service",
+              "in_nav": false
+            }
+          ]
+        },
+        {
+          "url": "https://tartinebakery.com/",
+          "fetched_at": "2026-11-17T05:08:23.546Z",
+          "method": "HTTP GET",
+          "ok": true,
+          "status": 200,
+          "final_url": "https://tartinebakery.com/",
+          "redirected": false,
+          "content_type": "text/html; charset=UTF-8",
+          "bytes": 117001,
+          "title": "Tartine Bakery – Tartine is a thoughtful expression of modern craft through good food and warm experiences. We are a product of our communities and our friends.",
+          "robots": {
+            "allowed": true,
+            "matched": null,
+            "note": "robots.txt read for user-agent *"
+          },
+          "error": null,
+          "links": [
+            {
+              "url": "https://tartinebakery.com/stories/holiday",
+              "text": "Click here",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/cities",
+              "text": "Locations",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/san-francisco/bakery",
+              "text": "The Bakery",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/san-francisco/manufactory",
+              "text": "Tartine Manufactory",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/san-francisco/inner-sunset",
+              "text": "Inner Sunset SF",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/san-francisco/mill-valley",
+              "text": "Mill Valley",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/los-angeles/santa-monica",
+              "text": "Santa Monica",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/los-angeles/sycamore",
+              "text": "Sycamore",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/los-angeles/silverlake",
+              "text": "Silver Lake",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/los-angeles/west-adams",
+              "text": "West Adams",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/los-angeles/tartine-pasadena",
+              "text": "Pasadena",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/los-angeles/venice",
+              "text": "Venice",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/los-angeles/encino",
+              "text": "Encino",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/korea",
+              "text": "Korea",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/about",
+              "text": "About Us",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/about/our-story",
+              "text": "Our Story",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/about/tartine-bread",
+              "text": "Our Bread",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/about/join-the-team",
+              "text": "Join Tartine",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/press",
+              "text": "Press",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/cdn-cgi/l/email-protection",
+              "text": "[email protected]",
+              "in_nav": false
+            },
+            {
+              "url": "https://tartinebakery.com/privacy-policy",
+              "text": "Privacy Policy",
+              "in_nav": false
+            },
+            {
+              "url": "https://tartinebakery.com/site-map",
+              "text": "Site Map",
+              "in_nav": false
+            },
+            {
+              "url": "https://tartinebakery.com/terms-of-service",
+              "text": "Terms of Service",
+              "in_nav": false
+            }
+          ]
+        },
+        {
+          "url": "https://tartinebakery.com/cities",
+          "fetched_at": "2026-11-17T05:08:24.351Z",
+          "method": "HTTP GET",
+          "ok": true,
+          "status": 200,
+          "final_url": "https://tartinebakery.com/cities",
+          "redirected": false,
+          "content_type": "text/html; charset=UTF-8",
+          "bytes": 165155,
+          "title": "Locations – Tartine Bakery",
+          "robots": {
+            "allowed": true,
+            "matched": null,
+            "note": "robots.txt read for user-agent *"
+          },
+          "error": null,
+          "links": [
+            {
+              "url": "https://tartinebakery.com/stories/holiday",
+              "text": "Click here",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/cities",
+              "text": "Locations",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/san-francisco/bakery",
+              "text": "The Bakery",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/san-francisco/manufactory",
+              "text": "Tartine Manufactory",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/san-francisco/inner-sunset",
+              "text": "Inner Sunset SF",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/san-francisco/mill-valley",
+              "text": "Mill Valley",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/los-angeles/santa-monica",
+              "text": "Santa Monica",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/los-angeles/sycamore",
+              "text": "Sycamore",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/los-angeles/silverlake",
+              "text": "Silver Lake",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/los-angeles/west-adams",
+              "text": "West Adams",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/los-angeles/tartine-pasadena",
+              "text": "Pasadena",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/los-angeles/venice",
+              "text": "Venice",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/los-angeles/encino",
+              "text": "Encino",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/korea",
+              "text": "Korea",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/about",
+              "text": "About Us",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/about/our-story",
+              "text": "Our Story",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/about/tartine-bread",
+              "text": "Our Bread",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/about/join-the-team",
+              "text": "Join Tartine",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/press",
+              "text": "Press",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/cdn-cgi/l/email-protection",
+              "text": "[email protected]",
+              "in_nav": false
+            },
+            {
+              "url": "https://tartinebakery.com/privacy-policy",
+              "text": "Privacy Policy",
+              "in_nav": false
+            },
+            {
+              "url": "https://tartinebakery.com/site-map",
+              "text": "Site Map",
+              "in_nav": false
+            },
+            {
+              "url": "https://tartinebakery.com/terms-of-service",
+              "text": "Terms of Service",
+              "in_nav": false
+            }
+          ]
+        },
+        {
+          "url": "https://tartinebakery.com/san-francisco/bakery",
+          "fetched_at": "2026-11-17T05:08:25.112Z",
+          "method": "HTTP GET",
+          "ok": true,
+          "status": 200,
+          "final_url": "https://tartinebakery.com/san-francisco/bakery",
+          "redirected": false,
+          "content_type": "text/html; charset=UTF-8",
+          "bytes": 120169,
+          "title": "The Bakery – Tartine Bakery",
+          "robots": {
+            "allowed": true,
+            "matched": null,
+            "note": "robots.txt read for user-agent *"
+          },
+          "error": null,
+          "links": [
+            {
+              "url": "https://tartinebakery.com/stories/holiday",
+              "text": "Click here",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/cities",
+              "text": "Locations",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/san-francisco/bakery",
+              "text": "The Bakery",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/san-francisco/manufactory",
+              "text": "Tartine Manufactory",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/san-francisco/inner-sunset",
+              "text": "Inner Sunset SF",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/san-francisco/mill-valley",
+              "text": "Mill Valley",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/los-angeles/santa-monica",
+              "text": "Santa Monica",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/los-angeles/sycamore",
+              "text": "Sycamore",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/los-angeles/silverlake",
+              "text": "Silver Lake",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/los-angeles/west-adams",
+              "text": "West Adams",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/los-angeles/tartine-pasadena",
+              "text": "Pasadena",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/los-angeles/venice",
+              "text": "Venice",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/los-angeles/encino",
+              "text": "Encino",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/korea",
+              "text": "Korea",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/about",
+              "text": "About Us",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/about/our-story",
+              "text": "Our Story",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/about/tartine-bread",
+              "text": "Our Bread",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/about/join-the-team",
+              "text": "Join Tartine",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/press",
+              "text": "Press",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/cdn-cgi/l/email-protection",
+              "text": "[email protected]",
+              "in_nav": false
+            },
+            {
+              "url": "https://tartinebakery.com/wp-content/uploads/2026/09/Vertical_Menu_Guerrero_JUN_2026__copy.pdf",
+              "text": "Bakery Menu",
+              "in_nav": false
+            },
+            {
+              "url": "https://tartinebakery.com/stories/country-bread",
+              "text": "VIEW FULL RECIPE",
+              "in_nav": false
+            },
+            {
+              "url": "https://tartinebakery.com/privacy-policy",
+              "text": "Privacy Policy",
+              "in_nav": false
+            },
+            {
+              "url": "https://tartinebakery.com/site-map",
+              "text": "Site Map",
+              "in_nav": false
+            },
+            {
+              "url": "https://tartinebakery.com/terms-of-service",
+              "text": "Terms of Service",
+              "in_nav": false
+            }
+          ]
+        },
+        {
+          "url": "https://tartinebakery.com/about",
+          "fetched_at": "2026-11-17T05:08:25.930Z",
+          "method": "HTTP GET",
+          "ok": true,
+          "status": 200,
+          "final_url": "https://tartinebakery.com/about",
+          "redirected": false,
+          "content_type": "text/html; charset=UTF-8",
+          "bytes": 95969,
+          "title": "About Us – Tartine Bakery",
+          "robots": {
+            "allowed": true,
+            "matched": null,
+            "note": "robots.txt read for user-agent *"
+          },
+          "error": null,
+          "links": [
+            {
+              "url": "https://tartinebakery.com/stories/holiday",
+              "text": "Click here",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/cities",
+              "text": "Locations",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/san-francisco/bakery",
+              "text": "The Bakery",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/san-francisco/manufactory",
+              "text": "Tartine Manufactory",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/san-francisco/inner-sunset",
+              "text": "Inner Sunset SF",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/san-francisco/mill-valley",
+              "text": "Mill Valley",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/los-angeles/santa-monica",
+              "text": "Santa Monica",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/los-angeles/sycamore",
+              "text": "Sycamore",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/los-angeles/silverlake",
+              "text": "Silver Lake",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/los-angeles/west-adams",
+              "text": "West Adams",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/los-angeles/tartine-pasadena",
+              "text": "Pasadena",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/los-angeles/venice",
+              "text": "Venice",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/los-angeles/encino",
+              "text": "Encino",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/korea",
+              "text": "Korea",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/about",
+              "text": "About Us",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/about/our-story",
+              "text": "Our Story",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/about/tartine-bread",
+              "text": "Our Bread",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/about/join-the-team",
+              "text": "Join Tartine",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/press",
+              "text": "Press",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/cdn-cgi/l/email-protection",
+              "text": "[email protected]",
+              "in_nav": false
+            },
+            {
+              "url": "https://tartinebakery.com/privacy-policy",
+              "text": "Privacy Policy",
+              "in_nav": false
+            },
+            {
+              "url": "https://tartinebakery.com/site-map",
+              "text": "Site Map",
+              "in_nav": false
+            },
+            {
+              "url": "https://tartinebakery.com/terms-of-service",
+              "text": "Terms of Service",
+              "in_nav": false
+            }
+          ]
+        },
+        {
+          "url": "https://tartinebakery.com/about/our-story",
+          "fetched_at": "2026-11-17T05:08:26.678Z",
+          "method": "HTTP GET",
+          "ok": true,
+          "status": 200,
+          "final_url": "https://tartinebakery.com/about/our-story",
+          "redirected": false,
+          "content_type": "text/html; charset=UTF-8",
+          "bytes": 101542,
+          "title": "Our Story – Tartine Bakery",
+          "robots": {
+            "allowed": true,
+            "matched": null,
+            "note": "robots.txt read for user-agent *"
+          },
+          "error": null,
+          "links": [
+            {
+              "url": "https://tartinebakery.com/stories/holiday",
+              "text": "Click here",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/cities",
+              "text": "Locations",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/san-francisco/bakery",
+              "text": "The Bakery",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/san-francisco/manufactory",
+              "text": "Tartine Manufactory",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/san-francisco/inner-sunset",
+              "text": "Inner Sunset SF",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/san-francisco/mill-valley",
+              "text": "Mill Valley",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/los-angeles/santa-monica",
+              "text": "Santa Monica",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/los-angeles/sycamore",
+              "text": "Sycamore",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/los-angeles/silverlake",
+              "text": "Silver Lake",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/los-angeles/west-adams",
+              "text": "West Adams",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/los-angeles/tartine-pasadena",
+              "text": "Pasadena",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/los-angeles/venice",
+              "text": "Venice",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/los-angeles/encino",
+              "text": "Encino",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/korea",
+              "text": "Korea",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/about",
+              "text": "About Us",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/about/our-story",
+              "text": "Our Story",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/about/tartine-bread",
+              "text": "Our Bread",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/about/join-the-team",
+              "text": "Join Tartine",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/press",
+              "text": "Press",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/cdn-cgi/l/email-protection",
+              "text": "[email protected]",
+              "in_nav": false
+            },
+            {
+              "url": "https://tartinebakery.com/privacy-policy",
+              "text": "Privacy Policy",
+              "in_nav": false
+            },
+            {
+              "url": "https://tartinebakery.com/site-map",
+              "text": "Site Map",
+              "in_nav": false
+            },
+            {
+              "url": "https://tartinebakery.com/terms-of-service",
+              "text": "Terms of Service",
+              "in_nav": false
+            }
+          ]
+        },
+        {
+          "url": "https://tartinebakery.com/press",
+          "fetched_at": "2026-11-17T05:08:27.504Z",
+          "method": "HTTP GET",
+          "ok": true,
+          "status": 200,
+          "final_url": "https://tartinebakery.com/press",
+          "redirected": false,
+          "content_type": "text/html; charset=UTF-8",
+          "bytes": 93986,
+          "title": "Press – Tartine Bakery",
+          "robots": {
+            "allowed": true,
+            "matched": null,
+            "note": "robots.txt read for user-agent *"
+          },
+          "error": null,
+          "links": [
+            {
+              "url": "https://tartinebakery.com/stories/holiday",
+              "text": "Click here",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/cities",
+              "text": "Locations",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/san-francisco/bakery",
+              "text": "The Bakery",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/san-francisco/manufactory",
+              "text": "Tartine Manufactory",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/san-francisco/inner-sunset",
+              "text": "Inner Sunset SF",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/san-francisco/mill-valley",
+              "text": "Mill Valley",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/los-angeles/santa-monica",
+              "text": "Santa Monica",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/los-angeles/sycamore",
+              "text": "Sycamore",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/los-angeles/silverlake",
+              "text": "Silver Lake",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/los-angeles/west-adams",
+              "text": "West Adams",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/los-angeles/tartine-pasadena",
+              "text": "Pasadena",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/los-angeles/venice",
+              "text": "Venice",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/los-angeles/encino",
+              "text": "Encino",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/korea",
+              "text": "Korea",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/about",
+              "text": "About Us",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/about/our-story",
+              "text": "Our Story",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/about/tartine-bread",
+              "text": "Our Bread",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/about/join-the-team",
+              "text": "Join Tartine",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/press",
+              "text": "Press",
+              "in_nav": true
+            },
+            {
+              "url": "https://tartinebakery.com/cdn-cgi/l/email-protection",
+              "text": "[email protected]",
+              "in_nav": false
+            },
+            {
+              "url": "https://tartinebakery.com/privacy-policy",
+              "text": "Privacy Policy",
+              "in_nav": false
+            },
+            {
+              "url": "https://tartinebakery.com/site-map",
+              "text": "Site Map",
+              "in_nav": false
+            },
+            {
+              "url": "https://tartinebakery.com/terms-of-service",
+              "text": "Terms of Service",
+              "in_nav": false
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

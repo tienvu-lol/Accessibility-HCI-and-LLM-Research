@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en" data-section="html">
+<head>
+  <meta charset="utf-8">
+  <title>Fashion Trends – Vogue Vista</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header -->
+  <header data-section="header">
+    <div class="site-header">
+      <div class="logo" data-component="site-logo">Vogue Vista</div>
+      <nav data-component="primary-nav" aria-label="Main navigation">
+        <button class="hamburger" aria-controls="primary-menu" aria-expanded="false" aria-label="Menu">
+          ☰
+        </button>
+        <ul id="primary-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="fashion-index.html">Fashion</a></li>
+          <li><a href="beauty-index.html">Beauty</a></li>
+          <li><a href="travel-dining-index.html">Travel &amp; Dining</a></li>
+          <li><a href="red-carpet-index.html">Red Carpet</a></li>
+          <li><a href="newsletter-index.html">Newsletter</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section data-component="hero" aria-label="Fashion hero">
+    <h1>Fashion Trends 2026</h1>
+    <p>Runway highlights, emerging designers, and style tips.</p>
+  </section>
+
+  <main id="main-content" data-section="main">
+    <!-- Search -->
+    <section data-component="content-band" aria-label="Search fashion articles">
+      <h2>Search Articles</h2>
+      <label for="search-input">Search:</label>
+      <input type="search" id="search-input" placeholder="Filter articles">
+      <ul class="card-grid" id="search-results"></ul>
+    </section>
+
+    <!-- Featured cards -->
+    <section data-component="content-band" aria-label="Featured fashion articles">
+      <h2>Featured Stories</h2>
+      <ul class="card-grid">
+        <li class="card"><h3>Spring Runway Review</h3><p>Highlights from the latest shows.</p></li>
+        <li class="card"><h3>Emerging Designers</h3><p>Spotlight on fresh talent.</p></li>
+        <li class="card"><h3>Sustainable Style</h3><p>Eco‑friendly fashion choices.</p></li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer data-section="footer">
+    <p>&copy; 2026 Vogue Vista. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Inline demo dataset for search filtering
+    window.featuredArticles = [
+      {title: 'Spring Runway Review', summary: 'Highlights from the latest shows.'},
+      {title: 'Emerging Designers', summary: 'Spotlight on fresh talent.'},
+      {title: 'Sustainable Style', summary: 'Eco‑friendly fashion choices.'},
+      {title: 'Street Style Snapshots', summary: 'Urban looks that inspire.'},
+      {title: 'Color Forecast 2026', summary: 'Palette trends for the year.'},
+      {title: 'Accessory Must‑Haves', summary: 'Key pieces to complete any outfit.'}
+    ];
+  </script>
+</body>
+</html>

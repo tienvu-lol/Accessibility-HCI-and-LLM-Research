@@ -1,0 +1,162 @@
+/* Global reset & box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Base typography */
+html {
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+  color: #222;
+  background: #fff;
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #000;
+  color: #fff;
+  padding: 8px 12px;
+  z-index: 100;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+/* Header & navigation */
+header[data-section="header"] {
+  background: #f4f4f4;
+  border-bottom: 1px solid #ddd;
+}
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 12px 16px;
+}
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+nav[data-component="primary-nav"] {
+  position: relative;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+nav a {
+  text-decoration: none;
+  color: inherit;
+}
+nav button.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+}
+
+/* Mobile menu */
+@media (max-width: 600px) {
+  nav ul {
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #f4f4f4;
+    border-top: 1px solid #ddd;
+    display: none;
+  }
+  nav ul[aria-hidden="false"] {
+    display: flex;
+  }
+  nav button.hamburger {
+    display: block;
+  }
+}
+
+/* Hero */
+section[data-component="hero"] {
+  background: #e0e0e0;
+  text-align: center;
+  padding: 60px 20px;
+}
+section[data-component="hero"] h1 {
+  font-size: 2rem;
+}
+
+/* Content bands */
+section[data-component="content-band"] {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+.card-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+.card {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  background: #fafafa;
+}
+.card img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Footer */
+footer[data-section="footer"] {
+  background: #222;
+  color: #fff;
+  padding: 1rem;
+  margin-top: auto;
+}
+footer a {
+  color: #fff;
+}
+
+/* Focus outline */
+:focus-visible {
+  outline: 2px solid #005fcc;
+  outline-offset: 2px;
+}
+
+/* Responsive images */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Lightbox (hidden by default) */
+dialog[data-component="lightbox"] {
+  width: 90%;
+  max-width: 600px;
+  border: none;
+  padding: 0;
+}
+dialog::backdrop {
+  background: rgba(0,0,0,0.6);
+}
+
+/* Form error styling */
+.error {
+  color: #d00;
+  font-size: 0.9rem;
+}

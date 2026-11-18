@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>WeatherNow – Weather News</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <header data-section="header" data-component="site-header">
+    <div class="demo-premium-banner" aria-label="Demo Premium – Not functional" style="background:#ffeb3b;color:#222;padding:.5rem;text-align:center;font-size:.875rem;">
+      Demo Premium – Not functional
+    </div>
+    <h1>WeatherNow</h1>
+    <form class="location-search" data-component="location-search">
+      <label for="location-input-news" class="visually-hidden">Location search</label>
+      <input type="text" id="location-input-news" placeholder="Enter location (e.g., Ashburn, VA)" aria-label="Location search">
+      <button type="button">Search</button>
+    </form>
+  </header>
+  <nav data-section="navigation" data-component="primary-nav">
+    <ul class="nav-list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="today.html">Today</a></li>
+      <li><a href="radar.html">Radar</a></li>
+      <li><a href="news.html" aria-current="page">News</a></li>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="hourly.html">Hourly</a></li>
+      <li><a href="tenday.html">10‑Day</a></li>
+      <li><a href="monthly.html">Monthly</a></li>
+      <li><a href="allergy.html">Allergies</a></li>
+    </ul>
+  </nav>
+  <main id="main-content" data-section="main" class="main-content">
+    <section data-section="news-list" data-component="news-card">
+      <h2>Latest Weather News</h2>
+      <div id="news-container">Loading&hellip;</div>
+    </section>
+  </main>
+  <footer data-section="footer" data-component="site-footer">
+    &copy; 2026 WeatherNow. All rights reserved. <a href="help.html">Help</a> | <a href="about.html">About</a>
+  </footer>
+  <script>
+    // Inline demo news items
+    const newsItems = [
+      {
+        title: "Summer Heat Wave Expected Across the Midwest",
+        summary: "Temperatures are projected to reach the mid‑90s°F with high humidity through the weekend.",
+        timestamp: "2026-08-24 10:30"
+      },
+      {
+        title: "Tropical Storm Forms in the Atlantic",
+        summary: "A new tropical depression has strengthened and may affect the eastern seaboard later next week.",
+        timestamp: "2026-08-23 16:45"
+      },
+      {
+        title: "Wildfire Smoke Impacts Air Quality in Colorado",
+        summary: "Smoke from regional fires is elevating particulate matter levels; sensitive groups should limit outdoor exertion.",
+        timestamp: "2026-08-22 08:12"
+      }
+    ];
+
+    function renderNews() {
+      const container = document.getElementById('news-container');
+      container.innerHTML = '';
+      newsItems.forEach(item => {
+        const article = document.createElement('article');
+        article.style.border = '1px solid #ccc';
+        article.style.borderRadius = '0.5rem';
+        article.style.padding = '1rem';
+        article.style.marginBottom = '1rem';
+        article.innerHTML = `
+          <h3>${item.title}</h3>
+          <p>${item.summary}</p>
+          <time datetime="${item.timestamp}">${item.timestamp}</time>
+        `;
+        container.appendChild(article);
+      });
+    }
+
+    // Location search demo (same as other pages)
+    const searchForm = document.querySelector('.location-search form');
+    if (searchForm) {
+      searchForm.addEventListener('submit', e => {
+        e.preventDefault();
+        const input = searchForm.querySelector('input');
+        const val = input.value.trim();
+        if (val) {
+          alert(`Demo: showing forecast for "${val}". (No real data)`);
+          input.value = '';
+        }
+      });
+    }
+
+    renderNews();
+  </script>
+  <script src="js/main.js"></script>
+</body>
+</html>

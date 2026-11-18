@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en" data-section="press">
+<head>
+  <meta charset="utf-8">
+  <title>Press – Sunrise Bakery</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <a href="#main-content" id="skip-link">Skip to main content</a>
+
+  <header data-component="site-header">
+    <h1 data-component="site-logo">Sunrise Bakery</h1>
+    <nav data-component="primary-nav" aria-label="Main navigation">
+      <button id="nav-toggle" aria-controls="primary-nav-list" aria-expanded="false" aria-label="Toggle menu">☰</button>
+      <ul id="primary-nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="cities-index.html">Locations</a></li>
+        <li><a href="bakery-index.html">Bakery</a></li>
+        <li><a href="about-index.html">About</a></li>
+        <li><a href="press-index.html">Press</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section data-component="hero" aria-label="Press hero">
+    <h1>Press</h1>
+    <p>Media coverage and announcements.</p>
+  </section>
+
+  <main id="main-content" data-component="main-content">
+    <ul data-component="press-list">
+      <!-- Press items injected by JS -->
+    </ul>
+    <script>
+      const list = document.querySelector('[data-component="press-list"]');
+      pressItems.forEach(item => {
+        const li = document.createElement('li');
+        li.innerHTML = `<strong>${item.title}</strong> <em>(${item.date})</em>`;
+        list.appendChild(li);
+      });
+    </script>
+  </main>
+
+  <footer data-component="site-footer">
+    <p>&copy; 2024 Sunrise Bakery.</p>
+  </footer>
+</body>
+</html>

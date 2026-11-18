@@ -1,0 +1,84 @@
+{
+  "components": [
+    {
+      "name": "site-header",
+      "selector": "header[data-component=\"site-header\"]",
+      "pages": ["index.html","appointments.html","find-a-doctor.html","locations.html","patient-visitor-guide.html","billing-insurance.html","departments-centers.html","diseases-conditions.html","brain-tumor.html","404.html"],
+      "behaviours": ["contains site title and logo placeholder"],
+      "keyboard_expectations": ["focusable skip link before header; header itself not focusable"],
+      "status": "replicated"
+    },
+    {
+      "name": "primary-nav",
+      "selector": "nav[data-component=\"primary-nav\"]",
+      "pages": ["index.html","appointments.html","find-a-doctor.html","locations.html","patient-visitor-guide.html","billing-insurance.html","departments-centers.html","diseases-conditions.html","brain-tumor.html","404.html"],
+      "behaviours": ["navigation links to all top‑level pages"],
+      "keyboard_expectations": ["tab order follows link order; arrow keys not required"],
+      "status": "replicated"
+    },
+    {
+      "name": "site-footer",
+      "selector": "footer[data-component=\"site-footer\"]",
+      "pages": ["index.html","appointments.html","find-a-doctor.html","locations.html","patient-visitor-guide.html","billing-insurance.html","departments-centers.html","diseases-conditions.html","brain-tumor.html","404.html"],
+      "behaviours": ["copyright notice"],
+      "keyboard_expectations": ["no interactive elements"],
+      "status": "replicated"
+    },
+    {
+      "name": "filter-panel",
+      "selector": "section[data-component=\"filter-panel\"]",
+      "pages": ["find-a-doctor.html","locations.html"],
+      "behaviours": ["text inputs for filtering; live update of card grid"],
+      "keyboard_expectations": ["inputs reachable via Tab; labels associated"],
+      "status": "simulated"
+    },
+    {
+      "name": "doctor-card-grid",
+      "selector": "section[data-component=\"doctor-card-grid\"]",
+      "pages": ["find-a-doctor.html"],
+      "behaviours": ["displays doctor cards; updates on filter"],
+      "keyboard_expectations": ["cards not focusable; links inside would be focusable if present"],
+      "status": "simulated"
+    },
+    {
+      "name": "location-card-grid",
+      "selector": "section[data-component=\"location-card-grid\"]",
+      "pages": ["locations.html"],
+      "behaviours": ["displays location cards; updates on filter"],
+      "keyboard_expectations": ["cards not focusable"],
+      "status": "simulated"
+    },
+    {
+      "name": "appointment-form",
+      "selector": "form[data-component=\"appointment-form\"]",
+      "pages": ["appointments.html"],
+      "behaviours": ["client‑side validation, error summary, demo alert on success"],
+      "keyboard_expectations": ["tab order through fields; focus moves to error summary on error"],
+      "status": "simulated"
+    },
+    {
+      "name": "billing-info",
+      "selector": "section[data-component=\"billing-info\"]",
+      "pages": ["billing-insurance.html"],
+      "behaviours": ["static informational text"],
+      "keyboard_expectations": ["no interactive elements"],
+      "status": "replicated"
+    },
+    {
+      "name": "disease-card-grid",
+      "selector": "section[data-component=\"disease-card-grid\"]",
+      "pages": ["diseases-conditions.html"],
+      "behaviours": ["displays disease cards from sample data"],
+      "keyboard_expectations": ["cards not focusable"],
+      "status": "simulated"
+    },
+    {
+      "name": "condition-detail",
+      "selector": "section[data-component=\"condition-detail\"]",
+      "pages": ["brain-tumor.html"],
+      "behaviours": ["static placeholder content for a condition"],
+      "keyboard_expectations": ["no interactive elements"],
+      "status": "simulated"
+    }
+  ]
+}

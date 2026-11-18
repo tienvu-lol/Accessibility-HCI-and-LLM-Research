@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tropical cyclone | Aurora Meteorological Bureau</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  
+  <header class="site-header" data-section="header" data-component="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="site-logo" aria-label="Aurora Met Bureau">Aurora Met Bureau</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+      <nav class="primary-nav" id="primary-nav" data-component="primary-nav">
+        <ul>
+          <li><a href="location-australia.html">Forecasts</a></li>
+          <li><a href="warnings-and-alerts.html">Warnings & Alerts</a></li>
+          <li><a href="rain-radar-and-weather-maps.html">Radar & Maps</a></li>
+          <li><a href="tropical-cyclone.html">Tropical Cyclones</a></li>
+          <li><a href="water-data-and-forecasts.html">Water Data</a></li>
+          <li><a href="past-weather-and-climate.html">Past Weather</a></li>
+          <li><a href="about-the-bureau.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="hero" data-section="hero" data-component="hero-banner">
+      <div class="container">
+        <h1>Tropical cyclones</h1>
+        <p>Track active tropical cyclones and access historical data.</p>
+      </div>
+    </section>
+
+    <section class="container" data-section="active-cyclones" data-component="cyclone-track">
+      <h2>Active Systems</h2>
+      <div class="alert-item critical">
+        <p class="alert-type">Tropical Cyclone "Sim"</p>
+        <p><strong>Status:</strong> Category 3 Strong Tropical Cyclone</p>
+        <p><strong>Location:</strong> 15°S 145°E, approx. 300km NW of Port Haven</p>
+        <p><strong>Movement:</strong> Moving south-west at 15 km/h.</p>
+        <p><strong>Warning:</strong> Coastal Region D under Tropical Cyclone Warning.</p>
+      </div>
+    </section>
+
+    <section class="container" data-section="cyclone-map" data-component="static-map">
+      <h2>Cyclone Track Map</h2>
+      <figure>
+        <svg width="100%" height="400" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Tropical Cyclone Track Map">
+          <rect width="100%" height="100%" fill="#e0f7fa"/>
+          <path d="M400,350 Q350,250 300,150 T200,50" fill="none" stroke="#d32f2f" stroke-width="3" stroke-dasharray="5,5"/>
+          <circle cx="300" cy="150" r="10" fill="#d32f2f"/>
+          <text x="310" y="150" fill="#d32f2f" font-weight="bold">Sim</text>
+          <text x="50%" y="50%" text-anchor="middle" fill="#555">Cyclone Track Projection</text>
+        </svg>
+        <figcaption>Projected track of Tropical Cyclone "Sim".</figcaption>
+      </figure>
+    </section>
+
+    <section class="container" data-section="cyclone-info" data-component="card-grid">
+      <h2>Cyclone Information</h2>
+      <div class="card-grid">
+        <article class="card">
+          <h3>What is a Cyclone?</h3>
+          <p>Tropical cyclones are rotating storm systems characterized by a low-pressure center, strong thunderstorms, and a well-defined circulation.</p>
+        </article>
+        <article class="card">
+          <h3>Safety Tips</h3>
+          <ul>
+            <li>Stay indoors and away from windows.</li>
+            <li>Prepare emergency supplies.</li>
+            <li>Follow evacuation orders if issued.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" data-section="footer" data-component="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>Aurora Met Bureau</h3>
+        <p>Providing accurate weather information since 1901.</p>
+      </div>
+      <div>
+        <h3>Quick Links</h3>
+        <a href="index.html">Home</a>
+        <a href="warnings-and-alerts.html">Warnings</a>
+        <a href="about-the-bureau.html">About Us</a>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <p>Email: info@auroramet.sim</p>
+        <p>Phone: 1300 000 000</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

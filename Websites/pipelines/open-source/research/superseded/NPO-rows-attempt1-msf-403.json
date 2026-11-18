@@ -1,0 +1,80 @@
+{
+  "category": "nonprofit",
+  "prefix": "NPO",
+  "updated_at": "2026-11-16T21:47:18.210Z",
+  "slots_proposed": [
+    7
+  ],
+  "slots_outstanding": [
+    8,
+    9,
+    10
+  ],
+  "approval_state": "unapproved: approval cells are left empty for the project lead",
+  "runs": [
+    "2026-11-16T21-45-45-988Z-research-NPO-07"
+  ],
+  "rows": [
+    {
+      "source_id": "NPO-07",
+      "subcategory": "international humanitarian charity",
+      "source_name": "Doctors Without Borders / Médecins Sans Frontières",
+      "source_url": "https://www.doctorswithoutborders.org",
+      "verified_at": "2024-05-22 (HTTP GET by the orchestrator)",
+      "verification_method": "HTTP GET by the orchestrator",
+      "verification_result": "UNVERIFIED",
+      "evidence_reference": "pipelines/open-source/research/evidence/NPO-07-http-2026-11-16.json",
+      "source_pages": [
+        {
+          "url": "https://www.doctorswithoutborders.org/get-involved/ways-to-give",
+          "title": "Ways to give donations | Doctors Without Borders - USA",
+          "local_file": "ways-to-give.html"
+        },
+        {
+          "url": "https://www.doctorswithoutborders.org/get-involved/student-chapters",
+          "title": "Join a Friends of MSF chapter Doctors Without Borders (MSF) Student Chapters: Join or start a club at your college or university.",
+          "local_file": "student-chapters.html"
+        }
+      ],
+      "key_regions": [
+        "Navigation",
+        "Content Area",
+        "Footer"
+      ],
+      "key_interactions": [
+        {
+          "name": "Donation Form",
+          "evidence": "inferred",
+          "notes": "Page title and links to 'Become monthly donor' suggest donation interface, but form markup not visible."
+        },
+        {
+          "name": "Chapter Search/Filter",
+          "evidence": "observed",
+          "notes": "URLs in other_links show filter parameters like f%5B0%5D=country%3A... on the student chapters page."
+        }
+      ],
+      "complexity": "medium",
+      "stack_clues": "Drupal",
+      "limitations": "Homepage and 8 other interior pages returned 403. Only 'Ways to Give' and 'Student Chapters' pages were accessible. Site likely uses bot protection.",
+      "slot": 7,
+      "category": "nonprofit",
+      "model_group": "open-source",
+      "model_id": "unsloth/Qwen3.6-35B-A3B-GGUF",
+      "model_version": "Q4_K_M",
+      "approved_at": "",
+      "approved_by": "",
+      "approval_reference": "",
+      "researched_by": {
+        "model_id": "unsloth/Qwen3.6-35B-A3B-GGUF",
+        "slot": 7
+      },
+      "orchestrator_checks": {
+        "pages_proposed": 2,
+        "pages_without_successful_fetch": [],
+        "page_map_has_index": false,
+        "source_url_fetched_ok": false,
+        "meets_min_pages": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Course Catalog | Liberal Arts College</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <header data-section="banner" data-component="site-header">
+    <div class="site-name">Liberal Arts College</div>
+    <button id="nav-toggle" class="hamburger" aria-controls="primary-nav-list" aria-expanded="false" aria-label="Open main menu">☰</button>
+    <nav data-section="navigation" data-component="primary-nav">
+      <ul id="primary-nav-list" class="nav-list" aria-expanded="false">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="academic-life.html">Academics</a></li>
+        <li><a href="departments.html">Majors</a></li>
+        <li><a href="college-catalog.html">Course Catalog</a></li>
+        <li><a href="admission.html">Admission &amp; Aid</a></li>
+        <li><a href="apply.html">Apply</a></li>
+        <li><a href="visiting.html">Visit</a></li>
+        <li><a href="news.html">News &amp; Events</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content" data-section="main">
+    <h1>Course Catalog</h1>
+    <p>Browse sample courses offered this term. Use the search to find courses by title or code.</p>
+
+    <input type="search" id="course-search" placeholder="Search courses…" aria-label="Search courses">
+    <h2>Courses</h2>
+    <section data-section="course-list" data-component="card-grid">
+      <div class="card-grid" id="course-grid">
+        <!-- course cards will be inserted by script -->
+      </div>
+    </section>
+  </main>
+
+  <footer data-section="footer" data-component="site-footer">
+    <p>&copy; 2026 Liberal Arts College. All rights reserved.</p>
+    <ul>
+      <li><a href="#main-content">Privacy</a></li>
+      <li><a href="#main-content">Terms</a></li>
+      <li><a href="#main-content">Contact</a></li>
+    </ul>
+  </footer>
+
+  <div id="toast" aria-live="polite"></div>
+
+  <!-- Inline sample data -->
+  <script>
+    const coursesData = [
+      {code: "BIOL 101", title: "Introduction to Biology", credits: 4, description: "Survey of biological principles and laboratory techniques."},
+      {code: "ENG 205", title: "American Literature", credits: 3, description: "Study of major American writers from the colonial period to the present."},
+      {code: "CS 150", title: "Computer Science I", credits: 4, description: "Fundamentals of programming and problem‑solving using Python."},
+      {code: "HIST 120", title: "World History to 1500", credits: 3, description: "Overview of global civilizations from antiquity to the early modern era."},
+      {code: "MATH 101", title: "Calculus I", credits: 4, description: "Limits, derivatives, integrals, and applications."},
+      {code: "PHYS 101", title: "Introductory Physics I", credits: 4, description: "Mechanics, waves, and thermodynamics with laboratory."},
+      {code: "PSYC 100", title: "General Psychology", credits: 3, description: "Introduction to the science of mind and behavior."},
+      {code: "ECON 101", title: "Principles of Economics", credits: 3, description: "Micro‑ and macroeconomic foundations."},
+      {code: "ENVS 110", title: "Environmental Science", credits: 3, description: "Interdisciplinary study of ecosystems and human impact."},
+      {code: "PHIL 101", title: "Introduction to Philosophy", credits: 3, description: "Examination of knowledge, reality, and ethics."},
+      {code: "ARTH 200", title: "Art History Survey", credits: 3, description: "Major movements in Western art from Renaissance to today."},
+      {code: "MUS 101", title: "Music Fundamentals", credits: 3, description: "Basics of notation, theory, and listening skills."},
+      {code: "BIOL 250", title: "Genetics", credits: 4, description: "Principles of inheritance, molecular genetics, and genomics."},
+      {code: "ENG 312", title: "Creative Writing Workshop", credits: 3, description: "Practice in fiction, poetry, and nonfiction forms."},
+      {code: "CS 250", title: "Data Structures", credits: 4, description: "Study of data organization, algorithms, and complexity."},
+      {code: "HIST 320", title: "The Civil War Era", credits: 3, description: "In‑depth look at causes, conflict, and reconstruction."},
+      {code: "MATH 210", title: "Linear Algebra", credits: 3, description: "Vector spaces, matrices, and linear transformations."},
+      {code: "PHYS 220", title: "Electricity and Magnetism", credits: 4, description: "Fields, circuits, and electromagnetic waves."},
+      {code: "PSYC 250", title: "Cognitive Psychology", credits: 3, description: "Memory, perception, language, and decision‑making."},
+      {code: "ECON 220", title: "International Trade", credits: 3, description: "Theory and policy of global trade and finance."}
+    ];
+  </script>
+  <script src="js/main.js"></script>
+  <script>
+    const grid = document.getElementById('course-grid');
+    coursesData.forEach(c => {
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.setAttribute('data-component', 'course-card');
+      card.innerHTML = `
+        <h3>${c.code}: ${c.title}</h3>
+        <p><strong>Credits:</strong> ${c.credits}</p>
+        <p>${c.description}</p>
+      `;
+      grid.appendChild(card);
+    });
+
+    // Course search
+    const searchInput = document.getElementById('course-search');
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        const term = e.target.value.trim().toLowerCase();
+        const cards = document.querySelectorAll('[data-component="course-card"]');
+        cards.forEach(card => {
+          const text = card.textContent.toLowerCase();
+          card.style.display = term ? (text.includes(term) ? '' : 'none') : '';
+        });
+      });
+    }
+  </script>
+</body>
+</html>

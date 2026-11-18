@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en" data-section="service-detail">
+<head>
+  <meta charset="utf-8">
+  <title>Civic Harbor – Park Use Permits</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="site-header" data-component="site-header">
+    <img src="assets/logo.svg" alt="Civic Harbor logo" class="logo">
+    <div data-component="language-switcher">
+      <button type="button">Español</button>
+    </div>
+  </header>
+
+  <nav class="primary-nav" aria-label="Main navigation" data-component="primary-nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="parks-and-recreation.html">Parks & Recreation</a></li>
+      <li><a href="pothole-repair.html">Pothole Repair</a></li>
+      <li><a href="pay-bill.html">Pay Your Bill</a></li>
+      <li><a href="complaint-form.html">File a Complaint</a></li>
+    </ul>
+  </nav>
+
+  <main id="main-content" data-component="main-content">
+    <h1>Park Use Permit Application (Demo)</h1>
+
+    <div class="error-summary" role="alert" aria-live="assertive" style="display:none;"></div>
+
+    <form data-demo="true" aria-labelledby="permit-form-title">
+      <label for="applicant-name">Name</label>
+      <input type="text" id="applicant-name" name="applicant-name" required>
+
+      <label for="applicant-email">Email</label>
+      <input type="email" id="applicant-email" name="applicant-email" required>
+
+      <label for="permit-type">Permit Type</label>
+      <select id="permit-type" name="permit-type" required>
+        <!-- Options populated by JS -->
+      </select>
+
+      <label for="event-date">Event Date</label>
+      <input type="date" id="event-date" name="event-date" required>
+
+      <button type="submit">Submit Application</button>
+    </form>
+  </main>
+
+  <footer class="site-footer" data-component="site-footer">
+    <p>&copy; 2024 Civic Harbor. All rights reserved.</p>
+  </footer>
+</body>
+</html>

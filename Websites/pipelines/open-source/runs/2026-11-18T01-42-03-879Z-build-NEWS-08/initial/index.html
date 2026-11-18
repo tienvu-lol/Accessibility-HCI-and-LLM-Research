@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Cascadia Chronicle | Local news, sports, business, politics, entertainment, travel, restaurants and opinion for Seattle and the Pacific Northwest.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="site-header" data-section="header" data-component="site-header">
+    <div class="container">
+      <h1 class="site-title">Cascadia Chronicle</h1>
+      <form class="search-form" aria-label="Site search">
+        <label for="site-search" class="visually-hidden">Search</label>
+        <input type="search" id="site-search" placeholder="Search…" aria-label="Search">
+        <button type="submit">Search</button>
+      </form>
+    </div>
+  </header>
+
+  <nav class="primary-nav" aria-label="Primary" data-section="navigation" data-component="primary-nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="seattle-news.html">Local News</a></li>
+      <li><a href="business.html">Business</a></li>
+      <li><a href="sports.html">Sports</a></li>
+      <li><a href="nation-world.html">Nation &amp; World</a></li>
+      <li><a href="subscribe-signup-offers-subsource-voluntary.html">Subscribe</a></li>
+      <li><a href="help.html">Help</a></li>
+      <li><a href="newsroom-staff.html">Newsroom Staff</a></li>
+      <li><a href="rss-feeds.html">RSS Feeds</a></li>
+    </ul>
+  </nav>
+
+  <main id="main-content" class="main-content" data-section="main">
+    <section aria-label="Latest news" data-component="latest-tabs">
+      <div class="latest-tabs">
+        <button data-tab-trigger data-tab-target="tab-latest" aria-selected="true">Latest</button>
+        <button data-tab-trigger data-tab-target="tab-mostread" aria-selected="false">Most Read</button>
+      </div>
+      <section id="tab-latest" data-tab-panel>
+        <h2>Latest Stories</h2>
+        <!-- article cards will be injected by JS if needed; we provide static sample -->
+        <div class="article-card">
+          <img src="assets/article-placeholder.svg" alt="Placeholder image for article">
+          <div class="card-body">
+            <h3>City Council Approves New Bike Lanes on Downtown Streets</h3>
+            <p class="timestamp">Published 2 hours ago</p>
+            <p>The Seattle City Council voted unanimously to add protected bike lanes along three major downtown corridors, aiming to improve cyclist safety and reduce traffic congestion.</p>
+            <a href="seattle-i-5-express-lanes-closed.html" class="read-more">Read more</a>
+          </div>
+        </div>
+        <div class="article-card">
+          <img src="assets/article-placeholder.svg" alt="Placeholder image for article">
+          <div class="card-body">
+            <h3>Local Tech Startup Secures $12 Million Funding Round</h3>
+            <p class="timestamp">Published 4 hours ago</p>
+            <p>A Seattle‑based AI analytics company announced a Series A round led by local venture firms, planning to expand its workforce and product offerings.</p>
+            <a href="#" class="read-more">Read more</a>
+          </div>
+        </div>
+      </section>
+      <section id="tab-mostread" data-tab-panel hidden>
+        <h2>Most Read</h2>
+        <div class="article-card">
+          <img src="assets/article-placeholder.svg" alt="Placeholder image for article">
+          <div class="card-body">
+            <h3>Rain‑Soaked Weekend Brings Record River Levels</h3>
+            <p class="timestamp">Published 6 hours ago</p>
+            <p>Persistent rainfall caused the Snoqualmie River to reach levels not seen since 2012, prompting flood warnings in several communities.</p>
+            <a href="#" class="read-more">Read more</a>
+          </div>
+        </div>
+        <div class="article-card">
+          <img src="assets/article-placeholder.svg" alt="Placeholder image for article">
+          <div class="card-body">
+            <h3>Seattle Mariners Announce New Spring Training Schedule</h3>
+            <p class="timestamp">Published 8 hours ago</p>
+            <p>The Mariners released their Cactus League slate, featuring several home games in Peoria, Arizona.</p>
+            <a href="#" class="read-more">Read more</a>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <section aria-label="Newsletter signup" data-component="newsletter-signup">
+      <h2>Stay Informed</h2>
+      <form class="newsletter-signup" aria-label="Newsletter signup">
+        <label for="newsletter-email">Email address</label>
+        <input type="email" id="newsletter-email" placeholder="you@example.com" required>
+        <button type="submit">Subscribe</button>
+      </form>
+      <p class="error-message"></p>
+      <p class="success-message"></p>
+    </section>
+  </main>
+
+  <footer class="site-footer" data-section="footer" data-component="site-footer">
+    <div>
+      &copy; 2026 Cascadia Chronicle. All rights reserved. <br>
+      123 Fiction Ave, Seattle, WA 98101 <br>
+      <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a>
+    </div>
+  </footer>
+
+  <div id="subscription-modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-content">
+      <button class="modal-close" data-modal-close aria-label="Close modal">&times;</button>
+      <div class="modal-body">
+        <!-- content injected by JS -->
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Inline sample data for homepage (mix of sections)
+    window.pageArticles = [
+      {
+        title: "City Council Approves New Bike Lanes on Downtown Streets",
+        summary: "The Seattle City Council voted unanimously to add protected bike lanes along three major downtown corridors, aiming to improve cyclist safety and reduce traffic congestion.",
+        url: "seattle-i-5-express-lanes-closed.html"
+      },
+      {
+        title: "Local Tech Startup Secures $12 Million Funding Round",
+        summary: "A Seattle‑based AI analytics company announced a Series A round led by local venture firms, planning to expand its workforce and product offerings.",
+        url: "#"
+      },
+      {
+        title: "Rain‑Soaked Weekend Brings Record River Levels",
+        summary: "Persistent rainfall caused the Snoqualmie River to reach levels not seen since 2012, prompting flood warnings in several communities.",
+        url: "#"
+      },
+      {
+        title: "Seattle Mariners Announce New Spring Training Schedule",
+        summary: "The Mariners released their Cactus League slate, featuring several home games in Peoria, Arizona.",
+        url: "#"
+      }
+    ];
+  </script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

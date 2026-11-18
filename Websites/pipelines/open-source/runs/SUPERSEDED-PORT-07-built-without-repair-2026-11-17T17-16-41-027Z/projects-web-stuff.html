@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects - web-stuff - Alex Morgan's Portfolio</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  
+  <header class="site-header" data-component="site-header">
+    <div class="container nav-wrapper">
+      <a href="index.html" class="logo">Alex Morgan</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
+        <span class="sr-only">Toggle navigation</span>
+        &#9776;
+      </button>
+      <nav class="primary-nav" id="primary-nav" data-component="primary-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projects.html" aria-current="page">Projects</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="mini-tools.html">Mini-Tools</a></li>
+          <li><a href="all-posts.html">All Posts</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" data-section="projects-web-stuff">
+    <div class="container">
+      <h1>Projects: Web Stuff</h1>
+      
+      <div class="filter-buttons" data-component="category-filter">
+        <button class="filter-btn" data-category="all" aria-pressed="false">All</button>
+        <button class="filter-btn" data-category="applications" aria-pressed="false">Applications</button>
+        <button class="filter-btn" data-category="electronics" aria-pressed="false">Electronics</button>
+        <button class="filter-btn" data-category="marketing" aria-pressed="false">Marketing</button>
+        <button class="filter-btn" data-category="web-stuff" aria-pressed="true">Web Stuff</button>
+        <button class="filter-btn" data-category="other" aria-pressed="false">Other</button>
+      </div>
+
+      <div class="card-grid" data-component="project-card-grid">
+        <article class="project-card" data-component="project-card" data-category="web-stuff">
+          <h3>Project Delta</h3>
+          <p>Static site generator.</p>
+          <a href="projects-web-stuff-cheatsheets-and-snippets-markdown-powered-gatsby-mini-site.html">View Details</a>
+        </article>
+        <article class="project-card" data-component="project-card" data-category="web-stuff">
+          <h3>Project Iota</h3>
+          <p>CSS framework.</p>
+          <a href="#">View Details</a>
+        </article>
+        <article class="project-card" data-component="project-card" data-category="web-stuff">
+          <h3>Project Mu</h3>
+          <p>API wrapper.</p>
+          <a href="#">View Details</a>
+        </article>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer" data-component="site-footer">
+    <div class="container">
+      <p>&copy; 2026 Alex Morgan. All rights reserved.</p>
+      <p>Built with semantic HTML, CSS, and vanilla JS.</p>
+    </div>
+  </footer>
+
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top">&#8679;</button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

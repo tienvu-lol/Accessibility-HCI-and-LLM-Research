@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opinion & Analysis - The Metropolitan Herald</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header class="site-header" role="banner">
+        <div class="container header-inner">
+            <a href="index.html" class="logo">The Metropolitan Herald</a>
+            <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
+                <span class="sr-only">Toggle navigation</span>
+                ☰
+            </button>
+            <nav id="primary-nav" class="primary-nav" role="navigation" aria-label="Primary">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="nz.html" class="nav-link">NZ</a></li>
+                    <li><a href="world.html" class="nav-link">World</a></li>
+                    <li><a href="business.html" class="nav-link">Business</a></li>
+                    <li><a href="sport.html" class="nav-link">Sport</a></li>
+                    <li><a href="entertainment.html" class="nav-link">Entertainment</a></li>
+                    <li><a href="politics.html" class="nav-link">Politics</a></li>
+                    <li><a href="crime.html" class="nav-link">Crime</a></li>
+                    <li><a href="election-2026.html" class="nav-link">Election 2026</a></li>
+                    <li><a href="video.html" class="nav-link">Video</a></li>
+                    <li><a href="opinion.html" class="nav-link" aria-current="page">Opinion</a></li>
+                    <li><a href="lifestyle.html" class="nav-link">Lifestyle</a></li>
+                    <li><a href="weather.html" class="nav-link">Weather</a></li>
+                    <li><a href="premium.html" class="nav-link">Premium</a></li>
+                    <li><a href="podcasts.html" class="nav-link">Podcasts</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section class="hero-section" data-section="hero">
+            <div class="container hero-grid">
+                <article class="hero-main" data-component="hero-article">
+                    <img src="assets/hero-placeholder.svg" alt="Opinion featured image" class="hero-image">
+                    <div class="hero-content">
+                        <span class="article-category">Opinion</span>
+                        <h1 class="hero-title"><a href="#">The Future of Urban Planning</a></h1>
+                        <p class="hero-summary">Why cities need to rethink their approach to public transport and sustainable development.</p>
+                    </div>
+                </article>
+                <aside class="hero-side" data-component="hero-side-stories">
+                    <article class="side-story">
+                        <h3><a href="#">Education Reform: A Critical Look</a></h3>
+                        <p class="article-meta">1 hour ago</p>
+                    </article>
+                    <article class="side-story">
+                        <h3><a href="#">Healthcare System Under Pressure</a></h3>
+                        <p class="article-meta">3 hours ago</p>
+                    </article>
+                    <article class="side-story">
+                        <h3><a href="#">Climate Action: More Than Just Promises</a></h3>
+                        <p class="article-meta">5 hours ago</p>
+                    </article>
+                </aside>
+            </div>
+        </section>
+
+        <section class="container mt-lg" data-section="latest-news">
+            <div class="tabs" role="tablist" aria-label="Opinion feeds">
+                <button class="tab-btn" role="tab" aria-selected="true" aria-controls="opinion-latest-panel" id="opinion-latest-tab">Latest</button>
+                <button class="tab-btn" role="tab" aria-selected="false" aria-controls="opinion-most-read-panel" id="opinion-most-read-tab">Most Read</button>
+            </div>
+
+            <div id="opinion-latest-panel" class="tab-panel is-active" role="tabpanel" aria-labelledby="opinion-latest-tab">
+                <div class="article-grid" data-component="article-card-grid">
+                    <!-- Articles injected via JS -->
+                </div>
+            </div>
+
+            <div id="opinion-most-read-panel" class="tab-panel" role="tabpanel" aria-labelledby="opinion-most-read-tab">
+                <div class="article-grid" data-component="article-card-grid">
+                    <!-- Articles injected via JS -->
+                </div>
+            </div>
+        </section>
+
+        <aside class="container mt-lg" data-section="sidebar">
+            <div class="sidebar">
+                <h3>Trending in Opinion</h3>
+                <ul class="trending-list" data-component="trending-list">
+                    <li class="trending-item">
+                        <span class="trending-number">1</span>
+                        <a href="#" class="trending-title">The Future of Urban Planning</a>
+                    </li>
+                    <li class="trending-item">
+                        <span class="trending-number">2</span>
+                        <a href="#" class="trending-title">Education Reform: A Critical Look</a>
+                    </li>
+                    <li class="trending-item">
+                        <span class="trending-number">3</span>
+                        <a href="#" class="trending-title">Healthcare System Under Pressure</a>
+                    </li>
+                    <li class="trending-item">
+                        <span class="trending-number">4</span>
+                        <a href="#" class="trending-title">Climate Action: More Than Just Promises</a>
+                    </li>
+                    <li class="trending-item">
+                        <span class="trending-number">5</span>
+                        <a href="#" class="trending-title">The Role of Media in Democracy</a>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>The Metropolitan Herald</h4>
+                    <p>Truth in Every Story. Your trusted source for local and global news.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Sections</h4>
+                    <ul class="footer-links">
+                        <li><a href="nz.html">NZ</a></li>
+                        <li><a href="world.html">World</a></li>
+                        <li><a href="business.html">Business</a></li>
+                        <li><a href="sport.html">Sport</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Advertise</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Terms of Use</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 The Metropolitan Herald. All rights reserved. This is a fictional replica for research purposes.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        const opinionArticles = [
+            { id: 1, category: "Opinion", title: "The Future of Urban Planning", excerpt: "Why cities need to rethink their approach to public transport and sustainable development.", date: "1 hour ago", isPremium: false },
+            { id: 2, category: "Analysis", title: "Education Reform: A Critical Look", excerpt: "An in-depth analysis of the proposed changes to the national education system.", date: "3 hours ago", isPremium: false },
+            { id: 3, category: "Opinion", title: "Healthcare System Under Pressure", excerpt: "Experts weigh in on the challenges facing the public healthcare system.", date: "5 hours ago", isPremium: false },
+            { id: 4, category: "Commentary", title: "Climate Action: More Than Just Promises", excerpt: "Why current climate policies fall short and what needs to change.", date: "6 hours ago", isPremium: false },
+            { id: 5, category: "Opinion", title: "The Role of Media in Democracy", excerpt: "Examining the impact of digital media on public discourse and democratic processes.", date: "8 hours ago", isPremium: false },
+            { id: 6, category: "Analysis", title: "Economic Inequality: A Growing Divide", excerpt: "Data-driven analysis of wealth distribution and its societal implications.", date: "10 hours ago", isPremium: false },
+            { id: 7, category: "Opinion", title: "Rethinking Remote Work Policies", excerpt: "How businesses and governments can adapt to the new normal of hybrid work.", date: "12 hours ago", isPremium: false },
+            { id: 8, category: "Commentary", title: "The Ethics of Artificial Intelligence", excerpt: "A philosophical look at the moral implications of AI advancement.", date: "14 hours ago", isPremium: false },
+            { id: 9, category: "Opinion", title: "Housing Affordability Crisis", excerpt: "Why current housing policies are failing and what alternatives exist.", date: "1 day ago", isPremium: false }
+        ];
+
+        const opinionMostRead = [
+            { id: 10, category: "Opinion", title: "The Future of Urban Planning", excerpt: "Why cities need to rethink their approach to public transport and sustainable development.", date: "2 hours ago", isPremium: false },
+            { id: 11, category: "Analysis", title: "Education Reform: A Critical Look", excerpt: "An in-depth analysis of the proposed changes to the national education system.", date: "4 hours ago", isPremium: false },
+            { id: 12, category: "Opinion", title: "Healthcare System Under Pressure", excerpt: "Experts weigh in on the challenges facing the public healthcare system.", date: "6 hours ago", isPremium: false },
+            { id: 13, category: "Commentary", title: "Climate Action: More Than Just Promises", excerpt: "Why current climate policies fall short and what needs to change.", date: "8 hours ago", isPremium: false },
+            { id: 14, category: "Opinion", title: "The Role of Media in Democracy", excerpt: "Examining the impact of digital media on public discourse and democratic processes.", date: "10 hours ago", isPremium: false }
+        ];
+
+        function renderArticleCard(article) {
+            const premiumBadge = article.isPremium ? '<span class="premium-badge">Premium</span>' : '';
+            return `
+                <article class="article-card ${article.isPremium ? 'premium-overlay' : ''}">
+                    <img src="assets/article-placeholder.svg" alt="" class="article-image">
+                    <div class="article-body">
+                        ${premiumBadge}
+                        <span class="article-category">${article.category}</span>
+                        <h3 class="article-title"><a href="#">${article.title}</a></h3>
+                        <p class="article-excerpt">${article.excerpt}</p>
+                        <p class="article-meta">${article.date}</p>
+                    </div>
+                </article>
+            `;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const latestGrid = document.querySelector('#opinion-latest-panel .article-grid');
+            const mostReadGrid = document.querySelector('#opinion-most-read-panel .article-grid');
+
+            if (latestGrid) {
+                latestGrid.innerHTML = opinionArticles.map(renderArticleCard).join('');
+            }
+            if (mostReadGrid) {
+                mostReadGrid.innerHTML = opinionMostRead.map(renderArticleCard).join('');
+            }
+        });
+    </script>
+</body>
+</html>

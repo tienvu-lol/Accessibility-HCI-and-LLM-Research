@@ -1,0 +1,356 @@
+{
+  "components": [
+    {
+      "component": "site-header",
+      "selector": "[data-component=\"site-header\"]",
+      "pages": [
+        "index.html",
+        "menu.html",
+        "our-story.html",
+        "locations.html",
+        "contact.html",
+        "order-acknowledgment.html",
+        "press.html",
+        "accessibility.html",
+        "404.html"
+      ],
+      "behaviours": [
+        "Contains site logo link to home",
+        "Holds navigation toggle button",
+        "Holds age‑gate trigger button"
+      ],
+      "keyboardExpectations": [
+        "Navigation toggle reachable via Tab",
+        "Age‑gate trigger reachable via Tab",
+        "Escape closes age‑gate modal (handled elsewhere)"
+      ],
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "component": "primary-nav",
+      "selector": "[data-component=\"primary-nav\"]",
+      "pages": [
+        "index.html",
+        "menu.html",
+        "our-story.html",
+        "locations.html",
+        "contact.html",
+        "order-acknowledgment.html",
+        "press.html",
+        "accessibility.html",
+        "404.html"
+      ],
+      "behaviours": [
+        "Displays main navigation links",
+        "Collapses to hamburger on narrow viewports",
+        "Toggle expands/collapses menu list"
+      ],
+      "keyboardExpectations": [
+        "Toggle button operable with Enter/Space",
+        "Menu items reachable via Tab when expanded",
+        "Escape closes menu and returns focus to toggle"
+      ],
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "component": "hero",
+      "selector": "[data-component=\"hero\"]",
+      "pages": [
+        "index.html"
+      ],
+      "behaviours": [
+        "Shows prominent heading, description, and call‑to‑action button"
+      ],
+      "keyboardExpectations": [
+        "Call‑to‑action button reachable via Tab",
+        "Activable with Enter/Space"
+      ],
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "component": "content-band",
+      "selector": "[data-component=\"content-band\"]",
+      "pages": [
+        "our-story.html",
+        "locations.html",
+        "contact.html",
+        "order-acknowledgment.html",
+        "press.html",
+        "accessibility.html"
+      ],
+      "behaviours": [
+        "Provides a white card‑like container with padding and border",
+        "Used for main content sections"
+      ],
+      "keyboardExpectations": [
+        "No interactive behaviour; inherits tab order of inner elements"
+      ],
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "component": "menu-filter",
+      "selector": "[data-component=\"menu-filter\"]",
+      "pages": [
+        "menu.html"
+      ],
+      "behaviours": [
+        "Allows filtering of menu items by cuisine and spice level",
+        "Updates displayed items when checkboxes change"
+      ],
+      "keyboardExpectations": [
+        "Each checkbox reachable via Tab",
+        "Space toggles checkbox state"
+      ],
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "component": "menu-grid",
+      "selector": "[data-component=\"menu-grid\"]",
+      "pages": [
+        "menu.html"
+      ],
+      "behaviours": [
+        "Displays menu cards in a responsive grid",
+        "Holds menu‑card components"
+      ],
+      "keyboardExpectations": [
+        "Inherits tab order of menu cards"
+      ],
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "component": "menu-card",
+      "selector": ".menu-card",
+      "pages": [
+        "menu.html"
+      ],
+      "behaviours": [
+        "Shows dish title, description, price, and cuisine/spice tags"
+      ],
+      "keyboardExpectations": [
+        "Entire card is not a single focusable item; inner text is readable"
+      ],
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "component": "reservation-form",
+      "selector": "[data-component=\"reservation-form\"]",
+      "pages": [
+        "locations.html"
+      ],
+      "behaviours": [
+        "Collects reservation details",
+        "On submit shows a simulated confirmation toast"
+      ],
+      "keyboardExpectations": [
+        "Each input reachable via Tab",
+        "Submit button operable with Enter/Space",
+        "Error messages would be announced (simulated)"
+      ],
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "component": "location-card",
+      "selector": ".location-card",
+      "pages": [
+        "locations.html"
+      ],
+      "behaviours": [
+        "Shows location name, address, phone, hours, and open/closed status"
+      ],
+      "keyboardExpectations": [
+        "Inherits tab order of inner elements"
+      ],
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "component": "press-list",
+      "selector": "[data-component=\"press-list\"]",
+      "pages": [
+        "press.html"
+      ],
+      "behaviours": [
+        "Displays a list of press‑item components"
+      ],
+      "keyboardExpectations": [
+        "Inherits tab order of press items"
+      ],
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "component": "press-item",
+      "selector": ".press-item",
+      "pages": [
+        "press.html"
+      ],
+      "behaviours": [
+        "Shows press article title, date, source, and excerpt"
+      ],
+      "keyboardExpectations": [
+        "Inherits tab order of inner elements"
+      ],
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "component": "newsletter-signup",
+      "selector": "[data-component=\"newsletter-signup\"]",
+      "pages": [
+        "index.html",
+        "menu.html",
+        "our-story.html",
+        "locations.html",
+        "contact.html",
+        "order-acknowledgment.html",
+        "press.html",
+        "accessibility.html",
+        "404.html"
+      ],
+      "behaviours": [
+        "Collects email address",
+        "On submit shows a simulated thank‑you message"
+      ],
+      "keyboardExpectations": [
+        "Email input reachable via Tab",
+        "Submit button operable with Enter/Space"
+      ],
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "component": "site-footer",
+      "selector": "[data-component=\"site-footer\"]",
+      "pages": [
+        "index.html",
+        "menu.html",
+        "our-story.html",
+        "locations.html",
+        "contact.html",
+        "order-acknowledgment.html",
+        "press.html",
+        "accessibility.html",
+        "404.html"
+      ],
+      "behaviours": [
+        "Contains about text, quick links, and newsletter signup"
+      ],
+      "keyboardExpectations": [
+        "All links reachable via Tab",
+        "Newsletter form fields and button operable"
+      ],
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "component": "age-gate",
+      "selector": "[data-component=\"age-gate\"]",
+      "pages": [
+        "index.html",
+        "menu.html",
+        "our-story.html",
+        "locations.html",
+        "contact.html",
+        "order-acknowledgment.html",
+        "press.html",
+        "accessibility.html",
+        "404.html"
+      ],
+      "behaviours": [
+        "Modal overlay that blocks interaction until dismissed",
+        "Shows age‑verification disclaimer"
+      ],
+      "keyboardExpectations": [
+        "Modal trap focus when open",
+        "Confirm button reachable via Tab",
+        "Escape closes modal and returns focus to trigger"
+      ],
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "component": "contact-form",
+      "selector": "[data-component=\"contact-form\"]",
+      "pages": [
+        "contact.html",
+        "accessibility.html"
+      ],
+      "behaviours": [
+        "Collects user feedback",
+        "On submit shows a simulated response message"
+      ],
+      "keyboardExpectations": [
+        "Each field reachable via Tab",
+        "Submit button operable with Enter/Space",
+        "Error handling would move focus to first invalid field"
+      ],
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "component": "order-summary",
+      "selector": "[data-component=\"order-summary\"]",
+      "pages": [
+        "order-acknowledgment.html"
+      ],
+      "behaviours": [
+        "Displays order details in a definition list"
+      ],
+      "keyboardExpectations": [
+        "Inherits tab order of inner elements"
+      ],
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "component": "cta-button",
+      "selector": "[data-component=\"cta-button\"]",
+      "pages": [
+        "index.html"
+      ],
+      "behaviours": [
+        "Primary call‑to‑action that scrolls to menu or triggers action"
+      ],
+      "keyboardExpectations": [
+        "Reachable via Tab",
+        "Activable with Enter/Space"
+      ],
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "component": "skip-link",
+      "selector": ".skip-link",
+      "pages": [
+        "index.html",
+        "menu.html",
+        "our-story.html",
+        "locations.html",
+        "contact.html",
+        "order-acknowledgment.html",
+        "press.html",
+        "accessibility.html",
+        "404.html"
+      ],
+      "behaviours": [
+        "Provides a link to skip directly to main content",
+        "Becomes visible when focused"
+      ],
+      "keyboardExpectations": [
+        "First focusable element on page",
+        "Activable with Enter/Space"
+      ],
+      "status": "implemented",
+      "validationState": "not-tested"
+    }
+  ]
+}

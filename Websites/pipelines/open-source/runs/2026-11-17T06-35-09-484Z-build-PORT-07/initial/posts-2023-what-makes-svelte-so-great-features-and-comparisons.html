@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What Makes Svelte So Great - Alex Mercer</title>
+  <meta name="description" content="An exploration of Svelte's features and how it compares to other frameworks.">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .post-content {
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
+    .post-content h2 {
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+    .post-content p {
+      margin-bottom: 1.5rem;
+    }
+    .post-content pre {
+      background: var(--color-bg-alt);
+      padding: 1rem;
+      border-radius: 4px;
+      overflow-x: auto;
+      margin-bottom: 1.5rem;
+    }
+    .post-meta {
+      color: var(--color-text-light);
+      font-size: 0.875rem;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="site-header" data-section="header" data-component="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">Alex Mercer</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
+        <span class="sr-only">Menu</span>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+      </button>
+      <nav class="primary-nav" id="primary-nav" data-component="primary-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="mini-tools.html">Mini-Tools</a></li>
+          <li><a href="blog.html" aria-current="page">Blog</a></li>
+          <li><a href="all-posts.html">All Posts</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <article class="section" data-section="blog-post">
+      <div class="container">
+        <nav aria-label="Breadcrumb" style="margin-bottom: 2rem;">
+          <ol style="list-style: none; display: flex; gap: 0.5rem; font-size: 0.875rem;">
+            <li><a href="blog.html">Blog</a></li>
+            <li>/</li>
+            <li aria-current="page">What Makes Svelte So Great</li>
+          </ol>
+        </nav>
+
+        <div class="post-content">
+          <h1 class="section-title" style="text-align: left;">What Makes Svelte So Great - Features and Comparisons</h1>
+          <p class="post-meta">Published on May 15, 2023 • Category: Tech</p>
+          
+          <p>Svelte has rapidly gained traction in the web development community, and for good reason. Unlike traditional frameworks that do most of their work in the browser, Svelte shifts that work into a compile step that happens when you build your app. This results in smaller bundle sizes and faster runtime performance.</p>
+
+          <h2>The Compile Step Advantage</h2>
+          <p>By compiling your components into efficient, framework-free vanilla JavaScript, Svelte eliminates the overhead of a virtual DOM. This means your application can react to state changes more directly and efficiently.</p>
+
+          <pre><code>&lt;script&gt;
+  let count = 0;
+  function increment() {
+    count += 1;
+  }
+&lt;/script&gt;
+
+&lt;button on:click={increment}&gt;
+  Clicked {count} {count === 1 ? 'time' : 'times'}
+&lt;/button&gt;</code></pre>
+
+          <h2>Comparison with React</h2>
+          <p>While React relies on a virtual DOM to track changes and update the real DOM, Svelte writes code that updates the DOM directly. This approach can lead to significant performance improvements, especially in complex applications.</p>
+
+          <h2>Conclusion</h2>
+          <p>Svelte's unique approach to building web interfaces offers a compelling alternative to established frameworks. Its simplicity, performance, and developer experience make it a strong choice for modern web projects.</p>
+
+          <div class="card-actions" style="margin-top: 2rem;">
+            <button class="btn btn-secondary support-me-btn">Support Me</button>
+          </div>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer" data-section="footer" data-component="site-footer">
+    <div class="container">
+      <p>&copy; 2026 Alex Mercer. All rights reserved.</p>
+      <p style="margin-top: 0.5rem; font-size: 0.875rem;">
+        <a href="#" style="color: var(--color-text-light);">Contact</a> | 
+        <a href="#" style="color: var(--color-text-light);">GitHub</a> | 
+        <a href="#" style="color: var(--color-text-light);">Twitter</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

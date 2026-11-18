@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en" data-section="page-index">
+<head>
+  <meta charset="utf-8">
+  <title>NovaBank – Home</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header data-section="header" data-component="site-header">
+    <h1 class="visually-hidden">NovaBank</h1>
+    <img src="assets/logo.svg" alt="NovaBank logo" width="120">
+    <nav data-component="primary-nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="checking-index.html">Checking</a>
+      <a href="savings-index.html">Savings</a>
+      <a href="credit-cards-index.html">Credit Cards</a>
+      <a href="mortgage-index.html">Mortgage</a>
+      <a href="auto-loans-index.html">Auto Loans</a>
+      <a href="help-index.html">Help</a>
+      <a href="contact-us-index.html">Contact</a>
+    </nav>
+  </header>
+
+  <section data-component="hero-banner" class="hero-banner">
+    <h1>Welcome to NovaBank</h1>
+    <p>Your trusted partner for modern banking.</p>
+  </section>
+
+  <main id="main-content" data-section="main" data-component="content-band">
+    <h2>Find a Branch or ATM</h2>
+    <form id="branch-search-form" data-component="branch-locator">
+      <label for="branch-search-input">Enter city or ZIP</label>
+      <input type="text" id="branch-search-input" name="branch-search" required>
+      <button type="submit">Search</button>
+    </form>
+    <div id="branch-results" aria-live="polite"></div>
+
+    <h2>Latest News</h2>
+    <p>Placeholder for news items.</p>
+  </main>
+
+  <footer data-section="footer" data-component="site-footer">
+    <p>&copy; 2024 NovaBank. All rights reserved.</p>
+  </footer>
+</body>
+</html>

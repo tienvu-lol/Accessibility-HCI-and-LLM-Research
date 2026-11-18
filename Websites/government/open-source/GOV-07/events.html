@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events | City of Oakhaven</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header class="site-header" data-component="site-header">
+        <div class="header-container">
+            <a href="index.html" class="site-logo">City of Oakhaven</a>
+            <div class="header-controls">
+                <button id="lang-toggle" class="btn" data-lang="en" title="Switch language to Español">Español</button>
+                <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
+                    <span aria-hidden="true">☰</span>
+                </button>
+            </div>
+        </div>
+        <nav id="primary-nav" class="primary-nav" data-component="primary-nav" aria-label="Primary Navigation">
+            <ul>
+                <li class="has-dropdown">
+                    <a href="services.html" aria-haspopup="true" aria-expanded="false">Services</a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li role="none"><a href="services.html" role="menuitem">All Services</a></li>
+                        <li role="none"><a href="pay-utility-bill.html" role="menuitem">Pay Bills</a></li>
+                        <li role="none"><a href="permits.html" role="menuitem">Permits</a></li>
+                    </ul>
+                </li>
+                <li><a href="departments.html">Departments</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="service-request.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <section class="content-bands" data-section="events" data-component="content-bands">
+            <h1 class="section-title">Upcoming Events</h1>
+            
+            <div class="calendar-nav" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                <button id="prev-month" class="btn" aria-label="Previous month">&lt;</button>
+                <h2 id="current-month" style="margin: 0;">October 2024</h2>
+                <button id="next-month" class="btn" aria-label="Next month">&gt;</button>
+            </div>
+
+            <div class="card-grid" id="event-list">
+                <article class="card">
+                    <h2>City Council Meeting</h2>
+                    <p><strong>Date:</strong> October 15, 2024<br><strong>Time:</strong> 6:00 PM<br><strong>Location:</strong> City Hall</p>
+                    <a href="events.html">Details</a>
+                </article>
+                <article class="card">
+                    <h2>Community Art Walk</h2>
+                    <p><strong>Date:</strong> October 20, 2024<br><strong>Time:</strong> 5:00 PM - 9:00 PM<br><strong>Location:</strong> Downtown</p>
+                    <a href="events.html">Details</a>
+                </article>
+                <article class="card">
+                    <h2>Fall Festival</h2>
+                    <p><strong>Date:</strong> October 25, 2024<br><strong>Time:</strong> 10:00 AM - 4:00 PM<br><strong>Location:</strong> Riverside Park</p>
+                    <a href="events.html">Details</a>
+                </article>
+                <article class="card">
+                    <h2>Volunteer Orientation</h2>
+                    <p><strong>Date:</strong> October 30, 2024<br><strong>Time:</strong> 2:00 PM<br><strong>Location:</strong> Community Center</p>
+                    <a href="events.html">Details</a>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer" data-component="site-footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h2>Contact Us</h2>
+                <p>123 City Hall Blvd, Oakhaven, CA 90210</p>
+                <p>Phone: (555) 123-4567</p>
+            </div>
+            <div class="footer-section">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="departments.html">Departments</a></li>
+                    <li><a href="news.html">News</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h2>Legal</h2>
+                <ul>
+                    <li><a href="index.html">Privacy Policy</a></li>
+                    <li><a href="index.html">Terms of Use</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

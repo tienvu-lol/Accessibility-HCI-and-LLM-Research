@@ -11,7 +11,44 @@ export const SLOTS = [7, 8, 9, 10];
 export const SLOT_RE = /-(07|08|09|10)$/;
 
 export const readJSON = file => JSON.parse(fs.readFileSync(file, 'utf8'));
-export const writeJSON = (file, value) => fs.writeFileSync(file, JSON.stringify(value, null, 2) + '\n');
+export const writeJSON = (file, value) => {
+  // Write through a temporary file in the same directory, then rename. A reader never sees a
+  // half-written JSON file, and a crash mid-write cannot truncate the previous contents.
+  const text = JSON.stringify(value, null, 2) + '\n';
+  const tmp = `${file}.tmp-${process.pid}-${Date.now().toString(36)}`;
+  fs.writeFileSync(tmp, text);
+  fs.renameSync(tmp, file);
+};
+
+/** Sleep without a busy loop, in a synchronous helper. */
+const sleepSync = ms => {
+  try { Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, ms); } catch { /* no SAB: fall through */ }
+};
+
+/**
+ * Run `fn` holding an exclusive lock on `file`, taken as a sibling `.lock` directory
+ * (mkdir is atomic on every platform this pipeline runs on). Concurrent builds share
+ * queue/manifest.json, and a plain read-modify-write loses one process's status update
+ * whenever two of them overlap. A lock older than STALE_LOCK_MS is treated as abandoned
+ * by a killed run and broken, so a crash cannot wedge the queue.
+ */
+const LOCK_TIMEOUT_MS = 60000;
+const STALE_LOCK_MS = 120000;
+export function withFileLock(file, fn) {
+  const lock = `${file}.lock`;
+  const deadline = Date.now() + LOCK_TIMEOUT_MS;
+  for (;;) {
+    try { fs.mkdirSync(lock); break; } catch (err) {
+      if (err.code !== 'EEXIST') throw err;
+      let age = 0;
+      try { age = Date.now() - fs.statSync(lock).mtimeMs; } catch { continue; }
+      if (age > STALE_LOCK_MS) { try { fs.rmdirSync(lock); } catch { /* lost the race; retry */ } continue; }
+      if (Date.now() > deadline) throw new Error(`Timed out after ${LOCK_TIMEOUT_MS}ms waiting for ${lock}`);
+      sleepSync(25 + Math.floor(Math.random() * 75));
+    }
+  }
+  try { return fn(); } finally { try { fs.rmdirSync(lock); } catch { /* already gone */ } }
+}
 export const hash = data => crypto.createHash('sha256').update(data).digest('hex');
 export const nowISO = () => new Date().toISOString();
 export const stamp = () => new Date().toISOString().replace(/[:.]/g, '-');
@@ -254,8 +291,12 @@ export function buildReadiness(setup, id, {requireKeys = true} = {}) {
     const n = normalizeUrl(row.source_url);
     if (n) reserved.set(n, [...(reserved.get(n) || []), row.source_id]);
   }
-  const ourRows = inventory.filter(r => r.model_group === 'open-source');
-  if (ourRows.length !== 4) errors.push(`${c.category}: expected four open-source inventory rows, found ${ourRows.length}`);
+  // Readiness is scoped to the ONE slot being built (operator decision, 2026-11-16): a slot whose
+  // own research is complete, verified, approved and synchronized may build while its sibling
+  // open-source slots are still outstanding. The duplicate-URL check below still runs against every
+  // row in the category, so distinctness is preserved as the remaining slots are filled in later.
+  const ourRows = inventory.filter(r => r.model_group === 'open-source' && r.source_id === id);
+  if (ourRows.length !== 1) errors.push(`${id}: expected an open-source inventory row for this slot, found ${ourRows.length}`);
   for (const row of ourRows) {
     try {
       for (const key of ['source_name','source_url','model_id','subcategory','verified_at','verification_method','verification_result','evidence_reference','complexity','stack_clues','limitations','approved_at','approved_by','approval_reference'])
@@ -335,12 +376,16 @@ export function redact(text) {
 
 export function queueUpdate(setup, taskId, patch) {
   const file = path.join(setup.pipeline, 'queue/manifest.json');
-  const manifest = readJSON(file);
-  const task = manifest.tasks.find(t => t.id === taskId);
-  if (!task) throw new Error(`Unknown queue task ${taskId}`);
-  Object.assign(task, patch);
-  writeJSON(file, manifest);
-  return task;
+  // The read, the patch and the write happen under one lock: several builds run concurrently
+  // (config.execution.max_concurrent_builds) and all of them write this one file.
+  return withFileLock(file, () => {
+    const manifest = readJSON(file);
+    const task = manifest.tasks.find(t => t.id === taskId);
+    if (!task) throw new Error(`Unknown queue task ${taskId}`);
+    Object.assign(task, patch);
+    writeJSON(file, manifest);
+    return task;
+  });
 }
 
 /**

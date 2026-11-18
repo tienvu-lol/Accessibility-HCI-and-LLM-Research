@@ -1,0 +1,3287 @@
+{
+  "tool": "pipelines/open-source/scripts/verify-sources.mjs",
+  "run_id": "2026-11-17T05-24-17-819Z-research-CHUR-08",
+  "model_group": "open-source",
+  "category": "church",
+  "slots": [
+    8
+  ],
+  "fetched_at": "2026-11-17T05:25:20.877Z",
+  "method": "HTTP GET",
+  "rendered": false,
+  "interactions_tested": false,
+  "user_agent": "Mozilla/5.0 (compatible; accessibility-research-replica-study/1.0)",
+  "rounds": [
+    {
+      "round": 1,
+      "kind": "candidate homepages",
+      "records": [
+        {
+          "url": "https://www.canterburycathedral.org.uk",
+          "fetched_at": "2026-11-17T05:24:33.142Z",
+          "method": "HTTP GET",
+          "ok": false,
+          "status": null,
+          "final_url": null,
+          "redirected": null,
+          "content_type": null,
+          "bytes": null,
+          "title": null,
+          "robots": {
+            "allowed": true,
+            "matched": null,
+            "note": "robots.txt unreachable (TypeError); treated as permissive"
+          },
+          "error": "TypeError: fetch failed",
+          "links": []
+        },
+        {
+          "url": "https://www.yorkminster.org",
+          "fetched_at": "2026-11-17T05:24:34.230Z",
+          "method": "HTTP GET",
+          "ok": true,
+          "status": 200,
+          "final_url": "https://yorkminster.org/",
+          "redirected": true,
+          "content_type": "text/html; charset=UTF-8",
+          "bytes": 125174,
+          "title": "Homepage | York Minster",
+          "robots": {
+            "allowed": true,
+            "matched": null,
+            "note": "robots.txt read for user-agent *"
+          },
+          "error": null,
+          "links": [
+            {
+              "url": "https://yorkminster.org/",
+              "text": "Return to York Minster homepage",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/discover/conservation-projects/",
+              "text": "Conservation in Action",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/discover/stories/",
+              "text": "Stories",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/discover/behind-the-scenes/",
+              "text": "Behind the scenes",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/discover/collections-archive-library/",
+              "text": "Collections, Archive and Library",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/discover/interactive-map/",
+              "text": "Interactive Map",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/discover/timeline/",
+              "text": "Timeline",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/discover/centre-of-excellence-for-heritage-craft-skills-and-estate-management/",
+              "text": "Centre of Excellence",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/discover/conservation/",
+              "text": "Maintaining a fragile masterpiece",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/worship/ways-to-worship/",
+              "text": "Ways to worship and pray",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/worship/community/",
+              "text": "Community",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/worship/life-events/",
+              "text": "Life events",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/worship/choir-and-music/",
+              "text": "Choir and music",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/worship/sermons/",
+              "text": "Sermons",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/worship/christian-faith/",
+              "text": "Seeking to live a faith which can change the world",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/visit/plan-your-visit/",
+              "text": "Plan your visit",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/visit/suggested-itineraries/",
+              "text": "Suggested itineraries",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/visit/families/",
+              "text": "Families",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/visit/schools/",
+              "text": "School visits",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/visit/groups/",
+              "text": "Group Visits",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/visit/faq/",
+              "text": "FAQs",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/visit/accessibility-2/",
+              "text": "Accessibility",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/get-involved/jobs/",
+              "text": "Jobs",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/get-involved/volunteer/",
+              "text": "Volunteer",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/get-involved/friends-of-york-minster/",
+              "text": "Friends of York Minster",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/donate-to-york-minster/",
+              "text": "Help us ensure the survival of this iconic building",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/support-us/become-a-patron/",
+              "text": "Become a Patron",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/support-us/leave-a-legacy/",
+              "text": "Leave a Legacy",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/support-us/philanthropy-and-partnerships/",
+              "text": "Philanthropy and Partnerships",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/support-us/rose-window-project/",
+              "text": "Rescue the Rose Window",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/support-us/your-impact/",
+              "text": "Your Impact",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/worship/",
+              "text": "Worship",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/visit/",
+              "text": "Visit",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/discover/",
+              "text": "Discover",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/whats-on/",
+              "text": "What’s on",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/support-us/",
+              "text": "Support Us",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/about-us/safeguarding/",
+              "text": "Safeguarding",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/about-us/",
+              "text": "About us",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/latest/",
+              "text": "Latest",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/media-centre/",
+              "text": "Media centre",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/sign-up/",
+              "text": "Sign up",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/contact/",
+              "text": "Contact",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/terms-conditions/",
+              "text": "Terms & Conditions",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/privacy-notice/",
+              "text": "Privacy Notice",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/accessibility/",
+              "text": "Web Accessibility",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/cookies-policy/",
+              "text": "Cookies Policy",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/latest/local-organisations-come-together-for-york-minsters-biggest-ever-christmas-tree-festival/",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://yorkminster.org/latest/york-minster-is-exploring-a-new-collaboration-with-celebrated-artist-antony-gormley/",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://yorkminster.org/latest/historic-10000-change-bellringing-challenge-at-york-minster/",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://yorkminster.org/latest/advent-and-christmas-at-york-minster-2026/",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://yorkminster.org/latest/royal-unveiling-for-york-minster-made-sundial-at-british-museum/",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://yorkminster.org/christmas-york-minster/",
+              "text": "Advent & Christmas Enjoy the festive season with us at York Minster What's On",
+              "in_nav": false
+            },
+            {
+              "url": "https://yorkminster.org/whats-on/event/christmas-tree-festival/",
+              "text": "Click here",
+              "in_nav": false
+            },
+            {
+              "url": "https://yorkminster.org/whats-on/event/first-advent-procession/",
+              "text": "Click here",
+              "in_nav": false
+            },
+            {
+              "url": "https://yorkminster.org/whats-on/event/christmas-day/",
+              "text": "Click here",
+              "in_nav": false
+            },
+            {
+              "url": "http://yorkminster.org/sign-up/",
+              "text": "SIGN UP",
+              "in_nav": false
+            },
+            {
+              "url": "http://yorkminster.org/visit/plan-your-visit/",
+              "text": "Getting here",
+              "in_nav": false
+            }
+          ]
+        },
+        {
+          "url": "https://www.stpauls.co.uk",
+          "fetched_at": "2026-11-17T05:24:36.730Z",
+          "method": "HTTP GET",
+          "ok": true,
+          "status": 200,
+          "final_url": "https://www.stpauls.co.uk/",
+          "redirected": true,
+          "content_type": "text/html; charset=UTF-8",
+          "bytes": 238640,
+          "title": "St Paul's Cathedral | St Paul's Cathedral",
+          "robots": {
+            "allowed": true,
+            "matched": null,
+            "note": "robots.txt read for user-agent *"
+          },
+          "error": null,
+          "links": [
+            {
+              "url": "https://www.stpauls.co.uk/",
+              "text": "",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/worship-and-music",
+              "text": "Worship and music",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/visit-us",
+              "text": "Visit us",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/whats-on",
+              "text": "What's on",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/safeguarding",
+              "text": "Safeguarding",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/book-tickets",
+              "text": "Tickets",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/planning-your-visit",
+              "text": "Planning your visit",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/ticket-types-and-prices",
+              "text": "Ticket types and prices",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/how-to-find-us",
+              "text": "How to find us",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/guided-and-self-guided-tours",
+              "text": "Guided and self-guided tours",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/visit-with-your-family",
+              "text": "Visit with your family",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/accessibility-cathedral",
+              "text": "Accessibility at the Cathedral",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/group-visits",
+              "text": "Group visits",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/visit-with-your-school",
+              "text": "UK schools visits",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/remember-me-memorial",
+              "text": "Remember Me Memorial",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/filming-and-photography",
+              "text": "Filming and photography",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/safety-and-security",
+              "text": "Safety and security",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/explore-our-map",
+              "text": "Explore our map",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/information-for-travel-trade",
+              "text": "Information for travel trade",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/booking-tickets-faq",
+              "text": "Booking tickets FAQ",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/worship-with-us",
+              "text": "Worship with us",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/music",
+              "text": "Music",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/our-choirs",
+              "text": "Our choirs",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/our-musicians",
+              "text": "Our musicians",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/working-with-schools",
+              "text": "Working with schools",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/information-for-visiting-choirs",
+              "text": "Information for visiting choirs",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/bells",
+              "text": "The bells",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/organs",
+              "text": "The organ",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/attending-service",
+              "text": "Attending a St Paul's service",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/join-your-london-community",
+              "text": "Join your London community",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/weddings-baptisms-and-confirmations",
+              "text": "Weddings, baptisms and confirmations",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/history-and-collections",
+              "text": "History and collections",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/about-collections",
+              "text": "About the Collections",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/our-timeline",
+              "text": "Our timeline",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/hidden-histories",
+              "text": "Hidden histories",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/architecture-and-decoration",
+              "text": "Architecture and decoration",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/celebration-and-remembrance",
+              "text": "Celebration and remembrance",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/exploring-faith-through-art",
+              "text": "Exploring faith through art",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/library-treasures",
+              "text": "Library treasures",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/access-collections",
+              "text": "Access the Collections",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/conservation",
+              "text": "Conservation",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/stories-from-st-pauls-podcast",
+              "text": "Our podcast series",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/east-india-company-st-pauls",
+              "text": "The East India Company at St Paul's",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/war-and-resistance-in-caribbean-monuments-st-pauls",
+              "text": "War and resistance in the Caribbean: The monuments at St Paul's",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/spci",
+              "text": "St Paul's Cathedral Institute",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/st-pauls-cathedral-institute-events",
+              "text": "St Paul's Cathedral Institute events",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/our-digital-resources",
+              "text": "Our digital resources",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/learning",
+              "text": "Learning",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/family",
+              "text": "Visit with your family",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/about-us",
+              "text": "About us",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/news-and-updates",
+              "text": "News and updates",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/our-mission-vision-and-values",
+              "text": "Our mission and purpose",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/who-we-are-at-stpauls",
+              "text": "Who we are",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/annual-reports",
+              "text": "Our annual reports and accounts",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/contact-us",
+              "text": "Contact us",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/work-with-us",
+              "text": "Work for us",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/press-and-media",
+              "text": "Press and media",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/support-us",
+              "text": "Support us",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/ways-to-donate",
+              "text": "Ways to donate",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/corporate-support",
+              "text": "Corporate support",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/become-a-friend",
+              "text": "Become a Friend",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/become-music-patron",
+              "text": "Become a Music Patron",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/leave-legacy",
+              "text": "Leave a legacy",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/volunteer-with-us",
+              "text": "Volunteer with us",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/trusts-and-foundations",
+              "text": "Trusts and foundations",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/your-event-st-pauls",
+              "text": "Your event at St Paul's",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/wren-suite",
+              "text": "Wren Suite",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/crypt",
+              "text": "The Crypt",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/chapter-house",
+              "text": "Chapter House",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/nelson-chamber",
+              "text": "Nelson Chamber",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/churchyard",
+              "text": "North Churchyard",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/our-approved-suppliers",
+              "text": "Our approved suppliers",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/search",
+              "text": "Search",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/site-search?keys=Service%20schedule",
+              "text": "Service schedule",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/site-search?keys=Map%20of%20the%20Cathedral",
+              "text": "Map of the Cathedral",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/site-search?keys=Opening%20times",
+              "text": "Opening times",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/site-search?keys=Book%20sightseeing%20tickets",
+              "text": "Book sightseeing tickets",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/site-search?keys=Family%20activities",
+              "text": "Family activities",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/site-search?keys=Lent%2C%20Holy%20Week%20and%20Easter",
+              "text": "Lent, Holy Week and Easter",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/site-search?keys=Tyndale%27s%20New%20Testament",
+              "text": "Tyndale's New Testament",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/search-our-events",
+              "text": "Search our events",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/our-investment-principles",
+              "text": "Statement of investment principles",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/wren-international-centre-of-excellence",
+              "text": "Support heritage crafts",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/terms-and-conditions-for-entry",
+              "text": "Terms and conditions of entry",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/privacy-policy",
+              "text": "Privacy policy",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/staff-and-volunteer-information",
+              "text": "Staff and volunteers portal",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/terms-of-use",
+              "text": "Terms of use",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stpauls.co.uk/christmas",
+              "text": "Advent and Christmas",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.stpauls.co.uk/origins",
+              "text": "Origins by Luxmuralis coming 19th to 27th February 2027",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.stpauls.co.uk/press-release/st-pauls-cathedral-and-fabric-announce-four-year-contemporary-music-partnership",
+              "text": "Announcing our four-year contemporary music partnership with fabric",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.stpauls.co.uk/whats-on/exhibition-dangerous-calling-500-years-of-william-tyndales-new-testament",
+              "text": "New exhibition: A Dangerous Calling - 500 Years of William Tyndale’s New Testament",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.stpauls.co.uk/resources/our-service-schedule",
+              "text": "Find out more",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.stpauls.co.uk/how-find-us",
+              "text": "How to find us",
+              "in_nav": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "kind": "interior pages",
+      "records": [
+        {
+          "url": "https://yorkminster.org/",
+          "fetched_at": "2026-11-17T05:25:12.725Z",
+          "method": "HTTP GET",
+          "ok": true,
+          "status": 200,
+          "final_url": "https://yorkminster.org/",
+          "redirected": false,
+          "content_type": "text/html; charset=UTF-8",
+          "bytes": 125174,
+          "title": "Homepage | York Minster",
+          "robots": {
+            "allowed": true,
+            "matched": null,
+            "note": "robots.txt read for user-agent *"
+          },
+          "error": null,
+          "links": [
+            {
+              "url": "https://yorkminster.org/",
+              "text": "Return to York Minster homepage",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/discover/conservation-projects/",
+              "text": "Conservation in Action",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/discover/stories/",
+              "text": "Stories",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/discover/behind-the-scenes/",
+              "text": "Behind the scenes",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/discover/collections-archive-library/",
+              "text": "Collections, Archive and Library",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/discover/interactive-map/",
+              "text": "Interactive Map",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/discover/timeline/",
+              "text": "Timeline",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/discover/centre-of-excellence-for-heritage-craft-skills-and-estate-management/",
+              "text": "Centre of Excellence",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/discover/conservation/",
+              "text": "Maintaining a fragile masterpiece",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/worship/ways-to-worship/",
+              "text": "Ways to worship and pray",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/worship/community/",
+              "text": "Community",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/worship/life-events/",
+              "text": "Life events",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/worship/choir-and-music/",
+              "text": "Choir and music",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/worship/sermons/",
+              "text": "Sermons",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/worship/christian-faith/",
+              "text": "Seeking to live a faith which can change the world",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/visit/plan-your-visit/",
+              "text": "Plan your visit",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/visit/suggested-itineraries/",
+              "text": "Suggested itineraries",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/visit/families/",
+              "text": "Families",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/visit/schools/",
+              "text": "School visits",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/visit/groups/",
+              "text": "Group Visits",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/visit/faq/",
+              "text": "FAQs",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/visit/accessibility-2/",
+              "text": "Accessibility",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/get-involved/jobs/",
+              "text": "Jobs",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/get-involved/volunteer/",
+              "text": "Volunteer",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/get-involved/friends-of-york-minster/",
+              "text": "Friends of York Minster",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/donate-to-york-minster/",
+              "text": "Help us ensure the survival of this iconic building",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/support-us/become-a-patron/",
+              "text": "Become a Patron",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/support-us/leave-a-legacy/",
+              "text": "Leave a Legacy",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/support-us/philanthropy-and-partnerships/",
+              "text": "Philanthropy and Partnerships",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/support-us/rose-window-project/",
+              "text": "Rescue the Rose Window",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/support-us/your-impact/",
+              "text": "Your Impact",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/worship/",
+              "text": "Worship",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/visit/",
+              "text": "Visit",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/discover/",
+              "text": "Discover",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/whats-on/",
+              "text": "What’s on",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/support-us/",
+              "text": "Support Us",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/about-us/safeguarding/",
+              "text": "Safeguarding",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/about-us/",
+              "text": "About us",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/latest/",
+              "text": "Latest",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/media-centre/",
+              "text": "Media centre",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/sign-up/",
+              "text": "Sign up",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/contact/",
+              "text": "Contact",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/terms-conditions/",
+              "text": "Terms & Conditions",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/privacy-notice/",
+              "text": "Privacy Notice",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/accessibility/",
+              "text": "Web Accessibility",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/cookies-policy/",
+              "text": "Cookies Policy",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/latest/local-organisations-come-together-for-york-minsters-biggest-ever-christmas-tree-festival/",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://yorkminster.org/latest/york-minster-is-exploring-a-new-collaboration-with-celebrated-artist-antony-gormley/",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://yorkminster.org/latest/historic-10000-change-bellringing-challenge-at-york-minster/",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://yorkminster.org/latest/advent-and-christmas-at-york-minster-2026/",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://yorkminster.org/latest/royal-unveiling-for-york-minster-made-sundial-at-british-museum/",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://yorkminster.org/christmas-york-minster/",
+              "text": "Advent & Christmas Enjoy the festive season with us at York Minster What's On",
+              "in_nav": false
+            },
+            {
+              "url": "https://yorkminster.org/whats-on/event/christmas-tree-festival/",
+              "text": "Click here",
+              "in_nav": false
+            },
+            {
+              "url": "https://yorkminster.org/whats-on/event/first-advent-procession/",
+              "text": "Click here",
+              "in_nav": false
+            },
+            {
+              "url": "https://yorkminster.org/whats-on/event/christmas-day/",
+              "text": "Click here",
+              "in_nav": false
+            },
+            {
+              "url": "http://yorkminster.org/sign-up/",
+              "text": "SIGN UP",
+              "in_nav": false
+            },
+            {
+              "url": "http://yorkminster.org/visit/plan-your-visit/",
+              "text": "Getting here",
+              "in_nav": false
+            }
+          ]
+        },
+        {
+          "url": "https://yorkminster.org/discover/",
+          "fetched_at": "2026-11-17T05:25:13.759Z",
+          "method": "HTTP GET",
+          "ok": true,
+          "status": 200,
+          "final_url": "https://yorkminster.org/discover/",
+          "redirected": false,
+          "content_type": "text/html; charset=UTF-8",
+          "bytes": 108472,
+          "title": "Discover | York Minster",
+          "robots": {
+            "allowed": true,
+            "matched": null,
+            "note": "robots.txt read for user-agent *"
+          },
+          "error": null,
+          "links": [
+            {
+              "url": "https://yorkminster.org/",
+              "text": "Return to York Minster homepage",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/discover/conservation-projects/",
+              "text": "Conservation in Action",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/discover/stories/",
+              "text": "Stories",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/discover/behind-the-scenes/",
+              "text": "Behind the scenes",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/discover/collections-archive-library/",
+              "text": "Collections, Archive and Library",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/discover/interactive-map/",
+              "text": "Interactive Map",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/discover/timeline/",
+              "text": "Timeline",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/discover/centre-of-excellence-for-heritage-craft-skills-and-estate-management/",
+              "text": "Centre of Excellence",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/discover/conservation/",
+              "text": "Maintaining a fragile masterpiece",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/worship/ways-to-worship/",
+              "text": "Ways to worship and pray",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/worship/community/",
+              "text": "Community",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/worship/life-events/",
+              "text": "Life events",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/worship/choir-and-music/",
+              "text": "Choir and music",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/worship/sermons/",
+              "text": "Sermons",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/worship/christian-faith/",
+              "text": "Seeking to live a faith which can change the world",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/visit/plan-your-visit/",
+              "text": "Plan your visit",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/visit/suggested-itineraries/",
+              "text": "Suggested itineraries",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/visit/families/",
+              "text": "Families",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/visit/schools/",
+              "text": "School visits",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/visit/groups/",
+              "text": "Group Visits",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/visit/faq/",
+              "text": "FAQs",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/visit/accessibility-2/",
+              "text": "Accessibility",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/get-involved/jobs/",
+              "text": "Jobs",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/get-involved/volunteer/",
+              "text": "Volunteer",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/get-involved/friends-of-york-minster/",
+              "text": "Friends of York Minster",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/donate-to-york-minster/",
+              "text": "Help us ensure the survival of this iconic building",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/support-us/become-a-patron/",
+              "text": "Become a Patron",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/support-us/leave-a-legacy/",
+              "text": "Leave a Legacy",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/support-us/philanthropy-and-partnerships/",
+              "text": "Philanthropy and Partnerships",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/support-us/rose-window-project/",
+              "text": "Rescue the Rose Window",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/support-us/your-impact/",
+              "text": "Your Impact",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/worship/",
+              "text": "Worship",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/visit/",
+              "text": "Visit",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/discover/",
+              "text": "Discover",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/whats-on/",
+              "text": "What’s on",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/support-us/",
+              "text": "Support Us",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/about-us/safeguarding/",
+              "text": "Safeguarding",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/about-us/",
+              "text": "About us",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/latest/",
+              "text": "Latest",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/media-centre/",
+              "text": "Media centre",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/sign-up/",
+              "text": "Sign up",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/contact/",
+              "text": "Contact",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/terms-conditions/",
+              "text": "Terms & Conditions",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/privacy-notice/",
+              "text": "Privacy Notice",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/accessibility/",
+              "text": "Web Accessibility",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/cookies-policy/",
+              "text": "Cookies Policy",
+              "in_nav": true
+            },
+            {
+              "url": "http://yorkminster.org/discover/stories/",
+              "text": "Learn more",
+              "in_nav": false
+            },
+            {
+              "url": "https://yorkminster.org/discover/stories/story/protecting-our-irreplaceable-stained-glass-since-1861/",
+              "text": "Protecting our irreplaceable glass",
+              "in_nav": false
+            },
+            {
+              "url": "https://yorkminster.org/discover/stories/story/creating-the-undercroft/",
+              "text": "Creating the Undercroft",
+              "in_nav": false
+            },
+            {
+              "url": "https://yorkminster.org/discover/stories/story/a-grand-organ-rises-from-the-ashes/",
+              "text": "A Grand Organ rises from the ashes",
+              "in_nav": false
+            },
+            {
+              "url": "https://yorkminster.org/discover/stories/story/the-sisters-window-for-the-sisters/",
+              "text": "“The Sisters Window for the Sisters”",
+              "in_nav": false
+            },
+            {
+              "url": "https://yorkminster.org/discover/stories/story/remembering-yorks-fallen/",
+              "text": "Remembering York’s Fallen",
+              "in_nav": false
+            },
+            {
+              "url": "http://yorkminster.org/discover/conservation/",
+              "text": "Learn more",
+              "in_nav": false
+            },
+            {
+              "url": "https://yorkminster.org/undercroft-museum/",
+              "text": "Explore the Undercroft",
+              "in_nav": false
+            },
+            {
+              "url": "http://yorkminster.org/discover/behind-the-scenes/",
+              "text": "Learn more",
+              "in_nav": false
+            },
+            {
+              "url": "http://yorkminster.org/discover/interactive-map/",
+              "text": "See the map",
+              "in_nav": false
+            },
+            {
+              "url": "http://yorkminster.org/discover/timeline/",
+              "text": "Learn more",
+              "in_nav": false
+            },
+            {
+              "url": "http://yorkminster.org/sign-up/",
+              "text": "SIGN UP",
+              "in_nav": false
+            },
+            {
+              "url": "http://yorkminster.org/visit/plan-your-visit/",
+              "text": "Getting here",
+              "in_nav": false
+            }
+          ]
+        },
+        {
+          "url": "https://yorkminster.org/discover/collections-archive-library/",
+          "fetched_at": "2026-11-17T05:25:15.127Z",
+          "method": "HTTP GET",
+          "ok": true,
+          "status": 200,
+          "final_url": "https://yorkminster.org/discover/collections-archive-library/",
+          "redirected": false,
+          "content_type": "text/html; charset=UTF-8",
+          "bytes": 105880,
+          "title": "Collections, Archive and Library | York Minster",
+          "robots": {
+            "allowed": true,
+            "matched": null,
+            "note": "robots.txt read for user-agent *"
+          },
+          "error": null,
+          "links": [
+            {
+              "url": "https://yorkminster.org/",
+              "text": "Return to York Minster homepage",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/discover/conservation-projects/",
+              "text": "Conservation in Action",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/discover/stories/",
+              "text": "Stories",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/discover/behind-the-scenes/",
+              "text": "Behind the scenes",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/discover/collections-archive-library/",
+              "text": "Collections, Archive and Library",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/discover/interactive-map/",
+              "text": "Interactive Map",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/discover/timeline/",
+              "text": "Timeline",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/discover/centre-of-excellence-for-heritage-craft-skills-and-estate-management/",
+              "text": "Centre of Excellence",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/discover/conservation/",
+              "text": "Maintaining a fragile masterpiece",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/worship/ways-to-worship/",
+              "text": "Ways to worship and pray",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/worship/community/",
+              "text": "Community",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/worship/life-events/",
+              "text": "Life events",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/worship/choir-and-music/",
+              "text": "Choir and music",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/worship/sermons/",
+              "text": "Sermons",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/worship/christian-faith/",
+              "text": "Seeking to live a faith which can change the world",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/visit/plan-your-visit/",
+              "text": "Plan your visit",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/visit/suggested-itineraries/",
+              "text": "Suggested itineraries",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/visit/families/",
+              "text": "Families",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/visit/schools/",
+              "text": "School visits",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/visit/groups/",
+              "text": "Group Visits",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/visit/faq/",
+              "text": "FAQs",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/visit/accessibility-2/",
+              "text": "Accessibility",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/get-involved/jobs/",
+              "text": "Jobs",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/get-involved/volunteer/",
+              "text": "Volunteer",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/get-involved/friends-of-york-minster/",
+              "text": "Friends of York Minster",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/donate-to-york-minster/",
+              "text": "Help us ensure the survival of this iconic building",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/support-us/become-a-patron/",
+              "text": "Become a Patron",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/support-us/leave-a-legacy/",
+              "text": "Leave a Legacy",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/support-us/philanthropy-and-partnerships/",
+              "text": "Philanthropy and Partnerships",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/support-us/rose-window-project/",
+              "text": "Rescue the Rose Window",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/support-us/your-impact/",
+              "text": "Your Impact",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/worship/",
+              "text": "Worship",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/visit/",
+              "text": "Visit",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/discover/",
+              "text": "Discover",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/whats-on/",
+              "text": "What’s on",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/support-us/",
+              "text": "Support Us",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/about-us/safeguarding/",
+              "text": "Safeguarding",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/about-us/",
+              "text": "About us",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/latest/",
+              "text": "Latest",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/media-centre/",
+              "text": "Media centre",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/sign-up/",
+              "text": "Sign up",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/contact/",
+              "text": "Contact",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/terms-conditions/",
+              "text": "Terms & Conditions",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/privacy-notice/",
+              "text": "Privacy Notice",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/accessibility/",
+              "text": "Web Accessibility",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/cookies-policy/",
+              "text": "Cookies Policy",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/visiting-york-minster-library-and-archives/",
+              "text": "Visiting York Minster Library and Archives",
+              "in_nav": false
+            },
+            {
+              "url": "http://yorkminster.org/undercroft/",
+              "text": "Undercroft Museum,",
+              "in_nav": false
+            },
+            {
+              "url": "http://yorkminster.org/discover/stories/",
+              "text": "Stories",
+              "in_nav": false
+            },
+            {
+              "url": "https://yorkminster.org/app/uploads/2025/07/PN_library-and-archives_1.3.4_clean.pdf",
+              "text": "privacy notice for users of the collections",
+              "in_nav": false
+            },
+            {
+              "url": "https://yorkminster.org/app/uploads/2026/10/Collections-Access-Policy-final-approved-June-2024-2.6-update-6.6.25-and-30.9.26.pdf",
+              "text": "Download",
+              "in_nav": false
+            },
+            {
+              "url": "https://yorkminster.org/app/uploads/2024/07/Collections-Care-and-Conservation-Policy.pdf",
+              "text": "Download",
+              "in_nav": false
+            },
+            {
+              "url": "https://yorkminster.org/app/uploads/2024/12/Museum-Archives-Manuscripts-Coll-Dev-Policy-public.pdf",
+              "text": "Download",
+              "in_nav": false
+            },
+            {
+              "url": "https://yorkminster.org/app/uploads/2024/07/York-Minster-Library-Collections-Development-Policy-acquisitions-policy.pdf",
+              "text": "Download",
+              "in_nav": false
+            },
+            {
+              "url": "https://yorkminster.org/app/uploads/2024/07/Collections-Information-Policy-for-the-Museum-and-Archive-Manuscript-Collections.pdf",
+              "text": "Download",
+              "in_nav": false
+            },
+            {
+              "url": "https://yorkminster.org/app/uploads/2024/07/York-Minster-Library-Collections-Information-Policy.pdf",
+              "text": "Download",
+              "in_nav": false
+            },
+            {
+              "url": "http://yorkminster.org/sign-up/",
+              "text": "SIGN UP",
+              "in_nav": false
+            },
+            {
+              "url": "http://yorkminster.org/visit/plan-your-visit/",
+              "text": "Getting here",
+              "in_nav": false
+            }
+          ]
+        },
+        {
+          "url": "https://yorkminster.org/discover/interactive-map/",
+          "fetched_at": "2026-11-17T05:25:16.031Z",
+          "method": "HTTP GET",
+          "ok": true,
+          "status": 200,
+          "final_url": "https://yorkminster.org/discover/interactive-map/",
+          "redirected": false,
+          "content_type": "text/html; charset=UTF-8",
+          "bytes": 146144,
+          "title": "Interactive Map | York Minster",
+          "robots": {
+            "allowed": true,
+            "matched": null,
+            "note": "robots.txt read for user-agent *"
+          },
+          "error": null,
+          "links": [
+            {
+              "url": "https://yorkminster.org/",
+              "text": "Return to York Minster homepage",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/discover/conservation-projects/",
+              "text": "Conservation in Action",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/discover/stories/",
+              "text": "Stories",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/discover/behind-the-scenes/",
+              "text": "Behind the scenes",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/discover/collections-archive-library/",
+              "text": "Collections, Archive and Library",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/discover/interactive-map/",
+              "text": "Interactive Map",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/discover/timeline/",
+              "text": "Timeline",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/discover/centre-of-excellence-for-heritage-craft-skills-and-estate-management/",
+              "text": "Centre of Excellence",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/discover/conservation/",
+              "text": "Maintaining a fragile masterpiece",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/worship/ways-to-worship/",
+              "text": "Ways to worship and pray",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/worship/community/",
+              "text": "Community",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/worship/life-events/",
+              "text": "Life events",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/worship/choir-and-music/",
+              "text": "Choir and music",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/worship/sermons/",
+              "text": "Sermons",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/worship/christian-faith/",
+              "text": "Seeking to live a faith which can change the world",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/visit/plan-your-visit/",
+              "text": "Plan your visit",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/visit/suggested-itineraries/",
+              "text": "Suggested itineraries",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/visit/families/",
+              "text": "Families",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/visit/schools/",
+              "text": "School visits",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/visit/groups/",
+              "text": "Group Visits",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/visit/faq/",
+              "text": "FAQs",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/visit/accessibility-2/",
+              "text": "Accessibility",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/get-involved/jobs/",
+              "text": "Jobs",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/get-involved/volunteer/",
+              "text": "Volunteer",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/get-involved/friends-of-york-minster/",
+              "text": "Friends of York Minster",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/donate-to-york-minster/",
+              "text": "Help us ensure the survival of this iconic building",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/support-us/become-a-patron/",
+              "text": "Become a Patron",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/support-us/leave-a-legacy/",
+              "text": "Leave a Legacy",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/support-us/philanthropy-and-partnerships/",
+              "text": "Philanthropy and Partnerships",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/support-us/rose-window-project/",
+              "text": "Rescue the Rose Window",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/support-us/your-impact/",
+              "text": "Your Impact",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/worship/",
+              "text": "Worship",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/visit/",
+              "text": "Visit",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/discover/",
+              "text": "Discover",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/whats-on/",
+              "text": "What’s on",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/support-us/",
+              "text": "Support Us",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/about-us/safeguarding/",
+              "text": "Safeguarding",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/about-us/",
+              "text": "About us",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/latest/",
+              "text": "Latest",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/media-centre/",
+              "text": "Media centre",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/sign-up/",
+              "text": "Sign up",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/contact/",
+              "text": "Contact",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/terms-conditions/",
+              "text": "Terms & Conditions",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/privacy-notice/",
+              "text": "Privacy Notice",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/accessibility/",
+              "text": "Web Accessibility",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/cookies-policy/",
+              "text": "Cookies Policy",
+              "in_nav": true
+            },
+            {
+              "url": "http://yorkminster.org/discover/collections-archive-library/",
+              "text": "here",
+              "in_nav": false
+            },
+            {
+              "url": "http://yorkminster.org/sign-up/",
+              "text": "SIGN UP",
+              "in_nav": false
+            },
+            {
+              "url": "http://yorkminster.org/visit/plan-your-visit/",
+              "text": "Getting here",
+              "in_nav": false
+            }
+          ]
+        },
+        {
+          "url": "https://yorkminster.org/worship/sermons/",
+          "fetched_at": "2026-11-17T05:25:17.353Z",
+          "method": "HTTP GET",
+          "ok": true,
+          "status": 200,
+          "final_url": "https://yorkminster.org/worship/sermons/",
+          "redirected": false,
+          "content_type": "text/html; charset=UTF-8",
+          "bytes": 106640,
+          "title": "Sermons | York Minster",
+          "robots": {
+            "allowed": true,
+            "matched": null,
+            "note": "robots.txt read for user-agent *"
+          },
+          "error": null,
+          "links": [
+            {
+              "url": "https://yorkminster.org/",
+              "text": "Return to York Minster homepage",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/discover/conservation-projects/",
+              "text": "Conservation in Action",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/discover/stories/",
+              "text": "Stories",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/discover/behind-the-scenes/",
+              "text": "Behind the scenes",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/discover/collections-archive-library/",
+              "text": "Collections, Archive and Library",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/discover/interactive-map/",
+              "text": "Interactive Map",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/discover/timeline/",
+              "text": "Timeline",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/discover/centre-of-excellence-for-heritage-craft-skills-and-estate-management/",
+              "text": "Centre of Excellence",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/discover/conservation/",
+              "text": "Maintaining a fragile masterpiece",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/worship/ways-to-worship/",
+              "text": "Ways to worship and pray",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/worship/community/",
+              "text": "Community",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/worship/life-events/",
+              "text": "Life events",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/worship/choir-and-music/",
+              "text": "Choir and music",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/worship/sermons/",
+              "text": "Sermons",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/worship/christian-faith/",
+              "text": "Seeking to live a faith which can change the world",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/visit/plan-your-visit/",
+              "text": "Plan your visit",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/visit/suggested-itineraries/",
+              "text": "Suggested itineraries",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/visit/families/",
+              "text": "Families",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/visit/schools/",
+              "text": "School visits",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/visit/groups/",
+              "text": "Group Visits",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/visit/faq/",
+              "text": "FAQs",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/visit/accessibility-2/",
+              "text": "Accessibility",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/get-involved/jobs/",
+              "text": "Jobs",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/get-involved/volunteer/",
+              "text": "Volunteer",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/get-involved/friends-of-york-minster/",
+              "text": "Friends of York Minster",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/donate-to-york-minster/",
+              "text": "Help us ensure the survival of this iconic building",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/support-us/become-a-patron/",
+              "text": "Become a Patron",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/support-us/leave-a-legacy/",
+              "text": "Leave a Legacy",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/support-us/philanthropy-and-partnerships/",
+              "text": "Philanthropy and Partnerships",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/support-us/rose-window-project/",
+              "text": "Rescue the Rose Window",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/support-us/your-impact/",
+              "text": "Your Impact",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/worship/",
+              "text": "Worship",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/visit/",
+              "text": "Visit",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/discover/",
+              "text": "Discover",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/whats-on/",
+              "text": "What’s on",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/support-us/",
+              "text": "Support Us",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/about-us/safeguarding/",
+              "text": "Safeguarding",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/about-us/",
+              "text": "About us",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/latest/",
+              "text": "Latest",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/media-centre/",
+              "text": "Media centre",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/sign-up/",
+              "text": "Sign up",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/contact/",
+              "text": "Contact",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/terms-conditions/",
+              "text": "Terms & Conditions",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/privacy-notice/",
+              "text": "Privacy Notice",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/accessibility/",
+              "text": "Web Accessibility",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/cookies-policy/",
+              "text": "Cookies Policy",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/worship/sermon/wisdom-is-easily-discerned-by-those-who-love-her-the-very-reverend-dominic-barrington-dean-of-york/",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://yorkminster.org/worship/sermon/god-had-provided-something-better-so-that-they-would-not-without-us-be-made-perfect-the-very-reverend-dominic-barrington-dean-of-york/",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://yorkminster.org/worship/sermon/sermon-for-all-saints-day-the-reverend-canon-timothy-goode-congregational-discipleship-and-nurture/",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://yorkminster.org/worship/sermon/but-as-for-you-canon-peter-collier-cathedral-reader/",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://yorkminster.org/worship/sermon/loving-god-honouring-our-neighbour-the-reverend-canon-maggie-mclean-missioner/",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://yorkminster.org/worship/sermon/behind-every-knock-the-reverend-canon-maggie-mclean-missioner/",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://yorkminster.org/worship/sermon/sermon-for-harvest-festival-the-reverend-canon-timothy-goode-congregational-discipleship-and-nurture/",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://yorkminster.org/worship/sermon/sermon-for-the-seventeenth-sunday-after-trinity-the-reverend-canon-timothy-goode-congregational-discipleship-and-nurture/",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://yorkminster.org/worship/sermon/the-first-and-the-last-canon-peter-collier-cathedral-reader/",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://yorkminster.org/worship/sermon/love-beyond-understanding-the-reverend-canon-maggie-mclean-missioner/",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://yorkminster.org/worship/sermon/sermon-for-the-festival-of-creation-in-christ-the-reverend-canon-timothy-goode-congregational-discipleship-and-nurture/",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://yorkminster.org/worship/sermon/how-paul-spoke-to-the-athenian-agnostics-canon-peter-collier-cathedral-reader/",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "http://yorkminster.org/sign-up/",
+              "text": "SIGN UP",
+              "in_nav": false
+            },
+            {
+              "url": "http://yorkminster.org/visit/plan-your-visit/",
+              "text": "Getting here",
+              "in_nav": false
+            }
+          ]
+        },
+        {
+          "url": "https://yorkminster.org/visit/plan-your-visit/",
+          "fetched_at": "2026-11-17T05:25:18.491Z",
+          "method": "HTTP GET",
+          "ok": true,
+          "status": 200,
+          "final_url": "https://yorkminster.org/visit/plan-your-visit/",
+          "redirected": false,
+          "content_type": "text/html; charset=UTF-8",
+          "bytes": 128316,
+          "title": "Plan your visit | York Minster",
+          "robots": {
+            "allowed": true,
+            "matched": null,
+            "note": "robots.txt read for user-agent *"
+          },
+          "error": null,
+          "links": [
+            {
+              "url": "https://yorkminster.org/",
+              "text": "Return to York Minster homepage",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/discover/conservation-projects/",
+              "text": "Conservation in Action",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/discover/stories/",
+              "text": "Stories",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/discover/behind-the-scenes/",
+              "text": "Behind the scenes",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/discover/collections-archive-library/",
+              "text": "Collections, Archive and Library",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/discover/interactive-map/",
+              "text": "Interactive Map",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/discover/timeline/",
+              "text": "Timeline",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/discover/centre-of-excellence-for-heritage-craft-skills-and-estate-management/",
+              "text": "Centre of Excellence",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/discover/conservation/",
+              "text": "Maintaining a fragile masterpiece",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/worship/ways-to-worship/",
+              "text": "Ways to worship and pray",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/worship/community/",
+              "text": "Community",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/worship/life-events/",
+              "text": "Life events",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/worship/choir-and-music/",
+              "text": "Choir and music",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/worship/sermons/",
+              "text": "Sermons",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/worship/christian-faith/",
+              "text": "Seeking to live a faith which can change the world",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/visit/plan-your-visit/",
+              "text": "Plan your visit",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/visit/suggested-itineraries/",
+              "text": "Suggested itineraries",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/visit/families/",
+              "text": "Families",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/visit/schools/",
+              "text": "School visits",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/visit/groups/",
+              "text": "Group Visits",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/visit/faq/",
+              "text": "FAQs",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/visit/accessibility-2/",
+              "text": "Accessibility",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/get-involved/jobs/",
+              "text": "Jobs",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/get-involved/volunteer/",
+              "text": "Volunteer",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/get-involved/friends-of-york-minster/",
+              "text": "Friends of York Minster",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/donate-to-york-minster/",
+              "text": "Help us ensure the survival of this iconic building",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/support-us/become-a-patron/",
+              "text": "Become a Patron",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/support-us/leave-a-legacy/",
+              "text": "Leave a Legacy",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/support-us/philanthropy-and-partnerships/",
+              "text": "Philanthropy and Partnerships",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/support-us/rose-window-project/",
+              "text": "Rescue the Rose Window",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/support-us/your-impact/",
+              "text": "Your Impact",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/worship/",
+              "text": "Worship",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/visit/",
+              "text": "Visit",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/discover/",
+              "text": "Discover",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/whats-on/",
+              "text": "What’s on",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/support-us/",
+              "text": "Support Us",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/about-us/safeguarding/",
+              "text": "Safeguarding",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/about-us/",
+              "text": "About us",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/latest/",
+              "text": "Latest",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/media-centre/",
+              "text": "Media centre",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/sign-up/",
+              "text": "Sign up",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/contact/",
+              "text": "Contact",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/terms-conditions/",
+              "text": "Terms & Conditions",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/privacy-notice/",
+              "text": "Privacy Notice",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/accessibility/",
+              "text": "Web Accessibility",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/cookies-policy/",
+              "text": "Cookies Policy",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/free-guided-tours/",
+              "text": "Free Guided Tours",
+              "in_nav": false
+            },
+            {
+              "url": "https://yorkminster.org/visit/plan-your-visit/hidden-minster-tours/",
+              "text": "Find out more and pre-book your tickets.",
+              "in_nav": false
+            },
+            {
+              "url": "https://yorkminster.org/visit/plan-your-visit/tower-trips/",
+              "text": "York Minster’s Central Tower",
+              "in_nav": false
+            },
+            {
+              "url": "https://yorkminster.org/visit/plan-your-visit/why-we-charge/",
+              "text": "Your Impact How you make a difference",
+              "in_nav": false
+            },
+            {
+              "url": "http://yorkminster.org/sign-up/",
+              "text": "SIGN UP",
+              "in_nav": false
+            },
+            {
+              "url": "http://yorkminster.org/visit/plan-your-visit/",
+              "text": "Getting here",
+              "in_nav": false
+            }
+          ]
+        },
+        {
+          "url": "https://yorkminster.org/whats-on/",
+          "fetched_at": "2026-11-17T05:25:19.417Z",
+          "method": "HTTP GET",
+          "ok": true,
+          "status": 200,
+          "final_url": "https://yorkminster.org/whats-on/",
+          "redirected": false,
+          "content_type": "text/html; charset=UTF-8",
+          "bytes": 139871,
+          "title": "What's on | York Minster",
+          "robots": {
+            "allowed": true,
+            "matched": null,
+            "note": "robots.txt read for user-agent *"
+          },
+          "error": null,
+          "links": [
+            {
+              "url": "https://yorkminster.org/",
+              "text": "Return to York Minster homepage",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/discover/conservation-projects/",
+              "text": "Conservation in Action",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/discover/stories/",
+              "text": "Stories",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/discover/behind-the-scenes/",
+              "text": "Behind the scenes",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/discover/collections-archive-library/",
+              "text": "Collections, Archive and Library",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/discover/interactive-map/",
+              "text": "Interactive Map",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/discover/timeline/",
+              "text": "Timeline",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/discover/centre-of-excellence-for-heritage-craft-skills-and-estate-management/",
+              "text": "Centre of Excellence",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/discover/conservation/",
+              "text": "Maintaining a fragile masterpiece",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/worship/ways-to-worship/",
+              "text": "Ways to worship and pray",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/worship/community/",
+              "text": "Community",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/worship/life-events/",
+              "text": "Life events",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/worship/choir-and-music/",
+              "text": "Choir and music",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/worship/sermons/",
+              "text": "Sermons",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/worship/christian-faith/",
+              "text": "Seeking to live a faith which can change the world",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/visit/plan-your-visit/",
+              "text": "Plan your visit",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/visit/suggested-itineraries/",
+              "text": "Suggested itineraries",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/visit/families/",
+              "text": "Families",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/visit/schools/",
+              "text": "School visits",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/visit/groups/",
+              "text": "Group Visits",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/visit/faq/",
+              "text": "FAQs",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/visit/accessibility-2/",
+              "text": "Accessibility",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/get-involved/jobs/",
+              "text": "Jobs",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/get-involved/volunteer/",
+              "text": "Volunteer",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/get-involved/friends-of-york-minster/",
+              "text": "Friends of York Minster",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/donate-to-york-minster/",
+              "text": "Help us ensure the survival of this iconic building",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/support-us/become-a-patron/",
+              "text": "Become a Patron",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/support-us/leave-a-legacy/",
+              "text": "Leave a Legacy",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/support-us/philanthropy-and-partnerships/",
+              "text": "Philanthropy and Partnerships",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/support-us/rose-window-project/",
+              "text": "Rescue the Rose Window",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/support-us/your-impact/",
+              "text": "Your Impact",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/worship/",
+              "text": "Worship",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/visit/",
+              "text": "Visit",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/discover/",
+              "text": "Discover",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/whats-on/",
+              "text": "What’s on",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/support-us/",
+              "text": "Support Us",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/about-us/safeguarding/",
+              "text": "Safeguarding",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/about-us/",
+              "text": "About us",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/latest/",
+              "text": "Latest",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/media-centre/",
+              "text": "Media centre",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/sign-up/",
+              "text": "Sign up",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/contact/",
+              "text": "Contact",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/terms-conditions/",
+              "text": "Terms & Conditions",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/privacy-notice/",
+              "text": "Privacy Notice",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/accessibility/",
+              "text": "Web Accessibility",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/cookies-policy/",
+              "text": "Cookies Policy",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/whats-on/category/christmas/",
+              "text": "Christmas",
+              "in_nav": false
+            },
+            {
+              "url": "https://yorkminster.org/whats-on/event/christmas-tree-festival/",
+              "text": "View",
+              "in_nav": false
+            },
+            {
+              "url": "https://yorkminster.org/whats-on/event/first-advent-procession/",
+              "text": "View",
+              "in_nav": false
+            },
+            {
+              "url": "https://yorkminster.org/whats-on/event/christmas-day/",
+              "text": "View",
+              "in_nav": false
+            },
+            {
+              "url": "https://yorkminster.org/app/uploads/2026/11/13a-Scheme-15-November-%E2%80%93-19-December-2026-for-web.pdf",
+              "text": "Download our full schedule here (PDF, 433 KB)",
+              "in_nav": false
+            },
+            {
+              "url": "https://yorkminster.org/wp-json/cw/v1/month-days/2026-11-17",
+              "text": "November 2026",
+              "in_nav": false
+            },
+            {
+              "url": "https://yorkminster.org/wp-json/cw/v1/month-days/2026-12-01",
+              "text": "December 2026",
+              "in_nav": false
+            },
+            {
+              "url": "https://yorkminster.org/wp-json/cw/v1/month-days/2027-01-01",
+              "text": "January 2027",
+              "in_nav": false
+            },
+            {
+              "url": "https://yorkminster.org/wp-json/cw/v1/month-days/2027-02-01",
+              "text": "February 2027",
+              "in_nav": false
+            },
+            {
+              "url": "https://yorkminster.org/whats-on/category/worship/",
+              "text": "Worship",
+              "in_nav": false
+            },
+            {
+              "url": "https://yorkminster.org/whats-on/event/sunday-worship/",
+              "text": "Details",
+              "in_nav": false
+            },
+            {
+              "url": "https://yorkminster.org/whats-on/category/st-william-of-york-crafting-a-legacy/",
+              "text": "St William of York: Crafting a Legacy",
+              "in_nav": false
+            },
+            {
+              "url": "https://yorkminster.org/whats-on/event/st-william-of-york-life-and-legacy/",
+              "text": "Details",
+              "in_nav": false
+            },
+            {
+              "url": "https://yorkminster.org/whats-on/event/st-william-cinematic-experience/",
+              "text": "Details",
+              "in_nav": false
+            },
+            {
+              "url": "https://yorkminster.org/whats-on/event/evensong-bach-cantata/",
+              "text": "Details",
+              "in_nav": false
+            },
+            {
+              "url": "https://yorkminster.org/whats-on/event/lights-switch-on/",
+              "text": "Details",
+              "in_nav": false
+            },
+            {
+              "url": "https://yorkminster.org/whats-on/event/second-advent-procession/",
+              "text": "Details",
+              "in_nav": false
+            },
+            {
+              "url": "https://yorkminster.org/whats-on/event/christmas-carol-concerts/",
+              "text": "Details",
+              "in_nav": false
+            },
+            {
+              "url": "https://yorkminster.org/whats-on/event/the-nutcracker/",
+              "text": "Details",
+              "in_nav": false
+            },
+            {
+              "url": "https://yorkminster.org/whats-on/event/grimethorpe-colliery-band-christmas-concert/",
+              "text": "Details",
+              "in_nav": false
+            },
+            {
+              "url": "https://yorkminster.org/whats-on/event/sankta-lucia/",
+              "text": "Details",
+              "in_nav": false
+            },
+            {
+              "url": "https://yorkminster.org/whats-on/event/fairytale-at-york-minster-christmas-hits-by-candlelight/",
+              "text": "Details",
+              "in_nav": false
+            },
+            {
+              "url": "https://yorkminster.org/whats-on/event/carols-by-candlelight/",
+              "text": "Details",
+              "in_nav": false
+            },
+            {
+              "url": "https://yorkminster.org/whats-on/event/the-first-festival-of-nine-lessons-and-carols/",
+              "text": "Details",
+              "in_nav": false
+            },
+            {
+              "url": "https://yorkminster.org/whats-on/event/crib-service/",
+              "text": "Details",
+              "in_nav": false
+            },
+            {
+              "url": "https://yorkminster.org/whats-on/event/nine-lessons-and-carols/",
+              "text": "Details",
+              "in_nav": false
+            },
+            {
+              "url": "https://yorkminster.org/whats-on/event/midnight-mass/",
+              "text": "Details",
+              "in_nav": false
+            },
+            {
+              "url": "http://yorkminster.org/sign-up/",
+              "text": "SIGN UP",
+              "in_nav": false
+            },
+            {
+              "url": "http://yorkminster.org/visit/plan-your-visit/",
+              "text": "Getting here",
+              "in_nav": false
+            }
+          ]
+        },
+        {
+          "url": "https://yorkminster.org/donate-to-york-minster/",
+          "fetched_at": "2026-11-17T05:25:20.370Z",
+          "method": "HTTP GET",
+          "ok": true,
+          "status": 200,
+          "final_url": "https://yorkminster.org/donate-to-york-minster/",
+          "redirected": false,
+          "content_type": "text/html; charset=UTF-8",
+          "bytes": 94814,
+          "title": "Donate to York Minster | York Minster",
+          "robots": {
+            "allowed": true,
+            "matched": null,
+            "note": "robots.txt read for user-agent *"
+          },
+          "error": null,
+          "links": [
+            {
+              "url": "https://yorkminster.org/",
+              "text": "Return to York Minster homepage",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/discover/conservation-projects/",
+              "text": "Conservation in Action",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/discover/stories/",
+              "text": "Stories",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/discover/behind-the-scenes/",
+              "text": "Behind the scenes",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/discover/collections-archive-library/",
+              "text": "Collections, Archive and Library",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/discover/interactive-map/",
+              "text": "Interactive Map",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/discover/timeline/",
+              "text": "Timeline",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/discover/centre-of-excellence-for-heritage-craft-skills-and-estate-management/",
+              "text": "Centre of Excellence",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/discover/conservation/",
+              "text": "Maintaining a fragile masterpiece",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/worship/ways-to-worship/",
+              "text": "Ways to worship and pray",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/worship/community/",
+              "text": "Community",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/worship/life-events/",
+              "text": "Life events",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/worship/choir-and-music/",
+              "text": "Choir and music",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/worship/sermons/",
+              "text": "Sermons",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/worship/christian-faith/",
+              "text": "Seeking to live a faith which can change the world",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/visit/plan-your-visit/",
+              "text": "Plan your visit",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/visit/suggested-itineraries/",
+              "text": "Suggested itineraries",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/visit/families/",
+              "text": "Families",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/visit/schools/",
+              "text": "School visits",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/visit/groups/",
+              "text": "Group Visits",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/visit/faq/",
+              "text": "FAQs",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/visit/accessibility-2/",
+              "text": "Accessibility",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/get-involved/jobs/",
+              "text": "Jobs",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/get-involved/volunteer/",
+              "text": "Volunteer",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/get-involved/friends-of-york-minster/",
+              "text": "Friends of York Minster",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/donate-to-york-minster/",
+              "text": "Help us ensure the survival of this iconic building",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/support-us/become-a-patron/",
+              "text": "Become a Patron",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/support-us/leave-a-legacy/",
+              "text": "Leave a Legacy",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/support-us/philanthropy-and-partnerships/",
+              "text": "Philanthropy and Partnerships",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/support-us/rose-window-project/",
+              "text": "Rescue the Rose Window",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/support-us/your-impact/",
+              "text": "Your Impact",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/worship/",
+              "text": "Worship",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/visit/",
+              "text": "Visit",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/discover/",
+              "text": "Discover",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/whats-on/",
+              "text": "What’s on",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/support-us/",
+              "text": "Support Us",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/about-us/safeguarding/",
+              "text": "Safeguarding",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/about-us/",
+              "text": "About us",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/latest/",
+              "text": "Latest",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/media-centre/",
+              "text": "Media centre",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/sign-up/",
+              "text": "Sign up",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/contact/",
+              "text": "Contact",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/terms-conditions/",
+              "text": "Terms & Conditions",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/privacy-notice/",
+              "text": "Privacy Notice",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/accessibility/",
+              "text": "Web Accessibility",
+              "in_nav": true
+            },
+            {
+              "url": "https://yorkminster.org/cookies-policy/",
+              "text": "Cookies Policy",
+              "in_nav": true
+            },
+            {
+              "url": "http://yorkminster.org/sign-up/",
+              "text": "SIGN UP",
+              "in_nav": false
+            },
+            {
+              "url": "http://yorkminster.org/visit/plan-your-visit/",
+              "text": "Getting here",
+              "in_nav": false
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

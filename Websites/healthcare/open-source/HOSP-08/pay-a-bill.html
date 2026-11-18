@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Pay Your Bill – Community Health Center</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <header data-section="header" data-component="site-header">
+    <h1>Community Health Center</h1>
+    <p>Pay your bill online or view accepted insurance plans.</p>
+  </header>
+  <nav data-section="navigation" data-component="primary-nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="get-care-now.html">Get Care Now</a></li>
+      <li><a href="pay-a-bill.html" aria-current="page">Pay a Bill</a></li>
+      <li><a href="find-a-doctor.html">Find a Doctor</a></li>
+      <li><a href="health-care-services.html">Services</a></li>
+      <li><a href="location-map.html">Locations</a></li>
+      <li><a href="patient-resources.html">Patient Resources</a></li>
+    </ul>
+  </nav>
+  <main id="main-content" data-section="bill-pay">
+    <h1>Pay Your Bill</h1>
+    <p>You can make a payment through our secure portal (simulated).</p>
+    <p><button class="btn" aria-label="Make a payment (demo)">Make a Payment (demo)</button></p>
+    <section>
+      <h2>Accepted Insurance Plans</h2>
+      <button data-component="show-insurance-modal" class="btn">
+        View accepted insurance plans
+      </button>
+    </section>
+  </main>
+
+  <!-- Insurance Modal (hidden by default) -->
+  <div data-component="insurance-modal-backdrop" aria-hidden="true">
+    <div data-component="insurance-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button data-component="modal-close" aria-label="Close modal">&times;</button>
+      <h2 id="modal-title" data-component="modal-title">Accepted Insurance Plans</h2>
+      <ul data-component="insurance-list">
+        <!-- populated by script -->
+      </ul>
+    </div>
+  </div>
+
+  <footer data-section="footer" data-component="site-footer">
+    <p>&copy; 2026 Community Health Center. All rights reserved.</p>
+  </footer>
+  <script src="js/main.js"></script>
+  <script>
+    // Inline sample data for insurance plans
+    const insurancePlans = [
+      { id: 1, name: 'BlueCross BlueShield', networkTier: 'In-Network' },
+      { id: 2, name: 'UnitedHealthcare', networkTier: 'In-Network' },
+      { id: 3, name: 'Aetna', networkTier: 'In-Network' },
+      { id: 4, name: 'Cigna', networkTier: 'In-Network' }
+    ];
+    const list = document.querySelector('[data-component="insurance-list"]');
+    insurancePlans.forEach(plan => {
+      const li = document.createElement('li');
+      li.textContent = `${plan.name} – ${plan.networkTier}`;
+      list.appendChild(li);
+    });
+  </script>
+</body>
+</html>

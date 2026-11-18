@@ -1,0 +1,74 @@
+[
+  {
+    "component": "site-header",
+    "selector": "header.site-header",
+    "pages": ["index.html", "projects.html", "projects-applications.html", "projects-electronics.html", "projects-marketing.html", "projects-other.html", "projects-web-stuff.html", "mini-tools.html", "blog.html", "all-posts.html", "projects-applications-git-date-extractor-npm-package-and-cli-tool.html", "projects-web-stuff-cheatsheets-and-snippets-markdown-powered-gatsby-mini-site.html", "posts-2023-what-makes-svelte-so-great-features-and-comparisons.html", "posts-2023-shell-heredocs-productive-fun-bash-and-beyond.html", "404.html"],
+    "behaviors": ["Sticky positioning", "Responsive layout"],
+    "keyboard": ["Tab to navigate links", "Escape to close mobile menu"],
+    "status": "implemented",
+    "validation": "not-tested"
+  },
+  {
+    "component": "primary-nav",
+    "selector": "nav.primary-nav",
+    "pages": ["index.html", "projects.html", "projects-applications.html", "projects-electronics.html", "projects-marketing.html", "projects-other.html", "projects-web-stuff.html", "mini-tools.html", "blog.html", "all-posts.html", "projects-applications-git-date-extractor-npm-package-and-cli-tool.html", "projects-web-stuff-cheatsheets-and-snippets-markdown-powered-gatsby-mini-site.html", "posts-2023-what-makes-svelte-so-great-features-and-comparisons.html", "posts-2023-shell-heredocs-productive-fun-bash-and-beyond.html", "404.html"],
+    "behaviors": ["Mobile menu toggle", "Escape to close"],
+    "keyboard": ["Tab to navigate links", "Escape to close menu"],
+    "status": "implemented",
+    "validation": "not-tested"
+  },
+  {
+    "component": "site-footer",
+    "selector": "footer.site-footer",
+    "pages": ["index.html", "projects.html", "projects-applications.html", "projects-electronics.html", "projects-marketing.html", "projects-other.html", "projects-web-stuff.html", "mini-tools.html", "blog.html", "all-posts.html", "projects-applications-git-date-extractor-npm-package-and-cli-tool.html", "projects-web-stuff-cheatsheets-and-snippets-markdown-powered-gatsby-mini-site.html", "posts-2023-what-makes-svelte-so-great-features-and-comparisons.html", "posts-2023-shell-heredocs-productive-fun-bash-and-beyond.html", "404.html"],
+    "behaviors": ["Static content"],
+    "keyboard": ["Tab to navigate links"],
+    "status": "implemented",
+    "validation": "not-tested"
+  },
+  {
+    "component": "card-grid",
+    "selector": "div.card-grid",
+    "pages": ["index.html", "projects.html", "projects-applications.html", "projects-electronics.html", "projects-marketing.html", "projects-other.html", "projects-web-stuff.html", "mini-tools.html", "blog.html", "all-posts.html"],
+    "behaviors": ["Responsive grid layout"],
+    "keyboard": ["Tab to navigate links"],
+    "status": "implemented",
+    "validation": "not-tested"
+  },
+  {
+    "component": "filter-group",
+    "selector": "div.filters",
+    "pages": ["projects.html"],
+    "behaviors": ["Client-side category filtering"],
+    "keyboard": ["Tab to navigate buttons", "Enter/Space to activate"],
+    "status": "implemented",
+    "validation": "not-tested"
+  },
+  {
+    "component": "nav-toggle",
+    "selector": "button.nav-toggle",
+    "pages": ["index.html", "projects.html", "projects-applications.html", "projects-electronics.html", "projects-marketing.html", "projects-other.html", "projects-web-stuff.html", "mini-tools.html", "blog.html", "all-posts.html", "projects-applications-git-date-extractor-npm-package-and-cli-tool.html", "projects-web-stuff-cheatsheets-and-snippets-markdown-powered-gatsby-mini-site.html", "posts-2023-what-makes-svelte-so-great-features-and-comparisons.html", "posts-2023-shell-heredocs-productive-fun-bash-and-beyond.html", "404.html"],
+    "behaviors": ["Toggle mobile menu visibility"],
+    "keyboard": ["Enter/Space to toggle", "Escape to close"],
+    "status": "implemented",
+    "validation": "not-tested"
+  },
+  {
+    "component": "support-me-btn",
+    "selector": "button.support-me-btn",
+    "pages": ["projects-applications-git-date-extractor-npm-package-and-cli-tool.html", "projects-web-stuff-cheatsheets-and-snippets-markdown-powered-gatsby-mini-site.html", "posts-2023-what-makes-svelte-so-great-features-and-comparisons.html", "posts-2023-shell-heredocs-productive-fun-bash-and-beyond.html"],
+    "behaviors": ["Simulation alert"],
+    "keyboard": ["Enter/Space to activate"],
+    "status": "simulated",
+    "validation": "not-tested"
+  },
+  {
+    "component": "tool-action",
+    "selector": "button.tool-action",
+    "pages": ["mini-tools.html"],
+    "behaviors": ["Simulation alert"],
+    "keyboard": ["Enter/Space to activate"],
+    "status": "simulated",
+    "validation": "not-tested"
+  }
+]

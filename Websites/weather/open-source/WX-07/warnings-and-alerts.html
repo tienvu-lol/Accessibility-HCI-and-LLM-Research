@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Warnings and alerts | Aurora Meteorological Bureau</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  
+  <header class="site-header" data-section="header" data-component="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="site-logo" aria-label="Aurora Met Bureau">Aurora Met Bureau</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+      <nav class="primary-nav" id="primary-nav" data-component="primary-nav">
+        <ul>
+          <li><a href="location-australia.html">Forecasts</a></li>
+          <li><a href="warnings-and-alerts.html">Warnings & Alerts</a></li>
+          <li><a href="rain-radar-and-weather-maps.html">Radar & Maps</a></li>
+          <li><a href="tropical-cyclone.html">Tropical Cyclones</a></li>
+          <li><a href="water-data-and-forecasts.html">Water Data</a></li>
+          <li><a href="past-weather-and-climate.html">Past Weather</a></li>
+          <li><a href="about-the-bureau.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="hero" data-section="hero" data-component="hero-banner">
+      <div class="container">
+        <h1>Warnings and alerts</h1>
+        <p>Stay safe with the latest severe weather warnings and alerts.</p>
+      </div>
+    </section>
+
+    <section class="container" data-section="main-content" data-component="alert-filters">
+      <h2>Filter Alerts</h2>
+      <form class="search-form" aria-label="Filter weather alerts">
+        <label for="alert-filter" class="sr-only">Filter by alert type</label>
+        <select id="alert-filter" class="search-input">
+          <option value="all">All Alerts</option>
+          <option value="critical">Critical</option>
+          <option value="warning">Warning</option>
+          <option value="watch">Watch</option>
+        </select>
+      </form>
+    </section>
+
+    <section class="container" data-section="alerts-list" data-component="alert-list">
+      <h2>Active Warnings</h2>
+      <div id="alerts-container">
+        <div class="alert-item critical" data-type="critical">
+          <p class="alert-type">Severe Storm Warning</p>
+          <p><strong>Region A:</strong> Heavy rainfall and strong winds expected until 18:00. Travel may be hazardous.</p>
+        </div>
+        <div class="alert-item warning" data-type="warning">
+          <p class="alert-type">Flood Watch</p>
+          <p><strong>Region B:</strong> River levels rising due to upstream rainfall. Low-lying areas may flood.</p>
+        </div>
+        <div class="alert-item watch" data-type="watch">
+          <p class="alert-type">Heatwave Watch</p>
+          <p><strong>Region C:</strong> Temperatures expected to exceed 40°C over the next 48 hours.</p>
+        </div>
+        <div class="alert-item critical" data-type="critical">
+          <p class="alert-type">Tropical Cyclone Warning</p>
+          <p><strong>Coastal Region D:</strong> Tropical Cyclone "Sim" approaching. Prepare for strong winds and storm surge.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" data-section="footer" data-component="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>Aurora Met Bureau</h3>
+        <p>Providing accurate weather information since 1901.</p>
+      </div>
+      <div>
+        <h3>Quick Links</h3>
+        <a href="index.html">Home</a>
+        <a href="warnings-and-alerts.html">Warnings</a>
+        <a href="about-the-bureau.html">About Us</a>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <p>Email: info@auroramet.sim</p>
+        <p>Phone: 1300 000 000</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

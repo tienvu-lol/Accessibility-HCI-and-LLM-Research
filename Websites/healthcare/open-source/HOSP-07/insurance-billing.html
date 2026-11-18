@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Insurance, Billing & Financial Assistance | Metro General Health</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="site-header" data-component="site-header">
+    <div class="container">
+      <a href="index.html" class="site-logo">Metro General Health</a>
+      <nav class="primary-nav" data-component="primary-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="doctors.html">Find a Doctor</a></li>
+          <li><a href="conditions.html">Conditions</a></li>
+          <li><a href="locations.html">Locations</a></li>
+          <li><a href="care-services.html">Care & Services</a></li>
+          <li><a href="insurance-billing.html">Insurance & Billing</a></li>
+          <li><a href="patient-forms.html">Patient Forms</a></li>
+          <li><a href="contact-us.html">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="hero" data-section="hero-banner" data-component="hero-banner">
+      <div class="container">
+        <h1>Insurance, Billing & Financial Assistance</h1>
+        <p>Information about insurance, billing, and financial help.</p>
+      </div>
+    </section>
+
+    <section class="container" data-section="insurance-documents" data-component="document-list">
+      <h2>Resources</h2>
+      <ul id="insurance-doc-list" class="document-list"></ul>
+    </section>
+  </main>
+
+  <footer class="site-footer" data-component="site-footer">
+    <div class="container">
+      <div>
+        <h2>Metro General Health</h2>
+        <p>Providing compassionate care since 1950.</p>
+      </div>
+      <div>
+        <h2>Quick Links</h2>
+        <ul>
+          <li><a href="doctors.html">Find a Doctor</a></li>
+          <li><a href="locations.html">Locations</a></li>
+          <li><a href="patient-forms.html">Patient Forms</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Resources</h2>
+        <ul>
+          <li><a href="insurance-billing.html">Insurance & Billing</a></li>
+          <li><a href="contact-us.html">Contact Us</a></li>
+          <li><a href="404.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const docs = [
+        { title: "Insurance Accepted List", desc: "Comprehensive list of accepted insurance plans." },
+        { title: "Billing FAQ", desc: "Frequently asked questions about billing." },
+        { title: "Financial Assistance Application", desc: "Apply for financial assistance." },
+        { title: "Payment Plans", desc: "Information on available payment plans." },
+        { title: "Out-of-Network Claims", desc: "How to file out-of-network claims." },
+        { title: "Pre-authorization Guide", desc: "Guide to getting pre-authorization." },
+        { title: "Explanation of Benefits", desc: "Understanding your EOB." },
+        { title: "Contact Billing Department", desc: "Direct contact info for billing." }
+      ];
+      const list = document.getElementById('insurance-doc-list');
+      if (list) {
+        docs.forEach(doc => {
+          const li = document.createElement('li');
+          li.innerHTML = `<strong>${doc.title}</strong><br>${doc.desc}`;
+          list.appendChild(li);
+        });
+      }
+    });
+  </script>
+</body>
+</html>

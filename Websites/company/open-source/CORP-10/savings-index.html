@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en" data-section="page-savings">
+<head>
+  <meta charset="utf-8">
+  <title>Savings Accounts – NovaBank</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header data-section="header" data-component="site-header">
+    <h1 class="visually-hidden">NovaBank</h1>
+    <img src="assets/logo.svg" alt="NovaBank logo" width="120">
+    <nav data-component="primary-nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="checking-index.html">Checking</a>
+      <a href="savings-index.html">Savings</a>
+      <a href="credit-cards-index.html">Credit Cards</a>
+      <a href="mortgage-index.html">Mortgage</a>
+      <a href="auto-loans-index.html">Auto Loans</a>
+      <a href="help-index.html">Help</a>
+      <a href="contact-us-index.html">Contact</a>
+    </nav>
+  </header>
+
+  <section data-component="hero-banner" class="hero-banner" role="region" aria-label="Hero banner">
+    <h1>Savings Accounts</h1>
+    <p>Grow your money with competitive rates.</p>
+  </section>
+
+  <main id="main-content" data-section="main" data-component="content-band">
+    <h2>Open a Savings Account</h2>
+    <form class="account-form" data-component="account-opening-form" novalidate>
+      <div class="error-summary" tabindex="-1" aria-live="assertive" style="display:none;"></div>
+
+      <label for="sav-name">Full Name</label>
+      <input type="text" id="sav-name" name="Full Name" required>
+      <span class="error" aria-live="polite"></span>
+
+      <label for="sav-email">Email</label>
+      <input type="email" id="sav-email" name="Email" required>
+      <span class="error" aria-live="polite"></span>
+
+      <label for="sav-type">Account Type</label>
+      <select id="sav-type" name="Account Type" required>
+        <option value="">Select…</option>
+        <option>Standard Savings</option>
+        <option>High‑Yield Savings</option>
+        <option>Student Savings</option>
+        <option>Business Savings</option>
+      </select>
+      <span class="error" aria-live="polite"></span>
+
+      <button type="submit">Open Account (Demo)</button>
+    </form>
+  </main>
+
+  <footer data-section="footer" data-component="site-footer">
+    <p>&copy; 2024 NovaBank.</p>
+  </footer>
+</body>
+</html>

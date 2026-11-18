@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Search Court Dockets, Calendars and Case Information – MassGov</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="site-header" data-section="header" data-component="site-header">
+        <div class="logo" aria-label="Fictional Massachusetts Government">MassGov</div>
+        <nav aria-label="Language selection">
+            <div class="demo-lang">
+                <label for="lang-select" id="lang-demo">Language selection: English (demo)</label>
+                <select id="lang-select" aria-label="Demo language selector">
+                    <option value="en">English</option>
+                    <option value="es">Español</option>
+                </select>
+            </div>
+        </nav>
+    </header>
+
+    <nav class="primary-nav" aria-label="Primary" data-section="navigation" data-component="primary-nav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="health-social-services.html">Health & Social Services</a></li>
+            <li><a href="families-children.html">Families & Children</a></li>
+            <li><a href="transportation.html">Transportation</a></li>
+            <li><a href="apply-unemployment-benefits.html">Unemployment Benefits</a></li>
+            <li><a href="renew-vehicle-registration.html">Vehicle Registration</a></li>
+            <li><a href="search-court-dockets.html">Court Dockets</a></li>
+            <li><a href="state-organizations-a-to-z.html">State Organizations A‑Z</a></li>
+        </ul>
+    </nav>
+
+    <main id="main-content" class="content-band" data-section="main">
+        <h1>Search Court Dockets, Calendars and Case Information</h1>
+        <p>Use this tool to view sample court docket information (demo).</p>
+
+        <!-- Demo search form (shared) -->
+        <form id="search-form" class="search-form" data-section="search" data-component="search-form" aria-label="Site search">
+            <label for="search-input">Search dockets</label>
+            <input type="search" id="search-input" placeholder="Enter case number, party, or court…" aria-label="Search dockets">
+            <button type="submit">Search</button>
+        </form>
+        <div id="search-results" aria-live="polite"></div>
+
+        <h2>Sample docket entries</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th scope="col">Case Number</th>
+                    <th scope="col">Party</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Court</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>2024-CV-00123</td><td>Doe v. Smith</td><td>2024-10-02</td><td>Superior Court</td></tr>
+                <tr><td>2024-CV-00456</td><td>Roe v. Jones</td><td>2024-10-03</td><td>District Court</td></tr>
+                <tr><td>2024-CV-00789</td><td>Lee v. Brown</td><td>2024-10-04</td><td>Superior Court</td></tr>
+                <tr><td>2024-CV-00101</td><td>White v. Black</td><td>2024-10-05</td><td>District Court</td></tr>
+                <tr><td>2024-CV-00202</td><td>Green v. Yellow</td><td>2024-10-06</td><td>Superior Court</td></tr>
+                <tr><td>2024-CV-00303</td><td>Purple v. Orange</td><td>2024-10-07</td><td>District Court</td></tr>
+                <tr><td>2024-CV-00404</td><td>Pink v. Gray</td><td>2024-10-08</td><td>Superior Court</td></tr>
+                <tr><td>2024-CV-00505</td><td>Brown v. White</td><td>2024-10-09</td><td>District Court</td></tr>
+            </tbody>
+        </table>
+        <p><em>This is a static demo set; no live search is performed.</em></p>
+    </main>
+
+    <footer class="site-footer" data-section="footer" data-component="site-footer">
+        &copy; 2026 Massachusetts State Government (fictional). All demo content.
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

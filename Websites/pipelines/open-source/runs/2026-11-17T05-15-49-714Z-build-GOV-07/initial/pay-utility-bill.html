@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pay Utility Bill | City of Oakhaven</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header class="site-header" data-component="site-header">
+        <div class="header-container">
+            <a href="index.html" class="site-logo">City of Oakhaven</a>
+            <div class="header-controls">
+                <button id="lang-toggle" class="btn" data-lang="en" aria-label="Switch language">Español</button>
+                <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
+                    <span aria-hidden="true">☰</span>
+                </button>
+            </div>
+        </div>
+        <nav id="primary-nav" class="primary-nav" data-component="primary-nav" aria-label="Primary Navigation">
+            <ul>
+                <li class="has-dropdown">
+                    <a href="services.html" aria-haspopup="true" aria-expanded="false">Services</a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li role="none"><a href="services.html" role="menuitem">All Services</a></li>
+                        <li role="none"><a href="pay-utility-bill.html" role="menuitem">Pay Bills</a></li>
+                        <li role="none"><a href="permits.html" role="menuitem">Permits</a></li>
+                    </ul>
+                </li>
+                <li><a href="departments.html">Departments</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="service-request.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <section class="content-bands" data-section="pay-bill" data-component="content-bands">
+            <h1 class="section-title">Pay Utility Bill</h1>
+            <p>Pay your water, sewer, and trash bills securely online. <strong>Note: This is a demo form for research purposes only. No real payments are processed.</strong></p>
+            
+            <form id="pay-bill-form" data-validate>
+                <div class="form-group">
+                    <label for="account-number">Account Number</label>
+                    <input type="text" id="account-number" name="account-number" placeholder="Enter your 10-digit account number" required>
+                    <span class="error-message">Please enter a valid account number.</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="zip-code">ZIP Code</label>
+                    <input type="text" id="zip-code" name="zip-code" placeholder="Enter your ZIP code" required>
+                    <span class="error-message">Please enter a valid ZIP code.</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="amount">Payment Amount</label>
+                    <input type="number" id="amount" name="amount" placeholder="Enter amount to pay" required min="0.01" step="0.01">
+                    <span class="error-message">Please enter a valid payment amount.</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="payment-method">Payment Method</label>
+                    <select id="payment-method" name="payment-method" required>
+                        <option value="">-- Select Payment Method --</option>
+                        <option value="checking">Checking Account</option>
+                        <option value="savings">Savings Account</option>
+                        <option value="credit">Credit Card</option>
+                    </select>
+                    <span class="error-message">Please select a payment method.</span>
+                </div>
+
+                <button type="submit" class="btn">Pay Now (Demo)</button>
+            </form>
+
+            <div class="success-message" style="display: none; background-color: #d4edda; color: #155724; padding: 1rem; margin-top: 1rem; border-radius: 4px;">
+                <p>Payment successful! (Demo) A confirmation number has been generated.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer" data-component="site-footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <p>123 City Hall Blvd, Oakhaven, CA 90210</p>
+                <p>Phone: (555) 123-4567</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="departments.html">Departments</a></li>
+                    <li><a href="news.html">News</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Use</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

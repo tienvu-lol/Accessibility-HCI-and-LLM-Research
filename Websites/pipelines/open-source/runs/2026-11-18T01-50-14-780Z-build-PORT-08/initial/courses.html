@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Courses – Fictional Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <header data-section="header" data-component="site-header">
+    <div class="site-logo">Fictional Dev</div>
+    <nav class="primary-nav" data-component="primary-nav" aria-label="Primary">
+      <button aria-controls="primary-menu" aria-expanded="false">Menu</button>
+      <ul id="primary-menu" class="primary-nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="tips.html">Tips</a></li>
+        <li><a href="javascript.html">JS Notes</a></li>
+        <li><a href="speaking-and-training.html">Speaking</a></li>
+        <li><a href="uses.html">Uses</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content" data-section="main">
+    <h1>Courses</h1>
+    <p>Below are some fictional courses I’ve created. Use the checkboxes to filter by topic.</p>
+
+    <section data-component="card-grid" data-section="courses-list">
+      <h2>All Courses</h2>
+
+      <!-- Filter controls -->
+      <fieldset data-component="filter-group" aria-label="Filter courses">
+        <legend>Filter by topic</legend>
+        <div>
+          <label><input type="checkbox" data-filter value="web-dev"> Web Development</label>
+        </div>
+        <div>
+          <label><input type="checkbox" data-filter value="js"> JavaScript</label>
+        </div>
+        <div>
+          <label><input type="checkbox" data-filter value="css"> CSS</label>
+        </div>
+        <div>
+          <label><input type="checkbox" data-filter value="react"> React</label>
+        </div>
+        <div>
+          <label><input type="checkbox" data-filter value="node"> Node.js</label>
+        </div>
+        <div>
+          <label><input type="checkbox" data-filter value="design"> Design</label>
+        </div>
+      </fieldset>
+
+      <div id="courses-container" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <footer data-section="footer" data-component="site-footer">
+    <p>&copy; 2026 Fictional Dev. All rights reserved.</p>
+    <nav aria-label="Footer">
+      <a href="index.html">Home</a> |
+      <a href="about.html">About</a> |
+      <a href="contact.html">Contact</a>
+    </nav>
+  </footer>
+
+  <script>
+    // Inline dataset for courses
+    const coursesData = [
+      {title: "Introduction to Web Development", description: "Learn HTML, CSS, and JavaScript basics.", tags: ["web-dev", "html", "css", "js"], level: "Beginner"},
+      {title: "Modern JavaScript Deep Dive", description: "ES6+ features, modules, and asynchronous programming.", tags: ["js", "es6"], level: "Intermediate"},
+      {title: "CSS Layouts: Flexbox & Grid", description: "Master modern CSS layout techniques.", tags: ["css", "layout"], level: "Intermediate"},
+      {title: "React Fundamentals", description: "Build component‑based UIs with React hooks.", tags: ["react", "js"], level: "Intermediate"},
+      {title: "Node.js Backend Basics", description: "Create REST APIs and work with databases.", tags: ["node", "backend"], level: "Intermediate"},
+      {title: "UI/UX Design for Developers", description: "Design principles, prototyping, and accessibility.", tags: ["design", "ux"], level: "Beginner"}
+    ];
+
+    // Simple renderer
+    function renderCourses(container, items) {
+      container.innerHTML = '';
+      if (items.length === 0) {
+        const msg = document.createElement('p');
+        msg.textContent = 'No courses match the selected filters.';
+        container.appendChild(msg);
+        return;
+      }
+      const grid = document.createElement('div');
+      grid.className = 'card-grid';
+      items.forEach(course => {
+        const card = document.createElement('article');
+        card.className = 'card';
+        card.dataset.component = 'project-card';
+        card.dataset.instance = Math.random().toString(36).substr(2,9);
+        card.innerHTML = `
+          <img src="assets/placeholder.svg" alt="${course.title} thumbnail">
+          <div class="card-body">
+            <h3>${course.title}</h3>
+            <p>${course.description}</p>
+            <div class="tags">
+              ${course.tags.map(t => `<span class="tag">${t}</span>`).join('')}
+            </div>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+      container.appendChild(grid);
+    }
+
+    // Initialize filter (calls main.js initFilter)
+    document.addEventListener('DOMContentLoaded', () => {
+      const container = document.getElementById('courses-container');
+      if (typeof initFilter === 'function') {
+        initFilter('courses-container', coursesData, renderCourses);
+      } else {
+        // fallback
+        renderCourses(container, coursesData);
+      }
+    });
+  </script>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

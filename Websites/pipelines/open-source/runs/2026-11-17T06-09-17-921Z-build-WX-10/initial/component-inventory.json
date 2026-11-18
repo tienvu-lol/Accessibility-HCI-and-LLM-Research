@@ -1,0 +1,84 @@
+{
+  "components": [
+    {
+      "name": "site-header",
+      "selector": "header[data-component=\"site-header\"]",
+      "pages": ["index.html","menu.html","services.html","publications.html","news.html","nmhs.html","about-us.html","links.html","site-map.html","access.html","404.html"],
+      "behaviors": ["branding placeholder"],
+      "keyboard": ["focusable skip link before header"],
+      "status": "replicated"
+    },
+    {
+      "name": "primary-nav",
+      "selector": "nav[data-component=\"primary-nav\"]",
+      "pages": ["index.html","menu.html","services.html","publications.html","news.html","nmhs.html","about-us.html","links.html","site-map.html","access.html","404.html"],
+      "behaviors": ["navigation links"],
+      "keyboard": ["tab navigation, arrow keys not required"],
+      "status": "replicated"
+    },
+    {
+      "name": "site-footer",
+      "selector": "footer[data-component=\"site-footer\"]",
+      "pages": ["index.html","menu.html","services.html","publications.html","news.html","nmhs.html","about-us.html","links.html","site-map.html","access.html","404.html"],
+      "behaviors": ["copyright notice"],
+      "keyboard": ["focusable links"],
+      "status": "replicated"
+    },
+    {
+      "name": "hero-section",
+      "selector": "section[data-component=\"hero-section\"]",
+      "pages": ["index.html","services.html","news.html"],
+      "behaviors": ["introductory banner"],
+      "keyboard": ["none"],
+      "status": "replicated"
+    },
+    {
+      "name": "sidebar",
+      "selector": "aside[data-component=\"sidebar\"]",
+      "pages": ["menu.html","services.html","publications.html","nmhs.html"],
+      "behaviors": ["secondary navigation list"],
+      "keyboard": ["tab order"],
+      "status": "replicated"
+    },
+    {
+      "name": "location-search",
+      "selector": "form#location-search-form[data-component=\"location-search\"]",
+      "pages": ["index.html"],
+      "behaviors": ["filter forecast table"],
+      "keyboard": ["Enter to submit, focus moves to results"],
+      "status": "simulated"
+    },
+    {
+      "name": "forecast-tabs",
+      "selector": "div[role=\"tablist\"]",
+      "pages": ["index.html"],
+      "behaviors": ["switch daily/hourly panels"],
+      "keyboard": ["ArrowLeft/Right to move, Enter/Space to activate"],
+      "status": "simulated"
+    },
+    {
+      "name": "temp-toggle",
+      "selector": "#temp-toggle",
+      "pages": ["index.html"],
+      "behaviors": ["toggle °C/°F"],
+      "keyboard": ["Enter/Space activates"],
+      "status": "simulated"
+    },
+    {
+      "name": "radar-map",
+      "selector": "#radar-map[data-component=\"radar-map\"]",
+      "pages": ["index.html"],
+      "behaviors": ["opens modal with larger placeholder"],
+      "keyboard": ["Enter/Space opens modal, Escape closes"],
+      "status": "simulated"
+    },
+    {
+      "name": "alert-filters",
+      "selector": "form#alert-filter-form[data-component=\"alerts-section\"]",
+      "pages": ["index.html","news.html"],
+      "behaviors": ["show/hide alerts by type"],
+      "keyboard": ["Space toggles checkboxes"],
+      "status": "simulated"
+    }
+  ]
+}

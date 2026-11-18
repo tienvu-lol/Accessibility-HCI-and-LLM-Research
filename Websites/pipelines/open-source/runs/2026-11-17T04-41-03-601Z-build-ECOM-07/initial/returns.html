@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Summit & Stone | Returns & Repairs</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  
+  <header class="site-header" data-component="site-header">
+    <a href="index.html" class="logo">Summit & Stone</a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
+      Menu
+    </button>
+    <nav id="primary-nav" class="primary-nav" data-component="primary-nav">
+      <ul>
+        <li><a href="shop-womens.html">Women</a></li>
+        <li><a href="shop-mens.html">Men</a></li>
+        <li><a href="shop-kids-baby.html">Kids</a></li>
+        <li><a href="shop-gear.html">Gear</a></li>
+        <li><a href="worn-wear.html">Worn Wear</a></li>
+        <li><a href="stories-articles.html">Stories</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content" data-section="returns">
+    <section class="returns-info">
+      <h1>Returns & Repairs</h1>
+      <p>We want you to be happy with your purchase. If you're not, we'll make it right.</p>
+      
+      <form class="returns-form" data-component="contact-form">
+        <fieldset>
+          <legend>Return Request</legend>
+          <div class="form-group">
+            <label for="order-number">Order Number</label>
+            <input type="text" id="order-number" name="order-number" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="reason">Reason for Return</label>
+            <select id="reason" name="reason" required>
+              <option value="">Select a reason</option>
+              <option value="defective">Defective</option>
+              <option value="wrong-size">Wrong Size</option>
+              <option value="not-as-described">Not as Described</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Additional Comments</label>
+            <textarea id="message" name="message" rows="4"></textarea>
+          </div>
+          <button type="submit" class="cta-button">Submit Return Request</button>
+        </fieldset>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer" data-component="site-footer">
+    <p>&copy; 2026 Summit & Stone. All rights reserved.</p>
+    <nav>
+      <ul>
+        <li><a href="returns.html">Returns</a></li>
+        <li><a href="guides-size-fit.html">Size Guide</a></li>
+        <li><a href="account-register.html">Account</a></li>
+      </ul>
+    </nav>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

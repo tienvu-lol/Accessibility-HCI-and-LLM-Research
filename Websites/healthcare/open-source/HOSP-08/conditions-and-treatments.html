@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Conditions and Treatments – Community Health Center</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <header data-section="header" data-component="site-header">
+    <h1>Community Health Center</h1>
+    <p>Learn about common conditions and treatments.</p>
+  </header>
+  <nav data-section="navigation" data-component="primary-nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="get-care-now.html">Get Care Now</a></li>
+      <li><a href="pay-a-bill.html">Pay a Bill</a></li>
+      <li><a href="find-a-doctor.html">Find a Doctor</a></li>
+      <li><a href="health-care-services.html">Services</a></li>
+      <li><a href="location-map.html">Locations</a></li>
+      <li><a href="conditions-and-treatments.html" aria-current="page">Conditions and Treatments</a></li>
+      <li><a href="patient-resources.html">Patient Resources</a></li>
+    </ul>
+  </nav>
+  <main id="main-content" data-section="conditions">
+    <h1>Conditions and Treatments</h1>
+    <h2>Conditions we treat</h2>
+    <p>Below is a sample of conditions we treat and the corresponding services.</p>
+    <section data-section="condition-list" data-component="condition-list">
+      <!-- condition items will be injected by script -->
+    </section>
+  </main>
+  <footer data-section="footer" data-component="site-footer">
+    <p>&copy; 2026 Community Health Center. All rights reserved.</p>
+  </footer>
+  <script src="js/main.js"></script>
+  <script>
+    // Inline sample data for conditions and treatments
+    const conditions = [
+      { id: 1, name: 'Hypertension', treatment: 'Lifestyle changes, medication, monitoring', service: 'Cardiology' },
+      { id: 2, name: 'Type 2 Diabetes', treatment: 'Diet, exercise, glucose monitoring, medication', service: 'Primary Care' },
+      { id: 3, name: 'Asthma', treatment: 'Inhalers, trigger avoidance, pulmonary rehab', service: 'Pediatrics' },
+      { id: 4, name: 'Lower Back Pain', treatment: 'Physical therapy, medication, possible surgery', service: 'Orthopedics' },
+      { id: 5, name: 'Prenatal Care', treatment: 'Regular check-ups, ultrasounds, nutrition counseling', service: 'Women\'s Health' },
+      { id: 6, name: 'Depression', treatment: 'Counseling, therapy, medication', service: 'Behavioral Health' },
+      { id: 7, name: 'Breast Cancer', treatment: 'Screening, surgery, chemotherapy, radiation', service: 'Oncology' },
+      { id: 8, name: 'Urinary Tract Infection', treatment: 'Antibiotics, hydration', service: 'Urgent Care' }
+    ];
+    const container = document.querySelector('[data-component="condition-list"]');
+    conditions.forEach(cond => {
+      const item = document.createElement('div');
+      item.className = 'provider-card'; // reuse card styling
+      item.setAttribute('data-component', 'condition-item');
+      item.innerHTML = `
+        <h3>${cond.name}</h3>
+        <p><strong>Typical treatment:</strong> ${cond.treatment}</p>
+        <p><strong>Related service:</strong> ${cond.service}</p>
+      `;
+      container.appendChild(item);
+    });
+  </script>
+</body>
+</html>

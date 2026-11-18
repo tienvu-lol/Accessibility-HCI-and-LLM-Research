@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Podcasts - The Metropolitan Herald</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header class="site-header" role="banner">
+        <div class="container header-inner">
+            <a href="index.html" class="logo">The Metropolitan Herald</a>
+            <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
+                <span class="sr-only">Toggle navigation</span>
+                ☰
+            </button>
+            <nav id="primary-nav" class="primary-nav" role="navigation" aria-label="Primary">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="nz.html" class="nav-link">NZ</a></li>
+                    <li><a href="world.html" class="nav-link">World</a></li>
+                    <li><a href="business.html" class="nav-link">Business</a></li>
+                    <li><a href="sport.html" class="nav-link">Sport</a></li>
+                    <li><a href="entertainment.html" class="nav-link">Entertainment</a></li>
+                    <li><a href="politics.html" class="nav-link">Politics</a></li>
+                    <li><a href="crime.html" class="nav-link">Crime</a></li>
+                    <li><a href="election-2026.html" class="nav-link">Election 2026</a></li>
+                    <li><a href="video.html" class="nav-link">Video</a></li>
+                    <li><a href="opinion.html" class="nav-link">Opinion</a></li>
+                    <li><a href="lifestyle.html" class="nav-link">Lifestyle</a></li>
+                    <li><a href="weather.html" class="nav-link">Weather</a></li>
+                    <li><a href="premium.html" class="nav-link">Premium</a></li>
+                    <li><a href="podcasts.html" class="nav-link" aria-current="page">Podcasts</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section class="hero-section" data-section="hero" style="background-color: var(--color-bg-alt);">
+            <div class="container text-center">
+                <h1 class="hero-title">The Metropolitan Herald Podcasts</h1>
+                <p class="hero-summary">Listen to the latest news, analysis, and interviews.</p>
+            </div>
+        </section>
+
+        <section class="container mt-lg" data-section="podcast-list">
+            <h2>Latest Episodes</h2>
+            <div class="article-grid" data-component="podcast-grid" id="podcast-grid">
+                <!-- Podcast episodes injected via JS -->
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>The Metropolitan Herald</h4>
+                    <p>Truth in Every Story. Your trusted source for local and global news.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Sections</h4>
+                    <ul class="footer-links">
+                        <li><a href="nz.html">NZ</a></li>
+                        <li><a href="world.html">World</a></li>
+                        <li><a href="business.html">Business</a></li>
+                        <li><a href="sport.html">Sport</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Advertise</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Terms of Use</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 The Metropolitan Herald. All rights reserved. This is a fictional replica for research purposes.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        const podcastEpisodes = [
+            { id: 1, title: "The Daily Briefing: Election Day Special", duration: "45:00", date: "Today", description: "A comprehensive look at the day's events and what they mean for the future." },
+            { id: 2, title: "Market Watch: Tech Stocks Surge", duration: "30:00", date: "Yesterday", description: "Analysis of the latest trends in the tech sector and what investors should know." },
+            { id: 3, title: "Sports Roundup: Rugby Championship Preview", duration: "60:00", date: "2 days ago", description: "Previewing the upcoming Rugby Championship with expert predictions." },
+            { id: 4, title: "Climate Change: What Can We Do?", duration: "35:00", date: "3 days ago", description: "A discussion on practical steps individuals can take to combat climate change." },
+            { id: 5, title: "Health & Wellness: Mental Health Matters", duration: "40:00", date: "4 days ago", description: "Expert advice on maintaining mental well-being in a stressful world." },
+            { id: 6, title: "Technology: The Rise of AI", duration: "50:00", date: "5 days ago", description: "Exploring the impact of artificial intelligence on society and the economy." },
+            { id: 7, title: "Culture: Local Arts Scene", duration: "25:00", date: "6 days ago", description: "A look at the vibrant local arts scene and upcoming events." },
+            { id: 8, title: "Travel: Hidden Gems of New Zealand", duration: "55:00", date: "1 week ago", description: "Discovering the lesser-known treasures of New Zealand." }
+        ];
+
+        function renderPodcastCard(episode) {
+            return `
+                <article class="article-card">
+                    <div class="article-body">
+                        <h3 class="article-title"><a href="#">${episode.title}</a></h3>
+                        <p class="article-meta">${episode.date} | ${episode.duration}</p>
+                        <p class="article-excerpt">${episode.description}</p>
+                        <button class="newsletter-btn" style="margin-top: var(--spacing-sm);" data-component="media-player-btn">Play Episode</button>
+                    </div>
+                </article>
+            `;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const grid = document.querySelector('#podcast-grid');
+            if (grid) {
+                grid.innerHTML = podcastEpisodes.map(renderPodcastCard).join('');
+            }
+        });
+    </script>
+</body>
+</html>

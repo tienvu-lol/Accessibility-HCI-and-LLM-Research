@@ -11,6 +11,7 @@ import {qcHeadline} from './qc-runner.mjs';
 
 const USAGE = `Usage:
   node sync-register.mjs rows <PREFIX>
+  node sync-register.mjs approve <PREFIX> [--slot 7[,8]] --approved-by "name" --approval-reference "where"
       Write this group's four proposed rows from research/proposals/<PREFIX>-rows.json into
       metadata/source-inventories/<category>.csv. Approval cells stay empty.
 
@@ -42,10 +43,13 @@ function applyRows(setup, prefix) {
   if (!fs.existsSync(proposalPath)) throw new Error(`No proposals at ${path.relative(setup.pipeline, proposalPath)}; run run-research.mjs first`);
   const proposal = readJSON(proposalPath);
   const byId = new Map(proposal.rows.map(r => [r.source_id, r]));
-  for (const slot of SLOTS) {
-    const id = `${category.prefix}-${padSlot(slot)}`;
-    if (!byId.has(id)) throw new Error(`Proposal file is missing a row for ${id}`);
-  }
+  // Partial sync is allowed (operator decision, 2026-11-16): slots are researched, approved and
+  // built independently, so this copies the rows the proposal actually holds and reports the rest as
+  // outstanding instead of refusing the whole category.
+  const presentIds = SLOTS.map(slot => `${category.prefix}-${padSlot(slot)}`).filter(id => byId.has(id));
+  if (!presentIds.length) throw new Error(`Proposal file holds no open-source rows for ${category.prefix}`);
+  const missingIds = SLOTS.map(slot => `${category.prefix}-${padSlot(slot)}`).filter(id => !byId.has(id));
+  if (missingIds.length) console.warn(`Note: no proposal row yet for ${missingIds.join(', ')}; syncing ${presentIds.join(', ')} only.`);
   const file = inside(setup.root, `${setup.config.paths.inventories}/${category.category}.csv`);
   const raw = fs.readFileSync(file, 'utf8');
   const {text, changed} = editCSVRecords(raw, {
@@ -81,7 +85,7 @@ function applyRows(setup, prefix) {
   return {category: category.category, changed, unapproved: true};
 }
 
-function approve(setup, prefix, {by, reference, at}) {
+function approve(setup, prefix, {by, reference, at}, onlySlots) {
   const category = categoryFor(setup, prefix);
   if (!category) throw new Error(`Unknown category or prefix "${prefix}"`);
   if (!by?.trim() || !reference?.trim()) throw new Error('--approved-by and --approval-reference are both required: an approval cell records a real decision');
@@ -90,9 +94,28 @@ function approve(setup, prefix, {by, reference, at}) {
 
   const invFile = inside(setup.root, `${setup.config.paths.inventories}/${category.category}.csv`);
   const rows = readCSV(invFile).filter(r => r.model_group === 'open-source');
-  const incomplete = rows.filter(r => !r.source_url?.trim() || r.verification_result !== 'verified');
-  if (incomplete.length)
-    throw new Error(`These rows are not ready to approve (missing source or not verified): ${incomplete.map(r => r.source_id).join(', ')}`);
+  // Approve only this group's rows that carry a verified source. A row with no source yet is
+  // outstanding, not rejected, and must never receive approval cells (operator decision, 2026-11-16:
+  // slots proceed independently). A row that HAS a source but is not verified is a real defect and
+  // still blocks, because approving an unverified source is exactly what the gate exists to prevent.
+  // --slot narrows approval to named slots. Without it, approval covers every verified row in the
+  // category, which can capture a row that landed after the reviewer looked (that happened on
+  // 2026-11-17 with NPO-10 and had to be revoked). Prefer --slot whenever research is still running.
+  const slotFilter = onlySlots?.length ? new Set(onlySlots) : null;
+  const rowsInScope = slotFilter ? rows.filter(r => slotFilter.has(slotOf(r.source_id))) : rows;
+  if (slotFilter && !rowsInScope.length) throw new Error(`No open-source rows in ${category.category} for slot(s) ${[...slotFilter].join(', ')}`);
+  const targets = rowsInScope.filter(r => r.source_url?.trim() && r.verification_result === 'verified');
+  const defective = rowsInScope.filter(r => r.source_url?.trim() && r.verification_result !== 'verified');
+  const outstanding = rowsInScope.filter(r => !r.source_url?.trim());
+  // A sibling row with an unverified source does not block this slot's approval: it simply is not
+  // approvable, and the scoped stamp below never touches it. Blocking here would recouple the slots.
+  if (defective.length)
+    console.warn(`Note: not approving ${defective.map(r => r.source_id).join(', ')} — each has a source but no verification result. Their approval cells stay empty.`);
+  if (!targets.length)
+    throw new Error(`No verified open-source rows to approve in ${category.category}; run run-research.mjs and sync rows first`);
+  if (outstanding.length)
+    console.warn(`Note: approving ${targets.map(r => r.source_id).join(', ')}; still outstanding with no source: ${outstanding.map(r => r.source_id).join(', ')}.`);
+  const approvable = new Set(targets.map(r => r.source_id));
   if (setup.config.approval.require_all_ten_sources) {
     const all = readCSV(invFile);
     const blank = all.filter(r => !r.source_url?.trim());
@@ -100,12 +123,12 @@ function approve(setup, prefix, {by, reference, at}) {
       console.warn(`WARN config.approval.require_all_ten_sources is true, but ${blank.length} row(s) of this category still have no source: ${blank.map(r => r.source_id).join(', ')}. Approving only this group's four slots; MODEL_ALLOCATION.md section 4 allows a group to proceed over its own slots.`);
   }
   const invResult = editCSVRecords(fs.readFileSync(invFile, 'utf8'), {
-    match: r => r.model_group === 'open-source',
+    match: r => r.model_group === 'open-source' && approvable.has(r.source_id),
     update: r => ({...r, approved_at: date, approved_by: by, approval_reference: reference}),
   });
   writeFile(invFile, invResult.text);
 
-  const approved = new Map(readCSV(invFile).filter(r => r.model_group === 'open-source').map(r => [r.source_id, r]));
+  const approved = new Map(readCSV(invFile).filter(r => r.model_group === 'open-source' && approvable.has(r.source_id)).map(r => [r.source_id, r]));
   const regFile = inside(setup.root, setup.config.paths.assignments);
   const regResult = editCSVRecords(fs.readFileSync(regFile, 'utf8'), {
     match: r => r.category === category.category && r.model_group === 'open-source' && approved.has(r.source_id),
@@ -156,7 +179,7 @@ function appendLog(setup, message) {
 
 try {
   const {positional, flags} = cliArgs(process.argv.slice(2), {
-    'approved-by': 'value', 'approval-reference': 'value', 'approved-at': 'value', run: 'value', message: 'value',
+    'approved-by': 'value', 'approval-reference': 'value', 'approved-at': 'value', run: 'value', message: 'value', slot: 'value',
   });
   const [command, target] = positional;
   const setup = loadSetup();
@@ -170,7 +193,9 @@ try {
     console.log('Approval cells were left empty. No source is approved by this command, and no other group\'s row was touched.');
   } else if (command === 'approve') {
     if (!target) throw new Error(USAGE);
-    const r = approve(setup, target, {by: flags['approved-by'], reference: flags['approval-reference'], at: flags['approved-at']});
+    const onlySlots = flags.slot ? flags.slot.split(',').map(x => Number(x.trim())) : null;
+    if (onlySlots?.some(x => !SLOTS.includes(x))) throw new Error(`--slot values must be among ${SLOTS.join(', ')}`);
+    const r = approve(setup, target, {by: flags['approved-by'], reference: flags['approval-reference'], at: flags['approved-at']}, onlySlots);
     console.log(`Recorded approval dated ${r.date} on ${r.inventory_rows} inventory row(s) and synchronized ${r.register_rows} register row(s) for ${r.category}.`);
     console.log('This records a decision you stated; the script cannot authenticate it.');
   } else if (command === 'delivered') {

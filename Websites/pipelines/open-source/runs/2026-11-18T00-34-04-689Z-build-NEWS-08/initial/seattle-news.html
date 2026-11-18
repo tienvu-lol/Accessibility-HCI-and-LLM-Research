@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Local News | Cascadia Times</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <header data-section="header" data-component="site-header">
+    <div class="container">
+      <a href="index.html" class="site-logo" data-component="site-logo">Cascadia Times</a>
+      <form class="site-search" data-component="site-search">
+        <label for="search-input-sn" class="sr-only">Search</label>
+        <input type="search" id="search-input-sn" placeholder="Search…" aria-label="Search">
+        <button type="submit">Search</button>
+      </form>
+      <button id="menu-button-sn" aria-controls="primary-nav-menu-sn" aria-expanded="false" aria-label="Open main menu" class="menu-btn" data-component="menu-button">
+        <span class="sr-only">Open menu</span>
+        ☰
+      </button>
+    </div>
+  </header>
+
+  <nav id="primary-nav-menu-sn" data-section="navigation" data-component="primary-nav" hidden>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="seattle-news.html" aria-current="page">Local News</a></li>
+      <li><a href="business.html">Business</a></li>
+      <li><a href="sports.html">Sports</a></li>
+      <li><a href="nation-world.html">Nation &amp; World</a></li>
+    </ul>
+  </nav>
+
+  <main id="main-content" data-section="main">
+    <header data-component="breadcrumb">
+      <nav aria-label="breadcrumb">
+        <ol>
+          <li><a href="index.html">Home</a></li>
+          <li>Local News</li>
+        </ol>
+      </nav>
+    </header>
+
+    <h1>Local News</h1>
+
+    <!-- Latest/Most Read tabs (inferred) -->
+    <section data-component="latest-tabs">
+      <header>
+        <h2>Latest News</h2>
+      </header>
+      <div class="tabs" data-component="tabs">
+        <button role="tab" aria-selected="true" aria-controls="tab-sn-latest" data-instance="1">Latest</button>
+        <button role="tab" aria-selected="false" aria-controls="tab-sn-mostread" data-instance="2">Most Read</button>
+      </div>
+      <div class="tabs-panel" role="tabpanel" aria-hidden="false" id="tab-sn-latest" data-instance="1">
+        <div class="card-grid" data-component="card-grid">
+          <article class="article-card" data-component="article-card" data-instance="1">
+            <img src="assets/placeholder-9.svg" alt="Placeholder image">
+            <div class="article-card-body">
+              <h3><a href="#">Seattle approves new bike lanes on Eastlake Avenue</a></h3>
+              <p>The project aims to improve safety for cyclists and reduce traffic congestion.</p>
+            </div>
+          </article>
+          <article class="article-card" data-component="article-card" data-instance="2">
+            <img src="assets/placeholder-10.svg" alt="Placeholder image">
+            <div class="article-card-body">
+              <h3><a href="#">City council debates funding for homeless services</a></h3>
+              <p>Discussions focus on expanding shelter capacity and outreach programs.</p>
+            </div>
+          </article>
+          <article class="article-card" data-component="article-card" data-instance="3">
+            <img src="assets/placeholder-11.svg" alt="Placeholder image">
+            <div class="article-card-body">
+              <h3><a href="#">Local schools report rise in enrollment after pandemic dip</a></h3>
+              <p>Officials attribute the increase to families returning to the district.</p>
+            </div>
+          </article>
+          <article class="article-card" data-component="article-card" data-instance="4">
+            <img src="assets/placeholder-12.svg" alt="Placeholder image">
+            <div class="article-card-body">
+              <h3><a href="#">Seattle’s waterfront park opens new playground area</a></h3>
+              <p>The addition includes inclusive equipment and sensory‑friendly zones.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+      <div class="tabs-panel" role="tabpanel" aria-hidden="true" id="tab-sn-mostread" data-instance="2">
+        <div class="card-grid" data-component="card-grid">
+          <article class="article-card" data-component="article-card" data-instance="5">
+            <img src="assets/placeholder-13.svg" alt="Placeholder image">
+            <div class="article-card-body">
+              <h3><a href="#">Traffic delays expected on I‑90 due to weekend construction</a></h3>
+              <p>Drivers advised to use alternate routes or allow extra travel time.</p>
+            </div>
+          </article>
+          <article class="article-card" data-component="article-card" data-instance="6">
+            <img src="assets/placeholder-14.svg" alt="Placeholder image">
+            <div class="article-card-body">
+              <h3><a href="#">Seattle Public Library launches summer reading program</a></h3>
+              <p>Kids can earn prizes by logging reading hours at any branch.</p>
+            </div>
+          </article>
+          <article class="article-card" data-component="article-card" data-instance="7">
+            <img src="assets/placeholder-15.svg" alt="Placeholder image">
+            <div class="article-card-body">
+              <h3><a href="#">New farmers market opens in Ballard every Saturday</a></h3>
+              <p>Vendors offer fresh produce, baked goods, and handmade crafts.</p>
+            </div>
+          </article>
+          <article class="article-card" data-component="article-card" data-instance="8">
+            <img src="assets/placeholder-16.svg" alt="Placeholder image">
+            <div class="article-card-body">
+              <h3><a href="#">City invests in renewable energy for municipal buildings</a></h3>
+              <p>Solar panels will be installed on rooftops across downtown.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter promo -->
+    <section data-component="newsletter-promo">
+      <h2>Stay Informed</h2>
+      <p>Get the latest local headlines delivered to your inbox each morning.</p>
+      <form class="newsletter-form" data-component="newsletter-signup">
+        <label for="newsletter-email-sn">Email address</label>
+        <input type="email" id="newsletter-email-sn" placeholder="you@example.com" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </section>
+  </main>
+
+  <footer data-section="footer" data-component="site-footer">
+    <div class="footer-cols" data-component="footer-cols">
+      <div>
+        <h3>Sections</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="seattle-news.html">Local News</a></li>
+          <li><a href="business.html">Business</a></li>
+          <li><a href="sports.html">Sports</a></li>
+          <li><a href="nation-world.html">Nation &amp; World</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>More</h3>
+        <ul>
+          <li><a href="help.html">Help</a></li>
+          <li><a href="newsroom-staff.html">Newsroom Staff</a></li>
+          <li><a href="rss-feeds.html">RSS Feeds</a></li>
+          <li><a href="subscribe-signup-offers-subsource-voluntary.html">Subscribe</a></li>
+        </ul>
+      </div>
+    </div>
+    <p>&copy; 2026 Cascadia Times. All rights reserved.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

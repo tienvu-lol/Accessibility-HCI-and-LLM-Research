@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Riverbank Community Bank – Learning Center</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <header data-section="site-header" data-component="site-header" class="site-header">
+    <div class="logo">Riverbank Community Bank</div>
+    <button id="nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Open main menu">
+      ☰
+    </button>
+    <nav data-section="primary-nav" data-component="primary-nav" class="primary-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="learning.html" aria-current="page">Learning Center</a></li>
+        <li><a href="support.html">Support</a></li>
+        <li><a href="checking.html">Checking & Savings</a></li>
+        <li><a href="loans.html">Loans</a></li>
+        <li><a href="digital.html">Digital Banking</a></li>
+        <li><a href="careers.html">Careers</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section data-section="hero" data-component="hero-banner" class="hero">
+    <h1>Learning Center</h1>
+    <p>Free resources to boost your financial confidence.</p>
+  </section>
+
+  <main id="main-content" data-section="main-content">
+    <section data-section="content-band" data-component="content-band-learning" class="content-band">
+      <h2>Featured Resources</h2>
+      <div class="card-grid" data-instance="learning-resources">
+        <!-- Inline sample data will be rendered by script -->
+      </div>
+    </section>
+  </main>
+
+  <footer data-section="site-footer" data-component="site-footer" class="site-footer">
+    <div>
+      <a href="index.html">Home</a> |
+      <a href="about.html">About</a> |
+      <a href="learning.html">Learning Center</a> |
+      <a href="support.html">Support</a> |
+      <a href="careers.html">Careers</a>
+    </div>
+    <div>&copy; 2026 Riverbank Community Bank. All rights reserved.</div>
+  </footer>
+
+  <script>
+    // Sample learning resources (5 items)
+    const sampleLearningResources = [
+      {title: "Budgeting Basics", type: "Article", length: "5 min read", topic: "Personal Finance"},
+      {title: "Understanding Credit Scores", type: "Video", length: "7 min", topic: "Credit"},
+      {title: "First-Time Homebuyer Guide", type: "Guide", length: "10 min read", topic: "Mortgage"},
+      {title: "Saving for College", type: "Article", length: "6 min read", topic: "Education"},
+      {title: "Intro to Investing", type: "Video", length: "8 min", topic: "Investing"}
+    ];
+    const grid = document.querySelector('[data-instance="learning-resources"]');
+    sampleLearningResources.forEach(item => {
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.setAttribute('data-component', 'learning-card');
+      card.innerHTML = `
+        <h3>${item.title}</h3>
+        <p><strong>Type:</strong> ${item.type}</p>
+        <p><strong>Length:</strong> ${item.length}</p>
+        <p><strong>Topic:</strong> ${item.topic}</p>
+      `;
+      grid.appendChild(card);
+    });
+  </script>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

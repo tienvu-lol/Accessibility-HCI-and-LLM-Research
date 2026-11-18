@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | City of Oakhaven</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header class="site-header" data-component="site-header">
+        <div class="header-container">
+            <a href="index.html" class="site-logo">City of Oakhaven</a>
+            <div class="header-controls">
+                <button id="lang-toggle" class="btn" data-lang="en" aria-label="Switch language">Español</button>
+                <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
+                    <span aria-hidden="true">☰</span>
+                </button>
+            </div>
+        </div>
+        <nav id="primary-nav" class="primary-nav" data-component="primary-nav" aria-label="Primary Navigation">
+            <ul>
+                <li class="has-dropdown">
+                    <a href="services.html" aria-haspopup="true" aria-expanded="false">Services</a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li role="none"><a href="services.html" role="menuitem">All Services</a></li>
+                        <li role="none"><a href="pay-utility-bill.html" role="menuitem">Pay Bills</a></li>
+                        <li role="none"><a href="permits.html" role="menuitem">Permits</a></li>
+                    </ul>
+                </li>
+                <li><a href="departments.html">Departments</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="service-request.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <section class="hero" data-section="hero" data-component="hero">
+            <h1>Welcome to Oakhaven</h1>
+            <p>Your city, your community. Find services, news, and events all in one place.</p>
+            <a href="services.html" class="btn">Explore Services</a>
+        </section>
+
+        <section class="content-bands" data-section="services" data-component="content-bands">
+            <h2 class="section-title">Popular Services</h2>
+            <div class="card-grid" id="popular-services">
+                <!-- Populated by JS or static -->
+                <article class="card">
+                    <h3>Trash & Recycling</h3>
+                    <p>Schedule pickups and view collection schedules.</p>
+                    <a href="services.html">Learn More</a>
+                </article>
+                <article class="card">
+                    <h3>Water Bills</h3>
+                    <p>Pay your water bill online or find payment locations.</p>
+                    <a href="pay-utility-bill.html">Pay Now</a>
+                </article>
+                <article class="card">
+                    <h3>Park Permits</h3>
+                    <p>Reserve parks and facilities for your event.</p>
+                    <a href="permits.html">Apply</a>
+                </article>
+            </div>
+        </section>
+
+        <section class="content-bands" data-section="news" data-component="content-bands">
+            <h2 class="section-title">Latest News</h2>
+            <div class="card-grid" id="latest-news">
+                <article class="card">
+                    <h3>City Council Meeting</h3>
+                    <p>Join the monthly meeting to discuss budget updates.</p>
+                    <a href="news.html">Read More</a>
+                </article>
+                <article class="card">
+                    <h3>New Park Opening</h3>
+                    <p>Celebrate the opening of Riverside Park this weekend.</p>
+                    <a href="news.html">Read More</a>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer" data-component="site-footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <p>123 City Hall Blvd, Oakhaven, CA 90210</p>
+                <p>Phone: (555) 123-4567</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="departments.html">Departments</a></li>
+                    <li><a href="news.html">News</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Use</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

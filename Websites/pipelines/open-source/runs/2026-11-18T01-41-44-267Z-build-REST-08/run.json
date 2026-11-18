@@ -1,0 +1,425 @@
+{
+  "run_id": "2026-11-18T01-41-44-267Z-build-REST-08",
+  "phase": "build",
+  "target": "REST-08",
+  "category": "restaurant",
+  "slot": 8,
+  "model_group": "open-source",
+  "model": {
+    "model_id": "unsloth/NVIDIA-Nemotron-3-Super-120B-A12B-GGUF",
+    "model_version": "MXFP4_MOE",
+    "model_provider_or_runtime": "vt-arc-falcon-llamacpp (OpenAI-compatible chat completions at http://localhost:8081/v1)",
+    "weights_url": "https://huggingface.co/unsloth/NVIDIA-Nemotron-3-Super-120B-A12B-GGUF",
+    "license": "nvidia-nemotron-open-model-license",
+    "open_weights": true,
+    "eligibility_note": "Open weights. Licence is the NVIDIA Nemotron Open Model License (HF tag nvidia-nemotron-open-model-license), read 2026-11-17 by the orchestrator on the quant repo and the base model card nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-BF16. A vendor open-model licence, NOT OSI-approved: this slot is open-weight, not open-source. Quantisation MXFP4_MOE. Served self-hosted via llama.cpp on VT ARC Falcon over an SSH tunnel on localhost:8081. Serving history, same model and quant: fal052:50413 (2026-11-17, twelve slot-08 research runs and four builds; session ended), fal039:43471 (current).",
+    "params": {
+      "temperature": 0.3,
+      "max_tokens": 32000
+    }
+  },
+  "operator": "Samhith Varma Yallamraju",
+  "status": "completed",
+  "prepared_at": "2026-11-18T01:41:44.273Z",
+  "generation_started_at": "2026-11-18T01:41:44.273Z",
+  "generation_completed_at": "2026-11-18T02:01:39.422Z",
+  "tool_access": "chat-completions API only: no browsing, no shell, no filesystem. The orchestrator wrote every file and ran every check.",
+  "budget": {
+    "max_build_turns": 28,
+    "max_repair_rounds": 0,
+    "max_tokens_per_request": 32000,
+    "temperature": 0.3,
+    "history_exchanges_kept": 8
+  },
+  "approved_source": {
+    "source_name": "Xi'an Famous Foods",
+    "source_url": "https://www.xianfoods.com",
+    "verified_at": "2026-11-17",
+    "verification_method": "HTTP GET by the orchestrator",
+    "verification_result": "verified",
+    "evidence_reference": "pipelines/open-source/research/evidence/REST-08-http-2026-11-17.json",
+    "complexity": "medium",
+    "stack_clues": "unknown",
+    "limitations": "Verified_at date not provided in evidence; interactive components (filtering, reservation, age gate, newsletter) could not be observed in markup and are marked inferred.",
+    "approved_at": "2026-11-17",
+    "approved_by": "Samhith Varma Yallamraju",
+    "approval_reference": "Project lead approval of all slot-08 sources given 2026-11-17 in the Claude Code orchestration session; see research/REST-08.md and research/proposals/REST-rows.json"
+  },
+  "approved_page_map": [
+    {
+      "url": "https://www.xianfoods.com/",
+      "title": "Xi'an Famous Foods: specialty Chinese restaurants serving Xi'an dishes based on family recipes",
+      "local_file": "index.html"
+    },
+    {
+      "url": "https://www.xianfoods.com/menu",
+      "title": "Menu-Xi'an Famous Foods: specialty Chinese restaurants serving Xi'an dishes based on family recipes",
+      "local_file": "menu.html"
+    },
+    {
+      "url": "https://www.xianfoods.com/our-story",
+      "title": "Our Story-Xi'an Famous Foods: specialty Chinese restaurants serving Xi'an dishes based on family recipes",
+      "local_file": "our-story.html"
+    },
+    {
+      "url": "https://www.xianfoods.com/locations",
+      "title": "Locations-Xi'an Famous Foods: specialty Chinese restaurants serving Xi'an dishes based on family recipes",
+      "local_file": "locations.html"
+    },
+    {
+      "url": "https://www.xianfoods.com/contact",
+      "title": "Contact-Xi'an Famous Foods: specialty Chinese restaurants serving Xi'an dishes based on family recipes",
+      "local_file": "contact.html"
+    },
+    {
+      "url": "https://www.xianfoods.com/order-acknowledgment",
+      "title": "Pickup/Delivery Acknowledgment",
+      "local_file": "order-acknowledgment.html"
+    },
+    {
+      "url": "https://www.xianfoods.com/press",
+      "title": "Press-Xi'an Famous Foods: specialty Chinese restaurants serving Xi'an dishes based on family recipes",
+      "local_file": "press.html"
+    },
+    {
+      "url": "https://www.xianfoods.com/accessibility",
+      "title": "Accessibility",
+      "local_file": "accessibility.html"
+    }
+  ],
+  "protocol_snapshots": [
+    {
+      "path": "Rules.md",
+      "sha256": "04b1c3e38b76f2aff3aef869d67370bb4532cd8f9ab5e22ac8276f26cbb859bf"
+    },
+    {
+      "path": "MODEL_ALLOCATION.md",
+      "sha256": "7e9487530a6e80b35af48d0691951dafc2fffea39798c81a3c49203909148d30"
+    },
+    {
+      "path": "pipelines/open-source/config.json",
+      "sha256": "8c24eaf19a0efcde9dcf52301b49880c7f6330a2a407ae046d52a574085653e2"
+    },
+    {
+      "path": "pipelines/open-source/categories.json",
+      "sha256": "8180966e55daa24799e51106645e93fd5807dde470765ab8b3b38d3f922c867b"
+    },
+    {
+      "path": "pipelines/open-source/prompts/system.md",
+      "sha256": "61bc24a57de14bd6a662cd6b5f98d0cfc57bf47e187fc58a97831bf1f272b4ee"
+    },
+    {
+      "path": "pipelines/open-source/prompts/build.md",
+      "sha256": "6096ab8b698af7a99d8ddaf1534cc95f41844d1d00cdd1fce740123b3146ab6a"
+    },
+    {
+      "path": "pipelines/open-source/prompts/repair.md",
+      "sha256": "8a84e51995736607b3efa6f5b2d76e52692423c2c26b03409afb4afa3c6586d6"
+    },
+    {
+      "path": "pipelines/open-source/models.json",
+      "sha256": "582c3bcd03420379259f8896d72dd3a1be5cff7ecfb3700fe6c9302ae958c83a"
+    },
+    {
+      "path": "metadata/source-inventories/restaurant.csv",
+      "sha256": "bd938ae12db4078a7be7c743bec45cfbe183d9a9e26c722b500c44b2dc7ce0c6"
+    },
+    {
+      "path": "metadata/assignments.csv",
+      "sha256": "75aa44ee9046372a60e2b9bafe18f1e0dbb3f7c5bd80c29f49f4c060050bca06"
+    }
+  ],
+  "turns": [
+    {
+      "turn": 1,
+      "label": "plan",
+      "status_line": "CONTINUE",
+      "prose_chars": 4742,
+      "files_written": [],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 1537,
+        "prompt_tokens": 5104,
+        "total_tokens": 6641,
+        "prompt_tokens_details": {
+          "cached_tokens": 541
+        }
+      },
+      "at": "2026-11-18T01:42:23.380Z"
+    },
+    {
+      "turn": 2,
+      "label": "files-2",
+      "status_line": "CONTINUE",
+      "prose_chars": 0,
+      "files_written": [
+        "css/styles.css",
+        "js/main.js",
+        "index.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 4413,
+        "prompt_tokens": 6410,
+        "total_tokens": 10823,
+        "prompt_tokens_details": {
+          "cached_tokens": 5100
+        }
+      },
+      "at": "2026-11-18T01:44:33.682Z"
+    },
+    {
+      "turn": 3,
+      "label": "files-3",
+      "status_line": "CONTINUE",
+      "prose_chars": 0,
+      "files_written": [
+        "404.html",
+        "menu.html",
+        "our-story.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 4152,
+        "prompt_tokens": 10619,
+        "total_tokens": 14771,
+        "prompt_tokens_details": {
+          "cached_tokens": 6406
+        }
+      },
+      "at": "2026-11-18T01:47:00.441Z"
+    },
+    {
+      "turn": 4,
+      "label": "files-4",
+      "status_line": "CONTINUE",
+      "prose_chars": 0,
+      "files_written": [
+        "locations.html",
+        "contact.html",
+        "order-acknowledgment.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 4339,
+        "prompt_tokens": 14757,
+        "total_tokens": 19096,
+        "prompt_tokens_details": {
+          "cached_tokens": 14753
+        }
+      },
+      "at": "2026-11-18T01:55:03.899Z"
+    },
+    {
+      "turn": 5,
+      "label": "files-5",
+      "status_line": "CONTINUE",
+      "prose_chars": 0,
+      "files_written": [
+        "press.html",
+        "accessibility.html",
+        "README.md"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 4064,
+        "prompt_tokens": 19027,
+        "total_tokens": 23091,
+        "prompt_tokens_details": {
+          "cached_tokens": 14753
+        }
+      },
+      "at": "2026-11-18T01:57:59.056Z"
+    },
+    {
+      "turn": 6,
+      "label": "files-6",
+      "status_line": "COMPLETE",
+      "prose_chars": 0,
+      "files_written": [
+        "fidelity-notes.md",
+        "component-inventory.json",
+        "generation-metadata.json"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 5090,
+        "prompt_tokens": 23043,
+        "total_tokens": 28133,
+        "prompt_tokens_details": {
+          "cached_tokens": 19023
+        }
+      },
+      "at": "2026-11-18T02:01:35.741Z"
+    }
+  ],
+  "rejected_files": [],
+  "qc_runs": [
+    {
+      "started_at": "2026-11-18T02:01:35.773Z",
+      "completed_at": "2026-11-18T02:01:39.422Z",
+      "exit_code": 1,
+      "executed": true,
+      "passed": false,
+      "outcome": "fail",
+      "failures": [
+        "placeholder href=\"#\" in 404.html",
+        "placeholder href=\"#\" in 404.html",
+        "placeholder href=\"#\" in 404.html",
+        "placeholder href=\"#\" in accessibility.html",
+        "placeholder href=\"#\" in accessibility.html",
+        "placeholder href=\"#\" in accessibility.html",
+        "placeholder href=\"#\" in contact.html",
+        "placeholder href=\"#\" in contact.html",
+        "placeholder href=\"#\" in contact.html",
+        "placeholder href=\"#\" in index.html",
+        "placeholder href=\"#\" in index.html",
+        "placeholder href=\"#\" in index.html",
+        "placeholder href=\"#\" in locations.html",
+        "placeholder href=\"#\" in locations.html",
+        "placeholder href=\"#\" in locations.html",
+        "placeholder href=\"#\" in menu.html",
+        "placeholder href=\"#\" in menu.html",
+        "placeholder href=\"#\" in menu.html",
+        "placeholder href=\"#\" in order-acknowledgment.html",
+        "placeholder href=\"#\" in order-acknowledgment.html",
+        "placeholder href=\"#\" in order-acknowledgment.html",
+        "placeholder href=\"#\" in our-story.html",
+        "placeholder href=\"#\" in our-story.html",
+        "placeholder href=\"#\" in our-story.html",
+        "placeholder href=\"#\" in press.html",
+        "placeholder href=\"#\" in press.html",
+        "placeholder href=\"#\" in press.html",
+        "axe aria-dialog-name (serious) @1280 404.html: 1 node(s) e.g. #age-gate-modal",
+        "axe heading-order (moderate) @1280 404.html: 1 node(s) e.g. h3",
+        "axe label-content-name-mismatch (serious) @1280 404.html: 3 node(s) e.g. a[aria-label=\"Facebook\"]",
+        "axe aria-dialog-name (serious) @1280 accessibility.html: 1 node(s) e.g. #age-gate-modal",
+        "axe label-content-name-mismatch (serious) @1280 accessibility.html: 3 node(s) e.g. a[aria-label=\"Facebook\"]",
+        "axe aria-dialog-name (serious) @1280 contact.html: 1 node(s) e.g. #age-gate-modal",
+        "axe heading-order (moderate) @1280 contact.html: 1 node(s) e.g. h3",
+        "axe label-content-name-mismatch (serious) @1280 contact.html: 3 node(s) e.g. a[aria-label=\"Facebook\"]",
+        "axe aria-dialog-name (serious) @1280 index.html: 1 node(s) e.g. #age-gate-modal",
+        "axe label-content-name-mismatch (serious) @1280 index.html: 3 node(s) e.g. a[aria-label=\"Facebook\"]",
+        "axe region (moderate) @1280 index.html: 1 node(s) e.g. .hero",
+        "axe aria-dialog-name (serious) @1280 locations.html: 1 node(s) e.g. #age-gate-modal",
+        "axe heading-order (moderate) @1280 locations.html: 1 node(s) e.g. article:nth-child(1) > h3",
+        "axe label-content-name-mismatch (serious) @1280 locations.html: 3 node(s) e.g. a[aria-label=\"Facebook\"]",
+        "axe aria-dialog-name (serious) @1280 menu.html: 1 node(s) e.g. #age-gate-modal",
+        "axe label-content-name-mismatch (serious) @1280 menu.html: 3 node(s) e.g. a[aria-label=\"Facebook\"]",
+        "axe aria-dialog-name (serious) @1280 order-acknowledgment.html: 1 node(s) e.g. #age-gate-modal",
+        "axe label-content-name-mismatch (serious) @1280 order-acknowledgment.html: 3 node(s) e.g. a[aria-label=\"Facebook\"]",
+        "axe aria-dialog-name (serious) @1280 our-story.html: 1 node(s) e.g. #age-gate-modal",
+        "axe heading-order (moderate) @1280 our-story.html: 1 node(s) e.g. h3",
+        "axe label-content-name-mismatch (serious) @1280 our-story.html: 3 node(s) e.g. a[aria-label=\"Facebook\"]",
+        "axe aria-dialog-name (serious) @1280 press.html: 1 node(s) e.g. #age-gate-modal",
+        "axe heading-order (moderate) @1280 press.html: 1 node(s) e.g. article:nth-child(1) > h3",
+        "axe label-content-name-mismatch (serious) @1280 press.html: 3 node(s) e.g. a[aria-label=\"Facebook\"]",
+        "axe aria-dialog-name (serious) @375 404.html: 1 node(s) e.g. #age-gate-modal",
+        "axe heading-order (moderate) @375 404.html: 1 node(s) e.g. h3",
+        "axe label-content-name-mismatch (serious) @375 404.html: 3 node(s) e.g. a[aria-label=\"Facebook\"]",
+        "axe aria-dialog-name (serious) @375 accessibility.html: 1 node(s) e.g. #age-gate-modal",
+        "axe label-content-name-mismatch (serious) @375 accessibility.html: 3 node(s) e.g. a[aria-label=\"Facebook\"]",
+        "axe aria-dialog-name (serious) @375 contact.html: 1 node(s) e.g. #age-gate-modal",
+        "axe heading-order (moderate) @375 contact.html: 1 node(s) e.g. h3",
+        "axe label-content-name-mismatch (serious) @375 contact.html: 3 node(s) e.g. a[aria-label=\"Facebook\"]",
+        "axe aria-dialog-name (serious) @375 index.html: 1 node(s) e.g. #age-gate-modal",
+        "axe label-content-name-mismatch (serious) @375 index.html: 3 node(s) e.g. a[aria-label=\"Facebook\"]",
+        "axe region (moderate) @375 index.html: 1 node(s) e.g. .hero",
+        "axe aria-dialog-name (serious) @375 locations.html: 1 node(s) e.g. #age-gate-modal",
+        "axe heading-order (moderate) @375 locations.html: 1 node(s) e.g. article:nth-child(1) > h3",
+        "axe label-content-name-mismatch (serious) @375 locations.html: 3 node(s) e.g. a[aria-label=\"Facebook\"]",
+        "axe aria-dialog-name (serious) @375 menu.html: 1 node(s) e.g. #age-gate-modal",
+        "axe label-content-name-mismatch (serious) @375 menu.html: 3 node(s) e.g. a[aria-label=\"Facebook\"]",
+        "axe aria-dialog-name (serious) @375 order-acknowledgment.html: 1 node(s) e.g. #age-gate-modal",
+        "axe label-content-name-mismatch (serious) @375 order-acknowledgment.html: 3 node(s) e.g. a[aria-label=\"Facebook\"]",
+        "axe aria-dialog-name (serious) @375 our-story.html: 1 node(s) e.g. #age-gate-modal",
+        "axe heading-order (moderate) @375 our-story.html: 1 node(s) e.g. h3",
+        "axe label-content-name-mismatch (serious) @375 our-story.html: 3 node(s) e.g. a[aria-label=\"Facebook\"]",
+        "axe aria-dialog-name (serious) @375 press.html: 1 node(s) e.g. #age-gate-modal",
+        "axe heading-order (moderate) @375 press.html: 1 node(s) e.g. article:nth-child(1) > h3",
+        "axe label-content-name-mismatch (serious) @375 press.html: 3 node(s) e.g. a[aria-label=\"Facebook\"]"
+      ],
+      "failure_count": 75,
+      "warnings": [],
+      "axe": {
+        "aria-dialog-name": 18,
+        "heading-order": 10,
+        "label-content-name-mismatch": 54,
+        "region": 2
+      },
+      "pages": 9,
+      "files": 15,
+      "qc_tool_sha256": "e9be905d19e7181e30d8291bcb1511d4469bdc9e36c20c0efe21e2d3fcf54513",
+      "report": "qc-initial-2026-11-18T02-01-35-772Z.json",
+      "log": "qc-initial-2026-11-18T02-01-35-772Z.log",
+      "stdout_tail": "FAIL axe aria-dialog-name (serious) @375 404.html: 1 node(s) e.g. #age-gate-modal\nFAIL axe heading-order (moderate) @375 404.html: 1 node(s) e.g. h3\nFAIL axe label-content-name-mismatch (serious) @375 404.html: 3 node(s) e.g. a[aria-label=\"Facebook\"]\nFAIL axe aria-dialog-name (serious) @375 accessibility.html: 1 node(s) e.g. #age-gate-modal\nFAIL axe label-content-name-mismatch (serious) @375 accessibility.html: 3 node(s) e.g. a[aria-label=\"Facebook\"]\nFAIL axe aria-dialog-name (serious) @375 contact.html: 1 node(s) e.g. #age-gate-modal\nFAIL axe heading-order (moderate) @375 contact.html: 1 node(s) e.g. h3\nFAIL axe label-content-name-mismatch (serious) @375 contact.html: 3 node(s) e.g. a[aria-label=\"Facebook\"]\nFAIL axe aria-dialog-name (serious) @375 index.html: 1 node(s) e.g. #age-gate-modal\nFAIL axe label-content-name-mismatch (serious) @375 index.html: 3 node(s) e.g. a[aria-label=\"Facebook\"]\nFAIL axe region (moderate) @375 index.html: 1 node(s) e.g. .hero\nFAIL axe aria-dialog-name (serious) @375 locations.html: 1 node(s) e.g. #age-gate-modal\nFAIL axe heading-order (moderate) @375 locations.html: 1 node(s) e.g. article:nth-child(1) > h3\nFAIL axe label-content-name-mismatch (serious) @375 locations.html: 3 node(s) e.g. a[aria-label=\"Facebook\"]\nFAIL axe aria-dialog-name (serious) @375 menu.html: 1 node(s) e.g. #age-gate-modal\nFAIL axe label-content-name-mismatch (serious) @375 menu.html: 3 node(s) e.g. a[aria-label=\"Facebook\"]\nFAIL axe aria-dialog-name (serious) @375 order-acknowledgment.html: 1 node(s) e.g. #age-gate-modal\nFAIL axe label-content-name-mismatch (serious) @375 order-acknowledgment.html: 3 node(s) e.g. a[aria-label=\"Facebook\"]\nFAIL axe aria-dialog-name (serious) @375 our-story.html: 1 node(s) e.g. #age-gate-modal\nFAIL axe heading-order (moderate) @375 our-story.html: 1 node(s) e.g. h3\nFAIL axe label-content-name-mismatch (serious) @375 our-story.html: 3 node(s) e.g. a[aria-label=\"Facebook\"]\nFAIL axe aria-dialog-name (serious) @375 press.html: 1 node(s) e.g. #age-gate-modal\nFAIL axe heading-order (moderate) @375 press.html: 1 node(s) e.g. article:nth-child(1) > h3\nFAIL axe label-content-name-mismatch (serious) @375 press.html: 3 node(s) e.g. a[aria-label=\"Facebook\"]\n",
+      "note": null
+    }
+  ],
+  "repair_rounds": [],
+  "retries": [],
+  "human_edits": [
+    {
+      "by": "orchestrator script",
+      "at": "2026-11-18T02:01:39.423Z",
+      "what": "Wrote the model's emitted files, normalized generation-metadata.json provenance fields, and set validation_summary from the recorded QC run. No site markup, style or script was authored or edited by hand."
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 78960,
+    "completion_tokens": 23595,
+    "total_tokens": 102555,
+    "requests": 6,
+    "retries": 1
+  },
+  "errors": [],
+  "outputs": {
+    "site": "restaurant/open-source/REST-08",
+    "transcript": "pipelines/open-source/runs/2026-11-18T01-41-44-267Z-build-REST-08/transcript.json"
+  },
+  "delivered": {
+    "files": [
+      "404.html",
+      "README.md",
+      "accessibility.html",
+      "component-inventory.json",
+      "contact.html",
+      "css/styles.css",
+      "fidelity-notes.md",
+      "generation-metadata.json",
+      "index.html",
+      "js/main.js",
+      "locations.html",
+      "menu.html",
+      "order-acknowledgment.html",
+      "our-story.html",
+      "press.html"
+    ],
+    "file_count": 15,
+    "bytes": 74705,
+    "pages_in_map": 8,
+    "missing_required": [],
+    "model_claimed_complete": true,
+    "delivered_complete": true,
+    "turns_used": 6,
+    "turn_budget": 28
+  },
+  "initial_artifact": "pipelines/open-source/runs/2026-11-18T01-41-44-267Z-build-REST-08/initial",
+  "provenance": {
+    "wrote": true,
+    "modelEmittedValidMetadata": true
+  },
+  "acceptance": "not accepted: a QC result is not acceptance, and interaction review plus human acceptance happen outside this script"
+}

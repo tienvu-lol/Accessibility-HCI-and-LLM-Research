@@ -1,0 +1,48 @@
+{
+  "generationDate": "2024-09-16",
+  "generationTool": "Microsoft Replica Generator",
+  "inputData": "Task text and approved map",
+  "outputData": "Microsoft Replica website",
+  "notes": "This replica is for research and development purposes only",
+  "allocation_protocol": "WEB-REPLICA-ALLOCATION-V1.0",
+  "generation_protocol": "WEB-REPLICA-V1.0",
+  "category": "company",
+  "slot": 9,
+  "source_id": "CORP-09",
+  "model_group": "open-source",
+  "model_id": "unsloth/Llama-3.3-70B-Instruct-GGUF",
+  "model_version": "Q8_0",
+  "model_provider_or_runtime": "vt-arc-falcon-llamacpp (OpenAI-compatible chat completions); open weights llama3.3-community, https://huggingface.co/unsloth/Llama-3.3-70B-Instruct-GGUF",
+  "generation_mode": "orchestrated API agent, multi-turn file emission, one replica per run, no human authoring of site code",
+  "operator": "Samhith Varma Yallamraju",
+  "approved_source_url": "https://www.microsoft.com/en-us",
+  "source_verified_at": "2026-11-17",
+  "source_approved_at": "2026-11-17",
+  "rules_revision": "WEB-REPLICA-V1.0 / WEB-REPLICA-ALLOCATION-V1.0 at commit 09a5576 (Rules.md sha256 04b1c3e38b76)",
+  "category_prompt_revision": "pipelines/open-source/prompts/build.md sha256 6096ab8b698a",
+  "prompt_or_transcript_reference": "pipelines/open-source/runs/2026-11-18T01-40-06-125Z-build-CORP-09/transcript.json",
+  "generation_started_at": "2026-11-18T01:40:06.129Z",
+  "generation_completed_at": "2026-11-18T01:50:12.730Z",
+  "validation_summary": {
+    "technology": "fail",
+    "completeness": "fail",
+    "structure": "fail",
+    "interaction": "not-tested",
+    "accessibility": "fail",
+    "traceability": "not-tested",
+    "scope": "not-tested"
+  },
+  "human_edits": [
+    {
+      "by": "open-source pipeline orchestrator (scripts/run-build.mjs)",
+      "at": "2026-11-18T01:50:12.730Z",
+      "what": "Normalized the provenance identifiers, model attribution, approval and revision fields to the recorded task values, and set validation_summary from the actual QC run. No website code was authored or edited by the orchestrator.",
+      "qc_evidence": "pipelines/open-source/runs/2026-11-18T01-40-06-125Z-build-CORP-09/qc-initial-2026-11-18T01-50-09-097Z.json",
+      "generation_budget": {
+        "requests": 7,
+        "retries": 0,
+        "total_tokens": 40808
+      }
+    }
+  ]
+}

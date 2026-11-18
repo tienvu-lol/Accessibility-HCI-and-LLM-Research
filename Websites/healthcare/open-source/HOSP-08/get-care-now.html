@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Get Care Now – Community Health Center</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <header data-section="header" data-component="site-header">
+    <h1>Community Health Center</h1>
+    <p>Request an appointment online.</p>
+  </header>
+  <nav data-section="navigation" data-component="primary-nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="get-care-now.html" aria-current="page">Get Care Now</a></li>
+      <li><a href="pay-a-bill.html">Pay a Bill</a></li>
+      <li><a href="find-a-doctor.html">Find a Doctor</a></li>
+      <li><a href="health-care-services.html">Services</a></li>
+      <li><a href="location-map.html">Locations</a></li>
+      <li><a href="patient-resources.html">Patient Resources</a></li>
+    </ul>
+  </nav>
+  <main id="main-content" data-section="appointment-form">
+    <h1>Request an Appointment</h1>
+    <p>Fill out the form below and we will contact you to confirm your visit.</p>
+    <form data-component="appointment-form" novalidate>
+      <div data-component="error-summary" role="alert"></div>
+      <div>
+        <label for="appt-name">Full Name <span aria-hidden="true">*</span></label>
+        <input type="text" id="appt-name" name="name" required>
+      </div>
+      <div>
+        <label for="appt-email">Email Address <span aria-hidden="true">*</span></label>
+        <input type="email" id="appt-email" name="email" required>
+      </div>
+      <div>
+        <label for="appt-phone">Phone Number <span aria-hidden="true">*</span></label>
+        <input type="tel" id="appt-phone" name="phone" required>
+      </div>
+      <div>
+        <label for="appt-date">Preferred Date <span aria-hidden="true">*</span></label>
+        <input type="date" id="appt-date" name="date" required>
+      </div>
+      <div>
+        <label for="appt-reason">Reason for Visit <span aria-hidden="true">*</span></label>
+        <textarea id="appt-reason" name="reason" rows="4" required></textarea>
+      </div>
+      <button type="submit" class="btn">Submit Request</button>
+    </form>
+  </main>
+  <footer data-section="footer" data-component="site-footer">
+    <p>&copy; 2026 Community Health Center. All rights reserved.</p>
+  </footer>
+  <script src="js/main.js"></script>
+</body>
+</html>

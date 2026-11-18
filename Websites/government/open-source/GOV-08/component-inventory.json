@@ -1,0 +1,149 @@
+[
+  {
+    "component": "site-header",
+    "selector": ".site-header",
+    "pages": [
+      "index.html",
+      "health-social-services.html",
+      "families-children.html",
+      "transportation.html",
+      "apply-unemployment-benefits.html",
+      "renew-vehicle-registration.html",
+      "search-court-dockets.html",
+      "state-organizations-a-to-z.html",
+      "404.html"
+    ],
+    "behaviors": "Displays fictional logo and language selection demo; contains skip link target.",
+    "keyboard_expectations": "Language select reachable via Tab; Enter/Space to open dropdown; Arrow keys to navigate options; Escape to close.",
+    "status": "implemented",
+    "validation_state": "not-tested"
+  },
+  {
+    "component": "primary-nav",
+    "selector": ".primary-nav",
+    "pages": [
+      "index.html",
+      "health-social-services.html",
+      "families-children.html",
+      "transportation.html",
+      "apply-unemployment-benefits.html",
+      "renew-vehicle-registration.html",
+      "search-court-dockets.html",
+      "state-organizations-a-to-z.html",
+      "404.html"
+    ],
+    "behaviors": "Provides primary site navigation across eight main sections plus home.",
+    "keyboard_expectations": "Each link reachable via Tab; Enter to activate; visible focus indicator.",
+    "status": "implemented",
+    "validation_state": "not-tested"
+  },
+  {
+    "component": "hero-banner",
+    "selector": ".hero-banner",
+    "pages": [
+      "index.html"
+    ],
+    "behaviors": "Shows welcome headline and brief description.",
+    "keyboard_expectations": "None beyond standard focus if interactive elements were present.",
+    "status": "implemented",
+    "validation_state": "not-tested"
+  },
+  {
+    "component": "alert-banner",
+    "selector": "#alert-banner",
+    "pages": [
+      "index.html"
+    ],
+    "behaviors": "Displays rotating demo alert messages; can be dismissed via button, which moves focus to next header.",
+    "keyboard_expectations": "Dismiss button reachable via Tab; Enter or Space to activate; Escape also closes banner and returns focus.",
+    "status": "implemented",
+    "validation_state": "not-tested"
+  },
+  {
+    "component": "search-form",
+    "selector": "#search-form",
+    "pages": [
+      "index.html",
+      "health-social-services.html",
+      "families-children.html",
+      "transportation.html",
+      "state-organizations-a-to-z.html"
+    ],
+    "behaviors": "Client‑search of inline servicesList; shows results in live region.",
+    "keyboard_expectations": "Input field reachable via Tab; typing updates results; Submit button reachable via Tab; Enter submits.",
+    "status": "implemented",
+    "validation_state": "not-tested"
+  },
+  {
+    "component": "report-form",
+    "selector": "#report-form",
+    "pages": [
+      "index.html"
+    ],
+    "behaviors": "Demo form with client‑side validation, inline errors, error summary, and success message.",
+    "keyboard_expectations": "Fields reachable via Tab; Submit via Enter on focused button or clicking; Error summary announced; focus moves to first error or success message.",
+    "status": "implemented",
+    "validation_state": "not-tested"
+  },
+  {
+    "component": "calendar-widget",
+    "selector": ".calendar-widget",
+    "pages": [
+      "apply-unemployment-benefits.html",
+      "renew-vehicle-registration.html"
+    ],
+    "behaviors": "Month‑picker demo with previous/next buttons; updates displayed month.",
+    "keyboard_expectations": "Buttons reachable via Tab; Enter or Space to activate; visible focus indicator.",
+    "status": "implemented",
+    "validation_state": "not-tested"
+  },
+  {
+    "component": "language-selector",
+    "selector": "#lang-select",
+    "pages": [
+      "index.html"
+    ],
+    "behaviors": "Demo selector that changes placeholder text only; no real translation.",
+    "keyboard_expectations": "Reachable via Tab; Arrow keys to change option; Enter/Space to select; change event updates demo text.",
+    "status": "implemented",
+    "validation_state": "not-tested"
+  },
+  {
+    "component": "site-footer",
+    "selector": ".site-footer",
+    "pages": [
+      "index.html",
+      "health-social-services.html",
+      "families-children.html",
+      "transportation.html",
+      "apply-unemployment-benefits.html",
+      "renew-vehicle-registration.html",
+      "search-court-dockets.html",
+      "state-organizations-a-to-z.html",
+      "404.html"
+    ],
+    "behaviors": "Shows fictional copyright and disclaimer.",
+    "keyboard_expectations": "None (static content).",
+    "status": "implemented",
+    "validation_state": "not-tested"
+  },
+  {
+    "component": "content-band",
+    "selector": ".content-band",
+    "pages": [
+      "index.html",
+      "health-social-services.html",
+      "families-children.html",
+      "transportation.html",
+      "apply-unemployment-benefits.html",
+      "renew-vehicle-registration.html",
+      "search-court-dockets.html",
+      "state-organizations-a-to-z.html",
+      "404.html"
+    ],
+    "behaviors": "Main content wrapper; contains headings, paragraphs, lists, forms, tables.",
+    "keyboard_expectations": "Standard focus order for interactive children.",
+    "status": "implemented",
+    "validation_state": "not-tested"
+  }
+]

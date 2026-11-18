@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Uses – Fictional Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <header data-section="header" data-component="site-header">
+    <div class="site-logo">Fictional Dev</div>
+    <nav class="primary-nav" data-component="primary-nav" aria-label="Primary">
+      <button aria-controls="primary-menu" aria-expanded="false">Menu</button>
+      <ul id="primary-menu" class="primary-nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="tips.html">Tips</a></li>
+        <li><a href="javascript.html">JS Notes</a></li>
+        <li><a href="speaking-and-training.html">Speaking</a></li>
+        <li><a href="uses.html">Uses</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content" data-section="main">
+    <h1>Uses</h1>
+    <p>Tools, hardware, and services I use in my workflow. Filter by category.</p>
+
+    <section data-component="card-grid" data-section="uses-list">
+      <h2>My Tools</h2>
+
+      <!-- Filter controls -->
+      <fieldset data-component="filter-group" aria-label="Filter uses">
+        <legend>Filter by category</legend>
+        <div>
+          <label><input type="checkbox" data-filter value="editor"> Editor/IDE</label>
+        </div>
+        <div>
+          <label><input type="checkbox" data-filter value="browser"> Browser</label>
+        </div>
+        <div>
+          <label><input type="checkbox" data-filter value="hardware"> Hardware</label>
+        </div>
+        <div>
+          <label><input type="checkbox" data-filter value="service"> Service</label>
+        </div>
+        <div>
+          <label><input type="checkbox" data-filter value="misc"> Miscellaneous</label>
+        </div>
+      </fieldset>
+
+      <div id="uses-container" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <footer data-section="footer" data-component="site-footer">
+    <p>&copy; 2026 Fictional Dev. All rights reserved.</p>
+    <nav aria-label="Footer">
+      <a href="index.html">Home</a> |
+      <a href="about.html">About</a> |
+      <a href="contact.html">Contact</a>
+    </nav>
+  </footer>
+
+  <script>
+    // Inline dataset for uses
+    const usesData = [
+      {name: "VS Code", purpose: "Primary code editor", link: "https://code.visualstudio.com/", category: ["editor"]},
+      {name: "Firefox Developer Edition", purpose: "Testing and debugging", link: "https://www.mozilla.org/firefox/developer/", category: ["browser"]},
+      {name: "Chrome Canary", purpose: "Bleeding-edge feature testing", link: "https://www.google.com/chrome/canary/", category: ["browser"]},
+      {name: "MacBook Pro 14\"", purpose: "Development laptop", link: "https://www.apple.com/macbook-pro/", category: ["hardware"]},
+      {name: "Mechanical Keyboard", purpose: "Typing comfort", link: "#", category: ["hardware"]},
+      {name: "GitHub", purpose: "Code hosting and collaboration", link: "https://github.com/", category: ["service"]},
+      {name: "Netlify", purpose: "Static site hosting", link: "https://www.netlify.com/", category: ["service"]},
+      {name: "Postman", purpose: "API testing", link: "https://www.postman.com/", category: ["service"]},
+      {name: "Docker", purpose: "Containerization", link: "https://www.docker.com/", category: ["service"]}
+    ];
+
+    function renderUses(container, items) {
+      container.innerHTML = '';
+      if (items.length === 0) {
+        const msg = document.createElement('p');
+        msg.textContent = 'No items match the selected filters.';
+        container.appendChild(msg);
+        return;
+      }
+      const grid = document.createElement('div');
+      grid.className = 'card-grid';
+      items.forEach(item => {
+        const card = document.createElement('article');
+        card.className = 'card';
+        card.dataset.component = 'project-card';
+        card.dataset.instance = Math.random().toString(36).substr(2,9);
+        const cats = item.category.map(c => `<span class="tag">${c}</span>`).join('');
+        card.innerHTML = `
+          <img src="assets/placeholder.svg" alt="${item.name} thumbnail">
+          <div class="card-body">
+            <h3>${item.name}</h3>
+            <p>${item.purpose}</p>
+            <div class="tags">
+              ${cats}
+            </div>
+            <a href="${item.link}" class="cta secondary" target="_blank" rel="noopener">Learn more</a>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+      container.appendChild(grid);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const container = document.getElementById('uses-container');
+      if (typeof initFilter === 'function') {
+        initFilter('uses-container', usesData, renderUses);
+      } else {
+        // fallback
+        renderUses(container, usesData);
+      }
+    });
+  </script>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

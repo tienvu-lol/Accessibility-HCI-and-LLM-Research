@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en" data-section="html">
+<head>
+  <meta charset="utf-8">
+  <title>Red Carpet Looks – Vogue Vista</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header -->
+  <header data-section="header">
+    <div class="site-header">
+      <div class="logo" data-component="site-logo">Vogue Vista</div>
+      <nav data-component="primary-nav" aria-label="Main navigation">
+        <button class="hamburger" aria-controls="primary-menu" aria-expanded="false" aria-label="Menu">
+          ☰
+        </button>
+        <ul id="primary-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="fashion-index.html">Fashion</a></li>
+          <li><a href="beauty-index.html">Beauty</a></li>
+          <li><a href="travel-dining-index.html">Travel &amp; Dining</a></li>
+          <li><a href="red-carpet-index.html">Red Carpet</a></li>
+          <li><a href="newsletter-index.html">Newsletter</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section data-component="hero" aria-label="Red carpet hero">
+    <h1>2026 Governors Awards Red‑Carpet Looks</h1>
+    <p>Explore the most striking gowns and tuxedos.</p>
+  </section>
+
+  <main id="main-content" data-section="main">
+    <section data-component="content-band" aria-label="Red carpet gallery">
+      <h2>Gallery</h2>
+      <ul class="card-grid">
+        <li class="card">
+          <button data-action="open-lightbox" data-index="0" aria-label="Open image 1">
+            <img src="assets/img1.svg" alt="Gown with sequined bodice">
+          </button>
+        </li>
+        <li class="card">
+          <button data-action="open-lightbox" data-index="1" aria-label="Open image 2">
+            <img src="assets/img2.svg" alt="Tailored tuxedo with velvet lapels">
+          </button>
+        </li>
+        <li class="card">
+          <button data-action="open-lightbox" data-index="2" aria-label="Open image 3">
+            <img src="assets/img3.svg" alt="Metallic cocktail dress with asymmetrical hem">
+          </button>
+        </li>
+        <li class="card">
+          <button data-action="open-lightbox" data-index="3" aria-label="Open image 4">
+            <img src="assets/img4.svg" alt="Classic black gown with feathered train">
+          </button>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- Lightbox dialog (demo) -->
+  <dialog id="lightbox-dialog" data-component="lightbox" aria-modal="true" aria-label="Image preview">
+    <figure>
+      <img src="" alt="">
+      <figcaption></figcaption>
+    </figure>
+    <button data-action="prev" aria-label="Previous image">←</button>
+    <button data-action="next" aria-label="Next image">→</button>
+    <button data-action="close" aria-label="Close dialog">✕</button>
+  </dialog>
+
+  <!-- Footer -->
+  <footer data-section="footer">
+    <p>&copy; 2026 Vogue Vista. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Inline demo dataset for lightbox
+    window.galleryItems = [
+      {src: 'assets/img1.svg', caption: 'Gown with sequined bodice'},
+      {src: 'assets/img2.svg', caption: 'Tailored tuxedo with velvet lapels'},
+      {src: 'assets/img3.svg', caption: 'Metallic cocktail dress with asymmetrical hem'},
+      {src: 'assets/img4.svg', caption: 'Classic black gown with feathered train'}
+    ];
+  </script>
+</body>
+</html>

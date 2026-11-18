@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>WeatherNow – Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <header data-section="header" data-component="site-header">
+    <div class="demo-premium-banner" aria-label="Demo Premium – Not functional" style="background:#ffeb3b;color:#222;padding:.5rem;text-align:center;font-size:.875rem;">
+      Demo Premium – Not functional
+    </div>
+    <h1>WeatherNow</h1>
+    <form class="location-search" data-component="location-search">
+      <label for="location-input-login" class="visually-hidden">Location search</label>
+      <input type="text" id="location-input-login" placeholder="Enter location (e.g., Ashburn, VA)" aria-label="Location search">
+      <button type="button">Search</button>
+    </form>
+  </header>
+  <nav data-section="navigation" data-component="primary-nav">
+    <ul class="nav-list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="today.html">Today</a></li>
+      <li><a href="radar.html">Radar</a></li>
+      <li><a href="news.html">News</a></li>
+      <li><a href="login.html" aria-current="page">Login</a></li>
+      <li><a href="hourly.html">Hourly</a></li>
+      <li><a href="tenday.html">10‑Day</a></li>
+      <li><a href="monthly.html">Monthly</a></li>
+      <li><a href="allergy.html">Allergies</a></li>
+    </ul>
+  </nav>
+  <main id="main-content" data-section="main" class="main-content">
+    <section data-section="login-form" data-component="login-form">
+      <h2>Sign in to WeatherNow</h2>
+      <p>This is a demo simulation – no real accounts are used.</p>
+      <form id="demo-login-form" novalidate>
+        <div>
+          <label for="email-input">Email address</label>
+          <input type="email" id="email-input" required aria-required="true">
+          <span class="error-message" id="email-error" aria-live="polite"></span>
+        </div>
+        <div>
+          <label for="password-input">Password</label>
+          <input type="password" id="password-input" required aria-required="true">
+          <span class="error-message" id="password-error" aria-live="polite"></span>
+        </div>
+        <button type="submit">Sign in</button>
+      </form>
+      <div id="login-result" role="alert" aria-live="assertive" style="margin-top:1rem;display:none;padding:1rem;border:1px solid #ccc;border-radius:.25rem;"></div>
+    </section>
+  </main>
+  <footer data-section="footer" data-component="site-footer">
+    &copy; 2026 WeatherNow. All rights reserved. <a href="help.html">Help</a> | <a href="about.html">About</a>
+  </footer>
+  <script>
+    const form = document.getElementById('demo-login-form');
+    const emailInput = document.getElementById('email-input');
+    const passwordInput = document.getElementById('password-input');
+    const emailError = document.getElementById('email-error');
+    const passwordError = document.getElementById('password-error');
+    const resultDiv = document.getElementById('login-result');
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      // Clear previous errors
+      emailError.textContent = '';
+      passwordError.textContent = '';
+      resultDiv.style.display = 'none';
+      resultDiv.textContent = '';
+
+      let valid = true;
+      const email = emailInput.value.trim();
+      const password = passwordInput.value;
+
+      if (!email) {
+        emailError.textContent = 'Email is required.';
+        valid = false;
+      } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        emailError.textContent = 'Enter a valid email address.';
+        valid = false;
+      }
+
+      if (!password) {
+        passwordError.textContent = 'Password is required.';
+        valid = false;
+      }
+
+      if (valid) {
+        // Demo success
+        resultDiv.style.backgroundColor = '#dff0d8';
+        resultDiv.style.color = '#3c763d';
+        resultDiv.textContent = 'Demo login successful – no real account created.';
+        resultDiv.style.display = 'block';
+        // Move focus to result message
+        resultDiv.focus();
+        // Clear form
+        form.reset();
+      } else {
+        resultDiv.style.backgroundColor = '#f2dede';
+        resultDiv.style.color = '#a94442';
+        resultDiv.textContent = 'Please fix the errors above.';
+        resultDiv.style.display = 'block';
+        resultDiv.focus();
+      }
+    });
+
+    // Location search demo (same as other pages)
+    const searchForm = document.querySelector('.location-search form');
+    if (searchForm) {
+      searchForm.addEventListener('submit', e => {
+        e.preventDefault();
+        const input = searchForm.querySelector('input');
+        const val = input.value.trim();
+        if (val) {
+          alert(`Demo: showing forecast for "${val}". (No real data)`);
+          input.value = '';
+        }
+      });
+    }
+  </script>
+  <script src="js/main.js"></script>
+</body>
+</html>

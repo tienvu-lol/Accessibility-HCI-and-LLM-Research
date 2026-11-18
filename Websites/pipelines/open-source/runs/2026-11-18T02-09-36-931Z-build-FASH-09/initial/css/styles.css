@@ -1,0 +1,84 @@
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #f0f0f0;
+  padding: 1em;
+  text-align: center;
+}
+
+nav {
+  background-color: #333;
+  color: #fff;
+  padding: 0.5em;
+  text-align: center;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2em;
+}
+
+footer {
+  background-color: #f0f0f0;
+  padding: 1em;
+  text-align: center;
+  clear: both;
+}
+
+/* Component Styles */
+.site-header {
+  background-color: #333;
+  color: #fff;
+  padding: 0.5em;
+  text-align: center;
+}
+
+.primary-nav {
+  background-color: #333;
+  color: #fff;
+  padding: 0.5em;
+  text-align: center;
+}
+
+.hero {
+  background-color: #f0f0f0;
+  padding: 2em;
+  text-align: center;
+}
+
+.content-bands {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2em;
+}
+
+.sidebar {
+  background-color: #f0f0f0;
+  padding: 1em;
+  width: 20%;
+  float: right;
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 768px) {
+  main {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+    float: none;
+  }
+}

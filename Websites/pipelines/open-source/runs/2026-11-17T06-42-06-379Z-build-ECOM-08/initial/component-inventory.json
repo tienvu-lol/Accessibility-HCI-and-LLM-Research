@@ -1,0 +1,247 @@
+{
+  "components": [
+    {
+      "name": "site-header",
+      "selector": ".site-header",
+      "pages": [
+        "index.html",
+        "target-circle.html",
+        "gift-registry.html",
+        "weekly-ad.html",
+        "store-locator.html",
+        "shop-all-categories.html",
+        "top-deals.html",
+        "404.html"
+      ],
+      "behaviors": [
+        "Displays brand name",
+        "Contains primary navigation"
+      ],
+      "keyboardExpectations": [
+        "Tab moves focus into navigation links"
+      ],
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "name": "primary-nav",
+      "selector": ".primary-nav",
+      "pages": [
+        "index.html",
+        "target-circle.html",
+        "gift-registry.html",
+        "weekly-ad.html",
+        "store-locator.html",
+        "shop-all-categories.html",
+        "top-deals.html",
+        "404.html"
+      ],
+      "behaviors": [
+        "Provides navigation to site sections",
+        "Cart and account links are demo placeholders"
+      ],
+      "keyboardExpectations": [
+        "Tab moves focus through each link in DOM order",
+        "Enter activates link"
+      ],
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "name": "hero",
+      "selector": ".hero",
+      "pages": [
+        "index.html",
+        "target-circle.html",
+        "gift-registry.html",
+        "weekly-ad.html",
+        "store-locator.html",
+        "shop-all-categories.html",
+        "top-deals.html",
+        "404.html"
+      ],
+      "behaviors": [
+        "Shows a prominent heading and short description"
+      ],
+      "keyboardExpectations": [],
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "name": "card-grid",
+      "selector": ".card-grid",
+      "pages": [
+        "index.html",
+        "shop-all-categories.html",
+        "top-deals.html",
+        "weekly-ad.html"
+      ],
+      "behaviors": [
+        "Displays a responsive grid of cards",
+        "Each card shows image placeholder, title, price"
+      ],
+      "keyboardExpectations": [],
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "name": "product-card",
+      "selector": ".card",
+      "pages": [
+        "index.html",
+        "shop-all-categories.html",
+        "top-deals.html",
+        "weekly-ad.html"
+      ],
+      "behaviors": [
+        "Presents product/deal/ad information"
+      ],
+      "keyboardExpectations": [],
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "name": "filter-controls",
+      "selector": ".filter-controls",
+      "pages": [
+        "shop-all-categories.html",
+        "top-deals.html"
+      ],
+      "behaviors": [
+        "Allows filtering by category and max price",
+        "Allows sorting by name or price",
+        "Reset button clears filters and sort"
+      ],
+      "keyboardExpectations": [
+        "Tab moves focus to each form control and button",
+        "Enter activates button",
+        "Arrow keys change selected option in <select>",
+        "Typing updates number input"
+      ],
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "name": "benefits-list",
+      "selector": ".benefits-list",
+      "pages": [
+        "target-circle.html"
+      ],
+      "behaviors": [
+        "Lists Target Circle benefits"
+      ],
+      "keyboardExpectations": [],
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "name": "registry-list",
+      "selector": ".registry-list",
+      "pages": [
+        "gift-registry.html"
+      ],
+      "behaviors": [
+        "Displays sample gift registries"
+      ],
+      "keyboardExpectations": [],
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "name": "store-list",
+      "selector": ".store-list",
+      "pages": [
+        "store-locator.html"
+      ],
+      "behaviors": [
+        "Displays nearby store information"
+      ],
+      "keyboardExpectations": [],
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "name": "ad-grid",
+      "selector": ".ad-grid",
+      "pages": [
+        "weekly-ad.html"
+      ],
+      "behaviors": [
+        "Displays weekly ad deals as cards"
+      ],
+      "keyboardExpectations": [],
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "name": "skip-link",
+      "selector": ".skip-link",
+      "pages": [
+        "index.html",
+        "target-circle.html",
+        "gift-registry.html",
+        "weekly-ad.html",
+        "store-locator.html",
+        "shop-all-categories.html",
+        "top-deals.html",
+        "404.html"
+      ],
+      "behaviors": [
+        "Provides a mechanism to skip repetitive navigation",
+        "Becomes visible when focused"
+      ],
+      "keyboardExpectations": [
+        "Tab moves focus to skip link (first focusable)",
+        "Enter activates link, moving focus to #main-content"
+      ],
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "name": "cart-link",
+      "selector": "a[aria-label='Demo cart – no real cart']",
+      "pages": [
+        "index.html",
+        "target-circle.html",
+        "gift-registry.html",
+        "weekly-ad.html",
+        "store-locator.html",
+        "shop-all-categories.html",
+        "top-deals.html",
+        "404.html"
+      ],
+      "behaviors": [
+        "Placeholder link indicating a demo cart"
+      ],
+      "keyboardExpectations": [
+        "Tab moves focus to link",
+        "Enter activates link (but does nothing)"
+      ],
+      "status": "implemented",
+      "validationState": "not-tested"
+    },
+    {
+      "name": "account-link",
+      "selector": "a[aria-label='Demo account – no real account']",
+      "pages": [
+        "index.html",
+        "target-circle.html",
+        "gift-registry.html",
+        "weekly-ad.html",
+        "store-locator.html",
+        "shop-all-categories.html",
+        "top-deals.html",
+        "404.html"
+      ],
+      "behaviors": [
+        "Placeholder link indicating a demo account"
+      ],
+      "keyboardExpectations": [
+        "Tab moves focus to link",
+        "Enter activates link (but does nothing)"
+      ],
+      "status": "implemented",
+      "validationState": "not-tested"
+    }
+  ]
+}

@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NZ Weather - The Metropolitan Herald</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header class="site-header" role="banner">
+        <div class="container header-inner">
+            <a href="index.html" class="logo">The Metropolitan Herald</a>
+            <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
+                <span class="sr-only">Toggle navigation</span>
+                ☰
+            </button>
+            <nav id="primary-nav" class="primary-nav" role="navigation" aria-label="Primary">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="nz.html" class="nav-link">NZ</a></li>
+                    <li><a href="world.html" class="nav-link">World</a></li>
+                    <li><a href="business.html" class="nav-link">Business</a></li>
+                    <li><a href="sport.html" class="nav-link">Sport</a></li>
+                    <li><a href="entertainment.html" class="nav-link">Entertainment</a></li>
+                    <li><a href="politics.html" class="nav-link">Politics</a></li>
+                    <li><a href="crime.html" class="nav-link">Crime</a></li>
+                    <li><a href="election-2026.html" class="nav-link">Election 2026</a></li>
+                    <li><a href="video.html" class="nav-link">Video</a></li>
+                    <li><a href="opinion.html" class="nav-link">Opinion</a></li>
+                    <li><a href="lifestyle.html" class="nav-link">Lifestyle</a></li>
+                    <li><a href="weather.html" class="nav-link" aria-current="page">Weather</a></li>
+                    <li><a href="premium.html" class="nav-link">Premium</a></li>
+                    <li><a href="podcasts.html" class="nav-link">Podcasts</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section class="hero-section" data-section="hero">
+            <div class="container hero-grid">
+                <article class="hero-main" data-component="hero-article">
+                    <img src="assets/hero-placeholder.svg" alt="Weather featured image" class="hero-image">
+                    <div class="hero-content">
+                        <span class="article-category">Weather</span>
+                        <h1 class="hero-title"><a href="#">Severe Weather Warning: Storm Expected This Weekend</a></h1>
+                        <p class="hero-summary">MetService has issued warnings for heavy rain and strong winds across the North Island.</p>
+                    </div>
+                </article>
+                <aside class="hero-side" data-component="hero-side-stories">
+                    <article class="side-story">
+                        <h3><a href="#">Summer Heatwave Continues in South</a></h3>
+                        <p class="article-meta">1 hour ago</p>
+                    </article>
+                    <article class="side-story">
+                        <h3><a href="#">Snowfall Expected on Southern Alps</a></h3>
+                        <p class="article-meta">3 hours ago</p>
+                    </article>
+                    <article class="side-story">
+                        <h3><a href="#">UV Index Reaches Critical Levels</a></h3>
+                        <p class="article-meta">5 hours ago</p>
+                    </article>
+                </aside>
+            </div>
+        </section>
+
+        <section class="container mt-lg" data-section="forecast">
+            <h2>7-Day Forecast</h2>
+            <div class="article-grid" data-component="weather-grid" id="weather-grid">
+                <!-- Forecast cards injected via JS -->
+            </div>
+        </section>
+
+        <section class="container mt-lg" data-section="latest-news">
+            <div class="tabs" role="tablist" aria-label="Weather feeds">
+                <button class="tab-btn" role="tab" aria-selected="true" aria-controls="weather-latest-panel" id="weather-latest-tab">Latest</button>
+                <button class="tab-btn" role="tab" aria-selected="false" aria-controls="weather-most-read-panel" id="weather-most-read-tab">Most Read</button>
+            </div>
+
+            <div id="weather-latest-panel" class="tab-panel is-active" role="tabpanel" aria-labelledby="weather-latest-tab">
+                <div class="article-grid" data-component="article-card-grid">
+                    <!-- Articles injected via JS -->
+                </div>
+            </div>
+
+            <div id="weather-most-read-panel" class="tab-panel" role="tabpanel" aria-labelledby="weather-most-read-tab">
+                <div class="article-grid" data-component="article-card-grid">
+                    <!-- Articles injected via JS -->
+                </div>
+            </div>
+        </section>
+
+        <aside class="container mt-lg" data-section="sidebar">
+            <div class="sidebar">
+                <h3>Trending in Weather</h3>
+                <ul class="trending-list" data-component="trending-list">
+                    <li class="trending-item">
+                        <span class="trending-number">1</span>
+                        <a href="#" class="trending-title">Severe Weather Warning: Storm Expected This Weekend</a>
+                    </li>
+                    <li class="trending-item">
+                        <span class="trending-number">2</span>
+                        <a href="#" class="trending-title">Summer Heatwave Continues in South</a>
+                    </li>
+                    <li class="trending-item">
+                        <span class="trending-number">3</span>
+                        <a href="#" class="trending-title">Snowfall Expected on Southern Alps</a>
+                    </li>
+                    <li class="trending-item">
+                        <span class="trending-number">4</span>
+                        <a href="#" class="trending-title">UV Index Reaches Critical Levels</a>
+                    </li>
+                    <li class="trending-item">
+                        <span class="trending-number">5</span>
+                        <a href="#" class="trending-title">Climate Report: Rising Temperatures</a>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>The Metropolitan Herald</h4>
+                    <p>Truth in Every Story. Your trusted source for local and global news.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Sections</h4>
+                    <ul class="footer-links">
+                        <li><a href="nz.html">NZ</a></li>
+                        <li><a href="world.html">World</a></li>
+                        <li><a href="business.html">Business</a></li>
+                        <li><a href="sport.html">Sport</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Advertise</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Terms of Use</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 The Metropolitan Herald. All rights reserved. This is a fictional replica for research purposes.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        const weatherForecast = [
+            { day: "Today", condition: "Partly Cloudy", high: "22°C", low: "14°C", icon: "⛅" },
+            { day: "Tomorrow", condition: "Heavy Rain", high: "18°C", low: "12°C", icon: "🌧️" },
+            { day: "Wednesday", condition: "Thunderstorms", high: "19°C", low: "13°C", icon: "⛈️" },
+            { day: "Thursday", condition: "Sunny", high: "24°C", low: "15°C", icon: "☀️" },
+            { day: "Friday", condition: "Clear", high: "25°C", low: "16°C", icon: "☀️" },
+            { day: "Saturday", condition: "Windy", high: "20°C", low: "14°C", icon: "💨" },
+            { day: "Sunday", condition: "Showers", high: "17°C", low: "11°C", icon: "🌦️" }
+        ];
+
+        const weatherArticles = [
+            { id: 1, category: "Weather", title: "Severe Weather Warning: Storm Expected This Weekend", excerpt: "MetService has issued warnings for heavy rain and strong winds across the North Island.", date: "1 hour ago", isPremium: false },
+            { id: 2, category: "Climate", title: "Summer Heatwave Continues in South", excerpt: "Temperatures remain well above average as a high-pressure system settles over the region.", date: "3 hours ago", isPremium: false },
+            { id: 3, category: "Weather", title: "Snowfall Expected on Southern Alps", excerpt: "Ski fields are preparing for early season snowfall as cold fronts move in.", date: "5 hours ago", isPremium: false },
+            { id: 4, category: "Health", title: "UV Index Reaches Critical Levels", excerpt: "Health officials urge residents to take precautions against extreme sun exposure.", date: "6 hours ago", isPremium: false },
+            { id: 5, category: "Climate", title: "Climate Report: Rising Temperatures", excerpt: "New data shows a steady increase in average temperatures over the past decade.", date: "8 hours ago", isPremium: false },
+            { id: 6, category: "Weather", title: "Coastal Flooding Risk Increases", excerpt: "High tides combined with storm surges pose a risk to low-lying coastal areas.", date: "10 hours ago", isPremium: false },
+            { id: 7, category: "Agriculture", title: "Farmers Brace for Drought Conditions", excerpt: "Dry spells continue to impact agricultural output in several regions.", date: "12 hours ago", isPremium: false },
+            { id: 8, category: "Weather", title: "Autumn Equinox Brings Mild Temperatures", excerpt: "The transition to autumn has been marked by unusually warm weather.", date: "14 hours ago", isPremium: false },
+            { id: 9, category: "Climate", title: "Ocean Temperatures Hit Record Highs", excerpt: "Marine ecosystems face challenges as sea surface temperatures continue to rise.", date: "1 day ago", isPremium: false }
+        ];
+
+        const weatherMostRead = [
+            { id: 10, category: "Weather", title: "Severe Weather Warning: Storm Expected This Weekend", excerpt: "MetService has issued warnings for heavy rain and strong winds across the North Island.", date: "2 hours ago", isPremium: false },
+            { id: 11, category: "Climate", title: "Summer Heatwave Continues in South", excerpt: "Temperatures remain well above average as a high-pressure system settles over the region.", date: "4 hours ago", isPremium: false },
+            { id: 12, category: "Weather", title: "Snowfall Expected on Southern Alps", excerpt: "Ski fields are preparing for early season snowfall as cold fronts move in.", date: "6 hours ago", isPremium: false },
+            { id: 13, category: "Health", title: "UV Index Reaches Critical Levels", excerpt: "Health officials urge residents to take precautions against extreme sun exposure.", date: "8 hours ago", isPremium: false },
+            { id: 14, category: "Climate", title: "Climate Report: Rising Temperatures", excerpt: "New data shows a steady increase in average temperatures over the past decade.", date: "10 hours ago", isPremium: false }
+        ];
+
+        function renderArticleCard(article) {
+            const premiumBadge = article.isPremium ? '<span class="premium-badge">Premium</span>' : '';
+            return `
+                <article class="article-card ${article.isPremium ? 'premium-overlay' : ''}">
+                    <img src="assets/article-placeholder.svg" alt="" class="article-image">
+                    <div class="article-body">
+                        ${premiumBadge}
+                        <span class="article-category">${article.category}</span>
+                        <h3 class="article-title"><a href="#">${article.title}</a></h3>
+                        <p class="article-excerpt">${article.excerpt}</p>
+                        <p class="article-meta">${article.date}</p>
+                    </div>
+                </article>
+            `;
+        }
+
+        function renderWeatherCard(day) {
+            return `
+                <article class="article-card">
+                    <div class="article-body" style="text-align: center;">
+                        <h3 class="article-title">${day.day}</h3>
+                        <p style="font-size: 2rem; margin: var(--spacing-sm) 0;">${day.icon}</p>
+                        <p class="article-excerpt">${day.condition}</p>
+                        <p class="article-meta">High: ${day.high} | Low: ${day.low}</p>
+                    </div>
+                </article>
+            `;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const weatherGrid = document.querySelector('#weather-grid');
+            const latestGrid = document.querySelector('#weather-latest-panel .article-grid');
+            const mostReadGrid = document.querySelector('#weather-most-read-panel .article-grid');
+
+            if (weatherGrid) {
+                weatherGrid.innerHTML = weatherForecast.map(renderWeatherCard).join('');
+            }
+            if (latestGrid) {
+                latestGrid.innerHTML = weatherArticles.map(renderArticleCard).join('');
+            }
+            if (mostReadGrid) {
+                mostReadGrid.innerHTML = weatherMostRead.map(renderArticleCard).join('');
+            }
+        });
+    </script>
+</body>
+</html>

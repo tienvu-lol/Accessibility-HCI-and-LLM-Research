@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en" data-section="page-contact-us">
+<head>
+  <meta charset="utf-8">
+  <title>Contact Us – NovaBank</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header data-section="header" data-component="site-header">
+    <h1 class="visually-hidden">NovaBank</h1>
+    <img src="assets/logo.svg" alt="NovaBank logo" width="120">
+    <nav data-component="primary-nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="checking-index.html">Checking</a>
+      <a href="savings-index.html">Savings</a>
+      <a href="credit-cards-index.html">Credit Cards</a>
+      <a href="mortgage-index.html">Mortgage</a>
+      <a href="auto-loans-index.html">Auto Loans</a>
+      <a href="help-index.html">Help</a>
+      <a href="contact-us-index.html">Contact</a>
+    </nav>
+  </header>
+
+  <section data-component="hero-banner" class="hero-banner" role="region" aria-label="Hero banner">
+    <h1>Contact Us</h1>
+    <p>We’re here to help.</p>
+  </section>
+
+  <main id="main-content" data-section="main" data-component="content-band">
+    <h2>Send us a Message (Demo)</h2>
+    <form id="contact-form" data-component="contact-form" novalidate>
+      <div class="error-summary" tabindex="-1" aria-live="assertive" style="display:none;"></div>
+
+      <label for="contact-name">Full Name</label>
+      <input type="text" id="contact-name" name="Full Name" required>
+      <span class="error" aria-live="polite"></span>
+
+      <label for="contact-email">Email</label>
+      <input type="email" id="contact-email" name="Email" required>
+      <span class="error" aria-live="polite"></span>
+
+      <label for="contact-subject">Subject</label>
+      <input type="text" id="contact-subject" name="Subject" required>
+      <span class="error" aria-live="polite"></span>
+
+      <label for="contact-message">Message</label>
+      <textarea id="contact-message" name="Message" rows="4" required></textarea>
+      <span class="error" aria-live="polite"></span>
+
+      <button type="submit">Send (Demo)</button>
+    </form>
+  </main>
+
+  <footer data-section="footer" data-component="site-footer">
+    <p>&copy; 2024 NovaBank.</p>
+  </footer>
+</body>
+</html>

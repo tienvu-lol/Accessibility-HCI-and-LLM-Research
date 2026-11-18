@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Contact – Xi'an Famous Foods</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header data-section="header" data-component="site-header" class="site-header container">
+    <a href="index.html" class="site-logo" aria-label="Home">Xi'an Famous Foods</a>
+    <button class="nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Open menu">☰</button>
+    <button class="age-gate-trigger" aria-label="Age verification">Enter</button>
+  </header>
+
+  <nav data-section="navigation" data-component="primary-nav" class="primary-nav">
+    <div class="container nav-container">
+      <button class="nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Open menu">☰</button>
+      <ul class="nav-menu" id="primary-nav" aria-expanded="false">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="our-story.html">Our Story</a></li>
+        <li><a href="locations.html">Locations</a></li>
+        <li><a href="contact.html" aria-current="page">Contact</a></li>
+        <li><a href="press.html">Press</a></li>
+        <li><a href="accessibility.html">Accessibility</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main-content" data-section="main">
+    <section data-component="content-band" class="content-band container">
+      <h1>Contact Us</h1>
+      <p>Have a question, feedback, or need assistance? Reach out using the form below or visit one of our locations.</p>
+
+      <!-- Contact form -->
+      <form data-component="contact-form" novalidate>
+        <label>
+          <span>Name</span>
+          <input type="text" name="name" required placeholder="Your name">
+        </label>
+        <label>
+          <span>Email</span>
+          <input type="email" name="email" required placeholder="you@example.com">
+        </label>
+        <label>
+          <span>Subject</span>
+          <input type="text" name="subject" required placeholder="How can we help?">
+        </label>
+        <label>
+          <span>Message</span>
+          <textarea name="message" rows="5" required placeholder="Your message here..."></textarea>
+        </label>
+        <button type="submit">Send Message</button>
+      </form>
+
+      <!-- Simulated form response area -->
+      <div id="form-response" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <footer data-section="footer" data-component="site-footer" class="site-footer">
+    <div class="container footer-container">
+      <div data-component="footer-info" class="footer-section">
+        <h4>About</h4>
+        <p>Family‑owned restaurant serving authentic Xi’an cuisine since 2005.</p>
+      </div>
+      <div data-component="footer-links" class="footer-section">
+        <h4>Quick links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="our-story.html">Our Story</a></li>
+          <li><a href="locations.html">Locations</a></li>
+          <li><a href="contact.html" aria-current="page">Contact</a></li>
+          <li><a href="press.html">Press</a></li>
+          <li><a href="accessibility.html">Accessibility</a></li>
+        </ul>
+      </div>
+      <div data-component="footer-newsletter" class="footer-section">
+        <h4>Stay updated</h4>
+        <form class="newsletter-form" data-component="newsletter-signup">
+          <label>
+            <span>Email address</span>
+            <input type="email" name="email" required placeholder="you@example.com">
+          </label>
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Age gate modal (hidden by default) -->
+  <div id="age-gate-modal" data-component="age-gate" aria-hidden="true">
+    <div class="age-gate-dialog" role="dialog" aria-modal="true" aria-labelledby="age-gate-title">
+      <h2 id="age-gate-title">Age verification</h2>
+      <p>Our menu includes items that may contain alcohol. By entering you confirm you are of legal drinking age.</p>
+      <button type="button">Enter site</button>
+    </div>
+  </div>
+
+  <script>
+    // Simple client-side form simulation (no actual submission)
+    const form = document.querySelector('[data-component="contact-form"]');
+    const responseDiv = document.getElementById('form-response');
+    if (form) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        // Gather values (not stored)
+        const name = form.elements.name.value.trim();
+        const email = form.elements.email.value.trim();
+        const subject = form.elements.subject.value.trim();
+        const message = form.elements.message.value.trim();
+        if (!name || !email || !subject || !message) {
+          responseDiv.textContent = 'Please fill in all fields.';
+          responseDiv.style.color = '#b22222';
+          return;
+        }
+        // Show simulated success
+        responseDiv.textContent = `Thanks, ${name}! We’ve received your message about "${subject}" and will reply to ${email} shortly (demo).`;
+        responseDiv.style.color = '#2e8b57';
+        form.reset();
+        // Clear after 5 seconds
+        setTimeout(() => { responseDiv.textContent = ''; }, 5000);
+      });
+    }
+  </script>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>WeatherNow – Monthly Forecast for Ashburn, VA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <header data-section="header" data-component="site-header">
+    <div class="demo-premium-banner" aria-label="Demo Premium – Not functional" style="background:#ffeb3b;color:#222;padding:.5rem;text-align:center;font-size:.875rem;">
+      Demo Premium – Not functional
+    </div>
+    <h1>WeatherNow</h1>
+    <form class="location-search" data-component="location-search">
+      <label for="location-input-monthly" class="visually-hidden">Location search</label>
+      <input type="text" id="location-input-monthly" placeholder="Enter location (e.g., Ashburn, VA)" aria-label="Location search">
+      <button type="button">Search</button>
+    </form>
+  </header>
+  <nav data-section="navigation" data-component="primary-nav">
+    <ul class="nav-list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="today.html">Today</a></li>
+      <li><a href="radar.html">Radar</a></li>
+      <li><a href="news.html">News</a></li>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="hourly.html">Hourly</a></li>
+      <li><a href="tenday.html">10‑Day</a></li>
+      <li><a href="monthly.html" aria-current="page">Monthly</a></li>
+      <li><a href="allergy.html">Allergies</a></li>
+    </ul>
+  </nav>
+  <main id="main-content" data-section="main" class="main-content">
+    <section data-section="monthly-forecast" data-component="hero">
+      <h2>Monthly Forecast</h2>
+      <div id="monthly-container">Loading&hellip;</div>
+      <button id="unit-toggle-monthly" aria-pressed="false">°C</button>
+    </section>
+
+    <section data-section="alerts" data-component="alert-filters">
+      <h3>Alert Filters</h3>
+      <div class="alert-filter-group">
+        <label><input type="checkbox" class="alert-filter" value="thunderstorm"> Thunderstorm</label>
+        <label><input type="checkbox" class="alert-filter" value="flood"> Flood</label>
+        <label><input type="checkbox" class="alert-filter" value="heat"> Heat</label>
+        <label><input type="checkbox" class="alert-filter" value="winter"> Winter</label>
+      </div>
+      <div id="demo-alert-banner" role="alert" aria-live="assertive" style="display:none;background:#ffeb3b;color:#222;padding:1rem;margin-top:1rem;">
+        <strong>Demo Alert:</strong> Selected conditions are active. <button id="close-alert-banner">Close</button>
+      </div>
+    </section>
+  </main>
+  <footer data-section="footer" data-component="site-footer">
+    &copy; 2026 WeatherNow. All rights reserved. <a href="help.html">Help</a> | <a href="about.html">About</a>
+  </footer>
+  <script>
+    // Generate 30 days of demo data (same as used in today.html)
+    const monthlyData = Array.from({length: 30}, (_, i) => ({
+      day: i+1,
+      highF: Math.round(70 + Math.sin(i/5)*5),
+      lowF: Math.round(50 + Math.sin(i/5)*5),
+      condition: ["Sunny","Partly Cloudy","Cloudy","Rain"][i%4],
+      precip: Math.round(Math.random()*30)
+    }));
+
+    function renderMonthly() {
+      const container = document.getElementById('monthly-container');
+      container.innerHTML = '';
+      monthlyData.forEach(d => {
+        const div = document.createElement('div');
+        div.style.margin = '0.25rem 0';
+        div.innerHTML = `Day ${d.day}: ${d.highF}°/${d.lowF}° ${d.condition} (${d.precip}% precip)`;
+        container.appendChild(div);
+      });
+    }
+
+    // Unit toggle demo
+    const unitBtn = document.getElementById('unit-toggle-monthly');
+    let isC = false;
+    unitBtn.addEventListener('click', () => {
+      isC = !isC;
+      unitBtn.textContent = isC ? '°F' : '°C';
+      unitBtn.setAttribute('aria-pressed', isC);
+    });
+
+    // Location search demo
+    const searchForm = document.querySelector('.location-search form');
+    if (searchForm) {
+      searchForm.addEventListener('submit', e => {
+        e.preventDefault();
+        const input = searchForm.querySelector('input');
+        const val = input.value.trim();
+        if (val) {
+          alert(`Demo: showing forecast for "${val}". (No real data)`);
+          input.value = '';
+        }
+      });
+    }
+
+    // Alert filters demo
+    const alertCheckboxes = document.querySelectorAll('.alert-filter input[type="checkbox"]');
+    const alertBanner = document.getElementById('demo-alert-banner');
+    if (alertCheckboxes.length && alertBanner) {
+      alertCheckboxes.forEach(cb => {
+        cb.addEventListener('change', () => {
+          const anyChecked = Array.from(alertCheckboxes).some(c => c.checked);
+          alertBanner.style.display = anyChecked ? 'block' : 'none';
+        });
+      });
+    }
+    const closeBanner = document.getElementById('close-alert-banner');
+    if (closeBanner) {
+      closeBanner.addEventListener('click', () => {
+        document.getElementById('demo-alert-banner').style.display = 'none';
+      });
+    }
+
+    // Initial render
+    renderMonthly();
+  </script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>JavaScript Notes & Reference – Fictional Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <header data-section="header" data-component="site-header">
+    <div class="site-logo">Fictional Dev</div>
+    <nav class="primary-nav" data-component="primary-nav" aria-label="Primary">
+      <button aria-controls="primary-menu" aria-expanded="false">Menu</button>
+      <ul id="primary-menu" class="primary-nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="tips.html">Tips</a></li>
+        <li><a href="javascript.html">JS Notes</a></li>
+        <li><a href="speaking-and-training.html">Speaking</a></li>
+        <li><a href="uses.html">Uses</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content" data-section="main">
+    <h1>JavaScript Notes & Reference</h1>
+    <p>A quick reference for modern JavaScript features.</p>
+
+    <section data-component="card-grid" data-section="js-reference">
+      <h2>Reference Items</h2>
+      <div id="js-container" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <footer data-section="footer" data-component="site-footer">
+    <p>&copy; 2026 Fictional Dev. All rights reserved.</p>
+    <nav aria-label="Footer">
+      <a href="index.html">Home</a> |
+      <a href="about.html">About</a> |
+      <a href="contact.html">Contact</a>
+    </nav>
+  </footer>
+
+  <script>
+    // Inline dataset for JavaScript reference
+    const javascriptData = [
+      {topic: "let & const", summary: "Block‑scoped variable declarations.", snippet: "let x = 1;\nconst y = 2;"},
+      {topic: "Arrow functions", summary: "Concise syntax with lexical this.", snippet: "const add = (a, b) => a + b;"},
+      {topic: "Template literals", summary: "String interpolation and multi‑line strings.", snippet: `const msg = \`Hello, ${name}!\`;`},
+      {topic: "Destructuring", summary: "Unpack values from arrays or objects.", snippet: "const [a, b] = [1, 2];\nconst {x, y} = {x:10, y:20};"},
+      {topic: "Default parameters", summary: "Function parameters with default values.", snippet: "function greet(name = 'Guest') { return `Hi ${name}`; }"},
+      {topic: "Rest & spread", summary: "Collect arguments or expand iterables.", snippet: "function sum(...nums) { return nums.reduce((a,b)=>a+b,0); }\nconst copy = [...arr];"},
+      {topic: "Modules (ESM)", summary: "Export and import bindings between files.", snippet: "export function foo(){};\nimport {foo} from './foo.js';"},
+      {topic: "Promises", summary: "Asynchronous operation placeholder.", snippet: "fetch('/data').then(r=>r.json()).then(d=>console.log(d));"},
+      {topic: "Async/await", summary: "Syntactic sugar over promises.", snippet: "async function load() { const resp = await fetch('/data'); const data = await resp.json(); return data; }"},
+      {topic: "Map & Set", summary: "Key‑value collections and unique value sets.", snippet: "const m = new Map(); m.set('key','val');\nconst s = new Set([1,2,2,3]); // {1,2,3}"},
+      {topic: "Classes", summary: "Syntactic sugar over prototype‑based inheritance.", snippet: "class Rectangle { constructor(w,h){this.w=w;this.h=h;} area(){return this.w*this.h;}}"},
+      {topic: "Optional chaining", summary: "Safe property access.", snippet: "const zip = user?.address?.zipcode;"}
+    ];
+
+    function renderJS(container, items) {
+      container.innerHTML = '';
+      if (items.length === 0) {
+        const msg = document.createElement('p');
+        msg.textContent = 'No reference items.';
+        container.appendChild(msg);
+        return;
+      }
+      const grid = document.createElement('div');
+      grid.className = 'card-grid';
+      items.forEach(item => {
+        const card = document.createElement('article');
+        card.className = 'card';
+        card.dataset.component = 'project-card';
+        card.dataset.instance = Math.random().toString(36).substr(2,9);
+        // Escape HTML in snippet for display
+        const escapedSnippet = item.snippet.replace(/[&<>"']/g, tag => ({
+          '&': '&amp;',
+          '<': '&lt;',
+          '>': '&gt;',
+          '"': '&quot;',
+          "'": '&#39;'
+        }[tag]));
+        card.innerHTML = `
+          <img src="assets/placeholder.svg" alt="${item.topic} thumbnail">
+          <div class="card-body">
+            <h3>${item.topic}</h3>
+            <p>${item.summary}</p>
+            <pre><code>${escapedSnippet}</code></pre>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+      container.appendChild(grid);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const container = document.getElementById('js-container');
+      if (typeof renderJS === 'function') {
+        renderJS(container, javascriptData);
+      }
+    });
+  </script>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

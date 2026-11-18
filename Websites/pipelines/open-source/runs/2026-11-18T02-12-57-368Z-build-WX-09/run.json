@@ -1,0 +1,415 @@
+{
+  "run_id": "2026-11-18T02-12-57-368Z-build-WX-09",
+  "phase": "build",
+  "target": "WX-09",
+  "category": "weather",
+  "slot": 9,
+  "model_group": "open-source",
+  "model": {
+    "model_id": "unsloth/Llama-3.3-70B-Instruct-GGUF",
+    "model_version": "Q8_0",
+    "model_provider_or_runtime": "vt-arc-falcon-llamacpp (OpenAI-compatible chat completions at http://localhost:8082/v1)",
+    "weights_url": "https://huggingface.co/unsloth/Llama-3.3-70B-Instruct-GGUF",
+    "license": "llama3.3-community",
+    "open_weights": true,
+    "eligibility_note": "Open weights. Licence is the Llama 3.3 Community License Agreement (HF licence tag llama3.3), read 2026-11-17 by the orchestrator on the quant repo and the Meta Llama 3.3 model card. A custom community licence with acceptable-use and scale conditions, NOT OSI-approved: this slot is open-weight, not open-source. Quantisation Q8_0. Served self-hosted via llama.cpp on VT ARC Falcon over an SSH tunnel on localhost:8082; serving history, same model and quant: fal034:42003 (2026-11-17, twelve slot-09 research runs and one build), fal052:49161 (2026-11-17, current). max_tokens is 16000 for this slot, not the 32000 used by slots 07, 08 and 10: this server reports n_ctx 48128 per slot, so a 32000-token output cap left only about 16000 tokens for the prompt, and every slot-09 build failed at the correction stage, where the conversation carries the build history plus the QC failure list. Recorded as a deliberate per-slot difference in generation parameters.",
+    "params": {
+      "temperature": 0.3,
+      "max_tokens": 16000
+    }
+  },
+  "operator": "Samhith Varma Yallamraju",
+  "status": "completed",
+  "prepared_at": "2026-11-18T02:12:57.373Z",
+  "generation_started_at": "2026-11-18T02:12:57.373Z",
+  "generation_completed_at": "2026-11-18T02:22:21.462Z",
+  "tool_access": "chat-completions API only: no browsing, no shell, no filesystem. The orchestrator wrote every file and ran every check.",
+  "budget": {
+    "max_build_turns": 28,
+    "max_repair_rounds": 0,
+    "max_tokens_per_request": 16000,
+    "temperature": 0.3,
+    "history_exchanges_kept": 3
+  },
+  "approved_source": {
+    "source_name": "NBC Weather",
+    "source_url": "https://www.nbcnews.com/news/weather",
+    "verified_at": "2026-11-17",
+    "verification_method": "HTTP GET",
+    "verification_result": "verified",
+    "evidence_reference": "pipelines/open-source/research/evidence/WX-09-http-2026-11-17.json",
+    "complexity": "medium",
+    "stack_clues": "unknown",
+    "limitations": "https://www.nbcnews.com/nightly-news/video/tornado-warnings-across-the-northeast-273390661516 (status: unknown, reason: not fetched)",
+    "approved_at": "2026-11-17",
+    "approved_by": "Samhith Varma Yallamraju",
+    "approval_reference": "Project lead approval of all slot-09 sources given 2026-11-17 in the Claude Code orchestration session; see research/WX-09.md"
+  },
+  "approved_page_map": [
+    {
+      "url": "https://www.nbcnews.com/news/weather",
+      "title": "Weather News: Headlines and Video on Storms, Climate Change, Hurricanes and More | NBC News",
+      "local_file": "index.html"
+    },
+    {
+      "url": "https://www.nbcnews.com/weather/floods/huge-waves-pummel-california-coast-forcing-closure-iconic-piers-rcna609141",
+      "title": "Huge waves pummel the California coast, forcing closure of iconic piers",
+      "local_file": "floods-in-california.html"
+    },
+    {
+      "url": "https://www.nbcnews.com/floods",
+      "title": "Floods: Latest news on flooding in the U.S. | NBC News",
+      "local_file": "floods.html"
+    },
+    {
+      "url": "https://www.nbcnews.com/weather/storms/weekend-storm-bring-seasons-first-widespread-freeze-millions-us-rcna609181",
+      "title": "Weekend storm brings season’s first widespread freeze to millions across U.S.",
+      "local_file": "weekend-storm.html"
+    },
+    {
+      "url": "https://www.nbcnews.com/science/environment",
+      "title": "Environment News: Climate Change, Energy & Conservation - NBC News | NBC News",
+      "local_file": "environment.html"
+    },
+    {
+      "url": "https://www.nbcnews.com/weather/storms/heavy-rains-cause-flash-flooding-north-georgia-forcing-water-rescues-e-rcna607627",
+      "title": "Heavy rain causes flash flooding in north Georgia, forcing water rescues and evacuations",
+      "local_file": "flash-flooding-in-georgia.html"
+    },
+    {
+      "url": "https://www.nbcnews.com/nightly-news/video/powerful-storms-strike-on-both-coasts-273486917980",
+      "title": "Powerful storms strike on both coasts",
+      "local_file": "powerful-storms.html"
+    },
+    {
+      "url": "https://www.nbcnews.com/tech/tech-news/twitch-middle-tier-streamers-making-living-platform-rcna608808",
+      "title": "The future of Twitch might belong to its smaller streamers",
+      "local_file": "twitch-streamers.html"
+    },
+    {
+      "url": "https://www.nbcnews.com/news/us-news/victim-washington-dc-gym-shooting-gun-control-activist-rcna609705",
+      "title": "One of the victims of the Washington, D.C., gym shooting is a gun control activist",
+      "local_file": "gym-shooting-victim.html"
+    }
+  ],
+  "protocol_snapshots": [
+    {
+      "path": "Rules.md",
+      "sha256": "04b1c3e38b76f2aff3aef869d67370bb4532cd8f9ab5e22ac8276f26cbb859bf"
+    },
+    {
+      "path": "MODEL_ALLOCATION.md",
+      "sha256": "7e9487530a6e80b35af48d0691951dafc2fffea39798c81a3c49203909148d30"
+    },
+    {
+      "path": "pipelines/open-source/config.json",
+      "sha256": "8c24eaf19a0efcde9dcf52301b49880c7f6330a2a407ae046d52a574085653e2"
+    },
+    {
+      "path": "pipelines/open-source/categories.json",
+      "sha256": "8180966e55daa24799e51106645e93fd5807dde470765ab8b3b38d3f922c867b"
+    },
+    {
+      "path": "pipelines/open-source/prompts/system.md",
+      "sha256": "61bc24a57de14bd6a662cd6b5f98d0cfc57bf47e187fc58a97831bf1f272b4ee"
+    },
+    {
+      "path": "pipelines/open-source/prompts/build.md",
+      "sha256": "6096ab8b698af7a99d8ddaf1534cc95f41844d1d00cdd1fce740123b3146ab6a"
+    },
+    {
+      "path": "pipelines/open-source/prompts/repair.md",
+      "sha256": "8a84e51995736607b3efa6f5b2d76e52692423c2c26b03409afb4afa3c6586d6"
+    },
+    {
+      "path": "pipelines/open-source/models.json",
+      "sha256": "582c3bcd03420379259f8896d72dd3a1be5cff7ecfb3700fe6c9302ae958c83a"
+    },
+    {
+      "path": "metadata/source-inventories/weather.csv",
+      "sha256": "15c72aa19b4d2ae1981c0a287f2c10facd6f134bc6ef3cdea4b418b9b94724f6"
+    },
+    {
+      "path": "metadata/assignments.csv",
+      "sha256": "75aa44ee9046372a60e2b9bafe18f1e0dbb3f7c5bd80c29f49f4c060050bca06"
+    }
+  ],
+  "turns": [
+    {
+      "turn": 1,
+      "label": "plan",
+      "status_line": "CONTINUE",
+      "prose_chars": 2692,
+      "files_written": [],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 675,
+        "prompt_tokens": 4849,
+        "total_tokens": 5524,
+        "prompt_tokens_details": {
+          "cached_tokens": 560
+        }
+      },
+      "at": "2026-11-18T02:14:25.904Z"
+    },
+    {
+      "turn": 2,
+      "label": "files-2",
+      "status_line": "CONTINUE",
+      "prose_chars": 87,
+      "files_written": [
+        "css/styles.css",
+        "js/main.js",
+        "index.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 637,
+        "prompt_tokens": 5689,
+        "total_tokens": 6326,
+        "prompt_tokens_details": {
+          "cached_tokens": 5523
+        }
+      },
+      "at": "2026-11-18T02:15:49.161Z"
+    },
+    {
+      "turn": 3,
+      "label": "files-3",
+      "status_line": "CONTINUE",
+      "prose_chars": 46,
+      "files_written": [
+        "404.html",
+        "floods-in-california.html",
+        "floods.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 792,
+        "prompt_tokens": 6494,
+        "total_tokens": 7286,
+        "prompt_tokens_details": {
+          "cached_tokens": 6325
+        }
+      },
+      "at": "2026-11-18T02:17:29.267Z"
+    },
+    {
+      "turn": 4,
+      "label": "files-4",
+      "status_line": "CONTINUE",
+      "prose_chars": 46,
+      "files_written": [
+        "weekend-storm.html",
+        "environment.html",
+        "flash-flooding-in-georgia.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 843,
+        "prompt_tokens": 7448,
+        "total_tokens": 8291,
+        "prompt_tokens_details": {
+          "cached_tokens": 7285
+        }
+      },
+      "at": "2026-11-18T02:19:22.555Z"
+    },
+    {
+      "turn": 5,
+      "label": "files-5",
+      "status_line": "CONTINUE",
+      "prose_chars": 46,
+      "files_written": [
+        "powerful-storms.html",
+        "twitch-streamers.html",
+        "gym-shooting-victim.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 846,
+        "prompt_tokens": 3481,
+        "total_tokens": 4327,
+        "prompt_tokens_details": {
+          "cached_tokens": 560
+        }
+      },
+      "at": "2026-11-18T02:21:12.132Z"
+    },
+    {
+      "turn": 6,
+      "label": "files-6",
+      "status_line": "COMPLETE",
+      "prose_chars": 45,
+      "files_written": [
+        "README.md",
+        "fidelity-notes.md",
+        "component-inventory.json",
+        "generation-metadata.json"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 505,
+        "prompt_tokens": 3677,
+        "total_tokens": 4182,
+        "prompt_tokens_details": {
+          "cached_tokens": 563
+        }
+      },
+      "at": "2026-11-18T02:22:18.306Z"
+    }
+  ],
+  "rejected_files": [],
+  "qc_runs": [
+    {
+      "started_at": "2026-11-18T02:22:18.324Z",
+      "completed_at": "2026-11-18T02:22:21.462Z",
+      "exit_code": 1,
+      "executed": true,
+      "passed": false,
+      "outcome": "fail",
+      "failures": [
+        "no data-section/data-component metadata in 404.html",
+        "placeholder href=\"#\" in environment.html",
+        "no data-section/data-component metadata in environment.html",
+        "placeholder href=\"#\" in flash-flooding-in-georgia.html",
+        "no data-section/data-component metadata in flash-flooding-in-georgia.html",
+        "placeholder href=\"#\" in floods-in-california.html",
+        "no data-section/data-component metadata in floods-in-california.html",
+        "placeholder href=\"#\" in floods.html",
+        "no data-section/data-component metadata in floods.html",
+        "placeholder href=\"#\" in gym-shooting-victim.html",
+        "no data-section/data-component metadata in gym-shooting-victim.html",
+        "placeholder href=\"#\" in index.html",
+        "placeholder href=\"#\" in index.html",
+        "placeholder href=\"#\" in index.html",
+        "placeholder href=\"#\" in index.html",
+        "no data-section/data-component metadata in index.html",
+        "placeholder href=\"#\" in powerful-storms.html",
+        "no data-section/data-component metadata in powerful-storms.html",
+        "placeholder href=\"#\" in twitch-streamers.html",
+        "no data-section/data-component metadata in twitch-streamers.html",
+        "placeholder href=\"#\" in weekend-storm.html",
+        "no data-section/data-component metadata in weekend-storm.html",
+        "axe color-contrast (serious) @1280 404.html: 1 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @1280 environment.html: 2 node(s) e.g. a[href=\"index.html\"]",
+        "axe target-size (serious) @1280 environment.html: 2 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @1280 flash-flooding-in-georgia.html: 2 node(s) e.g. a[href=\"index.html\"]",
+        "axe target-size (serious) @1280 flash-flooding-in-georgia.html: 2 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @1280 floods-in-california.html: 2 node(s) e.g. a[href=\"index.html\"]",
+        "axe target-size (serious) @1280 floods-in-california.html: 2 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @1280 floods.html: 2 node(s) e.g. a[href=\"index.html\"]",
+        "axe target-size (serious) @1280 floods.html: 2 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @1280 gym-shooting-victim.html: 2 node(s) e.g. a[href=\"index.html\"]",
+        "axe target-size (serious) @1280 gym-shooting-victim.html: 2 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @1280 index.html: 4 node(s) e.g. li:nth-child(1) > a[href=\"#\"]",
+        "axe target-size (serious) @1280 index.html: 4 node(s) e.g. li:nth-child(1) > a[href=\"#\"]",
+        "axe color-contrast (serious) @1280 powerful-storms.html: 2 node(s) e.g. a[href=\"index.html\"]",
+        "axe target-size (serious) @1280 powerful-storms.html: 2 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @1280 twitch-streamers.html: 2 node(s) e.g. a[href=\"index.html\"]",
+        "axe target-size (serious) @1280 twitch-streamers.html: 2 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @1280 weekend-storm.html: 2 node(s) e.g. a[href=\"index.html\"]",
+        "axe target-size (serious) @1280 weekend-storm.html: 2 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @375 404.html: 1 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @375 environment.html: 2 node(s) e.g. a[href=\"index.html\"]",
+        "axe target-size (serious) @375 environment.html: 2 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @375 flash-flooding-in-georgia.html: 2 node(s) e.g. a[href=\"index.html\"]",
+        "axe target-size (serious) @375 flash-flooding-in-georgia.html: 2 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @375 floods-in-california.html: 2 node(s) e.g. a[href=\"index.html\"]",
+        "axe target-size (serious) @375 floods-in-california.html: 2 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @375 floods.html: 2 node(s) e.g. a[href=\"index.html\"]",
+        "axe target-size (serious) @375 floods.html: 2 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @375 gym-shooting-victim.html: 2 node(s) e.g. a[href=\"index.html\"]",
+        "axe target-size (serious) @375 gym-shooting-victim.html: 2 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @375 index.html: 4 node(s) e.g. li:nth-child(1) > a[href=\"#\"]",
+        "axe target-size (serious) @375 index.html: 4 node(s) e.g. li:nth-child(1) > a[href=\"#\"]",
+        "axe color-contrast (serious) @375 powerful-storms.html: 2 node(s) e.g. a[href=\"index.html\"]",
+        "axe target-size (serious) @375 powerful-storms.html: 2 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @375 twitch-streamers.html: 2 node(s) e.g. a[href=\"index.html\"]",
+        "axe target-size (serious) @375 twitch-streamers.html: 2 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @375 weekend-storm.html: 2 node(s) e.g. a[href=\"index.html\"]",
+        "axe target-size (serious) @375 weekend-storm.html: 2 node(s) e.g. a[href=\"index.html\"]"
+      ],
+      "failure_count": 60,
+      "warnings": [],
+      "axe": {
+        "color-contrast": 42,
+        "target-size": 40
+      },
+      "pages": 10,
+      "files": 16,
+      "qc_tool_sha256": "e9be905d19e7181e30d8291bcb1511d4469bdc9e36c20c0efe21e2d3fcf54513",
+      "report": "qc-initial-2026-11-18T02-22-18-323Z.json",
+      "log": "qc-initial-2026-11-18T02-22-18-323Z.log",
+      "stdout_tail": "FAIL axe target-size (serious) @1280 powerful-storms.html: 2 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @1280 twitch-streamers.html: 2 node(s) e.g. a[href=\"index.html\"]\nFAIL axe target-size (serious) @1280 twitch-streamers.html: 2 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @1280 weekend-storm.html: 2 node(s) e.g. a[href=\"index.html\"]\nFAIL axe target-size (serious) @1280 weekend-storm.html: 2 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @375 404.html: 1 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @375 environment.html: 2 node(s) e.g. a[href=\"index.html\"]\nFAIL axe target-size (serious) @375 environment.html: 2 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @375 flash-flooding-in-georgia.html: 2 node(s) e.g. a[href=\"index.html\"]\nFAIL axe target-size (serious) @375 flash-flooding-in-georgia.html: 2 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @375 floods-in-california.html: 2 node(s) e.g. a[href=\"index.html\"]\nFAIL axe target-size (serious) @375 floods-in-california.html: 2 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @375 floods.html: 2 node(s) e.g. a[href=\"index.html\"]\nFAIL axe target-size (serious) @375 floods.html: 2 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @375 gym-shooting-victim.html: 2 node(s) e.g. a[href=\"index.html\"]\nFAIL axe target-size (serious) @375 gym-shooting-victim.html: 2 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @375 index.html: 4 node(s) e.g. li:nth-child(1) > a[href=\"#\"]\nFAIL axe target-size (serious) @375 index.html: 4 node(s) e.g. li:nth-child(1) > a[href=\"#\"]\nFAIL axe color-contrast (serious) @375 powerful-storms.html: 2 node(s) e.g. a[href=\"index.html\"]\nFAIL axe target-size (serious) @375 powerful-storms.html: 2 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @375 twitch-streamers.html: 2 node(s) e.g. a[href=\"index.html\"]\nFAIL axe target-size (serious) @375 twitch-streamers.html: 2 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @375 weekend-storm.html: 2 node(s) e.g. a[href=\"index.html\"]\nFAIL axe target-size (serious) @375 weekend-storm.html: 2 node(s) e.g. a[href=\"index.html\"]\n",
+      "note": null
+    }
+  ],
+  "repair_rounds": [],
+  "retries": [],
+  "human_edits": [
+    {
+      "by": "orchestrator script",
+      "at": "2026-11-18T02:22:21.463Z",
+      "what": "Wrote the model's emitted files, normalized generation-metadata.json provenance fields, and set validation_summary from the recorded QC run. No site markup, style or script was authored or edited by hand."
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 31638,
+    "completion_tokens": 4298,
+    "total_tokens": 35936,
+    "requests": 6,
+    "retries": 0
+  },
+  "errors": [],
+  "outputs": {
+    "site": "weather/open-source/WX-09",
+    "transcript": "pipelines/open-source/runs/2026-11-18T02-12-57-368Z-build-WX-09/transcript.json"
+  },
+  "delivered": {
+    "files": [
+      "404.html",
+      "README.md",
+      "component-inventory.json",
+      "css/styles.css",
+      "environment.html",
+      "fidelity-notes.md",
+      "flash-flooding-in-georgia.html",
+      "floods-in-california.html",
+      "floods.html",
+      "generation-metadata.json",
+      "gym-shooting-victim.html",
+      "index.html",
+      "js/main.js",
+      "powerful-storms.html",
+      "twitch-streamers.html",
+      "weekend-storm.html"
+    ],
+    "file_count": 16,
+    "bytes": 11411,
+    "pages_in_map": 9,
+    "missing_required": [],
+    "model_claimed_complete": true,
+    "delivered_complete": true,
+    "turns_used": 6,
+    "turn_budget": 28
+  },
+  "initial_artifact": "pipelines/open-source/runs/2026-11-18T02-12-57-368Z-build-WX-09/initial",
+  "provenance": {
+    "wrote": true,
+    "modelEmittedValidMetadata": true
+  },
+  "acceptance": "not accepted: a QC result is not acceptance, and interaction review plus human acceptance happen outside this script"
+}

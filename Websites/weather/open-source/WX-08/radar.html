@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>WeatherNow – Radar for Ashburn, VA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <header data-section="header" data-component="site-header">
+    <div class="demo-premium-banner" aria-label="Demo Premium – Not functional" style="background:#ffeb3b;color:#222;padding:.5rem;text-align:center;font-size:.875rem;">
+      Demo Premium – Not functional
+    </div>
+    <h1>WeatherNow</h1>
+    <form class="location-search" data-component="location-search">
+      <label for="location-input-radar" class="visually-hidden">Location search</label>
+      <input type="text" id="location-input-radar" placeholder="Enter location (e.g., Ashburn, VA)" aria-label="Location search">
+      <button type="button">Search</button>
+    </form>
+  </header>
+  <nav data-section="navigation" data-component="primary-nav">
+    <ul class="nav-list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="today.html">Today</a></li>
+      <li><a href="radar.html" aria-current="page">Radar</a></li>
+      <li><a href="news.html">News</a></li>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="hourly.html">Hourly</a></li>
+      <li><a href="tenday.html">10‑Day</a></li>
+      <li><a href="monthly.html">Monthly</a></li>
+      <li><a href="allergy.html">Allergies</a></li>
+    </ul>
+  </nav>
+  <main id="main-content" data-section="main" class="main-content">
+    <section data-section="radar" data-component="radar-placeholder">
+      <h2>Radar Map (Demo)</h2>
+      <svg width="300" height="300" aria-labelledby="radar-title radar-desc" role="img">
+        <title id="radar-title">Radar map centered on Ashburn, VA</title>
+        <desc id="radar-desc">A static placeholder showing concentric circles representing radar returns; green for light rain, yellow for moderate, red for heavy.</desc>
+        <circle cx="150" cy="150" r="130" fill="none" stroke="#0f0" stroke-width="2"/>
+        <circle cx="150" cy="150" r="100" fill="none" stroke="#ff0" stroke-width="2"/>
+        <circle cx="150" cy="150" r="70" fill="none" stroke="#f00" stroke-width="2"/>
+        <circle cx="150" cy="150" r="40" fill="none" stroke="#f00" stroke-width="4"/>
+        <!-- Simple marker for location -->
+        <circle cx="150" cy="150" r="3" fill="#000"/>
+      </svg>
+      <p>This is a non‑functional demo radar image. In a real site this would be an interactive map.</p>
+      <button type="button" id="refresh-radar">Refresh Demo (no effect)</button>
+    </section>
+  </main>
+  <footer data-section="footer" data-component="site-footer">
+    &copy; 2026 WeatherNow. All rights reserved. <a href="help.html">Help</a> | <a href="about.html">About</a>
+  </footer>
+  <script>
+    // Demo refresh button (does nothing)
+    document.getElementById('refresh-radar').addEventListener('click', () => {
+      alert('Demo: radar refreshed. No real data changed.');
+    });
+  </script>
+  <script src="js/main.js"></script>
+</body>
+</html>

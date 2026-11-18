@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en" data-section="html">
+<head>
+  <meta charset="utf-8">
+  <title>Vogue Vista – Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header -->
+  <header data-section="header">
+    <div class="site-header">
+      <div class="logo" data-component="site-logo">Vogue Vista</div>
+      <nav data-component="primary-nav" aria-label="Main navigation">
+        <button class="hamburger" aria-controls="primary-menu" aria-expanded="false" aria-label="Menu">
+          ☰
+        </button>
+        <ul id="primary-menu" aria-hidden="true">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="fashion-index.html">Fashion</a></li>
+          <li><a href="beauty-index.html">Beauty</a></li>
+          <li><a href="travel-dining-index.html">Travel &amp; Dining</a></li>
+          <li><a href="red-carpet-index.html">Red Carpet</a></li>
+          <li><a href="newsletter-index.html">Newsletter</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section data-component="hero" aria-label="Featured story">
+    <h1>Welcome to Vogue Vista</h1>
+    <p>Explore the latest trends, beauty tips, and runway highlights.</p>
+  </section>
+
+  <!-- Content Band 1 -->
+  <main id="main-content" data-section="main">
+    <section data-component="content-band" aria-label="Featured articles">
+      <h2>Featured Articles</h2>
+      <ul class="card-grid" id="search-results">
+        <!-- Placeholder cards will be injected by JS if needed -->
+        <li class="card"><h3>Style Spotlight</h3><p>Discover this season's must‑have pieces.</p></li>
+        <li class="card"><h3>Beauty Basics</h3><p>Essential skincare routines for glowing skin.</p></li>
+        <li class="card"><h3>Travel Trends</h3><p>Top destinations for fashion‑forward travelers.</p></li>
+      </ul>
+    </section>
+
+    <!-- Content Band 2 -->
+    <section data-component="content-band" aria-label="Search articles">
+      <h2>Search Articles</h2>
+      <label for="search-input">Search:</label>
+      <input type="search" id="search-input" placeholder="Type to filter articles">
+      <ul class="card-grid" id="search-results"></ul>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer data-section="footer">
+    <p>&copy; 2026 Vogue Vista. All rights reserved.</p>
+  </footer>
+</body>
+</html>

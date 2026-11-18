@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Fictional Mart – Store Locator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="site-header" data-section="header" data-component="site-header">
+    <h1>Fictional Mart</h1>
+    <nav class="primary-nav" data-section="navigation" data-component="primary-nav">
+      <a href="index.html">Home</a>
+      <a href="target-circle.html">Target Circle</a>
+      <a href="gift-registry.html">Gift Registry</a>
+      <a href="weekly-ad.html">Weekly Ad</a>
+      <a href="store-locator.html" aria-current="page">Store Locator</a>
+      <a href="shop-all-categories.html">Shop All Categories</a>
+      <a href="top-deals.html">Top Deals</a>
+      <button type="button" aria-label="Demo cart – no real cart" data-component="cart-link">Cart (demo)</button>
+      <button type="button" aria-label="Demo account – no real account" data-component="account-link">Account (demo)</button>
+    </nav>
+  </header>
+
+  <main id="main-content" class="content-band" data-section="main">
+    <section class="hero" data-section="hero" data-component="hero">
+      <h2>Stores Near Me</h2>
+      <p>Find your local Fictional Mart.</p>
+    </section>
+
+    <section data-section="store-list" data-component="store-list">
+      <h2 class="section-title">Nearby Stores</h2>
+      <ul id="store-list" class="store-list" data-component="store-list"></ul>
+    </section>
+  </main>
+
+  <footer class="site-footer" data-section="footer" data-component="site-footer">
+    &copy; 2027 Fictional Mart. All rights reserved.
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

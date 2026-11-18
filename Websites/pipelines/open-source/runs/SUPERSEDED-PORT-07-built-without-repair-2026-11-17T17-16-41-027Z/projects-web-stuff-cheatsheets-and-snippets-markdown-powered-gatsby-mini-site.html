@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cheatsheets and Snippets - Markdown Powered Gatsby Mini Site - Alex Morgan's Portfolio</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  
+  <header class="site-header" data-component="site-header">
+    <div class="container nav-wrapper">
+      <a href="index.html" class="logo">Alex Morgan</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
+        <span class="sr-only">Toggle navigation</span>
+        &#9776;
+      </button>
+      <nav class="primary-nav" id="primary-nav" data-component="primary-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projects.html" aria-current="page">Projects</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="mini-tools.html">Mini-Tools</a></li>
+          <li><a href="all-posts.html">All Posts</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" data-section="project-detail">
+    <div class="container">
+      <h1>Cheatsheets and Snippets - Markdown Powered Gatsby Mini Site</h1>
+      
+      <section data-component="project-detail-layout">
+        <p>A lightweight, static site generator built with Gatsby that allows developers to create and manage code snippets and cheatsheets using Markdown. This project focuses on simplicity, speed, and ease of use for technical writers and developers.</p>
+        
+        <h2>Features</h2>
+        <ul>
+          <li>Markdown-based content management.</li>
+          <li>Fast build times with Gatsby.</li>
+          <li>Responsive design for all devices.</li>
+          <li>Easy customization via configuration files.</li>
+        </ul>
+
+        <h2>Installation</h2>
+        <pre><code>npm install gatsby-cheatsheets</code></pre>
+
+        <h2>Usage</h2>
+        <pre><code>gatsby new my-cheatsheets https://github.com/alexmorgan/gatsby-cheatsheets-starter</code></pre>
+
+        <h2>Support</h2>
+        <p>If you find this tool useful, consider supporting its development.</p>
+        <a href="#" class="filter-btn">Support Me</a>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer" data-component="site-footer">
+    <div class="container">
+      <p>&copy; 2026 Alex Morgan. All rights reserved.</p>
+      <p>Built with semantic HTML, CSS, and vanilla JS.</p>
+    </div>
+  </footer>
+
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top">&#8679;</button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

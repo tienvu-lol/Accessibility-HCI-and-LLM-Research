@@ -1,0 +1,74 @@
+[
+  {
+    "component": "site-header",
+    "selector": "header.site-header",
+    "pages": ["index.html", "home.html", "shop-womens.html", "shop-mens.html", "shop-kids-baby.html", "shop-gear.html", "worn-wear.html", "returns.html", "account-register.html", "stories-articles.html", "progress-report.html", "guides-size-fit.html", "repairs.html", "404.html"],
+    "behaviours": ["Mobile nav toggle", "Escape key closes nav"],
+    "keyboard_expectations": ["Tab to logo", "Tab to nav links", "Tab to menu button", "Enter/Space on menu button toggles nav"],
+    "status": "implemented",
+    "validation_state": "not-tested"
+  },
+  {
+    "component": "primary-nav",
+    "selector": "nav.primary-nav",
+    "pages": ["index.html", "home.html", "shop-womens.html", "shop-mens.html", "shop-kids-baby.html", "shop-gear.html", "worn-wear.html", "returns.html", "account-register.html", "stories-articles.html", "progress-report.html", "guides-size-fit.html", "repairs.html", "404.html"],
+    "behaviours": ["Responsive collapse", "Escape key closes nav"],
+    "keyboard_expectations": ["Tab through links", "Escape closes menu"],
+    "status": "implemented",
+    "validation_state": "not-tested"
+  },
+  {
+    "component": "site-footer",
+    "selector": "footer.site-footer",
+    "pages": ["index.html", "home.html", "shop-womens.html", "shop-mens.html", "shop-kids-baby.html", "shop-gear.html", "worn-wear.html", "returns.html", "account-register.html", "stories-articles.html", "progress-report.html", "guides-size-fit.html", "repairs.html", "404.html"],
+    "behaviours": ["Static content"],
+    "keyboard_expectations": ["Tab through links"],
+    "status": "implemented",
+    "validation_state": "not-tested"
+  },
+  {
+    "component": "hero-section",
+    "selector": "section.hero",
+    "pages": ["index.html", "home.html", "worn-wear.html"],
+    "behaviours": ["Static content"],
+    "keyboard_expectations": ["Tab through links"],
+    "status": "implemented",
+    "validation_state": "not-tested"
+  },
+  {
+    "component": "card-grid",
+    "selector": "div.product-grid",
+    "pages": ["index.html", "home.html", "shop-womens.html", "shop-mens.html", "shop-kids-baby.html", "shop-gear.html", "worn-wear.html"],
+    "behaviours": ["Dynamic rendering from inline data", "Filtering", "Add to Cart simulation"],
+    "keyboard_expectations": ["Tab through cards", "Enter/Space on Add to Cart button"],
+    "status": "implemented",
+    "validation_state": "not-tested"
+  },
+  {
+    "component": "filter-bar",
+    "selector": "div.filters",
+    "pages": ["shop-womens.html", "shop-mens.html", "shop-kids-baby.html", "shop-gear.html"],
+    "behaviours": ["Client-side filtering of product grid"],
+    "keyboard_expectations": ["Tab through filter buttons", "Enter/Space to filter"],
+    "status": "intentional-addition",
+    "validation_state": "not-tested"
+  },
+  {
+    "component": "contact-form",
+    "selector": "form",
+    "pages": ["returns.html", "account-register.html"],
+    "behaviours": ["Client-side validation", "Submission simulation"],
+    "keyboard_expectations": ["Tab through fields", "Enter to submit"],
+    "status": "implemented",
+    "validation_state": "not-tested"
+  },
+  {
+    "component": "size-chart",
+    "selector": "div.size-table-container",
+    "pages": ["guides-size-fit.html"],
+    "behaviours": ["Static table display"],
+    "keyboard_expectations": ["Tab through table"],
+    "status": "implemented",
+    "validation_state": "not-tested"
+  }
+]

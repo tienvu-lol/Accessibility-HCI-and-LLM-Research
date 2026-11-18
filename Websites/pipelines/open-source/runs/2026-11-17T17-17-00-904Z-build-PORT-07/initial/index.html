@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atlas Digital Portfolio - Home</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header class="site-header" data-section="header">
+        <div class="container">
+            <a href="index.html" class="site-logo">Atlas Digital</a>
+            <nav class="primary-nav" data-component="primary-nav" aria-label="Main navigation">
+                <ul>
+                    <li><a href="index.html" aria-current="page">Home</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="mini-tools.html">Mini-Tools</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content" data-section="main">
+        <div class="container">
+            <section data-section="hero">
+                <h1>Building Digital Experiences</h1>
+                <p>Welcome to the portfolio of Atlas Digital. I specialize in full-stack development, creative electronics, and strategic marketing solutions. Explore my work below.</p>
+                <a href="projects.html" class="btn">View Projects</a>
+            </section>
+
+            <section data-section="featured-projects" style="margin-top: var(--spacing-lg);">
+                <h2>Featured Work</h2>
+                <p>A selection of recent projects spanning web applications, electronics, and marketing campaigns.</p>
+                <ul class="card-grid" data-component="card-grid">
+                    <li class="card">
+                        <h3 class="card-title"><a href="projects-applications-git-date-extractor-npm-package-and-cli-tool.html">Git-Date-Extractor</a></h3>
+                        <p class="card-meta">Applications</p>
+                        <p>NPM package and CLI tool for extracting commit dates.</p>
+                    </li>
+                    <li class="card">
+                        <h3 class="card-title"><a href="projects-web-stuff-cheatsheets-and-snippets-markdown-powered-gatsby-mini-site.html">Cheatsheets Mini-Site</a></h3>
+                        <p class="card-meta">Web Stuff</p>
+                        <p>Markdown powered Gatsby mini site for developer cheatsheets.</p>
+                    </li>
+                    <li class="card">
+                        <h3 class="card-title"><a href="#">Smart Home Hub</a></h3>
+                        <p class="card-meta">Electronics</p>
+                        <p>ESP32-based home automation controller with custom PCB.</p>
+                    </li>
+                </ul>
+            </section>
+
+            <section data-section="contact" style="margin-top: var(--spacing-lg);">
+                <h2>Contact</h2>
+                <p>Interested in working together? Send me a message.</p>
+                <form id="contact-form" data-component="contact-form" novalidate>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required aria-required="true">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required aria-required="true">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required aria-required="true"></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer" data-section="footer">
+        <div class="container">
+            <p>&copy; 2026 Atlas Digital. All rights reserved.</p>
+            <p>
+                <a href="index.html">Home</a> | 
+                <a href="projects.html">Projects</a> | 
+                <a href="blog.html">Blog</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

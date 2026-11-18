@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Contact – Xi'an Famous Foods</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="site-header" data-section="header" data-component="site-header">
+    <h1>Xi'an Famous Foods</h1>
+    <button class="nav-toggle" aria-controls="primary-nav" aria-expanded="false">☰</button>
+    <nav class="primary-nav" id="primary-nav" aria-label="Primary" data-component="primary-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="our-story.html">Our Story</a></li>
+        <li><a href="locations.html">Locations</a></li>
+        <li><a href="contact.html" aria-current="page">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content" data-section="main">
+    <nav aria-label="Breadcrumb" data-section="breadcrumb" data-component="breadcrumb">
+      <ol>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="contact.html" aria-current="page">Contact</a></li>
+      </ol>
+    </nav>
+
+    <section class="content-band" data-section="content-band" data-component="content-band">
+      <h1>Contact Us</h1>
+      <p>Have a question, feedback, or catering inquiry? Fill out the form below and we’ll get back to you shortly.</p>
+
+      <form id="contact-form" data-component="contact-form">
+        <div>
+          <label for="contact-name">Name</label>
+          <input type="text" id="contact-name" name="contact-name" required>
+        </div>
+        <div>
+          <label for="contact-email">Email</label>
+          <input type="email" id="contact-email" name="contact-email" required>
+        </div>
+        <div>
+          <label for="contact-phone">Phone (optional)</label>
+          <input type="tel" id="contact-phone" name="contact-phone">
+        </div>
+        <div>
+          <label for="contact-subject">Subject</label>
+          <select id="contact-subject" name="contact-subject" required>
+            <option value="">-- Select a reason --</option>
+            <option value="general">General inquiry</option>
+            <option value="catering">Catering request</option>
+            <option value="feedback">Feedback</option>
+            <option value="press">Press / media</option>
+          </select>
+        </div>
+        <div>
+          <label for="contact-message">Message</label>
+          <textarea id="contact-message" name="contact-message" rows="5" required></textarea>
+        </div>
+        <div class="button-group">
+          <button type="submit" class="btn">Send Message</button>
+          <button type="reset" class="btn secondary">Reset</button>
+        </div>
+      </form>
+      <div id="contact-confirmation" aria-live="off"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer" data-section="footer" data-component="site-footer">
+    <p>&copy; 2026 Xi'an Famous Foods. All rights reserved.</p>
+    <ul class="social-list" data-component="social-links">
+      <li><a href="#" aria-label="Facebook">FB</a></li>
+      <li><a href="#" aria-label="Twitter">TW</a></li>
+      <li><a href="#" aria-label="Instagram">IG</a></li>
+    </ul>
+    <section data-component="newsletter-signup">
+      <h3>Stay updated</h3>
+      <form>
+        <label for="newsletter-email">Email address</label>
+        <input type="email" id="newsletter-email" placeholder="you@example.com" required>
+        <button type="submit" class="btn">Subscribe</button>
+      </form>
+      <p class="note">We’ll never share your address.</p>
+    </section>
+  </footer>
+
+  <!-- Age gate modal (same as index) -->
+  <div id="age-gate-backdrop" class="modal-backdrop" aria-hidden="true">
+    <div id="age-gate-modal" class="modal" aria-hidden="false" role="dialog" aria-modal="true">
+      <h2>Age verification</h2>
+      <p>Please confirm you are 18 years or older.</p>
+      <form id="age-gate-form">
+        <label for="age-gate-input">Date of birth (MM/DD/YYYY)</label>
+        <input type="text" id="age-gate-input" name="age-gate-input" placeholder="01/01/1990" required pattern="(0[1-9]|1[0-2])\/(0[1-9]|[12][0-9]|3[01])\/\d{4}">
+        <button type="submit" class="btn">Enter</button>
+      </form>
+      <p id="age-gate-message" style="color:#c00;display:none;"></p>
+      <button class="modal-close" aria-label="Close">×</button>
+    </div>
+  </div>
+
+  <!-- Toast container -->
+  <div id="toast" aria-live="off"></div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

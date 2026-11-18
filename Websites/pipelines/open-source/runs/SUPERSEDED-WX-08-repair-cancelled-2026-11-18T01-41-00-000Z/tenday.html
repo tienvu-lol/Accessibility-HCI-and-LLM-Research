@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>10‑Day Forecast – WeatherWise</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header data-section="header" data-component="site-header">
+    <h1>WeatherWise</h1>
+  </header>
+
+  <nav data-section="navigation" data-component="primary-nav" aria-label="Primary">
+    <ul>
+      <li><a href="index.html" data-instance="home-link">Home</a></li>
+      <li><a href="today.html" data-instance="today-link">Today</a></li>
+      <li><a href="hourly.html" data-instance="hourly-link">Hourly</a></li>
+      <li><a href="tenday.html" data-instance="10day-link" aria-current="page">10‑Day</a></li>
+      <li><a href="monthly.html" data-instance="monthly-link">Monthly</a></li>
+      <li><a href="allergy.html" data-instance="allergy-link">Allergies</a></li>
+      <li><a href="radar.html" data-instance="radar-link">Radar</a></li>
+      <li><a href="news.html" data-instance="news-link">News</a></li>
+      <li><a href="login.html" data-instance="login-link">Sign In</a></li>
+    </ul>
+  </nav>
+
+  <main id="main-content" data-section="main">
+    <section data-component="location-search" aria-label="Location search">
+      <form id="location-search-form" class="form-group">
+        <label for="location-search-input">Search location</label>
+        <input type="search" id="location-search-input" placeholder="e.g., Ashburn, VA" aria-label="Location search">
+        <button type="submit">Search</button>
+      </form>
+    </section>
+
+    <section data-component="alert-filters" aria-label="Alert filters">
+      <form id="alert-filter-form">
+        <fieldset>
+          <legend>Alert types</legend>
+          <div class="alert-filters">
+            <label><input type="checkbox" value="severe" checked> Severe Weather</label>
+            <label><input type="checkbox" value="pollen"> Pollen</label>
+            <label><input type="checkbox" value="air"> Air Quality</label>
+            <label><input type="checkbox" value="cold"> Cold & Flu</label>
+          </div>
+          <button type="submit">Apply Filters</button>
+        </fieldset>
+      </form>
+    </section>
+
+    <section data-component="ten-day-forecast" aria-label="10‑day forecast">
+      <h2>10‑Day Forecast for Ashburn, VA</h2>
+      <div class="card-grid">
+        <div class="card" data-component="day-card" data-instance="d1">
+          <h3>Today</h3>
+          <p class="temp-high" data-f="74">74°F</p>
+          <p class="temp-low" data-f="58">58°F</p>
+          <p>Partly cloudy</p>
+          <p>Precip: 10%</p>
+        </div>
+        <div class="card" data-component="day-card" data-instance="d2">
+          <h3>Tomorrow</h3>
+          <p class="temp-high" data-f="76">76°F</p>
+          <p class="temp-low" data-f="60">60°F</p>
+          <p>Mostly sunny</p>
+          <p>Precip: 0%</p>
+        </div>
+        <div class="card" data-component="day-card" data-instance="d3">
+          <h3>Day 3</h3>
+          <p class="temp-high" data-f="78">78°F</p>
+          <p class="temp-low" data-f="62">62°F</p>
+          <p>Mostly sunny</p>
+          <p>Precip: 0%</p>
+        </div>
+        <div class="card" data-component="day-card" data-instance="d4">
+          <h3>Day 4</h3>
+          <p class="temp-high" data-f="80">80°F</p>
+          <p class="temp-low" data-f="63">63°F</p>
+          <p>Partly cloudy</p>
+          <p>Precip: 20%</p>
+        </div>
+        <div class="card" data-component="day-card" data-instance="d5">
+          <h3>Day 5</h3>
+          <p class="temp-high" data-f="82">82°F</p>
+          <p class="temp-low" data-f="65">65°F</p>
+          <p>Mostly sunny</p>
+          <p>Precip: 10%</p>
+        </div>
+        <div class="card" data-component="day-card" data-instance="d6">
+          <h3>Day 6</h3>
+          <p class="temp-high" data-f="81">81°F</p>
+          <p class="temp-low" data-f="64">64°F</p>
+          <p>Partly cloudy</p>
+          <p>Precip: 30%</p>
+        </div>
+        <div class="card" data-component="day-card" data-instance="d7">
+          <h3>Day 7</h3>
+          <p class="temp-high" data-f="79">79°F</p>
+          <p class="temp-low" data-f="63">63°F</p>
+          <p>Mostly cloudy</p>
+          <p>Precip: 40%</p>
+        </div>
+        <div class="card" data-component="day-card" data-instance="d8">
+          <h3>Day 8</h3>
+          <p class="temp-high" data-f="77">77°F</p>
+          <p class="temp-low" data-f="62">62°F</p>
+          <p>Mostly cloudy</p>
+          <p>Precip: 50%</p>
+        </div>
+        <div class="card" data-component="day-card" data-instance="d9">
+          <h3>Day 9</h3>
+          <p class="temp-high" data-f="75">75°F</p>
+          <p class="temp-low" data-f="61">61°F</p>
+          <p>Partly sunny</p>
+          <p>Precip: 20%</p>
+        </div>
+        <div class="card" data-component="day-card" data-instance="d10">
+          <h3>Day 10</h3>
+          <p class="temp-high" data-f="73">73°F</p>
+          <p class="temp-low" data-f="60">60°F</p>
+          <p>Mostly sunny</p>
+          <p>Precip: 10%</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer data-section="footer" data-component="site-footer">
+    <p>&copy; 2026 WeatherWise. All rights reserved.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

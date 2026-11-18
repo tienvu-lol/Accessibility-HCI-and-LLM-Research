@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>RSS Feeds | Cascadia Chronicle</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="site-header" data-section="header" data-component="site-header">
+    <div class="container">
+      <h1 class="site-title">Cascadia Chronicle</h1>
+      <form class="search-form" aria-label="Site search">
+        <label for="site-search-rss" class="visually-hidden">Search</label>
+        <input type="search" id="site-search-rss" placeholder="Search…" aria-label="Search">
+        <button type="submit">Search</button>
+      </form>
+    </div>
+  </header>
+
+  <nav class="primary-nav" aria-label="Primary" data-section="navigation" data-component="primary-nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="seattle-news.html">Local News</a></li>
+      <li><a href="business.html">Business</a></li>
+      <li><a href="sports.html">Sports</a></li>
+      <li><a href="nation-world.html">Nation &amp; World</a></li>
+      <li><a href="subscribe-signup-offers-subsource-voluntary.html">Subscribe</a></li>
+      <li><a href="help.html">Help</a></li>
+      <li><a href="newsroom-staff.html">Newsroom Staff</a></li>
+      <li><a href="rss-feeds.html" aria-current="page">RSS Feeds</a></li>
+    </ul>
+  </nav>
+
+  <main id="main-content" class="main-content" data-section="main">
+    <h1>RSS Feeds</h1>
+    <p>Subscribe to our section feeds for automatic updates.</p>
+
+    <section aria-label="RSS feed list" data-component="rss-list">
+      <div class="rss-item">
+        <h3>Local News Feed</h3>
+        <p><code>https://www.cascadiachronicle.example/feeds/local-news.xml</code></p>
+        <p>Latest stories from the Local News section.</p>
+        <a href="#" class="rss-link">Subscribe</a>
+      </div>
+      <div class="rss-item">
+        <h3>Business Feed</h3>
+        <p><code>https://www.cascadiachronicle.example/feeds/business.xml</code></p>
+        <p>Latest stories from the Business section.</p>
+        <a href="#" class="rss-link">Subscribe</a>
+      </div>
+      <div class="rss-item">
+        <h3>Sports Feed</h3>
+        <p><code>https://www.cascadiachronicle.example/feeds/sports.xml</code></p>
+        <p>Latest stories from the Sports section.</p>
+        <a href="#" class="rss-link">Subscribe</a>
+      </div>
+      <div class="rss-item">
+        <h3>Nation &amp; World Feed</h3>
+        <p><code>https://www.cascadiachronicle.example/feeds/nation-world.xml</code></p>
+        <p>Latest stories from the Nation &amp; World section.</p>
+        <a href="#" class="rss-link">Subscribe</a>
+      </div>
+      <div class="rss-item">
+        <h3>Breaking News Feed</h3>
+        <p><code>https://www.cascadiachronicle.example/feeds/breaking.xml</code></p>
+        <p>Urgent updates as they happen.</p>
+        <a href="#" class="rss-link">Subscribe</a>
+      </div>
+    </section>
+
+    <section aria-label="Newsletter signup" data-component="newsletter-signup">
+      <h2>Stay Informed</h2>
+      <form class="newsletter-signup" aria-label="Newsletter signup">
+        <label for="newsletter-email-rss">Email address</label>
+        <input type="email" id="newsletter-email-rss" placeholder="you@example.com" required>
+        <button type="submit">Subscribe</button>
+      </form>
+      <p class="error-message"></p>
+      <p class="success-message"></p>
+    </section>
+  </main>
+
+  <footer class="site-footer" data-section="footer" data-component="site-footer">
+    <div>
+      &copy; 2026 Cascadia Chronicle. All rights reserved. <br>
+      123 Fiction Ave, Seattle, WA 98101 <br>
+      <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a>
+    </div>
+  </footer>
+
+  <script>
+    // Inline sample data for RSS items (could be used if we wanted to render dynamically)
+    window.rssFeedItems = [
+      { title: "Local News Feed", url: "#", description: "Latest stories from the Local News section." },
+      { title: "Business Feed", url: "#", description: "Latest stories from the Business section." },
+      { title: "Sports Feed", url: "#", description: "Latest stories from the Sports section." },
+      { title: "Nation &amp; World Feed", url: "#", description: "Latest stories from the Nation &amp; World section." },
+      { title: "Breaking News Feed", url: "#", description: "Urgent updates as they happen." }
+    ];
+  </script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

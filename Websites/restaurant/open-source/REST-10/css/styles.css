@@ -1,0 +1,44 @@
+/* Global reset & base */
+html { box-sizing: border-box; font-size: 100%; }
+*, *::before, *::after { box-sizing: inherit; margin: 0; padding: 0; }
+body { font-family: system-ui, sans-serif; line-height: 1.5; color: #222; background: #fff; padding: 1rem; }
+a { color: #0066cc; text-decoration: underline; }
+a:focus, button:focus { outline: 3px solid #ffbf47; outline-offset: 2px; }
+img { max-width: 100%; height: auto; }
+
+/* Skip link */
+#skip-link { position: absolute; top: -40px; left: 0; background: #fff; color: #000; padding: .5rem 1rem; z-index: 100; }
+#skip-link:focus { top: 0; }
+
+/* Header & navigation */
+[data-component="site-header"] { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; }
+[data-component="primary-nav"] ul { list-style: none; display: flex; gap: 1rem; }
+[data-component="primary-nav"] a { text-decoration: none; font-weight: 600; }
+[data-component="primary-nav"] button { display: none; background: none; border: none; font-size: 1.2rem; }
+
+/* Responsive nav */
+@media (max-width: 768px) {
+  [data-component="primary-nav"] ul { flex-direction: column; display: none; background: #f9f9f9; position: absolute; top: 3rem; left: 0; right: 0; padding: 1rem; }
+  [data-component="primary-nav"][data-open="true"] ul { display: flex; }
+  [data-component="primary-nav"] button { display: block; }
+}
+
+/* Hero */
+[data-component="hero"] { background: #eee; padding: 2rem; text-align: center; margin-bottom: 1rem; }
+
+/* Footer */
+[data-component="site-footer"] { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #ccc; font-size: .9rem; }
+
+/* Card grid */
+[data-component="location-card-grid"] { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+.location-card { border: 1px solid #ddd; padding: .5rem; text-align: center; }
+
+/* Form */
+form { display: flex; flex-direction: column; gap: .5rem; max-width: 300px; margin-top: 1rem; }
+label { font-weight: 600; }
+input, textarea, button { padding: .4rem; font: inherit; }
+button { background: #0066cc; color: #fff; border: none; cursor: pointer; }
+button:disabled { background: #999; cursor: not-allowed; }
+
+/* Utility */
+.hidden { display: none; }

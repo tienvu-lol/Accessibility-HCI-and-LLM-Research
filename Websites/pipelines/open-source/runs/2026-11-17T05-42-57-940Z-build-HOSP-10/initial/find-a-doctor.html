@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en" data-section="find-a-doctor">
+<head>
+  <meta charset="utf-8">
+  <title>Find a Doctor – Fictional Health Center</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script defer src="js/main.js"></script>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header data-component="site-header">
+    <h1>Fictional Health Center</h1>
+    <nav data-component="primary-nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="appointments.html">Appointments</a>
+      <a href="find-a-doctor.html">Find a Doctor</a>
+      <a href="locations.html">Locations</a>
+    </nav>
+  </header>
+
+  <main id="main-content" data-section="find-a-doctor-main">
+    <h1>Find a Doctor</h1>
+
+    <section data-component="filter-panel" aria-label="Doctor filters">
+      <label for="filter-specialty">Specialty</label>
+      <input type="text" id="filter-specialty" placeholder="e.g., Cardiology">
+
+      <label for="filter-location">Location</label>
+      <input type="text" id="filter-location" placeholder="e.g., Springfield">
+    </section>
+
+    <section class="grid card-grid" id="doctor-card-grid" data-component="doctor-card-grid">
+      <!-- Doctor cards injected by JS -->
+    </section>
+  </main>
+
+  <footer data-component="site-footer">
+    <p>&copy; 2024 Fictional Health Center.</p>
+  </footer>
+</body>
+</html>

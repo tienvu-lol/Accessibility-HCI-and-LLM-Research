@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assorted Mini-Tools - Alex Morgan's Portfolio</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  
+  <header class="site-header" data-component="site-header">
+    <div class="container nav-wrapper">
+      <a href="index.html" class="logo">Alex Morgan</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
+        <span class="sr-only">Toggle navigation</span>
+        &#9776;
+      </button>
+      <nav class="primary-nav" id="primary-nav" data-component="primary-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="mini-tools.html" aria-current="page">Mini-Tools</a></li>
+          <li><a href="all-posts.html">All Posts</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" data-section="mini-tools">
+    <div class="container">
+      <h1>Assorted Mini-Tools</h1>
+      <p>A collection of small utilities I've built for everyday tasks.</p>
+      
+      <div class="card-grid" data-component="tool-card-grid">
+        <article class="tool-card" data-component="tool-card">
+          <h3>Color Picker</h3>
+          <p>Select colors.</p>
+          <a href="#">Open Tool</a>
+        </article>
+        <article class="tool-card" data-component="tool-card">
+          <h3>JSON Formatter</h3>
+          <p>Pretty print JSON.</p>
+          <a href="#">Open Tool</a>
+        </article>
+        <article class="tool-card" data-component="tool-card">
+          <h3>Regex Tester</h3>
+          <p>Test regular expressions.</p>
+          <a href="#">Open Tool</a>
+        </article>
+        <article class="tool-card" data-component="tool-card">
+          <h3>Base64 Encoder</h3>
+          <p>Encode/decode Base64.</p>
+          <a href="#">Open Tool</a>
+        </article>
+        <article class="tool-card" data-component="tool-card">
+          <h3>Lorem Ipsum</h3>
+          <p>Generate dummy text.</p>
+          <a href="#">Open Tool</a>
+        </article>
+        <article class="tool-card" data-component="tool-card">
+          <h3>Unit Converter</h3>
+          <p>Convert units.</p>
+          <a href="#">Open Tool</a>
+        </article>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer" data-component="site-footer">
+    <div class="container">
+      <p>&copy; 2026 Alex Morgan. All rights reserved.</p>
+      <p>Built with semantic HTML, CSS, and vanilla JS.</p>
+    </div>
+  </footer>
+
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top">&#8679;</button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

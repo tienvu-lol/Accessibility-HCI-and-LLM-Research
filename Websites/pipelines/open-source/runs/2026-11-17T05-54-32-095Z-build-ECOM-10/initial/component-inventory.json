@@ -1,0 +1,130 @@
+{
+  "components": [
+    {
+      "name": "site-header",
+      "selector": ".site-header",
+      "pages": [
+        "index.html",
+        "womens-all-index.html",
+        "womens-pants-trousers-index.html",
+        "womens-sweaters-cashmere-index.html",
+        "redeem-index.html",
+        "about-index.html",
+        "404.html"
+      ],
+      "behaviour": "contains logo and primary navigation",
+      "keyboard": "focusable links, tab order follows DOM",
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "primary-nav",
+      "selector": ".primary-nav",
+      "pages": [
+        "index.html",
+        "womens-all-index.html",
+        "womens-pants-trousers-index.html",
+        "womens-sweaters-cashmere-index.html",
+        "redeem-index.html",
+        "about-index.html",
+        "404.html"
+      ],
+      "behaviour": "list of navigation links",
+      "keyboard": "arrow keys not required; tab navigation works",
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "search-box",
+      "selector": ".search-box",
+      "pages": [
+        "index.html",
+        "womens-all-index.html",
+        "womens-pants-trousers-index.html",
+        "womens-sweaters-cashmere-index.html",
+        "redeem-index.html",
+        "about-index.html",
+        "404.html"
+      ],
+      "behaviour": "filters current collection grid by product name (demo)",
+      "keyboard": "input receives focus, Enter triggers filter via JS",
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "hero-banner",
+      "selector": ".hero-banner",
+      "pages": ["index.html"],
+      "behaviour": "large introductory banner with heading and paragraph",
+      "keyboard": "none (static content)",
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "filter-sort-bar",
+      "selector": ".filter-sort-bar",
+      "pages": [
+        "womens-all-index.html",
+        "womens-pants-trousers-index.html",
+        "womens-sweaters-cashmere-index.html"
+      ],
+      "behaviour": "dropdowns for sorting (demo) and future filters",
+      "keyboard": "select receives focus, arrow keys navigate options",
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "collection-grid",
+      "selector": ".collection-grid",
+      "pages": [
+        "womens-all-index.html",
+        "womens-pants-trousers-index.html",
+        "womens-sweaters-cashmere-index.html"
+      ],
+      "behaviour": "grid container for product cards, populated by JS",
+      "keyboard": "tab order moves into each product-card button",
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "product-card",
+      "selector": ".product-card",
+      "pages": [
+        "womens-all-index.html",
+        "womens-pants-trousers-index.html",
+        "womens-sweaters-cashmere-index.html"
+      ],
+      "behaviour": "shows image, name, price, and Add to cart button (demo)",
+      "keyboard": "button focusable, Enter activates alert",
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "redeem-form",
+      "selector": ".redeem-form",
+      "pages": ["redeem-index.html"],
+      "behaviour": "client‑side validation of gift code and email, alerts on success/failure",
+      "keyboard": "inputs focusable, Enter submits form",
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "about-content",
+      "selector": ".about-content",
+      "pages": ["about-index.html"],
+      "behaviour": "static informational text",
+      "keyboard": "none",
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "404-page",
+      "selector": ".not-found",
+      "pages": ["404.html"],
+      "behaviour": "simple not‑found message with link to home",
+      "keyboard": "link focusable",
+      "status": "implemented",
+      "validation_state": "not-tested"
+    }
+  ]
+}

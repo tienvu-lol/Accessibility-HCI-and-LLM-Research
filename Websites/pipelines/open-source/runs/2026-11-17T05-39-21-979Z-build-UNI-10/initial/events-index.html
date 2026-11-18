@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en" data-section="events">
+<head>
+  <meta charset="utf-8">
+  <title>Events &amp; Attractions – Rivergate University</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <a href="#main-content" class="skip-link" data-component="skip-link">Skip to main content</a>
+
+  <header data-component="site-header" data-section="header">
+    <h1>Rivergate University</h1>
+    <nav aria-label="Primary navigation" data-component="primary-nav">
+      <button class="menu-toggle" aria-controls="primary-nav" aria-expanded="false" data-component="menu-toggle">☰</button>
+      <a href="index.html">Home</a>
+      <a href="admissions-index.html">Admissions</a>
+      <a href="academics-index.html">Academics</a>
+      <a href="schools-colleges-index.html">Schools &amp; Colleges</a>
+      <a href="directory-index.html">Directory</a>
+      <a href="research-index.html">Research</a>
+      <a href="events-index.html">Events</a>
+      <a href="by-the-numbers-index.html">By the Numbers</a>
+    </nav>
+  </header>
+
+  <main id="main-content" data-component="page-main">
+    <h1>Events &amp; Attractions</h1>
+
+    <section data-section="filter">
+      <h2>Filter Events</h2>
+      <form id="events-filter-form" aria-label="Filter events">
+        <label for="type">Type</label>
+        <select id="type" name="type">
+          <option value="">All types</option>
+          <option value="Campus Tour">Campus Tour</option>
+          <option value="Academic">Academic</option>
+          <option value="Social">Social</option>
+          <option value="Arts">Arts</option>
+          <option value="Career">Career</option>
+          <option value="Tech">Tech</option>
+          <option value="Ceremony">Ceremony</option>
+        </select>
+
+        <label for="month">Month</label>
+        <select id="month" name="month">
+          <option value="">All months</option>
+          <option value="September">September</option>
+          <option value="October">October</option>
+          <option value="November">November</option>
+          <option value="December">December</option>
+          <option value="January">January</option>
+          <option value="March">March</option>
+          <option value="April">April</option>
+          <option value="May">May</option>
+        </select>
+      </form>
+    </section>
+
+    <section id="events-results" data-section="results">
+      <!-- Event cards injected by JS -->
+    </section>
+  </main>
+
+  <footer data-component="site-footer" data-section="footer">
+    <p>&copy; 2024 Rivergate University.</p>
+  </footer>
+</body>
+</html>

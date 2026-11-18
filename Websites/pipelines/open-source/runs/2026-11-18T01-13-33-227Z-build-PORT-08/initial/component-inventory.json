@@ -1,0 +1,453 @@
+{
+  "components": [
+    {
+      "name": "site-header",
+      "selector": "header[data-component=\"site-header\"]",
+      "appearsOn": [
+        "index.html",
+        "courses.html",
+        "about.html",
+        "blog.html",
+        "tips.html",
+        "javascript.html",
+        "speaking-and-training.html",
+        "uses.html",
+        "contact.html",
+        "404.html"
+      ],
+      "behaviors": [
+        "Contains site logo and navigation toggle",
+        "Fixed positioning at top of page",
+        "Becomes hamburger menu on narrow viewports"
+      ],
+      "keyboardExpectations": [
+        "Tab moves focus to the skip link, then to the nav toggle, then into the navigation menu when open",
+        "Enter or Space on the nav toggle opens/closes the menu",
+        "Escape closes the open menu and returns focus to the toggle"
+      ],
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "site-logo",
+      "selector": ".logo[data-component=\"site-logo\"]",
+      "appearsOn": [
+        "index.html",
+        "courses.html",
+        "about.html",
+        "blog.html",
+        "tips.html",
+        "javascript.html",
+        "speaking-and-training.html",
+        "uses.html",
+        "contact.html",
+        "404.html"
+      ],
+      "behaviors": [
+        "Displays the fictional site name as text",
+        "Acts as a link to the home page"
+      ],
+      "keyboardExpectations": [
+        "Receives focus when navigating via Tab",
+        "Activates on Enter or Space to navigate to home"
+      ],
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "primary-nav",
+      "selector": "nav[data-component=\"primary-nav\"]",
+      "appearsOn": [
+        "index.html",
+        "courses.html",
+        "about.html",
+        "blog.html",
+        "tips.html",
+        "javascript.html",
+        "speaking-and-training.html",
+        "uses.html",
+        "contact.html",
+        "404.html"
+      ],
+      "behaviors": [
+        "Horizontal list of links on wide viewports",
+        "Collapses to vertical menu in a hamburger button on narrow viewports"
+      ],
+      "keyboardExpectations": [
+        "Tab moves focus through each link",
+        "Enter activates a link",
+        "Escape closes the mobile menu and returns focus to the toggle"
+      ],
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "nav-toggle",
+      "selector": "button#nav-toggle",
+      "appearsOn": [
+        "index.html",
+        "courses.html",
+        "about.html",
+        "blog.html",
+        "tips.html",
+        "javascript.html",
+        "speaking-and-training.html",
+        "uses.html",
+        "contact.html",
+        "404.html"
+      ],
+      "behaviors": [
+        "Toggles visibility of the primary navigation menu",
+        "Updates aria-expanded attribute"
+      ],
+      "keyboardExpectations": [
+        "Receives focus in tab order",
+        "Space or Enter toggles the menu",
+        "Escape closes the menu and returns focus to the button"
+      ],
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "site-footer",
+      "selector": "footer[data-component=\"site-footer\"]",
+      "appearsOn": [
+        "index.html",
+        "courses.html",
+        "about.html",
+        "blog.html",
+        "tips.html",
+        "javascript.html",
+        "speaking-and-training.html",
+        "uses.html",
+        "contact.html",
+        "404.html"
+      ],
+      "behaviors": [
+        "Displays copyright information",
+        "Appears at the bottom of each page"
+      ],
+      "keyboardExpectations": [
+        "Receives focus when navigating via Tab",
+        "No interactive expectations"
+      ],
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "page-title",
+      "selector": "section[data-component=\"page-title\"] h1",
+      "appearsOn": [
+        "index.html",
+        "courses.html",
+        "about.html",
+        "blog.html",
+        "tips.html",
+        "javascript.html",
+        "speaking-and-training.html",
+        "uses.html",
+        "contact.html",
+        "404.html"
+      ],
+      "behaviors": [
+        "Contains the top‑level heading for the page"
+      ],
+      "keyboardExpectations": [
+        "Receives focus as part of document reading order",
+        "No interactive expectations"
+      ],
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "card-grid",
+      "selector": "[data-component=\"card-grid\"]",
+      "appearsOn": [
+        "index.html",
+        "courses.html",
+        "blog.html",
+        "tips.html",
+        "speaking-and-training.html",
+        "uses.html"
+      ],
+      "behaviors": [
+        "Responsive grid layout (auto‑fit columns, minimum 260px)",
+        "Gap of 1.5rem between cards"
+      ],
+      "keyboardExpectations": [
+        "Focus moves to each card in DOM order",
+        "No interactive expectations on the grid itself"
+      ],
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "card",
+      "selector": "article.card",
+      "appearsOn": [
+        "index.html",
+        "courses.html",
+        "blog.html",
+        "tips.html",
+        "speaking-and-training.html",
+        "uses.html"
+      ],
+      "behaviors": [
+        "Displays an image, title, description, and a link",
+        "Hover/focus changes background color"
+      ],
+      "keyboardExpectations": [
+        "Tab moves focus to the link inside the card",
+        "Enter activates the link",
+        "The entire card is not a single focusable item"
+      ],
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "project-filter",
+      "selector": "section[data-component=\"project-filter\"]",
+      "appearsOn": [
+        "courses.html"
+      ],
+      "behaviors": [
+        "Group of checkboxes that filter the project cards",
+        "Change event triggers re‑render of the card grid"
+      ],
+      "keyboardExpectations": [
+        "Each checkbox is focusable via Tab",
+        "Space toggles the checkbox state",
+        "After a change, focus remains on the changed checkbox"
+      ],
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "gallery-lightbox",
+      "selector": "#lightbox",
+      "appearsOn": [
+        "uses.html"
+      ],
+      "behaviors": [
+        "Clicking a tech‑stack icon opens a dialog showing a larger SVG placeholder",
+        "Background is semi‑transparent overlay",
+        "Dialog can be closed via close button, clicking overlay, or Escape key"
+      ],
+      "keyboardExpectations": [
+        "When open, focus is trapped inside the dialog",
+        "Tab moves focus to the close button",
+        "Escape closes the dialog and returns focus to the triggering icon",
+        "Clicking the overlay (background) closes the dialog"
+      ],
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "contact-form",
+      "selector": "form#contact-form",
+      "appearsOn": [
+        "contact.html"
+      ],
+      "behaviors": [
+        "Collects name, email, and message",
+        "On submit prevents actual submission, shows a demo toast, then resets the form"
+      ],
+      "keyboardExpectations": [
+        "Tab moves through each input and the submit button",
+        "Enter on a focused submit button submits the form (triggering the demo)",
+        "Escape does not close the form (no dialog)"
+      ],
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "hero",
+      "selector": "section[data-component=\"hero\"]",
+      "appearsOn": [
+        "index.html"
+      ],
+      "behaviors": [
+        "Displays a placeholder SVG and a short tagline",
+        "Provides visual introduction to the site"
+      ],
+      "keyboardExpectations": [
+        "Receives focus as part of reading order",
+        "No interactive expectations"
+      ],
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "intro",
+      "selector": "section[data-component=\"intro\"]",
+      "appearsOn": [
+        "index.html"
+      ],
+      "behaviors": [
+        "Contains a brief introductory paragraph about the site owner"
+      ],
+      "keyboardExpectations": [
+        "Receives focus as part of reading order",
+        "No interactive expectations"
+      ],
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "featured-projects",
+      "selector": "section[data-component=\"featured-projects\"]",
+      "appearsOn": [
+        "index.html"
+      ],
+      "behaviors": [
+        "Shows three static project cards as examples"
+      ],
+      "keyboardExpectations": [
+        "Focus moves to each card’s link in turn",
+        "No interactive expectations on the section itself"
+      ],
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "bio",
+      "selector": "section[data-component=\"bio\"]",
+      "appearsOn": [
+        "about.html"
+      ],
+      "behaviors": [
+        "Presents a short biography of the fictional site owner"
+      ],
+      "keyboardExpectations": [
+        "Receives focus as part of reading order",
+        "No interactive expectations"
+      ],
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "skills",
+      "selector": "section[data-component=\"skills\"]",
+      "appearsOn": [
+        "about.html"
+      ],
+      "behaviors": [
+        "Lists technical skills as an unordered list"
+      ],
+      "keyboardExpectations": [
+        "Receives focus as part of reading order",
+        "No interactive expectations"
+      ],
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "post-list",
+      "selector": "section[data-component=\"post-list\"] ul",
+      "appearsOn": [
+        "blog.html"
+      ],
+      "behaviors": [
+        "Displays blog post entries as cards in a grid"
+      ],
+      "keyboardExpectations": [
+        "Focus moves to each card’s link in turn",
+        "No interactive expectations on the list itself"
+      ],
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "tip-list",
+      "selector": "section[data-component=\"tip-list\"] ul",
+      "appearsOn": [
+        "tips.html"
+      ],
+      "behaviors": [
+        "Displays accessibility tips as cards in a grid"
+      ],
+      "keyboardExpectations": [
+        "Focus moves to each card in turn",
+        "No interactive expectations on the list itself"
+      ],
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "js-reference",
+      "selector": "section[data-component=\"js-reference\"]",
+      "appearsOn": [
+        "javascript.html"
+      ],
+      "behaviors": [
+        "Presents a series of short articles on modern JavaScript features"
+      ],
+      "keyboardExpectations": [
+        "Receives focus as part of reading order",
+        "No interactive expectations"
+      ],
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "event-list",
+      "selector": "section[data-component=\"event-list\"] ul",
+      "appearsOn": [
+        "speaking-and-training.html"
+      ],
+      "behaviors": [
+        "Displays speaking and training events as cards in a grid"
+      ],
+      "keyboardExpectations": [
+        "Focus moves to each card in turn",
+        "No interactive expectations on the list itself"
+      ],
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "tech-stack",
+      "selector": "section[data-component=\"tech-stack\"]",
+      "appearsOn": [
+        "uses.html"
+      ],
+      "behaviors": [
+        "Displays icons representing tools/languages used",
+        "Each icon opens a lightbox placeholder on click"
+      ],
+      "keyboardExpectations": [
+        "Each icon is focusable via Tab",
+        "Enter or Space on an icon opens the lightbox",
+        "Escape closes the lightbox and returns focus to the icon"
+      ],
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "skip-link",
+      "selector": "a.skip-link",
+      "appearsOn": [
+        "index.html",
+        "courses.html",
+        "about.html",
+        "blog.html",
+        "tips.html",
+        "javascript.html",
+        "speaking-and-training.html",
+        "uses.html",
+        "contact.html",
+        "404.html"
+      ],
+      "behaviors": [
+        "Provides a mechanism to skip repetitive navigation",
+        "Becomes visible when focused"
+      ],
+      "keyboardExpectations": [
+        "First item in tab order",
+        "Enter activates the link, moving focus to #main-content"
+      ],
+      "status": "implemented",
+      "validation_state": "not-tested"
+    }
+  ]
+}

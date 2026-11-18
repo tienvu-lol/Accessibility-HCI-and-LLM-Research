@@ -17,7 +17,7 @@
   "execution": {
     "mode": "orchestrated-api-execution",
     "one_replica_per_run": true,
-    "max_concurrent_builds": 2,
+    "max_concurrent_builds": 4,
     "automatic_generation": true,
     "automatic_publish": false,
     "automatic_commit": false,
@@ -55,7 +55,7 @@
   },
   "api": {
     "protocol": "openai-chat-completions",
-    "timeout_ms": 600000,
+    "timeout_ms": 1800000,
     "max_retries": 4,
     "retry_backoff_ms": 2000,
     "key_source": "environment variables only; keys are never written to this repository or to run evidence"

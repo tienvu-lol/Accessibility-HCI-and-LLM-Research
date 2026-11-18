@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shell Heredocs - for Fun and Profit, in Bash and Beyond - Alex Morgan's Portfolio</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  
+  <header class="site-header" data-component="site-header">
+    <div class="container nav-wrapper">
+      <a href="index.html" class="logo">Alex Morgan</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
+        <span class="sr-only">Toggle navigation</span>
+        &#9776;
+      </button>
+      <nav class="primary-nav" id="primary-nav" data-component="primary-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="blog.html" aria-current="page">Blog</a></li>
+          <li><a href="mini-tools.html">Mini-Tools</a></li>
+          <li><a href="all-posts.html">All Posts</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" data-section="blog-post">
+    <div class="container">
+      <article data-component="blog-post-layout">
+        <h1>Shell Heredocs - for Fun and Profit, in Bash and Beyond</h1>
+        <time datetime="2023-02-20">February 20, 2023</time>
+        
+        <section data-section="content">
+          <p>Shell heredocs are a powerful feature in Bash and other Unix-like shells that allow you to pass multi-line strings to commands. They are often overlooked but can significantly simplify scripting tasks.</p>
+          
+          <h2>Basic Syntax</h2>
+          <pre><code>command << EOF
+This is a multi-line string.
+It can contain variables like $VAR.
+EOF</code></pre>
+
+          <h2>Use Cases</h2>
+          <ul>
+            <li><strong>Creating Configuration Files:</strong> Easily generate config files with dynamic content.</li>
+            <li><strong>SQL Queries:</strong> Embed complex SQL queries directly in scripts.</li>
+            <li><strong>Documentation:</strong> Generate help text or man pages on the fly.</li>
+          </ul>
+
+          <h2>Advanced Features</h2>
+          <p>Herdocs support variable expansion, command substitution, and even here-strings. They can be indented using <<- to align with code blocks.</p>
+        </section>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer" data-component="site-footer">
+    <div class="container">
+      <p>&copy; 2026 Alex Morgan. All rights reserved.</p>
+      <p>Built with semantic HTML, CSS, and vanilla JS.</p>
+    </div>
+  </footer>
+
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top">&#8679;</button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

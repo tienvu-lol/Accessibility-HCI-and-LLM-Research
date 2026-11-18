@@ -1,0 +1,116 @@
+/* Global reset and box-sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Typography */
+html {
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+  color: #222;
+  background-color: #fafafa;
+}
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 0.5em;
+}
+
+/* Focus outline – visible for all interactive elements */
+:focus-visible {
+  outline: 3px solid #005fcc;
+  outline-offset: 2px;
+}
+
+/* Layout containers */
+header, nav, main, footer {
+  padding: 1rem;
+}
+
+/* Header & navigation */
+[data-component="site-header"] {
+  background-color: #003366;
+  color: #fff;
+}
+[data-component="site-header"] a {
+  color: inherit;
+  text-decoration: none;
+}
+[data-component="primary-nav"] {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+[data-component="primary-nav"] a {
+  color: #fff;
+}
+[data-component="primary-nav"] .menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+/* Responsive navigation */
+@media (max-width: 600px) {
+  [data-component="primary-nav"] {
+    flex-direction: column;
+    display: none;
+  }
+  [data-component="primary-nav"].open {
+    display: flex;
+  }
+  [data-component="primary-nav"] .menu-toggle {
+    display: block;
+  }
+}
+
+/* Footer */
+[data-component="site-footer"] {
+  background-color: #003366;
+  color: #fff;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* Card grid */
+[data-component="card-grid"] {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+[data-component="card"] {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 1rem;
+}
+[data-component="card"] a {
+  text-decoration: none;
+  color: #005fcc;
+}
+
+/* Forms */
+form {
+  margin: 1rem 0;
+}
+label {
+  display: block;
+  margin-bottom: 0.25rem;
+}
+input, select, button {
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+button {
+  cursor: pointer;
+}
+
+/* 404 page */
+.error-page {
+  text-align: center;
+  margin-top: 4rem;
+}

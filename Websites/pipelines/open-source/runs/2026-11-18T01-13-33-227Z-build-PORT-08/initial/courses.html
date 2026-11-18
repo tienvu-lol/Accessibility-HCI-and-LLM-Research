@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Courses – Ava Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header data-section="header" data-component="site-header" class="site-width">
+    <h1 class="logo" data-component="site-logo">Ava Portfolio</h1>
+    <button id="nav-toggle" class="nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Open main menu">☰</button>
+    <nav id="primary-nav" data-section="navigation" data-component="primary-nav" class="site-width">
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="tips.html">Tips</a></li>
+        <li><a href="javascript.html">JavaScript</a></li>
+        <li><a href="speaking-and-training.html">Speaking &amp; Training</a></li>
+        <li><a href="uses.html">Uses</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content" data-section="main">
+    <section data-component="page-title">
+      <h1>Courses</h1>
+    </section>
+
+    <!-- Filter controls -->
+    <section data-component="project-filter" aria-label="Filter projects">
+      <h2>Filter by topic</h2>
+      <form id="filter-form">
+        <label><input type="checkbox" value="web"> Web</label>
+        <label><input type="checkbox" value="css"> CSS</label>
+        <label><input type="checkbox" value="js"> JavaScript</label>
+        <label><input type="checkbox" value="accessibility"> Accessibility</label>
+        <label><input type="checkbox" value="performance"> Performance</label>
+      </form>
+    </section>
+
+    <!-- Project grid -->
+    <section data-component="featured-projects">
+      <h2>Projects</h2>
+      <div class="card-grid" data-component="card-grid">
+        <!-- Content injected by JS -->
+      </div>
+    </section>
+  </main>
+
+  <footer data-section="footer" data-component="site-footer" class="site-width">
+    <p>&copy; 2026 Ava Portfolio. All rights reserved.</p>
+  </footer>
+
+  <!-- Inline sample dataset -->
+  <script>
+    window.PROJECTS = [
+      {id:1, title:"Flexbox Dashboard", category:"css", thumbnail:"assets/placeholder-project-1.svg", description:"A responsive admin panel built with Flexbox and CSS Grid."},
+      {id:2, title:"CSS Animation Library", category:"css", thumbnail:"assets/placeholder-project-2.svg", description:"A set of performant, accessibility‑friendly CSS animations."},
+      {id:3, title:"Vanilla JS Todo App", category:"js", thumbnail:"assets/placeholder-project-3.svg", description:"A simple todo application demonstrating state management without frameworks."},
+      {id:4, title:"Accessibility Audit Tool", category:"accessibility", thumbnail:"assets/placeholder-project-4.svg", description:"A browser extension that highlights WCAG issues on any page."},
+      {id:5, title:"Performance Budget Tracker", category:"performance", thumbnail:"assets/placeholder-project-5.svg", description:"Helps teams keep page weight and load time within defined budgets."},
+      {id:6, title:"Responsive Blog Theme", category:"web", thumbnail:"assets/placeholder-project-6.svg", description:"A clean, accessible blog theme built with semantic HTML and CSS custom properties."},
+      {id:7, title:"Dark Mode Toggle", category:"js", thumbnail:"assets/placeholder-project-7.svg", description:"A lightweight script that adds a persistent dark‑mode switch to any site."},
+      {id:8, title:"CSS Variables Demo", category:"css", thumbnail:"assets/placeholder-project-8.svg", description:"Shows how to use CSS custom properties for theming and component styling."},
+      {id:9, title:"Focus Trap Utility", category:"accessibility", thumbnail:"assets/placeholder-project-9.svg", description:"A tiny utility to manage focus inside modals and dialogs."},
+      {id:10, title:"Image Optimizer Script", category:"performance", thumbnail:"assets/placeholder-project-10.svg", description:"Automatically compresses and serves WebP images based on browser support."},
+      {id:11, title:"SVG Icon System", category:"web", thumbnail:"assets/placeholder-project-11.svg", description:"An inline‑SVG icon system with sprite fallback and accessibility labels."},
+      {id:12, title:"Custom Select Component", category:"js", thumbnail:"assets/placeholder-project-12.svg", description:"A fully accessible, keyboard‑navigable custom select replacement."}
+    ];
+  </script>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

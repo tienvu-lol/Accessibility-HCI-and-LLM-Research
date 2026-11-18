@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en" data-section="home">
+<head>
+  <meta charset="utf-8">
+  <title>Nimbus Weather Service – Home</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header data-component="site-header">
+    <h1>Nimbus Weather Service</h1>
+  </header>
+
+  <nav aria-label="Primary navigation" data-component="primary-nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="news.html">News</a></li>
+      <li><a href="about-us.html">About</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero" data-component="hero-section">
+    <h2>Welcome to Nimbus Weather Service</h2>
+    <p>Your trusted source for fictional weather forecasts.</p>
+  </section>
+
+  <main id="main-content" class="main-content" data-component="page-main">
+    <h1>Current Forecast</h1>
+
+    <!-- Inline location search -->
+    <form id="location-search-form" data-component="location-search">
+      <label for="location-input">Search city:</label>
+      <input type="text" id="location-input" placeholder="e.g., Tokyo">
+      <button type="submit">Search</button>
+    </form>
+
+    <!-- Temperature unit toggle -->
+    <button id="temp-toggle" type="button">Show °F</button>
+
+    <!-- Forecast tabs -->
+    <div role="tablist" aria-label="Forecast type" class="tablist">
+      <button role="tab" id="tab-daily" aria-controls="panel-daily" aria-selected="true" class="tab">Daily</button>
+      <button role="tab" id="tab-hourly" aria-controls="panel-hourly" aria-selected="false" class="tab">Hourly</button>
+    </div>
+
+    <section id="panel-daily" role="tabpanel" hidden="false" data-component="forecast-daily">
+      <h2>5‑Day Forecast</h2>
+      <div class="table-responsive">
+        <table id="daily-forecast">
+          <thead>
+            <tr><th>Date</th><th>High</th><th>Low</th><th>Condition</th></tr>
+          </thead>
+          <tbody>
+            <tr data-city="Tokyo"><td>2024‑12‑01</td><td data-temp="10">10 °C</td><td data-temp="2">2 °C</td><td>Sunny</td></tr>
+            <tr data-city="Tokyo"><td>2024‑12‑02</td><td data-temp="12">12 °C</td><td data-temp="3">3 °C</td><td>Partly Cloudy</td></tr>
+            <tr data-city="Tokyo"><td>2024‑12‑03</td><td data-temp="8">8 °C</td><td data-temp="1">1 °C</td><td>Rain</td></tr>
+            <tr data-city="Tokyo"><td>2024‑12‑04</td><td data-temp="9">9 °C</td><td data-temp="2">2 °C</td><td>Cloudy</td></tr>
+            <tr data-city="Tokyo"><td>2024‑12‑05</td><td data-temp="11">11 °C</td><td data-temp="3">3 °C</td><td>Sunny</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="panel-hourly" role="tabpanel" hidden="true" data-component="forecast-hourly">
+      <h2>12‑Hour Forecast</h2>
+      <div class="table-responsive">
+        <table>
+          <thead>
+            <tr><th>Hour</th><th>Temp</th><th>Precip (mm)</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>00:00</td><td data-temp="5">5 °C</td><td>0</td></tr>
+            <tr><td>01:00</td><td data-temp="5">5 °C</td><td>0</td></tr>
+            <tr><td>02:00</td><td data-temp="4">4 °C</td><td>0</td></tr>
+            <tr><td>03:00</td><td data-temp="4">4 °C</td><td>0</td></tr>
+            <tr><td>04:00</td><td data-temp="3">3 °C</td><td>0</td></tr>
+            <tr><td>05:00</td><td data-temp="3">3 °C</td><td>0</td></tr>
+            <tr><td>06:00</td><td data-temp="4">4 °C</td><td>0</td></tr>
+            <tr><td>07:00</td><td data-temp="6">6 °C</td><td>0</td></tr>
+            <tr><td>08:00</td><td data-temp="8">8 °C</td><td>0</td></tr>
+            <tr><td>09:00</td><td data-temp="10">10 °C</td><td>0</td></tr>
+            <tr><td>10:00</td><td data-temp="12">12 °C</td><td>0</td></tr>
+            <tr><td>11:00</td><td data-temp="13">13 °C</td><td>0</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Radar/map placeholder -->
+    <section data-component="radar-map">
+      <h2>Radar Map (Demo)</h2>
+      <svg id="radar-map" width="300" height="200" role="img" aria-label="Radar map placeholder" tabindex="0" style="border:1px solid #666; cursor:pointer;">
+        <rect width="300" height="200" fill="#cce5ff"/>
+        <text x="150" y="100" text-anchor="middle" fill="#333" font-size="14">Map Placeholder</text>
+      </svg>
+    </section>
+
+    <!-- Alerts list -->
+    <section data-component="alerts-section">
+      <h2>Current Alerts</h2>
+      <form id="alert-filter-form" aria-label="Alert filters">
+        <label><input type="checkbox" value="warning" checked> Warning</label>
+        <label><input type="checkbox" value="advisory" checked> Advisory</label>
+        <label><input type="checkbox" value="information" checked> Information</label>
+      </form>
+      <ul id="alerts-list">
+        <li data-type="warning">High wind warning for coastal areas.</li>
+        <li data-type="advisory">Heavy rain advisory in mountainous regions.</li>
+        <li data-type="information">Sunny conditions expected tomorrow.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer data-component="site-footer">
+    <p>&copy; 2024 Nimbus Weather Service. All fictional data.</p>
+  </footer>
+</body>
+</html>

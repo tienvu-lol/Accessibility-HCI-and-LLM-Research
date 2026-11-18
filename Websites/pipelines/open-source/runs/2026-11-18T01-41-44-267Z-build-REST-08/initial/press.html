@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Press – Xi'an Famous Foods</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="site-header" data-section="header" data-component="site-header">
+    <h1>Xi'an Famous Foods</h1>
+    <button class="nav-toggle" aria-controls="primary-nav" aria-expanded="false">☰</button>
+    <nav class="primary-nav" id="primary-nav" aria-label="Primary" data-component="primary-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="our-story.html">Our Story</a></li>
+        <li><a href="locations.html">Locations</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="press.html" aria-current="page">Press</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content" data-section="main">
+    <nav aria-label="Breadcrumb" data-section="breadcrumb" data-component="breadcrumb">
+      <ol>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="press.html" aria-current="page">Press</a></li>
+      </ol>
+    </nav>
+
+    <section class="content-band" data-section="content-band" data-component="content-band">
+      <h1>In the News</h1>
+      <p>Recent coverage of Xi'an Famous Foods from various media outlets.</p>
+
+      <section class="card-grid" data-section="press-grid" data-component="card-grid">
+        <!-- Press cards placeholder -->
+        <article class="press-card" data-component="press-card">
+          <h3>New York Times</h3>
+          <p class="date">October 12, 2026</p>
+          <p>"A deep dive into the hand‑ripped noodle technique that sets Xi'an Famous Foods apart."</p>
+        </article>
+        <article class="press-card" data-component="press-card">
+          <h3>Eater NY</h3>
+          <p class="date">September 3, 2026</p>
+          <p>"The Spicy Lamb Noodles remain a cult favorite among downtown workers."</p>
+        </article>
+        <article class="press-card" data-component="press-card">
+          <h3>Food &amp; Wine</h3>
+          <p class="date">August 20, 2026</p>
+          <p>"Exploring the regional flavors of Shaanxi through the lens of a family‑run business."</p>
+        </article>
+        <article class="press-card" data-component="press-card">
+          <h3>Infatuation</h3>
+          <p class="date">July 15, 2026</p>
+          <p>"A quick guide to the best late‑night bites in Chinatown, featuring our cumin lamb burger."</p>
+        </article>
+      </section>
+    </section>
+  </main>
+
+  <footer class="site-footer" data-section="footer" data-component="site-footer">
+    <p>&copy; 2026 Xi'an Famous Foods. All rights reserved.</p>
+    <ul class="social-list" data-component="social-links">
+      <li><a href="#" aria-label="Facebook">FB</a></li>
+      <li><a href="#" aria-label="Twitter">TW</a></li>
+      <li><a href="#" aria-label="Instagram">IG</a></li>
+    </ul>
+    <section data-component="newsletter-signup">
+      <h3>Stay updated</h3>
+      <form>
+        <label for="newsletter-email">Email address</label>
+        <input type="email" id="newsletter-email" placeholder="you@example.com" required>
+        <button type="submit" class="btn">Subscribe</button>
+      </form>
+      <p class="note">We’ll never share your address.</p>
+    </section>
+  </footer>
+
+  <!-- Age gate modal (same as index) -->
+  <div id="age-gate-backdrop" class="modal-backdrop" aria-hidden="true">
+    <div id="age-gate-modal" class="modal" aria-hidden="false" role="dialog" aria-modal="true">
+      <h2>Age verification</h2>
+      <p>Please confirm you are 18 years or older.</p>
+      <form id="age-gate-form">
+        <label for="age-gate-input">Date of birth (MM/DD/YYYY)</label>
+        <input type="text" id="age-gate-input" name="age-gate-input" placeholder="01/01/1990" required pattern="(0[1-9]|1[0-2])\/(0[1-9]|[12][0-9]|3[01])\/\d{4}">
+        <button type="submit" class="btn">Enter</button>
+      </form>
+      <p id="age-gate-message" style="color:#c00;display:none;"></p>
+      <button class="modal-close" aria-label="Close">×</button>
+    </div>
+  </div>
+
+  <!-- Toast container -->
+  <div id="toast" aria-live="off"></div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

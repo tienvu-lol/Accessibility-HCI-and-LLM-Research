@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home - Alex Morgan's Portfolio</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  
+  <header class="site-header" data-component="site-header">
+    <div class="container nav-wrapper">
+      <a href="index.html" class="logo">Alex Morgan</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
+        <span class="sr-only">Toggle navigation</span>
+        &#9776;
+      </button>
+      <nav class="primary-nav" id="primary-nav" data-component="primary-nav">
+        <ul>
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="mini-tools.html">Mini-Tools</a></li>
+          <li><a href="all-posts.html">All Posts</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" data-section="home">
+    <div class="container">
+      <section data-component="hero">
+        <h1>Welcome to My Portfolio</h1>
+        <p>I'm Alex Morgan, a software engineer and creative technologist. I build accessible, performant web applications and explore the intersection of code and design.</p>
+        <a href="projects.html" class="filter-btn">View My Work</a>
+      </section>
+
+      <section data-component="featured-projects" style="margin-top: 2rem;">
+        <h2>Featured Projects</h2>
+        <div class="card-grid">
+          <article class="project-card" data-component="project-card" data-category="applications">
+            <h3>Project Alpha</h3>
+            <p>A web application for data extraction.</p>
+            <a href="projects-applications-git-date-extractor-npm-package-and-cli-tool.html">View Details</a>
+          </article>
+          <article class="project-card" data-component="project-card" data-category="web-stuff">
+            <h3>Cheatsheets & Snippets</h3>
+            <p>Markdown powered Gatsby mini site.</p>
+            <a href="projects-web-stuff-cheatsheets-and-snippets-markdown-powered-gatsby-mini-site.html">View Details</a>
+          </article>
+          <article class="project-card" data-component="project-card" data-category="electronics">
+            <h3>Custom PCB Design</h3>
+            <p>A custom PCB design for IoT sensors.</p>
+            <a href="#">View Details</a>
+          </article>
+        </div>
+      </section>
+
+      <section data-component="contact" style="margin-top: 2rem;">
+        <h2>Contact Me</h2>
+        <form class="contact-form" action="#" method="post">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required aria-required="true">
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required aria-required="true">
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required aria-required="true"></textarea>
+          </div>
+          <button type="submit">Send Message</button>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer" data-component="site-footer">
+    <div class="container">
+      <p>&copy; 2026 Alex Morgan. All rights reserved.</p>
+      <p>Built with semantic HTML, CSS, and vanilla JS.</p>
+    </div>
+  </footer>
+
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top">&#8679;</button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

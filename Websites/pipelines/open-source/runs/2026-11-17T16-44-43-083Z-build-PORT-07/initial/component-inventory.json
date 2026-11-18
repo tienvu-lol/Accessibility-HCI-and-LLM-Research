@@ -1,0 +1,83 @@
+[
+  {
+    "component": "site-header",
+    "selector": "header.site-header",
+    "pages": ["index.html", "projects.html", "projects-applications.html", "projects-electronics.html", "projects-marketing.html", "projects-other.html", "projects-web-stuff.html", "mini-tools.html", "blog.html", "all-posts.html", "projects-applications-git-date-extractor-npm-package-and-cli-tool.html", "projects-web-stuff-cheatsheets-and-snippets-markdown-powered-gatsby-mini-site.html", "posts-2023-what-makes-svelte-so-great-features-and-comparisons.html", "posts-2023-shell-heredocs-productive-fun-bash-and-beyond.html", "404.html"],
+    "behaviours": ["Responsive navigation toggle", "Active link highlighting"],
+    "keyboard": ["Tab to navigate links", "Enter/Space on toggle to open menu", "Escape to close menu"],
+    "status": "implemented",
+    "validation": "not-tested"
+  },
+  {
+    "component": "primary-nav",
+    "selector": "nav.primary-nav",
+    "pages": ["index.html", "projects.html", "projects-applications.html", "projects-electronics.html", "projects-marketing.html", "projects-other.html", "projects-web-stuff.html", "mini-tools.html", "blog.html", "all-posts.html", "projects-applications-git-date-extractor-npm-package-and-cli-tool.html", "projects-web-stuff-cheatsheets-and-snippets-markdown-powered-gatsby-mini-site.html", "posts-2023-what-makes-svelte-so-great-features-and-comparisons.html", "posts-2023-shell-heredocs-productive-fun-bash-and-beyond.html", "404.html"],
+    "behaviours": ["Mobile menu display", "Focus trapping"],
+    "keyboard": ["Arrow keys to navigate links", "Escape to close"],
+    "status": "implemented",
+    "validation": "not-tested"
+  },
+  {
+    "component": "project-card",
+    "selector": "article.project-card",
+    "pages": ["index.html", "projects.html", "projects-applications.html", "projects-electronics.html", "projects-marketing.html", "projects-other.html", "projects-web-stuff.html"],
+    "behaviours": ["Hover effect", "Category filtering"],
+    "keyboard": ["Tab to focus link"],
+    "status": "implemented",
+    "validation": "not-tested"
+  },
+  {
+    "component": "category-filter",
+    "selector": "div.filter-buttons",
+    "pages": ["projects.html", "projects-applications.html", "projects-electronics.html", "projects-marketing.html", "projects-other.html", "projects-web-stuff.html"],
+    "behaviours": ["Toggle active state", "Filter project cards"],
+    "keyboard": ["Tab to navigate buttons", "Enter/Space to filter"],
+    "status": "implemented",
+    "validation": "not-tested"
+  },
+  {
+    "component": "contact-form",
+    "selector": "form.contact-form",
+    "pages": ["index.html"],
+    "behaviours": ["Validation", "Error summary", "Success message simulation"],
+    "keyboard": ["Tab to navigate fields", "Enter to submit"],
+    "status": "implemented",
+    "validation": "not-tested"
+  },
+  {
+    "component": "blog-card",
+    "selector": "article.blog-card",
+    "pages": ["blog.html", "all-posts.html"],
+    "behaviours": ["Hover effect"],
+    "keyboard": ["Tab to focus link"],
+    "status": "implemented",
+    "validation": "not-tested"
+  },
+  {
+    "component": "tool-card",
+    "selector": "article.tool-card",
+    "pages": ["mini-tools.html"],
+    "behaviours": ["Hover effect"],
+    "keyboard": ["Tab to focus link"],
+    "status": "implemented",
+    "validation": "not-tested"
+  },
+  {
+    "component": "site-footer",
+    "selector": "footer.site-footer",
+    "pages": ["index.html", "projects.html", "projects-applications.html", "projects-electronics.html", "projects-marketing.html", "projects-other.html", "projects-web-stuff.html", "mini-tools.html", "blog.html", "all-posts.html", "projects-applications-git-date-extractor-npm-package-and-cli-tool.html", "projects-web-stuff-cheatsheets-and-snippets-markdown-powered-gatsby-mini-site.html", "posts-2023-what-makes-svelte-so-great-features-and-comparisons.html", "posts-2023-shell-heredocs-productive-fun-bash-and-beyond.html", "404.html"],
+    "behaviours": ["Static content"],
+    "keyboard": ["Tab to navigate links"],
+    "status": "implemented",
+    "validation": "not-tested"
+  },
+  {
+    "component": "back-to-top",
+    "selector": "button#back-to-top",
+    "pages": ["index.html", "projects.html", "projects-applications.html", "projects-electronics.html", "projects-marketing.html", "projects-other.html", "projects-web-stuff.html", "mini-tools.html", "blog.html", "all-posts.html", "projects-applications-git-date-extractor-npm-package-and-cli-tool.html", "projects-web-stuff-cheatsheets-and-snippets-markdown-powered-gatsby-mini-site.html", "posts-2023-what-makes-svelte-so-great-features-and-comparisons.html", "posts-2023-shell-heredocs-productive-fun-bash-and-beyond.html", "404.html"],
+    "behaviours": ["Show/hide on scroll", "Smooth scroll to top"],
+    "keyboard": ["Enter/Space to scroll"],
+    "status": "implemented",
+    "validation": "not-tested"
+  }
+]

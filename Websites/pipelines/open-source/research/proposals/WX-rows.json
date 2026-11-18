@@ -1,0 +1,484 @@
+{
+  "category": "weather",
+  "prefix": "WX",
+  "updated_at": "2026-11-17T05:22:25.125Z",
+  "slots_proposed": [
+    7,
+    8,
+    9,
+    10
+  ],
+  "slots_outstanding": [],
+  "approval_state": "unapproved: approval cells are left empty for the project lead",
+  "runs": [
+    "2026-11-16T21-43-57-698Z-research-WX-07",
+    "2026-11-17T05-15-05-830Z-research-WX-10",
+    "2026-11-17T05-11-13-301Z-research-WX-09",
+    "2026-11-17T05-20-05-716Z-research-WX-08"
+  ],
+  "rows": [
+    {
+      "source_id": "WX-07",
+      "subcategory": "national meteorological service",
+      "source_name": "Bureau of Meteorology",
+      "source_url": "https://www.bom.gov.au",
+      "verified_at": "2026-11-16",
+      "verification_method": "HTTP GET by the orchestrator",
+      "verification_result": "verified",
+      "evidence_reference": "pipelines/open-source/research/evidence/WX-07-http-2026-11-16.json",
+      "source_pages": [
+        {
+          "url": "https://www.bom.gov.au",
+          "title": "Discover your weather | The Bureau of Meteorology",
+          "local_file": "index.html"
+        },
+        {
+          "url": "https://www.bom.gov.au/location/australia",
+          "title": "Forecasts and observations | The Bureau of Meteorology",
+          "local_file": "location-australia.html"
+        },
+        {
+          "url": "https://www.bom.gov.au/weather-and-climate/warnings-and-alerts",
+          "title": "Warnings and alerts | The Bureau of Meteorology",
+          "local_file": "warnings-and-alerts.html"
+        },
+        {
+          "url": "https://www.bom.gov.au/weather-and-climate/rain-radar-and-weather-maps",
+          "title": "Rain radar and weather maps | The Bureau of Meteorology",
+          "local_file": "rain-radar-and-weather-maps.html"
+        },
+        {
+          "url": "https://www.bom.gov.au/weather-and-climate/specialised-forecasts-and-observations/tropical-cyclone",
+          "title": "Tropical cyclone | The Bureau of Meteorology",
+          "local_file": "tropical-cyclone.html"
+        },
+        {
+          "url": "https://www.bom.gov.au/weather-and-climate/water-data-and-forecasts",
+          "title": "Water data and forecasts | The Bureau of Meteorology",
+          "local_file": "water-data-and-forecasts.html"
+        },
+        {
+          "url": "https://www.bom.gov.au/weather-and-climate/past-weather-and-climate",
+          "title": "Past weather and climate | The Bureau of Meteorology",
+          "local_file": "past-weather-and-climate.html"
+        },
+        {
+          "url": "https://www.bom.gov.au/about-the-bureau",
+          "title": "About the bureau | The Bureau of Meteorology",
+          "local_file": "about-the-bureau.html"
+        },
+        {
+          "url": "https://www.bom.gov.au/resources/learn-and-explore",
+          "title": "Learn and explore | The Bureau of Meteorology",
+          "local_file": "learn-and-explore.html"
+        },
+        {
+          "url": "https://www.bom.gov.au/resources/indigenous-weather-knowledge",
+          "title": "Indigenous weather knowledge | The Bureau of Meteorology",
+          "local_file": "indigenous-weather-knowledge.html"
+        }
+      ],
+      "key_regions": [
+        "Header",
+        "Navigation",
+        "Hero",
+        "Main Content",
+        "Footer"
+      ],
+      "key_interactions": [
+        {
+          "name": "Radar map selection",
+          "evidence": "observed",
+          "notes": "Evidence shows links with ?radar= parameters on the radar page."
+        },
+        {
+          "name": "Location search",
+          "evidence": "inferred",
+          "notes": "Standard feature for this site type; not explicitly visible in extracted markup."
+        },
+        {
+          "name": "Forecast tabs",
+          "evidence": "inferred",
+          "notes": "Standard feature for this site type; not explicitly visible in extracted markup."
+        }
+      ],
+      "complexity": "medium",
+      "stack_clues": "unknown",
+      "limitations": "None",
+      "slot": 7,
+      "category": "weather",
+      "model_group": "open-source",
+      "model_id": "unsloth/Qwen3.6-35B-A3B-GGUF",
+      "model_version": "Q4_K_M",
+      "approved_at": "",
+      "approved_by": "",
+      "approval_reference": "",
+      "researched_by": {
+        "model_id": "unsloth/Qwen3.6-35B-A3B-GGUF",
+        "slot": 7
+      },
+      "orchestrator_checks": {
+        "pages_proposed": 10,
+        "pages_without_successful_fetch": [],
+        "page_map_has_index": true,
+        "source_url_fetched_ok": true,
+        "meets_min_pages": true
+      }
+    },
+    {
+      "source_id": "WX-08",
+      "subcategory": "commercial weather portal",
+      "source_name": "Weather.com",
+      "source_url": "https://weather.com/",
+      "verified_at": "2026-11-17",
+      "verification_method": "HTTP GET by the orchestrator",
+      "verification_result": "verified",
+      "evidence_reference": "pipelines/open-source/research/evidence/WX-08-http-2026-11-17.json",
+      "source_pages": [
+        {
+          "url": "https://weather.com/",
+          "title": "National and Local Weather Radar, Daily Forecast, Hurricane and information from The Weather Channel and weather.com",
+          "local_file": "index.html"
+        },
+        {
+          "url": "https://weather.com/redir?id=autodetect&page=today&locale=en-US",
+          "title": "Weather Forecast and Conditions for Ashburn, Virginia - The Weather Channel | Weather.com",
+          "local_file": "today.html"
+        },
+        {
+          "url": "https://weather.com/redir?id=autodetect&page=radar&locale=en-US",
+          "title": "Interactive Radar for Ashburn, Virginia | weather.com",
+          "local_file": "radar.html"
+        },
+        {
+          "url": "https://weather.com/news",
+          "title": "Local & National Breaking Weather News & Videos | weather.com",
+          "local_file": "news.html"
+        },
+        {
+          "url": "https://weather.com/login",
+          "title": "Login - The Weather Channel | weather.com",
+          "local_file": "login.html"
+        },
+        {
+          "url": "https://weather.com/redir?id=autodetect&page=hourly&locale=en-US",
+          "title": "Hourly Weather Forecast for Ashburn, Virginia - The Weather Channel | Weather.com",
+          "local_file": "hourly.html"
+        },
+        {
+          "url": "https://weather.com/redir?id=autodetect&page=tenday&locale=en-US",
+          "title": "10-Day Weather Forecast for Ashburn, Virginia - The Weather Channel | weather.com",
+          "local_file": "tenday.html"
+        },
+        {
+          "url": "https://weather.com/redir?id=autodetect&page=monthly&locale=en-US",
+          "title": "Monthly Weather Forecast for Ashburn, Virginia - weather.com",
+          "local_file": "monthly.html"
+        },
+        {
+          "url": "https://weather.com/redir?id=autodetect&page=allergy&locale=en-US",
+          "title": "Pollen count and allergy forecast for Ashburn, Virginia - The Weather Channel | Weather.com",
+          "local_file": "allergy.html"
+        }
+      ],
+      "key_regions": [
+        "header",
+        "navigation (with links to Today Forecasts, Radar Radar, News News, User Avatar Sign in, lightning Get Premium Upgrade Chevron Right, Hourly, 10 Day, Monthly, Allergies, Air Quality, Cold & Flu, lightning Get Premium, Winter Outlook, El Niño, Hurricanes, Tornadoes, Health & Wellness, Wildfires, Fall Outlook, Home & Garden, Fall Travel)"
+      ],
+      "key_interactions": [
+        {
+          "name": "inline location search",
+          "evidence": "inferred",
+          "notes": "No search form observed in fetched markup."
+        },
+        {
+          "name": "forecast tabs",
+          "evidence": "inferred",
+          "notes": "Links for today, hourly, 10‑day, monthly present but not confirmed as tabs."
+        },
+        {
+          "name": "F/C conversion",
+          "evidence": "inferred",
+          "notes": "No temperature unit toggle seen in markup."
+        },
+        {
+          "name": "labeled static radar/map",
+          "evidence": "inferred",
+          "notes": "Radar link present but not confirmed as a labeled static map."
+        },
+        {
+          "name": "alert filters",
+          "evidence": "inferred",
+          "notes": "No alert filter controls observed."
+        }
+      ],
+      "complexity": "medium",
+      "stack_clues": "unknown",
+      "limitations": "No fetched pages failed; however, the exact date of the HTTP GET is not included in the evidence, and navigation may be incomplete if the site relies on JavaScript for some links that were not present in the raw HTML.",
+      "slot": 8,
+      "category": "weather",
+      "model_group": "open-source",
+      "model_id": "unsloth/NVIDIA-Nemotron-3-Super-120B-A12B-GGUF",
+      "model_version": "MXFP4_MOE",
+      "approved_at": "",
+      "approved_by": "",
+      "approval_reference": "",
+      "researched_by": {
+        "model_id": "unsloth/NVIDIA-Nemotron-3-Super-120B-A12B-GGUF",
+        "slot": 8
+      },
+      "orchestrator_checks": {
+        "pages_proposed": 9,
+        "pages_without_successful_fetch": [
+          "https://weather.com/redir?id=autodetect&page=today&locale=en-US",
+          "https://weather.com/redir?id=autodetect&page=radar&locale=en-US",
+          "https://weather.com/redir?id=autodetect&page=hourly&locale=en-US",
+          "https://weather.com/redir?id=autodetect&page=tenday&locale=en-US",
+          "https://weather.com/redir?id=autodetect&page=monthly&locale=en-US",
+          "https://weather.com/redir?id=autodetect&page=allergy&locale=en-US"
+        ],
+        "page_map_has_index": true,
+        "source_url_fetched_ok": true,
+        "meets_min_pages": true
+      }
+    },
+    {
+      "source_id": "WX-09",
+      "subcategory": "local TV weather or specialized forecast site",
+      "source_name": "NBC Weather",
+      "source_url": "https://www.nbcnews.com/news/weather",
+      "verified_at": "2026-11-17",
+      "verification_method": "HTTP GET",
+      "verification_result": "verified",
+      "evidence_reference": "pipelines/open-source/research/evidence/WX-09-http-2026-11-17.json",
+      "source_pages": [
+        {
+          "url": "https://www.nbcnews.com/news/weather",
+          "title": "Weather News: Headlines and Video on Storms, Climate Change, Hurricanes and More | NBC News",
+          "local_file": "index.html"
+        },
+        {
+          "url": "https://www.nbcnews.com/weather/floods/huge-waves-pummel-california-coast-forcing-closure-iconic-piers-rcna609141",
+          "title": "Huge waves pummel the California coast, forcing closure of iconic piers",
+          "local_file": "floods-in-california.html"
+        },
+        {
+          "url": "https://www.nbcnews.com/floods",
+          "title": "Floods: Latest news on flooding in the U.S. | NBC News",
+          "local_file": "floods.html"
+        },
+        {
+          "url": "https://www.nbcnews.com/weather/storms/weekend-storm-bring-seasons-first-widespread-freeze-millions-us-rcna609181",
+          "title": "Weekend storm brings season’s first widespread freeze to millions across U.S.",
+          "local_file": "weekend-storm.html"
+        },
+        {
+          "url": "https://www.nbcnews.com/science/environment",
+          "title": "Environment News: Climate Change, Energy & Conservation - NBC News | NBC News",
+          "local_file": "environment.html"
+        },
+        {
+          "url": "https://www.nbcnews.com/weather/storms/heavy-rains-cause-flash-flooding-north-georgia-forcing-water-rescues-e-rcna607627",
+          "title": "Heavy rain causes flash flooding in north Georgia, forcing water rescues and evacuations",
+          "local_file": "flash-flooding-in-georgia.html"
+        },
+        {
+          "url": "https://www.nbcnews.com/nightly-news/video/powerful-storms-strike-on-both-coasts-273486917980",
+          "title": "Powerful storms strike on both coasts",
+          "local_file": "powerful-storms.html"
+        },
+        {
+          "url": "https://www.nbcnews.com/tech/tech-news/twitch-middle-tier-streamers-making-living-platform-rcna608808",
+          "title": "The future of Twitch might belong to its smaller streamers",
+          "local_file": "twitch-streamers.html"
+        },
+        {
+          "url": "https://www.nbcnews.com/news/us-news/victim-washington-dc-gym-shooting-gun-control-activist-rcna609705",
+          "title": "One of the victims of the Washington, D.C., gym shooting is a gun control activist",
+          "local_file": "gym-shooting-victim.html"
+        }
+      ],
+      "key_regions": [
+        "header",
+        "navigation",
+        "hero",
+        "content bands",
+        "sidebar",
+        "footer"
+      ],
+      "key_interactions": [
+        {
+          "name": "inline location search",
+          "evidence": "inferred",
+          "notes": "not found in fetched markup"
+        },
+        {
+          "name": "forecast tabs",
+          "evidence": "inferred",
+          "notes": "not found in fetched markup"
+        },
+        {
+          "name": "F/C conversion",
+          "evidence": "inferred",
+          "notes": "not found in fetched markup"
+        },
+        {
+          "name": "labeled static radar/map",
+          "evidence": "inferred",
+          "notes": "not found in fetched markup"
+        },
+        {
+          "name": "alert filters",
+          "evidence": "inferred",
+          "notes": "not found in fetched markup"
+        }
+      ],
+      "complexity": "medium",
+      "stack_clues": "unknown",
+      "limitations": "https://www.nbcnews.com/nightly-news/video/tornado-warnings-across-the-northeast-273390661516 (status: unknown, reason: not fetched)",
+      "slot": 9,
+      "category": "weather",
+      "model_group": "open-source",
+      "model_id": "unsloth/Llama-3.3-70B-Instruct-GGUF",
+      "model_version": "Q8_0",
+      "approved_at": "",
+      "approved_by": "",
+      "approval_reference": "",
+      "researched_by": {
+        "model_id": "unsloth/Llama-3.3-70B-Instruct-GGUF",
+        "slot": 9
+      },
+      "orchestrator_checks": {
+        "pages_proposed": 9,
+        "pages_without_successful_fetch": [],
+        "page_map_has_index": true,
+        "source_url_fetched_ok": true,
+        "meets_min_pages": true
+      }
+    },
+    {
+      "source_id": "WX-10",
+      "subcategory": "reserve",
+      "source_name": "Japan Meteorological Agency – Weather (English)",
+      "source_url": "https://www.jma.go.jp/jma/indexe.html",
+      "verified_at": "2026-11-17",
+      "verification_method": "HTTP GET by the orchestrator",
+      "verification_result": "verified",
+      "evidence_reference": "pipelines/open-source/research/evidence/WX-10-http-2026-11-17.json",
+      "source_pages": [
+        {
+          "url": "https://www.jma.go.jp/jma/indexe.html",
+          "title": "Japan Meteorological Agency",
+          "local_file": "index.html"
+        },
+        {
+          "url": "https://www.jma.go.jp/jma/en/menu.html",
+          "title": "Japan Meteorological Agency",
+          "local_file": "menu.html"
+        },
+        {
+          "url": "https://www.jma.go.jp/jma/en/Services/indexe_services.html",
+          "title": "Japan Meteorological Agency",
+          "local_file": "services.html"
+        },
+        {
+          "url": "https://www.jma.go.jp/jma/en/Publications/publications.html",
+          "title": "Japan Meteorological Agency Publications/Periodicals",
+          "local_file": "publications.html"
+        },
+        {
+          "url": "https://www.jma.go.jp/jma/en/News/indexe_news.html",
+          "title": "Japan Meteorological Agency",
+          "local_file": "news.html"
+        },
+        {
+          "url": "https://www.jma.go.jp/jma/en/NMHS/indexe_nmhs.html",
+          "title": "Japan Meteorological Agency",
+          "local_file": "nmhs.html"
+        },
+        {
+          "url": "https://www.jma.go.jp/jma/en/AboutUs/indexe_aboutus.html",
+          "title": "Japan Meteorological Agency",
+          "local_file": "about-us.html"
+        },
+        {
+          "url": "https://www.jma.go.jp/jma/en/Links/indexe_lnk.html",
+          "title": "Japan Meteorological Agency",
+          "local_file": "links.html"
+        },
+        {
+          "url": "https://www.jma.go.jp/jma/en/SiteMap/indexe_smp.html",
+          "title": "Japan Meteorological Agency",
+          "local_file": "site-map.html"
+        },
+        {
+          "url": "https://www.jma.go.jp/jma/en/Access/indexe_acs.html",
+          "title": "Japan Meteorological Agency",
+          "local_file": "access.html"
+        }
+      ],
+      "key_regions": [
+        "header",
+        "navigation",
+        "main content",
+        "footer",
+        "hero",
+        "sidebar"
+      ],
+      "key_interactions": [
+        {
+          "name": "inline location search",
+          "evidence": "inferred",
+          "notes": "Typical for national weather portals but not present in fetched markup"
+        },
+        {
+          "name": "forecast tabs",
+          "evidence": "inferred",
+          "notes": "Common UI pattern for daily/hourly forecasts; not visible in markup"
+        },
+        {
+          "name": "F/C conversion",
+          "evidence": "inferred",
+          "notes": "Often offered on weather sites; not detected in HTML"
+        },
+        {
+          "name": "radar/map placeholder",
+          "evidence": "inferred",
+          "notes": "Site lists map pages but placeholder links only; no map markup fetched"
+        },
+        {
+          "name": "alert filters",
+          "evidence": "inferred",
+          "notes": "Alert pages exist; filter UI not evident in fetched HTML"
+        }
+      ],
+      "complexity": "medium",
+      "stack_clues": "unknown",
+      "limitations": "Only the 10 pages listed returned 2xx responses. Numerous additional links (PDFs, photo galleries, real‑time map pages, and other informational pages) were present in the markup but were not fetched; they are therefore omitted.",
+      "slot": 10,
+      "category": "weather",
+      "model_group": "open-source",
+      "model_id": "unsloth/gpt-oss-120b-GGUF",
+      "model_version": "F16",
+      "approved_at": "",
+      "approved_by": "",
+      "approval_reference": "",
+      "researched_by": {
+        "model_id": "unsloth/gpt-oss-120b-GGUF",
+        "slot": 10
+      },
+      "orchestrator_checks": {
+        "pages_proposed": 10,
+        "pages_without_successful_fetch": [],
+        "page_map_has_index": true,
+        "source_url_fetched_ok": true,
+        "meets_min_pages": true
+      }
+    }
+  ],
+  "orchestrator_corrections": [
+    "2026-11-17: WX-10 verified_at normalised; see CORRECTIONS-2026-11-17-slot10.json",
+    "2026-11-17: WX-08 verified_at normalised; see CORRECTIONS-2026-11-17-slot08.json",
+    "2026-11-17: verified_at reset to the HTTP evidence date; see CORRECTIONS-2026-11-17-dates.json"
+  ]
+}

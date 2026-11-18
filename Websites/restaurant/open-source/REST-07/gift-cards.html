@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gift Cards | Harvest Table</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="site-header" data-component="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">Harvest Table</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav-menu">
+        Menu
+      </button>
+      <nav class="primary-nav" id="primary-nav-menu" data-component="primary-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="locations.html">Locations</a></li>
+          <li><a href="gift-cards.html">Gift Cards</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="support.html">Support</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" data-section="gift-cards-content">
+    <section class="hero">
+      <div class="container">
+        <h1>Gift Cards</h1>
+        <p>Give the gift of fresh, delicious food. Perfect for any occasion.</p>
+      </div>
+    </section>
+
+    <section class="container" data-section="gift-card-purchase">
+      <h2>Purchase a Gift Card</h2>
+      <div class="card-grid" data-component="card-grid">
+        <article class="card">
+          <div class="card-body">
+            <h3 class="card-title">$25 Gift Card</h3>
+            <p>Great for a quick lunch or coffee.</p>
+            <button class="btn" disabled>Add to Cart (Simulation)</button>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-body">
+            <h3 class="card-title">$50 Gift Card</h3>
+            <p>Perfect for a family meal.</p>
+            <button class="btn" disabled>Add to Cart (Simulation)</button>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-body">
+            <h3 class="card-title">$100 Gift Card</h3>
+            <p>The ultimate gift for any food lover.</p>
+            <button class="btn" disabled>Add to Cart (Simulation)</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="container" data-section="gift-card-balance">
+      <h2>Check Your Balance</h2>
+      <p>Enter your gift card number and PIN to check your balance. (Simulation)</p>
+      <form id="gift-card-balance-form" data-component="gift-card-balance-check">
+        <div class="form-group">
+          <label for="gift-card-number">Gift Card Number</label>
+          <input type="text" id="gift-card-number" name="cardNumber" required placeholder="1234567890">
+        </div>
+        <div class="form-group">
+          <label for="gift-card-pin">PIN</label>
+          <input type="password" id="gift-card-pin" name="pin" required placeholder="****">
+        </div>
+        <button type="submit" class="btn">Check Balance</button>
+        <div id="gift-card-balance-result" role="status" aria-live="polite"></div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer" data-component="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-section">
+        <h2>Harvest Table</h2>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="values.html">Our Values</a></li>
+          <li><a href="press.html">Press</a></li>
+          <li><a href="community.html">Community</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h2>Customer Care</h2>
+        <ul>
+          <li><a href="support.html">Support</a></li>
+          <li><a href="gift-cards.html">Gift Cards</a></li>
+          <li><a href="locations.html">Locations</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h2>Newsletter</h2>
+        <form id="newsletter-form" data-component="newsletter-signup">
+          <label for="newsletter-email">Subscribe to our newsletter</label>
+          <input type="email" id="newsletter-email" name="email" required aria-describedby="newsletter-result">
+          <button type="submit" class="btn">Subscribe</button>
+          <div id="newsletter-result" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+    </div>
+    <div class="container" style="margin-top: var(--spacing-md); text-align: center;">
+      <p>&copy; 2026 Harvest Table. All rights reserved. (Fictional Replica)</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

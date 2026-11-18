@@ -1,0 +1,78 @@
+{
+  "corrected_at": "2026-11-16T21:41:38.107855Z",
+  "corrected_by": "orchestrator (Claude), disclosed post-hoc correction of Phase A proposal metadata",
+  "reason": "The model emitted a fabricated verified_at date (May 2024) in every row despite the prompt instructing it to copy the date exactly as the HTTP evidence states it, and in one row a non-canonical complexity value. The fetches actually occurred on the evidence file's date. Page maps, URLs and verification_result were NOT altered.",
+  "corrections": [
+    {
+      "file": "CORP-rows.json",
+      "source_id": "CORP-07",
+      "fields": {
+        "verified_at": {
+          "model_emitted": "2024-05-24 HTTP GET by the orchestrator",
+          "corrected_to": "2026-11-16",
+          "source": "evidence filename / HTTP fetch date"
+        },
+        "complexity": {
+          "model_emitted": "High",
+          "corrected_to": "high",
+          "source": "prompt specifies low|medium|high"
+        }
+      }
+    },
+    {
+      "file": "ECOM-rows.json",
+      "source_id": "ECOM-07",
+      "fields": {
+        "verified_at": {
+          "model_emitted": "2024-05-22",
+          "corrected_to": "2026-11-16",
+          "source": "evidence filename / HTTP fetch date"
+        }
+      }
+    },
+    {
+      "file": "GOV-rows.json",
+      "source_id": "GOV-07",
+      "fields": {
+        "verified_at": {
+          "model_emitted": "2024-05-22 HTTP GET by the orchestrator",
+          "corrected_to": "2026-11-16",
+          "source": "evidence filename / HTTP fetch date"
+        }
+      }
+    },
+    {
+      "file": "HOSP-rows.json",
+      "source_id": "HOSP-07",
+      "fields": {
+        "verified_at": {
+          "model_emitted": "2024-05-20 (HTTP GET by the orchestrator)",
+          "corrected_to": "2026-11-16",
+          "source": "evidence filename / HTTP fetch date"
+        }
+      }
+    },
+    {
+      "file": "NEWS-rows.json",
+      "source_id": "NEWS-07",
+      "fields": {
+        "verified_at": {
+          "model_emitted": "2026-11-17",
+          "corrected_to": "2026-11-16",
+          "source": "evidence filename / HTTP fetch date"
+        }
+      }
+    },
+    {
+      "file": "UNI-rows.json",
+      "source_id": "UNI-07",
+      "fields": {
+        "verified_at": {
+          "model_emitted": "2024-05-22",
+          "corrected_to": "2026-11-16",
+          "source": "evidence filename / HTTP fetch date"
+        }
+      }
+    }
+  ]
+}

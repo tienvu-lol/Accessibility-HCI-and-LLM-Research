@@ -1,0 +1,4737 @@
+{
+  "tool": "pipelines/open-source/scripts/verify-sources.mjs",
+  "run_id": "2026-11-17T05-35-49-704Z-research-HOSP-09",
+  "model_group": "open-source",
+  "category": "healthcare",
+  "slots": [
+    9
+  ],
+  "fetched_at": "2026-11-17T05:37:26.180Z",
+  "method": "HTTP GET",
+  "rendered": false,
+  "interactions_tested": false,
+  "user_agent": "Mozilla/5.0 (compatible; accessibility-research-replica-study/1.0)",
+  "rounds": [
+    {
+      "round": 1,
+      "kind": "candidate homepages",
+      "records": [
+        {
+          "url": "https://www.bostonchildrens.org",
+          "fetched_at": "2026-11-17T05:36:30.669Z",
+          "method": "HTTP GET",
+          "ok": true,
+          "status": 200,
+          "final_url": "https://www.childrenshospital.org/",
+          "redirected": true,
+          "content_type": "text/html; charset=utf-8",
+          "bytes": 70025,
+          "title": "Homepage | Boston Children's Hospital",
+          "robots": {
+            "allowed": true,
+            "matched": null,
+            "note": "robots.txt read for user-agent *"
+          },
+          "error": null,
+          "links": [
+            {
+              "url": "https://www.childrenshospital.org/",
+              "text": "",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/request-appointment",
+              "text": "Make an Appointment",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/patients-families/about-boston-childrens/billing-insurance/pay-your-bill-online",
+              "text": "Pay My Bill",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor",
+              "text": "Find a Doctor",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-location",
+              "text": "Find a Location",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/patients-families/about-boston-childrens/second-opinion-program",
+              "text": "Get a Second Opinion",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/ways-help/donate-blood",
+              "text": "Donate Blood",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/conditions-treatments",
+              "text": "Conditions & Treatments",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/services",
+              "text": "Programs & Services",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/patients-families",
+              "text": "Patients & Families",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/health-care-professionals",
+              "text": "Healthcare Professionals",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/search",
+              "text": "Search",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/search?keywords=Healthcare",
+              "text": "Healthcare",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/search?keywords=Cold",
+              "text": "Cold",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/search?keywords=Cough",
+              "text": "Cough",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/search?keywords=Ear%20Infection",
+              "text": "Ear Infection",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/search?keywords=Chronic%20Pain",
+              "text": "Chronic Pain",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/search?keywords=Cancer",
+              "text": "Cancer",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us",
+              "text": "About Boston Children's",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/newsroom",
+              "text": "Newsroom",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/ways-help",
+              "text": "Ways to Help",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/contact-us",
+              "text": "Contact Us",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/get-connected/government-relations",
+              "text": "Government Relations",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/legal/notice-privacy-practices",
+              "text": "HIPAA Notice of Privacy Rights",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/legal/rights-responsibilities-patients-patient-representatives-families",
+              "text": "Patient & Family Rights",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/patients-families/about-boston-childrens/billing-insurance/resources-self-service/charges-services",
+              "text": "Price Transparency",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/patient-experience",
+              "text": "Quality & Patient Safety",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/working-us/contractors-vendors",
+              "text": "Compliance",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/patients-families/you-arrive/your-visit",
+              "text": "Read more >>",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/webform/find_a_doctor_questionnaire",
+              "text": "Not Sure Where to Begin?",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/awards-accolades",
+              "text": "Read About Our Rankings & Awards",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/online-second-opinions",
+              "text": "Online Second Opinion",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/newsroom/media-archive/inside-wraparound-waltham-citys-safety-net-immigrant-students-and-their",
+              "text": "About the gift",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/videos/meet-dr-christina-jacobsen-boston-childrens-hospital",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/videos",
+              "text": "See All Videos",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/podcasts/boston-childrens-answers-parentcast/what-should-parents-know-about-down-syndrome",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/podcasts",
+              "text": "Check Out All Episodes",
+              "in_nav": false
+            }
+          ]
+        },
+        {
+          "url": "https://www.chla.org",
+          "fetched_at": "2026-11-17T05:36:32.515Z",
+          "method": "HTTP GET",
+          "ok": false,
+          "status": 403,
+          "final_url": "https://www.chla.org/",
+          "redirected": true,
+          "content_type": "text/html; charset=UTF-8",
+          "bytes": 5520,
+          "title": "Just a moment...",
+          "robots": {
+            "allowed": true,
+            "matched": "/",
+            "note": "robots.txt read for user-agent *"
+          },
+          "error": null,
+          "links": []
+        },
+        {
+          "url": "https://www.stjude.org",
+          "fetched_at": "2026-11-17T05:36:33.546Z",
+          "method": "HTTP GET",
+          "ok": true,
+          "status": 200,
+          "final_url": "https://www.stjude.org/",
+          "redirected": true,
+          "content_type": "text/html; charset=UTF-8",
+          "bytes": 322732,
+          "title": "St. Jude Children's Research Hospital",
+          "robots": {
+            "allowed": true,
+            "matched": null,
+            "note": "robots.txt read for user-agent *"
+          },
+          "error": null,
+          "links": [
+            {
+              "url": "https://www.stjude.org/",
+              "text": "St. Jude Children's Research Hospital logo #Layer_2 .cls-1 { fill: #c10f3a; } #Layer_2 .cls-2 { fill: none; } SJ_ChildGr",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stjude.org/about-st-jude.html",
+              "text": "About Us",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stjude.org/about-st-jude/our-purpose.html",
+              "text": "Our Purpose",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stjude.org/about-st-jude/what-st-jude-does.html",
+              "text": "What We Do",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stjude.org/about-st-jude/impact.html",
+              "text": "Our Impact",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stjude.org/about-st-jude/history.html",
+              "text": "History",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stjude.org/about-st-jude/connect-with-us.html",
+              "text": "Connect with Us",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stjude.org/about-st-jude/stories.html",
+              "text": "Stories",
+              "in_nav": true
+            },
+            {
+              "url": "https://stjude.org/care-treatment.html?sc_icid=home-mm-care",
+              "text": "Care & Treatment",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stjude.org/care-treatment/treatment/disease.html?sc_icid=home-mm-diseases",
+              "text": "Diseases Treated",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stjude.org/care-treatment/patient-referrals.html?sc_icid=home-mm-patient-referrals",
+              "text": "Patient Referrals",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stjude.org/care-treatment/patient-referrals/refer-a-patient/physician-patient-referral-form.html?sc_icid=home-mm-prf",
+              "text": "Online Referral Form",
+              "in_nav": true
+            },
+            {
+              "url": "https://stjude.org/care-treatment/clinical-trials.html?sc_icid=home-mm-trials",
+              "text": "Open Clinical Trials",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stjude.org/care-treatment/patient-families.html?sc_icid=home-mm-patients-fam",
+              "text": "Patients & Families",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stjude.org/care-treatment/patient-families/affiliate-program.html?sc_icid=home-mm-affiliates",
+              "text": "Affiliate Program",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stjude.org/research.html?sc_icid=home-mm-res",
+              "text": "Research",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stjude.org/research/why-st-jude.html?sc_icid=home-mm-why",
+              "text": "Why St. Jude",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stjude.org/research/departments.html?sc_icid=home-mm-depts",
+              "text": "Departments",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stjude.org/research/labs.html?sc_icid=home-mm-labs",
+              "text": "Labs",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stjude.org/research/clinical-research.html?sc_icid=home-mm-cr",
+              "text": "Clinical Research",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stjude.org/people.html",
+              "text": "Research Faculty",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stjude.org/research/centers-initiatives.html?sc_icid=home-mm-ci",
+              "text": "Centers & Initiatives",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stjude.org/research/progress.html?sc_icid=home-mm-progress",
+              "text": "Our Progress",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stjude.org/research/why-st-jude/scientific-report.html?sc_icid=home-mm-report",
+              "text": "Scientific Report",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stjude.org/research/careers.html?sc_icid=home-mm-jobs",
+              "text": "Research Careers",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stjude.org/education-training.html?sc_icid=home-mm-training",
+              "text": "Training",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stjude.org/education-training/research-training.html?sc_icid=home-mm-rt",
+              "text": "Research Training",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stjude.org/education-training/clinical-training.html?sc_icid=home-mm-ct",
+              "text": "Clinical Training",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stjude.org/education-training/professional-development.html?sc_icid=home-mm-pd",
+              "text": "Professional Development",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stjude.org/education-training/pre-college.html?sc_icid=home-mm-pc",
+              "text": "Pre-College",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stjude.org/education-training/opportunity-finder.html?sc_icid=home-mm-of",
+              "text": "Opportunity Finder",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stjude.org/support-and-fundraising.html",
+              "text": "Support & Fundraising",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stjude.org/give.html",
+              "text": "Ways to Give",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stjude.org/get-involved.html",
+              "text": "Events & Fundraisers",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stjude.org/get-involved/volunteer-locally.html",
+              "text": "Volunteer",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stjude.org/jobs.html",
+              "text": "Careers",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stjude.org/contact-us.html",
+              "text": "Contact Us",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stjude.org/es/",
+              "text": "Español",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stjude.org/patient-referrals.html?sc_icid=header-btn-patient-referrals",
+              "text": "Refer a Patient",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stjude.org/donate/donate-to-st-jude.html?sc_icid=header-btn-donate-now",
+              "text": "Donate Now",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stjude.org/patient-referrals.html?sc_icid=home-btn-patient-referrals",
+              "text": "Refer a Patient",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.stjude.org/research.html?sc_icid=home-btn-explore-research",
+              "text": "Explore Our Research",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.stjude.org/donate/donate-to-st-jude.html?sc_icid=home-btn-donate-now",
+              "text": "Donate Now",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.stjude.org/give/5-reasons-to-become-a-monthly-donor.html?sc_icid=home-spot-teaser-five-monthly",
+              "text": "5 reasons to become a monthly donor",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.stjude.org/donate/donate-to-st-jude.html?sc_icid=home-btn-donate-now-hldy-zn",
+              "text": "Donate Now",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.stjude.org/care-treatment/patient-families/seek-treatment/about-clinical-research.html?sc_icid=home-spot-clinical-research-ct",
+              "text": "Research supports patient care Learn how patients and healthy volunteers can take part in studies to help St. Jude physi",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.stjude.org/get-involved/other-ways/st-jude-thanks-and-giving.html?sc_icid=home-spot-hi-holiday-tg",
+              "text": "Holiday giving Share the joy of the holidays with donations and gift-giving, and help St. Jude kids.",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.stjude.org/about-st-jude/stories/meet-our-patients/meet-nico.html?sc_icid=home-spot-patient-nico",
+              "text": "Nico came to St. Jude and found hope \"I was so blown away by everything at St. Jude .\" - Nico's mom Read Nico's story",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.stjude.org/about-st-jude/stories/making-a-difference/finding-the-light-amidst-brain-tumor-treatment.html?sc_icid=home-spot-patient-sloane",
+              "text": "Finding the light amidst brain tumor treatment Learn how red-light therapy helped St. Jude patient Sloane get her shine ",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.stjude.org/about-st-jude/stories/meet-our-patients/meet-valentina.html?sc_icid=home-spot-patient-valentina",
+              "text": "Valentina came to St. Jude at 18 months \"I couldn’t have asked to be in a better place.\" - Valentina's mom Read Valentin",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.stjude.org/about-st-jude/stories/making-a-difference/when-your-mom-is-a-st-jude-physician.html?sc_icid=home-spot-patient-eli",
+              "text": "When your mom is a St. Jude physician Learn how Eli’s family is navigating being treated at his mother’s workplace. Meet",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.stjude.org/research/progress/2026/from-surveillance-to-gene-editing-charting-new-future-for-bone-marrow-failure-care.html?sc_icid=home-spot-hospital-feature-progress-bone-marrow-failure",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.stjude.org/media-resources/news-releases/2026-medicine-science-news/protein-guides-cytoneme-highway-formation-to-support-developmental-signaling.html?sc_icid=home-spot-hospital-lst-release-ogden-sciadv",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.stjude.org/care-treatment/clinical-trials/sjimb21-medulloblastoma.html?sc_icid=home-spot-lst-sjimb21",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.stjude.org/research.html?sc_icid=home-spot-hospital-lst-txt",
+              "text": "Explore Our Science and Medicine",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.stjude.org/give/memorials-and-dedications/send-holiday-cards-to-loved-ones.html?sc_icid=home-spot-help-hldy-card-lst",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.stjude.org/give/holiday-gifts-under-25-dollars.html?sc_icid=home-spot-help-holiday-25-lst",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.stjude.org/donate/monthly-donor-incentives.html?sc_icid=home-spot-help-mnthly-gvng-lst",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.stjude.org/give.html?sc_icid=home-spot-other-lst-txt",
+              "text": "See Other Ways to Give to St. Jude",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.stjude.org/jobs/hospital.html?sc_icid=home-spot-hospital-careers-crd",
+              "text": "Research and Hospital Jobs Join talented clinicians, nurses, researchers, support staff, administrators, and more.",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.stjude.org/jobs/alsac.html?sc_icid=home-spot-alsac-careers-crd",
+              "text": "Fundraising Jobs at ALSAC To ensure families never receive a bill, we need dynamic fundraisers, marketers, and support s",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.stjude.org/get-involved/other-ways/stay-connected.html",
+              "text": "Sign Up For Email Updates",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.stjude.org/media-resources/st-jude-social-media.html",
+              "text": "Connect With Us",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.stjude.org/about-st-jude/connect-with-us/our-campus.html",
+              "text": "Visit St. Jude",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.stjude.org/media-resources.html",
+              "text": "Media Resources",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.stjude.org/legal/u-s-privacy-policy-statement.html",
+              "text": "U.S. Privacy Notice",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.stjude.org/legal.html",
+              "text": "Disclaimer / Registrations / Copyright Statement",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.stjude.org/legal/linking-policy.html",
+              "text": "Linking Policy",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.stjude.org/legal/notice-of-privacy-practices.html",
+              "text": "Notice of Privacy Practices (HIPAA)",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.stjude.org/legal/notice-of-non-discrimination.html",
+              "text": "Notice of Non-Discrimination",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.stjude.org/legal/standard-charges.html",
+              "text": "Price Transparency",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.stjude.org/sitemap.html",
+              "text": "Site Map",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.stjude.org/legal/u-s-privacy-policy-statement/health-privacy-notice.html",
+              "text": "Consumer Health Privacy Notice",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.stjude.org/legal/language-assistance/language-assistance-spanish.html",
+              "text": "Español",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.stjude.org/legal/language-assistance/language-assistance-chinese.html",
+              "text": "中文",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.stjude.org/legal/language-assistance/language-assistance-vietnamese.html",
+              "text": "Tiếng Việt",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.stjude.org/legal/language-assistance/language-assistance-korean.html",
+              "text": "한국어",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.stjude.org/legal/language-assistance/language-assistance-tagalog.html",
+              "text": "Tagalog",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.stjude.org/legal/language-assistance/language-assistance-russian.html",
+              "text": "русский",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.stjude.org/legal/language-assistance/language-assistance-arabic.html",
+              "text": "العربية",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.stjude.org/legal/language-assistance/language-assistance-french.html",
+              "text": "Français",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.stjude.org/legal/language-assistance/language-assistance-german.html",
+              "text": "Deutsch",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.stjude.org/legal/language-assistance/language-assistance-japanese.html",
+              "text": "日本語",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.stjude.org/legal/language-assistance/language-assistance-persian.html",
+              "text": "فارسی",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.stjude.org/legal/language-assistance/language-assistance-hindi.html",
+              "text": "हिन्दी",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.stjude.org/legal/language-assistance/language-assistance-gujarati.html",
+              "text": "ગુજરાતી",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.stjude.org/legal/language-assistance/language-assistance-amharic.html",
+              "text": "አማርኛ",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.stjude.org/legal/language-assistance/language-assistance-lao.html",
+              "text": "ພາສາລາວ",
+              "in_nav": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "kind": "interior pages",
+      "records": [
+        {
+          "url": "https://www.childrenshospital.org/",
+          "fetched_at": "2026-11-17T05:37:16.359Z",
+          "method": "HTTP GET",
+          "ok": true,
+          "status": 200,
+          "final_url": "https://www.childrenshospital.org/",
+          "redirected": false,
+          "content_type": "text/html; charset=utf-8",
+          "bytes": 70025,
+          "title": "Homepage | Boston Children's Hospital",
+          "robots": {
+            "allowed": true,
+            "matched": null,
+            "note": "robots.txt read for user-agent *"
+          },
+          "error": null,
+          "links": [
+            {
+              "url": "https://www.childrenshospital.org/",
+              "text": "",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/request-appointment",
+              "text": "Make an Appointment",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/patients-families/about-boston-childrens/billing-insurance/pay-your-bill-online",
+              "text": "Pay My Bill",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor",
+              "text": "Find a Doctor",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-location",
+              "text": "Find a Location",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/patients-families/about-boston-childrens/second-opinion-program",
+              "text": "Get a Second Opinion",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/ways-help/donate-blood",
+              "text": "Donate Blood",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/conditions-treatments",
+              "text": "Conditions & Treatments",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/services",
+              "text": "Programs & Services",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/patients-families",
+              "text": "Patients & Families",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/health-care-professionals",
+              "text": "Healthcare Professionals",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/search",
+              "text": "Search",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/search?keywords=Healthcare",
+              "text": "Healthcare",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/search?keywords=Cold",
+              "text": "Cold",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/search?keywords=Cough",
+              "text": "Cough",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/search?keywords=Ear%20Infection",
+              "text": "Ear Infection",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/search?keywords=Chronic%20Pain",
+              "text": "Chronic Pain",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/search?keywords=Cancer",
+              "text": "Cancer",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us",
+              "text": "About Boston Children's",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/newsroom",
+              "text": "Newsroom",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/ways-help",
+              "text": "Ways to Help",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/contact-us",
+              "text": "Contact Us",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/get-connected/government-relations",
+              "text": "Government Relations",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/legal/notice-privacy-practices",
+              "text": "HIPAA Notice of Privacy Rights",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/legal/rights-responsibilities-patients-patient-representatives-families",
+              "text": "Patient & Family Rights",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/patients-families/about-boston-childrens/billing-insurance/resources-self-service/charges-services",
+              "text": "Price Transparency",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/patient-experience",
+              "text": "Quality & Patient Safety",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/working-us/contractors-vendors",
+              "text": "Compliance",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/patients-families/you-arrive/your-visit",
+              "text": "Read more >>",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/webform/find_a_doctor_questionnaire",
+              "text": "Not Sure Where to Begin?",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/awards-accolades",
+              "text": "Read About Our Rankings & Awards",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/online-second-opinions",
+              "text": "Online Second Opinion",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/newsroom/media-archive/inside-wraparound-waltham-citys-safety-net-immigrant-students-and-their",
+              "text": "About the gift",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/videos/meet-dr-christina-jacobsen-boston-childrens-hospital",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/videos",
+              "text": "See All Videos",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/podcasts/boston-childrens-answers-parentcast/what-should-parents-know-about-down-syndrome",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/podcasts",
+              "text": "Check Out All Episodes",
+              "in_nav": false
+            }
+          ]
+        },
+        {
+          "url": "https://www.childrenshospital.org/request-appointment",
+          "fetched_at": "2026-11-17T05:37:17.584Z",
+          "method": "HTTP GET",
+          "ok": true,
+          "status": 200,
+          "final_url": "https://www.childrenshospital.org/request-appointment",
+          "redirected": false,
+          "content_type": "text/html; charset=utf-8",
+          "bytes": 59404,
+          "title": "Request an Appointment | Boston Children's Hospital",
+          "robots": {
+            "allowed": true,
+            "matched": null,
+            "note": "robots.txt read for user-agent *"
+          },
+          "error": null,
+          "links": [
+            {
+              "url": "https://www.childrenshospital.org/patients-families/you-arrive/your-visit",
+              "text": "Read more >>",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/",
+              "text": "",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/request-appointment",
+              "text": "Make an Appointment",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/patients-families/about-boston-childrens/billing-insurance/pay-your-bill-online",
+              "text": "Pay My Bill",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor",
+              "text": "Find a Doctor",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-location",
+              "text": "Find a Location",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/patients-families/about-boston-childrens/second-opinion-program",
+              "text": "Get a Second Opinion",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/ways-help/donate-blood",
+              "text": "Donate Blood",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/conditions-treatments",
+              "text": "Conditions & Treatments",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/services",
+              "text": "Programs & Services",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/patients-families",
+              "text": "Patients & Families",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/health-care-professionals",
+              "text": "Healthcare Professionals",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/search",
+              "text": "Search",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/search?keywords=Healthcare",
+              "text": "Healthcare",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/search?keywords=Cold",
+              "text": "Cold",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/search?keywords=Cough",
+              "text": "Cough",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/search?keywords=Ear%20Infection",
+              "text": "Ear Infection",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/search?keywords=Chronic%20Pain",
+              "text": "Chronic Pain",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/search?keywords=Cancer",
+              "text": "Cancer",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us",
+              "text": "About Boston Children's",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/newsroom",
+              "text": "Newsroom",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/ways-help",
+              "text": "Ways to Help",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/contact-us",
+              "text": "Contact Us",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/get-connected/government-relations",
+              "text": "Government Relations",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/legal/notice-privacy-practices",
+              "text": "HIPAA Notice of Privacy Rights",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/legal/rights-responsibilities-patients-patient-representatives-families",
+              "text": "Patient & Family Rights",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/patients-families/about-boston-childrens/billing-insurance/resources-self-service/charges-services",
+              "text": "Price Transparency",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/patient-experience",
+              "text": "Quality & Patient Safety",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/working-us/contractors-vendors",
+              "text": "Compliance",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/online-second-opinions",
+              "text": "Image Online Second Opinions",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/neurology/patient-resources/billing-insurance",
+              "text": "Image Billing and Insurance",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/patients-families/about-boston-childrens/billing-insurance/participating-plans",
+              "text": "Image Accepted Health Insurance",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/videos",
+              "text": "Video Library",
+              "in_nav": false
+            }
+          ]
+        },
+        {
+          "url": "https://www.childrenshospital.org/find-a-doctor",
+          "fetched_at": "2026-11-17T05:37:18.630Z",
+          "method": "HTTP GET",
+          "ok": true,
+          "status": 200,
+          "final_url": "https://www.childrenshospital.org/find-a-doctor",
+          "redirected": false,
+          "content_type": "text/html; charset=utf-8",
+          "bytes": 74361,
+          "title": "Find a Doctor | Boston Children's Hospital",
+          "robots": {
+            "allowed": true,
+            "matched": null,
+            "note": "robots.txt read for user-agent *"
+          },
+          "error": null,
+          "links": [
+            {
+              "url": "https://www.childrenshospital.org/patients-families/you-arrive/your-visit",
+              "text": "Read more >>",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/",
+              "text": "",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/request-appointment",
+              "text": "Make an Appointment",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/patients-families/about-boston-childrens/billing-insurance/pay-your-bill-online",
+              "text": "Pay My Bill",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor",
+              "text": "Find a Doctor",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-location",
+              "text": "Find a Location",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/patients-families/about-boston-childrens/second-opinion-program",
+              "text": "Get a Second Opinion",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/ways-help/donate-blood",
+              "text": "Donate Blood",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/conditions-treatments",
+              "text": "Conditions & Treatments",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/services",
+              "text": "Programs & Services",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/patients-families",
+              "text": "Patients & Families",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/health-care-professionals",
+              "text": "Healthcare Professionals",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/search",
+              "text": "Search",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/search?keywords=Healthcare",
+              "text": "Healthcare",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/search?keywords=Cold",
+              "text": "Cold",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/search?keywords=Cough",
+              "text": "Cough",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/search?keywords=Ear%20Infection",
+              "text": "Ear Infection",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/search?keywords=Chronic%20Pain",
+              "text": "Chronic Pain",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/search?keywords=Cancer",
+              "text": "Cancer",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us",
+              "text": "About Boston Children's",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/newsroom",
+              "text": "Newsroom",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/ways-help",
+              "text": "Ways to Help",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/contact-us",
+              "text": "Contact Us",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/get-connected/government-relations",
+              "text": "Government Relations",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/legal/notice-privacy-practices",
+              "text": "HIPAA Notice of Privacy Rights",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/legal/rights-responsibilities-patients-patient-representatives-families",
+              "text": "Patient & Family Rights",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/patients-families/about-boston-childrens/billing-insurance/resources-self-service/charges-services",
+              "text": "Price Transparency",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/patient-experience",
+              "text": "Quality & Patient Safety",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/working-us/contractors-vendors",
+              "text": "Compliance",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?conditions[]=866",
+              "text": "Cancer & Blood Disorders",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?conditions[]=457",
+              "text": "Cardiology & Congential Heart Defects",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?conditions[]=716",
+              "text": "Endocrine Disorders",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?conditions[]=215",
+              "text": "Neurological & Movement Disorders",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?conditions[]=633",
+              "text": "Inflammatory Bowel Disease",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?conditions[]=283",
+              "text": "Asthma & Severe Pulmonary Conditions",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?conditions[]=318",
+              "text": "Trauma & Acute Injury Care",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?conditions[]=361",
+              "text": "Genetic & Complex Congenital Conditions",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?conditions[]=256",
+              "text": "Audiology, ENT, & Sinonasal Conditions",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?conditions[]=482",
+              "text": "Psychiatric & Behavioral Health",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?programs[]=6270",
+              "text": "Nephrology",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?programs[]=6278",
+              "text": "Neurology & Neurosurgery",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?programs[]=4452",
+              "text": "Pulmonology & Lung Surgery",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?programs[]=6642",
+              "text": "Urology",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?programs[]=1752",
+              "text": "Cancer",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?programs[]=5922",
+              "text": "Cardiology & Heart Surgery",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?programs[]=3485",
+              "text": "Diabetes & Endocrinology",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?programs[]=4663",
+              "text": "Gastroenterology & GI Surgery",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?programs[]=4758",
+              "text": "Neonatology",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?programs[]=1774",
+              "text": "Orthopedics",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?location[]=16609",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?location[]=16658",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?location[]=18104",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?location[]=16514",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?location[]=16536",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?location[]=16306",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?location[]=16356",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?location[]=16909",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?location[]=16365",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?location[]=16923",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?location[]=17828",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?location[]=17691",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?location[]=17687",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?location[]=16409",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?location[]=16640",
+              "text": "",
+              "in_nav": false
+            }
+          ]
+        },
+        {
+          "url": "https://www.childrenshospital.org/find-a-location",
+          "fetched_at": "2026-11-17T05:37:19.851Z",
+          "method": "HTTP GET",
+          "ok": true,
+          "status": 200,
+          "final_url": "https://www.childrenshospital.org/find-a-location",
+          "redirected": false,
+          "content_type": "text/html; charset=utf-8",
+          "bytes": 61914,
+          "title": "Find a Location | Boston Children's Hospital",
+          "robots": {
+            "allowed": true,
+            "matched": null,
+            "note": "robots.txt read for user-agent *"
+          },
+          "error": null,
+          "links": [
+            {
+              "url": "https://www.childrenshospital.org/patients-families/you-arrive/your-visit",
+              "text": "Read more >>",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/",
+              "text": "",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/request-appointment",
+              "text": "Make an Appointment",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/patients-families/about-boston-childrens/billing-insurance/pay-your-bill-online",
+              "text": "Pay My Bill",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor",
+              "text": "Find a Doctor",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-location",
+              "text": "Find a Location",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/patients-families/about-boston-childrens/second-opinion-program",
+              "text": "Get a Second Opinion",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/ways-help/donate-blood",
+              "text": "Donate Blood",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/conditions-treatments",
+              "text": "Conditions & Treatments",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/services",
+              "text": "Programs & Services",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/patients-families",
+              "text": "Patients & Families",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/health-care-professionals",
+              "text": "Healthcare Professionals",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/search",
+              "text": "Search",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/search?keywords=Healthcare",
+              "text": "Healthcare",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/search?keywords=Cold",
+              "text": "Cold",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/search?keywords=Cough",
+              "text": "Cough",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/search?keywords=Ear%20Infection",
+              "text": "Ear Infection",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/search?keywords=Chronic%20Pain",
+              "text": "Chronic Pain",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/search?keywords=Cancer",
+              "text": "Cancer",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us",
+              "text": "About Boston Children's",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/newsroom",
+              "text": "Newsroom",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/ways-help",
+              "text": "Ways to Help",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/contact-us",
+              "text": "Contact Us",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/get-connected/government-relations",
+              "text": "Government Relations",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/legal/notice-privacy-practices",
+              "text": "HIPAA Notice of Privacy Rights",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/legal/rights-responsibilities-patients-patient-representatives-families",
+              "text": "Patient & Family Rights",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/patients-families/about-boston-childrens/billing-insurance/resources-self-service/charges-services",
+              "text": "Price Transparency",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/patient-experience",
+              "text": "Quality & Patient Safety",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/working-us/contractors-vendors",
+              "text": "Compliance",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/locations/boston",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/locations/boston-childrens-brookline",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/locations/lexington",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/locations/martha-eliot",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/locations/boston-childrens-needham",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/locations/north-dartmouth",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/locations/peabody",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/locations/boston-childrens-waltham",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/locations/boston-childrens-weymouth",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/locations/boston-childrens-physicians-milford",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/locations/boston-childrens-physicians-norwell",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/locations/norwood",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/locations/boston-childrens-physicians-shrewsbury",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/locations/dana-farber-boston-childrens-cancer-and-blood-disorders-center",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/locations/beverly",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/locations/cape-cod",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/locations/charlton-memorial-hospital",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/locations/franciscan-childrens",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/locations/massachusetts-eye-and-ear-infirmary",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/locations/south-shore-hospital",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/locations/spaulding-rehabilitation-hospital",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/locations/st-lukes-hospital",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/locations/tufts-medical-center",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/videos",
+              "text": "Video Library",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/online-second-opinions",
+              "text": "Online Second Opinions",
+              "in_nav": false
+            }
+          ]
+        },
+        {
+          "url": "https://www.childrenshospital.org/conditions-treatments",
+          "fetched_at": "2026-11-17T05:37:20.749Z",
+          "method": "HTTP GET",
+          "ok": true,
+          "status": 200,
+          "final_url": "https://www.childrenshospital.org/conditions-treatments",
+          "redirected": false,
+          "content_type": "text/html; charset=utf-8",
+          "bytes": 1332774,
+          "title": "Conditions & Treatments | Boston Children's Hospital",
+          "robots": {
+            "allowed": true,
+            "matched": null,
+            "note": "robots.txt read for user-agent *"
+          },
+          "error": null,
+          "links": [
+            {
+              "url": "https://www.childrenshospital.org/patients-families/you-arrive/your-visit",
+              "text": "Read more >>",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/",
+              "text": "",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/request-appointment",
+              "text": "Make an Appointment",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/patients-families/about-boston-childrens/billing-insurance/pay-your-bill-online",
+              "text": "Pay My Bill",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor",
+              "text": "Find a Doctor",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-location",
+              "text": "Find a Location",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/patients-families/about-boston-childrens/second-opinion-program",
+              "text": "Get a Second Opinion",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/ways-help/donate-blood",
+              "text": "Donate Blood",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/conditions-treatments",
+              "text": "Conditions & Treatments",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/services",
+              "text": "Programs & Services",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/patients-families",
+              "text": "Patients & Families",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/health-care-professionals",
+              "text": "Healthcare Professionals",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/search",
+              "text": "Search",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/search?keywords=Healthcare",
+              "text": "Healthcare",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/search?keywords=Cold",
+              "text": "Cold",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/search?keywords=Cough",
+              "text": "Cough",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/search?keywords=Ear%20Infection",
+              "text": "Ear Infection",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/search?keywords=Chronic%20Pain",
+              "text": "Chronic Pain",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/search?keywords=Cancer",
+              "text": "Cancer",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us",
+              "text": "About Boston Children's",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/newsroom",
+              "text": "Newsroom",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/ways-help",
+              "text": "Ways to Help",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/contact-us",
+              "text": "Contact Us",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/get-connected/government-relations",
+              "text": "Government Relations",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/legal/notice-privacy-practices",
+              "text": "HIPAA Notice of Privacy Rights",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/legal/rights-responsibilities-patients-patient-representatives-families",
+              "text": "Patient & Family Rights",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/patients-families/about-boston-childrens/billing-insurance/resources-self-service/charges-services",
+              "text": "Price Transparency",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/patient-experience",
+              "text": "Quality & Patient Safety",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/working-us/contractors-vendors",
+              "text": "Compliance",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/conditions-treatments/abdominal-pain-children",
+              "text": "Abdominal Pain in Children",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?conditions[]=310",
+              "text": "Find a Doctor",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/conditions-treatments/abrasions",
+              "text": "Abrasions",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?conditions[]=316",
+              "text": "Find a Doctor",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/conditions-treatments/ac-joint-injuries",
+              "text": "AC Joint Injuries",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?conditions[]=251",
+              "text": "Find a Doctor",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/conditions-treatments/achalasia",
+              "text": "Achalasia",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?conditions[]=515",
+              "text": "Find a Doctor",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/conditions-treatments/achilles-tendon-injuries",
+              "text": "Achilles Tendon Injuries",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?conditions[]=17164",
+              "text": "Find a Doctor",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/conditions-treatments/achondroplasia",
+              "text": "Achondroplasia",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?conditions[]=252",
+              "text": "Find a Doctor",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/conditions-treatments/acne",
+              "text": "Acne",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?conditions[]=253",
+              "text": "Find a Doctor",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/conditions-treatments/acne-peel",
+              "text": "Acne Peel",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?conditions[]=1129",
+              "text": "Find a Doctor",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/conditions-treatments/acupuncture",
+              "text": "Acupuncture",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?conditions[]=153",
+              "text": "Find a Doctor",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/conditions-treatments/acute-bronchitis",
+              "text": "Acute Bronchitis",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?conditions[]=317",
+              "text": "Find a Doctor",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/conditions-treatments/acute-disseminated-encephalomyelitis-adem",
+              "text": "Acute Disseminated Encephalomyelitis (ADEM)",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?conditions[]=254",
+              "text": "Find a Doctor",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/conditions-treatments/acute-flaccid-myelitis-afm",
+              "text": "Acute Flaccid Myelitis (AFM)",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?conditions[]=266",
+              "text": "Find a Doctor",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/conditions-treatments/acute-kidney-injury",
+              "text": "Acute Kidney Injury",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?conditions[]=318",
+              "text": "Find a Doctor",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/conditions-treatments/acute-lymphoblastic-leukemia-all",
+              "text": "Acute Lymphoblastic Leukemia (ALL)",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?conditions[]=259",
+              "text": "Find a Doctor",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/conditions-treatments/acute-myeloid-leukemia-aml",
+              "text": "Acute Myeloid Leukemia (AML)",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?conditions[]=319",
+              "text": "Find a Doctor",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/conditions-treatments/acute-necrotizing-encephalopathy-ane",
+              "text": "Acute Necrotizing Encephalopathy (ANE)",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?conditions[]=1167",
+              "text": "Find a Doctor",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/conditions-treatments/adamantinoma",
+              "text": "Adamantinoma",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?conditions[]=321",
+              "text": "Find a Doctor",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/conditions-treatments/addisons-disease",
+              "text": "Addison’s Disease",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?conditions[]=255",
+              "text": "Find a Doctor",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/conditions-treatments/adenovirus-infections",
+              "text": "Adenovirus Infections",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?conditions[]=322",
+              "text": "Find a Doctor",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/conditions-treatments/adjustment-disorders",
+              "text": "Adjustment Disorders",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?conditions[]=256",
+              "text": "Find a Doctor",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/conditions-treatments/adrenal-tumors",
+              "text": "Adrenal Tumors",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?conditions[]=288",
+              "text": "Find a Doctor",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/conditions-treatments/adrenocortical-carcinoma",
+              "text": "Adrenocortical Carcinoma",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?conditions[]=267",
+              "text": "Find a Doctor",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/conditions-treatments/adrenoleukodystrophy-ald",
+              "text": "Adrenoleukodystrophy (ALD)",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?conditions[]=257",
+              "text": "Find a Doctor",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/conditions-treatments/advanced-endoscopic-treatments",
+              "text": "Advanced Endoscopic Treatments",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?conditions[]=1119",
+              "text": "Find a Doctor",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/conditions-treatments/airway-obstruction",
+              "text": "Airway Obstruction",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?conditions[]=262",
+              "text": "Find a Doctor",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/conditions-treatments/alagille-syndrome",
+              "text": "Alagille Syndrome",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?conditions[]=258",
+              "text": "Find a Doctor",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/conditions-treatments/allergic-colitis",
+              "text": "Allergic Colitis",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?conditions[]=260",
+              "text": "Find a Doctor",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/conditions-treatments/allergic-contact-dermatitis",
+              "text": "Allergic Contact Dermatitis",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?conditions[]=1139",
+              "text": "Find a Doctor",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/conditions-treatments/allergic-rhinitis",
+              "text": "Allergic Rhinitis",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?conditions[]=261",
+              "text": "Find a Doctor",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/conditions-treatments/allergies-children",
+              "text": "Allergies in Children",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?conditions[]=323",
+              "text": "Find a Doctor",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/conditions-treatments/allergy-immunotherapy",
+              "text": "Allergy Immunotherapy",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?conditions[]=106",
+              "text": "Find a Doctor",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/conditions-treatments/alpha-1-antitrypsin-deficiency-aatd",
+              "text": "Alpha-1 Antitrypsin Deficiency (AATD)",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?conditions[]=303",
+              "text": "Find a Doctor",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/conditions-treatments/alpha-mannosidosis",
+              "text": "Alpha-mannosidosis",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?conditions[]=312",
+              "text": "Find a Doctor",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/conditions-treatments/alveolar-soft-part-sarcoma-asps",
+              "text": "Alveolar Soft Part Sarcoma (ASPS)",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?conditions[]=304",
+              "text": "Find a Doctor",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/conditions-treatments/amenorrhea",
+              "text": "Amenorrhea",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?conditions[]=295",
+              "text": "Find a Doctor",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/conditions-treatments/amniotic-band-syndrome",
+              "text": "Amniotic Band Syndrome",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?conditions[]=325",
+              "text": "Find a Doctor",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/conditions-treatments/anaphylaxis",
+              "text": "Anaphylaxis",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?conditions[]=292",
+              "text": "Find a Doctor",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/conditions-treatments/anaplastic-astrocytomas",
+              "text": "Anaplastic Astrocytomas",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?conditions[]=289",
+              "text": "Find a Doctor",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/conditions-treatments/androgen-insensitivity",
+              "text": "Androgen Insensitivity",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?conditions[]=293",
+              "text": "Find a Doctor",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/conditions-treatments/anemia",
+              "text": "Anemia",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?conditions[]=308",
+              "text": "Find a Doctor",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/conditions-treatments/anencephaly",
+              "text": "Anencephaly",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?conditions[]=296",
+              "text": "Find a Doctor",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/conditions-treatments/aneurysmal-bone-cyst",
+              "text": "Aneurysmal Bone Cyst",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?conditions[]=297",
+              "text": "Find a Doctor",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/conditions-treatments/angelman-syndrome",
+              "text": "Angelman Syndrome",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?conditions[]=294",
+              "text": "Find a Doctor",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/conditions-treatments/angiofibroma",
+              "text": "Angiofibroma",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?conditions[]=298",
+              "text": "Find a Doctor",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/conditions-treatments/angiogram",
+              "text": "Angiogram",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?conditions[]=154",
+              "text": "Find a Doctor",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/conditions-treatments/angioplasty",
+              "text": "Angioplasty",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?conditions[]=155",
+              "text": "Find a Doctor",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/conditions-treatments/angiosarcoma",
+              "text": "Angiosarcoma",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?conditions[]=291",
+              "text": "Find a Doctor",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/conditions-treatments/animal-allergy",
+              "text": "Animal Allergy",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?conditions[]=299",
+              "text": "Find a Doctor",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/conditions-treatments/ankle-sprains",
+              "text": "Ankle Sprains",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?conditions[]=263",
+              "text": "Find a Doctor",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/conditions-treatments/anomalous-aortic-origin-coronary-artery-aaoca",
+              "text": "Anomalous Aortic Origin of the Coronary Artery (AAOCA)",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?conditions[]=280",
+              "text": "Find a Doctor",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/conditions-treatments/anomalous-left-coronary-artery-pulmonary-artery-alcapa",
+              "text": "Anomalous Left Coronary Artery from the Pulmonary Artery (ALCAPA)",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?conditions[]=306",
+              "text": "Find a Doctor",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/conditions-treatments/anorectal-malformation",
+              "text": "Anorectal Malformation",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?conditions[]=264",
+              "text": "Find a Doctor",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/conditions-treatments/anorectal-manometry",
+              "text": "Anorectal Manometry",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?conditions[]=156",
+              "text": "Find a Doctor",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/conditions-treatments/anterior-cruciate-ligament-acl-injury",
+              "text": "Anterior Cruciate Ligament (ACL) Injury",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?conditions[]=265",
+              "text": "Find a Doctor",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/conditions-treatments/anterior-cutaneous-nerve-entrapment-syndrome",
+              "text": "Anterior Cutaneous Nerve Entrapment Syndrome",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?conditions[]=314",
+              "text": "Find a Doctor",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/conditions-treatments/antibiotic-allergy-testing",
+              "text": "Antibiotic Allergy Testing",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?conditions[]=157",
+              "text": "Find a Doctor",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/conditions-treatments/antroduodenal-manometry",
+              "text": "Antroduodenal Manometry",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?conditions[]=206",
+              "text": "Find a Doctor",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/conditions-treatments/anxiety-disorders",
+              "text": "Anxiety Disorders",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?conditions[]=300",
+              "text": "Find a Doctor",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/conditions-treatments/aortic-valve-disease",
+              "text": "Aortic Valve Disease",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?conditions[]=1144",
+              "text": "Find a Doctor",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/conditions-treatments/aortic-valve-stenosis",
+              "text": "Aortic Valve Stenosis",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?conditions[]=301",
+              "text": "Find a Doctor",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/conditions-treatments/aortopulmonary-window",
+              "text": "Aortopulmonary Window",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?conditions[]=307",
+              "text": "Find a Doctor",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/conditions-treatments/ap-4-associated-hereditary-spastic-paraplegia",
+              "text": "AP 4 Associated Hereditary Spastic Paraplegia",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?conditions[]=324",
+              "text": "Find a Doctor",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/conditions-treatments/apert-syndrome",
+              "text": "Apert Syndrome",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?conditions[]=8",
+              "text": "Find a Doctor",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/conditions-treatments/apert-syndrome-portuguese",
+              "text": "Apert Syndrome - Portuguese",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?conditions[]=1075",
+              "text": "Find a Doctor",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/conditions-treatments/aplastic-anemia",
+              "text": "Aplastic Anemia",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor/search-results?conditions[]=269",
+              "text": "Find a Doctor",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/conditions-treatments/apnea-prematurity",
+              "text": "Apnea of Prematurity",
+              "in_nav": false
+            }
+          ]
+        },
+        {
+          "url": "https://www.childrenshospital.org/services",
+          "fetched_at": "2026-11-17T05:37:21.815Z",
+          "method": "HTTP GET",
+          "ok": true,
+          "status": 200,
+          "final_url": "https://www.childrenshospital.org/services",
+          "redirected": false,
+          "content_type": "text/html; charset=utf-8",
+          "bytes": 453557,
+          "title": "Programs & Services | Boston Children's Hospital",
+          "robots": {
+            "allowed": true,
+            "matched": null,
+            "note": "robots.txt read for user-agent *"
+          },
+          "error": null,
+          "links": [
+            {
+              "url": "https://www.childrenshospital.org/patients-families/you-arrive/your-visit",
+              "text": "Read more >>",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/",
+              "text": "",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/request-appointment",
+              "text": "Make an Appointment",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/patients-families/about-boston-childrens/billing-insurance/pay-your-bill-online",
+              "text": "Pay My Bill",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor",
+              "text": "Find a Doctor",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-location",
+              "text": "Find a Location",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/patients-families/about-boston-childrens/second-opinion-program",
+              "text": "Get a Second Opinion",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/ways-help/donate-blood",
+              "text": "Donate Blood",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/conditions-treatments",
+              "text": "Conditions & Treatments",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/services",
+              "text": "Programs & Services",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/patients-families",
+              "text": "Patients & Families",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/health-care-professionals",
+              "text": "Healthcare Professionals",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/search",
+              "text": "Search",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/search?keywords=Healthcare",
+              "text": "Healthcare",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/search?keywords=Cold",
+              "text": "Cold",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/search?keywords=Cough",
+              "text": "Cough",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/search?keywords=Ear%20Infection",
+              "text": "Ear Infection",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/search?keywords=Chronic%20Pain",
+              "text": "Chronic Pain",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/search?keywords=Cancer",
+              "text": "Cancer",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us",
+              "text": "About Boston Children's",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/newsroom",
+              "text": "Newsroom",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/ways-help",
+              "text": "Ways to Help",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/contact-us",
+              "text": "Contact Us",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/get-connected/government-relations",
+              "text": "Government Relations",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/legal/notice-privacy-practices",
+              "text": "HIPAA Notice of Privacy Rights",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/legal/rights-responsibilities-patients-patient-representatives-families",
+              "text": "Patient & Family Rights",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/patients-families/about-boston-childrens/billing-insurance/resources-self-service/charges-services",
+              "text": "Price Transparency",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/patient-experience",
+              "text": "Quality & Patient Safety",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/working-us/contractors-vendors",
+              "text": "Compliance",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/abcd-family-planning-services",
+              "text": "ABCD Family Planning Services",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/addiction-medicine",
+              "text": "Addiction Medicine",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/adolescent-and-young-adult-medicine",
+              "text": "Adolescent and Young Adult Medicine",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/adolescent-breast-center",
+              "text": "Adolescent Breast Center",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/adolescent-medicine-complex-diagnosis-consult-program",
+              "text": "Adolescent Medicine Complex Diagnosis Consult Program",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/adolescent-substance-use-and-addiction-program",
+              "text": "Adolescent Substance Use and Addiction Program",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/adolescent-weight-loss-bariatric-surgery-program",
+              "text": "Adolescent Weight Loss (Bariatric) Surgery Program",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/adult-congenital-heart-surgery",
+              "text": "Adult Congenital Heart Surgery",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/adult-strabismus-service",
+              "text": "Adult Strabismus Service",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/advanced-cardiac-therapies",
+              "text": "Advanced Cardiac Therapies",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/aerodigestive-center",
+              "text": "Aerodigestive Center",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/allergy-and-asthma-program",
+              "text": "Allergy and Asthma Program",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/als-augmentative-communication-program",
+              "text": "ALS Augmentative Communication Program",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/anesthesia",
+              "text": "Anesthesia",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/anterior-cruciate-ligament-program",
+              "text": "Anterior Cruciate Ligament Program",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/arfid-program",
+              "text": "ARFID Program",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/arteriopathy-program",
+              "text": "Arteriopathy Program",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/atopic-dermatitis-center",
+              "text": "Atopic Dermatitis Center",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/audiology-program",
+              "text": "Audiology Program",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/augmentative-communication-program",
+              "text": "Augmentative Communication Program",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/autism-language-program",
+              "text": "Autism Language Program",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/autism-spectrum-center",
+              "text": "Autism Spectrum Center",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/autoinflammatory-diseases-clinic",
+              "text": "Autoinflammatory Diseases Clinic",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/awake-program",
+              "text": "AWAKE Program",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/balance-and-vestibular-program",
+              "text": "Balance and Vestibular Program",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/behavioral-health-integration-initiatives-pediatric-care",
+              "text": "Behavioral Health Integration Initiatives in Pediatric Care",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/behavioral-health-integration-program",
+              "text": "Behavioral Health Integration Program",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/being-u",
+              "text": "BEING-U",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/bladder-exstrophy-program",
+              "text": "Bladder Exstrophy Program",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/blood-disorders-center",
+              "text": "Blood Disorders Center",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/bone-and-soft-tissue-tumors-program",
+              "text": "Bone and Soft Tissue Tumors Program",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/bone-marrow-failure-program",
+              "text": "Bone Marrow Failure Program",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/bone-anchored-hearing-system-program",
+              "text": "Bone-Anchored Hearing System Program",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/boston-adult-congenital-heart-bach-and-pulmonary-hypertension",
+              "text": "Boston Adult Congenital Heart (BACH) and Pulmonary Hypertension",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/boston-bleeding-disorders-center",
+              "text": "Boston Bleeding Disorders Center",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/boston-childrens-hospital-neighborhood-partnerships",
+              "text": "Boston Children's Hospital Neighborhood Partnerships",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/boston-childrens-hospital-aids-program",
+              "text": "Boston Childrens Hospital AIDS Program",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/boston-happens",
+              "text": "Boston HAPPENS",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/brachial-plexus-program",
+              "text": "Brachial Plexus Program",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/brain-development-and-genetics-clinic",
+              "text": "Brain Development and Genetics Clinic",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/brain-injury-center",
+              "text": "Brain Injury Center",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/brain-tumor-center",
+              "text": "Brain Tumor Center",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/brain-mind-behavior-center-bmbc",
+              "text": "Brain, Mind & Behavior Center (BMBC)",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/bridges-adult-transition-program",
+              "text": "BRIDGES Adult Transition Program",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/bronchiectasis-clinic",
+              "text": "Bronchiectasis Clinic",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/bronchopulmonary-dysplasia-program",
+              "text": "Bronchopulmonary Dysplasia Program",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/bullying-cyberbullying-prevention-bacpac",
+              "text": "Bullying and Cyberbullying Prevention and Advocacy Collaborative (BACPAC)",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/cancer-and-blood-disorders-center",
+              "text": "Cancer and Blood Disorders Center",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/cardiac-anesthesia-services",
+              "text": "Cardiac Anesthesia Services",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/cardiac-antithrombosis-management-program",
+              "text": "Cardiac Antithrombosis Management Program",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/cardiac-catheterization",
+              "text": "Cardiac Catheterization",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/cardiac-fitness-program",
+              "text": "Cardiac Fitness Program",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/cardiac-imaging",
+              "text": "Cardiac Imaging",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/cardiac-intensive-care",
+              "text": "Cardiac Intensive Care",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/cardiac-neurodevelopmental-program",
+              "text": "Cardiac Neurodevelopmental Program",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/cardiac-surgery",
+              "text": "Cardiac Surgery",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/cardiology",
+              "text": "Cardiology",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/cardiomyopathy-program",
+              "text": "Cardiomyopathy Program",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/cardiovascular-3d-modeling-and-simulation-program",
+              "text": "Cardiovascular 3D Modeling and Simulation Program",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/cardiovascular-clinic-brain-development-genetics",
+              "text": "Cardiovascular Clinic for Brain Development in Genetics",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/care-management-center",
+              "text": "Care Management Center",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/cares-kids",
+              "text": "CARES for Kids",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/cdkl5-clinic",
+              "text": "CDKL5 Clinic",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/celiac-disease-program",
+              "text": "Celiac Disease Program",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/cair",
+              "text": "Center for Advanced Intestinal Rehabilitation (CAIR)",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/center-airway-disorders",
+              "text": "Center for Airway Disorders",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/center-biopreparedness",
+              "text": "Center for Biopreparedness",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/center-cardiovascular-genetics",
+              "text": "Center for Cardiovascular Genetics",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/center-childhood-liver-disease",
+              "text": "Center for Childhood Liver Disease",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/center-communication-enhancement",
+              "text": "Center for Communication Enhancement",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/center-congenital-anomalies-reproductive-tract",
+              "text": "Center for Congenital Anomalies of the Reproductive Tract",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/center-gender-health",
+              "text": "Center for Gender Health",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/cheer",
+              "text": "Center for Healthy Elimination and Bladder Rehabilitation (CHEER)",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/center-healthy-infant-lung-development",
+              "text": "Center for Healthy Infant Lung Development",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/center-pediatric-bioethics",
+              "text": "Center for Pediatric Bioethics",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/center-young-womens-health",
+              "text": "Center for Young Women's Health",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/cerebral-palsy-and-spasticity-center",
+              "text": "Cerebral Palsy and Spasticity Center",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/cerebrovascular-surgery-and-interventions-center",
+              "text": "Cerebrovascular Surgery and Interventions Center",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/child-and-young-adult-hip-preservation-program",
+              "text": "Child and Young Adult Hip Preservation Program",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/child-life-services",
+              "text": "Child Life Services",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/child-protection-program",
+              "text": "Child Protection Program",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/chopra-amiel-gordon-syndrome-cags-clinic",
+              "text": "Chopra-Amiel-Gordon Syndrome (CAGS) Clinic",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/chronic-headache-program-pain-medicine",
+              "text": "Chronic Headache Program in Pain Medicine",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/chronic-pain-clinic",
+              "text": "Chronic Pain Clinic",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/cleft-and-craniofacial-center",
+              "text": "Cleft and Craniofacial Center",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/cleft-lip-and-palate-program",
+              "text": "Cleft Lip and Palate Program",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/clinic-interactive-media-and-internet-disorders-cimaid",
+              "text": "Clinic for Interactive Media and Internet Disorders (CIMAID)",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/clinical-meg-service",
+              "text": "Clinical MEG Service",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/clinical-pharmacogenomics-service",
+              "text": "Clinical Pharmacogenomics Service",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/cochlear-implant-program",
+              "text": "Cochlear Implant Program",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/colorectal-and-pelvic-malformation-center",
+              "text": "Colorectal and Pelvic Malformation Center",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/comfort-ability",
+              "text": "Comfort Ability",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/community-asthma-initiative",
+              "text": "Community Asthma Initiative",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/community-based-acute-treatment",
+              "text": "Community Based Acute Treatment",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/complex-biventricular-repair-program",
+              "text": "Complex Biventricular Repair Program",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/complex-care",
+              "text": "Complex Care",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/complex-cervical-spine-program",
+              "text": "Complex Cervical Spine Program",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/comprehensive-pediatric-ophthalmology-service",
+              "text": "Comprehensive Pediatric Ophthalmology Service",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/congenital-diaphragmatic-hernia-center",
+              "text": "Congenital Diaphragmatic Hernia Center",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/congenital-enteropathy-program",
+              "text": "Congenital Enteropathy Program",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/congenital-heart-valve-program",
+              "text": "Congenital Heart Valve Program",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/contact-lens-service",
+              "text": "Contact Lens Service",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/cornelia-de-lange-syndrome-and-related-disorders-clinic",
+              "text": "Cornelia de Lange Syndrome and Related Disorders Clinic",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/coronary-artery-program",
+              "text": "Coronary Artery Program",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/craniofacial-program",
+              "text": "Craniofacial Program",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/critical-care-medicine",
+              "text": "Critical Care Medicine",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/critical-care-transport-program",
+              "text": "Critical Care Transport Program",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/critical-care-anesthesia-perioperative-extension-and-home-ventilation-program",
+              "text": "Critical Care, Anesthesia, Perioperative, Extension and Home Ventilation Program",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/cystic-fibrosis-center",
+              "text": "Cystic Fibrosis Center",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/day-surgery-program",
+              "text": "Day Surgery Program",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/deaf-and-hard-hearing-program",
+              "text": "Deaf and Hard of Hearing Program",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/dentistry",
+              "text": "Dentistry",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/dermatology",
+              "text": "Dermatology",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/developmental-medicine",
+              "text": "Developmental Medicine",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/developmental-medicine-center",
+              "text": "Developmental Medicine Center",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/diabetes-genetics-clinic",
+              "text": "Diabetes Genetics Clinic",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/diabetes-program",
+              "text": "Diabetes Program",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/down-syndrome-program",
+              "text": "Down Syndrome Program",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/dxa-bone-density-program",
+              "text": "DXA Bone Density Program",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/early-intervention",
+              "text": "Early Intervention",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/eating-disorders-program",
+              "text": "Eating Disorders Program",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/electrophysiology",
+              "text": "Electrophysiology",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/emergency-medicine",
+              "text": "Emergency Medicine",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/emergency-psychiatry-service",
+              "text": "Emergency Psychiatry Service",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/empower",
+              "text": "EMPOWER",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/end-stage-renal-disease-program",
+              "text": "End-Stage Renal Disease Program",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/endocrine-oncology-program",
+              "text": "Endocrine-Oncology Program",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/endocrinology",
+              "text": "Endocrinology",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/endodontics-program",
+              "text": "Endodontics Program",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/endoscopy",
+              "text": "Endoscopy",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/eosinophilic-gastrointestinal-disease-program",
+              "text": "Eosinophilic Gastrointestinal Disease Program",
+              "in_nav": false
+            }
+          ]
+        },
+        {
+          "url": "https://www.childrenshospital.org/patients-families",
+          "fetched_at": "2026-11-17T05:37:22.835Z",
+          "method": "HTTP GET",
+          "ok": true,
+          "status": 200,
+          "final_url": "https://www.childrenshospital.org/patients-families",
+          "redirected": false,
+          "content_type": "text/html; charset=utf-8",
+          "bytes": 89043,
+          "title": "Patients & Families | Boston Children's Hospital",
+          "robots": {
+            "allowed": true,
+            "matched": null,
+            "note": "robots.txt read for user-agent *"
+          },
+          "error": null,
+          "links": [
+            {
+              "url": "https://www.childrenshospital.org/patients-families/you-arrive/your-visit",
+              "text": "Read more >>",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/",
+              "text": "",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/request-appointment",
+              "text": "Make an Appointment",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/patients-families/about-boston-childrens/billing-insurance/pay-your-bill-online",
+              "text": "Pay My Bill",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor",
+              "text": "Find a Doctor",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-location",
+              "text": "Find a Location",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/patients-families/about-boston-childrens/second-opinion-program",
+              "text": "Get a Second Opinion",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/ways-help/donate-blood",
+              "text": "Donate Blood",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/conditions-treatments",
+              "text": "Conditions & Treatments",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/services",
+              "text": "Programs & Services",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/patients-families",
+              "text": "Patients & Families",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/health-care-professionals",
+              "text": "Healthcare Professionals",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/search",
+              "text": "Search",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/search?keywords=Healthcare",
+              "text": "Healthcare",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/search?keywords=Cold",
+              "text": "Cold",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/search?keywords=Cough",
+              "text": "Cough",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/search?keywords=Ear%20Infection",
+              "text": "Ear Infection",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/search?keywords=Chronic%20Pain",
+              "text": "Chronic Pain",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/search?keywords=Cancer",
+              "text": "Cancer",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us",
+              "text": "About Boston Children's",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/newsroom",
+              "text": "Newsroom",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/ways-help",
+              "text": "Ways to Help",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/contact-us",
+              "text": "Contact Us",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/get-connected/government-relations",
+              "text": "Government Relations",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/legal/notice-privacy-practices",
+              "text": "HIPAA Notice of Privacy Rights",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/legal/rights-responsibilities-patients-patient-representatives-families",
+              "text": "Patient & Family Rights",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/patients-families/about-boston-childrens/billing-insurance/resources-self-service/charges-services",
+              "text": "Price Transparency",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/patient-experience",
+              "text": "Quality & Patient Safety",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/working-us/contractors-vendors",
+              "text": "Compliance",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/patients-families/i-want",
+              "text": "Get Help",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/patients-families/about-boston-childrens",
+              "text": "Learn more",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/patients-families/you-arrive",
+              "text": "Be Prepared",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/patients-families/partner-us",
+              "text": "Lend Your Voice",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/patients-families/while-you-are-here",
+              "text": "Get Information",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/patients-families/patient-family-support-resources",
+              "text": "Get Support",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/sites/default/files/2025-11/patient-families-welcome-outpatient.pdf",
+              "text": "Image Your visit to Boston Children's",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/sites/default/files/2025-11/patient-families-welcome-inpatient.pdf",
+              "text": "Image Your overnight stay at Boston Children's",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/sites/default/files/2025-11/patient-families-welcome-emergency-department.pdf",
+              "text": "Image Visiting our ER",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/legal",
+              "text": "Image Helpful documents & forms",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/sites/default/files/2025-11/patient-families-welcome-outpatient-spanish.pdf",
+              "text": "Image Descargar: Su visita al Boston Children's",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/sites/default/files/2025-11/patient-families-welcome-inpatient-spanish.pdf",
+              "text": "Image Descargar: Su estancia de un día para otro en el Boston Children's",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/sites/default/files/2025-11/patient-families-welcome-emergency-department-spanish.pdf",
+              "text": "Image Descargar: Su visita al Departamento de Emergencias",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/sites/default/files/2025-11/patient-families-welcome-outpatient-creole-haitian.pdf",
+              "text": "Image Telechaje: Vizit ou nan Boston Children's lan",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/sites/default/files/2025-11/patient-families-welcome-inpatient-creole-haitian-new.pdf",
+              "text": "Image Telechaje: Nuit ou te pase nan Boston Children's lan",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/sites/default/files/2025-11/patient-families-welcome-emergency-department-creole-haitian.pdf",
+              "text": "Image Telechaje: Vizit ou nan Depatman Ijans lan",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/sites/default/files/2025-11/patient-families-welcome-outpatient-portugese.pdf",
+              "text": "Image Download: Seu(ua) visita ao Boston Children's",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/sites/default/files/2025-11/patient-families-welcome-inpatient-portugese.pdf",
+              "text": "Image Download: Seu(ua) pernoite no Boston Children's",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/sites/default/files/2025-11/patient-families-welcome-emergency-department-portugese.pdf",
+              "text": "Image Download: Seu(ua) visita ao Pronto Socorro",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/sites/default/files/2025-11/patient-families-welcome-outpatient-arabic.pdf",
+              "text": "Image تحميل: زيارتك إلى Boston Children’s",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/sites/default/files/2025-11/patient-families-welcome-inpatient-arabic.pdf",
+              "text": "Image تحميل: إقامتك الليلية في Boston Children’s",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/sites/default/files/2025-11/patient-families-welcome-emergency-department-arabic.pdf",
+              "text": "Image تحميل: زيارتك لقسم الطوارئ",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/sites/default/files/2025-11/patient-families-welcome-outpatient-chinese-simplified.pdf",
+              "text": "Image 下载：前往 Boston Children’s 就诊",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/sites/default/files/2025-11/patient-families-welcome-inpatient-chinese-simplified.pdf",
+              "text": "Image 下载：留在 Boston Children’s 过夜",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/sites/default/files/2025-11/patient-families-welcome-emergency-department-chinese-simplified.pdf",
+              "text": "Image 下载：前往急诊室就诊",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/videos",
+              "text": "Video Library",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/online-second-opinions",
+              "text": "Online Second Opinions",
+              "in_nav": false
+            }
+          ]
+        },
+        {
+          "url": "https://www.childrenshospital.org/about-us",
+          "fetched_at": "2026-11-17T05:37:23.872Z",
+          "method": "HTTP GET",
+          "ok": true,
+          "status": 200,
+          "final_url": "https://www.childrenshospital.org/about-us",
+          "redirected": false,
+          "content_type": "text/html; charset=utf-8",
+          "bytes": 123719,
+          "title": "About Us | Boston Children's Hospital",
+          "robots": {
+            "allowed": true,
+            "matched": null,
+            "note": "robots.txt read for user-agent *"
+          },
+          "error": null,
+          "links": [
+            {
+              "url": "https://www.childrenshospital.org/patients-families/you-arrive/your-visit",
+              "text": "Read more >>",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/",
+              "text": "",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/request-appointment",
+              "text": "Make an Appointment",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/patients-families/about-boston-childrens/billing-insurance/pay-your-bill-online",
+              "text": "Pay My Bill",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor",
+              "text": "Find a Doctor",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-location",
+              "text": "Find a Location",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/patients-families/about-boston-childrens/second-opinion-program",
+              "text": "Get a Second Opinion",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/ways-help/donate-blood",
+              "text": "Donate Blood",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/conditions-treatments",
+              "text": "Conditions & Treatments",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/services",
+              "text": "Programs & Services",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/patients-families",
+              "text": "Patients & Families",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/health-care-professionals",
+              "text": "Healthcare Professionals",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/search",
+              "text": "Search",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/search?keywords=Healthcare",
+              "text": "Healthcare",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/search?keywords=Cold",
+              "text": "Cold",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/search?keywords=Cough",
+              "text": "Cough",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/search?keywords=Ear%20Infection",
+              "text": "Ear Infection",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/search?keywords=Chronic%20Pain",
+              "text": "Chronic Pain",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/search?keywords=Cancer",
+              "text": "Cancer",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us",
+              "text": "Overview Toggle Overview",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/fenwick-institute",
+              "text": "Fenwick Institute Toggle Fenwick Institute",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/fenwick-institute/meet-our-team",
+              "text": "Meet Our Team",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/fenwick-institute/policy",
+              "text": "Setting the Standards of Practice to Improve Health Outcomes for All Children",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/fenwick-institute/leadership-development",
+              "text": "Providing Leadership Development for Current and Future Healthcare and Research Leaders",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/fenwick-institute/research-studies",
+              "text": "Performing, Collaborating, and Supporting Pioneering Research Studies",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/awards-accolades",
+              "text": "Awards & Accolades",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/expansion-renewal",
+              "text": "Expansion & Renewal Toggle Expansion & Renewal",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/expansion-renewal/franciscan-childrens-affiliation",
+              "text": "Franciscan Children's Affiliation",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/expansion-renewal/hale-family-building",
+              "text": "Hale Family Building Toggle Hale Family Building",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/expansion-renewal/hale-family-building/determination-need",
+              "text": "Determination of Need",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/expansion-renewal/longwood-campus",
+              "text": "Longwood Campus",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/expansion-renewal/ongoing-projects",
+              "text": "Ongoing Projects",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/our-leadership",
+              "text": "Our Leadership Toggle Our Leadership",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/our-leadership/board-trustees",
+              "text": "Board of Trustees",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/our-leadership/chiefs-service",
+              "text": "Chiefs of Service",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/archives",
+              "text": "Archives",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/contact-us",
+              "text": "Contact Us",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/community-health",
+              "text": "Community Health Toggle Community Health",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/community-health/needs",
+              "text": "Community Health Needs",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/community-health/stories",
+              "text": "Stories",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/community-health/webinars",
+              "text": "Webinars",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/community-health/programs-partners",
+              "text": "Programs & Partners",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/community-health/family-food-connections",
+              "text": "Family Food Connections",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/community-health/governing-boards",
+              "text": "Governing Boards",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/community-health/office-community-health",
+              "text": "Office of Community Health",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/community-health/contributions",
+              "text": "Community Benefits Contributions",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/community-health/determination-need-community-health-initiatives",
+              "text": "Determination of Need Community Health Initiatives",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/community-health/collaboration-community-health",
+              "text": "Collaboration for Community Health Toggle Collaboration for Community Health",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/community-health/collaboration-community-health/funded-partners",
+              "text": "Funded Partners",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/community-health/collaboration-community-health/childrens-health-equity-initiative",
+              "text": "Children’s Health Equity Initiative",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/community-health/metro-south-west-community-health-initiative",
+              "text": "Metro South West Community Health Initiative Toggle Metro South West Community Health Initiative",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/community-health/metro-south-west-community-health-initiative/funded-partners",
+              "text": "Funded Partners",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/libraries",
+              "text": "Libraries",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/health-equity",
+              "text": "Health Equity Toggle Health Equity",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/health-equity/office-health-equity-inclusion",
+              "text": "Office of Health Equity & Inclusion Toggle Office of Health Equity & Inclusion",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/health-equity/office-health-equity-inclusion/our-team",
+              "text": "Our Team",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/health-equity/office-health-equity-inclusion/initiatives-equity-diversity-inclusion",
+              "text": "Initiatives in Equity, Diversity, & Inclusion",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/health-equity/office-health-equity-inclusion/leadership-development-academic-advancement",
+              "text": "Leadership Development & Academic Advancement",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/health-equity/office-health-equity-inclusion/programs-resources",
+              "text": "Programs & Resources",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/social-responsibility",
+              "text": "Social Responsibility Toggle Social Responsibility",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/social-responsibility/lgbtq-equality",
+              "text": "LGBTQ+ Equality",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/social-responsibility/anchor-strategy",
+              "text": "Anchor Strategy Toggle Anchor Strategy",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/social-responsibility/anchor-strategy/workforce-development",
+              "text": "Building & Supporting a Diverse Workforce",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/social-responsibility/anchor-strategy/creating-healthier-environment",
+              "text": "Creating a Healthier Environment",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/social-responsibility/anchor-strategy/investments",
+              "text": "Investments",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/social-responsibility/anchor-strategy/purchasing",
+              "text": "Purchasing Toggle Purchasing",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/social-responsibility/anchor-strategy/purchasing/supplier-diversity",
+              "text": "Supplier Diversity Program",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/patient-experience",
+              "text": "Patient Experience Toggle Patient Experience",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/patient-experience/capacity",
+              "text": "Capacity",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/patient-experience/experience-data",
+              "text": "Experience Data",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/patient-experience/key-measures-quality",
+              "text": "Key Measures of Quality Toggle Key Measures of Quality",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/patient-experience/key-measures-quality/hand-hygiene",
+              "text": "Hand Hygiene",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/patient-experience/key-measures-quality/adverse-drug-events",
+              "text": "Adverse Drug Events",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/patient-experience/key-measures-quality/cauti",
+              "text": "CAUTI",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/patient-experience/key-measures-quality/central-line-infections",
+              "text": "Central Line Infections",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/patient-experience/key-measures-quality/surgical-site-infections",
+              "text": "Surgical Site Infections",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/patient-experience/key-measures-quality/venous-thromboembolism",
+              "text": "Venous Thromboembolism",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/patient-experience/key-measures-quality/lung-function-cystic-fibrosis-patients",
+              "text": "Lung Function in Cystic Fibrosis Patients",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/patient-experience/key-measures-quality/vaccination-rates",
+              "text": "Vaccination Rates",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/working-us",
+              "text": "Working With Us Toggle Working With Us",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/working-us/not-profit-status",
+              "text": "Not-for-Profit Status",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/working-us/contractors-vendors",
+              "text": "Contractors & Vendors",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/get-connected",
+              "text": "Get Connected Toggle Get Connected",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/get-connected/government-relations",
+              "text": "Government Relations Toggle Government Relations",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/get-connected/government-relations/meet-our-team",
+              "text": "Meet Our Team",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/get-connected/government-relations/legislative-priorities",
+              "text": "Legislative Priorities Toggle Legislative Priorities",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/get-connected/government-relations/legislative-priorities/city-civic-policy",
+              "text": "City & Civic Policy",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/get-connected/government-relations/legislative-priorities/state-policy",
+              "text": "State Policy",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/government-relations/legislative-priorities/federal-policy",
+              "text": "Federal Policy",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/get-connected/government-relations/childrens-advocacy-network",
+              "text": "Children’s Advocacy Network Toggle Children’s Advocacy Network",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/get-connected/government-relations/childrens-advocacy-network/our-partners",
+              "text": "Our Partners",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/get-connected/government-relations/childrens-advocacy-network/action-center",
+              "text": "Action Center",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/get-connected/government-relations/childrens-advocacy-network/sign-our-newsletter",
+              "text": "Sign Up For Our Newsletter",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/get-connected/government-relations/resources",
+              "text": "Resources Toggle Resources",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/government-relations/resources/state-resources",
+              "text": "State Resources",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/government-relations/resources/federal-resources",
+              "text": "Federal Resources",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/get-connected/government-relations/resources/voter-resources",
+              "text": "Voter Resources",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/get-connected/government-relations/contact-us",
+              "text": "Contact Us",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/get-connected/sustainability",
+              "text": "Sustainability",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/newsroom",
+              "text": "Newsroom",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/ways-help",
+              "text": "Ways to Help",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/legal/notice-privacy-practices",
+              "text": "HIPAA Notice of Privacy Rights",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/legal/rights-responsibilities-patients-patient-representatives-families",
+              "text": "Patient & Family Rights",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/patients-families/about-boston-childrens/billing-insurance/resources-self-service/charges-services",
+              "text": "Price Transparency",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/videos",
+              "text": "Video Library",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/online-second-opinions",
+              "text": "Online Second Opinions",
+              "in_nav": false
+            }
+          ]
+        },
+        {
+          "url": "https://www.childrenshospital.org/newsroom",
+          "fetched_at": "2026-11-17T05:37:24.925Z",
+          "method": "HTTP GET",
+          "ok": true,
+          "status": 200,
+          "final_url": "https://www.childrenshospital.org/newsroom",
+          "redirected": false,
+          "content_type": "text/html; charset=utf-8",
+          "bytes": 92160,
+          "title": "Newsroom",
+          "robots": {
+            "allowed": true,
+            "matched": null,
+            "note": "robots.txt read for user-agent *"
+          },
+          "error": null,
+          "links": [
+            {
+              "url": "https://www.childrenshospital.org/patients-families/you-arrive/your-visit",
+              "text": "Read more >>",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/",
+              "text": "",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/request-appointment",
+              "text": "Make an Appointment",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/patients-families/about-boston-childrens/billing-insurance/pay-your-bill-online",
+              "text": "Pay My Bill",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor",
+              "text": "Find a Doctor",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-location",
+              "text": "Find a Location",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/patients-families/about-boston-childrens/second-opinion-program",
+              "text": "Get a Second Opinion",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/ways-help/donate-blood",
+              "text": "Donate Blood",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/conditions-treatments",
+              "text": "Conditions & Treatments",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/services",
+              "text": "Programs & Services",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/patients-families",
+              "text": "Patients & Families",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/health-care-professionals",
+              "text": "Healthcare Professionals",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/search",
+              "text": "Search",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/search?keywords=Healthcare",
+              "text": "Healthcare",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/search?keywords=Cold",
+              "text": "Cold",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/search?keywords=Cough",
+              "text": "Cough",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/search?keywords=Ear%20Infection",
+              "text": "Ear Infection",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/search?keywords=Chronic%20Pain",
+              "text": "Chronic Pain",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/search?keywords=Cancer",
+              "text": "Cancer",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us",
+              "text": "About Boston Children's",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/newsroom",
+              "text": "Newsroom",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/ways-help",
+              "text": "Ways to Help",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/contact-us",
+              "text": "Contact Us",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/get-connected/government-relations",
+              "text": "Government Relations",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/legal/notice-privacy-practices",
+              "text": "HIPAA Notice of Privacy Rights",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/legal/rights-responsibilities-patients-patient-representatives-families",
+              "text": "Patient & Family Rights",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/patients-families/about-boston-childrens/billing-insurance/resources-self-service/charges-services",
+              "text": "Price Transparency",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/patient-experience",
+              "text": "Quality & Patient Safety",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/working-us/contractors-vendors",
+              "text": "Compliance",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/newsroom/resources-reporters/contact-media-relations",
+              "text": "Contact Media Relations",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/newsroom/media-archive/inside-wraparound-waltham-citys-safety-net-immigrant-students-and-their",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/newsroom/media-archive/unlocking-value-medical-data-while-safeguarding-patient-privacy",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/newsroom/media-archive/new-46-million-grant-allows-boston-childrens-university-oxford-lead-genetic",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/newsroom/media-archive/researchers-identify-genetic-convergence-autism-and-possible-explanation",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/newsroom/media-archive/watch-boston-childrens-psychiatrist-helps-parents-improve-morning-routine",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/newsroom/media-archive/study-upends-common-view-inflammatory-signal-transduction",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/newsroom/media-archive/boston-childrens-patients-step-inside-celtics-world-historic-day",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/newsroom/media-archive/361-hospital-and-health-system-chief-nursing-officers-know-2026",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/newsroom/media-archive/celtics-make-200-million-donation-boston-childrens",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/newsroom/media-archive/celtics-owners-make-record-200-million-gift-boston-childrens",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/newsroom/media-archive/boston-childrens-announces-historic-gift-led-owners-boston-celtics",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/newsroom/media-archive/patriots-host-feel-good-halloween-costume-party-pediatric-cancer-patients",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/newsroom/media-archive/new-hampshire-5-year-old-nearing-victory-leukemia-battle",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/newsroom/media-archive/listen-team-boston-doctors-scientists-are-looking-grow-bioengineered-hearts",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/newsroom/media-archive/watch-boston-childrens-psychiatrist-explains-how-halloween-can-help-kids",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/newsroom/media-archive/depression-linked-higher-risk-prescription-drug-misuse-youths",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/newsroom/media-archive/baby-needed-brain-surgery-boston-one-his-parents-biggest-hurdles-finding",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/newsroom/media-archive/boston-childrens-harvard-school-engineering-and-applied-sciences-brigham-and",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/newsroom/media-archive/kimberly-stegmaier-md-elected-national-academy-medicine",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/newsroom/media-archive/nam-elects-100-new-members-2026",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/newsroom/media-archive/100-hospitals-and-health-systems-great-heart-programs",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/newsroom/media-archive/what-mother-eats-while-pregnant-may-affect-her-babys-risk-colic-and-eczema",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/newsroom/media-archive/no-1-protein-help-reduce-your-risk-stroke-according-dietitians",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/newsroom/media-archive/listen-understanding-osteochondritis-dissecans-young-athletes",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/newsroom/media-archive/us-surpasses-4000-measles-cases-infections-confirmed-45-states-cdc",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/newsroom/media-archive",
+              "text": "View Archive",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/newsroom/media-archive?keywords=&type=2447",
+              "text": "View News Releases",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/newsroom/resources-reporters",
+              "text": "View Resources",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/videos/boston-childrens-answers-parentcast",
+              "text": "Learn More",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/videos",
+              "text": "Video Library",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/online-second-opinions",
+              "text": "Online Second Opinions",
+              "in_nav": false
+            }
+          ]
+        },
+        {
+          "url": "https://www.childrenshospital.org/ways-help",
+          "fetched_at": "2026-11-17T05:37:25.971Z",
+          "method": "HTTP GET",
+          "ok": true,
+          "status": 200,
+          "final_url": "https://www.childrenshospital.org/ways-help",
+          "redirected": false,
+          "content_type": "text/html; charset=utf-8",
+          "bytes": 51405,
+          "title": "Ways to Help",
+          "robots": {
+            "allowed": true,
+            "matched": null,
+            "note": "robots.txt read for user-agent *"
+          },
+          "error": null,
+          "links": [
+            {
+              "url": "https://www.childrenshospital.org/patients-families/you-arrive/your-visit",
+              "text": "Read more >>",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/",
+              "text": "",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/request-appointment",
+              "text": "Make an Appointment",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/patients-families/about-boston-childrens/billing-insurance/pay-your-bill-online",
+              "text": "Pay My Bill",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-doctor",
+              "text": "Find a Doctor",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/find-a-location",
+              "text": "Find a Location",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/patients-families/about-boston-childrens/second-opinion-program",
+              "text": "Get a Second Opinion",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/ways-help/donate-blood",
+              "text": "Donate Blood",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/conditions-treatments",
+              "text": "Conditions & Treatments",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/services",
+              "text": "Programs & Services",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/patients-families",
+              "text": "Patients & Families",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/health-care-professionals",
+              "text": "Healthcare Professionals",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/search",
+              "text": "Search",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/search?keywords=Healthcare",
+              "text": "Healthcare",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/search?keywords=Cold",
+              "text": "Cold",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/search?keywords=Cough",
+              "text": "Cough",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/search?keywords=Ear%20Infection",
+              "text": "Ear Infection",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/search?keywords=Chronic%20Pain",
+              "text": "Chronic Pain",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/search?keywords=Cancer",
+              "text": "Cancer",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us",
+              "text": "About Boston Children's",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/newsroom",
+              "text": "Newsroom",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/ways-help",
+              "text": "Ways to Help",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/contact-us",
+              "text": "Contact Us",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/get-connected/government-relations",
+              "text": "Government Relations",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/legal/notice-privacy-practices",
+              "text": "HIPAA Notice of Privacy Rights",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/legal/rights-responsibilities-patients-patient-representatives-families",
+              "text": "Patient & Family Rights",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/patients-families/about-boston-childrens/billing-insurance/resources-self-service/charges-services",
+              "text": "Price Transparency",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/patient-experience",
+              "text": "Quality & Patient Safety",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/about-us/working-us/contractors-vendors",
+              "text": "Compliance",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.childrenshospital.org/ways-help/donate-artwork",
+              "text": "Donating art",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/ways-help/organize-blood-drive",
+              "text": "Organize a blood drive",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/ways-help/volunteer-services",
+              "text": "Volunteer",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/videos",
+              "text": "Video Library",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.childrenshospital.org/services/online-second-opinions",
+              "text": "Online Second Opinions",
+              "in_nav": false
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

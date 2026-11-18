@@ -1,0 +1,224 @@
+{
+  "components": [
+    {
+      "name": "site-header",
+      "selector": "header[data-component='site-header']",
+      "pages": [
+        "index.html",
+        "today.html",
+        "hourly.html",
+        "tenday.html",
+        "monthly.html",
+        "allergy.html",
+        "radar.html",
+        "news.html",
+        "login.html",
+        "404.html"
+      ],
+      "behaviors": "Displays site name and optional promotional banner; serves as a landmark.",
+      "keyboard_expectations": "None beyond standard tab order; header is not focusable.",
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "primary-nav",
+      "selector": "nav[data-component='primary-nav']",
+      "pages": [
+        "index.html",
+        "today.html",
+        "hourly.html",
+        "tenday.html",
+        "monthly.html",
+        "allergy.html",
+        "radar.html",
+        "news.html",
+        "login.html",
+        "404.html"
+      ],
+      "behaviors": "Provides primary site navigation as a horizontal list of links.",
+      "keyboard_expectations": "Tab moves focus between links; Enter or Space activates link.",
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "site-footer",
+      "selector": "footer[data-component='site-footer']",
+      "pages": [
+        "index.html",
+        "today.html",
+        "hourly.html",
+        "tenday.html",
+        "monthly.html",
+        "allergy.html",
+        "radar.html",
+        "news.html",
+        "login.html",
+        "404.html"
+      ],
+      "behaviors": "Contains copyright information and simple text links.",
+      "keyboard_expectations": "Tab moves focus into footer; links activated via Enter/Space.",
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "location-search",
+      "selector": "section[data-component='location-search'] form",
+      "pages": [
+        "index.html",
+        "today.html",
+        "hourly.html",
+        "tenday.html",
+        "monthly.html",
+        "allergy.html"
+      ],
+      "behaviors": "Accepts a location query; on submit shows a toast with the entered location (demo).",
+      "keyboard_expectations": "Tab to input and button; Enter on input or Space/Enter on button submits form.",
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "alert-filters",
+      "selector": "section[data-component='alert-filters'] form",
+      "pages": [
+        "index.html",
+        "today.html",
+        "hourly.html",
+        "tenday.html",
+        "monthly.html",
+        "allergy.html"
+      ],
+      "behaviors": "Checkboxes for alert categories; submit shows a toast with active filters (demo).",
+      "keyboard_expectations": "Tab to each checkbox; Space toggles; Tab to submit button; Enter/Space submits.",
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "forecast-tabs",
+      "selector": "[role='tablist']",
+      "pages": [
+        "index.html",
+        "today.html"
+      ],
+      "behaviors": "Switches between forecast views (Today, Hourly, 10‑Day, Monthly) without page reload.",
+      "keyboard_expectations": "Tab into tablist; Left/Right arrow moves tab focus; Tab leaves tablist; Enter/Space activates selected tab.",
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "unit-toggle",
+      "selector": "#unit-toggle",
+      "pages": [
+        "index.html",
+        "today.html",
+        "hourly.html",
+        "tenday.html",
+        "monthly.html"
+      ],
+      "behaviors": "Toggles displayed temperature units between Fahrenheit and Celsius.",
+      "keyboard_expectations": "Tab to toggle; Space or Enter changes state.",
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "today-forecast",
+      "selector": "section[data-component='today-forecast']",
+      "pages": [
+        "today.html"
+      ],
+      "behaviors": "Shows detailed current conditions for the selected location.",
+      "keyboard_expectations": "None; content is read-only.",
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "hourly-preview",
+      "selector": "section[data-component='hourly-preview']",
+      "pages": [
+        "today.html"
+      ],
+      "behaviors": "Presents a short sample of hourly forecasts as cards.",
+      "keyboard_expectations": "None; content is read-only.",
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "hourly-card",
+      "selector": ".card[data-component='hourly-card']",
+      "pages": [
+        "hourly.html",
+        "today.html"
+      ],
+      "behaviors": "Displays a single hour’s forecast (time, temperature, condition).",
+      "keyboard_expectations": "None; content is read-only.",
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "day-card",
+      "selector": ".card[data-component='day-card']",
+      "pages": [
+        "tenday.html"
+      ],
+      "behaviors": "Displays a single day’s forecast (high/low temperature, condition, precipitation chance).",
+      "keyboard_expectations": "None; content is read-only.",
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "month-card",
+      "selector": ".card[data-component='month-card']",
+      "pages": [
+        "monthly.html"
+      ],
+      "behaviors": "Displays monthly average high/low temperature and precipitation.",
+      "keyboard_expectations": "None; content is read-only.",
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "news-card",
+      "selector": ".card[data-component='news-card']",
+      "pages": [
+        "news.html"
+      ],
+      "behaviors": "Shows a preview of a weather news article (title, summary, date, placeholder image).",
+      "keyboard_expectations": "None; content is read-only.",
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "radar-placeholder",
+      "selector": "section[data-component='radar-placeholder'] svg",
+      "pages": [
+        "radar.html"
+      ],
+      "behaviors": "Static SVG placeholder representing a radar map; labeled 'Radar'.",
+      "keyboard_expectations": "None; decorative, aria-label provides description.",
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "login-form",
+      "selector": "section[data-component='login-form'] form",
+      "pages": [
+        "login.html"
+      ],
+      "behaviors": "Accepts email and password; on submit shows a toast 'Login successful (demo)' and redirects to home.",
+      "keyboard_expectations": "Tab to fields and button; Enter on fields or Space/Enter on button submits.",
+      "status": "implemented",
+      "validation_state": "not-tested"
+    },
+    {
+      "name": "promo-banner",
+      "selector": "p.promo-banner",
+      "pages": [
+        "index.html",
+        "today.html"
+      ],
+      "behaviors": "Demo call‑to‑action for Premium upgrade; shows a banner with text.",
+      "keyboard_expectations": "None; non‑functional.",
+      "status": "implemented",
+      "validation_state": "not-tested"
+    }
+  ]
+}

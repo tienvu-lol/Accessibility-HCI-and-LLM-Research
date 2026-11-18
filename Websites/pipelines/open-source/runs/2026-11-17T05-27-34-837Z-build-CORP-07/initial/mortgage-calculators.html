@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mortgage Calculators | Meridian Valley Bank</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  
+  <header class="site-header" data-component="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" data-component="logo">Meridian Valley Bank</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+      <nav class="primary-nav" id="primary-nav" data-component="primary-nav">
+        <ul>
+          <li><a href="checking.html">Checking</a></li>
+          <li><a href="savings-cds.html">Savings & CDs</a></li>
+          <li><a href="mortgage.html">Mortgages</a></li>
+          <li><a href="auto-loans.html">Auto Loans</a></li>
+          <li><a href="help.html">Help</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="hero" data-section="hero">
+      <div class="container">
+        <h1>Mortgage Calculators</h1>
+        <p>Plan your home purchase with our financial tools.</p>
+      </div>
+    </section>
+
+    <section class="container mt-2" data-section="calculator">
+      <h2 class="text-center">Monthly Payment Calculator</h2>
+      <p class="text-center mb-2">Estimate your monthly mortgage payment.</p>
+      
+      <div class="card" style="max-width: 600px; margin: 0 auto;">
+        <form id="mortgage-calc-form">
+          <div class="form-group">
+            <label for="principal">Loan Amount ($)</label>
+            <input type="number" id="principal" placeholder="e.g., 300000" required>
+            <div class="error-message">Please enter a valid loan amount.</div>
+          </div>
+          <div class="form-group">
+            <label for="rate">Interest Rate (%)</label>
+            <input type="number" id="rate" step="0.01" placeholder="e.g., 6.5" required>
+            <div class="error-message">Please enter a valid interest rate.</div>
+          </div>
+          <div class="form-group">
+            <label for="term">Loan Term (Years)</label>
+            <select id="term" required>
+              <option value="15">15 Years</option>
+              <option value="30" selected>30 Years</option>
+            </select>
+          </div>
+          <button type="submit" class="btn" style="width: 100%;">Calculate Payment</button>
+        </form>
+        
+        <div id="result" class="mt-2 hidden">
+          <h3>Estimated Monthly Payment</h3>
+          <p id="monthly-payment" style="font-size: 1.5rem; font-weight: bold; color: #0056b3;">$0.00</p>
+          <p class="text-muted">This is an estimate. Actual rates may vary.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" data-component="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-section">
+          <h4>Products</h4>
+          <ul>
+            <li><a href="checking.html">Checking</a></li>
+            <li><a href="savings-cds.html">Savings</a></li>
+            <li><a href="mortgage.html">Mortgages</a></li>
+            <li><a href="auto-loans.html">Auto Loans</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="help.html">Help Center</a></li>
+            <li><a href="help-routing.html">Routing Numbers</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>About</h4>
+          <ul>
+            <li><a href="about.html">Our Story</a></li>
+            <li><a href="about-inclusion.html">Inclusion</a></li>
+            <li><a href="#">Careers</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        &copy; 2026 Meridian Valley Bank. All rights reserved. FDIC Equal Housing Lender.
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

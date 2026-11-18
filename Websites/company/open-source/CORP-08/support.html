@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Riverbank Community Bank – Support</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <header data-section="site-header" data-component="site-header" class="site-header">
+    <div class="logo">Riverbank Community Bank</div>
+    <button id="nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Open main menu">
+      ☰
+    </button>
+    <nav data-section="primary-nav" data-component="primary-nav" class="primary-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="learning.html">Learning Center</a></li>
+        <li><a href="support.html" aria-current="page">Support</a></li>
+        <li><a href="checking.html">Checking & Savings</a></li>
+        <li><a href="loans.html">Loans</a></li>
+        <li><a href="digital.html">Digital Banking</a></li>
+        <li><a href="careers.html">Careers</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section data-section="hero" data-component="hero-banner" class="hero" role="region" aria-label="Hero banner">
+    <h1>Support</h1>
+    <p>Find answers to common questions and get help.</p>
+  </section>
+
+  <main id="main-content" data-section="main-content">
+    <section data-section="content-band" data-component="content-band-faq" class="content-band">
+      <h2>Frequently Asked Questions</h2>
+      <div class="accordion" data-instance="faq-accordion">
+        <div class="accordion-item" data-component="accordion-item">
+          <button class="accordion-trigger" aria-expanded="false" aria-controls="faq-1">
+            How do I open a new account?
+          </button>
+          <div id="faq-1" class="accordion-panel" hidden>
+            <p>You can open an account online through our digital banking portal or visit any branch with a valid ID and proof of address.</p>
+          </div>
+        </div>
+        <div class="accordion-item" data-component="accordion-item">
+          <button class="accordion-trigger" aria-expanded="false" aria-controls="faq-2">
+            What should I do if I lose my debit card?
+          </button>
+          <div id="faq-2" class="accordion-panel" hidden>
+            <p>Immediately lock your card via the mobile app or call our 24/7 support line at (555) 123-4567 to report it lost or stolen.</p>
+          </div>
+        </div>
+        <div class="accordion-item" data-component="accordion-item">
+          <button class="accordion-trigger" aria-expanded="false" aria-controls="faq-3">
+            How can I set up direct deposit?
+          </button>
+          <div id="faq-3" class="accordion-panel" hidden>
+            <p>Provide your employer with our routing number (021000021) and your account number, which you can find in the digital banking app or on your checks.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section data-section="content-band" data-component="content-band-contact-support" class="content-band">
+      <h2>Contact Support</h2>
+      <p>Phone: <a href="tel:+15551234567">(555) 123-4567</a> (24/7)</p>
+      <p>Email: <a href="mailto:support@riverbank.example">support@riverbank.example</a></p>
+      <p>Visit any branch during lobby hours.</p>
+    </section>
+  </main>
+
+  <footer data-section="site-footer" data-component="site-footer" class="site-footer">
+    <div>
+      <a href="index.html">Home</a> |
+      <a href="about.html">About</a> |
+      <a href="learning.html">Learning Center</a> |
+      <a href="support.html">Support</a> |
+      <a href="careers.html">Careers</a>
+    </div>
+    <div>&copy; 2026 Riverbank Community Bank. All rights reserved.</div>
+  </footer>
+
+  <script>
+    // Accordion behavior
+    document.addEventListener('DOMContentLoaded', function () {
+      const triggers = document.querySelectorAll('.accordion-trigger');
+      triggers.forEach(button => {
+        button.addEventListener('click', function () {
+          const expanded = this.getAttribute('aria-expanded') === 'true' || false;
+          this.setAttribute('aria-expanded', !expanded);
+          const panelId = this.getAttribute('aria-controls');
+          const panel = document.getElementById(panelId);
+          if (panel) {
+            panel.hidden = expanded;
+          }
+        });
+      });
+    });
+  </script>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

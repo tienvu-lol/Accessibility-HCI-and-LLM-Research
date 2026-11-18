@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cheatsheets and Snippets - Markdown Powered Gatsby Mini Site - Atlas Digital Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header class="site-header" data-section="header">
+        <div class="container">
+            <a href="index.html" class="site-logo">Atlas Digital</a>
+            <nav class="primary-nav" data-component="primary-nav" aria-label="Main navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="projects.html" aria-current="page">Projects</a></li>
+                    <li><a href="mini-tools.html">Mini-Tools</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content" data-section="main">
+        <div class="container">
+            <h1>Cheatsheets and Snippets - Markdown Powered Gatsby Mini Site</h1>
+            
+            <div data-section="project-meta" style="margin-bottom: var(--spacing-md);">
+                <p><strong>Category:</strong> Web Stuff</p>
+                <p><strong>Technologies:</strong> Gatsby, Markdown, React</p>
+            </div>
+
+            <div data-section="project-description">
+                <h2>Overview</h2>
+                <p>This project is a static site generator built with Gatsby that serves as a centralized repository for developer cheatsheets and code snippets. It leverages Markdown files for content management, allowing for easy updates and version control.</p>
+                
+                <h2>Features</h2>
+                <ul>
+                    <li>Markdown-based content structure</li>
+                    <li>Fast static site generation</li>
+                    <li>Searchable index of snippets</li>
+                    <li>Responsive design for mobile and desktop</li>
+                    <li>Easy contribution workflow via GitHub</li>
+                </ul>
+
+                <h2>Structure</h2>
+                <p>Content is organized by language and topic. Each cheatsheet is a Markdown file with YAML frontmatter for metadata such as tags, language, and difficulty level.</p>
+
+                <h2>Getting Started</h2>
+                <p>Clone the repository and install dependencies:</p>
+                <pre><code>git clone https://github.com/atlas-digital/cheatsheets.git
+cd cheatsheets
+npm install</code></pre>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer" data-section="footer">
+        <div class="container">
+            <p>&copy; 2026 Atlas Digital. All rights reserved.</p>
+            <p>
+                <a href="index.html">Home</a> | 
+                <a href="projects.html">Projects</a> | 
+                <a href="blog.html">Blog</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

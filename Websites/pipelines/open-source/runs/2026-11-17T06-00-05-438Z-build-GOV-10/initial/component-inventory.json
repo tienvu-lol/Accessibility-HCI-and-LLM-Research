@@ -1,0 +1,103 @@
+{
+  "components": [
+    {
+      "name": "site-header",
+      "selector": ".site-header",
+      "pages": ["index.html","parks-and-recreation.html","park-permits.html","pothole-repair.html","pay-bill.html","complaint-form.html","404.html"],
+      "behaviours": ["logo display","language toggle"],
+      "keyboard": ["Tab navigation", "Enter/Space on language button"],
+      "status": "implemented",
+      "validation": "not-tested"
+    },
+    {
+      "name": "primary-nav",
+      "selector": ".primary-nav",
+      "pages": ["index.html","parks-and-recreation.html","park-permits.html","pothole-repair.html","pay-bill.html","complaint-form.html","404.html"],
+      "behaviours": ["navigation links"],
+      "keyboard": ["Arrow keys not required; standard Tab order"],
+      "status": "implemented",
+      "validation": "not-tested"
+    },
+    {
+      "name": "skip-link",
+      "selector": ".skip-link",
+      "pages": ["index.html","parks-and-recreation.html","park-permits.html","pothole-repair.html","pay-bill.html","complaint-form.html","404.html"],
+      "behaviours": ["jump to main content"],
+      "keyboard": ["focusable via Tab, activates on Enter/Space"],
+      "status": "implemented",
+      "validation": "not-tested"
+    },
+    {
+      "name": "hero-banner",
+      "selector": ".hero-banner",
+      "pages": ["index.html"],
+      "behaviours": ["headline, sub‑headline"],
+      "keyboard": ["none"],
+      "status": "implemented",
+      "validation": "not-tested"
+    },
+    {
+      "name": "service-list",
+      "selector": ".service-list",
+      "pages": ["parks-and-recreation.html","pothole-repair.html"],
+      "behaviours": ["grid of cards", "search filter (inferred)"],
+      "keyboard": ["Tab through cards"],
+      "status": "implemented",
+      "validation": "not-tested"
+    },
+    {
+      "name": "sidebar",
+      "selector": ".sidebar",
+      "pages": ["parks-and-recreation.html","pothole-repair.html","pay-bill.html","complaint-form.html"],
+      "behaviours": ["quick links, alerts (inferred)"],
+      "keyboard": ["Tab order"],
+      "status": "implemented",
+      "validation": "not-tested"
+    },
+    {
+      "name": "alert-banner",
+      "selector": ".alert-banner",
+      "pages": ["index.html"],
+      "behaviours": ["dismiss button"],
+      "keyboard": ["Escape to close", "Enter/Space on dismiss"],
+      "status": "implemented",
+      "validation": "not-tested"
+    },
+    {
+      "name": "language-switcher",
+      "selector": "[data-component=\"language-switcher\"]",
+      "pages": ["index.html","parks-and-recreation.html","park-permits.html","pothole-repair.html","pay-bill.html","complaint-form.html","404.html"],
+      "behaviours": ["toggle language"],
+      "keyboard": ["Enter/Space"],
+      "status": "implemented",
+      "validation": "not-tested"
+    },
+    {
+      "name": "search-widget",
+      "selector": "[data-component=\"search-widget\"]",
+      "pages": ["parks-and-recreation.html","pothole-repair.html"],
+      "behaviours": ["client‑side filter (inferred)"],
+      "keyboard": ["Tab to input, type, Escape does not affect"],
+      "status": "implemented",
+      "validation": "not-tested"
+    },
+    {
+      "name": "demo-form",
+      "selector": "form[data-demo=\"true\"]",
+      "pages": ["park-permits.html","pay-bill.html","complaint-form.html"],
+      "behaviours": ["validation, error summary, demo success message"],
+      "keyboard": ["Enter to submit, focus moves to first error"],
+      "status": "implemented",
+      "validation": "not-tested"
+    },
+    {
+      "name": "site-footer",
+      "selector": ".site-footer",
+      "pages": ["index.html","parks-and-recreation.html","park-permits.html","pothole-repair.html","pay-bill.html","complaint-form.html","404.html"],
+      "behaviours": ["copyright notice"],
+      "keyboard": ["none"],
+      "status": "implemented",
+      "validation": "not-tested"
+    }
+  ]
+}

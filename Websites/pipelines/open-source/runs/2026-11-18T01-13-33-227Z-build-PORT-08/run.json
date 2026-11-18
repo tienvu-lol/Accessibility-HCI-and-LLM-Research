@@ -1,0 +1,563 @@
+{
+  "run_id": "2026-11-18T01-13-33-227Z-build-PORT-08",
+  "phase": "build",
+  "target": "PORT-08",
+  "category": "portfolio",
+  "slot": 8,
+  "model_group": "open-source",
+  "model": {
+    "model_id": "unsloth/NVIDIA-Nemotron-3-Super-120B-A12B-GGUF",
+    "model_version": "MXFP4_MOE",
+    "model_provider_or_runtime": "vt-arc-falcon-llamacpp (OpenAI-compatible chat completions at http://localhost:8081/v1)",
+    "weights_url": "https://huggingface.co/unsloth/NVIDIA-Nemotron-3-Super-120B-A12B-GGUF",
+    "license": "nvidia-nemotron-open-model-license",
+    "open_weights": true,
+    "eligibility_note": "Open weights. Licence is the NVIDIA Nemotron Open Model License (HF tag nvidia-nemotron-open-model-license), read 2026-11-17 by the orchestrator on the quant repo and the base model card nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-BF16. A vendor open-model licence, NOT OSI-approved: this slot is open-weight, not open-source. Quantisation MXFP4_MOE. Served self-hosted via llama.cpp on VT ARC Falcon over an SSH tunnel on localhost:8081. Serving history, same model and quant: fal052:50413 (2026-11-17, twelve slot-08 research runs and four builds; session ended), fal039:43471 (current).",
+    "params": {
+      "temperature": 0.3,
+      "max_tokens": 32000
+    }
+  },
+  "operator": "Samhith Varma Yallamraju",
+  "status": "stopped",
+  "prepared_at": "2026-11-18T01:13:33.231Z",
+  "generation_started_at": "2026-11-18T01:13:33.231Z",
+  "generation_completed_at": null,
+  "tool_access": "chat-completions API only: no browsing, no shell, no filesystem. The orchestrator wrote every file and ran every check.",
+  "budget": {
+    "max_build_turns": 28,
+    "max_repair_rounds": 3,
+    "max_tokens_per_request": 32000,
+    "temperature": 0.3,
+    "history_exchanges_kept": 8
+  },
+  "approved_source": {
+    "source_name": "Wes Bos",
+    "source_url": "https://wesbos.com/",
+    "verified_at": "2026-11-17",
+    "verification_method": "HTTP GET by the orchestrator",
+    "verification_result": "verified",
+    "evidence_reference": "pipelines/open-source/research/evidence/PORT-08-http-2026-11-17.json",
+    "complexity": "medium",
+    "stack_clues": "unknown",
+    "limitations": "Hero section, sidebar, and footer groups not visible in the fetched markup; legal pages omitted per guidance; interactive components (filtering, gallery, contact form) not verifiable from static HTML; verification date missing from evidence.",
+    "approved_at": "2026-11-17",
+    "approved_by": "Samhith Varma Yallamraju",
+    "approval_reference": "Project lead approval of slot-08 sources given 2026-11-17; PORT-08 re-researched to wesbos.com after its first source duplicated the approved PORT-10"
+  },
+  "approved_page_map": [
+    {
+      "url": "https://wesbos.com/",
+      "title": "Wes Bos",
+      "local_file": "index.html"
+    },
+    {
+      "url": "https://wesbos.com/courses",
+      "title": "Courses - Wes Bos",
+      "local_file": "courses.html"
+    },
+    {
+      "url": "https://wesbos.com/about",
+      "title": "About - Wes Bos",
+      "local_file": "about.html"
+    },
+    {
+      "url": "https://wesbos.com/blog",
+      "title": "Blog - Wes Bos",
+      "local_file": "blog.html"
+    },
+    {
+      "url": "https://wesbos.com/tips",
+      "title": "Tips - Wes Bos",
+      "local_file": "tips.html"
+    },
+    {
+      "url": "https://wesbos.com/javascript",
+      "title": "Beginner JavaScript Notes & Reference - Wes Bos",
+      "local_file": "javascript.html"
+    },
+    {
+      "url": "https://wesbos.com/speaking-and-training",
+      "title": "Speaking And Training - Wes Bos",
+      "local_file": "speaking-and-training.html"
+    },
+    {
+      "url": "https://wesbos.com/uses",
+      "title": "Uses - Wes Bos",
+      "local_file": "uses.html"
+    },
+    {
+      "url": "https://wesbos.com/contact",
+      "title": "Contact - Wes Bos",
+      "local_file": "contact.html"
+    }
+  ],
+  "protocol_snapshots": [
+    {
+      "path": "Rules.md",
+      "sha256": "04b1c3e38b76f2aff3aef869d67370bb4532cd8f9ab5e22ac8276f26cbb859bf"
+    },
+    {
+      "path": "MODEL_ALLOCATION.md",
+      "sha256": "7e9487530a6e80b35af48d0691951dafc2fffea39798c81a3c49203909148d30"
+    },
+    {
+      "path": "pipelines/open-source/config.json",
+      "sha256": "8c24eaf19a0efcde9dcf52301b49880c7f6330a2a407ae046d52a574085653e2"
+    },
+    {
+      "path": "pipelines/open-source/categories.json",
+      "sha256": "8180966e55daa24799e51106645e93fd5807dde470765ab8b3b38d3f922c867b"
+    },
+    {
+      "path": "pipelines/open-source/prompts/system.md",
+      "sha256": "61bc24a57de14bd6a662cd6b5f98d0cfc57bf47e187fc58a97831bf1f272b4ee"
+    },
+    {
+      "path": "pipelines/open-source/prompts/build.md",
+      "sha256": "6096ab8b698af7a99d8ddaf1534cc95f41844d1d00cdd1fce740123b3146ab6a"
+    },
+    {
+      "path": "pipelines/open-source/prompts/repair.md",
+      "sha256": "8a84e51995736607b3efa6f5b2d76e52692423c2c26b03409afb4afa3c6586d6"
+    },
+    {
+      "path": "pipelines/open-source/models.json",
+      "sha256": "582c3bcd03420379259f8896d72dd3a1be5cff7ecfb3700fe6c9302ae958c83a"
+    },
+    {
+      "path": "metadata/source-inventories/portfolio.csv",
+      "sha256": "8df029223761f558c1ff5d182c72e199cfce94630f18d47b2b53acde4eef984a"
+    },
+    {
+      "path": "metadata/assignments.csv",
+      "sha256": "75aa44ee9046372a60e2b9bafe18f1e0dbb3f7c5bd80c29f49f4c060050bca06"
+    }
+  ],
+  "turns": [
+    {
+      "turn": 1,
+      "label": "plan",
+      "status_line": "CONTINUE",
+      "prose_chars": 3182,
+      "files_written": [],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 1188,
+        "prompt_tokens": 5002,
+        "total_tokens": 6190,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "at": "2026-11-18T01:14:43.537Z"
+    },
+    {
+      "turn": 2,
+      "label": "files-2",
+      "status_line": "CONTINUE",
+      "prose_chars": 0,
+      "files_written": [
+        "css/styles.css",
+        "js/main.js",
+        "index.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 4091,
+        "prompt_tokens": 5998,
+        "total_tokens": 10089,
+        "prompt_tokens_details": {
+          "cached_tokens": 4998
+        }
+      },
+      "at": "2026-11-18T01:17:35.149Z"
+    },
+    {
+      "turn": 3,
+      "label": "files-3",
+      "status_line": "CONTINUE",
+      "prose_chars": 0,
+      "files_written": [
+        "404.html",
+        "courses.html",
+        "about.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 2662,
+        "prompt_tokens": 9358,
+        "total_tokens": 12020,
+        "prompt_tokens_details": {
+          "cached_tokens": 5994
+        }
+      },
+      "at": "2026-11-18T01:19:30.786Z"
+    },
+    {
+      "turn": 4,
+      "label": "files-4",
+      "status_line": "CONTINUE",
+      "prose_chars": 0,
+      "files_written": [
+        "blog.html",
+        "tips.html",
+        "javascript.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 3083,
+        "prompt_tokens": 11968,
+        "total_tokens": 15051,
+        "prompt_tokens_details": {
+          "cached_tokens": 9354
+        }
+      },
+      "at": "2026-11-18T01:21:43.397Z"
+    },
+    {
+      "turn": 5,
+      "label": "files-5",
+      "status_line": "CONTINUE",
+      "prose_chars": 0,
+      "files_written": [
+        "speaking-and-training.html",
+        "uses.html",
+        "contact.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 2978,
+        "prompt_tokens": 15028,
+        "total_tokens": 18006,
+        "prompt_tokens_details": {
+          "cached_tokens": 11964
+        }
+      },
+      "at": "2026-11-18T01:23:38.502Z"
+    },
+    {
+      "turn": 6,
+      "label": "files-6",
+      "status_line": "COMPLETE",
+      "prose_chars": 0,
+      "files_written": [
+        "README.md",
+        "fidelity-notes.md",
+        "component-inventory.json",
+        "generation-metadata.json"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 7315,
+        "prompt_tokens": 17951,
+        "total_tokens": 25266,
+        "prompt_tokens_details": {
+          "cached_tokens": 15024
+        }
+      },
+      "at": "2026-11-18T01:28:04.533Z"
+    },
+    {
+      "turn": 7,
+      "label": "repair-1",
+      "status_line": "CONTINUE",
+      "prose_chars": 0,
+      "files_written": [
+        "css/styles.css",
+        "index.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 4082,
+        "prompt_tokens": 27822,
+        "total_tokens": 31904,
+        "prompt_tokens_details": {
+          "cached_tokens": 27818
+        }
+      },
+      "at": "2026-11-18T01:35:35.237Z"
+    },
+    {
+      "turn": 8,
+      "label": "repair-1-cont-1",
+      "status_line": "CONTINUE",
+      "prose_chars": 0,
+      "files_written": [
+        "css/styles.css",
+        "assets/placeholder-project-1.svg",
+        "assets/placeholder-project-2.svg",
+        "assets/placeholder-project-3.svg",
+        "assets/placeholder-project-4.svg",
+        "assets/placeholder-project-5.svg",
+        "assets/placeholder-project-6.svg",
+        "assets/placeholder-project-7.svg",
+        "assets/placeholder-project-8.svg",
+        "assets/placeholder-project-9.svg",
+        "assets/placeholder-project-10.svg",
+        "assets/placeholder-project-11.svg",
+        "assets/placeholder-project-12.svg",
+        "assets/icon-html.svg",
+        "assets/icon-css.svg",
+        "assets/icon-js.svg",
+        "assets/icon-git.svg",
+        "assets/icon-npm.svg",
+        "assets/icon-eslint.svg",
+        "assets/icon-prettier.svg",
+        "assets/icon-jest.svg",
+        "assets/icon-cypress.svg",
+        "assets/icon-webpack.svg",
+        "assets/icon-rollup.svg",
+        "assets/icon-parcel.svg",
+        "assets/icon-devtools.svg",
+        "assets/icon-lighthouse.svg",
+        "assets/icon-axe.svg",
+        "assets/icon-storybook.svg",
+        "assets/icon-figma.svg",
+        "assets/icon-svg.svg",
+        "assets/icon-md.svg",
+        "assets/icon-json.svg"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 6563,
+        "prompt_tokens": 30395,
+        "total_tokens": 36958,
+        "prompt_tokens_details": {
+          "cached_tokens": 27818
+        }
+      },
+      "at": "2026-11-18T01:39:36.103Z"
+    },
+    {
+      "turn": 9,
+      "label": "repair-1-cont-2",
+      "status_line": "COMPLETE",
+      "prose_chars": 1193,
+      "files_written": [],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 645,
+        "prompt_tokens": 35968,
+        "total_tokens": 36613,
+        "prompt_tokens_details": {
+          "cached_tokens": 30391
+        }
+      },
+      "at": "2026-11-18T01:39:58.243Z"
+    }
+  ],
+  "rejected_files": [],
+  "qc_runs": [
+    {
+      "started_at": "2026-11-18T01:28:04.549Z",
+      "completed_at": "2026-11-18T01:28:08.383Z",
+      "exit_code": 1,
+      "executed": true,
+      "passed": false,
+      "outcome": "fail",
+      "failures": [
+        "placeholder href=\"#\" in index.html",
+        "placeholder href=\"#\" in index.html",
+        "placeholder href=\"#\" in index.html",
+        "broken asset in index.html: assets/placeholder-project-1.svg",
+        "broken asset in index.html: assets/placeholder-project-2.svg",
+        "broken asset in index.html: assets/placeholder-project-3.svg",
+        "axe color-contrast (serious) @1280 404.html: 1 node(s) e.g. footer > p",
+        "axe color-contrast (serious) @1280 about.html: 1 node(s) e.g. footer > p",
+        "axe color-contrast (serious) @1280 blog.html: 1 node(s) e.g. p",
+        "axe color-contrast (serious) @1280 contact.html: 1 node(s) e.g. p",
+        "failed request @1280 courses.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/portfolio/open-source/PORT-08/assets/placeholder-project-1.svg",
+        "console error @1280 courses.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @1280 courses.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/portfolio/open-source/PORT-08/assets/placeholder-project-2.svg",
+        "console error @1280 courses.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @1280 courses.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/portfolio/open-source/PORT-08/assets/placeholder-project-3.svg",
+        "console error @1280 courses.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @1280 courses.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/portfolio/open-source/PORT-08/assets/placeholder-project-4.svg",
+        "console error @1280 courses.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @1280 courses.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/portfolio/open-source/PORT-08/assets/placeholder-project-5.svg",
+        "console error @1280 courses.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @1280 courses.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/portfolio/open-source/PORT-08/assets/placeholder-project-6.svg",
+        "console error @1280 courses.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @1280 courses.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/portfolio/open-source/PORT-08/assets/placeholder-project-7.svg",
+        "console error @1280 courses.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @1280 courses.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/portfolio/open-source/PORT-08/assets/placeholder-project-8.svg",
+        "console error @1280 courses.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @1280 courses.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/portfolio/open-source/PORT-08/assets/placeholder-project-9.svg",
+        "console error @1280 courses.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @1280 courses.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/portfolio/open-source/PORT-08/assets/placeholder-project-10.svg",
+        "console error @1280 courses.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @1280 courses.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/portfolio/open-source/PORT-08/assets/placeholder-project-11.svg",
+        "console error @1280 courses.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @1280 courses.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/portfolio/open-source/PORT-08/assets/placeholder-project-12.svg",
+        "console error @1280 courses.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "axe color-contrast (serious) @1280 courses.html: 1 node(s) e.g. footer > p",
+        "failed request @1280 index.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/portfolio/open-source/PORT-08/assets/placeholder-project-1.svg",
+        "console error @1280 index.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @1280 index.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/portfolio/open-source/PORT-08/assets/placeholder-project-2.svg",
+        "console error @1280 index.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @1280 index.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/portfolio/open-source/PORT-08/assets/placeholder-project-3.svg",
+        "console error @1280 index.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "axe color-contrast (serious) @1280 index.html: 1 node(s) e.g. footer > p",
+        "axe color-contrast (serious) @1280 javascript.html: 1 node(s) e.g. footer > p",
+        "axe color-contrast (serious) @1280 speaking-and-training.html: 1 node(s) e.g. p",
+        "axe color-contrast (serious) @1280 tips.html: 1 node(s) e.g. p",
+        "axe color-contrast (serious) @1280 uses.html: 1 node(s) e.g. p",
+        "axe color-contrast (serious) @375 404.html: 1 node(s) e.g. footer > p",
+        "axe color-contrast (serious) @375 about.html: 1 node(s) e.g. footer > p",
+        "axe color-contrast (serious) @375 blog.html: 1 node(s) e.g. p",
+        "axe color-contrast (serious) @375 contact.html: 1 node(s) e.g. p",
+        "failed request @375 courses.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/portfolio/open-source/PORT-08/assets/placeholder-project-1.svg",
+        "console error @375 courses.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @375 courses.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/portfolio/open-source/PORT-08/assets/placeholder-project-2.svg",
+        "console error @375 courses.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @375 courses.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/portfolio/open-source/PORT-08/assets/placeholder-project-3.svg",
+        "console error @375 courses.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @375 courses.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/portfolio/open-source/PORT-08/assets/placeholder-project-4.svg",
+        "console error @375 courses.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @375 courses.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/portfolio/open-source/PORT-08/assets/placeholder-project-5.svg",
+        "console error @375 courses.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @375 courses.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/portfolio/open-source/PORT-08/assets/placeholder-project-6.svg",
+        "console error @375 courses.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @375 courses.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/portfolio/open-source/PORT-08/assets/placeholder-project-7.svg",
+        "console error @375 courses.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @375 courses.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/portfolio/open-source/PORT-08/assets/placeholder-project-8.svg",
+        "console error @375 courses.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @375 courses.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/portfolio/open-source/PORT-08/assets/placeholder-project-9.svg",
+        "console error @375 courses.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @375 courses.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/portfolio/open-source/PORT-08/assets/placeholder-project-10.svg",
+        "console error @375 courses.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @375 courses.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/portfolio/open-source/PORT-08/assets/placeholder-project-11.svg",
+        "console error @375 courses.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @375 courses.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/portfolio/open-source/PORT-08/assets/placeholder-project-12.svg",
+        "console error @375 courses.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "axe color-contrast (serious) @375 courses.html: 1 node(s) e.g. footer > p",
+        "failed request @375 index.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/portfolio/open-source/PORT-08/assets/placeholder-project-1.svg",
+        "console error @375 index.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @375 index.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/portfolio/open-source/PORT-08/assets/placeholder-project-2.svg",
+        "console error @375 index.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @375 index.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/portfolio/open-source/PORT-08/assets/placeholder-project-3.svg",
+        "console error @375 index.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "axe color-contrast (serious) @375 index.html: 1 node(s) e.g. footer > p",
+        "axe color-contrast (serious) @375 javascript.html: 1 node(s) e.g. footer > p",
+        "horizontal scroll @375 javascript.html: 85px",
+        "axe color-contrast (serious) @375 speaking-and-training.html: 1 node(s) e.g. p",
+        "axe color-contrast (serious) @375 tips.html: 1 node(s) e.g. p",
+        "axe color-contrast (serious) @375 uses.html: 1 node(s) e.g. p"
+      ],
+      "failure_count": 87,
+      "warnings": [],
+      "axe": {
+        "color-contrast": 20
+      },
+      "pages": 10,
+      "files": 16,
+      "qc_tool_sha256": "e9be905d19e7181e30d8291bcb1511d4469bdc9e36c20c0efe21e2d3fcf54513",
+      "report": "qc-initial-2026-11-18T01-28-04-549Z.json",
+      "log": "qc-initial-2026-11-18T01-28-04-549Z.log",
+      "stdout_tail": "FAIL failed request @375 courses.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/portfolio/open-source/PORT-08/assets/placeholder-project-1.svg\nFAIL console error @375 courses.html: Failed to load resource: net::ERR_FILE_NOT_FOUND\nFAIL failed request @375 courses.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/portfolio/open-source/PORT-08/assets/placeholder-project-2.svg\nFAIL failed request @375 courses.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/portfolio/open-source/PORT-08/assets/placeholder-project-3.svg\nFAIL failed request @375 courses.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/portfolio/open-source/PORT-08/assets/placeholder-project-4.svg\nFAIL failed request @375 courses.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/portfolio/open-source/PORT-08/assets/placeholder-project-5.svg\nFAIL failed request @375 courses.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/portfolio/open-source/PORT-08/assets/placeholder-project-6.svg\nFAIL failed request @375 courses.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/portfolio/open-source/PORT-08/assets/placeholder-project-7.svg\nFAIL failed request @375 courses.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/portfolio/open-source/PORT-08/assets/placeholder-project-8.svg\nFAIL failed request @375 courses.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/portfolio/open-source/PORT-08/assets/placeholder-project-9.svg\nFAIL failed request @375 courses.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/portfolio/open-source/PORT-08/assets/placeholder-project-10.svg\nFAIL failed request @375 courses.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/portfolio/open-source/PORT-08/assets/placeholder-project-11.svg\nFAIL failed request @375 courses.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/portfolio/open-source/PORT-08/assets/placeholder-project-12.svg\nFAIL axe color-contrast (serious) @375 courses.html: 1 node(s) e.g. footer > p\nFAIL failed request @375 index.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/portfolio/open-source/PORT-08/assets/placeholder-project-1.svg\nFAIL console error @375 index.html: Failed to load resource: net::ERR_FILE_NOT_FOUND\nFAIL failed request @375 index.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/portfolio/open-source/PORT-08/assets/placeholder-project-2.svg\nFAIL failed request @375 index.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/portfolio/open-source/PORT-08/assets/placeholder-project-3.svg\nFAIL axe color-contrast (serious) @375 index.html: 1 node(s) e.g. footer > p\nFAIL axe color-contrast (serious) @375 javascript.html: 1 node(s) e.g. footer > p\nFAIL horizontal scroll @375 javascript.html: 85px\nFAIL axe color-contrast (serious) @375 speaking-and-training.html: 1 node(s) e.g. p\nFAIL axe color-contrast (serious) @375 tips.html: 1 node(s) e.g. p\nFAIL axe color-contrast (serious) @375 uses.html: 1 node(s) e.g. p\n",
+      "note": null
+    },
+    {
+      "started_at": "2026-11-18T01:39:58.247Z",
+      "completed_at": "2026-11-18T01:40:01.861Z",
+      "exit_code": 1,
+      "executed": true,
+      "passed": false,
+      "outcome": "fail",
+      "failures": [
+        "axe scrollable-region-focusable (serious) @375 javascript.html: 1 node(s) e.g. article:nth-child(6) > pre"
+      ],
+      "failure_count": 1,
+      "warnings": [],
+      "axe": {
+        "scrollable-region-focusable": 1
+      },
+      "pages": 10,
+      "files": 48,
+      "qc_tool_sha256": "e9be905d19e7181e30d8291bcb1511d4469bdc9e36c20c0efe21e2d3fcf54513",
+      "report": "qc-repair-1-2026-11-18T01-39-58-247Z.json",
+      "log": "qc-repair-1-2026-11-18T01-39-58-247Z.log",
+      "stdout_tail": "QC /Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/portfolio/open-source/PORT-08\npages=10 files=48 failures=1 warnings=0\nFAIL axe scrollable-region-focusable (serious) @375 javascript.html: 1 node(s) e.g. article:nth-child(6) > pre\n",
+      "note": null
+    }
+  ],
+  "repair_rounds": [
+    {
+      "round": 1,
+      "before": {
+        "outcome": "fail",
+        "failures": 87
+      },
+      "after": {
+        "outcome": "fail",
+        "failures": 1
+      },
+      "files_changed": [],
+      "at": "2026-11-18T01:40:01.861Z"
+    }
+  ],
+  "retries": [],
+  "human_edits": [],
+  "usage": {
+    "prompt_tokens": 159490,
+    "completion_tokens": 32607,
+    "total_tokens": 192097,
+    "requests": 9,
+    "retries": 1
+  },
+  "errors": [
+    "Run stopped by the orchestrator at 2026-11-18T01:40Z: operator cancelled the QC correction stage for this batch. The slot was re-queued and rebuilt with max_repair_rounds=0, so the delivered replica is the uncorrected first emission. Files from this run were moved to runs/SUPERSEDED-<ID>-repair-cancelled-2026-11-18T01-41-00-000Z/ and remain in this run's initial/."
+  ],
+  "outputs": {
+    "site": "portfolio/open-source/PORT-08",
+    "transcript": "pipelines/open-source/runs/2026-11-18T01-13-33-227Z-build-PORT-08/transcript.json"
+  },
+  "delivered": {
+    "files": [
+      "404.html",
+      "README.md",
+      "about.html",
+      "blog.html",
+      "component-inventory.json",
+      "contact.html",
+      "courses.html",
+      "css/styles.css",
+      "fidelity-notes.md",
+      "generation-metadata.json",
+      "index.html",
+      "javascript.html",
+      "js/main.js",
+      "speaking-and-training.html",
+      "tips.html",
+      "uses.html"
+    ],
+    "file_count": 16,
+    "bytes": 63388,
+    "pages_in_map": 9,
+    "missing_required": [],
+    "model_claimed_complete": true,
+    "delivered_complete": true,
+    "turns_used": 6,
+    "turn_budget": 28
+  },
+  "initial_artifact": "pipelines/open-source/runs/2026-11-18T01-13-33-227Z-build-PORT-08/initial"
+}

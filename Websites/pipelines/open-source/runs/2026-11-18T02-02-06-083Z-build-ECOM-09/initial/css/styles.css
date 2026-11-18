@@ -1,0 +1,55 @@
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 1em;
+  text-align: center;
+}
+
+nav {
+  background-color: #444;
+  padding: 1em;
+  text-align: center;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 1em;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2em;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 1em;
+  text-align: center;
+  clear: both;
+}
+
+/* Accessibility Styles */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background-color: #333;
+  color: #fff;
+  padding: 0.5em;
+  z-index: 1;
+}
+
+.skip-link:focus {
+  top: 0;
+}

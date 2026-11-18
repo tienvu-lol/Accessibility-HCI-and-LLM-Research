@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en" data-section="politics">
+<head>
+  <meta charset="utf-8">
+  <title>Politics – Fictional Daily</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="site-header" data-component="site-header">
+    <h1>Fictional Daily</h1>
+    <nav class="primary-nav" aria-label="Main navigation" data-component="primary-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="politics-index.html">Politics</a></li>
+        <li><a href="business-index.html">Business</a></li>
+        <li><a href="technology-index.html">Technology</a></li>
+        <li><a href="world-index.html">World</a></li>
+        <li><a href="science-index.html">Science</a></li>
+        <li><a href="environment-index.html">Environment</a></li>
+        <li><a href="entertainment-arts-index.html">Entertainment</a></li>
+        <li><a href="food-index.html">Food</a></li>
+      </ul>
+    </nav>
+
+    <form id="search-form" class="search-form" role="search" aria-label="Site search">
+      <label for="search-input" class="visually-hidden">Search articles</label>
+      <input type="search" id="search-input" placeholder="Search…" required>
+      <button type="submit">Search</button>
+    </form>
+  </header>
+
+  <main id="main-content">
+    <h1>Politics</h1>
+    <section class="article-list" id="section-article-list" data-component="article-list">
+      <!-- Articles injected by JS -->
+    </section>
+  </main>
+
+  <footer class="site-footer" data-component="site-footer">
+    <p>&copy; 2024 Fictional Daily. All rights reserved.</p>
+    <form id="newsletter-form" class="newsletter-form" aria-label="Newsletter subscription">
+      <label for="newsletter-email">Email address</label>
+      <input type="email" id="newsletter-email" placeholder="you@example.com" required>
+      <button type="submit">Subscribe</button>
+    </form>
+    <div id="newsletter-message" aria-live="polite"></div>
+    <p><a href="404.html">Site map</a></p>
+  </footer>
+</body>
+</html>

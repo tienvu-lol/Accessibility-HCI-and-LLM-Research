@@ -1,0 +1,489 @@
+{
+  "category": "healthcare",
+  "prefix": "HOSP",
+  "updated_at": "2026-11-17T05:40:06.015Z",
+  "slots_proposed": [
+    7,
+    8,
+    9,
+    10
+  ],
+  "slots_outstanding": [],
+  "approval_state": "unapproved: approval cells are left empty for the project lead",
+  "runs": [
+    "2026-11-16T21-28-20-739Z-research-HOSP-07",
+    "2026-11-17T05-06-50-800Z-research-HOSP-08",
+    "2026-11-17T05-09-37-891Z-research-HOSP-10",
+    "2026-11-17T05-35-49-704Z-research-HOSP-09"
+  ],
+  "rows": [
+    {
+      "source_id": "HOSP-07",
+      "subcategory": "academic medical center",
+      "source_name": "NYU Langone Health",
+      "source_url": "https://nyulangone.org/",
+      "verified_at": "2026-11-16",
+      "verification_method": "HTTP GET by the orchestrator",
+      "verification_result": "verified",
+      "evidence_reference": "pipelines/open-source/research/evidence/HOSP-07-http-2026-11-16.json",
+      "source_pages": [
+        {
+          "url": "https://nyulangone.org/",
+          "title": "Patient Care at NYU Langone Health",
+          "local_file": "index.html"
+        },
+        {
+          "url": "https://nyulangone.org/doctors",
+          "title": "Find a Doctor | NYU Langone Health",
+          "local_file": "doctors.html"
+        },
+        {
+          "url": "https://nyulangone.org/conditions",
+          "title": "Conditions We Treat",
+          "local_file": "conditions.html"
+        },
+        {
+          "url": "https://nyulangone.org/locations",
+          "title": "Our Locations | NYU Langone Health",
+          "local_file": "locations.html"
+        },
+        {
+          "url": "https://nyulangone.org/care-services",
+          "title": "Care & Services",
+          "local_file": "care-services.html"
+        },
+        {
+          "url": "https://nyulangone.org/insurance-billing-financial-assistance",
+          "title": "Insurance, Billing & Financial Assistance | NYU Langone Health",
+          "local_file": "insurance-billing.html"
+        },
+        {
+          "url": "https://nyulangone.org/patient-forms",
+          "title": "Patient Forms | NYU Langone Health",
+          "local_file": "patient-forms.html"
+        },
+        {
+          "url": "https://nyulangone.org/brain",
+          "title": "Brain Care",
+          "local_file": "brain-care.html"
+        },
+        {
+          "url": "https://nyulangone.org/cancer",
+          "title": "Perlmutter Cancer Center",
+          "local_file": "cancer-care.html"
+        },
+        {
+          "url": "https://nyulangone.org/womens-health",
+          "title": "Women's Health",
+          "local_file": "womens-health.html"
+        },
+        {
+          "url": "https://nyulangone.org/contact-us",
+          "title": "Contact Us | NYU Langone Health",
+          "local_file": "contact-us.html"
+        }
+      ],
+      "key_regions": [
+        "Header with global navigation",
+        "Hero or primary content banner",
+        "Service and specialty directory links",
+        "Location directory and regional filters",
+        "Condition area expertise links",
+        "Footer with policies, accessibility, and contact information"
+      ],
+      "key_interactions": [
+        {
+          "name": "Location filtering by geographic region",
+          "evidence": "observed",
+          "notes": "Navigation and other links explicitly list regional directories (Manhattan, Brooklyn, Queens, etc.)"
+        },
+        {
+          "name": "Service category navigation",
+          "evidence": "observed",
+          "notes": "Multiple pages feature prominent links to care services, brain care, cancer care, and women's health"
+        },
+        {
+          "name": "Insurance and financial assistance document access",
+          "evidence": "observed",
+          "notes": "Dedicated page with numerous PDF links for financial assistance applications and billing information"
+        },
+        {
+          "name": "Doctor and specialty search/filter",
+          "evidence": "inferred",
+          "notes": "Directory page structure implies search and filtering capabilities, though specific form markup was not fully detailed in the fetched evidence"
+        }
+      ],
+      "complexity": "high",
+      "stack_clues": "JavaScript-heavy client-side rendering (indicated by large page byte counts and dynamic URL structures), PDF-based document delivery for forms and policies, standard web server infrastructure",
+      "limitations": "https://nyulangone.org/our-story returned a 404 status and redirected to a non-HTTPS URL, so it is excluded from the page map. Some navigation elements may be dynamically rendered via JavaScript, meaning the full extent of the site's information architecture might not be fully captured by the HTTP GET method alone.",
+      "slot": 7,
+      "category": "healthcare",
+      "model_group": "open-source",
+      "model_id": "unsloth/Qwen3.6-35B-A3B-GGUF",
+      "model_version": "Q4_K_M",
+      "approved_at": "",
+      "approved_by": "",
+      "approval_reference": "",
+      "researched_by": {
+        "model_id": "unsloth/Qwen3.6-35B-A3B-GGUF",
+        "slot": 7
+      },
+      "orchestrator_checks": {
+        "pages_proposed": 11,
+        "pages_without_successful_fetch": [],
+        "page_map_has_index": true,
+        "source_url_fetched_ok": true,
+        "meets_min_pages": true
+      }
+    },
+    {
+      "source_id": "HOSP-08",
+      "subcategory": "community/regional hospital",
+      "source_name": "Mercy Medical Center",
+      "source_url": "https://www.mercy.com/",
+      "verified_at": "2026-11-17",
+      "verification_method": "HTTP GET by the orchestrator",
+      "verification_result": "verified",
+      "evidence_reference": "pipelines/open-source/research/evidence/HOSP-08-http-2026-11-17.json",
+      "source_pages": [
+        {
+          "url": "https://www.mercy.com/",
+          "title": "Mercy Health | The Highest Quality Care across Ohio & Kentucky",
+          "local_file": "index.html"
+        },
+        {
+          "url": "https://www.mercy.com/get-care-now",
+          "title": "Care Where You Need It | Mercy Health",
+          "local_file": "get-care-now.html"
+        },
+        {
+          "url": "https://www.mercy.com/pay-a-bill",
+          "title": "Pay Your Mercy Health Bill | Online Bill Pay | Mercy Health",
+          "local_file": "pay-a-bill.html"
+        },
+        {
+          "url": "https://www.mercy.com/find-a-doctor",
+          "title": "Find a Doctor | Physician Search | Mercy Health",
+          "local_file": "find-a-doctor.html"
+        },
+        {
+          "url": "https://www.mercy.com/find-a-doctor?displayValue=Primary%20Care%20Providers&page=1&primary_care=Primary%20Care%20Providers&shuffle_seed=cc2dc033-78de-4d3e-acb9-cb48ed7f5c63&sort=networks%2Cdistance%2Cavailability_soonest%2Crelevance",
+          "title": "Find a Doctor | Physician Search | Mercy Health",
+          "local_file": "find-a-doctor-primary-care.html"
+        },
+        {
+          "url": "https://www.mercy.com/health-care-services",
+          "title": "Mercy Health Services & Specialties | Ohio & Kentucky Health Care",
+          "local_file": "health-care-services.html"
+        },
+        {
+          "url": "https://www.mercy.com/conditions-and-treatments",
+          "title": "Conditions and Treatments | Mercy Health",
+          "local_file": "conditions-and-treatments.html"
+        },
+        {
+          "url": "https://www.mercy.com/location-map",
+          "title": "Location Map | Mercy Health",
+          "local_file": "location-map.html"
+        },
+        {
+          "url": "https://www.mercy.com/locations/hospitals",
+          "title": "Mercy Health Hospitals | Hospitals in Ohio and Kentucky",
+          "local_file": "locations-hospitals.html"
+        },
+        {
+          "url": "https://www.mercy.com/patient-resources",
+          "title": "Patient Resources | Mercy Health Patient Information",
+          "local_file": "patient-resources.html"
+        }
+      ],
+      "key_regions": [
+        "header",
+        "navigation",
+        "hero",
+        "service bands",
+        "provider listing band",
+        "location map band",
+        "footer"
+      ],
+      "key_interactions": [
+        {
+          "name": "doctor filter",
+          "evidence": "inferred",
+          "notes": "No explicit filter markup observed in fetched HTML; typical for hospital sites."
+        },
+        {
+          "name": "location filter",
+          "evidence": "inferred",
+          "notes": "No explicit filter markup observed; location pages suggest filtering capability."
+        },
+        {
+          "name": "service navigation",
+          "evidence": "inferred",
+          "notes": "Navigation links to services present, but interactive navigation component not visible in markup."
+        },
+        {
+          "name": "appointment-request validation",
+          "evidence": "inferred",
+          "notes": "No form or validation markup observed; inferred from site purpose."
+        },
+        {
+          "name": "billing/insurance information",
+          "evidence": "inferred",
+          "notes": "Links to bill pay and insurance pages present, but no form or validation markup observed."
+        }
+      ],
+      "complexity": "medium",
+      "stack_clues": "unknown",
+      "limitations": "Verification date not provided in evidence; detailed doctor/service detail pages not captured; dynamic search results beyond sampled query not verified; client‑side‑only interactive components cannot be confirmed from static HTML.",
+      "slot": 8,
+      "category": "healthcare",
+      "model_group": "open-source",
+      "model_id": "unsloth/NVIDIA-Nemotron-3-Super-120B-A12B-GGUF",
+      "model_version": "MXFP4_MOE",
+      "approved_at": "",
+      "approved_by": "",
+      "approval_reference": "",
+      "researched_by": {
+        "model_id": "unsloth/NVIDIA-Nemotron-3-Super-120B-A12B-GGUF",
+        "slot": 8
+      },
+      "orchestrator_checks": {
+        "pages_proposed": 10,
+        "pages_without_successful_fetch": [],
+        "page_map_has_index": true,
+        "source_url_fetched_ok": true,
+        "meets_min_pages": true
+      }
+    },
+    {
+      "source_id": "HOSP-09",
+      "subcategory": "children’s hospital",
+      "source_name": "Boston Children's Hospital",
+      "source_url": "https://www.childrenshospital.org/",
+      "verified_at": "2026-11-17",
+      "verification_method": "HTTP GET by the orchestrator",
+      "verification_result": "verified",
+      "evidence_reference": "pipelines/open-source/research/evidence/HOSP-09-http-2026-11-17.json",
+      "source_pages": [
+        {
+          "url": "https://www.childrenshospital.org/",
+          "title": "Homepage | Boston Children's Hospital",
+          "local_file": "index.html"
+        },
+        {
+          "url": "https://www.childrenshospital.org/request-appointment",
+          "title": "Request an Appointment | Boston Children's Hospital",
+          "local_file": "request-appointment.html"
+        },
+        {
+          "url": "https://www.childrenshospital.org/find-a-doctor",
+          "title": "Find a Doctor | Boston Children's Hospital",
+          "local_file": "find-a-doctor.html"
+        },
+        {
+          "url": "https://www.childrenshospital.org/find-a-location",
+          "title": "Find a Location | Boston Children's Hospital",
+          "local_file": "find-a-location.html"
+        },
+        {
+          "url": "https://www.childrenshospital.org/conditions-treatments",
+          "title": "Conditions & Treatments | Boston Children's Hospital",
+          "local_file": "conditions-treatments.html"
+        },
+        {
+          "url": "https://www.childrenshospital.org/services",
+          "title": "Programs & Services | Boston Children's Hospital",
+          "local_file": "services.html"
+        },
+        {
+          "url": "https://www.childrenshospital.org/patients-families",
+          "title": "Patients & Families | Boston Children's Hospital",
+          "local_file": "patients-families.html"
+        },
+        {
+          "url": "https://www.childrenshospital.org/about-us",
+          "title": "About Us | Boston Children's Hospital",
+          "local_file": "about-us.html"
+        },
+        {
+          "url": "https://www.childrenshospital.org/newsroom",
+          "title": "Newsroom",
+          "local_file": "newsroom.html"
+        },
+        {
+          "url": "https://www.childrenshospital.org/ways-help",
+          "title": "Ways to Help",
+          "local_file": "ways-help.html"
+        }
+      ],
+      "key_regions": [
+        "header",
+        "navigation",
+        "hero",
+        "content bands",
+        "sidebar",
+        "footer"
+      ],
+      "key_interactions": [
+        {
+          "name": "Doctor Search",
+          "evidence": "observed",
+          "notes": "The site has a search function for doctors."
+        },
+        {
+          "name": "Location Search",
+          "evidence": "observed",
+          "notes": "The site has a search function for locations."
+        },
+        {
+          "name": "Appointment Request",
+          "evidence": "observed",
+          "notes": "The site has a form for requesting appointments."
+        },
+        {
+          "name": "Service Navigation",
+          "evidence": "observed",
+          "notes": "The site has a navigation menu for services."
+        },
+        {
+          "name": "Search",
+          "evidence": "observed",
+          "notes": "The site has a search function."
+        }
+      ],
+      "complexity": "medium",
+      "stack_clues": "unknown",
+      "limitations": "none",
+      "slot": 9,
+      "category": "healthcare",
+      "model_group": "open-source",
+      "model_id": "unsloth/Llama-3.3-70B-Instruct-GGUF",
+      "model_version": "Q8_0",
+      "approved_at": "",
+      "approved_by": "",
+      "approval_reference": "",
+      "researched_by": {
+        "model_id": "unsloth/Llama-3.3-70B-Instruct-GGUF",
+        "slot": 9
+      },
+      "orchestrator_checks": {
+        "pages_proposed": 10,
+        "pages_without_successful_fetch": [],
+        "page_map_has_index": true,
+        "source_url_fetched_ok": true,
+        "meets_min_pages": true
+      }
+    },
+    {
+      "source_id": "HOSP-10",
+      "subcategory": "additional distinct academic medical center (complexity-matched reserve)",
+      "source_name": "Mayo Clinic",
+      "source_url": "https://www.mayoclinic.org",
+      "verified_at": "2026-11-17",
+      "verification_method": "HTTP GET by the orchestrator",
+      "verification_result": "verified",
+      "evidence_reference": "pipelines/open-source/research/evidence/HOSP-10-http-2026-11-17.json",
+      "source_pages": [
+        {
+          "url": "https://www.mayoclinic.org",
+          "title": "The world's best hospital - Mayo Clinic",
+          "local_file": "index.html"
+        },
+        {
+          "url": "https://www.mayoclinic.org/appointments",
+          "title": "Appointments at Mayo Clinic",
+          "local_file": "appointments.html"
+        },
+        {
+          "url": "https://www.mayoclinic.org/appointments/find-a-doctor",
+          "title": "Doctors and Medical Staff - Mayo Clinic",
+          "local_file": "find-a-doctor.html"
+        },
+        {
+          "url": "https://www.mayoclinic.org/locations",
+          "title": "U.S. and International Locations - Mayo Clinic",
+          "local_file": "locations.html"
+        },
+        {
+          "url": "https://www.mayoclinic.org/patient-visitor-guide",
+          "title": "Patient and Visitor Guide - Mayo Clinic",
+          "local_file": "patient-visitor-guide.html"
+        },
+        {
+          "url": "https://www.mayoclinic.org/billing-insurance",
+          "title": "Billing and Insurance - Mayo Clinic",
+          "local_file": "billing-insurance.html"
+        },
+        {
+          "url": "https://www.mayoclinic.org/departments-centers",
+          "title": "Medical departments and centers - Mayo Clinic",
+          "local_file": "departments-centers.html"
+        },
+        {
+          "url": "https://www.mayoclinic.org/diseases-conditions",
+          "title": "Medical Diseases & Conditions - Mayo Clinic",
+          "local_file": "diseases-conditions.html"
+        },
+        {
+          "url": "https://www.mayoclinic.org/diseases-conditions/brain-tumor/care-at-mayo-clinic/mac-20350092",
+          "title": "Brain tumor - Care at Mayo Clinic - Mayo Clinic",
+          "local_file": "brain-tumor.html"
+        }
+      ],
+      "key_regions": [
+        "header",
+        "navigation",
+        "footer"
+      ],
+      "key_interactions": [
+        {
+          "name": "Doctor and location filters",
+          "evidence": "inferred",
+          "notes": "Find-a-Doctor and Locations pages are expected to provide filter controls, but the fetched markup does not expose the filter UI."
+        },
+        {
+          "name": "Service navigation",
+          "evidence": "observed",
+          "notes": "Navigation links to Services, Departments & Centers, Diseases & Conditions, etc., are present in the markup."
+        },
+        {
+          "name": "Appointment-request validation",
+          "evidence": "inferred",
+          "notes": "The Appointments page likely contains a form with validation; the markup only shows the link."
+        },
+        {
+          "name": "Billing/insurance information",
+          "evidence": "observed",
+          "notes": "Dedicated Billing & Insurance page is fetched and linked."
+        }
+      ],
+      "complexity": "high",
+      "stack_clues": "unknown",
+      "limitations": "None – all requested pages returned HTTP 200.",
+      "slot": 10,
+      "category": "healthcare",
+      "model_group": "open-source",
+      "model_id": "unsloth/gpt-oss-120b-GGUF",
+      "model_version": "F16",
+      "approved_at": "",
+      "approved_by": "",
+      "approval_reference": "",
+      "researched_by": {
+        "model_id": "unsloth/gpt-oss-120b-GGUF",
+        "slot": 10
+      },
+      "orchestrator_checks": {
+        "pages_proposed": 9,
+        "pages_without_successful_fetch": [],
+        "page_map_has_index": true,
+        "source_url_fetched_ok": true,
+        "meets_min_pages": true
+      }
+    }
+  ],
+  "orchestrator_corrections": [
+    "2026-11-17: HOSP-08 verified_at normalised; see CORRECTIONS-2026-11-17-slot08.json",
+    "2026-11-17: verified_at reset to the HTTP evidence date; see CORRECTIONS-2026-11-17-dates.json"
+  ]
+}

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en" data-section="service-directory">
+<head>
+  <meta charset="utf-8">
+  <title>Civic Harbor – Parks & Recreation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="site-header" data-component="site-header">
+    <img src="assets/logo.svg" alt="Civic Harbor logo" class="logo">
+    <div data-component="language-switcher">
+      <button type="button">Español</button>
+    </div>
+  </header>
+
+  <nav class="primary-nav" aria-label="Main navigation" data-component="primary-nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="parks-and-recreation.html">Parks & Recreation</a></li>
+      <li><a href="pothole-repair.html">Pothole Repair</a></li>
+      <li><a href="pay-bill.html">Pay Your Bill</a></li>
+      <li><a href="complaint-form.html">File a Complaint</a></li>
+    </ul>
+  </nav>
+
+  <main id="main-content" data-component="main-content">
+    <h1>Parks & Recreation Services</h1>
+
+    <section data-component="search-widget" role="region" aria-label="Search parks">
+      <label for="park-search">Search parks:</label>
+      <input type="search" id="park-search" placeholder="Enter park name" data-target="parks-list">
+    </section>
+
+    <div id="parks-list" class="service-list" data-component="service-list">
+      <!-- JavaScript will populate park cards -->
+    </div>
+
+    <aside class="sidebar" data-component="sidebar">
+      <h2>Quick Links</h2>
+      <ul>
+        <li><a href="park-permits.html">Park Use Permits</a></li>
+        <li><a href="events.html">Event Calendar</a></li>
+      </ul>
+    </aside>
+
+    <p><a href="events.html">View the city events calendar</a></p>
+  </main>
+
+  <footer class="site-footer" data-component="site-footer">
+    <p>&copy; 2024 Civic Harbor. All rights reserved.</p>
+  </footer>
+</body>
+</html>

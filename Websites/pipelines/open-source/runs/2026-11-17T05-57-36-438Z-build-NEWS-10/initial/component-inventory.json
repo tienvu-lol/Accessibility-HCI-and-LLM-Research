@@ -1,0 +1,76 @@
+{
+  "components": [
+    {
+      "name": "site-header",
+      "selector": ".site-header",
+      "pages": ["index.html","politics-index.html","business-index.html","technology-index.html","world-index.html","science-index.html","environment-index.html","entertainment-arts-index.html","food-index.html","404.html"],
+      "behaviors": ["contains site title and navigation"],
+      "keyboard": ["focusable links in nav reachable via Tab"],
+      "status": "implemented"
+    },
+    {
+      "name": "primary-nav",
+      "selector": ".primary-nav",
+      "pages": ["index.html","politics-index.html","business-index.html","technology-index.html","world-index.html","science-index.html","environment-index.html","entertainment-arts-index.html","food-index.html","404.html"],
+      "behaviors": ["list of section links"],
+      "keyboard": ["Tab navigation, focus visible, Escape does not apply"],
+      "status": "implemented"
+    },
+    {
+      "name": "hero-banner",
+      "selector": ".hero-banner",
+      "pages": ["index.html"],
+      "behaviors": ["static heading and paragraph"],
+      "keyboard": ["none"],
+      "status": "implemented"
+    },
+    {
+      "name": "article-list",
+      "selector": ".article-list",
+      "pages": ["index.html","politics-index.html","business-index.html","technology-index.html","world-index.html","science-index.html","environment-index.html","entertainment-arts-index.html","food-index.html"],
+      "behaviors": ["grid container for article cards, populated via JS"],
+      "keyboard": ["focusable links inside cards reachable via Tab"],
+      "status": "implemented"
+    },
+    {
+      "name": "article-card",
+      "selector": ".article-card",
+      "pages": ["index.html","politics-index.html","business-index.html","technology-index.html","world-index.html","science-index.html","environment-index.html","entertainment-arts-index.html","food-index.html"],
+      "behaviors": ["image (decorative), title, summary, read‑more link"],
+      "keyboard": ["read‑more link focusable"],
+      "status": "implemented"
+    },
+    {
+      "name": "sidebar",
+      "selector": ".sidebar",
+      "pages": ["index.html","business-index.html"],
+      "behaviors": ["most‑read list populated via JS"],
+      "keyboard": ["links in list reachable via Tab"],
+      "status": "implemented"
+    },
+    {
+      "name": "search-form",
+      "selector": ".search-form",
+      "pages": ["index.html","politics-index.html","business-index.html","technology-index.html","world-index.html","science-index.html","environment-index.html","entertainment-arts-index.html","food-index.html","404.html"],
+      "behaviors": ["client‑side filter of homeArticles"],
+      "keyboard": ["input focus, submit via Enter, Escape does not close"],
+      "status": "implemented"
+    },
+    {
+      "name": "newsletter-form",
+      "selector": ".newsletter-form",
+      "pages": ["index.html","politics-index.html","business-index.html","technology-index.html","world-index.html","science-index.html","environment-index.html","entertainment-arts-index.html","food-index.html","404.html"],
+      "behaviors": ["email validation, success message"],
+      "keyboard": ["input focus, submit via Enter"],
+      "status": "implemented"
+    },
+    {
+      "name": "site-footer",
+      "selector": ".site-footer",
+      "pages": ["index.html","politics-index.html","business-index.html","technology-index.html","world-index.html","science-index.html","environment-index.html","entertainment-arts-index.html","food-index.html","404.html"],
+      "behaviors": ["copyright, site‑map link"],
+      "keyboard": ["focusable links reachable via Tab"],
+      "status": "implemented"
+    }
+  ]
+}

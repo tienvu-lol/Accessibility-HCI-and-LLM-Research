@@ -1,0 +1,522 @@
+{
+  "category": "e-commerce",
+  "prefix": "ECOM",
+  "updated_at": "2026-11-17T05:48:42.795Z",
+  "slots_proposed": [
+    7,
+    8,
+    9,
+    10
+  ],
+  "slots_outstanding": [],
+  "approval_state": "unapproved: approval cells are left empty for the project lead",
+  "runs": [
+    "2026-11-16T21-28-20-739Z-research-ECOM-07",
+    "2026-11-17T05-11-36-137Z-research-ECOM-10",
+    "2026-11-17T05-11-04-530Z-research-ECOM-08",
+    "2026-11-17T05-44-24-017Z-research-ECOM-09"
+  ],
+  "rows": [
+    {
+      "source_id": "ECOM-07",
+      "subcategory": "single-brand direct-to-consumer store",
+      "source_name": "Patagonia",
+      "source_url": "https://www.patagonia.com/",
+      "verified_at": "2026-11-16",
+      "verification_method": "HTTP GET by the orchestrator",
+      "verification_result": "verified",
+      "evidence_reference": "pipelines/open-source/research/evidence/ECOM-07-http-2026-11-16.json",
+      "source_pages": [
+        {
+          "url": "https://www.patagonia.com/",
+          "title": "Patagonia Outdoor Clothing & Gear",
+          "local_file": "index.html"
+        },
+        {
+          "url": "https://www.patagonia.com/home/",
+          "title": "Patagonia Outdoor Clothing & Gear",
+          "local_file": "home.html"
+        },
+        {
+          "url": "https://www.patagonia.com/shop/womens",
+          "title": "Patagonia Outdoor Clothing & Gear",
+          "local_file": "shop-womens.html"
+        },
+        {
+          "url": "https://www.patagonia.com/shop/mens",
+          "title": "Patagonia Outdoor Clothing & Gear",
+          "local_file": "shop-mens.html"
+        },
+        {
+          "url": "https://www.patagonia.com/shop/kids-baby",
+          "title": "Patagonia Outdoor Clothing & Gear",
+          "local_file": "shop-kids-baby.html"
+        },
+        {
+          "url": "https://www.patagonia.com/shop/gear",
+          "title": "Patagonia Outdoor Clothing & Gear",
+          "local_file": "shop-gear.html"
+        },
+        {
+          "url": "https://www.patagonia.com/worn-wear/",
+          "title": "Used Clothing & Gear - Patagonia® Worn Wear®",
+          "local_file": "worn-wear.html"
+        },
+        {
+          "url": "https://www.patagonia.com/returns.html",
+          "title": "Returns, Repairs & Exchanges - Patagonia",
+          "local_file": "returns.html"
+        },
+        {
+          "url": "https://www.patagonia.com/account/login/?action=register",
+          "title": "Register - Patagonia Account",
+          "local_file": "account-register.html"
+        },
+        {
+          "url": "https://www.patagonia.com/stories/all/articles/",
+          "title": "All Stories | Patagonia",
+          "local_file": "stories-articles.html"
+        },
+        {
+          "url": "https://www.patagonia.com/progress-report/",
+          "title": "Patagonia 2025 Impact Report",
+          "local_file": "progress-report.html"
+        },
+        {
+          "url": "https://www.patagonia.com/guides/size-fit/",
+          "title": "Size Charts by Patagonia",
+          "local_file": "guides-size-fit.html"
+        },
+        {
+          "url": "https://www.patagonia.com/repairs/",
+          "title": "Patagonia Product Care, Repair, and Washing Instructions",
+          "local_file": "repairs.html"
+        }
+      ],
+      "key_regions": [
+        "Header",
+        "Main Navigation",
+        "Footer",
+        "Hero Section",
+        "Product Listings",
+        "Article Grid",
+        "Forms"
+      ],
+      "key_interactions": [
+        {
+          "name": "Navigation",
+          "evidence": "observed",
+          "notes": "Links to all major sections are present in the HTML."
+        },
+        {
+          "name": "Login/Registration",
+          "evidence": "observed",
+          "notes": "Form fields for account creation are present on the register page."
+        },
+        {
+          "name": "Size Chart Display",
+          "evidence": "observed",
+          "notes": "Tables and guides for sizing are present on the size fit page."
+        },
+        {
+          "name": "Product Filtering/Sorting",
+          "evidence": "inferred",
+          "notes": "Not visible in the fetched HTML of shop category pages."
+        },
+        {
+          "name": "Add to Cart",
+          "evidence": "inferred",
+          "notes": "Not visible in the fetched HTML."
+        }
+      ],
+      "complexity": "high",
+      "stack_clues": "Demandware (Salesforce Commerce Cloud)",
+      "limitations": "The shop category pages (/shop/womens, /shop/mens, /shop/kids-baby, /shop/gear) returned very low byte counts (3300 bytes), suggesting that the product listings and filtering interfaces are rendered client-side via JavaScript and are not present in the initial HTML response.",
+      "slot": 7,
+      "category": "e-commerce",
+      "model_group": "open-source",
+      "model_id": "unsloth/Qwen3.6-35B-A3B-GGUF",
+      "model_version": "Q4_K_M",
+      "approved_at": "",
+      "approved_by": "",
+      "approval_reference": "",
+      "researched_by": {
+        "model_id": "unsloth/Qwen3.6-35B-A3B-GGUF",
+        "slot": 7
+      },
+      "orchestrator_checks": {
+        "pages_proposed": 13,
+        "pages_without_successful_fetch": [
+          "https://www.patagonia.com/"
+        ],
+        "page_map_has_index": true,
+        "source_url_fetched_ok": false,
+        "meets_min_pages": true
+      }
+    },
+    {
+      "source_id": "ECOM-08",
+      "subcategory": "multi-category retailer",
+      "source_name": "Target",
+      "source_url": "https://www.target.com/",
+      "verified_at": "2026-11-17",
+      "verification_method": "HTTP GET by the orchestrator",
+      "verification_result": "verified",
+      "evidence_reference": "pipelines/open-source/research/evidence/ECOM-08-http-2026-11-17.json",
+      "source_pages": [
+        {
+          "url": "https://www.target.com/",
+          "title": "Target : Expect More. Pay Less.",
+          "local_file": "index.html"
+        },
+        {
+          "url": "https://www.target.com/l/target-circle/-/N-pzno9",
+          "title": "Target Circle™",
+          "local_file": "target-circle.html"
+        },
+        {
+          "url": "https://www.target.com/gift-registry",
+          "title": "Gift Registry & Wish lists : Target",
+          "local_file": "gift-registry.html"
+        },
+        {
+          "url": "https://www.target.com/weekly-ad",
+          "title": "Target Weekly Ad",
+          "local_file": "weekly-ad.html"
+        },
+        {
+          "url": "https://www.target.com/store-locator/find-stores",
+          "title": "Stores Near Me : Target",
+          "local_file": "store-locator.html"
+        },
+        {
+          "url": "https://www.target.com/c/shop-all-categories/-/N-5xsxf?prehydrateClick=true",
+          "title": "Shop All Categories : Target",
+          "local_file": "shop-all-categories.html"
+        },
+        {
+          "url": "https://www.target.com/c/top-deals/-/N-4xw74?prehydrateClick=true",
+          "title": "Top Deals at Target",
+          "local_file": "top-deals.html"
+        }
+      ],
+      "key_regions": [
+        "header",
+        "navigation",
+        "hero",
+        "content band",
+        "footer"
+      ],
+      "key_interactions": [
+        {
+          "name": "cart navigation",
+          "evidence": "observed",
+          "notes": "Link to /cart present in nav_links on multiple pages."
+        },
+        {
+          "name": "account navigation",
+          "evidence": "observed",
+          "notes": "Link to /account present in nav_links on multiple pages."
+        },
+        {
+          "name": "product category navigation",
+          "evidence": "observed",
+          "notes": "Link to /c/shop-all-categories present in nav_links."
+        },
+        {
+          "name": "deals navigation",
+          "evidence": "observed",
+          "notes": "Link to /c/top-deals present in nav_links."
+        },
+        {
+          "name": "product category/price filters",
+          "evidence": "inferred",
+          "notes": "Typical e-commerce category pages include filters; not visible in fetched markup."
+        },
+        {
+          "name": "sort",
+          "evidence": "inferred",
+          "notes": "Typical e-commerce pages include sort controls; not visible in fetched markup."
+        },
+        {
+          "name": "variant selection",
+          "evidence": "inferred",
+          "notes": "Product detail pages would include size/color selectors; not visible in fetched markup."
+        },
+        {
+          "name": "cart quantity/removal",
+          "evidence": "inferred",
+          "notes": "Cart functionality implied by cart link; quantity/removal controls not visible in fetched markup."
+        },
+        {
+          "name": "checkout validation",
+          "evidence": "inferred",
+          "notes": "Checkout flow implied by site type; validation controls not visible in fetched markup."
+        }
+      ],
+      "complexity": "high",
+      "stack_clues": "unknown",
+      "limitations": "Verification date not provided in evidence; verified_at left blank. Cart page (https://www.target.com/cart?prehydrateClick=true) skipped due to robots.txt disallow. Product detail pages (e.g., https://www.target.com/pl/188903077, https://www.target.com/pl/411502157?content_id=STORY-48777) skipped due to robots.txt disallow. Any other desired pages not present in nav_links or other_links remain unverified.",
+      "slot": 8,
+      "category": "e-commerce",
+      "model_group": "open-source",
+      "model_id": "unsloth/NVIDIA-Nemotron-3-Super-120B-A12B-GGUF",
+      "model_version": "MXFP4_MOE",
+      "approved_at": "",
+      "approved_by": "",
+      "approval_reference": "",
+      "researched_by": {
+        "model_id": "unsloth/NVIDIA-Nemotron-3-Super-120B-A12B-GGUF",
+        "slot": 8
+      },
+      "orchestrator_checks": {
+        "pages_proposed": 7,
+        "pages_without_successful_fetch": [],
+        "page_map_has_index": true,
+        "source_url_fetched_ok": true,
+        "meets_min_pages": true
+      }
+    },
+    {
+      "source_id": "ECOM-09",
+      "subcategory": "specialty retailer",
+      "source_name": "REI",
+      "source_url": "https://www.rei.com",
+      "verified_at": "2026-11-17",
+      "verification_method": "HTTP GET",
+      "verification_result": "verified",
+      "evidence_reference": "pipelines/open-source/research/evidence/ECOM-09-http-2026-11-17.json",
+      "source_pages": [
+        {
+          "url": "https://www.rei.com",
+          "title": "REI: A Life Outdoors is a Life Well Lived | REI Co-op",
+          "local_file": "index.html"
+        },
+        {
+          "url": "https://www.rei.com/accessibility",
+          "title": "REI Accessibility Statement | REI Co-op",
+          "local_file": "accessibility.html"
+        },
+        {
+          "url": "https://www.rei.com/outlet",
+          "title": "REI Outlet: Discount & Sale Outdoor Clothing & Gear | REI Co-op",
+          "local_file": "outlet.html"
+        },
+        {
+          "url": "https://www.rei.com/used/trade-it-in",
+          "title": "Used Outdoor Clothing & Gear: Deals on Top Brands | REI Co-op",
+          "local_file": "trade-in.html"
+        },
+        {
+          "url": "https://www.rei.com/travel",
+          "title": "REI Travel | Intrepid Travel | REI Co-op",
+          "local_file": "travel.html"
+        },
+        {
+          "url": "https://www.rei.com/events",
+          "title": "In-store Classes and Events | REI Classes & Events",
+          "local_file": "events.html"
+        },
+        {
+          "url": "https://www.rei.com/learn/expert-advice",
+          "title": "Learn Outdoor Skills with Expert Advice from REI | REI Expert Advice",
+          "local_file": "expert-advice.html"
+        },
+        {
+          "url": "https://www.rei.com/blog",
+          "title": "Uncommon Path – An REI Co-op Publication",
+          "local_file": "blog.html"
+        },
+        {
+          "url": "https://www.rei.com/membership",
+          "title": "REI Co-op Membership Benefits & Rewards | REI Co-op",
+          "local_file": "membership.html"
+        },
+        {
+          "url": "https://www.rei.com/stores/map",
+          "title": "REI Store Locator: Find an REI Store Near You",
+          "local_file": "stores.html"
+        }
+      ],
+      "key_regions": [
+        "Header",
+        "Navigation",
+        "Hero",
+        "Content bands",
+        "Sidebar",
+        "Footer"
+      ],
+      "key_interactions": [
+        {
+          "name": "Product filtering",
+          "evidence": "inferred",
+          "notes": "Not observed in the fetched markup"
+        },
+        {
+          "name": "Product sorting",
+          "evidence": "inferred",
+          "notes": "Not observed in the fetched markup"
+        },
+        {
+          "name": "Variant selection",
+          "evidence": "inferred",
+          "notes": "Not observed in the fetched markup"
+        },
+        {
+          "name": "Cart quantity adjustment",
+          "evidence": "inferred",
+          "notes": "Not observed in the fetched markup"
+        },
+        {
+          "name": "Checkout validation",
+          "evidence": "inferred",
+          "notes": "Not observed in the fetched markup"
+        },
+        {
+          "name": "Search",
+          "evidence": "observed",
+          "notes": "Observed in the navigation links"
+        },
+        {
+          "name": "Login",
+          "evidence": "observed",
+          "notes": "Observed but access denied"
+        }
+      ],
+      "complexity": "medium",
+      "stack_clues": "unknown",
+      "limitations": "https://www.rei.com/login (403, Access to this page has been denied), https://www.rei.com/ShoppingCart (403, Access to this page has been denied)",
+      "slot": 9,
+      "category": "e-commerce",
+      "model_group": "open-source",
+      "model_id": "unsloth/Llama-3.3-70B-Instruct-GGUF",
+      "model_version": "Q8_0",
+      "approved_at": "",
+      "approved_by": "",
+      "approval_reference": "",
+      "researched_by": {
+        "model_id": "unsloth/Llama-3.3-70B-Instruct-GGUF",
+        "slot": 9
+      },
+      "orchestrator_checks": {
+        "pages_proposed": 10,
+        "pages_without_successful_fetch": [],
+        "page_map_has_index": true,
+        "source_url_fetched_ok": true,
+        "meets_min_pages": true
+      }
+    },
+    {
+      "source_id": "ECOM-10",
+      "subcategory": "single-brand direct-to-consumer (complexity-matched reserve)",
+      "source_name": "Everlane",
+      "source_url": "https://www.everlane.com/",
+      "verified_at": "2026-11-17",
+      "verification_method": "HTTP GET by the orchestrator",
+      "verification_result": "verified",
+      "evidence_reference": "pipelines/open-source/research/evidence/ECOM-10-http-2026-11-17.json",
+      "source_pages": [
+        {
+          "url": "https://everlane.com",
+          "title": "Everlane",
+          "local_file": "index.html"
+        },
+        {
+          "url": "https://www.everlane.com/collections/womens-all",
+          "title": "Women's Clothing, Shoes & More | Everlane",
+          "local_file": "womens-all-index.html"
+        },
+        {
+          "url": "https://www.everlane.com/collections/womens-pants-trousers",
+          "title": "Women's Trousers & Dress Pants | Chinos, Wide-Leg & More | Everlane",
+          "local_file": "womens-pants-trousers-index.html"
+        },
+        {
+          "url": "https://www.everlane.com/collections/womens-sweaters?fq=Fabric%3ACashmere",
+          "title": "Women's Sweaters | Cashmere, Cotton & Wool | Everlane",
+          "local_file": "womens-sweaters-cashmere-index.html"
+        },
+        {
+          "url": "https://www.everlane.com/pages/redeem",
+          "title": "Redeem – Everlane",
+          "local_file": "redeem-index.html"
+        },
+        {
+          "url": "https://www.everlane.com/pages/about",
+          "title": "Everlane - About",
+          "local_file": "about-index.html"
+        }
+      ],
+      "key_regions": [
+        "header",
+        "navigation",
+        "footer",
+        "hero (inferred)",
+        "content bands (inferred)"
+      ],
+      "key_interactions": [
+        {
+          "name": "navigation",
+          "evidence": "observed",
+          "notes": "links to collections, gift guide, etc."
+        },
+        {
+          "name": "gift-card redemption form",
+          "evidence": "observed",
+          "notes": "Redeem page contains a form element"
+        },
+        {
+          "name": "product variant selection",
+          "evidence": "inferred",
+          "notes": "typical for product detail pages"
+        },
+        {
+          "name": "add to cart",
+          "evidence": "inferred",
+          "notes": "standard e-commerce interaction"
+        },
+        {
+          "name": "filter / sort controls",
+          "evidence": "inferred",
+          "notes": "collections usually expose filters"
+        },
+        {
+          "name": "search",
+          "evidence": "inferred",
+          "notes": "site likely offers a search field"
+        },
+        {
+          "name": "cart quantity adjustment",
+          "evidence": "inferred",
+          "notes": "common in cart UI"
+        }
+      ],
+      "complexity": "medium",
+      "stack_clues": "unknown",
+      "limitations": "Product detail page https://www.everlane.com/products/womens-cashmere-slim-crew-sweater-canvas returned 429 (too many requests); could not verify product markup.",
+      "slot": 10,
+      "category": "e-commerce",
+      "model_group": "open-source",
+      "model_id": "unsloth/gpt-oss-120b-GGUF",
+      "model_version": "F16",
+      "approved_at": "",
+      "approved_by": "",
+      "approval_reference": "",
+      "researched_by": {
+        "model_id": "unsloth/gpt-oss-120b-GGUF",
+        "slot": 10
+      },
+      "orchestrator_checks": {
+        "pages_proposed": 6,
+        "pages_without_successful_fetch": [],
+        "page_map_has_index": false,
+        "source_url_fetched_ok": true,
+        "meets_min_pages": true
+      }
+    }
+  ],
+  "orchestrator_corrections": [
+    "2026-11-17: ECOM-08 verified_at normalised; see CORRECTIONS-2026-11-17-slot08.json",
+    "2026-11-17: verified_at reset to the HTTP evidence date; see CORRECTIONS-2026-11-17-dates.json"
+  ]
+}
