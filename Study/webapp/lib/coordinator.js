@@ -7,6 +7,9 @@ const { validateFiles } = require('./store');
 const { CONDITIONS } = require('./state');
 
 const MAX_ATTEMPTS = 3;
+// After a console restart a job that was running keeps its worker and lease for this long. Workers heartbeat every
+// 10 s, so a live one confirms within seconds; one that never reports back is requeued when this runs out.
+const RESTART_GRACE_MS = 60000;
 // One freshness rule for "online": the worker list, the machine view and ARC availability all use it.
 const ONLINE_MS = 45000;
 const BASE_URL = { anthropic: null, openai: 'https://api.openai.com/v1', gemini: 'https://generativelanguage.googleapis.com/v1beta/openai' };
@@ -23,7 +26,9 @@ const num = (v) => (Number.isFinite(v) && v >= 0 ? Math.round(v) : 0);
 
 function create(ctx, { leaseS = 900 } = {}) {
   const { state, store } = ctx;
-  const jobs = new Map(state.queue.map((j) => [j.id, { ...j }]));
+  // A job that was running when the console stopped is still running on its worker: restoring it as queued made the
+  // worker's next heartbeat fail ("job not running"), so it abandoned a run that could be many minutes in.
+  const jobs = new Map(state.queue.map((j) => [j.id, j.state === 'running' ? { ...j, lease_exp: ctx.now() + RESTART_GRACE_MS } : { ...j }]));
   const imported = new Set(state.imported);
   // Older workers left the mock marker in the final status, not in the queue.
   for (const j of jobs.values()) {
@@ -69,7 +74,7 @@ function create(ctx, { leaseS = 900 } = {}) {
   const arcWorkers = (arm) => [...workers.values()].filter((w) => w.arcs && w.arcs[arm] && ctx.now() - w.last_seen < ONLINE_MS);
   const siteList = () => state.settings.sites || ctx.siteIds();
   const persist = () => {
-    state.queue = [...jobs.values()].map(({ lease_exp, reserved_by, reserved_until, stop_at, ...j }) => ({ ...j, state: j.state === 'running' ? 'queued' : j.state }));
+    state.queue = [...jobs.values()].map(({ lease_exp, reserved_by, reserved_until, stop_at, ...j }) => ({ ...j }));
     state.imported = [...imported];
     state.save();
   };
@@ -114,8 +119,14 @@ function create(ctx, { leaseS = 900 } = {}) {
     return c;
   }
   const finishedRepairs = (arm) => [...jobs.values()].filter((j) => j.kind === 'repair' && j.arm === arm && (j.state === 'done' || j.state === 'failed')).length;
+  // What the dashboard shows. A running cell whose worker has gone quiet is "s" (stalled), not "r": the job may have
+  // finished on the computer without its result arriving, and showing it as running hides that.
+  const shown = (arm, cond, site) => {
+    const ch = char(arm, cond, site);
+    return ch === 'r' && isStalled(jobs.get(`repair:${arm}:${cond}:${site}`)) ? 's' : ch;
+  };
   const matrix = () => Object.fromEntries(Object.keys(state.arms).map((arm) => [arm, Object.fromEntries(
-    state.settings.conditions.map((cond) => [cond, siteList().map((site) => char(arm, cond, site)).join('')]))]));
+    state.settings.conditions.map((cond) => [cond, siteList().map((site) => shown(arm, cond, site)).join('')]))]));
   const judgeItems = () => {
     const n = { total: 0, queued: 0, running: 0, done: 0, failed: 0 };
     for (const j of jobs.values()) if (j.kind === 'judge') { n.total++; n[j.state]++; }
@@ -620,6 +631,11 @@ function create(ctx, { leaseS = 900 } = {}) {
   }
   function heartbeat(id, b = {}) {
     const j = getJob(id);
+    // Jobs saved as "queued" by an older console (running ones were written that way) or put back by an expired lease
+    // while their worker was still going: the worker that still holds this exact lease takes the job back.
+    if (j.state === 'queued' && j.worker && b.worker_id === j.worker && b.lease !== undefined && b.lease === j.lease && !j.reserved_by) {
+      Object.assign(j, { state: 'running', error: null });
+    }
     if (j.state !== 'running') throw new HttpError(409, 'job not running');
     checkLease(j, b);
     j.lease_exp = ctx.now() + leaseS * 1000;

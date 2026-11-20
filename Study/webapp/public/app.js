@@ -12,6 +12,7 @@
   SITE_PREFIXES.forEach(function (p) { for (var i = 1; i <= 6; i++) SITE_IDS.push(p + '-0' + i); });
   var CELL = {
     '.': ['queued', '\u00b7', 'Queued'], r: ['running', 'R', 'Running'], o: ['ok', '\u2713', 'OK'], f: ['failed', '\u2715', 'Failed'],
+    s: ['stalled', '!', 'Stalled: running, but its computer has gone quiet'],
     t: ['truncated', 'T', 'Truncated'], i: ['imported', 'I', 'Imported'], '-': ['none', '\u2013', 'Not planned']
   };
   var VIEWS = [

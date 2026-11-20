@@ -45,10 +45,10 @@ function createWorker(opts = {}) {
   const stopper = new AbortController();
   let loopDone = Promise.resolve();
 
-  async function api(path, body) {
+  async function api(path, body, timeoutMs = 30000) {
     const res = await fetch(webUrl + path, {
       method: 'POST', headers: { 'content-type': 'application/json', authorization: `Bearer ${token}` },
-      body: JSON.stringify(body), signal: AbortSignal.timeout(30000),
+      body: JSON.stringify(body), signal: AbortSignal.timeout(timeoutMs),
     });
     const text = await res.text();
     let json = null;
@@ -62,16 +62,20 @@ function createWorker(opts = {}) {
   });
 
   // POST with retries on network error / 5xx; returns the last response or null.
-  async function post(path, body, tries = 3) {
+  async function post(path, body, tries = 3, timeoutMs = 30000) {
     for (let i = 0; i < tries; i++) {
       try {
-        const r = await api(path, body);
+        const r = await api(path, body, timeoutMs);
         if (r.status < 500) return r;
       } catch { /* network: retry */ }
-      if (i < tries - 1) await new Promise((r) => setTimeout(r, retryMs * 2 ** i));
+      if (i < tries - 1) await new Promise((r) => setTimeout(r, Math.min(retryMs * 2 ** i, 30000)));
     }
     return null;
   }
+  // A finished result is the one thing that must not be lost: the run behind it can be many minutes of model time.
+  // It is large (every iteration's files), and a slow link such as a VPN needs far longer than a heartbeat does,
+  // so it gets a long timeout and many tries over about two minutes before the worker gives up and releases the job.
+  const RESULT_TRIES = 8, RESULT_TIMEOUT_MS = 120000;
 
   const clean = (msg, job) => (job.api_key ? String(msg).split(job.api_key).join('***') : String(msg)).slice(0, 500);
 
@@ -89,9 +93,10 @@ function createWorker(opts = {}) {
       const run = runners[job.kind];
       if (!run) throw new Error(`unsupported job kind ${job.kind}`);
       const result = await run(job, { signal: ac.signal });
-      clearInterval(hb);
       if (stopped) throw new Error('stopped'); // a runner may return, not throw, when aborted
-      const r = await post('/api/worker/result', { job_id: job.id, ...lease, ...result });
+      // the heartbeat keeps running while the result uploads, so the lease cannot lapse and the console keeps
+      // showing the job as running instead of stalled (the finally block stops it)
+      const r = await post('/api/worker/result', { job_id: job.id, ...lease, ...result }, RESULT_TRIES, RESULT_TIMEOUT_MS);
       if (!r || r.status >= 300) throw new Error(`result upload failed (${r ? r.status : 'network'})`);
       log(`${job.id} ${result.status}`);
     } catch (e) {
