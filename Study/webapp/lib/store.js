@@ -64,6 +64,10 @@ function create(dataDir) {
   return {
     abs, readText, readJson, iterations, iterFiles,
     writeFiles(entries) { for (const { rel, buf } of entries) csv.writeAtomic(abs(rel), buf); },
+    // set a file aside under a new name; missing file is not an error
+    renameIfExists(rel, to) {
+      try { fs.renameSync(abs(rel), abs(to)); return true; } catch { return false; }
+    },
     appendLine(rel, obj) {
       fs.mkdirSync(path.dirname(abs(rel)), { recursive: true });
       fs.appendFileSync(abs(rel), JSON.stringify(obj) + '\n');

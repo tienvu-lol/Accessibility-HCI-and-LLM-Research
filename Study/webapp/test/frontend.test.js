@@ -16,10 +16,11 @@ function hasKeys(obj, keys, where) {
 }
 
 test('demo-state.json contains every snapshot field in API.md', () => {
-  hasKeys(state, ['now', 'run', 'settings', 'keys', 'arms', 'judge', 'matrix', 'intake', 'projection', 'workers', 'pricing', 'warnings', 'human', 'imports'], 'state');
+  hasKeys(state, ['now', 'run', 'settings', 'keys', 'arms', 'judge', 'matrix', 'machines', 'matrix_workers', 'intake', 'projection', 'recent_usage', 'workers', 'pricing', 'warnings', 'human', 'imports'], 'state');
   hasKeys(state.run, ['phase', 'kind', 'started_at'], 'run');
   hasKeys(state.settings, ['budget_usd', 'sites', 'conditions', 'max_iter', 'judge_model_id'], 'settings');
-  assert.deepStrictEqual(Object.keys(state.keys).sort(), ['anthropic', 'gemini', 'openai']);
+  // three hosted providers plus one key slot per open-source arm
+  assert.deepStrictEqual(Object.keys(state.keys).sort(), ['a5', 'a6', 'anthropic', 'gemini', 'openai']);
   for (const k of Object.values(state.keys)) hasKeys(k, ['set', 'last4', 'source'], 'key');
   assert.strictEqual(state.arms.length, 6);
   for (const a of state.arms) {
@@ -29,15 +30,31 @@ test('demo-state.json contains every snapshot field in API.md', () => {
   }
   hasKeys(state.judge, ['provider', 'model_id', 'ready', 'blockers', 'items', 'tokens', 'cost_usd'], 'judge');
   hasKeys(state.judge.items, ['total', 'queued', 'running', 'done', 'failed'], 'judge.items');
-  hasKeys(state.intake, ['total', 'rolling5m', 'sources', 'series'], 'intake');
+  hasKeys(state.intake, ['total', 'rolling5m', 'sources', 'machines', 'series'], 'intake');
+  for (const m of state.machines) hasKeys(m, ['id', 'char', 'online', 'os', 'calls', 'input', 'output', 'cost_usd', 'mock_calls', 'cells'], 'machine');
+  // one character per site per (arm, condition), matching the state matrix
+  for (const arm of Object.keys(state.matrix)) {
+    for (const [cond, str] of Object.entries(state.matrix[arm])) {
+      assert.strictEqual(state.matrix_workers[arm][cond].length, str.length, arm + ' ' + cond + ' worker row');
+    }
+  }
+  const chars = new Set(state.machines.map((m) => m.char).concat(['-']));
+  for (const arm of Object.keys(state.matrix_workers)) {
+    for (const str of Object.values(state.matrix_workers[arm])) {
+      for (const ch of str) assert.ok(chars.has(ch), 'unknown machine char ' + ch);
+    }
+  }
+  for (const u of state.recent_usage) hasKeys(u, ['ts', 'worker', 'arm', 'kind', 'model_id', 'key_id', 'mock', 'input', 'output', 'calls', 'cost_usd'], 'recent_usage');
   hasKeys(state.intake.rolling5m, ['tokens', 'cost_usd'], 'rolling5m');
   assert.deepStrictEqual(state.intake.sources.map((s) => s.id), ['A1', 'A2', 'A3', 'A4', 'A5', 'A6', 'judge']);
   for (const s of state.intake.sources) hasKeys(s, ['id', 'input', 'output', 'cost_usd', 'calls', 'tokens_per_min'], 'source');
   for (const p of state.intake.series) hasKeys(p, ['t', 'cum_cost_usd', 'cum_tokens'], 'series');
-  hasKeys(state.projection, ['budget_usd', 'spent_usd', 'remaining_usd', 'expected_total_usd', 'over_budget', 'eta_minutes', 'by_arm'], 'projection');
+  hasKeys(state.projection, ['budget_usd', 'spent_usd', 'remaining_usd', 'expected_total_usd', 'over_budget', 'eta_minutes', 'by_arm', 'by_machine', 'by_key', 'mock_calls', 'legacy_calls'], 'projection');
+  for (const m of state.projection.by_machine) hasKeys(m, ['id', 'calls', 'input', 'output', 'cost_usd', 'mock_calls', 'share_pct', 'arms'], 'by_machine');
+  for (const k of state.projection.by_key) hasKeys(k, ['id', 'arm', 'model_id', 'calls', 'input', 'output', 'cost_usd'], 'by_key');
   for (const b of state.projection.by_arm) {
-    hasKeys(b, ['arm', 'calls_total', 'calls_done', 'avg_in', 'avg_out', 'est_cost_usd', 'basis'], 'by_arm');
-    assert.ok(['measured', 'estimated', 'self-hosted'].includes(b.basis));
+    hasKeys(b, ['arm', 'model_id', 'calls_total', 'calls_done', 'avg_in', 'avg_out', 'spent_usd', 'est_cost_usd', 'est_total_usd', 'mock_calls', 'basis'], 'by_arm');
+    assert.ok(['measured', 'estimated', 'self-hosted', 'unpriced'].includes(b.basis));
   }
   for (const w of state.workers) hasKeys(w, ['id', 'last_seen', 'slots', 'running'], 'worker');
   for (const p of Object.values(state.pricing)) hasKeys(p, ['input_per_mtok', 'output_per_mtok', 'verified'], 'pricing');
@@ -202,13 +219,80 @@ test('results view: ceiling banner, fig 3 note, export controls, sandboxed viewe
   assert.ok(!/sandbox="[^"]*allow-scripts/.test(html));
 });
 
-test('keys view never renders a key value and offers exactly three providers', () => {
+test('keys view never renders a key value and offers a slot per provider and per open arm', () => {
   const html = App.views.keys(state).map((s) => s.html).join('\n');
-  assert.strictEqual((html.match(/data-form="key"/g) || []).length, 3);
-  assert.strictEqual((html.match(/type="password"/g) || []).length, 3);
+  // three hosted providers + one key per open-source arm: A5 and A6 are separate credentials
+  assert.strictEqual((html.match(/data-form="key"/g) || []).length, 5);
+  assert.strictEqual((html.match(/type="password"/g) || []).length, 5);
+  for (const slot of ['openai', 'anthropic', 'gemini', 'a5', 'a6']) {
+    assert.match(html, new RegExp('data-provider="' + slot + '"'), slot + ' has its own key card');
+  }
   assert.ok(!/<input[^>]*type="password"[^>]*value=/.test(html), 'password inputs carry no value');
   assert.ok(!/gemini<\/option>/.test(html), 'gemini is not an arm provider option');
   assert.match(html, /Unverified placeholder/);
+});
+
+// What the user hit: the stepper read "Done" for repair and score while cells were failed or unscored.
+test('a phase is Done only when every cell produced output', () => {
+  const cells = (o) => Object.assign({ total: 10, queued: 0, running: 0, ok: 0, failed: 0, truncated: 0, imported: 0, converged: 0 }, o);
+  const base = {
+    run: { phase: 'running', kind: 'repair' }, human: { items: 0 },
+    judge: { ready: true, items: { total: 0, done: 0, failed: 0 } },
+    arms: [
+      { id: 'A1', kind: 'mainstream', ready: true, blockers: [], cells: cells({ ok: 10 }) },
+      { id: 'A5', kind: 'open_source', ready: true, blockers: [], cells: cells({ imported: 10 }) },
+    ],
+  };
+  const stepOf = (S, R, name) => App.steps(S, R).find((x) => x.name === name);
+  const full = { coverage: { variants_scored: 20, variants_expected: 20, judge_items_expected: 2 } };
+  assert.strictEqual(stepOf(base, full, 'Repair').state[1], 'Done');
+
+  // one failed cell: finished, but not done
+  const withFail = { ...base, arms: [{ ...base.arms[0], cells: cells({ ok: 9, failed: 1 }) }, base.arms[1]] };
+  const rep = stepOf(withFail, full, 'Repair');
+  assert.strictEqual(rep.done, 9);
+  assert.strictEqual(rep.bad, 1);
+  assert.strictEqual(rep.state[0], 'attn');
+  assert.strictEqual(rep.state[1], '1 failed');
+
+  // a truncated cell counts the same way
+  const withTrunc = { ...base, arms: [{ ...base.arms[0], cells: cells({ ok: 9, truncated: 1 }) }, base.arms[1]] };
+  assert.strictEqual(stepOf(withTrunc, full, 'Repair').state[0], 'attn');
+
+  // score cannot be Done while variants are unscored, even if some are
+  const partial = { coverage: { variants_scored: 12, variants_expected: 20, judge_items_expected: 2 } };
+  assert.strictEqual(stepOf(base, partial, 'Score').state[1], 'In progress');
+
+  // the judge total comes from coverage, not from the few items queued so far
+  const judgeStarted = { ...base, run: { phase: 'running', kind: 'judge' }, judge: { ready: true, items: { total: 2, done: 2, failed: 0 } } };
+  const jud = stepOf(judgeStarted, { coverage: { variants_scored: 20, variants_expected: 20, judge_items_expected: 120 } }, 'Judge (Gemini)');
+  assert.strictEqual(jud.total, 120);
+  assert.notStrictEqual(jud.state[1], 'Done');
+
+  // dispatched open arms count as done, not only imported ones
+  const dispatched = { ...base, arms: [base.arms[0], { ...base.arms[1], cells: cells({ ok: 6, imported: 4 }) }] };
+  assert.strictEqual(stepOf(dispatched, full, 'Open-source arms (A5, A6)').state[1], 'Done');
+});
+
+test('runs view: cells carry the machine that ran them, as colour and as text', () => {
+  const html = App.matrixGrid(state, 'A1');
+  const m = state.machines[0];
+  assert.match(html, /--machine:hsl\(/, 'the machine is a colour variable, not the only cue');
+  assert.ok(html.includes(', ran by ' + m.id), 'the machine is in the cell text alternative');
+  assert.ok(html.includes('\u00b7 ' + m.id) || html.includes('· ' + m.id), 'and in the cell title');
+  const runsHtml = App.views.runs(state).map((s) => s.html).join('\n');
+  assert.match(runsHtml, /class="mswatch"/, 'the Runs view has a machine legend');
+  assert.ok(runsHtml.includes(m.id));
+});
+
+test('cost view attributes spend to machines and to separate keys', () => {
+  const html = App.views.cost(state).map((s) => s.html).join('\n');
+  for (const m of state.machines) assert.ok(html.includes(m.id), 'machine ' + m.id + ' is listed');
+  // A5 and A6 spend is attributed to their own keys, never pooled
+  assert.ok(html.includes('a5:ds01'));
+  assert.ok(html.includes('local:demo-laptop-2'));
+  assert.match(html, /Contribution by machine/);
+  assert.match(html, /Spend by API key/);
 });
 
 test('runs view: one grid cell per arm x condition x site, with text alternatives', () => {

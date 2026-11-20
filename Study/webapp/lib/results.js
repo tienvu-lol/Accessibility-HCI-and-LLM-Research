@@ -343,7 +343,7 @@ function build(dataDir, opts = {}) {
 
 function emptyResults() {
   return {
-    coverage: { variants_expected: 0, variants_scored: 0, baselines_scored: 0, judge_items_done: 0, judge_items_expected: 0, human_raters: 0, human_items_complete: 0 },
+    coverage: { variants_expected: 0, variants_scored: 0, variants_out_of_scope: 0, baselines_scored: 0, baselines_expected: 0, judge_items_done: 0, judge_items_expected: 0, human_raters: 0, human_items_complete: 0 },
     gate: { median_baseline_violation_rate: null, sites_zero_axe: 0, warn: false, note: 'no baseline data' },
     fig2: [], fig3: [], fig4: { criteria: [], heuristics: HEURISTICS, cells: [], basis: '' }, fig5: [], fig6: [], loop: [],
     headline: { pct_sites_gained_wcag_lost_nielsen: null, n_sites: 0, top_conflict: null },
@@ -366,10 +366,14 @@ function buildUnsafe(dataDir, opts) {
 
   const baseSites = [];
   const variants = []; // site-variants with before/after
-  let scored = 0;
+  const armSet = new Set(arms), condSet = new Set(conditions);
+  let scored = 0, outOfScope = 0;
   for (const [key, iters] of cells) {
     const [arm, cond, site] = key.split('|');
     if (arm === 'baseline') { baseSites.push(site); continue; }
+    // Coverage is "how much of the work in scope is scored", so a cell from an arm or condition that is
+    // not in scope cannot count towards it - otherwise narrowing the settings makes scoring look finished.
+    if (!armSet.has(arm) || !condSet.has(cond)) { outOfScope++; continue; }
     scored++;
     const fi = finalIter(iters);
     const bIters = cells.get('baseline|baseline|' + site);
@@ -380,8 +384,10 @@ function buildUnsafe(dataDir, opts) {
 
   // coverage
   out.coverage.variants_expected = sitesAll.length * arms.length * conditions.length;
-  out.coverage.variants_scored = scored;
+  out.coverage.variants_scored = Math.min(scored, out.coverage.variants_expected);
+  out.coverage.variants_out_of_scope = outOfScope;
   out.coverage.baselines_scored = baseSites.length;
+  out.coverage.baselines_expected = sitesAll.length;
   out.coverage.judge_items_done = judge.items.size;
   out.coverage.judge_items_expected = sitesAll.length * arms.length;
   out.coverage.human_raters = agr.raters;
@@ -575,24 +581,35 @@ function tables(dataDir, opts = {}) {
   };
 }
 
+// Who spent what: one row per (arm, machine, model, key), from the facts recorded in usage.jsonl.
+// Cost is the figure stored when the call finished; only legacy rows (no cost_usd) are priced here, from
+// the pricing passed in. Mock rows are kept, flagged, and cost 0, so a test run is visible but separable.
 function costBySource(dataDir, opts) {
   const pricing = opts.pricing || {}, modelBySource = opts.modelBySource || {};
   const by = new Map();
   for (const l of readJsonl(path.join(dataDir, 'usage.jsonl'))) {
-    const src = String(l.source ?? '');
-    let a = by.get(src);
-    if (!a) { a = { input: 0, output: 0, calls: 0, cost: 0, priced: false }; by.set(src, a); }
+    const arm = String(l.arm ?? l.source ?? '');
+    const machine = String(l.worker ?? l.source ?? 'unknown');
+    const model = String(l.model_id ?? modelBySource[arm] ?? '');
+    const key = String(l.key_id ?? '');
+    const mock = l.mock === true;
+    const k = [arm, machine, model, key, mock].join('\u0000');
+    let a = by.get(k);
+    if (!a) { a = { arm, machine, model, key, mock, input: 0, output: 0, calls: 0, cost: 0, priced: false }; by.set(k, a); }
     const inp = num(l.input) || 0, outp = num(l.output) || 0;
     a.input += inp; a.output += outp; a.calls += num(l.calls) || 0;
-    const p = pricing[l.model] || pricing[src] || pricing[modelBySource[src]];
+    if (typeof l.cost_usd === 'number') { a.priced = true; a.cost += l.cost_usd; continue; }
+    if (mock) { a.priced = true; continue; }
+    const p = pricing[model] || pricing[modelBySource[arm]] || pricing[arm];
     if (p) {
       a.priced = true;
       a.cost += (inp * (num(p.input_per_mtok) || 0) + outp * (num(p.output_per_mtok) || 0)) / 1e6;
     }
   }
+  const cmp = (a, b) => a.arm.localeCompare(b.arm) || a.machine.localeCompare(b.machine) || a.model.localeCompare(b.model) || a.key.localeCompare(b.key);
   return {
-    columns: ['source', 'input', 'output', 'calls', 'cost_usd'],
-    rows: [...by].sort((a, b) => a[0].localeCompare(b[0])).map(([s, a]) => [s, a.input, a.output, a.calls, a.priced ? a.cost : null]),
+    columns: ['arm', 'machine', 'model_id', 'key_id', 'mock', 'input', 'output', 'calls', 'cost_usd'],
+    rows: [...by.values()].sort(cmp).map((a) => [a.arm, a.machine, a.model, a.key, a.mock, a.input, a.output, a.calls, a.priced ? a.cost : null]),
   };
 }
 

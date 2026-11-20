@@ -8,6 +8,11 @@
 # server writes into each returned file is checked in the console's copy, so a pass means the bytes went
 # worker container -> tunnel container -> ssh -> fake llama.cpp and back.
 #
+# The two arms are deliberately keyed differently, because they are different servers with different
+# credentials: A5's key is typed into the console (which sends it inside A5 jobs) and A6's key lives only
+# in agent.env on this machine. Each fake server rejects the other arm's key, so a crossed key cannot pass.
+# The run then checks that the console attributed each arm's usage to its own key and to the right machine.
+#
 # Usage: ./agent/arc/e2e-open-arms.sh [--keep]     (--keep leaves everything running for inspection)
 # Needs: docker, curl, python3, ssh-keygen. Takes a few minutes the first time (image builds).
 set -euo pipefail
@@ -78,10 +83,10 @@ ARC_USER=arcuser
 ARC_HOST=$SSHD
 ARC_A5_TARGET=$L5:8000
 ARC_A6_TARGET=$L6:8000
-A5_API_KEY=$A5KEY
 A6_API_KEY=$A6KEY
 EOF
 )
+# A5's key is NOT in agent.env: it is typed into the console below, to exercise that path too.
 export HOST_OS="$(uname -s | sed 's/Darwin/macOS/') $(uname -m)"
 export WORKER_IMAGE=study-worker:latest
 export COMPOSE_PROJECT_NAME=$P
@@ -127,6 +132,9 @@ $CURL -c "$JAR" -X POST -H 'content-type: application/json' -d "{\"password\":\"
 # because the only workers running take A5/A6 only.
 for a in A3 A4; do api PUT "/api/arms/$a" '{"provider":"openai","model_id":"e2e-unused"}' >/dev/null; done
 for k in openai anthropic gemini; do api PUT "/api/keys/$k" '{"key":"e2e-not-a-real-key"}' >/dev/null; done
+# A5 gets its own key from the console; A6 uses the one in agent.env. Separate keys, separate arms.
+api PUT /api/keys/a5 "{\"key\":\"$A5KEY\"}" | grep -q '"ok":true' || die "could not set the A5 key"
+api GET /api/state | python3 -c 'import json,sys;k=json.load(sys.stdin)["keys"];print("  console keys: a5=%s a6=%s" % (k["a5"]["set"], k["a6"]["set"]))'
 api PUT /api/settings "{\"sites\":[\"$SITE\"],\"conditions\":[\"$COND\"],\"max_iter\":$MAX_ITER,\"dispatch_open\":true}" >/dev/null
 
 say "waiting for both workers to advertise a live ARC tunnel"
@@ -167,6 +175,16 @@ print("  %s: status=%s converged=%s iter=%s model=%s version=%s usage=%s latency
       % (arm, st["status"], st["converged"], st["iteration"], st["model_id"], st["model_version"], st["usage"], st["latency_ms"]))
 PY
 done
+say "how the console attributed the usage"
+api GET /api/state > "$WORK/state.json"
+python3 "$AGENT_DIR/arc/check-attribution.py" "$WORK/state.json" "$A5KEY" || die "usage was not attributed per arm/key/machine"
+
+say "a crossed key is refused (the arms are not interchangeable)"
+code=$(docker run --rm --network $NET curlimages/curl:8.10.1 -s -o /dev/null -w '%{http_code}' --max-time 8 \
+  -H "authorization: Bearer $A6KEY" "http://$L5:8000/v1/models")
+[ "$code" = 401 ] || die "the A5 server answered $code for A6's key; it must refuse it"
+echo "  A6's key on the A5 server: 401 as expected"
+
 say "calls the fake ARC servers answered"
 docker logs $L5 2>&1 | grep -c 'call ' | sed 's/^/  A5 chat completions: /'
 docker logs $L6 2>&1 | grep -c 'call ' | sed 's/^/  A6 chat completions: /'

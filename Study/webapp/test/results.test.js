@@ -59,18 +59,35 @@ function smallTree() {
   write(root, cell + 'S2/iter1/status.json', JSON.stringify({ status: 'failed', reason: 'truncated: short', usage: { input: 20, output: 0 } }));
   write(root, 'runs/A1/naive/S1/iter1/status.json', status(1)); // still running
   write(root, 'usage.jsonl', jl([
-    { ts: 1, source: 'A1', arm: 'A1', kind: 'repair', input: 1000000, output: 500000, calls: 2 },
-    { ts: 2, source: 'A1', arm: 'A1', kind: 'repair', input: 1000000, output: 0, calls: 1 },
-    { ts: 3, source: 'judge', kind: 'judge', input: 10, output: 5, calls: 1 },
-  ]) + '{"ts":4,"sou');
+    // rows as written now: the machine, model and key are facts, and the cost was priced when recorded
+    { ts: 1, worker: 'mac-2', arm: 'A1', kind: 'repair', model_id: 'm-A1', key_id: 'anthropic:aaaa', mock: false, input: 1000000, output: 500000, calls: 2, cost_usd: 4, priced: true },
+    { ts: 2, worker: 'win-1', arm: 'A1', kind: 'repair', model_id: 'm-A1', key_id: 'anthropic:aaaa', mock: false, input: 1000000, output: 0, calls: 1, cost_usd: 2, priced: true },
+    { ts: 3, worker: 'mac-2', arm: 'A5', kind: 'repair', model_id: 'deepseek', key_id: 'a5:1111', mock: false, input: 500, output: 400, calls: 1, cost_usd: 0, priced: false },
+    { ts: 4, worker: 'mac-2', arm: 'A1', kind: 'repair', model_id: 'm-A1', key_id: 'anthropic:aaaa', mock: true, input: 99, output: 99, calls: 1, cost_usd: 0, priced: true },
+    // a legacy row: no machine, model, key or cost, so it is priced on read
+    { ts: 5, source: 'judge', arm: 'A1', kind: 'judge', input: 10, output: 5, calls: 1 },
+  ]) + '{"ts":6,"sou');
   return root;
 }
 const OPTS = { sites: ['S1', 'S2'], conditions: ['naive', 'wcag'], arms: ['A1'] };
 const close = (a, b) => assert.ok(Math.abs(a - b) < 1e-9, `${a} !== ${b}`);
 
+test('coverage counts only the arms and conditions in scope', () => {
+  const root = smallTree();
+  // the same tree read with one condition in scope: the other condition's cells are out of scope,
+  // so they can neither inflate `variants_scored` nor make scoring look finished
+  const r = results.build(root, { sites: ['S1', 'S2'], conditions: ['wcag'], arms: ['A1'] });
+  assert.equal(r.coverage.variants_expected, 2);
+  assert.equal(r.coverage.variants_scored, 2);
+  assert.equal(r.coverage.variants_out_of_scope, 2);
+  const narrowArms = results.build(root, { sites: ['S1', 'S2'], conditions: ['naive', 'wcag'], arms: ['A2'] });
+  assert.equal(narrowArms.coverage.variants_scored, 0, 'A1 data cannot count towards A2 coverage');
+  assert.equal(narrowArms.coverage.variants_out_of_scope, 4);
+});
+
 test('results.build: coverage, gate, fig2', () => {
   const r = results.build(smallTree(), OPTS);
-  assert.deepEqual(r.coverage, { variants_expected: 4, variants_scored: 4, baselines_scored: 2, judge_items_done: 2, judge_items_expected: 2, human_raters: 0, human_items_complete: 0 });
+  assert.deepEqual(r.coverage, { variants_expected: 4, variants_scored: 4, variants_out_of_scope: 0, baselines_scored: 2, baselines_expected: 2, judge_items_done: 2, judge_items_expected: 2, human_raters: 0, human_items_complete: 0 });
   close(r.gate.median_baseline_violation_rate, (0.2 + 0.2) / 2); // S1 mean(.1,.3)=.2, S2 .2
   assert.equal(r.gate.sites_zero_axe, 0);
   assert.equal(r.gate.warn, false);
@@ -169,13 +186,22 @@ test('empty and garbage inputs do not throw', () => {
   assert.doesNotThrow(() => results.tables(root, OPTS));
 });
 
-test('tables: values, partial ledger line, cost_by_source with pricing', () => {
+test('tables: values, partial ledger line, cost_by_source attributes every call', () => {
   const root = smallTree();
-  const t = results.tables(root, { ...OPTS, pricing: { A1: { input_per_mtok: 2, output_per_mtok: 4 } } });
+  const t = results.tables(root, { ...OPTS, pricing: { A1: { input_per_mtok: 2, output_per_mtok: 4 }, 'm-A1': { input_per_mtok: 2, output_per_mtok: 4 } } });
   assert.deepEqual(t.fig2_violations.rows[0], ['A1', 'naive', 'S1', 8, 7]);
   assert.deepEqual(t.fig6_broke_usability.rows.length, 1);
   assert.equal(t.fig4_conflict_heatmap.columns.length, 11);
-  assert.deepEqual(t.cost_by_source.rows, [['A1', 2000000, 500000, 3, 6], ['judge', 10, 5, 1, null]]); // 2M*2 + 0.5M*4
+  assert.deepEqual(t.cost_by_source.columns, ['arm', 'machine', 'model_id', 'key_id', 'mock', 'input', 'output', 'calls', 'cost_usd']);
+  assert.deepEqual(t.cost_by_source.rows, [
+    // a legacy row carries no machine, model or key, so it keeps its old `source` and is priced on read
+    ['A1', 'judge', '', '', false, 10, 5, 1, (10 * 2 + 5 * 4) / 1e6],
+    // the same machine's real and mock work stay apart, and the two machines are not pooled
+    ['A1', 'mac-2', 'm-A1', 'anthropic:aaaa', false, 1000000, 500000, 2, 4],
+    ['A1', 'mac-2', 'm-A1', 'anthropic:aaaa', true, 99, 99, 1, 0],
+    ['A1', 'win-1', 'm-A1', 'anthropic:aaaa', false, 1000000, 0, 1, 2],
+    ['A5', 'mac-2', 'deepseek', 'a5:1111', false, 500, 400, 1, 0],
+  ]);
   assert.equal(t.metrics_all.rows.length, 13);
   assert.equal(t.judge_rankings.rows.length, 9);
   assert.ok(toCsv(t.fig5_gain_vs_usability).startsWith('site,arm,generator_group,condition,wcag_gain,usability_delta\r\n'));

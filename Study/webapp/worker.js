@@ -16,15 +16,19 @@ function createWorker(opts = {}) {
   const retryMs = opts.retryMs ?? 1000; // base of the exponential backoff
   const runners = opts.runners || KINDS;
   const info = opts.info || { host: process.env.MACHINE_NAME || os.hostname(), os: process.env.HOST_OS || `${os.platform()} ${os.arch()}` };
-  // ARC tunnels this machine can reach: ARC_URLS="A5=http://arc-a5:8091/v1,A6=http://arc-a6:8090/v1". An arm is advertised only
-  // while its tunnel answers and its key (A5_API_KEY ...) is set locally, so a dropped SSH session just stops new claims.
+  // ARC tunnels this machine can reach: ARC_URLS="A5=http://arc-a5:8091/v1,A6=http://arc-a6:8090/v1". An arm is advertised
+  // only while its tunnel answers, so a dropped SSH session just stops new claims for that arm.
+  // The arm's llama.cpp key may live here (A5_API_KEY / A6_API_KEY, never leaves this machine) or on the
+  // console, which then sends it inside the job. Either way each arm has its own: A5 and A6 never share.
   const arcUrls = opts.arcUrls || Object.fromEntries((process.env.ARC_URLS || '').split(',').filter(Boolean).map((p) => p.split(/=(.+)/).slice(0, 2)));
   const onlyArms = opts.arms || (process.env.WORKER_ARMS ? process.env.WORKER_ARMS.split(',') : undefined);
   async function liveArcs() {
     const out = {};
     for (const [arm, url] of Object.entries(arcUrls)) {
-      if (!process.env[`${arm}_API_KEY`]) continue;
-      try { await fetch(`${url.replace(/\/$/, '')}/models`, { headers: { authorization: `Bearer ${process.env[`${arm}_API_KEY`]}` }, signal: AbortSignal.timeout(3000) }); out[arm] = url; } catch { /* tunnel down */ }
+      const local = process.env[`${arm}_API_KEY`];
+      const headers = local ? { authorization: `Bearer ${local}` } : {};
+      // any answer proves the forward is up; the status does not matter (a keyless probe may be refused)
+      try { await fetch(`${url.replace(/\/$/, '')}/models`, { headers, signal: AbortSignal.timeout(3000) }); out[arm] = url; } catch { /* tunnel down */ }
     }
     return out;
   }

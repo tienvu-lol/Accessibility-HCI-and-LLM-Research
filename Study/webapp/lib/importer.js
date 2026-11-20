@@ -23,13 +23,22 @@ function importLine(ctx, text) {
   for (const [rel, f] of Object.entries(rec.files || {})) prefixed[prefix + rel] = f;
   const entries = validateFiles(prefixed, prefix);
   if (!entries.length) throw new Error('no files');
-  let input = 0, output = 0, calls = 0;
+  let input = 0, output = 0, calls = 0, modelId = null;
   for (const { rel, buf } of entries) {
     if (!rel.endsWith('/status.json')) continue;
-    try { const u = JSON.parse(buf.toString('utf8')).usage || {}; input += u.input || 0; output += u.output || 0; calls++; } catch { /* usage unknown */ }
+    try {
+      const st = JSON.parse(buf.toString('utf8'));
+      const u = st.usage || {};
+      input += u.input || 0; output += u.output || 0; calls++;
+      modelId = st.model_id || st.model_version || modelId;
+    } catch { /* usage unknown */ }
   }
   ctx.store.writeFiles(entries);
-  if (!ctx.state.imported.includes(rec.cell)) ctx.coord.addLedger('import', arm, 'repair', input, output, calls);
+  // an imported cell was run elsewhere (on ARC, by hand), so the "machine" is the import itself and
+  // the model is whatever that run recorded; it is real usage, never mock
+  if (!ctx.state.imported.includes(rec.cell)) {
+    ctx.coord.addLedger({ worker: '(imported)', arm, kind: 'repair', model_id: modelId, key_id: null, mock: false }, input, output, calls);
+  }
   ctx.coord.markImported([rec.cell]);
   return arm;
 }

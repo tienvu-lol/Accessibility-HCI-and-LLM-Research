@@ -320,6 +320,110 @@ test('projection switches from estimated to measured once calls finish', async (
   } finally { await s.close(); }
 });
 
+// What the user hit: a mock run left every arm claiming "measured" averages off fabricated tokens.
+test('mock calls are recorded but are never spend and never a measurement basis', async () => {
+  const s = await boot({ MOCK_PROVIDERS: '1' });
+  try {
+    await configure(s);
+    await s.ui('PUT', '/api/pricing', { 'm-A1': { input_per_mtok: 10, output_per_mtok: 20 } });
+    await s.ui('POST', '/api/run/start', { phase: 'repair' });
+    const job = (await claim(s, 1))[0];
+    const [, arm, cond, site] = job.id.split(':');
+    assert.equal(job.mock, true);
+    await s.worker('/api/worker/result', { job_id: job.id, status: 'ok', files: cellFiles(arm, cond, site), usage: { input: 1_000_000, output: 500_000 }, calls: 2 });
+    const st = (await s.ui('GET', '/api/state')).data;
+    const a1 = st.projection.by_arm.find((x) => x.arm === 'A1');
+    assert.equal(a1.basis, 'estimated', 'a fake call cannot make the projection measured');
+    assert.equal(a1.mock_calls, 2);
+    assert.equal(a1.spent_usd, 0);
+    assert.equal(st.projection.spent_usd, 0);
+    assert.equal(st.projection.mock_calls, 2);
+    assert.equal(st.intake.total.input, 0, 'mock tokens are not counted as intake');
+    assert.equal(st.recent_usage[0].mock, true);
+    assert.equal(st.recent_usage[0].cost_usd, 0);
+    // the cell itself still counts as done: the pipeline ran, only the money did not
+    assert.equal(st.arms[0].cells.ok, 1);
+  } finally { await s.close(); }
+});
+
+test('usage rows are facts: machine, model and key are recorded, and a model change does not reprice history', async () => {
+  const s = await boot();
+  try {
+    await configure(s);
+    await s.ui('PUT', '/api/pricing', { 'm-A1': { input_per_mtok: 10, output_per_mtok: 20 } });
+    await s.ui('POST', '/api/run/start', { phase: 'repair' });
+    const job = (await s.worker('/api/worker/claim', { worker_id: 'mac-2', kinds: ['repair'], max: 1, info: { host: 'mac-2', os: 'macOS arm64' } })).data.jobs[0];
+    const [, arm, cond, site] = job.id.split(':');
+    await s.worker('/api/worker/result', { job_id: job.id, status: 'ok', files: cellFiles(arm, cond, site), usage: { input: 1_000_000, output: 500_000 }, calls: 1 });
+    let st = (await s.ui('GET', '/api/state')).data;
+    const row = st.recent_usage[0];
+    assert.equal(row.worker, 'mac-2');
+    assert.equal(row.model_id, 'm-A1');
+    assert.equal(row.key_id, `anthropic:${SECRETS.anthropic.slice(-4)}`);
+    assert.equal(row.mock, false);
+    assert.equal(row.cost_usd, 20);
+    assert.equal(st.projection.spent_usd, 20);
+    const m = st.projection.by_machine.find((x) => x.id === 'mac-2');
+    assert.equal(m.calls, 1);
+    assert.equal(m.cost_usd, 20);
+    assert.equal(m.share_pct, 100);
+    assert.deepEqual(m.arms.map((a) => a.arm), ['A1']);
+    const k = st.projection.by_key.find((x) => x.id === row.key_id);
+    assert.equal(k.cost_usd, 20);
+    assert.equal(k.model_id, 'm-A1');
+    // point A1 at a different model: spend already booked stays, but the basis is no longer measured
+    assert.equal((await s.ui('PUT', '/api/arms/A1', { provider: 'anthropic', model_id: 'm-A1-next' })).status, 200);
+    st = (await s.ui('GET', '/api/state')).data;
+    const a1 = st.projection.by_arm.find((x) => x.arm === 'A1');
+    assert.equal(st.projection.spent_usd, 20, 'history is not repriced when the model changes');
+    assert.equal(a1.spent_usd, 20);
+    assert.equal(a1.basis, 'estimated', 'the new model has no finished calls yet');
+    assert.equal(a1.model_id, 'm-A1-next');
+  } finally { await s.close(); }
+});
+
+test('the cell matrix records which machine ran each cell', async () => {
+  const s = await boot();
+  try {
+    await configure(s);
+    await s.ui('POST', '/api/run/start', { phase: 'repair' });
+    const job = (await s.worker('/api/worker/claim', { worker_id: 'laptop-b', kinds: ['repair'], max: 1 })).data.jobs[0];
+    const [, arm, cond, site] = job.id.split(':');
+    await s.worker('/api/worker/result', { job_id: job.id, status: 'ok', files: cellFiles(arm, cond, site), usage: { input: 1, output: 1 }, calls: 1 });
+    const st = (await s.ui('GET', '/api/state')).data;
+    const me = st.machines.find((m) => m.id === 'laptop-b');
+    assert.ok(me, 'the machine is listed');
+    assert.equal(st.matrix_workers[arm][cond][SITES.indexOf(site)], me.char);
+    assert.equal(me.cells, 1);
+    // every other cell is unattributed
+    assert.equal(st.matrix_workers[arm][cond].replace(new RegExp(me.char, 'g'), '').replace(/-/g, ''), '');
+  } finally { await s.close(); }
+});
+
+test('POST /api/usage/reset archives the recorded usage and zeroes spend', async () => {
+  const s = await boot();
+  try {
+    await configure(s);
+    await s.ui('PUT', '/api/pricing', { 'm-A1': { input_per_mtok: 10, output_per_mtok: 20 } });
+    await s.ui('POST', '/api/run/start', { phase: 'repair' });
+    const job = (await claim(s, 1))[0];
+    const [, arm, cond, site] = job.id.split(':');
+    await s.worker('/api/worker/result', { job_id: job.id, status: 'ok', files: cellFiles(arm, cond, site), usage: { input: 1_000_000, output: 500_000 }, calls: 1 });
+    assert.equal((await s.ui('GET', '/api/state')).data.projection.spent_usd, 20);
+    const r = await s.ui('POST', '/api/usage/reset', {});
+    assert.equal(r.status, 200);
+    assert.equal(r.data.cleared, 1);
+    assert.ok(fs.existsSync(path.join(s.dataDir, r.data.archived_to)), 'the rows are archived, not destroyed');
+    assert.ok(!fs.existsSync(path.join(s.dataDir, 'usage.jsonl')));
+    const st = (await s.ui('GET', '/api/state')).data;
+    assert.equal(st.projection.spent_usd, 0);
+    assert.deepEqual(st.recent_usage, []);
+    assert.equal(st.projection.by_arm.find((x) => x.arm === 'A1').basis, 'estimated');
+    assert.equal(st.projection.baseline, null);
+    assert.equal(st.arms[0].cells.ok, 1, 'finished cells are untouched');
+  } finally { await s.close(); }
+});
+
 test('cost = tokens x pricing, set through PUT /api/pricing', async () => {
   const s = await boot();
   try {

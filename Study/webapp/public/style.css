@@ -166,6 +166,13 @@ summary { cursor: pointer; font-weight: 600; padding: 4px 0; }
 .cell-none { background: transparent; color: #595959; }
 .legend { list-style: none; display: flex; flex-wrap: wrap; gap: 6px 18px; padding: 0; margin: 0 0 6px; }
 
+/* which computer ran a cell: a left edge plus a faint wash, never the only cue (the glyph carries the state) */
+.cell[style*="--machine"] { box-shadow: inset 0 -2px 0 0 var(--machine); }
+.legend-machines { gap: 6px 14px; }
+.mswatch { display: inline-block; width: 12px; height: 12px; border-radius: 3px; vertical-align: -1px; }
+.mchip { display: inline-block; padding: 0 6px; border: 1px solid var(--line); border-radius: 999px; font-size: .92em; white-space: nowrap; }
+.sub-h { font-size: 1rem; margin: 18px 0 4px; }
+
 /* charts, viewer */
 .chart { overflow-x: auto; }
 .chart svg { min-width: 620px; width: 100%; height: auto; display: block; border: 1px solid var(--line); border-radius: 4px; }

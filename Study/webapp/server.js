@@ -100,7 +100,11 @@ function createApp(opts = {}) {
   const rating = optional('./lib/rating');
   const ratingHandler = rating && rating.create({ dataDir, studyDir, secret: auth.secret.toString('hex') });
   let resultsCache = { at: 0, value: null };
-  const activeOpts = () => ({ sites: ctx.state.settings.sites || ctx.siteIds(), conditions: ctx.state.settings.conditions });
+  const activeOpts = () => ({ sites: ctx.state.settings.sites || ctx.siteIds(), conditions: ctx.state.settings.conditions,
+    arms: Object.keys(ctx.state.arms), maxIter: ctx.state.settings.max_iter,
+    // only legacy usage rows need these: rows written now carry the cost they were booked at
+    pricing: ctx.state.pricing,
+    modelBySource: Object.fromEntries(Object.entries(ctx.state.arms).map(([id, a]) => [id, a.model_id])) });
   const resultsFor = () => {
     if (now() - resultsCache.at > 2000) resultsCache = { at: now(), value: results.build(dataDir, activeOpts()) };
     return resultsCache.value;
@@ -117,7 +121,7 @@ function createApp(opts = {}) {
     if (a === 'events' && m === 'GET') return sse.add(req, res);
 
     if (a === 'keys' && b) {
-      if (!keysLib.PROVIDERS.includes(b)) throw new HttpError(400, 'bad provider');
+      if (!keysLib.SLOTS.includes(b)) throw new HttpError(400, 'bad key slot');
       if (m === 'DELETE') ctx.keys.delete(b);
       else if (m === 'PUT') {
         const { key } = await body(req);
@@ -166,6 +170,14 @@ function createApp(opts = {}) {
       else notFound();
       sse.notify();
       return json(res, 200, { ok: true });
+    }
+    // Set the recorded usage aside. Mock/test runs otherwise keep every arm's projection "measured"
+    // off fabricated token counts for good, so there has to be a way to start the books clean.
+    if (a === 'usage' && b === 'reset' && m === 'POST') {
+      const r = ctx.coord.resetLedger();
+      ctx.state.baseline = null;
+      ctx.state.save(); sse.notify();
+      return json(res, 200, { ok: true, ...r });
     }
     if (a === 'projection' && b === 'baseline' && m === 'POST') {
       ctx.state.baseline = stateLib.captureBaseline(ctx);

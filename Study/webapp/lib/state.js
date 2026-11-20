@@ -113,6 +113,7 @@ function warnings(ctx) {
     if (ctx.armKind(id) === 'mainstream' && a.provider && !ctx.mock && !ctx.keys.get(a.provider)) w.push(`${id}: no ${a.provider} key set`);
     if (a.provider === 'gemini') w.push(`${id}: Gemini is the judge only, not a repair arm`);
   }
+  if (ctx.mock) w.push('MOCK_PROVIDERS is on: calls are fake, cost nothing and are excluded from measured averages');
   if (ctx.geminiRejected) w.push('Gemini was rejected as a repair-arm provider (judge only)');
   if (!ctx.mock && !ctx.keys.get('gemini')) w.push('judge: no gemini key set');
   const used = new Set();
@@ -160,10 +161,16 @@ function snapshot(ctx) {
       items: coord.judgeItems(), tokens: { input: j.input, output: j.output }, cost_usd: j.cost_usd,
     },
     matrix: coord.matrix(),
+    ...coord.machineView(agg), // machines[] + matrix_workers: which computer ran each cell
     intake: proj.intake(agg),
     projection: proj.project(ctx, agg, counts, state.baseline),
     recent_usage: ctx.ledger.filter((e) => e.kind !== 'score').slice(-30).reverse()
-      .map((e) => ({ ts: e.ts, source: e.source, arm: e.kind === 'judge' ? 'judge' : e.arm, kind: e.kind, input: e.input, output: e.output, calls: e.calls, cost_usd: proj.cost(ctx, e.kind === 'judge' ? 'judge' : e.arm, e.input, e.output) })),
+      .map((e) => ({ ts: e.ts, worker: e.worker || e.source || 'unknown', source: e.worker || e.source, arm: e.kind === 'judge' ? 'judge' : e.arm,
+        kind: e.kind, model_id: e.model_id || null, key_id: e.key_id || null, mock: e.mock === true,
+        input: e.input, output: e.output, calls: e.calls,
+        // as recorded; only rows written before per-call attribution are priced on read
+        cost_usd: typeof e.cost_usd === 'number' ? e.cost_usd : proj.cost(ctx, e.kind === 'judge' ? 'judge' : e.arm, e.input, e.output),
+        legacy: typeof e.cost_usd !== 'number' })),
     workers: coord.workers(),
     docker: ctx.docker && ctx.docker.snapshot(),
     pricing: state.pricing,
@@ -196,20 +203,59 @@ function demoSnapshot(ctx) {
     };
   });
   const series = Array.from({ length: 120 }, (_, i) => ({ t: now - (119 - i) * 60000, cum_cost_usd: i * 0.9, cum_tokens: i * 40000 }));
+  // three computers sharing the work, so the demo shows the per-machine attribution
+  const demoMachines = [
+    { id: 'demo-laptop-1', os: 'Windows x64', online: true, running: 3, calls: 620, input: 2.1e6, output: 8e5, cost_usd: 55, mock_calls: 0, cells: 520 },
+    { id: 'demo-laptop-2', os: 'macOS arm64', online: true, running: 2, calls: 430, input: 1.4e6, output: 5e5, cost_usd: 38, mock_calls: 0, cells: 380 },
+    { id: '(imported)', os: null, online: false, running: 0, calls: 240, input: 5e5, output: 2e5, cost_usd: 7, mock_calls: 0, cells: 480 },
+  ];
+  const DEMO_CHARS = '012';
   const sources = [...armsOut.map((a) => ({ id: a.id, input: a.tokens.input, output: a.tokens.output, cost_usd: a.cost_usd, calls: a.calls, tokens_per_min: a.tokens_per_min })),
     { id: 'judge', input: 500000, output: 80000, cost_usd: 1.2, calls: 120, tokens_per_min: 900 }];
   return {
     now, run: { phase: 'running', kind: 'repair', started_at: now - 3600000 },
     settings: { budget_usd: 300, sites: null, conditions: conds, max_iter: 3, judge_model_id: 'gemini-demo' },
-    keys: { openai: { set: true, last4: 'demo', source: 'env' }, anthropic: { set: true, last4: 'demo', source: 'ui' }, gemini: { set: false, last4: null, source: null } },
+    keys: { openai: { set: true, last4: 'demo', source: 'env' }, anthropic: { set: true, last4: 'demo', source: 'ui' }, gemini: { set: false, last4: null, source: null },
+      a5: { set: true, last4: 'ds01', source: 'ui' }, a6: { set: false, last4: null, source: null } },
     arms: armsOut,
     judge: { provider: 'gemini', model_id: 'gemini-demo', ready: false, blockers: ['no gemini key set'], items: { total: 360, queued: 360, running: 0, done: 0, failed: 0 }, tokens: { input: 0, output: 0 }, cost_usd: 0 },
     matrix,
-    intake: { total: { input: 4e6, output: 1.5e6, cost_usd: 100 }, rolling5m: { tokens: 25000, cost_usd: 0.9 }, sources, series },
+    machines: demoMachines.map((m, i) => ({ id: m.id, char: DEMO_CHARS[i], online: m.online, host: m.id, os: m.os, running: m.running,
+      calls: m.calls, input: m.input, output: m.output, cost_usd: m.cost_usd, mock_calls: m.mock_calls, cells: m.cells })),
+    matrix_workers: Object.fromEntries(Object.keys(ctx.cfg.arms).map((id) => [id, Object.fromEntries(
+      conds.map((c) => [c, sites.map((_, i) => {
+        const ch = matrix[id][c][i];
+        if (ch === '.' || ch === '-') return '-';          // not run anywhere yet
+        if (ch === 'i') return DEMO_CHARS[2];              // imported cells belong to "(imported)"
+        return DEMO_CHARS[(i + c.length + id.charCodeAt(1)) % 2];
+      }).join('')]))])),
+    intake: { total: { input: 4e6, output: 1.5e6, cost_usd: 100 }, rolling5m: { tokens: 25000, cost_usd: 0.9 }, sources,
+      machines: demoMachines.map((m) => ({ id: m.id, calls: m.calls, input: m.input, output: m.output, cost_usd: m.cost_usd, mock_calls: m.mock_calls })), series },
     projection: {
       budget_usd: 300, spent_usd: 100, remaining_usd: 200, expected_total_usd: 240, over_budget: false, eta_minutes: 95,
-      by_arm: Object.keys(ctx.cfg.arms).map((arm, k) => ({ arm, calls_total: 480, calls_done: 300 * (k + 1), avg_in: 9000, avg_out: 6000, est_cost_usd: arm > 'A4' ? 0 : 35, basis: arm > 'A4' ? 'self-hosted' : k < 2 ? 'measured' : 'estimated' })),
+      baseline: { at: now - 7200000, expected_total_usd: 225 }, baseline_total_usd: 225, variance_usd: 15, variance_pct: 6.7,
+      mock_calls: 0, legacy_calls: 0,
+      by_arm: Object.keys(ctx.cfg.arms).map((arm, k) => ({ arm, model_id: String(ctx.cfg.arms[arm].model_id).replace(/\s*\(.*$/, ''),
+        calls_total: Math.max(480, 300 * (k + 1)), calls_done: 300 * (k + 1),
+        avg_in: 9000, avg_out: 6000, spent_usd: arm > 'A4' ? 0 : 20 * (k + 1), est_cost_usd: arm > 'A4' ? 0 : 35,
+        est_total_usd: (arm > 'A4' ? 0 : 20 * (k + 1)) + (arm > 'A4' ? 0 : 35), mock_calls: 0, legacy_calls: 0,
+        baseline_total_usd: arm > 'A4' ? 0 : 50, variance_usd: arm > 'A4' ? 0 : 5, variance_pct: arm > 'A4' ? null : 10,
+        basis: arm > 'A4' ? 'self-hosted' : k < 2 ? 'measured' : 'estimated' })),
+      by_machine: demoMachines.map((m) => ({ id: m.id, calls: m.calls, input: m.input, output: m.output, cost_usd: m.cost_usd,
+        mock_calls: m.mock_calls, share_pct: m.cost_usd, arms: [{ arm: 'A1', calls: Math.round(m.calls / 2), input: m.input / 2, output: m.output / 2, cost_usd: m.cost_usd / 2 }] })),
+      by_key: [{ id: 'anthropic:demo', arm: 'A1', model_id: 'claude-demo', calls: 600, input: 2e6, output: 8e5, cost_usd: 60 },
+        { id: 'a5:ds01', arm: 'A5', model_id: 'deepseek-demo', calls: 120, input: 9e5, output: 4e5, cost_usd: 0 },
+        { id: 'local:demo-laptop-2', arm: 'A6', model_id: 'qwen-demo', calls: 110, input: 8e5, output: 3e5, cost_usd: 0 }],
     },
+    recent_usage: [
+      ['A1', 0, 'anthropic:demo', 'claude-opus-5-5', 'repair', 2, 16400, 27000, 2.49, 40],
+      ['A6', 1, 'local:demo-laptop-2', 'unsloth/Qwen3.6-35B-A3B-GGUF', 'repair', 2, 16400, 27000, 0, 95],
+      ['A3', 1, 'openai:demo', 'gpt-6.2-astra', 'repair', 1, 8200, 13500, 0.61, 150],
+      ['A5', 0, 'a5:ds01', 'unsloth/DeepSeek-V4-Flash-0731-GGUF', 'repair', 2, 16400, 27000, 0, 210],
+      ['judge', 0, 'gemini:demo', 'gemini-demo', 'judge', 1, 8200, 1000, 0.17, 260],
+    ].map(([arm, mi, key_id, model_id, kind, calls, input, output, cost_usd, agoS]) => ({
+      ts: now - agoS * 1000, worker: demoMachines[mi].id, source: demoMachines[mi].id, arm, kind, model_id, key_id,
+      mock: false, input, output, calls, cost_usd, legacy: false })),
     workers: [{ id: 'demo-worker-1', last_seen: now, slots: 4, running: 3 }],
     pricing: ctx.state.pricing, warnings: ['DEMO mode: synthetic data'],
     human: { built: false, items: 30, raters: 0, ratings_rows: 0 },

@@ -88,9 +88,11 @@ async function runRepair(job, { signal, studyRoot = STUDY } = {}) {
     for (const s of statuses.filter(Boolean)) {
       usage.input += s.usage?.input || 0; usage.output += s.usage?.output || 0; calls += s.attempts || 0;
     }
+    // what the provider said served the call, so the console's usage row names the real model
+    const model_version = statuses.filter(Boolean).map((st) => st.model_version).filter(Boolean).pop() || null;
     const terminal = last.status === 'failed' || last.converged || last.iteration >= job.max_iter;
-    if (last.status === 'ok' && terminal) return { status: 'ok', files, usage, calls, error: null };
-    return { status: 'failed', files, usage, calls, error: scrub(last.reason || 'cell did not reach a terminal iteration', job) };
+    if (last.status === 'ok' && terminal) return { status: 'ok', files, usage, calls, model_version, error: null };
+    return { status: 'failed', files, usage, calls, model_version, error: scrub(last.reason || 'cell did not reach a terminal iteration', job) };
   });
 }
 

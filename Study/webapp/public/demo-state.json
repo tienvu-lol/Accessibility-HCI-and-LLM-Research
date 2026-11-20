@@ -32,6 +32,16 @@
    "set": true,
    "last4": "9xKd",
    "source": "env"
+  },
+  "a5": {
+   "set": true,
+   "last4": "ds01",
+   "source": "ui"
+  },
+  "a6": {
+   "set": false,
+   "last4": null,
+   "source": null
   }
  },
  "arms": [
@@ -925,6 +935,32 @@
     "cum_cost_usd": 143.03,
     "cum_tokens": 5721232
    }
+  ],
+  "machines": [
+   {
+    "id": "demo-laptop-1",
+    "calls": 540,
+    "input": 4430000,
+    "output": 7290000,
+    "cost_usd": 311.4,
+    "mock_calls": 0
+   },
+   {
+    "id": "demo-laptop-2",
+    "calls": 342,
+    "input": 2800000,
+    "output": 4610000,
+    "cost_usd": 220.58,
+    "mock_calls": 0
+   },
+   {
+    "id": "(imported)",
+    "calls": 240,
+    "input": 1960000,
+    "output": 3240000,
+    "cost_usd": 0,
+    "mock_calls": 0
+   }
   ]
  },
  "projection": {
@@ -942,7 +978,15 @@
     "avg_in": 8200,
     "avg_out": 13500,
     "est_cost_usd": 545.04,
-    "basis": "measured"
+    "basis": "measured",
+    "model_id": "claude-opus-5-5",
+    "spent_usd": 264.8,
+    "est_total_usd": 809.84,
+    "mock_calls": 0,
+    "legacy_calls": 0,
+    "baseline_total_usd": 769.35,
+    "variance_usd": 40.49,
+    "variance_pct": 5.3
    },
    {
     "arm": "A2",
@@ -951,7 +995,15 @@
     "avg_in": 8200,
     "avg_out": 13500,
     "est_cost_usd": 109.01,
-    "basis": "measured"
+    "basis": "measured",
+    "model_id": "claude-sonnet-5-5",
+    "spent_usd": 52.96,
+    "est_total_usd": 161.97,
+    "mock_calls": 0,
+    "legacy_calls": 0,
+    "baseline_total_usd": 153.87,
+    "variance_usd": 8.1,
+    "variance_pct": 5.3
    },
    {
     "arm": "A3",
@@ -960,7 +1012,15 @@
     "avg_in": 8200,
     "avg_out": 13500,
     "est_cost_usd": 298.56,
-    "basis": "measured"
+    "basis": "measured",
+    "model_id": "gpt-6.2-astra",
+    "spent_usd": 145.1,
+    "est_total_usd": 443.66,
+    "mock_calls": 0,
+    "legacy_calls": 0,
+    "baseline_total_usd": 421.48,
+    "variance_usd": 22.18,
+    "variance_pct": 5.3
    },
    {
     "arm": "A4",
@@ -969,7 +1029,15 @@
     "avg_in": 8200,
     "avg_out": 13500,
     "est_cost_usd": 29.86,
-    "basis": "estimated"
+    "basis": "estimated",
+    "model_id": "gpt-6.1-sol",
+    "spent_usd": 48.3,
+    "est_total_usd": 78.16,
+    "mock_calls": 0,
+    "legacy_calls": 0,
+    "baseline_total_usd": 74.25,
+    "variance_usd": 3.91,
+    "variance_pct": 5.3
    },
    {
     "arm": "A5",
@@ -978,7 +1046,15 @@
     "avg_in": 8200,
     "avg_out": 13500,
     "est_cost_usd": 0,
-    "basis": "self-hosted"
+    "basis": "self-hosted",
+    "model_id": "unsloth/DeepSeek-V4-Flash-0731-GGUF",
+    "spent_usd": 0,
+    "est_total_usd": 0,
+    "mock_calls": 0,
+    "legacy_calls": 0,
+    "baseline_total_usd": 0,
+    "variance_usd": 0,
+    "variance_pct": null
    },
    {
     "arm": "A6",
@@ -987,7 +1063,148 @@
     "avg_in": 8200,
     "avg_out": 13500,
     "est_cost_usd": 0,
-    "basis": "self-hosted"
+    "basis": "self-hosted",
+    "model_id": "unsloth/Qwen3.6-35B-A3B-GGUF",
+    "spent_usd": 0,
+    "est_total_usd": 0,
+    "mock_calls": 0,
+    "legacy_calls": 0,
+    "baseline_total_usd": 0,
+    "variance_usd": 0,
+    "variance_pct": null
+   }
+  ],
+  "baseline": {
+   "at": "2026-12-02T09:12:00.000Z",
+   "expected_total_usd": 948.2
+  },
+  "baseline_total_usd": 948.2,
+  "variance_usd": 55.4,
+  "variance_pct": 5.8,
+  "mock_calls": 0,
+  "legacy_calls": 0,
+  "by_machine": [
+   {
+    "id": "demo-laptop-1",
+    "calls": 540,
+    "input": 4430000,
+    "output": 7290000,
+    "cost_usd": 311.4,
+    "mock_calls": 0,
+    "share_pct": 58.5,
+    "arms": [
+     {
+      "arm": "A1",
+      "calls": 270,
+      "input": 2215000,
+      "output": 3645000,
+      "cost_usd": 155.7
+     },
+     {
+      "arm": "A3",
+      "calls": 162,
+      "input": 1329000,
+      "output": 2187000,
+      "cost_usd": 93.42
+     }
+    ]
+   },
+   {
+    "id": "demo-laptop-2",
+    "calls": 342,
+    "input": 2800000,
+    "output": 4610000,
+    "cost_usd": 220.58,
+    "mock_calls": 0,
+    "share_pct": 41.5,
+    "arms": [
+     {
+      "arm": "A1",
+      "calls": 171,
+      "input": 1400000,
+      "output": 2305000,
+      "cost_usd": 110.29
+     },
+     {
+      "arm": "A3",
+      "calls": 103,
+      "input": 840000,
+      "output": 1383000,
+      "cost_usd": 66.17
+     }
+    ]
+   },
+   {
+    "id": "(imported)",
+    "calls": 240,
+    "input": 1960000,
+    "output": 3240000,
+    "cost_usd": 0,
+    "mock_calls": 0,
+    "share_pct": 0,
+    "arms": [
+     {
+      "arm": "A1",
+      "calls": 120,
+      "input": 980000,
+      "output": 1620000,
+      "cost_usd": 0
+     },
+     {
+      "arm": "A3",
+      "calls": 72,
+      "input": 588000,
+      "output": 972000,
+      "cost_usd": 0
+     }
+    ]
+   }
+  ],
+  "by_key": [
+   {
+    "id": "anthropic:demo",
+    "arm": "A1",
+    "model_id": "claude-opus-5-5",
+    "calls": 562,
+    "input": 4600000,
+    "output": 7580000,
+    "cost_usd": 317.76
+   },
+   {
+    "id": "openai:demo",
+    "arm": "A3",
+    "model_id": "gpt-6.2-astra",
+    "calls": 320,
+    "input": 2620000,
+    "output": 4320000,
+    "cost_usd": 193.4
+   },
+   {
+    "id": "gemini:demo",
+    "arm": "judge",
+    "model_id": "gemini-3.1-pro-preview",
+    "calls": 120,
+    "input": 980000,
+    "output": 120000,
+    "cost_usd": 20.82
+   },
+   {
+    "id": "a5:ds01",
+    "arm": "A5",
+    "model_id": "unsloth/DeepSeek-V4-Flash-0731-GGUF",
+    "calls": 120,
+    "input": 980000,
+    "output": 1620000,
+    "cost_usd": 0
+   },
+   {
+    "id": "local:demo-laptop-2",
+    "arm": "A6",
+    "model_id": "unsloth/Qwen3.6-35B-A3B-GGUF",
+    "calls": 120,
+    "input": 980000,
+    "output": 1620000,
+    "cost_usd": 0
    }
   ]
  },
@@ -1065,6 +1282,165 @@
    ],
    "cells": 180,
    "rejected": 3
+  }
+ ],
+ "matrix_workers": {
+  "A1": {
+   "naive": "0-01--0101--010101010101--0-0-0-01010101-101--010-01---1-101",
+   "wcag": "10-0101--0-0-010-01--010-0101-1-101-101-10101-1-10-01-101010",
+   "nielsen": "---10101-101--01---10-01010-0101--0-0101--0--1010101-1-10101",
+   "both": "1-10101--010-0-010----10--101-----1-1-101--0101010--1--0---0"
+  },
+  "A2": {
+   "naive": "1-1-1-----1-1---1--0-0--1-1010-0-----0-010101--010101010-010",
+   "wcag": "010101--01010--1010--1-1-1--01-1-10-010-0-0-010101--0101-1--",
+   "nielsen": "10---0-0---------0----1-1----01---101010-01-10-0-0------1010",
+   "both": "01010-01010-0-0101010101010-0-01010-0--1-1---1----01010--1--"
+  },
+  "A3": {
+   "naive": "010-0--1------010----1------0--10--10--1---10---0101010-0-0-",
+   "wcag": "10-0--1--0--1-1--0101-1-1-1------01-----1-1-10-01---1--0--1-",
+   "nielsen": "-1-1--01--01--0-01--01--0-01-1--01--0-01--01010----1---1-1--",
+   "both": "--101-1-1-----1-10---010-0-0--------10----1-1-10-0--1---101-"
+  },
+  "A4": {
+   "naive": "--------101-10----1-10-0-010-----0--10-0---01----0---0-0----",
+   "wcag": "0--1-1-1-1-1--0-0----10---0101---------1-10---0--1--0-----0-",
+   "nielsen": "1--0----1-1---10---0-0--1--01-----1-----1-1-1------0-----0--",
+   "both": "-----1----0---0-0-010-0-0--1--010----10--101---1-1--01-1--0-"
+  },
+  "A5": {
+   "naive": "222222222222222222222222222222222222222222222222222222222222",
+   "wcag": "222222222222222222222222222222222222222222222222222222222222",
+   "nielsen": "222222222222222222222222222222222222222222222222222222222222",
+   "both": "222222222222222222222222222222222222222222222222222222222222"
+  },
+  "A6": {
+   "naive": "2-2222-2-2-22222222-2--2-2-2-2222-22222222222-22222-2222-222",
+   "wcag": "22222222-2222222-22-222222-222--2-2222----2-2-222-222222222-",
+   "nielsen": "22-2222-22--22-2222222222-2--2-2-2-22-2222-22222--2222222--2",
+   "both": "-----2-------222-2----2-222-----22-----2----222-22---2-2----"
+  }
+ },
+ "machines": [
+  {
+   "id": "demo-laptop-1",
+   "char": "0",
+   "online": true,
+   "host": "demo-laptop-1",
+   "os": "Windows x64",
+   "running": 4,
+   "calls": 540,
+   "input": 4430000,
+   "output": 7290000,
+   "cost_usd": 311.4,
+   "mock_calls": 0,
+   "cells": 239
+  },
+  {
+   "id": "demo-laptop-2",
+   "char": "1",
+   "online": true,
+   "host": "demo-laptop-2",
+   "os": "macOS arm64",
+   "running": 2,
+   "calls": 342,
+   "input": 2800000,
+   "output": 4610000,
+   "cost_usd": 220.58,
+   "mock_calls": 0,
+   "cells": 242
+  },
+  {
+   "id": "(imported)",
+   "char": "2",
+   "online": false,
+   "host": null,
+   "os": null,
+   "running": 0,
+   "calls": 240,
+   "input": 1960000,
+   "output": 3240000,
+   "cost_usd": 0,
+   "mock_calls": 0,
+   "cells": 393
+  }
+ ],
+ "recent_usage": [
+  {
+   "ts": "2026-12-02T14:59:20.000Z",
+   "worker": "demo-laptop-1",
+   "source": "demo-laptop-1",
+   "arm": "A1",
+   "kind": "repair",
+   "model_id": "claude-opus-5-5",
+   "key_id": "anthropic:demo",
+   "mock": false,
+   "input": 16400,
+   "output": 27000,
+   "calls": 2,
+   "cost_usd": 2.49,
+   "legacy": false
+  },
+  {
+   "ts": "2026-12-02T14:58:25.000Z",
+   "worker": "demo-laptop-2",
+   "source": "demo-laptop-2",
+   "arm": "A6",
+   "kind": "repair",
+   "model_id": "unsloth/Qwen3.6-35B-A3B-GGUF",
+   "key_id": "local:demo-laptop-2",
+   "mock": false,
+   "input": 16400,
+   "output": 27000,
+   "calls": 2,
+   "cost_usd": 0,
+   "legacy": false
+  },
+  {
+   "ts": "2026-12-02T14:57:30.000Z",
+   "worker": "demo-laptop-2",
+   "source": "demo-laptop-2",
+   "arm": "A3",
+   "kind": "repair",
+   "model_id": "gpt-6.2-astra",
+   "key_id": "openai:demo",
+   "mock": false,
+   "input": 8200,
+   "output": 13500,
+   "calls": 1,
+   "cost_usd": 0.61,
+   "legacy": false
+  },
+  {
+   "ts": "2026-12-02T14:56:30.000Z",
+   "worker": "demo-laptop-1",
+   "source": "demo-laptop-1",
+   "arm": "A5",
+   "kind": "repair",
+   "model_id": "unsloth/DeepSeek-V4-Flash-0731-GGUF",
+   "key_id": "a5:ds01",
+   "mock": false,
+   "input": 16400,
+   "output": 27000,
+   "calls": 2,
+   "cost_usd": 0,
+   "legacy": false
+  },
+  {
+   "ts": "2026-12-02T14:55:40.000Z",
+   "worker": "demo-laptop-1",
+   "source": "demo-laptop-1",
+   "arm": "judge",
+   "kind": "judge",
+   "model_id": "gemini-3.1-pro-preview",
+   "key_id": "gemini:demo",
+   "mock": false,
+   "input": 8200,
+   "output": 1000,
+   "calls": 1,
+   "cost_usd": 0.17,
+   "legacy": false
   }
  ]
 }

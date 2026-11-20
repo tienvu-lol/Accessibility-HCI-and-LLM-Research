@@ -2,6 +2,7 @@
 const crypto = require('crypto');
 const csv = require('./csv');
 const proj = require('./projection');
+const keysLib = require('./keys');
 const { HttpError } = require('./http');
 const { validateFiles } = require('./store');
 const { CONDITIONS } = require('./state');
@@ -82,6 +83,44 @@ function create(ctx, { leaseS = 900 } = {}) {
   };
 
   // ---- readiness
+  // ---- which computer ran what
+  // The matrix is sent once per snapshot, so a machine is one character: an index into `machines`.
+  // '-' = no machine (not run here yet). Imported cells belong to the pseudo-machine "(imported)".
+  const MACHINE_CHARS = '0123456789abcdefghijklmnopqrstuvwxyz';
+  const IMPORTED = '(imported)';
+  function machineView(agg) {
+    const ids = new Set();
+    for (const j of jobs.values()) if (j.worker) ids.add(j.worker);
+    for (const id of workers.keys()) ids.add(id);
+    if (agg) for (const m of agg.machines) ids.add(m.id);
+    if (imported.size) ids.add(IMPORTED);
+    const order = [...ids].filter((id) => id && id !== 'unknown').sort().slice(0, MACHINE_CHARS.length);
+    const idx = new Map(order.map((id, i) => [id, MACHINE_CHARS[i]]));
+    const stats = new Map((agg ? agg.machines : []).map((m) => [m.id, m]));
+    const t = ctx.now();
+    const machines = order.map((id, i) => {
+      const w = workers.get(id), m = stats.get(id) || {};
+      return { id, char: MACHINE_CHARS[i], online: !!w && t - w.last_seen < 60000, host: w && w.info ? w.info.host : null,
+        os: w && w.info ? w.info.os : null, running: w ? runningOn(id) : 0,
+        calls: m.calls || 0, input: m.input || 0, output: m.output || 0, cost_usd: m.cost_usd || 0, mock_calls: m.mock_calls || 0,
+        cells: 0 };
+    });
+    const byChar = new Map(machines.map((m) => [m.char, m]));
+    const cellChar = (arm, cond, site) => {
+      if (imported.has(`${arm}/${cond}/${site}`)) return idx.get(IMPORTED) || '-';
+      const j = jobs.get(`repair:${arm}:${cond}:${site}`);
+      return (j && j.worker && idx.get(j.worker)) || '-';
+    };
+    const matrix_workers = Object.fromEntries(Object.keys(state.arms).map((arm) => [arm, Object.fromEntries(
+      state.settings.conditions.map((cond) => [cond, siteList().map((site) => {
+        const c = cellChar(arm, cond, site);
+        const m = byChar.get(c);
+        if (m) m.cells++;
+        return c;
+      }).join('')]))]));
+    return { machines, matrix_workers };
+  }
+
   const armBlockers = (id) => {
     const a = state.arms[id];
     if (ctx.armKind(id) === 'open_source') {
@@ -181,17 +220,32 @@ function create(ctx, { leaseS = 900 } = {}) {
   }
 
   // ---- claim
+  // What this job was actually dispatched with, kept so the usage row can record it even if the
+  // arm's model or key is changed afterwards. Spend is history; it must not move when settings do.
+  function stamp(j, modelId, keyId) {
+    j.model_id = modelId || null;
+    j.key_id = keyId || null;
+    j.mock = !!ctx.mock;
+  }
+
   function jobPayload(j, w) {
     const base = { id: j.id, kind: j.kind, mock: ctx.mock };
     if (j.kind === 'repair') {
       const a = state.arms[j.arm];
-      if (ctx.armKind(j.arm) === 'open_source') { // base_url is the claiming worker's tunnel; its API key never leaves that machine
+      if (ctx.armKind(j.arm) === 'open_source') { // base_url is the claiming worker's own tunnel
         if (!w.arcs || !w.arcs[j.arm]) return null;
+        // Each open arm has its own llama.cpp credential: A5 (DeepSeek) and A6 (Qwen) never share one.
+        // The console's key for the arm is used when set; otherwise the key stays on the worker, in its
+        // own A5_API_KEY / A6_API_KEY, and never travels at all.
+        const slot = keysLib.armSlot(j.arm);
+        const armKey = slot ? ctx.keys.get(slot) : null;
+        stamp(j, a.model_id, slot && armKey ? ctx.keys.id(slot) : `local:${w.id}`);
         return { ...base, arm: j.arm, condition: j.condition, site: j.site, max_iter: state.settings.max_iter, lease_s: leaseS,
-          provider: a.provider, base_url: w.arcs[j.arm], model_id: a.model_id, api_key_env: ctx.cfg.arms[j.arm].api_key_env, api_key: null };
+          provider: a.provider, base_url: w.arcs[j.arm], model_id: a.model_id, api_key_env: ctx.cfg.arms[j.arm].api_key_env, api_key: armKey };
       }
       const key = ctx.keys.get(a.provider);
       if (!key && !ctx.mock) return null;
+      stamp(j, a.model_id, ctx.keys.id(a.provider));
       return { ...base, arm: j.arm, condition: j.condition, site: j.site, max_iter: state.settings.max_iter, lease_s: leaseS,
         provider: a.provider, base_url: BASE_URL[a.provider] ?? null, model_id: a.model_id,
         api_key_env: ctx.cfg.arms[j.arm].api_key_env, api_key: key };
@@ -208,6 +262,7 @@ function create(ctx, { leaseS = 900 } = {}) {
     }
     const key = ctx.keys.get('gemini');
     if (!key && !ctx.mock) return null;
+    stamp(j, state.settings.judge_model_id, ctx.keys.id('gemini'));
     const variants = {};
     for (const c of CONDITIONS) {
       const its = store.iterations(j.arm, c, j.site);
@@ -290,10 +345,26 @@ function create(ctx, { leaseS = 900 } = {}) {
   }
 
   // ---- results
-  function addLedger(source, arm, kind, input, output, calls) {
-    const e = { ts: ctx.now(), source, arm, kind, input: num(input), output: num(output), calls: num(calls) };
+  // One row per finished call, holding everything needed to attribute it later: the machine that ran
+  // it, the model that served it, the credential that paid, whether it was a mock (test) call, and the
+  // cost at today's price. Nothing downstream reprices it.
+  function addLedger({ worker, arm, kind, model_id, key_id, mock }, input, output, calls) {
+    const e = { ts: ctx.now(), worker: worker || 'unknown', arm, kind,
+      model_id: model_id || null, key_id: key_id || null, mock: !!mock,
+      input: num(input), output: num(output), calls: num(calls) };
+    Object.assign(e, proj.entryCost(ctx, e));
     ctx.ledger.push(e);
     store.appendLine('usage.jsonl', e);
+  }
+
+  // Drop the recorded history (a test run makes every projection "measured" from fabricated tokens).
+  // The file is kept beside the new one so nothing is destroyed, only set aside.
+  function resetLedger() {
+    const n = ctx.ledger.length;
+    const to = `usage.archived-${new Date(ctx.now()).toISOString().replace(/[:.]/g, '-')}.jsonl`;
+    store.renameIfExists('usage.jsonl', to);
+    ctx.ledger.length = 0;
+    return { cleared: n, archived_to: n ? to : null };
   }
 
   function fail(j, error) {
@@ -334,8 +405,11 @@ function create(ctx, { leaseS = 900 } = {}) {
       store.appendLine('verdicts/usage.jsonl', { ts: ctx.now(), site: j.site, arm: j.arm, input: num(usage.input), output: num(usage.output) });
     }
 
-    if (j.kind !== 'score') addLedger(j.worker || 'worker', j.arm, j.kind, usage.input, usage.output, b.calls);
-    else addLedger('worker', j.arm, 'score', 0, 0, 0);
+    // the model the provider actually answered with, when the worker reports it; else what we dispatched
+    const reported = typeof b.model_version === 'string' ? b.model_version.trim().slice(0, 200) : '';
+    const servedBy = reported && reported !== 'mock' ? reported : j.model_id;
+    if (j.kind !== 'score') addLedger({ ...j, model_id: servedBy }, usage.input, usage.output, b.calls);
+    else addLedger({ worker: j.worker, arm: j.arm, kind: 'score', mock: j.mock }, 0, 0, 0);
 
     if (ok) {
       j.state = 'done';
@@ -384,7 +458,7 @@ function create(ctx, { leaseS = 900 } = {}) {
 
   persist();
   return { start, pause, resume, retryFailed, claim, heartbeat, release, result, reap, armCells, finishedRepairs, matrix, judgeItems, armBlockers, judgeBlockers,
-    markImported, addLedger, workers: workerList, setWorkerCtl, runInfo: () => state.run, jobs };
+    markImported, addLedger, resetLedger, machineView, workers: workerList, setWorkerCtl, runInfo: () => state.run, jobs };
 }
 
 module.exports = { create };

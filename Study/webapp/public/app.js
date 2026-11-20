@@ -74,9 +74,12 @@
   function siteList(S) { return S && S.settings && Array.isArray(S.settings.sites) ? S.settings.sites : SITE_IDS; }
 
   /* ---------- Overview ---------- */
-  function phaseStatus(done, total, active) {
+  // `done` is work that produced a usable result. A cell that failed or was truncated is finished, not
+  // done: it is reported separately as `bad` so a phase never reads "Done" while cells are broken.
+  function phaseStatus(done, total, active, bad) {
     if (total > 0 && done >= total) return ['done', 'Done'];
-    if (active || done > 0) return ['active', 'In progress'];
+    if (total > 0 && done + (bad || 0) >= total) return ['attn', (bad || 0) + ' failed'];
+    if (active || done > 0 || bad) return ['active', 'In progress'];
     return ['pending', 'Not started'];
   }
 
@@ -84,20 +87,28 @@
     var main = S.arms.filter(function (a) { return a.kind === 'mainstream'; });
     var open = S.arms.filter(function (a) { return a.kind === 'open_source'; });
     var sum = function (arr, k) { return arr.reduce(function (n, a) { return n + (a.cells[k] || 0); }, 0); };
-    var mainTotal = sum(main, 'total'), mainDone = sum(main, 'ok') + sum(main, 'failed') + sum(main, 'truncated');
-    var openTotal = sum(open, 'total'), openDone = sum(open, 'imported');
+    // repair: ok and imported cells have output; failed and truncated ones do not
+    var mainTotal = sum(main, 'total');
+    var mainDone = sum(main, 'ok') + sum(main, 'imported');
+    var mainBad = sum(main, 'failed') + sum(main, 'truncated');
+    // open arms arrive either by import or, with dispatch on, as ordinary finished cells
+    var openTotal = sum(open, 'total');
+    var openDone = sum(open, 'imported') + sum(open, 'ok');
+    var openBad = sum(open, 'failed') + sum(open, 'truncated');
     var cov = (R && R.coverage) || {};
     var blockers = main.concat([S.judge]).filter(function (a) { return !a.ready; });
     var running = S.run.phase === 'running';
+    // the judge's own queue only holds the items created so far, so the total comes from coverage
+    var judgeTotal = Math.max(cov.judge_items_expected || 0, S.judge.items.total || 0);
     var list = [
       { name: 'Setup', done: blockers.length ? 0 : 1, total: 1, unit: '', note: blockers.length ? blockers.length + ' not ready' : 'Keys and arms ready', state: blockers.length ? ['attn', 'Needs attention'] : ['done', 'Done'] },
-      { name: 'Import open-source', done: openDone, total: openTotal, unit: 'cells' },
-      { name: 'Repair', done: mainDone, total: mainTotal, unit: 'cells', active: running && S.run.kind === 'repair' },
-      { name: 'Score', done: cov.variants_scored || 0, total: cov.variants_expected || 0, unit: 'variants' },
-      { name: 'Judge (Gemini)', done: S.judge.items.done, total: S.judge.items.total, unit: 'items', active: running && S.run.kind === 'judge' },
+      { name: 'Open-source arms (A5, A6)', done: openDone, total: openTotal, bad: openBad, unit: 'cells', active: running && S.run.kind === 'repair' && openDone + openBad < openTotal },
+      { name: 'Repair', done: mainDone, total: mainTotal, bad: mainBad, unit: 'cells', active: running && S.run.kind === 'repair' },
+      { name: 'Score', done: cov.variants_scored || 0, total: cov.variants_expected || 0, unit: 'variants', active: running && S.run.kind === 'score' },
+      { name: 'Judge (Gemini)', done: S.judge.items.done, total: judgeTotal, bad: S.judge.items.failed || 0, unit: 'items', active: running && S.run.kind === 'judge' },
       { name: 'Human rating', done: cov.human_items_complete || 0, total: S.human.items || 0, unit: 'items' }
     ];
-    return list.map(function (s) { s.state = s.state || phaseStatus(s.done, s.total, s.active); return s; });
+    return list.map(function (s) { s.state = s.state || phaseStatus(s.done, s.total, s.active, s.bad); return s; });
   }
 
   function overview(S, R, ui) {
@@ -105,7 +116,7 @@
     var stepHtml = steps(S, R).map(function (s, i) {
       return '<li class="step step-' + s.state[0] + '"><span class="step-n" aria-hidden="true">' + (i + 1) + '</span><div><strong>' + esc(s.name) + '</strong>' +
         '<span class="step-state">' + badge(s.state[0], s.state[1]) + '</span>' +
-        '<span class="step-count">' + (s.note ? esc(s.note) : int(s.done) + ' / ' + int(s.total) + ' ' + esc(s.unit)) + '</span>' +
+        '<span class="step-count">' + (s.note ? esc(s.note) : int(s.done) + ' / ' + int(s.total) + ' ' + esc(s.unit) + (s.bad ? ', ' + int(s.bad) + ' failed' : '')) + '</span>' +
         (s.note ? '' : bar(s.done, s.total, s.name)) + '</div></li>';
     }).join('');
     var run = S.run, running = run.phase === 'running', paused = run.phase === 'paused', busy = ui && ui.busy ? ' disabled' : '';
@@ -159,6 +170,12 @@
     ['anthropic', 'Claude / Anthropic', 'Used by repair arms with provider anthropic.'],
     ['gemini', 'Gemini', 'Judge only. Gemini never repairs, so the judge stays neutral to the arms.']
   ];
+  // One key per open-source arm. They are different llama.cpp servers in different ARC sessions, so
+  // the keys are never interchangeable; either one can also be left on the laptop that tunnels to it.
+  var ARM_KEYS = [
+    ['a5', 'A5 DeepSeek (llama.cpp on ARC)', 'Its own key, separate from A6. Leave empty to use the A5_API_KEY on the laptop running the A5 tunnel.'],
+    ['a6', 'A6 Qwen (llama.cpp on ARC)', 'Its own key, separate from A5. Leave empty to use the A6_API_KEY on the laptop running the A6 tunnel.']
+  ];
 
   function keyCard(S, p) {
     var k = S.keys[p[0]] || { set: false };
@@ -174,7 +191,10 @@
 
   function keys(S) {
     var out = [];
-    out.push(panel('k-keys', 'API keys', '<div class="cards">' + PROVIDERS.map(function (p) { return keyCard(S, p); }).join('') + '</div>', { form: true }));
+    out.push(panel('k-keys', 'API keys', '<div class="cards">' + PROVIDERS.map(function (p) { return keyCard(S, p); }).join('') + '</div>' +
+      '<h3 class="sub-h">Open-source arms</h3>' +
+      '<p class="hint">A5 and A6 are separate self-hosted models with separate credentials. A key set here is sent inside that arm\u2019s jobs and used only by them; with no key here, the arm uses the one on the laptop that holds its tunnel, which never leaves that machine. Spend is attributed per key in Cost.</p>' +
+      '<div class="cards">' + ARM_KEYS.map(function (p) { return keyCard(S, p); }).join('') + '</div>', { form: true }));
 
     var rows = S.arms.map(function (a) {
       var editable = a.kind === 'mainstream';
@@ -182,7 +202,7 @@
         '<td><select aria-label="' + esc(a.id + ' provider') + '" data-field="provider"><option value="openai"' + (a.provider === 'openai' ? ' selected' : '') + '>openai</option><option value="anthropic"' + (a.provider === 'anthropic' ? ' selected' : '') + '>anthropic</option></select></td>' +
         '<td><input aria-label="' + esc(a.id + ' model id') + '" data-field="model_id" value="' + esc(a.model_id) + '" spellcheck="false"></td>' +
         '<td><button type="button" class="btn" data-action="save-arm" data-arm="' + esc(a.id) + '">Save ' + esc(a.id) + '</button></td>' :
-        '<td colspan="3" class="muted">Open-source, run ahead of time on ARC. Import only; never dispatched.</td>';
+        '<td colspan="3" class="muted">Open-source on ARC: dispatched to a laptop with a live tunnel when that setting is on, otherwise imported. Model id and its own key are fixed per arm.</td>';
       var st = a.ready ? badge('done', 'Ready') : badge('attn', 'Blocked') + (a.blockers.length ? ' <span class="sub">' + a.blockers.map(esc).join('; ') + '</span>' : '');
       return '<tr data-arm="' + esc(a.id) + '"><th scope="row">' + esc(a.id) + '</th><td>' + esc(a.label) + '</td><td>' + esc(a.kind === 'open_source' ? 'Open-source' : 'Mainstream') + '</td>' + cell + '<td>' + st + '</td></tr>';
     }).join('');
@@ -221,16 +241,24 @@
   }
 
   /* ---------- Runs ---------- */
+  // Each cell shows its state as a glyph and, as a background tint, the machine that ran it. The tint
+  // is only ever extra information: the glyph and the accessible text carry the state on their own.
   function matrixGrid(S, armId) {
     var m = S.matrix[armId] || {}, sites = siteList(S);
     var conds = Object.keys(m);
     if (!conds.length) return '<p class="muted">No cells planned for this arm.</p>';
+    var who = (S.matrix_workers || {})[armId] || {};
+    var byChar = {};
+    (S.machines || []).forEach(function (x, i) { byChar[x.char] = { id: x.id, hue: (i * 47) % 360 }; });
     var head = '<tr><th scope="col" class="corner">Condition</th>' + sites.map(function (id, i) { return '<th scope="col" class="site"><span class="sr">' + esc(id) + '</span><span aria-hidden="true">' + ((i + 1) % 10 === 0 || i === 0 ? i + 1 : '') + '</span></th>'; }).join('') + '</tr>';
     var body = conds.map(function (c) {
-      var str = String(m[c] || '');
+      var str = String(m[c] || ''), ws = String(who[c] || '');
       return '<tr><th scope="row">' + esc(c) + '</th>' + sites.map(function (id, i) {
         var d = CELL[str.charAt(i)] || CELL['-'];
-        return '<td class="cell cell-' + d[0] + '" title="' + esc(armId + ' ' + c + ' ' + id + ': ' + d[2]) + '"><span aria-hidden="true">' + d[1] + '</span><span class="sr">' + esc(d[2]) + '</span></td>';
+        var mm = byChar[ws.charAt(i)];
+        return '<td class="cell cell-' + d[0] + '"' + (mm ? ' style="--machine:hsl(' + mm.hue + ' 70% 45%)"' : '') +
+          ' title="' + esc(armId + ' ' + c + ' ' + id + ': ' + d[2] + (mm ? ' \u00b7 ' + mm.id : '')) + '">' +
+          '<span aria-hidden="true">' + d[1] + '</span><span class="sr">' + esc(d[2] + (mm ? ', ran by ' + mm.id : '')) + '</span></td>';
       }).join('') + '</tr>';
     }).join('');
     return tableWrap(armId + ' cell matrix', '<table class="matrix"><thead>' + head + '</thead><tbody>' + body + '</tbody></table>');
@@ -254,7 +282,13 @@
     var out = [];
     out.push(panel('r-legend', 'Cell states',
       '<ul class="legend">' + Object.keys(CELL).map(function (k) { return '<li><span class="cell cell-' + CELL[k][0] + ' lg" aria-hidden="true">' + CELL[k][1] + '</span> ' + esc(CELL[k][2]) + '</li>'; }).join('') + '</ul>' +
-      '<p class="hint">Columns are sites in settings order (' + siteList(S).length + '); hover or focus the grid for each cell\u2019s site id.</p>'));
+      '<p class="hint">Columns are sites in settings order (' + siteList(S).length + '); hover or focus the grid for each cell\u2019s site id.</p>' +
+      ((S.machines && S.machines.length) ?
+        '<h3 class="sub-h">Machines</h3><ul class="legend legend-machines">' + S.machines.map(function (x, i) {
+          return '<li><span class="mswatch" style="background:hsl(' + ((i * 47) % 360) + ' 70% 45%)" aria-hidden="true"></span> ' +
+            esc(x.id) + ' <span class="muted">' + int(x.cells) + ' cells' + (x.online ? ', online' : '') + (x.os ? ', ' + esc(x.os) : '') + '</span></li>';
+        }).join('') + '</ul>' +
+        '<p class="hint">A cell is tinted with the colour of the computer that ran it, so you can see how the work was split. The same colours are used in Cost \u2192 Contribution by machine.</p>' : '')));
     S.arms.forEach(function (a) {
       var c = a.cells;
       var counters = ['total', 'queued', 'running', 'ok', 'failed', 'truncated', 'imported', 'converged'].map(function (k) { return '<div><dt>' + esc(k) + '</dt><dd>' + int(c[k]) + '</dd></div>'; }).join('');
@@ -278,6 +312,22 @@
     return out;
   }
 
+  /* ---------- machines: one stable colour per computer, used by Cost and Runs ---------- */
+  // The colour comes from the machine's position in S.machines, which the server sorts by id, so a
+  // machine keeps its colour across reloads and means the same thing in every view.
+  function machineMap(S) {
+    var m = {};
+    (S.machines || []).forEach(function (x, i) { m[x.id] = { i: i, hue: (i * 47) % 360, char: x.char, meta: x }; });
+    return m;
+  }
+  function machineStyle(e) { return 'background:hsl(' + e.hue + ' 70% 45% / .18);border-color:hsl(' + e.hue + ' 70% 45% / .55)'; }
+  function machineChip(S, id, map) {
+    if (!id) return '<span class="muted">n/a</span>';
+    var e = (map || machineMap(S))[id];
+    if (!e) return '<span class="mchip">' + esc(id) + '</span>';
+    return '<span class="mchip" style="' + machineStyle(e) + '">' + esc(id) + '</span>';
+  }
+
   /* ---------- Cost ---------- */
   function cost(S) {
     var I = S.intake;
@@ -292,21 +342,56 @@
       '<p class="hint">Open-source arms count tokens only; their cost is $0.00 unless a price is set.</p>')];
     var P = S.projection;
     var pr = P.by_arm.map(function (b) {
-      return '<tr><th scope="row">' + esc(b.arm) + '</th><td class="num">' + int(b.calls_done) + ' / ' + int(b.calls_total) + '</td><td class="num">' + int(b.avg_in) + '</td><td class="num">' + int(b.avg_out) + '</td><td class="num">' + usd(b.spent_usd) + '</td><td class="num">' + usd(b.est_cost_usd) + '</td><td class="num">' + usd(b.est_total_usd) + '</td><td class="num">' + usd(b.baseline_total_usd) + '</td><td class="num">' + variance(b) + '</td><td>' + badge(b.basis === 'measured' ? 'done' : b.basis === 'estimated' || b.basis === 'unpriced' ? 'attn' : 'pending', b.basis) + '</td></tr>';
+      return '<tr><th scope="row">' + esc(b.arm) + '</th><td>' + esc(b.model_id || 'not set') + '</td><td class="num">' + int(b.calls_done) + ' / ' + int(b.calls_total) + '</td><td class="num">' + int(b.avg_in) + '</td><td class="num">' + int(b.avg_out) + '</td><td class="num">' + usd(b.spent_usd) + '</td><td class="num">' + usd(b.est_cost_usd) + '</td><td class="num">' + usd(b.est_total_usd) + '</td><td class="num">' + usd(b.baseline_total_usd) + '</td><td class="num">' + variance(b) + '</td><td>' + badge(b.basis === 'measured' ? 'done' : b.basis === 'estimated' || b.basis === 'unpriced' ? 'attn' : 'pending', b.basis) + (b.mock_calls ? ' ' + badge('pending', int(b.mock_calls) + ' test') : '') + '</td></tr>';
     }).join('');
+    var mmap = machineMap(S);
     out.push(panel('c-live', 'Live API usage (newest first)', (S.recent_usage && S.recent_usage.length) ?
-      tableWrap('Recent usage', '<table class="grid compact"><thead><tr><th scope="col">When</th><th scope="col">Source</th><th scope="col">Arm</th><th scope="col" class="num">Calls</th><th scope="col" class="num">Tokens in</th><th scope="col" class="num">Tokens out</th><th scope="col" class="num">Cost</th></tr></thead><tbody>' +
-        S.recent_usage.map(function (u) { return '<tr><th scope="row">' + esc(ago(u.ts, S.now)) + '</th><td>' + esc(u.source) + '</td><td>' + esc(u.arm) + '</td><td class="num">' + int(u.calls) + '</td><td class="num">' + int(u.input) + '</td><td class="num">' + int(u.output) + '</td><td class="num">' + usd(u.cost_usd) + '</td></tr>'; }).join('') + '</tbody></table>') +
-      '<p class="hint">One row per finished job as its result arrives. This list and the totals update live.</p>' :
+      tableWrap('Recent usage', '<table class="grid compact"><thead><tr><th scope="col">When</th><th scope="col">Machine</th><th scope="col">Arm</th><th scope="col">Model</th><th scope="col">Key</th><th scope="col" class="num">Calls</th><th scope="col" class="num">Tokens in</th><th scope="col" class="num">Tokens out</th><th scope="col" class="num">Cost</th></tr></thead><tbody>' +
+        S.recent_usage.map(function (u) {
+          return '<tr><th scope="row">' + esc(ago(u.ts, S.now)) + '</th><td>' + machineChip(S, u.worker, mmap) + '</td><td>' + esc(u.arm) + '</td>' +
+            '<td>' + esc(u.model_id || 'n/a') + '</td><td>' + (u.key_id ? '<code>' + esc(u.key_id) + '</code>' : '<span class="muted">n/a</span>') + '</td>' +
+            '<td class="num">' + int(u.calls) + '</td><td class="num">' + int(u.input) + '</td><td class="num">' + int(u.output) + '</td>' +
+            '<td class="num">' + (u.mock ? badge('pending', 'test') : usd(u.cost_usd)) + (u.legacy ? ' ' + badge('attn', 'legacy') : '') + '</td></tr>';
+        }).join('') + '</tbody></table>') +
+      '<p class="hint">One row per finished job as its result arrives, with the machine that ran it, the model that served it and the key that paid. Rows marked <em>test</em> came from a mock run and cost nothing; <em>legacy</em> rows predate per-call attribution and are priced on read.</p>' :
       empty('No usage yet', 'Rows appear here as workers report finished calls.')));
+
+    // --- who ran what, and what it cost per machine
+    var mach = P.by_machine || [];
+    var mRows = mach.map(function (m) {
+      var e = mmap[m.id];
+      return '<tr' + (e ? ' style="' + machineStyle(e) + '"' : '') + '><th scope="row">' + machineChip(S, m.id, mmap) + '</th>' +
+        '<td class="num">' + int(m.calls) + '</td><td class="num">' + int(m.input) + '</td><td class="num">' + int(m.output) + '</td>' +
+        '<td class="num">' + usd(m.cost_usd) + '</td><td class="num">' + (m.share_pct === null ? 'n/a' : m.share_pct.toFixed(1) + '%') + '</td>' +
+        '<td>' + (m.arms.length ? m.arms.map(function (a) { return esc(a.arm) + ' ' + usd(a.cost_usd) + ' (' + int(a.calls) + ')'; }).join(', ') : '<span class="muted">none</span>') +
+        '</td><td class="num">' + (m.mock_calls ? int(m.mock_calls) : '0') + '</td></tr>';
+    }).join('');
+    var kRows = (P.by_key || []).map(function (k) {
+      return '<tr><th scope="row"><code>' + esc(k.id) + '</code></th><td>' + esc(k.arm) + '</td><td>' + esc(k.model_id || 'n/a') + '</td>' +
+        '<td class="num">' + int(k.calls) + '</td><td class="num">' + int(k.input) + '</td><td class="num">' + int(k.output) + '</td><td class="num">' + usd(k.cost_usd) + '</td></tr>';
+    }).join('');
+    out.push(panel('c-machines', 'Contribution by machine',
+      (mach.length ?
+        tableWrap('Cost by machine', '<table class="grid"><thead><tr><th scope="col">Machine</th><th scope="col" class="num">Calls</th><th scope="col" class="num">Tokens in</th><th scope="col" class="num">Tokens out</th><th scope="col" class="num">Spent</th><th scope="col" class="num">Share</th><th scope="col">By arm</th><th scope="col" class="num">Test calls</th></tr></thead><tbody>' + mRows + '</tbody></table>') +
+        '<p class="hint">Every finished call is attributed to the computer that ran it, so you can see which machine contributed what. Imported cells are attributed to <code>(imported)</code>. Test calls are counted but cost nothing. The same colour marks that machine in the Runs matrix.</p>'
+        : empty('Nothing recorded yet', 'Rows appear once a worker finishes a job.')) +
+      '<h3 class="sub-h">Spend by API key</h3>' +
+      (kRows ? tableWrap('Cost by key', '<table class="grid"><thead><tr><th scope="col">Key</th><th scope="col">Arm</th><th scope="col">Model</th><th scope="col" class="num">Calls</th><th scope="col" class="num">Tokens in</th><th scope="col" class="num">Tokens out</th><th scope="col" class="num">Spent</th></tr></thead><tbody>' + kRows + '</tbody></table>') +
+        '<p class="hint">Keys appear as slot plus the last four characters, never the key itself. A5 and A6 have separate keys, so their spend is separate. <code>local:&lt;machine&gt;</code> means the arm used the key held on that laptop.</p>'
+        : empty('No key attribution yet', 'Calls finished before this was recorded show under legacy rows instead.'))));
     out.push(panel('c-proj', 'Projection by arm',
       '<p>Expected total <strong>' + usd(P.expected_total_usd) + '</strong> against a budget of ' + usd(P.budget_usd) + '; ETA ' + mins(P.eta_minutes) + '.' +
       (P.baseline ? ' Projected at start ' + usd(P.baseline.expected_total_usd) + ' (' + esc(when(P.baseline.at)) + '); now ' + variance(P) + '.' : ' No baseline yet: it is taken when you first start a phase.') + '</p>' +
       '<form data-form="budget" class="row" autocomplete="off"><label for="cost-budget">Budget cap (USD)</label> <input id="cost-budget" name="budget_usd" type="number" min="0" step="1" required value="' + esc(P.budget_usd) + '"> <button type="submit" class="btn btn-primary">Update cap</button></form>' +
       '<p class="hint">The cap is a hard stop: no new job is dispatched once spent plus the estimate for running jobs reaches it. Change it any time; it applies to the next job.</p>' +
-      '<p><button type="button" class="btn" data-action="rebaseline">Reset baseline to now</button></p>' +
-      tableWrap('Projection by arm', '<table class="grid"><thead><tr><th scope="col">Arm</th><th scope="col" class="num">Calls done / total</th><th scope="col" class="num">Avg tokens in</th><th scope="col" class="num">Avg tokens out</th><th scope="col" class="num">Spent</th><th scope="col" class="num">Remaining (est.)</th><th scope="col" class="num">Projected total</th><th scope="col" class="num">At start</th><th scope="col" class="num">Change</th><th scope="col">Basis</th></tr></thead><tbody>' + pr + '</tbody></table>') +
-      '<p class="hint">Measured = from finished calls. Estimated = from prompt sizes before any data. Self-hosted = tokens only. Unpriced = no price entry for the model, so its cost is counted as $0 (add a price). The judge row is included in the expected total.</p>', { form: true }));
+      '<p><button type="button" class="btn" data-action="rebaseline">Reset baseline to now</button> ' +
+      '<button type="button" class="btn btn-danger" data-action="reset-usage">Clear usage history</button></p>' +
+      ((P.mock_calls || P.legacy_calls) ? notice('warn',
+        '<p>' + (P.mock_calls ? '<strong>' + int(P.mock_calls) + ' mock (test) calls</strong> are recorded. They cost nothing and are excluded from spend and from the measured averages. ' : '') +
+        (P.legacy_calls ? '<strong>' + int(P.legacy_calls) + ' rows predate per-call attribution</strong>, so they carry no machine, model or key and are priced at today\u2019s rate for the arm\u2019s current model. ' : '') +
+        'Clear the usage history to start the books from a known-clean state.</p>') : '') +
+      tableWrap('Projection by arm', '<table class="grid"><thead><tr><th scope="col">Arm</th><th scope="col">Model</th><th scope="col" class="num">Calls done / total</th><th scope="col" class="num">Avg tokens in</th><th scope="col" class="num">Avg tokens out</th><th scope="col" class="num">Spent</th><th scope="col" class="num">Remaining (est.)</th><th scope="col" class="num">Projected total</th><th scope="col" class="num">At start</th><th scope="col" class="num">Change</th><th scope="col">Basis</th></tr></thead><tbody>' + pr + '</tbody></table>') +
+      '<p class="hint">Measured = from real finished calls on the model the arm uses <em>now</em>; change an arm\u2019s model and it falls back to estimated until that model has data. Mock (test) calls never count. Estimated = from prompt sizes. Self-hosted = tokens only, no price set. Unpriced = no price entry for the model, so its cost is counted as $0 (add a price). The judge row is included in the expected total.</p>', { form: true }));
     return out;
   }
 
@@ -693,6 +778,11 @@
     else if (a === 'view-fix') { var fx = R.fig6[+t.dataset.i]; ui.viewer = { site: fx.site, arm: fx.arm, condition: fx.condition, before_url: fx.before_url, after_url: fx.after_url }; render(); }
     else if (a === 'close-viewer') { ui.viewer = null; render(); }
     else if (a === 'rebaseline') { if (window.confirm('Replace the start projection with the current one?')) save('Baseline reset', 'POST', '/api/projection/baseline', {}); }
+    else if (a === 'reset-usage') {
+      if (window.confirm('Clear the recorded API usage?\n\nEvery row is moved to an archive file on the server and the spend, the measured averages and the start baseline go back to zero. Use this after a test run. Finished cells and results are not touched.')) {
+        save('Usage history cleared', 'POST', '/api/usage/reset', {});
+      }
+    }
     else if (a === 'do-import') doImport();
     else if (a === 'logout') { (DEMO ? Promise.resolve() : fetch('/api/logout', { method: 'POST', credentials: 'same-origin' })).then(function () { location.href = '/login.html' + (DEMO ? '?demo=1' : ''); }); }
   }

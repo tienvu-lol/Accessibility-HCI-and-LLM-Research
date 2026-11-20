@@ -5,9 +5,9 @@ const os = require('os');
 const path = require('path');
 const { createApp } = require('../server');
 
-function boot() {
+function boot(env = {}) {
   const dataDir = fs.mkdtempSync(path.join(os.tmpdir(), 'arc-'));
-  const app = createApp({ dataDir, env: { MOCK_PROVIDERS: '1', WORKER_TOKEN: 'wt' } });
+  const app = createApp({ dataDir, env: { MOCK_PROVIDERS: '1', WORKER_TOKEN: 'wt', ...env } });
   const { coord, state } = app.ctx;
   for (const a of ['A1', 'A2', 'A3', 'A4']) state.arms[a] = { provider: 'openai', model_id: 'm' };
   state.settings.sites = ['UNI-01'];
@@ -56,4 +56,43 @@ test('a worker that drops its tunnel stops receiving open-arm jobs; bad urls are
   assert.equal(coord.start('repair').ok, true);
   assert.ok(coord.claim({ worker_id: 'w', max: 50, arcs: ARCS }).some((j) => j.arm === 'A5'));
   assert.ok(coord.claim({ worker_id: 'w', max: 50, arcs: {} }).every((j) => j.arm !== 'A5')); // tunnel down
+});
+
+test('A5 and A6 take separate keys: each arm gets its own, and never the other one', () => {
+  // the two arms are different llama.cpp servers in different ARC sessions
+  const { coord, state } = boot({ A5_API_KEY: 'deepseek-key-1111', A6_API_KEY: 'qwen-key-2222' });
+  state.settings.dispatch_open = true;
+  coord.claim({ worker_id: 'mac', max: 0, arcs: ARCS });
+  assert.equal(coord.start('repair').ok, true);
+  const jobs = coord.claim({ worker_id: 'mac', max: 50, arcs: ARCS }).filter((j) => /^A[56]$/.test(j.arm));
+  const byArm = Object.fromEntries(jobs.map((j) => [j.arm, j]));
+  assert.equal(byArm.A5.api_key, 'deepseek-key-1111');
+  assert.equal(byArm.A5.api_key_env, 'A5_API_KEY');
+  assert.equal(byArm.A6.api_key, 'qwen-key-2222');
+  assert.equal(byArm.A6.api_key_env, 'A6_API_KEY');
+  assert.notEqual(byArm.A5.api_key, byArm.A6.api_key);
+  // and the spend each one causes is attributed to its own key, not pooled
+  assert.equal(coord.jobs.get(byArm.A5.id).key_id, 'a5:1111');
+  assert.equal(coord.jobs.get(byArm.A6.id).key_id, 'a6:2222');
+});
+
+test('with no key on the console the open arm uses the one on its worker, which never travels', () => {
+  const { coord, state } = boot();
+  state.settings.dispatch_open = true;
+  coord.claim({ worker_id: 'mac', max: 0, arcs: ARCS });
+  coord.start('repair');
+  const j = coord.claim({ worker_id: 'mac', max: 50, arcs: ARCS }).find((x) => x.arm === 'A5');
+  assert.equal(j.api_key, null, 'nothing to send: the key stays in the worker\u2019s own A5_API_KEY');
+  assert.equal(j.api_key_env, 'A5_API_KEY');
+  assert.equal(coord.jobs.get(j.id).key_id, 'local:mac', 'spend is still attributed, to that machine\u2019s own key');
+});
+
+test('one arm keyed on the console and the other on the laptop work side by side', () => {
+  const { coord, state } = boot({ A6_API_KEY: 'qwen-key-2222' });
+  state.settings.dispatch_open = true;
+  coord.claim({ worker_id: 'mac', max: 0, arcs: ARCS });
+  coord.start('repair');
+  const jobs = coord.claim({ worker_id: 'mac', max: 50, arcs: ARCS });
+  assert.equal(jobs.find((j) => j.arm === 'A5').api_key, null);
+  assert.equal(jobs.find((j) => j.arm === 'A6').api_key, 'qwen-key-2222');
 });
