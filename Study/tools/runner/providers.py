@@ -49,10 +49,13 @@ def build_request(arm, prompt, cfg, api_key="KEY"):
         headers = {"x-api-key": api_key, "anthropic-version": "2023-06-01",
                    "content-type": "application/json"}
         return a.get("base_url") or ANTHROPIC_URL, headers, body
-    body = {"model": a["model_id"], "max_tokens": hc["max_tokens"],
+    hosted = a.get("provider") in ("openai", "gemini")
+    # OpenAI chat models reject max_tokens; hosted APIs reject the llama.cpp-only chat_template_kwargs
+    limit = "max_completion_tokens" if a.get("provider") == "openai" else "max_tokens"
+    body = {"model": a["model_id"], limit: hc["max_tokens"],
             "temperature": hc["temperature"], "top_p": hc["top_p"],
             "messages": [{"role": "user", "content": prompt}]}
-    if hc["reasoning"] == "disabled":
+    if hc["reasoning"] == "disabled" and not hosted:
         body["chat_template_kwargs"] = {"enable_thinking": False}
     headers = {"authorization": "Bearer " + api_key, "content-type": "application/json"}
     return (a["base_url"] or "").rstrip("/") + "/chat/completions", headers, body

@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rate pages</title>
+<link rel="stylesheet" href="/rate.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="bar">
+  <p class="brand">Page rating</p>
+  <div id="session" class="session" hidden>
+    <span id="who"></span>
+    <button type="button" id="switch-name" class="link">Change name</button>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+  <section id="screen-name" class="narrow" aria-labelledby="name-h">
+    <h1 id="name-h">Rate two versions of a page</h1>
+    <p>For each question choose which version, A or B, does better, or Tie. Your name is all we need. Use the same name later to pick up where you stopped.</p>
+    <form id="name-form" novalidate>
+      <label for="name">Your name</label>
+      <input id="name" name="name" type="text" autocomplete="name" maxlength="64" aria-describedby="name-err" required>
+      <p id="name-err" class="err" role="alert"></p>
+      <button type="submit" class="primary">Start</button>
+    </form>
+  </section>
+
+  <section id="screen-rate" hidden aria-labelledby="item-h">
+    <div class="item-head">
+      <h1 id="item-h" tabindex="-1">Item <span id="item-pos"></span> of <span id="item-total"></span></h1>
+      <div class="meter" role="progressbar" aria-label="Items finished" aria-valuemin="0" aria-valuenow="0" aria-valuemax="30" id="meter">
+        <div class="meter-fill" id="meter-fill"></div>
+      </div>
+      <p class="muted" id="meter-text"></p>
+      <nav class="nav" aria-label="Items">
+        <button type="button" id="prev">Previous item (p)</button>
+        <button type="button" id="next">Next item (n)</button>
+      </nav>
+    </div>
+
+    <p id="load-err" class="err" role="alert"></p>
+    <div id="load-retry" hidden><button type="button" id="retry-load">Retry loading this item</button></div>
+
+    <div class="panel" id="rubric" aria-live="polite">
+      <h2 id="rubric-title"></h2>
+      <p id="rubric-anchor"></p>
+    </div>
+
+    <div class="pagebar">
+      <label for="page">Page shown in both versions</label>
+      <select id="page"></select>
+    </div>
+
+    <div class="frames">
+      <figure><figcaption>Version A</figcaption><iframe id="frame-a" title="Version A" sandbox="allow-same-origin" referrerpolicy="no-referrer"></iframe></figure>
+      <figure><figcaption>Version B</figcaption><iframe id="frame-b" title="Version B" sandbox="allow-same-origin" referrerpolicy="no-referrer"></iframe></figure>
+    </div>
+
+    <h2 class="qs-h" id="qs-h">Questions</h2>
+    <p class="muted">Keys: with a question focused, 1 = A, 2 = B, 3 = Tie. Outside a note box, n = next item, p = previous item. Answers save as you go.</p>
+    <div id="questions" aria-labelledby="qs-h"></div>
+  </section>
+
+  <section id="screen-done" class="narrow" hidden aria-labelledby="done-h">
+    <h1 id="done-h" tabindex="-1">Thank you</h1>
+    <p id="done-text"></p>
+    <button type="button" id="review" class="primary">Review my answers</button>
+  </section>
+</main>
+<p id="status" class="sr" role="status"></p>
+<script src="/rate.js"></script>
+</body>
+</html>

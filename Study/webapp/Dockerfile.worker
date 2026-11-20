@@ -1,0 +1,19 @@
+# Build context = Study/ (Railway Root Directory = Study; Dockerfile path webapp/Dockerfile.worker)
+# Keep the Playwright tag equal to the playwright version locked in Study/package-lock.json.
+FROM mcr.microsoft.com/playwright:v1.65.0-noble
+COPY --from=node:24-bookworm-slim /usr/local/bin/node /usr/local/bin/node
+RUN apt-get update && apt-get install -y --no-install-recommends python3 && rm -rf /var/lib/apt/lists/*
+WORKDIR /app
+COPY package.json package-lock.json ./
+RUN npm ci
+COPY webapp/worker.js ./webapp/worker.js
+COPY webapp/lib/runjob.js ./webapp/lib/runjob.js
+COPY webapp/worker ./webapp/worker
+COPY sample ./sample
+COPY config ./config
+COPY prompts ./prompts
+COPY criteria ./criteria
+COPY baseline ./baseline
+COPY tools ./tools
+USER pwuser
+CMD ["node", "webapp/worker.js"]

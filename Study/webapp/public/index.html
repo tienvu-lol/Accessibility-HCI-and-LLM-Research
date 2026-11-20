@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Repair Study Console</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#h1">Skip to main content</a>
+<header class="top">
+  <div class="top-row">
+    <p class="brand">Repair Study Console</p>
+    <div id="runpill" class="runpill" role="status" aria-live="polite"></div>
+    <div class="top-links">
+      <a href="/rate">Rating page</a>
+      <button type="button" class="linkbtn" data-action="logout">Sign out</button>
+    </div>
+  </div>
+  <nav id="nav" class="tabs" aria-label="Console views"></nav>
+</header>
+<main id="main">
+  <h1 id="h1" tabindex="-1">Overview</h1>
+  <div id="flash"></div>
+  <div id="view" class="view"><p class="muted">Loading the latest state...</p></div>
+  <noscript><p class="notice notice-error">This console needs JavaScript. Enable it and reload.</p></noscript>
+</main>
+<script src="charts.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

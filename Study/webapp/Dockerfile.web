@@ -1,0 +1,20 @@
+# Build context = Study/ (Railway Root Directory = Study; Dockerfile path webapp/Dockerfile.web)
+FROM node:24-bookworm-slim
+RUN apt-get update && apt-get install -y --no-install-recommends python3 && rm -rf /var/lib/apt/lists/*
+WORKDIR /app
+COPY webapp ./webapp
+COPY sample ./sample
+COPY config ./config
+COPY prompts ./prompts
+COPY criteria ./criteria
+COPY baseline ./baseline
+COPY tools ./tools
+COPY metrics ./metrics
+COPY human ./human
+RUN mkdir /data && chown node:node /data
+ENV NODE_ENV=production DATA_DIR=/data PORT=8080
+VOLUME /data
+USER node
+EXPOSE 8080
+HEALTHCHECK --interval=30s --timeout=5s --start-period=15s CMD node -e "fetch('http://127.0.0.1:'+(process.env.PORT||8080)+'/healthz').then(r=>process.exit(r.ok?0:1),()=>process.exit(1))"
+CMD ["node", "webapp/server.js"]

@@ -1,0 +1,347 @@
+// Job queue, leases, budget gate and result ingestion for repair / score / judge jobs.
+const crypto = require('crypto');
+const csv = require('./csv');
+const proj = require('./projection');
+const { HttpError } = require('./http');
+const { validateFiles } = require('./store');
+const { CONDITIONS } = require('./state');
+
+const MAX_ATTEMPTS = 3;
+const BASE_URL = { anthropic: null, openai: 'https://api.openai.com/v1', gemini: 'https://generativelanguage.googleapis.com/v1beta/openai' };
+const METRICS_HEADER = ['site_id', 'category', 'generator_group', 'arm', 'condition', 'iteration', 'page', 'breakpoint', 'axe_violations',
+  'axe_passes', 'axe_incomplete', 'violation_rate', 'ax_name_chars', 'ax_interactive_nodes', 'name_chars_per_interactive', 'tab_order_mismatches',
+  'keyboard_traps', 'unreachable_interactives', 'focus_visible_fails', 'heading_skips', 'text_chars', 'element_count', 'status'];
+const METRICS_KEY = [0, 3, 4, 5, 6, 7];
+const JUDGE_HEADER = ['site_id', 'arm', 'question', 'condition', 'rank', 'judge_model', 'call_id'];
+const KEY_HEADER = ['site_id', 'arm', 'label_shown', 'condition'];
+const num = (v) => (Number.isFinite(v) && v >= 0 ? Math.round(v) : 0);
+
+function create(ctx, { leaseS = 900 } = {}) {
+  const { state, store } = ctx;
+  const jobs = new Map(state.queue.map((j) => [j.id, { ...j }]));
+  const imported = new Set(state.imported);
+  const workers = new Map();
+  const scored = new Set();
+  const mainstream = () => Object.keys(state.arms).filter((a) => ctx.armKind(a) === 'mainstream');
+  const siteList = () => state.settings.sites || ctx.siteIds();
+  const persist = () => {
+    state.queue = [...jobs.values()].map(({ worker, lease_exp, ...j }) => ({ ...j, state: j.state === 'running' ? 'queued' : j.state }));
+    state.imported = [...imported];
+    state.save();
+  };
+
+  // ---- metrics seed + scored index
+  const metricsFile = store.abs('metrics/metrics.csv');
+  if (!store.readText('metrics/metrics.csv')) {
+    const seed = csv.readRows(require('path').join(ctx.studyDir, 'metrics', 'metrics.csv'));
+    if (seed.length) csv.writeAtomic(metricsFile, csv.stringify(seed));
+  }
+  for (const r of csv.readRows(metricsFile).slice(1)) scored.add(`${r[3]}|${r[4]}|${r[0]}`);
+
+  function addJob(kind, arm, condition, site) {
+    const id = kind === 'judge' ? `judge:${site}:${arm}` : `${kind}:${arm}:${condition}:${site}`;
+    if (jobs.has(id)) return jobs.get(id);
+    const j = { id, kind, arm, condition, site, state: 'queued', attempts: 0, error: null };
+    jobs.set(id, j);
+    return j;
+  }
+  const queueScore = (arm, cond, site) => { if (!scored.has(`${arm}|${cond}|${site}`)) addJob('score', arm, cond, site); };
+
+  // ---- cell view
+  function char(arm, cond, site) {
+    if (imported.has(`${arm}/${cond}/${site}`)) return 'i';
+    const j = jobs.get(`repair:${arm}:${cond}:${site}`);
+    if (!j) return '-';
+    if (j.state === 'queued') return '.';
+    if (j.state === 'running') return 'r';
+    return j.state === 'done' ? 'o' : j.final === 't' ? 't' : 'f';
+  }
+  function armCells(arm) {
+    const c = { total: 0, queued: 0, running: 0, ok: 0, failed: 0, truncated: 0, imported: 0, converged: 0 };
+    const name = { '.': 'queued', r: 'running', o: 'ok', f: 'failed', t: 'truncated', i: 'imported' };
+    for (const cond of state.settings.conditions) {
+      for (const site of siteList()) {
+        c.total++;
+        const ch = char(arm, cond, site);
+        if (name[ch]) c[name[ch]]++;
+        if (ch === 'o' && jobs.get(`repair:${arm}:${cond}:${site}`).converged) c.converged++;
+      }
+    }
+    return c;
+  }
+  const matrix = () => Object.fromEntries(Object.keys(state.arms).map((arm) => [arm, Object.fromEntries(
+    state.settings.conditions.map((cond) => [cond, siteList().map((site) => char(arm, cond, site)).join('')]))]));
+  const judgeItems = () => {
+    const n = { total: 0, queued: 0, running: 0, done: 0, failed: 0 };
+    for (const j of jobs.values()) if (j.kind === 'judge') { n.total++; n[j.state]++; }
+    return n;
+  };
+
+  // ---- readiness
+  const armBlockers = (id) => {
+    const a = state.arms[id];
+    if (ctx.armKind(id) === 'open_source') return armCells(id).imported ? [] : ['no imported cells'];
+    const b = [];
+    if (!a.provider) b.push('provider not set');
+    if (!a.model_id) b.push('model not set');
+    if (a.provider && !ctx.mock && !ctx.keys.get(a.provider)) b.push(`no ${a.provider} key`);
+    return b;
+  };
+  const judgeBlockers = () => {
+    const b = [];
+    if (!state.settings.judge_model_id) b.push('judge model not set');
+    if (!ctx.mock && !ctx.keys.get('gemini')) b.push('no gemini key');
+    return b;
+  };
+
+  // ---- run control
+  function reap() {
+    const t = ctx.now();
+    for (const j of jobs.values()) if (j.state === 'running' && j.lease_exp < t) { j.state = 'queued'; j.error = 'lease expired'; }
+    if (state.run.phase === 'running' && ![...jobs.values()].some((j) => j.state === 'queued' || j.state === 'running')) {
+      state.run = { phase: 'idle', kind: null, started_at: null };
+      persist();
+    }
+  }
+
+  function planRepair() {
+    for (const site of siteList()) {
+      for (const cond of state.settings.conditions) {
+        for (const arm of mainstream()) {
+          const j = addJob('repair', arm, cond, site);
+          const last = store.lastStatus(arm, cond, site);
+          if (j.state === 'queued' && last && last.st.status === 'ok' && (last.st.converged || last.n >= state.settings.max_iter)) {
+            Object.assign(j, { state: 'done', final: 'o', converged: !!last.st.converged });
+            queueScore(arm, cond, site);
+          }
+        }
+      }
+    }
+  }
+  const queueBaselines = () => siteList().forEach((site) => queueScore('baseline', 'baseline', site));
+
+  function planScore() {
+    queueBaselines();
+    for (const j of jobs.values()) if (j.kind === 'score' && j.state === 'failed') Object.assign(j, { state: 'queued', attempts: 0, error: null });
+    for (const j of [...jobs.values()]) if (j.kind === 'repair' && j.state === 'done' && j.final === 'o') queueScore(j.arm, j.condition, j.site);
+    for (const cell of imported) queueScore(...cell.split('/'));
+  }
+
+  const hasVariants = (arm, site) => CONDITIONS.every((c) => {
+    const its = store.iterations(arm, c, site);
+    return its.length && store.iterFiles(arm, c, site, its[its.length - 1])['index.html'] !== undefined;
+  });
+  function planJudge() {
+    for (const site of siteList()) for (const arm of Object.keys(state.arms)) if (hasVariants(arm, site)) addJob('judge', arm, null, site);
+  }
+
+  function start(phase, force) {
+    let blockers = [];
+    if (phase === 'repair') blockers = mainstream().flatMap((id) => armBlockers(id).map((b) => `${id}: ${b}`));
+    if (phase === 'judge') {
+      blockers = judgeBlockers();
+      planJudge();
+      if (judgeItems().total === 0) blockers.push('no (site, arm) has all four conditions yet');
+      if (!force) {
+        let open = 0;
+        for (const arm of Object.keys(state.arms)) for (const cond of state.settings.conditions) {
+          for (const site of siteList()) if ('.r-'.includes(char(arm, cond, site))) open++;
+        }
+        if (open) blockers.push(`${open} repair/import cells unfinished (use force to override)`);
+      }
+    }
+    if (blockers.length) return { blockers };
+    if (phase === 'repair') { planRepair(); queueBaselines(); }
+    if (phase === 'score') planScore();
+    state.run = { phase: 'running', kind: phase, started_at: ctx.now() };
+    persist();
+    return { ok: true };
+  }
+  const pause = () => { if (state.run.phase === 'running') { state.run.phase = 'paused'; persist(); } };
+  const resume = () => { if (state.run.phase === 'paused') { state.run.phase = 'running'; persist(); } };
+  function retryFailed() {
+    let n = 0;
+    for (const j of jobs.values()) if (j.state === 'failed') { Object.assign(j, { state: 'queued', attempts: 0, error: null }); n++; }
+    if (n && state.run.phase === 'idle') state.run = { phase: 'running', kind: 'repair', started_at: ctx.now() };
+    persist();
+    return n;
+  }
+
+  // ---- claim
+  function jobPayload(j) {
+    const base = { id: j.id, kind: j.kind, mock: ctx.mock };
+    if (j.kind === 'repair') {
+      const a = state.arms[j.arm];
+      const key = ctx.keys.get(a.provider);
+      if (!key && !ctx.mock) return null;
+      return { ...base, arm: j.arm, condition: j.condition, site: j.site, max_iter: state.settings.max_iter, lease_s: leaseS,
+        provider: a.provider, base_url: BASE_URL[a.provider] ?? null, model_id: a.model_id,
+        api_key_env: ctx.cfg.arms[j.arm].api_key_env, api_key: key };
+    }
+    if (j.kind === 'score') {
+      const slice = ctx.sites.find((s) => s.site_id === j.site).slice_files;
+      const iterations = {};
+      if (j.arm === 'baseline') {
+        iterations['0'] = Object.fromEntries(slice.map((f) => [f, ctx.baselineFile(j.site, f)]));
+      } else {
+        for (const n of store.iterations(j.arm, j.condition, j.site)) iterations[n] = store.iterFiles(j.arm, j.condition, j.site, n);
+      }
+      return { ...base, arm: j.arm, condition: j.condition, site: j.site, slice_files: slice, iterations };
+    }
+    const key = ctx.keys.get('gemini');
+    if (!key && !ctx.mock) return null;
+    const variants = {};
+    for (const c of CONDITIONS) {
+      const its = store.iterations(j.arm, c, j.site);
+      variants[c] = store.iterFiles(j.arm, c, j.site, its[its.length - 1]);
+    }
+    return { ...base, site: j.site, arm: j.arm, seed: parseInt(crypto.createHash('sha1').update(j.id).digest('hex').slice(0, 8), 16),
+      variants, provider: 'gemini', base_url: BASE_URL.gemini, model_id: state.settings.judge_model_id, api_key: key,
+      call_id: `${j.id}:${crypto.randomBytes(4).toString('hex')}` };
+  }
+
+  function claim({ worker_id, kinds, max }) {
+    reap();
+    const id = String(worker_id || 'worker').slice(0, 64);
+    const want = Array.isArray(kinds) ? kinds : ['repair', 'score', 'judge'];
+    const limit = Math.min(Math.max(Number.isInteger(max) ? max : 1, 1), 50);
+    const w = workers.get(id) || { id, slots: limit };
+    Object.assign(w, { last_seen: ctx.now(), slots: Math.max(w.slots, limit) });
+    workers.set(id, w);
+    if (state.run.phase === 'paused') return [];
+
+    const agg = proj.aggregate(ctx, ctx.now());
+    const counts = Object.fromEntries(Object.keys(state.arms).map((a) => { const c = armCells(a); return [a, { done: c.ok + c.failed + c.truncated + c.imported }]; }));
+    const judgeAvg = agg.by.judge.calls ? agg.by.judge.cost_usd / agg.by.judge.calls : 0;
+    const estimate = (j) => (j.kind === 'repair' ? proj.armStats(ctx, agg, j.arm, counts[j.arm].done).perCell : j.kind === 'judge' ? judgeAvg : 0);
+    let committed = agg.total.cost_usd;
+    const running = {};
+    for (const j of jobs.values()) {
+      if (j.state !== 'running') continue;
+      committed += estimate(j);
+      if (j.kind === 'repair') running[j.arm] = (running[j.arm] || 0) + 1;
+    }
+    const out = [];
+    for (const j of jobs.values()) {
+      if (out.length >= limit) break;
+      if (j.state !== 'queued' || !want.includes(j.kind)) continue;
+      if (j.kind === 'repair' && (running[j.arm] || 0) >= ctx.concurrency(j.arm)) continue;
+      const est = estimate(j);
+      if (j.kind !== 'score' && committed + est >= state.settings.budget_usd) continue;
+      const payload = jobPayload(j);
+      if (!payload) continue;
+      Object.assign(j, { state: 'running', worker: id, lease_exp: ctx.now() + leaseS * 1000 });
+      committed += est;
+      if (j.kind === 'repair') running[j.arm] = (running[j.arm] || 0) + 1;
+      out.push(payload);
+    }
+    if (out.length) persist();
+    return out;
+  }
+
+  const getJob = (id) => {
+    const j = jobs.get(id);
+    if (!j) throw new HttpError(404, 'unknown job');
+    return j;
+  };
+  function heartbeat(id) {
+    const j = getJob(id);
+    if (j.state !== 'running') throw new HttpError(409, 'job not running');
+    j.lease_exp = ctx.now() + leaseS * 1000;
+    return { ok: true, lease_s: leaseS };
+  }
+  function release(id, reason, retryable) {
+    const j = getJob(id);
+    if (j.state !== 'running') return { ok: true };
+    j.error = String(reason || 'released').slice(0, 300);
+    j.state = retryable === false ? 'failed' : 'queued';
+    persist();
+    return { ok: true };
+  }
+
+  // ---- results
+  function addLedger(source, arm, kind, input, output, calls) {
+    const e = { ts: ctx.now(), source, arm, kind, input: num(input), output: num(output), calls: num(calls) };
+    ctx.ledger.push(e);
+    store.appendLine('usage.jsonl', e);
+  }
+
+  function fail(j, error) {
+    j.attempts++;
+    j.error = String(error || 'failed').slice(0, 300);
+    j.state = j.attempts >= MAX_ATTEMPTS ? 'failed' : 'queued';
+  }
+
+  const rowsOf = (v, width, j, name) => {
+    if (!Array.isArray(v) || v.length > 5000 || !v.every((r) => Array.isArray(r) && r.length === width && r.every((x) => x === null || typeof x !== 'object')) ||
+      !v.every((r) => r[0] === j.site)) throw new HttpError(400, `bad ${name}`);
+    return v;
+  };
+
+  function result(b) {
+    const j = getJob(b.job_id);
+    if (j.state === 'done' || j.state === 'failed') return { ok: true, ignored: true };
+    const usage = b.usage || {};
+    const ok = b.status === 'ok';
+
+    if (j.kind === 'repair') {
+      const entries = validateFiles(b.files || {}, `runs/${j.arm}/${j.condition}/${j.site}/`);
+      store.writeFiles(entries);
+    } else if (j.kind === 'score' && ok) {
+      const rows = rowsOf(b.rows, METRICS_HEADER.length, j, 'rows');
+      if (!rows.every((r) => r[3] === j.arm && r[4] === j.condition)) throw new HttpError(400, 'rows do not match job');
+      const rules = Array.isArray(b.rules) ? b.rules : [];
+      if (!rules.every((r) => r && r.site_id === j.site && r.arm === j.arm && r.condition === j.condition)) throw new HttpError(400, 'bad rules');
+      csv.upsert(metricsFile, METRICS_HEADER, rows, METRICS_KEY);
+      for (const r of rules) store.appendLine('metrics/axe_rules.jsonl', r);
+      scored.add(`${j.arm}|${j.condition}|${j.site}`);
+    } else if (j.kind === 'judge' && ok) {
+      const rows = rowsOf(b.rows, JUDGE_HEADER.length, j, 'rows');
+      const keyRows = rowsOf(b.key_rows, KEY_HEADER.length, j, 'key_rows');
+      if (![...rows, ...keyRows].every((r) => r[1] === j.arm)) throw new HttpError(400, 'rows do not match job');
+      csv.upsert(store.abs('verdicts/judge_rankings.csv'), JUDGE_HEADER, rows, [0, 1, 2, 3]);
+      csv.upsert(store.abs('blinding_key.csv'), KEY_HEADER, keyRows, [0, 1, 2]);
+      store.appendLine('verdicts/usage.jsonl', { ts: ctx.now(), site: j.site, arm: j.arm, input: num(usage.input), output: num(usage.output) });
+    }
+
+    if (j.kind !== 'score') addLedger('worker', j.arm, j.kind, usage.input, usage.output, b.calls);
+    else addLedger('worker', j.arm, 'score', 0, 0, 0);
+
+    if (ok) {
+      j.state = 'done';
+      j.error = null;
+      if (j.kind === 'repair') {
+        const last = store.lastStatus(j.arm, j.condition, j.site);
+        Object.assign(j, { final: 'o', converged: !!(last && last.st.converged) });
+        queueScore(j.arm, j.condition, j.site);
+      }
+    } else {
+      fail(j, b.error);
+      if (j.kind === 'repair') {
+        const last = store.lastStatus(j.arm, j.condition, j.site);
+        j.final = last && String(last.st.reason || '').startsWith('truncated') ? 't' : 'f';
+      }
+    }
+    persist();
+    return { ok: true, state: j.state };
+  }
+
+  // ---- imports
+  function markImported(cells) {
+    for (const c of cells) { imported.add(c); queueScore(...c.split('/')); }
+    persist();
+  }
+
+  function workerList() {
+    const t = ctx.now();
+    for (const [id, w] of workers) if (t - w.last_seen > 10 * 60000) workers.delete(id);
+    return [...workers.values()].map((w) => ({ id: w.id, last_seen: w.last_seen, slots: w.slots,
+      running: [...jobs.values()].filter((j) => j.state === 'running' && j.worker === w.id).length }));
+  }
+
+  persist();
+  return { start, pause, resume, retryFailed, claim, heartbeat, release, result, reap, armCells, matrix, judgeItems, armBlockers, judgeBlockers,
+    markImported, addLedger, workers: workerList, runInfo: () => state.run, jobs };
+}
+
+module.exports = { create };

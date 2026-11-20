@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sign in | Repair Study Console</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="login-page">
+<main id="main" class="login">
+  <h1 id="h1">Repair Study Console</h1>
+  <p class="lead">Sign in with the shared team password to run the study, watch spend and read results.</p>
+  <form id="login-form" method="post" action="/api/login" novalidate>
+    <label for="password">Password</label>
+    <input id="password" name="password" type="password" autocomplete="current-password" autofocus required aria-describedby="login-help">
+    <p id="login-help" class="hint">Ask the project lead if you do not have it.</p>
+    <div id="login-msg" class="notice" hidden></div>
+    <button id="login-btn" class="btn btn-primary btn-lg" type="submit">Sign in</button>
+  </form>
+  <noscript><p class="notice notice-error">Signing in needs JavaScript. Enable it and reload.</p></noscript>
+</main>
+<script src="charts.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

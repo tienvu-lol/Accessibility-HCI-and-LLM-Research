@@ -1,0 +1,1070 @@
+{
+ "now": "2026-12-02T15:00:00.000Z",
+ "run": {
+  "phase": "running",
+  "kind": "repair",
+  "started_at": "2026-12-02T11:48:00.000Z"
+ },
+ "settings": {
+  "budget_usd": 900,
+  "sites": null,
+  "conditions": [
+   "naive",
+   "wcag",
+   "nielsen",
+   "both"
+  ],
+  "max_iter": 3,
+  "judge_model_id": "gemini-3-pro"
+ },
+ "keys": {
+  "openai": {
+   "set": false,
+   "last4": null,
+   "source": null
+  },
+  "anthropic": {
+   "set": true,
+   "last4": "f3Qa",
+   "source": "ui"
+  },
+  "gemini": {
+   "set": true,
+   "last4": "9xKd",
+   "source": "env"
+  }
+ },
+ "arms": [
+  {
+   "id": "A1",
+   "label": "Opus 5.5",
+   "kind": "mainstream",
+   "provider": "anthropic",
+   "model_id": "claude-opus-5-5",
+   "ready": true,
+   "blockers": [],
+   "concurrency": 12,
+   "cells": {
+    "total": 240,
+    "queued": 82,
+    "running": 5,
+    "ok": 132,
+    "failed": 11,
+    "truncated": 10,
+    "imported": 0,
+    "converged": 74
+   },
+   "tokens": {
+    "input": 2509200,
+    "output": 4131000
+   },
+   "calls": 306,
+   "cost_usd": 347.46,
+   "tokens_per_min": 52000
+  },
+  {
+   "id": "A2",
+   "label": "Sonnet 5.5",
+   "kind": "mainstream",
+   "provider": "anthropic",
+   "model_id": "claude-sonnet-5-5",
+   "ready": true,
+   "blockers": [],
+   "concurrency": 12,
+   "cells": {
+    "total": 240,
+    "queued": 103,
+    "running": 9,
+    "ok": 108,
+    "failed": 10,
+    "truncated": 10,
+    "imported": 0,
+    "converged": 64
+   },
+   "tokens": {
+    "input": 2099200,
+    "output": 3456000
+   },
+   "calls": 256,
+   "cost_usd": 58.14,
+   "tokens_per_min": 43000
+  },
+  {
+   "id": "A3",
+   "label": "Astra",
+   "kind": "mainstream",
+   "provider": "openai",
+   "model_id": "gpt-5-astra",
+   "ready": true,
+   "blockers": [],
+   "concurrency": 12,
+   "cells": {
+    "total": 240,
+    "queued": 137,
+    "running": 13,
+    "ok": 78,
+    "failed": 7,
+    "truncated": 5,
+    "imported": 0,
+    "converged": 48
+   },
+   "tokens": {
+    "input": 1476000,
+    "output": 2430000
+   },
+   "calls": 180,
+   "cost_usd": 111.96,
+   "tokens_per_min": 29000
+  },
+  {
+   "id": "A4",
+   "label": "Astra mini",
+   "kind": "mainstream",
+   "provider": "openai",
+   "model_id": "gpt-5-astra-mini",
+   "ready": false,
+   "blockers": [
+    "No OpenAI key set"
+   ],
+   "concurrency": 12,
+   "cells": {
+    "total": 240,
+    "queued": 157,
+    "running": 13,
+    "ok": 60,
+    "failed": 4,
+    "truncated": 6,
+    "imported": 0,
+    "converged": 35
+   },
+   "tokens": {
+    "input": 1148000,
+    "output": 1890000
+   },
+   "calls": 140,
+   "cost_usd": 8.71,
+   "tokens_per_min": 21000
+  },
+  {
+   "id": "A5",
+   "label": "Open-source Q4",
+   "kind": "open_source",
+   "provider": null,
+   "model_id": "open-q4",
+   "ready": true,
+   "blockers": [],
+   "concurrency": 0,
+   "cells": {
+    "total": 240,
+    "queued": 0,
+    "running": 0,
+    "ok": 0,
+    "failed": 0,
+    "truncated": 0,
+    "imported": 240,
+    "converged": 0
+   },
+   "tokens": {
+    "input": 2352000,
+    "output": 3360000
+   },
+   "calls": 0,
+   "cost_usd": 0,
+   "tokens_per_min": 0
+  },
+  {
+   "id": "A6",
+   "label": "Open-source Q8",
+   "kind": "open_source",
+   "provider": null,
+   "model_id": "open-q8",
+   "ready": true,
+   "blockers": [],
+   "concurrency": 0,
+   "cells": {
+    "total": 213,
+    "queued": 60,
+    "running": 0,
+    "ok": 0,
+    "failed": 0,
+    "truncated": 0,
+    "imported": 153,
+    "converged": 0
+   },
+   "tokens": {
+    "input": 1499400,
+    "output": 2142000
+   },
+   "calls": 0,
+   "cost_usd": 0,
+   "tokens_per_min": 0
+  }
+ ],
+ "judge": {
+  "provider": "gemini",
+  "model_id": "gemini-3-pro",
+  "ready": true,
+  "blockers": [],
+  "items": {
+   "total": 360,
+   "queued": 250,
+   "running": 4,
+   "done": 96,
+   "failed": 10
+  },
+  "tokens": {
+   "input": 3648000,
+   "output": 115200
+  },
+  "cost_usd": 5.71
+ },
+ "matrix": {
+  "A1": {
+   "naive": "o.of..oooo..ootooooooooo..o.o.o.oofoooor.oto..ooo.oo...o.oof",
+   "wcag": "oo.ooro..t.o.oof.oo..ooo.oooo.f.foo.too.ooofo.o.oo.oo.oooooo",
+   "nielsen": "...ooofo.ooo..oo...oo.ofooo.ofoo..o.oooo..o..ooooooo.o.ooooo",
+   "both": "o.ooooo..oot.f.oor....to..ott.....o.o.otr..rooooot..o..o...o"
+  },
+  "A2": {
+   "naive": "o.o.o.....f.o...o..r.t..o.oroo.o.....o.ooftto..ooooooooo.ooo",
+   "wcag": "trfooo..otfoo..oooo..o.r.o..oo.o.oo.rot.f.o.oooooo..oofo.o..",
+   "nielsen": "oo...o.f.........o....r.o....oo...oootoo.oo.oo.o.o......oroo",
+   "both": "otooo.ooooo.o.ofoooofoooooo.o.ooofo.o..r.r...t....oooto..o.."
+  },
+  "A3": {
+   "naive": "ofo.o..r......foo....o......o..oo..oo..o...oo...rotoooo.o.o.",
+   "wcag": "oo.o..o..o..o.f..ooor.o.r.f......oo.....r.r.or.oo...o..r..o.",
+   "nielsen": ".o.o..or..or..o.oo..oo..r.oo.t..oo..o.fo..roooo....t...o.o..",
+   "both": "..ooo.o.o.....o.ro...ofo.t.o........oo....f.o.oo.t..o...ooo."
+  },
+  "A4": {
+   "naive": "........fto.ro....r.oo.o.ooo.....r..oo.o...oo....o...o.o....",
+   "wcag": "o..o.o.r.t.o..r.o....rr...roor.........o.tf...o..o..o.....o.",
+   "nielsen": "o..o....f.t...oo...o.o..o..oo.....f.....o.r.o......o.....o..",
+   "both": ".....r....t...o.o.ooo.o.o..o..oor....or..ooo...o.t..oo.o..o."
+  },
+  "A5": {
+   "naive": "iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii",
+   "wcag": "iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii",
+   "nielsen": "iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii",
+   "both": "iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii"
+  },
+  "A6": {
+   "naive": "i.iiii.i.i.iiiiiiii.i..i.i.i.iiii.iiiiiiiiiii.iiiii.iiii.iii",
+   "wcag": "iiiiiiii.iiiiiii.ii.iiiiii.iii..i.iiii....i.i.iii.iiiiiiiii.",
+   "nielsen": "ii.iiii.ii..ii.iiiiiiiiii.i..i.i.i.ii.iiii.iiiii..iiiiiii..i",
+   "both": "--.--i-----..iii-i..-.i-iii-.---ii.--.-i.-.-iii-ii.-.i-i---."
+  }
+ },
+ "intake": {
+  "total": {
+   "input": 14731800,
+   "output": 17524200,
+   "cost_usd": 531.98
+  },
+  "rolling5m": {
+   "tokens": 725000,
+   "cost_usd": 4.9
+  },
+  "sources": [
+   {
+    "id": "A1",
+    "input": 2509200,
+    "output": 4131000,
+    "cost_usd": 347.46,
+    "calls": 306,
+    "tokens_per_min": 52000
+   },
+   {
+    "id": "A2",
+    "input": 2099200,
+    "output": 3456000,
+    "cost_usd": 58.14,
+    "calls": 256,
+    "tokens_per_min": 43000
+   },
+   {
+    "id": "A3",
+    "input": 1476000,
+    "output": 2430000,
+    "cost_usd": 111.96,
+    "calls": 180,
+    "tokens_per_min": 29000
+   },
+   {
+    "id": "A4",
+    "input": 1148000,
+    "output": 1890000,
+    "cost_usd": 8.71,
+    "calls": 140,
+    "tokens_per_min": 21000
+   },
+   {
+    "id": "A5",
+    "input": 2352000,
+    "output": 3360000,
+    "cost_usd": 0,
+    "calls": 0,
+    "tokens_per_min": 0
+   },
+   {
+    "id": "A6",
+    "input": 1499400,
+    "output": 2142000,
+    "cost_usd": 0,
+    "calls": 0,
+    "tokens_per_min": 0
+   },
+   {
+    "id": "judge",
+    "input": 3648000,
+    "output": 115200,
+    "cost_usd": 5.71,
+    "calls": 96,
+    "tokens_per_min": 6400
+   }
+  ],
+  "series": [
+   {
+    "t": "2026-12-02T13:01:00.000Z",
+    "cum_cost_usd": 0.2,
+    "cum_tokens": 8000
+   },
+   {
+    "t": "2026-12-02T13:02:00.000Z",
+    "cum_cost_usd": 0.4,
+    "cum_tokens": 16000
+   },
+   {
+    "t": "2026-12-02T13:03:00.000Z",
+    "cum_cost_usd": 0.6,
+    "cum_tokens": 24000
+   },
+   {
+    "t": "2026-12-02T13:04:00.000Z",
+    "cum_cost_usd": 0.8,
+    "cum_tokens": 32000
+   },
+   {
+    "t": "2026-12-02T13:05:00.000Z",
+    "cum_cost_usd": 1,
+    "cum_tokens": 40000
+   },
+   {
+    "t": "2026-12-02T13:06:00.000Z",
+    "cum_cost_usd": 1.2,
+    "cum_tokens": 48000
+   },
+   {
+    "t": "2026-12-02T13:07:00.000Z",
+    "cum_cost_usd": 1.4,
+    "cum_tokens": 56000
+   },
+   {
+    "t": "2026-12-02T13:08:00.000Z",
+    "cum_cost_usd": 1.6,
+    "cum_tokens": 64000
+   },
+   {
+    "t": "2026-12-02T13:09:00.000Z",
+    "cum_cost_usd": 1.8,
+    "cum_tokens": 72000
+   },
+   {
+    "t": "2026-12-02T13:10:00.000Z",
+    "cum_cost_usd": 2,
+    "cum_tokens": 80000
+   },
+   {
+    "t": "2026-12-02T13:11:00.000Z",
+    "cum_cost_usd": 2.2,
+    "cum_tokens": 88000
+   },
+   {
+    "t": "2026-12-02T13:12:00.000Z",
+    "cum_cost_usd": 2.4,
+    "cum_tokens": 96000
+   },
+   {
+    "t": "2026-12-02T13:13:00.000Z",
+    "cum_cost_usd": 2.6,
+    "cum_tokens": 104000
+   },
+   {
+    "t": "2026-12-02T13:14:00.000Z",
+    "cum_cost_usd": 2.8,
+    "cum_tokens": 112000
+   },
+   {
+    "t": "2026-12-02T13:15:00.000Z",
+    "cum_cost_usd": 3,
+    "cum_tokens": 120000
+   },
+   {
+    "t": "2026-12-02T13:16:00.000Z",
+    "cum_cost_usd": 3.2,
+    "cum_tokens": 128000
+   },
+   {
+    "t": "2026-12-02T13:17:00.000Z",
+    "cum_cost_usd": 3.4,
+    "cum_tokens": 136000
+   },
+   {
+    "t": "2026-12-02T13:18:00.000Z",
+    "cum_cost_usd": 3.6,
+    "cum_tokens": 144000
+   },
+   {
+    "t": "2026-12-02T13:19:00.000Z",
+    "cum_cost_usd": 3.8,
+    "cum_tokens": 152000
+   },
+   {
+    "t": "2026-12-02T13:20:00.000Z",
+    "cum_cost_usd": 4,
+    "cum_tokens": 160000
+   },
+   {
+    "t": "2026-12-02T13:21:00.000Z",
+    "cum_cost_usd": 5.7,
+    "cum_tokens": 228086
+   },
+   {
+    "t": "2026-12-02T13:22:00.000Z",
+    "cum_cost_usd": 7.12,
+    "cum_tokens": 284862
+   },
+   {
+    "t": "2026-12-02T13:23:00.000Z",
+    "cum_cost_usd": 8.19,
+    "cum_tokens": 327438
+   },
+   {
+    "t": "2026-12-02T13:24:00.000Z",
+    "cum_cost_usd": 9.61,
+    "cum_tokens": 384334
+   },
+   {
+    "t": "2026-12-02T13:25:00.000Z",
+    "cum_cost_usd": 10.6,
+    "cum_tokens": 424035
+   },
+   {
+    "t": "2026-12-02T13:26:00.000Z",
+    "cum_cost_usd": 11.75,
+    "cum_tokens": 469920
+   },
+   {
+    "t": "2026-12-02T13:27:00.000Z",
+    "cum_cost_usd": 12.79,
+    "cum_tokens": 511661
+   },
+   {
+    "t": "2026-12-02T13:28:00.000Z",
+    "cum_cost_usd": 13.99,
+    "cum_tokens": 559450
+   },
+   {
+    "t": "2026-12-02T13:29:00.000Z",
+    "cum_cost_usd": 15.68,
+    "cum_tokens": 627025
+   },
+   {
+    "t": "2026-12-02T13:30:00.000Z",
+    "cum_cost_usd": 17.17,
+    "cum_tokens": 686726
+   },
+   {
+    "t": "2026-12-02T13:31:00.000Z",
+    "cum_cost_usd": 18.45,
+    "cum_tokens": 737856
+   },
+   {
+    "t": "2026-12-02T13:32:00.000Z",
+    "cum_cost_usd": 20.01,
+    "cum_tokens": 800301
+   },
+   {
+    "t": "2026-12-02T13:33:00.000Z",
+    "cum_cost_usd": 21.18,
+    "cum_tokens": 847342
+   },
+   {
+    "t": "2026-12-02T13:34:00.000Z",
+    "cum_cost_usd": 22.8,
+    "cum_tokens": 912145
+   },
+   {
+    "t": "2026-12-02T13:35:00.000Z",
+    "cum_cost_usd": 23.84,
+    "cum_tokens": 953785
+   },
+   {
+    "t": "2026-12-02T13:36:00.000Z",
+    "cum_cost_usd": 25.24,
+    "cum_tokens": 1009756
+   },
+   {
+    "t": "2026-12-02T13:37:00.000Z",
+    "cum_cost_usd": 26.7,
+    "cum_tokens": 1067918
+   },
+   {
+    "t": "2026-12-02T13:38:00.000Z",
+    "cum_cost_usd": 28.28,
+    "cum_tokens": 1131109
+   },
+   {
+    "t": "2026-12-02T13:39:00.000Z",
+    "cum_cost_usd": 29.41,
+    "cum_tokens": 1176202
+   },
+   {
+    "t": "2026-12-02T13:40:00.000Z",
+    "cum_cost_usd": 31.15,
+    "cum_tokens": 1245911
+   },
+   {
+    "t": "2026-12-02T13:41:00.000Z",
+    "cum_cost_usd": 32.31,
+    "cum_tokens": 1292457
+   },
+   {
+    "t": "2026-12-02T13:42:00.000Z",
+    "cum_cost_usd": 34.11,
+    "cum_tokens": 1364384
+   },
+   {
+    "t": "2026-12-02T13:43:00.000Z",
+    "cum_cost_usd": 35.72,
+    "cum_tokens": 1428648
+   },
+   {
+    "t": "2026-12-02T13:44:00.000Z",
+    "cum_cost_usd": 37.11,
+    "cum_tokens": 1484343
+   },
+   {
+    "t": "2026-12-02T13:45:00.000Z",
+    "cum_cost_usd": 38.03,
+    "cum_tokens": 1521351
+   },
+   {
+    "t": "2026-12-02T13:46:00.000Z",
+    "cum_cost_usd": 39.43,
+    "cum_tokens": 1577261
+   },
+   {
+    "t": "2026-12-02T13:47:00.000Z",
+    "cum_cost_usd": 40.82,
+    "cum_tokens": 1632740
+   },
+   {
+    "t": "2026-12-02T13:48:00.000Z",
+    "cum_cost_usd": 42.08,
+    "cum_tokens": 1683328
+   },
+   {
+    "t": "2026-12-02T13:49:00.000Z",
+    "cum_cost_usd": 43.89,
+    "cum_tokens": 1755606
+   },
+   {
+    "t": "2026-12-02T13:50:00.000Z",
+    "cum_cost_usd": 45.1,
+    "cum_tokens": 1803800
+   },
+   {
+    "t": "2026-12-02T13:51:00.000Z",
+    "cum_cost_usd": 46.08,
+    "cum_tokens": 1843279
+   },
+   {
+    "t": "2026-12-02T13:52:00.000Z",
+    "cum_cost_usd": 47.56,
+    "cum_tokens": 1902286
+   },
+   {
+    "t": "2026-12-02T13:53:00.000Z",
+    "cum_cost_usd": 48.76,
+    "cum_tokens": 1950226
+   },
+   {
+    "t": "2026-12-02T13:54:00.000Z",
+    "cum_cost_usd": 49.84,
+    "cum_tokens": 1993543
+   },
+   {
+    "t": "2026-12-02T13:55:00.000Z",
+    "cum_cost_usd": 51.22,
+    "cum_tokens": 2048774
+   },
+   {
+    "t": "2026-12-02T13:56:00.000Z",
+    "cum_cost_usd": 53.05,
+    "cum_tokens": 2121972
+   },
+   {
+    "t": "2026-12-02T13:57:00.000Z",
+    "cum_cost_usd": 54.69,
+    "cum_tokens": 2187761
+   },
+   {
+    "t": "2026-12-02T13:58:00.000Z",
+    "cum_cost_usd": 56,
+    "cum_tokens": 2239811
+   },
+   {
+    "t": "2026-12-02T13:59:00.000Z",
+    "cum_cost_usd": 57.95,
+    "cum_tokens": 2318186
+   },
+   {
+    "t": "2026-12-02T14:00:00.000Z",
+    "cum_cost_usd": 59.23,
+    "cum_tokens": 2369170
+   },
+   {
+    "t": "2026-12-02T14:01:00.000Z",
+    "cum_cost_usd": 60.4,
+    "cum_tokens": 2415960
+   },
+   {
+    "t": "2026-12-02T14:02:00.000Z",
+    "cum_cost_usd": 61.82,
+    "cum_tokens": 2472990
+   },
+   {
+    "t": "2026-12-02T14:03:00.000Z",
+    "cum_cost_usd": 62.75,
+    "cum_tokens": 2509987
+   },
+   {
+    "t": "2026-12-02T14:04:00.000Z",
+    "cum_cost_usd": 63.67,
+    "cum_tokens": 2546919
+   },
+   {
+    "t": "2026-12-02T14:05:00.000Z",
+    "cum_cost_usd": 64.67,
+    "cum_tokens": 2586755
+   },
+   {
+    "t": "2026-12-02T14:06:00.000Z",
+    "cum_cost_usd": 66.16,
+    "cum_tokens": 2646444
+   },
+   {
+    "t": "2026-12-02T14:07:00.000Z",
+    "cum_cost_usd": 67.87,
+    "cum_tokens": 2714857
+   },
+   {
+    "t": "2026-12-02T14:08:00.000Z",
+    "cum_cost_usd": 69.14,
+    "cum_tokens": 2765520
+   },
+   {
+    "t": "2026-12-02T14:09:00.000Z",
+    "cum_cost_usd": 71.07,
+    "cum_tokens": 2842998
+   },
+   {
+    "t": "2026-12-02T14:10:00.000Z",
+    "cum_cost_usd": 72.77,
+    "cum_tokens": 2910941
+   },
+   {
+    "t": "2026-12-02T14:11:00.000Z",
+    "cum_cost_usd": 74.56,
+    "cum_tokens": 2982593
+   },
+   {
+    "t": "2026-12-02T14:12:00.000Z",
+    "cum_cost_usd": 75.5,
+    "cum_tokens": 3019857
+   },
+   {
+    "t": "2026-12-02T14:13:00.000Z",
+    "cum_cost_usd": 77.22,
+    "cum_tokens": 3088692
+   },
+   {
+    "t": "2026-12-02T14:14:00.000Z",
+    "cum_cost_usd": 78.74,
+    "cum_tokens": 3149741
+   },
+   {
+    "t": "2026-12-02T14:15:00.000Z",
+    "cum_cost_usd": 79.78,
+    "cum_tokens": 3191067
+   },
+   {
+    "t": "2026-12-02T14:16:00.000Z",
+    "cum_cost_usd": 81.12,
+    "cum_tokens": 3244785
+   },
+   {
+    "t": "2026-12-02T14:17:00.000Z",
+    "cum_cost_usd": 82.49,
+    "cum_tokens": 3299632
+   },
+   {
+    "t": "2026-12-02T14:18:00.000Z",
+    "cum_cost_usd": 84.17,
+    "cum_tokens": 3366729
+   },
+   {
+    "t": "2026-12-02T14:19:00.000Z",
+    "cum_cost_usd": 85.16,
+    "cum_tokens": 3406301
+   },
+   {
+    "t": "2026-12-02T14:20:00.000Z",
+    "cum_cost_usd": 86.17,
+    "cum_tokens": 3446602
+   },
+   {
+    "t": "2026-12-02T14:21:00.000Z",
+    "cum_cost_usd": 87.72,
+    "cum_tokens": 3508681
+   },
+   {
+    "t": "2026-12-02T14:22:00.000Z",
+    "cum_cost_usd": 89.21,
+    "cum_tokens": 3568232
+   },
+   {
+    "t": "2026-12-02T14:23:00.000Z",
+    "cum_cost_usd": 90.15,
+    "cum_tokens": 3605995
+   },
+   {
+    "t": "2026-12-02T14:24:00.000Z",
+    "cum_cost_usd": 92.07,
+    "cum_tokens": 3682884
+   },
+   {
+    "t": "2026-12-02T14:25:00.000Z",
+    "cum_cost_usd": 94.03,
+    "cum_tokens": 3761137
+   },
+   {
+    "t": "2026-12-02T14:26:00.000Z",
+    "cum_cost_usd": 95.29,
+    "cum_tokens": 3811429
+   },
+   {
+    "t": "2026-12-02T14:27:00.000Z",
+    "cum_cost_usd": 96.45,
+    "cum_tokens": 3858086
+   },
+   {
+    "t": "2026-12-02T14:28:00.000Z",
+    "cum_cost_usd": 97.83,
+    "cum_tokens": 3913176
+   },
+   {
+    "t": "2026-12-02T14:29:00.000Z",
+    "cum_cost_usd": 99.52,
+    "cum_tokens": 3980871
+   },
+   {
+    "t": "2026-12-02T14:30:00.000Z",
+    "cum_cost_usd": 101.11,
+    "cum_tokens": 4044463
+   },
+   {
+    "t": "2026-12-02T14:31:00.000Z",
+    "cum_cost_usd": 102.13,
+    "cum_tokens": 4085156
+   },
+   {
+    "t": "2026-12-02T14:32:00.000Z",
+    "cum_cost_usd": 103.13,
+    "cum_tokens": 4125324
+   },
+   {
+    "t": "2026-12-02T14:33:00.000Z",
+    "cum_cost_usd": 104.23,
+    "cum_tokens": 4169219
+   },
+   {
+    "t": "2026-12-02T14:34:00.000Z",
+    "cum_cost_usd": 105.19,
+    "cum_tokens": 4207678
+   },
+   {
+    "t": "2026-12-02T14:35:00.000Z",
+    "cum_cost_usd": 107.02,
+    "cum_tokens": 4280783
+   },
+   {
+    "t": "2026-12-02T14:36:00.000Z",
+    "cum_cost_usd": 108.41,
+    "cum_tokens": 4336455
+   },
+   {
+    "t": "2026-12-02T14:37:00.000Z",
+    "cum_cost_usd": 109.7,
+    "cum_tokens": 4387808
+   },
+   {
+    "t": "2026-12-02T14:38:00.000Z",
+    "cum_cost_usd": 111.44,
+    "cum_tokens": 4457597
+   },
+   {
+    "t": "2026-12-02T14:39:00.000Z",
+    "cum_cost_usd": 113.08,
+    "cum_tokens": 4523146
+   },
+   {
+    "t": "2026-12-02T14:40:00.000Z",
+    "cum_cost_usd": 114.55,
+    "cum_tokens": 4581868
+   },
+   {
+    "t": "2026-12-02T14:41:00.000Z",
+    "cum_cost_usd": 115.84,
+    "cum_tokens": 4633776
+   },
+   {
+    "t": "2026-12-02T14:42:00.000Z",
+    "cum_cost_usd": 116.99,
+    "cum_tokens": 4679547
+   },
+   {
+    "t": "2026-12-02T14:43:00.000Z",
+    "cum_cost_usd": 118.06,
+    "cum_tokens": 4722480
+   },
+   {
+    "t": "2026-12-02T14:44:00.000Z",
+    "cum_cost_usd": 119.28,
+    "cum_tokens": 4771364
+   },
+   {
+    "t": "2026-12-02T14:45:00.000Z",
+    "cum_cost_usd": 121.13,
+    "cum_tokens": 4845098
+   },
+   {
+    "t": "2026-12-02T14:46:00.000Z",
+    "cum_cost_usd": 122.08,
+    "cum_tokens": 4883065
+   },
+   {
+    "t": "2026-12-02T14:47:00.000Z",
+    "cum_cost_usd": 123.45,
+    "cum_tokens": 4938193
+   },
+   {
+    "t": "2026-12-02T14:48:00.000Z",
+    "cum_cost_usd": 124.57,
+    "cum_tokens": 4982767
+   },
+   {
+    "t": "2026-12-02T14:49:00.000Z",
+    "cum_cost_usd": 126.27,
+    "cum_tokens": 5050960
+   },
+   {
+    "t": "2026-12-02T14:50:00.000Z",
+    "cum_cost_usd": 127.26,
+    "cum_tokens": 5090478
+   },
+   {
+    "t": "2026-12-02T14:51:00.000Z",
+    "cum_cost_usd": 128.52,
+    "cum_tokens": 5140734
+   },
+   {
+    "t": "2026-12-02T14:52:00.000Z",
+    "cum_cost_usd": 130.22,
+    "cum_tokens": 5208655
+   },
+   {
+    "t": "2026-12-02T14:53:00.000Z",
+    "cum_cost_usd": 132.08,
+    "cum_tokens": 5283387
+   },
+   {
+    "t": "2026-12-02T14:54:00.000Z",
+    "cum_cost_usd": 134.03,
+    "cum_tokens": 5361294
+   },
+   {
+    "t": "2026-12-02T14:55:00.000Z",
+    "cum_cost_usd": 135.61,
+    "cum_tokens": 5424534
+   },
+   {
+    "t": "2026-12-02T14:56:00.000Z",
+    "cum_cost_usd": 137.36,
+    "cum_tokens": 5494572
+   },
+   {
+    "t": "2026-12-02T14:57:00.000Z",
+    "cum_cost_usd": 139.19,
+    "cum_tokens": 5567578
+   },
+   {
+    "t": "2026-12-02T14:58:00.000Z",
+    "cum_cost_usd": 140.88,
+    "cum_tokens": 5635296
+   },
+   {
+    "t": "2026-12-02T14:59:00.000Z",
+    "cum_cost_usd": 141.84,
+    "cum_tokens": 5673600
+   },
+   {
+    "t": "2026-12-02T15:00:00.000Z",
+    "cum_cost_usd": 143.03,
+    "cum_tokens": 5721232
+   }
+  ]
+ },
+ "projection": {
+  "budget_usd": 900,
+  "spent_usd": 531.98,
+  "remaining_usd": 368.02,
+  "expected_total_usd": 1003.6,
+  "over_budget": true,
+  "eta_minutes": 214,
+  "by_arm": [
+   {
+    "arm": "A1",
+    "calls_total": 480,
+    "calls_done": 306,
+    "avg_in": 8200,
+    "avg_out": 13500,
+    "est_cost_usd": 545.04,
+    "basis": "measured"
+   },
+   {
+    "arm": "A2",
+    "calls_total": 480,
+    "calls_done": 256,
+    "avg_in": 8200,
+    "avg_out": 13500,
+    "est_cost_usd": 109.01,
+    "basis": "measured"
+   },
+   {
+    "arm": "A3",
+    "calls_total": 480,
+    "calls_done": 180,
+    "avg_in": 8200,
+    "avg_out": 13500,
+    "est_cost_usd": 298.56,
+    "basis": "measured"
+   },
+   {
+    "arm": "A4",
+    "calls_total": 480,
+    "calls_done": 140,
+    "avg_in": 8200,
+    "avg_out": 13500,
+    "est_cost_usd": 29.86,
+    "basis": "estimated"
+   },
+   {
+    "arm": "A5",
+    "calls_total": 0,
+    "calls_done": 0,
+    "avg_in": 8200,
+    "avg_out": 13500,
+    "est_cost_usd": 0,
+    "basis": "self-hosted"
+   },
+   {
+    "arm": "A6",
+    "calls_total": 0,
+    "calls_done": 0,
+    "avg_in": 8200,
+    "avg_out": 13500,
+    "est_cost_usd": 0,
+    "basis": "self-hosted"
+   }
+  ]
+ },
+ "workers": [
+  {
+   "id": "worker-7c9d",
+   "last_seen": "2026-12-02T14:59:58.000Z",
+   "slots": 4,
+   "running": 4
+  },
+  {
+   "id": "worker-b21e",
+   "last_seen": "2026-12-02T14:59:56.000Z",
+   "slots": 4,
+   "running": 3
+  },
+  {
+   "id": "worker-e804",
+   "last_seen": "2026-12-02T14:58:25.000Z",
+   "slots": 4,
+   "running": 0
+  }
+ ],
+ "pricing": {
+  "claude-opus-5-5": {
+   "input_per_mtok": 15,
+   "output_per_mtok": 75,
+   "verified": false
+  },
+  "claude-sonnet-5-5": {
+   "input_per_mtok": 3,
+   "output_per_mtok": 15,
+   "verified": false
+  },
+  "gpt-5-astra": {
+   "input_per_mtok": 10,
+   "output_per_mtok": 40,
+   "verified": false
+  },
+  "gpt-5-astra-mini": {
+   "input_per_mtok": 1,
+   "output_per_mtok": 4,
+   "verified": false
+  },
+  "gemini-3-pro": {
+   "input_per_mtok": 1.25,
+   "output_per_mtok": 10,
+   "verified": true
+  }
+ },
+ "warnings": [
+  "A4 has no ready key: the OpenAI key is not set, so A4 cannot be dispatched.",
+  "Worker worker-e804 last seen 95 s ago.",
+  "Projected total $1003.6 exceeds the $900 budget; the coordinator stops dispatching at the cap."
+ ],
+ "human": {
+  "built": true,
+  "items": 30,
+  "raters": 3,
+  "ratings_rows": 412
+ },
+ "imports": [
+  {
+   "ts": "2026-11-30T15:00:00.000Z",
+   "arms": [
+    "A5"
+   ],
+   "cells": 240,
+   "rejected": 0
+  },
+  {
+   "ts": "2026-12-01T15:00:00.000Z",
+   "arms": [
+    "A6"
+   ],
+   "cells": 180,
+   "rejected": 3
+  }
+ ]
+}

@@ -13,6 +13,7 @@ async function run(page) {
       violations: r.violations.length,
       passes: r.passes.length,
       incomplete: r.incomplete.length,
+      rules: r.violations.map((v) => ({ id: v.id, impact: v.impact, tags: v.tags, nodes: v.nodes.length })),
     }));
   }, { wcag: WCAG_TAGS, best: ['best-practice'] });
   const dom = await page.evaluate(() => ({
@@ -23,6 +24,7 @@ async function run(page) {
     violations: wcag.violations,
     passes: wcag.passes,
     incomplete: wcag.incomplete,
+    rules: wcag.rules,
     bestPracticeViolations: best.violations,
     ...dom,
   };

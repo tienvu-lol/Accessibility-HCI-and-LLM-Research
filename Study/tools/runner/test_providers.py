@@ -72,3 +72,26 @@ class T(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+class HostedProviderBodyTest(unittest.TestCase):
+    def _cfg(self, provider):
+        cfg = json.loads(json.dumps(CFG))
+        cfg["arms"]["A2"].update(provider=provider, base_url="https://x.test/v1", model_id="m", family="x")
+        return cfg
+
+    def test_openai_uses_max_completion_tokens_and_no_template_kwargs(self):
+        _, _, b = providers.build_request("A2", "hi", self._cfg("openai"))
+        self.assertIn("max_completion_tokens", b)
+        self.assertNotIn("max_tokens", b)
+        self.assertNotIn("chat_template_kwargs", b)
+
+    def test_gemini_keeps_max_tokens_without_template_kwargs(self):
+        _, _, b = providers.build_request("A2", "hi", self._cfg("gemini"))
+        self.assertIn("max_tokens", b)
+        self.assertNotIn("chat_template_kwargs", b)
+
+    def test_self_hosted_still_disables_thinking(self):
+        _, _, b = providers.build_request("A2", "hi", self._cfg("vt-arc-falcon-llamacpp"))
+        self.assertEqual(b["chat_template_kwargs"], {"enable_thinking": False})
+        self.assertIn("max_tokens", b)
+
