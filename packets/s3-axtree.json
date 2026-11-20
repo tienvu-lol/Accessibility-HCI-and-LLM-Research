@@ -1,0 +1,21 @@
+{
+ "id": "s3-axtree",
+ "goal": "Implement ax_tree.js run(page) per C6 via CDP Accessibility.getFullAXTree (not page.accessibility).",
+ "files": [
+  "Study/tools/score/ax_tree.js",
+  "Study/tools/score/ax_tree.test.js"
+ ],
+ "plan_quotes": [
+  "design/CONTRACTS.md C6",
+  "Study/README.md section 5 Accessibility tree"
+ ],
+ "acceptance": [
+  "fixture: unnamed button counted missing, heading h1->h3 counted as skip, landmarks listed, nameChars/interactiveNodes correct",
+  "only listed files changed",
+  "no network, no API keys, no new deps"
+ ],
+ "platform": "any",
+ "checks": {
+  "tests": "node --test Study/tools/score/ax_tree.test.js"
+ }
+}

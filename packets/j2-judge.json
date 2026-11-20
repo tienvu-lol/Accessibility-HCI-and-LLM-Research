@@ -1,0 +1,25 @@
+{
+ "id": "j2-judge",
+ "goal": "Write Study/prompts/judge.md (14-question ranking task, ties allowed, JSON only) and judge.py per C7 with response parser and un-blinding to judge_rankings.csv.",
+ "files": [
+  "Study/prompts/judge.md",
+  "Study/tools/judge/judge.py",
+  "Study/tools/judge/test_judge.py"
+ ],
+ "plan_quotes": [
+  "design/CONTRACTS.md C3,C7",
+  "Study/README.md section 6 Phase 3 and section 9 judge_rankings.csv"
+ ],
+ "acceptance": [
+  "parser accepts tied ranks and rejects missing questions",
+  "un-blind maps V1-V4 to conditions via key",
+  "row count 4 x 14 per call",
+  "mock provider path works offline",
+  "only listed files changed",
+  "no network, no API keys, no new deps"
+ ],
+ "platform": "any",
+ "checks": {
+  "tests": "python -m unittest discover -s Study/tools/judge -t . -p test_judge.py"
+ }
+}

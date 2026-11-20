@@ -1,0 +1,21 @@
+{
+ "id": "h2-rubric",
+ "goal": "Write Study/human/rubric.md: anchors for Q1-Q14 (A/B/Tie), 1-2 lines each, plus tie rule and note rule. Neutral wording, no condition names.",
+ "files": [
+  "Study/human/rubric.md",
+  "Study/tools/human/test_rubric.py"
+ ],
+ "plan_quotes": [
+  "Study/README.md section 6 Task, section 7 rules"
+ ],
+ "acceptance": [
+  "14 numbered questions Q1-Q14 matching section 6",
+  "test_rubric.py asserts 14 headings and none of the words wcag/both/naive/nielsen as condition names",
+  "only listed files changed",
+  "no network, no API keys, no new deps"
+ ],
+ "platform": "any",
+ "checks": {
+  "tests": "python -m unittest discover -s Study/tools/human -t . -p test_rubric.py"
+ }
+}

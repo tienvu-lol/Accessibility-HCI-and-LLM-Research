@@ -1,0 +1,24 @@
+{
+ "id": "h1-harness",
+ "goal": "Implement build_harness.js per C8 producing 3 self-contained rater HTML files from human_items.csv and a lookup; test with a tiny fixture using node:test string checks.",
+ "files": [
+  "Study/human/build_harness.js",
+  "Study/tools/human/harness.test.js"
+ ],
+ "plan_quotes": [
+  "design/CONTRACTS.md C8",
+  "Study/README.md section 7 What a rater does, Where rating happens"
+ ],
+ "acceptance": [
+  "no 'wcag' or 'both' string visible in output HTML",
+  "left/right and item order differ per rater, recorded",
+  "CSV export header matches human_ratings.csv schema",
+  "localStorage autosave per item",
+  "only listed files changed",
+  "no network, no API keys, no new deps"
+ ],
+ "platform": "any",
+ "checks": {
+  "tests": "node --test Study/tools/human/harness.test.js"
+ }
+}

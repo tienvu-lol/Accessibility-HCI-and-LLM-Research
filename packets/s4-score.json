@@ -1,0 +1,24 @@
+{
+ "id": "s4-score",
+ "goal": "Implement score.js driver and metrics.csv writer per C6 + README section 9 schema. Probes are required modules; tests may stub them.",
+ "files": [
+  "Study/tools/score/score.js",
+  "Study/tools/score/score.test.js"
+ ],
+ "plan_quotes": [
+  "design/CONTRACTS.md C6",
+  "Study/README.md section 9 metrics.csv"
+ ],
+ "acceptance": [
+  "CLI appends rows with exact header order, one per page per breakpoint (1280,375)",
+  "violation_rate and name_chars_per_interactive computed",
+  "exit 0 even with violations",
+  "unit test with stubbed probes",
+  "only listed files changed",
+  "no network, no API keys, no new deps"
+ ],
+ "platform": "any",
+ "checks": {
+  "tests": "node --test Study/tools/score/score.test.js"
+ }
+}

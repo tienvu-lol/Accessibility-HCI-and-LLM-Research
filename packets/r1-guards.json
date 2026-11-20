@@ -1,0 +1,24 @@
+{
+ "id": "r1-guards",
+ "goal": "Implement C4 in guards.py: parse_response, text_chars, normalize_hash, check_truncation.",
+ "files": [
+  "Study/tools/runner/guards.py",
+  "Study/tools/runner/test_guards.py"
+ ],
+ "plan_quotes": [
+  "design/CONTRACTS.md C2,C4",
+  "Study/README.md section 4 Runner requirements",
+  "Study/prompts/both.md Output format"
+ ],
+ "acceptance": [
+  "parse_response handles valid C2, missing <<<END>>>, fenced output (ParseError)",
+  "check_truncation rejects missing </html> and <50% text",
+  "normalize_hash equal for whitespace/comment-only diffs, differs on content change",
+  "only listed files changed",
+  "no network, no API keys, no new deps"
+ ],
+ "platform": "any",
+ "checks": {
+  "tests": "python -m unittest discover -s Study/tools/runner -t . -p test_guards.py"
+ }
+}

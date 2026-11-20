@@ -1,0 +1,23 @@
+{
+ "id": "r2-providers",
+ "goal": "Implement C3 in providers.py: mock provider, Anthropic Messages adapter, OpenAI-compatible adapter (stdlib urllib), all driven by repair-allocation.json.",
+ "files": [
+  "Study/tools/runner/providers.py",
+  "Study/tools/runner/test_providers.py"
+ ],
+ "plan_quotes": [
+  "design/CONTRACTS.md C3",
+  "Study/config/repair-allocation.json held_constant + arms"
+ ],
+ "acceptance": [
+  "STUDY_MOCK=1 returns C2-format text echoing input files",
+  "request bodies built from config: temperature 0, max_tokens 32000, reasoning disabled, tested without sending",
+  "HTTP 429/5xx/timeout raise ProviderError(retryable=True); 4xx retryable=False",
+  "only listed files changed",
+  "no network, no API keys, no new deps"
+ ],
+ "platform": "any",
+ "checks": {
+  "tests": "python -m unittest discover -s Study/tools/runner -t . -p test_providers.py"
+ }
+}

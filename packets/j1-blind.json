@@ -1,0 +1,23 @@
+{
+ "id": "j1-blind",
+ "goal": "Implement blind.py per C7: seeded shuffle V1-V4, blinding_key.csv rows, strip condition markers from HTML and filenames.",
+ "files": [
+  "Study/tools/judge/blind.py",
+  "Study/tools/judge/test_blind.py"
+ ],
+ "plan_quotes": [
+  "design/CONTRACTS.md C1,C7",
+  "Study/README.md section 6 Input"
+ ],
+ "acceptance": [
+  "same seed same mapping; different sites differ",
+  "output HTML/filenames contain no condition name",
+  "key CSV has header site_id,arm,label_shown,condition",
+  "only listed files changed",
+  "no network, no API keys, no new deps"
+ ],
+ "platform": "any",
+ "checks": {
+  "tests": "python -m unittest discover -s Study/tools/judge -t . -p test_blind.py"
+ }
+}

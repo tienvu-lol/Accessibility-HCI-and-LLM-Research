@@ -1,0 +1,23 @@
+{
+ "id": "s1-axe",
+ "goal": "Implement axe_probe.js run(page) per C6 and a node:test using an inline HTML fixture.",
+ "files": [
+  "Study/tools/score/axe_probe.js",
+  "Study/tools/score/axe_probe.test.js"
+ ],
+ "plan_quotes": [
+  "design/CONTRACTS.md C6",
+  "Study/README.md section 5 Normalization, Capture axe incomplete",
+  "Websites/tools/qc/qc.js axe setup"
+ ],
+ "acceptance": [
+  "returns violations, passes, incomplete, bestPractice separate, textChars, elementCount",
+  "fixture with missing alt yields >=1 violation and passes >0",
+  "only listed files changed",
+  "no network, no API keys, no new deps"
+ ],
+ "platform": "any",
+ "checks": {
+  "tests": "node --test Study/tools/score/axe_probe.test.js"
+ }
+}

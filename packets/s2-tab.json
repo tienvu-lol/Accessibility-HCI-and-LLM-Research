@@ -1,0 +1,22 @@
+{
+ "id": "s2-tab",
+ "goal": "Implement tab_probe.js run(page) per C6: Tab traversal trace, order/trap/unreachable checks, screenshot-diff focus visibility, skip-link check.",
+ "files": [
+  "Study/tools/score/tab_probe.js",
+  "Study/tools/score/tab_probe.test.js"
+ ],
+ "plan_quotes": [
+  "design/CONTRACTS.md C6",
+  "Study/README.md section 5 Behavioral probes Tab traversal"
+ ],
+ "acceptance": [
+  "fixtures: clean page, page with outline:none, page with reordered tabindex; each flagged correctly",
+  "no per-stop screenshots persisted",
+  "only listed files changed",
+  "no network, no API keys, no new deps"
+ ],
+ "platform": "any",
+ "checks": {
+  "tests": "node --test Study/tools/score/tab_probe.test.js"
+ }
+}

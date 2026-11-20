@@ -1,0 +1,23 @@
+{
+ "id": "a2-stats",
+ "goal": "Implement stats.py per C9: Friedman, Wilcoxon signed-rank, Holm, Benjamini-Hochberg, Kendall W in pure python, plus headline-quadrant counter.",
+ "files": [
+  "Study/analysis/stats.py",
+  "Study/tools/analysis/test_stats.py"
+ ],
+ "plan_quotes": [
+  "design/CONTRACTS.md C9",
+  "Study/README.md section 8"
+ ],
+ "acceptance": [
+  "known-value tests for each statistic (hand-computed small cases)",
+  "BH/Holm monotone adjusted p-values",
+  "quadrant counter counts lower-left trade-off share",
+  "only listed files changed",
+  "no network, no API keys, no new deps"
+ ],
+ "platform": "any",
+ "checks": {
+  "tests": "python -m unittest discover -s Study/tools/analysis -t . -p test_stats.py"
+ }
+}

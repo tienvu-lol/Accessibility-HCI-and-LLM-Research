@@ -1,0 +1,24 @@
+{
+ "id": "a1-kappa",
+ "goal": "Implement kappa.py per C9: fleiss (3 raters), cohen, majority collapse (1-1-1 excluded + counted), site-clustered bootstrap, gate table.",
+ "files": [
+  "Study/analysis/kappa.py",
+  "Study/tools/analysis/test_kappa.py"
+ ],
+ "plan_quotes": [
+  "design/CONTRACTS.md C9",
+  "Study/README.md section 7 Validity math"
+ ],
+ "acceptance": [
+  "worked example: p_o=0.786 p_e=0.543 kappa~0.53",
+  "perfect agreement -> 1.0",
+  "bootstrap deterministic given seed",
+  "gate returns use/drop-judge/drop-rubric",
+  "only listed files changed",
+  "no network, no API keys, no new deps"
+ ],
+ "platform": "any",
+ "checks": {
+  "tests": "python -m unittest discover -s Study/tools/analysis -t . -p test_kappa.py"
+ }
+}

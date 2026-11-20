@@ -1,0 +1,25 @@
+{
+ "id": "r3-runner",
+ "goal": "Implement C5 runner.py with per-arm concurrency, retries, resumability, convergence loop, status.json/response.json per C1. Import C3/C4 only.",
+ "files": [
+  "Study/tools/runner/runner.py",
+  "Study/tools/runner/test_runner.py"
+ ],
+ "plan_quotes": [
+  "design/CONTRACTS.md C1,C3,C4,C5",
+  "Study/README.md sections 3-4",
+  "Study/sample/sites.csv slice_files"
+ ],
+ "acceptance": [
+  "with STUDY_MOCK=1 on 2 baseline sites x wcag,both x A1: writes iter1 and stops by convergence at iter2",
+  "rerun skips status ok",
+  "truncated output retried up to 2x then status failed; never kept",
+  "prompt built from Study/prompts/<condition>.md placeholders + criteria JSON",
+  "only listed files changed",
+  "no network, no API keys, no new deps"
+ ],
+ "platform": "any",
+ "checks": {
+  "tests": "python -m unittest discover -s Study/tools/runner -t . -p test_runner.py"
+ }
+}

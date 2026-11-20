@@ -1,0 +1,22 @@
+{
+ "id": "s5-ceiling",
+ "goal": "Implement ceiling.py: reads metrics.csv of baselines, prints median violation_rate, per-site list, and PASS/WARN for the S3 baseline ceiling gate (median violations near 0).",
+ "files": [
+  "Study/tools/score/ceiling.py",
+  "Study/tools/score/test_ceiling.py"
+ ],
+ "plan_quotes": [
+  "Study/README.md section 12 Gate: baseline ceiling check",
+  "design/CONTRACTS.md C6"
+ ],
+ "acceptance": [
+  "synthetic metrics.csv: near-zero median -> WARN, normal -> PASS",
+  "reports excluded/failed rows",
+  "only listed files changed",
+  "no network, no API keys, no new deps"
+ ],
+ "platform": "any",
+ "checks": {
+  "tests": "python -m unittest discover -s Study/tools/score -t . -p test_ceiling.py"
+ }
+}
