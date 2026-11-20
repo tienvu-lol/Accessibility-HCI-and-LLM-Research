@@ -29,6 +29,9 @@ node --env-file=Study/agent/agent.env --env-file=Study/agent/launcher.env Study/
 
 The launcher does not start any worker by itself. In **Runs**, queue work, then choose **Deploy & claim** for a computer and target. The launcher executes `start.sh` with the matching Compose worker service; after the worker registers, the console sends it a claim under the normal caps and budget. The **Job queue** is visible even with no enrolled computers or worker containers. A device needs a local Tailscale connection and launcher to receive deployments; signing in via a browser is not enrollment.
 
+## Frontier-model API keys stay local
+Set `A1_API_KEY` to `A4_API_KEY` in this computer's `agent.env` for the arms you run. The key never leaves this machine: a worker holding its own key for an arm uses it and the console never sends one, and Cost shows that spend as `local:<machine>`. A key pasted in the console's Keys & arms is only a shared fallback, held in console memory and sent inside jobs. Each person uses their own keys; never share one in chat or commit `agent.env`.
+
 ## Open-source arms on VT ARC
 A5 (DeepSeek), A6 (Qwen), and A7 (GLM 4.7 Flash) are not hosted APIs: they are llama.cpp servers inside an ARC session, reachable only over SSH. So
 instead of keys on the console, this machine runs, per arm, an SSH-tunnel container and a worker container
@@ -37,12 +40,12 @@ console only while its tunnel answers, so a dropped ARC session just stops new c
 
 1. Put the ARC settings in `agent/agent.env` (see `agent.env.example`): `ARC_USER`, `ARC_HOST`,
    `ARC_A5_TARGET`, `ARC_A6_TARGET` (the `node:port` of each llama.cpp server, as reachable from the login
-   host), `A5_API_KEY`, `A6_API_KEY`.
+   host), and `ARC_API_KEY` (the one key all open-source arms share; `A5_API_KEY`/`A6_API_KEY`/`A7_API_KEY` override it per arm).
 2. Put your ARC private key at `agent/arc/ssh/id` (git-ignored, `chmod 600`), or set `ARC_PASSWORD`.
    Interactive 2FA (Duo) cannot be automated by the tunnel.
 3. Start: `./agent/start.sh --arc` (macOS one-shot: `ARC=1 ... ./agent/setup-mac.sh`, which also probes both
    tunnels and tells you which setting is wrong if one does not answer). Stop: `./agent/stop.sh`.
-4. To run A7 on this machine, set `ARC_A7_TARGET` (and optionally `A7_API_KEY` for a key kept local) and add `--a7` to the launcher, with or without `--arc`. Otherwise save the A7 key in **Keys & arms**. Future configured self-hosted arms automatically get a dashboard key slot and run grid; they also need a worker advertising a live tunnel via `ARC_URLS`.
+4. To run A7 on this machine, set `ARC_A7_TARGET` (the shared `ARC_API_KEY` already covers it) and add `--a7` to the launcher, with or without `--arc`. Otherwise save the key in **Keys & arms**. Future configured self-hosted arms automatically get a dashboard key slot and run grid; they also need a worker advertising a live tunnel via `ARC_URLS`.
 5. In the console, turn on **Keys & arms → Run open-source arms on laptops with an ARC tunnel**. Dispatch requires a live ARC tunnel for the corresponding arm.
 
 Containers: `study-arc-a5` / `study-arc-a6` (tunnels, local ports 8091 / 8090) and `study-agent-a5` /

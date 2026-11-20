@@ -142,7 +142,7 @@ fi
 # ---------------------------------------------------------------- ARC settings
 # agent.env is rewritten below, so anything already in it that this script does not ask for
 # (the ARC host, targets and llama.cpp keys) has to be carried over or a re-run would wipe it.
-ARC_VARS="ARC_USER ARC_HOST ARC_A5_TARGET ARC_A6_TARGET ARC_A7_TARGET A5_API_KEY A6_API_KEY A7_API_KEY ARC_PASSWORD ARC_SSH_OPTS"
+ARC_VARS="ARC_USER ARC_HOST ARC_A5_TARGET ARC_A6_TARGET ARC_A7_TARGET ARC_API_KEY A5_API_KEY A6_API_KEY A7_API_KEY ARC_PASSWORD ARC_SSH_OPTS"
 # arc_val NAME -> the environment's value, else the one already in agent.env, else empty
 arc_val() {
   eval "v=\${$1:-}"
@@ -152,9 +152,11 @@ arc_val() {
 
 if [ "${ARC:-0}" = 1 ]; then
   missing=
-  for v in ARC_USER ARC_HOST ARC_A5_TARGET ARC_A6_TARGET A5_API_KEY A6_API_KEY; do
+  for v in ARC_USER ARC_HOST ARC_A5_TARGET ARC_A6_TARGET; do
     [ -n "$(arc_val "$v")" ] || missing="$missing $v"
   done
+  # one ARC key covers every open-source arm; A5_API_KEY/A6_API_KEY are per-arm overrides
+  [ -n "$(arc_val ARC_API_KEY)" ] || { [ -n "$(arc_val A5_API_KEY)" ] && [ -n "$(arc_val A6_API_KEY)" ]; } || missing="$missing ARC_API_KEY"
   [ -z "$missing" ] && say "ARC: all settings present" || die "ARC=1 is missing:$missing
   Set them in the environment or put them in agent/agent.env (see agent/agent.env.example).
   ARC_A5_TARGET / ARC_A6_TARGET are the node:port of each llama.cpp server, as reachable from the login host."

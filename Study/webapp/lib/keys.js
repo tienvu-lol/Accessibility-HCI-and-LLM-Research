@@ -1,4 +1,4 @@
-// Shared hosted-provider keys and a separate key for each configured self-hosted arm.
+// Shared hosted-provider keys; self-hosted (ARC) arms have one slot each but all read the same ARC_API_KEY unless their own variable is set.
 const PROVIDERS = ['openai', 'anthropic', 'gemini'];
 
 // Memory only: never written to disk, logged or returned except {set,last4,source}.
@@ -7,7 +7,10 @@ function create(env = process.env, openArms = {}) {
   const envNames = new Map(PROVIDERS.map((p) => [p, `${p.toUpperCase()}_API_KEY`]));
   for (const [arm, slot] of armSlots) envNames.set(slot, openArms[arm].api_key_env || `${arm}_API_KEY`);
   const store = new Map();
-  for (const [slot, name] of envNames) if (env[name]) store.set(slot, { key: env[name], source: 'env' });
+  for (const [slot, name] of envNames) {
+    const key = env[name] || ([...armSlots.values()].includes(slot) && env.ARC_API_KEY);
+    if (key) store.set(slot, { key, source: 'env' });
+  }
   return {
     armSlot: (arm) => armSlots.get(arm) || null,
     has: (slot) => envNames.has(slot),

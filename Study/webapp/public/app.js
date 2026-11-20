@@ -199,7 +199,9 @@
     var armKeys = S.arms.filter(function (a) { return a.kind === 'open_source'; }).map(function (a) {
       return [a.key_slot || a.id.toLowerCase(), a.id + ' ' + a.label, 'Leave empty to use ' + (a.key_env || a.id + '_API_KEY') + ' on the laptop running its tunnel.'];
     });
-    out.push(panel('k-keys', 'API keys', '<div class="cards">' + PROVIDERS.map(function (p) { return keyCard(S, p); }).join('') + '</div>' +
+    out.push(panel('k-keys', 'API keys',
+      '<p class="hint"><strong>Frontier-model keys (OpenAI, Anthropic) belong on each person’s own computer.</strong> Put <code>A1_API_KEY</code> to <code>A4_API_KEY</code> in that computer’s <code>agent.env</code>: the key stays there and is never sent to this console. A computer with its own key for an arm uses it and ignores any key below; spend shows as <code>local:&lt;machine&gt;</code> in Cost. A key pasted below is only a shared fallback: it is held in this console’s memory and sent inside jobs to whichever worker claims them. Leave it empty when each person pays with their own.</p>' +
+      '<div class="cards">' + PROVIDERS.map(function (p) { return keyCard(S, p); }).join('') + '</div>' +
       '<h3 class="sub-h">Open-source arms</h3>' +
       '<p class="hint">Each self-hosted arm has its own key. Console keys are sent only to workers running that arm. Locally configured keys stay on the machine running the tunnel. Spend is attributed per key in Cost.</p>' +
       '<div class="cards">' + armKeys.map(function (p) { return keyCard(S, p); }).join('') + '</div>', { form: true }));
@@ -323,11 +325,29 @@
       return '<option value="' + esc(o.v) + '"' + (o.off ? ' disabled' : '') + (o.v && o.v === sel && !o.off ? ' selected' : '') + '>' + esc(o.label) + '</option>';
     }).join('');
   }
+  // Claim a whole arm (A1-A7) for one computer. That computer runs it through repair, scoring and judging, using its own key.
+  function armClaim(S, a, ui) {
+    var owner = ((S.live_jobs || {}).assign || {})[a.id], ws = S.workers || [], label = function (w) { return ((w.info && w.info.host) ? w.info.host + ' · ' : '') + w.id; };
+    if (owner) {
+      var ow = ws.filter(function (w) { return w.id === owner; })[0];
+      return '<div class="row" id="arm-claim-' + esc(a.id) + '">' + badge('active', a.id + ' claimed by ' + (ow ? label(ow) : owner)) + (ow && ow.online === false ? ' ' + badge('attn', 'computer offline') : '') +
+        ' <button type="button" class="btn" id="release-arm-' + esc(a.id) + '" data-action="release-arm" data-arm="' + esc(a.id) + '">Release ' + esc(a.id) + '</button></div>';
+    }
+    var sel = ui && ui.pick && ui.pick['arm-' + a.id];
+    var opts = '<option value="">Choose a computer</option>' + ws.map(function (w) {
+      var why = w.online === false ? 'offline' : (w.can && w.can[a.id]) || '';
+      var own = (w.own_keys || []).indexOf(a.id) !== -1 ? ' · own key' : '';
+      return '<option value="' + esc(w.id) + '"' + (why ? ' disabled' : '') + (w.id === sel && !why ? ' selected' : '') + '>' + esc(label(w) + own + (why ? ' (' + why + ')' : '')) + '</option>';
+    }).join('');
+    return '<div class="row" id="arm-claim-' + esc(a.id) + '"><label for="pick-arm-' + esc(a.id) + '">Computer for ' + esc(a.id) + '</label> <select id="pick-arm-' + esc(a.id) + '" data-pick="arm-' + esc(a.id) + '">' + opts + '</select> ' +
+      '<button type="button" class="btn btn-primary" id="claim-arm-' + esc(a.id) + '" data-action="claim-arm" data-arm="' + esc(a.id) + '">Claim ' + esc(a.id) + '</button></div>' +
+      (ws.length ? '' : '<p class="hint">No worker is connected. Start one on a computer, then claim ' + esc(a.id) + ' for it.</p>');
+  }
   function queueBody(live, ui, S) {
     var group = live.queue || [];
     var controls = '<div class="controls" role="group" aria-label="Queue jobs">' + ['repair', 'score', 'judge'].map(function (phase) {
       return '<button class="btn" type="button" data-action="run" data-arg="start:' + phase + '"' + (ui && ui.busy ? ' disabled' : '') + '>Queue ' + phase + ' jobs</button>';
-    }).join('') + '</div>';
+    }).join('') + (group.length ? ' <button class="btn btn-danger" type="button" id="cancel-all-queued" data-action="cancel-queued" data-all="1">Cancel all waiting jobs</button>' : '') + '</div>';
     var blocked = ui && ui.blockers ? notice('warn', esc(ui.blockers.title) + ': ' + ui.blockers.list.map(esc).join('; '), 'alert') : '';
     var idle = (live.idle || []).length ? '<h3 class="sub-h">Nothing queued</h3><ul class="legend" id="queue-idle">' + live.idle.map(function (x) { return '<li><strong>' + esc(x.arm) + '</strong> <span class="muted">' + esc(x.reason) + '</span></li>'; }).join('') + '</ul>' : '';
     return controls + blocked + (group.length ? group.map(function (g) {
@@ -335,9 +355,10 @@
       var chooser = '<div class="row"><label for="pick-' + esc(gid) + '">Computer for ' + esc(g.kind + ' ' + g.arm) + '</label> <select id="pick-' + esc(gid) + '" data-pick="' + esc(gid) + '">' + pickOptions(S, g, sel) + '</select> ' +
         '<button type="button" class="btn btn-primary" id="dispatch-' + esc(gid) + '" data-action="dispatch" data-group="' + esc(gid) + '" data-kind="' + esc(g.kind) + '" data-arm="' + esc(g.arm) + '">' + (sel && sel.charAt(0) === 'l' ? 'Deploy &amp; claim ' : 'Claim ') + esc(g.arm) + '</button></div>';
       var shown = g.jobs.slice(0, 25);
-      return '<details data-key="' + esc(key) + '"' + (ui && ui.open && ui.open[key] ? ' open' : '') + '><summary>' + esc(g.kind + ' · ' + g.arm) + ' — ' + int(g.jobs.length) + ' waiting</summary>' + chooser + '<ul>' + shown.map(function (j, i) {
+      return '<details data-key="' + esc(key) + '"' + (ui && ui.open && ui.open[key] ? ' open' : '') + '><summary>' + esc(g.kind + ' · ' + g.arm) + ' — ' + int(g.jobs.length) + ' waiting</summary>' + chooser +
+        '<p><button type="button" class="btn btn-danger" id="cancel-group-' + esc(gid) + '" data-action="cancel-queued" data-arm="' + esc(g.arm) + '" data-kind="' + esc(g.kind) + '">Cancel waiting ' + esc(g.kind + ' ' + g.arm) + '</button></p><ul>' + shown.map(function (j, i) {
         var id = g.ids[i], held = g.reserved && g.reserved[id];
-        return '<li>' + esc(j.filter(Boolean).join(' · ')) + (held ? ' ' + badge('active', 'reserved for ' + held) : ' <button type="button" class="btn btn-quiet" data-action="dispatch" data-group="' + esc(gid) + '" data-kind="' + esc(g.kind) + '" data-arm="' + esc(g.arm) + '" data-job="' + esc(id) + '">Claim this job</button>') + '</li>';
+        return '<li>' + esc(j.filter(Boolean).join(' · ')) + (held ? ' ' + badge('active', 'reserved for ' + held) : ' <button type="button" class="btn btn-quiet" data-action="dispatch" data-group="' + esc(gid) + '" data-kind="' + esc(g.kind) + '" data-arm="' + esc(g.arm) + '" data-job="' + esc(id) + '">Claim this job</button>') + ' <button type="button" class="btn btn-quiet" data-action="cancel-queued" data-job="' + esc(id) + '">Cancel</button></li>';
       }).join('') + (g.jobs.length > shown.length ? '<li class="muted">and ' + int(g.jobs.length - shown.length) + ' more</li>' : '') + '</ul></details>';
     }).join('') : empty('No jobs waiting', 'Queue a phase to see work here, even with no workers running.')) + idle +
       '<p class="hint">Pick a computer, then claim: the server checks again that the computer can take that work (tunnel, slots, cap, pause, budget) and only that arm or job starts. Unavailable computers stay listed with the reason.</p>';
@@ -351,7 +372,7 @@
     var rows = live.jobs.map(function (j) {
       var when = j.finished_at || j.started_at;
       return '<tr><th scope="row">' + esc([j.kind, j.arm, j.condition, j.site].filter(Boolean).join(' · ')) + '</th><td>' +
-        badge(j.state === 'running' ? 'active' : j.state === 'done' ? 'done' : 'attn', j.canceled ? 'stopped' : j.state) + (j.stopping ? ' ' + badge('attn', 'stopping') : '') + (j.mock ? ' ' + badge('pending', 'test') : '') + '</td><td>' +
+        badge(j.stalled ? 'attn' : j.state === 'running' ? 'active' : j.state === 'done' ? 'done' : 'attn', j.canceled ? 'stopped' : j.stalled ? 'stalled' : j.state) + (j.stopping ? ' ' + badge('attn', 'stopping') : '') + (j.mock ? ' ' + badge('pending', 'test') : '') + '</td><td>' +
         esc([j.worker_node, j.worker_user].filter(Boolean).join(' · ') || 'Unidentified') + (j.worker ? '<br><code>' + esc(j.worker) + '</code>' : '') +
         '</td><td>' + (when ? esc(ago(when, S.now)) : 'n/a') + '</td><td>' +
         (j.state === 'running' ? '<button type="button" class="btn btn-danger" data-action="stop-job" data-id="' + esc(j.id) + '"' + (j.stopping ? ' disabled' : '') + '>' + (j.stopping ? 'Stopping' : 'Stop job') + '</button>' : '') + '</td></tr>';
@@ -399,22 +420,32 @@
       '<ul class="legend">' + Object.keys(CELL).map(function (k) { return '<li><span class="cell cell-' + CELL[k][0] + ' lg" aria-hidden="true">' + CELL[k][1] + '</span> ' + esc(CELL[k][2]) + '</li>'; }).join('') + '</ul>' +
       '<p class="hint">Columns are sites in settings order (' + siteList(S).length + '); hover or focus the grid for each cell\u2019s site id.</p>' +
       ((S.machines && S.machines.length) ?
-        '<h3 class="sub-h" id="machines-h">Machines (' + int(S.machines.filter(function (x) { return !x.history; }).length) + ')</h3><ul class="legend legend-machines">' + S.machines.map(function (x, i) {
-          var nodes = (x.nodes || []).map(function (n) { return '<span class="mnode">' + esc(nodeTag(n.id, x.id)) + (n.online ? '' : ' (offline)') + '</span>'; }).join(' ');
-          return '<li><span class="mswatch" style="background:hsl(' + ((i * 47) % 360) + ' 70% 45%)" aria-hidden="true"></span> ' +
-            esc(x.label || x.id) + (x.history ? ' <span class="muted">(history only)</span>' : '') + ' <span class="muted">' + int(x.cells) + ' cells' + (x.online ? ', online' : ', offline') + (x.os ? ', ' + esc(x.os) : '') + '</span>' +
-            (nodes ? '<br><span class="muted">' + ((x.nodes || []).length === 1 ? 'node' : (x.nodes || []).length + ' nodes') + ':</span> ' + nodes : '') + '</li>';
-        }).join('') + '</ul>' +
+        // Online computers first, each swatch outlined; then offline ones, faded. Three job colours per computer.
+        [true, false].map(function (on) {
+          var list = S.machines.map(function (x, i) { return { x: x, i: i }; }).filter(function (e) { return !!e.x.online === on; });
+          if (!list.length) return '';
+          return '<h3 class="sub-h">Machines ' + (on ? 'online' : 'offline') + ' (' + list.length + ')</h3><ul class="legend legend-machines">' + list.map(function (e) {
+            var x = e.x, j = x.jobs || {}, fin = (j.done || 0) + (j.failed || 0);
+            var nodes = (x.nodes || []).map(function (n) { return '<span class="mnode">' + esc(nodeTag(n.id, x.id)) + (n.online ? '' : ' (offline)') + '</span>'; }).join(' ');
+            return '<li><span class="mswatch ' + (on ? 'mswatch-on' : 'mswatch-off') + '" style="background:hsl(' + ((e.i * 47) % 360) + ' 70% 45%)" aria-hidden="true"></span> ' + esc(x.label || x.id) + (x.history ? ' <span class="muted">(history only)</span>' : '') + ' <span class="muted">' + int(x.cells) + ' cells' + (x.os ? ', ' + esc(x.os) : '') + '</span> ' +
+              badge('active', int(j.running || 0) + ' running') + ' ' + badge('attn', int(j.stalled || 0) + ' stalled') + ' ' + badge('done', int(fin) + ' finished' + (j.failed ? ' (' + int(j.failed) + ' failed)' : '')) +
+              (nodes ? '<br><span class="muted">' + ((x.nodes || []).length === 1 ? 'node' : (x.nodes || []).length + ' nodes') + ':</span> ' + nodes : '') + '</li>';
+          }).join('') + '</ul>';
+        }).join('') +
         (S.machines_omitted ? '<p class="hint" id="machines-omitted">' + int(S.machines_omitted) + ' more computer' + (S.machines_omitted === 1 ? ' is' : 's are') + ' not tinted here (36 at most; online and active ones are kept). All are listed under Computers.</p>' : '') + '<p class="hint">A cell is tinted with the colour of the computer that ran it, so you can see how the work was split. The same colours are used in Cost \u2192 Contribution by machine.</p>' : '')));
     S.arms.forEach(function (a) {
       var c = a.cells;
       var counters = ['total', 'queued', 'running', 'ok', 'failed', 'truncated', 'imported', 'converged'].map(function (k) { return '<div><dt>' + esc(k) + '</dt><dd>' + int(c[k]) + '</dd></div>'; }).join('');
-      out.push(panel('r-' + a.id, a.id + ' \u00b7 ' + a.label, '<dl class="facts compact">' + counters + '</dl>' + armNodes(S, a) + matrixGrid(S, a.id)));
+      out.push(panel('r-' + a.id, a.id + ' \u00b7 ' + a.label, armClaim(S, a, ui) + '<dl class="facts compact">' + counters + '</dl>' + armNodes(S, a) + matrixGrid(S, a.id), { form: true }));
     });
     if (S.docker && S.docker.enabled) out.push(panel('r-docker', 'Docker workers', dockerBody(S.docker), { form: true }));
-    out.push(panel('r-workers', 'Workers (' + S.workers.length + ')', S.workers.length ?
+    // Workers are containers; group them under their computer so a Mac with three containers reads as one computer, three nodes.
+    var mOf = S.machine_of || {}, wmap = machineMap(S);
+    var wlist = S.workers.slice().sort(function (a, b) { var x = mOf[a.id] || a.id, y = mOf[b.id] || b.id; return x < y ? -1 : x > y ? 1 : a.id < b.id ? -1 : 1; });
+    var wComputers = {}; wlist.forEach(function (w) { wComputers[mOf[w.id] || w.id] = 1; });
+    out.push(panel('r-workers', 'Workers (' + Object.keys(wComputers).length + (Object.keys(wComputers).length === 1 ? ' computer, ' : ' computers, ') + wlist.length + (wlist.length === 1 ? ' container)' : ' containers)'), wlist.length ?
       tableWrap('Workers', '<table class="grid"><thead><tr><th scope="col">Worker</th><th scope="col">Tailscale device and account</th><th scope="col">Status</th><th scope="col">Slots</th><th scope="col">Running</th><th scope="col">Job controls</th></tr></thead><tbody>' +
-        S.workers.map(function (w) {
+        wlist.map(function (w) {
           var online = typeof w.online === 'boolean' ? w.online : ms(S.now) - ms(w.last_seen) < 45000;
           var inf = w.info || {};
           var status = !online ? badge('attn', 'Offline') : w.paused ? badge('attn', 'Paused') : badge('done', 'Online');
@@ -424,7 +455,7 @@
           var available = Math.min(w.slots, w.cap == null ? w.slots : w.cap, 50) - w.running;
           var claim = !w.manual ? '' : w.requested ? '<button id="claim-' + id + '" type="button" class="btn" data-action="worker-unclaim" data-id="' + id + '">Unclaim</button> ' + badge('active', int(w.requested) + ' waiting') :
             '<button id="claim-' + id + '" type="button" class="btn btn-primary" data-action="worker-claim" data-id="' + id + '"' + (!online || w.paused || available < 1 ? ' disabled' : '') + '>Claim jobs</button>';
-          return '<tr><th scope="row">' + id + (w.arcs && w.arcs.length ? ' ' + badge('active', 'ARC ' + w.arcs.join('+')) : '') + '</th><td>' + identity + (inf.os ? '<br><span class="muted">' + esc(inf.os) + '</span>' : '') + '</td><td>' + status + ' ' + esc(ago(w.last_seen, S.now)) + '</td>' +
+          return '<tr><th scope="row">' + machineChip(S, w.id, wmap) + '<br><span class="muted">' + id + '</span>' + (w.arcs && w.arcs.length ? ' ' + badge('active', 'ARC ' + w.arcs.join('+')) : '') + '</th><td>' + identity + (inf.os ? '<br><span class="muted">' + esc(inf.os) + '</span>' : '') + '</td><td>' + status + ' ' + esc(ago(w.last_seen, S.now)) + '</td>' +
             '<td class="num">' + int(w.slots) + '</td><td class="num">' + int(w.running) + '</td>' +
             '<td><label class="sr" for="' + lid + '">Slot cap for ' + esc(w.id) + '</label><input id="' + lid + '" type="number" min="0" max="64" step="1" placeholder="no cap" value="' + (w.cap === null ? '' : esc(w.cap)) + '" data-field="cap"> ' +
             '<button type="button" class="btn" data-action="worker-cap" data-id="' + esc(w.id) + '">Set cap</button> ' +
@@ -925,6 +956,22 @@
       api('POST', pathD, pp[0] === 'w' ? sel : Object.assign({ target: pp[2] }, sel)).then(function (r) {
         if (!r.ok) announce('error', (r.data && r.data.error) || 'Request failed (HTTP ' + r.status + ')');
         else announce('ok', pp[0] === 'w' ? 'Requested ' + (job || t.dataset.arm) + ' on ' + pp[1] + '.' : 'Deployment queued for ' + (job || t.dataset.arm) + '. Watch Deployment status.');
+        return poll();
+      }, function () { announce('error', 'Could not reach the console. Try again.'); });
+    }
+    else if (a === 'claim-arm' || a === 'release-arm') {
+      var armId = t.dataset.arm, pk = document.getElementById('pick-arm-' + armId), claiming = a === 'claim-arm';
+      if (claiming && !(pk && pk.value)) { announce('error', 'Choose a computer for ' + armId + ' first.'); return; }
+      api(claiming ? 'POST' : 'DELETE', '/api/arms/' + encodeURIComponent(armId) + '/claim', claiming ? { worker_id: pk.value } : undefined).then(function (r) {
+        announce(r.ok ? 'ok' : 'error', r.ok ? (claiming ? armId + ' claimed by ' + pk.value + '. It runs the arm through, with that computer’s own key.' : armId + ' released. Jobs already running finish.') : (r.data && r.data.error) || 'Request failed (HTTP ' + r.status + ')');
+        return poll();
+      }, function () { announce('error', 'Could not reach the console. Try again.'); });
+    }
+    else if (a === 'cancel-queued') {
+      var csel = t.dataset.job ? { job_id: t.dataset.job } : t.dataset.all ? { all: true } : { arm: t.dataset.arm, kind: t.dataset.kind };
+      if (!window.confirm('Cancel ' + (csel.job_id || (csel.all ? 'all waiting jobs' : 'waiting ' + csel.kind + ' ' + csel.arm + ' jobs')) + '?\n\nOnly jobs that have not started are removed. Running jobs keep going (use Stop job).')) return;
+      api('POST', '/api/queue/cancel', csel).then(function (r) {
+        announce(r.ok ? 'ok' : 'error', r.ok ? int(r.data.canceled) + ' waiting job' + (r.data.canceled === 1 ? '' : 's') + ' canceled.' : (r.data && r.data.error) || 'Request failed (HTTP ' + r.status + ')');
         return poll();
       }, function () { announce('error', 'Could not reach the console. Try again.'); });
     }

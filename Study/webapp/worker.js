@@ -20,9 +20,13 @@ function createWorker(opts = {}) {
     manual: process.env.WORKER_MANUAL_CLAIM === '1' };
   // ARC tunnels this machine can reach: ARC_URLS="A5=http://arc-a5:8091/v1,A6=http://arc-a6:8090/v1". An arm is advertised
   // only while its tunnel answers, so a dropped SSH session just stops new claims for that arm.
-  // The arm's llama.cpp key may live here (A5_API_KEY / A6_API_KEY, never leaves this machine) or on the
-  // console, which then sends it inside the job. Either way each arm has its own: A5 and A6 never share.
+  // The open-source arms share one ARC key. It may live here (ARC_API_KEY, or a per-arm A5_API_KEY override; it never
+  // leaves this machine) or on the console, which then sends it inside the job.
   const arcUrls = opts.arcUrls || Object.fromEntries((process.env.ARC_URLS || '').split(',').filter(Boolean).map((p) => p.split(/=(.+)/).slice(0, 2)));
+  // ARC_API_KEY stands in for the arm's own variable on every arm this machine has a tunnel for.
+  if (process.env.ARC_API_KEY) for (const arm of Object.keys(arcUrls)) process.env[`${arm}_API_KEY`] ||= process.env.ARC_API_KEY;
+  // Names only, never values: lets the console see which arms this computer can pay for with its own keys.
+  const keyNames = Object.keys(process.env).filter((k) => /_API_KEY$/.test(k) && process.env[k]);
   const onlyArms = opts.arms || (process.env.WORKER_ARMS ? process.env.WORKER_ARMS.split(',') : undefined);
   async function liveArcs() {
     const out = {};
@@ -113,7 +117,7 @@ function createWorker(opts = {}) {
       const free = slots - running.size;
       {
         try { // free = 0 still polls (max 0) so an all-busy machine stays online
-          const r = await api('/api/worker/claim', { worker_id: id, kinds: Object.keys(runners), max: free, slots, info, arcs: await liveArcs(), arms: onlyArms });
+          const r = await api('/api/worker/claim', { worker_id: id, kinds: Object.keys(runners), max: free, slots, info, arcs: await liveArcs(), arms: onlyArms, keys: keyNames });
           if (r.status >= 500) throw new Error(`claim ${r.status}`);
           if (r.status >= 400) throw new Error(`claim rejected ${r.status}`);
           jobs = r.body?.jobs || [];

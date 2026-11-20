@@ -201,6 +201,17 @@ function createApp(opts = {}) {
       sse.notify();
       return json(res, 200, { ok: true });
     }
+    if (a === 'arms' && b && parts.length === 5 && parts[4] === 'claim' && (m === 'POST' || m === 'DELETE')) {
+      const arm = decodeURIComponent(b);
+      const r = m === 'POST' ? ctx.coord.claimArm(arm, String((await body(req).catch(() => ({}))).worker_id || '')) : ctx.coord.releaseArm(arm);
+      sse.notify();
+      return json(res, 200, { ok: true, ...r });
+    }
+    if (a === 'queue' && b === 'cancel' && m === 'POST') {
+      const r = ctx.coord.cancelQueued(await body(req).catch(() => ({})));
+      sse.notify();
+      return json(res, 200, { ok: true, ...r });
+    }
     if (a === 'jobs' && b && parts.length === 5 && parts[4] === 'stop' && m === 'POST') {
       const r = ctx.coord.stopJob(decodeURIComponent(b));
       sse.notify();
@@ -361,7 +372,7 @@ function createApp(opts = {}) {
     }
 
     // login.html loads these (plus the self-hosted fonts); they hold no secrets, so they must be reachable without a cookie
-    const isLoginAsset = p === '/login.html' || p.startsWith('/login.') || p === '/style.css' || p === '/app.js' || p === '/charts.js' || p.startsWith('/fonts/');
+    const isLoginAsset = p === '/login.html' || p.startsWith('/login.') || p === '/favicon.svg' || p === '/style.css' || p === '/app.js' || p === '/charts.js' || p.startsWith('/fonts/');
     if (!isLoginAsset && !auth.isAuthed(req)) {
       if (p.startsWith('/api/') || p.startsWith('/rate/frame/')) return json(res, 401, { error: 'login required' });
       res.writeHead(302, { Location: '/login.html' });

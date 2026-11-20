@@ -33,6 +33,7 @@ function load(dataDir, cfg) {
     imported: raw.imported || [],
     imports: raw.imports || [],
     workerCtl: raw.workerCtl || {},
+    assign: raw.assign || {}, // arm id -> worker id that owns it
     // Every computer that ever connected, with the name it reported, so the dashboard lists it after a restart.
     registry: { workers: {}, launchers: {}, ...raw.registry },
     baseline: raw.baseline || null,

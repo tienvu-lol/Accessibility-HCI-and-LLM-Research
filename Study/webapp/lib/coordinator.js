@@ -190,11 +190,21 @@ function create(ctx, { leaseS = 900 } = {}) {
     const order = kept.sort();
     const omitted = all.length - order.length;
     const idx = new Map(order.map((k, i) => [k, MACHINE_CHARS[i]]));
+    // Per computer: running (heartbeating), stalled (silent or its worker is gone) and settled jobs.
+    const tally = new Map();
+    for (const j of jobs.values()) {
+      if (!j.worker) continue;
+      const c = tally.get(j.worker) || { running: 0, stalled: 0, done: 0, failed: 0 };
+      if (j.state === 'running') c[isStalled(j) ? 'stalled' : 'running']++;
+      else if (j.state === 'done' || j.state === 'failed') c[j.state]++;
+      tally.set(j.worker, c);
+    }
     const machines = order.map((key, i) => {
       const nodes = groups.get(key).sort(), m = stat0.get(key) || {};
       const first = nodes.map((n) => workers.get(n)).find(Boolean);
       const inf = first?.info || {};
-      return { id: key, label: inf.host || inf.tailnet_node || key, char: MACHINE_CHARS[i], online: nodes.some(online), host: inf.host || null,
+      const jb = nodes.reduce((a, n) => { const t = tally.get(n); if (t) for (const k in a) a[k] += t[k]; return a; }, { running: 0, stalled: 0, done: 0, failed: 0 });
+      return { id: key, jobs: jb, label: inf.host || inf.tailnet_node || key, char: MACHINE_CHARS[i], online: nodes.some(online), host: inf.host || null,
         os: inf.os || null, running: nodes.reduce((n, id) => n + runningOn(id), 0), history: key !== IMPORTED && !nodes.some((n) => workers.has(n)),
         nodes: nodes.map((id) => ({ id, online: online(id), running: runningOn(id), arcs: Object.keys(workers.get(id)?.arcs || {}) })),
         calls: m.calls || 0, input: m.input || 0, output: m.output || 0, cost_usd: m.cost_usd || 0, mock_calls: m.mock_calls || 0, cells: 0 };
@@ -266,10 +276,10 @@ function create(ctx, { leaseS = 900 } = {}) {
     }
   }
 
-  function planRepair() {
+  function planRepair(arms = dispatched()) {
     for (const site of siteList()) {
       for (const cond of state.settings.conditions) {
-        for (const arm of dispatched()) {
+        for (const arm of arms) {
           const j = addJob('repair', arm, cond, site);
           const last = store.lastStatus(arm, cond, site);
           if (j.state === 'queued' && last && last.st.status === 'ok' && (last.st.converged || last.n >= state.settings.max_iter)) {
@@ -358,9 +368,10 @@ function create(ctx, { leaseS = 900 } = {}) {
         return { ...base, arm: j.arm, condition: j.condition, site: j.site, max_iter: state.settings.max_iter, lease_s: leaseS,
           provider: a.provider, base_url: w.arcs[j.arm], model_id: a.model_id, api_key_env: ctx.keys.envName(slot), api_key: armKey };
       }
-      const key = ctx.keys.get(a.provider);
-      if (!key && !ctx.mock) return null;
-      stamp(j, a.model_id, ctx.keys.id(a.provider));
+      const local = localKey(w, j.arm); // this computer's own key wins; the console's is never sent in that case
+      const key = local ? null : ctx.keys.get(a.provider);
+      if (!key && !local && !ctx.mock) return null;
+      stamp(j, a.model_id, local ? `local:${w.id}` : ctx.keys.id(a.provider));
       return { ...base, arm: j.arm, condition: j.condition, site: j.site, max_iter: state.settings.max_iter, lease_s: leaseS,
         provider: a.provider, base_url: BASE_URL[a.provider] ?? null, model_id: a.model_id,
         api_key_env: ctx.cfg.arms[j.arm].api_key_env, api_key: key };
@@ -395,10 +406,20 @@ function create(ctx, { leaseS = 900 } = {}) {
   const workerManual = (w) => state.workerCtl[w.id]?.manual ?? (w.info?.manual === true);
   const workerOnline = (w) => ctx.now() - w.last_seen < ONLINE_MS;
   const requested = (w) => w.request_until > ctx.now() ? w.requested : 0;
+  // A running job whose last heartbeat (sent every 10 s) is over 30 s old, or whose worker is no longer reporting.
+  const STALL_MS = 30000;
+  function isStalled(j) {
+    const w = workers.get(j.worker);
+    return j.state === 'running' && (!w || !workerOnline(w) || ctx.now() - (j.lease_exp - leaseS * 1000) > STALL_MS);
+  }
+  // Keys are per computer: a worker reports the NAMES of the *_API_KEY variables it holds (never values).
+  const armEnv = (arm) => (ctx.armKind(arm) === 'open_source' ? ctx.keys.envName(ctx.keys.armSlot(arm)) : ctx.cfg.arms[arm]?.api_key_env);
+  const localKey = (w, arm) => !!armEnv(arm) && !!w.keyNames?.includes(armEnv(arm));
   // Why this worker cannot take this job right now, or null when it can. The one place eligibility lives:
   // the UI shows the text, requestWork refuses with it, and claim() skips on it.
-  function whyNot(j, w) {
+  function whyNot(j, w, anyOwner) {
     if (j.state !== 'queued') return `job is ${j.state}`;
+    if (!anyOwner && state.assign[j.arm] && state.assign[j.arm] !== w.id) return `${j.arm} is claimed by ${state.assign[j.arm]}`;
     if (!w.kinds.includes(j.kind)) return `this worker does not run ${j.kind} jobs`;
     if (j.arm !== 'baseline' && !Object.hasOwn(state.arms, j.arm)) return `unknown arm ${j.arm}`;
     if (w.armsOnly && !w.armsOnly.includes(j.arm)) return `this worker only runs ${w.armsOnly.join('/')}`;
@@ -409,7 +430,7 @@ function create(ctx, { leaseS = 900 } = {}) {
     } else if (j.kind === 'repair') {
       const provider = state.arms[j.arm].provider;
       if (!provider) return `${j.arm} has no provider set`;
-      if (!ctx.mock && !ctx.keys.get(provider)) return `no ${provider} key`;
+      if (!ctx.mock && !ctx.keys.get(provider) && !localKey(w, j.arm)) return `no ${provider} key (set it in agent.env on this computer, or in Keys & arms)`;
     } else if (j.kind === 'judge' && !ctx.mock && !ctx.keys.get('gemini')) return 'no gemini key';
     return null;
   }
@@ -461,7 +482,45 @@ function create(ctx, { leaseS = 900 } = {}) {
     dropReservations(id);
     return { unclaimed };
   }
-  function claim({ worker_id, kinds, max, slots, info, arcs, arms }) {
+  // ---- arm ownership: one computer takes an arm (A1-A7) and runs it through repair, scoring and judging
+  const armWhy = (arm, w) => whyNot({ state: 'queued', kind: 'repair', arm }, w, true);
+  function claimArm(arm, workerId) {
+    if (!Object.hasOwn(state.arms, arm)) throw new HttpError(400, `unknown arm ${arm}`);
+    const w = workers.get(workerId);
+    if (!w || !workerOnline(w)) throw new HttpError(409, 'that computer has no worker online; deploy one first');
+    const owner = state.assign[arm];
+    if (owner && owner !== workerId) throw new HttpError(409, `${arm} is claimed by ${owner}; release it first`);
+    const why = armWhy(arm, w);
+    if (why) throw new HttpError(409, `${workerId} cannot run ${arm}: ${why}`);
+    state.assign[arm] = workerId;
+    planRepair([arm]);
+    queueBaselines();
+    if (state.run.phase === 'idle') state.run = { phase: 'running', kind: 'repair', started_at: ctx.now() };
+    persist();
+    return { arm, worker: workerId };
+  }
+  function releaseArm(arm) {
+    if (!state.assign[arm]) throw new HttpError(409, `${arm} is not claimed`);
+    delete state.assign[arm];
+    persist();
+    return { arm, released: true };
+  }
+  // Removes jobs that have not started. Running jobs are never touched here (use Stop job).
+  function cancelQueued(sel = {}) {
+    if (sel.job_id !== undefined && typeof sel.job_id !== 'string') throw new HttpError(400, 'bad job_id');
+    if (sel.arm !== undefined && !Object.hasOwn(state.arms, sel.arm)) throw new HttpError(400, `unknown arm ${sel.arm}`);
+    if (!sel.job_id && !sel.arm && sel.all !== true) throw new HttpError(400, 'say which jobs: job_id, arm or all');
+    const one = sel.job_id ? jobs.get(sel.job_id) : null;
+    if (sel.job_id && !one) throw new HttpError(404, 'unknown job');
+    const hit = [...jobs.values()].filter((j) => j.state === 'queued' && (sel.job_id ? j === one : sel.all === true || (j.arm === sel.arm && (!sel.kind || j.kind === sel.kind))));
+    if (!hit.length) throw new HttpError(409, one ? `job is ${one.state}, not waiting${one.state === 'running' ? '; use Stop job' : ''}` : 'no waiting jobs match');
+    for (const j of hit) jobs.delete(j.id);
+    for (const w of workers.values()) if (w.want?.job_id && !jobs.has(w.want.job_id)) { w.requested = 0; w.want = null; }
+    reap();
+    persist();
+    return { canceled: hit.length };
+  }
+  function claim({ worker_id, kinds, max, slots, info, arcs, arms, keys }) {
     reap();
     const id = cleanName(String(worker_id || 'worker')) || 'worker';
     const want = Array.isArray(kinds) ? kinds : ['repair', 'score', 'judge'];
@@ -477,14 +536,14 @@ function create(ctx, { leaseS = 900 } = {}) {
         ...(info.tailnet_user ? { tailnet_user: str(info.tailnet_user, 128) } : {}),
         ...(info.manual === true ? { manual: true } : {}) } : w.info,
       arcs: arcs && typeof arcs === 'object' ? Object.fromEntries(Object.entries(arcs).filter(([a, u]) => state.arms[a] && /^https?:\/\/[\w.-]+(:\d+)?(\/[\w./-]*)?$/.test(u))) : {},
-      armsOnly: Array.isArray(arms) ? arms.filter((a) => state.arms[a]) : null });
+      armsOnly: Array.isArray(arms) ? arms.filter((a) => state.arms[a]) : null,
+      keyNames: Array.isArray(keys) ? keys.filter((k) => typeof k === 'string' && /^[A-Z][A-Z0-9_]{0,63}_API_KEY$/.test(k)).slice(0, 32) : [] });
     workers.set(id, w);
     remember(w);
     if (max === 0) return []; // keepalive from a worker with no free slots
     const ctl = state.workerCtl[id] || {};
     if (ctl.paused || state.run.phase === 'paused') return [];
     if (Number.isInteger(ctl.cap)) limit = Math.min(limit, ctl.cap - runningOn(id));
-    if (workerManual(w)) limit = Math.min(limit, requested(w));
     if (limit < 1) return [];
 
     const agg = proj.aggregate(ctx, ctx.now());
@@ -499,9 +558,11 @@ function create(ctx, { leaseS = 900 } = {}) {
       if (j.kind === 'repair') running[j.arm] = (running[j.arm] || 0) + 1;
     }
     const out = [];
+    let byHand = 0; // jobs taken through a Claim request; an arm this computer owns needs no request
     for (const j of jobs.values()) {
       if (out.length >= limit) break;
-      if (!canTake(j, w) || (workerManual(w) && !matches(j, w.want))) continue;
+      const hand = workerManual(w) && state.assign[j.arm] !== id;
+      if (!canTake(j, w) || (hand && (byHand >= requested(w) || !matches(j, w.want)))) continue;
       if (j.kind === 'repair' && (running[j.arm] || 0) >= ctx.concurrency(j.arm)) continue;
       const est = estimate(j);
       if (j.kind !== 'score' && committed + est >= state.settings.budget_usd) continue;
@@ -514,10 +575,11 @@ function create(ctx, { leaseS = 900 } = {}) {
       payload.lease = j.lease;
       committed += est;
       if (j.kind === 'repair') running[j.arm] = (running[j.arm] || 0) + 1;
+      if (hand) byHand++;
       out.push(payload);
     }
     if (out.length) {
-      if (workerManual(w)) { w.requested -= out.length; if (w.requested <= 0) w.want = null; }
+      if (byHand) { w.requested -= byHand; if (w.requested <= 0) w.want = null; }
       persist();
     }
     return out;
@@ -699,11 +761,11 @@ function create(ctx, { leaseS = 900 } = {}) {
     }
     recent.sort((a, b) => (b.finished_at || 0) - (a.finished_at || 0));
     const groups = [...queue.values()].map(({ list, ...g }) => ({ ...g, eligible: queueEligibility(list) }));
-    return { counts, queue: groups, idle: idleArms(new Set(groups.filter((g) => g.kind === 'repair').map((g) => g.arm))),
+    return { counts, assign: { ...state.assign }, queue: groups, idle: idleArms(new Set(groups.filter((g) => g.kind === 'repair').map((g) => g.arm))),
       jobs: [...running, ...recent.slice(0, 30)].map((j) => ({
         id: j.id, kind: j.kind, arm: j.arm, condition: j.condition, site: j.site, state: j.state, worker: j.worker,
         worker_node: j.worker_node, worker_user: j.worker_user, started_at: j.started_at, finished_at: j.finished_at, mock: j.mock === true,
-        stopping: j.state === 'running' && !!j.stop_at, canceled: j.canceled === true,
+        stopping: j.state === 'running' && !!j.stop_at, canceled: j.canceled === true, stalled: isStalled(j),
       })) };
   }
 
@@ -758,7 +820,10 @@ function create(ctx, { leaseS = 900 } = {}) {
     for (const [id, w] of workers) if (t - w.last_seen > REGISTRY_TTL_MS) { workers.delete(id); delete registry[id]; } // offline machines stay listed for 30 days
     return [...workers.values()].map((w) => ({ id: w.id, last_seen: w.last_seen, slots: w.slots, info: w.info, arcs: Object.keys(w.arcs || {}),
       cap: Number.isInteger((state.workerCtl[w.id] || {}).cap) ? state.workerCtl[w.id].cap : null, paused: !!(state.workerCtl[w.id] || {}).paused,
-      online: workerOnline(w), manual: workerManual(w), requested: requested(w), running: runningOn(w.id), conflict: w.conflict === true }));
+      online: workerOnline(w), manual: workerManual(w), requested: requested(w), running: runningOn(w.id), conflict: w.conflict === true,
+      // per arm: null = this computer can run it now, otherwise why not; own_keys = arms it holds a key for locally
+      can: Object.fromEntries(Object.keys(state.arms).map((a) => [a, armWhy(a, w)])),
+      own_keys: Object.keys(state.arms).filter((a) => localKey(w, a)) }));
   }
   // compute split: per-worker slot cap (null = no cap) and pause; persisted so it survives a restart
   function setWorkerCtl(id, { cap, paused, manual }) {
@@ -779,7 +844,7 @@ function create(ctx, { leaseS = 900 } = {}) {
 
   persist();
   return { start, pause, resume, retryFailed, claim, heartbeat, release, result, reap, armCells, finishedRepairs, matrix, judgeItems, pipelineProgress, armBlockers, judgeBlockers,
-    markImported, stopJob, addLedger, machineOf, armNodes, resetLedger, machineView, devices, jobView, workers: workerList, setWorkerCtl, requestWork, unclaimWork, runInfo: () => state.run, jobs };
+    markImported, stopJob, claimArm, releaseArm, cancelQueued, addLedger, machineOf, armNodes, resetLedger, machineView, devices, jobView, workers: workerList, setWorkerCtl, requestWork, unclaimWork, runInfo: () => state.run, jobs };
 }
 
 module.exports = { create };

@@ -30,6 +30,14 @@ async function main() {
   // Tailscale status is re-read every 15 s and sent with the poll, so the console shows real tailnet presence.
   let tailnet = fromStatus(JSON.parse(stdout)), tailnetAt = Date.now();
   console.log(`Docker launcher enrolled as ${node}: hosted${arcs.length ? `, ${arcs.join(', ')}` : ''}`);
+  // Workers already running here are re-applied through start.sh, so they move to a rebuilt image (no-op when unchanged).
+  try {
+    const up = await exec('docker', ['compose', '--profile', '*', 'ps', '--services', '--status', 'running'], { cwd, env: dockerEnv, timeout: 15000 });
+    for (const service of up.stdout.split(/\r?\n/).filter((s) => /^worker(-a\d+)?$/.test(s))) {
+      await exec(bash, ['./start.sh'], { cwd, env: { ...dockerEnv, DASHBOARD_WORKER_SERVICE: service }, timeout: 180000 });
+      console.log(`Refreshed running worker: ${service}`);
+    }
+  } catch (error) { console.error(`Could not refresh running workers (${error.message.split('\n')[0]})`); }
   let result = null;
   let busy = false;
   let connected = true;

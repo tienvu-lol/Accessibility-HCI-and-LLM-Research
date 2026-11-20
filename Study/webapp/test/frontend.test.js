@@ -290,7 +290,10 @@ test('runs view: cells carry the machine that ran them, as colour and as text', 
   assert.ok(html.includes(', ran by ' + m.id), 'the machine is in the cell text alternative');
   assert.ok(html.includes('\u00b7 ' + m.id) || html.includes('· ' + m.id), 'and in the cell title');
   const runsHtml = App.views.runs(state).map((s) => s.html).join('\n');
-  assert.match(runsHtml, /class="mswatch"/, 'the Runs view has a machine legend');
+  assert.match(runsHtml, /class="mswatch mswatch-(on|off)"/, 'the Runs view has a machine legend; online ones are outlined');
+  assert.match(runsHtml, /Machines (online|offline) \(\d+\)/);
+  assert.ok(/\d+ running/.test(runsHtml) && /\d+ stalled/.test(runsHtml) && /\d+ finished/.test(runsHtml), 'three status chips per machine');
+  assert.match(runsHtml, /id="claim-arm-A1" data-action="claim-arm"/, 'every arm row has a claim control');
   assert.ok(runsHtml.includes(m.id));
 });
 
@@ -368,7 +371,7 @@ test('legend counts computers not containers; chips and arm rows show containers
       A6: [{ id: '100.64.7.1-a6', machine: '100.64.7.1', running: 1, can_take: 2, manual: false, requested: 0, state: 'running' }], A7: [] },
     projection: { ...state.projection, by_machine: [{ id: '100.64.7.1', calls: 3, input: 3, output: 3, cost_usd: 0, share_pct: null, mock_calls: 0, arms: [], nodes: [{ id: '100.64.7.1-a6', calls: 1 }, { id: '100.64.7.1-a7', calls: 2 }] }] } };
   const html = App.views.runs(st).map((s) => s.html).join('\n');
-  assert.match(html, /Machines \(2\)/, 'three containers + one legacy id are two computers');
+  assert.match(html, /Machines online \(2\)/, 'three containers + one legacy id are two computers');
   assert.match(html, /3 nodes:/);
   assert.match(html, /history only/);
   assert.match(html, /<strong>?[^<]*<\/strong>|Mac[\s\S]{0,400}hosted[\s\S]{0,60}a6[\s\S]{0,60}a7/);
@@ -377,4 +380,14 @@ test('legend counts computers not containers; chips and arm rows show containers
   assert.match(html, /id="nodes-A7">No node can run A7 right now: no worker container has a live ARC tunnel/);
   const cost = App.views.cost(st).map((s) => s.html).join('\n');
   assert.match(cost, /Mac[\s\S]{0,40}a6 1 call · a7 2 calls/);
+});
+
+test('workers panel counts computers and groups containers under them', () => {
+  const st = { ...state, now: '2026-01-01T00:00:00Z',
+    machines: [{ id: 'm1', label: 'Mac', char: '0', online: true, nodes: [{ id: 'm1' }, { id: 'm1-a6' }], cells: 0, calls: 0, input: 0, output: 0, cost_usd: 0, mock_calls: 0 }],
+    machine_of: { m1: 'm1', 'm1-a6': 'm1' },
+    workers: ['m1-a6', 'm1'].map((id) => ({ id, online: true, last_seen: '2026-01-01T00:00:00Z', slots: 2, running: 0, cap: null, info: {} })) };
+  const html = App.views.runs(st).map((s) => s.html).join('\n');
+  assert.match(html, /Workers \(1 computer, 2 containers\)/);
+  assert.match(html, /Mac › hosted[\s\S]*Mac › a6/, 'rows sorted under their computer');
 });
