@@ -7,4 +7,4 @@
 - Read parameters from `Study/config/repair-allocation.json`; never hardcode model, temperature, max_tokens.
 - Never hardcode `css/styles.css`; use `slice_files` from `Study/sample/sites.csv`.
 - Small, readable code; one-line comments only for non-obvious why. No extra features.
-- Finish: run your packet `checks`, then `git add` + `git commit` with message `feat(<packet id>): <summary>`. No push.
+- Finish: run your packet `checks`. Do not commit; the harness commits.
