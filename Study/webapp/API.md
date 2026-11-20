@@ -61,3 +61,38 @@ Cell status values (from `status.json`): `ok|failed` (+ `truncated` when `reason
   imports:[{ts,arms,cells,rejected}] }
 ```
 Projection: remaining calls = unfinished cells x expected iterations (measured mean per arm, default 2 before data, cap max_iter) x per-call tokens (measured from finished calls, else `estimate.json` from `runner.build_prompt` sizes: input = prompt chars/4; output = slice html+css chars/4 x 1.1). Cost = tokens x pricing. Open-source arms: tokens only, cost 0. The coordinator STOPS handing out jobs when spent + in-flight-estimate >= budget_usd.
+
+---
+# Addendum: scoring, results, exports, human rating (supersedes the earlier human/build text)
+
+Palette (shared by every page; poster colours): maroon `#861F41`, orange `#E5751F`, black `#000`, neutrals. Operate-mode UI: dense, scannable, tables and charts first.
+
+## Phases
+`repair` (mainstream arms A1-A4 only) -> `score` (auto-pipelined: a score job is queued the moment a cell finishes; baselines are scored too, as arm `baseline`, condition `baseline`, iteration 0, files from `Study/baseline/<site>`) -> `judge` (explicit start, Gemini, ALL arms incl. imported A5/A6) -> human rating (names, below). `POST /api/run/start {phase}` accepts `repair|judge|score` (score = (re)queue everything unscored).
+
+## Score job (workers need chromium)
+Job `{id:"score:A1:wcag:UNI-01",kind:"score",arm,condition,site,mock,slice_files:["index.html","apply.html"],iterations:{"1":{"index.html":"...","apply.html":"...","css/styles.css":"..."}}}` (baseline: `arm:"baseline",condition:"baseline",iterations:{"0":{...}}`). Worker materializes each iteration to a temp dir and runs `node Study/tools/score/score.js` (breakpoints 1280 and 375). Result `{job_id,status,rows:[[...metrics.csv columns in README order...]],rules:[{site_id,arm,condition,iteration,page,breakpoint,rules:[{id,impact,tags,nodes}]}],error}`. Server appends rows to `metrics/metrics.csv` (dedupe on site_id,arm,condition,iteration,page,breakpoint; replace) and rules to `metrics/axe_rules.jsonl`. `score.js` gets `--rules-out`; `axe_probe.run` additionally returns `rules` (additive, contract-compatible). First boot seeds `metrics/metrics.csv` from the committed baseline scoring (`Study/metrics/metrics.csv`, arm column `baseline`).
+
+## Results (`GET /api/results`, pure functions in `lib/results.js`, recomputed on every call from files under DATA_DIR; cheap enough for 3-s polling with a 2-s cache)
+Interface: `results.build(dataDir, {sites,conditions}) -> object`, `results.tables(dataDir, opts) -> { <name>: {columns:[...], rows:[[...]]} }`. Unit: a "site-variant" = (arm, condition, site) final iteration; "before" = that site's baseline; per-site value = mean over the site's pages at breakpoint 1280. Missing data yields `null`/empty arrays, never errors or NaN.
+```
+{ coverage:{variants_expected,variants_scored,baselines_scored,judge_items_done,judge_items_expected,human_raters,human_items_complete},
+  gate:{median_baseline_violation_rate,sites_zero_axe,warn:bool,note},                       // ceiling check
+  fig2:[{arm,condition,before_mean,after_mean,n,sites:[{site,before,after}]}],                // WCAG violations per site, baseline vs after
+  fig3:[{arm,condition,mean_rank,n}],                                                         // judge mean rank per condition per arm (rank 1 best); NOTE below
+  fig4:{criteria:[wcag ids],heuristics:["h1_..","..h10_.."],cells:[[count]],basis:str},       // WCAG criterion improved x Nielsen heuristic worse than naive
+  fig5:[{site,arm,generator_group,condition,wcag_gain,usability_delta}],                      // gain = before-after violations; usability_delta = mean over Nielsen questions of (rank_naive - rank_condition), positive = better than naive
+  fig6:[{site,arm,condition,wcag_gain,worst_heuristic,worst_delta,before_url,after_url}],     // fixes that gained on WCAG but lost on a heuristic, ranked by worst_delta; urls under /api/variant/...
+  loop:[{arm,condition,sites,mean_iterations,pct_converged,pct_hit_cap,pct_failed,pct_truncated,mean_edit_ratio,regressions_per_cell,self_reported_tokens_in,self_reported_tokens_out}],
+  headline:{pct_sites_gained_wcag_lost_nielsen,n_sites,top_conflict:{criterion,heuristic,count}|null},
+  agreement:{judge_vs_human:{kappa,n}|null,human_fleiss:{kappa,n_items,raters}|null,gate:{threshold,pass:bool|null}},
+  notes:[str] }
+```
+NOTE (state in the UI): the README judge ranks only the four repaired variants (no baseline), so poster Fig 3's "before vs after Nielsen score" cannot be computed as such; `fig3` shows mean rank by condition and `fig5.usability_delta` uses `naive` as the usability reference. Adding the baseline as a fifth variant to the judge call is a protocol decision for the researchers; do not do it silently.
+`edit_ratio` = normalized line-diff between consecutive iterations; `regressions` = rules violated after an iteration that were not violated before it.
+
+## Exports
+`GET /api/export/<name>.csv` for every key of `results.tables` (names: `fig2_violations`, `fig3_judge_ranks`, `fig4_conflict_heatmap`, `fig5_gain_vs_usability`, `fig6_broke_usability`, `loop_behavior`, `headline`, `agreement`, `metrics_all`, `judge_rankings`, `human_ratings`, `cost_by_source`), UTF-8 with BOM-less header row, proper CSV quoting. `GET /api/export/all.json` = `results.build` + tables. Charts export client-side: SVG download and PNG rendered at 4x (>=300 dpi at print size) from the same SVG; tables export CSV via these endpoints. Original-vs-after viewer: `GET /api/variant/<arm>/<cond>/<site>/<iter>/<page>` serves a stored page (for `baseline`: `Study/baseline/<site>/<page>`), sandboxed (`Content-Security-Policy: sandbox; default-src 'self' 'unsafe-inline'`, no scripts needed to be trusted) and auth-required.
+
+## Human rating (replaces rater_R1..R3 files for hosted use)
+Researchers open `/rate`, type their NAME, and start; no account, no password beyond the site cookie. Server derives `rater_id` = slug of the name (lowercase, `[a-z0-9-]`, <=32; reject empty), item order and left/right per item from `sha256(rater_id|seed)` (deterministic; resume after reload by the same name continues where they left off). 30 items from `Study/sample/human_items.csv` x 14 questions (`Study/human/rubric.md`, `Study/prompts/judge.md`). Blinding is enforced SERVER-SIDE: the browser only ever receives opaque tokens and left/right page URLs `/rate/frame/<token>/<side>/<page>` (token = HMAC of rater+item; side in `l|r`); condition names, arm, and the blinding key never reach the client; page names go through the same `clean_path` rule as `Study/tools/judge/blind.py`. Un-blinding happens when saving: `POST /api/rate/answer {name,item,question,verdict:"A"|"B"|"tie",note}` -> server maps A/B to wcag/both via the key and appends a row to `human/human_ratings.csv` (`site_id,arm,question,rater_id,verdict,note,shown_left,shown_right,ts`; last answer for the same (rater,item,question) wins, so store latest per key and rewrite atomically). Endpoints: `POST /api/rate/start {name}` -> `{rater_id,total_items,done_items,next}`; `GET /api/rate/item?name=&i=` -> `{i,token,pages:[...],questions:[{id,text,anchor}],answers:{q:{verdict,note}}}`; `POST /api/rate/answer`; `GET /api/rate/progress?name=`. Notes starting with `= + - @` are stored with a leading `'` (spreadsheet formula injection). Items need blinded variants: the server picks the (arm, site) item's `wcag` and `both` final-iteration files from `runs/` (imported or generated). An item whose variants are missing is skipped and reported in `/api/rate/progress` as `unavailable`.
