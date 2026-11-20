@@ -84,7 +84,7 @@ const IP_B = '100.64.0.2', IP_C = '100.64.0.3';
   await post('/api/worker/claim', { worker_id: `${IP_B}-a6`, max: 0, slots: 4, arms: ['A6'], arcs: { A6: 'http://arc-a6:8090/v1' }, info: { host: IP_B, os: 'test', tailnet_ip: IP_B, manual: true } }, WTOKEN);
   await p1.waitForSelector('.legend-machines li:has-text("2 nodes")');
   await p2.waitForSelector('.legend-machines li:has-text("2 nodes")');
-  assert.match(await p1.locator('#machines-h').innerText(), /Machines \(7\)/, 'a container is not a machine');
+  assert.match(await p1.locator('h3:has-text("Machines online")').innerText(), /Machines online \(7\)/, 'a container is not a machine');
   const legend = await p1.locator('.legend-machines li').allInnerTexts();
   assert.ok(legend.some((t) => /^\s*100\.64\.0\.2[\s\S]*2 nodes:[\s\S]*hosted[\s\S]*a6/.test(t)), 'legend: ' + JSON.stringify(legend));
   await p1.waitForSelector(`#nodes-A6 :text("a6")`);
