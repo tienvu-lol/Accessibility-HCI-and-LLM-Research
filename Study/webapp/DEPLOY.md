@@ -62,7 +62,7 @@ node --test --test-reporter=tap webapp/test/worker*.test.js
 The worker image tag `mcr.microsoft.com/playwright:v<version>-noble` must match the `playwright` version in `Study/package-lock.json`; bump both together.
 
 ## 7. Self-hosted: start workers from the dashboard (Docker)
-Railway cannot expose a docker socket, so dashboard-launched containers need a machine you control (a VPS or your own box with Docker).
+Railway cannot expose a docker socket, so dashboard-launched containers need a machine you control (a VPS or your own box with Docker). Run Compose from [`Dashboard/`](../../Dashboard/README.md) at the repository root.
 ```
 cp .env.example .env                       # set APP_PASSWORD and WORKER_TOKEN
 docker compose --profile build build       # builds study-web and study-worker
@@ -83,8 +83,8 @@ In the console open Runs -> Docker workers, pick containers and slots, Start. Co
 ## 9. Tailscale (private, no public URL)
 Host the console on one machine and join the others over the tailnet. Traffic is WireGuard-encrypted, so plain `http://` is fine inside it.
 1. Install Tailscale on every machine and sign in to the same tailnet. Check names with `tailscale status`.
-2. Host machine: `cp .env.example .env`, set `APP_PASSWORD` and `WORKER_TOKEN`, set `BIND_ADDR` to `tailscale ip -4` (listen on the tailnet only), then `docker compose --profile build build && docker compose up -d web`.
+2. Host machine: from `Dashboard/`, run `cp .env.example .env`, set `APP_PASSWORD` and `WORKER_TOKEN`, set `BIND_ADDR` to `tailscale ip -4` (listen on the tailnet only), then `docker compose --profile build build && docker compose up -d web`.
 3. Other machines: `./agent/start.sh` (or `agent\start.ps1`), console URL `http://<host-machine-name>:8080` (MagicDNS) or `http://<tailnet-ip>:8080`. They need the worker image: `docker login ghcr.io` and pull from CI, or `docker save study-worker | ssh friend docker load`.
-4. The host's own agent can use `http://host.docker.internal:8080`.
+4. When `BIND_ADDR` is set to the Tailscale IP, the host's own agent also uses the tailnet URL.
 5. Optional HTTPS: `tailscale serve --bg 8080` gives `https://<host>.<tailnet>.ts.net`.
 Railway cannot join a tailnet without extra sidecar setup, so the tailnet route means the web service runs on a machine you own.

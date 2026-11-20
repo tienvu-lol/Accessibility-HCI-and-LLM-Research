@@ -21,8 +21,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: docker build -f Study/webapp/Dockerfile.web -t study-web Study
-      - run: docker build -f Study/webapp/Dockerfile.worker -t study-worker Study
+      - run: docker compose --profile build build
+        working-directory: Dashboard
+        env:
+          APP_PASSWORD: ci-build-only
+          WORKER_TOKEN: ci-build-only
   publish-worker:
     # multi-arch image so Windows/Linux (amd64) and Apple Silicon (arm64) laptops pull the same tag
     needs: [test, docker]

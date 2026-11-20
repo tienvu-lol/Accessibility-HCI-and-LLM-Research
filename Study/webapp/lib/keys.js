@@ -1,36 +1,28 @@
-// Hosted-provider keys (one per provider, shared by the arms that use it) plus one key per
-// open-source arm: A5 (DeepSeek) and A6 (Qwen) are separate llama.cpp servers with separate
-// credentials, so they get separate slots and are never interchangeable.
+// Shared hosted-provider keys and a separate key for each configured self-hosted arm.
 const PROVIDERS = ['openai', 'anthropic', 'gemini'];
-const ARM_KEYS = ['a5', 'a6'];
-const SLOTS = [...PROVIDERS, ...ARM_KEYS];
-const ENV = {
-  openai: 'OPENAI_API_KEY', anthropic: 'ANTHROPIC_API_KEY', gemini: 'GEMINI_API_KEY',
-  a5: 'A5_API_KEY', a6: 'A6_API_KEY',
-};
-const armSlot = (arm) => (typeof arm === 'string' && ARM_KEYS.includes(arm.toLowerCase()) ? arm.toLowerCase() : null);
 
-// Memory only: nothing here is ever written to disk, logged or returned except {set,last4,source}.
-// `id` is what the usage ledger records so spend can be split by the credential that paid for it;
-// it holds no secret, only the slot and the last four characters.
-function create(env = process.env) {
-  const store = {};
-  for (const p of SLOTS) if (env[ENV[p]]) store[p] = { key: env[ENV[p]], source: 'env' };
-  const entry = (p) => store[p] || null;
+// Memory only: never written to disk, logged or returned except {set,last4,source}.
+function create(env = process.env, openArms = {}) {
+  const armSlots = new Map(Object.keys(openArms).map((arm) => [arm, arm.toLowerCase()]));
+  const envNames = new Map(PROVIDERS.map((p) => [p, `${p.toUpperCase()}_API_KEY`]));
+  for (const [arm, slot] of armSlots) envNames.set(slot, openArms[arm].api_key_env || `${arm}_API_KEY`);
+  const store = new Map();
+  for (const [slot, name] of envNames) if (env[name]) store.set(slot, { key: env[name], source: 'env' });
   return {
-    PROVIDERS, ARM_KEYS, SLOTS,
-    set(p, key) { store[p] = { key, source: 'ui' }; },
-    delete(p) { delete store[p]; },
-    get(p) { const e = entry(p); return e ? e.key : null; },
-    // stable, secret-free identity of the credential behind a slot, e.g. "openai:f4a1"
-    id(p) { const e = entry(p); return e ? `${p}:${e.key.slice(-4)}` : null; },
-    envName(p) { return ENV[p] || null; },
+    armSlot: (arm) => armSlots.get(arm) || null,
+    has: (slot) => envNames.has(slot),
+    set(slot, key) { store.set(slot, { key, source: 'ui' }); },
+    delete(slot) { store.delete(slot); },
+    get(slot) { return store.get(slot)?.key || null; },
+    id(slot) { const e = store.get(slot); return e ? `${slot}:${e.key.slice(-4)}` : null; },
+    envName: (slot) => envNames.get(slot) || null,
     status() {
-      return Object.fromEntries(SLOTS.map((p) => [p, store[p]
-        ? { set: true, last4: store[p].key.slice(-4), source: store[p].source }
-        : { set: false, last4: null, source: null }]));
+      return Object.fromEntries([...envNames.keys()].map((slot) => {
+        const e = store.get(slot);
+        return [slot, e ? { set: true, last4: e.key.slice(-4), source: e.source } : { set: false, last4: null, source: null }];
+      }));
     },
   };
 }
 
-module.exports = { create, PROVIDERS, ARM_KEYS, SLOTS, ENV, armSlot };
+module.exports = { create, PROVIDERS };

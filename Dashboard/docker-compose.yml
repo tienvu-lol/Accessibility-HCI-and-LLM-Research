@@ -4,14 +4,17 @@
 #   docker compose up -d web                 # http://localhost:8080
 # The web container mounts the host docker socket, which is root-equivalent on the host: run this on a
 # machine you control, behind HTTPS, with a strong APP_PASSWORD.
+# Keep the existing container and study_data volume when deploying from Dashboard/.
+name: study
 services:
   web:
-    build: { context: ., dockerfile: webapp/Dockerfile.web }
+    build: { context: ../Study, dockerfile: webapp/Dockerfile.web }
     image: study-web
     ports: ["${BIND_ADDR:-0.0.0.0}:${PORT:-8080}:8080"]  # BIND_ADDR = your Tailscale IP to keep it off other networks
     environment:
       APP_PASSWORD: ${APP_PASSWORD:?set APP_PASSWORD}
       WORKER_TOKEN: ${WORKER_TOKEN:?set WORKER_TOKEN}
+      DASHBOARD_LAUNCH_TOKEN: ${DASHBOARD_LAUNCH_TOKEN:-}
       OPENAI_API_KEY: ${OPENAI_API_KEY:-}
       ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
       GEMINI_API_KEY: ${GEMINI_API_KEY:-}
@@ -29,7 +32,7 @@ services:
     networks: [study-net]
     restart: unless-stopped
   worker:  # build target only; the dashboard starts the containers
-    build: { context: ., dockerfile: webapp/Dockerfile.worker }
+    build: { context: ../Study, dockerfile: webapp/Dockerfile.worker }
     image: study-worker
     profiles: ["build"]
 volumes:

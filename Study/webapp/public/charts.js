@@ -2,12 +2,27 @@
 (function (root) {
   'use strict';
 
-  var FONT = 'Segoe UI, system-ui, Arial, sans-serif';
-  var INK = '#1a1a1a';
-  var MUTED = '#595959';
-  var GRID = '#d9d6d2';
+  var FONT = 'Atkinson Hyperlegible Next, Segoe UI, system-ui, Arial, sans-serif';
+  // The published (export) palette: light, print-safe. Exported unchanged as ARM_COLORS / COND_COLORS.
   var ARM_COLORS = { A1: '#861F41', A2: '#E5751F', A3: '#1a1a1a', A4: '#6b6b6b', A5: '#1F6F78', A6: '#3F5FA8' };
   var COND_COLORS = { naive: '#6b6b6b', wcag: '#E5751F', nielsen: '#1F6F78', both: '#861F41', baseline: '#111111' };
+  var THEMES = {
+    light: { ink: '#1a1a1a', muted: '#595959', grid: '#d9d6d2', bg: '#ffffff', edge: '#ffffff', arm: ARM_COLORS, cond: COND_COLORS, before: '#8a8a8a', after: '#861F41', group: '#444444', heatA: [255, 255, 255], heatB: [134, 31, 65], spark: '#861F41' },
+    // On-screen console cards: the same chart on the dark surface. Every mark is at least 3:1 against #0e1014.
+    dark: { ink: '#f7f8f8', muted: '#9e9f9f', grid: '#2a2c30', bg: '#0e1014', edge: '#0e1014',
+      arm: { A1: '#ee8aa8', A2: '#ff7a2e', A3: '#f7f8f8', A4: '#9e9f9f', A5: '#4cc3d0', A6: '#7b9be0' },
+      cond: { naive: '#9e9f9f', wcag: '#ff7a2e', nielsen: '#4cc3d0', both: '#ee8aa8', baseline: '#f7f8f8' },
+      before: '#7c7d7d', after: '#ee8aa8', group: '#c8c9c9', heatA: [23, 23, 24], heatB: [208, 85, 127], spark: '#ee8aa8' }
+  };
+  var INK, MUTED, GRID, BG, EDGE, ARM, COND, BEFORE, AFTER, GROUP, HEAT_A, HEAT_B, SPARK;
+  function use(name) {
+    var th = THEMES[name] || THEMES.light;
+    INK = th.ink; MUTED = th.muted; GRID = th.grid; BG = th.bg; EDGE = th.edge; ARM = th.arm; COND = th.cond;
+    BEFORE = th.before; AFTER = th.after; GROUP = th.group; HEAT_A = th.heatA; HEAT_B = th.heatB; SPARK = th.spark;
+  }
+  // Charts are built synchronously, so a scoped swap is safe; the default stays light so exports never change.
+  function themed(name, fn) { use(name); try { return fn(); } finally { use('light'); } }
+  use('light');
   var COND_ORDER = ['naive', 'wcag', 'nielsen', 'both', 'baseline'];
   var GROUP_SHAPES = { claude: 'circle', codex: 'square', 'open-source': 'triangle' };
   var COND_SHAPES = { naive: 'circle', wcag: 'square', nielsen: 'triangle', both: 'diamond', baseline: 'circle' };
@@ -75,7 +90,7 @@
   // White -> maroon ramp, t in [0,1].
   function heatColor(t) {
     t = Math.max(0, Math.min(1, t));
-    var a = [255, 255, 255], b = [134, 31, 65];
+    var a = HEAT_A, b = HEAT_B;
     var c = a.map(function (v, i) { return Math.round(v + (b[i] - v) * t); });
     return '#' + c.map(function (v) { return ('0' + v.toString(16)).slice(-2); }).join('');
   }
@@ -99,7 +114,7 @@
   function wrap(w, h, title, desc, inner) {
     return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ' + w + ' ' + h + '" width="' + w + '" height="' + h +
       '" role="img" aria-label="' + esc(title) + '"><title>' + esc(title) + '</title><desc>' + esc(desc) + '</desc>' +
-      '<rect width="' + w + '" height="' + h + '" fill="#ffffff"/>' + inner + '</svg>';
+      '<rect width="' + w + '" height="' + h + '" fill="' + BG + '"/>' + inner + '</svg>';
   }
 
   function header(w, title, subtitle) {
@@ -133,7 +148,7 @@
   }
 
   /* Fig 2: grouped bars, before vs after per arm, one condition. */
-  function fig2Svg(fig2, condition) {
+  function fig2Build(fig2, condition) {
     var rows = (fig2 || []).filter(function (r) { return r.condition === condition; });
     var arms = rows.map(function (r) { return r.arm; }).sort();
     var W = 760, H = 380, box = { l: 62, r: W - 20, t: 78, b: H - 52 };
@@ -143,11 +158,11 @@
     var ax = niceTicks(0, max || 1, 5);
     var ymap = linear(ax.min, ax.max, box.b, box.t);
     var s = header(W, title, 'Mean axe violations per site at 1280 px. Lower is better.') + yAxis(box, ax.ticks, ymap, 'Violations per site (mean)');
-    s += legend([{ label: 'Baseline (before)', color: '#8a8a8a' }, { label: 'After repair', color: '#861F41' }], box.l, 64);
+    s += legend([{ label: 'Baseline (before)', color: BEFORE }, { label: 'After repair', color: AFTER }], box.l, 64);
     var band = (box.r - box.l) / Math.max(arms.length, 1), bw = Math.min(40, band / 3);
     rows.sort(function (a, b) { return a.arm < b.arm ? -1 : 1; }).forEach(function (r, i) {
       var cx = box.l + band * (i + 0.5);
-      [['before_mean', '#8a8a8a', -bw - 2], ['after_mean', '#861F41', 2]].forEach(function (k) {
+      [['before_mean', BEFORE, -bw - 2], ['after_mean', AFTER, 2]].forEach(function (k) {
         var v = r[k[0]];
         if (v == null) return;
         var y = ymap(v);
@@ -161,8 +176,14 @@
     return wrap(W, H, title, 'Grouped bars per arm. ' + rows.map(function (r) { return r.arm + ' ' + num(r.before_mean, 1) + ' before, ' + num(r.after_mean, 1) + ' after'; }).join('; '), s);
   }
 
+  function fig2Svg(fig2, condition, theme) { return themed(theme, function () { return fig2Build(fig2, condition); }); }
+  function fig3Svg(fig3, theme) { return themed(theme, function () { return fig3Build(fig3); }); }
+  function fig4Svg(fig4, theme) { return themed(theme, function () { return fig4Build(fig4); }); }
+  function fig5Svg(fig5, theme) { return themed(theme, function () { return fig5Build(fig5); }); }
+  function sparkSvg(series, field, label, theme) { return themed(theme, function () { return sparkBuild(series, field, label); }); }
+
   /* Fig 3: judge mean rank per condition per arm, dot plot (rank 1 = best, left). */
-  function fig3Svg(fig3) {
+  function fig3Build(fig3) {
     var rows = fig3 || [], arms = armsIn(rows);
     var W = 760, H = 118 + arms.length * 46, box = { l: 70, r: W - 30, t: 96, b: H - 44 };
     var title = 'Fig 3. Judge mean rank by condition and arm';
@@ -171,7 +192,7 @@
 
   function fig3Draw(rows, arms, W, H, box, title, head) {
     var rowH = 46, xmap = linear(1, 5, box.l, box.r);
-    var s = head + legend(COND_ORDER.map(function (c) { return { label: c, color: COND_COLORS[c], shape: COND_SHAPES[c] }; }), box.l, 66);
+    var s = head + legend(COND_ORDER.map(function (c) { return { label: c, color: COND[c], shape: COND_SHAPES[c] }; }), box.l, 66);
     [1, 2, 3, 4, 5].forEach(function (v) {
       s += '<line x1="' + round(xmap(v)) + '" x2="' + round(xmap(v)) + '" y1="' + box.t + '" y2="' + box.b + '" stroke="' + GRID + '"/>' + t(xmap(v), box.b + 16, v, { anchor: 'middle', size: 11, fill: MUTED });
     });
@@ -180,7 +201,7 @@
       s += t(box.l - 10, cy + 4, a, { anchor: 'end', size: 12, weight: 600 }) + '<line x1="' + box.l + '" x2="' + box.r + '" y1="' + cy + '" y2="' + cy + '" stroke="' + GRID + '" stroke-dasharray="2 3"/>';
       rows.filter(function (r) { return r.arm === a && r.mean_rank != null; }).forEach(function (r) {
         var k = Math.max(0, COND_ORDER.indexOf(r.condition));
-        s += marker(COND_SHAPES[r.condition] || 'circle', xmap(r.mean_rank), cy + (k - 2) * 7, 5, COND_COLORS[r.condition] || INK, 'stroke="#ffffff" stroke-width="1"');
+        s += marker(COND_SHAPES[r.condition] || 'circle', xmap(r.mean_rank), cy + (k - 2) * 7, 5, COND[r.condition] || INK, 'stroke="' + EDGE + '" stroke-width="1"');
       });
     });
     s += t((box.l + box.r) / 2, H - 6, 'Mean judge rank (1 = best, 4 = worst)', { anchor: 'middle', size: 11.5 });
@@ -189,7 +210,7 @@
   }
 
   /* Fig 4: WCAG criterion x Nielsen heuristic heatmap with counts printed in cells. */
-  function fig4Svg(fig4) {
+  function fig4Build(fig4) {
     fig4 = fig4 || {};
     var crit = fig4.criteria || [], heur = fig4.heuristics || [], cells = fig4.cells || [];
     var cw = 54, ch = 24, left = 80, top = 96, W = left + cw * Math.max(heur.length, 1) + 24, H = top + ch * Math.max(crit.length, 1) + 64;
@@ -207,7 +228,7 @@
       s += t(left - 8, top + ch * (i + 0.5) + 4, c, { anchor: 'end', size: 11.5 });
       heur.forEach(function (h, j) {
         var v = (cells[i] || [])[j] || 0, fill = heatColor(max ? v / max : 0);
-        s += '<rect x="' + (left + cw * j) + '" y="' + (top + ch * i) + '" width="' + cw + '" height="' + ch + '" fill="' + fill + '" stroke="#ffffff"><title>' + esc('WCAG ' + c + ' x ' + h + ': ' + v) + '</title></rect>' +
+        s += '<rect x="' + (left + cw * j) + '" y="' + (top + ch * i) + '" width="' + cw + '" height="' + ch + '" fill="' + fill + '" stroke="' + EDGE + '"><title>' + esc('WCAG ' + c + ' x ' + h + ': ' + v) + '</title></rect>' +
           t(left + cw * (j + 0.5), top + ch * (i + 0.5) + 4, v, { anchor: 'middle', size: 11, fill: textOn(fill) });
       });
     });
@@ -218,7 +239,7 @@
   }
 
   /* Fig 5: scatter, WCAG gain vs usability delta; colour = arm, shape = generator group. */
-  function fig5Svg(fig5) {
+  function fig5Build(fig5) {
     var pts = (fig5 || []).filter(function (p) { return p.wcag_gain != null && p.usability_delta != null; });
     var W = 760, H = 460, box = { l: 66, r: W - 24, t: 96, b: H - 56 };
     var title = 'Fig 5. WCAG gain vs usability change (per site-variant)';
@@ -227,21 +248,21 @@
     var ay = niceTicks(Math.min.apply(null, ys.concat([-0.5])), Math.max.apply(null, ys.concat([0.5])), 6);
     var xmap = linear(ax.min, ax.max, box.l, box.r), ymap = linear(ay.min, ay.max, box.b, box.t);
     var s = header(W, title, 'Gain = violations before minus after. Usability = mean rank gain over baseline; above 0 is better than the original page.');
-    s += legend(armsIn(pts).map(function (a) { return { label: a, color: ARM_COLORS[a] || INK, shape: 'square' }; }), box.l, 64);
-    s += legend(Object.keys(GROUP_SHAPES).map(function (g) { return { label: g, color: '#444444', shape: GROUP_SHAPES[g] }; }), box.l, 82);
+    s += legend(armsIn(pts).map(function (a) { return { label: a, color: ARM[a] || INK, shape: 'square' }; }), box.l, 64);
+    s += legend(Object.keys(GROUP_SHAPES).map(function (g) { return { label: g, color: GROUP, shape: GROUP_SHAPES[g] }; }), box.l, 82);
     s += yAxis(box, ay.ticks, ymap, 'Usability delta vs baseline');
     ax.ticks.forEach(function (v) { s += t(xmap(v), box.b + 16, v, { anchor: 'middle', size: 11, fill: MUTED }); });
     if (ay.min < 0 && ay.max > 0) s += '<line x1="' + box.l + '" x2="' + box.r + '" y1="' + round(ymap(0)) + '" y2="' + round(ymap(0)) + '" stroke="' + INK + '"/>';
     if (ax.min < 0 && ax.max > 0) s += '<line x1="' + round(xmap(0)) + '" x2="' + round(xmap(0)) + '" y1="' + box.t + '" y2="' + box.b + '" stroke="' + INK + '" stroke-dasharray="3 3"/>';
     pts.forEach(function (p) {
-      s += marker(GROUP_SHAPES[p.generator_group] || 'circle', xmap(p.wcag_gain), ymap(p.usability_delta), 4, ARM_COLORS[p.arm] || INK, 'fill-opacity="0.72" stroke="#ffffff" stroke-width="0.8"');
+      s += marker(GROUP_SHAPES[p.generator_group] || 'circle', xmap(p.wcag_gain), ymap(p.usability_delta), 4, ARM[p.arm] || INK, 'fill-opacity="0.72" stroke="' + EDGE + '" stroke-width="0.8"');
     });
     s += '<line x1="' + box.l + '" x2="' + box.r + '" y1="' + box.b + '" y2="' + box.b + '" stroke="' + INK + '"/>' + t((box.l + box.r) / 2, H - 8, 'WCAG violations fixed (gain per site)', { anchor: 'middle', size: 11.5 });
     if (!pts.length) s += t((box.l + box.r) / 2, (box.t + box.b) / 2, 'No scored and judged site-variants yet', { anchor: 'middle', size: 13, fill: MUTED });
     return wrap(W, H, title, 'Scatter of ' + pts.length + ' site-variants; see the data table for values.', s);
   }
 
-  function sparkSvg(series, field, label) {
+  function sparkBuild(series, field, label) {
     var pts = (series || []).filter(function (p) { return typeof p[field] === 'number'; });
     var W = 320, H = 64;
     if (pts.length < 2) return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="' + esc(label) + ': not enough data"><title>' + esc(label) + ': not enough data</title></svg>';
@@ -251,7 +272,7 @@
     var first = pts[0][field], last = pts[pts.length - 1][field];
     var d = 'M' + round(x(0)) + ',' + (H - 2) + ' ' + path.replace(/^M/, 'L') + ' L' + round(x(pts.length - 1)) + ',' + (H - 2) + ' Z';
     return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="' + esc(label + ': from ' + num(first) + ' to ' + num(last) + ' over ' + pts.length + ' minutes') + '">' +
-      '<title>' + esc(label) + '</title><path d="' + d + '" fill="#861F41" fill-opacity="0.12"/><path d="' + path + '" fill="none" stroke="#861F41" stroke-width="2"/></svg>';
+      '<title>' + esc(label) + '</title><path d="' + d + '" fill="' + SPARK + '" fill-opacity="0.12"/><path d="' + path + '" fill="none" stroke="' + SPARK + '" stroke-width="2"/></svg>';
   }
 
   /* Tables behind every chart: also the data-table alternative and the demo CSV source. */
@@ -272,7 +293,7 @@
     return out;
   }
 
-  // Serialise an SVG string to a PNG blob at `scale`x, white background (the SVG already paints one).
+  // Serialise an SVG string to a PNG blob at `scale`x. Pass the light SVG: exports are always on white.
   function pngFromSvg(svg, scale) {
     return new Promise(function (resolve, reject) {
       var m = /viewBox="0 0 (\d+) (\d+)"/.exec(svg);

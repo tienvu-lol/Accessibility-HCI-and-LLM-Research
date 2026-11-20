@@ -1,9 +1,9 @@
 # Handoff: researcher console, workers, ARC arms (state as of 2026-11-20)
 
-Branch `study/hackloop-orchestration`. Read this first on a new machine, then `webapp/DEPLOY.md` and `agent/README.md`.
+Read this first on a new machine, then `webapp/DEPLOY.md` and `agent/README.md`.
 
 ## What exists and works (all tested locally with MOCK_PROVIDERS=1, no paid calls)
-- **Console** (`webapp/server.js`, zero deps): UI + API + job coordinator. Docker image `webapp/Dockerfile.web`, stack in `docker-compose.yml` (`cp .env.example .env`; set `APP_PASSWORD`, `WORKER_TOKEN`; `docker compose --profile build build && docker compose up -d web`).
+- **Console** (`webapp/server.js`, zero deps): UI + API + job coordinator. Docker image `webapp/Dockerfile.web`, deploy from [`Dashboard/`](../Dashboard/README.md) at the repository root.
 - **Workers** (`webapp/worker.js`, image `webapp/Dockerfile.worker`): pull jobs (repair / score / judge) from the console and push results back. Keys never live on a worker; they arrive inside each job.
 - **Dashboard (Runs -> Workers)**: online/offline badge, machine name + OS, per-worker slot cap and pause (compute split), "Docker workers" panel to start/stop containers on the console host (`DOCKER_WORKERS=1`).
 - **Cost view**: projection by arm (A1-A6 + judge), spent / remaining / projected total / at-start baseline / change, live usage feed, budget cap editable any time (hard stop, default $200), **contribution by machine** and **spend by API key**.
@@ -14,7 +14,7 @@ Branch `study/hackloop-orchestration`. Read this first on a new machine, then `w
 - **Cost config**: `config/live-arms.json` (A1-A4 models) + `webapp/lib/pricing.default.json` (prices with sources). Apply to a live console: `WEB_URL=... APP_PASSWORD=... node webapp/tools/apply-config.js` (prints the projection).
 
 ## Live deployment (on the original laptop, may be off)
-Console on the Tailscale address `http://100.112.79.22:8080` (compose binds `BIND_ADDR`). Secrets are in `Study/.env` on that laptop only (never committed): `APP_PASSWORD`, `WORKER_TOKEN`. Ask the owner for them. The host's own agent must use `WEB_URL=http://100.112.79.22:8080` (not `host.docker.internal`) when `BIND_ADDR` is set.
+Console on the Tailscale address `http://100.112.79.22:8080` (compose binds `BIND_ADDR`). Secrets are in `Dashboard/.env` on that laptop only (never committed): `APP_PASSWORD`, `WORKER_TOKEN`. Ask the owner for them. The host's own agent must use `WEB_URL=http://100.112.79.22:8080` (not `host.docker.internal`) when `BIND_ADDR` is set.
 
 ## NOT done / unverified
 1. **Real paid run**: no API keys have been used. Paste OpenAI / Anthropic / Gemini keys under Keys & arms (kept in memory only) and leave `MOCK_PROVIDERS` unset. Do a one-site real run first.

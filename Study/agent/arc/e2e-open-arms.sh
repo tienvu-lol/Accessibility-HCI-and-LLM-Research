@@ -87,7 +87,7 @@ A6_API_KEY=$A6KEY
 EOF
 )
 # A5's key is NOT in agent.env: it is typed into the console below, to exercise that path too.
-export HOST_OS="$(uname -s | sed 's/Darwin/macOS/') $(uname -m)"
+export HOST_OS="$(uname -s | sed 's/Darwin/macOS/') $(uname -m)" WORKER_MANUAL_CLAIM=0
 export WORKER_IMAGE=study-worker:latest
 export COMPOSE_PROJECT_NAME=$P
 COMPOSE="docker compose -f $WORK/agent/docker-compose.yml"

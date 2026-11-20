@@ -100,14 +100,23 @@
     var running = S.run.phase === 'running';
     // the judge's own queue only holds the items created so far, so the total comes from coverage
     var judgeTotal = Math.max(cov.judge_items_expected || 0, S.judge.items.total || 0);
+    var mock = S.pipeline && S.pipeline.mock;
+    var openLabel = 'Open-source arms (' + open.map(function (a) { return a.id; }).join(', ') + ')';
     var list = [
-      { name: 'Setup', done: blockers.length ? 0 : 1, total: 1, unit: '', note: blockers.length ? blockers.length + ' not ready' : 'Keys and arms ready', state: blockers.length ? ['attn', 'Needs attention'] : ['done', 'Done'] },
-      { name: 'Open-source arms (A5, A6)', done: openDone, total: openTotal, bad: openBad, unit: 'cells', active: running && S.run.kind === 'repair' && openDone + openBad < openTotal },
+      { name: 'Setup', done: blockers.length || mock ? 0 : 1, total: 1, unit: '', note: mock ? 'Test providers enabled' : blockers.length ? blockers.length + ' not ready' : 'Keys and arms ready', state: mock ? ['attn', 'Mock mode'] : blockers.length ? ['attn', 'Needs attention'] : ['done', 'Done'] },
+      { name: openLabel, done: openDone, total: openTotal, bad: openBad, unit: 'cells', active: running && S.run.kind === 'repair' && openDone + openBad < openTotal },
       { name: 'Repair', done: mainDone, total: mainTotal, bad: mainBad, unit: 'cells', active: running && S.run.kind === 'repair' },
       { name: 'Score', done: cov.variants_scored || 0, total: cov.variants_expected || 0, unit: 'variants', active: running && S.run.kind === 'score' },
       { name: 'Judge (Gemini)', done: S.judge.items.done, total: judgeTotal, bad: S.judge.items.failed || 0, unit: 'items', active: running && S.run.kind === 'judge' },
       { name: 'Human rating', done: cov.human_items_complete || 0, total: S.human.items || 0, unit: 'items' }
     ];
+    if (S.pipeline) {
+      var p = S.pipeline;
+      Object.assign(list[1], p.open, { active: running && S.run.kind === 'repair' && S.settings.dispatch_open });
+      Object.assign(list[2], p.repair);
+      Object.assign(list[3], p.score, { unit: 'variants and baselines' });
+      Object.assign(list[4], p.judge);
+    }
     return list.map(function (s) { s.state = s.state || phaseStatus(s.done, s.total, s.active, s.bad); return s; });
   }
 
@@ -130,7 +139,9 @@
       '<button type="button" class="btn" data-action="run" data-arg="retry-failed"' + busy + '>Retry failed</button></div>';
     var runLine = '<p class="runline">' + badge(running ? 'active' : paused ? 'attn' : 'pending', running ? 'Running' : paused ? 'Paused' : 'Idle') +
       (run.kind ? ' <span>' + esc(run.kind) + (run.started_at ? ', started ' + esc(ago(run.started_at, S.now)) : '') + '</span>' : ' <span>No phase active. Start a phase below.</span>') + '</p>';
-    out.push(panel('ov-run', 'Pipeline', '<ol class="stepper">' + stepHtml + '</ol>' + runLine + ctl + blk +
+    var p = S.pipeline, scope = p && p.scope;
+    var scopeLine = scope ? '<p class="hint">Progress is for the full study. Selected run: ' + int(scope.sites) + ' of ' + int(scope.study_sites) + ' sites, ' + int(scope.conditions) + ' of ' + int(scope.study_conditions) + ' conditions. Mock runs do not count.</p>' : '';
+    out.push(panel('ov-run', 'Pipeline', scopeLine + '<ol class="stepper">' + stepHtml + '</ol>' + runLine + ctl + blk +
       '<p class="hint">Retry failed re-queues every failed cell and item. Judge start is refused while repair or imports are incomplete.</p>'));
 
     var P = S.projection, scale = Math.max(P.budget_usd, P.expected_total_usd, P.spent_usd) || 1;
@@ -140,7 +151,7 @@
       '<span class="spend-fill' + (P.spent_usd > P.budget_usd ? ' spend-over' : '') + '" style="width:' + (P.spent_usd / scale * 100) + '%"></span>' +
       '<span class="mark mark-proj" style="left:' + (P.expected_total_usd / scale * 100) + '%"></span>' +
       '<span class="mark mark-budget" style="left:' + (P.budget_usd / scale * 100) + '%"></span></div>' +
-      '<p class="hint">Solid bar = spent. Orange tick = projected total. Black tick = budget.</p>' +
+      '<p class="hint">Solid bar = spent. Orange tick = projected total. White tick = budget.</p>' +
       '<dl class="facts"><div><dt>Spent</dt><dd>' + usd(P.spent_usd) + ' <span class="sub">' + pct(P.spent_usd, P.budget_usd) + '% of budget</span></dd></div>' +
       '<div><dt>Budget</dt><dd>' + usd(P.budget_usd) + '</dd></div>' +
       '<div><dt>Remaining</dt><dd>' + usd(P.remaining_usd) + '</dd></div>' +
@@ -155,7 +166,7 @@
       '<div><dt>Tokens in, total</dt><dd>' + tok(I.total.input) + '</dd></div>' +
       '<div><dt>Tokens out, total</dt><dd>' + tok(I.total.output) + '</dd></div>' +
       '<div><dt>Cost, total</dt><dd>' + usd(I.total.cost_usd) + '</dd></div></dl>' +
-      '<div class="spark">' + C.sparkSvg(I.series, 'cum_cost_usd', 'Cumulative cost') + '<p class="hint">Cumulative cost, last ' + (I.series.length) + ' min' +
+      '<div class="spark">' + C.sparkSvg(I.series, 'cum_cost_usd', 'Cumulative cost', 'dark') + '<p class="hint">Cumulative cost, last ' + (I.series.length) + ' min' +
       (I.series.length ? ': ' + usd(I.series[0].cum_cost_usd) + ' to ' + usd(I.series[I.series.length - 1].cum_cost_usd) : '') + '</p></div>'));
 
     out.push(panel('ov-warn', 'Warnings (' + S.warnings.length + ')', S.warnings.length ?
@@ -169,12 +180,6 @@
     ['openai', 'ChatGPT / OpenAI', 'Used by repair arms with provider openai.'],
     ['anthropic', 'Claude / Anthropic', 'Used by repair arms with provider anthropic.'],
     ['gemini', 'Gemini', 'Judge only. Gemini never repairs, so the judge stays neutral to the arms.']
-  ];
-  // One key per open-source arm. They are different llama.cpp servers in different ARC sessions, so
-  // the keys are never interchangeable; either one can also be left on the laptop that tunnels to it.
-  var ARM_KEYS = [
-    ['a5', 'A5 DeepSeek (llama.cpp on ARC)', 'Its own key, separate from A6. Leave empty to use the A5_API_KEY on the laptop running the A5 tunnel.'],
-    ['a6', 'A6 Qwen (llama.cpp on ARC)', 'Its own key, separate from A5. Leave empty to use the A6_API_KEY on the laptop running the A6 tunnel.']
   ];
 
   function keyCard(S, p) {
@@ -191,10 +196,13 @@
 
   function keys(S) {
     var out = [];
+    var armKeys = S.arms.filter(function (a) { return a.kind === 'open_source'; }).map(function (a) {
+      return [a.key_slot || a.id.toLowerCase(), a.id + ' ' + a.label, 'Leave empty to use ' + (a.key_env || a.id + '_API_KEY') + ' on the laptop running its tunnel.'];
+    });
     out.push(panel('k-keys', 'API keys', '<div class="cards">' + PROVIDERS.map(function (p) { return keyCard(S, p); }).join('') + '</div>' +
       '<h3 class="sub-h">Open-source arms</h3>' +
-      '<p class="hint">A5 and A6 are separate self-hosted models with separate credentials. A key set here is sent inside that arm\u2019s jobs and used only by them; with no key here, the arm uses the one on the laptop that holds its tunnel, which never leaves that machine. Spend is attributed per key in Cost.</p>' +
-      '<div class="cards">' + ARM_KEYS.map(function (p) { return keyCard(S, p); }).join('') + '</div>', { form: true }));
+      '<p class="hint">Each self-hosted arm has its own key. Console keys are sent only to workers running that arm. Locally configured keys stay on the machine running the tunnel. Spend is attributed per key in Cost.</p>' +
+      '<div class="cards">' + armKeys.map(function (p) { return keyCard(S, p); }).join('') + '</div>', { form: true }));
 
     var rows = S.arms.map(function (a) {
       var editable = a.kind === 'mainstream';
@@ -207,7 +215,7 @@
       return '<tr data-arm="' + esc(a.id) + '"><th scope="row">' + esc(a.id) + '</th><td>' + esc(a.label) + '</td><td>' + esc(a.kind === 'open_source' ? 'Open-source' : 'Mainstream') + '</td>' + cell + '<td>' + st + '</td></tr>';
     }).join('');
     out.push(panel('k-arms', 'Arms',
-      '<p class="hint">A1 to A4 take provider openai or anthropic only. Gemini is the judge, so it is not offered here.</p>' +
+      '<p class="hint">Hosted repair arms take provider openai or anthropic only. Gemini is the judge, so it is not offered here.</p>' +
       tableWrap('Arms table', '<table class="grid"><thead><tr><th scope="col">Arm</th><th scope="col">Label</th><th scope="col">Kind</th><th scope="col">Provider</th><th scope="col">Model id</th><th scope="col">Save</th><th scope="col">Status</th></tr></thead><tbody>' + rows + '</tbody></table>'), { form: true }));
 
     var s = S.settings, cond = s.conditions || [];
@@ -216,8 +224,8 @@
       '<div class="fields"><div><label for="set-budget">Budget (USD)</label><input id="set-budget" name="budget_usd" type="number" min="0" step="0.01" required value="' + esc(s.budget_usd) + '"></div>' +
       '<div><label for="set-iter">Max iterations</label><input id="set-iter" name="max_iter" type="number" min="1" max="10" step="1" required value="' + esc(s.max_iter) + '"></div>' +
       '<div><label for="set-judge">Judge model id</label><input id="set-judge" name="judge_model_id" required value="' + esc(s.judge_model_id) + '" spellcheck="false"></div></div>' +
-      '<label class="check"><input type="checkbox" name="dispatch_open"' + (s.dispatch_open ? ' checked' : '') + '> Run open-source arms (A5, A6) on laptops with an ARC tunnel</label>' +
-      '<p class="hint">Off = A5/A6 are imported from ARC runs. On = their jobs go only to workers started with <code>start.sh --arc</code> whose tunnel is up.</p>' +
+      '<label class="check"><input type="checkbox" name="dispatch_open"' + (s.dispatch_open ? ' checked' : '') + '> Run open-source arms on laptops with an ARC tunnel</label>' +
+      '<p class="hint">Off = import their results from ARC runs. On = their jobs go only to workers with a live tunnel for that arm.</p>' +
       '<fieldset><legend>Conditions</legend><div class="checks">' + CONDS.map(function (c) { return '<label class="check"><input type="checkbox" name="conditions" value="' + c + '"' + (cond.indexOf(c) >= 0 ? ' checked' : '') + '> ' + c + '</label>'; }).join('') + '</div></fieldset>' +
       '<div><label for="set-sites">Sites</label><textarea id="set-sites" name="sites" rows="3" spellcheck="false" aria-describedby="set-sites-h" placeholder="Leave empty for all 60 sites">' + esc(Array.isArray(s.sites) ? s.sites.join(', ') : '') + '</textarea>' +
       '<p id="set-sites-h" class="hint">Site ids separated by commas or spaces, e.g. UNI-01, GOV-03. Empty means all 60.</p></div>' +
@@ -278,7 +286,51 @@
       (D.containers.length ? tableWrap('Docker worker containers', '<table class="grid"><thead><tr><th scope="col">Container</th><th scope="col">Status</th><th scope="col">Action</th></tr></thead><tbody>' + rows + '</tbody></table>') :
         empty('No worker containers', 'Start some above; they appear in Workers below once they connect.'));
   }
-  function runs(S) {
+  function launcherBody(S) {
+    var hosts = S.launchers || [];
+    if (!hosts.length) return empty('No Docker launchers enrolled', 'Run the launcher once on each computer you want to deploy to. Workers need not be running.');
+    var targets = ['hosted'].concat(S.arms.filter(function (a) { return a.kind === 'open_source'; }).map(function (a) { return a.id; }));
+    var states = { queued: 'Waiting for launcher', deploying: 'Running start.sh', starting: 'Waiting for worker or ARC tunnel', ready: 'Worker ready; claim sent', 'needs-claim': 'Worker ready; no claim sent (check queue, cap or pause)', failed: 'Docker startup failed; check the launcher log', 'timed-out': 'Deployment timed out; check the launcher and tunnel' };
+    return tableWrap('Deploy workers', '<table class="grid"><thead><tr><th scope="col">Computer</th><th scope="col">Deploy and claim</th><th scope="col">Deployment status</th></tr></thead><tbody>' + hosts.map(function (h) {
+      var task = h.task, busy = task && ['queued', 'deploying', 'starting'].includes(task.status);
+      return '<tr><th scope="row">' + esc(h.node || h.ip) + '<br><span class="muted">' + esc([h.user, h.ip].filter(Boolean).join(' · ')) + '</span></th><td>' + targets.map(function (target) {
+        var label = target === 'hosted' ? 'Hosted arms / score / judge' : target + ' (ARC)';
+        var configured = h.targets.indexOf(target) !== -1;
+        return '<button type="button" class="btn btn-primary" id="deploy-' + esc(h.ip + '-' + target) + '" data-action="deploy-worker" data-id="' + esc(h.ip) + '" data-target="' + esc(target) + '"' + (!h.online || busy || !configured ? ' disabled' : '') + '>' + (configured ? 'Deploy &amp; claim: ' : 'Not configured: ') + esc(label) + '</button>';
+      }).join(' ') + '</td><td>' + (h.online ? badge('done', 'Launcher online') : badge('attn', 'Launcher offline')) + (task ? '<br>' + esc(task.target) + ': ' + esc(states[task.status]) : '') + '</td></tr>';
+    }).join('') + '</tbody></table>') + '<p class="hint">The launcher runs start.sh on the selected computer and requests jobs when the worker checks in. Configure an ARC tunnel on a computer to enable deployment for that arm.</p>';
+  }
+  function queueBody(live, ui) {
+    var group = live.queue || [];
+    var controls = '<div class="controls" role="group" aria-label="Queue jobs">' + ['repair', 'score', 'judge'].map(function (phase) {
+      return '<button class="btn" type="button" data-action="run" data-arg="start:' + phase + '"' + (ui && ui.busy ? ' disabled' : '') + '>Queue ' + phase + ' jobs</button>';
+    }).join('') + '</div>';
+    var blocked = ui && ui.blockers ? notice('warn', esc(ui.blockers.title) + ': ' + ui.blockers.list.map(esc).join('; '), 'alert') : '';
+    return controls + blocked + (group.length ? group.map(function (g) {
+      var key = 'queue-' + g.kind + '-' + g.arm;
+      return '<details data-key="' + esc(key) + '"' + (ui && ui.open && ui.open[key] ? ' open' : '') + '><summary>' + esc(g.kind + ' · ' + g.arm) + ' — ' + int(g.jobs.length) + ' waiting</summary><ul>' + g.jobs.map(function (j) {
+        return '<li>' + esc(j.filter(Boolean).join(' · ')) + '</li>';
+      }).join('') + '</ul></details>';
+    }).join('') : empty('No jobs waiting', 'Queue a phase to see work here, even with no workers running.'));
+  }
+  function liveJobs(S) {
+    var live = S.live_jobs;
+    if (!live) return '';
+    var counts = '<dl class="facts compact">' + Object.keys(live.counts).map(function (status) {
+      return '<div><dt>' + esc(status) + '</dt><dd>' + int(live.counts[status]) + '</dd></div>';
+    }).join('') + '</dl>';
+    var rows = live.jobs.map(function (j) {
+      var when = j.finished_at || j.started_at;
+      return '<tr><th scope="row">' + esc([j.kind, j.arm, j.condition, j.site].filter(Boolean).join(' · ')) + '</th><td>' +
+        badge(j.state === 'running' ? 'active' : j.state === 'done' ? 'done' : 'attn', j.state) + (j.mock ? ' ' + badge('pending', 'test') : '') + '</td><td>' +
+        esc([j.worker_node, j.worker_user].filter(Boolean).join(' · ') || 'Unidentified') + (j.worker ? '<br><code>' + esc(j.worker) + '</code>' : '') +
+        '</td><td>' + (when ? esc(ago(when, S.now)) : 'n/a') + '</td></tr>';
+    }).join('');
+    return counts + (rows ? tableWrap('Live jobs', '<table class="grid"><thead><tr><th scope="col">Job</th><th scope="col">Status</th><th scope="col">Worker</th><th scope="col">Updated</th></tr></thead><tbody>' + rows + '</tbody></table>') :
+      empty('No jobs running yet', 'Start a phase in Overview, then claim jobs for an online worker.')) +
+      '<p class="hint">All running jobs and the 30 most recently finished jobs across repair, scoring, and judging.</p>';
+  }
+  function runs(S, R, ui) {
     var out = [];
     out.push(panel('r-legend', 'Cell states',
       '<ul class="legend">' + Object.keys(CELL).map(function (k) { return '<li><span class="cell cell-' + CELL[k][0] + ' lg" aria-hidden="true">' + CELL[k][1] + '</span> ' + esc(CELL[k][2]) + '</li>'; }).join('') + '</ul>' +
@@ -296,19 +348,28 @@
     });
     if (S.docker && S.docker.enabled) out.push(panel('r-docker', 'Docker workers', dockerBody(S.docker), { form: true }));
     out.push(panel('r-workers', 'Workers (' + S.workers.length + ')', S.workers.length ?
-      tableWrap('Workers', '<table class="grid"><thead><tr><th scope="col">Worker</th><th scope="col">Machine</th><th scope="col">Status</th><th scope="col">Slots</th><th scope="col">Running</th><th scope="col">Share of compute</th></tr></thead><tbody>' +
+      tableWrap('Workers', '<table class="grid"><thead><tr><th scope="col">Worker</th><th scope="col">Tailscale device and account</th><th scope="col">Status</th><th scope="col">Slots</th><th scope="col">Running</th><th scope="col">Job controls</th></tr></thead><tbody>' +
         S.workers.map(function (w) {
-          var online = ms(S.now) - ms(w.last_seen) < 45000;
+          var online = typeof w.online === 'boolean' ? w.online : ms(S.now) - ms(w.last_seen) < 45000;
           var inf = w.info || {};
-          var status = w.paused ? badge('attn', 'Paused') : online ? badge('done', 'Online') : badge('attn', 'Offline');
-          var lid = 'cap-' + esc(w.id);
-          return '<tr><th scope="row">' + esc(w.id) + '</th><td>' + esc([inf.host, inf.os].filter(Boolean).join(' \u00b7 ') || 'n/a') + (w.arcs && w.arcs.length ? ' ' + badge('active', 'ARC ' + w.arcs.join('+')) : '') + '</td><td>' + status + ' ' + esc(ago(w.last_seen, S.now)) + '</td>' +
+          var status = !online ? badge('attn', 'Offline') : w.paused ? badge('attn', 'Paused') : badge('done', 'Online');
+          var lid = 'cap-' + esc(w.id), id = esc(w.id);
+          var identity = inf.tailnet_node || inf.tailnet_ip ? esc(inf.tailnet_node || inf.tailnet_ip) + '<br><span class="muted">' + esc([inf.tailnet_user || 'Account not reported', inf.tailnet_node && inf.tailnet_ip].filter(Boolean).join(' · ')) + '</span>' :
+            esc(inf.host || 'Unknown device') + '<br><span class="muted">Tailscale identity not reported</span>';
+          var available = Math.min(w.slots, w.cap == null ? w.slots : w.cap, 50) - w.running;
+          var claim = !w.manual ? '' : w.requested ? '<button id="claim-' + id + '" type="button" class="btn" data-action="worker-unclaim" data-id="' + id + '">Unclaim</button> ' + badge('active', int(w.requested) + ' waiting') :
+            '<button id="claim-' + id + '" type="button" class="btn btn-primary" data-action="worker-claim" data-id="' + id + '"' + (!online || w.paused || available < 1 ? ' disabled' : '') + '>Claim jobs</button>';
+          return '<tr><th scope="row">' + id + (w.arcs && w.arcs.length ? ' ' + badge('active', 'ARC ' + w.arcs.join('+')) : '') + '</th><td>' + identity + (inf.os ? '<br><span class="muted">' + esc(inf.os) + '</span>' : '') + '</td><td>' + status + ' ' + esc(ago(w.last_seen, S.now)) + '</td>' +
             '<td class="num">' + int(w.slots) + '</td><td class="num">' + int(w.running) + '</td>' +
             '<td><label class="sr" for="' + lid + '">Slot cap for ' + esc(w.id) + '</label><input id="' + lid + '" type="number" min="0" max="64" step="1" placeholder="no cap" value="' + (w.cap === null ? '' : esc(w.cap)) + '" data-field="cap"> ' +
             '<button type="button" class="btn" data-action="worker-cap" data-id="' + esc(w.id) + '">Set cap</button> ' +
-            '<button type="button" class="btn" data-action="worker-pause" data-id="' + esc(w.id) + '" data-paused="' + (w.paused ? '0' : '1') + '">' + (w.paused ? 'Resume' : 'Pause') + '</button></td></tr>';
-        }).join('') + '</tbody></table>') + '<p class="hint">Cap = most jobs this machine runs at once (empty = its full slot count). Pause stops it taking new jobs; running ones finish.</p>' :
-      empty('No workers connected', 'Start a worker (agent script or Docker) with WEB_URL and WORKER_TOKEN set. Jobs wait in the queue until one claims them.')));
+            '<button type="button" class="btn" data-action="worker-pause" data-id="' + id + '" data-paused="' + (w.paused ? '0' : '1') + '">' + (w.paused ? 'Resume' : 'Pause') + '</button> ' +
+            '<button type="button" class="btn" data-action="worker-mode" data-id="' + id + '" data-manual="' + (w.manual ? '0' : '1') + '">' + (w.manual ? 'Switch to auto' : 'Switch to manual') + '</button> ' + claim + '</td></tr>';
+        }).join('') + '</tbody></table>') + '<p class="hint">Anyone signed in can claim or unclaim for any worker. Manual claims last up to one minute and respect the worker’s free slots and cap. Unclaim cancels only jobs the worker hasn’t started. Tailscale identity is reported by the agent.</p>' :
+      empty('No workers connected', 'Being on Tailscale or opening this page does not start a worker. Start the Docker agent on each computer with the console URL and worker token.'), { form: true }));
+    var workerPanel = out.pop();
+    out.unshift(panel('r-deploy', 'Deploy on connected computers', launcherBody(S)), workerPanel);
+    if (S.live_jobs) out.unshift(panel('r-queue', 'Job queue (' + int(S.live_jobs.counts.queued) + ')', queueBody(S.live_jobs, ui)), panel('r-live-jobs', 'Live jobs', liveJobs(S)));
     return out;
   }
 
@@ -377,7 +438,7 @@
         : empty('Nothing recorded yet', 'Rows appear once a worker finishes a job.')) +
       '<h3 class="sub-h">Spend by API key</h3>' +
       (kRows ? tableWrap('Cost by key', '<table class="grid"><thead><tr><th scope="col">Key</th><th scope="col">Arm</th><th scope="col">Model</th><th scope="col" class="num">Calls</th><th scope="col" class="num">Tokens in</th><th scope="col" class="num">Tokens out</th><th scope="col" class="num">Spent</th></tr></thead><tbody>' + kRows + '</tbody></table>') +
-        '<p class="hint">Keys appear as slot plus the last four characters, never the key itself. A5 and A6 have separate keys, so their spend is separate. <code>local:&lt;machine&gt;</code> means the arm used the key held on that laptop.</p>'
+        '<p class="hint">Keys appear as slot plus the last four characters, never the key itself. Self-hosted arms have separate keys. <code>local:&lt;machine&gt;</code> means the arm used the key held on that laptop.</p>'
         : empty('No key attribution yet', 'Calls finished before this was recorded show under legacy rows instead.'))));
     out.push(panel('c-proj', 'Projection by arm',
       '<p>Expected total <strong>' + usd(P.expected_total_usd) + '</strong> against a budget of ' + usd(P.budget_usd) + '; ETA ' + mins(P.eta_minutes) + '.' +
@@ -446,15 +507,17 @@
 
     var T = C.tables(R);
     var cond = (ui && ui.cond) || 'wcag';
+    // exports are always light, rebuilt from the same data as the dark figures on screen
+    FIGS = { fig2: function () { return C.fig2Svg(R.fig2, cond, 'light'); }, fig3: function () { return C.fig3Svg(R.fig3, 'light'); }, fig4: function () { return C.fig4Svg(R.fig4, 'light'); }, fig5: function () { return C.fig5Svg(R.fig5, 'light'); } };
     var picker = '<fieldset class="picker"><legend>Condition</legend>' + CONDS.map(function (c) {
       return '<label class="check"><input type="radio" name="cond" id="cond-' + c + '" value="' + c + '"' + (c === cond ? ' checked' : '') + '> ' + c + '</label>';
     }).join('') + '</fieldset>';
     out.push({ id: 'res-fig2-ctl', html: '<h2 id="res-fig2-ctl-h">Fig 2 condition</h2>' + picker, form: true });
-    out.push(chartPanel('res-fig2', 'Fig 2. Violations before vs after', 'fig2', 'fig2_violations', C.fig2Svg(R.fig2, cond), T.fig2_violations, ui));
-    out.push(chartPanel('res-fig3', 'Fig 3. Judge mean rank', 'fig3', 'fig3_judge_ranks', C.fig3Svg(R.fig3), T.fig3_judge_ranks, ui,
+    out.push(chartPanel('res-fig2', 'Fig 2. Violations before vs after', 'fig2', 'fig2_violations', C.fig2Svg(R.fig2, cond, 'dark'), T.fig2_violations, ui));
+    out.push(chartPanel('res-fig3', 'Fig 3. Judge mean rank', 'fig3', 'fig3_judge_ranks', C.fig3Svg(R.fig3, 'dark'), T.fig3_judge_ranks, ui,
       notice('info', 'The judge ranks five blinded variants: the four repaired conditions plus the unrepaired <em>baseline</em>. Fig 5 uses the baseline rank as the usability reference.')));
-    out.push(chartPanel('res-fig4', 'Fig 4. Criteria vs heuristics conflicts', 'fig4', 'fig4_conflict_heatmap', C.fig4Svg(R.fig4), T.fig4_conflict_heatmap, ui));
-    out.push(chartPanel('res-fig5', 'Fig 5. WCAG gain vs usability', 'fig5', 'fig5_gain_vs_usability', C.fig5Svg(R.fig5), T.fig5_gain_vs_usability, ui));
+    out.push(chartPanel('res-fig4', 'Fig 4. Criteria vs heuristics conflicts', 'fig4', 'fig4_conflict_heatmap', C.fig4Svg(R.fig4, 'dark'), T.fig4_conflict_heatmap, ui));
+    out.push(chartPanel('res-fig5', 'Fig 5. WCAG gain vs usability', 'fig5', 'fig5_gain_vs_usability', C.fig5Svg(R.fig5, 'dark'), T.fig5_gain_vs_usability, ui));
 
     var fixes = R.fig6 || [];
     var sel = ui && ui.viewer;
@@ -504,7 +567,7 @@
     var out = [];
     out.push({
       id: 'i-up', form: true, html: '<h2 id="i-up-h">Import open-source runs</h2>' +
-        '<p class="hint">Upload a gzip\u2019d NDJSON file (<code>.ndjson.gz</code>) of A5/A6 cells from the ARC run. Only open-source arms are accepted.</p>' +
+        '<p class="hint">Upload a gzip\u2019d NDJSON file (<code>.ndjson.gz</code>) of self-hosted arm cells from the ARC run. Only open-source arms are accepted.</p>' +
         '<div class="drop" data-drop><label for="imp-file" class="btn btn-primary">Choose file</label><input id="imp-file" type="file" accept=".gz,.ndjson.gz,application/gzip,application/x-gzip" class="sr-file">' +
         '<span class="drop-hint">or drop a file here</span></div>' +
         '<p id="imp-sel" aria-live="polite">' + (f ? 'Selected: <strong>' + esc(f.name) + '</strong> (' + esc((f.size / 1048576).toFixed(2)) + ' MB)' : 'No file selected.') + '</p>' +
@@ -671,7 +734,8 @@
     document.body.appendChild(a); a.click(); a.remove();
     setTimeout(function () { URL.revokeObjectURL(a.href); }, 4000);
   }
-  function figSvg(fig) { var n = $('[data-fig="' + fig + '"] svg'); return n ? new XMLSerializer().serializeToString(n) : null; }
+  var FIGS = {};
+  function figSvg(fig) { return FIGS[fig] ? FIGS[fig]() : null; }
 
   function exportAll() {
     var names = Object.keys(C.tables(R || {})).concat(['metrics_all', 'judge_rankings', 'human_ratings', 'cost_by_source']);
@@ -760,6 +824,16 @@
     else if (a === 'run') runAction(t.dataset.arg);
     else if (a === 'worker-cap') { var cv = t.closest('tr').querySelector('[data-field=cap]').value.trim(); save('Cap for ' + t.dataset.id, 'PUT', '/api/workers/' + encodeURIComponent(t.dataset.id), { cap: cv === '' ? null : +cv }); }
     else if (a === 'worker-pause') save(t.dataset.paused === '1' ? t.dataset.id + ' paused' : t.dataset.id + ' resumed', 'PUT', '/api/workers/' + encodeURIComponent(t.dataset.id), { paused: t.dataset.paused === '1' });
+    else if (a === 'worker-mode') save('Dispatch mode updated', 'PUT', '/api/workers/' + encodeURIComponent(t.dataset.id), { manual: t.dataset.manual === '1' });
+    else if (a === 'worker-claim' || a === 'worker-unclaim' || a === 'deploy-worker') {
+      var deploy = a === 'deploy-worker', cancel = a === 'worker-unclaim';
+      var path = (deploy ? '/api/launchers/' : '/api/workers/') + encodeURIComponent(t.dataset.id) + (deploy ? '' : '/claim');
+      api(cancel ? 'DELETE' : 'POST', path, deploy ? { target: t.dataset.target } : undefined).then(function (r) {
+        if (!r.ok) announce('error', (r.data && r.data.error) || 'Request failed (HTTP ' + r.status + ')');
+        else announce('ok', deploy ? 'Deployment queued. Watch Deployment status.' : cancel ? 'Pending claim canceled.' : int(r.data.requested) + ' slots requested. Watch Live jobs as the worker picks them up.');
+        return poll();
+      }, function () { announce('error', 'Could not reach the console. Try again.'); });
+    }
     else if (a === 'docker-stop') { var dn = t.dataset.name; if (window.confirm(dn ? 'Remove container ' + dn + '?' : 'Remove every Docker worker container?')) dockerCall('DELETE', '/api/docker/workers' + (dn ? '/' + encodeURIComponent(dn) : '')); }
     else if (a === 'clear-key') { if (window.confirm('Clear the ' + t.dataset.provider + ' key from the server?')) save(t.dataset.provider + ' key cleared', 'DELETE', '/api/keys/' + t.dataset.provider, undefined, t.closest('form')); }
     else if (a === 'save-arm') {

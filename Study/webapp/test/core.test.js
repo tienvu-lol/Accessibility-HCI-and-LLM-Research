@@ -79,6 +79,140 @@ test('login sets an HttpOnly SameSite cookie, gates the API, rate-limits after 5
   } finally { await s.close(); }
 });
 
+test('pipeline uses full study totals and does not count a mock repair', async () => {
+  for (const mock of [true, false]) {
+    const s = await boot(mock ? { MOCK_PROVIDERS: '1' } : {});
+    try {
+      await configure(s);
+      await s.ui('PUT', '/api/settings', { sites: ['UNI-01'], conditions: ['naive'] });
+      assert.equal((await s.ui('POST', '/api/run/start', { phase: 'repair' })).status, 200);
+      const [job] = await claim(s, 1);
+      const [, arm, cond, site] = job.id.split(':');
+      const result = await s.worker('/api/worker/result', { job_id: job.id, status: 'ok', files: cellFiles(arm, cond, site) });
+      assert.equal(result.status, 200);
+      const { arms, pipeline } = (await s.ui('GET', '/api/state')).data;
+      const sites = s.app.ctx.siteIds().length;
+      assert.equal(arms.find((a) => a.id === arm).cells.ok, 1);
+      assert.deepEqual(pipeline.scope, { sites: 1, study_sites: sites, conditions: 1, study_conditions: 4 });
+      assert.deepEqual(pipeline.repair, { total: sites * 4 * 4, done: mock ? 0 : 1, bad: 0 });
+      assert.equal(pipeline.score.total, sites * (arms.length * 4 + 1));
+      assert.equal(pipeline.judge.total, sites * arms.length);
+    } finally { await s.close(); }
+  }
+});
+
+test('pipeline recognizes legacy mock repairs from the saved artifact', async () => {
+  const dataDir = fs.mkdtempSync(path.join(os.tmpdir(), 'console-legacy-mock-'));
+  const job = { id: 'repair:A1:naive:UNI-01', kind: 'repair', arm: 'A1', condition: 'naive', site: 'UNI-01', state: 'done', final: 'o' };
+  for (const [name, entry] of Object.entries(cellFiles(job.arm, job.condition, job.site, { status: 'ok', model_version: 'mock' }))) {
+    const dest = path.join(dataDir, name);
+    fs.mkdirSync(path.dirname(dest), { recursive: true });
+    fs.writeFileSync(dest, entry.data);
+  }
+  fs.writeFileSync(path.join(dataDir, 'state.json'), JSON.stringify({ queue: [job] }));
+  const s = await boot({}, { dataDir });
+  try {
+    const { arms, pipeline } = (await s.ui('GET', '/api/state')).data;
+    assert.equal(arms.find((a) => a.id === job.arm).cells.ok, 1);
+    assert.equal(pipeline.repair.done, 0);
+  } finally {
+    await s.close();
+    fs.rmSync(dataDir, { recursive: true, force: true });
+  }
+});
+
+test('signed-in operators can claim and unclaim for another worker; live jobs show its identity', async () => {
+  const s = await boot({ MOCK_PROVIDERS: '1' });
+  try {
+    await configure(s);
+    await s.ui('PUT', '/api/settings', { dispatch_open: true, sites: ['UNI-01'], conditions: ['naive'] });
+    assert.equal((await s.ui('PUT', '/api/keys/a7', { key: 'arc-SECRET-7164' })).status, 200);
+    assert.equal((await s.ui('POST', '/api/run/start', { phase: 'repair' })).status, 200);
+    const id = '100.100.0.2-a7', claimPath = `/api/workers/${id}/claim`;
+    const remote = { worker_id: id, kinds: ['repair'], arms: ['A7'], arcs: { A7: 'http://arc-a7:8092/v1' }, slots: 2, max: 2,
+      info: { manual: true, tailnet_node: 'remote.example.ts.net', tailnet_ip: '100.100.0.2', tailnet_user: 'researcher@example.net' } };
+    const poll = async () => (await s.worker('/api/worker/claim', remote)).data.jobs;
+    assert.equal((await s.api('POST', claimPath)).status, 401);
+    assert.equal((await s.ui('POST', claimPath)).status, 409); // no agent yet
+    assert.deepEqual(await poll(), []); // connected but not authorized to take work yet
+    await s.ui('PUT', `/api/workers/${id}`, { cap: 1 });
+    assert.equal((await s.ui('POST', claimPath)).data.requested, 1);
+    const r = await fetch(s.base + '/api/events', { headers: { cookie: s.cookie } });
+    const reader = r.body.getReader();
+    try {
+      const frame = Buffer.from((await reader.read()).value).toString();
+      assert.match(frame, /"requested":1/);
+      assert.match(frame, /researcher@example\.net/);
+      assert.doesNotMatch(frame, /arc-SECRET/);
+    } finally { await reader.cancel(); }
+    assert.equal((await s.ui('DELETE', claimPath)).data.unclaimed, 1);
+    assert.deepEqual(await poll(), []);
+    await s.ui('POST', claimPath);
+    const [job] = await poll();
+    assert.equal(job.arm, 'A7');
+    assert.equal(job.api_key, 'arc-SECRET-7164');
+    assert.equal((await s.ui('DELETE', claimPath)).data.unclaimed, 0); // leased work finishes
+    let snap = await s.ui('GET', '/api/state');
+    assert.equal(snap.data.live_jobs.jobs.find((j) => j.id === job.id).worker_user, remote.info.tailnet_user);
+    assert.equal(snap.data.live_jobs.counts.running, 1);
+    assert.doesNotMatch(snap.text, /arc-SECRET/);
+    await s.worker('/api/worker/result', { job_id: job.id, status: 'ok', files: cellFiles('A7', 'naive', 'UNI-01') });
+    snap = await s.ui('GET', '/api/state');
+    assert.equal(snap.data.live_jobs.jobs.find((j) => j.id === job.id).state, 'done');
+    assert.deepEqual(await poll(), []); // one-shot claim, not auto mode
+  } finally { await s.close(); }
+});
+
+test('GUI deploys and claims on an enrolled host before any worker is running', async () => {
+  const s = await boot({ MOCK_PROVIDERS: '1', DASHBOARD_LAUNCH_TOKEN: 'launcher-secret' });
+  try {
+    await configure(s);
+    await s.ui('PUT', '/api/settings', { dispatch_open: true, sites: ['UNI-01'], conditions: ['naive'] });
+    await s.ui('POST', '/api/run/start', { phase: 'repair' });
+    const snap = () => s.ui('GET', '/api/state').then((r) => r.data);
+    assert.equal((await snap()).workers.length, 0);
+    assert.deepEqual((await snap()).live_jobs.queue.find((g) => g.kind === 'repair' && g.arm === 'A7').jobs, [['UNI-01', 'naive']]);
+    const ip = '100.100.0.2', host = { ip, node: 'other.example.ts.net', arcs: ['A7'] };
+    const route = '/api/launchers/' + ip;
+    const poll = (result, token = 'launcher-secret') => s.api('POST', '/api/launcher/poll', { token, body: { ...host, result } });
+    assert.equal((await poll(null, 'wt')).status, 401);
+    assert.equal((await poll()).status, 200);
+    assert.equal((await s.ui('POST', route, { target: 'A6' })).status, 400);
+    assert.equal((await s.ui('POST', route, { target: 'A7' })).status, 202);
+    const { deploy } = (await poll()).data;
+    assert.equal(deploy.target, 'A7');
+    assert.equal((await s.ui('POST', route, { target: 'hosted' })).status, 409);
+    await poll({ id: deploy.id, ok: true });
+    assert.equal((await snap()).launchers[0].task.status, 'starting');
+    const remote = { worker_id: ip + '-a7', max: 1, slots: 1, arms: ['A7'], arcs: { A7: 'http://arc-a7:8092/v1' }, info: { manual: true } };
+    assert.deepEqual((await s.worker('/api/worker/claim', remote)).data.jobs, []);
+    await poll();
+    assert.equal((await snap()).launchers[0].task.status, 'ready');
+    assert.equal((await s.worker('/api/worker/claim', remote)).data.jobs[0].arm, 'A7');
+  } finally { await s.close(); }
+});
+
+test('an additional self-hosted arm in the allocation gets a key slot, matrix and study totals', async () => {
+  const studyDir = miniStudy();
+  const file = path.join(studyDir, 'config', 'repair-allocation.json');
+  const cfg = JSON.parse(fs.readFileSync(file));
+  cfg.arms.A8 = { ...cfg.arms.A7, model: 'Test added arm', api_key_env: 'EXTRA_ARM_KEY' };
+  fs.writeFileSync(file, JSON.stringify(cfg));
+  const s = await boot({ EXTRA_ARM_KEY: 'test-extra-1337' }, { studyDir });
+  try {
+    const snap = (await s.ui('GET', '/api/state')).data;
+    assert.equal(snap.arms.find((a) => a.id === 'A8').key_env, 'EXTRA_ARM_KEY');
+    assert.deepEqual(snap.keys.a8, { set: true, last4: '1337', source: 'env' });
+    assert.ok(snap.matrix.A8.naive);
+    assert.equal(snap.pipeline.judge.total, s.app.ctx.siteIds().length * Object.keys(cfg.arms).length);
+    assert.equal((await s.ui('PUT', '/api/keys/a8', { key: 'ui-extra-4444' })).data.key.last4, '4444');
+    assert.equal((await s.ui('PUT', '/api/keys/a9', { key: 'not-configured' })).status, 400);
+  } finally {
+    await s.close();
+    fs.rmSync(studyDir, { recursive: true, force: true });
+  }
+});
+
 test('production refuses to start without APP_PASSWORD and WORKER_TOKEN', () => {
   assert.throws(() => createApp({ dataDir: os.tmpdir(), env: { NODE_ENV: 'production', APP_PASSWORD: 'x' } }), /required/);
 });
@@ -273,10 +407,10 @@ test('snapshot carries every contract field', async () => {
     has(st, ['now', 'run', 'settings', 'keys', 'arms', 'judge', 'matrix', 'intake', 'projection', 'workers', 'pricing', 'warnings', 'human', 'imports'], 'state');
     has(st.run, ['phase', 'kind', 'started_at'], 'run');
     has(st.settings, ['budget_usd', 'sites', 'conditions', 'max_iter', 'judge_model_id'], 'settings');
-    assert.equal(st.arms.length, 6);
+    assert.deepEqual(st.arms.map((a) => a.id), Object.keys(s.app.ctx.cfg.arms));
     has(st.arms[0], ['id', 'label', 'kind', 'provider', 'model_id', 'ready', 'blockers', 'concurrency', 'cells', 'tokens', 'calls', 'cost_usd', 'tokens_per_min'], 'arm');
     has(st.arms[0].cells, ['total', 'queued', 'running', 'ok', 'failed', 'truncated', 'imported', 'converged'], 'cells');
-    assert.deepEqual(st.arms.map((a) => a.kind), ['mainstream', 'mainstream', 'mainstream', 'mainstream', 'open_source', 'open_source']);
+    assert.deepEqual(st.arms.map((a) => a.kind), st.arms.map((a) => s.app.ctx.armKind(a.id)));
     has(st.judge, ['provider', 'model_id', 'ready', 'blockers', 'items', 'tokens', 'cost_usd'], 'judge');
     has(st.judge.items, ['total', 'queued', 'running', 'done', 'failed'], 'judge.items');
     has(st.intake, ['total', 'rolling5m', 'sources', 'series'], 'intake');

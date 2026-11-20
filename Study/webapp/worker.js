@@ -10,12 +10,14 @@ function createWorker(opts = {}) {
   const webUrl = (opts.webUrl || process.env.WEB_URL || '').replace(/\/$/, '');
   const token = opts.token || process.env.WORKER_TOKEN;
   const slots = opts.slots || Number(process.env.WORKER_SLOTS) || 4;
-  const id = (opts.id || process.env.WORKER_ID || os.hostname()) + (opts.id ? '' : process.env.WORKER_SUFFIX || '');
+  const id = opts.id || (process.env.TAILNET_IP || process.env.WORKER_ID || os.hostname()) + (process.env.WORKER_SUFFIX || '');
   const pollMs = opts.pollMs ?? (Number(process.env.POLL_MS) || 3000);
   const heartbeatMs = opts.heartbeatMs ?? 60000;
   const retryMs = opts.retryMs ?? 1000; // base of the exponential backoff
   const runners = opts.runners || KINDS;
-  const info = opts.info || { host: process.env.MACHINE_NAME || os.hostname(), os: process.env.HOST_OS || `${os.platform()} ${os.arch()}` };
+  const info = opts.info || { host: process.env.MACHINE_NAME || os.hostname(), os: process.env.HOST_OS || `${os.platform()} ${os.arch()}`,
+    tailnet_node: process.env.TAILNET_NODE, tailnet_ip: process.env.TAILNET_IP, tailnet_user: process.env.TAILNET_USER,
+    manual: process.env.WORKER_MANUAL_CLAIM === '1' };
   // ARC tunnels this machine can reach: ARC_URLS="A5=http://arc-a5:8091/v1,A6=http://arc-a6:8090/v1". An arm is advertised
   // only while its tunnel answers, so a dropped SSH session just stops new claims for that arm.
   // The arm's llama.cpp key may live here (A5_API_KEY / A6_API_KEY, never leaves this machine) or on the

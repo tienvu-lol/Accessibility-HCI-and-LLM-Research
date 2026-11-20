@@ -142,7 +142,7 @@ fi
 # ---------------------------------------------------------------- ARC settings
 # agent.env is rewritten below, so anything already in it that this script does not ask for
 # (the ARC host, targets and llama.cpp keys) has to be carried over or a re-run would wipe it.
-ARC_VARS="ARC_USER ARC_HOST ARC_A5_TARGET ARC_A6_TARGET A5_API_KEY A6_API_KEY ARC_PASSWORD ARC_SSH_OPTS"
+ARC_VARS="ARC_USER ARC_HOST ARC_A5_TARGET ARC_A6_TARGET ARC_A7_TARGET A5_API_KEY A6_API_KEY A7_API_KEY ARC_PASSWORD ARC_SSH_OPTS"
 # arc_val NAME -> the environment's value, else the one already in agent.env, else empty
 arc_val() {
   eval "v=\${$1:-}"
@@ -178,8 +178,13 @@ chmod 600 "$envtmp"
 } > "$envtmp"
 mv "$envtmp" agent.env
 export HOST_OS="macOS $(uname -m)" WORKER_IMAGE=study-worker
+source ./tailnet.sh
 if [ "${ARC:-0}" = 1 ]; then
-  docker compose --profile arc up -d --build --force-recreate
+  if [ -n "$(arc_val ARC_A7_TARGET)" ]; then
+    docker compose --profile arc --profile arc-a7 up -d --build --force-recreate
+  else
+    docker compose --profile arc up -d --build --force-recreate
+  fi
 else
   docker compose up -d --force-recreate
 fi
@@ -188,6 +193,7 @@ fi
 # So the check is: the container stays up and never logs a failed claim.
 WATCH=study-agent
 [ "${ARC:-0}" = 1 ] && WATCH="study-agent study-agent-a5 study-agent-a6"
+if [ "${ARC:-0}" = 1 ] && [ -n "$(arc_val ARC_A7_TARGET)" ]; then WATCH="$WATCH study-agent-a7"; fi
 say "Watching the worker container(s) for failed claims (a healthy worker is silent)"
 i=0
 while [ "$i" -lt 5 ]; do
@@ -208,7 +214,9 @@ done
 # An arm is only offered to the console while its tunnel answers, so check that from the worker itself.
 if [ "${ARC:-0}" = 1 ]; then
   say "Checking each ARC tunnel from its worker container"
-  for pair in a5:8091 a6:8090; do
+  pairs="a5:8091 a6:8090"
+  if [ -n "$(arc_val ARC_A7_TARGET)" ]; then pairs="$pairs a7:8092"; fi
+  for pair in $pairs; do
     arm=${pair%%:*}; port=${pair##*:}
     ok=0
     for i in 1 2 3 4 5 6 7 8 9 10; do
@@ -232,7 +240,7 @@ fi
 
 say "Agent '$MACHINE_NAME' is online. It should show under Runs -> Workers as macOS $(uname -m)."
 if [ "${ARC:-0}" = 1 ]; then
-  echo "Open arms: study-agent-a5 and study-agent-a6 are online with live tunnels; turn on"
-  echo "  Keys & arms -> 'Run open-source arms (A5, A6) on laptops with an ARC tunnel' in the console."
+  echo "ARC workers with live tunnels: $WATCH"
+  echo "Turn on 'Run open-source arms on laptops with an ARC tunnel' in Keys & arms."
 fi
 echo "Logs: docker logs -f study-agent    Stop: ./stop.sh"

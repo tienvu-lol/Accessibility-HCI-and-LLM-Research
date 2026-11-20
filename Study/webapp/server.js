@@ -14,6 +14,7 @@ const storeLib = require('./lib/store');
 const coordLib = require('./lib/coordinator');
 const importer = require('./lib/importer');
 const sseLib = require('./lib/sse');
+const launchLib = require('./lib/launches');
 const dockerLib = require('./lib/docker');
 
 const { HttpError, json, readJson, readBody, sendFile, safeJoin } = H;
@@ -50,19 +51,22 @@ function createApp(opts = {}) {
   const auth = authLib.create({ password: env.APP_PASSWORD, workerToken: env.WORKER_TOKEN, now });
   if (!auth.enabled) console.warn('APP_PASSWORD not set: authentication is disabled (development only)');
 
+  const armKind = (id) => /self-hosted/.test(cfg.arms[id].serving || '') ? 'open_source' : 'mainstream';
+  const openArms = Object.fromEntries(Object.entries(cfg.arms).filter(([id]) => armKind(id) === 'open_source'));
   const ctx = {
-    dataDir, studyDir, cfg, sites, store, now, keys: keysLib.create(env),
+    dataDir, studyDir, cfg, sites, store, now, keys: keysLib.create(env, openArms),
     mock: env.MOCK_PROVIDERS === '1', geminiRejected: false,
     state: stateLib.load(dataDir, cfg),
     ledger: store.readJsonl('usage.jsonl'),
     siteIds: () => sites.map((s) => s.site_id),
-    armKind: (id) => (/self-hosted/.test(cfg.arms[id].serving || '') ? 'open_source' : 'mainstream'),
+    armKind,
     concurrency: (id) => (Number.isInteger(cfg.arms[id].concurrency) ? cfg.arms[id].concurrency : 4),
     baselineFile: (site, file) => { try { return fs.readFileSync(path.join(studyDir, 'baseline', site, file), 'utf8'); } catch { return ''; } },
     estimate: () => estimate(),
   };
   ctx.docker = dockerLib.create({ env, port: Number(env.PORT) || 8080 });
   ctx.coord = coordLib.create(ctx, { leaseS: opts.leaseS });
+  ctx.launches = launchLib.create(ctx, env.DASHBOARD_LAUNCH_TOKEN);
 
   // ---- per-call token estimate: estimate.json (python), else chars/4 of the slice files
   let spawned = false, fallback = null;
@@ -121,7 +125,7 @@ function createApp(opts = {}) {
     if (a === 'events' && m === 'GET') return sse.add(req, res);
 
     if (a === 'keys' && b) {
-      if (!keysLib.SLOTS.includes(b)) throw new HttpError(400, 'bad key slot');
+      if (!ctx.keys.has(b)) throw new HttpError(400, 'bad key slot');
       if (m === 'DELETE') ctx.keys.delete(b);
       else if (m === 'PUT') {
         const { key } = await body(req);
@@ -132,7 +136,7 @@ function createApp(opts = {}) {
       return json(res, 200, { ok: true, key: ctx.keys.status()[b] });
     }
     if (a === 'arms' && b && m === 'PUT') {
-      if (!ctx.state.arms[b] || ctx.armKind(b) !== 'mainstream') throw new HttpError(400, 'only mainstream arms A1-A4 are configurable');
+      if (!ctx.state.arms[b] || ctx.armKind(b) !== 'mainstream') throw new HttpError(400, 'only mainstream arms are configurable');
       const { provider, model_id } = await body(req);
       if (provider === 'gemini') { ctx.geminiRejected = true; throw new HttpError(400, 'Gemini is the judge only; arms accept openai or anthropic'); }
       if (!stateLib.ARM_PROVIDERS.includes(provider)) throw new HttpError(400, 'provider must be openai or anthropic');
@@ -184,7 +188,19 @@ function createApp(opts = {}) {
       ctx.state.save(); sse.notify();
       return json(res, 200, { ok: true });
     }
-    if (a === 'workers' && b && m === 'PUT') {
+    if (a === 'launchers' && b && parts.length === 4 && m === 'POST') {
+      const { target } = await body(req);
+      ctx.launches.deploy(decodeURIComponent(b), target);
+      sse.notify();
+      return json(res, 202, { ok: true });
+    }
+    if (a === 'workers' && b && parts.length === 5 && parts[4] === 'claim' && (m === 'POST' || m === 'DELETE')) {
+      const id = decodeURIComponent(b);
+      const claim = m === 'POST' ? ctx.coord.requestWork(id) : ctx.coord.unclaimWork(id);
+      sse.notify();
+      return json(res, 200, { ok: true, ...claim });
+    }
+    if (a === 'workers' && b && parts.length === 4 && m === 'PUT') {
       ctx.coord.setWorkerCtl(decodeURIComponent(b), await body(req));
       sse.notify();
       return json(res, 200, { ok: true });
@@ -325,9 +341,15 @@ function createApp(opts = {}) {
       return json(res, 200, { ok: true });
     }
     if (p.startsWith('/api/worker/')) return worker(req, res, parts);
+    if (p === '/api/launcher/poll' && req.method === 'POST') {
+      if (!ctx.launches.valid(req.headers.authorization)) throw new HttpError(401, 'bad launcher token');
+      const out = ctx.launches.poll(await body(req));
+      sse.notify();
+      return json(res, 200, out);
+    }
 
-    // login.html loads these three; they hold no secrets, so they must be reachable without a cookie
-    const isLoginAsset = p === '/login.html' || p.startsWith('/login.') || p === '/style.css' || p === '/app.js' || p === '/charts.js';
+    // login.html loads these (plus the self-hosted fonts); they hold no secrets, so they must be reachable without a cookie
+    const isLoginAsset = p === '/login.html' || p.startsWith('/login.') || p === '/style.css' || p === '/app.js' || p === '/charts.js' || p.startsWith('/fonts/');
     if (!isLoginAsset && !auth.isAuthed(req)) {
       if (p.startsWith('/api/') || p.startsWith('/rate/frame/')) return json(res, 401, { error: 'login required' });
       res.writeHead(302, { Location: '/login.html' });

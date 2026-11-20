@@ -9,6 +9,7 @@ cost of Nielsen usability, and where do the two conflict?
 
 ## Contents
 
+- [`Dashboard/`](Dashboard/README.md) — deploy the main researcher console and build its worker image.
 - `Study/` — the repair experiment: protocol, sample, criteria, prompts, baselines.
   Start at [`Study/README.md`](Study/README.md), which is the self-contained protocol.
 - `Websites/` — the replica dataset: 60 static replicas of real websites, 10 categories

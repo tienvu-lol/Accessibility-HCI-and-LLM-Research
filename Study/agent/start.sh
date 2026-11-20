@@ -14,12 +14,26 @@ if [ ! -f agent.env ]; then
   ( umask 077; printf 'WEB_URL=%s\nWORKER_TOKEN=%s\nMACHINE_NAME=%s\nWORKER_ID=%s\nWORKER_SLOTS=%s\n' \
     "${url%/}" "$tok" "$name" "$name" "$slots" > agent.env )
 fi
-export HOST_OS="$(uname -s | sed 's/Darwin/macOS/') $(uname -m)"
+export HOST_OS="${HOST_OS:-$(uname -s | sed 's/Darwin/macOS/') $(uname -m)}"
+if [ -z "${TAILNET_IP:-}" ]; then source ./tailnet.sh; fi
 # A locally built image has nothing to pull, and on macOS the registry login is often absent.
 if [ -n "${WORKER_IMAGE:-}" ]; then
   echo "Using local image ${WORKER_IMAGE} (skipping pull)"
 else
   docker compose pull worker || echo "WARNING: pull failed (not logged in to ghcr.io?); trying a local image"
 fi
-if [ "${1:-}" = "--arc" ]; then docker compose --profile arc up -d --build; else docker compose up -d; fi
-echo "Agent running as $(grep ^WORKER_ID= agent.env | cut -d= -f2). Logs: docker logs -f study-agent"
+if [ -n "${DASHBOARD_WORKER_SERVICE:-}" ]; then
+  [[ "$DASHBOARD_WORKER_SERVICE" =~ ^worker(-a[0-9]+)?$ ]] || { echo 'Invalid worker service' >&2; exit 2; }
+  docker compose up -d --build "$DASHBOARD_WORKER_SERVICE"
+else
+  profiles=()
+  for arg in "$@"; do
+    case "$arg" in
+      --arc) profiles+=(--profile arc) ;;
+      --a7) profiles+=(--profile arc-a7) ;;
+      *) echo "Unknown option: $arg" >&2; exit 2 ;;
+    esac
+  done
+  docker compose ${profiles[@]+"${profiles[@]}"} up -d --build
+fi
+echo "Agent running as ${TAILNET_NODE:-$(grep ^WORKER_ID= agent.env | cut -d= -f2)}. Logs: docker logs -f study-agent"

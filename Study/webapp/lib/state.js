@@ -148,6 +148,7 @@ function snapshot(ctx) {
     const blockers = coord.armBlockers(id);
     return {
       id, label: ctx.cfg.arms[id].model, kind: ctx.armKind(id), provider: a.provider, model_id: a.model_id,
+      key_slot: ctx.keys.armSlot(id), key_env: ctx.keys.envName(ctx.keys.armSlot(id)),
       ready: blockers.length === 0, blockers, concurrency: ctx.concurrency(id), cells,
       tokens: { input: s.input, output: s.output }, calls: s.calls, cost_usd: s.cost_usd, tokens_per_min: s.rtokens / 5,
     };
@@ -161,6 +162,7 @@ function snapshot(ctx) {
       items: coord.judgeItems(), tokens: { input: j.input, output: j.output }, cost_usd: j.cost_usd,
     },
     matrix: coord.matrix(),
+    pipeline: coord.pipelineProgress(),
     ...coord.machineView(agg), // machines[] + matrix_workers: which computer ran each cell
     intake: proj.intake(agg),
     projection: proj.project(ctx, agg, counts, state.baseline),
@@ -172,6 +174,8 @@ function snapshot(ctx) {
         cost_usd: typeof e.cost_usd === 'number' ? e.cost_usd : proj.cost(ctx, e.kind === 'judge' ? 'judge' : e.arm, e.input, e.output),
         legacy: typeof e.cost_usd !== 'number' })),
     workers: coord.workers(),
+    live_jobs: coord.jobView(),
+    launchers: ctx.launches.snapshot(),
     docker: ctx.docker && ctx.docker.snapshot(),
     pricing: state.pricing,
     warnings: warnings(ctx),

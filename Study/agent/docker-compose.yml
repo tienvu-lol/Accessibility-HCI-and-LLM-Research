@@ -1,11 +1,16 @@
 # Local worker agent: connects this machine to the hosted console and takes jobs. Use start.sh (macOS/Linux) or start.ps1 (Windows).
+x-worker-env: &worker-env
+  HOST_OS: ${HOST_OS:-unknown}
+  TAILNET_NODE: ${TAILNET_NODE:-}
+  TAILNET_IP: ${TAILNET_IP:-}
+  TAILNET_USER: ${TAILNET_USER:-}
+  WORKER_MANUAL_CLAIM: ${WORKER_MANUAL_CLAIM:-1}
 services:
   worker:
     image: ${WORKER_IMAGE:-ghcr.io/tienvu-lol/accessibility-hci-and-llm-research/study-worker:latest}
     container_name: study-agent
     env_file: agent.env
-    environment:
-      HOST_OS: ${HOST_OS:-unknown}
+    environment: *worker-env
     shm_size: 1gb
     init: true
     restart: unless-stopped
@@ -27,7 +32,7 @@ services:
     image: ${WORKER_IMAGE:-ghcr.io/tienvu-lol/accessibility-hci-and-llm-research/study-worker:latest}
     container_name: study-agent-a5
     env_file: agent.env
-    environment: { HOST_OS: "${HOST_OS:-unknown}", WORKER_SUFFIX: -a5, WORKER_ARMS: A5, ARC_URLS: "A5=http://arc-a5:8091/v1" }
+    environment: { <<: *worker-env, WORKER_SUFFIX: -a5, WORKER_ARMS: A5, ARC_URLS: "A5=http://arc-a5:8091/v1" }
     shm_size: 1gb
     init: true
     restart: unless-stopped
@@ -46,8 +51,27 @@ services:
     image: ${WORKER_IMAGE:-ghcr.io/tienvu-lol/accessibility-hci-and-llm-research/study-worker:latest}
     container_name: study-agent-a6
     env_file: agent.env
-    environment: { HOST_OS: "${HOST_OS:-unknown}", WORKER_SUFFIX: -a6, WORKER_ARMS: A6, ARC_URLS: "A6=http://arc-a6:8090/v1" }
+    environment: { <<: *worker-env, WORKER_SUFFIX: -a6, WORKER_ARMS: A6, ARC_URLS: "A6=http://arc-a6:8090/v1" }
     shm_size: 1gb
     init: true
     restart: unless-stopped
     depends_on: [arc-a6]
+  arc-a7:
+    profiles: ["arc-a7"]
+    build: { context: arc, dockerfile: Dockerfile.tunnel }
+    image: study-arc-tunnel
+    container_name: study-arc-a7
+    env_file: agent.env
+    environment: { ARM: A7, LOCAL_PORT: "8092" }
+    volumes: ["./arc/ssh:/ssh:ro"]
+    restart: unless-stopped
+  worker-a7:
+    profiles: ["arc-a7"]
+    image: ${WORKER_IMAGE:-ghcr.io/tienvu-lol/accessibility-hci-and-llm-research/study-worker:latest}
+    container_name: study-agent-a7
+    env_file: agent.env
+    environment: { <<: *worker-env, WORKER_SUFFIX: -a7, WORKER_ARMS: A7, ARC_URLS: "A7=http://arc-a7:8092/v1" }
+    shm_size: 1gb
+    init: true
+    restart: unless-stopped
+    depends_on: [arc-a7]

@@ -5,7 +5,7 @@ Zero-dependency Node 24 (CommonJS, built-ins only) server + vanilla JS frontend.
 ## Topology (Railway)
 - **web** service: `server.js` (UI + API + coordinator + data volume at `DATA_DIR`). Single replica; owns the only copy of results. Railway volumes attach to ONE service, so workers never share its disk.
 - **worker** service: `worker.js`, N replicas, no volume. Pull jobs over HTTPS, run the existing `Study/tools` code in a scratch dir, push results back. Scale = replicas x `WORKER_SLOTS` (parallel cells per replica).
-- **Open-source arms (A5, A6)** run on the ARC cluster, either dispatched to a laptop holding an SSH tunnel into the ARC session (`settings.dispatch_open`, `agent/README.md`) or run ahead of time and imported (`/api/import`). They are separate llama.cpp servers with **separate credentials**: key slots `a5` and `a6`, never shared, and either one may instead live on the laptop that holds that arm's tunnel. After repair, Gemini judges ALL arms, then humans rate via the harness.
+- **Configured open-source arms** run on the ARC cluster, either dispatched to a laptop holding an SSH tunnel into the ARC session (`settings.dispatch_open`, `agent/README.md`) or run ahead of time and imported (`/api/import`). They are separate llama.cpp servers with **separate credentials**: one key slot per configured arm, never shared. A key can instead live on the laptop that holds that arm's tunnel. After repair, Gemini judges ALL arms, then humans rate via the harness.
 - Gemini is the JUDGE only (config neutrality note). Repair arms A1-A4 may use provider `openai` or `anthropic` only; the API must reject `gemini` for an arm.
 
 ## Env
@@ -31,9 +31,11 @@ Cell status values (from `status.json`): `ok|failed` (+ `truncated` when `reason
 
 ## UI endpoints (JSON)
 - `GET /api/state` -> snapshot (below). `GET /api/events` -> SSE, event `state` with the same snapshot on change and every 3 s.
-- `PUT /api/keys/:slot {key}` / `DELETE /api/keys/:slot`. Slots: `openai`, `anthropic`, `gemini` (hosted providers) and `a5`, `a6` (one per open-source arm; separate credentials, used only by that arm, optional - without one the arm uses the key on the laptop that holds its tunnel). 400 on an unknown slot or an empty key. Keys live in memory only.
+- `PUT /api/keys/:slot {key}` / `DELETE /api/keys/:slot`. Slots: `openai`, `anthropic`, `gemini` (hosted providers) and the lowercase arm ID for each configured open-source arm (for example `a7`). An arm key is used only by that arm and can instead be configured on the worker that holds its tunnel. 400 on an unknown slot or an empty key. Keys live in memory only.
 - `POST /api/usage/reset` -> `{ok,cleared,archived_to}`. Renames `usage.jsonl` to `usage.archived-<iso>.jsonl`, empties the in-memory ledger and drops the projection baseline. Spend, measured averages and the per-machine/per-key rollups go back to zero; finished cells, results and files are untouched. Use it after a mock/test run.
-- `PUT /api/arms/:arm {provider,model_id}` for A1-A4 (400 for A5/A6 or provider gemini).
+- `PUT /api/arms/:arm {provider,model_id}` for configured hosted repair arms only (Gemini is judge-only).
+- `POST /api/launchers/:ip {target}` queues a deployment on a registered online host (`hosted` or an ARC arm the host has configured). Launchers use `POST /api/launcher/poll` with a separate `DASHBOARD_LAUNCH_TOKEN`. The launcher runs the locally configured `start.sh`; once the worker is ready the console requests a batch under normal claim limits.
+- `PUT /api/workers/:id {cap?,paused?,manual?}` sets per-worker dispatch controls. `POST /api/workers/:id/claim` gives the selected online manual worker a batch up to its available slots, expiring after one minute. `DELETE /api/workers/:id/claim` withdraws any unleased part of that batch. All require an operator session; none returns provider credentials.
 - `PUT /api/settings {budget_usd,sites,conditions,max_iter,judge_model_id}` (sites: array of site ids or null = all 60 from `Study/sample/sites.csv`).
 - `PUT /api/pricing {<model_id>:{input_per_mtok,output_per_mtok}}`.
 - `POST /api/run/start {phase:"repair"|"judge"}`; `POST /api/run/pause`; `POST /api/run/resume`; `POST /api/run/retry-failed`. Start refuses (409 + `blockers`) if a needed key/model is missing, or for `judge` while repair/imports are incomplete unless `{force:true}`.
@@ -70,7 +72,9 @@ Cell status values (from `status.json`): `ok|failed` (+ `truncated` when `reason
               by_machine:[{id,calls,input,output,cost_usd,mock_calls,share_pct,arms:[{arm,calls,input,output,cost_usd}]}],
               by_key:[{id,arm,model_id,calls,input,output,cost_usd}]},     // id = "<slot>:<last4>" or "local:<machine>"
   recent_usage:[{ts,worker,arm,kind,model_id,key_id,mock,input,output,calls,cost_usd,legacy}], // newest first, last 30, no score rows
-  workers:[{id,last_seen,slots,running,info,arcs,cap,paused}],             // arcs = open arms this worker has a live tunnel for
+  workers:[{id,last_seen,slots,running,info,arcs,cap,paused,online,manual,requested}], // info may include agent-reported tailnet identity; arcs are live tunnel arms
+  launchers:[{ip,node,user,targets,online,task}],                          // host launchers are independent of worker containers
+  live_jobs:{counts:{queued,running,done,failed},queue:[{kind,arm,jobs}],jobs:[{id,kind,arm,condition,site,state,worker,worker_node,worker_user,started_at,finished_at,mock}]}, // active and last 30 terminal jobs, pushed over SSE
   pricing:{<model_id>:{input_per_mtok,output_per_mtok,verified}},        // placeholders ship verified:false
   warnings:[str],
   human:{built,items,raters,ratings_rows},
