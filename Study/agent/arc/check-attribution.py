@@ -1,4 +1,4 @@
-"""Checks the console attributed an A5/A6 run per arm, per key and per machine.
+"""Checks the console attributed an A5/A6/A7 run per arm, per key and per machine.
 
 Used by e2e-open-arms.sh: argv = <state.json from /api/state> <the A5 key that was set in the console>.
 """
@@ -9,14 +9,16 @@ import sys
 def main(path, a5_key):
     st = json.load(open(path, encoding="utf-8"))
     a5_id = "a5:" + a5_key[-4:]
-    rows = [u for u in st["recent_usage"] if u["arm"] in ("A5", "A6")]
-    assert len(rows) == 2, "expected one usage row per open arm, got %r" % rows
+    rows = [u for u in st["recent_usage"] if u["arm"] in ("A5", "A6", "A7")]
+    assert len(rows) == 3, "expected one usage row per open arm, got %r" % rows
     by = {u["arm"]: u for u in rows}
 
     # A5's key came from the console, so the row names it; A6's never left the laptop, so it reads local:<machine>
     assert by["A5"]["key_id"] == a5_id, by["A5"]
     assert by["A6"]["key_id"].startswith("local:"), by["A6"]
-    assert by["A5"]["key_id"] != by["A6"]["key_id"], "the two arms must not share a key"
+    assert by["A7"]["key_id"].startswith("local:"), by["A7"]
+    assert by["A5"]["key_id"] != by["A6"]["key_id"], "A5 and A6 must not share a key"
+    assert len({u["worker"] for u in by.values()}) == 3, "each arm ran in its own worker container"
     for arm, u in sorted(by.items()):
         assert u["mock"] is False, u
         assert u["worker"].endswith(arm.lower()), (arm, u["worker"])
@@ -35,7 +37,7 @@ def main(path, a5_key):
 
     # and every finished cell is attributed to the machine that ran it
     chars = {m["char"]: m["id"] for m in st["machines"]}
-    for arm in ("A5", "A6"):
+    for arm in ("A5", "A6", "A7"):
         row = st["matrix_workers"][arm]["naive"]
         ran = [chars[c] for c in row if c in chars]
         assert ran, "no machine recorded for any %s cell (%r)" % (arm, row)

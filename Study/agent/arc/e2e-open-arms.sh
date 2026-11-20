@@ -1,16 +1,16 @@
 #!/usr/bin/env bash
-# Proves A5/A6 repair jobs really run in this machine's Docker containers, without ARC and without paid calls.
+# Proves A5/A6/A7 repair jobs really run in this machine's Docker containers, without ARC and without paid calls.
 #
-# It brings up, on one throwaway docker network: two fake ARC llama.cpp servers (arc/fake-llama.js), a throwaway
+# It brings up, on one throwaway docker network: three fake ARC llama.cpp servers (arc/fake-llama.js), a throwaway
 # sshd standing in for the ARC login host, the real console image, and the real agent/docker-compose.yml
-# `arc` profile (tunnel + worker container per arm). Then it logs in to the console, turns on open-arm
-# dispatch, starts a one-site repair run and waits for the A5 and A6 cells to finish. The marker the fake
+# `arc` and `arc-a7` profiles (tunnel + worker container per arm). Then it logs in to the console, turns on open-arm
+# dispatch, starts a one-site repair run and waits for the A5, A6 and A7 cells to finish. The marker the fake
 # server writes into each returned file is checked in the console's copy, so a pass means the bytes went
 # worker container -> tunnel container -> ssh -> fake llama.cpp and back.
 #
 # The two arms are deliberately keyed differently, because they are different servers with different
-# credentials: A5's key is typed into the console (which sends it inside A5 jobs) and A6's key lives only
-# in agent.env on this machine. Each fake server rejects the other arm's key, so a crossed key cannot pass.
+# credentials: A5's key is typed into the console (which sends it inside A5 jobs) while A6's and A7's keys
+# live only in agent.env on this machine. Each fake server rejects the other arm's key, so a crossed key cannot pass.
 # The run then checks that the console attributed each arm's usage to its own key and to the right machine.
 #
 # Usage: ./agent/arc/e2e-open-arms.sh [--keep]     (--keep leaves everything running for inspection)
@@ -23,10 +23,10 @@ STUDY_DIR=$(cd .. && pwd)
 P=arce2e                                     # compose project
 NET=${P}_default
 PORT=${E2E_PORT:-18080}
-WEB=e2e-web; SSHD=e2e-sshd; L5=e2e-llama-a5; L6=e2e-llama-a6
+WEB=e2e-web; SSHD=e2e-sshd; L5=e2e-llama-a5; L6=e2e-llama-a6; L7=e2e-llama-a7
 PASS_WORD=e2e-password
 WTOKEN=e2e-worker-token
-A5KEY=e2e-a5-key; A6KEY=e2e-a6-key
+A5KEY=e2e-a5-key; A6KEY=e2e-a6-key; A7KEY=e2e-a7-key
 SITE=${E2E_SITE:-UNI-01}; COND=naive; MAX_ITER=2
 KEEP=0; [ "${1:-}" = "--keep" ] && KEEP=1
 WORK=$(mktemp -d) || exit 1
@@ -40,12 +40,12 @@ cleanup() {
   code=$?
   if [ "$KEEP" = 1 ]; then
     echo; echo "--keep: left running. Console http://127.0.0.1:$PORT (password $PASS_WORD)."
-    echo "Stop with: docker compose -p $P -f $WORK/agent/docker-compose.yml --profile arc down -v; docker rm -f $WEB $SSHD $L5 $L6"
+    echo "Stop with: docker compose -p $P -f $WORK/agent/docker-compose.yml --profile arc --profile arc-a7 down -v; docker rm -f $WEB $SSHD $L5 $L6 $L7"
     exit $code
   fi
   echo; echo "cleaning up"
-  docker rm -f $WEB $SSHD $L5 $L6 >/dev/null 2>&1 || true
-  [ -f "$WORK/agent/docker-compose.yml" ] && COMPOSE_PROJECT_NAME=$P docker compose -f "$WORK/agent/docker-compose.yml" --profile arc down -v --remove-orphans >/dev/null 2>&1 || true
+  docker rm -f $WEB $SSHD $L5 $L6 $L7 >/dev/null 2>&1 || true
+  [ -f "$WORK/agent/docker-compose.yml" ] && COMPOSE_PROJECT_NAME=$P docker compose -f "$WORK/agent/docker-compose.yml" --profile arc --profile arc-a7 down -v --remove-orphans >/dev/null 2>&1 || true
   rm -rf "$WORK"
   exit $code
 }
@@ -54,10 +54,10 @@ trap cleanup EXIT
 # ---- preconditions
 command -v docker >/dev/null || die "docker is not installed"
 docker info >/dev/null 2>&1 || die "Docker is not running (open Docker Desktop, or: colima start)"
-for c in study-agent study-agent-a5 study-agent-a6 study-arc-a5 study-arc-a6; do
+for c in study-agent study-agent-a5 study-agent-a6 study-agent-a7 study-arc-a5 study-arc-a6 study-arc-a7; do
   docker ps -a --format '{{.Names}}' | grep -qx "$c" && die "container $c already exists (a real agent is running?). Stop it first: ./agent/stop.sh"
 done
-docker ps -a --format '{{.Names}}' | grep -qxE "$WEB|$SSHD|$L5|$L6" && die "a previous run left containers behind; remove them: docker rm -f $WEB $SSHD $L5 $L6"
+docker ps -a --format '{{.Names}}' | grep -qxE "$WEB|$SSHD|$L5|$L6|$L7" && die "a previous run left containers behind; remove them: docker rm -f $WEB $SSHD $L5 $L6 $L7"
 for img in study-worker:latest study-web; do
   docker image inspect "$img" >/dev/null 2>&1 || {
     f=$([ "$img" = study-web ] && echo webapp/Dockerfile.web || echo webapp/Dockerfile.worker)
@@ -84,6 +84,8 @@ ARC_HOST=$SSHD
 ARC_A5_TARGET=$L5:8000
 ARC_A6_TARGET=$L6:8000
 A6_API_KEY=$A6KEY
+ARC_A7_TARGET=$L7:8000
+A7_API_KEY=$A7KEY
 EOF
 )
 # A5's key is NOT in agent.env: it is typed into the console below, to exercise that path too.
@@ -94,12 +96,12 @@ COMPOSE="docker compose -f $WORK/agent/docker-compose.yml"
 
 # ---- the agent side: exactly what `start.sh --arc` runs, minus the plain worker (no mainstream jobs here)
 say "starting the arc profile (tunnel + worker container per arm)"
-$COMPOSE --profile arc up -d --build arc-a5 worker-a5 arc-a6 worker-a6 >/dev/null
+$COMPOSE --profile arc --profile arc-a7 up -d --build arc-a5 worker-a5 arc-a6 worker-a6 arc-a7 worker-a7 >/dev/null
 docker network inspect $NET >/dev/null 2>&1 || die "compose network $NET not found"
 
 # ---- the fake ARC: one llama.cpp per arm, reachable only from the sshd (as on ARC's compute nodes)
-say "starting the fake ARC (two llama.cpp servers + sshd) and the console"
-for a in "A5 $L5 $A5KEY" "A6 $L6 $A6KEY"; do
+say "starting the fake ARC (three llama.cpp servers + sshd) and the console"
+for a in "A5 $L5 $A5KEY" "A6 $L6 $A6KEY" "A7 $L7 $A7KEY"; do
   set -- $a
   docker run -d --name "$2" --network $NET -v "$AGENT_DIR/arc/fake-llama.js:/fake-llama.js:ro" \
     -e ARM="$1" -e EXPECT_KEY="$3" -e PORT=8000 node:24-bookworm-slim node /fake-llama.js >/dev/null
@@ -114,7 +116,7 @@ docker run -d --name $WEB --network $NET -p "127.0.0.1:$PORT:8080" \
 
 # the tunnels and workers started before their peers existed; restart them instead of waiting out the backoff
 sleep 8
-docker restart study-arc-a5 study-arc-a6 study-agent-a5 study-agent-a6 >/dev/null
+docker restart study-arc-a5 study-arc-a6 study-arc-a7 study-agent-a5 study-agent-a6 study-agent-a7 >/dev/null
 
 # ---- console: log in, configure, start
 for i in $(seq 1 60); do $CURL "http://127.0.0.1:$PORT/healthz" >/dev/null 2>&1 && break; sleep 1; done
@@ -129,38 +131,38 @@ api() { # api METHOD PATH [JSON]
 $CURL -c "$JAR" -X POST -H 'content-type: application/json' -d "{\"password\":\"$PASS_WORD\"}" \
   "http://127.0.0.1:$PORT/api/login" | grep -q '"ok":true' || die "login failed"
 # A1-A4 must be configured or the repair phase refuses to start; these keys are never dispatched here,
-# because the only workers running take A5/A6 only.
+# because the only workers running take A5/A6/A7 only.
 for a in A3 A4; do api PUT "/api/arms/$a" '{"provider":"openai","model_id":"e2e-unused"}' >/dev/null; done
 for k in openai anthropic gemini; do api PUT "/api/keys/$k" '{"key":"e2e-not-a-real-key"}' >/dev/null; done
-# A5 gets its own key from the console; A6 uses the one in agent.env. Separate keys, separate arms.
+# A5 gets its own key from the console; A6 and A7 use their own in agent.env. Separate keys, separate arms.
 api PUT /api/keys/a5 "{\"key\":\"$A5KEY\"}" | grep -q '"ok":true' || die "could not set the A5 key"
-api GET /api/state | python3 -c 'import json,sys;k=json.load(sys.stdin)["keys"];print("  console keys: a5=%s a6=%s" % (k["a5"]["set"], k["a6"]["set"]))'
+api GET /api/state | python3 -c 'import json,sys;k=json.load(sys.stdin)["keys"];print("  console keys: a5=%s a6=%s a7=%s" % (k["a5"]["set"], k["a6"]["set"], k["a7"]["set"]))'
 api PUT /api/settings "{\"sites\":[\"$SITE\"],\"conditions\":[\"$COND\"],\"max_iter\":$MAX_ITER,\"dispatch_open\":true}" >/dev/null
 
-say "waiting for both workers to advertise a live ARC tunnel"
+say "waiting for the three workers to advertise a live ARC tunnel"
 for i in $(seq 1 90); do
   arcs=$(api GET /api/state | python3 -c 'import json,sys;s=json.load(sys.stdin);print(" ".join(sorted(set(a for w in s.get("workers",[]) for a in (w.get("arcs") or [])))))' 2>/dev/null || true)
-  [ "$arcs" = "A5 A6" ] && break
+  [ "$arcs" = "A5 A6 A7" ] && break
   sleep 2
 done
-[ "${arcs:-}" = "A5 A6" ] || { docker logs study-arc-a5 | tail -5; docker logs study-agent-a5 | tail -5; die "no worker advertised a live A5+A6 tunnel (got '${arcs:-}')"; }
+[ "${arcs:-}" = "A5 A6 A7" ] || { docker logs study-arc-a7 | tail -5; docker logs study-agent-a7 | tail -5; die "no worker advertised a live A5+A6+A7 tunnel (got '${arcs:-}')"; }
 echo "workers advertise: $arcs"
 
 say "starting the repair phase for $SITE / $COND (max_iter=$MAX_ITER)"
 api POST /api/run/start '{"phase":"repair"}' | grep -q '"ok":true' || { api POST /api/run/start '{"phase":"repair"}'; die "run/start was blocked"; }
 
-say "waiting for the A5 and A6 cells"
+say "waiting for the A5, A6 and A7 cells"
 for i in $(seq 1 150); do
-  m=$(api GET /api/state | python3 -c 'import json,sys;s=json.load(sys.stdin);m=s["matrix"];print("".join(m[a]["'"$COND"'"] for a in ("A5","A6")))' 2>/dev/null || true)
-  echo "  cells A5|A6: $m"
-  case "$m" in oo) break;; *f*|*t*) break;; esac   # f = failed cell, t = truncated
+  m=$(api GET /api/state | python3 -c 'import json,sys;s=json.load(sys.stdin);m=s["matrix"];print("".join(m[a]["'"$COND"'"] for a in ("A5","A6","A7")))' 2>/dev/null || true)
+  echo "  cells A5|A6|A7: $m"
+  case "$m" in ooo) break;; *f*|*t*) break;; esac   # f = failed cell, t = truncated
   sleep 4
 done
-[ "${m:-}" = "oo" ] || { for c in study-agent-a5 study-agent-a6 study-arc-a5 study-arc-a6; do echo "--- $c"; docker logs --tail 15 $c; done; die "A5/A6 cells did not finish ok (matrix '$m')"; }
+[ "${m:-}" = "ooo" ] || { for c in study-agent-a5 study-agent-a6 study-agent-a7 study-arc-a5 study-arc-a6 study-arc-a7; do echo "--- $c"; docker logs --tail 15 $c; done; die "A5/A6/A7 cells did not finish ok (matrix '$m')"; }
 
 # ---- the proof: the console's stored iterations came from the fake llama.cpp through the tunnel
 say "checking what the console stored"
-for arm in A5 A6; do
+for arm in A5 A6 A7; do
   base=/data/runs/$arm/$COND/$SITE
   docker exec $WEB sh -c "cat $base/iter$MAX_ITER/status.json" > "$WORK/$arm.json" || die "$arm: no status.json in the console's data"
   docker exec $WEB sh -c "cat $base/iter$MAX_ITER/index.html" > "$WORK/$arm.html" || die "$arm: no index.html in the console's data"
@@ -180,12 +182,20 @@ api GET /api/state > "$WORK/state.json"
 python3 "$AGENT_DIR/arc/check-attribution.py" "$WORK/state.json" "$A5KEY" || die "usage was not attributed per arm/key/machine"
 
 say "a crossed key is refused (the arms are not interchangeable)"
-code=$(docker run --rm --network $NET curlimages/curl:8.10.1 -s -o /dev/null -w '%{http_code}' --max-time 8 \
-  -H "authorization: Bearer $A6KEY" "http://$L5:8000/v1/models")
-[ "$code" = 401 ] || die "the A5 server answered $code for A6's key; it must refuse it"
-echo "  A6's key on the A5 server: 401 as expected"
+crossed() { # crossed <server> <other arm's key> <label>
+  code=$(docker run --rm --network $NET curlimages/curl:8.10.1 -s -o /dev/null -w '%{http_code}' --max-time 8 \
+    -H "authorization: Bearer $2" "http://$1:8000/v1/models")
+  [ "$code" = 401 ] || die "$3: the server answered $code; it must refuse another arm's key"
+  echo "  $3: 401 as expected"
+}
+crossed $L5 $A6KEY "A6's key on the A5 server"
+crossed $L5 $A7KEY "A7's key on the A5 server"
+crossed $L6 $A7KEY "A7's key on the A6 server"
+crossed $L7 $A5KEY "A5's key on the A7 server"
+crossed $L7 $A6KEY "A6's key on the A7 server"
 
 say "calls the fake ARC servers answered"
 docker logs $L5 2>&1 | grep -c 'call ' | sed 's/^/  A5 chat completions: /'
 docker logs $L6 2>&1 | grep -c 'call ' | sed 's/^/  A6 chat completions: /'
-printf '\nPASS: A5 and A6 repair cells ran in this machine'"'"'s containers, through the ARC tunnel containers.\n'
+docker logs $L7 2>&1 | grep -c 'call ' | sed 's/^/  A7 chat completions: /'
+printf '\nPASS: A5, A6 and A7 repair cells ran in this machine'"'"'s containers, through the ARC tunnel containers.\n'
