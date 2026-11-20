@@ -20,7 +20,7 @@ function load(dataDir, cfg) {
   }
   const state = {
     settings: {
-      budget_usd: 100, sites: null, conditions: [...CONDITIONS],
+      budget_usd: 200, sites: null, conditions: [...CONDITIONS],
       max_iter: cfg.held_constant.max_iterations || 3, judge_model_id: tbd(cfg.judge && cfg.judge.model_id),
       ...raw.settings,
     },
