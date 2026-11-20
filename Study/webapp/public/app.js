@@ -285,12 +285,12 @@
       '<p class="hint">Open-source arms count tokens only; their cost is $0.00 unless a price is set.</p>')];
     var P = S.projection;
     var pr = P.by_arm.map(function (b) {
-      return '<tr><th scope="row">' + esc(b.arm) + '</th><td class="num">' + int(b.calls_done) + ' / ' + int(b.calls_total) + '</td><td class="num">' + int(b.avg_in) + '</td><td class="num">' + int(b.avg_out) + '</td><td class="num">' + usd(b.est_cost_usd) + '</td><td>' + badge(b.basis === 'measured' ? 'done' : b.basis === 'estimated' ? 'attn' : 'pending', b.basis) + '</td></tr>';
+      return '<tr><th scope="row">' + esc(b.arm) + '</th><td class="num">' + int(b.calls_done) + ' / ' + int(b.calls_total) + '</td><td class="num">' + int(b.avg_in) + '</td><td class="num">' + int(b.avg_out) + '</td><td class="num">' + usd(b.spent_usd) + '</td><td class="num">' + usd(b.est_cost_usd) + '</td><td>' + badge(b.basis === 'measured' ? 'done' : b.basis === 'estimated' || b.basis === 'unpriced' ? 'attn' : 'pending', b.basis) + '</td></tr>';
     }).join('');
     out.push(panel('c-proj', 'Projection by arm',
       '<p>Expected total <strong>' + usd(P.expected_total_usd) + '</strong> against a budget of ' + usd(P.budget_usd) + '; ETA ' + mins(P.eta_minutes) + '.</p>' +
-      tableWrap('Projection by arm', '<table class="grid"><thead><tr><th scope="col">Arm</th><th scope="col" class="num">Calls done / total</th><th scope="col" class="num">Avg tokens in</th><th scope="col" class="num">Avg tokens out</th><th scope="col" class="num">Estimated cost</th><th scope="col">Basis</th></tr></thead><tbody>' + pr + '</tbody></table>') +
-      '<p class="hint">Measured = from finished calls. Estimated = from prompt sizes before any data. Self-hosted = tokens only.</p>'));
+      tableWrap('Projection by arm', '<table class="grid"><thead><tr><th scope="col">Arm</th><th scope="col" class="num">Calls done / total</th><th scope="col" class="num">Avg tokens in</th><th scope="col" class="num">Avg tokens out</th><th scope="col" class="num">Spent</th><th scope="col" class="num">Remaining (est.)</th><th scope="col">Basis</th></tr></thead><tbody>' + pr + '</tbody></table>') +
+      '<p class="hint">Measured = from finished calls. Estimated = from prompt sizes before any data. Self-hosted = tokens only. Unpriced = no price entry for the model, so its cost is counted as $0 (add a price). The judge row is included in the expected total.</p>'));
     return out;
   }
 

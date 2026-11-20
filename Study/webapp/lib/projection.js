@@ -79,19 +79,38 @@ function project(ctx, agg, counts) {
   const { budget_usd } = ctx.state.settings;
   let estTotal = 0, repairCallsLeft = 0, repairCallsPerMin = 0;
   const by_arm = Object.keys(ctx.state.arms).map((id) => {
-    const { total, done } = counts[id];
-    const st = armStats(ctx, agg, id, done);
+    const { total, done, finished = done } = counts[id];
+    const st = armStats(ctx, agg, id, finished);
     const open = ctx.armKind(id) === 'open_source';
     const left = (total - done) * st.expectedIter;
     const est = open ? 0 : (total - done) * st.perCell;
     estTotal += est;
     if (!open) { repairCallsLeft += left; repairCallsPerMin += agg.by[id].rcalls / 5; }
+    const spentArm = agg.by[id].cost_usd;
     return {
-      arm: id, calls_total: Math.round(total * st.expectedIter), calls_done: agg.by[id].calls,
-      avg_in: st.avgIn, avg_out: st.avgOut, est_cost_usd: est,
-      basis: open ? 'self-hosted' : st.measured ? 'measured' : 'estimated',
+      arm: id, calls_total: Math.max(Math.round(total * st.expectedIter), agg.by[id].calls), calls_done: agg.by[id].calls,
+      avg_in: st.avgIn, avg_out: st.avgOut, spent_usd: spentArm, est_cost_usd: est, est_total_usd: spentArm + est,
+      basis: open ? 'self-hosted' : !price(ctx, id) ? 'unpriced' : st.measured ? 'measured' : 'estimated',
     };
   });
+  // judge: one call per (site, arm); the repair arms alone understate the total
+  const j = counts.judge;
+  if (j) {
+    const js = agg.by.judge;
+    const measured = js.calls > 0;
+    const nVariants = ctx.state.settings.conditions.length + 1; // the judge sees every condition plus the unrepaired page
+    // shortcut: unmeasured judge output is a flat 1000 tokens, replace with the first real judge usage (it self-corrects once measured)
+    const avgIn = measured ? js.input / js.calls : nVariants * ctx.estimate().input;
+    const avgOut = measured ? js.output / js.calls : 1000;
+    const left = Math.max(j.total - j.done, 0);
+    const est = left * cost(ctx, 'judge', avgIn, avgOut);
+    estTotal += est;
+    by_arm.push({
+      arm: 'judge', calls_total: Math.max(j.total, js.calls), calls_done: js.calls, avg_in: avgIn, avg_out: avgOut,
+      spent_usd: js.cost_usd, est_cost_usd: est, est_total_usd: js.cost_usd + est,
+      basis: !price(ctx, 'judge') ? 'unpriced' : measured ? 'measured' : 'estimated',
+    });
+  }
   const spent = agg.total.cost_usd;
   return {
     budget_usd, spent_usd: spent, remaining_usd: budget_usd - spent, expected_total_usd: spent + estTotal,

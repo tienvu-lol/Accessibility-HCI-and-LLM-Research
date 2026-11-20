@@ -443,3 +443,18 @@ test('DEMO=1 serves a synthetic snapshot', async () => {
     assert.ok(st.warnings.some((w) => /DEMO/.test(w)));
   } finally { await s.close(); }
 });
+
+test('projection by arm: judge row, spent/remaining, unpriced model flagged, no calls_done > calls_total', async () => {
+  const b = await boot();
+  try {
+    const st = (await b.ui('GET', '/api/state')).data;
+    const rows = st.projection.by_arm;
+    assert.ok(rows.some((r) => r.arm === 'judge'), 'judge row present');
+    for (const r of rows) {
+      assert.ok(r.calls_total >= r.calls_done);
+      assert.ok(Math.abs(r.est_total_usd - (r.spent_usd + r.est_cost_usd)) < 1e-9);
+    }
+    const sum = rows.reduce((n, r) => n + r.est_cost_usd, 0);
+    assert.ok(Math.abs(st.projection.expected_total_usd - (st.projection.spent_usd + sum)) < 1e-6, 'expected total includes every row');
+  } finally { await b.close(); }
+});

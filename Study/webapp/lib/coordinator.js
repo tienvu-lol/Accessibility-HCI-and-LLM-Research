@@ -69,6 +69,7 @@ function create(ctx, { leaseS = 900 } = {}) {
     }
     return c;
   }
+  const finishedRepairs = (arm) => [...jobs.values()].filter((j) => j.kind === 'repair' && j.arm === arm && (j.state === 'done' || j.state === 'failed')).length;
   const matrix = () => Object.fromEntries(Object.keys(state.arms).map((arm) => [arm, Object.fromEntries(
     state.settings.conditions.map((cond) => [cond, siteList().map((site) => char(arm, cond, site)).join('')]))]));
   const judgeItems = () => {
@@ -226,9 +227,9 @@ function create(ctx, { leaseS = 900 } = {}) {
     if (limit < 1) return [];
 
     const agg = proj.aggregate(ctx, ctx.now());
-    const counts = Object.fromEntries(Object.keys(state.arms).map((a) => { const c = armCells(a); return [a, { done: c.ok + c.failed + c.truncated + c.imported }]; }));
+    const counts = Object.fromEntries(Object.keys(state.arms).map((a) => { const c = armCells(a); return [a, { done: c.ok + c.failed + c.truncated + c.imported, finished: finishedRepairs(a) }]; }));
     const judgeAvg = agg.by.judge.calls ? agg.by.judge.cost_usd / agg.by.judge.calls : 0;
-    const estimate = (j) => (j.kind === 'repair' ? proj.armStats(ctx, agg, j.arm, counts[j.arm].done).perCell : j.kind === 'judge' ? judgeAvg : 0);
+    const estimate = (j) => (j.kind === 'repair' ? proj.armStats(ctx, agg, j.arm, counts[j.arm].finished).perCell : j.kind === 'judge' ? judgeAvg : 0);
     let committed = agg.total.cost_usd;
     const running = {};
     for (const j of jobs.values()) {
@@ -368,7 +369,7 @@ function create(ctx, { leaseS = 900 } = {}) {
   }
 
   persist();
-  return { start, pause, resume, retryFailed, claim, heartbeat, release, result, reap, armCells, matrix, judgeItems, armBlockers, judgeBlockers,
+  return { start, pause, resume, retryFailed, claim, heartbeat, release, result, reap, armCells, finishedRepairs, matrix, judgeItems, armBlockers, judgeBlockers,
     markImported, addLedger, workers: workerList, setWorkerCtl, runInfo: () => state.run, jobs };
 }
 

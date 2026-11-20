@@ -119,9 +119,11 @@ function snapshot(ctx) {
   const agg = proj.aggregate(ctx, now);
   const ids = Object.keys(state.arms);
   const counts = {};
+  const ji = coord.judgeItems();
+  counts.judge = { total: (state.settings.sites || ctx.siteIds()).length * ids.length, done: ji.done + ji.failed };
   const arms = ids.map((id) => {
     const cells = coord.armCells(id);
-    counts[id] = { total: cells.total, done: cells.ok + cells.failed + cells.truncated + cells.imported };
+    counts[id] = { total: cells.total, done: cells.ok + cells.failed + cells.truncated + cells.imported, finished: coord.finishedRepairs(id) };
     const s = agg.by[id];
     const a = state.arms[id];
     const blockers = coord.armBlockers(id);
