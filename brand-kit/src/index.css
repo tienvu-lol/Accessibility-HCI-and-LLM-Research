@@ -1,0 +1,104 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+/* One family. Atkinson Hyperlegible Next (Braille Institute, SIL OFL) was drawn so similar characters stay distinct,
+   which is the point of a study about accessibility. Variable font, so real 400 / 500 / 600 are all available. */
+@font-face { font-family: "Atkinson Hyperlegible Next"; font-weight: 200 800; font-display: swap; src: url("/fonts/atkinson/atkinson-hyperlegible-next-latin.woff2") format("woff2"); }
+@font-face { font-family: "Atkinson Hyperlegible Mono"; font-weight: 200 800; font-display: swap; src: url("/fonts/atkinson/atkinson-hyperlegible-mono-latin.woff2") format("woff2"); }
+
+@theme inline {
+  --font-sans: "Atkinson Hyperlegible Next", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Atkinson Hyperlegible Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-heading: var(--font-sans);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-raised: var(--raised);
+  --color-line-strong: var(--line-strong);
+  --color-maroon: var(--vt-maroon);
+  --color-maroon-deep: var(--vt-maroon-deep);
+  --color-orange: var(--vt-orange);
+  --color-ok: var(--st-ok);
+  --color-attn: var(--st-attn);
+  --color-err: var(--st-err);
+  --radius-sm: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.625rem;
+  --radius-xl: 0.625rem;
+}
+
+/*
+  Tokens. Repovive supplies the flat near-black floor; VTURCS (poster, page 2) supplies the
+  maroon + orange. One colour per meaning: orange is current or running, green done, yellow needs attention, red failed. Text on orange must be black: white on #FF6406 is 2.97:1.
+*/
+:root {
+  color-scheme: dark;
+  --vt-maroon: #861f41;
+  --vt-maroon-deep: #6b1634;
+  --vt-orange: #ff6406;
+  --floor: #090a0c;
+  --surface: #0e1014;
+  --raised: #171718;
+  --line: rgb(247 248 248 / 0.1);
+  --line-strong: #3a3a3a;
+  --st-ok: #6dc88f;
+  --st-attn: #f2c94c;
+  --st-err: #f47b74;
+
+  --background: var(--floor);
+  --foreground: #f7f8f8;
+  --card: var(--surface);
+  --card-foreground: var(--foreground);
+  --popover: var(--raised);
+  --popover-foreground: var(--foreground);
+  --primary: var(--vt-maroon);
+  --primary-foreground: #ffffff;
+  --secondary: var(--raised);
+  --secondary-foreground: var(--foreground);
+  --muted: var(--raised);
+  --muted-foreground: #9e9f9f;
+  --accent: var(--raised);
+  --accent-foreground: var(--foreground);
+  --destructive: var(--st-err);
+  --border: var(--line);
+  --input: #3a3a3a;
+  --ring: #f7f8f8;
+  --radius: 0.625rem;
+}
+
+@layer base {
+  * { @apply border-border; }
+  html { @apply font-sans antialiased; scroll-behavior: smooth; scroll-padding-top: 7rem; }
+  body { @apply bg-background text-foreground; font-size: 1rem; line-height: 1.55; caret-color: var(--vt-orange); scrollbar-color: #3a3a3a var(--floor); }
+  h1, h2, h3 { text-wrap: balance; }
+  :focus-visible { outline: 3px solid var(--foreground); outline-offset: 2px; }
+  ::selection { background: var(--vt-maroon); color: #fff; }
+  ::placeholder { color: var(--muted-foreground); opacity: 1; }
+  input[type="range"] { accent-color: var(--vt-orange); }
+}
+
+/* Roles. label: caps for nav and column heads only. figure: tabular numerals for anything compared. */
+.label { font-weight: 600; font-size: 0.75rem; line-height: 1.1; letter-spacing: 0.08em; text-transform: uppercase; }
+.figure, .tnum { font-variant-numeric: tabular-nums; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+@media (forced-colors: active) { .keep-colors { forced-color-adjust: none; } }

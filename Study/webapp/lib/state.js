@@ -166,7 +166,7 @@ function snapshot(ctx) {
     matrix: coord.matrix(),
     pipeline: coord.pipelineProgress(),
     ...coord.machineView(agg), // machines[] + matrix_workers: which computer ran each cell
-    ...coord.devices(ctx.launches.snapshot()), // devices[] (one per computer) + history_machines[] (attribution only)
+    ...coord.devices(ctx.launches.snapshot(), ctx.tailnet.snapshot()), // devices[] (one per computer) + history_machines[] (attribution only)
     intake: proj.intake(agg),
     projection: proj.project(ctx, agg, counts, state.baseline),
     recent_usage: ctx.ledger.filter((e) => e.kind !== 'score').slice(-30).reverse()
@@ -223,7 +223,7 @@ function demoSnapshot(ctx) {
     now, run: { phase: 'running', kind: 'repair', started_at: now - 3600000 },
     settings: { budget_usd: 300, sites: null, conditions: conds, max_iter: 3, judge_model_id: 'gemini-demo' },
     keys: { openai: { set: true, last4: 'demo', source: 'env' }, anthropic: { set: true, last4: 'demo', source: 'ui' }, gemini: { set: false, last4: null, source: null },
-      a5: { set: true, last4: 'ds01', source: 'ui' }, a6: { set: false, last4: null, source: null } },
+      a5: { set: true, last4: 'ds01', source: 'ui' }, a6: { set: false, last4: null, source: null }, a7: { set: false, last4: null, source: null } },
     arms: armsOut,
     judge: { provider: 'gemini', model_id: 'gemini-demo', ready: false, blockers: ['no gemini key set'], items: { total: 360, queued: 360, running: 0, done: 0, failed: 0 }, tokens: { input: 0, output: 0 }, cost_usd: 0 },
     matrix,

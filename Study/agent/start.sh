@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # macOS / Linux: start (or update) the worker agent. Run from anywhere: ./agent/start.sh   Stop: ./agent/stop.sh
-# With --arc it also starts the per-arm ARC ssh tunnels so this machine can take A5/A6 jobs.
+# With --arc it also starts the per-arm ARC ssh tunnels so this machine can take A5/A6/A7 jobs.
 set -euo pipefail
 cd "$(dirname "$0")"
 command -v docker >/dev/null || { echo "Install Docker Desktop first: https://www.docker.com/products/docker-desktop/"; exit 1; }

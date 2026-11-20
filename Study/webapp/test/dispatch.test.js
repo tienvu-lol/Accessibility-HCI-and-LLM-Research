@@ -316,3 +316,63 @@ test('machine names are sanitised before they are stored or shown', () => {
   assert.equal(w.info.host, '<b>Pat</b> PC'); // HTML is escaped by the page, not stripped, so the name stays faithful
   assert.equal(w.info.os.length, 64);
 });
+
+// --- Tailscale status in the Computers panel: only real `tailscale status --json` data, matched by IP
+const STATUS = {
+  BackendState: 'Running',
+  Self: { HostName: 'host-win', DNSName: 'host-win.tail1234.ts.net.', TailscaleIPs: ['100.64.0.2', 'fd7a::2'], OS: 'windows', UserID: 7 },
+  User: { 7: { LoginName: 'sam@example.org' } },
+  Peer: {
+    k1: { HostName: 'samhiths-macbook-air', DNSName: 'samhiths-macbook-air.tail1234.ts.net.', TailscaleIPs: ['100.64.0.9'], OS: 'macOS', Online: true, LastSeen: '2026-11-20T12:00:00Z', UserID: 7 },
+    k2: { HostName: 'old-phone', DNSName: 'old-phone.tail1234.ts.net.', TailscaleIPs: ['100.64.0.30'], OS: 'iOS', Online: false, LastSeen: '2026-11-18T08:00:00Z', UserID: 7 },
+    k3: { HostName: 'no-ip', TailscaleIPs: [], Online: true },
+  },
+};
+
+test('fromStatus reads real tailscale JSON: peers with IPs only, MagicDNS name, account, online flag', () => {
+  const t = require('../lib/tailnet').fromStatus(STATUS);
+  assert.equal(t.peers.length, 2, 'a peer without an address is dropped');
+  const mac = t.peers.find((p) => p.ip === '100.64.0.9');
+  assert.deepEqual([mac.name, mac.os, mac.online, mac.user], ['samhiths-macbook-air.tail1234.ts.net', 'macOS', true, 'sam@example.org']);
+  assert.equal(mac.last_seen, Date.parse('2026-11-20T12:00:00Z'));
+  assert.equal(t.self.ip, '100.64.0.2');
+  assert.equal(t.self.online, true);
+});
+
+test('devices carry Tailscale online/offline/stale/no-report, and unmatched peers are listed separately', () => {
+  const { coord, ctx } = boot({ DASHBOARD_LAUNCH_TOKEN: 'lt' });
+  coord.claim({ worker_id: '100.64.0.2', max: 0, slots: 1, info: { host: 'Host B', tailnet_ip: '100.64.0.2' } });
+  coord.claim({ worker_id: 'lan-box', max: 0, slots: 1, info: { host: 'LAN box' } });
+  const L = ctx.launches;
+  // before any report: unknown, said plainly
+  let d = coord.devices([], ctx.tailnet.snapshot());
+  assert.equal(d.devices.find((x) => x.key === '100.64.0.2').tailscale.state, 'unknown');
+  assert.equal(d.tailnet_status.available, false);
+  // a launcher poll carries the report
+  L.poll({ ip: '100.64.0.9', node: 'mac', name: 'Sam MacBook Air', arcs: [], tailnet: require('../lib/tailnet').fromStatus(STATUS) });
+  d = coord.devices(L.snapshot(), ctx.tailnet.snapshot());
+  const by = (k) => d.devices.find((x) => x.key === k);
+  assert.equal(by('100.64.0.2').tailscale.state, 'online');
+  assert.equal(by('100.64.0.9').tailscale.state, 'online', 'the Mac: launcher up and Tailscale up');
+  assert.equal(by('LAN box').tailscale.state, 'not-listed', 'a worker not in the tailnet report is not claimed to be on it');
+  assert.deepEqual(d.tailnet_only.map((p) => [p.name, p.online]), [['old-phone.tail1234.ts.net', false]]);
+  assert.deepEqual([d.tailnet_status.available, d.tailnet_status.fresh, d.tailnet_status.peers], [true, true, 3]);
+  // the report ages out: every state becomes stale instead of staying "online"
+  ctx.now = () => Date.now() + 120000;
+  d = coord.devices(L.snapshot(), ctx.tailnet.snapshot());
+  assert.equal(d.devices.find((x) => x.key === '100.64.0.2').tailscale.state, 'stale');
+  assert.equal(d.tailnet_status.fresh, false);
+});
+
+test('a peer that is offline on Tailscale is shown offline, and a malformed report is ignored', () => {
+  const { ctx, coord } = boot({ DASHBOARD_LAUNCH_TOKEN: 'lt' });
+  const st = JSON.parse(JSON.stringify(STATUS));
+  st.Peer.k1.Online = false;
+  coord.claim({ worker_id: '100.64.0.9', max: 0, slots: 1, info: { host: 'Mac', tailnet_ip: '100.64.0.9' } });
+  ctx.launches.poll({ ip: '100.64.0.2', node: 'win', arcs: [], tailnet: require('../lib/tailnet').fromStatus(st) });
+  const mac = () => coord.devices(ctx.launches.snapshot(), ctx.tailnet.snapshot()).devices.find((x) => x.key === '100.64.0.9');
+  assert.equal(mac().tailscale.state, 'offline');
+  ctx.launches.poll({ ip: '100.64.0.2', node: 'win', arcs: [], tailnet: { peers: 'nope' } });
+  ctx.launches.poll({ ip: '100.64.0.2', node: 'win', arcs: [], tailnet: { peers: [{ ip: 'not-an-ip', online: true }, { ip: '100.64.0.9', online: true, name: '<x>' }] } });
+  assert.equal(mac().tailscale.state, 'online', 'valid entries kept, invalid ones dropped');
+});

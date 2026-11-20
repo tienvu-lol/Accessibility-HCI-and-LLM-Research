@@ -361,11 +361,15 @@
       '<p class="hint">All running jobs and the 30 most recently finished jobs across repair, scoring, and judging. Stop job asks the owning worker to abort only that job and shows Stopped once the worker confirms or its lease expires; the container and its other jobs keep running. Calls already sent to a provider may still be billed. Stopped jobs stay failed until you use Retry failed.</p>';
   }
   // One row per computer, from what the agents reported. Launcher and worker are separate facts; history ids are shown apart.
-  function computersBody(S) {
+  function computersBody(S, ui) {
     var devs = S.devices || [];
     if (!devs.length && !(S.history_machines || []).length) return empty('No computers seen', 'A computer appears once its launcher or a worker checks in. Being on Tailscale does not make it appear.');
     var rows = devs.map(function (d) {
       var l = d.launcher;
+      var ts = d.tailscale || { state: 'unknown' };
+      var tsBadge = ts.state === 'online' ? badge('done', 'Tailscale online') : ts.state === 'offline' ? badge('attn', 'Tailscale offline') : ts.state === 'stale' ? badge('pending', 'Tailscale: report is old') :
+        ts.state === 'not-listed' ? badge('pending', 'Not in tailnet report') : badge('pending', 'Tailscale: no report');
+      var tsSeen = ts.state === 'offline' && ts.last_seen ? '<br><span class="muted">last on tailnet ' + esc(ago(ts.last_seen, S.now)) + '</span>' : '';
       var launcher = !l ? badge('pending', 'No launcher') : l.online ? badge('done', 'Launcher online') : badge('attn', 'Launcher offline');
       var workers = d.workers.length ? '<ul class="plain">' + d.workers.map(function (w) {
         return '<li><code>' + esc(w.id) + '</code> ' + (w.online ? badge('done', 'Worker online') : badge('attn', 'Worker offline')) + (w.arcs.length ? ' ' + badge('active', 'ARC ' + w.arcs.join('+')) : '') + ' <span class="muted">' + int(w.running) + ' running</span></li>';
@@ -373,12 +377,21 @@
       var t = d.tailnet || {};
       var meta = [d.os, t.node && t.node !== d.label ? t.node : null, t.ip || d.key, t.user].filter(Boolean).join(' \u00b7 ');
       return '<tr><th scope="row">' + esc(d.label) + (d.conflict ? ' ' + badge('attn', 'Two computers share this id') : '') + '<br><span class="muted">' + esc(meta) + '</span>' +
-        (d.online ? '' : '<br><span class="muted">Last seen ' + esc(d.last_seen ? ago(d.last_seen, S.now) : 'never') + '</span>') + '</th><td>' + launcher + '</td><td>' + workers + '</td></tr>';
+        (d.online ? '' : '<br><span class="muted">Last seen ' + esc(d.last_seen ? ago(d.last_seen, S.now) : 'never') + '</span>') + '</th><td>' + tsBadge + tsSeen + '</td><td>' + launcher + '</td><td>' + workers + '</td></tr>';
     }).join('');
     var hist = (S.history_machines || []).length ? '<h3 class="sub-h">Attribution history</h3><p class="hint" id="machine-history">These ids appear only in finished-job and usage records, with no worker connected now. They are not matched to any computer above: <code>' + S.history_machines.map(esc).join('</code>, <code>') + '</code>.</p>' : '';
     var sum = S.computers ? '<p id="computers-summary">' + int(S.computers.total) + ' computer' + (S.computers.total === 1 ? '' : 's') + ' known, ' + int(S.computers.online) + ' online.</p>' : '';
-    return sum + (rows ? tableWrap('Computers', '<table class="grid"><thead><tr><th scope="col">Computer</th><th scope="col">Launcher</th><th scope="col">Workers</th></tr></thead><tbody>' + rows + '</tbody></table>') : '') + hist +
-      '<p class="hint">Identity is what each agent reports. A launcher means this console can start Docker there; a worker means it is taking jobs. Tailscale status is not shown because the console does not read it: an active Tailscale peer with no launcher or worker is not listed.</p>';
+    var tn = S.tailnet_status || {};
+    var tnLine = !tn.available ? '<p class="hint" id="tailnet-status">No Tailscale report yet. Run the launcher on a computer that has the Tailscale CLI (or set TAILSCALE_CLI on the console host).</p>'
+      : '<p class="hint" id="tailnet-status">Tailscale status from ' + esc(tn.source) + ', ' + int(tn.peers) + ' devices, read ' + esc(ago(tn.at, S.now)) + (tn.fresh ? '.' : '. That report is old, so Tailscale states are marked stale.') + '</p>';
+    var only = (S.tailnet_only || []);
+    var onlyHtml = only.length ? '<details data-key="tailnet-only"' + (ui && ui.open && ui.open['tailnet-only'] ? ' open' : '') + '><summary id="tailnet-only">On the tailnet with no launcher or worker (' + int(only.length) + ')</summary>' +
+      tableWrap('Tailnet devices without an agent', '<table class="grid"><thead><tr><th scope="col">Device</th><th scope="col">Tailscale</th></tr></thead><tbody>' + only.map(function (p) {
+        return '<tr><th scope="row">' + esc(p.name || p.ip) + '<br><span class="muted">' + esc([p.os, p.ip, p.user].filter(Boolean).join(' \u00b7 ')) + '</span></th><td>' + (p.online ? badge('done', 'Tailscale online') : badge('attn', 'Tailscale offline')) +
+          (!p.online && p.last_seen ? '<br><span class="muted">last on tailnet ' + esc(ago(p.last_seen, S.now)) + '</span>' : '') + '</td></tr>';
+      }).join('') + '</tbody></table>') + '<p class="hint">Online on Tailscale does not mean the computer is running a launcher or worker. Start the launcher there to deploy or claim.</p></details>' : '';
+    return sum + tnLine + (rows ? tableWrap('Computers', '<table class="grid"><thead><tr><th scope="col">Computer</th><th scope="col">Tailscale</th><th scope="col">Launcher</th><th scope="col">Workers</th></tr></thead><tbody>' + rows + '</tbody></table>') : '') + onlyHtml + hist +
+      '<p class="hint">Names and identity are what each agent reports. Tailscale is read from real <code>tailscale status</code> output, matched by Tailscale IP. A launcher means this console can start Docker there; a worker means it is taking jobs.</p>';
   }
   function runs(S, R, ui) {
     var out = [];
@@ -418,7 +431,7 @@
         }).join('') + '</tbody></table>') + '<p class="hint">Anyone signed in can claim or unclaim for any worker. Manual claims last up to one minute and respect the worker’s free slots and cap. Unclaim cancels only jobs the worker hasn’t started. Tailscale identity is reported by the agent.</p>' :
       empty('No workers connected', 'Being on Tailscale or opening this page does not start a worker. Start the Docker agent on each computer with the console URL and worker token.'), { form: true }));
     var workerPanel = out.pop();
-    out.unshift(panel('r-computers', 'Computers (' + int((S.devices || []).length) + ')', computersBody(S)), panel('r-deploy', 'Deploy on connected computers', launcherBody(S)), workerPanel);
+    out.unshift(panel('r-computers', 'Computers (' + int((S.devices || []).length) + ')', computersBody(S, ui)), panel('r-deploy', 'Deploy on connected computers', launcherBody(S)), workerPanel);
     if (S.live_jobs) out.unshift(panel('r-queue', 'Job queue (' + int(S.live_jobs.counts.queued) + ')', queueBody(S.live_jobs, ui, S), { form: true }), panel('r-live-jobs', 'Live jobs', liveJobs(S)));
     return out;
   }

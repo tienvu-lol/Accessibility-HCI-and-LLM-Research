@@ -30,9 +30,10 @@ function create(ctx, token) {
     }
     task.status = w.paused ? 'needs-claim' : 'ready';
   }
-  function poll({ ip, node, user, name, arcs, result }) {
+  function poll({ ip, node, user, name, arcs, result, tailnet }) {
     if (typeof ip !== 'string' || !isIP(ip)) throw new HttpError(400, 'launcher needs a Tailscale IP');
     const seen = ctx.now();
+    if (tailnet) ctx.tailnet.ingest(`launcher ${ip}`, tailnet); // a malformed report is ignored; the previous one just ages
     if (!hosts.has(ip) && hosts.size >= MAX_HOSTS) {
       for (const [id, h] of hosts) if (!online(h)) { hosts.delete(id); delete registry[id]; }
       if (hosts.size >= MAX_HOSTS) throw new HttpError(409, 'launcher capacity reached');

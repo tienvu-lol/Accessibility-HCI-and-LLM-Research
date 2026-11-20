@@ -66,6 +66,7 @@ function createApp(opts = {}) {
   };
   ctx.docker = dockerLib.create({ env, port: Number(env.PORT) || 8080 });
   ctx.coord = coordLib.create(ctx, { leaseS: opts.leaseS });
+  ctx.tailnet = require('./lib/tailnet').create(ctx, env.TAILSCALE_CLI);
   ctx.launches = launchLib.create(ctx, env.DASHBOARD_LAUNCH_TOKEN);
 
   // ---- per-call token estimate: estimate.json (python), else chars/4 of the slice files
@@ -395,6 +396,7 @@ function createApp(opts = {}) {
     listen: (port = Number(env.PORT) || 8080) => new Promise((resolve) => server.listen(port, () => { ctx.docker.watch(() => sse.notify()); resolve(server.address().port); })),
     close: () => new Promise((resolve) => {
       sse.close();
+      ctx.tailnet.stop();
       ctx.docker.unwatch();
       ctx.state.flush();
       server.close(resolve);

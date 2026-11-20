@@ -80,6 +80,21 @@ const IP_B = '100.64.0.2', IP_C = '100.64.0.3';
   assert.equal(labels.length, 7);
   step('seven computers listed by the names they reported, in both sessions');
 
+  // Tailscale status comes from the launcher's real `tailscale status` report, matched by IP
+  const now = Date.now();
+  await post('/api/launcher/poll', { ip: IP_B, node: 'host-b.ts.net', name: 'Host B', arcs: [], tailnet: { state: 'Running',
+    self: { ip: IP_B, name: 'host-b.ts.net', os: 'windows', online: true },
+    peers: [{ ip: '100.64.9.1', name: 'lab-pc-1.ts.net', os: 'windows', online: true }, { ip: '100.64.9.2', name: 'lab-pc-2.ts.net', os: 'windows', online: false, last_seen: now - 7200000 },
+      { ip: '100.64.7.7', name: 'sam-macbook-air.ts.net', os: 'macOS', online: true, user: 'sam@example.org' }] } }, LTOKEN);
+  await p1.waitForSelector('#r-computers tr:has-text("Lab PC 1") .badge:text("Tailscale online")');
+  await p1.waitForSelector('#r-computers tr:has-text("Lab PC 2") .badge:text("Tailscale offline")');
+  await p2.waitForSelector('#r-computers tr:has-text("Lab PC 1") .badge:text("Tailscale online")');
+  assert.match(await p1.locator('#r-computers tr:has-text("Lab PC 3")').innerText(), /Not in tailnet report/);
+  await p1.click('#tailnet-only');
+  assert.match(await p1.locator('#r-computers details').innerText(), /sam-macbook-air[\s\S]*macOS[\s\S]*Tailscale online/);
+  assert.match(await p1.locator('#tailnet-status').innerText(), /Tailscale status from launcher 100\.64\.0\.2.*4 devices/);
+  step('Tailscale online/offline per computer from a real report, plus a tailnet device that runs no agent');
+
   // 3. claim A1 specifically on host B (worker already up)
   await p1.click('summary:has-text("repair · A1")');
   await p1.selectOption('[id="pick-repair:A1"]', `w|${IP_B}`);

@@ -679,7 +679,7 @@ function create(ctx, { leaseS = 900 } = {}) {
   // One row per physical computer. Identity is what the agent reported (Tailscale IP, else host name);
   // nothing here is inferred from a legacy worker id. `launchers` is the launcher snapshot, keyed by IP.
   // Ids that appear only in job/usage history, with no worker ever connected, go to `history`.
-  function devices(launchers = []) {
+  function devices(launchers = [], tailnet = { available: false, fresh: false, peers: [] }) {
     const byKey = new Map();
     const dev = (key, label) => { if (!byKey.has(key)) byKey.set(key, { key, label, os: null, launcher: null, workers: [], tailnet: null, last_seen: 0, conflict: false }); return byKey.get(key); };
     for (const w of workers.values()) {
@@ -702,11 +702,24 @@ function create(ctx, { leaseS = 900 } = {}) {
     }
     const list = [...byKey.values()].map((d) => ({ ...d, workers_online: d.workers.filter((w) => w.online).length,
       online: d.workers.some((w) => w.online) || !!d.launcher?.online })).sort((a, b) => a.label.localeCompare(b.label) || a.key.localeCompare(b.key));
+    // Tailscale state comes only from a real `tailscale status` report, matched by IP. No report, or an old one, is said so.
+    const byIp = new Map(tailnet.peers.map((p) => [p.ip, p]));
+    const matched = new Set();
+    for (const d of list) {
+      const ip = [d.key, d.tailnet && d.tailnet.ip, d.launcher && d.launcher.ip].find((x) => x && byIp.has(x));
+      const peer = ip && byIp.get(ip);
+      if (ip) matched.add(ip);
+      d.tailscale = !tailnet.available ? { state: 'unknown' }
+        : !peer ? { state: tailnet.fresh ? 'not-listed' : 'stale' }
+        : { state: !tailnet.fresh ? 'stale' : peer.online ? 'online' : 'offline', last_seen: peer.last_seen, os: peer.os, name: peer.name };
+    }
+    const tailnet_only = tailnet.peers.filter((p) => !matched.has(p.ip)).sort((a, b) => a.name.localeCompare(b.name) || a.ip.localeCompare(b.ip));
     const seen = new Set([...workers.keys(), ...launchers.map((h) => h.ip), IMPORTED]);
     const history = [];
     for (const j of jobs.values()) if (j.worker && !seen.has(j.worker) && !history.includes(j.worker)) history.push(j.worker);
     for (const e of ctx.ledger) if (e.worker && e.worker !== 'unknown' && !seen.has(e.worker) && !history.includes(e.worker)) history.push(e.worker);
-    return { devices: list, history_machines: history.sort(), computers: { total: list.length, online: list.filter((d) => d.online).length } };
+    return { devices: list, history_machines: history.sort(), computers: { total: list.length, online: list.filter((d) => d.online).length },
+      tailnet_only, tailnet_status: { available: tailnet.available, fresh: tailnet.fresh, source: tailnet.source || null, at: tailnet.at || null, peers: tailnet.peers.length } };
   }
 
   function workerList() {
