@@ -34,8 +34,17 @@ If a worker dies, its lease (900 s) expires and the job is requeued without coun
 ## 4. Cost warning
 Repair is 4 arms x 4 conditions x 60 sites x up to 3 iterations with up to 32k output tokens per call, plus 360 judge calls. That is thousands of paid calls. Set `budget_usd` in the UI before starting and check the estimate (`estimate.json`, built from `worker/estimate.py`). Pricing entries ship as `verified:false` placeholders; fix them before trusting the budget guard. Use `MOCK_PROVIDERS=1` for a dry run first.
 
-## 5. Importing open-source runs (A5, A6) from ARC
-A5 and A6 are never dispatched; they run on ARC. Pack their `runs/` and import:
+## 5. Open-source arms (A5, A6) on ARC
+Two ways, and the console does both:
+
+**Dispatch (preferred).** A laptop runs an SSH tunnel container per arm into the ARC session and a worker
+container that takes only that arm's jobs; the llama.cpp keys stay on that laptop and the console sends the
+jobs to it. Set it up with `agent/README.md` ("Open-source arms"), then turn on **Keys & arms -> "Run
+open-source arms (A5, A6) on laptops with an ARC tunnel"**. Starting the repair phase stays blocked for an
+arm until some worker advertises a live tunnel for it. Proof that the containers work without an ARC account:
+`agent/arc/selftest.sh` and `agent/arc/e2e-open-arms.sh`.
+
+**Import.** If the arm was run by hand on ARC instead, pack its `runs/` and import:
 ```
 python Study/webapp/worker/pack_runs.py --runs Study/runs --arms A5,A6 --out runs.ndjson.gz
 # optional direct upload; --token is the value of the `sid` cookie after logging in to the console

@@ -13,6 +13,9 @@ Study/**/*.png
 !Study/analysis/figures/*.png
 
 Study/node_modules/
+# pytest/runner byte-code: created by `python -m pytest Study/tools/...` on every machine
+__pycache__/
+*.pyc
 .hackloop/
 STOP
 Study/agent/arc/ssh/

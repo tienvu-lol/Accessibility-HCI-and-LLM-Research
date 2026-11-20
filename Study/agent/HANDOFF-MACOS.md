@@ -21,6 +21,28 @@ The human must have **Tailscale installed and signed in to the same tailnet** (`
 3. Verify: `docker ps` shows `study-agent` Up; `docker logs study-agent` has no errors; the human sees this machine **Online** under Runs -> Workers in the console, with OS "macOS arm64".
 4. Optional smoke test: ask the host to run a mock repair; confirm `docker logs study-agent` shows `repair:... ok` lines.
 
+## Status on this Mac (verified 2026-11-20, macOS 26.5.2, Apple Silicon, Docker Desktop 29.1.5, bash 3.2)
+The worker and the open-source arms both run here. What was checked, in order:
+`node --test 'webapp/test/*.test.js'` (74 pass) and `python -m pytest -q Study/tools/judge` (12 pass);
+`study-worker` and `study-web` rebuilt natively for arm64; `agent/arc/selftest.sh` (forward + reconnect);
+`agent/arc/e2e-open-arms.sh` (a full A5+A6 repair run through the containers, both cells converged on
+iteration 2); and `ARC=1 ... setup-mac.sh` twice against the same fake ARC, which brought up all five
+containers and left the console showing `<name>-a5` and `<name>-a6` with live tunnels.
+
+## Open arms (A5 DeepSeek, A6 Qwen) on this Mac
+Only needed if this Mac is the one tunnelling into VT ARC. `agent/README.md` has the details; the short form:
+1. Ask the human for `ARC_USER`, `ARC_HOST`, `ARC_A5_TARGET`, `ARC_A6_TARGET` (`node:port` of each llama.cpp
+   server), `A5_API_KEY`, `A6_API_KEY`, and their ARC private key, which goes at `agent/arc/ssh/id`
+   (`chmod 600`, git-ignored). Duo / interactive 2FA cannot be automated - the key must work non-interactively.
+2. `ARC=1 WEB_URL=... WORKER_TOKEN=... ARC_USER=... ARC_HOST=... ARC_A5_TARGET=... ARC_A6_TARGET=... \
+   A5_API_KEY=... A6_API_KEY=... ./Study/agent/setup-mac.sh`
+   It validates those settings before building, carries them over on a re-run, starts the tunnel and worker
+   container for each arm, and then probes each tunnel from inside its worker. A failed probe prints the
+   tunnel log and says whether it looks like an SSH refusal or a wrong `node:port`.
+3. The human turns on **Keys & arms -> "Run open-source arms (A5, A6) on laptops with an ARC tunnel"**.
+4. Before involving ARC at all, you can prove the containers work: `./Study/agent/arc/e2e-open-arms.sh`
+   (fake sshd + fake llama.cpp, no paid calls, no ARC account). Run it with no real agent up: same names.
+
 ## If something fails (iterate until it works)
 | Symptom | Likely cause / fix |
 |---|---|
@@ -32,6 +54,9 @@ The human must have **Tailscale installed and signed in to the same tailnet** (`
 | `the console rejected WORKER_TOKEN (401)` | wrong `WORKER_TOKEN`; caught by the preflight before any build |
 | build fails on a package/arch error | read the failing line; the Dockerfile is `Study/webapp/Dockerfile.worker` (Playwright base image is multi-arch) |
 | `host.docker.internal` issues | only matters if the console runs on this same Mac; use its tailnet URL instead |
+| `ARC=1 is missing: ...` | those settings are in neither the environment nor `agent.env`; see `agent/agent.env.example` |
+| `tunnel a5 never answered` | read the printed tunnel log: an auth refusal means the SSH key/2FA failed; a refused forward means `ARC_A5_TARGET` is not serving on that `node:port`. Mainstream jobs still run; only A5/A6 are withheld |
+| `container study-agent-a5 already exists` when running the e2e | stop the real agent first (`./agent/stop.sh`): the compose file pins container names |
 
 Fix macOS problems in `Study/agent/setup-mac.sh` / `start.sh` (note macOS ships bash 3.2: no `mapfile`, no `${var,,}`, no associative arrays). Keep files LF-ended.
 
