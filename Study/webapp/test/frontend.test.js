@@ -312,3 +312,18 @@ test('static pages: landmarks, language, no external origins', () => {
   assert.match(idx, /<header/); assert.match(idx, /<nav[^>]*aria-label/); assert.match(idx, /class="skip"/);
   for (const f of ['app.js', 'charts.js', 'style.css']) assert.ok(!/https?:\/\/(?!www\.w3\.org)/.test(fs.readFileSync(pub(f), 'utf8')), f + ' external URL');
 });
+
+test('charts: dark cards on screen, light for export, and the theme never leaks', () => {
+  const light = C.fig2Svg(results.fig2, 'wcag');
+  const dark = C.fig2Svg(results.fig2, 'wcag', 'dark');
+  assert.match(light, /<rect width="\d+" height="\d+" fill="#ffffff"\/>/);
+  assert.match(dark, /<rect width="\d+" height="\d+" fill="#0e1014"\/>/);
+  assert.ok(!/#ffffff|#1a1a1a/.test(dark), 'dark figure carries no light-theme colours');
+  assert.strictEqual(C.fig2Svg(results.fig2, 'wcag'), light, 'default stays light after a dark render');
+  assert.strictEqual(C.heatColor(0), '#ffffff', 'default heat ramp stays light');
+  for (const svg of [C.fig3Svg(results.fig3, 'dark'), C.fig4Svg(results.fig4, 'dark'), C.fig5Svg(results.fig5, 'dark'), C.sparkSvg(state.intake.series, 'cum_cost_usd', 'Cost', 'dark')]) {
+    assert.ok(!/NaN|undefined|Infinity/.test(svg));
+  }
+  const idx = fs.readFileSync(pub('index.html'), 'utf8');
+  assert.match(idx, /vendor\/gsap\.min\.js/); assert.match(idx, /intro\.js/);
+});

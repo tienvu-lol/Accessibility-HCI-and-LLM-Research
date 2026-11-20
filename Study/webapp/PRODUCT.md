@@ -12,4 +12,4 @@
 - Keys never come back to the browser: only `{set, last4, source}`; inputs are cleared on submit.
 - Say what is unverified: placeholder prices, partial coverage, the Fig 3 baseline caveat, the ceiling gate.
 
-**Brand:** Virginia Tech maroon `#861F41` (chrome, primary action), orange `#E5751F` (current-tab mark, projections; never body text), black, warm neutrals. System font stack, no external assets.
+**Brand:** VTURCS maroon `#861F41` (header, primary action) and orange `#FF6406` (current tab, running, projections; text on orange fills is black) on a flat near-black floor (`#090A0C`, panels `#0E1014`). One colour per meaning: orange running, green done, yellow needs attention, red failed, always with a word or glyph. One family, Atkinson Hyperlegible Next (self-hosted; tabular figures), capitals only on tabs and column heads. Figures are dark cards on screen and light in SVG/PNG exports. No external assets. Source of truth: `brand-kit/`.

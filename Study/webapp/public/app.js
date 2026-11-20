@@ -140,7 +140,7 @@
       '<span class="spend-fill' + (P.spent_usd > P.budget_usd ? ' spend-over' : '') + '" style="width:' + (P.spent_usd / scale * 100) + '%"></span>' +
       '<span class="mark mark-proj" style="left:' + (P.expected_total_usd / scale * 100) + '%"></span>' +
       '<span class="mark mark-budget" style="left:' + (P.budget_usd / scale * 100) + '%"></span></div>' +
-      '<p class="hint">Solid bar = spent. Orange tick = projected total. Black tick = budget.</p>' +
+      '<p class="hint">Solid bar = spent. Orange tick = projected total. White tick = budget.</p>' +
       '<dl class="facts"><div><dt>Spent</dt><dd>' + usd(P.spent_usd) + ' <span class="sub">' + pct(P.spent_usd, P.budget_usd) + '% of budget</span></dd></div>' +
       '<div><dt>Budget</dt><dd>' + usd(P.budget_usd) + '</dd></div>' +
       '<div><dt>Remaining</dt><dd>' + usd(P.remaining_usd) + '</dd></div>' +
@@ -155,7 +155,7 @@
       '<div><dt>Tokens in, total</dt><dd>' + tok(I.total.input) + '</dd></div>' +
       '<div><dt>Tokens out, total</dt><dd>' + tok(I.total.output) + '</dd></div>' +
       '<div><dt>Cost, total</dt><dd>' + usd(I.total.cost_usd) + '</dd></div></dl>' +
-      '<div class="spark">' + C.sparkSvg(I.series, 'cum_cost_usd', 'Cumulative cost') + '<p class="hint">Cumulative cost, last ' + (I.series.length) + ' min' +
+      '<div class="spark">' + C.sparkSvg(I.series, 'cum_cost_usd', 'Cumulative cost', 'dark') + '<p class="hint">Cumulative cost, last ' + (I.series.length) + ' min' +
       (I.series.length ? ': ' + usd(I.series[0].cum_cost_usd) + ' to ' + usd(I.series[I.series.length - 1].cum_cost_usd) : '') + '</p></div>'));
 
     out.push(panel('ov-warn', 'Warnings (' + S.warnings.length + ')', S.warnings.length ?
@@ -446,15 +446,17 @@
 
     var T = C.tables(R);
     var cond = (ui && ui.cond) || 'wcag';
+    // exports are always light, rebuilt from the same data as the dark figures on screen
+    FIGS = { fig2: function () { return C.fig2Svg(R.fig2, cond, 'light'); }, fig3: function () { return C.fig3Svg(R.fig3, 'light'); }, fig4: function () { return C.fig4Svg(R.fig4, 'light'); }, fig5: function () { return C.fig5Svg(R.fig5, 'light'); } };
     var picker = '<fieldset class="picker"><legend>Condition</legend>' + CONDS.map(function (c) {
       return '<label class="check"><input type="radio" name="cond" id="cond-' + c + '" value="' + c + '"' + (c === cond ? ' checked' : '') + '> ' + c + '</label>';
     }).join('') + '</fieldset>';
     out.push({ id: 'res-fig2-ctl', html: '<h2 id="res-fig2-ctl-h">Fig 2 condition</h2>' + picker, form: true });
-    out.push(chartPanel('res-fig2', 'Fig 2. Violations before vs after', 'fig2', 'fig2_violations', C.fig2Svg(R.fig2, cond), T.fig2_violations, ui));
-    out.push(chartPanel('res-fig3', 'Fig 3. Judge mean rank', 'fig3', 'fig3_judge_ranks', C.fig3Svg(R.fig3), T.fig3_judge_ranks, ui,
+    out.push(chartPanel('res-fig2', 'Fig 2. Violations before vs after', 'fig2', 'fig2_violations', C.fig2Svg(R.fig2, cond, 'dark'), T.fig2_violations, ui));
+    out.push(chartPanel('res-fig3', 'Fig 3. Judge mean rank', 'fig3', 'fig3_judge_ranks', C.fig3Svg(R.fig3, 'dark'), T.fig3_judge_ranks, ui,
       notice('info', 'The judge ranks five blinded variants: the four repaired conditions plus the unrepaired <em>baseline</em>. Fig 5 uses the baseline rank as the usability reference.')));
-    out.push(chartPanel('res-fig4', 'Fig 4. Criteria vs heuristics conflicts', 'fig4', 'fig4_conflict_heatmap', C.fig4Svg(R.fig4), T.fig4_conflict_heatmap, ui));
-    out.push(chartPanel('res-fig5', 'Fig 5. WCAG gain vs usability', 'fig5', 'fig5_gain_vs_usability', C.fig5Svg(R.fig5), T.fig5_gain_vs_usability, ui));
+    out.push(chartPanel('res-fig4', 'Fig 4. Criteria vs heuristics conflicts', 'fig4', 'fig4_conflict_heatmap', C.fig4Svg(R.fig4, 'dark'), T.fig4_conflict_heatmap, ui));
+    out.push(chartPanel('res-fig5', 'Fig 5. WCAG gain vs usability', 'fig5', 'fig5_gain_vs_usability', C.fig5Svg(R.fig5, 'dark'), T.fig5_gain_vs_usability, ui));
 
     var fixes = R.fig6 || [];
     var sel = ui && ui.viewer;
@@ -671,7 +673,8 @@
     document.body.appendChild(a); a.click(); a.remove();
     setTimeout(function () { URL.revokeObjectURL(a.href); }, 4000);
   }
-  function figSvg(fig) { var n = $('[data-fig="' + fig + '"] svg'); return n ? new XMLSerializer().serializeToString(n) : null; }
+  var FIGS = {};
+  function figSvg(fig) { return FIGS[fig] ? FIGS[fig]() : null; }
 
   function exportAll() {
     var names = Object.keys(C.tables(R || {})).concat(['metrics_all', 'judge_rankings', 'human_ratings', 'cost_by_source']);

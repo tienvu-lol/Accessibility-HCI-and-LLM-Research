@@ -326,8 +326,8 @@ function createApp(opts = {}) {
     }
     if (p.startsWith('/api/worker/')) return worker(req, res, parts);
 
-    // login.html loads these three; they hold no secrets, so they must be reachable without a cookie
-    const isLoginAsset = p === '/login.html' || p.startsWith('/login.') || p === '/style.css' || p === '/app.js' || p === '/charts.js';
+    // login.html loads these (plus the self-hosted fonts); they hold no secrets, so they must be reachable without a cookie
+    const isLoginAsset = p === '/login.html' || p.startsWith('/login.') || p === '/style.css' || p === '/app.js' || p === '/charts.js' || p.startsWith('/fonts/');
     if (!isLoginAsset && !auth.isAuthed(req)) {
       if (p.startsWith('/api/') || p.startsWith('/rate/frame/')) return json(res, 401, { error: 'login required' });
       res.writeHead(302, { Location: '/login.html' });
