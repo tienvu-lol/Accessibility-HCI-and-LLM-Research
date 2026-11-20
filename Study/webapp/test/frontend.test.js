@@ -336,3 +336,24 @@ test('charts: dark cards on screen, light for export, and the theme never leaks'
   const idx = fs.readFileSync(pub('index.html'), 'utf8');
   assert.match(idx, /vendor\/gsap\.min\.js/); assert.match(idx, /intro\.js/);
 });
+
+test('runs view lists every computer by its reported name, escaped, with a summary and stop/dispatch controls', () => {
+  const evil = '<img src=x onerror=alert(1)>';
+  const devices = Array.from({ length: 12 }, (_, i) => ({ key: '100.64.0.' + i, label: i === 0 ? evil : 'Lab PC ' + i, os: 'Windows x64', online: i % 2 === 0, last_seen: Date.now() - 3600000,
+    tailnet: { node: 'n' + i + '.ts.net', ip: '100.64.0.' + i, user: 'u' }, conflict: i === 3, launcher: i === 1 ? { online: true } : null,
+    workers: [{ id: '100.64.0.' + i, online: i % 2 === 0, arcs: [], running: 0 }] }));
+  const st = { ...state, devices, history_machines: ['legacy-1'], computers: { total: 12, online: 6 }, machines_omitted: 3, now: Date.now(),
+    live_jobs: { counts: { queued: 1, running: 1, done: 0, failed: 0 }, idle: [{ arm: 'A1', reason: 'not queued yet in this scope' }],
+      queue: [{ kind: 'repair', arm: 'A2', jobs: [['UNI-01', 'naive']], ids: ['repair:A2:naive:UNI-01'], reserved: {}, eligible: {} }],
+      jobs: [{ id: 'repair:A1:naive:UNI-01', kind: 'repair', arm: 'A1', condition: 'naive', site: 'UNI-01', state: 'running', worker: 'w', stopping: false }] } };
+  const html = App.views.runs(st).map((s) => s.html).join('\n');
+  assert.ok(!html.includes(evil), 'a hostile name is escaped');
+  assert.match(html, /12 computers known, 6 online/);
+  for (let i = 1; i < 12; i++) assert.ok(html.includes('Lab PC ' + i), 'Lab PC ' + i);
+  assert.match(html, /Two computers share this id/);
+  assert.match(html, /legacy-1/);
+  assert.match(html, /3 more computers are not tinted/);
+  assert.match(html, /data-action="stop-job" data-id="repair:A1:naive:UNI-01"/);
+  assert.match(html, /data-action="dispatch"[^>]*data-arm="A2"/);
+  assert.match(html, /not queued yet in this scope/);
+});

@@ -189,14 +189,24 @@ function createApp(opts = {}) {
       return json(res, 200, { ok: true });
     }
     if (a === 'launchers' && b && parts.length === 4 && m === 'POST') {
-      const { target } = await body(req);
-      ctx.launches.deploy(decodeURIComponent(b), target);
+      const { target, arm, job_id, kind } = await body(req);
+      ctx.launches.deploy(decodeURIComponent(b), target, { arm, job_id, kind });
       sse.notify();
       return json(res, 202, { ok: true });
     }
+    if (a === 'launchers' && b && parts.length === 4 && m === 'DELETE') {
+      ctx.launches.cancel(decodeURIComponent(b));
+      sse.notify();
+      return json(res, 200, { ok: true });
+    }
+    if (a === 'jobs' && b && parts.length === 5 && parts[4] === 'stop' && m === 'POST') {
+      const r = ctx.coord.stopJob(decodeURIComponent(b));
+      sse.notify();
+      return json(res, 202, r);
+    }
     if (a === 'workers' && b && parts.length === 5 && parts[4] === 'claim' && (m === 'POST' || m === 'DELETE')) {
       const id = decodeURIComponent(b);
-      const claim = m === 'POST' ? ctx.coord.requestWork(id) : ctx.coord.unclaimWork(id);
+      const claim = m === 'POST' ? ctx.coord.requestWork(id, await body(req).catch(() => ({}))) : ctx.coord.unclaimWork(id);
       sse.notify();
       return json(res, 200, { ok: true, ...claim });
     }
@@ -260,8 +270,8 @@ function createApp(opts = {}) {
     const co = ctx.coord;
     let out;
     if (op === 'claim') out = { jobs: co.claim(await body(req)) };
-    else if (op === 'heartbeat') out = co.heartbeat((await body(req)).job_id);
-    else if (op === 'release') { const b = await body(req); out = co.release(b.job_id, b.reason, b.retryable); }
+    else if (op === 'heartbeat') { const b = await body(req); out = co.heartbeat(b.job_id, b); }
+    else if (op === 'release') { const b = await body(req); out = co.release(b.job_id, b.reason, b.retryable, b); }
     else if (op === 'result') out = co.result(await body(req, 90 * 1024 * 1024));
     else notFound();
     sse.notify();

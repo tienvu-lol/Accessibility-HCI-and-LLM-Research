@@ -33,6 +33,8 @@ function load(dataDir, cfg) {
     imported: raw.imported || [],
     imports: raw.imports || [],
     workerCtl: raw.workerCtl || {},
+    // Every computer that ever connected, with the name it reported, so the dashboard lists it after a restart.
+    registry: { workers: {}, launchers: {}, ...raw.registry },
     baseline: raw.baseline || null,
   };
   let timer = null;
@@ -164,6 +166,7 @@ function snapshot(ctx) {
     matrix: coord.matrix(),
     pipeline: coord.pipelineProgress(),
     ...coord.machineView(agg), // machines[] + matrix_workers: which computer ran each cell
+    ...coord.devices(ctx.launches.snapshot()), // devices[] (one per computer) + history_machines[] (attribution only)
     intake: proj.intake(agg),
     projection: proj.project(ctx, agg, counts, state.baseline),
     recent_usage: ctx.ledger.filter((e) => e.kind !== 'score').slice(-30).reverse()

@@ -33,7 +33,7 @@ async function main() {
   for (;;) {
     try {
       const res = await fetch(url, { method: 'POST', signal: AbortSignal.timeout(10000), headers: { 'content-type': 'application/json', authorization: `Bearer ${env.DASHBOARD_LAUNCH_TOKEN}` },
-        body: JSON.stringify({ ip, node, user, arcs, result }) });
+        body: JSON.stringify({ ip, node, user, name: env.MACHINE_NAME, arcs, result }) });
       if (!res.ok) throw new Error(`console HTTP ${res.status}`);
       const { deploy } = await res.json();
       result = null;

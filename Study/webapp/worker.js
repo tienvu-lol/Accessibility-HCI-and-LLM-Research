@@ -12,7 +12,7 @@ function createWorker(opts = {}) {
   const slots = opts.slots || Number(process.env.WORKER_SLOTS) || 4;
   const id = opts.id || (process.env.TAILNET_IP || process.env.WORKER_ID || os.hostname()) + (process.env.WORKER_SUFFIX || '');
   const pollMs = opts.pollMs ?? (Number(process.env.POLL_MS) || 3000);
-  const heartbeatMs = opts.heartbeatMs ?? 60000;
+  const heartbeatMs = opts.heartbeatMs ?? 10000; // also how quickly a "Stop job" reaches this machine
   const retryMs = opts.retryMs ?? 1000; // base of the exponential backoff
   const runners = opts.runners || KINDS;
   const info = opts.info || { host: process.env.MACHINE_NAME || os.hostname(), os: process.env.HOST_OS || `${os.platform()} ${os.arch()}`,
@@ -72,11 +72,13 @@ function createWorker(opts = {}) {
   const clean = (msg, job) => (job.api_key ? String(msg).split(job.api_key).join('***') : String(msg)).slice(0, 500);
 
   async function handle(job, ac) {
-    let lost = false;
+    let lost = false, stopped = false;
+    const lease = { worker_id: id, lease: job.lease }; // sent on every call so a stale worker cannot overwrite the new owner
     const hb = setInterval(async () => {
       try {
-        const r = await api('/api/worker/heartbeat', { job_id: job.id });
+        const r = await api('/api/worker/heartbeat', { job_id: job.id, ...lease });
         if (r.status === 404 || r.status === 409) { lost = true; ac.abort(); }
+        else if (r.body?.stop) { stopped = true; ac.abort(); } // aborts this job's runner only, never the container
       } catch { /* next beat retries */ }
     }, heartbeatMs);
     try {
@@ -84,15 +86,21 @@ function createWorker(opts = {}) {
       if (!run) throw new Error(`unsupported job kind ${job.kind}`);
       const result = await run(job, { signal: ac.signal });
       clearInterval(hb);
-      const r = await post('/api/worker/result', { job_id: job.id, ...result });
+      if (stopped) throw new Error('stopped'); // a runner may return, not throw, when aborted
+      const r = await post('/api/worker/result', { job_id: job.id, ...lease, ...result });
       if (!r || r.status >= 300) throw new Error(`result upload failed (${r ? r.status : 'network'})`);
       log(`${job.id} ${result.status}`);
     } catch (e) {
       clearInterval(hb);
       if (lost) { log(`${job.id} lease lost`); return; }
+      if (stopped) { // the acknowledgement is what lets the console show the job as stopped
+        log(`${job.id} stopped on request`);
+        await post('/api/worker/release', { job_id: job.id, ...lease, reason: 'stopped by operator', retryable: false, stopped: true });
+        return;
+      }
       const reason = clean(stopper.signal.aborted ? 'worker shutting down' : e.message, job);
       log(`${job.id} released: ${reason}`);
-      await post('/api/worker/release', { job_id: job.id, reason, retryable: true });
+      await post('/api/worker/release', { job_id: job.id, ...lease, reason, retryable: true });
     } finally {
       clearInterval(hb);
     }
