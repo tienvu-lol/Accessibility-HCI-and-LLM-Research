@@ -376,3 +376,53 @@ test('a peer that is offline on Tailscale is shown offline, and a malformed repo
   ctx.launches.poll({ ip: '100.64.0.2', node: 'win', arcs: [], tailnet: { peers: [{ ip: 'not-an-ip', online: true }, { ip: '100.64.0.9', online: true, name: '<x>' }] } });
   assert.equal(mac().tailscale.state, 'online', 'valid entries kept, invalid ones dropped');
 });
+
+// --- machines are computers; worker containers are nodes on them
+test('containers on one computer are one machine with nodes, in the legend, the cells and the cost table', () => {
+  const { coord, ctx, state } = boot();
+  const stateLib = require('../lib/state');
+  const mac = (id, extra = {}) => coord.claim({ worker_id: id, max: 0, slots: 4, info: { host: 'Mac', tailnet_ip: '100.64.7.1', tailnet_node: 'mac.ts.net', os: 'macOS arm64' }, ...extra });
+  mac('100.64.7.1'); mac('100.64.7.1-a6', { arcs: { A6: 'http://arc-a6:8090/v1' }, arms: ['A6'] }); mac('100.64.7.1-a7', { arcs: { A7: 'http://arc-a7:8092/v1' }, arms: ['A7'] });
+  coord.claim({ worker_id: '100.64.7.2', max: 0, slots: 4, info: { host: 'Win', tailnet_ip: '100.64.7.2' } });
+  state.settings.dispatch_open = true;
+  coord.start('repair');
+  // work done by two of the containers, plus one id that never connected (legacy attribution)
+  coord.addLedger({ worker: '100.64.7.1-a6', arm: 'A6', kind: 'repair', model_id: 'm', key_id: 'local:x', mock: false }, 1000, 500, 1);
+  coord.addLedger({ worker: '100.64.7.1-a7', arm: 'A7', kind: 'repair', model_id: 'm', key_id: 'local:x', mock: false }, 2000, 800, 2);
+  coord.addLedger({ worker: 'laptop-arc-a5', arm: 'A5', kind: 'repair', model_id: 'm', key_id: 'local:y', mock: false }, 10, 10, 1);
+  for (const [arm, w] of [['A6', '100.64.7.1-a6'], ['A7', '100.64.7.1-a7']]) Object.assign(coord.jobs.get(`repair:${arm}:naive:UNI-01`), { state: 'done', final: 'o', worker: w });
+  const snap = stateLib.snapshot(ctx);
+  const real = snap.machines.filter((m) => !m.history);
+  assert.deepEqual(real.map((m) => m.label).sort(), ['Mac', 'Win'], 'two computers, not four containers');
+  const mac1 = snap.machines.find((m) => m.label === 'Mac');
+  assert.deepEqual(mac1.nodes.map((n) => n.id), ['100.64.7.1', '100.64.7.1-a6', '100.64.7.1-a7']);
+  assert.deepEqual([snap.machine_of['100.64.7.1-a6'], snap.machine_of['100.64.7.1']], ['100.64.7.1', '100.64.7.1']);
+  assert.ok(snap.machines.find((m) => m.id === 'laptop-arc-a5').history, 'an id that never connected is history, not a computer');
+  // both done cells are tinted with the computer, not the container
+  assert.equal(snap.matrix_workers.A6.naive[0], mac1.char);
+  assert.equal(snap.matrix_workers.A7.naive[0], mac1.char);
+  assert.equal(mac1.cells, 2);
+  // cost: one row for the computer with its containers listed underneath
+  const row = snap.projection.by_machine.find((m) => m.id === '100.64.7.1');
+  assert.equal(row.calls, 3);
+  assert.deepEqual(row.nodes.map((n) => [n.id, n.calls]).sort(), [['100.64.7.1-a6', 1], ['100.64.7.1-a7', 2]]);
+  assert.equal(snap.intake.machines.filter((m) => m.id === '100.64.7.1').length, 1);
+});
+
+test('arm_nodes lists the online containers that can run each arm, with what they are doing', () => {
+  const { coord, ctx, state } = boot();
+  const stateLib = require('../lib/state');
+  state.settings.dispatch_open = true;
+  const info = { host: 'Mac', tailnet_ip: '100.64.7.1', manual: true };
+  coord.claim({ worker_id: '100.64.7.1', max: 0, slots: 4, info });
+  coord.claim({ worker_id: '100.64.7.1-a6', max: 0, slots: 4, info, arcs: { A6: 'http://arc-a6:8090/v1' }, arms: ['A6'] });
+  coord.start('repair');
+  coord.requestWork('100.64.7.1-a6', { arm: 'A6' });
+  const nodes = stateLib.snapshot(ctx).arm_nodes;
+  assert.deepEqual(nodes.A1.map((n) => n.id), ['100.64.7.1'], 'the hosted container runs the hosted arms');
+  assert.deepEqual(nodes.A6.map((n) => [n.id, n.state, n.machine]), [['100.64.7.1-a6', 'claim pending', '100.64.7.1']]);
+  assert.equal(nodes.A6[0].can_take, 2);
+  assert.deepEqual(nodes.A7, [], 'no container has an A7 tunnel');
+  coord.claim({ worker_id: '100.64.7.1-a6', max: 4, slots: 4, info, arcs: { A6: 'http://arc-a6:8090/v1' }, arms: ['A6'] });
+  assert.equal(stateLib.snapshot(ctx).arm_nodes.A6[0].state, 'running');
+});

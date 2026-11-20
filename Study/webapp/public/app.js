@@ -257,7 +257,7 @@
     if (!conds.length) return '<p class="muted">No cells planned for this arm.</p>';
     var who = (S.matrix_workers || {})[armId] || {};
     var byChar = {};
-    (S.machines || []).forEach(function (x, i) { byChar[x.char] = { id: x.id, hue: (i * 47) % 360 }; });
+    (S.machines || []).forEach(function (x, i) { byChar[x.char] = { id: x.label || x.id, hue: (i * 47) % 360 }; });
     var head = '<tr><th scope="col" class="corner">Condition</th>' + sites.map(function (id, i) { return '<th scope="col" class="site"><span class="sr">' + esc(id) + '</span><span aria-hidden="true">' + ((i + 1) % 10 === 0 || i === 0 ? i + 1 : '') + '</span></th>'; }).join('') + '</tr>';
     var body = conds.map(function (c) {
       var str = String(m[c] || ''), ws = String(who[c] || '');
@@ -399,15 +399,17 @@
       '<ul class="legend">' + Object.keys(CELL).map(function (k) { return '<li><span class="cell cell-' + CELL[k][0] + ' lg" aria-hidden="true">' + CELL[k][1] + '</span> ' + esc(CELL[k][2]) + '</li>'; }).join('') + '</ul>' +
       '<p class="hint">Columns are sites in settings order (' + siteList(S).length + '); hover or focus the grid for each cell\u2019s site id.</p>' +
       ((S.machines && S.machines.length) ?
-        '<h3 class="sub-h">Machines</h3><ul class="legend legend-machines">' + S.machines.map(function (x, i) {
+        '<h3 class="sub-h" id="machines-h">Machines (' + int(S.machines.filter(function (x) { return !x.history; }).length) + ')</h3><ul class="legend legend-machines">' + S.machines.map(function (x, i) {
+          var nodes = (x.nodes || []).map(function (n) { return '<span class="mnode">' + esc(nodeTag(n.id, x.id)) + (n.online ? '' : ' (offline)') + '</span>'; }).join(' ');
           return '<li><span class="mswatch" style="background:hsl(' + ((i * 47) % 360) + ' 70% 45%)" aria-hidden="true"></span> ' +
-            esc(x.id) + ' <span class="muted">' + int(x.cells) + ' cells' + (x.online ? ', online' : ', offline') + (x.os ? ', ' + esc(x.os) : '') + '</span></li>';
+            esc(x.label || x.id) + (x.history ? ' <span class="muted">(history only)</span>' : '') + ' <span class="muted">' + int(x.cells) + ' cells' + (x.online ? ', online' : ', offline') + (x.os ? ', ' + esc(x.os) : '') + '</span>' +
+            (nodes ? '<br><span class="muted">' + ((x.nodes || []).length === 1 ? 'node' : (x.nodes || []).length + ' nodes') + ':</span> ' + nodes : '') + '</li>';
         }).join('') + '</ul>' +
         (S.machines_omitted ? '<p class="hint" id="machines-omitted">' + int(S.machines_omitted) + ' more computer' + (S.machines_omitted === 1 ? ' is' : 's are') + ' not tinted here (36 at most; online and active ones are kept). All are listed under Computers.</p>' : '') + '<p class="hint">A cell is tinted with the colour of the computer that ran it, so you can see how the work was split. The same colours are used in Cost \u2192 Contribution by machine.</p>' : '')));
     S.arms.forEach(function (a) {
       var c = a.cells;
       var counters = ['total', 'queued', 'running', 'ok', 'failed', 'truncated', 'imported', 'converged'].map(function (k) { return '<div><dt>' + esc(k) + '</dt><dd>' + int(c[k]) + '</dd></div>'; }).join('');
-      out.push(panel('r-' + a.id, a.id + ' \u00b7 ' + a.label, '<dl class="facts compact">' + counters + '</dl>' + matrixGrid(S, a.id)));
+      out.push(panel('r-' + a.id, a.id + ' \u00b7 ' + a.label, '<dl class="facts compact">' + counters + '</dl>' + armNodes(S, a) + matrixGrid(S, a.id)));
     });
     if (S.docker && S.docker.enabled) out.push(panel('r-docker', 'Docker workers', dockerBody(S.docker), { form: true }));
     out.push(panel('r-workers', 'Workers (' + S.workers.length + ')', S.workers.length ?
@@ -445,11 +447,28 @@
     return m;
   }
   function machineStyle(e) { return 'background:hsl(' + e.hue + ' 70% 45% / .18);border-color:hsl(' + e.hue + ' 70% 45% / .55)'; }
+  // A worker container is a node on a computer: "hosted" for the plain worker, else the part after the computer's id (e.g. a6).
+  function nodeTag(id, machineId) { return id === machineId ? 'hosted' : String(id).replace(machineId, '').replace(/^[-_]+/, '') || id; }
+  // id may be a computer or one of its containers; usage and jobs report containers, the colour belongs to the computer.
   function machineChip(S, id, map) {
     if (!id) return '<span class="muted">n/a</span>';
-    var e = (map || machineMap(S))[id];
+    var mid = (S.machine_of || {})[id] || id, e = (map || machineMap(S))[mid];
     if (!e) return '<span class="mchip">' + esc(id) + '</span>';
-    return '<span class="mchip" style="' + machineStyle(e) + '">' + esc(id) + '</span>';
+    var label = (e.meta && e.meta.label) || mid;
+    var multi = e.meta && e.meta.nodes && e.meta.nodes.length > 1;
+    return '<span class="mchip" style="' + machineStyle(e) + '">' + esc(label) + (mid !== id || multi ? ' \u203a ' + esc(nodeTag(id, mid)) : '') + '</span>';
+  }
+  // The containers that can run this arm, each as its own node with what it is doing right now.
+  function armNodes(S, a) {
+    if (!S.arm_nodes) return '';
+    var nodes = S.arm_nodes[a.id] || [];
+    if (!nodes.length) return '<p class="hint" id="nodes-' + esc(a.id) + '">No node can run ' + esc(a.id) + ' right now: ' +
+      (a.kind === 'open_source' ? 'no worker container has a live ARC tunnel for it.' : 'no online worker container.') + '</p>';
+    var map = machineMap(S);
+    return '<h3 class="sub-h">Nodes (' + int(nodes.length) + ')</h3><ul class="legend legend-nodes" id="nodes-' + esc(a.id) + '">' + nodes.map(function (n) {
+      var kind = n.state === 'running' ? 'active' : n.state === 'idle' ? 'done' : 'pending';
+      return '<li>' + machineChip(S, n.id, map) + ' ' + badge(kind, n.state) + ' <span class="muted">' + int(n.running) + ' running \u00b7 can take ' + int(n.can_take) + ' queued</span></li>';
+    }).join('') + '</ul>';
   }
 
   /* ---------- Cost ---------- */
@@ -484,7 +503,8 @@
     var mach = P.by_machine || [];
     var mRows = mach.map(function (m) {
       var e = mmap[m.id];
-      return '<tr' + (e ? ' style="' + machineStyle(e) + '"' : '') + '><th scope="row">' + machineChip(S, m.id, mmap) + '</th>' +
+      return '<tr' + (e ? ' style="' + machineStyle(e) + '"' : '') + '><th scope="row">' + machineChip(S, m.id, mmap) +
+        ((m.nodes || []).length ? '<br><span class="muted">' + m.nodes.map(function (n) { return esc(nodeTag(n.id, m.id)) + ' ' + int(n.calls) + (n.calls === 1 ? ' call' : ' calls'); }).join(' \u00b7 ') + '</span>' : '') + '</th>' +
         '<td class="num">' + int(m.calls) + '</td><td class="num">' + int(m.input) + '</td><td class="num">' + int(m.output) + '</td>' +
         '<td class="num">' + usd(m.cost_usd) + '</td><td class="num">' + (m.share_pct === null ? 'n/a' : m.share_pct.toFixed(1) + '%') + '</td>' +
         '<td>' + (m.arms.length ? m.arms.map(function (a) { return esc(a.arm) + ' ' + usd(a.cost_usd) + ' (' + int(a.calls) + ')'; }).join(', ') : '<span class="muted">none</span>') +

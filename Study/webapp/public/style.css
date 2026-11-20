@@ -227,3 +227,8 @@ summary { cursor: pointer; font-weight: 500; padding: 4px 0; }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }
 @media (forced-colors: active) { .cell, .badge, .bar > span, .spend-fill { forced-color-adjust: none; } }
 #imp-sel { margin: 10px 0 6px; }
+
+/* worker containers shown as nodes under their computer */
+.mnode { display: inline-block; padding: 0 .45em; margin: 0 .15em; border: 1px solid var(--line, #2a2c30); border-radius: .35em; font-family: var(--mono, ui-monospace, monospace); font-size: .85em; }
+.legend-nodes { list-style: none; padding-left: 0; }
+.legend-nodes li { margin: .25em 0; }

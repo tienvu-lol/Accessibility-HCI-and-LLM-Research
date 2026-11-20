@@ -29,21 +29,28 @@ def main(path, a5_key):
     keys = {k["id"]: k for k in st["projection"]["by_key"]}
     assert a5_id in keys, list(keys)
     assert any(k.startswith("local:") for k in keys), list(keys)
+    # three worker containers on ONE computer: one machine, three nodes (a container is not a machine)
     machines = st["projection"]["by_machine"]
-    assert len(machines) >= 2, machines
-    for m in machines:
-        print("  machine %-26s calls=%-3s tokens=%-8s spend=$%.2f arms=%s"
-              % (m["id"], m["calls"], m["input"] + m["output"], m["cost_usd"], [a["arm"] for a in m["arms"]]))
+    assert len(machines) == 1, "expected one computer, got %r" % [m["id"] for m in machines]
+    m = machines[0]
+    assert sorted(n["id"].rsplit("-", 1)[-1] for n in m["nodes"]) == ["a5", "a6", "a7"], m["nodes"]
+    print("  machine %-26s calls=%-3s tokens=%-8s spend=$%.2f arms=%s"
+          % (m["id"], m["calls"], m["input"] + m["output"], m["cost_usd"], [a["arm"] for a in m["arms"]]))
+    for n in m["nodes"]:
+        assert n["calls"] > 0, n
+        print("    node %-30s calls=%s" % (n["id"], n["calls"]))
 
     # and every finished cell is attributed to the machine that ran it
-    chars = {m["char"]: m["id"] for m in st["machines"]}
+    chars = {mm["char"]: mm["id"] for mm in st["machines"]}
+    real = [mm for mm in st["machines"] if not mm.get("history")]
+    assert len(real) == 1 and len(real[0]["nodes"]) == 3, real
     for arm in ("A5", "A6", "A7"):
         row = st["matrix_workers"][arm]["naive"]
         ran = [chars[c] for c in row if c in chars]
         assert ran, "no machine recorded for any %s cell (%r)" % (arm, row)
-        assert all(r.endswith(arm.lower()) for r in ran), (arm, row, ran)
-        print("  cells of %s ran on %s" % (arm, sorted(set(ran))))
-    print("  attribution OK: separate keys, separate machines, per-cell provenance")
+        assert set(ran) == {real[0]["id"]}, (arm, row, ran)
+        print("  cells of %s ran on %s (node -%s)" % (arm, sorted(set(ran)), arm.lower()))
+    print("  attribution OK: separate keys, one computer with three nodes, per-cell provenance")
 
 
 if __name__ == "__main__":

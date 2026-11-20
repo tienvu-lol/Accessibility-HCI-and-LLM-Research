@@ -357,3 +357,24 @@ test('runs view lists every computer by its reported name, escaped, with a summa
   assert.match(html, /data-action="dispatch"[^>]*data-arm="A2"/);
   assert.match(html, /not queued yet in this scope/);
 });
+
+test('legend counts computers not containers; chips and arm rows show containers as nodes', () => {
+  const mk = (id, label, nodes, extra = {}) => ({ id, label, char: extra.char, online: true, os: 'macOS arm64', cells: 2, history: false, nodes, calls: 3, input: 1, output: 1, cost_usd: 0, mock_calls: 0, ...extra });
+  const machines = [mk('100.64.7.1', 'Mac', [{ id: '100.64.7.1', online: true, running: 0, arcs: [] }, { id: '100.64.7.1-a6', online: true, running: 1, arcs: ['A6'] }, { id: '100.64.7.1-a7', online: true, running: 0, arcs: ['A7'] }], { char: '0' }),
+    mk('100.64.7.2', 'Win', [{ id: '100.64.7.2', online: true, running: 0, arcs: [] }], { char: '1' }),
+    mk('laptop-arc-a5', 'laptop-arc-a5', [{ id: 'laptop-arc-a5', online: false, running: 0, arcs: [] }], { char: '2', history: true, online: false })];
+  const st = { ...state, machines, machine_of: { '100.64.7.1': '100.64.7.1', '100.64.7.1-a6': '100.64.7.1', '100.64.7.1-a7': '100.64.7.1', '100.64.7.2': '100.64.7.2', 'laptop-arc-a5': 'laptop-arc-a5' },
+    arm_nodes: { A1: [{ id: '100.64.7.1', machine: '100.64.7.1', running: 0, can_take: 3, manual: true, requested: 0, state: 'waiting for claim' }],
+      A6: [{ id: '100.64.7.1-a6', machine: '100.64.7.1', running: 1, can_take: 2, manual: false, requested: 0, state: 'running' }], A7: [] },
+    projection: { ...state.projection, by_machine: [{ id: '100.64.7.1', calls: 3, input: 3, output: 3, cost_usd: 0, share_pct: null, mock_calls: 0, arms: [], nodes: [{ id: '100.64.7.1-a6', calls: 1 }, { id: '100.64.7.1-a7', calls: 2 }] }] } };
+  const html = App.views.runs(st).map((s) => s.html).join('\n');
+  assert.match(html, /Machines \(2\)/, 'three containers + one legacy id are two computers');
+  assert.match(html, /3 nodes:/);
+  assert.match(html, /history only/);
+  assert.match(html, /<strong>?[^<]*<\/strong>|Mac[\s\S]{0,400}hosted[\s\S]{0,60}a6[\s\S]{0,60}a7/);
+  assert.match(html, /id="nodes-A6"[\s\S]*Mac › a6[\s\S]*running[\s\S]*1 running/);
+  assert.match(html, /id="nodes-A1"[\s\S]*waiting for claim/);
+  assert.match(html, /id="nodes-A7">No node can run A7 right now: no worker container has a live ARC tunnel/);
+  const cost = App.views.cost(st).map((s) => s.html).join('\n');
+  assert.match(cost, /Mac[\s\S]{0,40}a6 1 call · a7 2 calls/);
+});

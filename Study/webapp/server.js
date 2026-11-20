@@ -66,6 +66,7 @@ function createApp(opts = {}) {
   };
   ctx.docker = dockerLib.create({ env, port: Number(env.PORT) || 8080 });
   ctx.coord = coordLib.create(ctx, { leaseS: opts.leaseS });
+  ctx.machineOf = ctx.coord.machineOf; // usage is attributed per computer, not per container
   ctx.tailnet = require('./lib/tailnet').create(ctx, env.TAILSCALE_CLI);
   ctx.launches = launchLib.create(ctx, env.DASHBOARD_LAUNCH_TOKEN);
 

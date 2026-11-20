@@ -160,35 +160,50 @@ function create(ctx, { leaseS = 900 } = {}) {
   // '-' = no machine (not run here yet). Imported cells belong to the pseudo-machine "(imported)".
   const MACHINE_CHARS = '0123456789abcdefghijklmnopqrstuvwxyz';
   const IMPORTED = '(imported)';
+  // A machine is one physical computer; a worker container is a node on it. Identity is what the agent reported
+  // (Tailscale IP, else host name), the same key devices() uses. An id that never connected stands for itself.
+  function machineOf(id) {
+    const inf = workers.get(id)?.info;
+    return (inf && (inf.tailnet_ip || inf.host)) || id;
+  }
   function machineView(agg) {
-    const ids = new Set();
-    for (const j of jobs.values()) if (j.worker) ids.add(j.worker);
-    for (const id of workers.keys()) ids.add(id);
-    if (agg) for (const m of agg.machines) ids.add(m.id);
-    if (imported.size) ids.add(IMPORTED);
+    const nodeIds = new Set();
+    for (const j of jobs.values()) if (j.worker) nodeIds.add(j.worker);
+    for (const id of workers.keys()) nodeIds.add(id);
+    if (agg) for (const m of agg.machines) for (const n of Object.keys(m.nodes || { [m.id]: 1 })) nodeIds.add(n);
+    const groups = new Map(); // machine key -> node ids
+    for (const id of nodeIds) {
+      if (!id || id === 'unknown') continue;
+      const key = machineOf(id);
+      if (!groups.has(key)) groups.set(key, []);
+      groups.get(key).push(id);
+    }
+    if (imported.size) groups.set(IMPORTED, []);
+    const t = ctx.now();
+    const online = (id) => workers.has(id) && t - workers.get(id).last_seen < ONLINE_MS;
+    const stat0 = new Map((agg ? agg.machines : []).map((m) => [m.id, m]));
     // One character per machine, so at most 36 are tinted. Past that, keep the ones that matter most
     // (online, then with cells or calls), and report how many were left out instead of dropping them silently.
-    const stat0 = new Map((agg ? agg.machines : []).map((m) => [m.id, m]));
-    const all = [...ids].filter((id) => id && id !== 'unknown');
-    const rank = (id) => (workers.has(id) && ctx.now() - workers.get(id).last_seen < ONLINE_MS ? 2 : 0) + (stat0.get(id)?.calls || runningOn(id) ? 1 : 0);
+    const all = [...groups.keys()];
+    const rank = (k) => (groups.get(k).some(online) ? 2 : 0) + (stat0.get(k)?.calls || groups.get(k).some(runningOn) ? 1 : 0);
     const kept = all.length > MACHINE_CHARS.length ? [...all].sort((a, b) => rank(b) - rank(a) || a.localeCompare(b)).slice(0, MACHINE_CHARS.length) : all;
     const order = kept.sort();
     const omitted = all.length - order.length;
-    const idx = new Map(order.map((id, i) => [id, MACHINE_CHARS[i]]));
-    const stats = new Map((agg ? agg.machines : []).map((m) => [m.id, m]));
-    const t = ctx.now();
-    const machines = order.map((id, i) => {
-      const w = workers.get(id), m = stats.get(id) || {};
-      return { id, char: MACHINE_CHARS[i], online: !!w && t - w.last_seen < ONLINE_MS, host: w && w.info ? w.info.host : null,
-        os: w && w.info ? w.info.os : null, running: w ? runningOn(id) : 0,
-        calls: m.calls || 0, input: m.input || 0, output: m.output || 0, cost_usd: m.cost_usd || 0, mock_calls: m.mock_calls || 0,
-        cells: 0 };
+    const idx = new Map(order.map((k, i) => [k, MACHINE_CHARS[i]]));
+    const machines = order.map((key, i) => {
+      const nodes = groups.get(key).sort(), m = stat0.get(key) || {};
+      const first = nodes.map((n) => workers.get(n)).find(Boolean);
+      const inf = first?.info || {};
+      return { id: key, label: inf.host || inf.tailnet_node || key, char: MACHINE_CHARS[i], online: nodes.some(online), host: inf.host || null,
+        os: inf.os || null, running: nodes.reduce((n, id) => n + runningOn(id), 0), history: key !== IMPORTED && !nodes.some((n) => workers.has(n)),
+        nodes: nodes.map((id) => ({ id, online: online(id), running: runningOn(id), arcs: Object.keys(workers.get(id)?.arcs || {}) })),
+        calls: m.calls || 0, input: m.input || 0, output: m.output || 0, cost_usd: m.cost_usd || 0, mock_calls: m.mock_calls || 0, cells: 0 };
     });
     const byChar = new Map(machines.map((m) => [m.char, m]));
     const cellChar = (arm, cond, site) => {
       if (imported.has(`${arm}/${cond}/${site}`)) return idx.get(IMPORTED) || '-';
       const j = jobs.get(`repair:${arm}:${cond}:${site}`);
-      return (j && j.worker && idx.get(j.worker)) || '-';
+      return (j && j.worker && idx.get(machineOf(j.worker))) || '-';
     };
     const matrix_workers = Object.fromEntries(Object.keys(state.arms).map((arm) => [arm, Object.fromEntries(
       state.settings.conditions.map((cond) => [cond, siteList().map((site) => {
@@ -197,7 +212,23 @@ function create(ctx, { leaseS = 900 } = {}) {
         if (m) m.cells++;
         return c;
       }).join('')]))]));
-    return { machines, matrix_workers, machines_omitted: omitted };
+    const machine_of = {};
+    for (const [key, nodes] of groups) for (const n of nodes) machine_of[n] = key;
+    return { machines, matrix_workers, machine_of, machines_omitted: omitted };
+  }
+  // The containers that can run each arm right now, as individual nodes: what each is doing and how much
+  // queued work of that arm it could take. Online nodes only; an offline container is not a node anyone can use.
+  function armNodes() {
+    const list = [...jobs.values()];
+    return Object.fromEntries(Object.keys(state.arms).map((arm) => [arm, [...workers.values()]
+      .filter((w) => workerOnline(w) && w.kinds.includes('repair') && (!w.armsOnly || w.armsOnly.includes(arm)) && (ctx.armKind(arm) !== 'open_source' || w.arcs[arm]))
+      .map((w) => {
+        const running = list.filter((j) => j.kind === 'repair' && j.arm === arm && j.state === 'running' && j.worker === w.id).length;
+        const can_take = list.filter((j) => j.kind === 'repair' && j.arm === arm && j.state === 'queued' && canTake(j, w)).length;
+        const manual = workerManual(w), asked = requested(w);
+        return { id: w.id, machine: machineOf(w.id), running, can_take, manual, requested: asked,
+          state: running ? 'running' : asked ? 'claim pending' : manual ? 'waiting for claim' : 'idle' };
+      }).sort((a, b) => a.id.localeCompare(b.id))]));
   }
 
   const armBlockers = (id) => {
@@ -748,7 +779,7 @@ function create(ctx, { leaseS = 900 } = {}) {
 
   persist();
   return { start, pause, resume, retryFailed, claim, heartbeat, release, result, reap, armCells, finishedRepairs, matrix, judgeItems, pipelineProgress, armBlockers, judgeBlockers,
-    markImported, stopJob, addLedger, resetLedger, machineView, devices, jobView, workers: workerList, setWorkerCtl, requestWork, unclaimWork, runInfo: () => state.run, jobs };
+    markImported, stopJob, addLedger, machineOf, armNodes, resetLedger, machineView, devices, jobView, workers: workerList, setWorkerCtl, requestWork, unclaimWork, runInfo: () => state.run, jobs };
 }
 
 module.exports = { create };

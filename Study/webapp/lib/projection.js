@@ -71,11 +71,14 @@ function aggregate(ctx, now) {
       if (b < 0) { preCost += c; preTokens += tokens; } else if (b < 120) { buckets[b].cost += c; buckets[b].tokens += tokens; }
     }
 
-    const host = e.worker || e.source || 'unknown';
+    // a machine is a physical computer; the worker containers on it are its nodes (ctx.machineOf maps one to the other)
+    const node = e.worker || e.source || 'unknown';
+    const host = ctx.machineOf ? ctx.machineOf(node) : node;
     let mm = machines.get(host);
-    if (!mm) machines.set(host, (mm = { id: host, ...bucket(), mock_calls: 0, arms: {} }));
-    if (isMock) mm.mock_calls += e.calls;
-    else { addTo(mm, e, c); addTo(mm.arms[id] = mm.arms[id] || bucket(), e, c); }
+    if (!mm) machines.set(host, (mm = { id: host, ...bucket(), mock_calls: 0, arms: {}, nodes: {} }));
+    const nn = mm.nodes[node] = mm.nodes[node] || { id: node, ...bucket(), mock_calls: 0 };
+    if (isMock) { mm.mock_calls += e.calls; nn.mock_calls += e.calls; }
+    else { addTo(mm, e, c); addTo(mm.arms[id] = mm.arms[id] || bucket(), e, c); addTo(nn, e, c); }
 
     const kid = e.key_id || (isLegacy ? null : 'unattributed');
     if (kid && !isMock) {
@@ -173,6 +176,8 @@ function project(ctx, agg, counts, baseline) {
     by_arm,
     by_machine: agg.machines.map((m) => ({ id: m.id, calls: m.calls, input: m.input, output: m.output, cost_usd: m.cost_usd,
       mock_calls: m.mock_calls, share_pct: spent > 0 ? (m.cost_usd / spent) * 100 : null,
+      nodes: Object.values(m.nodes).map((n) => ({ id: n.id, calls: n.calls, input: n.input, output: n.output, cost_usd: n.cost_usd, mock_calls: n.mock_calls }))
+        .sort((a, b) => b.calls - a.calls || a.id.localeCompare(b.id)),
       arms: Object.entries(m.arms).map(([arm, b]) => ({ arm, calls: b.calls, input: b.input, output: b.output, cost_usd: b.cost_usd })).sort((a, b) => b.cost_usd - a.cost_usd || a.arm.localeCompare(b.arm)) })),
     by_key: agg.keys.map((k) => ({ id: k.id, arm: k.arm, model_id: k.model_id, calls: k.calls, input: k.input, output: k.output, cost_usd: k.cost_usd })),
     mock_calls: agg.mock_calls, legacy_calls: agg.legacy_calls,

@@ -165,7 +165,8 @@ function snapshot(ctx) {
     },
     matrix: coord.matrix(),
     pipeline: coord.pipelineProgress(),
-    ...coord.machineView(agg), // machines[] + matrix_workers: which computer ran each cell
+    ...coord.machineView(agg), // machines[] (one per computer, with its nodes) + machine_of + matrix_workers
+    arm_nodes: coord.armNodes(), // per arm: the worker containers that can run it, as individual nodes
     ...coord.devices(ctx.launches.snapshot(), ctx.tailnet.snapshot()), // devices[] (one per computer) + history_machines[] (attribution only)
     intake: proj.intake(agg),
     projection: proj.project(ctx, agg, counts, state.baseline),

@@ -80,6 +80,19 @@ const IP_B = '100.64.0.2', IP_C = '100.64.0.3';
   assert.equal(labels.length, 7);
   step('seven computers listed by the names they reported, in both sessions');
 
+  // a worker container is a node on its computer, not a machine of its own
+  await post('/api/worker/claim', { worker_id: `${IP_B}-a6`, max: 0, slots: 4, arms: ['A6'], arcs: { A6: 'http://arc-a6:8090/v1' }, info: { host: IP_B, os: 'test', tailnet_ip: IP_B, manual: true } }, WTOKEN);
+  await p1.waitForSelector('.legend-machines li:has-text("2 nodes")');
+  await p2.waitForSelector('.legend-machines li:has-text("2 nodes")');
+  assert.match(await p1.locator('#machines-h').innerText(), /Machines \(7\)/, 'a container is not a machine');
+  const legend = await p1.locator('.legend-machines li').allInnerTexts();
+  assert.ok(legend.some((t) => /^\s*100\.64\.0\.2[\s\S]*2 nodes:[\s\S]*hosted[\s\S]*a6/.test(t)), 'legend: ' + JSON.stringify(legend));
+  await p1.waitForSelector(`#nodes-A6 :text("a6")`);
+  assert.equal(await p1.locator('#nodes-A6 li').count(), 1, 'only the container with an A6 tunnel is a node for A6');
+  assert.equal(await p1.locator('#r-computers tbody tr:has-text("100.64.0.2")').count(), 1, 'still one computer row');
+  await p1.waitForSelector('#nodes-A7:text("No node can run A7")');
+  step('seven machines with the A6 container shown as a node under its computer, per-arm node rows correct');
+
   // Tailscale status comes from the launcher's real `tailscale status` report, matched by IP
   const now = Date.now();
   await post('/api/launcher/poll', { ip: IP_B, node: 'host-b.ts.net', name: 'Host B', arcs: [], tailnet: { state: 'Running',
