@@ -1,0 +1,787 @@
+{
+  "protocol_version": "1.0",
+  "replica_id": "ECOM-01",
+  "category": "e-commerce",
+  "source_url": "https://www.glossier.com/",
+  "components": [
+    {
+      "id": "accordion",
+      "selector": "[data-component='accordion']",
+      "pages": [
+        "returns.html"
+      ],
+      "behavior": [
+        "Group of native details disclosures"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "axe-and-scripted-flow-checks-only-no-manual-assistive-technology-testing"
+    },
+    {
+      "id": "accordion-item",
+      "selector": "[data-component='accordion-item']",
+      "pages": [
+        "returns.html"
+      ],
+      "behavior": [
+        "Native details/summary disclosure"
+      ],
+      "keyboard": [
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "axe-and-scripted-flow-checks-only-no-manual-assistive-technology-testing"
+    },
+    {
+      "id": "add-to-bag-form",
+      "selector": "[data-component='add-to-bag-form']",
+      "pages": [
+        "product.html"
+      ],
+      "behavior": [
+        "Quantity input and Add to demo bag button"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "axe-and-scripted-flow-checks-only-no-manual-assistive-technology-testing"
+    },
+    {
+      "id": "breadcrumb",
+      "selector": "[data-component='breadcrumb']",
+      "pages": [
+        "bestsellers.html",
+        "fragrance.html",
+        "gift-guide.html",
+        "makeup.html",
+        "product.html",
+        "returns.html",
+        "shop.html",
+        "skincare.html"
+      ],
+      "behavior": [
+        "Breadcrumb trail"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "axe-and-scripted-flow-checks-only-no-manual-assistive-technology-testing"
+    },
+    {
+      "id": "card-grid",
+      "selector": "[data-component='card-grid']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "Category tile grid"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "axe-and-scripted-flow-checks-only-no-manual-assistive-technology-testing"
+    },
+    {
+      "id": "cart-button",
+      "selector": "[data-component='cart-button']",
+      "pages": [
+        "404.html",
+        "account.html",
+        "bestsellers.html",
+        "cart.html",
+        "checkout.html",
+        "confirmation.html",
+        "fragrance.html",
+        "gift-guide.html",
+        "index.html",
+        "makeup.html",
+        "product.html",
+        "returns.html",
+        "search.html",
+        "shop.html",
+        "skincare.html"
+      ],
+      "behavior": [
+        "Header bag button with live item count; opens drawer"
+      ],
+      "keyboard": [
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "axe-and-scripted-flow-checks-only-no-manual-assistive-technology-testing"
+    },
+    {
+      "id": "cart-drawer",
+      "selector": "[data-component='cart-drawer']",
+      "pages": [
+        "404.html",
+        "account.html",
+        "bestsellers.html",
+        "cart.html",
+        "checkout.html",
+        "confirmation.html",
+        "fragrance.html",
+        "gift-guide.html",
+        "index.html",
+        "makeup.html",
+        "product.html",
+        "returns.html",
+        "search.html",
+        "shop.html",
+        "skincare.html"
+      ],
+      "behavior": [
+        "Native dialog with bag lines, quantity inputs, remove buttons and checkout links"
+      ],
+      "keyboard": [
+        "Tab (trapped by modal dialog)",
+        "Escape closes",
+        "Enter on controls"
+      ],
+      "status": "implemented",
+      "validation": "axe-and-scripted-flow-checks-only-no-manual-assistive-technology-testing"
+    },
+    {
+      "id": "cart-line-item",
+      "selector": "[data-component='cart-line-item']",
+      "pages": [
+        "cart.html",
+        "checkout.html"
+      ],
+      "behavior": [
+        "Bag line with quantity input and remove button"
+      ],
+      "keyboard": [
+        "Tab",
+        "Arrow up/down in number input",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "axe-and-scripted-flow-checks-only-no-manual-assistive-technology-testing"
+    },
+    {
+      "id": "cart-list",
+      "selector": "[data-component='cart-list']",
+      "pages": [
+        "cart.html"
+      ],
+      "behavior": [
+        "List of bag lines"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "axe-and-scripted-flow-checks-only-no-manual-assistive-technology-testing"
+    },
+    {
+      "id": "category-tile",
+      "selector": "[data-component='category-tile']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "Linked category tile"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "axe-and-scripted-flow-checks-only-no-manual-assistive-technology-testing"
+    },
+    {
+      "id": "checkout-form",
+      "selector": "[data-component='checkout-form']",
+      "pages": [
+        "checkout.html"
+      ],
+      "behavior": [
+        "Simulated checkout form with validation, error summary and focus management; no payment fields"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "axe-and-scripted-flow-checks-only-no-manual-assistive-technology-testing"
+    },
+    {
+      "id": "demo-banner",
+      "selector": "[data-component='demo-banner']",
+      "pages": [
+        "404.html",
+        "account.html",
+        "bestsellers.html",
+        "cart.html",
+        "checkout.html",
+        "confirmation.html",
+        "fragrance.html",
+        "gift-guide.html",
+        "index.html",
+        "makeup.html",
+        "product.html",
+        "returns.html",
+        "search.html",
+        "shop.html",
+        "skincare.html"
+      ],
+      "behavior": [
+        "Persistent notice that the site is a fictional demonstration"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "axe-and-scripted-flow-checks-only-no-manual-assistive-technology-testing"
+    },
+    {
+      "id": "demo-confirmation",
+      "selector": "[data-component='demo-confirmation']",
+      "pages": [
+        "confirmation.html"
+      ],
+      "behavior": [
+        "Demo confirmation marked as not an order"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "axe-and-scripted-flow-checks-only-no-manual-assistive-technology-testing"
+    },
+    {
+      "id": "demo-notice",
+      "selector": "[data-component='demo-notice']",
+      "pages": [
+        "account.html",
+        "cart.html",
+        "checkout.html",
+        "returns.html"
+      ],
+      "behavior": [
+        "Boxed notice that the flow is simulated"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "axe-and-scripted-flow-checks-only-no-manual-assistive-technology-testing"
+    },
+    {
+      "id": "empty-state",
+      "selector": "[data-component='empty-state']",
+      "pages": [
+        "bestsellers.html",
+        "cart.html",
+        "checkout.html",
+        "fragrance.html",
+        "makeup.html",
+        "product.html",
+        "search.html",
+        "shop.html",
+        "skincare.html"
+      ],
+      "behavior": [
+        "Message shown when a list, search, bag or checkout has nothing to show"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "axe-and-scripted-flow-checks-only-no-manual-assistive-technology-testing"
+    },
+    {
+      "id": "error-summary",
+      "selector": "[data-component='error-summary']",
+      "pages": [
+        "account.html",
+        "checkout.html"
+      ],
+      "behavior": [
+        "Error summary with links to fields; receives focus on failed submit"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-and-scripted-flow-checks-only-no-manual-assistive-technology-testing"
+    },
+    {
+      "id": "filter-group",
+      "selector": "[data-component='filter-group']",
+      "pages": [
+        "bestsellers.html",
+        "fragrance.html",
+        "makeup.html",
+        "shop.html",
+        "skincare.html"
+      ],
+      "behavior": [
+        "Fieldset of checkboxes (type or category, price band, extras)"
+      ],
+      "keyboard": [
+        "Tab",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "axe-and-scripted-flow-checks-only-no-manual-assistive-technology-testing"
+    },
+    {
+      "id": "filter-panel",
+      "selector": "[data-component='filter-panel']",
+      "pages": [
+        "bestsellers.html",
+        "fragrance.html",
+        "makeup.html",
+        "shop.html",
+        "skincare.html"
+      ],
+      "behavior": [
+        "Filter form; collapses behind an aria-expanded button below 900px"
+      ],
+      "keyboard": [
+        "Tab",
+        "Space",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-and-scripted-flow-checks-only-no-manual-assistive-technology-testing"
+    },
+    {
+      "id": "footer-link-group",
+      "selector": "[data-component='footer-link-group']",
+      "pages": [
+        "404.html",
+        "account.html",
+        "bestsellers.html",
+        "cart.html",
+        "checkout.html",
+        "confirmation.html",
+        "fragrance.html",
+        "gift-guide.html",
+        "index.html",
+        "makeup.html",
+        "product.html",
+        "returns.html",
+        "search.html",
+        "shop.html",
+        "skincare.html"
+      ],
+      "behavior": [
+        "Labelled list of footer links"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "axe-and-scripted-flow-checks-only-no-manual-assistive-technology-testing"
+    },
+    {
+      "id": "hero-banner",
+      "selector": "[data-component='hero-banner']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "Homepage hero (structure only; reference hero content not observed)"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "axe-and-scripted-flow-checks-only-no-manual-assistive-technology-testing"
+    },
+    {
+      "id": "mobile-menu-toggle",
+      "selector": "[data-component='mobile-menu-toggle']",
+      "pages": [
+        "404.html",
+        "account.html",
+        "bestsellers.html",
+        "cart.html",
+        "checkout.html",
+        "confirmation.html",
+        "fragrance.html",
+        "gift-guide.html",
+        "index.html",
+        "makeup.html",
+        "product.html",
+        "returns.html",
+        "search.html",
+        "shop.html",
+        "skincare.html"
+      ],
+      "behavior": [
+        "Shows/hides primary nav below 900px (aria-expanded)"
+      ],
+      "keyboard": [
+        "Enter",
+        "Space",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "axe-and-scripted-flow-checks-only-no-manual-assistive-technology-testing"
+    },
+    {
+      "id": "nav-dropdown",
+      "selector": "[data-component='nav-dropdown']",
+      "pages": [
+        "404.html",
+        "account.html",
+        "bestsellers.html",
+        "cart.html",
+        "checkout.html",
+        "confirmation.html",
+        "fragrance.html",
+        "gift-guide.html",
+        "index.html",
+        "makeup.html",
+        "product.html",
+        "returns.html",
+        "search.html",
+        "shop.html",
+        "skincare.html"
+      ],
+      "behavior": [
+        "Disclosure button + submenu list (aria-expanded); closes on Escape, outside click, focus leaving"
+      ],
+      "keyboard": [
+        "Enter",
+        "Space",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "axe-and-scripted-flow-checks-only-no-manual-assistive-technology-testing"
+    },
+    {
+      "id": "order-summary",
+      "selector": "[data-component='order-summary']",
+      "pages": [
+        "cart.html",
+        "checkout.html",
+        "confirmation.html"
+      ],
+      "behavior": [
+        "Subtotal summary / demo order summary"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "axe-and-scripted-flow-checks-only-no-manual-assistive-technology-testing"
+    },
+    {
+      "id": "payment-placeholder",
+      "selector": "[data-component='payment-placeholder']",
+      "pages": [
+        "checkout.html"
+      ],
+      "behavior": [
+        "Labelled non-functional placeholder explaining that payment is deliberately not collected"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "axe-and-scripted-flow-checks-only-no-manual-assistive-technology-testing"
+    },
+    {
+      "id": "primary-nav",
+      "selector": "[data-component='primary-nav']",
+      "pages": [
+        "404.html",
+        "account.html",
+        "bestsellers.html",
+        "cart.html",
+        "checkout.html",
+        "confirmation.html",
+        "fragrance.html",
+        "gift-guide.html",
+        "index.html",
+        "makeup.html",
+        "product.html",
+        "returns.html",
+        "search.html",
+        "shop.html",
+        "skincare.html"
+      ],
+      "behavior": [
+        "Primary navigation with dropdown groups and mobile disclosure"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "Escape closes open submenu"
+      ],
+      "status": "implemented",
+      "validation": "axe-and-scripted-flow-checks-only-no-manual-assistive-technology-testing"
+    },
+    {
+      "id": "product-card",
+      "selector": "[data-component='product-card']",
+      "pages": [
+        "bestsellers.html",
+        "fragrance.html",
+        "gift-guide.html",
+        "index.html",
+        "makeup.html",
+        "product.html",
+        "search.html",
+        "shop.html",
+        "skincare.html"
+      ],
+      "behavior": [
+        "Product card: abstract SVG art, name link, category, price"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-and-scripted-flow-checks-only-no-manual-assistive-technology-testing"
+    },
+    {
+      "id": "product-carousel",
+      "selector": "[data-component='product-carousel']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "Horizontally scrolling best-sellers row with previous/next buttons (no auto-rotation)"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "axe-and-scripted-flow-checks-only-no-manual-assistive-technology-testing"
+    },
+    {
+      "id": "product-gallery",
+      "selector": "[data-component='product-gallery']",
+      "pages": [
+        "product.html"
+      ],
+      "behavior": [
+        "Single abstract product image that recolours with the selected shade"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "axe-and-scripted-flow-checks-only-no-manual-assistive-technology-testing"
+    },
+    {
+      "id": "product-grid",
+      "selector": "[data-component='product-grid']",
+      "pages": [
+        "bestsellers.html",
+        "fragrance.html",
+        "gift-guide.html",
+        "makeup.html",
+        "product.html",
+        "search.html",
+        "shop.html",
+        "skincare.html"
+      ],
+      "behavior": [
+        "Grid of product cards"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "axe-and-scripted-flow-checks-only-no-manual-assistive-technology-testing"
+    },
+    {
+      "id": "promo-banner",
+      "selector": "[data-component='promo-banner']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "Gift Guide promotional band"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "axe-and-scripted-flow-checks-only-no-manual-assistive-technology-testing"
+    },
+    {
+      "id": "search-form",
+      "selector": "[data-component='search-form']",
+      "pages": [
+        "404.html",
+        "account.html",
+        "bestsellers.html",
+        "cart.html",
+        "checkout.html",
+        "confirmation.html",
+        "fragrance.html",
+        "gift-guide.html",
+        "index.html",
+        "makeup.html",
+        "product.html",
+        "returns.html",
+        "search.html",
+        "shop.html",
+        "skincare.html"
+      ],
+      "behavior": [
+        "Site search form (GET to search.html) over inline catalog"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-and-scripted-flow-checks-only-no-manual-assistive-technology-testing"
+    },
+    {
+      "id": "signin-form",
+      "selector": "[data-component='signin-form']",
+      "pages": [
+        "account.html"
+      ],
+      "behavior": [
+        "Demo sign-in form (validation only; nothing stored)"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-and-scripted-flow-checks-only-no-manual-assistive-technology-testing"
+    },
+    {
+      "id": "site-footer",
+      "selector": "[data-component='site-footer']",
+      "pages": [
+        "404.html",
+        "account.html",
+        "bestsellers.html",
+        "cart.html",
+        "checkout.html",
+        "confirmation.html",
+        "fragrance.html",
+        "gift-guide.html",
+        "index.html",
+        "makeup.html",
+        "product.html",
+        "returns.html",
+        "search.html",
+        "shop.html",
+        "skincare.html"
+      ],
+      "behavior": [
+        "Footer with help, shop and account link groups"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "axe-and-scripted-flow-checks-only-no-manual-assistive-technology-testing"
+    },
+    {
+      "id": "site-header",
+      "selector": "[data-component='site-header']",
+      "pages": [
+        "404.html",
+        "account.html",
+        "bestsellers.html",
+        "cart.html",
+        "checkout.html",
+        "confirmation.html",
+        "fragrance.html",
+        "gift-guide.html",
+        "index.html",
+        "makeup.html",
+        "product.html",
+        "returns.html",
+        "search.html",
+        "shop.html",
+        "skincare.html"
+      ],
+      "behavior": [
+        "Brand, account link, bag button, search and primary nav"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "axe-and-scripted-flow-checks-only-no-manual-assistive-technology-testing"
+    },
+    {
+      "id": "sort-control",
+      "selector": "[data-component='sort-control']",
+      "pages": [
+        "bestsellers.html",
+        "fragrance.html",
+        "makeup.html",
+        "shop.html",
+        "skincare.html"
+      ],
+      "behavior": [
+        "Result count and sort select"
+      ],
+      "keyboard": [
+        "Tab",
+        "Arrow keys"
+      ],
+      "status": "implemented",
+      "validation": "axe-and-scripted-flow-checks-only-no-manual-assistive-technology-testing"
+    },
+    {
+      "id": "sticky-add-to-bag",
+      "selector": "[data-component='sticky-add-to-bag']",
+      "pages": [
+        "product.html"
+      ],
+      "behavior": [
+        "Bottom bar with add-to-bag shown on small screens when the main button scrolls out of view"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-and-scripted-flow-checks-only-no-manual-assistive-technology-testing"
+    },
+    {
+      "id": "text-block",
+      "selector": "[data-component='text-block']",
+      "pages": [
+        "index.html",
+        "returns.html"
+      ],
+      "behavior": [
+        "Plain text content block"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "axe-and-scripted-flow-checks-only-no-manual-assistive-technology-testing"
+    },
+    {
+      "id": "variant-selector",
+      "selector": "[data-component='variant-selector']",
+      "pages": [
+        "product.html"
+      ],
+      "behavior": [
+        "Radio group of shade or size options with visible text names, check mark and swatch"
+      ],
+      "keyboard": [
+        "Tab",
+        "Arrow keys",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "axe-and-scripted-flow-checks-only-no-manual-assistive-technology-testing"
+    }
+  ]
+}

@@ -1,0 +1,753 @@
+{
+  "protocol_version": "1.0",
+  "replica_id": "WX-02",
+  "category": "weather",
+  "source_url": "https://www.wunderground.com/",
+  "components": [
+    {
+      "id": "accordion",
+      "selector": "[data-component='accordion']",
+      "pages": [
+        "prepare.html"
+      ],
+      "behavior": [
+        "aria-expanded sections",
+        "localStorage checklists"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean in qc.js run; main flows scripted for forms, tabs, dialog, settings, filters; no assistive-technology testing"
+    },
+    {
+      "id": "alert-list",
+      "selector": "[data-component='alert-list']",
+      "pages": [
+        "forecast.html",
+        "index.html"
+      ],
+      "behavior": [
+        "sample alerts",
+        "empty state"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean in qc.js run; main flows scripted for forms, tabs, dialog, settings, filters; no assistive-technology testing"
+    },
+    {
+      "id": "article-card",
+      "selector": "[data-component='article-card']",
+      "pages": [
+        "articles.html",
+        "index.html"
+      ],
+      "behavior": [
+        "expand/collapse body"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean in qc.js run; main flows scripted for forms, tabs, dialog, settings, filters; no assistive-technology testing"
+    },
+    {
+      "id": "brand-link",
+      "selector": "[data-component='brand-link']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "accessibility.html",
+        "articles.html",
+        "forecast.html",
+        "history.html",
+        "index.html",
+        "interactive-map.html",
+        "maps.html",
+        "prepare.html",
+        "radar.html",
+        "stations.html",
+        "tropical.html",
+        "videos.html"
+      ],
+      "behavior": [
+        "home link"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean in qc.js run; main flows scripted for forms, tabs, dialog, settings, filters; no assistive-technology testing"
+    },
+    {
+      "id": "breadcrumb",
+      "selector": "[data-component='breadcrumb']",
+      "pages": [
+        "about.html",
+        "accessibility.html",
+        "articles.html",
+        "forecast.html",
+        "history.html",
+        "interactive-map.html",
+        "maps.html",
+        "prepare.html",
+        "radar.html",
+        "stations.html",
+        "tropical.html",
+        "videos.html"
+      ],
+      "behavior": [
+        "links"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean in qc.js run; main flows scripted for forms, tabs, dialog, settings, filters; no assistive-technology testing"
+    },
+    {
+      "id": "card-grid",
+      "selector": "[data-component='card-grid']",
+      "pages": [
+        "articles.html",
+        "index.html",
+        "maps.html",
+        "videos.html"
+      ],
+      "behavior": [
+        "links"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean in qc.js run; main flows scripted for forms, tabs, dialog, settings, filters; no assistive-technology testing"
+    },
+    {
+      "id": "content-block",
+      "selector": "[data-component='content-block']",
+      "pages": [
+        "about.html",
+        "accessibility.html"
+      ],
+      "behavior": [
+        "static content"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean in qc.js run; main flows scripted for forms, tabs, dialog, settings, filters; no assistive-technology testing"
+    },
+    {
+      "id": "current-conditions",
+      "selector": "[data-component='current-conditions']",
+      "pages": [
+        "forecast.html"
+      ],
+      "behavior": [
+        "sample conditions"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean in qc.js run; main flows scripted for forms, tabs, dialog, settings, filters; no assistive-technology testing"
+    },
+    {
+      "id": "data-table",
+      "selector": "[data-component='data-table']",
+      "pages": [
+        "stations.html",
+        "tropical.html"
+      ],
+      "behavior": [
+        "real table",
+        "focusable scroll region"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean in qc.js run; main flows scripted for forms, tabs, dialog, settings, filters; no assistive-technology testing"
+    },
+    {
+      "id": "favorites-list",
+      "selector": "[data-component='favorites-list']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "localStorage list",
+        "empty state"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean in qc.js run; main flows scripted for forms, tabs, dialog, settings, filters; no assistive-technology testing"
+    },
+    {
+      "id": "filter-bar",
+      "selector": "[data-component='filter-bar']",
+      "pages": [
+        "articles.html",
+        "maps.html",
+        "stations.html",
+        "tropical.html",
+        "videos.html"
+      ],
+      "behavior": [
+        "live filter",
+        "status message",
+        "empty state"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean in qc.js run; main flows scripted for forms, tabs, dialog, settings, filters; no assistive-technology testing"
+    },
+    {
+      "id": "footer-nav",
+      "selector": "[data-component='footer-nav']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "accessibility.html",
+        "articles.html",
+        "forecast.html",
+        "history.html",
+        "index.html",
+        "interactive-map.html",
+        "maps.html",
+        "prepare.html",
+        "radar.html",
+        "stations.html",
+        "tropical.html",
+        "videos.html"
+      ],
+      "behavior": [
+        "links"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean in qc.js run; main flows scripted for forms, tabs, dialog, settings, filters; no assistive-technology testing"
+    },
+    {
+      "id": "forecast-table",
+      "selector": "[data-component='forecast-table']",
+      "pages": [
+        "forecast.html",
+        "index.html"
+      ],
+      "behavior": [
+        "real table with caption, scope headers",
+        "focusable named scroll region",
+        "unit-aware"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean in qc.js run; main flows scripted for forms, tabs, dialog, settings, filters; no assistive-technology testing"
+    },
+    {
+      "id": "history-search",
+      "selector": "[data-component='history-search']",
+      "pages": [
+        "history.html"
+      ],
+      "behavior": [
+        "validated form",
+        "error summary",
+        "focus management"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean in qc.js run; main flows scripted for forms, tabs, dialog, settings, filters; no assistive-technology testing"
+    },
+    {
+      "id": "history-table",
+      "selector": "[data-component='history-table']",
+      "pages": [
+        "history.html"
+      ],
+      "behavior": [
+        "12-row sample table"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean in qc.js run; main flows scripted for forms, tabs, dialog, settings, filters; no assistive-technology testing"
+    },
+    {
+      "id": "interactive-map",
+      "selector": "[data-component='interactive-map']",
+      "pages": [
+        "interactive-map.html"
+      ],
+      "behavior": [
+        "layer select",
+        "marker buttons",
+        "table alternative"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean in qc.js run; main flows scripted for forms, tabs, dialog, settings, filters; no assistive-technology testing"
+    },
+    {
+      "id": "location-hero",
+      "selector": "[data-component='location-hero']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "default location h1 + Full Forecast link"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean in qc.js run; main flows scripted for forms, tabs, dialog, settings, filters; no assistive-technology testing"
+    },
+    {
+      "id": "location-search",
+      "selector": "[data-component='location-search']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "accessibility.html",
+        "articles.html",
+        "forecast.html",
+        "history.html",
+        "index.html",
+        "interactive-map.html",
+        "maps.html",
+        "prepare.html",
+        "radar.html",
+        "stations.html",
+        "tropical.html",
+        "videos.html"
+      ],
+      "behavior": [
+        "GET form to forecast.html",
+        "empty-input inline error",
+        "datalist suggestions",
+        "no-match empty state"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean in qc.js run; main flows scripted for forms, tabs, dialog, settings, filters; no assistive-technology testing"
+    },
+    {
+      "id": "map-controls",
+      "selector": "[data-component='map-controls']",
+      "pages": [
+        "interactive-map.html",
+        "radar.html"
+      ],
+      "behavior": [
+        "layer/region selects"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean in qc.js run; main flows scripted for forms, tabs, dialog, settings, filters; no assistive-technology testing"
+    },
+    {
+      "id": "map-detail",
+      "selector": "[data-component='map-detail']",
+      "pages": [
+        "interactive-map.html"
+      ],
+      "behavior": [
+        "live detail panel"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean in qc.js run; main flows scripted for forms, tabs, dialog, settings, filters; no assistive-technology testing"
+    },
+    {
+      "id": "menu-toggle",
+      "selector": "[data-component='menu-toggle']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "accessibility.html",
+        "articles.html",
+        "forecast.html",
+        "history.html",
+        "index.html",
+        "interactive-map.html",
+        "maps.html",
+        "prepare.html",
+        "radar.html",
+        "stations.html",
+        "tropical.html",
+        "videos.html"
+      ],
+      "behavior": [
+        "toggles primary nav below 56rem"
+      ],
+      "keyboard": [
+        "Enter",
+        "Space",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean in qc.js run; main flows scripted for forms, tabs, dialog, settings, filters; no assistive-technology testing"
+    },
+    {
+      "id": "modal-dialog",
+      "selector": "[data-component='modal-dialog']",
+      "pages": [
+        "videos.html"
+      ],
+      "behavior": [
+        "native dialog",
+        "Escape closes",
+        "focus returns"
+      ],
+      "keyboard": [
+        "Enter",
+        "Space",
+        "Escape",
+        "Tab trapped by native modal"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean in qc.js run; main flows scripted for forms, tabs, dialog, settings, filters; no assistive-technology testing"
+    },
+    {
+      "id": "primary-nav",
+      "selector": "[data-component='primary-nav']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "accessibility.html",
+        "articles.html",
+        "forecast.html",
+        "history.html",
+        "index.html",
+        "interactive-map.html",
+        "maps.html",
+        "prepare.html",
+        "radar.html",
+        "stations.html",
+        "tropical.html",
+        "videos.html"
+      ],
+      "behavior": [
+        "disclosure dropdowns",
+        "mobile menu",
+        "aria-current"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean in qc.js run; main flows scripted for forms, tabs, dialog, settings, filters; no assistive-technology testing"
+    },
+    {
+      "id": "radar-viewer",
+      "selector": "[data-component='radar-viewer']",
+      "pages": [
+        "radar.html"
+      ],
+      "behavior": [
+        "6 frames",
+        "play/pause",
+        "step",
+        "slider"
+      ],
+      "keyboard": [
+        "Tab",
+        "Space",
+        "Arrow keys on slider"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean in qc.js run; main flows scripted for forms, tabs, dialog, settings, filters; no assistive-technology testing"
+    },
+    {
+      "id": "sample-data-banner",
+      "selector": "[data-component='sample-data-banner']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "accessibility.html",
+        "articles.html",
+        "forecast.html",
+        "history.html",
+        "index.html",
+        "interactive-map.html",
+        "maps.html",
+        "prepare.html",
+        "radar.html",
+        "stations.html",
+        "tropical.html",
+        "videos.html"
+      ],
+      "behavior": [
+        "site-wide fictional-data notice"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean in qc.js run; main flows scripted for forms, tabs, dialog, settings, filters; no assistive-technology testing"
+    },
+    {
+      "id": "sample-data-label",
+      "selector": "[data-component='sample-data-label']",
+      "pages": [
+        "forecast.html",
+        "history.html",
+        "index.html",
+        "interactive-map.html",
+        "maps.html",
+        "radar.html",
+        "stations.html",
+        "tropical.html"
+      ],
+      "behavior": [
+        "inline sample-data label"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean in qc.js run; main flows scripted for forms, tabs, dialog, settings, filters; no assistive-technology testing"
+    },
+    {
+      "id": "search-results",
+      "selector": "[data-component='search-results']",
+      "pages": [
+        "forecast.html"
+      ],
+      "behavior": [
+        "location results list"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean in qc.js run; main flows scripted for forms, tabs, dialog, settings, filters; no assistive-technology testing"
+    },
+    {
+      "id": "settings-menu",
+      "selector": "[data-component='settings-menu']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "accessibility.html",
+        "articles.html",
+        "forecast.html",
+        "history.html",
+        "index.html",
+        "interactive-map.html",
+        "maps.html",
+        "prepare.html",
+        "radar.html",
+        "stations.html",
+        "tropical.html",
+        "videos.html"
+      ],
+      "behavior": [
+        "Units (temp, wind, precip) convert sample data",
+        "Density compact/comfortable",
+        "Appearance system/light/dark",
+        "localStorage in try/catch"
+      ],
+      "keyboard": [
+        "Tab",
+        "Arrow keys on radios",
+        "Space",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean in qc.js run; main flows scripted for forms, tabs, dialog, settings, filters; no assistive-technology testing"
+    },
+    {
+      "id": "signup-form",
+      "selector": "[data-component='signup-form']",
+      "pages": [
+        "stations.html"
+      ],
+      "behavior": [
+        "validated demo form",
+        "demo success state"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean in qc.js run; main flows scripted for forms, tabs, dialog, settings, filters; no assistive-technology testing"
+    },
+    {
+      "id": "site-footer",
+      "selector": "[data-component='site-footer']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "accessibility.html",
+        "articles.html",
+        "forecast.html",
+        "history.html",
+        "index.html",
+        "interactive-map.html",
+        "maps.html",
+        "prepare.html",
+        "radar.html",
+        "stations.html",
+        "tropical.html",
+        "videos.html"
+      ],
+      "behavior": [
+        "footer"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean in qc.js run; main flows scripted for forms, tabs, dialog, settings, filters; no assistive-technology testing"
+    },
+    {
+      "id": "site-header",
+      "selector": "[data-component='site-header']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "accessibility.html",
+        "articles.html",
+        "forecast.html",
+        "history.html",
+        "index.html",
+        "interactive-map.html",
+        "maps.html",
+        "prepare.html",
+        "radar.html",
+        "stations.html",
+        "tropical.html",
+        "videos.html"
+      ],
+      "behavior": [
+        "brand, search, tools, nav"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean in qc.js run; main flows scripted for forms, tabs, dialog, settings, filters; no assistive-technology testing"
+    },
+    {
+      "id": "tabs",
+      "selector": "[data-component='tabs']",
+      "pages": [
+        "forecast.html"
+      ],
+      "behavior": [
+        "roving tabindex tabs",
+        "arrow/Home/End",
+        "hash selects Alerts"
+      ],
+      "keyboard": [
+        "Tab",
+        "ArrowLeft",
+        "ArrowRight",
+        "Home",
+        "End"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean in qc.js run; main flows scripted for forms, tabs, dialog, settings, filters; no assistive-technology testing"
+    },
+    {
+      "id": "track-map",
+      "selector": "[data-component='track-map']",
+      "pages": [
+        "tropical.html"
+      ],
+      "behavior": [
+        "storm track SVG"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean in qc.js run; main flows scripted for forms, tabs, dialog, settings, filters; no assistive-technology testing"
+    },
+    {
+      "id": "utility-nav",
+      "selector": "[data-component='utility-nav']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "accessibility.html",
+        "articles.html",
+        "forecast.html",
+        "history.html",
+        "index.html",
+        "interactive-map.html",
+        "maps.html",
+        "prepare.html",
+        "radar.html",
+        "stations.html",
+        "tropical.html",
+        "videos.html"
+      ],
+      "behavior": [
+        "Favorites link"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core clean in qc.js run; main flows scripted for forms, tabs, dialog, settings, filters; no assistive-technology testing"
+    }
+  ]
+}

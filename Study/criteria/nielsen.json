@@ -1,0 +1,80 @@
+{
+  "framework": "Nielsen's 10 Usability Heuristics for User Interface Design",
+  "author": "Jakob Nielsen",
+  "first_published": 1994,
+  "source": "https://www.nngroup.com/articles/ten-usability-heuristics/",
+  "count": 10,
+  "note": "The `definition` field paraphrases Nielsen's published heuristic. The `static_page_test` field is study-authored operational guidance for a static 2-page slice.",
+  "heuristics": [
+    {
+      "id": "H1",
+      "num": 1,
+      "title": "Visibility of system status",
+      "definition": "The design should always keep users informed about what is going on, through appropriate feedback within a reasonable amount of time.",
+      "static_page_test": "Loading, submission, selection and navigation states are visibly communicated; the user is never left guessing whether an action registered."
+    },
+    {
+      "id": "H2",
+      "num": 2,
+      "title": "Match between the system and the real world",
+      "definition": "The design should speak the users' language, using words, phrases and concepts familiar to the user rather than internal jargon, and follow real-world conventions so information appears in a natural and logical order.",
+      "static_page_test": "Labels, categories and ordering use the vocabulary of the site's domain and audience, not developer or internal terminology."
+    },
+    {
+      "id": "H3",
+      "num": 3,
+      "title": "User control and freedom",
+      "definition": "Users often perform actions by mistake. They need a clearly marked emergency exit to leave the unwanted action without having to go through an extended process.",
+      "static_page_test": "Cancel, back, close and undo are available and obvious wherever an action can be started."
+    },
+    {
+      "id": "H4",
+      "num": 4,
+      "title": "Consistency and standards",
+      "definition": "Users should not have to wonder whether different words, situations or actions mean the same thing. Follow platform and industry conventions.",
+      "static_page_test": "Navigation, control styling, terminology and layout behave the same way on every page of the slice."
+    },
+    {
+      "id": "H5",
+      "num": 5,
+      "title": "Error prevention",
+      "definition": "Good error messages are important, but the best designs carefully prevent problems from occurring in the first place.",
+      "static_page_test": "Constraints, sensible defaults, format hints and confirmation prevent errors before they happen."
+    },
+    {
+      "id": "H6",
+      "num": 6,
+      "title": "Recognition rather than recall",
+      "definition": "Minimise the user's memory load by making elements, actions and options visible. The user should not have to remember information from one part of the interface to another.",
+      "static_page_test": "Needed information is visible at the point of use rather than something the user must carry in their head."
+    },
+    {
+      "id": "H7",
+      "num": 7,
+      "title": "Flexibility and efficiency of use",
+      "definition": "Shortcuts may speed up the interaction for the expert user, so that the design can cater to both inexperienced and experienced users.",
+      "static_page_test": "Accelerators, shortcuts or alternate paths exist for frequent tasks without obstructing first-time users."
+    },
+    {
+      "id": "H8",
+      "num": 8,
+      "title": "Aesthetic and minimalist design",
+      "definition": "Interfaces should not contain information which is irrelevant or rarely needed. Every extra unit of information competes with the relevant units and diminishes their relative visibility.",
+      "static_page_test": "Content earns its place; added help text, labels or affordances do not bury the primary task."
+    },
+    {
+      "id": "H9",
+      "num": 9,
+      "title": "Help users recognise, diagnose and recover from errors",
+      "definition": "Error messages should be expressed in plain language (no error codes), precisely indicate the problem, and constructively suggest a solution.",
+      "static_page_test": "Errors say what went wrong, where, and what to do about it, in plain language."
+    },
+    {
+      "id": "H10",
+      "num": 10,
+      "title": "Help and documentation",
+      "definition": "It is best if the system does not need any additional explanation. However, it may be necessary to provide documentation to help users understand how to complete their tasks.",
+      "static_page_test": "Help is findable at the point of need, task-oriented and concrete."
+    }
+  ]
+}

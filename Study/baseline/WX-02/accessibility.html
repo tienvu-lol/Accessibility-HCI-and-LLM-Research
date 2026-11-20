@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Accessibility statement - Larkspur Weather (fictional)</title>
+<meta name="description" content="What accessibility work was done on this replica and what was not.">
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/styles.css">
+<script src="js/main.js" defer></script>
+</head>
+<body data-page="accessibility">
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header" data-section="global-header" data-component="site-header">
+<div class="sample-bar" role="note" data-section="sample-data-notice" data-component="sample-data-banner"><strong>SAMPLE DATA ONLY.</strong> All temperatures, forecasts, radar images, history and times on this site are fictional and invented for research. Not a real forecast; never current conditions.</div>
+<div class="header-row">
+<a class="brand" href="index.html" data-component="brand-link"><img src="assets/logo.svg" alt="" width="40" height="40"><span>Larkspur Weather</span></a>
+<button type="button" class="btn small menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="primary-nav" data-component="menu-toggle">Menu</button>
+<form class="loc-search" role="search" action="forecast.html" method="get" novalidate data-section="location-search" data-component="location-search">
+<label for="loc-q" class="sr-only">Search sample locations</label>
+<input id="loc-q" name="q" type="search" placeholder="Search Locations..." autocomplete="off" list="loc-list">
+<datalist id="loc-list"></datalist>
+<button type="submit" class="btn small">Search</button>
+<p id="loc-q-error" class="field-error" role="alert" hidden></p>
+</form>
+<div class="header-tools" data-section="utility-navigation" data-component="utility-nav">
+<a class="tool-link" href="index.html#favorites">Favorites</a>
+<div class="settings-wrap" data-component="settings-menu">
+<button type="button" id="settings-btn" class="btn small" aria-expanded="false" aria-controls="settings-panel">Settings</button>
+<div id="settings-panel" class="settings-panel" role="group" aria-label="Display settings" hidden>
+<fieldset><legend>Units</legend>
+<div><span class="hint">Temperature</span><br><label><input type="radio" name="pref-temp" value="F" checked> &deg;F</label><label><input type="radio" name="pref-temp" value="C"> &deg;C</label></div>
+<div><span class="hint">Wind</span><br><label><input type="radio" name="pref-wind" value="mph" checked> mph</label><label><input type="radio" name="pref-wind" value="kmh"> km/h</label></div>
+<div><span class="hint">Precipitation</span><br><label><input type="radio" name="pref-precip" value="in" checked> in</label><label><input type="radio" name="pref-precip" value="mm"> mm</label></div>
+</fieldset>
+<fieldset><legend>Density</legend><label><input type="radio" name="pref-density" value="comfortable" checked> Comfortable</label><label><input type="radio" name="pref-density" value="compact"> Compact</label></fieldset>
+<fieldset><legend>Appearance</legend><label><input type="radio" name="pref-theme" value="system" checked> System</label><label><input type="radio" name="pref-theme" value="light"> Light</label><label><input type="radio" name="pref-theme" value="dark"> Dark</label></fieldset>
+<button type="button" id="settings-reset" class="btn small secondary">Reset to defaults</button>
+<p id="settings-status" class="note" role="status"></p>
+<p class="note">Choices are kept only in this browser (localStorage) and convert every sample value.</p>
+</div></div></div></div>
+<nav id="primary-nav" class="primary-nav" aria-label="Primary" data-section="global-navigation" data-component="primary-nav"><ul class="nav-list"><li><a href="forecast.html">Forecast</a></li><li class="nav-drop"><button type="button" class="nav-drop-btn" aria-expanded="false" aria-controls="drop-1">Maps &amp; Radar</button><ul id="drop-1" class="drop-list"><li><a href="maps.html">Maps catalog</a></li><li><a href="radar.html">Radar</a></li><li><a href="interactive-map.html">Interactive map</a></li></ul></li><li class="nav-drop"><button type="button" class="nav-drop-btn" aria-expanded="false" aria-controls="drop-2">Storms</button><ul id="drop-2" class="drop-list"><li><a href="tropical.html">Hurricane &amp; tropical cyclones</a></li></ul></li><li class="nav-drop"><button type="button" class="nav-drop-btn" aria-expanded="false" aria-controls="drop-3">Data</button><ul id="drop-3" class="drop-list"><li><a href="history.html">Historical weather</a></li><li><a href="stations.html">Station network</a></li></ul></li><li class="nav-drop"><button type="button" class="nav-drop-btn" aria-expanded="false" aria-controls="drop-4">Learn</button><ul id="drop-4" class="drop-list"><li><a href="articles.html">Articles</a></li><li><a href="prepare.html">Preparedness</a></li><li><a href="videos.html">Videos</a></li></ul></li></ul></nav>
+</header>
+<main id="main-content" data-section="main-content" tabindex="-1">
+<nav class="breadcrumb wrap" aria-label="Breadcrumb" data-section="breadcrumb" data-component="breadcrumb"><ol><li><a href="index.html">Home</a></li><li aria-current="page">Accessibility statement</li></ol></nav>
+
+<div class="wrap"><h1 id="page-title">Accessibility statement</h1>
+<section class="band" data-section="accessibility-body" data-component="content-block">
+<p>This site is a fictional research replica. This statement describes the work actually done on it. It makes no claim of conformance to WCAG or any other standard.</p>
+<h2>What was designed in</h2><ul>
+<li>Skip link, landmarks, one main heading per page and real table markup with captions and header cells.</li>
+<li>Keyboard use for menus, tabs, settings, dialogs and the radar controls; Escape closes menus and the dialog.</li>
+<li>Labeled form fields, an error summary that receives focus, and inline error messages.</li>
+<li>Light, dark and system appearance, compact and comfortable density, and reduced-motion support. The radar loop never starts on its own.</li>
+<li>Scrolling table areas are keyboard focusable and named.</li>
+<li>Maps have a table alternative listing the same values.</li>
+</ul>
+<h2>What was checked</h2><p>Automated checks (axe-core in a headless browser) and scripted keyboard flows were run at two widths. No testing with assistive technology users or screen readers was done.</p>
+<h2>Known limitations</h2><ul><li>Sample illustrations (radar, maps, tracks) are drawn images with text equivalents of limited detail.</li><li>Contrast in dark mode was spot-checked, not fully audited.</li><li>Pages that build tables with JavaScript show a notice if scripting is off.</li></ul>
+<p>This fictional site has no support desk. Report issues to the research team that supplied it.</p></section></div>
+</main>
+<footer class="site-footer" data-section="global-footer" data-component="site-footer"><div class="wrap">
+<div class="footer-cols">
+<nav aria-label="Footer" data-section="footer-navigation" data-component="footer-nav"><h2>Explore</h2><ul><li><a href="maps.html">Maps catalog</a></li><li><a href="radar.html">Radar</a></li><li><a href="history.html">Historical weather</a></li><li><a href="stations.html">Station network</a></li><li><a href="articles.html">Articles</a></li><li><a href="prepare.html">Preparedness</a></li><li><a href="videos.html">Videos</a></li></ul></nav>
+<div><h2>About</h2><ul><li><a href="about.html">About us</a></li><li><a href="accessibility.html">Accessibility statement</a></li></ul></div>
+<div><h2>Fictional site</h2><p>Larkspur Weather is a fictional portal built for an accessibility research dataset. All weather data is sample data. There are no ads, trackers or accounts.</p></div>
+</div></div></footer>
+</body>
+</html>

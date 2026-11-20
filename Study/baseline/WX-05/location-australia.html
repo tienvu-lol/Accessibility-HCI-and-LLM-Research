@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forecasts and observations | Aurora Meteorological Bureau</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  
+  <header class="site-header" data-section="header" data-component="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="site-logo" aria-label="Aurora Met Bureau">Aurora Met Bureau</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+      <nav class="primary-nav" id="primary-nav" data-component="primary-nav">
+        <ul>
+          <li><a href="location-australia.html">Forecasts</a></li>
+          <li><a href="warnings-and-alerts.html">Warnings & Alerts</a></li>
+          <li><a href="rain-radar-and-weather-maps.html">Radar & Maps</a></li>
+          <li><a href="tropical-cyclone.html">Tropical Cyclones</a></li>
+          <li><a href="water-data-and-forecasts.html">Water Data</a></li>
+          <li><a href="past-weather-and-climate.html">Past Weather</a></li>
+          <li><a href="about-the-bureau.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="hero" data-section="hero" data-component="hero-banner">
+      <div class="container">
+        <h1>Forecasts and observations</h1>
+        <p>Find detailed weather forecasts and current observations for your area.</p>
+      </div>
+    </section>
+
+    <section class="container" data-section="main-content" data-component="location-search">
+      <h2>Find your location</h2>
+      <form class="search-form" aria-label="Search locations">
+        <label for="location-search" class="sr-only">Search for a city or region</label>
+        <input type="search" id="location-search" class="search-input" placeholder="Enter city or region name...">
+        <button type="button" class="btn">Search</button>
+      </form>
+    </section>
+
+    <section class="container" data-section="forecasts" data-component="forecast-tabs">
+      <div class="tabs">
+        <div class="tabs-header">
+          <h2>Current Forecasts</h2>
+          <div class="unit-toggle" role="group" aria-label="Temperature unit selection">
+            <label for="unit-toggle">Show in:</label>
+            <select id="unit-toggle">
+              <option value="C">°C</option>
+              <option value="F">°F</option>
+            </select>
+          </div>
+        </div>
+        <ul class="tab-list" role="tablist">
+          <li role="presentation">
+            <button class="tab-btn" role="tab" aria-selected="true" aria-controls="panel-daily" id="tab-daily">Daily Forecast</button>
+          </li>
+          <li role="presentation">
+            <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-hourly" id="tab-hourly">Hourly Forecast</button>
+          </li>
+        </ul>
+      </div>
+
+      <div class="tab-panel" role="tabpanel" id="panel-daily" aria-labelledby="tab-daily" aria-hidden="false">
+        <div class="card-grid" id="location-list">
+          <article class="card location-card" data-location="capital-city">
+            <h3 class="location-name">Capital City</h3>
+            <p class="location-region">Region A</p>
+            <div class="forecast-details">
+              <p><strong>Today:</strong> <span class="temp-c" data-c="22">22°C</span> / <span class="temp-f" data-f="72">72°F</span></p>
+              <p>Partly Cloudy, Wind 15 km/h NW</p>
+            </div>
+            <div class="forecast-details">
+              <p><strong>Tomorrow:</strong> <span class="temp-c" data-c="24">24°C</span> / <span class="temp-f" data-f="75">75°F</span></p>
+              <p>Sunny, Wind 10 km/h N</p>
+            </div>
+          </article>
+          <article class="card location-card" data-location="port-haven">
+            <h3 class="location-name">Port Haven</h3>
+            <p class="location-region">Region B</p>
+            <div class="forecast-details">
+              <p><strong>Today:</strong> <span class="temp-c" data-c="18">18°C</span> / <span class="temp-f" data-f="64">64°F</span></p>
+              <p>Overcast, Wind 20 km/h S</p>
+            </div>
+            <div class="forecast-details">
+              <p><strong>Tomorrow:</strong> <span class="temp-c" data-c="19">19°C</span> / <span class="temp-f" data-f="66">66°F</span></p>
+              <p>Rain showers, Wind 25 km/h SW</p>
+            </div>
+          </article>
+          <article class="card location-card" data-location="highland-valley">
+            <h3 class="location-name">Highland Valley</h3>
+            <p class="location-region">Region C</p>
+            <div class="forecast-details">
+              <p><strong>Today:</strong> <span class="temp-c" data-c="12">12°C</span> / <span class="temp-f" data-f="54">54°F</span></p>
+              <p>Clear, Wind 10 km/h E</p>
+            </div>
+            <div class="forecast-details">
+              <p><strong>Tomorrow:</strong> <span class="temp-c" data-c="14">14°C</span> / <span class="temp-f" data-f="57">57°F</span></p>
+              <p>Partly Cloudy, Wind 15 km/h SE</p>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="tab-panel" role="tabpanel" id="panel-hourly" aria-labelledby="tab-hourly" aria-hidden="true">
+        <p>Hourly forecast data for selected locations would appear here. Select a location from the list above to view detailed hourly trends.</p>
+        <div class="card-grid">
+          <article class="card">
+            <h3>Capital City - Next 24 Hours</h3>
+            <ul>
+              <li>12:00 - 22°C, Partly Cloudy</li>
+              <li>15:00 - 24°C, Sunny</li>
+              <li>18:00 - 21°C, Clear</li>
+              <li>21:00 - 18°C, Clear</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" data-section="footer" data-component="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>Aurora Met Bureau</h3>
+        <p>Providing accurate weather information since 1901.</p>
+      </div>
+      <div>
+        <h3>Quick Links</h3>
+        <a href="index.html">Home</a>
+        <a href="warnings-and-alerts.html">Warnings</a>
+        <a href="about-the-bureau.html">About Us</a>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <p>Email: info@auroramet.sim</p>
+        <p>Phone: 1300 000 000</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

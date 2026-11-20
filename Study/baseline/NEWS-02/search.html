@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Search | The Alderny Daily Lantern (Fictional)</title>
+<meta name="description" content="Search results page over sample articles. Fictional publication: invented sample content for an accessibility research dataset.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/styles.css">
+<script src="js/main.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header" data-section="global-header" data-component="site-header">
+<div class="fiction-notice" role="note" aria-label="Fictional publication notice" data-section="fictional-notice" data-component="fictional-notice"><p><strong>Fictional publication.</strong> Every article, byline and quote on this site is invented sample content for an accessibility research dataset. Nothing here is real news.</p></div>
+<div class="header-top" data-section="header-utility" data-component="utility-bar">
+<div class="wrap header-row">
+<button type="button" class="menu-toggle" aria-expanded="false" aria-controls="menu-panel" data-component="menu-toggle"><span class="menu-icon" aria-hidden="true"></span>Menu</button>
+<a class="brand" href="index.html" data-component="site-brand"><img src="assets/logo.svg" alt="" width="44" height="44"><span class="brand-text"><span class="brand-name">The Alderny Daily Lantern</span><span class="brand-sub">Fictional metro daily of Port Alderny, Tessaly County, Calvern</span></span></a>
+<div class="utility" data-component="utility-links">
+<a class="btn btn-primary" id="subscribe-button" href="subscribe.html">Subscribe (demo)</a>
+<div class="dropdown" data-component="subscriber-services">
+<button type="button" class="btn" aria-expanded="false" aria-controls="services-menu">Subscriber services</button>
+<ul id="services-menu" hidden>
+<li><a href="subscribe.html#plans">Plans (demo)</a></li>
+<li><a href="subscribe.html#newsletters">Newsletters (demo)</a></li>
+<li><a href="subscribe.html#e-edition">E-edition (demo notice)</a></li>
+</ul></div>
+</div>
+<form class="search-form" role="search" action="search.html" method="get" data-section="site-search" data-component="search-form">
+<label for="site-search-input" class="sr-only">Search The Alderny Daily Lantern</label>
+<input id="site-search-input" name="s" type="search" placeholder="Search sample articles" autocomplete="off">
+<button type="submit" class="btn">Search</button>
+</form>
+</div></div>
+<nav class="primary-nav" aria-label="Primary" data-section="global-navigation" data-component="primary-nav"><div class="wrap"><ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="news.html">News</a></li>
+<li><a href="business.html">Business</a></li>
+<li><a href="sports.html">Sports</a></li>
+<li><a href="opinion.html">Opinion</a></li>
+<li><a href="things-to-do.html">Things to do</a></li>
+<li><a href="suburbs.html">Suburbs</a></li>
+</ul></div></nav>
+<div id="menu-panel" class="menu-panel" hidden data-section="menu-panel" data-component="push-menu"><div class="wrap">
+<nav aria-label="All sections"><div class="menu-groups">
+<div><h2>News</h2><ul><li><a href="news.html">News front</a></li><li><a href="latest-headlines.html">Latest headlines</a></li><li><a href="local-news.html">Local news</a></li></ul></div>
+<div><h2>Business</h2><ul><li><a href="business.html">Business front</a></li></ul></div>
+<div><h2>Sports</h2><ul><li><a href="sports.html">Sports front</a></li></ul></div>
+<div><h2>Opinion</h2><ul><li><a href="opinion.html">Editorials, commentary, letters</a></li></ul></div>
+<div><h2>Things to do</h2><ul><li><a href="things-to-do.html">Arts, museums, recipes</a></li></ul></div>
+<div><h2>Suburbs</h2><ul><li><a href="suburbs.html">Suburban coverage</a></li></ul></div>
+<div><h2>More</h2><ul><li><a href="subscribe.html">Subscribe and newsletters (demo)</a></li><li><a href="about.html">About this fictional site</a></li></ul></div>
+</div></nav></div></div>
+</header>
+<main id="main-content" data-section="main-content">
+<div class="wrap">
+<nav class="breadcrumbs" aria-label="Breadcrumb" data-section="breadcrumbs" data-component="breadcrumbs"><ol><li><a href="index.html">Home</a></li><li aria-current="page">Search</li></ol></nav>
+
+<h1 class="page-title">Search sample articles</h1>
+<form class="search-page-form" action="search.html" method="get" role="search" aria-label="Search page" data-component="search-form" data-section="search-controls">
+<div class="field"><label for="sp-q">Search words</label><input id="sp-q" name="s" type="search" autocomplete="off"></div>
+<div class="field"><label for="sp-sec">Section</label><select id="sp-sec" name="section"><option value="">All sections</option><option value="news">News</option><option value="business">Business</option><option value="sports">Sports</option><option value="opinion">Opinion</option><option value="things-to-do">Things to do</option><option value="suburbs">Suburbs</option></select></div>
+<div class="field"><label for="sp-sort">Sort by</label><select id="sp-sort" name="sort"><option value="rel">Best match</option><option value="new">Newest sample date</option></select></div>
+<button class="btn btn-primary" type="submit">Search</button></form>
+<p class="meta" id="results-count" role="status" aria-live="polite"></p>
+<section aria-labelledby="res-h" data-section="search-results" data-component="search-results"><h2 id="res-h" class="sr-only">Results</h2><ul class="story-list" id="results"></ul><p class="empty" id="results-empty" hidden></p></section>
+</div></main>
+<footer class="site-footer" data-section="global-footer" data-component="site-footer"><div class="wrap">
+<p class="fiction-notice-foot" data-component="fictional-notice-footer"><strong>Fictional publication.</strong> Every article, byline and quote on this site is invented sample content for an accessibility research dataset. Nothing here is real news. Phone numbers use 555 exchanges; all names, places and organizations are invented.</p>
+<div class="footer-groups">
+<nav aria-label="Footer sections" data-component="footer-nav"><h2>Sections</h2><ul><li><a href="news.html">News</a></li><li><a href="business.html">Business</a></li><li><a href="sports.html">Sports</a></li><li><a href="opinion.html">Opinion</a></li><li><a href="things-to-do.html">Things to do</a></li><li><a href="suburbs.html">Suburbs</a></li><li><a href="latest-headlines.html">Latest headlines</a></li></ul></nav>
+<nav aria-label="Company info" data-component="footer-nav"><h2>Company info</h2><ul><li><a href="about.html">About this fictional site</a></li><li><a href="about.html#sitemap">Site map</a></li><li><a href="about.html#accessibility">Accessibility statement (sample)</a></li><li><a href="subscribe.html">Subscribe (demo)</a></li></ul></nav>
+<div><h2>Contact (fictional)</h2><p>The Alderny Daily Lantern<br>100 Sample Street, Port Alderny, Calvern<br>Newsroom: 555-0142<br>news@example.invalid</p></div>
+</div>
+<p class="legal">Sample site generated for a research dataset. Not a real newspaper. No subscription, payment or newsletter on this site is real.</p>
+</div></footer>
+<div class="sr-only" id="live-region" role="status" aria-live="polite" data-component="live-region"></div>
+</body>
+</html>

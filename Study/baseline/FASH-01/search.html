@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Search | The Weft Review</title>
+<meta name="description" content="The Weft Review: an invented fashion and textile magazine, built as a static research replica.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/styles.css">
+<script src="js/main.js" defer></script>
+</head>
+<body data-page="search.html">
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header" data-section="global-header" data-component="site-header">
+ <div class="fiction-note" role="note" data-section="fictional-note" data-component="fictional-publication-note"><p><strong>Invented magazine.</strong> The Weft Review is an invented magazine for a research replica. None of its stories, bylines, brands, events or places are real, and all dates are sample data.</p></div>
+ <div class="masthead">
+  <a class="wordmark" href="index.html" data-component="wordmark"><span class="wordmark-main">The Weft</span> <span class="wordmark-sub">Review</span></a>
+  <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="site-menu" data-component="menu-toggle">Menu</button>
+  <div class="menu-wrap" id="site-menu" data-section="header-menu" data-component="header-menu">
+   <nav aria-label="Primary" data-section="global-navigation" data-component="primary-nav"><ul><li><a href="fashion.html">Fashion</a></li><li><a href="culture.html">Culture</a></li><li><a href="travel.html">Travel</a></li><li><a href="video.html">Video</a></li><li><a href="nextwave.html">Next Wave</a></li><li><a href="issue.html">The Makers Issue</a></li><li><a href="latest.html">Latest</a></li><li><a href="newsletter.html">Newsletter</a></li></ul></nav>
+   <form class="site-search" role="search" aria-label="Site search" action="search.html" method="get" data-section="header-search" data-component="site-search">
+    <label for="site-q" class="vh">Search The Weft Review</label>
+    <input id="site-q" name="q" type="search" placeholder="Search stories" autocomplete="off">
+    <button type="submit">Search</button>
+   </form>
+  </div>
+ </div>
+</header>
+<main id="main-content" data-section="main-content">
+
+<div class="wrap">
+<nav class="breadcrumb" aria-label="Breadcrumb" data-component="breadcrumb"><ol><li><a href="index.html">Home</a></li><li aria-current="page">Search</li></ol></nav>
+<h1>Search</h1>
+<form class="filters" role="search" action="search.html" method="get" aria-label="Search stories" data-section="search-form" data-component="search-form">
+ <div class="field grow"><label for="search-q">Search stories</label><input id="search-q" name="q" type="search" autocomplete="off"></div>
+ <div class="field"><label for="search-sec">Section</label><select id="search-sec" name="sec"><option value="">All sections</option><option value="fashion">Fashion</option><option value="culture">Culture</option><option value="travel">Travel</option><option value="video">Video</option><option value="nextwave">Next Wave</option></select></div>
+ <button type="submit" class="btn">Search</button>
+</form>
+<section aria-labelledby="results-title" data-section="search-results" data-component="search-results"><h2 id="results-title">Results</h2><p class="result-count" role="status" id="search-status">Enter a search term above.</p><ul class="card-grid" role="list" aria-label="Search results" id="search-results"></ul><div class="empty" id="search-empty" hidden data-component="empty-state"><h3>No stories found</h3><p>Check the spelling, try a broader word such as "wool", or browse <a href="latest.html">all latest stories</a>.</p></div>
+<noscript><p>Search needs JavaScript. You can browse <a href="latest.html">all stories</a> instead.</p></noscript></section>
+</div>
+</main>
+<footer class="site-footer" data-section="global-footer" data-component="site-footer">
+ <div class="footer-grid">
+  <div><p class="footer-brand">The Weft Review</p><p>An invented magazine about cloth, craft and the rooms where garments are made. Research replica: nothing here is a real publication.</p></div>
+  <nav aria-label="Footer sections" data-component="footer-nav"><h2>Sections</h2><ul><li><a href="fashion.html">Fashion</a></li><li><a href="culture.html">Culture</a></li><li><a href="travel.html">Travel</a></li><li><a href="video.html">Video</a></li><li><a href="nextwave.html">Next Wave</a></li></ul></nav>
+  <nav aria-label="Footer more" data-component="footer-nav"><h2>More</h2><ul><li><a href="latest.html">Latest</a></li><li><a href="issue.html">The Makers Issue</a></li><li><a href="newsletter.html">Newsletter</a></li><li><a href="search.html">Search</a></li></ul></nav>
+ </div>
+ <p class="footer-legal">Sample content for accessibility research. Stories, people, brands, events and places are invented; dates are sample data.</p>
+</footer>
+</body>
+</html>

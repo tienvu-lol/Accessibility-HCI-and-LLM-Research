@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Home | Trattoria Fico Nero</title>
+<meta name="description" content="Home page of Trattoria Fico Nero, a fictional neighborhood trattoria: image menu with plain-text alternative, address and hours.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="index">
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header" data-section="global-header" data-component="site-header">
+<div class="demo-banner" data-section="demo-banner" data-component="announcement-bar"><p>Fictional restaurant for a research dataset. Reservations, orders and the shop are local simulations.</p></div>
+ <div class="header-inner">
+  <a class="brand" href="index.html" data-component="brand-link"><img src="assets/logo.svg" alt="" width="44" height="44"><span>Trattoria Fico Nero</span></a>
+  <div class="header-tools" data-section="header-utility" data-component="utility-bar">
+   <a class="text-menu-link" href="text-menu.html">Plain-text menu</a>
+   <form class="search-form" role="search" aria-label="Site search" action="search.html" method="get" data-section="site-search" data-component="search-form">
+    <label for="site-search-q" class="visually-hidden">Search this site</label>
+    <input id="site-search-q" type="search" name="q" placeholder="Search" autocomplete="off">
+    <button type="submit">Search</button>
+   </form>
+   <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" data-component="nav-toggle">Menu</button>
+  </div>
+ </div>
+ <nav id="primary-nav" class="primary-nav" aria-label="Primary" data-section="global-navigation" data-component="primary-nav"><ul><li><a href="gatherings.html">Gatherings</a></li><li><a href="shop.html">Shop</a></li><li><a href="cocktails.html">Craft Cocktails</a></li><li><a href="owners.html">Marta &amp; Joel</a></li><li><a href="cart.html" data-cart-link>Cart</a></li></ul></nav>
+</header>
+<main id="main-content" data-section="main-content" tabindex="-1">
+
+
+<section class="hero" aria-labelledby="menu-title" data-section="menu-image" data-component="image-menu">
+ <h1 id="menu-title">TRATTORIA FICO NERO MENU</h1>
+ <p class="text-alt-link" data-component="text-menu-alternative"><a href="text-menu.html">A plain-text version of the Trattoria Fico Nero menu is available here.</a></p>
+ <figure class="menu-figure">
+  <img src="assets/menu-image.svg" width="720" height="960" alt="Dinner menu shown as a picture. It lists Spuntini, Bruschetta, Antipasti, Verdure, Pasta, Pesce, Carne, Specials and a wine list. Every dish and price is available as text on the plain-text menu page.">
+  <figcaption>The printed dinner menu, shown as an image. <a href="text-menu.html">Read the same menu as text</a>, with dietary filters.</figcaption>
+ </figure>
+</section>
+<section class="band" aria-labelledby="about-title" data-section="intro" data-component="intro-band">
+ <h2 id="about-title" class="visually-hidden-until-wide">Trattoria Fico Nero</h2>
+ <p class="lead">A neighborhood trattoria with a short menu, a long table and a back garden. Cooking is simple, seasonal and Italian in spirit.</p>
+ <p><a class="button" href="reserve.html">Request a table (demo)</a> <a class="button secondary" href="owners.html">Meet the owners</a></p>
+</section>
+<div class="two-col">
+ <section class="band" aria-labelledby="address-title" data-section="address" data-component="contact-block">
+  <h2 id="address-title">INDIRIZZO</h2>
+  <h3 class="plain">27 Mulberry Alley, Lakeview Falls</h3>
+  <p>A fictional address. Step-free entrance from the street; a ramp leads to the garden.</p>
+ </section>
+ <section class="band" aria-labelledby="hours-title" data-section="opening-hours" data-component="hours-block">
+  <h2 id="hours-title">ORARI</h2>
+  <h3 class="plain">Lunedi al Giovedi &bull; 11:00am&ndash;11:00pm</h3>
+  <h3 class="plain">Venerdi, Sabato e Domenica &bull; 10:00am&ndash;11:00pm</h3>
+  <p><strong>Walk-ins always welcome.</strong></p>
+  <p class="open-status" data-open-status data-component="open-status"></p>
+ </section>
+</div>
+<section class="band" aria-labelledby="village-title" data-section="village" data-component="feature-panel">
+ <h1 class="h1-secondary" id="village-title">IT TAKES A VILLAGE</h1>
+ <p>We cook alongside local farmers, bakers and neighbors. See how we give back on the <a href="community.html">community page</a>.</p>
+</section>
+<section class="band" aria-labelledby="home-more-title" data-section="home-links" data-component="card-grid">
+ <h2 id="home-more-title">More from the house</h2>
+ <ul class="cards">
+  <li><a href="cocktails.html"><img src="assets/photo-1.svg" alt="" width="320" height="200"><span>Craft cocktails</span></a></li>
+  <li><a href="gatherings.html"><img src="assets/photo-2.svg" alt="" width="320" height="200"><span>Gatherings</span></a></li>
+  <li><a href="shop.html"><img src="assets/photo-3.svg" alt="" width="320" height="200"><span>Shop</span></a></li>
+  <li><a href="gallery.html"><img src="assets/photo-4.svg" alt="" width="320" height="200"><span>Gallery</span></a></li>
+ </ul>
+</section>
+</main>
+<footer class="site-footer" data-section="global-footer" data-component="site-footer">
+ <div class="footer-grid">
+  <section aria-labelledby="newsletter-title" data-section="newsletter" data-component="newsletter-form">
+   <h2 id="newsletter-title">Stay in touch</h2>
+   <p>Seasonal menus and event news, a few times a year. <strong>Demo:</strong> nothing is stored or sent.</p>
+   <form id="newsletter-form" novalidate data-validate data-demo-form="newsletter">
+    <div class="error-summary" tabindex="-1" hidden data-component="error-summary"></div>
+    <div class="field"><label for="nl-email">Email address</label><input id="nl-email" name="email" type="email" autocomplete="email" required></div>
+    <button type="submit">Subscribe (demo)</button>
+    <p class="form-status" role="status" data-status></p>
+   </form>
+  </section>
+  <nav aria-label="Footer" data-section="footer-navigation" data-component="footer-nav"><h2>Explore</h2><ul><li><a href="text-menu.html">Plain-text menu</a></li><li><a href="reserve.html">Reserve (demo)</a></li><li><a href="press.html">Press</a></li><li><a href="community.html">Community</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="accessibility.html">Accessibility</a></li><li><a href="search.html">Search</a></li></ul></nav>
+  <section aria-labelledby="footer-visit" data-section="footer-contact" data-component="contact-block">
+   <h2 id="footer-visit">Visit</h2>
+   <address>27 Mulberry Alley<br>Lakeview Falls (fictional)</address>
+   <p>ciao@ficonero.example</p>
+   <p>Comments and questions are welcome.</p>
+  </section>
+ </div>
+ <p class="legal">Trattoria Fico Nero is a fictional business created for a research dataset. Not a real restaurant. Inspired by the structure of a public restaurant site; no real names, logos or text are reproduced.</p>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

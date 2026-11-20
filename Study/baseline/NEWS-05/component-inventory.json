@@ -1,0 +1,83 @@
+[
+  {
+    "component": "site-header",
+    "selector": "header.site-header",
+    "pages": ["index.html", "nz.html", "world.html", "business.html", "sport.html", "entertainment.html", "politics.html", "crime.html", "election-2026.html", "video.html", "opinion.html", "lifestyle.html", "weather.html", "premium.html", "podcasts.html", "404.html"],
+    "behaviors": ["Sticky positioning", "Logo link to home"],
+    "keyboard": [],
+    "status": "implemented",
+    "validation": "semantic-html"
+  },
+  {
+    "component": "primary-nav",
+    "selector": "nav.primary-nav",
+    "pages": ["index.html", "nz.html", "world.html", "business.html", "sport.html", "entertainment.html", "politics.html", "crime.html", "election-2026.html", "video.html", "opinion.html", "lifestyle.html", "weather.html", "premium.html", "podcasts.html", "404.html"],
+    "behaviors": ["Mobile toggle", "Active state for current page"],
+    "keyboard": ["Escape closes mobile menu"],
+    "status": "implemented",
+    "validation": "semantic-html"
+  },
+  {
+    "component": "hero-section",
+    "selector": "section.hero-section",
+    "pages": ["index.html", "nz.html", "world.html", "business.html"],
+    "behaviors": ["Featured story display", "Side stories list"],
+    "keyboard": [],
+    "status": "implemented",
+    "validation": "semantic-html"
+  },
+  {
+    "component": "article-card-grid",
+    "selector": "div.article-grid",
+    "pages": ["index.html", "nz.html", "world.html", "business.html", "sport.html", "entertainment.html", "politics.html", "crime.html", "election-2026.html", "opinion.html", "lifestyle.html"],
+    "behaviors": ["Responsive grid layout", "Hover effects"],
+    "keyboard": [],
+    "status": "implemented",
+    "validation": "semantic-html"
+  },
+  {
+    "component": "tabs",
+    "selector": "div.tabs",
+    "pages": ["index.html", "nz.html", "world.html", "business.html", "sport.html", "entertainment.html", "politics.html", "crime.html", "election-2026.html", "opinion.html", "lifestyle.html"],
+    "behaviors": ["Tab switching", "Content filtering"],
+    "keyboard": ["ArrowLeft/Right to switch tabs", "Enter/Space to activate"],
+    "status": "implemented",
+    "validation": "aria"
+  },
+  {
+    "component": "sidebar",
+    "selector": "aside.sidebar",
+    "pages": ["index.html", "nz.html", "world.html", "business.html", "sport.html", "entertainment.html", "politics.html", "crime.html", "election-2026.html", "video.html", "opinion.html", "lifestyle.html", "weather.html", "premium.html", "podcasts.html"],
+    "behaviors": ["Trending items list", "Weather forecast (weather.html)"],
+    "keyboard": [],
+    "status": "implemented",
+    "validation": "semantic-html"
+  },
+  {
+    "component": "newsletter-signup",
+    "selector": "form.newsletter-form",
+    "pages": ["index.html"],
+    "behaviors": ["Email validation", "Simulated submission"],
+    "keyboard": ["Enter to submit"],
+    "status": "implemented",
+    "validation": "form-validation"
+  },
+  {
+    "component": "premium-gate",
+    "selector": "article.premium-overlay",
+    "pages": ["premium.html"],
+    "behaviors": ["Content blur/obscuration", "Subscribe button"],
+    "keyboard": ["Tab to subscribe button"],
+    "status": "implemented",
+    "validation": "semantic-html"
+  },
+  {
+    "component": "site-footer",
+    "selector": "footer.site-footer",
+    "pages": ["index.html", "nz.html", "world.html", "business.html", "sport.html", "entertainment.html", "politics.html", "crime.html", "election-2026.html", "video.html", "opinion.html", "lifestyle.html", "weather.html", "premium.html", "podcasts.html", "404.html"],
+    "behaviors": ["Link columns", "Copyright notice"],
+    "keyboard": [],
+    "status": "implemented",
+    "validation": "semantic-html"
+  }
+]

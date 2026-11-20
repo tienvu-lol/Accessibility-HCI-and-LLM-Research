@@ -1,0 +1,144 @@
+{
+  "protocol": "REPAIR-STUDY-V3",
+  "declared_at": "2026-11-19",
+  "declared_by": "Samhith Varma Yallamraju",
+  "note": "The runner MUST read every parameter from this file. Per-model configs are not consulted. Any parameter under `held_constant` differing between arms is a confound.",
+  "held_constant": {
+    "temperature": 0,
+    "max_tokens": 32000,
+    "reasoning": "disabled",
+    "top_p": 1,
+    "max_iterations": 3,
+    "convergence": "normalized output hash equals previous iteration (collapse whitespace, strip comments before hashing)",
+    "page_slice": "the files listed in sample/sites.csv `slice_files` for that site: index.html + form_page + its stylesheet(s). Do NOT hardcode css/styles.css - PORT-03 and PORT-04 use assets/styles.css.",
+    "retry": {
+      "max_retries": 2,
+      "backoff_ms": 2000
+    },
+    "truncation_guard": {
+      "require_closing_html": true,
+      "min_text_char_ratio": 0.5,
+      "on_failure": "mark status=failed; never keep a truncated output"
+    },
+    "output_contract": "one JSON evaluation object, then the complete rewritten files; no commentary, no markdown fences; all relative paths preserved",
+    "quantization_note": "Quantization differs by arm and is recorded per arm, not held constant - it is a property of the arm. Expect elevated truncation/malformed-output rates from Q4 arms; the truncation guard catches these and per-arm failure counts are a reportable result."
+  },
+  "arms": {
+    "A1": {
+      "model": "Opus 5.5",
+      "model_id": "claude-opus-5-5",
+      "family": "claude",
+      "provider": "TBD",
+      "base_url": null,
+      "api_key_env": "A1_API_KEY",
+      "model_version": "TBD",
+      "concurrency": 12
+    },
+    "A2": {
+      "model": "Sonnet 5.5",
+      "model_id": "claude-sonnet-5-5",
+      "family": "claude",
+      "provider": "TBD",
+      "base_url": null,
+      "api_key_env": "A2_API_KEY",
+      "model_version": "TBD",
+      "concurrency": 12
+    },
+    "A3": {
+      "model": "Astra",
+      "model_id": "TBD",
+      "family": "TBD",
+      "provider": "TBD",
+      "base_url": null,
+      "api_key_env": "A3_API_KEY",
+      "model_version": "TBD",
+      "concurrency": 12
+    },
+    "A4": {
+      "model": "Sol 6.1",
+      "model_id": "TBD",
+      "family": "TBD",
+      "provider": "TBD",
+      "base_url": null,
+      "api_key_env": "A4_API_KEY",
+      "model_version": "TBD",
+      "concurrency": 12
+    },
+    "A5": {
+      "model": "DeepSeek",
+      "model_id": "unsloth/DeepSeek-V4-Flash-0731-GGUF  (PENDING: confirm hosted vs GGUF)",
+      "family": "deepseek",
+      "provider": "vt-arc-falcon-llamacpp",
+      "base_url": "TBD (SSH tunnel)",
+      "api_key_env": "A5_API_KEY",
+      "model_version": "UD-Q4_K_XL",
+      "concurrency": "MEASURE FIRST - 1 GPU / 8 cores per session; compare completed calls/min at 4 vs 8 parallel",
+      "serving": "self-hosted, SECOND ARC session (own GPU, runs in parallel with A6)",
+      "selection_note": "Chosen over the R1 distills because R1-Distill-Qwen-* and R1-0528-Qwen3-8B are distills into Qwen and would collide with A6's family, and because R1-family models emit reasoning blocks that cannot be disabled, violating held_constant.reasoning.",
+      "quantization": "UD-Q4_K_XL",
+      "throughput_note": "720 calls at full depth. Depth-nest to 400 if projected runtime exceeds ~8h.",
+      "fallback": "depth-nest: depth 1 on all 60 + depth 3 on a stratified 20 = 400 calls",
+      "verify_before_use": "confirm context >= ~20K in and >= ~15K out; if it cannot emit 15K tokens of coherent HTML, reconsider R1-Distill-Qwen-32B and record the A5/A6 base-family collision as a limitation"
+    },
+    "A6": {
+      "model": "Qwen 3.6",
+      "model_id": "unsloth/Qwen3.6-35B-A3B-GGUF",
+      "family": "qwen",
+      "provider": "vt-arc-falcon-llamacpp",
+      "base_url": "TBD (SSH tunnel, e.g. http://localhost:8090/v1)",
+      "api_key_env": "A6_API_KEY",
+      "model_version": "Q4_K_M",
+      "concurrency": "MEASURE FIRST - test 8 before accepting 4; old max_concurrent_builds=4 was sized for 28-turn builds, not single-turn repair",
+      "quantization": "Q4_K_M",
+      "serving": "self-hosted",
+      "throughput_note": "720 calls at full depth. Fits a 6h window only if latency <= 2min at 4 concurrent, or <= 4min at 8. Run 5 real repair calls before committing to full depth.",
+      "fallback": "depth-nest: depth 1 on all 60 + depth 3 on a stratified 20 = 400 calls"
+    }
+  },
+  "judge": {
+    "model": "Gemini",
+    "model_id": "TBD",
+    "family": "gemini",
+    "provider": "TBD",
+    "api_key_env": "JUDGE_API_KEY",
+    "model_version": "TBD",
+    "temperature": 0,
+    "concurrency": 8,
+    "neutrality": "Gemini is not a repair arm and was not a generator group (claude / codex / open-source), so it has no self-preference on any arm.",
+    "task": "rank V1-V4 per question, 14 questions, ties permitted",
+    "calls": 360
+  },
+  "keys": {
+    "source": "environment variables only; never written to this repository or to run evidence",
+    "pending": [
+      "A5_API_KEY",
+      "A5_BASE_URL",
+      "A6_BASE_URL"
+    ],
+    "note": "A6_API_KEY issued 2026-11-19 (VT ARC session 22336989). Export in the shell; never commit."
+  },
+  "counts": {
+    "sites": 60,
+    "arms": 6,
+    "conditions": 4,
+    "max_iterations": 3,
+    "repair_calls_upper_bound": 4320,
+    "repaired_variants": 1440,
+    "variants_evaluated": 1500,
+    "judge_calls": 360,
+    "human_validation_items": 30
+  },
+  "schedule_risk": {
+    "binding_constraint": "self-hosted arms",
+    "measure_before_running": "5 real repair calls per self-hosted arm; compute calls * latency / concurrency",
+    "if_it_does_not_fit": [
+      "raise llama.cpp --parallel",
+      "depth-nest the self-hosted arms",
+      "cut to 30 sites"
+    ],
+    "parallelism": "A5 and A6 occupy separate ARC sessions with separate GPUs, so they run concurrently; generation wall clock is max(A5, A6, frontier~4h), not the sum.",
+    "start_order": "Launch A5 and A6 first - they are the long pole by 2-3x. A1-A4 finish in ~4h whenever started.",
+    "session_hygiene": "Both ARC sessions auto-terminate after 1h idle (already observed in models.json). Keepalive ping every ~20 min on each while any other arm is running. Delete both sessions when the run completes.",
+    "decision_rule": "After 5 real repair calls per self-hosted arm: calls * latency / concurrency. Over ~8h projected -> depth-nest that arm only; the two arms are independent."
+  }
+}

@@ -1,0 +1,689 @@
+{
+  "protocol_version": "1.0",
+  "replica_id": "REST-01",
+  "category": "restaurant",
+  "source_url": "https://www.viacarota.com/",
+  "components": [
+    {
+      "id": "skip-link",
+      "selector": "a.skip-link",
+      "pages": [
+        "404.html",
+        "accessibility.html",
+        "cart.html",
+        "cocktails.html",
+        "community.html",
+        "gallery.html",
+        "gatherings.html",
+        "index.html",
+        "owners.html",
+        "press.html",
+        "reserve.html",
+        "search.html",
+        "shop.html",
+        "text-menu.html"
+      ],
+      "behavior": [
+        "skip to main content"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-qc-only (axe + qc.js); manual keyboard/screen-reader testing not performed"
+    },
+    {
+      "id": "site-header",
+      "selector": "[data-component=\"site-header\"]",
+      "pages": [
+        "404.html",
+        "accessibility.html",
+        "cart.html",
+        "cocktails.html",
+        "community.html",
+        "gallery.html",
+        "gatherings.html",
+        "index.html",
+        "owners.html",
+        "press.html",
+        "reserve.html",
+        "search.html",
+        "shop.html",
+        "text-menu.html"
+      ],
+      "behavior": [
+        "brand link",
+        "utility bar"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "automated-qc-only (axe + qc.js); manual keyboard/screen-reader testing not performed"
+    },
+    {
+      "id": "announcement-bar",
+      "selector": "[data-component=\"announcement-bar\"]",
+      "pages": [
+        "404.html",
+        "accessibility.html",
+        "cart.html",
+        "cocktails.html",
+        "community.html",
+        "gallery.html",
+        "gatherings.html",
+        "index.html",
+        "owners.html",
+        "press.html",
+        "reserve.html",
+        "search.html",
+        "shop.html",
+        "text-menu.html"
+      ],
+      "behavior": [
+        "demo disclosure banner"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "automated-qc-only (axe + qc.js); manual keyboard/screen-reader testing not performed"
+    },
+    {
+      "id": "utility-bar",
+      "selector": "[data-component=\"utility-bar\"]",
+      "pages": [
+        "404.html",
+        "accessibility.html",
+        "cart.html",
+        "cocktails.html",
+        "community.html",
+        "gallery.html",
+        "gatherings.html",
+        "index.html",
+        "owners.html",
+        "press.html",
+        "reserve.html",
+        "search.html",
+        "shop.html",
+        "text-menu.html"
+      ],
+      "behavior": [
+        "plain-text menu link",
+        "search",
+        "menu toggle"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "automated-qc-only (axe + qc.js); manual keyboard/screen-reader testing not performed"
+    },
+    {
+      "id": "primary-nav",
+      "selector": "[data-component=\"primary-nav\"]",
+      "pages": [
+        "404.html",
+        "accessibility.html",
+        "cart.html",
+        "cocktails.html",
+        "community.html",
+        "gallery.html",
+        "gatherings.html",
+        "index.html",
+        "owners.html",
+        "press.html",
+        "reserve.html",
+        "search.html",
+        "shop.html",
+        "text-menu.html"
+      ],
+      "behavior": [
+        "desktop nav",
+        "mobile disclosure",
+        "aria-current"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "Escape closes mobile menu"
+      ],
+      "status": "implemented",
+      "validation": "automated-qc-only (axe + qc.js); manual keyboard/screen-reader testing not performed"
+    },
+    {
+      "id": "nav-toggle",
+      "selector": "[data-component=\"nav-toggle\"]",
+      "pages": [
+        "404.html",
+        "accessibility.html",
+        "cart.html",
+        "cocktails.html",
+        "community.html",
+        "gallery.html",
+        "gatherings.html",
+        "index.html",
+        "owners.html",
+        "press.html",
+        "reserve.html",
+        "search.html",
+        "shop.html",
+        "text-menu.html"
+      ],
+      "behavior": [
+        "aria-expanded disclosure below 48rem"
+      ],
+      "keyboard": [
+        "Enter",
+        "Space",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "automated-qc-only (axe + qc.js); manual keyboard/screen-reader testing not performed"
+    },
+    {
+      "id": "search-form",
+      "selector": "[data-component=\"search-form\"]",
+      "pages": [
+        "404.html",
+        "accessibility.html",
+        "cart.html",
+        "cocktails.html",
+        "community.html",
+        "gallery.html",
+        "gatherings.html",
+        "index.html",
+        "owners.html",
+        "press.html",
+        "reserve.html",
+        "search.html",
+        "shop.html",
+        "text-menu.html"
+      ],
+      "behavior": [
+        "GET to search.html"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-qc-only (axe + qc.js); manual keyboard/screen-reader testing not performed"
+    },
+    {
+      "id": "search-results",
+      "selector": "[data-component=\"search-results\"]",
+      "pages": [
+        "search.html"
+      ],
+      "behavior": [
+        "local inline index",
+        "empty state"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-qc-only (axe + qc.js); manual keyboard/screen-reader testing not performed"
+    },
+    {
+      "id": "breadcrumb",
+      "selector": "[data-component=\"breadcrumb\"]",
+      "pages": [
+        "accessibility.html",
+        "cart.html",
+        "cocktails.html",
+        "community.html",
+        "gallery.html",
+        "gatherings.html",
+        "owners.html",
+        "press.html",
+        "reserve.html",
+        "search.html",
+        "shop.html",
+        "text-menu.html"
+      ],
+      "behavior": [
+        "aria-current page"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "automated-qc-only (axe + qc.js); manual keyboard/screen-reader testing not performed"
+    },
+    {
+      "id": "image-menu",
+      "selector": "[data-component=\"image-menu\"]",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "menu as SVG image with descriptive alt and adjacent link to text menu"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-qc-only (axe + qc.js); manual keyboard/screen-reader testing not performed"
+    },
+    {
+      "id": "text-menu-alternative",
+      "selector": "[data-component=\"text-menu-alternative\"]",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "link to plain-text menu placed before the image"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-qc-only (axe + qc.js); manual keyboard/screen-reader testing not performed"
+    },
+    {
+      "id": "text-menu",
+      "selector": "[data-component=\"text-menu\"]",
+      "pages": [
+        "text-menu.html"
+      ],
+      "behavior": [
+        "real-text headings Spuntini..Lista del vini",
+        "prices",
+        "dietary badges"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "automated-qc-only (axe + qc.js); manual keyboard/screen-reader testing not performed"
+    },
+    {
+      "id": "menu-section",
+      "selector": "[data-component=\"menu-section\"]",
+      "pages": [
+        "text-menu.html"
+      ],
+      "behavior": [
+        "grouped dishes"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "automated-qc-only (axe + qc.js); manual keyboard/screen-reader testing not performed"
+    },
+    {
+      "id": "menu-filter",
+      "selector": "[data-component=\"menu-filter\"]",
+      "pages": [
+        "text-menu.html"
+      ],
+      "behavior": [
+        "text search",
+        "dietary checkboxes",
+        "live count",
+        "empty state",
+        "clear"
+      ],
+      "keyboard": [
+        "Tab",
+        "Space",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-qc-only (axe + qc.js); manual keyboard/screen-reader testing not performed"
+    },
+    {
+      "id": "hours-block",
+      "selector": "[data-component=\"hours-block\"]",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "posted hours"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "automated-qc-only (axe + qc.js); manual keyboard/screen-reader testing not performed"
+    },
+    {
+      "id": "open-status",
+      "selector": "[data-component=\"open-status\"]",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "open/closed from device clock (demo addition)"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "automated-qc-only (axe + qc.js); manual keyboard/screen-reader testing not performed"
+    },
+    {
+      "id": "contact-block",
+      "selector": "[data-component=\"contact-block\"]",
+      "pages": [
+        "404.html",
+        "accessibility.html",
+        "cart.html",
+        "cocktails.html",
+        "community.html",
+        "gallery.html",
+        "gatherings.html",
+        "index.html",
+        "owners.html",
+        "press.html",
+        "reserve.html",
+        "search.html",
+        "shop.html",
+        "text-menu.html"
+      ],
+      "behavior": [
+        "address and email"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "automated-qc-only (axe + qc.js); manual keyboard/screen-reader testing not performed"
+    },
+    {
+      "id": "newsletter-form",
+      "selector": "[data-component=\"newsletter-form\"]",
+      "pages": [
+        "404.html",
+        "accessibility.html",
+        "cart.html",
+        "cocktails.html",
+        "community.html",
+        "gallery.html",
+        "gatherings.html",
+        "index.html",
+        "owners.html",
+        "press.html",
+        "reserve.html",
+        "search.html",
+        "shop.html",
+        "text-menu.html"
+      ],
+      "behavior": [
+        "validated demo form",
+        "inline error",
+        "error summary",
+        "demo success"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-qc-only (axe + qc.js); manual keyboard/screen-reader testing not performed"
+    },
+    {
+      "id": "error-summary",
+      "selector": "[data-component=\"error-summary\"]",
+      "pages": [
+        "accessibility.html",
+        "cart.html",
+        "cocktails.html",
+        "community.html",
+        "gallery.html",
+        "gatherings.html",
+        "index.html",
+        "owners.html",
+        "press.html",
+        "reserve.html",
+        "search.html",
+        "shop.html",
+        "text-menu.html"
+      ],
+      "behavior": [
+        "focus moves to summary on invalid submit",
+        "links focus fields"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-qc-only (axe + qc.js); manual keyboard/screen-reader testing not performed"
+    },
+    {
+      "id": "reservation-form",
+      "selector": "[data-component=\"reservation-form\"]",
+      "pages": [
+        "reserve.html"
+      ],
+      "behavior": [
+        "simulation only",
+        "date not in past",
+        "select validation"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-qc-only (axe + qc.js); manual keyboard/screen-reader testing not performed"
+    },
+    {
+      "id": "inquiry-form",
+      "selector": "[data-component=\"inquiry-form\"]",
+      "pages": [
+        "gatherings.html"
+      ],
+      "behavior": [
+        "simulation only",
+        "number range validation"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-qc-only (axe + qc.js); manual keyboard/screen-reader testing not performed"
+    },
+    {
+      "id": "product-grid",
+      "selector": "[data-component=\"product-grid\"]",
+      "pages": [
+        "shop.html"
+      ],
+      "behavior": [
+        "add to cart with live status"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "automated-qc-only (axe + qc.js); manual keyboard/screen-reader testing not performed"
+    },
+    {
+      "id": "cart-summary",
+      "selector": "[data-component=\"cart-summary\"]",
+      "pages": [
+        "cart.html"
+      ],
+      "behavior": [
+        "quantity edit",
+        "remove",
+        "empty state",
+        "demo checkout"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-qc-only (axe + qc.js); manual keyboard/screen-reader testing not performed"
+    },
+    {
+      "id": "accordion",
+      "selector": "[data-component=\"accordion\"]",
+      "pages": [
+        "cocktails.html"
+      ],
+      "behavior": [
+        "aria-expanded disclosures",
+        "expand all"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "automated-qc-only (axe + qc.js); manual keyboard/screen-reader testing not performed"
+    },
+    {
+      "id": "gallery",
+      "selector": "[data-component=\"gallery\"]",
+      "pages": [
+        "gallery.html"
+      ],
+      "behavior": [
+        "thumbnail grid opens dialog"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "automated-qc-only (axe + qc.js); manual keyboard/screen-reader testing not performed"
+    },
+    {
+      "id": "dialog",
+      "selector": "[data-component=\"dialog\"]",
+      "pages": [
+        "gallery.html"
+      ],
+      "behavior": [
+        "native dialog showModal",
+        "focus returns to opener"
+      ],
+      "keyboard": [
+        "Escape",
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-qc-only (axe + qc.js); manual keyboard/screen-reader testing not performed"
+    },
+    {
+      "id": "article-list",
+      "selector": "[data-component=\"article-list\"]",
+      "pages": [
+        "press.html",
+        "community.html"
+      ],
+      "behavior": [
+        "content lists"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "automated-qc-only (axe + qc.js); manual keyboard/screen-reader testing not performed"
+    },
+    {
+      "id": "profile",
+      "selector": "[data-component=\"profile\"]",
+      "pages": [
+        "owners.html"
+      ],
+      "behavior": [
+        "owners story"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "automated-qc-only (axe + qc.js); manual keyboard/screen-reader testing not performed"
+    },
+    {
+      "id": "feature-panel",
+      "selector": "[data-component=\"feature-panel\"]",
+      "pages": [
+        "index.html",
+        "gatherings.html"
+      ],
+      "behavior": [
+        "content band"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "automated-qc-only (axe + qc.js); manual keyboard/screen-reader testing not performed"
+    },
+    {
+      "id": "card-grid",
+      "selector": "[data-component=\"card-grid\"]",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "image link cards"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-qc-only (axe + qc.js); manual keyboard/screen-reader testing not performed"
+    },
+    {
+      "id": "footer-nav",
+      "selector": "[data-component=\"footer-nav\"]",
+      "pages": [
+        "404.html",
+        "accessibility.html",
+        "cart.html",
+        "cocktails.html",
+        "community.html",
+        "gallery.html",
+        "gatherings.html",
+        "index.html",
+        "owners.html",
+        "press.html",
+        "reserve.html",
+        "search.html",
+        "shop.html",
+        "text-menu.html"
+      ],
+      "behavior": [
+        "footer links"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-qc-only (axe + qc.js); manual keyboard/screen-reader testing not performed"
+    },
+    {
+      "id": "site-footer",
+      "selector": "[data-component=\"site-footer\"]",
+      "pages": [
+        "404.html",
+        "accessibility.html",
+        "cart.html",
+        "cocktails.html",
+        "community.html",
+        "gallery.html",
+        "gatherings.html",
+        "index.html",
+        "owners.html",
+        "press.html",
+        "reserve.html",
+        "search.html",
+        "shop.html",
+        "text-menu.html"
+      ],
+      "behavior": [
+        "footer"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "automated-qc-only (axe + qc.js); manual keyboard/screen-reader testing not performed"
+    }
+  ]
+}

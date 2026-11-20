@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gift Guide | Pebblebloom (demo)</title>
+<meta name="description" content="Pebblebloom is a fictional beauty store used for research. Demonstration only.">
+<link rel="icon" href="assets/mark.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/styles.css">
+<noscript><style>.site-nav{display:block!important}.submenu[hidden]{display:block}.filter-panel{display:block}.menu-toggle{display:none}</style></noscript>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header" data-section="global-header" data-component="site-header">
+<div class="demo-strip" data-section="demo-notice" data-component="demo-banner"><p><strong>Demonstration site.</strong> Pebblebloom is a fictional store built for research. Nothing here is sold, charged or shipped, and prices are illustrative.</p></div>
+<div class="header-row">
+<a class="brand" href="index.html"><img src="assets/mark.svg" alt="" width="30" height="30">Pebblebloom<span class="sr-only"> home</span></a>
+<div class="header-tools">
+<button type="button" class="icon-btn menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="site-nav" data-component="mobile-menu-toggle">Menu</button>
+<a class="icon-btn" href="account.html" style="text-decoration:none">Account</a>
+<button type="button" class="icon-btn" id="cart-button" data-component="cart-button">Bag<span class="count" data-cart-count>0</span><span class="sr-only"> items, open demo bag</span></button>
+</div>
+<form class="search-form" action="search.html" method="get" role="search" data-section="site-search" data-component="search-form"><label class="sr-only" for="header-search-input">Search products</label><input type="search" id="header-search-input" name="q" placeholder="Search the demo catalog" autocomplete="off"><button type="submit">Search</button></form>
+<nav class="site-nav" id="site-nav" aria-label="Primary" data-section="global-navigation" data-component="primary-nav"><ul>
+<li class="nav-item" data-component="nav-dropdown"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="submenu-shop">Shop<span class="sr-only"> submenu</span></button>
+<ul class="submenu" id="submenu-shop" hidden><li><a href="shop.html">All products</a></li><li><a href="bestsellers.html">Best-sellers</a></li></ul></li>
+<li class="nav-item"><a class="nav-link" href="gift-guide.html" aria-current="page">Gift Guide</a></li>
+<li class="nav-item" data-component="nav-dropdown"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="submenu-fragrance">Fragrance<span class="sr-only"> submenu</span></button>
+<ul class="submenu" id="submenu-fragrance" hidden><li><a href="product.html?id=marigold-hour">Marigold Hour</a></li><li><a href="product.html?id=salt-and-linen">Salt and Linen</a></li><li><a href="product.html?id=night-orchard">Night Orchard</a></li><li><a href="product.html?id=paper-moon">Paper Moon</a></li><li><a href="product.html?id=ember-tea">Ember Tea</a></li><li><a href="fragrance.html?type=Sets">Save with Sets</a></li><li><a href="fragrance.html" class="submenu__all">All Fragrance</a></li></ul></li>
+<li class="nav-item" data-component="nav-dropdown"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="submenu-makeup">Makeup<span class="sr-only"> submenu</span></button>
+<ul class="submenu" id="submenu-makeup" hidden><li><a href="makeup.html?type=Face">Face</a></li><li><a href="makeup.html?type=Lip">Lip</a></li><li><a href="makeup.html?type=Brow">Brow</a></li><li><a href="makeup.html?type=Eye">Eye</a></li><li><a href="makeup.html?type=Cheek">Cheek</a></li><li><a href="makeup.html?type=Sets">Save with Sets</a></li><li><a href="makeup.html" class="submenu__all">All Makeup</a></li></ul></li>
+<li class="nav-item" data-component="nav-dropdown"><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="submenu-skincare">Skincare<span class="sr-only"> submenu</span></button>
+<ul class="submenu" id="submenu-skincare" hidden><li><a href="skincare.html?type=Moisturizers">Moisturizers</a></li><li><a href="skincare.html?type=Cleansers">Cleansers</a></li><li><a href="skincare.html?type=Treatments">Treatments</a></li><li><a href="skincare.html?type=Sets">Save with Sets</a></li><li><a href="skincare.html" class="submenu__all">All Skincare</a></li></ul></li>
+</ul></nav>
+</div>
+</header>
+<main id="main-content" data-section="main-content" tabindex="-1">
+
+<div class="wrap">
+<div class="page-head"><nav class="breadcrumb" aria-label="Breadcrumb" data-section="breadcrumb" data-component="breadcrumb"><ol><li><a href="index.html">Home</a></li><li><span aria-current="page">Gift Guide</span></li></ol></nav><h1>The Gift Guide</h1><p class="lede">Hand-picked sample products for gifting. This is a fictional guide; no gifts are sent from this site.</p></div>
+<section class="band" aria-labelledby="g1" data-section="gift-sets" data-component="product-grid"><h2 id="g1">Sets</h2><ul class="product-grid product-grid--4" data-gift-ids="easy-routine-set,weekend-face-kit,sampler-set"></ul></section>
+<section class="band" aria-labelledby="g2" data-section="gift-small" data-component="product-grid"><h2 id="g2">Small things under $20</h2><ul class="product-grid product-grid--4" data-gift-ids="melt-balm-stick,glasshouse-lip-gloss,softwick-balm-pot,pocket-liner,dawn-rinse-gel-wash,satin-lip-pencil"></ul></section>
+<section class="band" aria-labelledby="g3" data-section="gift-scents" data-component="product-grid"><h2 id="g3">For the scent collector</h2><ul class="product-grid product-grid--4" data-gift-ids="marigold-hour,night-orchard,ember-tea"></ul></section>
+</div>
+</main>
+<footer class="site-footer" data-section="global-footer" data-component="site-footer">
+<div class="wrap">
+<div class="footer-grid">
+<div data-section="footer-brand"><p><strong>Pebblebloom</strong></p><p>Easy routines, honest colour. A fictional single-brand beauty store used as a research replica.</p></div>
+<div data-section="footer-help" data-component="footer-link-group"><h2>How can we help?</h2><ul>
+<li><a href="returns.html">Returns, exchanges and help</a></li>
+<li><a href="mailto:hello@pebblebloom.example">hello@pebblebloom.example</a></li>
+<li>Phone: 555-0142 (fictional)</li></ul></div>
+<div data-section="footer-shop" data-component="footer-link-group"><h2>Shop</h2><ul>
+<li><a href="shop.html">All products</a></li><li><a href="bestsellers.html">Best-sellers</a></li><li><a href="gift-guide.html">Gift Guide</a></li></ul></div>
+<div data-section="footer-account" data-component="footer-link-group"><h2>Your account</h2><ul>
+<li><a href="account.html">Sign in (demo)</a></li><li><a href="cart.html">Demo bag</a></li><li><a href="checkout.html">Demo checkout</a></li></ul></div>
+</div>
+<p class="footer-fine">Fictional demonstration site for an accessibility research dataset. All products, shade names, prices, ratings and contact details are invented sample data. No orders are placed.</p>
+</div>
+</footer>
+<dialog class="drawer" id="cart-drawer" aria-labelledby="drawer-title" data-section="cart-drawer" data-component="cart-drawer">
+<div class="drawer__inner">
+<div class="drawer__head"><h2 id="drawer-title">Your demo bag</h2><button type="button" class="icon-btn" id="drawer-close">Close<span class="sr-only"> demo bag</span></button></div>
+<div class="drawer__body" data-cart-lines><p>Loading your bag...</p></div>
+<div class="drawer__foot" data-cart-hide-empty hidden>
+<p class="summary-row" style="font-family:Arial,sans-serif"><span>Subtotal</span><strong data-cart-subtotal>$0.00</strong></p>
+<p class="muted" style="font:.85rem Arial,sans-serif;margin:0">Demo bag: no payment is taken and nothing ships.</p>
+<a class="btn btn--ghost btn--block" href="cart.html">View bag</a>
+<a class="btn btn--block" href="checkout.html">Go to demo checkout</a>
+</div>
+</div>
+</dialog>
+<div id="live-status" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></div>
+<script src="js/main.js"></script>
+</body>
+</html>

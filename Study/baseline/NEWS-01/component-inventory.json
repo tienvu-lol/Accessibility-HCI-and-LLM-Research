@@ -1,0 +1,733 @@
+{
+  "protocol_version": "1.0",
+  "replica_id": "NEWS-01",
+  "category": "news",
+  "source_url": "https://www.theguardian.com/us",
+  "components": [
+    {
+      "id": "article",
+      "selector": "[data-component='article']",
+      "pages": [
+        "article.html"
+      ],
+      "behavior": [
+        "article with fictional inline notice, kicker, h1, standfirst, byline, figure, body"
+      ],
+      "keyboard": [
+        "Tab, Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-checks-partial"
+    },
+    {
+      "id": "article-body",
+      "selector": "[data-component='article-body']",
+      "pages": [
+        "article.html"
+      ],
+      "behavior": [
+        "article text at readable measure with h2 subheads"
+      ],
+      "keyboard": [
+        "static"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-checks-partial"
+    },
+    {
+      "id": "article-figure",
+      "selector": "[data-component='article-figure']",
+      "pages": [
+        "article.html"
+      ],
+      "behavior": [
+        "abstract placeholder figure with caption"
+      ],
+      "keyboard": [
+        "static"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-checks-partial"
+    },
+    {
+      "id": "breadcrumb",
+      "selector": "[data-component='breadcrumb']",
+      "pages": [
+        "abroad.html",
+        "business.html",
+        "culture.html",
+        "lifestyle.html",
+        "newsletters.html",
+        "opinion.html",
+        "orravia.html",
+        "podcasts.html",
+        "search.html",
+        "sport.html",
+        "support.html",
+        "technology.html"
+      ],
+      "behavior": [
+        "breadcrumb trail"
+      ],
+      "keyboard": [
+        "Tab, Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-checks-partial"
+    },
+    {
+      "id": "byline",
+      "selector": "[data-component='byline']",
+      "pages": [
+        "article.html"
+      ],
+      "behavior": [
+        "byline and dateline of invented author and invented place"
+      ],
+      "keyboard": [
+        "static"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-checks-partial"
+    },
+    {
+      "id": "demo-success",
+      "selector": "[data-component='demo-success']",
+      "pages": [
+        "newsletters.html",
+        "support.html"
+      ],
+      "behavior": [
+        "demo success panel that receives focus"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-checks-partial"
+    },
+    {
+      "id": "episode",
+      "selector": "[data-component='episode']",
+      "pages": [
+        "podcasts.html"
+      ],
+      "behavior": [
+        "episode row with Play (demo) toggle button"
+      ],
+      "keyboard": [
+        "Enter, Space"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-checks-partial"
+    },
+    {
+      "id": "episode-list",
+      "selector": "[data-component='episode-list']",
+      "pages": [
+        "podcasts.html"
+      ],
+      "behavior": [
+        "group of invented podcast episodes"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-checks-partial"
+    },
+    {
+      "id": "error-summary",
+      "selector": "[data-component='error-summary']",
+      "pages": [
+        "newsletters.html",
+        "support.html"
+      ],
+      "behavior": [
+        "error summary receiving focus on failed submit with links to fields"
+      ],
+      "keyboard": [
+        "Tab, Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-checks-partial"
+    },
+    {
+      "id": "fictional-notice",
+      "selector": "[data-component='fictional-notice']",
+      "pages": [
+        "404.html",
+        "abroad.html",
+        "article.html",
+        "business.html",
+        "culture.html",
+        "index.html",
+        "lifestyle.html",
+        "newsletters.html",
+        "opinion.html",
+        "orravia.html",
+        "podcasts.html",
+        "search.html",
+        "sport.html",
+        "support.html",
+        "technology.html"
+      ],
+      "behavior": [
+        "persistent visible fictional-publication notice (header, article inline, footer)"
+      ],
+      "keyboard": [
+        "static text, no interaction"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-checks-partial"
+    },
+    {
+      "id": "filter-form",
+      "selector": "[data-component='filter-form']",
+      "pages": [
+        "abroad.html",
+        "business.html",
+        "culture.html",
+        "lifestyle.html",
+        "opinion.html",
+        "orravia.html",
+        "sport.html",
+        "technology.html"
+      ],
+      "behavior": [
+        "live text filter over a section's stories with polite status and empty state"
+      ],
+      "keyboard": [
+        "Type, Tab, Enter on Clear"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-checks-partial"
+    },
+    {
+      "id": "footer-group",
+      "selector": "[data-component='footer-group']",
+      "pages": [
+        "404.html",
+        "abroad.html",
+        "article.html",
+        "business.html",
+        "culture.html",
+        "index.html",
+        "lifestyle.html",
+        "newsletters.html",
+        "opinion.html",
+        "orravia.html",
+        "podcasts.html",
+        "search.html",
+        "sport.html",
+        "support.html",
+        "technology.html"
+      ],
+      "behavior": [
+        "footer link group"
+      ],
+      "keyboard": [
+        "Tab, Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-checks-partial"
+    },
+    {
+      "id": "front-section",
+      "selector": "[data-component='front-section']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "home front section with heading, view-all link and Hide/Show button"
+      ],
+      "keyboard": [
+        "Tab, Enter, Space"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-checks-partial"
+    },
+    {
+      "id": "hero-story",
+      "selector": "[data-component='hero-story']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "top story hero card"
+      ],
+      "keyboard": [
+        "Tab, Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-checks-partial"
+    },
+    {
+      "id": "masthead",
+      "selector": "[data-component='masthead']",
+      "pages": [
+        "404.html",
+        "abroad.html",
+        "article.html",
+        "business.html",
+        "culture.html",
+        "index.html",
+        "lifestyle.html",
+        "newsletters.html",
+        "opinion.html",
+        "orravia.html",
+        "podcasts.html",
+        "search.html",
+        "sport.html",
+        "support.html",
+        "technology.html"
+      ],
+      "behavior": [
+        "fictional wordmark linking to front page"
+      ],
+      "keyboard": [
+        "Tab, Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-checks-partial"
+    },
+    {
+      "id": "mega-menu",
+      "selector": "[data-component='mega-menu']",
+      "pages": [
+        "404.html",
+        "abroad.html",
+        "article.html",
+        "business.html",
+        "culture.html",
+        "index.html",
+        "lifestyle.html",
+        "newsletters.html",
+        "opinion.html",
+        "orravia.html",
+        "podcasts.html",
+        "search.html",
+        "sport.html",
+        "support.html",
+        "technology.html"
+      ],
+      "behavior": [
+        "expanded menu panel grouped News/Opinion/Sport/Culture/Lifestyle/More; only local pages"
+      ],
+      "keyboard": [
+        "Tab, Enter, Escape"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-checks-partial"
+    },
+    {
+      "id": "membership-form",
+      "selector": "[data-component='membership-form']",
+      "pages": [
+        "support.html"
+      ],
+      "behavior": [
+        "simulated membership form with validation, error summary and focus handling"
+      ],
+      "keyboard": [
+        "Tab, arrow keys on radios, Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-checks-partial"
+    },
+    {
+      "id": "menu-group",
+      "selector": "[data-component='menu-group']",
+      "pages": [
+        "404.html",
+        "abroad.html",
+        "article.html",
+        "business.html",
+        "culture.html",
+        "index.html",
+        "lifestyle.html",
+        "newsletters.html",
+        "opinion.html",
+        "orravia.html",
+        "podcasts.html",
+        "search.html",
+        "sport.html",
+        "support.html",
+        "technology.html"
+      ],
+      "behavior": [
+        "group of links in the expanded menu"
+      ],
+      "keyboard": [
+        "Tab, Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-checks-partial"
+    },
+    {
+      "id": "menu-toggle",
+      "selector": "[data-component='menu-toggle']",
+      "pages": [
+        "404.html",
+        "abroad.html",
+        "article.html",
+        "business.html",
+        "culture.html",
+        "index.html",
+        "lifestyle.html",
+        "newsletters.html",
+        "opinion.html",
+        "orravia.html",
+        "podcasts.html",
+        "search.html",
+        "sport.html",
+        "support.html",
+        "technology.html"
+      ],
+      "behavior": [
+        "disclosure button with aria-expanded controlling the expanded menu"
+      ],
+      "keyboard": [
+        "Enter, Space, Escape"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-checks-partial"
+    },
+    {
+      "id": "newsletter-form",
+      "selector": "[data-component='newsletter-form']",
+      "pages": [
+        "newsletters.html"
+      ],
+      "behavior": [
+        "simulated newsletter signup with validation, error summary and focus handling"
+      ],
+      "keyboard": [
+        "Tab, Space, Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-checks-partial"
+    },
+    {
+      "id": "newsletter-promo",
+      "selector": "[data-component='newsletter-promo']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "newsletter promo band linking to newsletters.html"
+      ],
+      "keyboard": [
+        "Tab, Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-checks-partial"
+    },
+    {
+      "id": "primary-nav",
+      "selector": "[data-component='primary-nav']",
+      "pages": [
+        "404.html",
+        "abroad.html",
+        "article.html",
+        "business.html",
+        "culture.html",
+        "index.html",
+        "lifestyle.html",
+        "newsletters.html",
+        "opinion.html",
+        "orravia.html",
+        "podcasts.html",
+        "search.html",
+        "sport.html",
+        "support.html",
+        "technology.html"
+      ],
+      "behavior": [
+        "primary navigation with section sub-nav and All sections disclosure"
+      ],
+      "keyboard": [
+        "Tab, Enter, Space",
+        "Escape closes the menu"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-checks-partial"
+    },
+    {
+      "id": "related-items",
+      "selector": "[data-component='related-items']",
+      "pages": [
+        "article.html"
+      ],
+      "behavior": [
+        "related stories from the same section"
+      ],
+      "keyboard": [
+        "Tab, Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-checks-partial"
+    },
+    {
+      "id": "results-list",
+      "selector": "[data-component='results-list']",
+      "pages": [
+        "search.html"
+      ],
+      "behavior": [
+        "search results with polite status and empty state"
+      ],
+      "keyboard": [
+        "Tab, Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-checks-partial"
+    },
+    {
+      "id": "search-form",
+      "selector": "[data-component='search-form']",
+      "pages": [
+        "404.html",
+        "abroad.html",
+        "article.html",
+        "business.html",
+        "culture.html",
+        "index.html",
+        "lifestyle.html",
+        "newsletters.html",
+        "opinion.html",
+        "orravia.html",
+        "podcasts.html",
+        "search.html",
+        "sport.html",
+        "support.html",
+        "technology.html"
+      ],
+      "behavior": [
+        "search forms (header form; page form on search.html) over inline demo data"
+      ],
+      "keyboard": [
+        "Tab, type, Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-checks-partial"
+    },
+    {
+      "id": "section-hide-button",
+      "selector": "[data-component='section-hide-button']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "Hide/Show toggle with aria-expanded and polite announcement"
+      ],
+      "keyboard": [
+        "Enter, Space"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-checks-partial"
+    },
+    {
+      "id": "section-subnav",
+      "selector": "[data-component='section-subnav']",
+      "pages": [
+        "404.html",
+        "abroad.html",
+        "article.html",
+        "business.html",
+        "culture.html",
+        "index.html",
+        "lifestyle.html",
+        "newsletters.html",
+        "opinion.html",
+        "orravia.html",
+        "podcasts.html",
+        "search.html",
+        "sport.html",
+        "support.html",
+        "technology.html"
+      ],
+      "behavior": [
+        "inline section links, desktop only, aria-current on active page"
+      ],
+      "keyboard": [
+        "Tab, Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-checks-partial"
+    },
+    {
+      "id": "site-footer",
+      "selector": "[data-component='site-footer']",
+      "pages": [
+        "404.html",
+        "abroad.html",
+        "article.html",
+        "business.html",
+        "culture.html",
+        "index.html",
+        "lifestyle.html",
+        "newsletters.html",
+        "opinion.html",
+        "orravia.html",
+        "podcasts.html",
+        "search.html",
+        "sport.html",
+        "support.html",
+        "technology.html"
+      ],
+      "behavior": [
+        "footer with grouped local links and fictional notice"
+      ],
+      "keyboard": [
+        "Tab, Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-checks-partial"
+    },
+    {
+      "id": "site-header",
+      "selector": "[data-component='site-header']",
+      "pages": [
+        "404.html",
+        "abroad.html",
+        "article.html",
+        "business.html",
+        "culture.html",
+        "index.html",
+        "lifestyle.html",
+        "newsletters.html",
+        "opinion.html",
+        "orravia.html",
+        "podcasts.html",
+        "search.html",
+        "sport.html",
+        "support.html",
+        "technology.html"
+      ],
+      "behavior": [
+        "global header region"
+      ],
+      "keyboard": [
+        "Tab order: skip link, notice, utility links, search, brand, nav"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-checks-partial"
+    },
+    {
+      "id": "story-card",
+      "selector": "[data-component='story-card']",
+      "pages": [
+        "abroad.html",
+        "article.html",
+        "business.html",
+        "culture.html",
+        "index.html",
+        "lifestyle.html",
+        "opinion.html",
+        "orravia.html",
+        "search.html",
+        "sport.html",
+        "technology.html"
+      ],
+      "behavior": [
+        "story card linking to article.html?id=..."
+      ],
+      "keyboard": [
+        "Tab, Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-checks-partial"
+    },
+    {
+      "id": "story-list",
+      "selector": "[data-component='story-list']",
+      "pages": [
+        "abroad.html",
+        "business.html",
+        "culture.html",
+        "lifestyle.html",
+        "opinion.html",
+        "orravia.html",
+        "sport.html",
+        "technology.html"
+      ],
+      "behavior": [
+        "grid of story cards for a section"
+      ],
+      "keyboard": [
+        "Tab, Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-checks-partial"
+    },
+    {
+      "id": "support-promo",
+      "selector": "[data-component='support-promo']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "support/membership promo band (simulation)"
+      ],
+      "keyboard": [
+        "Tab, Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-checks-partial"
+    },
+    {
+      "id": "tabs",
+      "selector": "[data-component='tabs']",
+      "pages": [
+        "abroad.html",
+        "article.html",
+        "business.html",
+        "culture.html",
+        "index.html",
+        "lifestyle.html",
+        "opinion.html",
+        "orravia.html",
+        "sport.html",
+        "technology.html"
+      ],
+      "behavior": [
+        "Latest / Most read tab pattern (roles, aria-selected, roving tabindex, focusable tabpanel)"
+      ],
+      "keyboard": [
+        "Tab, ArrowLeft, ArrowRight, Home, End"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-checks-partial"
+    },
+    {
+      "id": "utility-bar",
+      "selector": "[data-component='utility-bar']",
+      "pages": [
+        "404.html",
+        "abroad.html",
+        "article.html",
+        "business.html",
+        "culture.html",
+        "index.html",
+        "lifestyle.html",
+        "newsletters.html",
+        "opinion.html",
+        "orravia.html",
+        "podcasts.html",
+        "search.html",
+        "sport.html",
+        "support.html",
+        "technology.html"
+      ],
+      "behavior": [
+        "top bar with Newsletters and Support links plus search"
+      ],
+      "keyboard": [
+        "Tab, Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-checks-partial"
+    }
+  ]
+}

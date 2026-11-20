@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Menu | Cinder Ridge Smokehouse</title>
+<meta name="description" content="Browse the full barbecue menu with dietary filters, search and a demo pre-order tray.">
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<div class="announce" data-section="announcement-bar" data-component="announcement-bar" role="region" aria-label="Announcement">
+  <div class="wrap"><p>Holiday party and catering dates are filling up. <a href="private-events.html">Send a demo inquiry for a December date.</a></p><button type="button" aria-label="Dismiss announcement"><span aria-hidden="true">&times;</span></button></div>
+</div>
+<header class="site-header" data-section="global-header" data-component="site-header">
+  <div class="wrap bar">
+    <a class="brand" href="index.html"><img src="assets/logo.svg" alt="" width="44" height="44"><span>Cinder Ridge Smokehouse</span></a>
+    <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="nav-wrap">Menu</button>
+    <div class="nav-wrap" id="nav-wrap">
+      <nav aria-label="Primary" class="primary-nav" data-section="global-navigation" data-component="primary-nav"><ul><li><a href="visit-us.html">Visit Us</a></li><li><a href="menu.html" aria-current="page">Menu</a></li><li><a href="sauces-rubs.html">Sauces & Rubs</a></li><li><a href="about.html">About</a></li><li><a href="gift-cards.html">Gift Cards</a></li><li><a href="private-events.html">Private Events</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
+      <nav aria-label="Cart" class="utility-nav" data-section="utility-navigation" data-component="utility-nav"><ul><li><a href="cart.html">Cart (<span data-cart-count>0</span><span class="visually-hidden"> items</span>)</a></li></ul></nav>
+    </div>
+  </div>
+  <div class="status-strip" data-section="open-status" data-component="open-status-indicator"><div class="wrap">
+    <span class="chip" data-status-chip data-state="closed"><span class="dot" aria-hidden="true"></span><span class="chip-text">Checking hours</span></span>
+    <small data-status-sub></small>
+  </div></div>
+</header>
+<div id="live-region" class="visually-hidden" role="status" aria-live="polite"></div>
+<main id="main-content" data-section="main-content">
+<div class="page-hero" data-section="page-hero" data-component="page-hero"><div class="wrap"><nav class="crumbs" aria-label="Breadcrumb" data-section="breadcrumbs" data-component="breadcrumb"><ol><li><a href="index.html">Home</a></li><li aria-current="page">Menu</li></ol></nav><h1>Menu</h1><p>Meats by the pound, plates, sides and sweets. Everything is cooked fresh each morning and sold until it is gone.</p></div></div>
+
+<section class="band" aria-labelledby="hours-note" data-section="menu-hours" data-component="hours-notice"><div class="wrap">
+  <h2 id="hours-note">We are open for lunch Tuesday to Sunday, 11 am until sold out (about 3 pm). Closed Monday.</h2>
+  <p><span class="chip" data-status-chip data-state="closed"><span class="dot" aria-hidden="true"></span><span class="chip-text">Checking hours</span></span></p>
+  <p>Cannot wait in line? Try the pre-order tray at the bottom of this page. On the original site pre-ordering is handled off-site, so here it is a local demo.</p>
+  <div class="demo-note"><label for="line-demo">Line status demo (changes the whole replica for this browser session)</label>
+  <select id="line-demo"><option value="auto">Automatic, based on the clock</option><option value="low">Simulate: running low</option><option value="soldout">Simulate: sold out</option></select></div>
+</div></section>
+<section class="band alt" aria-label="Menu search and filters" data-section="menu-filters" data-component="filter-toolbar"><div class="wrap">
+  <form id="menu-filters" role="search" aria-label="Search the menu">
+    <div class="toolbar">
+      <div class="field"><label for="menu-search">Search the menu</label><input id="menu-search" type="search" autocomplete="off" placeholder="brisket, slaw, pie"></div>
+      <div class="field"><label for="menu-cat">Category</label><select id="menu-cat"><option value="all">All categories</option><option value="meats">Meats by the pound</option><option value="plates">Plates and sandwiches</option><option value="sides">Sides</option><option value="desserts">Desserts</option><option value="drinks">Drinks</option></select></div>
+      <div class="field"><label for="menu-sort">Sort by</label><select id="menu-sort"><option value="default">Menu order</option><option value="name">Name, A to Z</option><option value="price-asc">Price, low to high</option><option value="price-desc">Price, high to low</option></select></div>
+    </div>
+    <fieldset class="chips"><legend>Dietary filters (items must match all selected)</legend>
+      <label><input type="checkbox" name="diet" value="vegetarian">Vegetarian</label>
+      <label><input type="checkbox" name="diet" value="gluten-free">Gluten-free</label>
+      <label><input type="checkbox" name="diet" value="dairy-free">Dairy-free</label>
+      <label><input type="checkbox" name="diet" value="spicy">Spicy</label></fieldset>
+    <button type="button" class="btn secondary" id="menu-clear">Clear filters</button>
+    <p class="result-count" id="menu-count" role="status" aria-live="polite"></p>
+  </form>
+</div></section>
+<section class="band" aria-label="Menu items" data-section="menu-items" data-component="menu-list"><div class="wrap">
+  <p class="hint">Dietary tags are demo data, not allergen guidance.</p>
+  <div id="menu-list"><noscript><p>The menu needs JavaScript to load its inline data.</p></noscript></div>
+</div></section>
+<section class="band alt" aria-labelledby="tray-heading" data-section="preorder" data-component="preorder-tray"><div class="wrap">
+  <h2 id="tray-heading" tabindex="-1">Demo pre-order</h2>
+  <div class="demo-note">Simulation only. Nothing is ordered, charged or sent; the real pre-order system is a separate off-site service.</div>
+  <div id="tray-list"></div>
+  <p><strong>Estimated total: <span id="tray-total">$0.00</span></strong></p>
+  <form id="preorder-form" data-validate data-hook="preorder" data-reset="false" data-section="preorder-form" data-component="preorder-form" aria-label="Demo pre-order pickup details">
+    <p class="hint">Fields marked <span class="req" aria-hidden="true">*</span><span class="visually-hidden">with an asterisk</span> are required.</p>
+    <div class="field"><label for="po-name">Name for pickup <span class="req" aria-hidden="true">*</span></label><input id="po-name" name="po-name" type="text" autocomplete="name" required></div>
+    <div class="field"><label for="po-time">Pickup time <span class="req" aria-hidden="true">*</span></label><select id="po-time" name="po-time" required><option value="">Choose a time</option><option value="11:00">11:00 am</option><option value="11:30">11:30 am</option><option value="12:00">12:00 pm</option><option value="12:30">12:30 pm</option><option value="1:00">1:00 pm</option></select></div>
+    <button type="submit" class="btn">Submit demo pre-order</button>
+    <div class="success" data-success hidden role="status"><h3>Demo pre-order received</h3><p data-success-detail></p></div>
+  </form>
+</div></section>
+<dialog id="item-dialog" aria-labelledby="dlg-title" data-section="item-dialog" data-component="modal-dialog"><div class="dlg">
+  <div class="dlg-head"><h2 id="dlg-title"></h2><button type="button" class="icon-btn" id="dlg-close" aria-label="Close details"><span aria-hidden="true">&times;</span></button></div>
+  <p id="dlg-desc"></p><p><strong id="dlg-price"></strong></p><p id="dlg-tags"></p>
+  <div class="qty-row"><label for="dlg-qty">Quantity</label><input class="qty" id="dlg-qty" type="number" min="1" max="20" value="1"></div>
+  <p class="field-error" id="dlg-msg" role="alert" style="display:block"></p>
+  <div class="btn-row"><button type="button" class="btn" id="dlg-add">Add to demo pre-order</button></div>
+</div></dialog>
+</main>
+<footer class="site-footer" data-section="global-footer" data-component="site-footer">
+  <div class="wrap">
+    <div class="grid cols-3">
+      <div><h2>Cinder Ridge Smokehouse</h2><address style="font-style:normal">1480 Mesquite Row<br>Juniper Falls, TX 78999<br><a href="tel:+15550100142">(555) 010-0142</a><br><a href="mailto:hello@cinderridge.example">hello@cinderridge.example</a></address></div>
+      <div><h2>Lunch hours</h2><p>Tuesday to Sunday, 11 am until sold out (about 3 pm). Closed Monday.</p></div>
+      <nav aria-label="Footer" class="footer-nav" data-section="footer-navigation" data-component="footer-nav"><h2>Explore</h2><ul><li><a href="visit-us.html">Visit Us</a></li><li><a href="menu.html">Menu</a></li><li><a href="sauces-rubs.html">Sauces & Rubs</a></li><li><a href="about.html">About</a></li><li><a href="gift-cards.html">Gift Cards</a></li><li><a href="private-events.html">Private Events</a></li><li><a href="contact.html">Contact</a></li><li><a href="cart.html">Cart</a></li></ul></nav>
+    </div>
+    <p class="legal">Cinder Ridge Smokehouse is a fictional restaurant created for an accessibility and usability research dataset. Names, address, prices, hours and events are invented. Ordering, gift cards and forms are local demonstrations only.</p>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

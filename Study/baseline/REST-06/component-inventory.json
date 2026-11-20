@@ -1,0 +1,68 @@
+{
+  "components": [
+    {
+      "name": "site-header",
+      "selector": "[data-component=\"site-header\"]",
+      "pages": ["index.html","cities-index.html","bakery-index.html","about-index.html","our-story-index.html","press-index.html","404.html"],
+      "behaviors": ["contains logo and site title"],
+      "keyboard": "none",
+      "status": "replicated"
+    },
+    {
+      "name": "primary-nav",
+      "selector": "[data-component=\"primary-nav\"]",
+      "pages": ["index.html","cities-index.html","bakery-index.html","about-index.html","our-story-index.html","press-index.html","404.html"],
+      "behaviors": ["responsive hamburger toggle", "aria-expanded management", "Escape closes menu"],
+      "keyboard": "Tab navigation, Enter/Space activate links, Escape closes",
+      "status": "replicated"
+    },
+    {
+      "name": "hero",
+      "selector": "[data-component=\"hero\"]",
+      "pages": ["index.html","cities-index.html","bakery-index.html","about-index.html","our-story-index.html","press-index.html"],
+      "behaviors": ["banner with heading and optional subtext"],
+      "keyboard": "none",
+      "status": "replicated"
+    },
+    {
+      "name": "site-footer",
+      "selector": "[data-component=\"site-footer\"]",
+      "pages": ["index.html","cities-index.html","bakery-index.html","about-index.html","our-story-index.html","press-index.html","404.html"],
+      "behaviors": ["copyright notice"],
+      "keyboard": "none",
+      "status": "replicated"
+    },
+    {
+      "name": "location-card-grid",
+      "selector": "[data-component=\"location-card-grid\"]",
+      "pages": ["cities-index.html"],
+      "behaviors": ["grid of city cards, client‑side filter"],
+      "keyboard": "Tab to each card",
+      "status": "simulated"
+    },
+    {
+      "name": "menu-download",
+      "selector": ".menu-download button",
+      "pages": ["bakery-index.html"],
+      "behaviors": ["download link to PDF"],
+      "keyboard": "Enter/Space activates download",
+      "status": "replicated"
+    },
+    {
+      "name": "reservation-form",
+      "selector": "#reservation-form",
+      "pages": ["bakery-index.html"],
+      "behaviors": ["client‑side validation, demo submission"],
+      "keyboard": "Tab through fields, Enter to submit, Escape does not close",
+      "status": "simulated"
+    },
+    {
+      "name": "press-list",
+      "selector": "[data-component=\"press-list\"]",
+      "pages": ["press-index.html"],
+      "behaviors": ["populate list from inline data"],
+      "keyboard": "Tab to each list item",
+      "status": "simulated"
+    }
+  ]
+}

@@ -1,0 +1,649 @@
+{
+  "protocol_version": "1.0",
+  "replica_id": "REST-02",
+  "category": "restaurant",
+  "source_url": "https://franklinbbq.com/",
+  "components": [
+    {
+      "id": "announcement-bar",
+      "selector": "[data-component='announcement-bar']",
+      "pages": [
+        "index.html",
+        "menu.html",
+        "visit-us.html",
+        "about.html",
+        "private-events.html",
+        "backyard-party.html",
+        "gift-cards.html",
+        "sauces-rubs.html",
+        "cart.html",
+        "contact.html",
+        "404.html"
+      ],
+      "behavior": [
+        "dismissible holiday-booking bar",
+        "dismissal persisted in sessionStorage with try/catch"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-tested; manual keyboard and screen reader not tested"
+    },
+    {
+      "id": "site-header",
+      "selector": "[data-component='site-header']",
+      "pages": [
+        "index.html",
+        "menu.html",
+        "visit-us.html",
+        "about.html",
+        "private-events.html",
+        "backyard-party.html",
+        "gift-cards.html",
+        "sauces-rubs.html",
+        "cart.html",
+        "contact.html",
+        "404.html"
+      ],
+      "behavior": [
+        "brand link",
+        "status strip"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-tested; manual keyboard and screen reader not tested"
+    },
+    {
+      "id": "primary-nav",
+      "selector": "[data-component='primary-nav']",
+      "pages": [
+        "index.html",
+        "menu.html",
+        "visit-us.html",
+        "about.html",
+        "private-events.html",
+        "backyard-party.html",
+        "gift-cards.html",
+        "sauces-rubs.html",
+        "cart.html",
+        "contact.html",
+        "404.html"
+      ],
+      "behavior": [
+        "links to built pages only",
+        "aria-current on active link",
+        "mobile disclosure button with aria-expanded"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "Escape closes mobile nav"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-tested; manual keyboard and screen reader not tested"
+    },
+    {
+      "id": "utility-nav",
+      "selector": "[data-component='utility-nav']",
+      "pages": [
+        "index.html",
+        "menu.html",
+        "visit-us.html",
+        "about.html",
+        "private-events.html",
+        "backyard-party.html",
+        "gift-cards.html",
+        "sauces-rubs.html",
+        "cart.html",
+        "contact.html",
+        "404.html"
+      ],
+      "behavior": [
+        "cart link with live item count"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-tested; manual keyboard and screen reader not tested"
+    },
+    {
+      "id": "open-status-indicator",
+      "selector": "[data-component='open-status-indicator']",
+      "pages": [
+        "index.html",
+        "menu.html",
+        "visit-us.html",
+        "about.html",
+        "private-events.html",
+        "backyard-party.html",
+        "gift-cards.html",
+        "sauces-rubs.html",
+        "cart.html",
+        "contact.html",
+        "404.html"
+      ],
+      "behavior": [
+        "hours-based open/closed text plus shape-coded dot",
+        "labeled demo override for low/sold-out line status via #line-demo on menu.html and visit-us.html"
+      ],
+      "keyboard": [
+        "Tab to select on menu and visit pages"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-tested; manual keyboard and screen reader not tested"
+    },
+    {
+      "id": "breadcrumb",
+      "selector": "[data-component='breadcrumb']",
+      "pages": [
+        "menu.html",
+        "visit-us.html",
+        "about.html",
+        "private-events.html",
+        "backyard-party.html",
+        "gift-cards.html",
+        "sauces-rubs.html",
+        "cart.html",
+        "contact.html"
+      ],
+      "behavior": [
+        "intentional addition; links home"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-tested; manual keyboard and screen reader not tested"
+    },
+    {
+      "id": "page-hero",
+      "selector": "[data-component='page-hero']",
+      "pages": [
+        "menu.html",
+        "visit-us.html",
+        "about.html",
+        "private-events.html",
+        "backyard-party.html",
+        "gift-cards.html",
+        "sauces-rubs.html",
+        "cart.html",
+        "contact.html"
+      ],
+      "behavior": [
+        "h1 and lede band"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-tested; manual keyboard and screen reader not tested"
+    },
+    {
+      "id": "hero-banner",
+      "selector": "[data-component='hero-banner']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "pull-quote h1",
+        "calls to action"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-tested; manual keyboard and screen reader not tested"
+    },
+    {
+      "id": "visit-summary",
+      "selector": "[data-component='visit-summary']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "location and hours summary with open status"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-tested; manual keyboard and screen reader not tested"
+    },
+    {
+      "id": "feature-panel",
+      "selector": "[data-component='feature-panel']",
+      "pages": [
+        "index.html",
+        "backyard-party.html"
+      ],
+      "behavior": [
+        "image plus copy panels"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-tested; manual keyboard and screen reader not tested"
+    },
+    {
+      "id": "holiday-hours",
+      "selector": "[data-component='holiday-hours']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "holiday hours table (invented dates)"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-tested; manual keyboard and screen reader not tested"
+    },
+    {
+      "id": "promo-banner",
+      "selector": "[data-component='promo-banner']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "gift card promotion"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-tested; manual keyboard and screen reader not tested"
+    },
+    {
+      "id": "newsletter-signup",
+      "selector": "[data-component='newsletter-signup']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "demo email subscribe form with validation and demo success"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-tested; manual keyboard and screen reader not tested"
+    },
+    {
+      "id": "filter-toolbar",
+      "selector": "[data-component='filter-toolbar']",
+      "pages": [
+        "menu.html"
+      ],
+      "behavior": [
+        "text search",
+        "category select",
+        "sort select",
+        "dietary checkbox filters (AND)",
+        "clear filters",
+        "result count in live region"
+      ],
+      "keyboard": [
+        "Tab",
+        "Space on checkboxes",
+        "arrow keys in selects"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-tested; manual keyboard and screen reader not tested"
+    },
+    {
+      "id": "menu-list",
+      "selector": "[data-component='menu-list']",
+      "pages": [
+        "menu.html"
+      ],
+      "behavior": [
+        "21 inline items in 5 categories rendered by main.js",
+        "empty state",
+        "limited items flagged low/sold out by demo override"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter on Details"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-tested; manual keyboard and screen reader not tested"
+    },
+    {
+      "id": "modal-dialog",
+      "selector": "[data-component='modal-dialog']",
+      "pages": [
+        "menu.html"
+      ],
+      "behavior": [
+        "native dialog showModal",
+        "item details and quantity",
+        "Add to demo pre-order",
+        "focus returns to trigger"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Escape closes"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-tested; manual keyboard and screen reader not tested"
+    },
+    {
+      "id": "preorder-tray",
+      "selector": "[data-component='preorder-tray']",
+      "pages": [
+        "menu.html"
+      ],
+      "behavior": [
+        "demo pre-order list with remove and total",
+        "sessionStorage persistence"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-tested; manual keyboard and screen reader not tested"
+    },
+    {
+      "id": "preorder-form",
+      "selector": "[data-component='preorder-form']",
+      "pages": [
+        "menu.html"
+      ],
+      "behavior": [
+        "validated pickup details",
+        "error summary",
+        "demo success"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-tested; manual keyboard and screen reader not tested"
+    },
+    {
+      "id": "hours-table",
+      "selector": "[data-component='hours-table']",
+      "pages": [
+        "visit-us.html"
+      ],
+      "behavior": [
+        "weekly hours table with current day highlighted"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-tested; manual keyboard and screen reader not tested"
+    },
+    {
+      "id": "location-block",
+      "selector": "[data-component='location-block']",
+      "pages": [
+        "visit-us.html"
+      ],
+      "behavior": [
+        "address and placeholder map"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-tested; manual keyboard and screen reader not tested"
+    },
+    {
+      "id": "info-list",
+      "selector": "[data-component='info-list']",
+      "pages": [
+        "visit-us.html"
+      ],
+      "behavior": [
+        "line tips (queue culture)"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-tested; manual keyboard and screen reader not tested"
+    },
+    {
+      "id": "story-block",
+      "selector": "[data-component='story-block']",
+      "pages": [
+        "about.html"
+      ],
+      "behavior": [
+        "invented story copy"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-tested; manual keyboard and screen reader not tested"
+    },
+    {
+      "id": "card-grid",
+      "selector": "[data-component='card-grid']",
+      "pages": [
+        "about.html",
+        "private-events.html"
+      ],
+      "behavior": [
+        "three-column card grids"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-tested; manual keyboard and screen reader not tested"
+    },
+    {
+      "id": "inquiry-form",
+      "selector": "[data-component='inquiry-form']",
+      "pages": [
+        "private-events.html",
+        "backyard-party.html"
+      ],
+      "behavior": [
+        "validated catering and venue inquiry forms",
+        "error summary and focus",
+        "demo success"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-tested; manual keyboard and screen reader not tested"
+    },
+    {
+      "id": "gift-card-form",
+      "selector": "[data-component='gift-card-form']",
+      "pages": [
+        "gift-cards.html"
+      ],
+      "behavior": [
+        "amount select with conditional custom amount",
+        "validation",
+        "demo success; no payment"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-tested; manual keyboard and screen reader not tested"
+    },
+    {
+      "id": "product-grid",
+      "selector": "[data-component='product-grid']",
+      "pages": [
+        "sauces-rubs.html"
+      ],
+      "behavior": [
+        "6 inline products",
+        "add to demo cart updates header count"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-tested; manual keyboard and screen reader not tested"
+    },
+    {
+      "id": "cart",
+      "selector": "[data-component='cart']",
+      "pages": [
+        "cart.html"
+      ],
+      "behavior": [
+        "quantity change, remove, subtotal, empty state"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-tested; manual keyboard and screen reader not tested"
+    },
+    {
+      "id": "checkout-form",
+      "selector": "[data-component='checkout-form']",
+      "pages": [
+        "cart.html"
+      ],
+      "behavior": [
+        "demo checkout validation and success"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-tested; manual keyboard and screen reader not tested"
+    },
+    {
+      "id": "contact-form",
+      "selector": "[data-component='contact-form']",
+      "pages": [
+        "contact.html"
+      ],
+      "behavior": [
+        "validated demo message form"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-tested; manual keyboard and screen reader not tested"
+    },
+    {
+      "id": "contact-block",
+      "selector": "[data-component='contact-block']",
+      "pages": [
+        "contact.html"
+      ],
+      "behavior": [
+        "placeholder phone, email, address"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-tested; manual keyboard and screen reader not tested"
+    },
+    {
+      "id": "hours-notice",
+      "selector": "[data-component='hours-notice']",
+      "pages": [
+        "menu.html"
+      ],
+      "behavior": [
+        "lunch hours h2 and status chip and line demo select"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-tested; manual keyboard and screen reader not tested"
+    },
+    {
+      "id": "error-page",
+      "selector": "[data-component='error-page']",
+      "pages": [
+        "404.html"
+      ],
+      "behavior": [
+        "route back to home, menu and visit"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-tested; manual keyboard and screen reader not tested"
+    },
+    {
+      "id": "site-footer",
+      "selector": "[data-component='site-footer']",
+      "pages": [
+        "index.html",
+        "menu.html",
+        "visit-us.html",
+        "about.html",
+        "private-events.html",
+        "backyard-party.html",
+        "gift-cards.html",
+        "sauces-rubs.html",
+        "cart.html",
+        "contact.html",
+        "404.html"
+      ],
+      "behavior": [
+        "address, hours, footer nav, fictional-site notice"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-tested; manual keyboard and screen reader not tested"
+    },
+    {
+      "id": "footer-nav",
+      "selector": "[data-component='footer-nav']",
+      "pages": [
+        "index.html",
+        "menu.html",
+        "visit-us.html",
+        "about.html",
+        "private-events.html",
+        "backyard-party.html",
+        "gift-cards.html",
+        "sauces-rubs.html",
+        "cart.html",
+        "contact.html",
+        "404.html"
+      ],
+      "behavior": [
+        "links to built pages only"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "automated-axe-and-scripted-flow-tested; manual keyboard and screen reader not tested"
+    }
+  ]
+}

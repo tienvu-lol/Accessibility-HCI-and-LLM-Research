@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en" data-section="news">
+<head>
+  <meta charset="utf-8">
+  <title>Nimbus Weather Service – News & Alerts</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header data-component="site-header"><h1>Nimbus Weather Service</h1></header>
+
+  <nav aria-label="Primary navigation" data-component="primary-nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="news.html">News</a></li>
+      <li><a href="about-us.html">About</a></li>
+    </ul>
+  </nav>
+
+  <main id="main-content" class="main-content" data-component="page-main">
+    <h1>News & Weather Articles</h1>
+    <section data-component="article-list">
+      <h2>Latest Articles</h2>
+      <ul>
+        <li><button type="button" class="article-link">Understanding Seasonal Temperature Shifts</button></li>
+        <li><button type="button" class="article-link">How Radar Works: A Beginner’s Guide</button></li>
+      </ul>
+    </section>
+
+    <section data-component="alerts-section">
+      <h2>Current Alerts</h2>
+      <form id="alert-filter-form" aria-label="Alert filters">
+        <label><input type="checkbox" value="warning" checked> Warning</label>
+        <label><input type="checkbox" value="advisory" checked> Advisory</label>
+        <label><input type="checkbox" value="information" checked> Information</label>
+      </form>
+      <ul id="alerts-list">
+        <li data-type="warning">High wind warning for coastal areas.</li>
+        <li data-type="advisory">Heavy rain advisory in mountainous regions.</li>
+        <li data-type="information">Sunny conditions expected tomorrow.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer data-component="site-footer"><p>&copy; 2024 Nimbus Weather Service.</p></footer>
+</body>
+</html>

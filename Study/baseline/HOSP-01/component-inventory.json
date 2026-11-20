@@ -1,0 +1,504 @@
+{
+  "protocol_version": "1.0",
+  "replica_id": "HOSP-01",
+  "category": "healthcare",
+  "source_url": "https://www.ucsfhealth.org/",
+  "components": [
+    {
+      "id": "site-header",
+      "selector": "[data-component='site-header']",
+      "pages": [
+        "all 16 pages"
+      ],
+      "behavior": [
+        "global header with logo, utility links and emergency bar"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "axe-core + scripted Playwright flow (see README); no manual or screen-reader testing"
+    },
+    {
+      "id": "emergency-notice",
+      "selector": "[data-component='emergency-notice']",
+      "pages": [
+        "all 16 pages"
+      ],
+      "behavior": [
+        "site-wide notice to call local emergency number (intentional addition)"
+      ],
+      "keyboard": [
+        "Tab (link)"
+      ],
+      "status": "implemented",
+      "validation": "axe-core + scripted Playwright flow (see README); no manual or screen-reader testing"
+    },
+    {
+      "id": "utility-nav",
+      "selector": "[data-component='utility-nav']",
+      "pages": [
+        "all 16 pages"
+      ],
+      "behavior": [
+        "BayPortal and appointment links"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core + scripted Playwright flow (see README); no manual or screen-reader testing"
+    },
+    {
+      "id": "primary-nav",
+      "selector": "[data-component='primary-nav']",
+      "pages": [
+        "all 16 pages"
+      ],
+      "behavior": [
+        "desktop navigation, mobile disclosure"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "Escape closes mobile menu"
+      ],
+      "status": "implemented",
+      "validation": "axe-core + scripted Playwright flow (see README); no manual or screen-reader testing"
+    },
+    {
+      "id": "dropdown-menu",
+      "selector": "[data-component='dropdown-menu']",
+      "pages": [
+        "all 16 pages"
+      ],
+      "behavior": [
+        "Care disclosure submenu with aria-expanded"
+      ],
+      "keyboard": [
+        "Enter",
+        "Space",
+        "Tab",
+        "Escape closes and returns focus"
+      ],
+      "status": "implemented",
+      "validation": "axe-core + scripted Playwright flow (see README); no manual or screen-reader testing"
+    },
+    {
+      "id": "mobile-menu-toggle",
+      "selector": "[data-component='mobile-menu-toggle']",
+      "pages": [
+        "all 16 pages"
+      ],
+      "behavior": [
+        "menu button below 900px"
+      ],
+      "keyboard": [
+        "Enter",
+        "Space",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "axe-core + scripted Playwright flow (see README); no manual or screen-reader testing"
+    },
+    {
+      "id": "breadcrumbs",
+      "selector": "[data-component='breadcrumbs']",
+      "pages": [
+        "all pages except index.html and 404.html"
+      ],
+      "behavior": [
+        "interior page breadcrumb trail"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core + scripted Playwright flow (see README); no manual or screen-reader testing"
+    },
+    {
+      "id": "hero-banner",
+      "selector": "[data-component='hero-banner']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "home hero with search"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "axe-core + scripted Playwright flow (see README); no manual or screen-reader testing"
+    },
+    {
+      "id": "page-hero",
+      "selector": "[data-component='page-hero']",
+      "pages": [
+        "all pages except index.html and 404.html"
+      ],
+      "behavior": [
+        "interior page title band"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "axe-core + scripted Playwright flow (see README); no manual or screen-reader testing"
+    },
+    {
+      "id": "typeahead-search",
+      "selector": "[data-component='typeahead-search']",
+      "pages": [
+        "index.html",
+        "find-a-doctor.html"
+      ],
+      "behavior": [
+        "combobox with listbox suggestions over sample data"
+      ],
+      "keyboard": [
+        "Type",
+        "ArrowUp",
+        "ArrowDown",
+        "Enter",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "axe-core + scripted Playwright flow (see README); no manual or screen-reader testing"
+    },
+    {
+      "id": "quick-link-card",
+      "selector": "[data-component='quick-link-card']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "I need / I need to / I need help with cards"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core + scripted Playwright flow (see README); no manual or screen-reader testing"
+    },
+    {
+      "id": "media-carousel",
+      "selector": "[data-component='media-carousel']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "story carousel with previous, next and pause"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "axe-core + scripted Playwright flow (see README); no manual or screen-reader testing"
+    },
+    {
+      "id": "filter-panel",
+      "selector": "[data-component='filter-panel']",
+      "pages": [
+        "find-a-doctor.html",
+        "locations.html",
+        "care.html",
+        "billing-insurance.html"
+      ],
+      "behavior": [
+        "filter controls for doctors, locations, care, plans"
+      ],
+      "keyboard": [
+        "Tab",
+        "Arrow keys on selects/radios",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "axe-core + scripted Playwright flow (see README); no manual or screen-reader testing"
+    },
+    {
+      "id": "results-list",
+      "selector": "[data-component='results-list']",
+      "pages": [
+        "find-a-doctor.html",
+        "locations.html"
+      ],
+      "behavior": [
+        "filtered results with live count, empty state, show more"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core + scripted Playwright flow (see README); no manual or screen-reader testing"
+    },
+    {
+      "id": "provider-card",
+      "selector": "[data-component='provider-card']",
+      "pages": [
+        "find-a-doctor.html"
+      ],
+      "behavior": [
+        "doctor result card"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core + scripted Playwright flow (see README); no manual or screen-reader testing"
+    },
+    {
+      "id": "location-card",
+      "selector": "[data-component='location-card']",
+      "pages": [
+        "locations.html"
+      ],
+      "behavior": [
+        "location result card"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core + scripted Playwright flow (see README); no manual or screen-reader testing"
+    },
+    {
+      "id": "topic-card",
+      "selector": "[data-component='topic-card']",
+      "pages": [
+        "care.html"
+      ],
+      "behavior": [
+        "care area result card"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core + scripted Playwright flow (see README); no manual or screen-reader testing"
+    },
+    {
+      "id": "az-index",
+      "selector": "[data-component='az-index']",
+      "pages": [
+        "medical-services.html"
+      ],
+      "behavior": [
+        "letter toggle buttons and filtered service list"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "axe-core + scripted Playwright flow (see README); no manual or screen-reader testing"
+    },
+    {
+      "id": "provider-profile",
+      "selector": "[data-component='provider-profile']",
+      "pages": [
+        "provider.html"
+      ],
+      "behavior": [
+        "profile template and not-found state"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core + scripted Playwright flow (see README); no manual or screen-reader testing"
+    },
+    {
+      "id": "accordion",
+      "selector": "[data-component='accordion']",
+      "pages": [
+        "emergency-department.html",
+        "cancer-care.html",
+        "patients-visitors.html",
+        "billing-insurance.html",
+        "help-paying-your-bill.html",
+        "your-hospital-stay.html"
+      ],
+      "behavior": [
+        "disclosure buttons with aria-expanded"
+      ],
+      "keyboard": [
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "axe-core + scripted Playwright flow (see README); no manual or screen-reader testing"
+    },
+    {
+      "id": "appointment-form",
+      "selector": "[data-component='appointment-form']",
+      "pages": [
+        "appointments.html"
+      ],
+      "behavior": [
+        "simulated form: labels, inline errors, error summary, focus management"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "axe-core + scripted Playwright flow (see README); no manual or screen-reader testing"
+    },
+    {
+      "id": "modal-dialog",
+      "selector": "[data-component='modal-dialog']",
+      "pages": [
+        "patient-portal.html"
+      ],
+      "behavior": [
+        "non-functional portal login dialog; Escape closes, focus returns"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "axe-core + scripted Playwright flow (see README); no manual or screen-reader testing"
+    },
+    {
+      "id": "promo-banner",
+      "selector": "[data-component='promo-banner']",
+      "pages": [
+        "index.html",
+        "cancer-care.html"
+      ],
+      "behavior": [
+        "call-to-action band"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core + scripted Playwright flow (see README); no manual or screen-reader testing"
+    },
+    {
+      "id": "info-card",
+      "selector": "[data-component='info-card']",
+      "pages": [
+        "emergency-department.html",
+        "cancer-care.html",
+        "about.html",
+        "patient-portal.html",
+        "help-paying-your-bill.html"
+      ],
+      "behavior": [
+        "text card/section"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "axe-core + scripted Playwright flow (see README); no manual or screen-reader testing"
+    },
+    {
+      "id": "stat-grid",
+      "selector": "[data-component='stat-grid']",
+      "pages": [
+        "about.html"
+      ],
+      "behavior": [
+        "invented statistics"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "axe-core + scripted Playwright flow (see README); no manual or screen-reader testing"
+    },
+    {
+      "id": "quick-actions",
+      "selector": "[data-component='quick-actions']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "I want to... buttons"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core + scripted Playwright flow (see README); no manual or screen-reader testing"
+    },
+    {
+      "id": "card-grid",
+      "selector": "[data-component='card-grid']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "grid of cards"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core + scripted Playwright flow (see README); no manual or screen-reader testing"
+    },
+    {
+      "id": "error-page",
+      "selector": "[data-component='error-page']",
+      "pages": [
+        "404.html"
+      ],
+      "behavior": [
+        "404 with routes home"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core + scripted Playwright flow (see README); no manual or screen-reader testing"
+    },
+    {
+      "id": "site-footer",
+      "selector": "[data-component='site-footer']",
+      "pages": [
+        "all 16 pages"
+      ],
+      "behavior": [
+        "footer with link groups"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe-core + scripted Playwright flow (see README); no manual or screen-reader testing"
+    },
+    {
+      "id": "footer-link-group",
+      "selector": "[data-component='footer-link-group']",
+      "pages": [
+        "all 16 pages"
+      ],
+      "behavior": [
+        "collapsible on narrow screens (disclosure), static on desktop"
+      ],
+      "keyboard": [
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "axe-core + scripted Playwright flow (see README); no manual or screen-reader testing"
+    }
+  ]
+}

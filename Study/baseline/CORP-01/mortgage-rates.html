@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sample mortgage rates | Corvane Bank (fictional)</title>
+<meta name="description" content="Filter and sort a table of fictional mortgage rates.">
+<link rel="stylesheet" href="css/styles.css">
+<noscript><style>.site-menu{display:flex!important}.mega[hidden]{display:grid!important;position:static}.menu-toggle{display:none!important}</style></noscript>
+</head>
+<body data-page="mortgage-rates" >
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header" data-section="global-header" data-component="site-header">
+<div class="utility" data-section="utility-bar" data-component="utility-nav"><div class="wrap"><span class="audience">Personal banking</span>
+<nav aria-label="Utility"><ul><li><a href="locations.html">Locations</a></li><li><a href="customer-service.html">Customer service</a></li></ul></nav></div></div>
+<div class="header-main"><a class="brand" href="index.html" aria-label="Corvane Bank (fictional), home"><img src="assets/logo.svg" alt="Corvane Bank logo, fictional" width="190" height="42"></a>
+<div class="header-actions" data-component="header-actions"><button type="button" class="btn" data-open-login>Log in (demo)</button><a class="btn secondary" href="online-banking.html#enroll">Enroll (demo)</a>
+<button type="button" class="btn secondary menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="site-menu">Menu</button></div></div>
+<div class="nav-wrap" data-section="global-navigation"><div class="site-menu" id="site-menu">
+<nav id="global-navigation-menubar" class="primary-nav" aria-label="Main" data-component="primary-nav"><ul><li class="" data-component="nav-dropdown"><button type="button" class="nav-trigger" aria-expanded="false" aria-controls="mega-cs">Checking &amp; savings<span class="chev" aria-hidden="true"></span></button>
+<div class="mega" id="mega-cs" hidden><div><p class="group-title">Accounts</p><ul><li><a href="checking.html">Checking accounts</a></li><li><a href="savings.html">Savings accounts</a></li><li><a href="cds.html">Certificates of deposit</a></li></ul></div><div><p class="group-title">Tools</p><ul><li><a href="online-banking.html">Mobile &amp; online banking</a></li><li><a href="locations.html">Branch &amp; ATM locator</a></li></ul></div><div><button type="button" class="btn secondary small back" data-close-mega>Return to main menu</button></div></div></li><li><a href="credit-cards.html">Credit cards</a></li><li class="is-current" data-component="nav-dropdown"><button type="button" class="nav-trigger" aria-expanded="false" aria-controls="mega-hl">Home loans<span class="chev" aria-hidden="true"></span></button>
+<div class="mega" id="mega-hl" hidden><div><p class="group-title">Mortgage</p><ul><li><a href="mortgage.html">Mortgage overview</a></li><li><a href="mortgage-rates.html" aria-current="page">Sample mortgage rates</a></li><li><a href="mortgage-calculators.html">Mortgage calculators</a></li></ul></div><div><button type="button" class="btn secondary small back" data-close-mega>Return to main menu</button></div></div></li><li><a href="personal-loan-calculator.html">Loans</a></li><li class="" data-component="nav-dropdown"><button type="button" class="nav-trigger" aria-expanded="false" aria-controls="mega-ls">Learn &amp; support<span class="chev" aria-hidden="true"></span></button>
+<div class="mega" id="mega-ls" hidden><div><p class="group-title">Learn</p><ul><li><a href="financial-education.html">Financial education</a></li></ul></div><div><p class="group-title">Support</p><ul><li><a href="customer-service.html">Customer service</a></li><li><a href="accessibility.html">Accessibility services</a></li><li><a href="search.html">Site search</a></li></ul></div><div><button type="button" class="btn secondary small back" data-close-mega>Return to main menu</button></div></div></li></ul></nav>
+<form class="site-search" role="search" action="search.html" method="get" data-section="global-search" data-component="site-search"><label class="vh" for="gs-q">Search Corvane Bank</label><input id="gs-q" name="q" type="search" placeholder="Search this site" autocomplete="off"><button class="btn small" type="submit">Search</button></form>
+</div></div></header>
+<main id="main-content" data-section="main-content">
+<nav class="crumbs wrap" aria-label="Breadcrumb" data-section="breadcrumbs" data-component="breadcrumb"><ol><li><a href="index.html">Home</a></li><li><a href="mortgage.html">Mortgage loans</a></li><li><span aria-current="page">Sample mortgage rates</span></li></ol></nav>
+
+<section class="hero" data-section="rates-hero" data-component="hero-banner" aria-labelledby="hero-title"><div class="wrap"><div><p class="eyebrow">Corvane Bank (fictional)</p><h1 id="hero-title">Sample mortgage rates</h1><p>A made-up rate table you can filter and sort. These are not real rates.</p></div><img src="assets/hero-home.svg" alt="" width="640" height="360"></div></section>
+<section class="band" aria-labelledby="mr-title" data-section="mortgage-rate-table" data-component="rate-table"><div class="wrap"><p class="notice" role="note" data-component="sample-data-notice"><strong>Fictional sample data.</strong> Figures on this page are invented for a design study. They are not an offer, quote or financial advice, and do not reflect any real bank's rates. Rates here were invented and are not updated.</p>
+<h2 id="mr-title">Rate table</h2>
+<form id="rate-filter" class="panel form-grid" novalidate data-component="filter-form">
+<div class="field" data-component="form-field"><label for="rate-type">Loan type</label><select id="rate-type" name="rate-type"><option value="all" selected>All types</option><option value="Fixed">Fixed</option><option value="Adjustable">Adjustable</option></select><span class="error" id="rate-type-error" hidden></span></div>
+<div class="field" data-component="form-field"><label for="rate-term">Term</label><select id="rate-term" name="rate-term"><option value="all" selected>Any term</option><option value="30">30 years</option><option value="20">20 years</option><option value="15">15 years</option><option value="10">10 years</option></select><span class="error" id="rate-term-error" hidden></span></div>
+<div class="field" data-component="form-field"><label for="rate-sort">Sort by</label><select id="rate-sort" name="rate-sort"><option value="name" selected>Product name</option><option value="rate">Lowest rate first</option><option value="term">Shortest term first</option></select><span class="error" id="rate-sort-error" hidden></span></div>
+</form>
+<p id="rate-count" role="status" aria-live="polite"></p>
+<div class="table-wrap" id="rate-wrap"><table id="rate-table" data-component="rate-table-grid"><caption>Sample mortgage rates (fictional, not an offer)</caption><thead><tr><th scope="col">Product</th><th scope="col">Type</th><th scope="col" class="num">Term</th><th scope="col" class="num">Sample rate</th><th scope="col" class="num">Sample APR</th><th scope="col" class="num">Sample points</th></tr></thead><tbody><tr data-type="Fixed" data-term="30" data-rate="4.11" data-name="30-year fixed"><th scope="row">30-year fixed</th><td>Fixed</td><td class="num">30 years</td><td class="num">4.11%</td><td class="num">4.27%</td><td class="num">0.5</td></tr><tr data-type="Fixed" data-term="20" data-rate="3.93" data-name="20-year fixed"><th scope="row">20-year fixed</th><td>Fixed</td><td class="num">20 years</td><td class="num">3.93%</td><td class="num">4.07%</td><td class="num">0.4</td></tr><tr data-type="Fixed" data-term="15" data-rate="3.37" data-name="15-year fixed"><th scope="row">15-year fixed</th><td>Fixed</td><td class="num">15 years</td><td class="num">3.37%</td><td class="num">3.55%</td><td class="num">0.6</td></tr><tr data-type="Fixed" data-term="10" data-rate="3.12" data-name="10-year fixed"><th scope="row">10-year fixed</th><td>Fixed</td><td class="num">10 years</td><td class="num">3.12%</td><td class="num">3.33%</td><td class="num">0.5</td></tr><tr data-type="Adjustable" data-term="30" data-rate="3.58" data-name="7/6 adjustable"><th scope="row">7/6 adjustable</th><td>Adjustable</td><td class="num">30 years</td><td class="num">3.58%</td><td class="num">4.01%</td><td class="num">0.3</td></tr><tr data-type="Adjustable" data-term="30" data-rate="3.29" data-name="5/6 adjustable"><th scope="row">5/6 adjustable</th><td>Adjustable</td><td class="num">30 years</td><td class="num">3.29%</td><td class="num">3.85%</td><td class="num">0.3</td></tr><tr data-type="Fixed" data-term="30" data-rate="4.38" data-name="30-year fixed, jumbo sample"><th scope="row">30-year fixed, jumbo sample</th><td>Fixed</td><td class="num">30 years</td><td class="num">4.38%</td><td class="num">4.49%</td><td class="num">0.7</td></tr><tr data-type="Fixed" data-term="15" data-rate="3.66" data-name="15-year fixed, jumbo sample"><th scope="row">15-year fixed, jumbo sample</th><td>Fixed</td><td class="num">15 years</td><td class="num">3.66%</td><td class="num">3.79%</td><td class="num">0.6</td></tr></tbody></table></div>
+<div class="empty" id="rate-empty" hidden><p><strong>No sample product matches.</strong> For example, adjustable products here only come in 30-year schedules.</p><button type="button" class="btn secondary" id="rate-reset">Reset filters</button></div>
+<p class="hint">Points are a made-up upfront cost expressed as a percentage of the loan. <a href="mortgage-calculators.html">Estimate a payment</a>.</p>
+</div></section>
+
+</main>
+<footer class="site-footer" data-section="global-footer" data-component="site-footer"><div class="wrap">
+<div class="footer-cols">
+<nav aria-labelledby="fn1" data-component="footer-nav"><h2 id="fn1">Bank</h2><ul><li><a href="checking.html">Checking accounts</a></li><li><a href="savings.html">Savings accounts</a></li><li><a href="cds.html">Certificates of deposit</a></li><li><a href="credit-cards.html">Credit cards</a></li></ul></nav>
+<nav aria-labelledby="fn2" data-component="footer-nav"><h2 id="fn2">Borrow</h2><ul><li><a href="mortgage.html">Mortgage overview</a></li><li><a href="mortgage-rates.html">Sample mortgage rates</a></li><li><a href="mortgage-calculators.html">Mortgage calculators</a></li><li><a href="personal-loan-calculator.html">Personal loan calculator</a></li></ul></nav>
+<nav aria-labelledby="fn3" data-component="footer-nav"><h2 id="fn3">Support</h2><ul><li><a href="customer-service.html">Customer service</a></li><li><a href="accessibility.html">Accessibility services</a></li><li><a href="locations.html">Branch &amp; ATM locator</a></li><li><a href="online-banking.html">Mobile &amp; online banking</a></li><li><a href="financial-education.html">Financial education</a></li><li><a href="search.html">Site search</a></li></ul></nav>
+</div>
+<div class="legal" data-component="fictional-disclosure"><img src="assets/regulator-badge.svg" alt="Fictional badge, not a real regulator" width="72" height="72">
+<div><p><strong>Corvane Bank is a fictional bank</strong> invented for an accessibility and usability research study. It is not a real financial institution and offers no real products.</p>
+<p>Accounts shown are not insured or overseen by any real agency. The badge is a made-up placeholder for the fictional "Northmark Banking Standards Board", which does not exist.</p>
+<p>All rates, fees, balances and branch details are fictional sample data. Nothing here is an offer, quote or financial advice. Phone numbers use the 555 exchange.</p></div></div>
+</div></footer>
+<dialog id="login-dialog" aria-labelledby="login-title" data-section="login-demo" data-component="login-dialog"><div class="dlg">
+<div class="dlg-head"><h2 id="login-title">Log in (non-functional demo)</h2><button type="button" class="btn secondary small" data-close-login aria-label="Close log in demo">Close</button></div>
+<p class="notice" role="note"><strong>Demo only.</strong> This is a design-study mock-up. It does not connect to any bank, starts no session, and sends or stores nothing. Do not type real credentials; any made-up text works.</p>
+<div data-login-body><div class="error-summary" data-error-summary hidden tabindex="-1" aria-labelledby="login-err-t"><h3 id="login-err-t">Please fix the following</h3><ul></ul></div>
+<form id="login-form" novalidate data-component="login-form">
+<div class="field"><label for="login-user">Demo user name</label><span class="hint" id="login-user-hint">Made-up text such as demo-user. Never a real ID.</span><input id="login-user" name="user" type="text" autocomplete="off" aria-describedby="login-user-hint" required><span class="error" id="login-user-error" hidden></span></div>
+<div class="field"><label for="login-pass">Demo passcode</label><span class="hint" id="login-pass-hint">At least 4 characters of made-up text. Not stored.</span><input id="login-pass" name="pass" type="password" autocomplete="off" aria-describedby="login-pass-hint" required><span class="error" id="login-pass-error" hidden></span></div>
+<button class="btn" type="submit">Run demo log in</button></form></div>
+<div data-login-done hidden tabindex="-1"><p role="status"><strong>Demo complete.</strong> No account was accessed and no session exists. Nothing you typed was sent or kept.</p><button type="button" class="btn" data-close-login>Close</button></div>
+</div></dialog>
+<script src="js/main.js"></script>
+</body>
+</html>

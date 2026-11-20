@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en" data-page="redeem">
+<head>
+  <meta charset="utf-8">
+  <title>Redeem Gift Card – Fictitious Apparel</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-section="page" data-page="redeem">
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header -->
+  <header data-section="header" data-component="site-header">
+    <div class="site-header">
+      <div class="site-logo" aria-label="Fictitious Apparel">Fictitious Apparel</div>
+      <nav class="primary-nav" data-component="primary-nav" aria-label="Primary navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="womens-all-index.html">Women’s All</a></li>
+          <li><a href="womens-pants-trousers-index.html">Trousers</a></li>
+          <li><a href="womens-sweaters-cashmere-index.html">Cashmere Sweaters</a></li>
+          <li><a href="redeem-index.html">Redeem</a></li>
+          <li><a href="about-index.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" data-section="main">
+    <h1>Redeem a Gift Card</h1>
+
+    <form class="redeem-form" data-component="redeem-form" novalidate>
+      <label for="gift-code">Gift Card Code</label>
+      <input type="text" id="gift-code" name="gift-code" required aria-required="true" />
+
+      <label for="email">Recipient Email</label>
+      <input type="email" id="email" name="email" required aria-required="true" />
+
+      <button type="submit">Redeem</button>
+    </form>
+
+    <div id="redeem-result" aria-live="polite"></div>
+  </main>
+
+  <footer data-section="footer" data-component="site-footer">
+    <p>&copy; 2024 Fictitious Apparel. All rights reserved.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

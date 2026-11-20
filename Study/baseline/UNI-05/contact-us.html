@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Lone Star University</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a href="index.html" class="site-logo" data-component="site-logo">Lone Star University</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
+        &#9776;
+      </button>
+      <nav class="primary-nav" id="primary-nav" role="navigation" aria-label="Primary">
+        <a href="about-texas.html">About</a>
+        <a href="academics-colleges-schools.html">Academics</a>
+        <a href="campus-life-housing-and-dining.html">Campus Life</a>
+        <a href="research.html">Research</a>
+        <a href="contact-us.html">Contact</a>
+        <a href="apply.html" class="apply-cta" data-component="apply-cta">Apply to Texas</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <div class="container">
+      <nav aria-label="Breadcrumb">
+        <ol>
+          <li><a href="index.html">Home</a></li>
+          <li aria-current="page">Contact Us</li>
+        </ol>
+      </nav>
+
+      <section class="hero" data-section="hero">
+        <h1>Contact Us</h1>
+        <p>We'd love to hear from you. Reach out to us through the form below or visit our campus.</p>
+      </section>
+
+      <section data-section="contact-form" class="container">
+        <div id="error-summary" class="error-summary" role="alert" aria-live="assertive" hidden>
+          <h2>Please correct the following errors:</h2>
+          <ul></ul>
+        </div>
+
+        <form id="contact-form" novalidate>
+          <div class="form-group">
+            <label for="contactName">Full Name</label>
+            <input type="text" id="contactName" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="contactEmail">Email Address</label>
+            <input type="email" id="contactEmail" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="contactSubject">Subject</label>
+            <select id="contactSubject" name="subject" required>
+              <option value="">Select a subject...</option>
+              <option value="admissions">Admissions</option>
+              <option value="academics">Academics</option>
+              <option value="financial">Financial Aid</option>
+              <option value="general">General Inquiry</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="contactMessage">Message</label>
+            <textarea id="contactMessage" name="message" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="apply-cta">Send Message</button>
+        </form>
+        <p class="simulation-note">Note: This is a simulation. No message is actually sent.</p>
+      </section>
+
+      <section data-section="contact-info" class="container">
+        <h2>Contact Information</h2>
+        <div class="card-grid" data-component="card-grid">
+          <div class="card">
+            <h3>Main Office</h3>
+            <p>Lone Star University<br>123 University Ave<br>Austin, TX 78712</p>
+            <p>Phone: (512) 555-0100<br>Email: info@lonestar.edu</p>
+          </div>
+          <div class="card">
+            <h3>Admissions</h3>
+            <p>Admissions Office<br>123 University Ave<br>Austin, TX 78712</p>
+            <p>Phone: (512) 555-0101<br>Email: admissions@lonestar.edu</p>
+          </div>
+          <div class="card">
+            <h3>Financial Aid</h3>
+            <p>Financial Aid Office<br>123 University Ave<br>Austin, TX 78712</p>
+            <p>Phone: (512) 555-0102<br>Email: finaid@lonestar.edu</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer" role="contentinfo" data-component="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h2>Contact Us</h2>
+        <p>123 University Ave<br>Austin, TX 78712<br>(512) 555-0100</p>
+      </div>
+      <div>
+        <h2>Quick Links</h2>
+        <a href="about-texas.html">About</a>
+        <a href="academics-colleges-schools.html">Academics</a>
+        <a href="apply.html">Apply</a>
+      </div>
+      <div>
+        <h2>Follow Us</h2>
+        <a href="index.html">Facebook</a>
+        <a href="index.html">Twitter</a>
+        <a href="index.html">Instagram</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

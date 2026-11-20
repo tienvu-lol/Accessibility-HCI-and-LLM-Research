@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tobias Quill &#8212; interactive developer &amp; creative technologist</title>
+<meta name="description" content="The personal site of Tobias Quill (fictional): small working toys, design engineering, writing and talks, from Portland, Oregon.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="author" content="Tobias Quill (fictional)">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="home">
+<a class="skip-link" href="#main-content" data-component="skip-link">Skip to main content</a>
+<header class="site-header" data-section="header">
+  <div class="utility-bar" data-section="utility-bar">
+    <div class="shell">
+      <p data-component="availability-strip">
+        <span class="status-dot" data-component="desk-state-dot" aria-hidden="true"></span>
+        <span class="badge-pill" data-component="availability-badge" data-state="open">Available for work</span>
+        <span class="visually-hidden">Studio clock: </span>
+        <span class="mono" data-component="local-time">Local time loading&#8230;</span>
+      </p>
+      <p class="d-flex flex-wrap align-items-center gap-2">
+        <a href="mailto:hello@tquill.example" data-component="email-link">hello@tquill.example</a>
+        <button class="icon-btn btn-sm" type="button" data-component="copy-button" data-copy="hello@tquill.example" data-label="Email address" data-status="utility-copy-status">
+          <svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15 5H6a2 2 0 0 0-2 2v9" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+          Copy
+        </button>
+        <span class="visually-hidden" role="status" aria-live="polite" id="utility-copy-status" data-component="copy-status"></span>
+      </p>
+    </div>
+  </div>
+  <div class="brand-bar" data-section="brand-bar">
+    <div class="shell">
+      <a class="brand" href="index.html" data-component="logo">
+        <svg class="brand-mark" width="34" height="34" viewBox="0 0 34 34" aria-hidden="true" focusable="false"><rect x="1.5" y="1.5" width="31" height="31" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 24c0-8 4-14 9-14s9 6 9 14" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17" cy="9" r="2.6" fill="currentColor"/></svg>
+        <span>
+          <span class="brand-name">Tobias Quill</span>
+          <span class="brand-role">Interactive developer &amp; creative technologist</span>
+        </span>
+        <span class="visually-hidden">&#8212; home page</span>
+      </a>
+      <div class="header-actions">
+        <button class="icon-btn" type="button" data-ui="disclosure" aria-expanded="false" aria-controls="site-search-panel" data-component="search-toggle">
+          <svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15.5 15.5 21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <span class="d-none d-sm-inline">Search</span><span class="visually-hidden"> this site</span>
+        </button>
+        <button class="icon-btn d-lg-none" type="button" data-ui="panel-open" aria-controls="primary-menu" data-component="mobile-nav-toggle">
+          <svg width="19" height="19" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          Menu<span class="visually-hidden">, open navigation</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <nav class="primary-nav" aria-label="Primary" data-section="primary-nav">
+    <div class="shell">
+      <div class="offcanvas-lg offcanvas-end" tabindex="-1" id="primary-menu" aria-labelledby="primary-menu-title" data-component="mobile-nav">
+        <div class="offcanvas-header">
+          <h2 class="offcanvas-title h5" id="primary-menu-title">Menu</h2>
+          <button type="button" class="btn-close" data-ui="panel-close" aria-label="Close menu"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="nav-list" data-component="nav-menu">
+          <li class="nav-item"><a class="nav-link" href="work.html">Work</a></li>
+          <li class="nav-item"><a class="nav-link" href="writing.html">Writing</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="uses.html">Uses</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            <li class="nav-item dropdown" data-component="nav-dropdown">
+              <button class="nav-link dropdown-toggle" type="button" id="nav-more" data-ui="dropdown-toggle" aria-controls="nav-more-menu" aria-expanded="false">More</button>
+              <ul class="dropdown-menu" id="nav-more-menu" aria-labelledby="nav-more">
+            <li><a class="dropdown-item" href="resume.html">Resume</a></li>
+            <li><a class="dropdown-item" href="talks.html">Talks &amp; podcasts</a></li>
+            <li><a class="dropdown-item" href="colophon.html">Colophon</a></li>
+            <li><a class="dropdown-item" href="accessibility.html">Accessibility</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <a class="btn btn-outline btn-sm nav-cta d-none d-lg-inline-flex" href="contact.html" data-component="cta-button">Start a project</a>
+    </div>
+  </nav>
+  <div class="collapse search-panel" id="site-search-panel" data-component="site-search">
+    <div class="shell py-3">
+      <form action="search.html" method="get" role="search" aria-label="Site" class="search-form">
+        <label class="form-label" for="header-q">Search projects, posts and pages</label>
+        <div class="input-group">
+          <input type="search" class="form-control" id="header-q" name="q" autocomplete="off" placeholder="plotter, focus rings, canvas&#8230;">
+          <button class="btn btn-primary" type="submit">Search</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</header>
+<main id="main-content" tabindex="-1" data-section="main-content">
+  <section class="hero shell" data-section="hero" aria-labelledby="hero-title">
+    <span class="eyebrow">Portland, Oregon &#183; <span data-component="desk-state">loading&#8230;</span></span>
+    <h1 id="hero-title">The curious contraptions of Tobias Quill</h1>
+    <p class="lede">I build small, strange, working things for the web: toys that teach, tools that do one job, and interfaces that stay usable with a keyboard, a screen reader and a stubborn old browser.</p>
+    <p class="hero-sig">Fifteen years of front-end work. Currently principal interaction engineer at Harborlight, and a workshop full of half-finished plotters.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="work.html" data-component="cta-button">See the work</a>
+      <button class="btn btn-outline" type="button" data-component="copy-button" data-copy="hello@tquill.example" data-label="Email address" data-status="hero-copy-status">Copy my email</button>
+      <a class="btn btn-outline" href="resume.html" data-component="cta-button">Resume</a>
+    </div>
+    <p class="status-line" role="status" aria-live="polite" id="hero-copy-status" data-component="copy-status"></p>
+
+    <div class="availability-card mt-band" data-component="availability-card">
+      <span class="badge-pill" data-component="availability-badge" data-state="open">Available for work</span>
+      <h2 class="mt-2">Taking two new projects for Q1 2027</h2>
+      <p>Short engagements suit me best: a prototype to prove out, a design system to make keyboard-friendly, a workshop to run.</p>
+      <dl>
+        <dt>Capacity</dt><dd>About 2 days a week, from January 2027</dd>
+        <dt>Lead time</dt><dd>3&#8211;4 weeks</dd>
+        <dt>Good fits</dt><dd>Prototypes, design engineering, teaching</dd>
+        <dt>Studio clock</dt><dd><span data-component="local-time">loading&#8230;</span></dd>
+      </dl>
+      <p class="mt-3 mb-0"><a class="btn btn-primary btn-sm" href="contact.html" data-component="cta-button">Start a project</a></p>
+    </div>
+  </section>
+
+  <nav class="band band-tight band-sunk" aria-labelledby="on-this-page" data-component="anchor-nav" data-section="anchor-nav">
+    <div class="shell">
+      <h2 class="eyebrow" id="on-this-page">On this page</h2>
+      <ul class="inline-list">
+        <li><a href="#contraptions">Contraptions</a></li>
+        <li><a href="#selected-work">Selected work</a></li>
+        <li><a href="#writing">Writing</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#talks">Talks</a></li>
+        <li><a href="#elsewhere">Elsewhere</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="band shell" id="contraptions" data-section="contraptions" aria-labelledby="contraptions-title">
+    <div class="band-head">
+      <h2 id="contraptions-title">Contraptions, toys and other unpaid work</h2>
+      <p class="meta"><span data-count="projects">9</span> things, most of them useless</p>
+    </div>
+    <p class="lede">Everything here started as a question I could not drop. A few became real projects; the rest live on as pages that do one odd thing well.</p>
+
+    <h3 class="mt-band">Toys</h3>
+    <ul class="link-list" data-component="link-list">
+      <li><a href="project-cursor-weather.html"><span class="link-title">Cursor Weather</span><span class="link-note">Weather that follows your pointer around the page</span><span class="link-year">2026</span></a></li>
+      <li><a href="https://codepen.io/" rel="nofollow noopener"><span class="link-title">Elevator Pitch <span class="ext-mark" aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens an external site)</span></span><span class="link-note">A lift that never reaches the top floor</span><span class="link-year">2024</span></a></li>
+      <li><a href="https://github.com/" rel="nofollow noopener"><span class="link-title">Typewriter Tax <span class="ext-mark" aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens an external site)</span></span><span class="link-note">A writing app that taxes adverbs</span><span class="link-year">2023</span></a></li>
+      <li><a href="https://codepen.io/" rel="nofollow noopener"><span class="link-title">Ninety-Nine Buttons <span class="ext-mark" aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens an external site)</span></span><span class="link-note">Ninety-nine hover states, all keyboard reachable</span><span class="link-year">2022</span></a></li>
+    </ul>
+
+    <h3 class="mt-band">Tools people actually use</h3>
+    <ul class="link-list" data-component="link-list">
+      <li><a href="project-paper-plotter.html"><span class="link-title">Paper Plotter</span><span class="link-note">Turns a week of commits into a plotted broadsheet</span><span class="link-year">2025</span></a></li>
+      <li><a href="https://github.com/" rel="nofollow noopener"><span class="link-title">Queue of One <span class="ext-mark" aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens an external site)</span></span><span class="link-note">A 40-line task runner, 90,000 downloads</span><span class="link-year">2023</span></a></li>
+      <li><a href="project-focus-ring-museum.html"><span class="link-title">The Focus Ring Museum</span><span class="link-note">Eighty-one focus indicators, measured and labelled</span><span class="link-year">2024</span></a></li>
+    </ul>
+
+    <h3 class="mt-band">Oddities in the workshop</h3>
+    <ul class="link-list" data-component="link-list">
+      <li><a href="project-keyboard-garden.html"><span class="link-title">Keyboard Garden</span><span class="link-note">A keyboard that grows a plant for every thousand words</span><span class="link-year">2026</span></a></li>
+      <li><a href="project-tiny-orrery.html"><span class="link-title">Tiny Orrery</span><span class="link-note">A hand-cranked solar system for a science class</span><span class="link-year">2025</span></a></li>
+      <li><a href="uses.html"><span class="link-title">The desk itself</span><span class="link-note">What I type on, draw with and plot to</span><span class="link-year">Ongoing</span></a></li>
+    </ul>
+  </section>
+
+  <section class="band shell" id="selected-work" data-section="selected-work" aria-labelledby="selected-work-title">
+    <div class="band-head">
+      <h2 id="selected-work-title">Selected work</h2>
+      <p class="meta"><a href="work.html">All projects and toys &#8594;</a></p>
+    </div>
+    <ul class="grid" style="list-style:none;padding:0" data-component="project-strip">
+        <li class="card-item" data-component="project-card" data-project="cursor-weather" data-tags="canvas toy open-source" data-search="Cursor Weather A pointer that carries its own microclimate: drizzle, fog and the occasional hailstorm, drawn on a 2&nbsp;KB canvas layer. canvas toy open-source" data-reveal>
+          <img class="thumb" src="assets/img/project-cursor-weather.svg" alt="Diagram of concentric rings standing in for a weather radar sweep" width="640" height="400" loading="lazy">
+          <div class="card-body">
+            <h3><a href="project-cursor-weather.html">Cursor Weather</a></h3>
+            <p>A pointer that carries its own microclimate: drizzle, fog and the occasional hailstorm, drawn on a 2&nbsp;KB canvas layer.</p>
+            <ul class="card-tags" aria-label="Tags for Cursor Weather"><li class="tag">canvas</li><li class="tag">toy</li><li class="tag">open-source</li></ul>
+            <p class="meta">2026 &#183; Case study</p>
+          </div>
+        </li>
+        <li class="card-item" data-component="project-card" data-project="keyboard-garden" data-tags="hardware accessibility" data-search="Keyboard Garden A split keyboard whose keys sprout a plant for every thousand words written, with a printed companion card for screen reader users. hardware accessibility" data-reveal>
+          <img class="thumb" src="assets/img/project-keyboard-garden.svg" alt="Grid of rounded rectangles standing in for keyboard keys" width="640" height="400" loading="lazy">
+          <div class="card-body">
+            <h3><a href="project-keyboard-garden.html">Keyboard Garden</a></h3>
+            <p>A split keyboard whose keys sprout a plant for every thousand words written, with a printed companion card for screen reader users.</p>
+            <ul class="card-tags" aria-label="Tags for Keyboard Garden"><li class="tag">hardware</li><li class="tag">accessibility</li></ul>
+            <p class="meta">2026 &#183; Case study</p>
+          </div>
+        </li>
+        <li class="card-item" data-component="project-card" data-project="tiny-orrery" data-tags="svg teaching open-source" data-search="Tiny Orrery A hand-cranked SVG solar system for a middle-school science unit. Keyboard operable, printable, and legible at 400% zoom. svg teaching open-source" data-reveal>
+          <img class="thumb" src="assets/img/project-tiny-orrery.svg" alt="Concentric orbit rings around a filled centre circle" width="640" height="400" loading="lazy">
+          <div class="card-body">
+            <h3><a href="project-tiny-orrery.html">Tiny Orrery</a></h3>
+            <p>A hand-cranked SVG solar system for a middle-school science unit. Keyboard operable, printable, and legible at 400% zoom.</p>
+            <ul class="card-tags" aria-label="Tags for Tiny Orrery"><li class="tag">svg</li><li class="tag">teaching</li><li class="tag">open-source</li></ul>
+            <p class="meta">2025 &#183; Case study</p>
+          </div>
+        </li>
+        <li class="card-item" data-component="project-card" data-project="paper-plotter" data-tags="hardware type" data-search="Paper Plotter A pen plotter queue that turns a week of git commits into a plotted broadsheet, printed every Friday at 4pm. hardware type" data-reveal>
+          <img class="thumb" src="assets/img/project-paper-plotter.svg" alt="Angular pen path over a plotted baseline" width="640" height="400" loading="lazy">
+          <div class="card-body">
+            <h3><a href="project-paper-plotter.html">Paper Plotter</a></h3>
+            <p>A pen plotter queue that turns a week of git commits into a plotted broadsheet, printed every Friday at 4pm.</p>
+            <ul class="card-tags" aria-label="Tags for Paper Plotter"><li class="tag">hardware</li><li class="tag">type</li></ul>
+            <p class="meta">2025 &#183; Case study</p>
+          </div>
+        </li>
+    </ul>
+  </section>
+
+  <section class="band band-sunk shell" id="writing" data-section="writing" aria-labelledby="writing-title">
+    <div class="band-head">
+      <h2 id="writing-title">Recent writing</h2>
+      <p class="meta"><a href="writing.html">All <span data-count="posts">6</span> posts &#8594;</a></p>
+    </div>
+    <ul class="link-list" data-component="latest-writing">
+      <li><a href="post-making-it-rain.html"><span class="link-title">Making it rain on your cursor</span><span class="link-note">Weather on a pointer sounds like three lines of code. It is three lines of code and&#8230;</span><span class="link-year"><time datetime="2026-10-21">October 21, 2026</time></span></a></li>
+      <li><a href="post-focus-rings-furniture.html"><span class="link-title">Focus rings aren&#8217;t ugly, they&#8217;re furniture</span><span class="link-note">A focus indicator is not decoration you apologise for. It is the handrail on your&#8230;</span><span class="link-year"><time datetime="2026-08-04">August 4, 2026</time></span></a></li>
+      <li><a href="post-twelve-small-tools.html"><span class="link-title">Twelve small tools I built instead of one large one</span><span class="link-note">The large tool was going to take a year. The twelve small ones took nine weekends&#8230;</span><span class="link-year"><time datetime="2026-05-12">May 12, 2026</time></span></a></li>
+    </ul>
+  </section>
+
+  <section class="band shell" id="experience" data-section="experience" aria-labelledby="experience-title">
+    <div class="band-head">
+      <h2 id="experience-title">Experience</h2>
+      <p class="meta"><a href="resume.html">Full resume &#8594;</a></p>
+    </div>
+    <ol class="timeline" data-component="experience-timeline">
+      <li data-reveal>
+        <span class="tl-when">2023&#8211;now</span>
+        <div>
+          <h3>Principal interaction engineer</h3>
+          <p class="tl-org">Harborlight &#183; Portland, Oregon</p>
+          <p>Design engineering for a scheduling product: component library, keyboard model, and the slow unglamorous work of making 240 screens behave the same way.</p>
+        </div>
+      </li>
+      <li data-reveal>
+        <span class="tl-when">2019&#8211;2023</span>
+        <div>
+          <h3>Senior front-end engineer</h3>
+          <p class="tl-org">Marrow &amp; Pike &#183; Remote</p>
+          <p>Built and maintained the public site and the editor used by 400 newsroom staff. Cut the editor&#8217;s keyboard path to any action to three steps.</p>
+        </div>
+      </li>
+      <li data-reveal>
+        <span class="tl-when">2015&#8211;2019</span>
+        <div>
+          <h3>Interactive developer</h3>
+          <p class="tl-org">Ferrous Studio &#183; Seattle</p>
+          <p>Campaign microsites, installations and one regrettable animated cursor. Learned to budget for QA on hardware that ships in a crate.</p>
+        </div>
+      </li>
+      <li data-reveal>
+        <span class="tl-when">2011&#8211;2015</span>
+        <div>
+          <h3>Front-end developer</h3>
+          <p class="tl-org">Rook Street Digital &#183; Melbourne</p>
+          <p>Where I learned HTML properly, mostly by having it taken apart in code review by someone with better taste than mine.</p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <section class="band shell" id="talks" data-section="talks" aria-labelledby="talks-title">
+    <div class="band-head">
+      <h2 id="talks-title">Talks and podcasts</h2>
+      <p class="meta"><a href="talks.html">Everything, with slides &#8594;</a></p>
+    </div>
+    <ul class="link-list" data-component="talk-strip">
+      <li><a href="talks.html#serious-play"><span class="link-title">Serious play: the case for useless software</span><span class="link-note">Interface Northwest &#183; Talk</span><span class="link-year">2026</span></a></li>
+      <li><a href="talks.html#focus-rings"><span class="link-title">Focus rings, handrails and other furniture</span><span class="link-note">A11y Portland &#183; Talk</span><span class="link-year">2026</span></a></li>
+      <li><a href="talks.html#long-build"><span class="link-title">Episode 212: tinkering as practice</span><span class="link-note">The Long Build podcast</span><span class="link-year">2025</span></a></li>
+      <li><a href="talks.html#twelve-tools"><span class="link-title">Twelve tools, nine weekends</span><span class="link-note">Cascadia JS Meetup &#183; Talk</span><span class="link-year">2025</span></a></li>
+    </ul>
+  </section>
+
+  <section class="band band-sunk" id="elsewhere" data-section="elsewhere" aria-labelledby="elsewhere-title">
+    <div class="shell">
+      <h2 id="elsewhere-title">Elsewhere, and a slow newsletter</h2>
+      <div class="grid grid-2 mt-band">
+        <div>
+          <h3>Find me</h3>
+          <ul class="link-list" data-component="social-links">
+            <li><a href="https://github.com/" rel="nofollow noopener"><span class="link-title">GitHub <span class="ext-mark" aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens an external site)</span></span><span class="link-note">Source for most things on this page</span></a></li>
+            <li><a href="https://codepen.io/" rel="nofollow noopener"><span class="link-title">CodePen <span class="ext-mark" aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens an external site)</span></span><span class="link-note">Toys that fit in one file</span></a></li>
+            <li><a href="https://bsky.app/" rel="nofollow noopener"><span class="link-title">Bluesky <span class="ext-mark" aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens an external site)</span></span><span class="link-note">Plotter photographs, mostly</span></a></li>
+            <li><a href="mailto:hello@tquill.example"><span class="link-title">Email</span><span class="link-note">hello@tquill.example</span></a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Six letters a year</h3>
+          <p>One letter every couple of months: what I built, what broke, and one small thing worth your attention. No tracking, no sponsors.</p>
+          <form class="form-stack" data-form="newsletter" novalidate data-component="newsletter-form">
+            <div class="error-summary" role="alert" hidden data-component="error-summary">
+              <h4>There is a problem</h4>
+              <ul></ul>
+            </div>
+            <div>
+              <label class="form-label" for="nl-email">Email address <span class="req" aria-hidden="true">*</span><span class="visually-hidden"> (required)</span></label>
+              <input class="form-control" type="email" id="nl-email" name="email" required autocomplete="email" data-validate="email" data-label="Email address" aria-describedby="nl-email-hint nl-email-error">
+              <span class="form-hint" id="nl-email-hint">Used only for the letter. Unsubscribe link in every one.</span>
+              <span class="field-error" id="nl-email-error" data-component="field-error"></span>
+            </div>
+            <button class="btn btn-primary" type="submit">Sign me up</button>
+            <p class="demo-flag">Demo form &#183; nothing is sent or stored</p>
+          </form>
+          <div class="success-panel" hidden data-component="success-panel">
+            <h3>You&#8217;re on the list</h3>
+            <p>We would have sent a confirmation to <strong data-echo>you</strong> under reference <strong data-ref>NE-0000</strong>.</p>
+            <p class="demo-note">Demo only: this page has no server, so nothing was sent and no address was stored.</p>
+          </div>
+          <p class="visually-hidden" role="status" aria-live="polite" data-component="form-status"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+<footer class="site-footer" data-section="footer">
+  <div class="shell">
+    <div class="footer-grid">
+      <div data-component="footer-column">
+        <h2>The site</h2>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="writing.html">Writing</a></li>
+          <li><a href="talks.html">Talks &amp; podcasts</a></li>
+          <li><a href="search.html">Search</a></li>
+        </ul>
+      </div>
+      <div data-component="footer-column">
+        <h2>Background</h2>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="uses.html">Uses</a></li>
+          <li><a href="colophon.html">Colophon</a></li>
+          <li><a href="accessibility.html">Accessibility</a></li>
+        </ul>
+      </div>
+      <div data-component="footer-column">
+        <h2>Elsewhere</h2>
+        <ul data-component="social-links">
+          <li><a href="https://github.com/" rel="nofollow noopener">GitHub <span class="ext-mark" aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens an external site)</span></a></li>
+          <li><a href="https://codepen.io/" rel="nofollow noopener">CodePen <span class="ext-mark" aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens an external site)</span></a></li>
+          <li><a href="https://bsky.app/" rel="nofollow noopener">Bluesky <span class="ext-mark" aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens an external site)</span></a></li>
+          <li><a href="https://www.linkedin.com/" rel="nofollow noopener">LinkedIn <span class="ext-mark" aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens an external site)</span></a></li>
+        </ul>
+      </div>
+      <div data-component="footer-column">
+        <h2>Get in touch</h2>
+        <p class="stack-sm">
+          <a href="mailto:hello@tquill.example" data-component="email-link">hello@tquill.example</a><br>
+          <span class="text-faint">Portland, Oregon &#183; <span data-component="local-time">local time loading&#8230;</span></span>
+        </p>
+        <p><a class="btn btn-outline btn-sm" href="contact.html" data-component="cta-button">Start a project</a></p>
+        <p class="text-faint" style="font-size:.8125rem">Replies within two working days, usually one.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&#169; <span data-component="year-stamp">2026</span> Tobias Quill. A fictional person, built as a research baseline. Phone numbers use the 555 range; email uses the reserved <span class="mono">.example</span> domain.</p>
+      <p><a class="to-top" href="#main-content" data-component="to-top">Back to top &#8593;</a></p>
+    </div>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

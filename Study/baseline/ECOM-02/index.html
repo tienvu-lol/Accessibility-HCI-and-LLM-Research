@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Larkwood Home (fictional demo store): home furnishings</title>
+<meta name="description" content="Home page of a fictional home furnishings retailer, built as a static accessibility research replica.">
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="home">
+<a class="skip-link" href="#main-content" data-component="skip-link">Skip to main content</a>
+<header class="site-header" data-section="global-header" data-component="site-header">
+  <div class="promo-strip" data-section="promo-strip" data-component="promo-strip"><p>Fictional demo store for a research dataset. Products, prices and offers are sample data. Nothing can be bought here.</p></div>
+  <div class="header-bar">
+    <a class="brand" href="index.html" data-component="brand-logo"><img src="assets/logo.svg" alt="Larkwood Home, go to the home page" width="160" height="40"></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-component="menu-toggle">Menu</button>
+    <form class="search" role="search" action="search.html" method="get" data-section="site-search" data-component="search-form">
+      <label for="q" class="sr-only">Search the sample catalogue</label>
+      <input id="q" type="search" name="q" placeholder="Search products, for example desk" autocomplete="off">
+      <button type="submit">Search</button>
+    </form>
+    <nav class="shop-links" aria-label="Shopping links" data-section="shopping-links" data-component="utility-nav">
+      <ul>
+        <li><a href="login.html">Hello! Sign in (demo)</a></li>
+        <li><a href="stores.html">Stores</a></li>
+        <li><a href="cart.html" data-component="bag-link">Bag <span class="count" data-cart-count>0</span><span class="sr-only"> items</span></a></li>
+      </ul>
+    </nav>
+    <div class="sr-only" id="live-polite" role="status" aria-live="polite" data-component="live-region"></div>
+  </div>
+  <div class="nav-wrap" id="site-nav" data-section="global-navigation">
+    <nav class="main-nav" aria-label="Main" data-component="primary-nav">
+      <ul>
+        <li class="mega-wrap" data-component="mega-menu">
+          <button class="mega-trigger" type="button" aria-expanded="false" aria-controls="mega-panel">Shop all</button>
+          <div class="mega-panel" id="mega-panel" hidden data-section="mega-menu-panel">
+            <ul class="mega-depts">
+              <li><button class="dept-btn" type="button" aria-expanded="false" aria-controls="dept-furniture">Furniture</button>
+                <div class="dept-panel" id="dept-furniture" hidden><ul><li><a href="furniture.html">All furniture</a></li><li><a href="sofas.html">Sofas &amp; armchairs</a></li><li><a href="sofas.html?type=Armchairs">Armchairs</a></li><li><a href="beds.html">Beds &amp; bed frames</a></li><li><a href="search.html?q=desk">Desks &amp; storage</a></li></ul></div></li>
+              <li><button class="dept-btn" type="button" aria-expanded="false" aria-controls="dept-lighting">Lighting</button>
+                <div class="dept-panel" id="dept-lighting" hidden><ul><li><a href="lighting.html">All lighting</a></li><li><a href="lighting.html?type=Table+lamps">Table lamps</a></li><li><a href="lighting.html?type=Floor+lamps">Floor lamps</a></li><li><a href="lighting.html?type=Pendant+lights">Pendant lights</a></li><li><a href="lighting.html?type=Wall+lights">Wall lights</a></li></ul></div></li>
+              <li><button class="dept-btn" type="button" aria-expanded="false" aria-controls="dept-beds">Beds &amp; bedroom</button>
+                <div class="dept-panel" id="dept-beds" hidden><ul><li><a href="beds.html">All beds &amp; bedroom</a></li><li><a href="beds.html?type=Bed+frames">Bed frames</a></li><li><a href="beds.html?type=Headboards">Headboards</a></li><li><a href="beds.html?type=Bedside+tables">Bedside tables</a></li></ul></div></li>
+              <li><button class="dept-btn" type="button" aria-expanded="false" aria-controls="dept-rooms">Rooms</button>
+                <div class="dept-panel" id="dept-rooms" hidden><ul><li><a href="rooms.html">All rooms</a></li><li><a href="rooms.html#living-room">Living room</a></li><li><a href="rooms.html#bedroom">Bedroom</a></li><li><a href="rooms.html#home-office">Home office</a></li></ul></div></li>
+            </ul>
+          </div>
+        </li>
+        <li><a class="nav-link" href="rooms.html">Rooms</a></li>
+        <li><a class="nav-link" href="new.html">New</a></li>
+        <li><a class="nav-link" href="customer-service.html">Customer service</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main-content" data-section="main-content">
+<div class="wrap">
+<section class="hero" aria-labelledby="hero-h" data-section="hero" data-component="hero-banner">
+  <div><h1 id="hero-h">Welcome to Larkwood Home</h1><p>Sample furniture and lighting for every room. This is a fictional store: browse, filter and fill a demo bag, but nothing can be bought.</p><p><a class="btn" href="furniture.html">Shop furniture</a> <a class="btn btn-secondary" href="rooms.html">Browse rooms</a></p></div>
+  <img src="assets/hero-living.svg" alt="Abstract illustration of a green sofa, a floor lamp and a window" width="480" height="300">
+</section>
+<section class="section" aria-labelledby="cats-h" data-section="category-links" data-component="category-grid"><h2 id="cats-h">Shop by category</h2><ul class="tile-grid" data-component="category-tile-grid"><li class="tile" data-component="category-tile"><a href="furniture.html"><img src="assets/tile-furniture.svg" alt="" width="200" height="150"><span>Furniture</span><p>Sofas, beds, desks and more</p></a></li><li class="tile" data-component="category-tile"><a href="sofas.html"><img src="assets/tile-sofas.svg" alt="" width="200" height="150"><span>Sofas &amp; armchairs</span><p>12 sample products</p></a></li><li class="tile" data-component="category-tile"><a href="lighting.html"><img src="assets/tile-lighting.svg" alt="" width="200" height="150"><span>Lighting</span><p>Lamps, pendants, wall lights</p></a></li><li class="tile" data-component="category-tile"><a href="beds.html"><img src="assets/tile-beds.svg" alt="" width="200" height="150"><span>Beds &amp; bedroom</span><p>Frames, headboards, tables</p></a></li><li class="tile" data-component="category-tile"><a href="rooms.html"><img src="assets/tile-rooms.svg" alt="" width="200" height="150"><span>Rooms</span><p>Shop by room</p></a></li><li class="tile" data-component="category-tile"><a href="new.html"><img src="assets/tile-new.svg" alt="" width="200" height="150"><span>New designs</span><p>Sample new arrivals</p></a></li></ul></section>
+<section class="section" aria-labelledby="deals-h" data-section="deals" data-component="product-card-grid"><h2 id="deals-h">Today's best deals</h2><p class="note">Sample deals with invented prices. They never expire because they are not real.</p><ul class="card-grid" data-fill="deals"  ></ul></section>
+</div>
+<div class="band"><div class="wrap">
+<section class="section two-col" aria-labelledby="club-h" data-section="club-offers" data-component="promo-card-pair">
+  <div class="panel-card"><h2 id="club-h">Larkwood Club offers</h2><p>A sample members' offers block. In this demo there is no membership; you can try the labelled demo sign-in.</p><p><a class="btn btn-secondary" href="login.html">Demo sign-in</a></p></div>
+  <div class="panel-card"><h2>Right now at Larkwood</h2><p>Sample seasonal feature: a cosy corner for reading, built from an armchair and a floor lamp.</p><p><a class="btn btn-secondary" href="rooms.html#living-room">See the living room</a></p></div>
+</section></div></div>
+<div class="wrap">
+<section class="section" aria-labelledby="newest-h" data-section="newest-designs" data-component="product-card-grid"><h2 id="newest-h">Fall in love with our newest designs</h2><ul class="card-grid" data-fill="new"  ></ul><p><a href="new.html">See all new designs</a></p></section>
+<section class="section" aria-labelledby="whatsnew-h" data-section="discover-new" data-component="feature-panel"><div class="panel-card"><h2 id="whatsnew-h">Discover what's new</h2><p>Original, invented collections: the Hearthside collection of warm woods and the Fieldnote collection for compact work corners.</p><p><a href="new.html">Explore new designs</a></p></div></section>
+</div>
+</main>
+<footer class="site-footer" data-section="global-footer" data-component="site-footer">
+  <div class="wrap">
+    <h2 class="sr-only">Footer</h2>
+    <div class="footer-grid">
+      <nav aria-label="Customer service" data-section="footer-customer-service" data-component="footer-link-group"><h3>Customer service</h3>
+        <ul><li><a href="faq.html">FAQ</a></li><li><a href="customer-service.html#contact">Contact us</a></li><li><a href="returns.html">Return policy</a></li><li><a href="customer-service.html#delivery">Delivery information</a></li><li><a href="stores.html">Find a store</a></li></ul></nav>
+      <nav aria-label="Shop" data-section="footer-shop" data-component="footer-link-group"><h3>Shop</h3>
+        <ul><li><a href="furniture.html">Furniture</a></li><li><a href="sofas.html">Sofas &amp; armchairs</a></li><li><a href="lighting.html">Lighting</a></li><li><a href="beds.html">Beds &amp; bedroom</a></li><li><a href="rooms.html">Rooms</a></li><li><a href="new.html">New designs</a></li></ul></nav>
+      <nav aria-label="Account" data-section="footer-account" data-component="footer-link-group"><h3>Your account</h3>
+        <ul><li><a href="login.html">Sign in (demo)</a></li><li><a href="cart.html">Shopping bag</a></li></ul></nav>
+    </div>
+    <div class="club" data-section="club-signup" data-component="membership-callout"><h3>Join Larkwood Club</h3><p>Sample membership block. There is no real membership; the sign-in page is a labelled demo.</p><p><a href="login.html">Go to the demo sign-in</a></p></div>
+    <p class="footer-note" data-component="legal-note">Larkwood Home is a fictional brand created for an accessibility and usability research dataset. This site is a static replica: product names, prices, stores and policies are invented sample data, and no purchase, payment or delivery can take place.</p>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

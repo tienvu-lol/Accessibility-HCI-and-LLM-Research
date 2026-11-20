@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Discover your weather | Aurora Meteorological Bureau</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  
+  <header class="site-header" data-section="header" data-component="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="site-logo" aria-label="Aurora Met Bureau">Aurora Met Bureau</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+      <nav class="primary-nav" id="primary-nav" data-component="primary-nav">
+        <ul>
+          <li><a href="location-australia.html">Forecasts</a></li>
+          <li><a href="warnings-and-alerts.html">Warnings & Alerts</a></li>
+          <li><a href="rain-radar-and-weather-maps.html">Radar & Maps</a></li>
+          <li><a href="tropical-cyclone.html">Tropical Cyclones</a></li>
+          <li><a href="water-data-and-forecasts.html">Water Data</a></li>
+          <li><a href="past-weather-and-climate.html">Past Weather</a></li>
+          <li><a href="about-the-bureau.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="hero" data-section="hero" data-component="hero-banner">
+      <div class="container">
+        <h1>Discover your weather</h1>
+        <p>Accurate forecasts, real-time observations, and critical weather alerts for the entire nation.</p>
+      </div>
+    </section>
+
+    <section class="container" data-section="main-content" data-component="card-grid">
+      <h2>Current Conditions</h2>
+      <div class="card-grid" id="location-list">
+        <article class="card location-card">
+          <h3 class="location-name">Capital City</h3>
+          <p class="location-region">Region A</p>
+          <p>Temp: <span class="temp-c" data-c="22">22°C</span> / <span class="temp-f" data-f="72">72°F</span></p>
+          <p>Wind: 15 km/h NW</p>
+          <p>Condition: Partly Cloudy</p>
+        </article>
+        <article class="card location-card">
+          <h3 class="location-name">Port Haven</h3>
+          <p class="location-region">Region B</p>
+          <p>Temp: <span class="temp-c" data-c="18">18°C</span> / <span class="temp-f" data-f="64">64°F</span></p>
+          <p>Wind: 20 km/h S</p>
+          <p>Condition: Overcast</p>
+        </article>
+        <article class="card location-card">
+          <h3 class="location-name">Highland Valley</h3>
+          <p class="location-region">Region C</p>
+          <p>Temp: <span class="temp-c" data-c="12">12°C</span> / <span class="temp-f" data-f="54">54°F</span></p>
+          <p>Wind: 10 km/h E</p>
+          <p>Condition: Clear</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="container" data-section="alerts-summary" data-component="alert-list">
+      <h2>Active Weather Alerts</h2>
+      <div class="alert-item critical">
+        <p class="alert-type">Severe Storm Warning</p>
+        <p><strong>Region A:</strong> Heavy rainfall and strong winds expected until 18:00.</p>
+      </div>
+      <div class="alert-item warning">
+        <p class="alert-type">Flood Watch</p>
+        <p><strong>Region B:</strong> River levels rising due to upstream rainfall.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" data-section="footer" data-component="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>Aurora Met Bureau</h3>
+        <p>Providing accurate weather information since 1901.</p>
+      </div>
+      <div>
+        <h3>Quick Links</h3>
+        <a href="index.html">Home</a>
+        <a href="warnings-and-alerts.html">Warnings</a>
+        <a href="about-the-bureau.html">About Us</a>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <p>Email: info@auroramet.sim</p>
+        <p>Phone: 1300 000 000</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

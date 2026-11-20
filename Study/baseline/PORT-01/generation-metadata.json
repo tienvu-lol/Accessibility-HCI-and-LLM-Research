@@ -1,0 +1,36 @@
+{
+  "allocation_protocol": "WEB-REPLICA-ALLOCATION-V1.0",
+  "generation_protocol": "WEB-REPLICA-V1.0",
+  "category": "portfolio",
+  "slot": 1,
+  "source_id": "PORT-01",
+  "model_group": "claude",
+  "model_id": "claude-opus-5",
+  "model_version": null,
+  "model_provider_or_runtime": "Claude Code CLI, interactive session",
+  "generation_mode": "interactive session with the project lead; one replica per delivery, each followed by a stop for review",
+  "operator": "project lead (repo owner, tienvu-lol) in an interactive Claude Code session",
+  "approved_source_url": "https://tholman.com/",
+  "source_verified_at": "2026-11-09",
+  "source_approved_at": "2026-11-09",
+  "generation_started_at": "2026-11-09",
+  "generation_completed_at": "2026-11-10",
+  "rules_revision": "a07e70e",
+  "category_prompt_revision": "project lead's portfolio brief, interactive session 2026-11-09; no category prompt file exists for portfolio",
+  "prompt_or_transcript_reference": "Claude Code session 2026-11-09/2026-11-10, portfolio category, slots 01-03",
+  "human_edits": [],
+  "notes": [
+    "Phase A was observed: a 10-source approval table was presented and approved by the project lead on 2026-11-09 before any code was generated.",
+    "Portfolio did not exist as a category in metadata/assignments.csv when these replicas were built; it was added as part of this delivery.",
+    "First built with Bootstrap 5.3.3 and jQuery 3.7.1 on the project lead's instruction, which conflicted with RULES.md section 2. The conflict was reported and the lead chose removal: both libraries were deleted and the dropdown, slide-in navigation, disclosures and image dialog were reimplemented in vanilla JS and CSS on 2026-11-10."
+  ],
+  "validation_summary": {
+    "technology": "pass: no framework, library, backend, build step or remote dependency; Bootstrap and jQuery were removed on 2026-11-10 and the widgets reimplemented in vanilla JS/CSS. Websites/tools/qc/qc.js reports failures=0",
+    "completeness": "pass: 23 pages and 50 files; 0 broken references, 0 orphan assets, 0 placeholder href=\"#\" (qc.js)",
+    "structure": "pass (automated): every page has header, a labelled nav, main#main-content[data-section=main-content] and footer; asides are top-level landmarks",
+    "interaction": "pass: 93/93 scripted Playwright checks over file://, 0 JavaScript console errors",
+    "accessibility": "pass (automated): axe-core 4.10.2 wcag2a/2aa/21a/21aa/22aa + best-practice, 0 violations in 69 runs (every page at 1280px light, 375px light, 1280px dark). NOT TESTED: manual keyboard walkthrough, screen readers, 200%/400% zoom",
+    "traceability": "pass: README.md, fidelity-notes.md and component-inventory.json generated from the delivered files and the QC report",
+    "scope": "pass with additions: the source page set is mirrored and every added page is labelled as an intentional addition in README.md and fidelity-notes.md"
+  }
+}

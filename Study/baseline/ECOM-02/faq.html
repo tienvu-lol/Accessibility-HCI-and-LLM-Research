@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FAQs - Larkwood Home (demo)</title>
+<meta name="description" content="Sample frequently asked questions.">
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="faq">
+<a class="skip-link" href="#main-content" data-component="skip-link">Skip to main content</a>
+<header class="site-header" data-section="global-header" data-component="site-header">
+  <div class="promo-strip" data-section="promo-strip" data-component="promo-strip"><p>Fictional demo store for a research dataset. Products, prices and offers are sample data. Nothing can be bought here.</p></div>
+  <div class="header-bar">
+    <a class="brand" href="index.html" data-component="brand-logo"><img src="assets/logo.svg" alt="Larkwood Home, go to the home page" width="160" height="40"></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-component="menu-toggle">Menu</button>
+    <form class="search" role="search" action="search.html" method="get" data-section="site-search" data-component="search-form">
+      <label for="q" class="sr-only">Search the sample catalogue</label>
+      <input id="q" type="search" name="q" placeholder="Search products, for example desk" autocomplete="off">
+      <button type="submit">Search</button>
+    </form>
+    <nav class="shop-links" aria-label="Shopping links" data-section="shopping-links" data-component="utility-nav">
+      <ul>
+        <li><a href="login.html">Hello! Sign in (demo)</a></li>
+        <li><a href="stores.html">Stores</a></li>
+        <li><a href="cart.html" data-component="bag-link">Bag <span class="count" data-cart-count>0</span><span class="sr-only"> items</span></a></li>
+      </ul>
+    </nav>
+    <div class="sr-only" id="live-polite" role="status" aria-live="polite" data-component="live-region"></div>
+  </div>
+  <div class="nav-wrap" id="site-nav" data-section="global-navigation">
+    <nav class="main-nav" aria-label="Main" data-component="primary-nav">
+      <ul>
+        <li class="mega-wrap" data-component="mega-menu">
+          <button class="mega-trigger" type="button" aria-expanded="false" aria-controls="mega-panel">Shop all</button>
+          <div class="mega-panel" id="mega-panel" hidden data-section="mega-menu-panel">
+            <ul class="mega-depts">
+              <li><button class="dept-btn" type="button" aria-expanded="false" aria-controls="dept-furniture">Furniture</button>
+                <div class="dept-panel" id="dept-furniture" hidden><ul><li><a href="furniture.html">All furniture</a></li><li><a href="sofas.html">Sofas &amp; armchairs</a></li><li><a href="sofas.html?type=Armchairs">Armchairs</a></li><li><a href="beds.html">Beds &amp; bed frames</a></li><li><a href="search.html?q=desk">Desks &amp; storage</a></li></ul></div></li>
+              <li><button class="dept-btn" type="button" aria-expanded="false" aria-controls="dept-lighting">Lighting</button>
+                <div class="dept-panel" id="dept-lighting" hidden><ul><li><a href="lighting.html">All lighting</a></li><li><a href="lighting.html?type=Table+lamps">Table lamps</a></li><li><a href="lighting.html?type=Floor+lamps">Floor lamps</a></li><li><a href="lighting.html?type=Pendant+lights">Pendant lights</a></li><li><a href="lighting.html?type=Wall+lights">Wall lights</a></li></ul></div></li>
+              <li><button class="dept-btn" type="button" aria-expanded="false" aria-controls="dept-beds">Beds &amp; bedroom</button>
+                <div class="dept-panel" id="dept-beds" hidden><ul><li><a href="beds.html">All beds &amp; bedroom</a></li><li><a href="beds.html?type=Bed+frames">Bed frames</a></li><li><a href="beds.html?type=Headboards">Headboards</a></li><li><a href="beds.html?type=Bedside+tables">Bedside tables</a></li></ul></div></li>
+              <li><button class="dept-btn" type="button" aria-expanded="false" aria-controls="dept-rooms">Rooms</button>
+                <div class="dept-panel" id="dept-rooms" hidden><ul><li><a href="rooms.html">All rooms</a></li><li><a href="rooms.html#living-room">Living room</a></li><li><a href="rooms.html#bedroom">Bedroom</a></li><li><a href="rooms.html#home-office">Home office</a></li></ul></div></li>
+            </ul>
+          </div>
+        </li>
+        <li><a class="nav-link" href="rooms.html">Rooms</a></li>
+        <li><a class="nav-link" href="new.html">New</a></li>
+        <li><a class="nav-link" href="customer-service.html">Customer service</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<nav class="breadcrumb wrap" aria-label="Breadcrumb" data-section="breadcrumb" data-component="breadcrumb"><ol><li><a href="index.html">Home</a></li><li><a href="customer-service.html">Customer service</a></li><li><span aria-current="page">FAQ</span></li></ol></nav>
+<main id="main-content" data-section="main-content">
+<div class="wrap"><h1>Frequently asked questions</h1><section aria-label="Questions" data-section="faq-list" data-component="accordion">
+<div class="acc-item"><h2 style="font-size:1.05rem;margin:0"><button class="acc-btn" type="button" id="acc-b0" aria-expanded="false" aria-controls="acc-p0">Is this a real store?</button></h2><div class="acc-panel" id="acc-p0" role="region" aria-labelledby="acc-b0" hidden><p>No. Larkwood Home is a fictional brand used for a research dataset. Nothing can be bought.</p></div></div>
+<div class="acc-item"><h2 style="font-size:1.05rem;margin:0"><button class="acc-btn" type="button" id="acc-b1" aria-expanded="false" aria-controls="acc-p1">Why does the checkout not ask for payment details?</button></h2><div class="acc-panel" id="acc-p1" role="region" aria-labelledby="acc-b1" hidden><p>The checkout is a simulation. A real store would collect payment at that step; this demo deliberately does not.</p></div></div>
+<div class="acc-item"><h2 style="font-size:1.05rem;margin:0"><button class="acc-btn" type="button" id="acc-b2" aria-expanded="false" aria-controls="acc-p2">Are the prices and products real?</button></h2><div class="acc-panel" id="acc-p2" role="region" aria-labelledby="acc-b2" hidden><p>No. Every product name, dimension and price is invented sample data.</p></div></div>
+<div class="acc-item"><h2 style="font-size:1.05rem;margin:0"><button class="acc-btn" type="button" id="acc-b3" aria-expanded="false" aria-controls="acc-p3">Where is my demo bag stored?</button></h2><div class="acc-panel" id="acc-p3" role="region" aria-labelledby="acc-b3" hidden><p>In your browser session only. Closing the browser tab or window clears it, and nothing is sent anywhere.</p></div></div>
+<div class="acc-item"><h2 style="font-size:1.05rem;margin:0"><button class="acc-btn" type="button" id="acc-b4" aria-expanded="false" aria-controls="acc-p4">Does signing in do anything?</button></h2><div class="acc-panel" id="acc-p4" role="region" aria-labelledby="acc-b4" hidden><p>No. The sign-in page is a labelled demo and no accounts exist.</p></div></div>
+<div class="acc-item"><h2 style="font-size:1.05rem;margin:0"><button class="acc-btn" type="button" id="acc-b5" aria-expanded="false" aria-controls="acc-p5">Are the stores real?</button></h2><div class="acc-panel" id="acc-p5" role="region" aria-labelledby="acc-b5" hidden><p>No. The store list uses invented names, addresses and 555 phone numbers.</p></div></div>
+</section></div>
+</main>
+<footer class="site-footer" data-section="global-footer" data-component="site-footer">
+  <div class="wrap">
+    <h2 class="sr-only">Footer</h2>
+    <div class="footer-grid">
+      <nav aria-label="Customer service" data-section="footer-customer-service" data-component="footer-link-group"><h3>Customer service</h3>
+        <ul><li><a href="faq.html">FAQ</a></li><li><a href="customer-service.html#contact">Contact us</a></li><li><a href="returns.html">Return policy</a></li><li><a href="customer-service.html#delivery">Delivery information</a></li><li><a href="stores.html">Find a store</a></li></ul></nav>
+      <nav aria-label="Shop" data-section="footer-shop" data-component="footer-link-group"><h3>Shop</h3>
+        <ul><li><a href="furniture.html">Furniture</a></li><li><a href="sofas.html">Sofas &amp; armchairs</a></li><li><a href="lighting.html">Lighting</a></li><li><a href="beds.html">Beds &amp; bedroom</a></li><li><a href="rooms.html">Rooms</a></li><li><a href="new.html">New designs</a></li></ul></nav>
+      <nav aria-label="Account" data-section="footer-account" data-component="footer-link-group"><h3>Your account</h3>
+        <ul><li><a href="login.html">Sign in (demo)</a></li><li><a href="cart.html">Shopping bag</a></li></ul></nav>
+    </div>
+    <div class="club" data-section="club-signup" data-component="membership-callout"><h3>Join Larkwood Club</h3><p>Sample membership block. There is no real membership; the sign-in page is a labelled demo.</p><p><a href="login.html">Go to the demo sign-in</a></p></div>
+    <p class="footer-note" data-component="legal-note">Larkwood Home is a fictional brand created for an accessibility and usability research dataset. This site is a static replica: product names, prices, stores and policies are invented sample data, and no purchase, payment or delivery can take place.</p>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

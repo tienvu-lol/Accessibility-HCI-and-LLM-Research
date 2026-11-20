@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Demo checkout - Larkwood Home (demo)</title>
+<meta name="description" content="Simulated checkout with validation. No order is placed and no payment is collected.">
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="checkout">
+<a class="skip-link" href="#main-content" data-component="skip-link">Skip to main content</a>
+<header class="site-header" data-section="global-header" data-component="site-header">
+  <div class="promo-strip" data-section="promo-strip" data-component="promo-strip"><p>Fictional demo store for a research dataset. Products, prices and offers are sample data. Nothing can be bought here.</p></div>
+  <div class="header-bar">
+    <a class="brand" href="index.html" data-component="brand-logo"><img src="assets/logo.svg" alt="Larkwood Home, go to the home page" width="160" height="40"></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-component="menu-toggle">Menu</button>
+    <form class="search" role="search" action="search.html" method="get" data-section="site-search" data-component="search-form">
+      <label for="q" class="sr-only">Search the sample catalogue</label>
+      <input id="q" type="search" name="q" placeholder="Search products, for example desk" autocomplete="off">
+      <button type="submit">Search</button>
+    </form>
+    <nav class="shop-links" aria-label="Shopping links" data-section="shopping-links" data-component="utility-nav">
+      <ul>
+        <li><a href="login.html">Hello! Sign in (demo)</a></li>
+        <li><a href="stores.html">Stores</a></li>
+        <li><a href="cart.html" data-component="bag-link">Bag <span class="count" data-cart-count>0</span><span class="sr-only"> items</span></a></li>
+      </ul>
+    </nav>
+    <div class="sr-only" id="live-polite" role="status" aria-live="polite" data-component="live-region"></div>
+  </div>
+  <div class="nav-wrap" id="site-nav" data-section="global-navigation">
+    <nav class="main-nav" aria-label="Main" data-component="primary-nav">
+      <ul>
+        <li class="mega-wrap" data-component="mega-menu">
+          <button class="mega-trigger" type="button" aria-expanded="false" aria-controls="mega-panel">Shop all</button>
+          <div class="mega-panel" id="mega-panel" hidden data-section="mega-menu-panel">
+            <ul class="mega-depts">
+              <li><button class="dept-btn" type="button" aria-expanded="false" aria-controls="dept-furniture">Furniture</button>
+                <div class="dept-panel" id="dept-furniture" hidden><ul><li><a href="furniture.html">All furniture</a></li><li><a href="sofas.html">Sofas &amp; armchairs</a></li><li><a href="sofas.html?type=Armchairs">Armchairs</a></li><li><a href="beds.html">Beds &amp; bed frames</a></li><li><a href="search.html?q=desk">Desks &amp; storage</a></li></ul></div></li>
+              <li><button class="dept-btn" type="button" aria-expanded="false" aria-controls="dept-lighting">Lighting</button>
+                <div class="dept-panel" id="dept-lighting" hidden><ul><li><a href="lighting.html">All lighting</a></li><li><a href="lighting.html?type=Table+lamps">Table lamps</a></li><li><a href="lighting.html?type=Floor+lamps">Floor lamps</a></li><li><a href="lighting.html?type=Pendant+lights">Pendant lights</a></li><li><a href="lighting.html?type=Wall+lights">Wall lights</a></li></ul></div></li>
+              <li><button class="dept-btn" type="button" aria-expanded="false" aria-controls="dept-beds">Beds &amp; bedroom</button>
+                <div class="dept-panel" id="dept-beds" hidden><ul><li><a href="beds.html">All beds &amp; bedroom</a></li><li><a href="beds.html?type=Bed+frames">Bed frames</a></li><li><a href="beds.html?type=Headboards">Headboards</a></li><li><a href="beds.html?type=Bedside+tables">Bedside tables</a></li></ul></div></li>
+              <li><button class="dept-btn" type="button" aria-expanded="false" aria-controls="dept-rooms">Rooms</button>
+                <div class="dept-panel" id="dept-rooms" hidden><ul><li><a href="rooms.html">All rooms</a></li><li><a href="rooms.html#living-room">Living room</a></li><li><a href="rooms.html#bedroom">Bedroom</a></li><li><a href="rooms.html#home-office">Home office</a></li></ul></div></li>
+            </ul>
+          </div>
+        </li>
+        <li><a class="nav-link" href="rooms.html">Rooms</a></li>
+        <li><a class="nav-link" href="new.html">New</a></li>
+        <li><a class="nav-link" href="customer-service.html">Customer service</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<nav class="breadcrumb wrap" aria-label="Breadcrumb" data-section="breadcrumb" data-component="breadcrumb"><ol><li><a href="index.html">Home</a></li><li><a href="cart.html">Shopping bag</a></li><li><span aria-current="page">Demo checkout</span></li></ol></nav>
+<main id="main-content" data-section="main-content">
+<div class="wrap"><h1>Demo checkout</h1>
+<div class="demo-banner" data-section="demo-notice" data-component="demo-banner"><strong>This is a simulation.</strong> No order will be placed, no payment is collected, and nothing will be shipped or scheduled. Do not enter real personal details; use made-up values. Nothing you type leaves your browser.</div>
+<div class="empty" id="checkout-empty" hidden data-component="empty-state"><h2>Your demo bag is empty</h2><p>Add something to the demo bag before trying the checkout simulation.</p><p><a class="btn" href="furniture.html">Shop furniture</a></p></div>
+<div class="checkout-layout">
+<form id="checkout-form" novalidate data-section="checkout" data-component="checkout-form">
+  <div id="error-summary" class="error-summary" role="alert" tabindex="-1" hidden aria-labelledby="error-summary-h" data-component="error-summary"></div>
+  <section class="form-section" aria-labelledby="s1-h" data-component="form-step"><h2 id="s1-h">1. Contact</h2>
+    <div class="field"><label for="c-email">Email address</label><p class="hint" id="c-email-hint">Use a made-up address such as name@example.com.</p><input id="c-email" name="email" type="email" autocomplete="email" aria-describedby="c-email-hint c-email-err" required><p class="field-error" id="c-email-err" hidden></p></div></section>
+  <section class="form-section" aria-labelledby="s2-h" data-component="form-step"><h2 id="s2-h">2. Delivery address (sample)</h2>
+    <div class="field"><label for="c-name">Full name</label><input id="c-name" name="name" type="text" autocomplete="name" aria-describedby="c-name-err" required><p class="field-error" id="c-name-err" hidden></p></div>
+    <div class="field"><label for="c-street">Street address</label><input id="c-street" name="street" type="text" autocomplete="address-line1" aria-describedby="c-street-err" required><p class="field-error" id="c-street-err" hidden></p></div>
+    <div class="field"><label for="c-city">City</label><input id="c-city" name="city" type="text" autocomplete="address-level2" aria-describedby="c-city-err" required><p class="field-error" id="c-city-err" hidden></p></div>
+    <div class="field"><label for="c-state">State</label><select id="c-state" name="state" autocomplete="address-level1" aria-describedby="c-state-err" required><option value="">Choose a state</option><option>OH</option><option>PA</option><option>VA</option><option>TX</option><option>WA</option></select><p class="field-error" id="c-state-err" hidden></p></div>
+    <div class="field"><label for="c-zip">ZIP code</label><p class="hint" id="c-zip-hint">5 digits.</p><input id="c-zip" name="zip" type="text" inputmode="numeric" autocomplete="postal-code" maxlength="5" aria-describedby="c-zip-hint c-zip-err" required><p class="field-error" id="c-zip-err" hidden></p></div></section>
+  <section class="form-section" aria-labelledby="s3-h" data-component="form-step"><h2 id="s3-h">3. Delivery option (sample)</h2>
+    <div role="group" id="delivery" aria-labelledby="s3-h" aria-describedby="delivery-err"><p class="note">Illustrative options only. Nothing is scheduled by this demo.</p>
+    <div class="radio-row"><input type="radio" id="d-standard" name="delivery" value="standard"><label for="d-standard">Standard delivery (sample fee $39.00)</label></div>
+    <div class="radio-row"><input type="radio" id="d-pickup" name="delivery" value="pickup"><label for="d-pickup">Store pickup (sample, same fee shown for simplicity)</label></div></div>
+    <p class="field-error" id="delivery-err" hidden></p></section>
+  <section class="form-section" aria-labelledby="s4-h" data-section="payment-placeholder" data-component="payment-placeholder"><h2 id="s4-h">4. Payment (placeholder, not functional)</h2>
+    <div class="placeholder-box"><p><strong>No payment is collected here.</strong> A real store would ask for payment details at this step. This demo deliberately does not, so there are no payment fields to fill in.</p><p class="note">Nothing will be charged and no order will exist after you finish.</p></div></section>
+  <section class="form-section" aria-labelledby="s5-h" data-component="form-step"><h2 id="s5-h">5. Finish the demo</h2>
+    <div class="field"><label class="check" for="c-ack"><input type="checkbox" id="c-ack" name="ack" aria-describedby="c-ack-err"> I understand this is a demo and no order will be placed.</label><p class="field-error" id="c-ack-err" hidden></p></div>
+    <button class="btn" type="submit">Finish demo checkout (places no order)</button> <a class="btn btn-secondary" href="cart.html">Back to bag</a></section>
+</form>
+<section class="summary" id="checkout-summary" aria-labelledby="cs-h" data-section="order-summary" data-component="order-summary"></section>
+</div></div>
+</main>
+<footer class="site-footer" data-section="global-footer" data-component="site-footer">
+  <div class="wrap">
+    <h2 class="sr-only">Footer</h2>
+    <div class="footer-grid">
+      <nav aria-label="Customer service" data-section="footer-customer-service" data-component="footer-link-group"><h3>Customer service</h3>
+        <ul><li><a href="faq.html">FAQ</a></li><li><a href="customer-service.html#contact">Contact us</a></li><li><a href="returns.html">Return policy</a></li><li><a href="customer-service.html#delivery">Delivery information</a></li><li><a href="stores.html">Find a store</a></li></ul></nav>
+      <nav aria-label="Shop" data-section="footer-shop" data-component="footer-link-group"><h3>Shop</h3>
+        <ul><li><a href="furniture.html">Furniture</a></li><li><a href="sofas.html">Sofas &amp; armchairs</a></li><li><a href="lighting.html">Lighting</a></li><li><a href="beds.html">Beds &amp; bedroom</a></li><li><a href="rooms.html">Rooms</a></li><li><a href="new.html">New designs</a></li></ul></nav>
+      <nav aria-label="Account" data-section="footer-account" data-component="footer-link-group"><h3>Your account</h3>
+        <ul><li><a href="login.html">Sign in (demo)</a></li><li><a href="cart.html">Shopping bag</a></li></ul></nav>
+    </div>
+    <div class="club" data-section="club-signup" data-component="membership-callout"><h3>Join Larkwood Club</h3><p>Sample membership block. There is no real membership; the sign-in page is a labelled demo.</p><p><a href="login.html">Go to the demo sign-in</a></p></div>
+    <p class="footer-note" data-component="legal-note">Larkwood Home is a fictional brand created for an accessibility and usability research dataset. This site is a static replica: product names, prices, stores and policies are invented sample data, and no purchase, payment or delivery can take place.</p>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,543 @@
+{
+  "protocol_version": "1.0",
+  "replica_id": "WX-01",
+  "category": "weather",
+  "source_url": "https://www.weather.gov/",
+  "components": [
+    {
+      "id": "site-header",
+      "selector": "[data-component='site-header']",
+      "pages": [
+        "index.html",
+        "alerts.html",
+        "current.html",
+        "forecast-maps.html",
+        "satellite.html",
+        "glossary.html",
+        "safety.html",
+        "point-forecast.html",
+        "local-office.html",
+        "about.html",
+        "news.html",
+        "contact.html",
+        "404.html"
+      ],
+      "behavior": [
+        "brand emblem (fictional) and wordmark",
+        "sample-data banner inside header"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe scan clean; flows scripted where noted in README"
+    },
+    {
+      "id": "sample-data-banner",
+      "selector": "[data-component='sample-data-banner']",
+      "pages": [
+        "index.html",
+        "alerts.html",
+        "current.html",
+        "forecast-maps.html",
+        "satellite.html",
+        "glossary.html",
+        "safety.html",
+        "point-forecast.html",
+        "local-office.html",
+        "about.html",
+        "news.html",
+        "contact.html",
+        "404.html"
+      ],
+      "behavior": [
+        "persistent notice that all weather content is fictional"
+      ],
+      "keyboard": [
+        "none (static)"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe scan clean; flows scripted where noted in README"
+    },
+    {
+      "id": "primary-nav",
+      "selector": "[data-component='primary-nav']",
+      "pages": [
+        "index.html",
+        "alerts.html",
+        "current.html",
+        "forecast-maps.html",
+        "satellite.html",
+        "glossary.html",
+        "safety.html",
+        "point-forecast.html",
+        "local-office.html",
+        "about.html",
+        "news.html",
+        "contact.html",
+        "404.html"
+      ],
+      "behavior": [
+        "hover and click dropdowns",
+        "mobile Menu disclosure",
+        "aria-expanded",
+        "aria-current"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "ArrowDown/ArrowUp in submenu",
+        "Escape closes and returns focus"
+      ],
+      "status": "implemented",
+      "validation": "scripted flow: click, hover, Arrow, Escape, mobile menu"
+    },
+    {
+      "id": "site-search",
+      "selector": "[data-component='site-search']",
+      "pages": [
+        "index.html",
+        "alerts.html",
+        "current.html",
+        "forecast-maps.html",
+        "satellite.html",
+        "glossary.html",
+        "safety.html",
+        "point-forecast.html",
+        "local-office.html",
+        "about.html",
+        "news.html",
+        "contact.html",
+        "404.html"
+      ],
+      "behavior": [
+        "GET form to point-forecast.html over sample locations",
+        "empty-input inline error"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe scan clean; flows scripted where noted in README"
+    },
+    {
+      "id": "breadcrumb",
+      "selector": "[data-component='breadcrumb']",
+      "pages": [
+        "alerts.html",
+        "current.html",
+        "forecast-maps.html",
+        "satellite.html",
+        "glossary.html",
+        "safety.html",
+        "point-forecast.html",
+        "local-office.html",
+        "about.html",
+        "news.html",
+        "contact.html",
+        "404.html"
+      ],
+      "behavior": [
+        "link back to Home"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "static"
+    },
+    {
+      "id": "unit-toggle",
+      "selector": "[data-component='unit-toggle']",
+      "pages": [
+        "index.html",
+        "current.html",
+        "point-forecast.html"
+      ],
+      "behavior": [
+        "F/C and mph/km/h toggle, persisted in localStorage",
+        "INTENTIONAL ADDITION (no toggle observed on source)"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe scan clean; flows scripted where noted in README"
+    },
+    {
+      "id": "map-viewer",
+      "selector": "[data-component='map-viewer']",
+      "pages": [
+        "index.html",
+        "forecast-maps.html",
+        "satellite.html"
+      ],
+      "behavior": [
+        "swap local placeholder SVGs",
+        "range slider for sample frames",
+        "demo only"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "Arrow keys on slider"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe scan clean; flows scripted where noted in README"
+    },
+    {
+      "id": "my-forecast-widget",
+      "selector": "[data-component='my-forecast-widget']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "save a sample location in localStorage",
+        "INFERRED feature (not observed)"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe scan clean; flows scripted where noted in README"
+    },
+    {
+      "id": "stat-list",
+      "selector": "[data-component='stat-list']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "sample extremes honoring unit toggle"
+      ],
+      "keyboard": [
+        "none (static)"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe scan clean; flows scripted where noted in README"
+    },
+    {
+      "id": "hazard-link-list",
+      "selector": "[data-component='hazard-link-list']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "links to filtered alerts page, counts from sample data"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe scan clean; flows scripted where noted in README"
+    },
+    {
+      "id": "card-grid",
+      "selector": "[data-component='card-grid']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "link cards"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "static"
+    },
+    {
+      "id": "filter-form",
+      "selector": "[data-component='filter-form']",
+      "pages": [
+        "alerts.html",
+        "current.html",
+        "glossary.html",
+        "news.html",
+        "local-office.html"
+      ],
+      "behavior": [
+        "live filtering over inline sample arrays",
+        "empty states",
+        "role=status result counts"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "typing"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe scan clean; flows scripted where noted in README"
+    },
+    {
+      "id": "alert-list",
+      "selector": "[data-component='alert-list']",
+      "pages": [
+        "alerts.html"
+      ],
+      "behavior": [
+        "level shown by word, symbol and border style, not colour alone"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe scan clean; flows scripted where noted in README"
+    },
+    {
+      "id": "alert-item",
+      "selector": "[data-component='alert-item']",
+      "pages": [
+        "alerts.html",
+        "point-forecast.html"
+      ],
+      "behavior": [
+        "sample alert card"
+      ],
+      "keyboard": [
+        "none"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe scan clean; flows scripted where noted in README"
+    },
+    {
+      "id": "hazards-box",
+      "selector": "[data-component='hazards-box']",
+      "pages": [
+        "point-forecast.html"
+      ],
+      "behavior": [
+        "per-location sample hazards"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe scan clean; flows scripted where noted in README"
+    },
+    {
+      "id": "location-search",
+      "selector": "[data-component='location-search']",
+      "pages": [
+        "point-forecast.html"
+      ],
+      "behavior": [
+        "search sample locations",
+        "multi-match list",
+        "no-match empty state",
+        "inline error"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "scripted flow"
+    },
+    {
+      "id": "search-results",
+      "selector": "[data-component='search-results']",
+      "pages": [
+        "point-forecast.html"
+      ],
+      "behavior": [
+        "focus moves to results heading"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe scan clean; flows scripted where noted in README"
+    },
+    {
+      "id": "current-conditions-card",
+      "selector": "[data-component='current-conditions-card']",
+      "pages": [
+        "point-forecast.html"
+      ],
+      "behavior": [
+        "fictional observation block with sample label"
+      ],
+      "keyboard": [
+        "none"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe scan clean; flows scripted where noted in README"
+    },
+    {
+      "id": "forecast-tabs",
+      "selector": "[data-component='forecast-tabs']",
+      "pages": [
+        "point-forecast.html"
+      ],
+      "behavior": [
+        "7-day and hourly tabs (roving tabindex)"
+      ],
+      "keyboard": [
+        "Tab",
+        "ArrowLeft/ArrowRight",
+        "Home",
+        "End"
+      ],
+      "status": "implemented",
+      "validation": "scripted flow"
+    },
+    {
+      "id": "data-table",
+      "selector": "[data-component='data-table']",
+      "pages": [
+        "current.html"
+      ],
+      "behavior": [
+        "sortable columns with aria-sort",
+        "focusable scroll region"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "scripted flow"
+    },
+    {
+      "id": "definition-list",
+      "selector": "[data-component='definition-list']",
+      "pages": [
+        "glossary.html"
+      ],
+      "behavior": [
+        "letter and text filter"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "scripted flow"
+    },
+    {
+      "id": "accordion",
+      "selector": "[data-component='accordion']",
+      "pages": [
+        "safety.html"
+      ],
+      "behavior": [
+        "native details/summary, expand/collapse all"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe scan clean; flows scripted where noted in README"
+    },
+    {
+      "id": "card",
+      "selector": "[data-component='card']",
+      "pages": [
+        "safety.html",
+        "about.html"
+      ],
+      "behavior": [
+        "content card"
+      ],
+      "keyboard": [
+        "none"
+      ],
+      "status": "implemented",
+      "validation": "static"
+    },
+    {
+      "id": "office-detail",
+      "selector": "[data-component='office-detail']",
+      "pages": [
+        "local-office.html"
+      ],
+      "behavior": [
+        "select office, sample discussion"
+      ],
+      "keyboard": [
+        "Tab",
+        "arrow keys on select"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe scan clean; flows scripted where noted in README"
+    },
+    {
+      "id": "article-list",
+      "selector": "[data-component='article-list']",
+      "pages": [
+        "news.html"
+      ],
+      "behavior": [
+        "filter by topic and text"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe scan clean; flows scripted where noted in README"
+    },
+    {
+      "id": "contact-form",
+      "selector": "[data-component='contact-form']",
+      "pages": [
+        "contact.html"
+      ],
+      "behavior": [
+        "client validation",
+        "error summary with focus",
+        "inline errors",
+        "demo success; nothing sent"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "scripted flow"
+    },
+    {
+      "id": "site-footer",
+      "selector": "[data-component='site-footer']",
+      "pages": [
+        "index.html",
+        "alerts.html",
+        "current.html",
+        "forecast-maps.html",
+        "satellite.html",
+        "glossary.html",
+        "safety.html",
+        "point-forecast.html",
+        "local-office.html",
+        "about.html",
+        "news.html",
+        "contact.html",
+        "404.html"
+      ],
+      "behavior": [
+        "grouped links to built pages only",
+        "fictional-agency legal note"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "qc.js axe scan clean; flows scripted where noted in README"
+    }
+  ]
+}

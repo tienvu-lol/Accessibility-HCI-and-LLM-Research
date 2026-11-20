@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fashion | The Weft Review</title>
+<meta name="description" content="The Weft Review: an invented fashion and textile magazine, built as a static research replica.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/styles.css">
+<script src="js/main.js" defer></script>
+</head>
+<body data-page="fashion.html">
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header" data-section="global-header" data-component="site-header">
+ <div class="fiction-note" role="note" data-section="fictional-note" data-component="fictional-publication-note"><p><strong>Invented magazine.</strong> The Weft Review is an invented magazine for a research replica. None of its stories, bylines, brands, events or places are real, and all dates are sample data.</p></div>
+ <div class="masthead">
+  <a class="wordmark" href="index.html" data-component="wordmark"><span class="wordmark-main">The Weft</span> <span class="wordmark-sub">Review</span></a>
+  <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="site-menu" data-component="menu-toggle">Menu</button>
+  <div class="menu-wrap" id="site-menu" data-section="header-menu" data-component="header-menu">
+   <nav aria-label="Primary" data-section="global-navigation" data-component="primary-nav"><ul><li><a href="fashion.html" aria-current="page">Fashion</a></li><li><a href="culture.html">Culture</a></li><li><a href="travel.html">Travel</a></li><li><a href="video.html">Video</a></li><li><a href="nextwave.html">Next Wave</a></li><li><a href="issue.html">The Makers Issue</a></li><li><a href="latest.html">Latest</a></li><li><a href="newsletter.html">Newsletter</a></li></ul></nav>
+   <form class="site-search" role="search" aria-label="Site search" action="search.html" method="get" data-section="header-search" data-component="site-search">
+    <label for="site-q" class="vh">Search The Weft Review</label>
+    <input id="site-q" name="q" type="search" placeholder="Search stories" autocomplete="off">
+    <button type="submit">Search</button>
+   </form>
+  </div>
+ </div>
+</header>
+<main id="main-content" data-section="main-content">
+
+<div class="wrap">
+<nav class="breadcrumb" aria-label="Breadcrumb" data-component="breadcrumb"><ol><li><a href="index.html">Home</a></li><li aria-current="page">Fashion</li></ol></nav>
+<h1>Fashion</h1><p class="lede">Garments, cloth and the people-free craft of making them: mills, pleating rooms, dye baths and trims.</p>
+<form class="filters" aria-label="Filter and sort stories" data-section="story-filters" data-component="filter-bar" data-filter-form>
+ <div class="field"><label for="fashion-q">Keyword</label><input id="fashion-q" type="search" data-f="q" autocomplete="off"></div>
+ 
+ <div class="field"><label for="fashion-tag">Topic</label><select id="fashion-tag" data-f="tag"><option value="">All topics</option><option>Colour</option><option>Craft</option><option>Events</option><option>Materials</option><option>Mending</option><option>Places</option><option>Process</option></select></div>
+ <div class="field"><label for="fashion-sort">Sort by</label><select id="fashion-sort" data-f="sort"><option value="new">Newest first</option><option value="old">Oldest first</option><option value="az">Title A to Z</option></select></div>
+ <button type="button" class="btn-secondary" data-f-reset>Reset filters</button>
+ <p class="result-count" role="status" data-result-count></p>
+</form>
+<section aria-labelledby="list-title" data-section="fashion-listing" data-component="story-listing" data-filter-list><h2 id="list-title" class="vh">Fashion stories</h2>
+<ul class="card-grid" role="list" aria-label="Fashion stories" data-component="card-grid">
+<li class="card" data-component="story-card" data-item data-sec="fashion" data-date="2031-02-14" data-tags="Materials|Craft" data-search="a coat built from six undyed wools at hollowbrook mills, a winter coat is assembled from the natural shades of six fleeces, and nothing is dyed. materials craft ilsabet corrow"><article>
+<img src="assets/art-01.svg" alt="" width="400" height="300" loading="lazy">
+<div class="card-body"><p class="kicker">Fashion</p><h3><a href="article.html">A coat built from six undyed wools</a></h3><p class="dek">At Hollowbrook Mills, a winter coat is assembled from the natural shades of six fleeces, and nothing is dyed.</p><p class="meta">By Ilsabet Corrow <span aria-hidden="true">/</span> <time datetime="2031-02-14">Feb 14, 2031</time> <span aria-hidden="true">/</span> 6 min</p></div></article></li>
+<li class="card" data-component="story-card" data-item data-sec="fashion" data-date="2031-02-11" data-tags="Craft|Process" data-search="pleats, counted: inside the nimbrel pleating room atelier nimbrel sets every fold by hand against a numbered paper template. craft process dov haverlund"><article>
+<img src="assets/art-07.svg" alt="" width="400" height="300" loading="lazy">
+<div class="card-body"><p class="kicker">Fashion</p><h3><a href="story.html?id=pleating-room">Pleats, counted: inside the Nimbrel pleating room</a></h3><p class="dek">Atelier Nimbrel sets every fold by hand against a numbered paper template.</p><p class="meta">By Dov Haverlund <span aria-hidden="true">/</span> <time datetime="2031-02-11">Feb 11, 2031</time> <span aria-hidden="true">/</span> 5 min</p></div></article></li>
+<li class="card" data-component="story-card" data-item data-sec="fashion" data-date="2031-02-08" data-tags="Colour|Process" data-search="indigo, twice: the case for the slow dye bath two dips, a day of air and a second dip: why one dye house refuses to hurry blue. colour process nuala peterkin-voss"><article>
+<img src="assets/art-02.svg" alt="" width="400" height="300" loading="lazy">
+<div class="card-body"><p class="kicker">Fashion</p><h3><a href="story.html?id=indigo-twice">Indigo, twice: the case for the slow dye bath</a></h3><p class="dek">Two dips, a day of air and a second dip: why one dye house refuses to hurry blue.</p><p class="meta">By Nuala Peterkin-Voss <span aria-hidden="true">/</span> <time datetime="2031-02-08">Feb 8, 2031</time> <span aria-hidden="true">/</span> 7 min</p></div></article></li>
+<li class="card" data-component="story-card" data-item data-sec="fashion" data-date="2031-02-05" data-tags="Materials" data-search="paper-weight cotton and the new summer shirt a crisp, light weave is turning up in collars, cuffs and long overshirts. materials casimir dellmore"><article>
+<img src="assets/art-10.svg" alt="" width="400" height="300" loading="lazy">
+<div class="card-body"><p class="kicker">Fashion</p><h3><a href="story.html?id=paper-cotton-shirt">Paper-weight cotton and the new summer shirt</a></h3><p class="dek">A crisp, light weave is turning up in collars, cuffs and long overshirts.</p><p class="meta">By Casimir Dellmore <span aria-hidden="true">/</span> <time datetime="2031-02-05">Feb 5, 2031</time> <span aria-hidden="true">/</span> 4 min</p></div></article></li>
+<li class="card" data-component="story-card" data-item data-sec="fashion" data-date="2031-02-02" data-tags="Craft|Materials" data-search="button rooms: how a trim house sorts ten thousand closures horn, shell, brass and glass: a visit to the drawers of pellam &amp; roe trims. craft materials yevanna brightwater"><article>
+<img src="assets/art-04.svg" alt="" width="400" height="300" loading="lazy">
+<div class="card-body"><p class="kicker">Fashion</p><h3><a href="story.html?id=button-rooms">Button rooms: how a trim house sorts ten thousand closures</a></h3><p class="dek">Horn, shell, brass and glass: a visit to the drawers of Pellam &amp; Roe Trims.</p><p class="meta">By Yevanna Brightwater <span aria-hidden="true">/</span> <time datetime="2031-02-02">Feb 2, 2031</time> <span aria-hidden="true">/</span> 5 min</p></div></article></li>
+<li class="card" data-component="story-card" data-item data-sec="fashion" data-date="2031-01-30" data-tags="Colour" data-search="autumn palette notes: moss, rust and a dusty teal three colours that keep appearing on mood boards, and the cloths that carry them best. colour orrin salcombe"><article>
+<img src="assets/art-08.svg" alt="" width="400" height="300" loading="lazy">
+<div class="card-body"><p class="kicker">Fashion</p><h3><a href="story.html?id=autumn-palette">Autumn palette notes: moss, rust and a dusty teal</a></h3><p class="dek">Three colours that keep appearing on mood boards, and the cloths that carry them best.</p><p class="meta">By Orrin Salcombe <span aria-hidden="true">/</span> <time datetime="2031-01-30">Jan 30, 2031</time> <span aria-hidden="true">/</span> 3 min</p></div></article></li>
+<li class="card" data-component="story-card" data-item data-sec="fashion" data-date="2031-01-27" data-tags="Mending|Craft" data-search="hems that show their work: visible mending at atelier corvane contrasting stitches, patched elbows and a repair counter that is part of the shop. mending craft tamsin ardeley"><article>
+<img src="assets/art-03.svg" alt="" width="400" height="300" loading="lazy">
+<div class="card-body"><p class="kicker">Fashion</p><h3><a href="story.html?id=visible-mending">Hems that show their work: visible mending at Atelier Corvane</a></h3><p class="dek">Contrasting stitches, patched elbows and a repair counter that is part of the shop.</p><p class="meta">By Tamsin Ardeley <span aria-hidden="true">/</span> <time datetime="2031-01-27">Jan 27, 2031</time> <span aria-hidden="true">/</span> 6 min</p></div></article></li>
+<li class="card" data-component="story-card" data-item data-sec="fashion" data-date="2031-01-24" data-tags="Events|Places" data-search="meridian cloth week diary: day one in port valmere our notebook from the opening day of an invented week of mills, makers and cut cloth. events places bastien okoro-lind"><article>
+<img src="assets/art-09.svg" alt="" width="400" height="300" loading="lazy">
+<div class="card-body"><p class="kicker">Fashion</p><h3><a href="story.html?id=cloth-week-day-one">Meridian Cloth Week diary: day one in Port Valmere</a></h3><p class="dek">Our notebook from the opening day of an invented week of mills, makers and cut cloth.</p><p class="meta">By Bastien Okoro-Lind <span aria-hidden="true">/</span> <time datetime="2031-01-24">Jan 24, 2031</time> <span aria-hidden="true">/</span> 5 min</p></div></article></li>
+<li class="card" data-component="story-card" data-item data-sec="fashion" data-date="2031-01-20" data-tags="Materials|Process" data-search="linen after rain: a field guide to crinkle why linen wrinkles, how it recovers and which weaves forgive the most. materials process marisol quennell"><article>
+<img src="assets/art-11.svg" alt="" width="400" height="300" loading="lazy">
+<div class="card-body"><p class="kicker">Fashion</p><h3><a href="story.html?id=linen-after-rain">Linen after rain: a field guide to crinkle</a></h3><p class="dek">Why linen wrinkles, how it recovers and which weaves forgive the most.</p><p class="meta">By Marisol Quennell <span aria-hidden="true">/</span> <time datetime="2031-01-20">Jan 20, 2031</time> <span aria-hidden="true">/</span> 4 min</p></div></article></li>
+<li class="card" data-component="story-card" data-item data-sec="fashion" data-date="2031-01-17" data-tags="Craft|Process" data-search="tailoring in three seams a jacket pared back to its structure: shoulder, side and sleeve. craft process halvard pryce"><article>
+<img src="assets/art-06.svg" alt="" width="400" height="300" loading="lazy">
+<div class="card-body"><p class="kicker">Fashion</p><h3><a href="story.html?id=tailoring-three-seams">Tailoring in three seams</a></h3><p class="dek">A jacket pared back to its structure: shoulder, side and sleeve.</p><p class="meta">By Halvard Pryce <span aria-hidden="true">/</span> <time datetime="2031-01-17">Jan 17, 2031</time> <span aria-hidden="true">/</span> 5 min</p></div></article></li>
+</ul>
+<div class="empty" data-empty hidden data-component="empty-state"><h3>No stories match</h3><p>Try a shorter keyword or choose another topic.</p></div>
+</section></div>
+</main>
+<footer class="site-footer" data-section="global-footer" data-component="site-footer">
+ <div class="footer-grid">
+  <div><p class="footer-brand">The Weft Review</p><p>An invented magazine about cloth, craft and the rooms where garments are made. Research replica: nothing here is a real publication.</p></div>
+  <nav aria-label="Footer sections" data-component="footer-nav"><h2>Sections</h2><ul><li><a href="fashion.html">Fashion</a></li><li><a href="culture.html">Culture</a></li><li><a href="travel.html">Travel</a></li><li><a href="video.html">Video</a></li><li><a href="nextwave.html">Next Wave</a></li></ul></nav>
+  <nav aria-label="Footer more" data-component="footer-nav"><h2>More</h2><ul><li><a href="latest.html">Latest</a></li><li><a href="issue.html">The Makers Issue</a></li><li><a href="newsletter.html">Newsletter</a></li><li><a href="search.html">Search</a></li></ul></nav>
+ </div>
+ <p class="footer-legal">Sample content for accessibility research. Stories, people, brands, events and places are invented; dates are sample data.</p>
+</footer>
+</body>
+</html>

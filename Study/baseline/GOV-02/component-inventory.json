@@ -1,0 +1,756 @@
+{
+  "protocol_version": "1.0",
+  "replica_id": "GOV-02",
+  "category": "government",
+  "source_url": "https://www.texas.gov/",
+  "components": [
+    {
+      "id": "accordion",
+      "selector": "[data-component='accordion']",
+      "pages": [
+        "faq.html"
+      ],
+      "behavior": [
+        "native details disclosure FAQ"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "axe via qc.js plus scripted Playwright checks for interactive components; not manually tested with assistive technology"
+    },
+    {
+      "id": "agency-list",
+      "selector": "[data-component='agency-list']",
+      "pages": [
+        "agencies.html"
+      ],
+      "behavior": [
+        "agency card list"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "axe via qc.js plus scripted Playwright checks for interactive components; not manually tested with assistive technology"
+    },
+    {
+      "id": "breadcrumbs",
+      "selector": "[data-component='breadcrumbs']",
+      "pages": [
+        "about.html",
+        "accessibility.html",
+        "agencies.html",
+        "community-learning.html",
+        "contact.html",
+        "faq.html",
+        "makers-markets.html",
+        "permit-detail.html",
+        "permits-passes.html",
+        "search.html",
+        "services.html",
+        "sitemap.html"
+      ],
+      "behavior": [
+        "breadcrumb trail"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe via qc.js plus scripted Playwright checks for interactive components; not manually tested with assistive technology"
+    },
+    {
+      "id": "contact-block",
+      "selector": "[data-component='contact-block']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "accessibility.html",
+        "agencies.html",
+        "community-learning.html",
+        "contact.html",
+        "faq.html",
+        "index.html",
+        "makers-markets.html",
+        "permit-detail.html",
+        "permits-passes.html",
+        "search.html",
+        "services.html",
+        "sitemap.html"
+      ],
+      "behavior": [
+        "invented contact details (555 phone, fictional domain)"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "axe via qc.js plus scripted Playwright checks for interactive components; not manually tested with assistive technology"
+    },
+    {
+      "id": "contact-form",
+      "selector": "[data-component='contact-form']",
+      "pages": [
+        "contact.html"
+      ],
+      "behavior": [
+        "simulated form with validation, error summary, focus management, demo-only outcome"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "axe via qc.js plus scripted Playwright checks for interactive components; not manually tested with assistive technology"
+    },
+    {
+      "id": "content-block",
+      "selector": "[data-component='content-block']",
+      "pages": [
+        "about.html",
+        "accessibility.html",
+        "permit-detail.html"
+      ],
+      "behavior": [
+        "text content section"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "axe via qc.js plus scripted Playwright checks for interactive components; not manually tested with assistive technology"
+    },
+    {
+      "id": "definition-list",
+      "selector": "[data-component='definition-list']",
+      "pages": [
+        "permit-detail.html"
+      ],
+      "behavior": [
+        "sample facts dl"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "axe via qc.js plus scripted Playwright checks for interactive components; not manually tested with assistive technology"
+    },
+    {
+      "id": "demo-success",
+      "selector": "[data-component='demo-success']",
+      "pages": [
+        "contact.html"
+      ],
+      "behavior": [
+        "demo-only outcome stating nothing was sent"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "axe via qc.js plus scripted Playwright checks for interactive components; not manually tested with assistive technology"
+    },
+    {
+      "id": "directory-filter",
+      "selector": "[data-component='directory-filter']",
+      "pages": [
+        "agencies.html",
+        "services.html"
+      ],
+      "behavior": [
+        "text and select filter with live count, clear button"
+      ],
+      "keyboard": [
+        "Tab",
+        "Type",
+        "Arrow keys on select",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe via qc.js plus scripted Playwright checks for interactive components; not manually tested with assistive technology"
+    },
+    {
+      "id": "empty-state",
+      "selector": "[data-component='empty-state']",
+      "pages": [
+        "agencies.html",
+        "services.html"
+      ],
+      "behavior": [
+        "meaningful empty state"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "axe via qc.js plus scripted Playwright checks for interactive components; not manually tested with assistive technology"
+    },
+    {
+      "id": "error-summary",
+      "selector": "[data-component='error-summary']",
+      "pages": [
+        "contact.html"
+      ],
+      "behavior": [
+        "error summary with links to fields, focused on submit"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe via qc.js plus scripted Playwright checks for interactive components; not manually tested with assistive technology"
+    },
+    {
+      "id": "fictional-notice-banner",
+      "selector": "[data-component='fictional-notice-banner']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "accessibility.html",
+        "agencies.html",
+        "community-learning.html",
+        "contact.html",
+        "faq.html",
+        "index.html",
+        "makers-markets.html",
+        "permit-detail.html",
+        "permits-passes.html",
+        "search.html",
+        "services.html",
+        "sitemap.html"
+      ],
+      "behavior": [
+        "persistent fictional-government notice at top of masthead",
+        "disclosure for more detail (aria-expanded)"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "Escape closes disclosure"
+      ],
+      "status": "implemented",
+      "validation": "axe via qc.js plus scripted Playwright checks for interactive components; not manually tested with assistive technology"
+    },
+    {
+      "id": "fictional-notice-footer",
+      "selector": "[data-component='fictional-notice-footer']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "accessibility.html",
+        "agencies.html",
+        "community-learning.html",
+        "contact.html",
+        "faq.html",
+        "index.html",
+        "makers-markets.html",
+        "permit-detail.html",
+        "permits-passes.html",
+        "search.html",
+        "services.html",
+        "sitemap.html"
+      ],
+      "behavior": [
+        "repeat of fictional notice in footer"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "axe via qc.js plus scripted Playwright checks for interactive components; not manually tested with assistive technology"
+    },
+    {
+      "id": "footer-link-list",
+      "selector": "[data-component='footer-link-list']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "accessibility.html",
+        "agencies.html",
+        "community-learning.html",
+        "contact.html",
+        "faq.html",
+        "index.html",
+        "makers-markets.html",
+        "permit-detail.html",
+        "permits-passes.html",
+        "search.html",
+        "services.html",
+        "sitemap.html"
+      ],
+      "behavior": [
+        "footer link list"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe via qc.js plus scripted Playwright checks for interactive components; not manually tested with assistive technology"
+    },
+    {
+      "id": "guidance-disclaimer",
+      "selector": "[data-component='guidance-disclaimer']",
+      "pages": [
+        "about.html",
+        "accessibility.html",
+        "agencies.html",
+        "community-learning.html",
+        "contact.html",
+        "faq.html",
+        "makers-markets.html",
+        "permit-detail.html",
+        "permits-passes.html",
+        "search.html",
+        "services.html"
+      ],
+      "behavior": [
+        "visible not-real-guidance note"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "axe via qc.js plus scripted Playwright checks for interactive components; not manually tested with assistive technology"
+    },
+    {
+      "id": "hero-search",
+      "selector": "[data-component='hero-search']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "home hero with search and suggested queries"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe via qc.js plus scripted Playwright checks for interactive components; not manually tested with assistive technology"
+    },
+    {
+      "id": "language-demo",
+      "selector": "[data-component='language-demo']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "accessibility.html",
+        "agencies.html",
+        "community-learning.html",
+        "contact.html",
+        "faq.html",
+        "index.html",
+        "makers-markets.html",
+        "permit-detail.html",
+        "permits-passes.html",
+        "search.html",
+        "services.html",
+        "sitemap.html"
+      ],
+      "behavior": [
+        "labelled non-functional language selector demo"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "axe via qc.js plus scripted Playwright checks for interactive components; not manually tested with assistive technology"
+    },
+    {
+      "id": "nav-dropdown",
+      "selector": "[data-component='nav-dropdown']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "accessibility.html",
+        "agencies.html",
+        "community-learning.html",
+        "contact.html",
+        "faq.html",
+        "index.html",
+        "makers-markets.html",
+        "permit-detail.html",
+        "permits-passes.html",
+        "search.html",
+        "services.html",
+        "sitemap.html"
+      ],
+      "behavior": [
+        "dropdown button with aria-expanded, lists only local pages"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "axe via qc.js plus scripted Playwright checks for interactive components; not manually tested with assistive technology"
+    },
+    {
+      "id": "offsite-label",
+      "selector": "[data-component='offsite-label']",
+      "pages": [
+        "community-learning.html",
+        "makers-markets.html",
+        "permit-detail.html",
+        "permits-passes.html"
+      ],
+      "behavior": [
+        "plain-text label for fictional off-site provider, not a link"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "axe via qc.js plus scripted Playwright checks for interactive components; not manually tested with assistive technology"
+    },
+    {
+      "id": "offsite-signpost",
+      "selector": "[data-component='offsite-signpost']",
+      "pages": [
+        "permit-detail.html"
+      ],
+      "behavior": [
+        "signpost section explaining unlinked off-site provider"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "axe via qc.js plus scripted Playwright checks for interactive components; not manually tested with assistive technology"
+    },
+    {
+      "id": "primary-nav",
+      "selector": "[data-component='primary-nav']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "accessibility.html",
+        "agencies.html",
+        "community-learning.html",
+        "contact.html",
+        "faq.html",
+        "index.html",
+        "makers-markets.html",
+        "permit-detail.html",
+        "permits-passes.html",
+        "search.html",
+        "services.html",
+        "sitemap.html"
+      ],
+      "behavior": [
+        "desktop dropdown navigation",
+        "mobile menu disclosure"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "Escape closes menus"
+      ],
+      "status": "implemented",
+      "validation": "axe via qc.js plus scripted Playwright checks for interactive components; not manually tested with assistive technology"
+    },
+    {
+      "id": "promo-block",
+      "selector": "[data-component='promo-block']",
+      "pages": [
+        "index.html",
+        "permits-passes.html"
+      ],
+      "behavior": [
+        "promo/featured block"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe via qc.js plus scripted Playwright checks for interactive components; not manually tested with assistive technology"
+    },
+    {
+      "id": "promo-block-list",
+      "selector": "[data-component='promo-block-list']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "off-site promo placeholders"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "axe via qc.js plus scripted Playwright checks for interactive components; not manually tested with assistive technology"
+    },
+    {
+      "id": "related-links",
+      "selector": "[data-component='related-links']",
+      "pages": [
+        "permit-detail.html"
+      ],
+      "behavior": [
+        "related links aside"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe via qc.js plus scripted Playwright checks for interactive components; not manually tested with assistive technology"
+    },
+    {
+      "id": "results-list",
+      "selector": "[data-component='results-list']",
+      "pages": [
+        "search.html"
+      ],
+      "behavior": [
+        "grouped site search results"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe via qc.js plus scripted Playwright checks for interactive components; not manually tested with assistive technology"
+    },
+    {
+      "id": "service-card",
+      "selector": "[data-component='service-card']",
+      "pages": [
+        "community-learning.html",
+        "makers-markets.html",
+        "permits-passes.html"
+      ],
+      "behavior": [
+        "service card with unlinked off-site label"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "axe via qc.js plus scripted Playwright checks for interactive components; not manually tested with assistive technology"
+    },
+    {
+      "id": "service-list",
+      "selector": "[data-component='service-list']",
+      "pages": [
+        "community-learning.html",
+        "makers-markets.html",
+        "permits-passes.html",
+        "services.html"
+      ],
+      "behavior": [
+        "list of service cards, filterable on services.html"
+      ],
+      "keyboard": [],
+      "status": "implemented",
+      "validation": "axe via qc.js plus scripted Playwright checks for interactive components; not manually tested with assistive technology"
+    },
+    {
+      "id": "site-brand",
+      "selector": "[data-component='site-brand']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "accessibility.html",
+        "agencies.html",
+        "community-learning.html",
+        "contact.html",
+        "faq.html",
+        "index.html",
+        "makers-markets.html",
+        "permit-detail.html",
+        "permits-passes.html",
+        "search.html",
+        "services.html",
+        "sitemap.html"
+      ],
+      "behavior": [
+        "home link with plain geometric emblem"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe via qc.js plus scripted Playwright checks for interactive components; not manually tested with assistive technology"
+    },
+    {
+      "id": "site-footer",
+      "selector": "[data-component='site-footer']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "accessibility.html",
+        "agencies.html",
+        "community-learning.html",
+        "contact.html",
+        "faq.html",
+        "index.html",
+        "makers-markets.html",
+        "permit-detail.html",
+        "permits-passes.html",
+        "search.html",
+        "services.html",
+        "sitemap.html"
+      ],
+      "behavior": [
+        "grouped footer links, invented contact, notice"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "axe via qc.js plus scripted Playwright checks for interactive components; not manually tested with assistive technology"
+    },
+    {
+      "id": "site-header",
+      "selector": "[data-component='site-header']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "accessibility.html",
+        "agencies.html",
+        "community-learning.html",
+        "contact.html",
+        "faq.html",
+        "index.html",
+        "makers-markets.html",
+        "permit-detail.html",
+        "permits-passes.html",
+        "search.html",
+        "services.html",
+        "sitemap.html"
+      ],
+      "behavior": [
+        "global header with notice, masthead, nav"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "axe via qc.js plus scripted Playwright checks for interactive components; not manually tested with assistive technology"
+    },
+    {
+      "id": "site-search-form",
+      "selector": "[data-component='site-search-form']",
+      "pages": [
+        "index.html",
+        "search.html"
+      ],
+      "behavior": [
+        "search form; GET to search.html or in-page"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe via qc.js plus scripted Playwright checks for interactive components; not manually tested with assistive technology"
+    },
+    {
+      "id": "sitemap-list",
+      "selector": "[data-component='sitemap-list']",
+      "pages": [
+        "sitemap.html"
+      ],
+      "behavior": [
+        "sitemap"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe via qc.js plus scripted Playwright checks for interactive components; not manually tested with assistive technology"
+    },
+    {
+      "id": "suggested-searches",
+      "selector": "[data-component='suggested-searches']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "suggested search chips linking to local search"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe via qc.js plus scripted Playwright checks for interactive components; not manually tested with assistive technology"
+    },
+    {
+      "id": "topic-card",
+      "selector": "[data-component='topic-card']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "topic card with link"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe via qc.js plus scripted Playwright checks for interactive components; not manually tested with assistive technology"
+    },
+    {
+      "id": "topic-card-grid",
+      "selector": "[data-component='topic-card-grid']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "topic hub list"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe via qc.js plus scripted Playwright checks for interactive components; not manually tested with assistive technology"
+    },
+    {
+      "id": "topic-service-list",
+      "selector": "[data-component='topic-service-list']",
+      "pages": [
+        "community-learning.html",
+        "makers-markets.html",
+        "permits-passes.html"
+      ],
+      "behavior": [
+        "static list of services for a topic"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe via qc.js plus scripted Playwright checks for interactive components; not manually tested with assistive technology"
+    },
+    {
+      "id": "utility-nav",
+      "selector": "[data-component='utility-nav']",
+      "pages": [
+        "404.html",
+        "about.html",
+        "accessibility.html",
+        "agencies.html",
+        "community-learning.html",
+        "contact.html",
+        "faq.html",
+        "index.html",
+        "makers-markets.html",
+        "permit-detail.html",
+        "permits-passes.html",
+        "search.html",
+        "services.html",
+        "sitemap.html"
+      ],
+      "behavior": [
+        "search link",
+        "non-functional language demo disclosure"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "axe via qc.js plus scripted Playwright checks for interactive components; not manually tested with assistive technology"
+    }
+  ]
+}

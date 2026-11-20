@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Work &#8212; Tobias Quill</title>
+<meta name="description" content="Case studies and toys by Tobias Quill (fictional): canvas experiments, hardware, accessibility research and teaching tools.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="author" content="Tobias Quill (fictional)">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="work">
+<a class="skip-link" href="#main-content" data-component="skip-link">Skip to main content</a>
+<header class="site-header" data-section="header">
+  <div class="utility-bar" data-section="utility-bar">
+    <div class="shell">
+      <p data-component="availability-strip">
+        <span class="status-dot" data-component="desk-state-dot" aria-hidden="true"></span>
+        <span class="badge-pill" data-component="availability-badge" data-state="open">Available for work</span>
+        <span class="visually-hidden">Studio clock: </span>
+        <span class="mono" data-component="local-time">Local time loading&#8230;</span>
+      </p>
+      <p class="d-flex flex-wrap align-items-center gap-2">
+        <a href="mailto:hello@tquill.example" data-component="email-link">hello@tquill.example</a>
+        <button class="icon-btn btn-sm" type="button" data-component="copy-button" data-copy="hello@tquill.example" data-label="Email address" data-status="utility-copy-status">
+          <svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15 5H6a2 2 0 0 0-2 2v9" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+          Copy
+        </button>
+        <span class="visually-hidden" role="status" aria-live="polite" id="utility-copy-status" data-component="copy-status"></span>
+      </p>
+    </div>
+  </div>
+  <div class="brand-bar" data-section="brand-bar">
+    <div class="shell">
+      <a class="brand" href="index.html" data-component="logo">
+        <svg class="brand-mark" width="34" height="34" viewBox="0 0 34 34" aria-hidden="true" focusable="false"><rect x="1.5" y="1.5" width="31" height="31" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 24c0-8 4-14 9-14s9 6 9 14" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17" cy="9" r="2.6" fill="currentColor"/></svg>
+        <span>
+          <span class="brand-name">Tobias Quill</span>
+          <span class="brand-role">Interactive developer &amp; creative technologist</span>
+        </span>
+        <span class="visually-hidden">&#8212; home page</span>
+      </a>
+      <div class="header-actions">
+        <button class="icon-btn" type="button" data-ui="disclosure" aria-expanded="false" aria-controls="site-search-panel" data-component="search-toggle">
+          <svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15.5 15.5 21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <span class="d-none d-sm-inline">Search</span><span class="visually-hidden"> this site</span>
+        </button>
+        <button class="icon-btn d-lg-none" type="button" data-ui="panel-open" aria-controls="primary-menu" data-component="mobile-nav-toggle">
+          <svg width="19" height="19" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          Menu<span class="visually-hidden">, open navigation</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <nav class="primary-nav" aria-label="Primary" data-section="primary-nav">
+    <div class="shell">
+      <div class="offcanvas-lg offcanvas-end" tabindex="-1" id="primary-menu" aria-labelledby="primary-menu-title" data-component="mobile-nav">
+        <div class="offcanvas-header">
+          <h2 class="offcanvas-title h5" id="primary-menu-title">Menu</h2>
+          <button type="button" class="btn-close" data-ui="panel-close" aria-label="Close menu"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="nav-list" data-component="nav-menu">
+          <li class="nav-item"><a class="nav-link" href="work.html" aria-current="page">Work</a></li>
+          <li class="nav-item"><a class="nav-link" href="writing.html">Writing</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="uses.html">Uses</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            <li class="nav-item dropdown" data-component="nav-dropdown">
+              <button class="nav-link dropdown-toggle" type="button" id="nav-more" data-ui="dropdown-toggle" aria-controls="nav-more-menu" aria-expanded="false">More</button>
+              <ul class="dropdown-menu" id="nav-more-menu" aria-labelledby="nav-more">
+            <li><a class="dropdown-item" href="resume.html">Resume</a></li>
+            <li><a class="dropdown-item" href="talks.html">Talks &amp; podcasts</a></li>
+            <li><a class="dropdown-item" href="colophon.html">Colophon</a></li>
+            <li><a class="dropdown-item" href="accessibility.html">Accessibility</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <a class="btn btn-outline btn-sm nav-cta d-none d-lg-inline-flex" href="contact.html" data-component="cta-button">Start a project</a>
+    </div>
+  </nav>
+  <div class="collapse search-panel" id="site-search-panel" data-component="site-search">
+    <div class="shell py-3">
+      <form action="search.html" method="get" role="search" aria-label="Site" class="search-form">
+        <label class="form-label" for="header-q">Search projects, posts and pages</label>
+        <div class="input-group">
+          <input type="search" class="form-control" id="header-q" name="q" autocomplete="off" placeholder="plotter, focus rings, canvas&#8230;">
+          <button class="btn btn-primary" type="submit">Search</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</header>
+<main id="main-content" tabindex="-1" data-section="main-content">
+  <div class="page-header shell" data-section="page-header">
+  <nav class="breadcrumb-nav" aria-label="Breadcrumb" data-component="breadcrumbs">
+    <ol>
+      <li><a href="index.html">Home</a></li>
+      <li aria-current="page">Work</li>
+    </ol>
+  </nav>
+    <h1>Work</h1>
+    <p class="lede">Five case studies and four toys that live on other people&#8217;s servers. Filter by tag, or search the titles and summaries.</p>
+  </div>
+
+  <section class="band shell" data-section="project-index" aria-labelledby="index-title">
+    <h2 class="visually-hidden" id="index-title">Project index</h2>
+    <div class="filter-bar" data-component="filter-bar">
+      <form class="search-form" role="search" aria-label="Projects" onsubmit="return false">
+        <label class="form-label" for="project-q">Search projects</label>
+        <input class="form-control" type="search" id="project-q" name="q" autocomplete="off" placeholder="plotter, keyboard, focus&#8230;" data-component="project-search">
+      </form>
+      <div>
+        <h3 class="eyebrow" id="filter-tags-label">Filter by tag</h3>
+        <ul class="chip-set" aria-labelledby="filter-tags-label" data-component="filter-chips">
+          <li><button class="chip" type="button" data-component="filter-chip" data-tag="all" aria-pressed="true">Everything</button></li>
+          <li><button class="chip" type="button" data-component="filter-chip" data-tag="canvas" aria-pressed="false">canvas</button></li>
+          <li><button class="chip" type="button" data-component="filter-chip" data-tag="hardware" aria-pressed="false">hardware</button></li>
+          <li><button class="chip" type="button" data-component="filter-chip" data-tag="accessibility" aria-pressed="false">accessibility</button></li>
+          <li><button class="chip" type="button" data-component="filter-chip" data-tag="open-source" aria-pressed="false">open source</button></li>
+          <li><button class="chip" type="button" data-component="filter-chip" data-tag="svg" aria-pressed="false">svg</button></li>
+          <li><button class="chip" type="button" data-component="filter-chip" data-tag="type" aria-pressed="false">type</button></li>
+          <li><button class="chip" type="button" data-component="filter-chip" data-tag="teaching" aria-pressed="false">teaching</button></li>
+          <li><button class="chip" type="button" data-component="filter-chip" data-tag="toy" aria-pressed="false">toy</button></li>
+        </ul>
+      </div>
+    </div>
+    <p class="result-count" role="status" aria-live="polite" data-component="result-count">9 projects</p>
+    <ul class="grid" style="list-style:none;padding:0" data-component="project-grid">
+        <li class="card-item" data-component="project-card" data-project="cursor-weather" data-tags="canvas toy open-source" data-search="Cursor Weather A pointer that carries its own microclimate: drizzle, fog and the occasional hailstorm, drawn on a 2&nbsp;KB canvas layer. canvas toy open-source" data-reveal>
+          <img class="thumb" src="assets/img/project-cursor-weather.svg" alt="Diagram of concentric rings standing in for a weather radar sweep" width="640" height="400" loading="lazy">
+          <div class="card-body">
+            <h3><a href="project-cursor-weather.html">Cursor Weather</a></h3>
+            <p>A pointer that carries its own microclimate: drizzle, fog and the occasional hailstorm, drawn on a 2&nbsp;KB canvas layer.</p>
+            <ul class="card-tags" aria-label="Tags for Cursor Weather"><li class="tag">canvas</li><li class="tag">toy</li><li class="tag">open-source</li></ul>
+            <p class="meta">2026 &#183; Case study</p>
+          </div>
+        </li>
+        <li class="card-item" data-component="project-card" data-project="keyboard-garden" data-tags="hardware accessibility" data-search="Keyboard Garden A split keyboard whose keys sprout a plant for every thousand words written, with a printed companion card for screen reader users. hardware accessibility" data-reveal>
+          <img class="thumb" src="assets/img/project-keyboard-garden.svg" alt="Grid of rounded rectangles standing in for keyboard keys" width="640" height="400" loading="lazy">
+          <div class="card-body">
+            <h3><a href="project-keyboard-garden.html">Keyboard Garden</a></h3>
+            <p>A split keyboard whose keys sprout a plant for every thousand words written, with a printed companion card for screen reader users.</p>
+            <ul class="card-tags" aria-label="Tags for Keyboard Garden"><li class="tag">hardware</li><li class="tag">accessibility</li></ul>
+            <p class="meta">2026 &#183; Case study</p>
+          </div>
+        </li>
+        <li class="card-item" data-component="project-card" data-project="tiny-orrery" data-tags="svg teaching open-source" data-search="Tiny Orrery A hand-cranked SVG solar system for a middle-school science unit. Keyboard operable, printable, and legible at 400% zoom. svg teaching open-source" data-reveal>
+          <img class="thumb" src="assets/img/project-tiny-orrery.svg" alt="Concentric orbit rings around a filled centre circle" width="640" height="400" loading="lazy">
+          <div class="card-body">
+            <h3><a href="project-tiny-orrery.html">Tiny Orrery</a></h3>
+            <p>A hand-cranked SVG solar system for a middle-school science unit. Keyboard operable, printable, and legible at 400% zoom.</p>
+            <ul class="card-tags" aria-label="Tags for Tiny Orrery"><li class="tag">svg</li><li class="tag">teaching</li><li class="tag">open-source</li></ul>
+            <p class="meta">2025 &#183; Case study</p>
+          </div>
+        </li>
+        <li class="card-item" data-component="project-card" data-project="paper-plotter" data-tags="hardware type" data-search="Paper Plotter A pen plotter queue that turns a week of git commits into a plotted broadsheet, printed every Friday at 4pm. hardware type" data-reveal>
+          <img class="thumb" src="assets/img/project-paper-plotter.svg" alt="Angular pen path over a plotted baseline" width="640" height="400" loading="lazy">
+          <div class="card-body">
+            <h3><a href="project-paper-plotter.html">Paper Plotter</a></h3>
+            <p>A pen plotter queue that turns a week of git commits into a plotted broadsheet, printed every Friday at 4pm.</p>
+            <ul class="card-tags" aria-label="Tags for Paper Plotter"><li class="tag">hardware</li><li class="tag">type</li></ul>
+            <p class="meta">2025 &#183; Case study</p>
+          </div>
+        </li>
+        <li class="card-item" data-component="project-card" data-project="focus-ring-museum" data-tags="accessibility teaching open-source" data-search="The Focus Ring Museum Eighty-one focus indicators, collected, measured against WCAG 2.2 and labelled like butterflies in a case. accessibility teaching open-source" data-reveal>
+          <img class="thumb" src="assets/img/project-focus-ring-museum.svg" alt="Nested rectangles standing in for a framed specimen case" width="640" height="400" loading="lazy">
+          <div class="card-body">
+            <h3><a href="project-focus-ring-museum.html">The Focus Ring Museum</a></h3>
+            <p>Eighty-one focus indicators, collected, measured against WCAG 2.2 and labelled like butterflies in a case.</p>
+            <ul class="card-tags" aria-label="Tags for The Focus Ring Museum"><li class="tag">accessibility</li><li class="tag">teaching</li><li class="tag">open-source</li></ul>
+            <p class="meta">2024 &#183; Case study</p>
+          </div>
+        </li>
+        <li class="card-item" data-component="project-card" data-project="elevator-pitch" data-tags="toy canvas" data-search="Elevator Pitch A lift that travels one floor for every scroll of the page. It never reaches the top floor. toy canvas" data-reveal>
+          <img class="thumb" src="assets/img/project-elevator-pitch.svg" alt="Vertical rule grid standing in for lift floors" width="640" height="400" loading="lazy">
+          <div class="card-body">
+            <h3><a href="https://codepen.io/" rel="nofollow noopener">Elevator Pitch <span class="ext-mark" aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens an external site)</span></a></h3>
+            <p>A lift that travels one floor for every scroll of the page. It never reaches the top floor.</p>
+            <ul class="card-tags" aria-label="Tags for Elevator Pitch"><li class="tag">toy</li><li class="tag">canvas</li></ul>
+            <p class="meta">2024 &#183; Hosted elsewhere</p>
+          </div>
+        </li>
+        <li class="card-item" data-component="project-card" data-project="typewriter-tax" data-tags="toy type" data-search="Typewriter Tax A writing app that charges you a key press for every adverb. Balance payable in semicolons. toy type" data-reveal>
+          <img class="thumb" src="assets/img/project-typewriter-tax.svg" alt="Wave line standing in for a line of running text" width="640" height="400" loading="lazy">
+          <div class="card-body">
+            <h3><a href="https://github.com/" rel="nofollow noopener">Typewriter Tax <span class="ext-mark" aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens an external site)</span></a></h3>
+            <p>A writing app that charges you a key press for every adverb. Balance payable in semicolons.</p>
+            <ul class="card-tags" aria-label="Tags for Typewriter Tax"><li class="tag">toy</li><li class="tag">type</li></ul>
+            <p class="meta">2023 &#183; Hosted elsewhere</p>
+          </div>
+        </li>
+        <li class="card-item" data-component="project-card" data-project="queue-of-one" data-tags="open-source toy" data-search="Queue of One A 40-line task runner for people who only ever have one task. Downloaded, inexplicably, 90,000 times. open-source toy" data-reveal>
+          <img class="thumb" src="assets/img/project-queue-of-one.svg" alt="Single filled circle inside two outlines" width="640" height="400" loading="lazy">
+          <div class="card-body">
+            <h3><a href="https://github.com/" rel="nofollow noopener">Queue of One <span class="ext-mark" aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens an external site)</span></a></h3>
+            <p>A 40-line task runner for people who only ever have one task. Downloaded, inexplicably, 90,000 times.</p>
+            <ul class="card-tags" aria-label="Tags for Queue of One"><li class="tag">open-source</li><li class="tag">toy</li></ul>
+            <p class="meta">2023 &#183; Hosted elsewhere</p>
+          </div>
+        </li>
+        <li class="card-item" data-component="project-card" data-project="ninety-nine-buttons" data-tags="toy accessibility" data-search="Ninety-Nine Buttons Ninety-nine buttons, each with a different hover state, all keyboard reachable in under four seconds. toy accessibility" data-reveal>
+          <img class="thumb" src="assets/img/project-ninety-nine-buttons.svg" alt="Grid of small rectangles standing in for a wall of buttons" width="640" height="400" loading="lazy">
+          <div class="card-body">
+            <h3><a href="https://codepen.io/" rel="nofollow noopener">Ninety-Nine Buttons <span class="ext-mark" aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens an external site)</span></a></h3>
+            <p>Ninety-nine buttons, each with a different hover state, all keyboard reachable in under four seconds.</p>
+            <ul class="card-tags" aria-label="Tags for Ninety-Nine Buttons"><li class="tag">toy</li><li class="tag">accessibility</li></ul>
+            <p class="meta">2022 &#183; Hosted elsewhere</p>
+          </div>
+        </li>
+    </ul>
+    <p class="empty-state" hidden data-component="empty-state">Nothing matches that combination. <button class="btn-quiet" type="button" data-component="filter-chip" data-tag="all">Show everything</button></p>
+  </section>
+
+  <section class="band band-sunk shell" data-section="work-cta" aria-labelledby="work-cta-title">
+    <h2 id="work-cta-title">Looking for something specific?</h2>
+    <p class="lede">Older client work from 2011&#8211;2019 is not on this site, mostly because the sites no longer exist. I can talk you through any of it, or send a PDF of the parts that are still relevant.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="contact.html" data-component="cta-button">Ask about a project</a>
+      <a class="btn btn-outline" href="resume.html" data-component="cta-button">Read the resume</a>
+    </div>
+  </section>
+
+</main>
+<footer class="site-footer" data-section="footer">
+  <div class="shell">
+    <div class="footer-grid">
+      <div data-component="footer-column">
+        <h2>The site</h2>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="writing.html">Writing</a></li>
+          <li><a href="talks.html">Talks &amp; podcasts</a></li>
+          <li><a href="search.html">Search</a></li>
+        </ul>
+      </div>
+      <div data-component="footer-column">
+        <h2>Background</h2>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="uses.html">Uses</a></li>
+          <li><a href="colophon.html">Colophon</a></li>
+          <li><a href="accessibility.html">Accessibility</a></li>
+        </ul>
+      </div>
+      <div data-component="footer-column">
+        <h2>Elsewhere</h2>
+        <ul data-component="social-links">
+          <li><a href="https://github.com/" rel="nofollow noopener">GitHub <span class="ext-mark" aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens an external site)</span></a></li>
+          <li><a href="https://codepen.io/" rel="nofollow noopener">CodePen <span class="ext-mark" aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens an external site)</span></a></li>
+          <li><a href="https://bsky.app/" rel="nofollow noopener">Bluesky <span class="ext-mark" aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens an external site)</span></a></li>
+          <li><a href="https://www.linkedin.com/" rel="nofollow noopener">LinkedIn <span class="ext-mark" aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens an external site)</span></a></li>
+        </ul>
+      </div>
+      <div data-component="footer-column">
+        <h2>Get in touch</h2>
+        <p class="stack-sm">
+          <a href="mailto:hello@tquill.example" data-component="email-link">hello@tquill.example</a><br>
+          <span class="text-faint">Portland, Oregon &#183; <span data-component="local-time">local time loading&#8230;</span></span>
+        </p>
+        <p><a class="btn btn-outline btn-sm" href="contact.html" data-component="cta-button">Start a project</a></p>
+        <p class="text-faint" style="font-size:.8125rem">Replies within two working days, usually one.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&#169; <span data-component="year-stamp">2026</span> Tobias Quill. A fictional person, built as a research baseline. Phone numbers use the 555 range; email uses the reserved <span class="mono">.example</span> domain.</p>
+      <p><a class="to-top" href="#main-content" data-component="to-top">Back to top &#8593;</a></p>
+    </div>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

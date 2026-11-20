@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apply to Texas | Lone Star University</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a href="index.html" class="site-logo" data-component="site-logo">Lone Star University</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
+        &#9776;
+      </button>
+      <nav class="primary-nav" id="primary-nav" role="navigation" aria-label="Primary">
+        <a href="about-texas.html">About</a>
+        <a href="academics-colleges-schools.html">Academics</a>
+        <a href="campus-life-housing-and-dining.html">Campus Life</a>
+        <a href="research.html">Research</a>
+        <a href="contact-us.html">Contact</a>
+        <a href="apply.html" class="apply-cta" data-component="apply-cta">Apply to Texas</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <div class="container">
+      <nav aria-label="Breadcrumb">
+        <ol>
+          <li><a href="index.html">Home</a></li>
+          <li aria-current="page">Apply to Texas</li>
+        </ol>
+      </nav>
+
+      <section data-section="apply-intro">
+        <h1>Apply to Texas</h1>
+        <p>Join our community of scholars and leaders. Start your application below.</p>
+      </section>
+
+      <section data-section="application-form">
+        <div id="error-summary" class="error-summary" role="alert" aria-live="assertive" hidden>
+          <h2>Please correct the following errors:</h2>
+          <ul></ul>
+        </div>
+
+        <form id="apply-form" novalidate>
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" name="firstName" required>
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" name="lastName" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="major">Intended Major</label>
+            <select id="major" name="major">
+              <option value="">Select a major...</option>
+              <option value="cs">Computer Science</option>
+              <option value="bus">Business Administration</option>
+              <option value="eng">Engineering</option>
+              <option value="arts">Liberal Arts</option>
+            </select>
+          </div>
+          <button type="submit" class="apply-cta">Submit Application</button>
+        </form>
+        <p class="simulation-note">Note: This is a simulation. No data is actually submitted.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer" role="contentinfo" data-component="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h2>Contact Us</h2>
+        <p>123 University Ave<br>Austin, TX 78712<br>(512) 555-0100</p>
+      </div>
+      <div>
+        <h2>Quick Links</h2>
+        <a href="about-texas.html">About</a>
+        <a href="academics-colleges-schools.html">Academics</a>
+        <a href="apply.html">Apply</a>
+      </div>
+      <div>
+        <h2>Follow Us</h2>
+        <a href="index.html">Facebook</a>
+        <a href="index.html">Twitter</a>
+        <a href="index.html">Instagram</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

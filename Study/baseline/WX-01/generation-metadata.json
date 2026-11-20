@@ -1,0 +1,31 @@
+{
+  "allocation_protocol": "WEB-REPLICA-ALLOCATION-V1.0",
+  "generation_protocol": "WEB-REPLICA-V1.0",
+  "category": "weather",
+  "slot": 1,
+  "source_id": "WX-01",
+  "model_group": "claude",
+  "model_id": "claude-sonnet-5-5",
+  "model_version": null,
+  "model_provider_or_runtime": "Claude Code Agent tool builder (claude-sonnet-5-5); orchestrated by claude-opus-5",
+  "generation_mode": "autonomous agent run, one replica per run, no human edits during generation",
+  "operator": "project lead (Samhith Varma) via orchestrator agent",
+  "approved_source_url": "https://www.weather.gov/",
+  "source_verified_at": "2026-11-12",
+  "source_approved_at": "2026-11-13",
+  "generation_started_at": "2026-11-14T05:29:07Z",
+  "generation_completed_at": "2026-11-14T05:39:11Z",
+  "rules_revision": "WEB-REPLICA-V1.0 / WEB-REPLICA-ALLOCATION-V1.0, working tree as of 2026-11-14 (uncommitted modifications to Rules.md and MODEL_ALLOCATION.md on top of commit a07e70e, branch websites/portfolio-claude-01-03)",
+  "category_prompt_revision": "orchestrator brief 2026-11-14 (no separate category prompt file)",
+  "prompt_or_transcript_reference": "Claude Code orchestrator session, round 08 weather build",
+  "human_edits": [],
+  "validation_summary": {
+    "technology": "pass: qc.js 2026-11-14 pages=13 files=28 failures=0; no libraries or remote requests",
+    "completeness": "pass: all mapped pages, 404 and artifacts present; qc.js link audit clean",
+    "structure": "pass: landmarks, skip link, lang, data-section/data-component verified by qc.js",
+    "interaction": "pass: 29/29 scripted Playwright flow checks",
+    "accessibility": "partial: axe-core 0 violations at 1280px and 375px, no horizontal scroll at 375px; manual, screen-reader, zoom and forced-colors review not tested; no conformance claim",
+    "traceability": "pass: self-reviewed against implemented files, not independently reviewed",
+    "scope": "pass: self-reviewed, 12 mapped pages plus 404"
+  }
+}

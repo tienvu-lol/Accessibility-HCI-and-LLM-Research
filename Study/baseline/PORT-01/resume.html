@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Resume &#8212; Tobias Quill</title>
+<meta name="description" content="The resume of Tobias Quill (fictional): design engineering, accessibility practice, fifteen years of front-end work.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="author" content="Tobias Quill (fictional)">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="resume">
+<a class="skip-link" href="#main-content" data-component="skip-link">Skip to main content</a>
+<header class="site-header" data-section="header">
+  <div class="utility-bar" data-section="utility-bar">
+    <div class="shell">
+      <p data-component="availability-strip">
+        <span class="status-dot" data-component="desk-state-dot" aria-hidden="true"></span>
+        <span class="badge-pill" data-component="availability-badge" data-state="open">Available for work</span>
+        <span class="visually-hidden">Studio clock: </span>
+        <span class="mono" data-component="local-time">Local time loading&#8230;</span>
+      </p>
+      <p class="d-flex flex-wrap align-items-center gap-2">
+        <a href="mailto:hello@tquill.example" data-component="email-link">hello@tquill.example</a>
+        <button class="icon-btn btn-sm" type="button" data-component="copy-button" data-copy="hello@tquill.example" data-label="Email address" data-status="utility-copy-status">
+          <svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15 5H6a2 2 0 0 0-2 2v9" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+          Copy
+        </button>
+        <span class="visually-hidden" role="status" aria-live="polite" id="utility-copy-status" data-component="copy-status"></span>
+      </p>
+    </div>
+  </div>
+  <div class="brand-bar" data-section="brand-bar">
+    <div class="shell">
+      <a class="brand" href="index.html" data-component="logo">
+        <svg class="brand-mark" width="34" height="34" viewBox="0 0 34 34" aria-hidden="true" focusable="false"><rect x="1.5" y="1.5" width="31" height="31" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 24c0-8 4-14 9-14s9 6 9 14" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17" cy="9" r="2.6" fill="currentColor"/></svg>
+        <span>
+          <span class="brand-name">Tobias Quill</span>
+          <span class="brand-role">Interactive developer &amp; creative technologist</span>
+        </span>
+        <span class="visually-hidden">&#8212; home page</span>
+      </a>
+      <div class="header-actions">
+        <button class="icon-btn" type="button" data-ui="disclosure" aria-expanded="false" aria-controls="site-search-panel" data-component="search-toggle">
+          <svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15.5 15.5 21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <span class="d-none d-sm-inline">Search</span><span class="visually-hidden"> this site</span>
+        </button>
+        <button class="icon-btn d-lg-none" type="button" data-ui="panel-open" aria-controls="primary-menu" data-component="mobile-nav-toggle">
+          <svg width="19" height="19" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          Menu<span class="visually-hidden">, open navigation</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <nav class="primary-nav" aria-label="Primary" data-section="primary-nav">
+    <div class="shell">
+      <div class="offcanvas-lg offcanvas-end" tabindex="-1" id="primary-menu" aria-labelledby="primary-menu-title" data-component="mobile-nav">
+        <div class="offcanvas-header">
+          <h2 class="offcanvas-title h5" id="primary-menu-title">Menu</h2>
+          <button type="button" class="btn-close" data-ui="panel-close" aria-label="Close menu"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="nav-list" data-component="nav-menu">
+          <li class="nav-item"><a class="nav-link" href="work.html">Work</a></li>
+          <li class="nav-item"><a class="nav-link" href="writing.html">Writing</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="uses.html">Uses</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            <li class="nav-item dropdown" data-component="nav-dropdown">
+              <button class="nav-link dropdown-toggle" type="button" id="nav-more" data-ui="dropdown-toggle" aria-controls="nav-more-menu" aria-expanded="false" aria-current="true">More</button>
+              <ul class="dropdown-menu" id="nav-more-menu" aria-labelledby="nav-more">
+            <li><a class="dropdown-item" href="resume.html" aria-current="page">Resume</a></li>
+            <li><a class="dropdown-item" href="talks.html">Talks &amp; podcasts</a></li>
+            <li><a class="dropdown-item" href="colophon.html">Colophon</a></li>
+            <li><a class="dropdown-item" href="accessibility.html">Accessibility</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <a class="btn btn-outline btn-sm nav-cta d-none d-lg-inline-flex" href="contact.html" data-component="cta-button">Start a project</a>
+    </div>
+  </nav>
+  <div class="collapse search-panel" id="site-search-panel" data-component="site-search">
+    <div class="shell py-3">
+      <form action="search.html" method="get" role="search" aria-label="Site" class="search-form">
+        <label class="form-label" for="header-q">Search projects, posts and pages</label>
+        <div class="input-group">
+          <input type="search" class="form-control" id="header-q" name="q" autocomplete="off" placeholder="plotter, focus rings, canvas&#8230;">
+          <button class="btn btn-primary" type="submit">Search</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</header>
+<main id="main-content" tabindex="-1" data-section="main-content">
+  <div class="page-header shell" data-section="page-header">
+  <nav class="breadcrumb-nav" aria-label="Breadcrumb" data-component="breadcrumbs">
+    <ol>
+      <li><a href="index.html">Home</a></li>
+      <li aria-current="page">Resume</li>
+    </ol>
+  </nav>
+    <h1>Resume</h1>
+    <p class="lede">Fifteen years of front-end and design engineering. The short version is on the <a href="about.html">about page</a>; this is the one with dates.</p>
+    <div class="cta-row no-print">
+      <a class="btn btn-primary" href="assets/tobias-quill-resume.txt" download data-component="download-link">Download (plain text, 4&nbsp;KB)</a>
+      <button class="btn btn-outline" type="button" data-component="print-button">Print this page</button>
+      <button class="btn btn-outline" type="button" data-component="copy-button" data-copy="hello@tquill.example" data-label="Email address" data-status="resume-copy-status">Copy my email</button>
+    </div>
+    <p class="status-line" role="status" aria-live="polite" id="resume-copy-status" data-component="copy-status"></p>
+  </div>
+
+  <div class="band shell" data-section="resume-body">
+    <section aria-labelledby="r-summary">
+      <h2 id="r-summary">Summary</h2>
+      <p class="lede">Design engineer who works at the seam between design systems and the browser. I am the person you call when 240 screens each solve the same problem differently, or when a prototype has to be real enough to test with people who use a keyboard and a screen reader.</p>
+      <dl class="spec-list mt-3" data-component="spec-list">
+        <dt>Based in</dt><dd>Portland, Oregon (Pacific time)</dd>
+        <dt>Email</dt><dd><a href="mailto:hello@tquill.example" data-component="email-link">hello@tquill.example</a></dd>
+        <dt>Phone</dt><dd><a href="tel:+15035550182">(503) 555-0182</a></dd>
+        <dt>Availability</dt><dd><span data-component="availability-badge" data-state="open" class="badge-pill">Available for work</span></dd>
+      </dl>
+    </section>
+
+    <section class="mt-band" aria-labelledby="r-experience">
+      <h2 id="r-experience">Experience</h2>
+      <ol class="timeline" data-component="experience-timeline">
+        <li>
+          <span class="tl-when">2023&#8211;now</span>
+          <div>
+            <h3>Principal interaction engineer</h3>
+            <p class="tl-org">Harborlight &#183; Portland, Oregon</p>
+            <ul>
+              <li>Own the component library used by six product teams: 74 components, one keyboard model, one focus specification.</li>
+              <li>Cut median time-to-first-interaction on the scheduling view from 3.1s to 0.9s by deleting code rather than adding it.</li>
+              <li>Ran the accessibility programme: 2.2 AA baseline on every new screen, with automated checks in review and quarterly manual passes.</li>
+              <li>Mentor four engineers; run a fortnightly &#8220;break the interface&#8221; session that has become the team&#8217;s favourite meeting.</li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <span class="tl-when">2019&#8211;2023</span>
+          <div>
+            <h3>Senior front-end engineer</h3>
+            <p class="tl-org">Marrow &amp; Pike &#183; Remote</p>
+            <ul>
+              <li>Rebuilt the newsroom editor used by 400 staff: any action reachable in three keystrokes, and no action that needed a mouse.</li>
+              <li>Took the public site from 1.9&nbsp;MB to 240&nbsp;KB per page, which halved bounce on mobile connections.</li>
+              <li>Wrote the editorial component documentation, which is still the onboarding path for new staff.</li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <span class="tl-when">2015&#8211;2019</span>
+          <div>
+            <h3>Interactive developer</h3>
+            <p class="tl-org">Ferrous Studio &#183; Seattle</p>
+            <ul>
+              <li>Twenty-odd campaign microsites and four physical installations, shipped in crates with their own QA plan.</li>
+              <li>Introduced the studio&#8217;s first accessibility checklist after an installation failed in front of a client.</li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <span class="tl-when">2011&#8211;2015</span>
+          <div>
+            <h3>Front-end developer</h3>
+            <p class="tl-org">Rook Street Digital &#183; Melbourne</p>
+            <ul>
+              <li>Agency work across 40+ sites. Learned semantics, review discipline and how to read a design file.</li>
+            </ul>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section class="mt-band" aria-labelledby="r-skills">
+      <h2 id="r-skills">Skills</h2>
+      <div class="grid grid-2">
+        <div>
+          <h3>Build</h3>
+          <ul>
+            <li>HTML, CSS (custom properties, grid, container queries), vanilla JavaScript</li>
+            <li>Design systems, component APIs, documentation sites</li>
+            <li>Canvas and SVG, light WebGL, pen-plotter toolchains (HPGL)</li>
+            <li>Python for tooling; a little C for keyboard firmware</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Practice</h3>
+          <ul>
+            <li>WCAG 2.2 AA: keyboard models, focus specification, assistive-technology testing</li>
+            <li>Performance budgets and the arguments that keep them</li>
+            <li>Teaching: workshops, pairing, written documentation</li>
+            <li>Prototyping with real data and real users, early</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="mt-band" aria-labelledby="r-education">
+      <h2 id="r-education">Education and selected talks</h2>
+      <table class="table">
+        <caption>Education, plus four of six recent appearances. The full list is on the <a href="talks.html">talks page</a>.</caption>
+        <tbody>
+          <tr><th scope="row">2007&#8211;2011</th><td>BSc Computer Science</td></tr>
+          <tr><th scope="row">2026</th><td>Serious play: the case for useless software &#183; Interface Northwest</td></tr>
+          <tr><th scope="row">2026</th><td>Focus rings, handrails and other furniture &#183; A11y Portland</td></tr>
+          <tr><th scope="row">2025</th><td>Twelve tools, nine weekends &#183; Cascadia JS Meetup</td></tr>
+          <tr><th scope="row">2024</th><td>Plotting the week (workshop) &#183; Type &amp; Machine Club</td></tr>
+        </tbody>
+      </table>
+      <p class="demo-flag">Fictional resume for a fictional person. Dates, employers and numbers are invented.</p>
+    </section>
+  </div>
+
+</main>
+<footer class="site-footer" data-section="footer">
+  <div class="shell">
+    <div class="footer-grid">
+      <div data-component="footer-column">
+        <h2>The site</h2>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="writing.html">Writing</a></li>
+          <li><a href="talks.html">Talks &amp; podcasts</a></li>
+          <li><a href="search.html">Search</a></li>
+        </ul>
+      </div>
+      <div data-component="footer-column">
+        <h2>Background</h2>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="uses.html">Uses</a></li>
+          <li><a href="colophon.html">Colophon</a></li>
+          <li><a href="accessibility.html">Accessibility</a></li>
+        </ul>
+      </div>
+      <div data-component="footer-column">
+        <h2>Elsewhere</h2>
+        <ul data-component="social-links">
+          <li><a href="https://github.com/" rel="nofollow noopener">GitHub <span class="ext-mark" aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens an external site)</span></a></li>
+          <li><a href="https://codepen.io/" rel="nofollow noopener">CodePen <span class="ext-mark" aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens an external site)</span></a></li>
+          <li><a href="https://bsky.app/" rel="nofollow noopener">Bluesky <span class="ext-mark" aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens an external site)</span></a></li>
+          <li><a href="https://www.linkedin.com/" rel="nofollow noopener">LinkedIn <span class="ext-mark" aria-hidden="true">&#8599;</span><span class="visually-hidden"> (opens an external site)</span></a></li>
+        </ul>
+      </div>
+      <div data-component="footer-column">
+        <h2>Get in touch</h2>
+        <p class="stack-sm">
+          <a href="mailto:hello@tquill.example" data-component="email-link">hello@tquill.example</a><br>
+          <span class="text-faint">Portland, Oregon &#183; <span data-component="local-time">local time loading&#8230;</span></span>
+        </p>
+        <p><a class="btn btn-outline btn-sm" href="contact.html" data-component="cta-button">Start a project</a></p>
+        <p class="text-faint" style="font-size:.8125rem">Replies within two working days, usually one.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&#169; <span data-component="year-stamp">2026</span> Tobias Quill. A fictional person, built as a research baseline. Phone numbers use the 555 range; email uses the reserved <span class="mono">.example</span> domain.</p>
+      <p><a class="to-top" href="#main-content" data-component="to-top">Back to top &#8593;</a></p>
+    </div>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

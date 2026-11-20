@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Find Care | Harborview Community Hospital</title>
+<meta name="description" content="Search fictional specialties and doctors by name, specialty and location using sample data.">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<div class="emergency-bar" role="region" aria-label="Emergency notice" data-section="emergency-announcement" data-component="emergency-banner"><p><strong>In an emergency, call your local emergency services.</strong> Harborview is a fictional hospital in a design study; this website cannot receive emergency requests.</p></div>
+<header data-section="global-header" data-component="site-header">
+<div class="utility"><nav aria-label="Utility" data-section="utility-navigation" data-component="utility-nav"><ul>
+<li><button type="button" class="link-button" data-open-portal>Pay Your Bill</button></li>
+<li><a href="contact-us.html">Contact Us</a></li>
+<li><a href="find-care.html" aria-current="page">Find Care</a></li></ul></nav></div>
+<div class="header-main" data-section="brand-and-navigation">
+<a class="brand" href="index.html" data-component="brand-link"><img src="assets/logo.svg" alt="" width="44" height="44"><span>Harborview Community Hospital<small>Harborview Health Network (fictional)</small></span></a>
+<button type="button" class="menu-toggle" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+<nav class="primary-nav" id="primary-nav" aria-label="Primary" data-section="global-navigation" data-component="primary-nav" data-collapsed="false"><ul class="nav-list">
+<li class="nav-item"><button type="button" class="nav-trigger" aria-expanded="false" aria-controls="menu-services">Explore Services</button><ul class="submenu" id="menu-services" hidden><li><a href="cancer-institute.html">Cancer</a></li><li><a href="heart-vascular-institute.html">Heart &amp; Vascular</a></li><li><a href="specialties-services.html">Programs &amp; Services</a></li></ul></li>
+<li class="nav-item"><button type="button" class="nav-trigger" aria-expanded="false" aria-controls="menu-locations">Locations</button><ul class="submenu" id="menu-locations" hidden><li><a href="locations.html">All Locations</a></li><li><a href="hospital-bayfront.html">Harborview Hospital Bayfront</a></li></ul></li>
+<li class="nav-item"><button type="button" class="nav-trigger" aria-expanded="false" aria-controls="menu-resources">Resources</button><ul class="submenu" id="menu-resources" hidden><li><a href="patients-visitors.html">Patients &amp; Visitors</a></li><li><a href="classes-events.html">Classes &amp; Events</a></li></ul></li>
+<li class="nav-item"><a class="nav-link" href="about.html">About Harborview</a></li>
+</ul></nav></div></header>
+<nav class="crumbs" aria-label="Breadcrumb" data-section="breadcrumbs" data-component="breadcrumbs"><div class="wrap"><ol><li><a href="index.html">Home</a></li><li aria-current="page">Find Care</li></ol></div></nav>
+<main id="main-content" data-section="main-content">
+
+<section class="page-hero" data-section="page-header" data-component="page-hero"><div class="wrap"><h1>Find Care</h1><p class="lead">Search invented sample data for services or doctors. This is the only place doctors appear; the reference has no standalone doctor directory.</p></div></section>
+<section class="band" aria-labelledby="fc-title" data-section="find-care-search" data-component="find-care-search"><div class="wrap">
+<h2 id="fc-title">Search</h2>
+<form id="find-care-form" role="search" aria-label="Find care" novalidate>
+<fieldset><legend>Search by</legend>
+<div class="choice"><input type="radio" id="fc-specialty-r" name="type" value="specialty" checked><label for="fc-specialty-r">Specialty or condition</label></div>
+<div class="choice"><input type="radio" id="fc-physician" name="type" value="physician"><label for="fc-physician">Find a physician</label></div></fieldset>
+<div class="filters">
+<div class="field"><label for="fc-q" id="fc-q-label">Specialty or condition</label><input type="search" id="fc-q"></div>
+<div class="field"><label for="fc-loc">Location (city or ZIP)</label><input type="text" id="fc-loc" placeholder="For example: Bayfront"></div>
+<div class="field"><label for="fc-specialty">Specialty</label><select id="fc-specialty"><option value="">Any specialty</option></select></div>
+</div>
+<div id="fc-physician-opts" class="filters" hidden>
+<div class="choice"><input type="checkbox" id="fc-accepting"><label for="fc-accepting">Accepting new patients (sample data)</label></div>
+<div class="field"><label for="fc-sort">Sort doctors by</label><select id="fc-sort"><option value="name">Name (A to Z)</option><option value="location">Location</option></select></div></div>
+<button type="submit" class="btn">Search</button> <button type="button" class="btn secondary" id="fc-reset">Reset</button></form>
+<p id="find-status" class="hint" role="status" aria-live="polite"></p>
+<section aria-labelledby="fr-title" data-section="find-care-results" data-component="results-list"><h2 id="fr-title">Results</h2><ul class="results" id="find-results"></ul></section>
+<p class="demo-note">Provider names, specialties and availability are invented for this demonstration and are not real.</p>
+</div></section>
+</main>
+<footer class="site-footer" data-section="global-footer" data-component="site-footer"><div class="wrap">
+<div class="grid"><div><h2>Harborview Community Hospital</h2><p>Main line: <a href="contact-us.html">(800) 555-0142</a> (fictional number)</p></div>
+<nav aria-label="Footer" data-section="footer-navigation" data-component="footer-nav"><h2>Quick links</h2><ul><li><a href="find-care.html">Find Care</a></li><li><a href="patients-visitors.html">Patients &amp; Visitors</a></li><li><a href="billing-help.html">Billing Information</a></li><li><a href="contact-us.html">Contact Us</a></li><li><a href="about.html">About Harborview</a></li></ul></nav></div>
+<p class="fine">Fictional website for an accessibility and usability research dataset. No real organization, provider, address or phone number is represented. Content is illustrative and is not medical advice. In an emergency, call your local emergency services.</p>
+</div></footer>
+<dialog id="portal-dialog" aria-labelledby="portal-title" data-section="portal-login" data-component="modal-dialog">
+<div class="dialog-head"><h2 id="portal-title">Patient portal sign-in (demo)</h2><button type="button" class="btn secondary" data-close-dialog>Close<span class="visually-hidden"> portal dialog</span></button></div>
+<p class="demo-note">Non-functional demonstration. The real reference links to an off-site portal; this replica never signs anyone in. Do not enter real credentials.</p>
+<form novalidate data-component="portal-login-form">
+<div class="field"><label for="portal-user">Username</label><input type="text" id="portal-user" autocomplete="off" aria-describedby="portal-user-error"><p class="error-msg" id="portal-user-error"></p></div>
+<div class="field"><label for="portal-pass">Password</label><input type="password" id="portal-pass" autocomplete="off" aria-describedby="portal-pass-error"><p class="error-msg" id="portal-pass-error"></p></div>
+<button type="submit" class="btn">Try demo sign-in</button></form>
+<p class="portal-msg success" role="status" hidden></p></dialog>
+<script src="js/main.js" defer></script>
+</body>
+</html>

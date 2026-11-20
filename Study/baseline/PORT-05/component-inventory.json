@@ -1,0 +1,142 @@
+[
+  {
+    "component": "site-header",
+    "selector": "header.site-header",
+    "pages": [
+      "index.html",
+      "projects.html",
+      "projects-applications.html",
+      "projects-electronics.html",
+      "projects-marketing.html",
+      "projects-other.html",
+      "projects-web-stuff.html",
+      "mini-tools.html",
+      "blog.html",
+      "projects-applications-git-date-extractor-npm-package-and-cli-tool.html",
+      "projects-web-stuff-cheatsheets-and-snippets-markdown-powered-gatsby-mini-site.html",
+      "posts-2023-what-makes-svelte-so-great-features-and-comparisons.html",
+      "posts-2023-shell-heredocs-productive-fun-bash-and-beyond.html",
+      "all-posts.html",
+      "404.html"
+    ],
+    "behaviors": [
+      "Sticky positioning",
+      "Responsive layout (flex to column on mobile)"
+    ],
+    "keyboard": [],
+    "status": "implemented",
+    "validation": "not-tested"
+  },
+  {
+    "component": "primary-nav",
+    "selector": "nav.primary-nav",
+    "pages": [
+      "index.html",
+      "projects.html",
+      "projects-applications.html",
+      "projects-electronics.html",
+      "projects-marketing.html",
+      "projects-other.html",
+      "projects-web-stuff.html",
+      "mini-tools.html",
+      "blog.html",
+      "projects-applications-git-date-extractor-npm-package-and-cli-tool.html",
+      "projects-web-stuff-cheatsheets-and-snippets-markdown-powered-gatsby-mini-site.html",
+      "posts-2023-what-makes-svelte-so-great-features-and-comparisons.html",
+      "posts-2023-shell-heredocs-productive-fun-bash-and-beyond.html",
+      "all-posts.html",
+      "404.html"
+    ],
+    "behaviors": [
+      "Active state highlighting via JS",
+      "Responsive layout"
+    ],
+    "keyboard": [],
+    "status": "implemented",
+    "validation": "not-tested"
+  },
+  {
+    "component": "site-footer",
+    "selector": "footer.site-footer",
+    "pages": [
+      "index.html",
+      "projects.html",
+      "projects-applications.html",
+      "projects-electronics.html",
+      "projects-marketing.html",
+      "projects-other.html",
+      "projects-web-stuff.html",
+      "mini-tools.html",
+      "blog.html",
+      "projects-applications-git-date-extractor-npm-package-and-cli-tool.html",
+      "projects-web-stuff-cheatsheets-and-snippets-markdown-powered-gatsby-mini-site.html",
+      "posts-2023-what-makes-svelte-so-great-features-and-comparisons.html",
+      "posts-2023-shell-heredocs-productive-fun-bash-and-beyond.html",
+      "all-posts.html",
+      "404.html"
+    ],
+    "behaviors": [],
+    "keyboard": [],
+    "status": "implemented",
+    "validation": "not-tested"
+  },
+  {
+    "component": "card-grid",
+    "selector": "ul.card-grid",
+    "pages": [
+      "index.html",
+      "projects.html",
+      "projects-applications.html",
+      "projects-electronics.html",
+      "projects-marketing.html",
+      "projects-other.html",
+      "projects-web-stuff.html",
+      "mini-tools.html",
+      "blog.html",
+      "all-posts.html"
+    ],
+    "behaviors": [
+      "CSS Grid layout",
+      "Responsive columns"
+    ],
+    "keyboard": [],
+    "status": "implemented",
+    "validation": "not-tested"
+  },
+  {
+    "component": "contact-form",
+    "selector": "form#contact-form",
+    "pages": [
+      "index.html"
+    ],
+    "behaviors": [
+      "Client-side validation",
+      "Simulated submission with timeout",
+      "Success state display"
+    ],
+    "keyboard": [
+      "Enter submits form",
+      "Tab navigates between fields"
+    ],
+    "status": "implemented",
+    "validation": "not-tested"
+  },
+  {
+    "component": "filter-controls",
+    "selector": "[data-component='filter-controls']",
+    "pages": [
+      "projects.html",
+      "blog.html"
+    ],
+    "behaviors": [
+      "Client-side filtering of content",
+      "Active state on selected filter"
+    ],
+    "keyboard": [
+      "Arrow keys navigate buttons",
+      "Enter/Space activates filter"
+    ],
+    "status": "implemented",
+    "validation": "not-tested"
+  }
+]

@@ -1,0 +1,660 @@
+{
+  "protocol_version": "1.0",
+  "replica_id": "FASH-01",
+  "category": "fashion",
+  "source_url": "https://www.wmagazine.com/",
+  "components": [
+    {
+      "id": "article-detail",
+      "selector": "[data-component='article-detail']",
+      "pages": [
+        "article.html",
+        "story.html"
+      ],
+      "behavior": [
+        "story header, body, topics (static on article.html, JS-rendered from inline data on story.html)"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "axe and scripted checks only (see README)"
+    },
+    {
+      "id": "breadcrumb",
+      "selector": "[data-component='breadcrumb']",
+      "pages": [
+        "article.html",
+        "culture.html",
+        "fashion.html",
+        "issue.html",
+        "latest.html",
+        "newsletter.html",
+        "nextwave.html",
+        "search.html",
+        "story.html",
+        "travel.html",
+        "video.html"
+      ],
+      "behavior": [
+        "breadcrumb trail (intentional addition)"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe and scripted checks only (see README)"
+    },
+    {
+      "id": "card-grid",
+      "selector": "[data-component='card-grid']",
+      "pages": [
+        "article.html",
+        "culture.html",
+        "fashion.html",
+        "index.html",
+        "issue.html",
+        "latest.html",
+        "nextwave.html",
+        "travel.html",
+        "video.html"
+      ],
+      "behavior": [
+        "list of story cards with real list semantics"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe and scripted checks only (see README)"
+    },
+    {
+      "id": "card-grid-section",
+      "selector": "[data-component='card-grid-section']",
+      "pages": [
+        "article.html",
+        "index.html",
+        "issue.html",
+        "story.html"
+      ],
+      "behavior": [
+        "titled band holding a card grid"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "axe and scripted checks only (see README)"
+    },
+    {
+      "id": "demo-success",
+      "selector": "[data-component='demo-success']",
+      "pages": [
+        "newsletter.html"
+      ],
+      "behavior": [
+        "simulation-complete message receiving focus; states nothing is stored or sent"
+      ],
+      "keyboard": [
+        "none (focus moved programmatically)"
+      ],
+      "status": "implemented",
+      "validation": "axe and scripted checks only (see README)"
+    },
+    {
+      "id": "editorial-letter",
+      "selector": "[data-component='editorial-letter']",
+      "pages": [
+        "issue.html"
+      ],
+      "behavior": [
+        "editors note text block"
+      ],
+      "keyboard": [
+        "none"
+      ],
+      "status": "implemented",
+      "validation": "axe and scripted checks only (see README)"
+    },
+    {
+      "id": "empty-state",
+      "selector": "[data-component='empty-state']",
+      "pages": [
+        "culture.html",
+        "fashion.html",
+        "latest.html",
+        "nextwave.html",
+        "search.html",
+        "travel.html",
+        "video.html"
+      ],
+      "behavior": [
+        "message shown when filters or search match nothing"
+      ],
+      "keyboard": [
+        "none (static text)"
+      ],
+      "status": "implemented",
+      "validation": "axe and scripted checks only (see README)"
+    },
+    {
+      "id": "error-summary",
+      "selector": "[data-component='error-summary']",
+      "pages": [
+        "newsletter.html"
+      ],
+      "behavior": [
+        "error summary receiving focus with links to invalid fields"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter on error links"
+      ],
+      "status": "implemented",
+      "validation": "axe and scripted checks only (see README)"
+    },
+    {
+      "id": "fictional-publication-note",
+      "selector": "[data-component='fictional-publication-note']",
+      "pages": [
+        "404.html",
+        "article.html",
+        "culture.html",
+        "fashion.html",
+        "index.html",
+        "issue.html",
+        "latest.html",
+        "newsletter.html",
+        "nextwave.html",
+        "search.html",
+        "story.html",
+        "travel.html",
+        "video.html"
+      ],
+      "behavior": [
+        "visible invented-magazine notice in masthead area of every page"
+      ],
+      "keyboard": [
+        "none (static text, not focusable)"
+      ],
+      "status": "implemented",
+      "validation": "axe and scripted checks only (see README)"
+    },
+    {
+      "id": "filter-bar",
+      "selector": "[data-component='filter-bar']",
+      "pages": [
+        "culture.html",
+        "fashion.html",
+        "latest.html",
+        "nextwave.html",
+        "travel.html",
+        "video.html"
+      ],
+      "behavior": [
+        "keyword, section, topic, sort and reset over inline data, live result count (role=status)"
+      ],
+      "keyboard": [
+        "Tab",
+        "typing",
+        "arrow keys in selects",
+        "Enter on Reset"
+      ],
+      "status": "implemented",
+      "validation": "axe and scripted checks only (see README)"
+    },
+    {
+      "id": "footer-nav",
+      "selector": "[data-component='footer-nav']",
+      "pages": [
+        "404.html",
+        "article.html",
+        "culture.html",
+        "fashion.html",
+        "index.html",
+        "issue.html",
+        "latest.html",
+        "newsletter.html",
+        "nextwave.html",
+        "search.html",
+        "story.html",
+        "travel.html",
+        "video.html"
+      ],
+      "behavior": [
+        "footer link groups"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe and scripted checks only (see README)"
+    },
+    {
+      "id": "gallery-controls",
+      "selector": "[data-component='gallery-controls']",
+      "pages": [
+        "article.html"
+      ],
+      "behavior": [
+        "previous/next/enlarge buttons and status"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "status": "implemented",
+      "validation": "axe and scripted checks only (see README)"
+    },
+    {
+      "id": "header-menu",
+      "selector": "[data-component='header-menu']",
+      "pages": [
+        "404.html",
+        "article.html",
+        "culture.html",
+        "fashion.html",
+        "index.html",
+        "issue.html",
+        "latest.html",
+        "newsletter.html",
+        "nextwave.html",
+        "search.html",
+        "story.html",
+        "travel.html",
+        "video.html"
+      ],
+      "behavior": [
+        "container shown inline on desktop, collapsed behind the toggle on mobile when JS is active"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "axe and scripted checks only (see README)"
+    },
+    {
+      "id": "hero-feature",
+      "selector": "[data-component='hero-feature']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "lead story block on home"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe and scripted checks only (see README)"
+    },
+    {
+      "id": "image-gallery",
+      "selector": "[data-component='image-gallery']",
+      "pages": [
+        "article.html"
+      ],
+      "behavior": [
+        "non-autoplaying slideshow with Previous/Next, thumbnails, polite slide counter"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "ArrowLeft",
+        "ArrowRight"
+      ],
+      "status": "implemented",
+      "validation": "axe and scripted checks only (see README)"
+    },
+    {
+      "id": "issue-hero",
+      "selector": "[data-component='issue-hero']",
+      "pages": [
+        "issue.html"
+      ],
+      "behavior": [
+        "special-issue cover and intro"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "axe and scripted checks only (see README)"
+    },
+    {
+      "id": "issue-promo",
+      "selector": "[data-component='issue-promo']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "special-issue promo band on home"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe and scripted checks only (see README)"
+    },
+    {
+      "id": "lightbox",
+      "selector": "[data-component='lightbox']",
+      "pages": [
+        "article.html"
+      ],
+      "behavior": [
+        "native dialog (showModal) with prev/next/close; Escape closes and focus returns to opener"
+      ],
+      "keyboard": [
+        "Tab (trapped by modal dialog)",
+        "ArrowLeft",
+        "ArrowRight",
+        "Escape"
+      ],
+      "status": "implemented",
+      "validation": "axe and scripted checks only (see README)"
+    },
+    {
+      "id": "menu-toggle",
+      "selector": "[data-component='menu-toggle']",
+      "pages": [
+        "404.html",
+        "article.html",
+        "culture.html",
+        "fashion.html",
+        "index.html",
+        "issue.html",
+        "latest.html",
+        "newsletter.html",
+        "nextwave.html",
+        "search.html",
+        "story.html",
+        "travel.html",
+        "video.html"
+      ],
+      "behavior": [
+        "mobile disclosure (aria-expanded) at 900px and below; inferred, reference not rendered"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space",
+        "Escape closes and returns focus"
+      ],
+      "status": "implemented",
+      "validation": "axe and scripted checks only (see README)"
+    },
+    {
+      "id": "newsletter-form",
+      "selector": "[data-component='newsletter-form']",
+      "pages": [
+        "newsletter.html"
+      ],
+      "behavior": [
+        "simulated sign-up with email and delivery-day validation"
+      ],
+      "keyboard": [
+        "Tab",
+        "Space on radios/checkboxes",
+        "Enter submits"
+      ],
+      "status": "implemented",
+      "validation": "axe and scripted checks only (see README)"
+    },
+    {
+      "id": "newsletter-promo",
+      "selector": "[data-component='newsletter-promo']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "link band to newsletter page"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe and scripted checks only (see README)"
+    },
+    {
+      "id": "primary-nav",
+      "selector": "[data-component='primary-nav']",
+      "pages": [
+        "404.html",
+        "article.html",
+        "culture.html",
+        "fashion.html",
+        "index.html",
+        "issue.html",
+        "latest.html",
+        "newsletter.html",
+        "nextwave.html",
+        "search.html",
+        "story.html",
+        "travel.html",
+        "video.html"
+      ],
+      "behavior": [
+        "flat nav list with aria-current; no dropdowns (none observed in reference raw HTML)"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe and scripted checks only (see README)"
+    },
+    {
+      "id": "search-form",
+      "selector": "[data-component='search-form']",
+      "pages": [
+        "search.html"
+      ],
+      "behavior": [
+        "in-page search form with section select"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe and scripted checks only (see README)"
+    },
+    {
+      "id": "search-results",
+      "selector": "[data-component='search-results']",
+      "pages": [
+        "search.html"
+      ],
+      "behavior": [
+        "results list from inline data with result count and empty state"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe and scripted checks only (see README)"
+    },
+    {
+      "id": "section-strip",
+      "selector": "[data-component='section-strip']",
+      "pages": [
+        "index.html"
+      ],
+      "behavior": [
+        "home section strip with a more-in-section link"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe and scripted checks only (see README)"
+    },
+    {
+      "id": "site-footer",
+      "selector": "[data-component='site-footer']",
+      "pages": [
+        "404.html",
+        "article.html",
+        "culture.html",
+        "fashion.html",
+        "index.html",
+        "issue.html",
+        "latest.html",
+        "newsletter.html",
+        "nextwave.html",
+        "search.html",
+        "story.html",
+        "travel.html",
+        "video.html"
+      ],
+      "behavior": [
+        "footer with brand blurb, link groups and sample-data note"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "axe and scripted checks only (see README)"
+    },
+    {
+      "id": "site-header",
+      "selector": "[data-component='site-header']",
+      "pages": [
+        "404.html",
+        "article.html",
+        "culture.html",
+        "fashion.html",
+        "index.html",
+        "issue.html",
+        "latest.html",
+        "newsletter.html",
+        "nextwave.html",
+        "search.html",
+        "story.html",
+        "travel.html",
+        "video.html"
+      ],
+      "behavior": [
+        "masthead with fictional note, wordmark, menu and search"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "axe and scripted checks only (see README)"
+    },
+    {
+      "id": "site-search",
+      "selector": "[data-component='site-search']",
+      "pages": [
+        "404.html",
+        "article.html",
+        "culture.html",
+        "fashion.html",
+        "index.html",
+        "issue.html",
+        "latest.html",
+        "newsletter.html",
+        "nextwave.html",
+        "search.html",
+        "story.html",
+        "travel.html",
+        "video.html"
+      ],
+      "behavior": [
+        "header search form, GET to search.html"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter submits"
+      ],
+      "status": "implemented",
+      "validation": "axe and scripted checks only (see README)"
+    },
+    {
+      "id": "story-card",
+      "selector": "[data-component='story-card']",
+      "pages": [
+        "article.html",
+        "culture.html",
+        "fashion.html",
+        "index.html",
+        "issue.html",
+        "latest.html",
+        "nextwave.html",
+        "search.html",
+        "story.html",
+        "travel.html",
+        "video.html"
+      ],
+      "behavior": [
+        "image plus headline link; image is decorative (alt empty), meaning carried by text"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe and scripted checks only (see README)"
+    },
+    {
+      "id": "story-listing",
+      "selector": "[data-component='story-listing']",
+      "pages": [
+        "culture.html",
+        "fashion.html",
+        "latest.html",
+        "nextwave.html",
+        "travel.html",
+        "video.html"
+      ],
+      "behavior": [
+        "filterable list region for a section or all stories"
+      ],
+      "keyboard": [
+        "Tab"
+      ],
+      "status": "implemented",
+      "validation": "axe and scripted checks only (see README)"
+    },
+    {
+      "id": "wordmark",
+      "selector": "[data-component='wordmark']",
+      "pages": [
+        "404.html",
+        "article.html",
+        "culture.html",
+        "fashion.html",
+        "index.html",
+        "issue.html",
+        "latest.html",
+        "newsletter.html",
+        "nextwave.html",
+        "search.html",
+        "story.html",
+        "travel.html",
+        "video.html"
+      ],
+      "behavior": [
+        "link to home"
+      ],
+      "keyboard": [
+        "Tab",
+        "Enter"
+      ],
+      "status": "implemented",
+      "validation": "axe and scripted checks only (see README)"
+    }
+  ]
+}

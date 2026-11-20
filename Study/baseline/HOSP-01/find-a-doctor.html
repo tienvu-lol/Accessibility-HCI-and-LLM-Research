@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Find a Doctor | Meridian Bay Health</title>
+<meta name="description" content="Search invented sample providers by name, specialty, location and language.">
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="doctors">
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header" id="page-top" data-section="global-header" data-component="site-header">
+<div class="emergency-bar" data-section="emergency-notice" data-component="emergency-notice"><div class="wrap"><p><strong>Emergency?</strong> Call your local emergency number. This site is a fictional demonstration and cannot take emergency requests. <a href="emergency-department.html">Emergency Department information</a></p></div></div>
+ <div class="utility" data-section="utility-navigation"><nav class="wrap" aria-label="Utility" data-component="utility-nav"><a href="patient-portal.html">BayPortal (demo)</a><a href="appointments.html">Request an appointment</a></nav></div>
+ <div class="header-main"><a class="brand" href="index.html" data-component="brand-logo"><img src="assets/logo.svg" alt="" width="44" height="44"><span>Meridian Bay Health<small>Fictional academic medical center</small></span></a>
+ <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="primary-nav" data-component="mobile-menu-toggle">Menu</button>
+ <nav id="primary-nav" class="primary-nav" aria-label="Primary" data-section="global-navigation" data-component="primary-nav"><ul><li class="has-sub" data-component="dropdown-menu"><button type="button" class="nav-btn" aria-expanded="false" aria-controls="sub-care">Care<span class="caret" aria-hidden="true"></span></button><ul id="sub-care" class="sub-menu"><li><a href="care.html">Conditions and Care</a></li><li><a href="emergency-department.html">Emergency Department</a></li><li><a href="cancer-care.html">Cancer Care</a></li></ul></li><li><a href="medical-services.html">Medical Services</a></li><li><a href="find-a-doctor.html" aria-current="page">Find a Doctor</a></li><li><a href="locations.html">Locations</a></li></ul></nav></div>
+</header>
+<nav class="breadcrumbs" aria-label="Breadcrumb" data-section="breadcrumbs" data-component="breadcrumbs"><ol><li><a href="index.html">Home</a></li><li><span aria-current="page">Find a Doctor</span></li></ol></nav>
+<main id="main-content" data-section="main-content">
+
+<section class="page-hero" aria-labelledby="page-title" data-section="page-hero" data-component="page-hero"><div class="wrap"><h1 id="page-title">Find a Doctor</h1><p>Search by specialty, name or condition area. All providers shown are invented sample data; the reference site&rsquo;s real results were not observed.</p></div></section>
+<div class="band"><div class="wrap" id="doctor-finder">
+<form id="d-form" role="search" aria-label="Doctor search" data-section="doctor-search" data-component="typeahead-search"><div class="combo"><label for="d-q">Search by specialty, name or location</label><p class="hint" id="d-q-hint">Type a few letters to see suggestions.</p><input id="d-q" type="text" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="d-q-list" autocomplete="off" aria-describedby="d-q-hint"><ul id="d-q-list" class="listbox" role="listbox" aria-label="Suggestions" hidden></ul></div><div class="btn-row"><button class="btn" type="submit">Search</button></div></form>
+<div style="height:1.5rem"></div>
+<div class="finder">
+<div><button type="button" class="btn secondary filter-toggle" id="d-filter-toggle" aria-expanded="false" aria-controls="d-filters">Filters</button>
+<div class="filters" id="d-filters" data-collapsible="true" data-section="doctor-filters" data-component="filter-panel"><h2>Filter results</h2>
+<div class="field"><label for="d-spec">Specialty</label><select id="d-spec"></select></div>
+<div class="field"><label for="d-loc">Location</label><select id="d-loc"></select></div>
+<div class="field"><label for="d-lang">Language</label><select id="d-lang"></select></div>
+<div class="field"><label for="d-gender">Gender</label><select id="d-gender"><option value="">Any</option><option>Female</option><option>Male</option></select></div>
+<div class="check"><input type="checkbox" id="d-acc"><label for="d-acc" style="font-weight:400">Accepting new patients</label></div>
+<div class="check"><input type="checkbox" id="d-virt"><label for="d-virt" style="font-weight:400">Offers virtual visits</label></div>
+<button type="button" class="btn secondary" id="d-reset">Clear all filters</button></div></div>
+<section aria-labelledby="d-results-title" data-section="doctor-results" data-component="results-list"><div class="results-head"><div><h2 id="d-results-title">Results</h2><p id="d-count" style="margin:0"></p></div><div class="sort"><label for="d-sort">Sort by</label><select id="d-sort"><option value="name">Last name (A to Z)</option><option value="exp">Years of experience</option></select></div></div>
+<div id="d-live" class="visually-hidden" role="status" aria-live="polite"></div>
+<ul id="d-list" class="result-list"></ul>
+<div id="d-empty" class="empty-state" hidden><h3>No doctors match your search</h3><p>Try removing a filter or checking the spelling.</p><button type="button" class="btn" id="d-empty-reset">Clear search and filters</button></div>
+<div class="btn-row"><button type="button" class="btn secondary" id="d-more" hidden>Show more doctors</button></div></section></div></div></div>
+<noscript><div class="wrap"><p>This search needs JavaScript to run over the local sample data.</p></div></noscript>
+</main>
+<footer class="site-footer" data-section="global-footer" data-component="site-footer"><div class="wrap"><div class="footer-groups">
+<div data-open="true" data-component="footer-link-group"><h2><button type="button" aria-expanded="true" aria-controls="fg-quick"><span>Quick links</span><span class="caret" aria-hidden="true"></span></button></h2><ul id="fg-quick"><li><a href="find-a-doctor.html">Find a doctor</a></li><li><a href="locations.html">Find a location</a></li><li><a href="care.html">Explore care</a></li><li><a href="appointments.html">Request an appointment</a></li><li><a href="help-paying-your-bill.html">Help paying your bill</a></li></ul></div>
+<div data-open="true" data-component="footer-link-group"><h2><button type="button" aria-expanded="true" aria-controls="fg-more"><span>More information</span><span class="caret" aria-hidden="true"></span></button></h2><ul id="fg-more"><li><a href="about.html">About us</a></li><li><a href="patients-visitors.html">Patients &amp; visitors</a></li><li><a href="billing-insurance.html">Billing &amp; insurance</a></li><li><a href="your-hospital-stay.html">Your hospital stay</a></li><li><a href="emergency-department.html">Emergency department</a></li><li><a href="patient-portal.html">BayPortal (demo)</a></li></ul></div>
+</div><div class="footer-bottom"><div><p><strong>Meridian Bay Health</strong> is a fictional organization created for an accessibility and usability research dataset. Names, phone numbers (555 exchange), addresses and doctors are invented.</p><p>Not a real hospital. Nothing here is medical advice. In an emergency call your local emergency number.</p></div><p><a href="#page-top">Back to top</a></p></div></div></footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

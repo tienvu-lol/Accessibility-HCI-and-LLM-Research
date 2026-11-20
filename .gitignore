@@ -1,3 +1,13 @@
 .env
 *.env
 .claude/worktrees/
+
+# --- Study: regenerable or non-committed run evidence (Study/README.md section 10) ---
+# Raw model responses (~130 MB) and intermediate iterations (~45 MB) stay local;
+# tar runs/ off the machine after generation. Screenshots regenerate from HTML+CSS
+# via the scorer. Final-iteration variants and the three CSVs ARE committed.
+Study/runs/**/response.json
+Study/runs/**/iter[12]/
+Study/screenshots/
+Study/**/*.png
+!Study/analysis/figures/*.png
