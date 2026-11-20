@@ -41,7 +41,7 @@ Hackloop leases packets dynamically; no pinning. Enqueue order = priority (criti
 ## Run
 Orchestrator:
 ```
-hackloop orch --repo .
+hackloop orch
 for f in r3-runner s4-score j2-judge r1-guards r2-providers s1-axe s2-tab s3-axtree j1-blind h1-harness a1-kappa a2-stats s5-ceiling h2-rubric; do hackloop packet add packets/$f.json; done
 hackloop worker --name o1   # repeat o2..o4, one terminal each
 hackloop status --watch
