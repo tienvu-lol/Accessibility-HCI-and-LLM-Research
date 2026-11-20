@@ -9,14 +9,15 @@ Make this Mac join the research console as a worker: Docker running, worker imag
 - `WEB_URL`: the console URL, e.g. `http://<host-laptop-tailscale-name>:8080`
 - `WORKER_TOKEN`: the shared worker token
 - A machine name (default: `hostname -s`)
-The human must have **Tailscale installed and signed in to the same tailnet** (`brew install --cask tailscale`, open it, log in; this needs a GUI click you cannot do). Verify with `tailscale status` or by `curl <WEB_URL>/healthz` returning `{"ok":true}`.
+The human must have **Tailscale installed and signed in to the same tailnet** (`brew install --cask tailscale`, open it, log in; the first sign-in needs a GUI click you cannot do). The script detects Tailscale (PATH or `/Applications/Tailscale.app`), runs `tailscale up` for you when the Mac is already signed in but disconnected, and prints the manual steps when it cannot. Verify with `tailscale status` or by `curl <WEB_URL>/healthz` returning `{"ok":true}`.
 
 ## Steps
 1. `git clone https://github.com/tienvu-lol/Accessibility-HCI-and-LLM-Research && cd Accessibility-HCI-and-LLM-Research && git checkout study/hackloop-orchestration` (or `main` once merged).
 2. Run: `WEB_URL=... WORKER_TOKEN=... MACHINE_NAME=... ./Study/agent/setup-mac.sh`
    - It installs Colima + Docker CLI + compose via Homebrew if no Docker daemon is running (no sudo, no GUI). If Docker Desktop is installed, start it first and the script uses it.
-   - It checks the console is reachable, builds `study-worker` natively (arm64 on Apple Silicon; several minutes), writes `Study/agent/agent.env` (git-ignored), and starts the `study-agent` container.
-   - Re-run with `REBUILD=1` to rebuild the image.
+   - It brings up Tailscale, then checks `/healthz` **and** validates `WORKER_TOKEN` against `POST /api/worker/claim` (`max:0`, a harmless keepalive) *before* building, so a bad token fails in seconds instead of after a multi-minute build. The token travels in a 0600 curl config file, never in argv.
+   - Then it builds `study-worker` natively (arm64 on Apple Silicon; several minutes), writes `Study/agent/agent.env` (git-ignored, created 0600 via `umask`), and starts the `study-agent` container.
+   - Flags: `REBUILD=1` rebuilds the image, `SKIP_CHECK=1` skips the console preflight, `REQUIRE_TAILSCALE=1` aborts unless the tailnet is up.
 3. Verify: `docker ps` shows `study-agent` Up; `docker logs study-agent` has no errors; the human sees this machine **Online** under Runs -> Workers in the console, with OS "macOS arm64".
 4. Optional smoke test: ask the host to run a mock repair; confirm `docker logs study-agent` shows `repair:... ok` lines.
 
@@ -26,8 +27,9 @@ The human must have **Tailscale installed and signed in to the same tailnet** (`
 | `Homebrew missing` | install from https://brew.sh |
 | `docker compose` not found | `brew install docker-compose`; the script links it into `~/.docker/cli-plugins` |
 | Colima won't start | `colima delete && colima start --cpu 4 --memory 8`; on Apple Silicon try `--vm-type vz` |
-| `Cannot reach the console` | Tailscale not connected, wrong host name, or host's compose bound with `BIND_ADDR` to a different IP |
-| 401 / "claim rejected" in logs | wrong `WORKER_TOKEN` |
+| `no reply from .../healthz` | Tailscale not connected, wrong host name, or host's compose bound with `BIND_ADDR` to a different IP. The script now says which of these it thinks it is, based on whether the host looks like a tailnet name and whether the tailnet is up |
+| `/healthz answered HTTP <n>` | reachable but not the console - wrong URL or path |
+| `the console rejected WORKER_TOKEN (401)` | wrong `WORKER_TOKEN`; caught by the preflight before any build |
 | build fails on a package/arch error | read the failing line; the Dockerfile is `Study/webapp/Dockerfile.worker` (Playwright base image is multi-arch) |
 | `host.docker.internal` issues | only matters if the console runs on this same Mac; use its tailnet URL instead |
 

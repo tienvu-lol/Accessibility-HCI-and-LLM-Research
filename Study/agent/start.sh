@@ -9,10 +9,16 @@ if [ ! -f agent.env ]; then
   read -rsp "Worker token: " tok; echo
   read -rp "Name for this machine [$(hostname -s)]: " name; name=${name:-$(hostname -s)}
   read -rp "Parallel jobs [4]: " slots; slots=${slots:-4}
-  printf 'WEB_URL=%s\nWORKER_TOKEN=%s\nMACHINE_NAME=%s\nWORKER_ID=%s\nWORKER_SLOTS=%s\n' "${url%/}" "$tok" "$name" "$name" "$slots" > agent.env
-  chmod 600 agent.env
+  # umask, not a later chmod: otherwise the token sits in a world-readable file in between
+  ( umask 077; printf 'WEB_URL=%s\nWORKER_TOKEN=%s\nMACHINE_NAME=%s\nWORKER_ID=%s\nWORKER_SLOTS=%s\n' \
+    "${url%/}" "$tok" "$name" "$name" "$slots" > agent.env )
 fi
 export HOST_OS="$(uname -s | sed 's/Darwin/macOS/') $(uname -m)"
-docker compose pull || echo "WARNING: pull failed (not logged in to ghcr.io?); trying a local image"
+# A locally built image has nothing to pull, and on macOS the registry login is often absent.
+if [ -n "${WORKER_IMAGE:-}" ]; then
+  echo "Using local image ${WORKER_IMAGE} (skipping pull)"
+else
+  docker compose pull || echo "WARNING: pull failed (not logged in to ghcr.io?); trying a local image"
+fi
 docker compose up -d
 echo "Agent running as $(grep ^WORKER_ID= agent.env | cut -d= -f2). Logs: docker logs -f study-agent"
