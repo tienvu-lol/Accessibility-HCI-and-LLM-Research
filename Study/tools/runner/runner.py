@@ -101,10 +101,13 @@ def run_cell(arm, condition, site, cfg, root, max_iter):
             "usage": resp.get("usage", {"input": 0, "output": 0}),
             "latency_ms": resp.get("latency_ms", 0),
         }
+        if resp.get("request_deviations"):  # held-constant settings this model could not take (see providers.py)
+            status["request_deviations"] = resp["request_deviations"]
         if resp:
             write_json(d / "response.json", {
                 "raw": resp.get("text", ""), "usage": status["usage"],
-                "latency_ms": status["latency_ms"], "model_version": status["model_version"]})
+                "latency_ms": status["latency_ms"], "model_version": status["model_version"],
+                **({"request_deviations": status["request_deviations"]} if "request_deviations" in status else {})})
         if not ok:
             status["reason"] = reason  # failed output is never kept as files
             write_json(sp, status)

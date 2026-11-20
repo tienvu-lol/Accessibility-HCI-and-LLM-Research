@@ -22,6 +22,75 @@ def _is_anthropic(arm_cfg):
         arm_cfg.get("provider") in (None, "TBD") and arm_cfg.get("family") == "claude")
 
 
+# What each Claude family accepts, from Anthropic's published rules (checked 2026-11-20). The study holds
+# temperature and "reasoning disabled" constant, but these models reject both with a 400, so the request is
+# built per model and every deviation is recorded next to the result (request_deviations).
+#   sampling:  False = temperature/top_p/top_k are rejected, so none is sent
+#   off:       how to switch thinking off, as far as the model allows
+#              "disabled" = {"type": "disabled"}; "between_tools" = {"type": "between_tools"};
+#              "effort_low" = thinking cannot be disabled, so omit it and send output_config.effort "low"
+# First match wins, so the more specific ids come first. A model that matches nothing keeps the original request.
+_CLAUDE_RULES = [
+    (re.compile(r"^claude-(fable|mythos)-"), {"sampling": False, "off": "effort_low"}),
+    (re.compile(r"^claude-opus-5-5($|-)"), {"sampling": False, "off": "effort_low"}),
+    (re.compile(r"^claude-opus-(5|4-8|4-7)($|-)"), {"sampling": False, "off": "disabled"}),
+    (re.compile(r"^claude-sonnet-5-5($|-)"), {"sampling": False, "off": "between_tools"}),
+    (re.compile(r"^claude-sonnet-5($|-)"), {"sampling": False, "off": "disabled"}),
+    (re.compile(r"^claude-haiku-5-5($|-)"), {"sampling": False, "off": "disabled"}),
+]
+_LEGACY_CLAUDE = {"sampling": True, "off": "disabled"}
+
+
+def _claude_rules(model_id):
+    for pattern, rules in _CLAUDE_RULES:
+        if pattern.match(model_id or ""):
+            return rules
+    return _LEGACY_CLAUDE
+
+
+def _anthropic_settings(model_id, hc):
+    """(fields to add to the request body, deviations from the held-constant settings)."""
+    rules, extra, deviations = _claude_rules(model_id), {}, []
+    if rules["sampling"]:
+        extra["temperature"] = hc["temperature"]
+    else:
+        deviations.append("temperature %s not sent: %s rejects sampling parameters" % (hc["temperature"], model_id))
+    if hc["reasoning"] == "disabled":
+        off = rules["off"]
+        if off == "disabled":
+            extra["thinking"] = {"type": "disabled"}
+        elif off == "between_tools":
+            extra["thinking"] = {"type": "between_tools"}
+            deviations.append("reasoning: thinking set to between_tools, as %s cannot disable it" % model_id)
+        else:
+            extra["output_config"] = {"effort": "low"}
+            deviations.append("reasoning: %s cannot disable thinking; sent at effort low instead" % model_id)
+    return extra, deviations
+
+
+def request_deviations(arm, cfg):
+    """Held-constant settings this arm's request cannot honour (empty for providers that accept them)."""
+    a = cfg["arms"][arm]
+    if not _is_anthropic(a):
+        return []
+    return _anthropic_settings(a["model_id"], cfg["held_constant"])[1]
+
+
+def _http_error(e):
+    """Keep the provider's own explanation, so a 400 says why. Anthropic's error JSON carries no secrets."""
+    detail = ""
+    try:
+        raw = e.read(4096).decode("utf-8", "replace")
+        if raw.lstrip().startswith("{"):
+            err = json.loads(raw).get("error")
+            raw = err.get("message") if isinstance(err, dict) else str(err or "")
+        detail = re.sub(r"sk-[A-Za-z0-9_-]{6,}", "sk-...", re.sub(r"\s+", " ", raw or "")).strip()[:300]
+    except Exception:
+        detail = ""
+    return ProviderError("HTTP %d%s" % (e.code, ": " + detail if detail else ""),
+                         retryable=(e.code == 429 or e.code >= 500))
+
+
 def _mock(prompt):
     m = re.search(r"<<<INPUT FILE: [^>]*>>>.*?(?=<<<END INPUT>>>)", prompt, re.S)
     body = m.group(0) if m else ""
@@ -42,10 +111,8 @@ def build_request(arm, prompt, cfg, api_key="KEY"):
     a = cfg["arms"][arm]
     if _is_anthropic(a):
         body = {"model": a["model_id"], "max_tokens": hc["max_tokens"],
-                "temperature": hc["temperature"],
                 "messages": [{"role": "user", "content": prompt}]}
-        if hc["reasoning"] == "disabled":
-            body["thinking"] = {"type": "disabled"}
+        body.update(_anthropic_settings(a["model_id"], hc)[0])
         headers = {"x-api-key": api_key, "anthropic-version": "2023-06-01",
                    "content-type": "application/json"}
         return a.get("base_url") or ANTHROPIC_URL, headers, body
@@ -93,11 +160,15 @@ def complete(arm, prompt, cfg):
         with urllib.request.urlopen(req, timeout=TIMEOUT_S) as r:
             data = json.loads(r.read().decode("utf-8"))
     except urllib.error.HTTPError as e:
-        raise ProviderError("HTTP %d" % e.code, retryable=(e.code == 429 or e.code >= 500))
+        raise _http_error(e)
     except (socket.timeout, TimeoutError) as e:
         raise ProviderError("timeout: %s" % e, retryable=True)
     except urllib.error.URLError as e:
         raise ProviderError("network error: %s" % e.reason, retryable=True)
     except ValueError as e:
         raise ProviderError("invalid JSON from provider: %s" % e, retryable=True)
-    return _parse(a, data, int((time.monotonic() - t0) * 1000))
+    out = _parse(a, data, int((time.monotonic() - t0) * 1000))
+    deviations = request_deviations(arm, cfg)
+    if deviations:  # only present when something differed, so the usual result shape is unchanged
+        out["request_deviations"] = deviations
+    return out

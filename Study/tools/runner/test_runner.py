@@ -151,6 +151,24 @@ class RunnerTest(unittest.TestCase):
                 raw = json.loads((self.cell(cond, site) / "iter1" / "response.json").read_text(encoding="utf-8"))
                 self.assertEqual(set(raw), {"raw", "usage", "latency_ms", "model_version"})
 
+    def test_request_deviations_are_recorded_with_the_iteration(self):
+        real, note = providers.complete, ["temperature 0 not sent: claude-opus-5-5 rejects sampling parameters"]
+
+        def with_deviation(arm, prompt, cfg):
+            out = real(arm, prompt, cfg)
+            out["request_deviations"] = note
+            return out
+
+        with mock.patch.object(providers, "complete", with_deviation):
+            self.run_cli(conditions="wcag", max_iter="1")
+        self.assertEqual(self.status("wcag", "UNI-01", 1)["request_deviations"], note)
+        raw = json.loads((self.cell("wcag", "UNI-01") / "iter1" / "response.json").read_text(encoding="utf-8"))
+        self.assertEqual(raw["request_deviations"], note)
+
+    def test_no_deviation_field_when_the_request_matched_the_study_settings(self):
+        self.run_cli(conditions="wcag", max_iter="1")
+        self.assertNotIn("request_deviations", self.status("wcag", "UNI-01", 1))
+
     def test_rerun_skips_ok(self):
         self.run_cli()
         with mock.patch.object(runner.providers, "complete", side_effect=AssertionError("called")):
