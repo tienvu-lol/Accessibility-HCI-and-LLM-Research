@@ -458,3 +458,31 @@ test('projection by arm: judge row, spent/remaining, unpriced model flagged, no 
     assert.ok(Math.abs(st.projection.expected_total_usd - (st.projection.spent_usd + sum)) < 1e-6, 'expected total includes every row');
   } finally { await b.close(); }
 });
+
+test('baseline is frozen at first start; live usage feed and variance follow results', async () => {
+  const s = await boot();
+  try {
+    await configure(s);
+    let st = (await s.ui('GET', '/api/state')).data;
+    assert.equal(st.projection.baseline, null);
+    await s.ui('POST', '/api/run/start', { phase: 'repair' });
+    st = (await s.ui('GET', '/api/state')).data;
+    const frozen = st.projection.baseline.expected_total_usd;
+    assert.ok(frozen > 0);
+    assert.equal(st.projection.variance_usd, 0);
+    assert.deepEqual(st.recent_usage, []);
+    const job = (await claim(s, 1))[0];
+    const [, arm, cond, site] = job.id.split(':');
+    await s.worker('/api/worker/result', { job_id: job.id, status: 'ok', files: cellFiles(arm, cond, site), usage: { input: 2000, output: 1000 }, calls: 2 });
+    st = (await s.ui('GET', '/api/state')).data;
+    assert.equal(st.projection.baseline.expected_total_usd, frozen); // does not drift with measurements
+    assert.equal(st.recent_usage.length, 1);
+    assert.equal(st.recent_usage[0].arm, arm);
+    assert.equal(st.recent_usage[0].input, 2000);
+    const row = st.projection.by_arm.find((r) => r.arm === arm);
+    assert.ok(Math.abs(row.variance_usd - (row.est_total_usd - row.baseline_total_usd)) < 1e-9);
+    await s.ui('POST', '/api/projection/baseline');
+    st = (await s.ui('GET', '/api/state')).data;
+    assert.ok(Math.abs(st.projection.variance_usd) < 1e-9); // rebaseline resets the comparison
+  } finally { await s.close(); }
+});

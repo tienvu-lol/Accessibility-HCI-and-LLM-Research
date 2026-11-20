@@ -31,6 +31,7 @@ function load(dataDir, cfg) {
     imported: raw.imported || [],
     imports: raw.imports || [],
     workerCtl: raw.workerCtl || {},
+    baseline: raw.baseline || null,
   };
   let timer = null;
   const flush = () => {
@@ -74,6 +75,20 @@ function applyPricing(ctx, b) {
   return null;
 }
 
+// freeze today's projection so live spend can be compared with it ("projected at start")
+function captureBaseline(ctx) {
+  const { state, coord } = ctx;
+  const agg = proj.aggregate(ctx, ctx.now());
+  const ids = Object.keys(state.arms);
+  const counts = Object.fromEntries(ids.map((id) => {
+    const c = coord.armCells(id);
+    return [id, { total: c.total, done: c.ok + c.failed + c.truncated + c.imported, finished: coord.finishedRepairs(id) }];
+  }));
+  const ji = coord.judgeItems();
+  counts.judge = { total: (state.settings.sites || ctx.siteIds()).length * ids.length, done: ji.done + ji.failed };
+  const p = proj.project(ctx, agg, counts);
+  return { at: ctx.now(), expected_total_usd: p.expected_total_usd, by_arm: Object.fromEntries(p.by_arm.map((r) => [r.arm, r.est_total_usd])) };
+}
 function humanSection(ctx) {
   const dir = path.join(ctx.dataDir, 'human');
   const ratings = csv.readRows(path.join(dir, 'human_ratings.csv'));
@@ -143,7 +158,9 @@ function snapshot(ctx) {
     },
     matrix: coord.matrix(),
     intake: proj.intake(agg),
-    projection: proj.project(ctx, agg, counts),
+    projection: proj.project(ctx, agg, counts, state.baseline),
+    recent_usage: ctx.ledger.filter((e) => e.kind !== 'score').slice(-30).reverse()
+      .map((e) => ({ ts: e.ts, source: e.source, arm: e.kind === 'judge' ? 'judge' : e.arm, kind: e.kind, input: e.input, output: e.output, calls: e.calls, cost_usd: proj.cost(ctx, e.kind === 'judge' ? 'judge' : e.arm, e.input, e.output) })),
     workers: coord.workers(),
     docker: ctx.docker && ctx.docker.snapshot(),
     pricing: state.pricing,
@@ -197,4 +214,4 @@ function demoSnapshot(ctx) {
   };
 }
 
-module.exports = { load, applySettings, applyPricing, snapshot, demoSnapshot, CONDITIONS, ARM_PROVIDERS };
+module.exports = { captureBaseline, load, applySettings, applyPricing, snapshot, demoSnapshot, CONDITIONS, ARM_PROVIDERS };

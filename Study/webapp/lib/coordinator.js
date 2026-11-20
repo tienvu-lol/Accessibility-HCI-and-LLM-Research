@@ -320,7 +320,7 @@ function create(ctx, { leaseS = 900 } = {}) {
       store.appendLine('verdicts/usage.jsonl', { ts: ctx.now(), site: j.site, arm: j.arm, input: num(usage.input), output: num(usage.output) });
     }
 
-    if (j.kind !== 'score') addLedger('worker', j.arm, j.kind, usage.input, usage.output, b.calls);
+    if (j.kind !== 'score') addLedger(j.worker || 'worker', j.arm, j.kind, usage.input, usage.output, b.calls);
     else addLedger('worker', j.arm, 'score', 0, 0, 0);
 
     if (ok) {

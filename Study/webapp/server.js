@@ -155,6 +155,7 @@ function createApp(opts = {}) {
         const { phase, force } = await body(req);
         if (!['repair', 'judge', 'score'].includes(phase)) throw new HttpError(400, 'phase must be repair, judge or score');
         const r = co.start(phase, !!force);
+        if (!r.blockers && !ctx.state.baseline) { ctx.state.baseline = stateLib.captureBaseline(ctx); ctx.state.save(); }
         sse.notify();
         if (r.blockers) return json(res, 409, { error: 'blocked', blockers: r.blockers });
         return json(res, 200, { ok: true });
@@ -164,6 +165,11 @@ function createApp(opts = {}) {
       else if (b === 'retry-failed') { const n = co.retryFailed(); sse.notify(); return json(res, 200, { ok: true, requeued: n }); }
       else notFound();
       sse.notify();
+      return json(res, 200, { ok: true });
+    }
+    if (a === 'projection' && b === 'baseline' && m === 'POST') {
+      ctx.state.baseline = stateLib.captureBaseline(ctx);
+      ctx.state.save(); sse.notify();
       return json(res, 200, { ok: true });
     }
     if (a === 'workers' && b && m === 'PUT') {

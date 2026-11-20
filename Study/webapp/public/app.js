@@ -60,6 +60,11 @@
   function bar(done, total, label) {
     return '<div class="bar" role="img" aria-label="' + esc(label + ': ' + int(done) + ' of ' + int(total)) + '"><span style="width:' + Math.min(100, pct(done, total)) + '%"></span></div>';
   }
+  function variance(b) {
+    if (typeof b.variance_usd !== 'number') return 'n/a';
+    var sign = b.variance_usd >= 0 ? '+' : '-';
+    return sign + usd(Math.abs(b.variance_usd)) + (typeof b.variance_pct === 'number' ? ' (' + sign + Math.abs(b.variance_pct).toFixed(0) + '%)' : '');
+  }
   function panel(id, title, body, extra) {
     return { id: id, html: '<h2 id="' + id + '-h">' + esc(title) + '</h2>' + body, form: !!(extra && extra.form) };
   }
@@ -285,11 +290,18 @@
       '<p class="hint">Open-source arms count tokens only; their cost is $0.00 unless a price is set.</p>')];
     var P = S.projection;
     var pr = P.by_arm.map(function (b) {
-      return '<tr><th scope="row">' + esc(b.arm) + '</th><td class="num">' + int(b.calls_done) + ' / ' + int(b.calls_total) + '</td><td class="num">' + int(b.avg_in) + '</td><td class="num">' + int(b.avg_out) + '</td><td class="num">' + usd(b.spent_usd) + '</td><td class="num">' + usd(b.est_cost_usd) + '</td><td>' + badge(b.basis === 'measured' ? 'done' : b.basis === 'estimated' || b.basis === 'unpriced' ? 'attn' : 'pending', b.basis) + '</td></tr>';
+      return '<tr><th scope="row">' + esc(b.arm) + '</th><td class="num">' + int(b.calls_done) + ' / ' + int(b.calls_total) + '</td><td class="num">' + int(b.avg_in) + '</td><td class="num">' + int(b.avg_out) + '</td><td class="num">' + usd(b.spent_usd) + '</td><td class="num">' + usd(b.est_cost_usd) + '</td><td class="num">' + usd(b.est_total_usd) + '</td><td class="num">' + usd(b.baseline_total_usd) + '</td><td class="num">' + variance(b) + '</td><td>' + badge(b.basis === 'measured' ? 'done' : b.basis === 'estimated' || b.basis === 'unpriced' ? 'attn' : 'pending', b.basis) + '</td></tr>';
     }).join('');
+    out.push(panel('c-live', 'Live API usage (newest first)', (S.recent_usage && S.recent_usage.length) ?
+      tableWrap('Recent usage', '<table class="grid compact"><thead><tr><th scope="col">When</th><th scope="col">Source</th><th scope="col">Arm</th><th scope="col" class="num">Calls</th><th scope="col" class="num">Tokens in</th><th scope="col" class="num">Tokens out</th><th scope="col" class="num">Cost</th></tr></thead><tbody>' +
+        S.recent_usage.map(function (u) { return '<tr><th scope="row">' + esc(ago(u.ts, S.now)) + '</th><td>' + esc(u.source) + '</td><td>' + esc(u.arm) + '</td><td class="num">' + int(u.calls) + '</td><td class="num">' + int(u.input) + '</td><td class="num">' + int(u.output) + '</td><td class="num">' + usd(u.cost_usd) + '</td></tr>'; }).join('') + '</tbody></table>') +
+      '<p class="hint">One row per finished job as its result arrives. This list and the totals update live.</p>' :
+      empty('No usage yet', 'Rows appear here as workers report finished calls.')));
     out.push(panel('c-proj', 'Projection by arm',
-      '<p>Expected total <strong>' + usd(P.expected_total_usd) + '</strong> against a budget of ' + usd(P.budget_usd) + '; ETA ' + mins(P.eta_minutes) + '.</p>' +
-      tableWrap('Projection by arm', '<table class="grid"><thead><tr><th scope="col">Arm</th><th scope="col" class="num">Calls done / total</th><th scope="col" class="num">Avg tokens in</th><th scope="col" class="num">Avg tokens out</th><th scope="col" class="num">Spent</th><th scope="col" class="num">Remaining (est.)</th><th scope="col">Basis</th></tr></thead><tbody>' + pr + '</tbody></table>') +
+      '<p>Expected total <strong>' + usd(P.expected_total_usd) + '</strong> against a budget of ' + usd(P.budget_usd) + '; ETA ' + mins(P.eta_minutes) + '.' +
+      (P.baseline ? ' Projected at start ' + usd(P.baseline.expected_total_usd) + ' (' + esc(when(P.baseline.at)) + '); now ' + variance(P) + '.' : ' No baseline yet: it is taken when you first start a phase.') + '</p>' +
+      '<p><button type="button" class="btn" data-action="rebaseline">Reset baseline to now</button></p>' +
+      tableWrap('Projection by arm', '<table class="grid"><thead><tr><th scope="col">Arm</th><th scope="col" class="num">Calls done / total</th><th scope="col" class="num">Avg tokens in</th><th scope="col" class="num">Avg tokens out</th><th scope="col" class="num">Spent</th><th scope="col" class="num">Remaining (est.)</th><th scope="col" class="num">Projected total</th><th scope="col" class="num">At start</th><th scope="col" class="num">Change</th><th scope="col">Basis</th></tr></thead><tbody>' + pr + '</tbody></table>') +
       '<p class="hint">Measured = from finished calls. Estimated = from prompt sizes before any data. Self-hosted = tokens only. Unpriced = no price entry for the model, so its cost is counted as $0 (add a price). The judge row is included in the expected total.</p>'));
     return out;
   }
@@ -674,6 +686,7 @@
     else if (a === 'export-all') exportAll();
     else if (a === 'view-fix') { var fx = R.fig6[+t.dataset.i]; ui.viewer = { site: fx.site, arm: fx.arm, condition: fx.condition, before_url: fx.before_url, after_url: fx.after_url }; render(); }
     else if (a === 'close-viewer') { ui.viewer = null; render(); }
+    else if (a === 'rebaseline') { if (window.confirm('Replace the start projection with the current one?')) save('Baseline reset', 'POST', '/api/projection/baseline', {}); }
     else if (a === 'do-import') doImport();
     else if (a === 'logout') { (DEMO ? Promise.resolve() : fetch('/api/logout', { method: 'POST', credentials: 'same-origin' })).then(function () { location.href = '/login.html' + (DEMO ? '?demo=1' : ''); }); }
   }

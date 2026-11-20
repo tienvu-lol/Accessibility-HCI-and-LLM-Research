@@ -75,7 +75,7 @@ function armStats(ctx, agg, id, done) {
 }
 
 // counts: {<arm>: {total, done}}
-function project(ctx, agg, counts) {
+function project(ctx, agg, counts, baseline) {
   const { budget_usd } = ctx.state.settings;
   let estTotal = 0, repairCallsLeft = 0, repairCallsPerMin = 0;
   const by_arm = Object.keys(ctx.state.arms).map((id) => {
@@ -112,7 +112,11 @@ function project(ctx, agg, counts) {
     });
   }
   const spent = agg.total.cost_usd;
+  const vs = (now, then) => (typeof then === 'number' ? { baseline_total_usd: then, variance_usd: now - then, variance_pct: then > 0 ? ((now - then) / then) * 100 : null } : { baseline_total_usd: null, variance_usd: null, variance_pct: null });
+  for (const r of by_arm) Object.assign(r, vs(r.est_total_usd, baseline && baseline.by_arm[r.arm]));
   return {
+    baseline: baseline ? { at: baseline.at, expected_total_usd: baseline.expected_total_usd } : null,
+    ...vs(spent + estTotal, baseline && baseline.expected_total_usd),
     budget_usd, spent_usd: spent, remaining_usd: budget_usd - spent, expected_total_usd: spent + estTotal,
     over_budget: spent + estTotal > budget_usd,
     eta_minutes: repairCallsLeft === 0 ? 0 : repairCallsPerMin > 0 ? repairCallsLeft / repairCallsPerMin : null,

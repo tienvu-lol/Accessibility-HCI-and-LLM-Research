@@ -21,6 +21,11 @@ const step = (m) => console.log('ok -', m);
     await page.waitForSelector('#view h2', { timeout: 10000 });
     step(`view ${v} renders`);
   }
+  await page.goto(`${base}/#cost`);
+  await page.waitForSelector('#c-proj-h');
+  await page.waitForSelector('#c-live-h');
+  assert.ok((await page.locator('#c-proj tbody tr').count()) >= 7, 'projection rows incl. judge');
+  step('cost view shows projection by arm (with judge) and live usage');
   await page.goto(`${base}/#runs`);
   await page.waitForSelector('#r-docker-h');
   await page.fill('#dk-count', '2');
