@@ -13,6 +13,6 @@ if [ ! -f agent.env ]; then
   chmod 600 agent.env
 fi
 export HOST_OS="$(uname -s | sed 's/Darwin/macOS/') $(uname -m)"
-docker compose pull || echo "WARNING: pull failed (not logged in to ghcr.io?); trying a local image"
-docker compose up -d
+docker compose pull worker || echo "WARNING: pull failed (not logged in to ghcr.io?); trying a local image"
+if [ "${1:-}" = "--arc" ]; then docker compose --profile arc up -d --build; else docker compose up -d; fi
 echo "Agent running as $(grep ^WORKER_ID= agent.env | cut -d= -f2). Logs: docker logs -f study-agent"

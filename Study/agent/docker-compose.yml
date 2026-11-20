@@ -10,3 +10,44 @@ services:
     init: true
     restart: unless-stopped
     extra_hosts: ["host.docker.internal:host-gateway"]  # Linux needs this to reach a web service on the same host
+
+  # --- Open-source arms on VT ARC: enable with `--profile arc` (start.sh --arc). One tunnel + one worker container per arm.
+  # The tunnel container keeps signing in to ARC over SSH; the worker only takes jobs while its tunnel answers.
+  arc-a5:
+    profiles: ["arc"]
+    build: { context: arc, dockerfile: Dockerfile.tunnel }
+    image: study-arc-tunnel
+    container_name: study-arc-a5
+    env_file: agent.env
+    environment: { ARM: A5, LOCAL_PORT: "8091" }
+    volumes: ["./arc/ssh:/ssh:ro"]
+    restart: unless-stopped
+  worker-a5:
+    profiles: ["arc"]
+    image: ${WORKER_IMAGE:-ghcr.io/tienvu-lol/accessibility-hci-and-llm-research/study-worker:latest}
+    container_name: study-agent-a5
+    env_file: agent.env
+    environment: { HOST_OS: "${HOST_OS:-unknown}", WORKER_SUFFIX: -a5, WORKER_ARMS: A5, ARC_URLS: "A5=http://arc-a5:8091/v1" }
+    shm_size: 1gb
+    init: true
+    restart: unless-stopped
+    depends_on: [arc-a5]
+  arc-a6:
+    profiles: ["arc"]
+    build: { context: arc, dockerfile: Dockerfile.tunnel }
+    image: study-arc-tunnel
+    container_name: study-arc-a6
+    env_file: agent.env
+    environment: { ARM: A6, LOCAL_PORT: "8090" }
+    volumes: ["./arc/ssh:/ssh:ro"]
+    restart: unless-stopped
+  worker-a6:
+    profiles: ["arc"]
+    image: ${WORKER_IMAGE:-ghcr.io/tienvu-lol/accessibility-hci-and-llm-research/study-worker:latest}
+    container_name: study-agent-a6
+    env_file: agent.env
+    environment: { HOST_OS: "${HOST_OS:-unknown}", WORKER_SUFFIX: -a6, WORKER_ARMS: A6, ARC_URLS: "A6=http://arc-a6:8090/v1" }
+    shm_size: 1gb
+    init: true
+    restart: unless-stopped
+    depends_on: [arc-a6]

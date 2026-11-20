@@ -196,6 +196,8 @@
       '<div class="fields"><div><label for="set-budget">Budget (USD)</label><input id="set-budget" name="budget_usd" type="number" min="0" step="0.01" required value="' + esc(s.budget_usd) + '"></div>' +
       '<div><label for="set-iter">Max iterations</label><input id="set-iter" name="max_iter" type="number" min="1" max="10" step="1" required value="' + esc(s.max_iter) + '"></div>' +
       '<div><label for="set-judge">Judge model id</label><input id="set-judge" name="judge_model_id" required value="' + esc(s.judge_model_id) + '" spellcheck="false"></div></div>' +
+      '<label class="check"><input type="checkbox" name="dispatch_open"' + (s.dispatch_open ? ' checked' : '') + '> Run open-source arms (A5, A6) on laptops with an ARC tunnel</label>' +
+      '<p class="hint">Off = A5/A6 are imported from ARC runs. On = their jobs go only to workers started with <code>start.sh --arc</code> whose tunnel is up.</p>' +
       '<fieldset><legend>Conditions</legend><div class="checks">' + CONDS.map(function (c) { return '<label class="check"><input type="checkbox" name="conditions" value="' + c + '"' + (cond.indexOf(c) >= 0 ? ' checked' : '') + '> ' + c + '</label>'; }).join('') + '</div></fieldset>' +
       '<div><label for="set-sites">Sites</label><textarea id="set-sites" name="sites" rows="3" spellcheck="false" aria-describedby="set-sites-h" placeholder="Leave empty for all 60 sites">' + esc(Array.isArray(s.sites) ? s.sites.join(', ') : '') + '</textarea>' +
       '<p id="set-sites-h" class="hint">Site ids separated by commas or spaces, e.g. UNI-01, GOV-03. Empty means all 60.</p></div>' +
@@ -266,7 +268,7 @@
           var inf = w.info || {};
           var status = w.paused ? badge('attn', 'Paused') : online ? badge('done', 'Online') : badge('attn', 'Offline');
           var lid = 'cap-' + esc(w.id);
-          return '<tr><th scope="row">' + esc(w.id) + '</th><td>' + esc([inf.host, inf.os].filter(Boolean).join(' · ') || 'n/a') + '</td><td>' + status + ' ' + esc(ago(w.last_seen, S.now)) + '</td>' +
+          return '<tr><th scope="row">' + esc(w.id) + '</th><td>' + esc([inf.host, inf.os].filter(Boolean).join(' \u00b7 ') || 'n/a') + (w.arcs && w.arcs.length ? ' ' + badge('active', 'ARC ' + w.arcs.join('+')) : '') + '</td><td>' + status + ' ' + esc(ago(w.last_seen, S.now)) + '</td>' +
             '<td class="num">' + int(w.slots) + '</td><td class="num">' + int(w.running) + '</td>' +
             '<td><label class="sr" for="' + lid + '">Slot cap for ' + esc(w.id) + '</label><input id="' + lid + '" type="number" min="0" max="64" step="1" placeholder="no cap" value="' + (w.cap === null ? '' : esc(w.cap)) + '" data-field="cap"> ' +
             '<button type="button" class="btn" data-action="worker-cap" data-id="' + esc(w.id) + '">Set cap</button> ' +
@@ -300,9 +302,11 @@
     out.push(panel('c-proj', 'Projection by arm',
       '<p>Expected total <strong>' + usd(P.expected_total_usd) + '</strong> against a budget of ' + usd(P.budget_usd) + '; ETA ' + mins(P.eta_minutes) + '.' +
       (P.baseline ? ' Projected at start ' + usd(P.baseline.expected_total_usd) + ' (' + esc(when(P.baseline.at)) + '); now ' + variance(P) + '.' : ' No baseline yet: it is taken when you first start a phase.') + '</p>' +
+      '<form data-form="budget" class="row" autocomplete="off"><label for="cost-budget">Budget cap (USD)</label> <input id="cost-budget" name="budget_usd" type="number" min="0" step="1" required value="' + esc(P.budget_usd) + '"> <button type="submit" class="btn btn-primary">Update cap</button></form>' +
+      '<p class="hint">The cap is a hard stop: no new job is dispatched once spent plus the estimate for running jobs reaches it. Change it any time; it applies to the next job.</p>' +
       '<p><button type="button" class="btn" data-action="rebaseline">Reset baseline to now</button></p>' +
       tableWrap('Projection by arm', '<table class="grid"><thead><tr><th scope="col">Arm</th><th scope="col" class="num">Calls done / total</th><th scope="col" class="num">Avg tokens in</th><th scope="col" class="num">Avg tokens out</th><th scope="col" class="num">Spent</th><th scope="col" class="num">Remaining (est.)</th><th scope="col" class="num">Projected total</th><th scope="col" class="num">At start</th><th scope="col" class="num">Change</th><th scope="col">Basis</th></tr></thead><tbody>' + pr + '</tbody></table>') +
-      '<p class="hint">Measured = from finished calls. Estimated = from prompt sizes before any data. Self-hosted = tokens only. Unpriced = no price entry for the model, so its cost is counted as $0 (add a price). The judge row is included in the expected total.</p>'));
+      '<p class="hint">Measured = from finished calls. Estimated = from prompt sizes before any data. Self-hosted = tokens only. Unpriced = no price entry for the model, so its cost is counted as $0 (add a price). The judge row is included in the expected total.</p>', { form: true }));
     return out;
   }
 
@@ -647,7 +651,9 @@
       if (bad && bad.length) { announce('error', 'Unknown site id: ' + bad.slice(0, 5).join(', ') + '. Use ids like UNI-01.'); return; }
       var conds = fd.getAll('conditions');
       if (!conds.length) { announce('error', 'Pick at least one condition.'); return; }
-      save('Settings', 'PUT', '/api/settings', { budget_usd: +fd.get('budget_usd'), sites: sites, conditions: conds, max_iter: +fd.get('max_iter'), judge_model_id: String(fd.get('judge_model_id')).trim() }, f);
+      save('Settings', 'PUT', '/api/settings', { budget_usd: +fd.get('budget_usd'), sites: sites, conditions: conds, max_iter: +fd.get('max_iter'), judge_model_id: String(fd.get('judge_model_id')).trim(), dispatch_open: fd.get('dispatch_open') === 'on' }, f);
+    } else if (kind === 'budget') {
+      save('Budget cap', 'PUT', '/api/settings', { budget_usd: +fd.get('budget_usd') }, f);
     } else if (kind === 'docker') {
       dockerCall('POST', '/api/docker/workers', { count: +fd.get('count'), slots: +fd.get('slots') });
     } else if (kind === 'pricing') {

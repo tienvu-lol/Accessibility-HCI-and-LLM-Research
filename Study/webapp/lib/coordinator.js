@@ -23,6 +23,9 @@ function create(ctx, { leaseS = 900 } = {}) {
   const workers = new Map();
   const scored = new Set();
   const mainstream = () => Object.keys(state.arms).filter((a) => ctx.armKind(a) === 'mainstream');
+  const dispatched = () => Object.keys(state.arms).filter((a) => ctx.armKind(a) === 'mainstream' || state.settings.dispatch_open);
+  // fresh workers that advertise a reachable ARC tunnel for this arm
+  const arcWorkers = (arm) => [...workers.values()].filter((w) => w.arcs && w.arcs[arm] && ctx.now() - w.last_seen < 60000);
   const siteList = () => state.settings.sites || ctx.siteIds();
   const persist = () => {
     state.queue = [...jobs.values()].map(({ worker, lease_exp, ...j }) => ({ ...j, state: j.state === 'running' ? 'queued' : j.state }));
@@ -81,7 +84,10 @@ function create(ctx, { leaseS = 900 } = {}) {
   // ---- readiness
   const armBlockers = (id) => {
     const a = state.arms[id];
-    if (ctx.armKind(id) === 'open_source') return armCells(id).imported ? [] : ['no imported cells'];
+    if (ctx.armKind(id) === 'open_source') {
+      if (state.settings.dispatch_open) return arcWorkers(id).length ? [] : [`no online worker with an ARC tunnel for ${id}`];
+      return armCells(id).imported ? [] : ['no imported cells'];
+    }
     const b = [];
     if (!a.provider) b.push('provider not set');
     if (!a.model_id) b.push('model not set');
@@ -108,7 +114,7 @@ function create(ctx, { leaseS = 900 } = {}) {
   function planRepair() {
     for (const site of siteList()) {
       for (const cond of state.settings.conditions) {
-        for (const arm of mainstream()) {
+        for (const arm of dispatched()) {
           const j = addJob('repair', arm, cond, site);
           const last = store.lastStatus(arm, cond, site);
           if (j.state === 'queued' && last && last.st.status === 'ok' && (last.st.converged || last.n >= state.settings.max_iter)) {
@@ -144,7 +150,7 @@ function create(ctx, { leaseS = 900 } = {}) {
 
   function start(phase, force) {
     let blockers = [];
-    if (phase === 'repair') blockers = mainstream().flatMap((id) => armBlockers(id).map((b) => `${id}: ${b}`));
+    if (phase === 'repair') blockers = dispatched().flatMap((id) => armBlockers(id).map((b) => `${id}: ${b}`));
     if (phase === 'judge') {
       blockers = judgeBlockers();
       planJudge();
@@ -175,10 +181,15 @@ function create(ctx, { leaseS = 900 } = {}) {
   }
 
   // ---- claim
-  function jobPayload(j) {
+  function jobPayload(j, w) {
     const base = { id: j.id, kind: j.kind, mock: ctx.mock };
     if (j.kind === 'repair') {
       const a = state.arms[j.arm];
+      if (ctx.armKind(j.arm) === 'open_source') { // base_url is the claiming worker's tunnel; its API key never leaves that machine
+        if (!w.arcs || !w.arcs[j.arm]) return null;
+        return { ...base, arm: j.arm, condition: j.condition, site: j.site, max_iter: state.settings.max_iter, lease_s: leaseS,
+          provider: a.provider, base_url: w.arcs[j.arm], model_id: a.model_id, api_key_env: ctx.cfg.arms[j.arm].api_key_env, api_key: null };
+      }
       const key = ctx.keys.get(a.provider);
       if (!key && !ctx.mock) return null;
       return { ...base, arm: j.arm, condition: j.condition, site: j.site, max_iter: state.settings.max_iter, lease_s: leaseS,
@@ -211,14 +222,16 @@ function create(ctx, { leaseS = 900 } = {}) {
 
   const runningOn = (id) => [...jobs.values()].filter((j) => j.state === 'running' && j.worker === id).length;
   const str = (v) => (typeof v === 'string' ? v.slice(0, 64) : undefined);
-  function claim({ worker_id, kinds, max, slots, info }) {
+  function claim({ worker_id, kinds, max, slots, info, arcs, arms }) {
     reap();
     const id = String(worker_id || 'worker').slice(0, 64);
     const want = Array.isArray(kinds) ? kinds : ['repair', 'score', 'judge'];
     let limit = Math.min(Math.max(Number.isInteger(max) ? max : 1, 1), 50);
     const w = workers.get(id) || { id };
     Object.assign(w, { last_seen: ctx.now(), slots: Number.isInteger(slots) && slots > 0 ? Math.min(slots, 64) : limit,
-      info: info && typeof info === 'object' ? { host: str(info.host), os: str(info.os) } : w.info });
+      info: info && typeof info === 'object' ? { host: str(info.host), os: str(info.os) } : w.info,
+      arcs: arcs && typeof arcs === 'object' ? Object.fromEntries(Object.entries(arcs).filter(([a, u]) => state.arms[a] && /^https?:\/\/[\w.-]+(:\d+)?(\/[\w./-]*)?$/.test(u))) : {},
+      armsOnly: Array.isArray(arms) ? arms.filter((a) => state.arms[a]) : null });
     workers.set(id, w);
     if (max === 0) return []; // keepalive from a worker with no free slots
     const ctl = state.workerCtl[id] || {};
@@ -241,10 +254,11 @@ function create(ctx, { leaseS = 900 } = {}) {
     for (const j of jobs.values()) {
       if (out.length >= limit) break;
       if (j.state !== 'queued' || !want.includes(j.kind)) continue;
+      if (w.armsOnly && !w.armsOnly.includes(j.arm)) continue;
       if (j.kind === 'repair' && (running[j.arm] || 0) >= ctx.concurrency(j.arm)) continue;
       const est = estimate(j);
       if (j.kind !== 'score' && committed + est >= state.settings.budget_usd) continue;
-      const payload = jobPayload(j);
+      const payload = jobPayload(j, w);
       if (!payload) continue;
       Object.assign(j, { state: 'running', worker: id, lease_exp: ctx.now() + leaseS * 1000 });
       committed += est;
@@ -352,7 +366,7 @@ function create(ctx, { leaseS = 900 } = {}) {
   function workerList() {
     const t = ctx.now();
     for (const [id, w] of workers) if (t - w.last_seen > 7 * 24 * 3600000) workers.delete(id); // offline machines stay listed
-    return [...workers.values()].map((w) => ({ id: w.id, last_seen: w.last_seen, slots: w.slots, info: w.info,
+    return [...workers.values()].map((w) => ({ id: w.id, last_seen: w.last_seen, slots: w.slots, info: w.info, arcs: Object.keys(w.arcs || {}),
       cap: Number.isInteger((state.workerCtl[w.id] || {}).cap) ? state.workerCtl[w.id].cap : null, paused: !!(state.workerCtl[w.id] || {}).paused,
       running: runningOn(w.id) }));
   }

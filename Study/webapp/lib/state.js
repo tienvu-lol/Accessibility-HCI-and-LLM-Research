@@ -16,11 +16,13 @@ function load(dataDir, cfg) {
   const arms = {};
   for (const [id, a] of Object.entries(cfg.arms)) {
     // claude-family arms default to anthropic so the config's provider "TBD" does not block A1/A2
-    arms[id] = { provider: tbd(a.provider) || (a.family === 'claude' ? 'anthropic' : null), model_id: tbd(a.model_id), ...(raw.arms && raw.arms[id]) };
+    // open-source arms run on VT ARC through llama.cpp; strip the config's "(PENDING: ...)" note from the model id
+    const open = /self-hosted/.test(a.serving || '');
+    arms[id] = { provider: tbd(a.provider) || (a.family === 'claude' ? 'anthropic' : null), model_id: tbd(open ? String(a.model_id).replace(/\s*\(.*$/, '') : a.model_id), ...(raw.arms && raw.arms[id]) };
   }
   const state = {
     settings: {
-      budget_usd: 200, sites: null, conditions: [...CONDITIONS],
+      budget_usd: 200, dispatch_open: false, sites: null, conditions: [...CONDITIONS],
       max_iter: cfg.held_constant.max_iterations || 3, judge_model_id: tbd(cfg.judge && cfg.judge.model_id),
       ...raw.settings,
     },
@@ -56,6 +58,7 @@ function applySettings(ctx, b) {
     if (!Array.isArray(b.conditions) || !b.conditions.length || !b.conditions.every((c) => CONDITIONS.includes(c))) return 'bad conditions';
     s.conditions = CONDITIONS.filter((c) => b.conditions.includes(c));
   }
+  if ('dispatch_open' in b) { if (typeof b.dispatch_open !== 'boolean') return 'dispatch_open must be boolean'; s.dispatch_open = b.dispatch_open; }
   if ('max_iter' in b) { if (!Number.isInteger(b.max_iter) || b.max_iter < 1 || b.max_iter > 10) return 'max_iter must be 1-10'; s.max_iter = b.max_iter; }
   if ('judge_model_id' in b) {
     if (b.judge_model_id !== null && (typeof b.judge_model_id !== 'string' || !b.judge_model_id.trim())) return 'bad judge_model_id';

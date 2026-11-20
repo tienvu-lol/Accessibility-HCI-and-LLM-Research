@@ -12,7 +12,7 @@ if (-not (Test-Path agent.env)) {
   "WEB_URL=$url`nWORKER_TOKEN=$tok`nMACHINE_NAME=$name`nWORKER_ID=$name`nWORKER_SLOTS=$slots" | Set-Content -Encoding ascii agent.env
 }
 $env:HOST_OS = "Windows $env:PROCESSOR_ARCHITECTURE"
-docker compose pull
+docker compose pull worker
 if ($LASTEXITCODE -ne 0) { Write-Warning "pull failed (not logged in to ghcr.io?); trying a local image" }
-docker compose up -d
+if ($args -contains "--arc") { docker compose --profile arc up -d --build } else { docker compose up -d }
 Write-Host 'Agent running. Logs: docker logs -f study-agent'

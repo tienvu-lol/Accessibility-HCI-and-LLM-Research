@@ -10,12 +10,24 @@ function createWorker(opts = {}) {
   const webUrl = (opts.webUrl || process.env.WEB_URL || '').replace(/\/$/, '');
   const token = opts.token || process.env.WORKER_TOKEN;
   const slots = opts.slots || Number(process.env.WORKER_SLOTS) || 4;
-  const id = opts.id || process.env.WORKER_ID || os.hostname();
+  const id = (opts.id || process.env.WORKER_ID || os.hostname()) + (opts.id ? '' : process.env.WORKER_SUFFIX || '');
   const pollMs = opts.pollMs ?? (Number(process.env.POLL_MS) || 3000);
   const heartbeatMs = opts.heartbeatMs ?? 60000;
   const retryMs = opts.retryMs ?? 1000; // base of the exponential backoff
   const runners = opts.runners || KINDS;
   const info = opts.info || { host: process.env.MACHINE_NAME || os.hostname(), os: process.env.HOST_OS || `${os.platform()} ${os.arch()}` };
+  // ARC tunnels this machine can reach: ARC_URLS="A5=http://arc-a5:8091/v1,A6=http://arc-a6:8090/v1". An arm is advertised only
+  // while its tunnel answers and its key (A5_API_KEY ...) is set locally, so a dropped SSH session just stops new claims.
+  const arcUrls = opts.arcUrls || Object.fromEntries((process.env.ARC_URLS || '').split(',').filter(Boolean).map((p) => p.split(/=(.+)/).slice(0, 2)));
+  const onlyArms = opts.arms || (process.env.WORKER_ARMS ? process.env.WORKER_ARMS.split(',') : undefined);
+  async function liveArcs() {
+    const out = {};
+    for (const [arm, url] of Object.entries(arcUrls)) {
+      if (!process.env[`${arm}_API_KEY`]) continue;
+      try { await fetch(`${url.replace(/\/$/, '')}/models`, { headers: { authorization: `Bearer ${process.env[`${arm}_API_KEY`]}` }, signal: AbortSignal.timeout(3000) }); out[arm] = url; } catch { /* tunnel down */ }
+    }
+    return out;
+  }
   const log = opts.log || ((m) => console.log(`[worker ${id}] ${m}`));
   if (!webUrl || !token) throw new Error('WEB_URL and WORKER_TOKEN are required');
 
@@ -87,7 +99,7 @@ function createWorker(opts = {}) {
       const free = slots - running.size;
       {
         try { // free = 0 still polls (max 0) so an all-busy machine stays online
-          const r = await api('/api/worker/claim', { worker_id: id, kinds: Object.keys(runners), max: free, slots, info });
+          const r = await api('/api/worker/claim', { worker_id: id, kinds: Object.keys(runners), max: free, slots, info, arcs: await liveArcs(), arms: onlyArms });
           if (r.status >= 500) throw new Error(`claim ${r.status}`);
           if (r.status >= 400) throw new Error(`claim rejected ${r.status}`);
           jobs = r.body?.jobs || [];

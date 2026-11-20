@@ -1,1 +1,1 @@
-Set-Location $PSScriptRoot; docker compose down
+Set-Location $PSScriptRoot; docker compose --profile arc down
