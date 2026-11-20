@@ -443,11 +443,21 @@
     var mOf = S.machine_of || {}, wmap = machineMap(S);
     var wlist = S.workers.slice().sort(function (a, b) { var x = mOf[a.id] || a.id, y = mOf[b.id] || b.id; return x < y ? -1 : x > y ? 1 : a.id < b.id ? -1 : 1; });
     var wComputers = {}; wlist.forEach(function (w) { wComputers[mOf[w.id] || w.id] = 1; });
+    // One computer, one identity cell: gSize/gFirst say how many rows a computer has and which is first, gSrc is the
+    // container whose report describes the computer best (a container restored after a restart may have reported nothing).
+    var gSize = {}, gFirst = {}, gSrc = {}, gScore = function (w) { var f = w.info || {}; return f.tailnet_node || f.tailnet_ip ? 2 : f.host ? 1 : 0; };
+    wlist.forEach(function (w, i) {
+      var k = mOf[w.id] || w.id;
+      gSize[k] = (gSize[k] || 0) + 1;
+      if (gFirst[k] === undefined) gFirst[k] = i;
+      if (!gSrc[k] || gScore(w) > gScore(gSrc[k])) gSrc[k] = w;
+    });
     out.push(panel('r-workers', 'Workers (' + Object.keys(wComputers).length + (Object.keys(wComputers).length === 1 ? ' computer, ' : ' computers, ') + wlist.length + (wlist.length === 1 ? ' container)' : ' containers)'), wlist.length ?
       tableWrap('Workers', '<table class="grid"><thead><tr><th scope="col">Worker</th><th scope="col">Tailscale device and account</th><th scope="col">Status</th><th scope="col">Slots</th><th scope="col">Running</th><th scope="col">Job controls</th></tr></thead><tbody>' +
-        wlist.map(function (w) {
+        wlist.map(function (w, i) {
           var online = typeof w.online === 'boolean' ? w.online : ms(S.now) - ms(w.last_seen) < 45000;
-          var inf = w.info || {};
+          var gk = mOf[w.id] || w.id;
+          var inf = (gSrc[gk] && gSrc[gk].info) || {};
           var status = !online ? badge('attn', 'Offline') : w.paused ? badge('attn', 'Paused') : badge('done', 'Online');
           var lid = 'cap-' + esc(w.id), id = esc(w.id);
           var identity = inf.tailnet_node || inf.tailnet_ip ? esc(inf.tailnet_node || inf.tailnet_ip) + '<br><span class="muted">' + esc([inf.tailnet_user || 'Account not reported', inf.tailnet_node && inf.tailnet_ip].filter(Boolean).join(' · ')) + '</span>' :
@@ -455,7 +465,7 @@
           var available = Math.min(w.slots, w.cap == null ? w.slots : w.cap, 50) - w.running;
           var claim = !w.manual ? '' : w.requested ? '<button id="claim-' + id + '" type="button" class="btn" data-action="worker-unclaim" data-id="' + id + '">Unclaim</button> ' + badge('active', int(w.requested) + ' waiting') :
             '<button id="claim-' + id + '" type="button" class="btn btn-primary" data-action="worker-claim" data-id="' + id + '"' + (!online || w.paused || available < 1 ? ' disabled' : '') + '>Claim jobs</button>';
-          return '<tr><th scope="row">' + machineChip(S, w.id, wmap) + '<br><span class="muted">' + id + '</span>' + (w.arcs && w.arcs.length ? ' ' + badge('active', 'ARC ' + w.arcs.join('+')) : '') + '</th><td>' + identity + (inf.os ? '<br><span class="muted">' + esc(inf.os) + '</span>' : '') + '</td><td>' + status + ' ' + esc(ago(w.last_seen, S.now)) + '</td>' +
+          return '<tr><th scope="row">' + machineChip(S, w.id, wmap) + '<br><span class="muted">' + id + '</span>' + (w.arcs && w.arcs.length ? ' ' + badge('active', 'ARC ' + w.arcs.join('+')) : '') + '</th>' + (i === gFirst[gk] ? '<td class="grp-id" rowspan="' + gSize[gk] + '">' + identity + (inf.os ? '<br><span class="muted">' + esc(inf.os) + '</span>' : '') + (gSize[gk] > 1 ? '<br><span class="muted">' + int(gSize[gk]) + ' containers</span>' : '') + '</td>' : '') + '<td>' + status + ' ' + esc(ago(w.last_seen, S.now)) + '</td>' +
             '<td class="num">' + int(w.slots) + '</td><td class="num">' + int(w.running) + '</td>' +
             '<td><label class="sr" for="' + lid + '">Slot cap for ' + esc(w.id) + '</label><input id="' + lid + '" type="number" min="0" max="64" step="1" placeholder="no cap" value="' + (w.cap === null ? '' : esc(w.cap)) + '" data-field="cap"> ' +
             '<button type="button" class="btn" data-action="worker-cap" data-id="' + esc(w.id) + '">Set cap</button> ' +
