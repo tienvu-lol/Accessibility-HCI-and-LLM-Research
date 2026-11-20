@@ -98,3 +98,13 @@ test('one arm keyed on the console and the other on the laptop work side by side
   assert.equal(jobs.find((j) => j.arm === 'A5').api_key, null);
   assert.equal(jobs.find((j) => j.arm === 'A6').api_key, 'qwen-key-2222');
 });
+
+test('an IP-based worker id retires its offline host-based twin', () => {
+  const { app, coord } = boot();
+  coord.claim({ worker_id: 'sam-a6', max: 0, info: { host: 'sam', os: 'macOS' } });
+  coord.claim({ worker_id: 'sam-a7', max: 0, info: { host: 'sam', os: 'macOS' } });
+  app.ctx.now = () => Date.now() + 120000; // both legacy ids go offline
+  coord.claim({ worker_id: '100.1.1.1-a6', max: 0, info: { host: 'sam', os: 'macOS', tailnet_ip: '100.1.1.1' } });
+  const ids = coord.workers().map((w) => w.id).sort();
+  assert.deepEqual(ids, ['100.1.1.1-a6', 'sam-a7']); // a7 has no replacement yet, so it stays
+});

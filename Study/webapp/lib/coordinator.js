@@ -540,6 +540,12 @@ function create(ctx, { leaseS = 900 } = {}) {
       keyNames: Array.isArray(keys) ? keys.filter((k) => typeof k === 'string' && /^[A-Z][A-Z0-9_]{0,63}_API_KEY$/.test(k)).slice(0, 32) : [] });
     workers.set(id, w);
     remember(w);
+    // An id that used to be host-based (`mac-a6`) and is now IP-based (`100.1.2.3-a6`) leaves an offline twin behind: retire it.
+    const host = w.info?.host, ip = w.info?.tailnet_ip;
+    if (host && ip && id.startsWith(ip)) {
+      const old = workers.get(host + id.slice(ip.length));
+      if (old && old !== w && !old.info?.tailnet_ip && !workerOnline(old) && runningOn(old.id) === 0) { workers.delete(old.id); delete registry[old.id]; persist(); }
+    }
     if (max === 0) return []; // keepalive from a worker with no free slots
     const ctl = state.workerCtl[id] || {};
     if (ctl.paused || state.run.phase === 'paused') return [];
