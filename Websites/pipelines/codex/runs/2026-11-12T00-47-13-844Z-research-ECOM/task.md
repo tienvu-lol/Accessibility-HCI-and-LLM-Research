@@ -43,56 +43,56 @@ Populate or propose only the three assigned Codex source records. Do not fill ap
       },
       {
         "slot": 3,
-        "source_id": "ECOM-03",
+        "source_id": "ECOM-R03",
         "model_group": "claude",
         "stratum": "specialty retailer",
         "authority": "coordination proposal; reconcile with shared inventory"
       },
       {
         "slot": 4,
-        "source_id": "ECOM-04",
+        "source_id": "ECOM-03",
         "model_group": "codex",
         "stratum": "single-brand direct-to-consumer store",
         "authority": "codex assignment"
       },
       {
         "slot": 5,
-        "source_id": "ECOM-05",
+        "source_id": "ECOM-04",
         "model_group": "codex",
         "stratum": "multi-category retailer",
         "authority": "codex assignment"
       },
       {
         "slot": 6,
-        "source_id": "ECOM-06",
+        "source_id": "ECOM-R06",
         "model_group": "codex",
         "stratum": "specialty retailer",
         "authority": "codex assignment"
       },
       {
         "slot": 7,
-        "source_id": "ECOM-07",
+        "source_id": "ECOM-05",
         "model_group": "open-source",
         "stratum": "single-brand direct-to-consumer store",
         "authority": "coordination proposal; reconcile with shared inventory"
       },
       {
         "slot": 8,
-        "source_id": "ECOM-08",
+        "source_id": "ECOM-R08",
         "model_group": "open-source",
         "stratum": "multi-category retailer",
         "authority": "coordination proposal; reconcile with shared inventory"
       },
       {
         "slot": 9,
-        "source_id": "ECOM-09",
+        "source_id": "ECOM-R09",
         "model_group": "open-source",
         "stratum": "specialty retailer",
         "authority": "coordination proposal; reconcile with shared inventory"
       },
       {
         "slot": 10,
-        "source_id": "ECOM-10",
+        "source_id": "ECOM-06",
         "model_group": "open-source",
         "stratum": "additional distinct single-brand direct-to-consumer store (complexity-matched reserve)",
         "authority": "coordination proposal; reconcile with shared inventory"
@@ -179,7 +179,7 @@ Populate or propose only the three assigned Codex source records. Do not fill ap
     {
       "category": "e-commerce",
       "slot": "03",
-      "source_id": "ECOM-03",
+      "source_id": "ECOM-R03",
       "model_group": "claude",
       "model_id": "",
       "model_version": "",
@@ -203,7 +203,7 @@ Populate or propose only the three assigned Codex source records. Do not fill ap
     {
       "category": "e-commerce",
       "slot": "04",
-      "source_id": "ECOM-04",
+      "source_id": "ECOM-03",
       "model_group": "codex",
       "model_id": "",
       "model_version": "",
@@ -227,7 +227,7 @@ Populate or propose only the three assigned Codex source records. Do not fill ap
     {
       "category": "e-commerce",
       "slot": "05",
-      "source_id": "ECOM-05",
+      "source_id": "ECOM-04",
       "model_group": "codex",
       "model_id": "",
       "model_version": "",
@@ -251,7 +251,7 @@ Populate or propose only the three assigned Codex source records. Do not fill ap
     {
       "category": "e-commerce",
       "slot": "06",
-      "source_id": "ECOM-06",
+      "source_id": "ECOM-R06",
       "model_group": "codex",
       "model_id": "",
       "model_version": "",
@@ -275,7 +275,7 @@ Populate or propose only the three assigned Codex source records. Do not fill ap
     {
       "category": "e-commerce",
       "slot": "07",
-      "source_id": "ECOM-07",
+      "source_id": "ECOM-05",
       "model_group": "open-source",
       "model_id": "",
       "model_version": "",
@@ -299,7 +299,7 @@ Populate or propose only the three assigned Codex source records. Do not fill ap
     {
       "category": "e-commerce",
       "slot": "08",
-      "source_id": "ECOM-08",
+      "source_id": "ECOM-R08",
       "model_group": "open-source",
       "model_id": "",
       "model_version": "",
@@ -323,7 +323,7 @@ Populate or propose only the three assigned Codex source records. Do not fill ap
     {
       "category": "e-commerce",
       "slot": "09",
-      "source_id": "ECOM-09",
+      "source_id": "ECOM-R09",
       "model_group": "open-source",
       "model_id": "",
       "model_version": "",
@@ -347,7 +347,7 @@ Populate or propose only the three assigned Codex source records. Do not fill ap
     {
       "category": "e-commerce",
       "slot": "10",
-      "source_id": "ECOM-10",
+      "source_id": "ECOM-06",
       "model_group": "open-source",
       "model_id": "",
       "model_version": "",

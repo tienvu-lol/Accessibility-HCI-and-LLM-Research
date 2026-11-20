@@ -1,0 +1,390 @@
+{
+  "run_id": "2026-11-17T14-50-53-015Z-build-REST-05",
+  "phase": "build",
+  "target": "REST-05",
+  "category": "restaurant",
+  "slot": 7,
+  "model_group": "open-source",
+  "model": {
+    "model_id": "unsloth/Qwen3.6-35B-A3B-GGUF",
+    "model_version": "Q4_K_M",
+    "model_provider_or_runtime": "vt-arc-falcon-llamacpp (OpenAI-compatible chat completions at http://localhost:8080/v1)",
+    "weights_url": "https://huggingface.co/unsloth/Qwen3.6-35B-A3B-GGUF",
+    "license": "apache-2.0",
+    "open_weights": true,
+    "eligibility_note": "Open weights; licence apache-2.0 as published on huggingface.co/unsloth/Qwen3.6-35B-A3B-GGUF and on the Qwen/Qwen3.6-35B-A3B base model card, both read 2026-11-16 by the orchestrator. Quantisation Q4_K_M (UD-Q4_K_M) as reported by the serving session. Served self-hosted via llama.cpp on the VT ARC Falcon cluster over an SSH tunnel on localhost:8080; no third-party inference provider. Serving history for this slot, same model and quant throughout: node fal039:39247 (2026-11-16, auto-terminated on idle; the eleven slot-07 research runs used it), node fal045:34691 (2026-11-17, nine slot-07 builds; session ended), node fal047:45317 (2026-11-17, current). Thinking/reasoning output left enabled as the model ships, by project decision; max_tokens 32000 because reasoning shares the completion budget. Apache-2.0 is OSI-approved, so this slot is open-source as well as open-weight.",
+    "params": {
+      "temperature": 0.3,
+      "max_tokens": 32000
+    }
+  },
+  "operator": "Samhith Varma Yallamraju",
+  "status": "completed",
+  "prepared_at": "2026-11-17T14:50:53.020Z",
+  "generation_started_at": "2026-11-17T14:50:53.020Z",
+  "generation_completed_at": "2026-11-17T14:54:30.043Z",
+  "tool_access": "chat-completions API only: no browsing, no shell, no filesystem. The orchestrator wrote every file and ran every check.",
+  "budget": {
+    "max_build_turns": 28,
+    "max_repair_rounds": 0,
+    "max_tokens_per_request": 32000,
+    "temperature": 0.3
+  },
+  "approved_source": {
+    "source_name": "Panera Bread",
+    "source_url": "https://www.panerabread.com",
+    "verified_at": "2026-11-16",
+    "verification_method": "HTTP GET by the orchestrator",
+    "verification_result": "verified",
+    "evidence_reference": "pipelines/open-source/research/evidence/REST-05-http-2026-11-16.json",
+    "complexity": "medium",
+    "stack_clues": "Salesforce Service Cloud, Mobile App promotion",
+    "limitations": "Redirects for locations and support; no body content analyzed.",
+    "approved_at": "2026-11-17",
+    "approved_by": "Samhith Varma Yallamraju",
+    "approval_reference": "Project lead approval given 2026-11-16 in the Claude Code orchestration session for open-source slot 07; see that session transcript and research/REST-05.md"
+  },
+  "approved_page_map": [
+    {
+      "url": "https://www.panerabread.com",
+      "title": "Home | Panera Bread",
+      "local_file": "index.html"
+    },
+    {
+      "url": "https://www.panerabread.com/en-us/home.html",
+      "title": "Home | Panera Bread",
+      "local_file": "home.html"
+    },
+    {
+      "url": "https://www.panerabread.com/en-us/menu.html",
+      "title": "Panerabread App | Panera Bread",
+      "local_file": "menu.html"
+    },
+    {
+      "url": "https://www.panerabread.com/en-us/cafe-locator.html",
+      "title": "Panerabread App | Panera Bread",
+      "local_file": "locations.html"
+    },
+    {
+      "url": "https://www.panerabread.com/en-us/gift-cards.html",
+      "title": "Buy Gift Cards Online For Friends, Family & Co-Workers | Panera Bread",
+      "local_file": "gift-cards.html"
+    },
+    {
+      "url": "https://www.panerabread.com/en-us/company/about-panera.html",
+      "title": "About Panera | Panera Bread",
+      "local_file": "about.html"
+    },
+    {
+      "url": "https://www.panerabread.com/en-us/food-values/our-values.html",
+      "title": "Corporate Responsibility | Panera Bread",
+      "local_file": "values.html"
+    },
+    {
+      "url": "https://www.panerabread.com/en-us/press/press-room.html",
+      "title": "Press Room & Featured News | Panera Bread",
+      "local_file": "press.html"
+    },
+    {
+      "url": "https://www.panerabread.com/en-us/food-values/community.html",
+      "title": "Our Communities | Panera Bread",
+      "local_file": "community.html"
+    },
+    {
+      "url": "https://www.panerabread.com/customercare",
+      "title": "Customer Support",
+      "local_file": "support.html"
+    }
+  ],
+  "protocol_snapshots": [
+    {
+      "path": "Rules.md",
+      "sha256": "04b1c3e38b76f2aff3aef869d67370bb4532cd8f9ab5e22ac8276f26cbb859bf"
+    },
+    {
+      "path": "MODEL_ALLOCATION.md",
+      "sha256": "7e9487530a6e80b35af48d0691951dafc2fffea39798c81a3c49203909148d30"
+    },
+    {
+      "path": "pipelines/open-source/config.json",
+      "sha256": "36ba2cde671cfe89f211cdca7c47c975281615e97cacb8d06ef247be6e4eb4d9"
+    },
+    {
+      "path": "pipelines/open-source/categories.json",
+      "sha256": "8180966e55daa24799e51106645e93fd5807dde470765ab8b3b38d3f922c867b"
+    },
+    {
+      "path": "pipelines/open-source/prompts/system.md",
+      "sha256": "61bc24a57de14bd6a662cd6b5f98d0cfc57bf47e187fc58a97831bf1f272b4ee"
+    },
+    {
+      "path": "pipelines/open-source/prompts/build.md",
+      "sha256": "6096ab8b698af7a99d8ddaf1534cc95f41844d1d00cdd1fce740123b3146ab6a"
+    },
+    {
+      "path": "pipelines/open-source/prompts/repair.md",
+      "sha256": "8a84e51995736607b3efa6f5b2d76e52692423c2c26b03409afb4afa3c6586d6"
+    },
+    {
+      "path": "pipelines/open-source/models.json",
+      "sha256": "ff7bf5226de812c9c69d453475ad13a23eb80265844c9f014131811d5d59b1fe"
+    },
+    {
+      "path": "metadata/source-inventories/restaurant.csv",
+      "sha256": "bd938ae12db4078a7be7c743bec45cfbe183d9a9e26c722b500c44b2dc7ce0c6"
+    },
+    {
+      "path": "metadata/assignments.csv",
+      "sha256": "75aa44ee9046372a60e2b9bafe18f1e0dbb3f7c5bd80c29f49f4c060050bca06"
+    }
+  ],
+  "turns": [
+    {
+      "turn": 1,
+      "label": "plan",
+      "status_line": "CONTINUE",
+      "prose_chars": 1977,
+      "files_written": [],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 1789,
+        "prompt_tokens": 5185,
+        "total_tokens": 6974,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "at": "2026-11-17T14:51:06.417Z"
+    },
+    {
+      "turn": 2,
+      "label": "files-2",
+      "status_line": "CONTINUE",
+      "prose_chars": 0,
+      "files_written": [
+        "css/styles.css",
+        "js/main.js",
+        "index.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 11049,
+        "prompt_tokens": 5855,
+        "total_tokens": 16904,
+        "prompt_tokens_details": {
+          "cached_tokens": 5181
+        }
+      },
+      "at": "2026-11-17T14:52:22.634Z"
+    },
+    {
+      "turn": 3,
+      "label": "files-3",
+      "status_line": "CONTINUE",
+      "prose_chars": 0,
+      "files_written": [
+        "home.html",
+        "menu.html",
+        "locations.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 3849,
+        "prompt_tokens": 10955,
+        "total_tokens": 14804,
+        "prompt_tokens_details": {
+          "cached_tokens": 5851
+        }
+      },
+      "at": "2026-11-17T14:52:50.239Z"
+    },
+    {
+      "turn": 4,
+      "label": "files-4",
+      "status_line": "CONTINUE",
+      "prose_chars": 0,
+      "files_written": [
+        "gift-cards.html",
+        "about.html",
+        "values.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 3966,
+        "prompt_tokens": 14493,
+        "total_tokens": 18459,
+        "prompt_tokens_details": {
+          "cached_tokens": 10951
+        }
+      },
+      "at": "2026-11-17T14:53:18.744Z"
+    },
+    {
+      "turn": 5,
+      "label": "files-5",
+      "status_line": "CONTINUE",
+      "prose_chars": 0,
+      "files_written": [
+        "press.html",
+        "community.html",
+        "support.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 2441,
+        "prompt_tokens": 18135,
+        "total_tokens": 20576,
+        "prompt_tokens_details": {
+          "cached_tokens": 14489
+        }
+      },
+      "at": "2026-11-17T14:53:36.869Z"
+    },
+    {
+      "turn": 6,
+      "label": "files-6",
+      "status_line": "COMPLETE",
+      "prose_chars": 652,
+      "files_written": [
+        "404.html",
+        "README.md",
+        "fidelity-notes.md",
+        "component-inventory.json",
+        "generation-metadata.json"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 6657,
+        "prompt_tokens": 20717,
+        "total_tokens": 27374,
+        "prompt_tokens_details": {
+          "cached_tokens": 18131
+        }
+      },
+      "at": "2026-11-17T14:54:25.737Z"
+    }
+  ],
+  "rejected_files": [],
+  "qc_runs": [
+    {
+      "started_at": "2026-11-17T14:54:25.758Z",
+      "completed_at": "2026-11-17T14:54:30.043Z",
+      "exit_code": 1,
+      "executed": true,
+      "passed": false,
+      "outcome": "fail",
+      "failures": [
+        "placeholder href=\"#\" in home.html",
+        "axe color-contrast (serious) @1280 404.html: 3 node(s) e.g. .skip-link",
+        "axe heading-order (moderate) @1280 404.html: 1 node(s) e.g. .footer-col:nth-child(1) > h3",
+        "axe color-contrast (serious) @1280 about.html: 2 node(s) e.g. .skip-link",
+        "axe color-contrast (serious) @1280 community.html: 2 node(s) e.g. .skip-link",
+        "axe color-contrast (serious) @1280 gift-cards.html: 6 node(s) e.g. .skip-link",
+        "axe color-contrast (serious) @1280 home.html: 4 node(s) e.g. .skip-link",
+        "axe color-contrast (serious) @1280 index.html: 3 node(s) e.g. .skip-link",
+        "axe color-contrast (serious) @1280 locations.html: 3 node(s) e.g. .skip-link",
+        "axe heading-order (moderate) @1280 locations.html: 1 node(s) e.g. .footer-col:nth-child(1) > h3",
+        "axe color-contrast (serious) @1280 menu.html: 8 node(s) e.g. .skip-link",
+        "axe heading-order (moderate) @1280 menu.html: 1 node(s) e.g. article:nth-child(1) > .card-body > .card-title",
+        "axe color-contrast (serious) @1280 press.html: 2 node(s) e.g. .skip-link",
+        "axe color-contrast (serious) @1280 support.html: 3 node(s) e.g. .skip-link",
+        "axe color-contrast (serious) @1280 values.html: 2 node(s) e.g. .skip-link",
+        "axe color-contrast (serious) @375 404.html: 3 node(s) e.g. .skip-link",
+        "axe heading-order (moderate) @375 404.html: 1 node(s) e.g. .footer-col:nth-child(1) > h3",
+        "axe color-contrast (serious) @375 about.html: 2 node(s) e.g. .skip-link",
+        "axe color-contrast (serious) @375 community.html: 2 node(s) e.g. .skip-link",
+        "axe color-contrast (serious) @375 gift-cards.html: 6 node(s) e.g. .skip-link",
+        "axe color-contrast (serious) @375 home.html: 4 node(s) e.g. .skip-link",
+        "axe color-contrast (serious) @375 index.html: 3 node(s) e.g. .skip-link",
+        "axe color-contrast (serious) @375 locations.html: 3 node(s) e.g. .skip-link",
+        "axe heading-order (moderate) @375 locations.html: 1 node(s) e.g. .footer-col:nth-child(1) > h3",
+        "axe color-contrast (serious) @375 menu.html: 8 node(s) e.g. .skip-link",
+        "axe heading-order (moderate) @375 menu.html: 1 node(s) e.g. article:nth-child(1) > .card-body > .card-title",
+        "axe color-contrast (serious) @375 press.html: 2 node(s) e.g. .skip-link",
+        "axe color-contrast (serious) @375 support.html: 3 node(s) e.g. .skip-link",
+        "axe color-contrast (serious) @375 values.html: 2 node(s) e.g. .skip-link"
+      ],
+      "failure_count": 29,
+      "warnings": [],
+      "axe": {
+        "color-contrast": 76,
+        "heading-order": 6
+      },
+      "pages": 11,
+      "files": 17,
+      "qc_tool_sha256": "e9be905d19e7181e30d8291bcb1511d4469bdc9e36c20c0efe21e2d3fcf54513",
+      "report": "qc-initial-2026-11-17T14-54-25-758Z.json",
+      "log": "qc-initial-2026-11-17T14-54-25-758Z.log",
+      "stdout_tail": "FAIL axe color-contrast (serious) @1280 gift-cards.html: 6 node(s) e.g. .skip-link\nFAIL axe color-contrast (serious) @1280 home.html: 4 node(s) e.g. .skip-link\nFAIL axe color-contrast (serious) @1280 index.html: 3 node(s) e.g. .skip-link\nFAIL axe color-contrast (serious) @1280 locations.html: 3 node(s) e.g. .skip-link\nFAIL axe heading-order (moderate) @1280 locations.html: 1 node(s) e.g. .footer-col:nth-child(1) > h3\nFAIL axe color-contrast (serious) @1280 menu.html: 8 node(s) e.g. .skip-link\nFAIL axe heading-order (moderate) @1280 menu.html: 1 node(s) e.g. article:nth-child(1) > .card-body > .card-title\nFAIL axe color-contrast (serious) @1280 press.html: 2 node(s) e.g. .skip-link\nFAIL axe color-contrast (serious) @1280 support.html: 3 node(s) e.g. .skip-link\nFAIL axe color-contrast (serious) @1280 values.html: 2 node(s) e.g. .skip-link\nFAIL axe color-contrast (serious) @375 404.html: 3 node(s) e.g. .skip-link\nFAIL axe heading-order (moderate) @375 404.html: 1 node(s) e.g. .footer-col:nth-child(1) > h3\nFAIL axe color-contrast (serious) @375 about.html: 2 node(s) e.g. .skip-link\nFAIL axe color-contrast (serious) @375 community.html: 2 node(s) e.g. .skip-link\nFAIL axe color-contrast (serious) @375 gift-cards.html: 6 node(s) e.g. .skip-link\nFAIL axe color-contrast (serious) @375 home.html: 4 node(s) e.g. .skip-link\nFAIL axe color-contrast (serious) @375 index.html: 3 node(s) e.g. .skip-link\nFAIL axe color-contrast (serious) @375 locations.html: 3 node(s) e.g. .skip-link\nFAIL axe heading-order (moderate) @375 locations.html: 1 node(s) e.g. .footer-col:nth-child(1) > h3\nFAIL axe color-contrast (serious) @375 menu.html: 8 node(s) e.g. .skip-link\nFAIL axe heading-order (moderate) @375 menu.html: 1 node(s) e.g. article:nth-child(1) > .card-body > .card-title\nFAIL axe color-contrast (serious) @375 press.html: 2 node(s) e.g. .skip-link\nFAIL axe color-contrast (serious) @375 support.html: 3 node(s) e.g. .skip-link\nFAIL axe color-contrast (serious) @375 values.html: 2 node(s) e.g. .skip-link\n",
+      "note": null
+    }
+  ],
+  "repair_rounds": [],
+  "retries": [],
+  "human_edits": [
+    {
+      "by": "orchestrator script",
+      "at": "2026-11-17T14:54:30.043Z",
+      "what": "Wrote the model's emitted files, normalized generation-metadata.json provenance fields, and set validation_summary from the recorded QC run. No site markup, style or script was authored or edited by hand."
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 75340,
+    "completion_tokens": 29751,
+    "total_tokens": 105091,
+    "requests": 6,
+    "retries": 0
+  },
+  "errors": [],
+  "outputs": {
+    "site": "restaurant/open-source/REST-05",
+    "transcript": "pipelines/open-source/runs/2026-11-17T14-50-53-015Z-build-REST-05/transcript.json"
+  },
+  "delivered": {
+    "files": [
+      "404.html",
+      "README.md",
+      "about.html",
+      "community.html",
+      "component-inventory.json",
+      "css/styles.css",
+      "fidelity-notes.md",
+      "generation-metadata.json",
+      "gift-cards.html",
+      "home.html",
+      "index.html",
+      "js/main.js",
+      "locations.html",
+      "menu.html",
+      "press.html",
+      "support.html",
+      "values.html"
+    ],
+    "file_count": 17,
+    "bytes": 55510,
+    "pages_in_map": 10,
+    "missing_required": [],
+    "model_claimed_complete": true,
+    "delivered_complete": true,
+    "turns_used": 6,
+    "turn_budget": 28
+  },
+  "initial_artifact": "pipelines/open-source/runs/2026-11-17T14-50-53-015Z-build-REST-05/initial",
+  "provenance": {
+    "wrote": true,
+    "modelEmittedValidMetadata": true
+  },
+  "acceptance": "not accepted: a QC result is not acceptance, and interaction review plus human acceptance happen outside this script"
+}

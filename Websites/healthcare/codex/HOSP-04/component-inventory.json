@@ -2,1025 +2,1025 @@
   "protocol_version": "1.0",
   "replica_id": "HOSP-04",
   "category": "healthcare",
-  "source_url": "https://www.dukehealth.org/",
+  "source_url": "https://www.evergreenhealth.com/",
   "components": [
     {
       "id": "site-header",
-      "selector": "[data-component=\"site-header\"]",
+      "selector": "[data-component='site-header']",
       "pages": [
-        "service-detail.html",
-        "index.html",
-        "billing.html",
         "404.html",
-        "provider-detail.html",
-        "appointments.html",
+        "billing.html",
+        "index.html",
+        "locations.html",
+        "medical-center.html",
+        "patients-visitors.html",
+        "primary-care.html",
         "providers.html",
-        "treatments.html",
-        "plan-your-visit.html",
-        "locations.html"
+        "services.html"
       ],
       "instances": [
         {
-          "page": "service-detail.html",
-          "section": "global-header",
-          "tag": "header"
-        },
-        {
           "page": "index.html",
-          "section": "global-header",
-          "tag": "header"
+          "selector": "header[data-section='global-header'][data-component='site-header']"
         },
         {
-          "page": "billing.html",
-          "section": "global-header",
-          "tag": "header"
+          "page": "services.html",
+          "selector": "header[data-section='global-header'][data-component='site-header']"
         },
         {
-          "page": "404.html",
-          "section": "global-header",
-          "tag": "header"
-        },
-        {
-          "page": "provider-detail.html",
-          "section": "global-header",
-          "tag": "header"
-        },
-        {
-          "page": "appointments.html",
-          "section": "global-header",
-          "tag": "header"
+          "page": "primary-care.html",
+          "selector": "header[data-section='global-header'][data-component='site-header']"
         },
         {
           "page": "providers.html",
-          "section": "global-header",
-          "tag": "header"
-        },
-        {
-          "page": "treatments.html",
-          "section": "global-header",
-          "tag": "header"
-        },
-        {
-          "page": "plan-your-visit.html",
-          "section": "global-header",
-          "tag": "header"
+          "selector": "header[data-section='global-header'][data-component='site-header']"
         },
         {
           "page": "locations.html",
-          "section": "global-header",
-          "tag": "header"
+          "selector": "header[data-section='global-header'][data-component='site-header']"
+        },
+        {
+          "page": "medical-center.html",
+          "selector": "header[data-section='global-header'][data-component='site-header']"
+        },
+        {
+          "page": "patients-visitors.html",
+          "selector": "header[data-section='global-header'][data-component='site-header']"
+        },
+        {
+          "page": "billing.html",
+          "selector": "header[data-section='global-header'][data-component='site-header']"
+        },
+        {
+          "page": "404.html",
+          "selector": "header[data-section='global-header'][data-component='site-header']"
         }
       ],
       "behavior": [
-        "semantic content; native links or controls where present"
+        "Static content/links"
       ],
       "keyboard": [
-        "Tab / Enter; Space for buttons; Escape for menu and dialog"
+        "Tab and Enter for links",
+        "Native Enter/Space controls",
+        "Escape dismisses menu/dialog where applicable"
       ],
       "status": "implemented",
-      "validation": "not-tested"
+      "validation": "static-inspected; browser not-tested"
+    },
+    {
+      "id": "site-search",
+      "selector": "[data-component='site-search']",
+      "pages": [
+        "404.html",
+        "billing.html",
+        "index.html",
+        "locations.html",
+        "medical-center.html",
+        "patients-visitors.html",
+        "primary-care.html",
+        "providers.html",
+        "services.html"
+      ],
+      "instances": [
+        {
+          "page": "index.html",
+          "selector": "form[data-section='site-search'][data-component='site-search']"
+        },
+        {
+          "page": "services.html",
+          "selector": "form[data-section='site-search'][data-component='site-search']"
+        },
+        {
+          "page": "primary-care.html",
+          "selector": "form[data-section='site-search'][data-component='site-search']"
+        },
+        {
+          "page": "providers.html",
+          "selector": "form[data-section='site-search'][data-component='site-search']"
+        },
+        {
+          "page": "locations.html",
+          "selector": "form[data-section='site-search'][data-component='site-search']"
+        },
+        {
+          "page": "medical-center.html",
+          "selector": "form[data-section='site-search'][data-component='site-search']"
+        },
+        {
+          "page": "patients-visitors.html",
+          "selector": "form[data-section='site-search'][data-component='site-search']"
+        },
+        {
+          "page": "billing.html",
+          "selector": "form[data-section='site-search'][data-component='site-search']"
+        },
+        {
+          "page": "404.html",
+          "selector": "form[data-section='site-search'][data-component='site-search']"
+        }
+      ],
+      "behavior": [
+        "Local interaction; see README and shared main.js"
+      ],
+      "keyboard": [
+        "Tab and Enter for links",
+        "Native Enter/Space controls",
+        "Escape dismisses menu/dialog where applicable"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser not-tested"
     },
     {
       "id": "primary-nav",
-      "selector": "[data-component=\"primary-nav\"]",
+      "selector": "[data-component='primary-nav']",
       "pages": [
-        "service-detail.html",
-        "index.html",
-        "billing.html",
         "404.html",
-        "provider-detail.html",
-        "appointments.html",
+        "billing.html",
+        "index.html",
+        "locations.html",
+        "medical-center.html",
+        "patients-visitors.html",
+        "primary-care.html",
         "providers.html",
-        "treatments.html",
-        "plan-your-visit.html",
-        "locations.html"
+        "services.html"
       ],
       "instances": [
         {
-          "page": "service-detail.html",
-          "section": "global-navigation",
-          "tag": "nav"
-        },
-        {
           "page": "index.html",
-          "section": "global-navigation",
-          "tag": "nav"
+          "selector": "nav[data-section='global-navigation'][data-component='primary-nav']"
         },
         {
-          "page": "billing.html",
-          "section": "global-navigation",
-          "tag": "nav"
+          "page": "services.html",
+          "selector": "nav[data-section='global-navigation'][data-component='primary-nav']"
         },
         {
-          "page": "404.html",
-          "section": "global-navigation",
-          "tag": "nav"
-        },
-        {
-          "page": "provider-detail.html",
-          "section": "global-navigation",
-          "tag": "nav"
-        },
-        {
-          "page": "appointments.html",
-          "section": "global-navigation",
-          "tag": "nav"
+          "page": "primary-care.html",
+          "selector": "nav[data-section='global-navigation'][data-component='primary-nav']"
         },
         {
           "page": "providers.html",
-          "section": "global-navigation",
-          "tag": "nav"
-        },
-        {
-          "page": "treatments.html",
-          "section": "global-navigation",
-          "tag": "nav"
-        },
-        {
-          "page": "plan-your-visit.html",
-          "section": "global-navigation",
-          "tag": "nav"
+          "selector": "nav[data-section='global-navigation'][data-component='primary-nav']"
         },
         {
           "page": "locations.html",
-          "section": "global-navigation",
-          "tag": "nav"
-        }
-      ],
-      "behavior": [
-        "semantic content; native links or controls where present"
-      ],
-      "keyboard": [
-        "Tab / Enter; Space for buttons; Escape for menu and dialog"
-      ],
-      "status": "implemented",
-      "validation": "not-tested"
-    },
-    {
-      "id": "search-form",
-      "selector": "[data-component=\"search-form\"]",
-      "pages": [
-        "service-detail.html",
-        "index.html",
-        "billing.html",
-        "404.html",
-        "provider-detail.html",
-        "appointments.html",
-        "providers.html",
-        "treatments.html",
-        "plan-your-visit.html",
-        "locations.html"
-      ],
-      "instances": [
-        {
-          "page": "service-detail.html",
-          "section": "site-search",
-          "tag": "form"
+          "selector": "nav[data-section='global-navigation'][data-component='primary-nav']"
         },
         {
-          "page": "index.html",
-          "section": "site-search",
-          "tag": "form"
+          "page": "medical-center.html",
+          "selector": "nav[data-section='global-navigation'][data-component='primary-nav']"
+        },
+        {
+          "page": "patients-visitors.html",
+          "selector": "nav[data-section='global-navigation'][data-component='primary-nav']"
         },
         {
           "page": "billing.html",
-          "section": "site-search",
-          "tag": "form"
+          "selector": "nav[data-section='global-navigation'][data-component='primary-nav']"
         },
         {
           "page": "404.html",
-          "section": "site-search",
-          "tag": "form"
-        },
-        {
-          "page": "provider-detail.html",
-          "section": "site-search",
-          "tag": "form"
-        },
-        {
-          "page": "appointments.html",
-          "section": "site-search",
-          "tag": "form"
-        },
-        {
-          "page": "providers.html",
-          "section": "site-search",
-          "tag": "form"
-        },
-        {
-          "page": "treatments.html",
-          "section": "site-search",
-          "tag": "form"
-        },
-        {
-          "page": "plan-your-visit.html",
-          "section": "site-search",
-          "tag": "form"
-        },
-        {
-          "page": "locations.html",
-          "section": "site-search",
-          "tag": "form"
+          "selector": "nav[data-section='global-navigation'][data-component='primary-nav']"
         }
       ],
       "behavior": [
-        "semantic content; native links or controls where present"
+        "Local interaction; see README and shared main.js"
       ],
       "keyboard": [
-        "Tab / Enter; Space for buttons; Escape for menu and dialog"
+        "Tab and Enter for links",
+        "Native Enter/Space controls",
+        "Escape dismisses menu/dialog where applicable"
       ],
       "status": "implemented",
-      "validation": "not-tested"
+      "validation": "static-inspected; browser not-tested"
     },
     {
       "id": "page-content",
-      "selector": "[data-component=\"page-content\"]",
+      "selector": "[data-component='page-content']",
       "pages": [
-        "service-detail.html",
-        "index.html",
-        "billing.html",
         "404.html",
-        "provider-detail.html",
-        "appointments.html",
+        "billing.html",
+        "index.html",
+        "locations.html",
+        "medical-center.html",
+        "patients-visitors.html",
+        "primary-care.html",
         "providers.html",
-        "treatments.html",
-        "plan-your-visit.html",
-        "locations.html"
+        "services.html"
       ],
       "instances": [
-        {
-          "page": "service-detail.html",
-          "section": "main-content",
-          "tag": "main"
-        },
         {
           "page": "index.html",
-          "section": "main-content",
-          "tag": "main"
+          "selector": "main[data-section='main-content'][data-component='page-content']"
         },
         {
-          "page": "billing.html",
-          "section": "main-content",
-          "tag": "main"
+          "page": "services.html",
+          "selector": "main[data-section='main-content'][data-component='page-content']"
         },
         {
-          "page": "404.html",
-          "section": "main-content",
-          "tag": "main"
-        },
-        {
-          "page": "provider-detail.html",
-          "section": "main-content",
-          "tag": "main"
-        },
-        {
-          "page": "appointments.html",
-          "section": "main-content",
-          "tag": "main"
+          "page": "primary-care.html",
+          "selector": "main[data-section='main-content'][data-component='page-content']"
         },
         {
           "page": "providers.html",
-          "section": "main-content",
-          "tag": "main"
-        },
-        {
-          "page": "treatments.html",
-          "section": "main-content",
-          "tag": "main"
-        },
-        {
-          "page": "plan-your-visit.html",
-          "section": "main-content",
-          "tag": "main"
+          "selector": "main[data-section='main-content'][data-component='page-content']"
         },
         {
           "page": "locations.html",
-          "section": "main-content",
-          "tag": "main"
-        }
-      ],
-      "behavior": [
-        "semantic content; native links or controls where present"
-      ],
-      "keyboard": [
-        "Tab / Enter; Space for buttons; Escape for menu and dialog"
-      ],
-      "status": "implemented",
-      "validation": "not-tested"
-    },
-    {
-      "id": "breadcrumb",
-      "selector": "[data-component=\"breadcrumb\"]",
-      "pages": [
-        "service-detail.html",
-        "billing.html",
-        "404.html",
-        "provider-detail.html",
-        "appointments.html",
-        "providers.html",
-        "treatments.html",
-        "plan-your-visit.html",
-        "locations.html"
-      ],
-      "instances": [
+          "selector": "main[data-section='main-content'][data-component='page-content']"
+        },
         {
-          "page": "service-detail.html",
-          "section": "breadcrumb",
-          "tag": "nav"
+          "page": "medical-center.html",
+          "selector": "main[data-section='main-content'][data-component='page-content']"
+        },
+        {
+          "page": "patients-visitors.html",
+          "selector": "main[data-section='main-content'][data-component='page-content']"
         },
         {
           "page": "billing.html",
-          "section": "breadcrumb",
-          "tag": "nav"
+          "selector": "main[data-section='main-content'][data-component='page-content']"
         },
         {
           "page": "404.html",
-          "section": "breadcrumb",
-          "tag": "nav"
-        },
-        {
-          "page": "provider-detail.html",
-          "section": "breadcrumb",
-          "tag": "nav"
-        },
-        {
-          "page": "appointments.html",
-          "section": "breadcrumb",
-          "tag": "nav"
-        },
-        {
-          "page": "providers.html",
-          "section": "breadcrumb",
-          "tag": "nav"
-        },
-        {
-          "page": "treatments.html",
-          "section": "breadcrumb",
-          "tag": "nav"
-        },
-        {
-          "page": "plan-your-visit.html",
-          "section": "breadcrumb",
-          "tag": "nav"
-        },
-        {
-          "page": "locations.html",
-          "section": "breadcrumb",
-          "tag": "nav"
+          "selector": "main[data-section='main-content'][data-component='page-content']"
         }
       ],
       "behavior": [
-        "semantic content; native links or controls where present"
+        "Static content/links"
       ],
       "keyboard": [
-        "Tab / Enter; Space for buttons; Escape for menu and dialog"
+        "Tab and Enter for links",
+        "Native Enter/Space controls",
+        "Escape dismisses menu/dialog where applicable"
       ],
       "status": "implemented",
-      "validation": "not-tested"
-    },
-    {
-      "id": "page-hero",
-      "selector": "[data-component=\"page-hero\"]",
-      "pages": [
-        "service-detail.html",
-        "billing.html",
-        "404.html",
-        "provider-detail.html",
-        "appointments.html",
-        "providers.html",
-        "treatments.html",
-        "plan-your-visit.html",
-        "locations.html"
-      ],
-      "instances": [
-        {
-          "page": "service-detail.html",
-          "section": "page-introduction",
-          "tag": "section"
-        },
-        {
-          "page": "billing.html",
-          "section": "page-introduction",
-          "tag": "section"
-        },
-        {
-          "page": "404.html",
-          "section": "page-introduction",
-          "tag": "section"
-        },
-        {
-          "page": "provider-detail.html",
-          "section": "page-introduction",
-          "tag": "section"
-        },
-        {
-          "page": "appointments.html",
-          "section": "page-introduction",
-          "tag": "section"
-        },
-        {
-          "page": "providers.html",
-          "section": "page-introduction",
-          "tag": "section"
-        },
-        {
-          "page": "treatments.html",
-          "section": "page-introduction",
-          "tag": "section"
-        },
-        {
-          "page": "plan-your-visit.html",
-          "section": "page-introduction",
-          "tag": "section"
-        },
-        {
-          "page": "locations.html",
-          "section": "page-introduction",
-          "tag": "section"
-        }
-      ],
-      "behavior": [
-        "semantic content; native links or controls where present"
-      ],
-      "keyboard": [
-        "Tab / Enter; Space for buttons; Escape for menu and dialog"
-      ],
-      "status": "implemented",
-      "validation": "not-tested"
+      "validation": "static-inspected; browser not-tested"
     },
     {
       "id": "content-section",
-      "selector": "[data-component=\"content-section\"]",
+      "selector": "[data-component='content-section']",
       "pages": [
-        "service-detail.html",
-        "index.html",
         "billing.html",
-        "404.html",
-        "provider-detail.html",
-        "appointments.html",
-        "providers.html",
-        "treatments.html",
-        "plan-your-visit.html",
-        "locations.html"
+        "index.html",
+        "medical-center.html",
+        "patients-visitors.html",
+        "primary-care.html"
       ],
       "instances": [
         {
-          "page": "service-detail.html",
-          "section": "program-overview",
-          "tag": "section"
-        },
-        {
-          "page": "service-detail.html",
-          "section": "visit-expectations",
-          "tag": "section"
-        },
-        {
-          "page": "service-detail.html",
-          "section": "team-approach",
-          "tag": "section"
-        },
-        {
-          "page": "service-detail.html",
-          "section": "program-faq",
-          "tag": "section"
+          "page": "index.html",
+          "selector": "section[data-section='care-options'][data-component='content-section']"
         },
         {
           "page": "index.html",
-          "section": "news",
-          "tag": "section"
+          "selector": "section[data-section='quick-actions'][data-component='content-section']"
         },
         {
           "page": "index.html",
-          "section": "blog-events",
-          "tag": "section"
+          "selector": "section[data-section='community-stories'][data-component='content-section']"
+        },
+        {
+          "page": "primary-care.html",
+          "selector": "section[data-section='overview'][data-component='content-section']"
+        },
+        {
+          "page": "primary-care.html",
+          "selector": "section[data-section='team'][data-component='content-section']"
+        },
+        {
+          "page": "medical-center.html",
+          "selector": "section[data-section='arrival'][data-component='content-section']"
+        },
+        {
+          "page": "medical-center.html",
+          "selector": "section[data-section='campus-services'][data-component='content-section']"
+        },
+        {
+          "page": "patients-visitors.html",
+          "selector": "section[data-section='before-visit'][data-component='content-section']"
+        },
+        {
+          "page": "patients-visitors.html",
+          "selector": "section[data-section='during-visit'][data-component='content-section']"
+        },
+        {
+          "page": "patients-visitors.html",
+          "selector": "section[data-section='after-visit'][data-component='content-section']"
         },
         {
           "page": "billing.html",
-          "section": "billing-overview",
-          "tag": "section"
+          "selector": "section[data-section='billing-options'][data-component='content-section']"
         },
         {
           "page": "billing.html",
-          "section": "insurance-resources",
-          "tag": "section"
+          "selector": "section[data-section='financial-resources'][data-component='content-section']"
+        }
+      ],
+      "behavior": [
+        "Static content/links"
+      ],
+      "keyboard": [
+        "Tab and Enter for links",
+        "Native Enter/Space controls",
+        "Escape dismisses menu/dialog where applicable"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser not-tested"
+    },
+    {
+      "id": "resource-card",
+      "selector": "[data-component='resource-card']",
+      "pages": [
+        "index.html",
+        "medical-center.html",
+        "patients-visitors.html",
+        "primary-care.html"
+      ],
+      "instances": [
+        {
+          "page": "index.html",
+          "selector": "article[data-section='resource-primary-care'][data-component='resource-card']"
         },
         {
-          "page": "billing.html",
-          "section": "financial-support",
-          "tag": "section"
+          "page": "index.html",
+          "selector": "article[data-section='resource-hospital-services'][data-component='resource-card']"
         },
         {
-          "page": "billing.html",
-          "section": "billing-faq",
-          "tag": "section"
+          "page": "index.html",
+          "selector": "article[data-section='resource-your-visit'][data-component='resource-card']"
         },
         {
-          "page": "404.html",
-          "section": "recovery-links",
-          "tag": "section"
+          "page": "primary-care.html",
+          "selector": "article[data-section='resource-new-visitors'][data-component='resource-card']"
         },
         {
-          "page": "provider-detail.html",
-          "section": "profile-locations",
-          "tag": "section"
+          "page": "primary-care.html",
+          "selector": "article[data-section='existing-visitors'][data-component='resource-card']"
         },
         {
-          "page": "provider-detail.html",
-          "section": "profile-biography",
-          "tag": "section"
+          "page": "medical-center.html",
+          "selector": "article[data-section='resource-services'][data-component='resource-card']"
         },
         {
-          "page": "provider-detail.html",
-          "section": "profile-reviews",
-          "tag": "section"
+          "page": "medical-center.html",
+          "selector": "article[data-section='resource-visitor-resources'][data-component='resource-card']"
         },
         {
-          "page": "provider-detail.html",
-          "section": "profile-education",
-          "tag": "section"
+          "page": "patients-visitors.html",
+          "selector": "article[data-section='resource-find-your-destination'][data-component='resource-card']"
         },
         {
-          "page": "provider-detail.html",
-          "section": "profile-research",
-          "tag": "section"
+          "page": "patients-visitors.html",
+          "selector": "article[data-section='resource-appointment-options'][data-component='resource-card']"
+        }
+      ],
+      "behavior": [
+        "Static content/links"
+      ],
+      "keyboard": [
+        "Tab and Enter for links",
+        "Native Enter/Space controls",
+        "Escape dismisses menu/dialog where applicable"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser not-tested"
+    },
+    {
+      "id": "site-footer",
+      "selector": "[data-component='site-footer']",
+      "pages": [
+        "404.html",
+        "billing.html",
+        "index.html",
+        "locations.html",
+        "medical-center.html",
+        "patients-visitors.html",
+        "primary-care.html",
+        "providers.html",
+        "services.html"
+      ],
+      "instances": [
+        {
+          "page": "index.html",
+          "selector": "footer[data-section='global-footer'][data-component='site-footer']"
         },
         {
-          "page": "provider-detail.html",
-          "section": "profile-insurance",
-          "tag": "section"
+          "page": "services.html",
+          "selector": "footer[data-section='global-footer'][data-component='site-footer']"
         },
         {
-          "page": "appointments.html",
-          "section": "appointment-pathways",
-          "tag": "section"
-        },
-        {
-          "page": "appointments.html",
-          "section": "preparation-checklist",
-          "tag": "section"
+          "page": "primary-care.html",
+          "selector": "footer[data-section='global-footer'][data-component='site-footer']"
         },
         {
           "page": "providers.html",
-          "section": "provider-results",
-          "tag": "section"
-        },
-        {
-          "page": "treatments.html",
-          "section": "treatment-directory",
-          "tag": "section"
-        },
-        {
-          "page": "plan-your-visit.html",
-          "section": "visit-resources",
-          "tag": "section"
-        },
-        {
-          "page": "plan-your-visit.html",
-          "section": "visit-support",
-          "tag": "section"
+          "selector": "footer[data-section='global-footer'][data-component='site-footer']"
         },
         {
           "page": "locations.html",
-          "section": "location-results",
-          "tag": "section"
+          "selector": "footer[data-section='global-footer'][data-component='site-footer']"
+        },
+        {
+          "page": "medical-center.html",
+          "selector": "footer[data-section='global-footer'][data-component='site-footer']"
+        },
+        {
+          "page": "patients-visitors.html",
+          "selector": "footer[data-section='global-footer'][data-component='site-footer']"
+        },
+        {
+          "page": "billing.html",
+          "selector": "footer[data-section='global-footer'][data-component='site-footer']"
+        },
+        {
+          "page": "404.html",
+          "selector": "footer[data-section='global-footer'][data-component='site-footer']"
         }
       ],
       "behavior": [
-        "semantic content; native links or controls where present"
+        "Static content/links"
       ],
       "keyboard": [
-        "Tab / Enter; Space for buttons; Escape for menu and dialog"
+        "Tab and Enter for links",
+        "Native Enter/Space controls",
+        "Escape dismisses menu/dialog where applicable"
       ],
       "status": "implemented",
-      "validation": "not-tested"
+      "validation": "static-inspected; browser not-tested"
     },
     {
-      "id": "content-card",
-      "selector": "[data-component=\"content-card\"]",
+      "id": "footer-nav",
+      "selector": "[data-component='footer-nav']",
       "pages": [
-        "service-detail.html",
+        "404.html",
+        "billing.html",
         "index.html",
-        "appointments.html",
-        "treatments.html",
-        "plan-your-visit.html"
+        "locations.html",
+        "medical-center.html",
+        "patients-visitors.html",
+        "primary-care.html",
+        "providers.html",
+        "services.html"
       ],
       "instances": [
         {
-          "page": "service-detail.html",
-          "section": "program-conversations",
-          "tag": "article"
-        },
-        {
-          "page": "service-detail.html",
-          "section": "learning-and-discovery",
-          "tag": "article"
-        },
-        {
           "page": "index.html",
-          "section": "a-place-for-learning",
-          "tag": "article"
+          "selector": "nav[data-section='footer-resources'][data-component='footer-nav']"
         },
         {
-          "page": "index.html",
-          "section": "a-personal-path-forward",
-          "tag": "article"
+          "page": "services.html",
+          "selector": "nav[data-section='footer-resources'][data-component='footer-nav']"
         },
         {
-          "page": "index.html",
-          "section": "meet-the-people-behind-care",
-          "tag": "article"
+          "page": "primary-care.html",
+          "selector": "nav[data-section='footer-resources'][data-component='footer-nav']"
         },
         {
-          "page": "appointments.html",
-          "section": "new-to-aster",
-          "tag": "article"
+          "page": "providers.html",
+          "selector": "nav[data-section='footer-resources'][data-component='footer-nav']"
         },
         {
-          "page": "appointments.html",
-          "section": "existing-patient",
-          "tag": "article"
+          "page": "locations.html",
+          "selector": "nav[data-section='footer-resources'][data-component='footer-nav']"
         },
         {
-          "page": "appointments.html",
-          "section": "looking-for-a-clinic",
-          "tag": "article"
+          "page": "medical-center.html",
+          "selector": "nav[data-section='footer-resources'][data-component='footer-nav']"
         },
         {
-          "page": "treatments.html",
-          "section": "tobacco-support",
-          "tag": "article"
+          "page": "patients-visitors.html",
+          "selector": "nav[data-section='footer-resources'][data-component='footer-nav']"
         },
         {
-          "page": "treatments.html",
-          "section": "spine-program",
-          "tag": "article"
+          "page": "billing.html",
+          "selector": "nav[data-section='footer-resources'][data-component='footer-nav']"
         },
         {
-          "page": "treatments.html",
-          "section": "primary-care",
-          "tag": "article"
-        },
-        {
-          "page": "treatments.html",
-          "section": "heart-program",
-          "tag": "article"
-        },
-        {
-          "page": "treatments.html",
-          "section": "rehabilitation",
-          "tag": "article"
-        },
-        {
-          "page": "treatments.html",
-          "section": "community-wellness",
-          "tag": "article"
-        },
-        {
-          "page": "plan-your-visit.html",
-          "section": "before-your-visit",
-          "tag": "article"
-        },
-        {
-          "page": "plan-your-visit.html",
-          "section": "getting-here",
-          "tag": "article"
-        },
-        {
-          "page": "plan-your-visit.html",
-          "section": "paying-for-care",
-          "tag": "article"
+          "page": "404.html",
+          "selector": "nav[data-section='footer-resources'][data-component='footer-nav']"
         }
       ],
       "behavior": [
-        "semantic content; native links or controls where present"
+        "Static content/links"
       ],
       "keyboard": [
-        "Tab / Enter; Space for buttons; Escape for menu and dialog"
+        "Tab and Enter for links",
+        "Native Enter/Space controls",
+        "Escape dismisses menu/dialog where applicable"
       ],
       "status": "implemented",
-      "validation": "not-tested"
+      "validation": "static-inspected; browser not-tested"
+    },
+    {
+      "id": "location-dialog",
+      "selector": "[data-component='location-dialog']",
+      "pages": [
+        "404.html",
+        "billing.html",
+        "index.html",
+        "locations.html",
+        "medical-center.html",
+        "patients-visitors.html",
+        "primary-care.html",
+        "providers.html",
+        "services.html"
+      ],
+      "instances": [
+        {
+          "page": "index.html",
+          "selector": "dialog[data-section='demo-location'][data-component='location-dialog']"
+        },
+        {
+          "page": "services.html",
+          "selector": "dialog[data-section='demo-location'][data-component='location-dialog']"
+        },
+        {
+          "page": "primary-care.html",
+          "selector": "dialog[data-section='demo-location'][data-component='location-dialog']"
+        },
+        {
+          "page": "providers.html",
+          "selector": "dialog[data-section='demo-location'][data-component='location-dialog']"
+        },
+        {
+          "page": "locations.html",
+          "selector": "dialog[data-section='demo-location'][data-component='location-dialog']"
+        },
+        {
+          "page": "medical-center.html",
+          "selector": "dialog[data-section='demo-location'][data-component='location-dialog']"
+        },
+        {
+          "page": "patients-visitors.html",
+          "selector": "dialog[data-section='demo-location'][data-component='location-dialog']"
+        },
+        {
+          "page": "billing.html",
+          "selector": "dialog[data-section='demo-location'][data-component='location-dialog']"
+        },
+        {
+          "page": "404.html",
+          "selector": "dialog[data-section='demo-location'][data-component='location-dialog']"
+        }
+      ],
+      "behavior": [
+        "Local interaction; see README and shared main.js"
+      ],
+      "keyboard": [
+        "Tab and Enter for links",
+        "Native Enter/Space controls",
+        "Escape dismisses menu/dialog where applicable"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser not-tested"
+    },
+    {
+      "id": "location-form",
+      "selector": "[data-component='location-form']",
+      "pages": [
+        "404.html",
+        "billing.html",
+        "index.html",
+        "locations.html",
+        "medical-center.html",
+        "patients-visitors.html",
+        "primary-care.html",
+        "providers.html",
+        "services.html"
+      ],
+      "instances": [
+        {
+          "page": "index.html",
+          "selector": "form[data-section='location-choice'][data-component='location-form']"
+        },
+        {
+          "page": "services.html",
+          "selector": "form[data-section='location-choice'][data-component='location-form']"
+        },
+        {
+          "page": "primary-care.html",
+          "selector": "form[data-section='location-choice'][data-component='location-form']"
+        },
+        {
+          "page": "providers.html",
+          "selector": "form[data-section='location-choice'][data-component='location-form']"
+        },
+        {
+          "page": "locations.html",
+          "selector": "form[data-section='location-choice'][data-component='location-form']"
+        },
+        {
+          "page": "medical-center.html",
+          "selector": "form[data-section='location-choice'][data-component='location-form']"
+        },
+        {
+          "page": "patients-visitors.html",
+          "selector": "form[data-section='location-choice'][data-component='location-form']"
+        },
+        {
+          "page": "billing.html",
+          "selector": "form[data-section='location-choice'][data-component='location-form']"
+        },
+        {
+          "page": "404.html",
+          "selector": "form[data-section='location-choice'][data-component='location-form']"
+        }
+      ],
+      "behavior": [
+        "Static content/links"
+      ],
+      "keyboard": [
+        "Tab and Enter for links",
+        "Native Enter/Space controls",
+        "Escape dismisses menu/dialog where applicable"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser not-tested"
+    },
+    {
+      "id": "notice-dialog",
+      "selector": "[data-component='notice-dialog']",
+      "pages": [
+        "404.html",
+        "billing.html",
+        "index.html",
+        "locations.html",
+        "medical-center.html",
+        "patients-visitors.html",
+        "primary-care.html",
+        "providers.html",
+        "services.html"
+      ],
+      "instances": [
+        {
+          "page": "index.html",
+          "selector": "dialog[data-section='portal-demo'][data-component='notice-dialog']"
+        },
+        {
+          "page": "services.html",
+          "selector": "dialog[data-section='portal-demo'][data-component='notice-dialog']"
+        },
+        {
+          "page": "primary-care.html",
+          "selector": "dialog[data-section='portal-demo'][data-component='notice-dialog']"
+        },
+        {
+          "page": "providers.html",
+          "selector": "dialog[data-section='portal-demo'][data-component='notice-dialog']"
+        },
+        {
+          "page": "locations.html",
+          "selector": "dialog[data-section='portal-demo'][data-component='notice-dialog']"
+        },
+        {
+          "page": "medical-center.html",
+          "selector": "dialog[data-section='portal-demo'][data-component='notice-dialog']"
+        },
+        {
+          "page": "patients-visitors.html",
+          "selector": "dialog[data-section='portal-demo'][data-component='notice-dialog']"
+        },
+        {
+          "page": "billing.html",
+          "selector": "dialog[data-section='portal-demo'][data-component='notice-dialog']"
+        },
+        {
+          "page": "404.html",
+          "selector": "dialog[data-section='portal-demo'][data-component='notice-dialog']"
+        }
+      ],
+      "behavior": [
+        "Local interaction; see README and shared main.js"
+      ],
+      "keyboard": [
+        "Tab and Enter for links",
+        "Native Enter/Space controls",
+        "Escape dismisses menu/dialog where applicable"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser not-tested"
+    },
+    {
+      "id": "breadcrumbs",
+      "selector": "[data-component='breadcrumbs']",
+      "pages": [
+        "404.html",
+        "billing.html",
+        "locations.html",
+        "medical-center.html",
+        "patients-visitors.html",
+        "primary-care.html",
+        "providers.html",
+        "services.html"
+      ],
+      "instances": [
+        {
+          "page": "services.html",
+          "selector": "nav[data-section='breadcrumbs'][data-component='breadcrumbs']"
+        },
+        {
+          "page": "primary-care.html",
+          "selector": "nav[data-section='breadcrumbs'][data-component='breadcrumbs']"
+        },
+        {
+          "page": "providers.html",
+          "selector": "nav[data-section='breadcrumbs'][data-component='breadcrumbs']"
+        },
+        {
+          "page": "locations.html",
+          "selector": "nav[data-section='breadcrumbs'][data-component='breadcrumbs']"
+        },
+        {
+          "page": "medical-center.html",
+          "selector": "nav[data-section='breadcrumbs'][data-component='breadcrumbs']"
+        },
+        {
+          "page": "patients-visitors.html",
+          "selector": "nav[data-section='breadcrumbs'][data-component='breadcrumbs']"
+        },
+        {
+          "page": "billing.html",
+          "selector": "nav[data-section='breadcrumbs'][data-component='breadcrumbs']"
+        },
+        {
+          "page": "404.html",
+          "selector": "nav[data-section='breadcrumbs'][data-component='breadcrumbs']"
+        }
+      ],
+      "behavior": [
+        "Static content/links"
+      ],
+      "keyboard": [
+        "Tab and Enter for links",
+        "Native Enter/Space controls",
+        "Escape dismisses menu/dialog where applicable"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser not-tested"
+    },
+    {
+      "id": "service-search",
+      "selector": "[data-component='service-search']",
+      "pages": [
+        "services.html"
+      ],
+      "instances": [
+        {
+          "page": "services.html",
+          "selector": "form[data-section='service-search'][data-component='service-search']"
+        }
+      ],
+      "behavior": [
+        "Local interaction; see README and shared main.js"
+      ],
+      "keyboard": [
+        "Tab and Enter for links",
+        "Native Enter/Space controls",
+        "Escape dismisses menu/dialog where applicable"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser not-tested"
+    },
+    {
+      "id": "service-card",
+      "selector": "[data-component='service-card']",
+      "pages": [
+        "services.html"
+      ],
+      "instances": [
+        {
+          "page": "services.html",
+          "selector": "article[data-section='service-0'][data-component='service-card']"
+        },
+        {
+          "page": "services.html",
+          "selector": "article[data-section='service-1'][data-component='service-card']"
+        },
+        {
+          "page": "services.html",
+          "selector": "article[data-section='service-2'][data-component='service-card']"
+        },
+        {
+          "page": "services.html",
+          "selector": "article[data-section='service-3'][data-component='service-card']"
+        },
+        {
+          "page": "services.html",
+          "selector": "article[data-section='service-4'][data-component='service-card']"
+        },
+        {
+          "page": "services.html",
+          "selector": "article[data-section='service-5'][data-component='service-card']"
+        }
+      ],
+      "behavior": [
+        "Static content/links"
+      ],
+      "keyboard": [
+        "Tab and Enter for links",
+        "Native Enter/Space controls",
+        "Escape dismisses menu/dialog where applicable"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser not-tested"
+    },
+    {
+      "id": "section-sidebar",
+      "selector": "[data-component='section-sidebar']",
+      "pages": [
+        "billing.html",
+        "primary-care.html"
+      ],
+      "instances": [
+        {
+          "page": "primary-care.html",
+          "selector": "aside[data-section='primary-care-sidebar'][data-component='section-sidebar']"
+        },
+        {
+          "page": "billing.html",
+          "selector": "aside[data-section='billing-sidebar'][data-component='section-sidebar']"
+        }
+      ],
+      "behavior": [
+        "Static content/links"
+      ],
+      "keyboard": [
+        "Tab and Enter for links",
+        "Native Enter/Space controls",
+        "Escape dismisses menu/dialog where applicable"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser not-tested"
+    },
+    {
+      "id": "section-nav",
+      "selector": "[data-component='section-nav']",
+      "pages": [
+        "patients-visitors.html",
+        "primary-care.html"
+      ],
+      "instances": [
+        {
+          "page": "primary-care.html",
+          "selector": "nav[data-section='primary-care-sections'][data-component='section-nav']"
+        },
+        {
+          "page": "patients-visitors.html",
+          "selector": "nav[data-section='visit-stages'][data-component='section-nav']"
+        }
+      ],
+      "behavior": [
+        "Static content/links"
+      ],
+      "keyboard": [
+        "Tab and Enter for links",
+        "Native Enter/Space controls",
+        "Escape dismisses menu/dialog where applicable"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser not-tested"
+    },
+    {
+      "id": "appointment-options",
+      "selector": "[data-component='appointment-options']",
+      "pages": [
+        "primary-care.html"
+      ],
+      "instances": [
+        {
+          "page": "primary-care.html",
+          "selector": "section[data-section='appointments'][data-component='appointment-options']"
+        }
+      ],
+      "behavior": [
+        "Static content/links"
+      ],
+      "keyboard": [
+        "Tab and Enter for links",
+        "Native Enter/Space controls",
+        "Escape dismisses menu/dialog where applicable"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser not-tested"
+    },
+    {
+      "id": "directory-form",
+      "selector": "[data-component='directory-form']",
+      "pages": [
+        "locations.html",
+        "providers.html"
+      ],
+      "instances": [
+        {
+          "page": "providers.html",
+          "selector": "form[data-section='provider-filters'][data-component='directory-form']"
+        },
+        {
+          "page": "locations.html",
+          "selector": "form[data-section='location-filters'][data-component='directory-form']"
+        }
+      ],
+      "behavior": [
+        "Local interaction; see README and shared main.js"
+      ],
+      "keyboard": [
+        "Tab and Enter for links",
+        "Native Enter/Space controls",
+        "Escape dismisses menu/dialog where applicable"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser not-tested"
+    },
+    {
+      "id": "directory-results",
+      "selector": "[data-component='directory-results']",
+      "pages": [
+        "locations.html",
+        "providers.html"
+      ],
+      "instances": [
+        {
+          "page": "providers.html",
+          "selector": "section[data-section='provider-results'][data-component='directory-results']"
+        },
+        {
+          "page": "locations.html",
+          "selector": "section[data-section='location-results'][data-component='directory-results']"
+        }
+      ],
+      "behavior": [
+        "Static content/links"
+      ],
+      "keyboard": [
+        "Tab and Enter for links",
+        "Native Enter/Space controls",
+        "Escape dismisses menu/dialog where applicable"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser not-tested"
     },
     {
       "id": "accordion",
-      "selector": "[data-component=\"accordion\"]",
+      "selector": "[data-component='accordion']",
       "pages": [
-        "service-detail.html",
+        "billing.html",
+        "patients-visitors.html"
+      ],
+      "instances": [
+        {
+          "page": "patients-visitors.html",
+          "selector": "details[data-section='visiting-information'][data-component='accordion']"
+        },
+        {
+          "page": "patients-visitors.html",
+          "selector": "details[data-section='access-support'][data-component='accordion']"
+        },
+        {
+          "page": "billing.html",
+          "selector": "details[data-section='insurance-example'][data-component='accordion']"
+        },
+        {
+          "page": "billing.html",
+          "selector": "details[data-section='assistance-example'][data-component='accordion']"
+        }
+      ],
+      "behavior": [
+        "Local interaction; see README and shared main.js"
+      ],
+      "keyboard": [
+        "Tab and Enter for links",
+        "Native Enter/Space controls",
+        "Escape dismisses menu/dialog where applicable"
+      ],
+      "status": "implemented",
+      "validation": "static-inspected; browser not-tested"
+    },
+    {
+      "id": "billing-demo",
+      "selector": "[data-component='billing-demo']",
+      "pages": [
         "billing.html"
       ],
       "instances": [
         {
-          "page": "service-detail.html",
-          "section": "program-faq",
-          "tag": "details"
-        },
-        {
-          "page": "service-detail.html",
-          "section": "program-faq",
-          "tag": "details"
-        },
-        {
-          "page": "service-detail.html",
-          "section": "program-faq",
-          "tag": "details"
-        },
-        {
           "page": "billing.html",
-          "section": "billing-faq",
-          "tag": "details"
+          "selector": "form[data-section='statement-choice'][data-component='billing-demo']"
         }
       ],
       "behavior": [
-        "semantic content; native links or controls where present"
+        "Local interaction; see README and shared main.js"
       ],
       "keyboard": [
-        "Tab / Enter; Space for buttons; Escape for menu and dialog"
+        "Tab and Enter for links",
+        "Native Enter/Space controls",
+        "Escape dismisses menu/dialog where applicable"
       ],
       "status": "implemented",
-      "validation": "not-tested"
-    },
-    {
-      "id": "resource-panel",
-      "selector": "[data-component=\"resource-panel\"]",
-      "pages": [
-        "service-detail.html",
-        "billing.html",
-        "provider-detail.html"
-      ],
-      "instances": [
-        {
-          "page": "service-detail.html",
-          "section": "related-resources",
-          "tag": "aside"
-        },
-        {
-          "page": "billing.html",
-          "section": "related-resources",
-          "tag": "aside"
-        },
-        {
-          "page": "provider-detail.html",
-          "section": "related-resources",
-          "tag": "aside"
-        }
-      ],
-      "behavior": [
-        "semantic content; native links or controls where present"
-      ],
-      "keyboard": [
-        "Tab / Enter; Space for buttons; Escape for menu and dialog"
-      ],
-      "status": "implemented",
-      "validation": "not-tested"
-    },
-    {
-      "id": "site-footer",
-      "selector": "[data-component=\"site-footer\"]",
-      "pages": [
-        "service-detail.html",
-        "index.html",
-        "billing.html",
-        "404.html",
-        "provider-detail.html",
-        "appointments.html",
-        "providers.html",
-        "treatments.html",
-        "plan-your-visit.html",
-        "locations.html"
-      ],
-      "instances": [
-        {
-          "page": "service-detail.html",
-          "section": "global-footer",
-          "tag": "footer"
-        },
-        {
-          "page": "index.html",
-          "section": "global-footer",
-          "tag": "footer"
-        },
-        {
-          "page": "billing.html",
-          "section": "global-footer",
-          "tag": "footer"
-        },
-        {
-          "page": "404.html",
-          "section": "global-footer",
-          "tag": "footer"
-        },
-        {
-          "page": "provider-detail.html",
-          "section": "global-footer",
-          "tag": "footer"
-        },
-        {
-          "page": "appointments.html",
-          "section": "global-footer",
-          "tag": "footer"
-        },
-        {
-          "page": "providers.html",
-          "section": "global-footer",
-          "tag": "footer"
-        },
-        {
-          "page": "treatments.html",
-          "section": "global-footer",
-          "tag": "footer"
-        },
-        {
-          "page": "plan-your-visit.html",
-          "section": "global-footer",
-          "tag": "footer"
-        },
-        {
-          "page": "locations.html",
-          "section": "global-footer",
-          "tag": "footer"
-        }
-      ],
-      "behavior": [
-        "semantic content; native links or controls where present"
-      ],
-      "keyboard": [
-        "Tab / Enter; Space for buttons; Escape for menu and dialog"
-      ],
-      "status": "implemented",
-      "validation": "not-tested"
-    },
-    {
-      "id": "demo-dialog",
-      "selector": "[data-component=\"demo-dialog\"]",
-      "pages": [
-        "service-detail.html",
-        "index.html",
-        "billing.html",
-        "404.html",
-        "provider-detail.html",
-        "appointments.html",
-        "providers.html",
-        "treatments.html",
-        "plan-your-visit.html",
-        "locations.html"
-      ],
-      "instances": [
-        {
-          "page": "service-detail.html",
-          "section": "portal-demonstration",
-          "tag": "dialog"
-        },
-        {
-          "page": "index.html",
-          "section": "portal-demonstration",
-          "tag": "dialog"
-        },
-        {
-          "page": "billing.html",
-          "section": "portal-demonstration",
-          "tag": "dialog"
-        },
-        {
-          "page": "404.html",
-          "section": "portal-demonstration",
-          "tag": "dialog"
-        },
-        {
-          "page": "provider-detail.html",
-          "section": "portal-demonstration",
-          "tag": "dialog"
-        },
-        {
-          "page": "appointments.html",
-          "section": "portal-demonstration",
-          "tag": "dialog"
-        },
-        {
-          "page": "providers.html",
-          "section": "portal-demonstration",
-          "tag": "dialog"
-        },
-        {
-          "page": "treatments.html",
-          "section": "portal-demonstration",
-          "tag": "dialog"
-        },
-        {
-          "page": "plan-your-visit.html",
-          "section": "portal-demonstration",
-          "tag": "dialog"
-        },
-        {
-          "page": "locations.html",
-          "section": "portal-demonstration",
-          "tag": "dialog"
-        }
-      ],
-      "behavior": [
-        "semantic content; native links or controls where present"
-      ],
-      "keyboard": [
-        "Tab / Enter; Space for buttons; Escape for menu and dialog"
-      ],
-      "status": "implemented",
-      "validation": "not-tested"
-    },
-    {
-      "id": "home-hero",
-      "selector": "[data-component=\"home-hero\"]",
-      "pages": [
-        "index.html"
-      ],
-      "instances": [
-        {
-          "page": "index.html",
-          "section": "home-introduction",
-          "tag": "section"
-        }
-      ],
-      "behavior": [
-        "semantic content; native links or controls where present"
-      ],
-      "keyboard": [
-        "Tab / Enter; Space for buttons; Escape for menu and dialog"
-      ],
-      "status": "implemented",
-      "validation": "not-tested"
-    },
-    {
-      "id": "task-grid",
-      "selector": "[data-component=\"task-grid\"]",
-      "pages": [
-        "index.html"
-      ],
-      "instances": [
-        {
-          "page": "index.html",
-          "section": "care-tasks",
-          "tag": "section"
-        }
-      ],
-      "behavior": [
-        "semantic content; native links or controls where present"
-      ],
-      "keyboard": [
-        "Tab / Enter; Space for buttons; Escape for menu and dialog"
-      ],
-      "status": "implemented",
-      "validation": "not-tested"
-    },
-    {
-      "id": "demo-checklist",
-      "selector": "[data-component=\"demo-checklist\"]",
-      "pages": [
-        "appointments.html"
-      ],
-      "instances": [
-        {
-          "page": "appointments.html",
-          "section": "visit-checklist",
-          "tag": "form"
-        }
-      ],
-      "behavior": [
-        "semantic content; native links or controls where present"
-      ],
-      "keyboard": [
-        "Tab / Enter; Space for buttons; Escape for menu and dialog"
-      ],
-      "status": "implemented",
-      "validation": "not-tested"
-    },
-    {
-      "id": "directory-filter",
-      "selector": "[data-component=\"directory-filter\"]",
-      "pages": [
-        "providers.html",
-        "locations.html"
-      ],
-      "instances": [
-        {
-          "page": "providers.html",
-          "section": "provider-refinements",
-          "tag": "form"
-        },
-        {
-          "page": "locations.html",
-          "section": "location-refinements",
-          "tag": "form"
-        }
-      ],
-      "behavior": [
-        "semantic content; native links or controls where present"
-      ],
-      "keyboard": [
-        "Tab / Enter; Space for buttons; Escape for menu and dialog"
-      ],
-      "status": "implemented",
-      "validation": "not-tested"
+      "validation": "static-inspected; browser not-tested"
     },
     {
       "id": "directory-card",
-      "selector": "[data-component=\"directory-card\"]",
+      "selector": "[data-component='directory-card']",
       "pages": [
         "providers.html",
         "locations.html"
@@ -1028,27 +1028,26 @@
       "instances": [
         {
           "page": "providers.html",
-          "section": "provider-results",
-          "rendered_initial": 6,
-          "maximum": 6
+          "selector": "#results article[data-component='directory-card']",
+          "initial_count": 3,
+          "possible_count": 6
         },
         {
           "page": "locations.html",
-          "section": "location-results",
-          "rendered_initial": 3,
-          "maximum": 6
+          "selector": "#results article[data-component='directory-card']",
+          "initial_count": 3,
+          "possible_count": 6
         }
       ],
       "behavior": [
-        "local filter/sort",
-        "load more locations"
+        "JS-rendered filtered records",
+        "3 records per page; six total per directory"
       ],
       "keyboard": [
-        "Tab",
-        "Enter"
+        "Native result links in Tab order"
       ],
       "status": "implemented",
-      "validation": "not-tested"
+      "validation": "logic tested separately; browser not-tested"
     }
   ]
 }

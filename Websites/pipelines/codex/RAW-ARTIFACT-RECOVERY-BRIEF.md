@@ -31,12 +31,12 @@ arm has no such snapshot.** That is the problem to solve.
 
 | Artifact | Where | What it is |
 | --- | --- | --- |
-| `build-site.py` | `runs/<id>/worker-evidence/` | The **generator script** that wrote the site. Deterministic Python, ~28 KB for NEWS-05. |
+| `build-site.py` | `runs/<id>/worker-evidence/` | The **generator script** that wrote the site. Deterministic Python, ~28 KB for NEWS-04. |
 | `worker-evidence/` | 39 runs (varies) | Pre-correction evidence bundle: generator, static checker, correction log, hashes, handoff. |
-| `worker-evidence-after-repair/` | **only 6 runs** | Post-correction copy of the same bundle. Runs: UNI-05, UNI-06, NEWS-05, NEWS-06, FASH-04, FASH-05. |
+| `worker-evidence-after-repair/` | **only 6 runs** | Post-correction copy of the same bundle. Runs: UNI-04, UNI-R06, NEWS-04, NEWS-R06, FASH-03, FASH-04. |
 | `correction-log.json` | **only 2 runs** have a parseable one | Timestamped list of what was changed and why. |
 | `final-artifact-sha256.json` | per run | Per-file SHA-256 of the delivered site. |
-| `delivery.zip` | per run | Archive of the delivered site. For NEWS-05 its mtime (16:21) is **after** the correction timestamp (16:19), so it is the **post**-correction state. |
+| `delivery.zip` | per run | Archive of the delivered site. For NEWS-04 its mtime (16:21) is **after** the correction timestamp (16:19), so it is the **post**-correction state. |
 | `qc-<timestamp>.log` | per run | Shared QC output. |
 
 ## 3. The finding that should shape the plan
@@ -45,22 +45,22 @@ arm has no such snapshot.** That is the problem to solve.
 
 - Across all `run.json` files: **31 recorded QC runs, every one `exit_code: 2, passed: false`**, and
   **12 runs with no QC record at all**.
-- NEWS-05's correction log states the reason verbatim: `"browser launch permission denied;
+- NEWS-04's correction log states the reason verbatim: `"browser launch permission denied;
   not-tested"`.
 - Only **2 runs** have a parseable correction log. The corrections recorded there are:
   - `documentation-only` — "Record actual checks and blocked browser scope; **implementation
     unchanged**" (README.md, generation-metadata.json, component-inventory.json).
-  - `same-worker coordinator-prompted correction` (NEWS-05).
-  - NEWS-06: "Static audit found menu dialog inner navigation lacked expli…" and "Coordinator
+  - `same-worker coordinator-prompted correction` (NEWS-04).
+  - NEWS-R06: "Static audit found menu dialog inner navigation lacked expli…" and "Coordinator
     requested both metadata attributes on every mean…" — these **do** change markup and are
     accessibility-relevant.
-- For NEWS-05, the live site still matches `final-artifact-sha256.json` exactly (18 files checked,
+- For NEWS-04, the live site still matches `final-artifact-sha256.json` exactly (18 files checked,
   0 differ), so delivered sites have not drifted since.
 
 **CORRECTION (appended 2026-11-17, after a harder check — the paragraph that stood here claimed the
 replicas were "probably already raw", and the evidence does not support that):**
 
-- **NEWS-05 was corrected in its markup.** Its pre- and post-correction `final-artifact-sha256.json`
+- **NEWS-04 was corrected in its markup.** Its pre- and post-correction `final-artifact-sha256.json`
   differ on 8 files: `README.md`, `article.html`, `component-inventory.json`, `fidelity-notes.md`,
   `generation-metadata.json`, `index.html`, `js/main.js`, `politics.html`. Its correction log
   describes the first correction as `documentation-only` with "implementation unchanged", which
@@ -71,7 +71,7 @@ replicas were "probably already raw", and the evidence does not support that):**
   `correction-log.json` in **2**. The two recovery levers described below therefore exist for 2 runs,
   not for the arm.
 - **QC never ran** (31 recorded QC runs, all `exit_code: 2`), so there was no QC-driven repair loop.
-  But the NEWS-05 and NEWS-06 corrections were *coordinator-prompted* and needed no QC, so "QC never
+  But the NEWS-04 and NEWS-R06 corrections were *coordinator-prompted* and needed no QC, so "QC never
   ran" does not imply "nothing was corrected".
 
 **Working conclusion:** at least the 6 runs with an after-repair bundle were corrected. For the
@@ -90,12 +90,12 @@ clean. They are not, which is consistent with QC never running.
    `worker-evidence-after-repair/` are the candidates. For the other 24, is there any evidence of
    post-generation editing? Compare `final-artifact-sha256.json` against the live site, and against
    `delivery.zip`, for all 30.
-2. **Is `build-site.py` deterministic and still runnable?** For NEWS-05 the pre- and post-repair
+2. **Is `build-site.py` deterministic and still runnable?** For NEWS-04 the pre- and post-repair
    copies are **byte-identical**, which means corrections were applied to the *output*, not the
    generator. If so, re-running the preserved generator reproduces the pre-correction site exactly,
    and raw artifacts are recoverable **without any model call**. Verify by re-running it into a
    scratch directory and diffing against the live site — do not write into the replica path.
-3. **For the corrected runs, what exactly changed?** NEWS-06's two implementation corrections are
+3. **For the corrected runs, what exactly changed?** NEWS-R06's two implementation corrections are
    named in its log. Can the specific markup change be identified and reverted surgically, rather
    than rebuilding the replica?
 4. **Does any correction predate the artifact hash record?** If `final-artifact-sha256.json` in
@@ -155,7 +155,7 @@ clean. They are not, which is consistent with QC never running.
 ## 8. Two findings from a partial test of the generator route (2026-11-17)
 
 **The declared model is recoverable.** `runs/<id>/build-context.json` is written by `build-site.py`
-itself and records the attribution. NEWS-05's says:
+itself and records the attribution. NEWS-04's says:
 
 ```
 "model_id": "gpt-6.1-sol", "model_version": null,
@@ -170,7 +170,7 @@ concluding attribution is lost.
 **The generator runs, with one edit.** `build-site.py` hardcodes the original sandbox root
 (`Path('/private/tmp/codex-news-05-a9usxzke/repository/Websites')`), which no longer exists. Replace
 that one line with a scratch root and it executes under `python3 -I` with no network, no subprocess
-and no deletions — it only writes under `<root>/news/codex/NEWS-05` and the run directory. A test run
+and no deletions — it only writes under `<root>/news/codex/NEWS-04` and the run directory. A test run
 reported `Generated 17 entries` and wrote 14 files into a scratch tree.
 
 **Not yet verified:** whether those regenerated files hash-match

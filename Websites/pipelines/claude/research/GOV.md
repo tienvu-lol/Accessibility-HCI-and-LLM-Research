@@ -77,8 +77,8 @@ Candidates checked and not chosen: seattle.gov, austintexas.gov, nyc.gov, ca.gov
 - stack_clues: the HTML contains "drupal" (42 matches) and "acquia" (one link points to an Acquia host), so Drupal on Acquia. The USWDS banner class (`usa-banner`) is present.
 - limitations: there is no meetings calendar or alert banner (none observed). One footer link points to a staging hostname (texasgovportalstage.prod.acquia-sites.com), which I did not follow. Most transactional services are on external agency sites, so replication should be limited to texas.gov pages. I did not test search results.
 
-### GOV-03
-- source_id: GOV-03
+### GOV-R03
+- source_id: GOV-R03
 - category/subcategory: government / federal-agency
 - source_name: National Park Service (NPS.gov)
 - official_url: https://www.nps.gov/

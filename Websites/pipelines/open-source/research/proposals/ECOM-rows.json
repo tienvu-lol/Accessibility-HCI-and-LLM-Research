@@ -11,21 +11,21 @@
   "slots_outstanding": [],
   "approval_state": "unapproved: approval cells are left empty for the project lead",
   "runs": [
-    "2026-11-16T21-28-20-739Z-research-ECOM-07",
-    "2026-11-17T05-11-36-137Z-research-ECOM-10",
-    "2026-11-17T05-11-04-530Z-research-ECOM-08",
-    "2026-11-17T05-44-24-017Z-research-ECOM-09"
+    "2026-11-16T21-28-20-739Z-research-ECOM-05",
+    "2026-11-17T05-11-36-137Z-research-ECOM-06",
+    "2026-11-17T05-11-04-530Z-research-ECOM-R08",
+    "2026-11-17T05-44-24-017Z-research-ECOM-R09"
   ],
   "rows": [
     {
-      "source_id": "ECOM-07",
+      "source_id": "ECOM-05",
       "subcategory": "single-brand direct-to-consumer store",
       "source_name": "Patagonia",
       "source_url": "https://www.patagonia.com/",
       "verified_at": "2026-11-16",
       "verification_method": "HTTP GET by the orchestrator",
       "verification_result": "verified",
-      "evidence_reference": "pipelines/open-source/research/evidence/ECOM-07-http-2026-11-16.json",
+      "evidence_reference": "pipelines/open-source/research/evidence/ECOM-05-http-2026-11-16.json",
       "source_pages": [
         {
           "url": "https://www.patagonia.com/",
@@ -155,14 +155,14 @@
       }
     },
     {
-      "source_id": "ECOM-08",
+      "source_id": "ECOM-R08",
       "subcategory": "multi-category retailer",
       "source_name": "Target",
       "source_url": "https://www.target.com/",
       "verified_at": "2026-11-17",
       "verification_method": "HTTP GET by the orchestrator",
       "verification_result": "verified",
-      "evidence_reference": "pipelines/open-source/research/evidence/ECOM-08-http-2026-11-17.json",
+      "evidence_reference": "pipelines/open-source/research/evidence/ECOM-R08-http-2026-11-17.json",
       "source_pages": [
         {
           "url": "https://www.target.com/",
@@ -278,14 +278,14 @@
       }
     },
     {
-      "source_id": "ECOM-09",
+      "source_id": "ECOM-R09",
       "subcategory": "specialty retailer",
       "source_name": "REI",
       "source_url": "https://www.rei.com",
       "verified_at": "2026-11-17",
       "verification_method": "HTTP GET",
       "verification_result": "verified",
-      "evidence_reference": "pipelines/open-source/research/evidence/ECOM-09-http-2026-11-17.json",
+      "evidence_reference": "pipelines/open-source/research/evidence/ECOM-R09-http-2026-11-17.json",
       "source_pages": [
         {
           "url": "https://www.rei.com",
@@ -407,14 +407,14 @@
       }
     },
     {
-      "source_id": "ECOM-10",
+      "source_id": "ECOM-06",
       "subcategory": "single-brand direct-to-consumer (complexity-matched reserve)",
       "source_name": "Everlane",
       "source_url": "https://www.everlane.com/",
       "verified_at": "2026-11-17",
       "verification_method": "HTTP GET by the orchestrator",
       "verification_result": "verified",
-      "evidence_reference": "pipelines/open-source/research/evidence/ECOM-10-http-2026-11-17.json",
+      "evidence_reference": "pipelines/open-source/research/evidence/ECOM-06-http-2026-11-17.json",
       "source_pages": [
         {
           "url": "https://everlane.com",
@@ -516,7 +516,7 @@
     }
   ],
   "orchestrator_corrections": [
-    "2026-11-17: ECOM-08 verified_at normalised; see CORRECTIONS-2026-11-17-slot08.json",
+    "2026-11-17: ECOM-R08 verified_at normalised; see CORRECTIONS-2026-11-17-slot08.json",
     "2026-11-17: verified_at reset to the HTTP evidence date; see CORRECTIONS-2026-11-17-dates.json"
   ]
 }

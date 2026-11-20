@@ -1,37 +1,34 @@
 # REST-04 fidelity notes
 
-## Page mapping
-
-| Local file | Source |
+| Local page | Approved source |
 |---|---|
-| `index.html` | https://www.crossroadskitchen.com/ |
-| `los-angeles.html` | https://www.crossroadskitchen.com/los-angeles |
-| `dinner-menu.html` | https://www.crossroadskitchen.com/dinner-menu |
-| `our-story.html` | https://www.crossroadskitchen.com/our-story |
-| `reservations.html` | https://www.crossroadskitchen.com/reservations |
-| `private-dining.html` | https://www.crossroadskitchen.com/private-dining |
-| `404.html` | Intentional local addition |
+| `index.html` | https://www.hogsalt.com/ |
+| `restaurants.html` | https://www.hogsalt.com/restaurants |
+| `restaurant-detail.html` | https://www.hogsalt.com/restaurants-list/maudes-liquor-bar-gdj97 |
+| `about.html` | https://www.hogsalt.com/about |
+| `private-events.html` | https://www.hogsalt.com/private-events |
+| `404.html` | Required intentional local addition |
 
-## Replicated from observed text structure
+## Replicated
 
-Nested restaurant/menu navigation, location chooser and detail, hours, categorized dinner listings, dietary markers, story page, reservation-provider handoff, private-dining information and footer hierarchy. Dinner/tasting links use anchor navigation rather than claiming source tabs were exercised.
+Image-led home with slide indicators, city-labeled restaurant directory, sparse single restaurant profile and next-item link, about/story image sequence, private-events venue directory, grouped utility footer. All page hierarchy follows approved text observations.
 
 ## Approximated
 
-Cream/olive visual palette, serif typography, image-led split layout, section proportions, text length, desktop and mobile layouts. These are an authored interpretation from text-only evidence; pixel/layout fidelity has not been verified. Location chooser has one built local location because other locations were outside the approved page map. Fictional restaurant and dish names, prose, prices and hours replace operational content.
+Typography, cream/charcoal palette, proportions, image placement and responsive layouts are authored interpretations, not verified source rendering. The single approved detail page has no invented source menu, reservation, hours, address, capacity or pricing. Other directory entries have explicit scope notes. Next-item navigation routes to the next directory item instead of creating an unapproved second detail page.
 
-## Simulated and inferred
+## Inferred and simulated
 
-Reservation handoff is an explanatory native dialog; it does not reproduce unknown provider fields, collect data, show availability or book. Gallery behavior is inferred from repeated source images; two original SVGs with manual navigation stand in for unverified source transitions. Native disclosures approximate unexecuted source menu behavior. Source keyboard interactions were not observed.
+Manual previous/next cycling interprets source numbered slide labels; autoplay, transition and keyboard behavior were not observed. No autoplay is added. Three original SVG room illustrations stand in for proprietary photos. Fictional names/cities/copy are local sample data. Mailing list uses a native disclosure to explain the external signup omission, not a subscription form.
 
 ## Intentional additions
 
-Required local 404; skip link, breadcrumb/current indicators, persistent demo disclosure, accessible gallery status and no-JavaScript fallbacks. Privacy/accessibility notices live in the footer instead of adding speculative legal pages. Modal is a bounded simulation of approved reservation handoff, not an added booking workflow.
+Required local 404, visible demo notice, skip link, breadcrumbs/current-page indicators, slide count/status, no-JavaScript fallback. Privacy/accessibility explanations are in the footer; no speculative legal pages.
 
 ## Omitted
 
-Outside-location sites, proprietary imagery/logos, original source prose, external reservations, ordering, catering transactions, gift-card payment and unobserved private-dining inquiry forms. No invented newsletter, search, account, filter, live opening status or location map.
+Brand-site cloning, detailed extra venue pages, live private-event inquiry, external mailing-list fields, account/rewards/checkout, unobserved interactive directory filters, real logos and source media. No operational restaurant claims.
 
 ## Unverified
 
-Fresh-origin source availability, responsive/source visual fidelity, all source dynamic behavior. Local actual checks and limits are in QA.md. This is not a conformance audit or human acceptance.
+Fresh-origin source status, rendered-source fidelity, source controls, local browser interactions and accessibility unless actual evidence in QA.md states otherwise. Differences in source complexity and scope remain study confounds.

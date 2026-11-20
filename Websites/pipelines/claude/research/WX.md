@@ -68,8 +68,8 @@ Rejected candidate: accuweather.com returned HTTP 403 to curl, so I did not use 
 - stack_clues: unknown. I did not identify a framework from the home HTML. Searches for `__NEXT_DATA__`, `ng-app` and `_next/static` found nothing. The page is server-delivered HTML with client-side widgets.
 - limitations: The radar/map pages are interactive JavaScript and cannot be fully replicated. The `/radar/us` page title list contains many per-region radar titles. Ad and tracking markup is heavy and should be omitted. Content is live data and must be replaced by fictional sample data. Both the Weather Channel and the Weather Underground brands appear in the footer and teasers.
 
-### WX-03
-- source_id: WX-03
+### WX-R03
+- source_id: WX-R03
 - category/subcategory: Weather / local TV station weather section
 - source_name: WRAL Weather (WRAL-TV, Raleigh NC; Capitol Broadcasting)
 - official_url: https://www.wral.com/weather/

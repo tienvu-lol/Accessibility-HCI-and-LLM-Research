@@ -43,7 +43,7 @@ Any host that exposes `POST {base_url}/chat/completions` works — Together, Fir
 
 Validation refuses placeholder values, a non-open-weight declaration, a key pasted where a variable name belongs, and a missing environment variable at build time. It prints a note, not an error, when the four slots do not use four distinct models — that is allowed, as long as it is declared.
 
-A **partial declaration is allowed**, so a single-slot test run needs only that slot's model and key. Commands check the slots they actually use: researching slot 07 needs slot 07 declared, and building `UNI-07` needs slot 07 declared, each with a note about the rest. `validate.mjs --models` is the full pre-generation check and wants all four.
+A **partial declaration is allowed**, so a single-slot test run needs only that slot's model and key. Commands check the slots they actually use: researching slot 07 needs slot 07 declared, and building `UNI-05` needs slot 07 declared, each with a note about the rest. `validate.mjs --models` is the full pre-generation check and wants all four.
 
 ## Running it
 
@@ -82,8 +82,8 @@ node .../sync-register.mjs approve UNI --approved-by "<project lead>" \
 ### 3. Build one replica
 
 ```sh
-node .../validate.mjs --ready UNI-07
-node .../run-build.mjs UNI-07 --operator "<your name>"
+node .../validate.mjs --ready UNI-05
+node .../run-build.mjs UNI-05 --operator "<your name>"
 ```
 
 Readiness is scoped to the one slot being built: that slot's own open-source row must be complete, verified, approved and synchronized, with no URL duplicating any other row in the category, and the slot's declared model must match the approved assignment with its key present. Sibling open-source slots that are still outstanding do not block it (operator decision, 2026-11-16; the original rule required all four). Incomplete Claude or Codex rows do not block it (`MODEL_ALLOCATION.md` §4).
@@ -95,8 +95,8 @@ After delivery the raw output is copied to `runs/<run-id>/initial/` before anyth
 **Correction rounds are disabled (`max_repair_rounds: 0`, set 2026-11-17 by project lead decision.)** The delivered replica is the model's uncorrected first emission, because the dataset is the baseline for a separate accessibility-repair condition and a repaired baseline would create the ceiling effect `Rules.md` §125 warns about. QC still runs and is still recorded — it measures the raw artifact instead of driving corrections to it. `prompts/repair.md` is retained deliberately as the separately versioned repair material that §125 requires; it is simply not used during generation. Raising the budget again (`--repairs N`, or the config value) re-enables the loop, and any replica generated that way is a different condition from the rest of this arm and must be recorded as such. Finally the orchestrator normalizes `generation-metadata.json` — identifiers, model attribution, approval, revisions, real timestamps — and sets the seven validation gates from the QC run that actually executed, disclosing that edit in `human_edits`.
 
 ```sh
-node .../record-qc.mjs UNI-07 --run <RUN-ID>       # re-run QC on its own
-node .../sync-register.mjs delivered UNI-07 --run <RUN-ID>
+node .../record-qc.mjs UNI-05 --run <RUN-ID>       # re-run QC on its own
+node .../sync-register.mjs delivered UNI-05 --run <RUN-ID>
 node .../sync-register.mjs log --message "what happened"
 ```
 

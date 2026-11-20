@@ -83,8 +83,8 @@ Run date 2026-11-12. All checks were plain `curl -sSL -A "Mozilla/5.0"` GETs. Pa
 - stack_clues: Shopify (the string appears 103 times, with `cdn.shopify` asset URLs). It also uses `/pages/` and `/collections/` URL patterns, which are consistent with a Shopify theme.
 - limitations: titles were not extractable from raw HTML. The site rate limits (429) on repeated requests. The product and collection depth is large and should be treated as a demo. Imagery is photography that must be replaced with placeholders.
 
-### FASH-03
-- source_id: FASH-03
+### FASH-R03
+- source_id: FASH-R03
 - category/subcategory: Content-driven (Fashion) / fashion blog, trend and street-style content site
 - source_name: Hypebeast
 - official_url: https://hypebeast.com/

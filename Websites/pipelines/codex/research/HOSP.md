@@ -6,9 +6,9 @@ Research only; no site code, site output directories or build agents created. Re
 
 | ID | Stratum | Organization | Complexity | Availability / scope |
 | --- | --- | --- | --- | --- |
-| HOSP-04 | Academic medical center | [Duke Health](https://www.dukehealth.org/) | high | Direct HTTP 200; 9 mapped pages + intentional local 404 |
-| HOSP-05 | Community/regional hospital | [EvergreenHealth](https://www.evergreenhealth.com/) | medium | Web text readable, direct HTTP 403; 8 mapped pages + local 404 |
-| HOSP-06 | Children’s hospital | [Nationwide Children’s Hospital](https://www.nationwidechildrens.org/) | high | Direct HTTP 200; 10 mapped pages + local 404 |
+| HOSP-03 | Academic medical center | [Duke Health](https://www.dukehealth.org/) | high | Direct HTTP 200; 9 mapped pages + intentional local 404 |
+| HOSP-04 | Community/regional hospital | [EvergreenHealth](https://www.evergreenhealth.com/) | medium | Web text readable, direct HTTP 403; 8 mapped pages + local 404 |
+| HOSP-R06 | Children’s hospital | [Nationwide Children’s Hospital](https://www.nationwidechildrens.org/) | high | Direct HTTP 200; 10 mapped pages + local 404 |
 
 `verified` denotes availability evidence only. All inspection was HTTP/text-only; web search/extraction is not a rendered browser. No interactions were executed or medical/appointment data submitted. Observed controls below mean present in retrieved markup/text, not tested behavior. All live flows would require explicitly disclosed local simulations and fictional directory data; no real advice, triage, emergency response, scheduling or patient access.
 
@@ -22,7 +22,7 @@ Actual generation model/version/runtime/operator are unresolved in supplied conf
 
 Tool bias: these are US English patient-facing sites selected for retrievable content. Bot protection and text extraction hide dynamic features and visual difficulty. Claude notes also used HTTP-only inspection; open-source access is unknown. High/medium/high matches the recorded Claude complexity labels only provisionally, not a controlled causal comparison. Page counts and features differ by actual evidence; rendered review may revise complexity and must precede final scope approval.
 
-## HOSP-04
+## HOSP-03
 
 - **Source / stratum:** Duke Health; healthcare / academic medical center; canonical https://www.dukehealth.org/
 - **Attempt:** 2026-11-12 UTC (2026-11-11 America/New_York). Direct Python urllib HTTPS GET with Mozilla/5.0 header plus live search/web text extraction. **HTTP-only availability verified** for mapped pages; rendered layout and interaction verification **NOT TESTED**. Exact request timestamps, final URLs, titles, headings, controls and failures: [HTTP evidence](evidence/HOSP-http-2026-11-12.json).
@@ -64,7 +64,7 @@ Local `404.html` is an intentional protocol addition; no fabricated source URL i
 - **observed:** Appointment choices — Appointment information page and MyChart scheduling affordances; no submission or validation tested
 - **observed:** Service navigation and billing — Treatment links, FAQ headings and billing resource page inspected; accordion effects inferred
 
-## HOSP-05
+## HOSP-04
 
 - **Source / stratum:** EvergreenHealth; healthcare / community/regional hospital; canonical https://www.evergreenhealth.com/. Community-owned hospital district identity appears on the Medical Center page.
 - **Attempt:** 2026-11-12 UTC (2026-11-11 local). **HTTP/text-only**. Direct urllib homepage GET returned **403 Forbidden**. Web `open`/`click` returned titled HTML text for the pages below, with crawl labels ranging from today to three days ago. Availability is verified only as retrievable through that tool, **not independently confirmed current origin HTTP 200**. No rendered or interaction verification.
@@ -105,7 +105,7 @@ Local `404.html` is an intentional protocol addition. No separate provider profi
 - **observed:** Appointment options — Primary Care page links phone offices and external MyChart for existing patients; no inquiry form observed
 - **observed:** Service navigation and billing — Service links, Primary Care local navigation, visit and pay-bill pages readable; no payment submitted
 
-## HOSP-06
+## HOSP-R06
 
 - **Source / stratum:** Nationwide Children’s Hospital; healthcare / children’s hospital; canonical https://www.nationwidechildrens.org/
 - **Attempt:** 2026-11-12 UTC (2026-11-11 America/New_York). Direct Python urllib HTTPS GET with Mozilla/5.0 header plus live search/web text extraction. **HTTP-only availability verified** for mapped pages; rendered layout and interaction verification **NOT TESTED**. Exact request timestamps, final URLs, titles, headings, controls and failures: [HTTP evidence](evidence/HOSP-http-2026-11-12.json).
@@ -155,13 +155,13 @@ Local `404.html` is an intentional protocol addition; no fabricated source URL i
 | --- | --- | --- | --- | --- |
 | HOSP-01 | Claude | Existing notes: academic | UCSF Health — https://www.ucsfhealth.org/ | Notes only; central reservation, complete scope/model approval pending |
 | HOSP-02 | Claude | Existing notes: community/regional | Hoag — https://www.hoag.org/ | Notes only; central reservation, complete scope/model approval pending |
-| HOSP-03 | Claude | Existing notes: children’s | CHOP — https://www.chop.edu/ | Notes only; central reservation, complete scope/model approval pending |
-| HOSP-04 | Codex | Assigned academic | Duke Health — https://www.dukehealth.org/ | Provisional; 9 source pages + local 404; approval pending |
-| HOSP-05 | Codex | Assigned community/regional | EvergreenHealth — https://www.evergreenhealth.com/ | Provisional; 8 source pages + local 404; access caveat; approval pending |
-| HOSP-06 | Codex | Assigned children’s | Nationwide Children’s — https://www.nationwidechildrens.org/ | Provisional; 10 source pages + local 404; approval pending |
-| HOSP-07 | Open-source | Academic proposal only | **PENDING — unknown** | Source, scope, exact model and approval pending |
-| HOSP-08 | Open-source | Community/regional proposal only | **PENDING — unknown** | Source, scope, exact model and approval pending |
-| HOSP-09 | Open-source | Children’s proposal only | **PENDING — unknown** | Source, scope, exact model and approval pending |
-| HOSP-10 | Open-source | Additional academic reserve proposal only | **PENDING — unknown** | Source, scope, exact model and approval pending |
+| HOSP-R03 | Claude | Existing notes: children’s | CHOP — https://www.chop.edu/ | Notes only; central reservation, complete scope/model approval pending |
+| HOSP-03 | Codex | Assigned academic | Duke Health — https://www.dukehealth.org/ | Provisional; 9 source pages + local 404; approval pending |
+| HOSP-04 | Codex | Assigned community/regional | EvergreenHealth — https://www.evergreenhealth.com/ | Provisional; 8 source pages + local 404; access caveat; approval pending |
+| HOSP-R06 | Codex | Assigned children’s | Nationwide Children’s — https://www.nationwidechildrens.org/ | Provisional; 10 source pages + local 404; approval pending |
+| HOSP-05 | Open-source | Academic proposal only | **PENDING — unknown** | Source, scope, exact model and approval pending |
+| HOSP-R08 | Open-source | Community/regional proposal only | **PENDING — unknown** | Source, scope, exact model and approval pending |
+| HOSP-R09 | Open-source | Children’s proposal only | **PENDING — unknown** | Source, scope, exact model and approval pending |
+| HOSP-06 | Open-source | Additional academic reserve proposal only | **PENDING — unknown** | Source, scope, exact model and approval pending |
 
 Coordinator action needed: reconcile reservations for 01–03 and 07–10, confirm no collisions with the provisional Codex URLs, and finalize matched scopes/models. Then request project-lead approval of all ten sources, scopes and the 3/3/4 assignment. **Stop before implementation.** Missing external references and approval are real dependencies; no autonomous replacements during build.

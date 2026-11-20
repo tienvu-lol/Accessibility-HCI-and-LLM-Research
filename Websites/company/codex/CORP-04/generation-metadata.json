@@ -2,25 +2,23 @@
   "allocation_protocol": "WEB-REPLICA-ALLOCATION-V1.0",
   "generation_protocol": "WEB-REPLICA-V1.0",
   "category": "company",
-  "slot": 4,
+  "slot": 5,
   "source_id": "CORP-04",
   "model_group": "codex",
   "model_id": "gpt-6.1-sol",
   "model_version": null,
   "model_provider_or_runtime": "OpenAI collaboration worker (gpt-6.1-sol), orchestrated in Codex",
-  "generation_mode": "single worker; isolated source snapshot; local-only",
+  "generation_mode": "single-agent local-only static generation in isolated filesystem snapshot",
   "operator": "Samhith Varma",
-  "approved_source_url": "https://www.chase.com/",
-  "source_verified_at": "2026-11-12T00:52:00.020333+00:00",
+  "approved_source_url": "https://www.becu.org/",
+  "source_verified_at": "2026-11-12T00:52:00.021127+00:00",
   "source_verification_method": "HTTP-only Python urllib GET with redirects; live web search/text extraction; browser unavailable; no interactions executed",
   "source_approved_at": "2026-11-12",
   "approval_reference": "metadata/change-log.md \u00a7 2026-11-12 \u2014 Codex Phase A approval (slots 04\u201306)",
-  "source_evidence": "pipelines/codex/research/CORP.md; pipelines/codex/research/evidence/CORP-http-2026-11-12.json",
-  "generation_started_at": "2026-11-13T15:58:40.151131+00:00",
-  "generation_completed_at": "2026-11-13T16:00:38.133050+00:00",
+  "generation_started_at": "2026-11-13T16:00:43.743806+00:00",
+  "generation_completed_at": "2026-11-13T16:03:08.449320+00:00",
   "rules_revision": "04b1c3e38b76f2aff3aef869d67370bb4532cd8f9ab5e22ac8276f26cbb859bf",
   "category_prompt_revision": "843ea7d8d1cc7d01385643f848408dea32997985422496d98e8f108bbc09a333",
-  "prompt_or_transcript_reference": "pipelines/codex/runs/2026-11-13T15-55-36-495Z-build-CORP-04/task.md",
   "protocol_snapshots": [
     {
       "path": "Rules.md",
@@ -51,26 +49,49 @@
       "sha256": "bc8e14f82d9f9c61d39c7a52d10ecf2a4ca582e409bcafc54094f8235bfa6e30"
     }
   ],
+  "prompt_or_transcript_reference": "Websites/pipelines/codex/runs/2026-11-13T15-55-36-598Z-build-CORP-04/task.md",
+  "task_sha256": "30d23ebde373857cb402ba7a50f1ceb288e03530793283b3217cc936b74486d1",
   "human_edits": [],
   "cross_model_edits": [],
   "active_allocation": {
-    "active": [
-      1,
-      2,
-      3,
-      4,
-      5,
-      6
+    "active_slots": [
+      "01",
+      "02",
+      "03",
+      "04",
+      "05",
+      "06"
     ],
-    "deferred": [
-      7,
-      8,
-      9,
-      10
+    "deferred_slots": [
+      "07",
+      "08",
+      "09",
+      "10"
     ]
   },
+  "tool_access": [
+    "filesystem shell",
+    "Python generation helper (not website runtime)",
+    "Node source/logic checks",
+    "shared QC attempted separately"
+  ],
   "generation_budget": null,
-  "retries": [],
+  "retries": [
+    {
+      "at": "2026-11-13T16:01:23.518629+00:00",
+      "reason": "Coordinator clarified rates scope; initial numeric tables removed in favor of observed category hub. Initial artifact preserved before correction.",
+      "files": [
+        "rates.html",
+        "checking.html",
+        "index.html",
+        "everyday-banking.html",
+        "README.md",
+        "fidelity-notes.md",
+        "component-inventory.json",
+        "generation-metadata.json"
+      ]
+    }
+  ],
   "validation_summary": {
     "technology": "pass",
     "completeness": "pass",
@@ -80,22 +101,31 @@
     "traceability": "pass",
     "scope": "pass"
   },
-  "limitations": [
-    "Exact model version and generation budget not exposed.",
-    "Source only HTTP/text verified; rendered fidelity unverified."
-  ],
   "validation_details": {
-    "static": "static-test-results.json; seven pages parsed; links/fragments, region metadata and inventory checked",
-    "logic": "11 actual main.js tests executed using Node vm and explicitly mocked DOM; not browser validation",
-    "shared_qc": "Invoked once; exit 2 Chromium launch blocked; qc.log and qc-invocation.json retained; qc-report.json not produced",
-    "browser_interaction": "not-tested",
-    "axe": "not-tested",
-    "visual_fidelity": "not-tested",
-    "manual_accessibility": "not-tested"
+    "technology": "Source scan: local semantic HTML/CSS/vanilla JS; no network/storage APIs, remote assets, prohibited files or runtime dependencies.",
+    "completeness": "9 HTML pages (8 approved plus required 404), 17 site files; relative references and fragments verified.",
+    "structure": "Source-level landmarks, one h1, unique IDs, both metadata attributes on meaningful regions; source-informed hierarchy. Rendered fidelity not tested.",
+    "interaction": "Actual filter function tests and mock DOM event tests passed; real browser interaction not tested due Chromium launch block. Native disclosure and modal behavior not verified.",
+    "accessibility": "Browser/axe/keyboard/screen reader/zoom/reflow/contrast review not tested. Static semantics, labels, alt, focus CSS and reduced-motion source inspected. No conformance claim.",
+    "traceability": "Actual 199 metadata instances inventoried; map/docs/source evidence and durable task/protocol hashes recorded. Initial output archive retained and same-worker scope correction logged.",
+    "scope": "Final rates hub has four groups/eight category descriptions, no numeric rates/tables/calculator. No inquiry form/credentials/accounts. Locator inferred and disclosed."
   },
-  "corrections": [],
-  "initial_output_reference": "pipelines/codex/runs/2026-11-13T15-55-36-495Z-build-CORP-04/initial-output.tar.gz",
-  "post_initial_changes": [
-    "Completed validation evidence and generation timestamp; appended actual QC/test outcome to README; no HTML/CSS/JS or asset repairs."
-  ]
+  "research_additions": [
+    "notice-only sign-in dialog"
+  ],
+  "limitations": [
+    "Source verification availability/text only, not rendered or interaction fidelity",
+    "Shared browser QC blocked; axe and browser interaction not tested",
+    "No actual financial functions, inquiry submission, credentials or account opening",
+    "Local locator filtering approximates an unverified live widget"
+  ],
+  "qc_evidence": {
+    "run_directory": "Websites/pipelines/codex/runs/2026-11-13T15-55-36-598Z-build-CORP-04",
+    "shared_qc_exit_code": 2,
+    "shared_qc_report": null,
+    "log": "qc-initial.log",
+    "outcome_wrapper": "qc-outcome.json",
+    "static_checks": "static-checks.json",
+    "logic_and_mock_tests": "interaction-checks.json"
+  }
 }

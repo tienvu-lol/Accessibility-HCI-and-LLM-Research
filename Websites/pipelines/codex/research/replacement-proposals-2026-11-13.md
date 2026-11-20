@@ -14,15 +14,15 @@ Full structured record: [evidence/replacement-proposals-2026-11-13.json](evidenc
 
 | ID | Previous source | Proposed source | Stratum | Mapped pages | Complexity |
 |---|---|---|---|---:|---|
-| UNI-06 | Community College of Philadelphia | [Wake Technical Community College](https://www.waketech.edu/) | community college | 5 | high |
-| GOV-04 | City of Raleigh | [City of Boston](https://www.boston.gov/) | municipal government | 5 | high |
-| GOV-05 | Mass.gov | [Commonwealth of Virginia portal](https://www.virginia.gov/) | state portal/agency | 5 | medium |
-| FASH-06 | Fashionista | [Who What Wear](https://www.whowhatwear.com/) | fashion blog or trend publication | 5 | high |
-| WX-05 | meteoblue | [Time and Date AS — weather section](https://www.timeanddate.com/weather/) | commercial weather portal | 5 | high |
+| UNI-R06 | Community College of Philadelphia | [Wake Technical Community College](https://www.waketech.edu/) | community college | 5 | high |
+| GOV-03 | City of Raleigh | [City of Boston](https://www.boston.gov/) | municipal government | 5 | high |
+| GOV-04 | Mass.gov | [Commonwealth of Virginia portal](https://www.virginia.gov/) | state portal/agency | 5 | medium |
+| FASH-R06 | Fashionista | [Who What Wear](https://www.whowhatwear.com/) | fashion blog or trend publication | 5 | high |
+| WX-04 | meteoblue | [Time and Date AS — weather section](https://www.timeanddate.com/weather/) | commercial weather portal | 5 | high |
 
 ## Source-specific scope
 
-### UNI-06 — Wake Technical Community College
+### UNI-R06 — Wake Technical Community College
 
 Page-to-local map:
 
@@ -41,7 +41,7 @@ Limits:
 - Application and virtual-tour destinations are external; simulate or disclose rather than embed
 - Do not assume a filterable program finder from the listing table
 
-### GOV-04 — City of Boston
+### GOV-03 — City of Boston
 
 Page-to-local map:
 
@@ -60,7 +60,7 @@ Limits:
 - Language switch, mobile menu, directory behavior and filters not executed
 - Do not copy real operational notices, seals, public officials or contact data into fictional content
 
-### GOV-05 — Commonwealth of Virginia portal
+### GOV-04 — Commonwealth of Virginia portal
 
 Page-to-local map:
 
@@ -79,7 +79,7 @@ Limits:
 - Agency-specific transactions are external and excluded from verified local scope
 - Prior GOV notes mentioned Virginia as a possible unverified substitute, not a reserved/selected source
 
-### FASH-06 — Who What Wear
+### FASH-R06 — Who What Wear
 
 Page-to-local map:
 
@@ -98,7 +98,7 @@ Limits:
 - Sharing and commercial links will be labeled simulations
 - More complex than the original medium-rated Fashionista proposal; complexity matching should be rechecked
 
-### WX-05 — Time and Date AS — weather section
+### WX-04 — Time and Date AS — weather section
 
 Page-to-local map:
 
@@ -120,7 +120,7 @@ Limits:
 
 ## Approval and integration
 
-Retain source IDs. If approved, archive original row values and replace only UNI-06, GOV-04, GOV-05, FASH-06 and WX-05 in their category inventories and assignment rows. Record the new method/date/scope and actual approval evidence; previous source approvals never transfer automatically. Append versioned research addenda and the central change log. Generate new task snapshots only after integration and policy reconciliation; do not alter old snapshots.
+Retain source IDs. If approved, archive original row values and replace only UNI-R06, GOV-03, GOV-04, FASH-R06 and WX-04 in their category inventories and assignment rows. Record the new method/date/scope and actual approval evidence; previous source approvals never transfer automatically. Append versioned research addenda and the central change log. Generate new task snapshots only after integration and policy reconciliation; do not alter old snapshots.
 
 No website implementation was performed. The all-ten-versus-per-group approval-policy conflict and NPO-06 scope issue remain separate from this replacement proposal.
 

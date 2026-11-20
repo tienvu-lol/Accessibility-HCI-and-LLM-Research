@@ -5,7 +5,7 @@ import {loadSetup,validateSetup,categoryFor,inside,cliArgs,hash} from './lib.mjs
 try {
   const {positional,flags}=cliArgs(process.argv.slice(2),{run:'value'});
   const [id]=positional;
-  if(positional.length!==1 || !flags.run || !/^[A-Za-z0-9-]+$/.test(flags.run)) throw new Error('Usage: node record-qc.mjs UNI-04 --run RUN-ID');
+  if(positional.length!==1 || !flags.run || !/^[A-Za-z0-9-]+$/.test(flags.run)) throw new Error('Usage: node record-qc.mjs UNI-03 --run RUN-ID');
   const setup=loadSetup();const errors=validateSetup(setup);if(errors.length)throw new Error(errors.join('\n'));
   const c=categoryFor(setup,id);
   if(!c || !new RegExp(`^${c.prefix}-0[456]$`).test(id))throw new Error('Invalid Codex ID');

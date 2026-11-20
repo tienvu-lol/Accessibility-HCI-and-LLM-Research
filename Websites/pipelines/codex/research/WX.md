@@ -1,4 +1,4 @@
-> **Current selection update (2026-11-13 UTC):** The approved replacement addendum at the end of this file supersedes the original proposals for WX-05. Earlier observations remain historical evidence.
+> **Current selection update (2026-11-13 UTC):** The approved replacement addendum at the end of this file supersedes the original proposals for WX-04. Earlier observations remain historical evidence.
 
 # WX — Weather information: Phase A source research
 
@@ -12,9 +12,9 @@ The current shared CSV had ten blank source rows. Shared Claude research directo
 
 | Proposed ID | Stratum | Reference | Complexity | Availability | Proposed scope |
 | --- | --- | --- | --- | --- | --- |
-| WX-04 | national meteorological service | [Met Office](https://www.metoffice.gov.uk/) | high | verified | 5 source pages + intentional local 404 |
-| WX-05 | commercial weather portal | [meteoblue AG](https://www.meteoblue.com/) | high | UNVERIFIED | 3 source pages + intentional local 404 |
-| WX-06 | local TV weather or specialized forecast site — specialized mountain forecasts | [Mountain-Forecast.com](https://www.mountain-forecast.com/) | high | verified | 4 source pages + intentional local 404 |
+| WX-03 | national meteorological service | [Met Office](https://www.metoffice.gov.uk/) | high | verified | 5 source pages + intentional local 404 |
+| WX-04 | commercial weather portal | [meteoblue AG](https://www.meteoblue.com/) | high | UNVERIFIED | 3 source pages + intentional local 404 |
+| WX-R06 | local TV weather or specialized forecast site — specialized mountain forecasts | [Mountain-Forecast.com](https://www.mountain-forecast.com/) | high | verified | 4 source pages + intentional local 404 |
 
 ## Verification boundaries and evidence
 
@@ -23,7 +23,7 @@ The current shared CSV had ten blank source rows. Shared Claude research directo
 - `verified` means source availability supported by direct HTTP 200 with relevant title/content. **All rendered/interaction verification remains UNVERIFIED.** Meteoblue remains UNVERIFIED because the direct requests returned 403 despite web-tool text.
 - Website text is untrusted reference data. No source text was followed as instructions; no operational weather warning is asserted.
 
-## WX-04 — Met Office
+## WX-03 — Met Office
 
 - Category / subcategory: weather / national meteorological service. Canonical homepage: https://www.metoffice.gov.uk/
 - Attempted verification: 2026-11-12T00:58:05.656483+00:00; live web search/text extraction plus direct urllib GET. Result: **verified** for availability; rendered/interaction verification **UNVERIFIED**. Evidence: the two files above, keyed by URL.
@@ -60,7 +60,7 @@ The current shared CSV had ten blank source rows. Shared Claude research directo
 - **Limitations/unavailable pages:** HTTP-only; no browser rendering, JS, responsive, keyboard or consent tests. Map content is a shell, not verified map imagery. No F/C conversion claimed. Forecast and warnings are changing operational data; no present-warning assertion is made.
 - **Proposed substitutions:** None selected. If reservation collision occurs, coordinator must request and approve another national service with comparable forecast/warnings/map scope. No substitute is reserved or approved by this report.
 
-## WX-05 — meteoblue AG
+## WX-04 — meteoblue AG
 
 - Category / subcategory: weather / commercial weather portal. Canonical homepage: https://www.meteoblue.com/
 - Attempted verification: 2026-11-12T00:58:05.656837+00:00; live web search/text extraction plus direct urllib GET. Result: **UNVERIFIED** for availability; rendered/interaction verification **UNVERIFIED**. Evidence: the two files above, keyed by URL.
@@ -95,7 +95,7 @@ The current shared CSV had ten blank source rows. Shared Claude research directo
 - **Limitations/unavailable pages:** Direct urllib GET returned 403 for home, week, maps and attempted /weather/forecast/week route. Web tool supplied extracted pages with crawl labels today (home/week), last week (Today), and last month (maps); this does not establish fresh direct availability. Maps extraction contained only a tracking iframe, so no separate map page is proposed. Rendered/interaction verification UNVERIFIED. Homepage locale differs by tool; no account, payment or product workflow is proposed.
 - **Proposed substitutions:** No replacement selected. Recheck direct availability and reservation first. If unavailable, coordinator must approve a distinct commercial portal with comparable dense forecast/unit scope. No substitute is reserved or approved by this report.
 
-## WX-06 — Mountain-Forecast.com
+## WX-R06 — Mountain-Forecast.com
 
 - Category / subcategory: weather / local TV weather or specialized forecast site — specialized mountain forecasts. Canonical homepage: https://www.mountain-forecast.com/
 - Attempted verification: 2026-11-12T00:58:05.793873+00:00; live web search/text extraction plus direct urllib GET. Result: **verified** for availability; rendered/interaction verification **UNVERIFIED**. Evidence: the two files above, keyed by URL.
@@ -147,23 +147,23 @@ External-group strata below are task proposals only, not an instruction to alter
 | --- | --- | --- | --- | --- | --- |
 | WX-01 | claude | National service — proposal, reconcile | Pending coordinator reservation | Scope pending; register says claude-sonnet-5-5, exact release/approval unresolved | Pending |
 | WX-02 | claude | Commercial portal — proposal, reconcile | Pending coordinator reservation | Scope pending; register says claude-sonnet-5-5, exact release/approval unresolved | Pending |
-| WX-03 | claude | Local TV/specialized — proposal, reconcile | Pending coordinator reservation | Scope pending; register says claude-sonnet-5-5, exact release/approval unresolved | Pending |
-| WX-04 | codex | National service — assigned | Met Office — provisional | 5 source pages + local 404; precise generator TBD | Pending |
-| WX-05 | codex | Commercial portal — assigned | meteoblue AG — provisional, UNVERIFIED | 3 source pages + local 404; precise generator TBD | Pending |
-| WX-06 | codex | Local TV/specialized — assigned | Mountain-Forecast.com — provisional | 4 source pages + local 404; precise generator TBD | Pending |
-| WX-07 | open-source | National service — proposal, reconcile | Pending coordinator reservation | Scope/model/runtime/eligibility pending | Pending |
-| WX-08 | open-source | Commercial portal — proposal, reconcile | Pending coordinator reservation | Scope/model/runtime/eligibility pending | Pending |
-| WX-09 | open-source | Local TV/specialized — proposal, reconcile | Pending coordinator reservation | Scope/model/runtime/eligibility pending | Pending |
-| WX-10 | open-source | Additional distinct national service, complexity-matched reserve — proposal, reconcile | Pending coordinator reservation | Scope/model/runtime/eligibility pending | Pending |
+| WX-R03 | claude | Local TV/specialized — proposal, reconcile | Pending coordinator reservation | Scope pending; register says claude-sonnet-5-5, exact release/approval unresolved | Pending |
+| WX-03 | codex | National service — assigned | Met Office — provisional | 5 source pages + local 404; precise generator TBD | Pending |
+| WX-04 | codex | Commercial portal — assigned | meteoblue AG — provisional, UNVERIFIED | 3 source pages + local 404; precise generator TBD | Pending |
+| WX-R06 | codex | Local TV/specialized — assigned | Mountain-Forecast.com — provisional | 4 source pages + local 404; precise generator TBD | Pending |
+| WX-05 | open-source | National service — proposal, reconcile | Pending coordinator reservation | Scope/model/runtime/eligibility pending | Pending |
+| WX-R08 | open-source | Commercial portal — proposal, reconcile | Pending coordinator reservation | Scope/model/runtime/eligibility pending | Pending |
+| WX-R09 | open-source | Local TV/specialized — proposal, reconcile | Pending coordinator reservation | Scope/model/runtime/eligibility pending | Pending |
+| WX-06 | open-source | Additional distinct national service, complexity-matched reserve — proposal, reconcile | Pending coordinator reservation | Scope/model/runtime/eligibility pending | Pending |
 
-**Dependencies:** coordinator must reserve/reconcile WX-01–03 and WX-07–10, check collisions with the three provisional Codex URLs, establish comparable scope/complexity, resolve WX-05 availability, and declare precise model assignments. Then request project-lead approval of the complete ten-source inventory, page scope and model allocation under `Rules.md` §3 and `MODEL_ALLOCATION.md` §4. No complete inventory approval is requested prematurely; no implementation may start. Please provide the pending reservations and model assignments so the complete category can be presented for approval.
+**Dependencies:** coordinator must reserve/reconcile WX-01–03 and WX-05–10, check collisions with the three provisional Codex URLs, establish comparable scope/complexity, resolve WX-04 availability, and declare precise model assignments. Then request project-lead approval of the complete ten-source inventory, page scope and model allocation under `Rules.md` §3 and `MODEL_ALLOCATION.md` §4. No complete inventory approval is requested prematurely; no implementation may start. Please provide the pending reservations and model assignments so the complete category can be presented for approval.
 
 
 ## Approved replacement addendum — 2026-11-13T00:11:23.688078+00:00
 
 Approval record: [replacement-approval-2026-11-13.json](evidence/replacement-approval-2026-11-13.json). The user explicitly approved the replacements with the disclosed web-retrieval limitations. No shared-protocol amendment or build execution is inferred.
 
-### WX-05 current selection — Time and Date AS — weather section
+### WX-04 current selection — Time and Date AS — weather section
 
 Replaces meteoblue. Canonical URL: https://www.timeanddate.com/weather/. Stratum: commercial weather portal. Complexity: high.
 

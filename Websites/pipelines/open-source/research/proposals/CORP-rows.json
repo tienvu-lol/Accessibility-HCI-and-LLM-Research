@@ -11,21 +11,21 @@
   "slots_outstanding": [],
   "approval_state": "unapproved: approval cells are left empty for the project lead",
   "runs": [
-    "2026-11-16T21-28-20-740Z-research-CORP-07",
-    "2026-11-17T05-09-03-841Z-research-CORP-08",
-    "2026-11-17T05-10-37-224Z-research-CORP-10",
-    "2026-11-17T05-40-06-132Z-research-CORP-09"
+    "2026-11-16T21-28-20-740Z-research-CORP-05",
+    "2026-11-17T05-09-03-841Z-research-CORP-R08",
+    "2026-11-17T05-10-37-224Z-research-CORP-06",
+    "2026-11-17T05-40-06-132Z-research-CORP-R09"
   ],
   "rows": [
     {
-      "source_id": "CORP-07",
+      "source_id": "CORP-05",
       "subcategory": "national retail bank",
       "source_name": "Wells Fargo",
       "source_url": "https://www.wellsfargo.com",
       "verified_at": "2026-11-16",
       "verification_method": "HTTP GET by the orchestrator",
       "verification_result": "verified",
-      "evidence_reference": "pipelines/open-source/research/evidence/CORP-07-http-2026-11-16.json",
+      "evidence_reference": "pipelines/open-source/research/evidence/CORP-05-http-2026-11-16.json",
       "source_pages": [
         {
           "url": "https://www.wellsfargo.com",
@@ -141,14 +141,14 @@
       }
     },
     {
-      "source_id": "CORP-08",
+      "source_id": "CORP-R08",
       "subcategory": "regional bank or credit union",
       "source_name": "First Horizon Bank",
       "source_url": "https://www.firsthorizon.com/",
       "verified_at": "2026-11-17",
       "verification_method": "HTTP GET by the orchestrator",
       "verification_result": "verified",
-      "evidence_reference": "pipelines/open-source/research/evidence/CORP-08-http-2026-11-17.json",
+      "evidence_reference": "pipelines/open-source/research/evidence/CORP-R08-http-2026-11-17.json",
       "source_pages": [
         {
           "url": "https://www.firsthorizon.com/",
@@ -256,14 +256,14 @@
       }
     },
     {
-      "source_id": "CORP-09",
+      "source_id": "CORP-R09",
       "subcategory": "technology/software company",
       "source_name": "Microsoft",
       "source_url": "https://www.microsoft.com/en-us",
       "verified_at": "2026-11-17",
       "verification_method": "HTTP GET by the orchestrator",
       "verification_result": "verified",
-      "evidence_reference": "pipelines/open-source/research/evidence/CORP-09-http-2026-11-17.json",
+      "evidence_reference": "pipelines/open-source/research/evidence/CORP-R09-http-2026-11-17.json",
       "source_pages": [
         {
           "url": "https://www.microsoft.com/en-us",
@@ -378,14 +378,14 @@
       }
     },
     {
-      "source_id": "CORP-10",
+      "source_id": "CORP-06",
       "subcategory": "additional distinct national retail bank (complexity-matched reserve)",
       "source_name": "Bank of America",
       "source_url": "https://www.bankofamerica.com/",
       "verified_at": "2026-11-17",
       "verification_method": "HTTP GET by the orchestrator",
       "verification_result": "verified",
-      "evidence_reference": "pipelines/open-source/research/evidence/CORP-10-http-2026-11-17.json",
+      "evidence_reference": "pipelines/open-source/research/evidence/CORP-06-http-2026-11-17.json",
       "source_pages": [
         {
           "url": "https://www.bankofamerica.com/",
@@ -501,7 +501,7 @@
     }
   ],
   "orchestrator_corrections": [
-    "2026-11-17: CORP-08 verified_at normalised; see CORRECTIONS-2026-11-17-slot08.json",
+    "2026-11-17: CORP-R08 verified_at normalised; see CORRECTIONS-2026-11-17-slot08.json",
     "2026-11-17: verified_at reset to the HTTP evidence date; see CORRECTIONS-2026-11-17-dates.json"
   ]
 }

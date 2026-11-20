@@ -11,21 +11,21 @@
   "slots_outstanding": [],
   "approval_state": "unapproved: approval cells are left empty for the project lead",
   "runs": [
-    "2026-11-16T21-47-24-007Z-research-REST-07",
-    "2026-11-17T05-08-04-495Z-research-REST-10",
-    "2026-11-17T05-28-44-974Z-research-REST-08",
-    "2026-11-17T05-28-01-311Z-research-REST-09"
+    "2026-11-16T21-47-24-007Z-research-REST-05",
+    "2026-11-17T05-08-04-495Z-research-REST-06",
+    "2026-11-17T05-28-44-974Z-research-REST-R08",
+    "2026-11-17T05-28-01-311Z-research-REST-R09"
   ],
   "rows": [
     {
-      "source_id": "REST-07",
+      "source_id": "REST-05",
       "subcategory": "fast-casual chain",
       "source_name": "Panera Bread",
       "source_url": "https://www.panerabread.com",
       "verified_at": "2026-11-16",
       "verification_method": "HTTP GET by the orchestrator",
       "verification_result": "verified",
-      "evidence_reference": "pipelines/open-source/research/evidence/REST-07-http-2026-11-16.json",
+      "evidence_reference": "pipelines/open-source/research/evidence/REST-05-http-2026-11-16.json",
       "source_pages": [
         {
           "url": "https://www.panerabread.com",
@@ -135,14 +135,14 @@
       }
     },
     {
-      "source_id": "REST-08",
+      "source_id": "REST-R08",
       "subcategory": "ethnic (Xi'an Chinese)",
       "source_name": "Xi'an Famous Foods",
       "source_url": "https://www.xianfoods.com",
       "verified_at": "2026-11-17",
       "verification_method": "HTTP GET by the orchestrator",
       "verification_result": "verified",
-      "evidence_reference": "pipelines/open-source/research/evidence/REST-08-http-2026-11-17.json",
+      "evidence_reference": "pipelines/open-source/research/evidence/REST-R08-http-2026-11-17.json",
       "source_pages": [
         {
           "url": "https://www.xianfoods.com/",
@@ -251,14 +251,14 @@
       }
     },
     {
-      "source_id": "REST-09",
+      "source_id": "REST-R09",
       "subcategory": "brewery",
       "source_name": "Firestone Walker Brewing Company",
       "source_url": "https://www.firestonewalker.com/",
       "verified_at": "2026-11-17",
       "verification_method": "HTTP GET by the orchestrator",
       "verification_result": "verified",
-      "evidence_reference": "pipelines/open-source/research/evidence/REST-09-http-2026-11-17.json",
+      "evidence_reference": "pipelines/open-source/research/evidence/REST-R09-http-2026-11-17.json",
       "source_pages": [
         {
           "url": "https://www.firestonewalker.com/",
@@ -357,14 +357,14 @@
       }
     },
     {
-      "source_id": "REST-10",
+      "source_id": "REST-06",
       "subcategory": "cafe / bakery",
       "source_name": "Tartine Bakery",
       "source_url": "https://tartinebakery.com/",
       "verified_at": "2026-11-17",
       "verification_method": "HTTP GET by the orchestrator",
       "verification_result": "verified",
-      "evidence_reference": "pipelines/open-source/research/evidence/REST-10-http-2026-11-17.json",
+      "evidence_reference": "pipelines/open-source/research/evidence/REST-06-http-2026-11-17.json",
       "source_pages": [
         {
           "url": "https://tartinebakery.com",
@@ -451,8 +451,8 @@
     }
   ],
   "orchestrator_corrections": [
-    "2026-11-17: REST-10 limitations normalised; see CORRECTIONS-2026-11-17-slot10.json",
-    "2026-11-17: REST-08 verified_at normalised; see CORRECTIONS-2026-11-17-slot08.json",
+    "2026-11-17: REST-06 limitations normalised; see CORRECTIONS-2026-11-17-slot10.json",
+    "2026-11-17: REST-R08 verified_at normalised; see CORRECTIONS-2026-11-17-slot08.json",
     "2026-11-17: verified_at reset to the HTTP evidence date; see CORRECTIONS-2026-11-17-dates.json"
   ]
 }

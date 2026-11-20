@@ -101,8 +101,8 @@ All three slots verified with HTTP GET via curl on 2026-11-10 (ISO date; run aro
   - The footer groups, the full nav and the calculator and locator internals were not fully extracted.
   - The login form is real, so any replica must be a demo.
 
-### CORP-03
-- **source_id:** CORP-03
+### CORP-R03
+- **source_id:** CORP-R03
 - **category/subcategory:** Company / technology company (software/SaaS, DevSecOps platform)
 - **source_name:** GitLab (about.gitlab.com marketing site)
 - **official_url:** https://about.gitlab.com/ (`gitlab.com` and `www.gitlab.com` both redirect there)

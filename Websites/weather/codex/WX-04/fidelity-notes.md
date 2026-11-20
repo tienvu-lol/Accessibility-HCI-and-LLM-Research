@@ -2,32 +2,32 @@
 
 | Local file | Source |
 |---|---|
-| `index.html` | https://www.metoffice.gov.uk/ |
-| `london.html` | https://weather.metoffice.gov.uk/forecast/gcpvj0u3w |
-| `warnings.html` | https://weather.metoffice.gov.uk/warnings-and-advice/uk-warnings |
-| `radar.html` | https://weather.metoffice.gov.uk/maps-and-charts/rainfall-radar-forecast-map |
-| `about.html` | https://www.metoffice.gov.uk/about-us |
+| `index.html` | https://www.timeanddate.com/weather/ |
+| `location.html` | https://www.timeanddate.com/weather/usa/new-york |
+| `hourly.html` | https://www.timeanddate.com/weather/usa/new-york/hourly |
+| `extended.html` | https://www.timeanddate.com/weather/usa/new-york/ext |
+| `help.html` | https://www.timeanddate.com/weather/ext-help.html |
 | `404.html` | Intentional required local addition |
 
 ## Replicated
 
-National-service organization: forecast finder, recent/sample places, national summary, local daily/hourly table, explanation controls, warning-date selectors, rainfall map shell, organizational overview and footer.
+Utility/header navigation, city search and world-city table; city conditions overview and breadcrumbs; separate hourly and extended routes; hourly date control, unit-settings affordance; help questions and footer.
 
 ## Approximated
 
-Navy/lime identity, typography, layout proportions, forecast density and mobile behavior are authored from text evidence; no exact source screenshot available. Five days and four periods per day provide bounded representative coverage.
+Blue/gray fictional identity, table density and responsive organization are authored interpretations of extracted text, not verified source rendering. Four fictional city contexts share one static representative city route using safe IDs.
 
 ## Simulated / inferred
 
-Three fictional place records; fixed forecast and warnings; manual six-frame rain patch on original schematic SVG. Map controls are inferred and simplified. No live maps, panning, playback service or geographic accuracy. Day radios and JS updates approximate unexecuted source behavior. Warning subscription/share area is an explanatory disclosure only.
+Local city dataset and calculated temperature offsets, C/F conversion and date-selected hourly samples approximate unexecuted control behavior. Unit choice is per page and not persisted. All conditions, apparent temperatures and other metrics are invented fixed examples. No real observation timestamp.
 
 ## Added
 
-Required 404, skip link, demo notice, current links, breadcrumbs, labelled scrollable table and meaningful empty states.
+Required 404, persistent demo notice, accessible status/empty search messages, keyboard-scrollable labeled table regions, native help disclosures and unit-conversion explanation.
 
 ## Omitted
 
-Unapproved articles/video pages, live subscriptions, remote tiles, service accounts and real warnings. No temperature unit conversion claimed for this source. About page is a fictional organization overview, not copied institutional claims.
+Radar is explicitly outside this source's approved scope. No meteoblue pages, live forecasts, external ads/tracking/account, payment, location detection, or speculative article/about screen. Utility scope remains within the approved weather pages.
 
 
 All source interactions and rendering remain unverified in the approved research. Source availability is limited to the recorded method. See QA.md for local test limits. No pixel fidelity or WCAG conformance claim.

@@ -1,0 +1,43 @@
+{
+  "allocation_protocol": "WEB-REPLICA-ALLOCATION-V1.0",
+  "generation_protocol": "WEB-REPLICA-V1.0",
+  "category": "weather",
+  "slot": 10,
+  "source_id": "WX-06",
+  "model_group": "open-source",
+  "model_id": "unsloth/gpt-oss-120b-GGUF",
+  "model_version": "F16",
+  "model_provider_or_runtime": "vt-arc-falcon-llamacpp (OpenAI-compatible chat completions); open weights apache-2.0, https://huggingface.co/unsloth/gpt-oss-120b-GGUF",
+  "generation_mode": "orchestrated API agent, multi-turn file emission, one replica per run, no human authoring of site code",
+  "operator": "Samhith Varma Yallamraju",
+  "approved_source_url": "https://www.jma.go.jp/jma/indexe.html",
+  "source_verified_at": "2026-11-17",
+  "source_approved_at": "2026-11-17",
+  "rules_revision": "WEB-REPLICA-V1.0 / WEB-REPLICA-ALLOCATION-V1.0 at commit 09a5576 (Rules.md sha256 04b1c3e38b76)",
+  "category_prompt_revision": "pipelines/open-source/prompts/build.md sha256 6096ab8b698a",
+  "prompt_or_transcript_reference": "pipelines/open-source/runs/2026-11-17T06-09-17-921Z-build-WX-06/transcript.json",
+  "human_edits": [
+    {
+      "by": "open-source pipeline orchestrator (scripts/run-build.mjs)",
+      "at": "2026-11-17T06:13:15.009Z",
+      "what": "Normalized the provenance identifiers, model attribution, approval and revision fields to the recorded task values, and set validation_summary from the actual QC run. No website code was authored or edited by the orchestrator.",
+      "qc_evidence": "pipelines/open-source/runs/2026-11-17T06-09-17-921Z-build-WX-06/qc-repair-3-2026-11-17T06-13-11-008Z.json",
+      "generation_budget": {
+        "requests": 5,
+        "retries": 0,
+        "total_tokens": 100395
+      }
+    }
+  ],
+  "validation_summary": {
+    "technology": "fail",
+    "completeness": "fail",
+    "structure": "fail",
+    "interaction": "not-tested",
+    "accessibility": "fail",
+    "traceability": "not-tested",
+    "scope": "not-tested"
+  },
+  "generation_started_at": "2026-11-17T06:09:17.926Z",
+  "generation_completed_at": "2026-11-17T06:13:15.009Z"
+}

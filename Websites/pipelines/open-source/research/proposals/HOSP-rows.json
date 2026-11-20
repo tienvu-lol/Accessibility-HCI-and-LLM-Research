@@ -11,21 +11,21 @@
   "slots_outstanding": [],
   "approval_state": "unapproved: approval cells are left empty for the project lead",
   "runs": [
-    "2026-11-16T21-28-20-739Z-research-HOSP-07",
-    "2026-11-17T05-06-50-800Z-research-HOSP-08",
-    "2026-11-17T05-09-37-891Z-research-HOSP-10",
-    "2026-11-17T05-35-49-704Z-research-HOSP-09"
+    "2026-11-16T21-28-20-739Z-research-HOSP-05",
+    "2026-11-17T05-06-50-800Z-research-HOSP-R08",
+    "2026-11-17T05-09-37-891Z-research-HOSP-06",
+    "2026-11-17T05-35-49-704Z-research-HOSP-R09"
   ],
   "rows": [
     {
-      "source_id": "HOSP-07",
+      "source_id": "HOSP-05",
       "subcategory": "academic medical center",
       "source_name": "NYU Langone Health",
       "source_url": "https://nyulangone.org/",
       "verified_at": "2026-11-16",
       "verification_method": "HTTP GET by the orchestrator",
       "verification_result": "verified",
-      "evidence_reference": "pipelines/open-source/research/evidence/HOSP-07-http-2026-11-16.json",
+      "evidence_reference": "pipelines/open-source/research/evidence/HOSP-05-http-2026-11-16.json",
       "source_pages": [
         {
           "url": "https://nyulangone.org/",
@@ -137,14 +137,14 @@
       }
     },
     {
-      "source_id": "HOSP-08",
+      "source_id": "HOSP-R08",
       "subcategory": "community/regional hospital",
       "source_name": "Mercy Medical Center",
       "source_url": "https://www.mercy.com/",
       "verified_at": "2026-11-17",
       "verification_method": "HTTP GET by the orchestrator",
       "verification_result": "verified",
-      "evidence_reference": "pipelines/open-source/research/evidence/HOSP-08-http-2026-11-17.json",
+      "evidence_reference": "pipelines/open-source/research/evidence/HOSP-R08-http-2026-11-17.json",
       "source_pages": [
         {
           "url": "https://www.mercy.com/",
@@ -257,14 +257,14 @@
       }
     },
     {
-      "source_id": "HOSP-09",
+      "source_id": "HOSP-R09",
       "subcategory": "children’s hospital",
       "source_name": "Boston Children's Hospital",
       "source_url": "https://www.childrenshospital.org/",
       "verified_at": "2026-11-17",
       "verification_method": "HTTP GET by the orchestrator",
       "verification_result": "verified",
-      "evidence_reference": "pipelines/open-source/research/evidence/HOSP-09-http-2026-11-17.json",
+      "evidence_reference": "pipelines/open-source/research/evidence/HOSP-R09-http-2026-11-17.json",
       "source_pages": [
         {
           "url": "https://www.childrenshospital.org/",
@@ -376,14 +376,14 @@
       }
     },
     {
-      "source_id": "HOSP-10",
+      "source_id": "HOSP-06",
       "subcategory": "additional distinct academic medical center (complexity-matched reserve)",
       "source_name": "Mayo Clinic",
       "source_url": "https://www.mayoclinic.org",
       "verified_at": "2026-11-17",
       "verification_method": "HTTP GET by the orchestrator",
       "verification_result": "verified",
-      "evidence_reference": "pipelines/open-source/research/evidence/HOSP-10-http-2026-11-17.json",
+      "evidence_reference": "pipelines/open-source/research/evidence/HOSP-06-http-2026-11-17.json",
       "source_pages": [
         {
           "url": "https://www.mayoclinic.org",
@@ -483,7 +483,7 @@
     }
   ],
   "orchestrator_corrections": [
-    "2026-11-17: HOSP-08 verified_at normalised; see CORRECTIONS-2026-11-17-slot08.json",
+    "2026-11-17: HOSP-R08 verified_at normalised; see CORRECTIONS-2026-11-17-slot08.json",
     "2026-11-17: verified_at reset to the HTTP evidence date; see CORRECTIONS-2026-11-17-dates.json"
   ]
 }

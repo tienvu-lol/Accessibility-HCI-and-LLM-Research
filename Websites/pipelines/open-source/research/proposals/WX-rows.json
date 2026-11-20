@@ -11,21 +11,21 @@
   "slots_outstanding": [],
   "approval_state": "unapproved: approval cells are left empty for the project lead",
   "runs": [
-    "2026-11-16T21-43-57-698Z-research-WX-07",
-    "2026-11-17T05-15-05-830Z-research-WX-10",
-    "2026-11-17T05-11-13-301Z-research-WX-09",
-    "2026-11-17T05-20-05-716Z-research-WX-08"
+    "2026-11-16T21-43-57-698Z-research-WX-05",
+    "2026-11-17T05-15-05-830Z-research-WX-06",
+    "2026-11-17T05-11-13-301Z-research-WX-R09",
+    "2026-11-17T05-20-05-716Z-research-WX-R08"
   ],
   "rows": [
     {
-      "source_id": "WX-07",
+      "source_id": "WX-05",
       "subcategory": "national meteorological service",
       "source_name": "Bureau of Meteorology",
       "source_url": "https://www.bom.gov.au",
       "verified_at": "2026-11-16",
       "verification_method": "HTTP GET by the orchestrator",
       "verification_result": "verified",
-      "evidence_reference": "pipelines/open-source/research/evidence/WX-07-http-2026-11-16.json",
+      "evidence_reference": "pipelines/open-source/research/evidence/WX-05-http-2026-11-16.json",
       "source_pages": [
         {
           "url": "https://www.bom.gov.au",
@@ -126,14 +126,14 @@
       }
     },
     {
-      "source_id": "WX-08",
+      "source_id": "WX-R08",
       "subcategory": "commercial weather portal",
       "source_name": "Weather.com",
       "source_url": "https://weather.com/",
       "verified_at": "2026-11-17",
       "verification_method": "HTTP GET by the orchestrator",
       "verification_result": "verified",
-      "evidence_reference": "pipelines/open-source/research/evidence/WX-08-http-2026-11-17.json",
+      "evidence_reference": "pipelines/open-source/research/evidence/WX-R08-http-2026-11-17.json",
       "source_pages": [
         {
           "url": "https://weather.com/",
@@ -243,14 +243,14 @@
       }
     },
     {
-      "source_id": "WX-09",
+      "source_id": "WX-R09",
       "subcategory": "local TV weather or specialized forecast site",
       "source_name": "NBC Weather",
       "source_url": "https://www.nbcnews.com/news/weather",
       "verified_at": "2026-11-17",
       "verification_method": "HTTP GET",
       "verification_result": "verified",
-      "evidence_reference": "pipelines/open-source/research/evidence/WX-09-http-2026-11-17.json",
+      "evidence_reference": "pipelines/open-source/research/evidence/WX-R09-http-2026-11-17.json",
       "source_pages": [
         {
           "url": "https://www.nbcnews.com/news/weather",
@@ -357,14 +357,14 @@
       }
     },
     {
-      "source_id": "WX-10",
+      "source_id": "WX-06",
       "subcategory": "reserve",
       "source_name": "Japan Meteorological Agency – Weather (English)",
       "source_url": "https://www.jma.go.jp/jma/indexe.html",
       "verified_at": "2026-11-17",
       "verification_method": "HTTP GET by the orchestrator",
       "verification_result": "verified",
-      "evidence_reference": "pipelines/open-source/research/evidence/WX-10-http-2026-11-17.json",
+      "evidence_reference": "pipelines/open-source/research/evidence/WX-06-http-2026-11-17.json",
       "source_pages": [
         {
           "url": "https://www.jma.go.jp/jma/indexe.html",
@@ -477,8 +477,8 @@
     }
   ],
   "orchestrator_corrections": [
-    "2026-11-17: WX-10 verified_at normalised; see CORRECTIONS-2026-11-17-slot10.json",
-    "2026-11-17: WX-08 verified_at normalised; see CORRECTIONS-2026-11-17-slot08.json",
+    "2026-11-17: WX-06 verified_at normalised; see CORRECTIONS-2026-11-17-slot10.json",
+    "2026-11-17: WX-R08 verified_at normalised; see CORRECTIONS-2026-11-17-slot08.json",
     "2026-11-17: verified_at reset to the HTTP evidence date; see CORRECTIONS-2026-11-17-dates.json"
   ]
 }

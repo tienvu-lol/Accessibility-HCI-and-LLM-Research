@@ -8,7 +8,7 @@ try {
   const {positional, flags} = cliArgs(process.argv.slice(2), {run: 'value'});
   const [id] = positional;
   if (positional.length !== 1 || !flags.run || !/^[A-Za-z0-9._-]+$/.test(flags.run))
-    throw new Error('Usage: node record-qc.mjs UNI-07 --run RUN-ID');
+    throw new Error('Usage: node record-qc.mjs UNI-05 --run RUN-ID');
   const setup = loadSetup();
   const errors = validateSetup(setup);
   if (errors.length) throw new Error(errors.join('\n'));

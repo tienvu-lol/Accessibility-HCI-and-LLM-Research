@@ -14,18 +14,18 @@ Live web search plus web page-open/click text retrieval. These tools may return 
 |---|---|---|---|---|
 | REST-01 | claude / small local independent | [Via Carota](https://www.viacarota.com/) | Homepage image-led introduction, search/cart affordances; interior menu/visit scope pending owner inspection. | medium; readable via web tool, unapproved |
 | REST-02 | claude / BBQ / smokehouse | [Franklin Barbecue](https://franklinbbq.com/) | Homepage visit/hours, announcements, preorder and shop handoffs; interior scope pending. | medium; readable via web tool, unapproved |
-| REST-03 | claude / fine dining | [Eleven Madison Park](https://www.elevenmadisonpark.com/) | Homepage image sequence and slide labels; dining/reservation interiors pending. | medium; readable via web tool, unapproved |
-| REST-04 | codex / vegan / health | [Crossroads Kitchen](https://www.crossroadskitchen.com/) | 6 source pages + local 404; detailed below | medium; readable via web tool, unapproved |
-| REST-05 | codex / multi-location group | [Hogsalt](https://www.hogsalt.com/) | 5 source pages + local 404; detailed below | medium; readable via web tool, unapproved |
-| REST-06 | codex / pizzeria | [Pizzeria Bianco](https://www.pizzeriabianco.com/) | 5 source pages + local 404; detailed below | medium; readable via web tool, unapproved |
-| REST-07 | open-source / fast-casual chain | [Sweetgreen](https://www.sweetgreen.com/) | Homepage menu-category buttons, food cards and ordering handoff; menu/location interiors pending. | high; readable via web tool, unapproved |
-| REST-08 | open-source / ethnic (Xi'an Chinese) | [Xi'an Famous Foods](https://www.xianfoods.com/) | Homepage bilingual dish highlights, story/menu links; interior scope pending. | medium; readable via web tool, unapproved |
-| REST-09 | open-source / brewery (age gate) | [Russian River Brewing](https://www.russianriverbrewing.com/) | Homepage location/brew/menu/tour navigation; age gate NOT established in text retrieval. Interiors pending. | high; readable via web tool, unapproved |
-| REST-10 | open-source / cafe / bakery | [Tartine Bakery](https://tartinebakery.com/) | Homepage regional locations, order links, feature bands and story; interiors pending. | medium; readable via web tool, unapproved |
+| REST-R03 | claude / fine dining | [Eleven Madison Park](https://www.elevenmadisonpark.com/) | Homepage image sequence and slide labels; dining/reservation interiors pending. | medium; readable via web tool, unapproved |
+| REST-03 | codex / vegan / health | [Crossroads Kitchen](https://www.crossroadskitchen.com/) | 6 source pages + local 404; detailed below | medium; readable via web tool, unapproved |
+| REST-04 | codex / multi-location group | [Hogsalt](https://www.hogsalt.com/) | 5 source pages + local 404; detailed below | medium; readable via web tool, unapproved |
+| REST-R06 | codex / pizzeria | [Pizzeria Bianco](https://www.pizzeriabianco.com/) | 5 source pages + local 404; detailed below | medium; readable via web tool, unapproved |
+| REST-05 | open-source / fast-casual chain | [Sweetgreen](https://www.sweetgreen.com/) | Homepage menu-category buttons, food cards and ordering handoff; menu/location interiors pending. | high; readable via web tool, unapproved |
+| REST-R08 | open-source / ethnic (Xi'an Chinese) | [Xi'an Famous Foods](https://www.xianfoods.com/) | Homepage bilingual dish highlights, story/menu links; interior scope pending. | medium; readable via web tool, unapproved |
+| REST-R09 | open-source / brewery (age gate) | [Russian River Brewing](https://www.russianriverbrewing.com/) | Homepage location/brew/menu/tour navigation; age gate NOT established in text retrieval. Interiors pending. | high; readable via web tool, unapproved |
+| REST-06 | open-source / cafe / bakery | [Tartine Bakery](https://tartinebakery.com/) | Homepage regional locations, order links, feature bands and story; interiors pending. | medium; readable via web tool, unapproved |
 
 Other-group complexity ratings are preliminary homepage-level estimates, not completed approval proposals. No same-stratum substitutions are currently proposed. Russian River’s brewery stratum remains valid; the age-gate qualifier needs rendered inspection before inclusion. Across all groups, match page-type diversity and interaction burden before claiming comparable difficulty.
 
-## REST-04
+## REST-03
 
 Proposed page map:
 
@@ -54,7 +54,7 @@ Limitations: Six source pages; no external Las Vegas build, ordering, gift-card 
 
 `404.html` is a required intentional local addition, not a claimed source page. All external services must be clearly marked demonstrations. Original fictional branding, text and placeholder graphics only.
 
-## REST-05
+## REST-04
 
 Proposed page map:
 
@@ -82,7 +82,7 @@ Limitations: Bare hogsalt.com retrieval failed; www homepage and interior pages 
 
 `404.html` is a required intentional local addition, not a claimed source page. All external services must be clearly marked demonstrations. Original fictional branding, text and placeholder graphics only.
 
-## REST-06
+## REST-R06
 
 Proposed page map:
 
@@ -120,4 +120,4 @@ Rules.md §3: “Stop after Phase A.” Await explicit source/scope approval bef
 
 ## Source/scope approval update — 2026-11-14T04:44:45.932240+00:00
 
-Samhith Varma approved REST-04–06 and their exact proposed page scopes in conversation. See [approval record](REST-source-approval.md). This supersedes earlier unapproved status for these three sources only. Model/version assignments remain TBD; generation readiness is not established. Other-group scope and approval remain pending.
+Samhith Varma approved REST-03–06 and their exact proposed page scopes in conversation. See [approval record](REST-source-approval.md). This supersedes earlier unapproved status for these three sources only. Model/version assignments remain TBD; generation readiness is not established. Other-group scope and approval remain pending.

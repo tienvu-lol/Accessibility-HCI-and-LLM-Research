@@ -43,56 +43,56 @@ Populate or propose only the three assigned Codex source records. Do not fill ap
       },
       {
         "slot": 3,
-        "source_id": "FASH-03",
+        "source_id": "FASH-R03",
         "model_group": "claude",
         "stratum": "fashion blog or trend publication",
         "authority": "coordination proposal; reconcile with shared inventory"
       },
       {
         "slot": 4,
-        "source_id": "FASH-04",
+        "source_id": "FASH-03",
         "model_group": "codex",
         "stratum": "fashion magazine",
         "authority": "codex assignment"
       },
       {
         "slot": 5,
-        "source_id": "FASH-05",
+        "source_id": "FASH-04",
         "model_group": "codex",
         "stratum": "brand editorial/lookbook",
         "authority": "codex assignment"
       },
       {
         "slot": 6,
-        "source_id": "FASH-06",
+        "source_id": "FASH-R06",
         "model_group": "codex",
         "stratum": "fashion blog or trend publication",
         "authority": "codex assignment"
       },
       {
         "slot": 7,
-        "source_id": "FASH-07",
+        "source_id": "FASH-05",
         "model_group": "open-source",
         "stratum": "fashion magazine",
         "authority": "coordination proposal; reconcile with shared inventory"
       },
       {
         "slot": 8,
-        "source_id": "FASH-08",
+        "source_id": "FASH-R08",
         "model_group": "open-source",
         "stratum": "brand editorial/lookbook",
         "authority": "coordination proposal; reconcile with shared inventory"
       },
       {
         "slot": 9,
-        "source_id": "FASH-09",
+        "source_id": "FASH-R09",
         "model_group": "open-source",
         "stratum": "fashion blog or trend publication",
         "authority": "coordination proposal; reconcile with shared inventory"
       },
       {
         "slot": 10,
-        "source_id": "FASH-10",
+        "source_id": "FASH-06",
         "model_group": "open-source",
         "stratum": "additional distinct fashion magazine (complexity-matched reserve)",
         "authority": "coordination proposal; reconcile with shared inventory"
@@ -178,7 +178,7 @@ Populate or propose only the three assigned Codex source records. Do not fill ap
     {
       "category": "fashion",
       "slot": "03",
-      "source_id": "FASH-03",
+      "source_id": "FASH-R03",
       "model_group": "claude",
       "model_id": "",
       "model_version": "",
@@ -202,7 +202,7 @@ Populate or propose only the three assigned Codex source records. Do not fill ap
     {
       "category": "fashion",
       "slot": "04",
-      "source_id": "FASH-04",
+      "source_id": "FASH-03",
       "model_group": "codex",
       "model_id": "",
       "model_version": "",
@@ -226,7 +226,7 @@ Populate or propose only the three assigned Codex source records. Do not fill ap
     {
       "category": "fashion",
       "slot": "05",
-      "source_id": "FASH-05",
+      "source_id": "FASH-04",
       "model_group": "codex",
       "model_id": "",
       "model_version": "",
@@ -250,7 +250,7 @@ Populate or propose only the three assigned Codex source records. Do not fill ap
     {
       "category": "fashion",
       "slot": "06",
-      "source_id": "FASH-06",
+      "source_id": "FASH-R06",
       "model_group": "codex",
       "model_id": "",
       "model_version": "",
@@ -274,7 +274,7 @@ Populate or propose only the three assigned Codex source records. Do not fill ap
     {
       "category": "fashion",
       "slot": "07",
-      "source_id": "FASH-07",
+      "source_id": "FASH-05",
       "model_group": "open-source",
       "model_id": "",
       "model_version": "",
@@ -298,7 +298,7 @@ Populate or propose only the three assigned Codex source records. Do not fill ap
     {
       "category": "fashion",
       "slot": "08",
-      "source_id": "FASH-08",
+      "source_id": "FASH-R08",
       "model_group": "open-source",
       "model_id": "",
       "model_version": "",
@@ -322,7 +322,7 @@ Populate or propose only the three assigned Codex source records. Do not fill ap
     {
       "category": "fashion",
       "slot": "09",
-      "source_id": "FASH-09",
+      "source_id": "FASH-R09",
       "model_group": "open-source",
       "model_id": "",
       "model_version": "",
@@ -346,7 +346,7 @@ Populate or propose only the three assigned Codex source records. Do not fill ap
     {
       "category": "fashion",
       "slot": "10",
-      "source_id": "FASH-10",
+      "source_id": "FASH-06",
       "model_group": "open-source",
       "model_id": "",
       "model_version": "",

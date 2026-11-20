@@ -1,58 +1,29 @@
-# UNI-04 — Northvale State University
+# UNI-04 — Redbrook College
 
-Independent static research replica, category university, slot 04, Codex group. Fictional branding and original copy; inspired by the approved information architecture of The Pennsylvania State University (Penn State), https://www.psu.edu/.
+Independent fictional university research replica inspired by Dickinson College (small private liberal-arts stratum). Source: https://www.dickinson.edu/. Approved 2026-11-12 by Samhith Varma. Verification: 2026-11-12 HTTP GET plus live search/text extraction, not rendered browser evidence. See `pipelines/codex/research/UNI.md#uni-05` and `research/evidence/UNI-http-2026-11-12.json` in the research workspace.
 
-Source verification: 2026-11-12, HTTP-only urllib GET plus live web search/text extraction. Mapped pages returned HTTP 200 in the archived research evidence. Source rendering and source interactions were not verified. Approval: Samhith Varma, 2026-11-12; `Websites/metadata/change-log.md`, “Codex Phase A approval (slots 04–06).” Stale “approval pending” language in the original research block is superseded by this approval and the prepared task.
+Open `index.html` directly in a browser. No server, installation, external request or build is required. Shared files: `css/styles.css`, `js/main.js`; 2 original SVG illustrations.
 
-## Run locally
+## Complete sitemap and source mapping
+- `index.html` ← https://www.dickinson.edu/
+- `programs.html` ← https://www.dickinson.edu/homepage/199/academic_programs
+- `biology.html` ← https://www.dickinson.edu/homepage/55/biology
+- `admissions.html` ← https://www.dickinson.edu/homepage/287/admissions
+- `apply.html` ← https://www.dickinson.edu/homepage/279/apply
+- `tuition-aid.html` ← https://www.dickinson.edu/homepage/281/tuition_and_aid_overview
+- `visit.html` ← https://www.dickinson.edu/homepage/278/visit
+- `news.html` ← https://www.dickinson.edu/news
+- `404.html`: approved intentional local recovery page.
 
-Open `index.html` directly in a browser. All nine pages, SVGs, filters, and form simulations work without a server or network. No installation or build step. No data is stored or sent. The 404 page is an explicit local page, not a server routing rule.
+8 mapped content pages plus 404, 9 HTML pages total. Directory omitted because no valid directory source was verified.
 
-## Complete sitemap and source map
+## Local interactions and datasets
+Recruitment actions and consistent primary navigation; mobile menu with Escape dismissal. Site search uses 8 inline page records; program search uses 8 fictional program records; news search uses 4 original fictional stories. Biology is the only approved program detail, other listing records explicitly disclose that limit. Visit slideshow contains 3 manually selected scenes using 2 illustrations; 3 native visit questions and 2 native application policy disclosures. Inquiry validates name/email and gives demo-only confirmation without storage or network. Application and calculator destinations explain their simulation/nonfunctional boundaries; no application/account/payment is submitted. Form behavior approximates uninspected external source flows.
 
-| Local file | Source |
-| --- | --- |
-| `index.html` | https://www.psu.edu/ |
-| `majors.html` | https://www.psu.edu/academics/undergraduate/majors |
-| `biology.html` | https://bulletins.psu.edu/undergraduate/colleges/eberly-science/biology-bs/ |
-| `apply.html` | https://www.psu.edu/admission/undergraduate/how-to-apply |
-| `costs-aid.html` | https://www.psu.edu/costs-aid |
-| `visit.html` | https://www.psu.edu/admission/undergraduate/explore/visit-penn-state |
-| `directories.html` | https://www.psu.edu/search/directories |
-| `news.html` | https://www.psu.edu/news |
-| `404.html` | Local intentional addition; source missing-page probe returned HTTP 404, rendered layout unknown. |
-
-## Content and behavior
-
-- Home: media-style illustrated hero; opportunity and three-part highlight bands; traditions feature; news cards; grouped footer.
-- Majors: eight inline program cards, text search, area and campus filters, reset, live result count and empty state. One mapped program detail, Biology; other records clearly identify their listing-only scope.
-- Biology: separate bulletin treatment, breadcrumb, section navigation, requirements table, objectives, advising, two expandable sample academic plans, career paths.
-- Apply: two application routes, preparation questions, sample dates, requirements, FAQs, and a local preparation checklist dialog.
-- Costs/aid: sample budget, aid types and planning sections. No live calculator or award offer.
-- Visit: admitted students, campus/audience options, virtual/group visit disclosures, and a local request-preview dialog.
-- Directories: gateway with three fictional office profiles. No inferred inline people search was added.
-- News: separate editorial header, featured research, campus groups, three fictional inline stories, and disclosed media-highlight limitation.
-
-Dataset: 8 program records, 3 campus choices, 4 fields, 3 fictional office profiles, 3 fictional news stories, 2 academic plan options, 3 applicant types. Costs, deadlines and names are expressly illustrative. No real outcome claims or testimonials.
-
-The responsive menu and submenu disclosures support native keyboard interaction, Escape closing, and focus return. Dialogs use native modal focus containment; closing returns focus to the initiating button. Form errors identify fields and focus an error summary. Success states explicitly deny submission or registration; values are written with textContent.
-
-## Provenance and evaluation
-
-Actual worker: gpt-6.1-sol through the OpenAI collaboration runtime in Codex; release version unavailable. Historical codex-cli research attribution is not this runtime. Active allocation is 01–06; 07–10 remain deferred. Generation artifacts and QC evidence are in `Websites/pipelines/codex/runs/2026-11-13T15-34-51-696Z-build-UNI-04/` in the delivery repository; evidence is outside this independent site.
-
-Initial generated site is preserved as `initial-site.tar.gz` before validation repairs. See generation-metadata.json for timestamps, durable protocol hashes, gates, tools and repair history. See fidelity-notes.md for observed versus inferred elements. QC and interaction results will be recorded in the run evidence and final validation note below.
+## Evaluation
+Shared QC executed once and exited 2 because Chromium launch was blocked (SIGTRAP/EPERM). No axe or browser-page check ran and the shared executable emitted no JSON. Raw evidence: `qc-initial.log`; truthful attempt summary: `qc-attempt.json`. Independent static audit passed local paths/fragments, IDs, H1, landmarks, labels, alt presence and JSON parsing. `node --check js/main.js` passed. Six separate Node VM tests with DOM stubs passed menu/Escape logic, site/program/news search match/empty states, program reset, inquiry validation/simulated success and slideshow wrap. These do not establish real browser focus, keyboard behavior or rendering. Solid color token contrast calculations range from 7.46:1 to 14.46:1; image-overlay contrast is unverified. Evidence `static-results.json`, `interaction-results.json`, their reproducible scripts and initial generated artifact are stored outside this site under `pipelines/codex/runs/2026-11-13T15-34-51-770Z-build-UNI-04/`. Passing automation is not human acceptance or accessibility conformance.
 
 ## Limits
+Source observations were HTTP-only. Typography, colors, image treatment and responsive behavior are original approximations, not visually measured fidelity. Screen reader, real-device, 200–400% zoom and cross-browser tests are untested. No real organizational identity, student outcomes, deadlines or costs are represented. Active allocation 01–06; 07–10 remain deferred.
 
-No pixel-level comparison is possible from the approved HTTP/text evidence. No external applications, directory system, registrations, media feeds, or social widgets are reproduced. No screen-reader, zoom, Safari/Firefox, or physical-device testing is claimed. WCAG 2.2 AA is a target, not a conformance claim.
-
-## Final validation record
-
-Completed 2026-11-13. Delivered 9 HTML pages, 2 original SVG assets, 1 CSS, 1 JS, and 4 documentation/metadata files: 17 files total.
-
-Static checks passed: required artifacts, all local files/fragments, unique IDs, one H1 per page, heading sequence, explicit control labels, alt attributes, both metadata attributes on meaningful semantic regions, explicit button types, and JS syntax. Nine declared solid palette pairs passed their text/focus contrast thresholds; imagery/rendered states were not audited.
-
-Shared mandatory QC was actually attempted once (`qc-01.log`, `qc-attempt.json`): exit 2, Chromium launch denied at MachPortRendezvous bootstrap_check_in. It emitted no QC summary JSON. Axe, desktop/mobile browser scans, reflow and browser interaction tests are **not tested**, with no claim of zero failures. Submission awaits runnable browser QC and human review.
-
-Five actual-JS logic groups passed through Node vm DOM stand-ins: menu Escape/focus requests; exclusive submenus; combined search/filter/empty/reset; application errors and success/reset; visit errors and success/reset. This does not test native dialog focus containment, accessibility trees, rendered CSS, or actual keyboard events. The first harness invocation had a runner-path error, preserved in `interaction-harness-first-error.log`; correcting the runner required no site-JS changes. See `interaction-logic-results.json`, `static-audit.json`, `technology-audit.json`, `palette-contrast.json`, `repairs.json`, and `delivery-summary.md` in the run folder.
+Coordinator source review identified incomplete instrumentation. The same gpt-6.1-sol worker added both region/component attributes and unique instance selectors throughout all semantic regions and existing component containers, then regenerated the inventory. Original artifact preserved; correction evidence: `instrumentation-correction.json` and `instrumentation-audit.json`. Presentation and interaction code were unchanged.

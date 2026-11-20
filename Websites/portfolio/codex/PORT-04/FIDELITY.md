@@ -1,61 +1,33 @@
-# Fidelity notes — replica 01
+# Fidelity notes — Jamie Vale
 
-## Reference and evidence
+## Reference evidence
 
-Primary reference: https://brittanychiang.com/
-Supporting archive: https://brittanychiang.com/archive
-The reference homepage and archive were successfully opened during the selection stage. Its extracted content confirmed About, Experience, Projects, Writing, social destinations, a résumé link, selected-project links, a project archive, and a compact credit footer. Writing destinations are external on the reference. The source homepage describes its own use of Next.js and Tailwind; neither is used here.
+Primary reference: https://www.adhamdannaway.com/
+Supporting reference: https://www.adhamdannaway.com/portfolio
+Also inspected during the selection stage: /about, /blog, /contact, and /featured.
 
-Visual direction follows the selected reference’s dark, restrained personal-portfolio layout: a large identity column beside a narrow reading column, substantial vertical spacing, compact uppercase section navigation, muted body text, mint accents, date-led experience rows, thumbnail-and-text project cards, technology pills, and editorial writing summaries. Responsive rules convert the desktop columns into a stacked layout.
-
-Browser access failed in this environment (“browser access host is unavailable”). No screenshot comparison, exact pixel measurement, browser runtime verification, or current DOM/style inspection was possible during implementation. This is an independently authored structural interpretation, not a verified pixel-identical clone. Exact typography, breakpoints, animations, spacing, and hover behavior remain approximations.
+The homepage and portfolio were successfully reopened during implementation. The readable source confirmed the designer/developer split positioning, shared About/Learn/Portfolio/Blog/Contact navigation, a latest-work group, and a larger product-design case-study collection. Earlier inspection confirmed article listings, publication dates, a contact form, biography, and featured/press content.
 
 ## Preserved architecture
 
-- Compact personal homepage with About → Experience → Projects → Writing progression.
-- Prominent identity/role introduction, supporting personal positioning, and professional history.
-- Desktop persistent identity sidebar; content flows alongside it.
-- Project thumbnails, concise descriptions, topic/technology pills, archive link, résumé CTA.
-- Separate project archive with a compact tabular index.
-- Small editorial writing list and credit area.
+The site follows the reference’s designer/coder homepage concept, a restrained dark header, prominent paired identity statements, central split artwork, and latest-work cards beneath the hero. Separate About, Learn, Portfolio, Blog, Contact, and Featured-equivalent pages keep the same broad information hierarchy. Product-design case studies, editorial posts, and a form-based contact route provide depth beyond the homepage.
 
-## Intentional content substitutions
+The visual implementation is an independent interpretation: white and light-gray content bands, charcoal typography, fine rules, wide spacing, image-led portfolio cards, and a clear type hierarchy. Responsive layouts move from a three-part desktop hero to a stacked portrait and paired text blocks. The original portrait and any distinctive real-owner images are not used.
 
-- Fictional engineer Rowan Ellis replaces Brittany Chiang.
-- Fictional employers, dates, project narratives, and article copy replace the owner’s material.
-- Three locally authored abstract SVG interface studies replace photographs and project screenshots.
-- Site-local contact actions replace real social profiles to avoid impersonation or misleading destinations.
-- No borrowed photos, real endorsements, client logos, résumé, book/course products, or proprietary code.
-- System sans-serif replaces the reference’s exact font dependency. No third-party asset requests.
+## Original substitutions
 
-## Research extensions, not observed original features
+Jamie Vale is fictional. The split portrait is a newly authored SVG illustration combining warm drawn shapes and geometric code-inspired forms. Six original SVG interface studies replace project screenshots. The projects, articles, résumé, employers, testimonials, recognition, product titles, and contact details are invented for the research package. No real client results, user-testing statistics, press coverage, or endorsements are claimed.
 
-The following additions satisfy the approved research brief and should not be counted as faithful observations of the reference:
+## Research extensions
 
-| Addition | Implementation |
-| --- | --- |
-| Utility bar and Explore menu | Sticky on compact layouts; native details dropdown with Escape/outside close |
-| Local project details | Three full case-study documents rather than outbound project links |
-| Local writing | Searchable listing and three article documents rather than external publications |
-| Search and tag/category interaction | Client-side AND combination, live count, empty state |
-| Contact / booking / newsletter | Native validation and in-memory demonstration success |
-| NDA project | Explicitly insecure client-side demonstration gate |
-| Masonry gallery and lightbox | CSS columns, native dialog, previous/next image controls |
-| Theme control | In-memory light/dark variable switch |
-| Availability and clock | Fictional availability plus New York time |
-| Services / FAQ / Toolkit / Press | Separate extension pages, including native accordions |
-| Testimonials | Fictional, manually operated carousel |
-| Prints | Local placeholder catalogue and modal purchase simulation |
-| CV and About | Expanded local documents plus plain-text résumé download |
-| Footer | Expanded navigational columns to expose research pages |
-| 404 | Standalone static error document; host routing must be configured |
+The utility bar, responsive disclosure menu, search/category filters, local learning paths, gallery/lightbox controls, previous/next case navigation, demo NDA gate, Services and FAQ pages, Toolkit, CV download, print/save-as-PDF control, theme toggle, copy-email actions, studio-local time/availability display, manual testimonials, and simulated booking/newsletter/purchase flows are approved research extensions rather than verified features of the original.
 
-No standalone video carousel is included: the manually operated testimonial carousel covers the carousel/slider interaction family without adding redundant homepage UI. A sidebar is represented by the identity column and the article table-of-contents panel. The design does not insert a generic marketing utility/header/footer stack into the reference’s core homepage merely to make it resemble the more complex sites in the study.
+The Learn and studio-shop pages use original material rather than recreating the owner’s real educational products. Contact forms and purchases never transmit data. The password gate is explicitly insecure and protects no confidential information.
 
-## Code and behavior fidelity
+## Scope and code
 
-Rendered websites do not establish their internal architecture or coding syntax. This package reproduces page structure and visible interaction concepts using new HTML, CSS, and JavaScript. There is no React, framework emulation, dependency bundle, build tooling, database, backend logic, or network submission. All state is page-local and ephemeral; theme preferences and form values do not persist across navigation.
+Twenty-three full HTML pages use CSS3 and vanilla JavaScript. The owner’s internal implementation and source syntax cannot be established from rendered content; they are not claimed to be copied. There is no React, dependency framework, build system, database, or backend logic. HTML shared regions are repeated in full so no PHP server is required. A common behavior foundation is shared in source with the companion Avery North site; each deliverable contains its own complete copy and works independently.
 
-## Remaining verification
+## Verification limit
 
-Manual browser checks should compare desktop at approximately 1440px and 1024px, mobile at 390px and 320px, and 200%/400% zoom. Verify native dialogs and date validation in Safari/Firefox/Chromium, keyboard paths, VoiceOver/NVDA announcements, target sizes, and contrast with ambient background effects. The included source-check results do not substitute for those checks.
+Browser host access was unavailable; attempting native Safari returned that computer-use permissions were not granted. No screenshot/pixel comparison, rendered responsive review, or live interaction test was completed. Hero proportions, exact spacing, fonts, hover behavior, and accessibility under real browser/assistive-technology conditions remain unverified. Source-check results do not imply exact fidelity or complete WCAG compliance.

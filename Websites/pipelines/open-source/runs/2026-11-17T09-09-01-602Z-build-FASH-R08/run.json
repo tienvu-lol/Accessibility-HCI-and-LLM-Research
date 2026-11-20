@@ -1,0 +1,151 @@
+{
+  "run_id": "2026-11-17T09-09-01-602Z-build-FASH-R08",
+  "phase": "build",
+  "target": "FASH-R08",
+  "category": "fashion",
+  "slot": 8,
+  "model_group": "open-source",
+  "model": {
+    "model_id": "unsloth/NVIDIA-Nemotron-3-Super-120B-A12B-GGUF",
+    "model_version": "MXFP4_MOE",
+    "model_provider_or_runtime": "vt-arc-falcon-llamacpp (OpenAI-compatible chat completions at http://localhost:8081/v1)",
+    "weights_url": "https://huggingface.co/unsloth/NVIDIA-Nemotron-3-Super-120B-A12B-GGUF",
+    "license": "nvidia-nemotron-open-model-license",
+    "open_weights": true,
+    "eligibility_note": "Open weights. Licence is the NVIDIA Nemotron Open Model License (HF tag nvidia-nemotron-open-model-license), as published on huggingface.co/unsloth/NVIDIA-Nemotron-3-Super-120B-A12B-GGUF and on the base model card nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-BF16, both read 2026-11-17 by the orchestrator. This is a vendor open-model licence, NOT an OSI-approved open-source licence: this slot is open-weight but should not be described as open-source without checking the licence text against the study's definition. Quantisation MXFP4_MOE. Served self-hosted via llama.cpp on VT ARC Falcon node fal052:50413 over an SSH tunnel on localhost:8081; no third-party inference provider.",
+    "params": {
+      "temperature": 0.3,
+      "max_tokens": 32000
+    }
+  },
+  "operator": "Samhith Varma Yallamraju",
+  "status": "failed",
+  "prepared_at": "2026-11-17T09:09:01.608Z",
+  "generation_started_at": "2026-11-17T09:09:01.608Z",
+  "generation_completed_at": "2026-11-17T09:54:44.704Z",
+  "tool_access": "chat-completions API only: no browsing, no shell, no filesystem. The orchestrator wrote every file and ran every check.",
+  "budget": {
+    "max_build_turns": 28,
+    "max_repair_rounds": 0,
+    "max_tokens_per_request": 32000,
+    "temperature": 0.3
+  },
+  "approved_source": {
+    "source_name": "Refinery29",
+    "source_url": "https://www.refinery29.com/en-us",
+    "verified_at": "2026-11-17",
+    "verification_method": "HTTP GET by the orchestrator",
+    "verification_result": "verified",
+    "evidence_reference": "pipelines/open-source/research/evidence/FASH-R08-http-2026-11-17.json",
+    "complexity": "medium",
+    "stack_clues": "unknown",
+    "limitations": "Verified_at date not supplied in evidence; deeper article pages not requested; JavaScript‑driven content cannot be confirmed.",
+    "approved_at": "2026-11-17",
+    "approved_by": "Samhith Varma Yallamraju",
+    "approval_reference": "Project lead approval of all slot-08 sources given 2026-11-17 in the Claude Code orchestration session; see research/FASH-R08.md and research/proposals/FASH-rows.json"
+  },
+  "approved_page_map": [
+    {
+      "url": "https://www.refinery29.com/en-us",
+      "title": "Refinery29",
+      "local_file": "index.html"
+    },
+    {
+      "url": "https://www.refinery29.com/en-us/fashion/",
+      "title": "Fashion: What To Wear, Trends, Styling Tips - Refinery29",
+      "local_file": "fashion.html"
+    },
+    {
+      "url": "https://www.refinery29.com/en-us/beauty/",
+      "title": "Beauty: Skincare Tips, Hair & Makeup Trends - Refinery29",
+      "local_file": "beauty.html"
+    },
+    {
+      "url": "https://www.refinery29.com/en-us/shopping/",
+      "title": "Shop The Best Beauty, Fashion & Homeware - Refinery29",
+      "local_file": "shopping.html"
+    },
+    {
+      "url": "https://www.refinery29.com/en-us/summer-lookbook-2026",
+      "title": "The R29 Lookbook: The Making of a Summer Star",
+      "local_file": "summer-lookbook-2026.html"
+    },
+    {
+      "url": "https://www.refinery29.com/en-us/money-diary",
+      "title": "Money Diaries - Refinery29",
+      "local_file": "money-diary.html"
+    },
+    {
+      "url": "https://www.refinery29.com/en-us/horoscope",
+      "title": "Horoscopes & Zodiac Star Sign Predictions - Refinery29",
+      "local_file": "horoscope.html"
+    },
+    {
+      "url": "https://www.refinery29.com/en-us/podcasts",
+      "title": "Refinery29 Podcasts",
+      "local_file": "podcasts.html"
+    }
+  ],
+  "protocol_snapshots": [
+    {
+      "path": "Rules.md",
+      "sha256": "04b1c3e38b76f2aff3aef869d67370bb4532cd8f9ab5e22ac8276f26cbb859bf"
+    },
+    {
+      "path": "MODEL_ALLOCATION.md",
+      "sha256": "7e9487530a6e80b35af48d0691951dafc2fffea39798c81a3c49203909148d30"
+    },
+    {
+      "path": "pipelines/open-source/config.json",
+      "sha256": "36ba2cde671cfe89f211cdca7c47c975281615e97cacb8d06ef247be6e4eb4d9"
+    },
+    {
+      "path": "pipelines/open-source/categories.json",
+      "sha256": "8180966e55daa24799e51106645e93fd5807dde470765ab8b3b38d3f922c867b"
+    },
+    {
+      "path": "pipelines/open-source/prompts/system.md",
+      "sha256": "61bc24a57de14bd6a662cd6b5f98d0cfc57bf47e187fc58a97831bf1f272b4ee"
+    },
+    {
+      "path": "pipelines/open-source/prompts/build.md",
+      "sha256": "6096ab8b698af7a99d8ddaf1534cc95f41844d1d00cdd1fce740123b3146ab6a"
+    },
+    {
+      "path": "pipelines/open-source/prompts/repair.md",
+      "sha256": "8a84e51995736607b3efa6f5b2d76e52692423c2c26b03409afb4afa3c6586d6"
+    },
+    {
+      "path": "pipelines/open-source/models.json",
+      "sha256": "f02e4efcab2732e1736a96e02459eef895400d01c2888b63c7cded93435f36c4"
+    },
+    {
+      "path": "metadata/source-inventories/fashion.csv",
+      "sha256": "c132d9eb91495d04d79d9506e6ebc45b1b635bfc56a3eeeda7994c50d8f8435d"
+    },
+    {
+      "path": "metadata/assignments.csv",
+      "sha256": "75aa44ee9046372a60e2b9bafe18f1e0dbb3f7c5bd80c29f49f4c060050bca06"
+    }
+  ],
+  "turns": [],
+  "rejected_files": [],
+  "qc_runs": [],
+  "repair_rounds": [],
+  "retries": [],
+  "human_edits": [],
+  "usage": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "total_tokens": 0,
+    "requests": 0,
+    "retries": 0
+  },
+  "errors": [
+    "Network error: fetch failed"
+  ],
+  "outputs": {
+    "site": "fashion/open-source/FASH-R08",
+    "transcript": "pipelines/open-source/runs/2026-11-17T09-09-01-602Z-build-FASH-R08/transcript.json"
+  }
+}

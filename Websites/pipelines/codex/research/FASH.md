@@ -1,4 +1,4 @@
-> **Current selection update (2026-11-13 UTC):** The approved replacement addendum at the end of this file supersedes the original proposals for FASH-06. Earlier observations remain historical evidence.
+> **Current selection update (2026-11-13 UTC):** The approved replacement addendum at the end of this file supersedes the original proposals for FASH-R06. Earlier observations remain historical evidence.
 
 # FASH — Phase A source research
 
@@ -22,11 +22,11 @@ Evidence below preserves URL, actual attempt timestamp, status/error and title. 
 
 | ID | Organization / canonical URL | Stratum | Complexity | Availability | Scope / approval |
 |---|---|---|---|---|---|
-| FASH-04 | [AnOther](https://www.anothermag.com/) | fashion magazine | medium | verified | 6 source pages + local 404; provisional, unapproved |
-| FASH-05 | [TOAST](https://www.toa.st/) | brand editorial/lookbook | medium | verified | 5 source pages + local 404; provisional, unapproved |
-| FASH-06 | [Fashionista](https://fashionista.com/) | fashion blog or trend publication | medium | UNVERIFIED | 4 source pages + local 404; provisional, unapproved |
+| FASH-03 | [AnOther](https://www.anothermag.com/) | fashion magazine | medium | verified | 6 source pages + local 404; provisional, unapproved |
+| FASH-04 | [TOAST](https://www.toa.st/) | brand editorial/lookbook | medium | verified | 5 source pages + local 404; provisional, unapproved |
+| FASH-R06 | [Fashionista](https://fashionista.com/) | fashion blog or trend publication | medium | UNVERIFIED | 4 source pages + local 404; provisional, unapproved |
 
-## FASH-04 — AnOther
+## FASH-03 — AnOther
 
 Subcategory/stratum: fashion magazine. Canonical organization homepage: https://www.anothermag.com/. Attempted 2026-11-12 UTC using live search, web extraction and direct HTTP GET. Result: **verified** for availability only. Evidence: HTTP ledger below and canonical page links in the map.
 
@@ -67,7 +67,7 @@ Limitations: HTTP-only. No rendered layout, responsiveness or interaction tests.
 
 Proposed substitutions: None selected. If unavailable or reserved, coordinator must propose and verify another fashion magazine of medium scoped complexity; await approval.
 
-## FASH-05 — TOAST
+## FASH-04 — TOAST
 
 Subcategory/stratum: brand editorial/lookbook. Canonical organization homepage: https://www.toa.st/. Attempted 2026-11-12 UTC using live search, web extraction and direct HTTP GET. Result: **verified** for availability only. Evidence: HTTP ledger below and canonical page links in the map.
 
@@ -107,7 +107,7 @@ Limitations: HTTP-only. Retail/account/bag/checkout not proposed. Seasonal conce
 
 Proposed substitutions: None selected. If reserved/unavailable, require coordinator-approved brand editorial with medium scoped complexity; no autonomous replacement.
 
-## FASH-06 — Fashionista
+## FASH-R06 — Fashionista
 
 Subcategory/stratum: fashion blog or trend publication. Canonical organization homepage: https://fashionista.com/. Attempted 2026-11-12 UTC using live search, web extraction and direct HTTP GET. Result: **UNVERIFIED** for availability only. Evidence: HTTP ledger below and canonical page links in the map.
 
@@ -193,14 +193,14 @@ Each row is an actual direct GET attempt. 200 verifies availability at that atte
 |---|---|---|---|---|---|
 | FASH-01 | claude | fashion magazine — pending reconciliation | Pending coordinator reservation | Register says claude-sonnet-5-5; version pending | Pending source, scope and approval |
 | FASH-02 | claude | brand editorial/lookbook — pending reconciliation | Pending coordinator reservation | Register says claude-sonnet-5-5; version pending | Pending source, scope and approval |
-| FASH-03 | claude | fashion blog/trend publication — pending reconciliation | Pending coordinator reservation | Register says claude-sonnet-5-5; version pending | Pending source, scope and approval |
-| FASH-04 | codex | fashion magazine | AnOther — provisional | TBD | Pending reservation, model and approval |
-| FASH-05 | codex | brand editorial/lookbook | TOAST — provisional | TBD | Pending reservation, model and approval |
-| FASH-06 | codex | fashion blog/trend publication | Fashionista — provisional; UNVERIFIED | TBD | Pending availability, reservation, model and approval |
-| FASH-07 | open-source | fashion magazine — pending reconciliation | Pending coordinator reservation | TBD | Pending source, eligible model, scope and approval |
-| FASH-08 | open-source | brand editorial/lookbook — pending reconciliation | Pending coordinator reservation | TBD | Pending source, eligible model, scope and approval |
-| FASH-09 | open-source | fashion blog/trend publication — pending reconciliation | Pending coordinator reservation | TBD | Pending source, eligible model, scope and approval |
-| FASH-10 | open-source | distinct magazine complexity reserve — pending reconciliation | Pending coordinator reservation | TBD | Pending source, eligible model, scope and approval |
+| FASH-R03 | claude | fashion blog/trend publication — pending reconciliation | Pending coordinator reservation | Register says claude-sonnet-5-5; version pending | Pending source, scope and approval |
+| FASH-03 | codex | fashion magazine | AnOther — provisional | TBD | Pending reservation, model and approval |
+| FASH-04 | codex | brand editorial/lookbook | TOAST — provisional | TBD | Pending reservation, model and approval |
+| FASH-R06 | codex | fashion blog/trend publication | Fashionista — provisional; UNVERIFIED | TBD | Pending availability, reservation, model and approval |
+| FASH-05 | open-source | fashion magazine — pending reconciliation | Pending coordinator reservation | TBD | Pending source, eligible model, scope and approval |
+| FASH-R08 | open-source | brand editorial/lookbook — pending reconciliation | Pending coordinator reservation | TBD | Pending source, eligible model, scope and approval |
+| FASH-R09 | open-source | fashion blog/trend publication — pending reconciliation | Pending coordinator reservation | TBD | Pending source, eligible model, scope and approval |
+| FASH-06 | open-source | distinct magazine complexity reserve — pending reconciliation | Pending coordinator reservation | TBD | Pending source, eligible model, scope and approval |
 
 Coordinator action requested: reconcile/reserve all seven external-group sources and confirm Codex domains are unreserved; establish comparability and generator assignments; resolve Fashionista availability. Then request project-lead approval for the complete ten-source inventory, exact page/interaction scope and model allocation under Rules.md §2–3 and MODEL_ALLOCATION.md §4. No implementation may start. No approval waiver has been inherited.
 
@@ -209,7 +209,7 @@ Coordinator action requested: reconcile/reserve all seven external-group sources
 
 Approval record: [replacement-approval-2026-11-13.json](evidence/replacement-approval-2026-11-13.json). The user explicitly approved the replacements with the disclosed web-retrieval limitations. No shared-protocol amendment or build execution is inferred.
 
-### FASH-06 current selection — Who What Wear
+### FASH-R06 current selection — Who What Wear
 
 Replaces Fashionista. Canonical URL: https://www.whowhatwear.com/. Stratum: fashion blog or trend publication. Complexity: high.
 

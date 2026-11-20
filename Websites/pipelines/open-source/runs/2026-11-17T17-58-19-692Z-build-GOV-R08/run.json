@@ -1,0 +1,482 @@
+{
+  "run_id": "2026-11-17T17-58-19-692Z-build-GOV-R08",
+  "phase": "build",
+  "target": "GOV-R08",
+  "category": "government",
+  "slot": 8,
+  "model_group": "open-source",
+  "model": {
+    "model_id": "unsloth/NVIDIA-Nemotron-3-Super-120B-A12B-GGUF",
+    "model_version": "MXFP4_MOE",
+    "model_provider_or_runtime": "vt-arc-falcon-llamacpp (OpenAI-compatible chat completions at http://localhost:8081/v1)",
+    "weights_url": "https://huggingface.co/unsloth/NVIDIA-Nemotron-3-Super-120B-A12B-GGUF",
+    "license": "nvidia-nemotron-open-model-license",
+    "open_weights": true,
+    "eligibility_note": "Open weights. Licence is the NVIDIA Nemotron Open Model License (HF tag nvidia-nemotron-open-model-license), read 2026-11-17 by the orchestrator on the quant repo and the base model card nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-BF16. A vendor open-model licence, NOT OSI-approved: this slot is open-weight, not open-source. Quantisation MXFP4_MOE. Served self-hosted via llama.cpp on VT ARC Falcon over an SSH tunnel on localhost:8081. Serving history, same model and quant: fal052:50413 (2026-11-17, twelve slot-08 research runs and four builds; session ended), fal039:43471 (current).",
+    "params": {
+      "temperature": 0.3,
+      "max_tokens": 32000
+    }
+  },
+  "operator": "Samhith Varma Yallamraju",
+  "status": "completed",
+  "prepared_at": "2026-11-17T17:58:19.697Z",
+  "generation_started_at": "2026-11-17T17:58:19.697Z",
+  "generation_completed_at": "2026-11-17T18:09:15.099Z",
+  "tool_access": "chat-completions API only: no browsing, no shell, no filesystem. The orchestrator wrote every file and ran every check.",
+  "budget": {
+    "max_build_turns": 48,
+    "max_repair_rounds": 3,
+    "max_tokens_per_request": 32000,
+    "temperature": 0.3
+  },
+  "approved_source": {
+    "source_name": "Massachusetts State Government",
+    "source_url": "https://www.mass.gov/",
+    "verified_at": "2026-11-17",
+    "verification_method": "HTTP GET by the orchestrator",
+    "verification_result": "verified",
+    "evidence_reference": "pipelines/open-source/research/evidence/GOV-R08-http-2026-11-17.json",
+    "complexity": "medium",
+    "stack_clues": "unknown",
+    "limitations": "Verification date not provided in evidence; markup structure not inspected, so regions and interactions are inferred; all requested pages returned 2xx and were mapped.",
+    "approved_at": "2026-11-17",
+    "approved_by": "Samhith Varma Yallamraju",
+    "approval_reference": "Project lead approval of all slot-08 sources given 2026-11-17 in the Claude Code orchestration session; see research/GOV-R08.md and research/proposals/GOV-rows.json"
+  },
+  "approved_page_map": [
+    {
+      "url": "https://www.mass.gov/",
+      "title": "Mass.gov",
+      "local_file": "index.html"
+    },
+    {
+      "url": "https://www.mass.gov/topics/health-social-services",
+      "title": "Health & Social Services | Mass.gov",
+      "local_file": "health-social-services.html"
+    },
+    {
+      "url": "https://www.mass.gov/topics/families-children",
+      "title": "Families & Children | Mass.gov",
+      "local_file": "families-children.html"
+    },
+    {
+      "url": "https://www.mass.gov/topics/transportation",
+      "title": "Transportation | Mass.gov",
+      "local_file": "transportation.html"
+    },
+    {
+      "url": "https://www.mass.gov/how-to/apply-for-unemployment-insurance-benefits",
+      "title": "Apply for unemployment insurance benefits | Mass.gov",
+      "local_file": "apply-unemployment-benefits.html"
+    },
+    {
+      "url": "https://www.mass.gov/how-to/renew-your-vehicle-or-trailer-registration",
+      "title": "Renew your vehicle or trailer registration | Mass.gov",
+      "local_file": "renew-vehicle-registration.html"
+    },
+    {
+      "url": "https://www.mass.gov/search-court-dockets-calendars-and-case-information",
+      "title": "Search Court Dockets, Calendars and Case Information | Mass.gov",
+      "local_file": "search-court-dockets.html"
+    },
+    {
+      "url": "https://www.mass.gov/info-details/massachusetts-state-organizations-a-to-z",
+      "title": "Massachusetts State Organizations | Mass.gov",
+      "local_file": "state-organizations-a-to-z.html"
+    }
+  ],
+  "protocol_snapshots": [
+    {
+      "path": "Rules.md",
+      "sha256": "04b1c3e38b76f2aff3aef869d67370bb4532cd8f9ab5e22ac8276f26cbb859bf"
+    },
+    {
+      "path": "MODEL_ALLOCATION.md",
+      "sha256": "7e9487530a6e80b35af48d0691951dafc2fffea39798c81a3c49203909148d30"
+    },
+    {
+      "path": "pipelines/open-source/config.json",
+      "sha256": "e5c7666dbdc7c302e54c0c94c946dcd01d64992b89a56df7ce1ee272dd488edf"
+    },
+    {
+      "path": "pipelines/open-source/categories.json",
+      "sha256": "8180966e55daa24799e51106645e93fd5807dde470765ab8b3b38d3f922c867b"
+    },
+    {
+      "path": "pipelines/open-source/prompts/system.md",
+      "sha256": "61bc24a57de14bd6a662cd6b5f98d0cfc57bf47e187fc58a97831bf1f272b4ee"
+    },
+    {
+      "path": "pipelines/open-source/prompts/build.md",
+      "sha256": "6096ab8b698af7a99d8ddaf1534cc95f41844d1d00cdd1fce740123b3146ab6a"
+    },
+    {
+      "path": "pipelines/open-source/prompts/repair.md",
+      "sha256": "8a84e51995736607b3efa6f5b2d76e52692423c2c26b03409afb4afa3c6586d6"
+    },
+    {
+      "path": "pipelines/open-source/models.json",
+      "sha256": "c9030eb15c275da3e978e64cf2a9e508788095ad3a9170258f24b9e3dc9db17b"
+    },
+    {
+      "path": "metadata/source-inventories/government.csv",
+      "sha256": "64dbeac032f8378980a12f27a714bc0afab7a180afe6d135c23d1a61b7449aca"
+    },
+    {
+      "path": "metadata/assignments.csv",
+      "sha256": "75aa44ee9046372a60e2b9bafe18f1e0dbb3f7c5bd80c29f49f4c060050bca06"
+    }
+  ],
+  "turns": [
+    {
+      "turn": 1,
+      "label": "plan",
+      "status_line": "CONTINUE",
+      "prose_chars": 3567,
+      "files_written": [],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 1390,
+        "prompt_tokens": 5065,
+        "total_tokens": 6455,
+        "prompt_tokens_details": {
+          "cached_tokens": 541
+        }
+      },
+      "at": "2026-11-17T17:58:48.956Z"
+    },
+    {
+      "turn": 2,
+      "label": "files-2",
+      "status_line": "CONTINUE",
+      "prose_chars": 0,
+      "files_written": [
+        "css/styles.css",
+        "js/main.js",
+        "index.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 6480,
+        "prompt_tokens": 6150,
+        "total_tokens": 12630,
+        "prompt_tokens_details": {
+          "cached_tokens": 5061
+        }
+      },
+      "at": "2026-11-17T18:00:55.229Z"
+    },
+    {
+      "turn": 3,
+      "label": "files-3",
+      "status_line": "CONTINUE",
+      "prose_chars": 0,
+      "files_written": [
+        "404.html",
+        "health-social-services.html",
+        "families-children.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 2657,
+        "prompt_tokens": 12234,
+        "total_tokens": 14891,
+        "prompt_tokens_details": {
+          "cached_tokens": 6146
+        }
+      },
+      "at": "2026-11-17T18:01:49.428Z"
+    },
+    {
+      "turn": 4,
+      "label": "files-4",
+      "status_line": "CONTINUE",
+      "prose_chars": 0,
+      "files_written": [
+        "transportation.html",
+        "apply-unemployment-benefits.html",
+        "renew-vehicle-registration.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 2832,
+        "prompt_tokens": 14595,
+        "total_tokens": 17427,
+        "prompt_tokens_details": {
+          "cached_tokens": 12230
+        }
+      },
+      "at": "2026-11-17T18:02:45.890Z"
+    },
+    {
+      "turn": 5,
+      "label": "files-5",
+      "status_line": "CONTINUE",
+      "prose_chars": 0,
+      "files_written": [
+        "search-court-dockets.html",
+        "state-organizations-a-to-z.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 2775,
+        "prompt_tokens": 17478,
+        "total_tokens": 20253,
+        "prompt_tokens_details": {
+          "cached_tokens": 14591
+        }
+      },
+      "at": "2026-11-17T18:03:41.514Z"
+    },
+    {
+      "turn": 6,
+      "label": "files-6",
+      "status_line": "COMPLETE",
+      "prose_chars": 0,
+      "files_written": [
+        "README.md",
+        "fidelity-notes.md",
+        "component-inventory.json",
+        "generation-metadata.json"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 4506,
+        "prompt_tokens": 20238,
+        "total_tokens": 24744,
+        "prompt_tokens_details": {
+          "cached_tokens": 17474
+        }
+      },
+      "at": "2026-11-17T18:05:11.278Z"
+    },
+    {
+      "turn": 7,
+      "label": "repair-1",
+      "status_line": "COMPLETE",
+      "prose_chars": 902,
+      "files_written": [
+        "js/main.js",
+        "index.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 6092,
+        "prompt_tokens": 25732,
+        "total_tokens": 31824,
+        "prompt_tokens_details": {
+          "cached_tokens": 20234
+        }
+      },
+      "at": "2026-11-17T18:07:17.350Z"
+    },
+    {
+      "turn": 8,
+      "label": "repair-2",
+      "status_line": "COMPLETE",
+      "prose_chars": 329,
+      "files_written": [
+        "index.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 5468,
+        "prompt_tokens": 31262,
+        "total_tokens": 36730,
+        "prompt_tokens_details": {
+          "cached_tokens": 25728
+        }
+      },
+      "at": "2026-11-17T18:09:11.200Z"
+    }
+  ],
+  "rejected_files": [],
+  "qc_runs": [
+    {
+      "started_at": "2026-11-17T18:05:11.290Z",
+      "completed_at": "2026-11-17T18:05:15.221Z",
+      "exit_code": 1,
+      "executed": true,
+      "passed": false,
+      "outcome": "fail",
+      "failures": [
+        "JS error @1280 404.html: Cannot read properties of null (reading 'addEventListener')",
+        "JS error @1280 apply-unemployment-benefits.html: Cannot read properties of null (reading 'addEventListener')",
+        "JS error @1280 families-children.html: Cannot read properties of null (reading 'addEventListener')",
+        "JS error @1280 health-social-services.html: Cannot read properties of null (reading 'addEventListener')",
+        "axe region (moderate) @1280 index.html: 12 node(s) e.g. .hero-banner",
+        "JS error @1280 renew-vehicle-registration.html: Cannot read properties of null (reading 'addEventListener')",
+        "JS error @1280 search-court-dockets.html: Cannot read properties of null (reading 'addEventListener')",
+        "JS error @1280 state-organizations-a-to-z.html: Cannot read properties of null (reading 'addEventListener')",
+        "JS error @1280 transportation.html: Cannot read properties of null (reading 'addEventListener')",
+        "JS error @375 404.html: Cannot read properties of null (reading 'addEventListener')",
+        "JS error @375 apply-unemployment-benefits.html: Cannot read properties of null (reading 'addEventListener')",
+        "JS error @375 families-children.html: Cannot read properties of null (reading 'addEventListener')",
+        "JS error @375 health-social-services.html: Cannot read properties of null (reading 'addEventListener')",
+        "axe region (moderate) @375 index.html: 12 node(s) e.g. .hero-banner",
+        "JS error @375 renew-vehicle-registration.html: Cannot read properties of null (reading 'addEventListener')",
+        "JS error @375 search-court-dockets.html: Cannot read properties of null (reading 'addEventListener')",
+        "JS error @375 state-organizations-a-to-z.html: Cannot read properties of null (reading 'addEventListener')",
+        "JS error @375 transportation.html: Cannot read properties of null (reading 'addEventListener')"
+      ],
+      "failure_count": 18,
+      "warnings": [],
+      "axe": {
+        "region": 24
+      },
+      "pages": 9,
+      "files": 15,
+      "qc_tool_sha256": "e9be905d19e7181e30d8291bcb1511d4469bdc9e36c20c0efe21e2d3fcf54513",
+      "report": "qc-initial-2026-11-17T18-05-11-290Z.json",
+      "log": "qc-initial-2026-11-17T18-05-11-290Z.log",
+      "stdout_tail": "QC /Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/government/open-source/GOV-R08\npages=9 files=15 failures=18 warnings=0\nFAIL JS error @1280 404.html: Cannot read properties of null (reading 'addEventListener')\nFAIL JS error @1280 apply-unemployment-benefits.html: Cannot read properties of null (reading 'addEventListener')\nFAIL JS error @1280 families-children.html: Cannot read properties of null (reading 'addEventListener')\nFAIL JS error @1280 health-social-services.html: Cannot read properties of null (reading 'addEventListener')\nFAIL axe region (moderate) @1280 index.html: 12 node(s) e.g. .hero-banner\nFAIL JS error @1280 renew-vehicle-registration.html: Cannot read properties of null (reading 'addEventListener')\nFAIL JS error @1280 search-court-dockets.html: Cannot read properties of null (reading 'addEventListener')\nFAIL JS error @1280 state-organizations-a-to-z.html: Cannot read properties of null (reading 'addEventListener')\nFAIL JS error @1280 transportation.html: Cannot read properties of null (reading 'addEventListener')\nFAIL JS error @375 404.html: Cannot read properties of null (reading 'addEventListener')\nFAIL JS error @375 apply-unemployment-benefits.html: Cannot read properties of null (reading 'addEventListener')\nFAIL JS error @375 families-children.html: Cannot read properties of null (reading 'addEventListener')\nFAIL JS error @375 health-social-services.html: Cannot read properties of null (reading 'addEventListener')\nFAIL axe region (moderate) @375 index.html: 12 node(s) e.g. .hero-banner\nFAIL JS error @375 renew-vehicle-registration.html: Cannot read properties of null (reading 'addEventListener')\nFAIL JS error @375 search-court-dockets.html: Cannot read properties of null (reading 'addEventListener')\nFAIL JS error @375 state-organizations-a-to-z.html: Cannot read properties of null (reading 'addEventListener')\nFAIL JS error @375 transportation.html: Cannot read properties of null (reading 'addEventListener')\n",
+      "note": null
+    },
+    {
+      "started_at": "2026-11-17T18:07:17.352Z",
+      "completed_at": "2026-11-17T18:07:21.207Z",
+      "exit_code": 1,
+      "executed": true,
+      "passed": false,
+      "outcome": "fail",
+      "failures": [
+        "axe region (moderate) @1280 index.html: 11 node(s) e.g. section[data-section=\"report\"] > h2",
+        "axe region (moderate) @375 index.html: 11 node(s) e.g. section[data-section=\"report\"] > h2"
+      ],
+      "failure_count": 2,
+      "warnings": [],
+      "axe": {
+        "region": 22
+      },
+      "pages": 9,
+      "files": 15,
+      "qc_tool_sha256": "e9be905d19e7181e30d8291bcb1511d4469bdc9e36c20c0efe21e2d3fcf54513",
+      "report": "qc-repair-1-2026-11-17T18-07-17-352Z.json",
+      "log": "qc-repair-1-2026-11-17T18-07-17-352Z.log",
+      "stdout_tail": "QC /Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/government/open-source/GOV-R08\npages=9 files=15 failures=2 warnings=0\nFAIL axe region (moderate) @1280 index.html: 11 node(s) e.g. section[data-section=\"report\"] > h2\nFAIL axe region (moderate) @375 index.html: 11 node(s) e.g. section[data-section=\"report\"] > h2\n",
+      "note": null
+    },
+    {
+      "started_at": "2026-11-17T18:09:11.201Z",
+      "completed_at": "2026-11-17T18:09:15.098Z",
+      "exit_code": 0,
+      "executed": true,
+      "passed": true,
+      "outcome": "pass",
+      "failures": [],
+      "failure_count": 0,
+      "warnings": [],
+      "axe": {},
+      "pages": 9,
+      "files": 15,
+      "qc_tool_sha256": "e9be905d19e7181e30d8291bcb1511d4469bdc9e36c20c0efe21e2d3fcf54513",
+      "report": "qc-repair-2-2026-11-17T18-09-11-201Z.json",
+      "log": "qc-repair-2-2026-11-17T18-09-11-201Z.log",
+      "stdout_tail": "QC /Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/government/open-source/GOV-R08\npages=9 files=15 failures=0 warnings=0\n",
+      "note": null
+    }
+  ],
+  "repair_rounds": [
+    {
+      "round": 1,
+      "before": {
+        "outcome": "fail",
+        "failures": 18
+      },
+      "after": {
+        "outcome": "fail",
+        "failures": 2
+      },
+      "files_changed": [
+        "js/main.js",
+        "index.html"
+      ],
+      "at": "2026-11-17T18:07:21.208Z"
+    },
+    {
+      "round": 2,
+      "before": {
+        "outcome": "fail",
+        "failures": 2
+      },
+      "after": {
+        "outcome": "pass",
+        "failures": 0
+      },
+      "files_changed": [
+        "index.html"
+      ],
+      "at": "2026-11-17T18:09:15.099Z"
+    }
+  ],
+  "retries": [],
+  "human_edits": [
+    {
+      "by": "orchestrator script",
+      "at": "2026-11-17T18:09:15.100Z",
+      "what": "Wrote the model's emitted files, normalized generation-metadata.json provenance fields, and set validation_summary from the recorded QC run. No site markup, style or script was authored or edited by hand."
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 132754,
+    "completion_tokens": 32200,
+    "total_tokens": 164954,
+    "requests": 8,
+    "retries": 0
+  },
+  "errors": [],
+  "outputs": {
+    "site": "government/open-source/GOV-R08",
+    "transcript": "pipelines/open-source/runs/2026-11-17T17-58-19-692Z-build-GOV-R08/transcript.json"
+  },
+  "delivered": {
+    "files": [
+      "404.html",
+      "README.md",
+      "apply-unemployment-benefits.html",
+      "component-inventory.json",
+      "css/styles.css",
+      "families-children.html",
+      "fidelity-notes.md",
+      "generation-metadata.json",
+      "health-social-services.html",
+      "index.html",
+      "js/main.js",
+      "renew-vehicle-registration.html",
+      "search-court-dockets.html",
+      "state-organizations-a-to-z.html",
+      "transportation.html"
+    ],
+    "file_count": 15,
+    "bytes": 68591,
+    "pages_in_map": 8,
+    "missing_required": [],
+    "model_claimed_complete": true,
+    "delivered_complete": true,
+    "turns_used": 6,
+    "turn_budget": 48
+  },
+  "initial_artifact": "pipelines/open-source/runs/2026-11-17T17-58-19-692Z-build-GOV-R08/initial",
+  "provenance": {
+    "wrote": true,
+    "modelEmittedValidMetadata": true
+  },
+  "acceptance": "not accepted: a QC result is not acceptance, and interaction review plus human acceptance happen outside this script"
+}

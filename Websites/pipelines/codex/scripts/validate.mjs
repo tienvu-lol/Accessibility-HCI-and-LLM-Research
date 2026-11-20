@@ -1,7 +1,7 @@
 import {loadSetup,validateSetup,buildReadiness,cliArgs} from './lib.mjs';
 try {
   const {positional,flags}=cliArgs(process.argv.slice(2),{ready:'value',model:'value',runtime:'value',operator:'value','model-version':'value'});
-  if (positional.length) throw new Error('Usage: node validate.mjs [--ready UNI-04 --model ID --runtime NAME --operator NAME]');
+  if (positional.length) throw new Error('Usage: node validate.mjs [--ready UNI-03 --model ID --runtime NAME --operator NAME]');
   const setup=loadSetup(); const errors=validateSetup(setup);
   if (flags.ready && !errors.length) errors.push(...buildReadiness(setup,flags.ready,{...setup.config.model,id:flags.model || setup.config.model.id,runtime:flags.runtime || setup.config.model.runtime,operator:flags.operator || setup.config.model.operator,version:flags['model-version'] || setup.config.model.version}));
   if (errors.length) {for (const e of errors) console.error('FAIL',e);process.exitCode=1;}

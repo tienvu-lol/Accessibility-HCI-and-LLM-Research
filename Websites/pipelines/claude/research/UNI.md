@@ -118,8 +118,8 @@ Rejected candidates, in case a replacement is needed:
   - Events, catalog and directory data are external or JS-driven.
   - I did not render the page, so the sixth nav group is unconfirmed.
 
-### UNI-03
-- **source_id:** UNI-03
+### UNI-R03
+- **source_id:** UNI-R03
 - **category/subcategory:** School (University) / community college
 - **source_name:** Northern Virginia Community College (NOVA)
 - **official_url:** https://www.nvcc.edu/

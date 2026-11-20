@@ -18,17 +18,17 @@ Primary evidence: [HTTP observation log](evidence/ECOM-http-2026-11-12.json), co
 
 | ID | Organization / canonical homepage | Assigned stratum | Complexity | Proposal |
 |---|---|---|---|---|
-| ECOM-04 | Allbirds — https://www.allbirds.com/ | single-brand direct-to-consumer store | medium | Provisional; 6 mapped pages; approval pending |
-| ECOM-05 | World Market — https://www.worldmarket.com/ | multi-category retailer | high | Provisional; 7 mapped pages; approval pending |
-| ECOM-06 | Adafruit Industries — https://www.adafruit.com/ | specialty retailer | medium | Provisional; 6 mapped pages; approval pending |
+| ECOM-03 | Allbirds — https://www.allbirds.com/ | single-brand direct-to-consumer store | medium | Provisional; 6 mapped pages; approval pending |
+| ECOM-04 | World Market — https://www.worldmarket.com/ | multi-category retailer | high | Provisional; 7 mapped pages; approval pending |
+| ECOM-R06 | Adafruit Industries — https://www.adafruit.com/ | specialty retailer | medium | Provisional; 6 mapped pages; approval pending |
 
 Page counts follow the inspected source branch, not a quota. Proposed `404.html` is a required local addition for all three; only Adafruit's actual 404 was inspected. Demo checkout is **not in source_pages**: no checkout page was fetched, and no validation was observed. If later requested for evaluation, `checkout.html` must be explicitly approved as an intentional simulated addition, with fictional data and no payment/account/shipping service. No persistent browser storage is justified by this inspection; any later use needs explicit documentation. No real transaction, login, return or newsletter submission was attempted.
 
-## ECOM-04 — Allbirds
+## ECOM-03 — Allbirds
 
-- Source ID: ECOM-04; category: e-commerce; subcategory/stratum: **single-brand direct-to-consumer store**.
+- Source ID: ECOM-03; category: e-commerce; subcategory/stratum: **single-brand direct-to-consumer store**.
 - Canonical organization homepage: https://www.allbirds.com/
-- Verification: 2026-11-12T00:52:36.949760+00:00; HTTP-only availability verified. All mapped URLs returned 200; detailed per-URL evidence below and in the shared log under source_id `ECOM-04`. Rendered/interaction verification: **UNVERIFIED / not tested**.
+- Verification: 2026-11-12T00:52:36.949760+00:00; HTTP-only availability verified. All mapped URLs returned 200; detailed per-URL evidence below and in the shared log under source_id `ECOM-03`. Rendered/interaction verification: **UNVERIFIED / not tested**.
 - Complexity: **medium** — Gender/category navigation, merchandise bands, size-dependent product purchase controls, filtered search and cart drawer; narrower merchandise domain than the multi-category retailer.
 - Stack clues: Shopify and cdn/shop strings; v-model and @change template attributes suggest reactive client rendering (framework/runtime not confirmed). jquery/bootstrap strings alone do not establish active dependencies.
 
@@ -62,11 +62,11 @@ Limitations: HTTP-only. Cart returns 200 with an empty title; shared shell is pr
 
 Proposed substitutions: none selected. If coordination finds a reservation conflict or rendered inspection invalidates the proposed scope, request a same-stratum, comparable-complexity replacement and project-lead approval; do not replace autonomously during build. The cart mapping is conditional on further source inspection; a drawer-focused local cart approximation requires explicit scope approval.
 
-## ECOM-05 — World Market
+## ECOM-04 — World Market
 
-- Source ID: ECOM-05; category: e-commerce; subcategory/stratum: **multi-category retailer**.
+- Source ID: ECOM-04; category: e-commerce; subcategory/stratum: **multi-category retailer**.
 - Canonical organization homepage: https://www.worldmarket.com/
-- Verification: 2026-11-12T00:52:37.323742+00:00; HTTP-only availability verified. All mapped URLs returned 200; detailed per-URL evidence below and in the shared log under source_id `ECOM-05`. Rendered/interaction verification: **UNVERIFIED / not tested**.
+- Verification: 2026-11-12T00:52:37.323742+00:00; HTTP-only availability verified. All mapped URLs returned 200; detailed per-URL evidence below and in the shared log under source_id `ECOM-04`. Rendered/interaction verification: **UNVERIFIED / not tested**.
 - Complexity: **high** — Multiple merchandise departments, category landing plus filtered listing, store/localization controls, color choice, product details and search. Scope limits the furniture branch while preserving cross-department navigation.
 - Stack clues: demandware.store and demandware.static URL paths identify Salesforce Commerce Cloud conventions; underlying application/version unknown.
 
@@ -103,11 +103,11 @@ Limitations: HTTP-only. No dropdown expansion, responsive layout, cart mutation,
 
 Proposed substitutions: none selected. If coordination finds a reservation conflict or rendered inspection invalidates the proposed scope, request a same-stratum, comparable-complexity replacement and project-lead approval; do not replace autonomously during build. 
 
-## ECOM-06 — Adafruit Industries
+## ECOM-R06 — Adafruit Industries
 
-- Source ID: ECOM-06; category: e-commerce; subcategory/stratum: **specialty retailer**.
+- Source ID: ECOM-R06; category: e-commerce; subcategory/stratum: **specialty retailer**.
 - Canonical organization homepage: https://www.adafruit.com/
-- Verification: 2026-11-12T00:52:39.545675+00:00; HTTP-only availability verified. All mapped URLs returned 200; detailed per-URL evidence below and in the shared log under source_id `ECOM-06`. Rendered/interaction verification: **UNVERIFIED / not tested**.
+- Verification: 2026-11-12T00:52:39.545675+00:00; HTTP-only availability verified. All mapped URLs returned 200; detailed per-URL evidence below and in the shared log under source_id `ECOM-R06`. Rendered/interaction verification: **UNVERIFIED / not tested**.
 - Complexity: **medium** — Dense product-category navigation, technical product sections, quantity/add-on purchase area, search filters and cart form; no configurator or observed size/color matrix. Broad electronics catalog increases navigation density, but proposed branch is bounded.
 - Stack clues: jquery/bootstrap strings in returned markup. Store backend and framework version unknown; no claim of Zen Cart based on URL style.
 
@@ -158,13 +158,13 @@ External rows below report existing notes only; they do not reserve, approve or 
 |---|---|---|---|---|
 | ECOM-01 | claude | DTC beauty per Claude notes | Glossier — https://www.glossier.com/ | Pending central reservation, scope/model reconciliation and approval |
 | ECOM-02 | claude | Multi-category home furnishings per Claude notes | IKEA USA — https://www.ikea.com/us/en/ | Pending central reservation, scope/model reconciliation and approval |
-| ECOM-03 | claude | Specialty outdoor per Claude notes | Orvis — https://www.orvis.com/ | Pending central reservation, scope/model reconciliation and approval |
-| ECOM-04 | codex | Single-brand DTC; medium | Allbirds — https://www.allbirds.com/ | Provisional; reservation conflict check and approval pending |
-| ECOM-05 | codex | Multi-category retailer; high | World Market — https://www.worldmarket.com/ | Provisional; reservation conflict check and approval pending |
-| ECOM-06 | codex | Specialty retailer; medium | Adafruit Industries — https://www.adafruit.com/ | Provisional; reservation conflict check and approval pending |
-| ECOM-07 | open-source | Pending; proposed DTC stratum only | Unknown — pending coordinator | Pending source, scope, verification, exact model and approval |
-| ECOM-08 | open-source | Pending; proposed multi-category stratum only | Unknown — pending coordinator | Pending source, scope, verification, exact model and approval |
-| ECOM-09 | open-source | Pending; proposed specialty stratum only | Unknown — pending coordinator | Pending source, scope, verification, exact model and approval |
-| ECOM-10 | open-source | Pending; proposed additional DTC reserve only | Unknown — pending coordinator | Pending source, scope, verification, exact model and approval |
+| ECOM-R03 | claude | Specialty outdoor per Claude notes | Orvis — https://www.orvis.com/ | Pending central reservation, scope/model reconciliation and approval |
+| ECOM-03 | codex | Single-brand DTC; medium | Allbirds — https://www.allbirds.com/ | Provisional; reservation conflict check and approval pending |
+| ECOM-04 | codex | Multi-category retailer; high | World Market — https://www.worldmarket.com/ | Provisional; reservation conflict check and approval pending |
+| ECOM-R06 | codex | Specialty retailer; medium | Adafruit Industries — https://www.adafruit.com/ | Provisional; reservation conflict check and approval pending |
+| ECOM-05 | open-source | Pending; proposed DTC stratum only | Unknown — pending coordinator | Pending source, scope, verification, exact model and approval |
+| ECOM-R08 | open-source | Pending; proposed multi-category stratum only | Unknown — pending coordinator | Pending source, scope, verification, exact model and approval |
+| ECOM-R09 | open-source | Pending; proposed specialty stratum only | Unknown — pending coordinator | Pending source, scope, verification, exact model and approval |
+| ECOM-06 | open-source | Pending; proposed additional DTC reserve only | Unknown — pending coordinator | Pending source, scope, verification, exact model and approval |
 
 **Coordinator action requested:** reserve Claude's documented URLs; confirm all open-source reservations/selections and reconcile the ten unique sources, page scope, complexity and exact model assignments. Then obtain project-lead approval for the complete ten-source inventory. All ten slots currently lack recorded complete-inventory approval. Stop here; no site folders or website code were created, and no build agents launched.

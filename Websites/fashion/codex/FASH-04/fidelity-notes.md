@@ -1,15 +1,13 @@
 # Fidelity notes
 
-Source verification on 2026-11-12 used live web search/text extraction and direct Python urllib GET: HTTP 200 for six mapped URLs. Availability only; no rendered geometry, mobile layout or interaction was verified. Gallery web fetch had a cache miss while direct HTTP returned 200. No fresh source verification during generation.
+Replicated: approved five-page map; delivery/country utility concept, brand and nested Community navigation, home seasonal feature and magazine entry, magazine introduction/category bands, article heading/body and comment affordance, seasonal imagery/quotation/related craft, search form, newsletter callout, grouped footer. Source evidence: Websites/pipelines/codex/research/FASH.md#fash-05--toast and task.md; original verification was HTTP/text only.
 
-Replicated: six-page source map; section navigation/search, homepage feature and story lists, category list, author archive, detail title/date/byline/body/caption, gallery controls, inline newsletter and utility footer. See README for exact URLs.
+Approximated: geometry, spacing, typography, muted palette, responsive arrangement and original editorial illustrations. No source screenshots were available, so visual similarity is unverified. The utility line is static and identifies a demo region, not a functional country selector. Retail menu branches are reduced to an explicit editorial-only navigation; no commerce actions appear.
 
-Approximated: typographic masthead, centered feature, card grids, editorial spacing, and footer arrangement are design interpretations from HTTP/text hierarchy; no screenshot or pixel matching evidence.
+Simulated: newsletter email confirmation, comment preview, six-record article search, responsive menu activation. These recreate indicated affordances, not observed source transaction states. Search excludes products, an intentional disclosed scope reduction. Only the mapped story and seasonal concept have matching detail links; four additional editorial sample summaries have visible summary-only labels and no detail links. All names, writing and artwork are fictional/original; no real endorsement.
 
-Simulated: search over one full-story title and three visibly labeled, unlinked summary-only titles; gallery transitions over four original studies; email validation and newsletter success without network or storage. These source interaction mechanics were inferred, not executed.
+Added: 404 recovery page required by protocol, visible demonstration disclosures, accessible status feedback, mobile button/Escape handling, local validation and no-JavaScript search fallback. These are implementation decisions, not verified source behaviors.
 
-Added: required 404, skip link, accessible statuses and explicit simulation notices.
+Omitted: retail/account/bag/checkout, video playback, external social/legal destinations and unavailable corporate pages; no mapped source screens removed. No independently observed author archive or interactive gallery, therefore none added. Seasonal concept remains a static visual narrative.
 
-Omitted: out-of-map section destinations, proprietary media, commercial services, real subscription endpoint, and twelve additional gallery items. No source sidebar was established.
-
-Unverified: rendered source layout, responsive rules, source keyboard/menu behavior, gallery transition/keyboard behavior, search result design, form validation and success. All local prose, brand and artwork are fictional and original.
+Unverified: rendered source/layout, source responsive behavior, source menu/search/form execution. Delivered browser rendering, axe and native keyboard/screen-reader/reflow checks remain subject to the actual QC evidence; mocked tests cannot establish these. No accessibility conformance is asserted.

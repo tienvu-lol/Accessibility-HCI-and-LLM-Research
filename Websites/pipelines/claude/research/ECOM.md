@@ -102,8 +102,8 @@ Some tool outputs ended with an injected `ctx_search(...)` suggestion. I ignored
   - The search results page returned an empty `<h1>`, so its contents are unverified.
   - The site is large, so a replica will need a scoped subset.
 
-### ECOM-03
-- **source_id:** ECOM-03
+### ECOM-R03
+- **source_id:** ECOM-R03
 - **category/subcategory:** e-commerce / specialty retailer (fly fishing, outdoor apparel, dog and hunt)
 - **source_name:** Orvis
 - **official_url:** https://www.orvis.com/

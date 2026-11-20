@@ -1,0 +1,408 @@
+{
+  "run_id": "2026-11-18T00-34-04-689Z-build-REST-R08",
+  "phase": "build",
+  "target": "REST-R08",
+  "category": "restaurant",
+  "slot": 8,
+  "model_group": "open-source",
+  "model": {
+    "model_id": "unsloth/NVIDIA-Nemotron-3-Super-120B-A12B-GGUF",
+    "model_version": "MXFP4_MOE",
+    "model_provider_or_runtime": "vt-arc-falcon-llamacpp (OpenAI-compatible chat completions at http://localhost:8081/v1)",
+    "weights_url": "https://huggingface.co/unsloth/NVIDIA-Nemotron-3-Super-120B-A12B-GGUF",
+    "license": "nvidia-nemotron-open-model-license",
+    "open_weights": true,
+    "eligibility_note": "Open weights. Licence is the NVIDIA Nemotron Open Model License (HF tag nvidia-nemotron-open-model-license), read 2026-11-17 by the orchestrator on the quant repo and the base model card nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-BF16. A vendor open-model licence, NOT OSI-approved: this slot is open-weight, not open-source. Quantisation MXFP4_MOE. Served self-hosted via llama.cpp on VT ARC Falcon over an SSH tunnel on localhost:8081. Serving history, same model and quant: fal052:50413 (2026-11-17, twelve slot-08 research runs and four builds; session ended), fal039:43471 (current).",
+    "params": {
+      "temperature": 0.3,
+      "max_tokens": 32000
+    }
+  },
+  "operator": "Samhith Varma Yallamraju",
+  "status": "failed",
+  "prepared_at": "2026-11-18T00:34:04.695Z",
+  "generation_started_at": "2026-11-18T00:34:04.695Z",
+  "generation_completed_at": "2026-11-18T01:22:30.764Z",
+  "tool_access": "chat-completions API only: no browsing, no shell, no filesystem. The orchestrator wrote every file and ran every check.",
+  "budget": {
+    "max_build_turns": 28,
+    "max_repair_rounds": 3,
+    "max_tokens_per_request": 32000,
+    "temperature": 0.3,
+    "history_exchanges_kept": 8
+  },
+  "approved_source": {
+    "source_name": "Xi'an Famous Foods",
+    "source_url": "https://www.xianfoods.com",
+    "verified_at": "2026-11-17",
+    "verification_method": "HTTP GET by the orchestrator",
+    "verification_result": "verified",
+    "evidence_reference": "pipelines/open-source/research/evidence/REST-R08-http-2026-11-17.json",
+    "complexity": "medium",
+    "stack_clues": "unknown",
+    "limitations": "Verified_at date not provided in evidence; interactive components (filtering, reservation, age gate, newsletter) could not be observed in markup and are marked inferred.",
+    "approved_at": "2026-11-17",
+    "approved_by": "Samhith Varma Yallamraju",
+    "approval_reference": "Project lead approval of all slot-08 sources given 2026-11-17 in the Claude Code orchestration session; see research/REST-R08.md and research/proposals/REST-rows.json"
+  },
+  "approved_page_map": [
+    {
+      "url": "https://www.xianfoods.com/",
+      "title": "Xi'an Famous Foods: specialty Chinese restaurants serving Xi'an dishes based on family recipes",
+      "local_file": "index.html"
+    },
+    {
+      "url": "https://www.xianfoods.com/menu",
+      "title": "Menu-Xi'an Famous Foods: specialty Chinese restaurants serving Xi'an dishes based on family recipes",
+      "local_file": "menu.html"
+    },
+    {
+      "url": "https://www.xianfoods.com/our-story",
+      "title": "Our Story-Xi'an Famous Foods: specialty Chinese restaurants serving Xi'an dishes based on family recipes",
+      "local_file": "our-story.html"
+    },
+    {
+      "url": "https://www.xianfoods.com/locations",
+      "title": "Locations-Xi'an Famous Foods: specialty Chinese restaurants serving Xi'an dishes based on family recipes",
+      "local_file": "locations.html"
+    },
+    {
+      "url": "https://www.xianfoods.com/contact",
+      "title": "Contact-Xi'an Famous Foods: specialty Chinese restaurants serving Xi'an dishes based on family recipes",
+      "local_file": "contact.html"
+    },
+    {
+      "url": "https://www.xianfoods.com/order-acknowledgment",
+      "title": "Pickup/Delivery Acknowledgment",
+      "local_file": "order-acknowledgment.html"
+    },
+    {
+      "url": "https://www.xianfoods.com/press",
+      "title": "Press-Xi'an Famous Foods: specialty Chinese restaurants serving Xi'an dishes based on family recipes",
+      "local_file": "press.html"
+    },
+    {
+      "url": "https://www.xianfoods.com/accessibility",
+      "title": "Accessibility",
+      "local_file": "accessibility.html"
+    }
+  ],
+  "protocol_snapshots": [
+    {
+      "path": "Rules.md",
+      "sha256": "04b1c3e38b76f2aff3aef869d67370bb4532cd8f9ab5e22ac8276f26cbb859bf"
+    },
+    {
+      "path": "MODEL_ALLOCATION.md",
+      "sha256": "7e9487530a6e80b35af48d0691951dafc2fffea39798c81a3c49203909148d30"
+    },
+    {
+      "path": "pipelines/open-source/config.json",
+      "sha256": "e5c7666dbdc7c302e54c0c94c946dcd01d64992b89a56df7ce1ee272dd488edf"
+    },
+    {
+      "path": "pipelines/open-source/categories.json",
+      "sha256": "8180966e55daa24799e51106645e93fd5807dde470765ab8b3b38d3f922c867b"
+    },
+    {
+      "path": "pipelines/open-source/prompts/system.md",
+      "sha256": "61bc24a57de14bd6a662cd6b5f98d0cfc57bf47e187fc58a97831bf1f272b4ee"
+    },
+    {
+      "path": "pipelines/open-source/prompts/build.md",
+      "sha256": "6096ab8b698af7a99d8ddaf1534cc95f41844d1d00cdd1fce740123b3146ab6a"
+    },
+    {
+      "path": "pipelines/open-source/prompts/repair.md",
+      "sha256": "8a84e51995736607b3efa6f5b2d76e52692423c2c26b03409afb4afa3c6586d6"
+    },
+    {
+      "path": "pipelines/open-source/models.json",
+      "sha256": "582c3bcd03420379259f8896d72dd3a1be5cff7ecfb3700fe6c9302ae958c83a"
+    },
+    {
+      "path": "metadata/source-inventories/restaurant.csv",
+      "sha256": "bd938ae12db4078a7be7c743bec45cfbe183d9a9e26c722b500c44b2dc7ce0c6"
+    },
+    {
+      "path": "metadata/assignments.csv",
+      "sha256": "75aa44ee9046372a60e2b9bafe18f1e0dbb3f7c5bd80c29f49f4c060050bca06"
+    }
+  ],
+  "turns": [
+    {
+      "turn": 1,
+      "label": "plan",
+      "status_line": "CONTINUE",
+      "prose_chars": 3593,
+      "files_written": [],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 1392,
+        "prompt_tokens": 5101,
+        "total_tokens": 6493,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "at": "2026-11-18T00:34:47.777Z"
+    },
+    {
+      "turn": 2,
+      "label": "files-2",
+      "status_line": "CONTINUE",
+      "prose_chars": 0,
+      "files_written": [
+        "css/styles.css",
+        "js/main.js",
+        "index.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 5838,
+        "prompt_tokens": 6168,
+        "total_tokens": 12006,
+        "prompt_tokens_details": {
+          "cached_tokens": 5097
+        }
+      },
+      "at": "2026-11-18T00:37:25.199Z"
+    },
+    {
+      "turn": 3,
+      "label": "files-3",
+      "status_line": "CONTINUE",
+      "prose_chars": 0,
+      "files_written": [
+        "menu.html",
+        "our-story.html",
+        "locations.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 5503,
+        "prompt_tokens": 11789,
+        "total_tokens": 17292,
+        "prompt_tokens_details": {
+          "cached_tokens": 6164
+        }
+      },
+      "at": "2026-11-18T00:39:59.290Z"
+    },
+    {
+      "turn": 4,
+      "label": "files-4",
+      "status_line": "CONTINUE",
+      "prose_chars": 0,
+      "files_written": [
+        "contact.html",
+        "order-acknowledgment.html",
+        "press.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 4474,
+        "prompt_tokens": 17101,
+        "total_tokens": 21575,
+        "prompt_tokens_details": {
+          "cached_tokens": 11785
+        }
+      },
+      "at": "2026-11-18T00:42:05.736Z"
+    },
+    {
+      "turn": 5,
+      "label": "files-5",
+      "status_line": "CONTINUE",
+      "prose_chars": 0,
+      "files_written": [
+        "index.html",
+        "menu.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 4400,
+        "prompt_tokens": 21492,
+        "total_tokens": 25892,
+        "prompt_tokens_details": {
+          "cached_tokens": 17097
+        }
+      },
+      "at": "2026-11-18T00:44:08.371Z"
+    },
+    {
+      "turn": 6,
+      "label": "files-6",
+      "status_line": "COMPLETE",
+      "prose_chars": 0,
+      "files_written": [
+        "404.html",
+        "accessibility.html",
+        "README.md",
+        "fidelity-notes.md",
+        "component-inventory.json",
+        "generation-metadata.json"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 8955,
+        "prompt_tokens": 24697,
+        "total_tokens": 33652,
+        "prompt_tokens_details": {
+          "cached_tokens": 21488
+        }
+      },
+      "at": "2026-11-18T00:48:21.570Z"
+    },
+    {
+      "turn": 7,
+      "label": "repair-1",
+      "status_line": "CONTINUE",
+      "prose_chars": 0,
+      "files_written": [
+        "index.html",
+        "menu.html",
+        "order-acknowledgment.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 7411,
+        "prompt_tokens": 35592,
+        "total_tokens": 43003,
+        "prompt_tokens_details": {
+          "cached_tokens": 35588
+        }
+      },
+      "at": "2026-11-18T00:56:55.719Z"
+    }
+  ],
+  "rejected_files": [],
+  "qc_runs": [
+    {
+      "started_at": "2026-11-18T00:48:21.586Z",
+      "completed_at": "2026-11-18T00:48:25.255Z",
+      "exit_code": 1,
+      "executed": true,
+      "passed": false,
+      "outcome": "fail",
+      "failures": [
+        "placeholder href=\"#\" in index.html",
+        "axe heading-order (moderate) @1280 404.html: 1 node(s) e.g. div[data-component=\"footer-info\"] > h4",
+        "axe label-content-name-mismatch (serious) @1280 404.html: 2 node(s) e.g. .site-logo",
+        "axe heading-order (moderate) @1280 accessibility.html: 1 node(s) e.g. div[data-component=\"footer-info\"] > h4",
+        "axe label-content-name-mismatch (serious) @1280 accessibility.html: 2 node(s) e.g. .site-logo",
+        "axe heading-order (moderate) @1280 contact.html: 1 node(s) e.g. div[data-component=\"footer-info\"] > h4",
+        "axe label-content-name-mismatch (serious) @1280 contact.html: 2 node(s) e.g. .site-logo",
+        "axe heading-order (moderate) @1280 index.html: 1 node(s) e.g. div[data-component=\"footer-info\"] > h4",
+        "axe label-content-name-mismatch (serious) @1280 index.html: 2 node(s) e.g. .site-logo",
+        "axe region (moderate) @1280 index.html: 2 node(s) e.g. h1",
+        "axe heading-order (moderate) @1280 locations.html: 2 node(s) e.g. article[data-open=\"Mon–Thu\"][data-close=\"Fri–Sun\"]:nth-child(1) > h3",
+        "axe label-content-name-mismatch (serious) @1280 locations.html: 2 node(s) e.g. .site-logo",
+        "axe label-content-name-mismatch (serious) @1280 menu.html: 2 node(s) e.g. .site-logo",
+        "axe page-has-heading-one (moderate) @1280 menu.html: 1 node(s) e.g. html",
+        "axe color-contrast (serious) @1280 order-acknowledgment.html: 1 node(s) e.g. dd:nth-child(15) > span",
+        "axe heading-order (moderate) @1280 order-acknowledgment.html: 1 node(s) e.g. div[data-component=\"footer-info\"] > h4",
+        "axe label-content-name-mismatch (serious) @1280 order-acknowledgment.html: 2 node(s) e.g. .site-logo",
+        "axe heading-order (moderate) @1280 our-story.html: 1 node(s) e.g. div[data-component=\"footer-info\"] > h4",
+        "axe label-content-name-mismatch (serious) @1280 our-story.html: 2 node(s) e.g. .site-logo",
+        "axe heading-order (moderate) @1280 press.html: 1 node(s) e.g. article:nth-child(1) > h3",
+        "axe label-content-name-mismatch (serious) @1280 press.html: 2 node(s) e.g. .site-logo",
+        "axe heading-order (moderate) @375 404.html: 1 node(s) e.g. div[data-component=\"footer-info\"] > h4",
+        "axe label-content-name-mismatch (serious) @375 404.html: 2 node(s) e.g. .site-logo",
+        "axe heading-order (moderate) @375 accessibility.html: 1 node(s) e.g. div[data-component=\"footer-info\"] > h4",
+        "axe label-content-name-mismatch (serious) @375 accessibility.html: 2 node(s) e.g. .site-logo",
+        "axe heading-order (moderate) @375 contact.html: 1 node(s) e.g. div[data-component=\"footer-info\"] > h4",
+        "axe label-content-name-mismatch (serious) @375 contact.html: 2 node(s) e.g. .site-logo",
+        "axe heading-order (moderate) @375 index.html: 1 node(s) e.g. div[data-component=\"footer-info\"] > h4",
+        "axe label-content-name-mismatch (serious) @375 index.html: 2 node(s) e.g. .site-logo",
+        "axe region (moderate) @375 index.html: 2 node(s) e.g. h1",
+        "axe heading-order (moderate) @375 locations.html: 2 node(s) e.g. article[data-open=\"Mon–Thu\"][data-close=\"Fri–Sun\"]:nth-child(1) > h3",
+        "axe label-content-name-mismatch (serious) @375 locations.html: 2 node(s) e.g. .site-logo",
+        "axe label-content-name-mismatch (serious) @375 menu.html: 2 node(s) e.g. .site-logo",
+        "axe page-has-heading-one (moderate) @375 menu.html: 1 node(s) e.g. html",
+        "axe color-contrast (serious) @375 order-acknowledgment.html: 1 node(s) e.g. dd:nth-child(15) > span",
+        "axe heading-order (moderate) @375 order-acknowledgment.html: 1 node(s) e.g. div[data-component=\"footer-info\"] > h4",
+        "axe label-content-name-mismatch (serious) @375 order-acknowledgment.html: 2 node(s) e.g. .site-logo",
+        "axe heading-order (moderate) @375 our-story.html: 1 node(s) e.g. div[data-component=\"footer-info\"] > h4",
+        "axe label-content-name-mismatch (serious) @375 our-story.html: 2 node(s) e.g. .site-logo",
+        "axe heading-order (moderate) @375 press.html: 1 node(s) e.g. article:nth-child(1) > h3",
+        "axe label-content-name-mismatch (serious) @375 press.html: 2 node(s) e.g. .site-logo"
+      ],
+      "failure_count": 41,
+      "warnings": [],
+      "axe": {
+        "heading-order": 18,
+        "label-content-name-mismatch": 36,
+        "region": 4,
+        "page-has-heading-one": 2,
+        "color-contrast": 2
+      },
+      "pages": 9,
+      "files": 15,
+      "qc_tool_sha256": "e9be905d19e7181e30d8291bcb1511d4469bdc9e36c20c0efe21e2d3fcf54513",
+      "report": "qc-initial-2026-11-18T00-48-21-586Z.json",
+      "log": "qc-initial-2026-11-18T00-48-21-586Z.log",
+      "stdout_tail": "FAIL axe heading-order (moderate) @1280 our-story.html: 1 node(s) e.g. div[data-component=\"footer-info\"] > h4\nFAIL axe label-content-name-mismatch (serious) @1280 our-story.html: 2 node(s) e.g. .site-logo\nFAIL axe heading-order (moderate) @1280 press.html: 1 node(s) e.g. article:nth-child(1) > h3\nFAIL axe label-content-name-mismatch (serious) @1280 press.html: 2 node(s) e.g. .site-logo\nFAIL axe heading-order (moderate) @375 404.html: 1 node(s) e.g. div[data-component=\"footer-info\"] > h4\nFAIL axe label-content-name-mismatch (serious) @375 404.html: 2 node(s) e.g. .site-logo\nFAIL axe heading-order (moderate) @375 accessibility.html: 1 node(s) e.g. div[data-component=\"footer-info\"] > h4\nFAIL axe label-content-name-mismatch (serious) @375 accessibility.html: 2 node(s) e.g. .site-logo\nFAIL axe heading-order (moderate) @375 contact.html: 1 node(s) e.g. div[data-component=\"footer-info\"] > h4\nFAIL axe label-content-name-mismatch (serious) @375 contact.html: 2 node(s) e.g. .site-logo\nFAIL axe heading-order (moderate) @375 index.html: 1 node(s) e.g. div[data-component=\"footer-info\"] > h4\nFAIL axe label-content-name-mismatch (serious) @375 index.html: 2 node(s) e.g. .site-logo\nFAIL axe region (moderate) @375 index.html: 2 node(s) e.g. h1\nFAIL axe heading-order (moderate) @375 locations.html: 2 node(s) e.g. article[data-open=\"Mon–Thu\"][data-close=\"Fri–Sun\"]:nth-child(1) > h3\nFAIL axe label-content-name-mismatch (serious) @375 locations.html: 2 node(s) e.g. .site-logo\nFAIL axe label-content-name-mismatch (serious) @375 menu.html: 2 node(s) e.g. .site-logo\nFAIL axe page-has-heading-one (moderate) @375 menu.html: 1 node(s) e.g. html\nFAIL axe color-contrast (serious) @375 order-acknowledgment.html: 1 node(s) e.g. dd:nth-child(15) > span\nFAIL axe heading-order (moderate) @375 order-acknowledgment.html: 1 node(s) e.g. div[data-component=\"footer-info\"] > h4\nFAIL axe label-content-name-mismatch (serious) @375 order-acknowledgment.html: 2 node(s) e.g. .site-logo\nFAIL axe heading-order (moderate) @375 our-story.html: 1 node(s) e.g. div[data-component=\"footer-info\"] > h4\nFAIL axe label-content-name-mismatch (serious) @375 our-story.html: 2 node(s) e.g. .site-logo\nFAIL axe heading-order (moderate) @375 press.html: 1 node(s) e.g. article:nth-child(1) > h3\nFAIL axe label-content-name-mismatch (serious) @375 press.html: 2 node(s) e.g. .site-logo\n",
+      "note": null
+    }
+  ],
+  "repair_rounds": [],
+  "retries": [],
+  "human_edits": [],
+  "usage": {
+    "prompt_tokens": 121940,
+    "completion_tokens": 37973,
+    "total_tokens": 159913,
+    "requests": 7,
+    "retries": 1
+  },
+  "errors": [
+    "Network error: fetch failed"
+  ],
+  "outputs": {
+    "site": "restaurant/open-source/REST-R08",
+    "transcript": "pipelines/open-source/runs/2026-11-18T00-34-04-689Z-build-REST-R08/transcript.json"
+  },
+  "delivered": {
+    "files": [
+      "404.html",
+      "README.md",
+      "accessibility.html",
+      "component-inventory.json",
+      "contact.html",
+      "css/styles.css",
+      "fidelity-notes.md",
+      "generation-metadata.json",
+      "index.html",
+      "js/main.js",
+      "locations.html",
+      "menu.html",
+      "order-acknowledgment.html",
+      "our-story.html",
+      "press.html"
+    ],
+    "file_count": 15,
+    "bytes": 86473,
+    "pages_in_map": 8,
+    "missing_required": [],
+    "model_claimed_complete": true,
+    "delivered_complete": true,
+    "turns_used": 6,
+    "turn_budget": 28
+  },
+  "initial_artifact": "pipelines/open-source/runs/2026-11-18T00-34-04-689Z-build-REST-R08/initial"
+}

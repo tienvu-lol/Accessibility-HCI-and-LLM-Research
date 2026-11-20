@@ -1,22 +1,58 @@
-"use strict";
-const branches = [
- {name:"Fairhaven Center",city:"Fairhaven",zip:"10001",address:"12 Harbor Walk",type:"branch",hours:"Mon–Fri 9 am–5 pm; Sat 9 am–noon",services:"Branch and ATM; sample accessible entrance"},
- {name:"Cedar Square",city:"Cedar",zip:"10002",address:"45 Cedar Lane",type:"branch",hours:"Mon–Fri 9 am–5 pm",services:"Branch and ATM; sample meeting space"},
- {name:"Fairhaven Station ATM",city:"Fairhaven",zip:"10003",address:"8 Station Court",type:"atm",hours:"Sample access: daily 6 am–10 pm",services:"ATM only"}
-];
-function filterBranches(query,service){const term=query.trim().toLowerCase();return branches.filter(b=>(service==="all"||b.type===service)&&[b.name,b.city,b.zip,b.address].some(v=>v.toLowerCase().includes(term)));}
-const menuButton=document.querySelector('.menu-toggle');
-const nav=document.querySelector('.nav-inner');
-menuButton.addEventListener('click',()=>{const expanded=menuButton.getAttribute('aria-expanded')==='true';menuButton.setAttribute('aria-expanded',String(!expanded));nav.classList.toggle('open',!expanded);});
-const productsButton=document.querySelector('[aria-controls="products-menu"]');
-const products=document.querySelector('#products-menu');
-productsButton.addEventListener('click',()=>{const expanded=productsButton.getAttribute('aria-expanded')==='true';productsButton.setAttribute('aria-expanded',String(!expanded));products.hidden=expanded;});
-document.addEventListener('keydown',event=>{if(event.key==='Escape'){if(!products.hidden){products.hidden=true;productsButton.setAttribute('aria-expanded','false');productsButton.focus();}else if(menuButton.getAttribute('aria-expanded')==='true'){nav.classList.remove('open');menuButton.setAttribute('aria-expanded','false');menuButton.focus();}}});
-const dialog=document.querySelector('dialog');let trigger=null;
-document.querySelectorAll('[data-demo]').forEach(button=>button.addEventListener('click',()=>{trigger=button;dialog.showModal();}));
-dialog.addEventListener('close',()=>{if(trigger)trigger.focus();});
-const search=document.querySelector('#branch-search');
-if(search){const query=document.querySelector('#query'),service=document.querySelector('#service'),results=document.querySelector('#branch-results'),status=document.querySelector('#search-status'),error=document.querySelector('#search-error');
- function render(){const matches=filterBranches(query.value,service.value);results.replaceChildren();matches.forEach(b=>{const article=document.createElement('article');article.className='branch';article.dataset.section='location-results';article.dataset.component='branch-card';const h=document.createElement('h3');h.textContent=b.name;article.append(h);[b.address+', '+b.city+' '+b.zip,b.hours,b.services,'Fictional location — no appointments or directions available.'].forEach(text=>{const p=document.createElement('p');p.textContent=text;article.append(p);});results.append(article);});status.textContent=matches.length?matches.length+' sample location'+(matches.length===1?'':'s')+' found.':'No sample locations found. Try Fairhaven, Cedar or a sample ZIP.';}
- search.addEventListener('submit',event=>{event.preventDefault();if(!query.value.trim()){error.textContent='Enter a city, sample ZIP or branch name, or choose Show all.';query.setAttribute('aria-invalid','true');query.focus();return;}error.textContent='';query.removeAttribute('aria-invalid');render();});
- document.querySelector('#reset-search').addEventListener('click',()=>{query.value='';service.value='all';error.textContent='';query.removeAttribute('aria-invalid');render();query.focus();});render();}
+/* Local-only interaction layer. No network, credentials or persistent storage. */
+(function () {
+  'use strict';
+  const locations = [
+    {name:'Alder Bay Center', address:'12 Example Square, Alder Bay', hours:'Mon–Fri 9–5; Saturday 10–2', services:'Member service • ATM'},
+    {name:'Cedar Hill Center', address:'45 Fiction Way, Cedar Hill', hours:'Mon–Fri 9–5', services:'Member service • ATM'},
+    {name:'Harbor Walk ATM', address:'8 Sample Promenade, Harbor Walk', hours:'Daily 6–10', services:'ATM only'}
+  ];
+  function filterLocations(query) {
+    const term = String(query).trim().toLowerCase();
+    return locations.filter(item => Object.values(item).join(' ').toLowerCase().includes(term));
+  }
+  if (typeof module !== 'undefined' && module.exports) module.exports = {filterLocations};
+  if (typeof document === 'undefined') return;
+  document.body.classList.add('js-ready');
+  const toggle = document.getElementById('menu-toggle');
+  const nav = document.getElementById('primary-nav');
+  function closeMenu(returnFocus) {
+    nav.classList.remove('is-open'); toggle.setAttribute('aria-expanded','false');
+    if (returnFocus) toggle.focus();
+  }
+  toggle.addEventListener('click', function () {
+    const open = toggle.getAttribute('aria-expanded') !== 'true';
+    toggle.setAttribute('aria-expanded', String(open)); nav.classList.toggle('is-open',open);
+  });
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') closeMenu(true);
+  });
+  nav.addEventListener('click', event => { if (event.target.closest('a')) closeMenu(false); });
+  const desktop = window.matchMedia('(min-width:761px)');
+  desktop.addEventListener('change', () => closeMenu(false));
+  const dialog = document.getElementById('demo-dialog'); let opener = null;
+  document.querySelectorAll('[data-open-demo]').forEach(button => button.addEventListener('click', () => {
+    opener = button; dialog.showModal(); dialog.querySelector('button').focus();
+  }));
+  dialog.addEventListener('close', () => { if (opener) opener.focus(); });
+  const form = document.getElementById('location-form');
+  if (form) {
+    const query = document.getElementById('location-query');
+    const results = document.getElementById('location-results');
+    const status = document.getElementById('location-status');
+    function renderLocations() {
+      const matches = filterLocations(query.value);
+      results.replaceChildren();
+      matches.forEach((item) => {
+        const card = document.createElement('article'); card.className = 'card';
+        card.dataset.section = 'location-' + item.name.toLowerCase().replace(/[^a-z0-9]+/g,'-');
+        card.dataset.component = 'feature-card';
+        const title = document.createElement('h3'); title.textContent = item.name; card.append(title);
+        [item.address,item.hours,item.services].forEach(text => { const p = document.createElement('p'); p.textContent = text; card.append(p); });
+        results.append(card);
+      });
+      status.textContent = matches.length ? matches.length + ' demo location' + (matches.length === 1 ? '' : 's') + ' found.' : 'No demo locations match. Try Alder, ATM or Saturday, or choose Show all.';
+    }
+    form.addEventListener('submit', event => { event.preventDefault(); renderLocations(); });
+    document.getElementById('reset-locations').addEventListener('click', () => { query.value = ''; renderLocations(); query.focus(); });
+  }
+}());

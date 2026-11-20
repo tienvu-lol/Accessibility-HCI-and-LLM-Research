@@ -1,0 +1,560 @@
+{
+  "run_id": "2026-11-17T06-09-17-921Z-build-WX-06",
+  "phase": "build",
+  "target": "WX-06",
+  "category": "weather",
+  "slot": 10,
+  "model_group": "open-source",
+  "model": {
+    "model_id": "unsloth/gpt-oss-120b-GGUF",
+    "model_version": "F16",
+    "model_provider_or_runtime": "vt-arc-falcon-llamacpp (OpenAI-compatible chat completions at http://localhost:8083/v1)",
+    "weights_url": "https://huggingface.co/unsloth/gpt-oss-120b-GGUF",
+    "license": "apache-2.0",
+    "open_weights": true,
+    "eligibility_note": "Open weights; licence apache-2.0 as published on huggingface.co/unsloth/gpt-oss-120b-GGUF and described on the base model card openai/gpt-oss-120b as a permissive Apache 2.0 licence, both read 2026-11-17 by the orchestrator. Apache-2.0 is OSI-approved, so this slot qualifies as open-source as well as open-weight. Quantisation F16. Served self-hosted via llama.cpp on VT ARC Falcon node fal039:53013 over an SSH tunnel on localhost:8083; no third-party inference provider.",
+    "params": {
+      "temperature": 0.3,
+      "max_tokens": 32000
+    }
+  },
+  "operator": "Samhith Varma Yallamraju",
+  "status": "completed",
+  "prepared_at": "2026-11-17T06:09:17.926Z",
+  "generation_started_at": "2026-11-17T06:09:17.926Z",
+  "generation_completed_at": "2026-11-17T06:13:15.009Z",
+  "tool_access": "chat-completions API only: no browsing, no shell, no filesystem. The orchestrator wrote every file and ran every check.",
+  "budget": {
+    "max_build_turns": 28,
+    "max_repair_rounds": 3,
+    "max_tokens_per_request": 32000,
+    "temperature": 0.3
+  },
+  "approved_source": {
+    "source_name": "Japan Meteorological Agency – Weather (English)",
+    "source_url": "https://www.jma.go.jp/jma/indexe.html",
+    "verified_at": "2026-11-17",
+    "verification_method": "HTTP GET by the orchestrator",
+    "verification_result": "verified",
+    "evidence_reference": "pipelines/open-source/research/evidence/WX-06-http-2026-11-17.json",
+    "complexity": "medium",
+    "stack_clues": "unknown",
+    "limitations": "Only the 10 pages listed returned 2xx responses. Numerous additional links (PDFs, photo galleries, real‑time map pages, and other informational pages) were present in the markup but were not fetched; they are therefore omitted.",
+    "approved_at": "2026-11-17",
+    "approved_by": "Samhith Varma Yallamraju",
+    "approval_reference": "Project lead approval of all twelve slot-10 sources given 2026-11-17 in the Claude Code orchestration session; see research/WX-06.md and research/proposals/WX-rows.json"
+  },
+  "approved_page_map": [
+    {
+      "url": "https://www.jma.go.jp/jma/indexe.html",
+      "title": "Japan Meteorological Agency",
+      "local_file": "index.html"
+    },
+    {
+      "url": "https://www.jma.go.jp/jma/en/menu.html",
+      "title": "Japan Meteorological Agency",
+      "local_file": "menu.html"
+    },
+    {
+      "url": "https://www.jma.go.jp/jma/en/Services/indexe_services.html",
+      "title": "Japan Meteorological Agency",
+      "local_file": "services.html"
+    },
+    {
+      "url": "https://www.jma.go.jp/jma/en/Publications/publications.html",
+      "title": "Japan Meteorological Agency Publications/Periodicals",
+      "local_file": "publications.html"
+    },
+    {
+      "url": "https://www.jma.go.jp/jma/en/News/indexe_news.html",
+      "title": "Japan Meteorological Agency",
+      "local_file": "news.html"
+    },
+    {
+      "url": "https://www.jma.go.jp/jma/en/NMHS/indexe_nmhs.html",
+      "title": "Japan Meteorological Agency",
+      "local_file": "nmhs.html"
+    },
+    {
+      "url": "https://www.jma.go.jp/jma/en/AboutUs/indexe_aboutus.html",
+      "title": "Japan Meteorological Agency",
+      "local_file": "about-us.html"
+    },
+    {
+      "url": "https://www.jma.go.jp/jma/en/Links/indexe_lnk.html",
+      "title": "Japan Meteorological Agency",
+      "local_file": "links.html"
+    },
+    {
+      "url": "https://www.jma.go.jp/jma/en/SiteMap/indexe_smp.html",
+      "title": "Japan Meteorological Agency",
+      "local_file": "site-map.html"
+    },
+    {
+      "url": "https://www.jma.go.jp/jma/en/Access/indexe_acs.html",
+      "title": "Japan Meteorological Agency",
+      "local_file": "access.html"
+    }
+  ],
+  "protocol_snapshots": [
+    {
+      "path": "Rules.md",
+      "sha256": "04b1c3e38b76f2aff3aef869d67370bb4532cd8f9ab5e22ac8276f26cbb859bf"
+    },
+    {
+      "path": "MODEL_ALLOCATION.md",
+      "sha256": "7e9487530a6e80b35af48d0691951dafc2fffea39798c81a3c49203909148d30"
+    },
+    {
+      "path": "pipelines/open-source/config.json",
+      "sha256": "e5c7666dbdc7c302e54c0c94c946dcd01d64992b89a56df7ce1ee272dd488edf"
+    },
+    {
+      "path": "pipelines/open-source/categories.json",
+      "sha256": "8180966e55daa24799e51106645e93fd5807dde470765ab8b3b38d3f922c867b"
+    },
+    {
+      "path": "pipelines/open-source/prompts/system.md",
+      "sha256": "61bc24a57de14bd6a662cd6b5f98d0cfc57bf47e187fc58a97831bf1f272b4ee"
+    },
+    {
+      "path": "pipelines/open-source/prompts/build.md",
+      "sha256": "6096ab8b698af7a99d8ddaf1534cc95f41844d1d00cdd1fce740123b3146ab6a"
+    },
+    {
+      "path": "pipelines/open-source/prompts/repair.md",
+      "sha256": "8a84e51995736607b3efa6f5b2d76e52692423c2c26b03409afb4afa3c6586d6"
+    },
+    {
+      "path": "pipelines/open-source/models.json",
+      "sha256": "f02e4efcab2732e1736a96e02459eef895400d01c2888b63c7cded93435f36c4"
+    },
+    {
+      "path": "metadata/source-inventories/weather.csv",
+      "sha256": "ab8c7405e0737ceb1b7812953c87292cb046a3b629fff95ce7d33038a35c350a"
+    },
+    {
+      "path": "metadata/assignments.csv",
+      "sha256": "dfedc1b7cf6b30895f785bd27cd54f2d4ae25f04c9a5613d0fea5a36b081526b"
+    }
+  ],
+  "turns": [
+    {
+      "turn": 1,
+      "label": "plan",
+      "status_line": "CONTINUE",
+      "prose_chars": 3133,
+      "files_written": [],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 1021,
+        "prompt_tokens": 4798,
+        "total_tokens": 5819,
+        "prompt_tokens_details": {
+          "cached_tokens": 597
+        }
+      },
+      "at": "2026-11-17T06:09:28.543Z"
+    },
+    {
+      "turn": 2,
+      "label": "files-2",
+      "status_line": "COMPLETE",
+      "prose_chars": 0,
+      "files_written": [
+        "css/styles.css",
+        "js/main.js",
+        "index.html",
+        "404.html",
+        "README.md",
+        "fidelity-notes.md",
+        "component-inventory.json",
+        "generation-metadata.json",
+        "menu.html",
+        "services.html",
+        "publications.html",
+        "news.html",
+        "nmhs.html",
+        "about-us.html",
+        "links.html",
+        "site-map.html",
+        "access.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 10776,
+        "prompt_tokens": 5711,
+        "total_tokens": 16487,
+        "prompt_tokens_details": {
+          "cached_tokens": 4793
+        }
+      },
+      "at": "2026-11-17T06:11:13.030Z"
+    },
+    {
+      "turn": 3,
+      "label": "repair-1",
+      "status_line": "COMPLETE",
+      "prose_chars": 0,
+      "files_written": [
+        "css/styles.css",
+        "index.html",
+        "links.html",
+        "news.html",
+        "fidelity-notes.md"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 5159,
+        "prompt_tokens": 17956,
+        "total_tokens": 23115,
+        "prompt_tokens_details": {
+          "cached_tokens": 5706
+        }
+      },
+      "at": "2026-11-17T06:12:11.404Z"
+    },
+    {
+      "turn": 4,
+      "label": "repair-2",
+      "status_line": "COMPLETE",
+      "prose_chars": 0,
+      "files_written": [
+        "css/styles.css"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 2391,
+        "prompt_tokens": 23886,
+        "total_tokens": 26277,
+        "prompt_tokens_details": {
+          "cached_tokens": 17951
+        }
+      },
+      "at": "2026-11-17T06:12:41.871Z"
+    },
+    {
+      "turn": 5,
+      "label": "repair-3",
+      "status_line": "COMPLETE",
+      "prose_chars": 0,
+      "files_written": [
+        "css/styles.css"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 2323,
+        "prompt_tokens": 26374,
+        "total_tokens": 28697,
+        "prompt_tokens_details": {
+          "cached_tokens": 23881
+        }
+      },
+      "at": "2026-11-17T06:13:11.007Z"
+    }
+  ],
+  "rejected_files": [],
+  "qc_runs": [
+    {
+      "started_at": "2026-11-17T06:11:13.034Z",
+      "completed_at": "2026-11-17T06:11:16.687Z",
+      "exit_code": 1,
+      "executed": true,
+      "passed": false,
+      "outcome": "fail",
+      "failures": [
+        "placeholder href=\"#\" in links.html",
+        "placeholder href=\"#\" in links.html",
+        "placeholder href=\"#\" in links.html",
+        "placeholder href=\"#\" in news.html",
+        "placeholder href=\"#\" in news.html",
+        "axe color-contrast (serious) @1280 404.html: 5 node(s) e.g. li:nth-child(1) > a[href=\"index.html\"]",
+        "axe color-contrast (serious) @1280 about-us.html: 5 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @1280 access.html: 5 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @1280 index.html: 5 node(s) e.g. a[href=\"index.html\"]",
+        "axe region (moderate) @1280 index.html: 1 node(s) e.g. .hero",
+        "axe color-contrast (serious) @1280 links.html: 5 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @1280 menu.html: 5 node(s) e.g. nav > ul > li:nth-child(1) > a[href=\"index.html\"]",
+        "axe color-contrast (serious) @1280 news.html: 5 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @1280 nmhs.html: 5 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @1280 publications.html: 5 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @1280 services.html: 5 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @1280 site-map.html: 10 node(s) e.g. nav > ul > li:nth-child(1) > a[href=\"index.html\"]",
+        "axe color-contrast (serious) @375 404.html: 5 node(s) e.g. li:nth-child(1) > a[href=\"index.html\"]",
+        "axe color-contrast (serious) @375 about-us.html: 5 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @375 access.html: 5 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @375 index.html: 5 node(s) e.g. a[href=\"index.html\"]",
+        "axe region (moderate) @375 index.html: 1 node(s) e.g. .hero",
+        "axe color-contrast (serious) @375 links.html: 5 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @375 menu.html: 5 node(s) e.g. nav > ul > li:nth-child(1) > a[href=\"index.html\"]",
+        "axe color-contrast (serious) @375 news.html: 5 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @375 nmhs.html: 5 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @375 publications.html: 5 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @375 services.html: 5 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @375 site-map.html: 10 node(s) e.g. nav > ul > li:nth-child(1) > a[href=\"index.html\"]",
+        "horizontal scroll @375 site-map.html: 294px"
+      ],
+      "failure_count": 30,
+      "warnings": [],
+      "axe": {
+        "color-contrast": 120,
+        "region": 2
+      },
+      "pages": 11,
+      "files": 17,
+      "qc_tool_sha256": "e9be905d19e7181e30d8291bcb1511d4469bdc9e36c20c0efe21e2d3fcf54513",
+      "report": "qc-initial-2026-11-17T06-11-13-034Z.json",
+      "log": "qc-initial-2026-11-17T06-11-13-034Z.log",
+      "stdout_tail": "FAIL axe color-contrast (serious) @1280 about-us.html: 5 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @1280 access.html: 5 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @1280 index.html: 5 node(s) e.g. a[href=\"index.html\"]\nFAIL axe region (moderate) @1280 index.html: 1 node(s) e.g. .hero\nFAIL axe color-contrast (serious) @1280 links.html: 5 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @1280 menu.html: 5 node(s) e.g. nav > ul > li:nth-child(1) > a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @1280 news.html: 5 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @1280 nmhs.html: 5 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @1280 publications.html: 5 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @1280 services.html: 5 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @1280 site-map.html: 10 node(s) e.g. nav > ul > li:nth-child(1) > a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @375 404.html: 5 node(s) e.g. li:nth-child(1) > a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @375 about-us.html: 5 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @375 access.html: 5 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @375 index.html: 5 node(s) e.g. a[href=\"index.html\"]\nFAIL axe region (moderate) @375 index.html: 1 node(s) e.g. .hero\nFAIL axe color-contrast (serious) @375 links.html: 5 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @375 menu.html: 5 node(s) e.g. nav > ul > li:nth-child(1) > a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @375 news.html: 5 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @375 nmhs.html: 5 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @375 publications.html: 5 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @375 services.html: 5 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @375 site-map.html: 10 node(s) e.g. nav > ul > li:nth-child(1) > a[href=\"index.html\"]\nFAIL horizontal scroll @375 site-map.html: 294px\n",
+      "note": null
+    },
+    {
+      "started_at": "2026-11-17T06:12:11.405Z",
+      "completed_at": "2026-11-17T06:12:15.568Z",
+      "exit_code": 1,
+      "executed": true,
+      "passed": false,
+      "outcome": "fail",
+      "failures": [
+        "axe color-contrast (serious) @1280 404.html: 5 node(s) e.g. li:nth-child(1) > a[href=\"index.html\"]",
+        "axe color-contrast (serious) @1280 about-us.html: 5 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @1280 access.html: 5 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @1280 index.html: 5 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @1280 links.html: 5 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @1280 menu.html: 5 node(s) e.g. nav > ul > li:nth-child(1) > a[href=\"index.html\"]",
+        "axe color-contrast (serious) @1280 news.html: 5 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @1280 nmhs.html: 5 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @1280 publications.html: 5 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @1280 services.html: 5 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @1280 site-map.html: 10 node(s) e.g. nav > ul > li:nth-child(1) > a[href=\"index.html\"]",
+        "axe color-contrast (serious) @375 404.html: 5 node(s) e.g. li:nth-child(1) > a[href=\"index.html\"]",
+        "axe color-contrast (serious) @375 about-us.html: 5 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @375 access.html: 5 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @375 index.html: 5 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @375 links.html: 5 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @375 menu.html: 5 node(s) e.g. nav > ul > li:nth-child(1) > a[href=\"index.html\"]",
+        "axe color-contrast (serious) @375 news.html: 5 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @375 nmhs.html: 5 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @375 publications.html: 5 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @375 services.html: 5 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @375 site-map.html: 10 node(s) e.g. nav > ul > li:nth-child(1) > a[href=\"index.html\"]"
+      ],
+      "failure_count": 22,
+      "warnings": [],
+      "axe": {
+        "color-contrast": 120
+      },
+      "pages": 11,
+      "files": 17,
+      "qc_tool_sha256": "e9be905d19e7181e30d8291bcb1511d4469bdc9e36c20c0efe21e2d3fcf54513",
+      "report": "qc-repair-1-2026-11-17T06-12-11-405Z.json",
+      "log": "qc-repair-1-2026-11-17T06-12-11-405Z.log",
+      "stdout_tail": "QC /Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/weather/open-source/WX-06\npages=11 files=17 failures=22 warnings=0\nFAIL axe color-contrast (serious) @1280 404.html: 5 node(s) e.g. li:nth-child(1) > a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @1280 about-us.html: 5 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @1280 access.html: 5 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @1280 index.html: 5 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @1280 links.html: 5 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @1280 menu.html: 5 node(s) e.g. nav > ul > li:nth-child(1) > a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @1280 news.html: 5 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @1280 nmhs.html: 5 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @1280 publications.html: 5 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @1280 services.html: 5 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @1280 site-map.html: 10 node(s) e.g. nav > ul > li:nth-child(1) > a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @375 404.html: 5 node(s) e.g. li:nth-child(1) > a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @375 about-us.html: 5 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @375 access.html: 5 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @375 index.html: 5 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @375 links.html: 5 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @375 menu.html: 5 node(s) e.g. nav > ul > li:nth-child(1) > a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @375 news.html: 5 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @375 nmhs.html: 5 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @375 publications.html: 5 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @375 services.html: 5 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @375 site-map.html: 10 node(s) e.g. nav > ul > li:nth-child(1) > a[href=\"index.html\"]\n",
+      "note": null
+    },
+    {
+      "started_at": "2026-11-17T06:12:41.873Z",
+      "completed_at": "2026-11-17T06:12:45.673Z",
+      "exit_code": 1,
+      "executed": true,
+      "passed": false,
+      "outcome": "fail",
+      "failures": [
+        "axe color-contrast (serious) @1280 404.html: 5 node(s) e.g. li:nth-child(1) > a[href=\"index.html\"]",
+        "axe color-contrast (serious) @1280 about-us.html: 5 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @1280 access.html: 5 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @1280 index.html: 5 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @1280 links.html: 5 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @1280 menu.html: 5 node(s) e.g. nav > ul > li:nth-child(1) > a[href=\"index.html\"]",
+        "axe color-contrast (serious) @1280 news.html: 5 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @1280 nmhs.html: 5 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @1280 publications.html: 5 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @1280 services.html: 5 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @1280 site-map.html: 10 node(s) e.g. nav > ul > li:nth-child(1) > a[href=\"index.html\"]",
+        "axe color-contrast (serious) @375 404.html: 5 node(s) e.g. li:nth-child(1) > a[href=\"index.html\"]",
+        "axe color-contrast (serious) @375 about-us.html: 5 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @375 access.html: 5 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @375 index.html: 5 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @375 links.html: 5 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @375 menu.html: 5 node(s) e.g. nav > ul > li:nth-child(1) > a[href=\"index.html\"]",
+        "axe color-contrast (serious) @375 news.html: 5 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @375 nmhs.html: 5 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @375 publications.html: 5 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @375 services.html: 5 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @375 site-map.html: 10 node(s) e.g. nav > ul > li:nth-child(1) > a[href=\"index.html\"]"
+      ],
+      "failure_count": 22,
+      "warnings": [],
+      "axe": {
+        "color-contrast": 120
+      },
+      "pages": 11,
+      "files": 17,
+      "qc_tool_sha256": "e9be905d19e7181e30d8291bcb1511d4469bdc9e36c20c0efe21e2d3fcf54513",
+      "report": "qc-repair-2-2026-11-17T06-12-41-873Z.json",
+      "log": "qc-repair-2-2026-11-17T06-12-41-873Z.log",
+      "stdout_tail": "QC /Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/weather/open-source/WX-06\npages=11 files=17 failures=22 warnings=0\nFAIL axe color-contrast (serious) @1280 404.html: 5 node(s) e.g. li:nth-child(1) > a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @1280 about-us.html: 5 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @1280 access.html: 5 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @1280 index.html: 5 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @1280 links.html: 5 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @1280 menu.html: 5 node(s) e.g. nav > ul > li:nth-child(1) > a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @1280 news.html: 5 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @1280 nmhs.html: 5 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @1280 publications.html: 5 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @1280 services.html: 5 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @1280 site-map.html: 10 node(s) e.g. nav > ul > li:nth-child(1) > a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @375 404.html: 5 node(s) e.g. li:nth-child(1) > a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @375 about-us.html: 5 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @375 access.html: 5 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @375 index.html: 5 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @375 links.html: 5 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @375 menu.html: 5 node(s) e.g. nav > ul > li:nth-child(1) > a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @375 news.html: 5 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @375 nmhs.html: 5 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @375 publications.html: 5 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @375 services.html: 5 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @375 site-map.html: 10 node(s) e.g. nav > ul > li:nth-child(1) > a[href=\"index.html\"]\n",
+      "note": null
+    },
+    {
+      "started_at": "2026-11-17T06:13:11.008Z",
+      "completed_at": "2026-11-17T06:13:15.008Z",
+      "exit_code": 1,
+      "executed": true,
+      "passed": false,
+      "outcome": "fail",
+      "failures": [
+        "axe color-contrast (serious) @1280 404.html: 5 node(s) e.g. li:nth-child(1) > a[href=\"index.html\"]",
+        "axe color-contrast (serious) @1280 about-us.html: 5 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @1280 access.html: 5 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @1280 index.html: 5 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @1280 links.html: 5 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @1280 menu.html: 5 node(s) e.g. nav > ul > li:nth-child(1) > a[href=\"index.html\"]",
+        "axe color-contrast (serious) @1280 news.html: 5 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @1280 nmhs.html: 5 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @1280 publications.html: 5 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @1280 services.html: 5 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @1280 site-map.html: 10 node(s) e.g. nav > ul > li:nth-child(1) > a[href=\"index.html\"]",
+        "axe color-contrast (serious) @375 404.html: 5 node(s) e.g. li:nth-child(1) > a[href=\"index.html\"]",
+        "axe color-contrast (serious) @375 about-us.html: 5 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @375 access.html: 5 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @375 index.html: 5 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @375 links.html: 5 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @375 menu.html: 5 node(s) e.g. nav > ul > li:nth-child(1) > a[href=\"index.html\"]",
+        "axe color-contrast (serious) @375 news.html: 5 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @375 nmhs.html: 5 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @375 publications.html: 5 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @375 services.html: 5 node(s) e.g. a[href=\"index.html\"]",
+        "axe color-contrast (serious) @375 site-map.html: 10 node(s) e.g. nav > ul > li:nth-child(1) > a[href=\"index.html\"]"
+      ],
+      "failure_count": 22,
+      "warnings": [],
+      "axe": {
+        "color-contrast": 120
+      },
+      "pages": 11,
+      "files": 17,
+      "qc_tool_sha256": "e9be905d19e7181e30d8291bcb1511d4469bdc9e36c20c0efe21e2d3fcf54513",
+      "report": "qc-repair-3-2026-11-17T06-13-11-008Z.json",
+      "log": "qc-repair-3-2026-11-17T06-13-11-008Z.log",
+      "stdout_tail": "QC /Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/weather/open-source/WX-06\npages=11 files=17 failures=22 warnings=0\nFAIL axe color-contrast (serious) @1280 404.html: 5 node(s) e.g. li:nth-child(1) > a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @1280 about-us.html: 5 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @1280 access.html: 5 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @1280 index.html: 5 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @1280 links.html: 5 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @1280 menu.html: 5 node(s) e.g. nav > ul > li:nth-child(1) > a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @1280 news.html: 5 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @1280 nmhs.html: 5 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @1280 publications.html: 5 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @1280 services.html: 5 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @1280 site-map.html: 10 node(s) e.g. nav > ul > li:nth-child(1) > a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @375 404.html: 5 node(s) e.g. li:nth-child(1) > a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @375 about-us.html: 5 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @375 access.html: 5 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @375 index.html: 5 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @375 links.html: 5 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @375 menu.html: 5 node(s) e.g. nav > ul > li:nth-child(1) > a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @375 news.html: 5 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @375 nmhs.html: 5 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @375 publications.html: 5 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @375 services.html: 5 node(s) e.g. a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @375 site-map.html: 10 node(s) e.g. nav > ul > li:nth-child(1) > a[href=\"index.html\"]\n",
+      "note": null
+    }
+  ],
+  "repair_rounds": [
+    {
+      "round": 1,
+      "before": {
+        "outcome": "fail",
+        "failures": 30
+      },
+      "after": {
+        "outcome": "fail",
+        "failures": 22
+      },
+      "files_changed": [
+        "css/styles.css",
+        "index.html",
+        "links.html",
+        "news.html",
+        "fidelity-notes.md"
+      ],
+      "at": "2026-11-17T06:12:15.569Z"
+    },
+    {
+      "round": 2,
+      "before": {
+        "outcome": "fail",
+        "failures": 22
+      },
+      "after": {
+        "outcome": "fail",
+        "failures": 22
+      },
+      "files_changed": [
+        "css/styles.css"
+      ],
+      "at": "2026-11-17T06:12:45.673Z"
+    },
+    {
+      "round": 3,
+      "before": {
+        "outcome": "fail",
+        "failures": 22
+      },
+      "after": {
+        "outcome": "fail",
+        "failures": 22
+      },
+      "files_changed": [
+        "css/styles.css"
+      ],
+      "at": "2026-11-17T06:13:15.009Z"
+    }
+  ],
+  "retries": [],
+  "human_edits": [
+    {
+      "by": "orchestrator script",
+      "at": "2026-11-17T06:13:15.009Z",
+      "what": "Wrote the model's emitted files, normalized generation-metadata.json provenance fields, and set validation_summary from the recorded QC run. No site markup, style or script was authored or edited by hand."
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 78725,
+    "completion_tokens": 21670,
+    "total_tokens": 100395,
+    "requests": 5,
+    "retries": 0
+  },
+  "errors": [],
+  "outputs": {
+    "site": "weather/open-source/WX-06",
+    "transcript": "pipelines/open-source/runs/2026-11-17T06-09-17-921Z-build-WX-06/transcript.json"
+  },
+  "delivered": {
+    "files": [
+      "404.html",
+      "README.md",
+      "about-us.html",
+      "access.html",
+      "component-inventory.json",
+      "css/styles.css",
+      "fidelity-notes.md",
+      "generation-metadata.json",
+      "index.html",
+      "js/main.js",
+      "links.html",
+      "menu.html",
+      "news.html",
+      "nmhs.html",
+      "publications.html",
+      "services.html",
+      "site-map.html"
+    ],
+    "file_count": 17,
+    "bytes": 36895,
+    "pages_in_map": 10,
+    "missing_required": [],
+    "model_claimed_complete": true,
+    "delivered_complete": true,
+    "turns_used": 2,
+    "turn_budget": 28
+  },
+  "initial_artifact": "pipelines/open-source/runs/2026-11-17T06-09-17-921Z-build-WX-06/initial",
+  "provenance": {
+    "wrote": true,
+    "modelEmittedValidMetadata": true
+  },
+  "acceptance": "not accepted: a QC result is not acceptance, and interaction review plus human acceptance happen outside this script"
+}

@@ -1,13 +1,13 @@
-# Fidelity and deviations
+# GOV-04 fidelity notes
 
-Replicated from approved text evidence: five-page municipal information architecture, menu/search/language affordances, city-status homepage bands, department directory, public-notice text/department filtering, service detail section navigation and government overview/service handoff. Each page mapping is in README.
+Replicated observed information architecture: five approved mapped pages, service-topic navigation and category cards, agency directory with keyword/category checkboxes, state-government overview, government category, grouped footer and feedback affordance.
 
-Approximated: navy/blue municipal visual hierarchy, roomy content bands, uppercase utilities, outlined form controls, directory rows, notice list, interior sidebar and grouped footer. Exact rendered layout, colors, breakpoints, menus and source footer structure were not verified. This is a structural approximation, not a pixel-perfect replica.
+Approximated: desktop/mobile layout, colors, type scale, hero geometry, local content-band sequence and interior anchor navigation. Evidence consists of text retrieval, not a rendered screenshot; visual or exact source section-sequence fidelity is unverified. Original Alder wordmark, prose, six agency records and SVG landscape replace source identity and content.
 
-Simulated: local search across five pages replaces live/AI search; notice filters operate on four invented notices; parking inquiry never transmits; service handoff becomes a labeled local disclosure; language affordance explains English-only demo. Mobile menu behavior is inferred, not observed in execution.
+Simulated: ten-record site search, six-record agency filtering and local feedback validation/completion. Source execution was untested, so behavior is an accessible research implementation of the observed affordances, not an asserted reproduction of source logic. Agency links navigate to the local government overview; no agency-specific transaction is modeled.
 
-Added: conspicuous research warnings; original harbor SVG; six fictional departments, four fictional notices and original civic copy; department keyword filtering is an inferred usability approximation of directory behavior; 404 is protocol-required. Practice inquiry is a labeled local substitute for an external operational route rather than a claimed observed source form.
+Added: prominent fictional notices, explanatory simulation text, required 404, local accessibility/research notes and sample branches of government. These support approved portal structures without introducing additional mapped pages.
 
-Omitted: real officials, seals, addresses, phone/emergency numbers, operational alerts, live service statuses, payments, external portals, AI backend, real translations and external social/legal destinations. No extra calendar or report page was invented. Original artwork carries no real identity.
+Omitted: external agency accounts, applications, payments, real contact details, official seals, operational alerts and emergency services. No language control, calendar, news screen or report-a-problem flow was established in the approved evidence, so none is invented.
 
-Unverified: rendered reference and replica, responsive comparison, browser interaction, assistive technology, visual contrast and zoom. Automated DOM mocks cover delivered logic only. Shared QC browser launch outcome is documented in run evidence.
+Unverified: source visual layout, exact footer groups, source interaction operation; rendered replica/browser/axe/assistive-technology behavior unless separately evidenced. WCAG 2.2 AA is a target only.

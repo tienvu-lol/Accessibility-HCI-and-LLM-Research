@@ -1,68 +1,86 @@
-# Rowan Ellis — portfolio replica 01
+# Jamie Vale — portfolio research replica 02
 
-A complete, buildless research website inspired by [Brittany Chiang’s portfolio](https://brittanychiang.com/). Rowan Ellis and every employer, project, testimonial, award, and biography detail are fictional. All images are original local SVG placeholders. No real owner assets, text, analytics, credentials, or source code are copied.
+Complete, independent frontend interpretation of [Adham Dannaway’s live portfolio](https://www.adhamdannaway.com/), using a fictional identity, original copy, and original local SVG placeholder artwork. No owner photographs, project assets, branding, source code, endorsements, or personal contact details are reused. All projects, employers, testimonials, and recognition are fictional and marked as illustrative.
 
-## Run
+## Open the website
 
-Open `index.html` in a current browser, or serve this folder with any static server. For example, from this folder:
+Open `index.html` in a current browser. No installation or build step is needed. For an optional local HTTP preview, run this from the site folder:
 
 ```sh
 python3 -m http.server 8080
 ```
 
-Visit `http://localhost:8080`. Python is an optional local serving convenience, not an application dependency or build tool. There is no installation, compilation, database, backend, package manager, or PHP requirement. The files also work on ordinary static hosting. Configure your host to serve `404.html` for unknown routes if desired; a plain static server does not automatically do that.
+Then visit `http://localhost:8080`. Python is only an optional static file server, not part of the application. A current Safari, Firefox, or Chromium browser is the intended environment. Clipboard access can require localhost/HTTPS; a visible manual-copy fallback is included.
 
-The site uses only HTML5, CSS3, and vanilla JavaScript. jQuery and Bootstrap were permitted but are unnecessary for this reference, so neither is loaded. There are no remote fonts, images, CDN libraries, tracking scripts, fetch calls, or form endpoints. Native HTML is readable without JavaScript; enhanced controls require it.
+The application uses **HTML5, CSS3, and vanilla JavaScript only**. There is no React, other framework, package manager, compilation, database, backend logic, PHP runtime, remote font, CDN library, image service, analytics, account, real payment, or API integration. jQuery and Bootstrap 5 were permitted by the brief but were not needed. Every page is delivered in full, with local relative links and assets.
 
-## Page map
+## Page map — 23 complete HTML documents
 
 | File | Purpose |
 | --- | --- |
-| `index.html` | Reference-inspired two-column homepage: identity, about, experience, selected projects, writing, contact CTA |
-| `archive.html` | Searchable/filterable projects and compact archive table |
-| `project-tide.html` | Library discovery case study, process, gallery, outcomes, previous/next |
-| `project-fieldwork.html` | Trail journal case study and gallery |
-| `project-signal.html` | Operations console case study with explicitly insecure demonstration NDA gate |
-| `about.html` | Biography, working approach, experience, skills, CV links |
-| `resume.html` | Readable CV, downloadable text résumé, print/save-as-PDF control |
-| `services.html` | Three service bands and FAQ accordions |
-| `writing.html` | Searchable/filterable blog listing and demo newsletter |
-| `post-quiet-interfaces.html` | Design article, on-page contents, article navigation |
-| `post-keyboard-first.html` | Accessibility article |
-| `post-useful-motion.html` | Engineering article |
-| `contact.html` | Contact actions, validated inquiry, simulated booking |
-| `toolkit.html` | Tools and working principles |
-| `press.html` | Clearly fictional recognition and manual testimonial carousel |
-| `prints.html` | Demo print catalogue and modal order simulation |
-| `404.html` | Error-page document with recovery links |
+| `404.html` | Static error document and recovery links |
+| `about.html` | Biography, practice context, experience timeline, contact routes |
+| `blog.html` | Searchable and filterable design-article listing |
+| `contact.html` | Inquiry form, contact sidebar, copy email, and demo booking |
+| `faq.html` | Native FAQ accordions |
+| `index.html` | Main portfolio homepage; split designer/coder hero, latest work, approach, testimonials, writing, newsletter |
+| `learn.html` | Learning paths and studio-shop entry point |
+| `post-good-empty-states.html` | Original editorial article with contents sidebar and related navigation |
+| `post-less-interface.html` | Original editorial article with contents sidebar and related navigation |
+| `post-readable-by-default.html` | Original editorial article with contents sidebar and related navigation |
+| `post-system-that-fits.html` | Original editorial article with contents sidebar and related navigation |
+| `press.html` | Fictional press list and manual testimonial carousel |
+| `prints.html` | Demo edition catalogue with format/price purchase modal |
+| `project-atlas.html` | Full fictional case study, image gallery, process, and previous/next navigation |
+| `project-folio.html` | Full fictional case study, image gallery, process, and previous/next navigation |
+| `project-lattice.html` | Full fictional case study, image gallery, process, and previous/next navigation |
+| `project-relay.html` | Full fictional case study, image gallery, process, and previous/next navigation |
+| `project-sprout.html` | Full fictional case study, image gallery, process, and previous/next navigation |
+| `project-waypoint.html` | Full fictional case study, image gallery, process, and previous/next navigation |
+| `resume.html` | CV, downloadable text file, and print/save-as-PDF action |
+| `services.html` | Service bands, process, and commission CTA |
+| `toolkit.html` | Tools, working habits, and implementation stack |
+| `work.html` | Searchable and filterable project collection |
 
-## Demo interaction guide
+The 404 file is provided for static-host configuration. Opening a nonexistent URL on an arbitrary server does not automatically route to this file.
 
-- **Navigation:** Homepage section links jump to About, Experience, Projects, and Writing. IntersectionObserver updates the active link. Explore opens a native details menu; Escape and outside clicks dismiss it. At mobile widths the identity column becomes a normal-flow header and the compact utility bar stays visible.
-- **Search and category filters:** Type `library` on the project archive; combine it with Interface design. Choose another category to see the empty state. Writing supports Design, Accessibility, and Engineering categories. Result counts are announced politely; content order does not change.
-- **Theme:** Light theme / Dark theme changes CSS variables and updates `aria-pressed`. State is in memory and resets with navigation/reload. Default is dark to follow the reference.
-- **Contact:** Required name, syntactically valid email, service, at least 20 characters of project context, and the demo acknowledgement. Native browser validation identifies invalid inputs; successful submissions display a local status and clear the form. No data is transmitted or retained.
-- **Booking:** Select a future weekday, a listed New York time, and an email address. Past dates fail native validation; weekends receive a custom validation message. All slots are illustrative and unrelated to a real calendar. Success does not create an appointment.
-- **Newsletter:** Email validation and a local success state only.
-- **NDA gate:** Open Signal and enter `fieldnotes`. This is interaction research, not authentication or access control. The notes exist in the HTML and are visible through source inspection or DOM manipulation. Never put confidential content here.
-- **Gallery:** Open a case-study image. Native `dialog` provides modal focus containment and Escape dismissal. Previous/next buttons and left/right arrow keys cycle images. Closing restores focus to the gallery opener.
-- **Testimonials:** Previous/next buttons cycle three fictional quotations; there is no autoplay. Updated quote text uses a polite live region.
-- **Prints:** Select a print, choose its format, and simulate an order. No shipping or payment information is collected. The modal resets its success message when reopened.
-- **Email:** Copy email uses the Clipboard API. If the browser denies access or the page is not a secure context, a visible manual-copy fallback shows the address. `.example` is deliberately non-deliverable.
-- **Résumé:** Download the complete `.txt` file or use the browser print dialog to save `resume.html` as PDF. No pre-generated PDF is included.
-- **Availability:** The availability wording is fictional and static. The time is real, computed using `Intl.DateTimeFormat` with `America/New_York` and refreshed every minute; DST is handled by the browser.
-- **Motion:** Scroll reveal and a pointer-following ambient highlight are progressive enhancements. `prefers-reduced-motion` disables them and smooth scrolling.
+## Interactive behavior
 
-## Accessibility baseline
+- **Navigation:** Sticky header, desktop navigation, a resources dropdown, and a JavaScript mobile disclosure. Menu uses `aria-expanded` and `aria-controls`; Escape closes the dropdown first, then the mobile panel. Native links remain available without JavaScript. Breadcrumbs, project previous/next links, and multi-column footer navigation connect the documents.
+- **Search and filters:** Case-insensitive substring matching on title, category, and description, combined with the active category using AND. Result counts use a polite status region. A dedicated empty state appears for no matches. Search does not call a server.
+- **Inquiry:** Required name, email, project type, budget range, a 30-character minimum project outline, and a demo acknowledgement. Native browser constraint validation identifies invalid fields. Success is an in-memory message and the form resets.
+- **Booking:** Future weekdays only; the minimum date is tomorrow in the browser’s local date. Select a studio-local sample time and valid email. Weekends receive a custom validation message. No real slot is checked or reserved. Studio time zone: `Australia/Sydney`.
+- **Newsletter:** Email validation and a local success state. There is no mailing list or transmission.
+- **No-JS form behavior:** Submit buttons are disabled in the HTML and enabled by `app.js`. This prevents accidental native GET submissions when JavaScript is unavailable. Content and ordinary page navigation still work.
+- **Lightbox:** Select a gallery image. Native `dialog` supplies modal focus containment and Escape dismissal; previous/next buttons and left/right arrows change the image within its gallery group. Caption updates are announced politely. Closing returns focus to the opener. No automatic slideshow.
+- **Demo NDA gate:** Open `project-relay.html` and enter **`openstudio`**. Wrong values show feedback; success reveals fictional notes and moves focus to the first heading. This is explicitly not security or authentication: the content exists in the HTML source. Do not use it for confidential material.
+- **Print purchase:** Select an edition, choose Digital ($20), A4 ($35), or A3 ($60), and simulate an order. The price updates in place. No payment or shipping information is requested; no order, delivery, or license is created. Reopening resets the modal.
+- **Testimonials:** Manual previous/next buttons cycle three clearly fictional quotes, with a polite announcement region. There is no autoplay.
+- **Theme:** Light/dark toggle updates `aria-pressed` and CSS variables. State is in memory only and resets on navigation/reload.
+- **Availability / clock:** Availability is a static fictional label. The time is real, formatted with `Intl.DateTimeFormat` for `Australia/Sydney`, and updated every minute with browser time-zone/DST handling.
+- **Copy email:** Clipboard API when available, visible manual-copy address otherwise. `.example` addresses are deliberately non-deliverable.
+- **Résumé:** Local `assets/jamie-vale-cv.txt` download and print styling for the browser’s Print / Save as PDF action. No pre-generated PDF is included.
+- **Motion:** IntersectionObserver reveals are progressive enhancements; content is never initially hidden by CSS. Reduced-motion preferences disable animations, transitions, and smooth scrolling.
 
-Semantic landmarks, one primary heading per document, skip link, labeled forms, native buttons and links, explicit button types, clear keyboard focus, image text alternatives, fieldset/legend filter grouping, polite result/success messages, reduced-motion support, manual carousels, and native modal focus management are included. Sections and custom components carry `data-section` and/or `data-component`; every principal region has both. Reused component names are stable; IDs are unique per document.
+## Accessibility and instrumentation
 
-Source checks confirmed primary text tokens against both base and surface colors have contrast above 4.5:1 in both themes (minimum checked pair: 5.17:1). This is a WCAG 2.2 AA implementation baseline, not a claim of certified conformance. Actual browser reflow, target geometry, full contrast combinations, focus visibility under all conditions, screen readers, and zoom need manual review. See `QA.md`.
+Semantic landmarks, one H1 per document, a skip link, image alternatives, labeled inputs, filter fieldsets, native accordions, keyboard focus outlines, descriptive button labels, live status feedback, reduced-motion support, native dialogs, and non-autoplay carousels form a WCAG 2.2 AA baseline. Every region and semantic/interactive component is instrumented with both `data-section` and `data-component`. Repeated types use stable semantic names; generic HTML components have explicit tag-based names. `component-inventory.json` is generated from the actual delivered documents, including all page sections and component counts.
 
-## Files and editing
+Source-level contrast calculations checked body, heading, muted, and accent text against both base and surface colors, plus button foreground/background, in both themes. All checked pairs are at least 5.37:1. This does not measure every rendered combination or establish full AA conformance. Browser reflow, target geometry, actual focus appearance, assistive technologies, and zoom still require manual review.
 
-`assets/styles.css` contains tokens, layouts, component styles, responsive rules at 950/760/420px, reduced-motion rules, and print styling. `assets/app.js` contains all progressive enhancement behavior. The three project SVGs are complete local placeholder artwork; `favicon.svg` is an original initial mark. `component-inventory.json` lists each page’s instrumented sections/components and interaction contracts.
+## File organization
 
-HTML is intentionally delivered in full per page. Repeated headers/footers are duplicated so the deliverable opens without a PHP server or client-side template loader. When editing global navigation, update all 17 pages consistently. PHP includes were optional and were not needed.
+- `assets/styles.css`: complete tokens, base styles, component rules, responsive breakpoints, site-specific visual direction, print rules, and reduced-motion rules.
+- `assets/app.js`: all progressive enhancements and local demo state.
+- `assets/*.svg`: original local placeholder artwork and favicon.
+- `assets/jamie-vale-cv.txt`: complete fictional CV text.
+- `FIDELITY.md`: observed reference architecture, intentional substitutions, and research additions.
+- `QA.md`: completed source checks and uncompleted browser checks.
+- `component-inventory.json`: actual page/component inventory and interaction contracts.
+- `FILES.txt`: complete file manifest.
 
-Read `FIDELITY.md` for the distinction between reference-derived architecture and research extensions. No source license or permission to reuse the real portfolio’s proprietary code/assets is implied; this package is independently implemented with fictional content.
+All HTML is repeated in full per page so the site can open directly from disk. Shared headers and footers are intentionally duplicated; update them consistently if editing. PHP includes were optional and are not used.
+
+## Verification limits
+
+JavaScript syntax, local links/fragments, IDs, landmark counts, field labels, instrumentation, form safeguards, and base color-token contrast were checked. Browser access was unavailable and native computer-use permissions were not granted, so rendered visual QA, real interaction tests, screen-reader review, and exact comparison with the reference were not completed. See `QA.md` for a manual acceptance path. No WCAG certification, real commercial results, or exact source-code/pixel fidelity is claimed.

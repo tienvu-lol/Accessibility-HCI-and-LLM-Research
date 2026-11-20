@@ -1,0 +1,887 @@
+{
+  "run_id": "2026-11-18T00-34-04-689Z-build-NEWS-R08",
+  "phase": "build",
+  "target": "NEWS-R08",
+  "category": "news",
+  "slot": 8,
+  "model_group": "open-source",
+  "model": {
+    "model_id": "unsloth/NVIDIA-Nemotron-3-Super-120B-A12B-GGUF",
+    "model_version": "MXFP4_MOE",
+    "model_provider_or_runtime": "vt-arc-falcon-llamacpp (OpenAI-compatible chat completions at http://localhost:8081/v1)",
+    "weights_url": "https://huggingface.co/unsloth/NVIDIA-Nemotron-3-Super-120B-A12B-GGUF",
+    "license": "nvidia-nemotron-open-model-license",
+    "open_weights": true,
+    "eligibility_note": "Open weights. Licence is the NVIDIA Nemotron Open Model License (HF tag nvidia-nemotron-open-model-license), read 2026-11-17 by the orchestrator on the quant repo and the base model card nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-BF16. A vendor open-model licence, NOT OSI-approved: this slot is open-weight, not open-source. Quantisation MXFP4_MOE. Served self-hosted via llama.cpp on VT ARC Falcon over an SSH tunnel on localhost:8081. Serving history, same model and quant: fal052:50413 (2026-11-17, twelve slot-08 research runs and four builds; session ended), fal039:43471 (current).",
+    "params": {
+      "temperature": 0.3,
+      "max_tokens": 32000
+    }
+  },
+  "operator": "Samhith Varma Yallamraju",
+  "status": "failed",
+  "prepared_at": "2026-11-18T00:34:04.694Z",
+  "generation_started_at": "2026-11-18T00:34:04.694Z",
+  "generation_completed_at": "2026-11-18T01:39:40.492Z",
+  "tool_access": "chat-completions API only: no browsing, no shell, no filesystem. The orchestrator wrote every file and ran every check.",
+  "budget": {
+    "max_build_turns": 28,
+    "max_repair_rounds": 3,
+    "max_tokens_per_request": 32000,
+    "temperature": 0.3,
+    "history_exchanges_kept": 8
+  },
+  "approved_source": {
+    "source_name": "The Seattle Times",
+    "source_url": "https://www.seattletimes.com/",
+    "verified_at": "2026-11-17",
+    "verification_method": "HTTP GET by the orchestrator",
+    "verification_result": "verified",
+    "evidence_reference": "pipelines/open-source/research/evidence/NEWS-R08-http-2026-11-17.json",
+    "complexity": "medium",
+    "stack_clues": "unknown",
+    "limitations": "Verification date not provided in evidence; only a subset of available sections and article pages were mapped to stay within 6‑16 page limit; many additional sections (e.g., author archives, topic tags) exist but were not included.",
+    "approved_at": "2026-11-17",
+    "approved_by": "Samhith Varma Yallamraju",
+    "approval_reference": "Project lead approval of all slot-08 sources given 2026-11-17 in the Claude Code orchestration session; see research/NEWS-R08.md and research/proposals/NEWS-rows.json"
+  },
+  "approved_page_map": [
+    {
+      "url": "https://www.seattletimes.com/",
+      "title": "The Seattle Times | Local news, sports, business, politics, entertainment, travel, restaurants and opinion for Seattle and the Pacific Northwest.",
+      "local_file": "index.html"
+    },
+    {
+      "url": "https://www.seattletimes.com/seattle-news/",
+      "title": "Local News | The Seattle Times",
+      "local_file": "seattle-news.html"
+    },
+    {
+      "url": "https://www.seattletimes.com/business/",
+      "title": "Business | The Seattle Times",
+      "local_file": "business.html"
+    },
+    {
+      "url": "https://www.seattletimes.com/sports/",
+      "title": "Sports | The Seattle Times",
+      "local_file": "sports.html"
+    },
+    {
+      "url": "https://www.seattletimes.com/nation-world/",
+      "title": "Nation & World | The Seattle Times",
+      "local_file": "nation-world.html"
+    },
+    {
+      "url": "https://www.seattletimes.com/seattle-news/transportation/seattles-i-5-express-lanes-suddenly-closed-by-severe-cracking/",
+      "title": "Seattle’s I-5 express lanes suddenly closed by severe cracking | The Seattle Times",
+      "local_file": "seattle-i-5-express-lanes-closed.html"
+    },
+    {
+      "url": "https://www.seattletimes.com/subscribe/signup-offers/?subsource=voluntary",
+      "title": "Subscribe | The Seattle Times",
+      "local_file": "subscribe-signup-offers-subsource-voluntary.html"
+    },
+    {
+      "url": "https://www.seattletimes.com/help/",
+      "title": "Questions? | The Seattle Times",
+      "local_file": "help.html"
+    },
+    {
+      "url": "https://www.seattletimes.com/newsroom-staff/",
+      "title": "Newsroom staff | The Seattle Times",
+      "local_file": "newsroom-staff.html"
+    },
+    {
+      "url": "https://www.seattletimes.com/rss-feeds/",
+      "title": "RSS Feeds | The Seattle Times",
+      "local_file": "rss-feeds.html"
+    }
+  ],
+  "protocol_snapshots": [
+    {
+      "path": "Rules.md",
+      "sha256": "04b1c3e38b76f2aff3aef869d67370bb4532cd8f9ab5e22ac8276f26cbb859bf"
+    },
+    {
+      "path": "MODEL_ALLOCATION.md",
+      "sha256": "7e9487530a6e80b35af48d0691951dafc2fffea39798c81a3c49203909148d30"
+    },
+    {
+      "path": "pipelines/open-source/config.json",
+      "sha256": "e5c7666dbdc7c302e54c0c94c946dcd01d64992b89a56df7ce1ee272dd488edf"
+    },
+    {
+      "path": "pipelines/open-source/categories.json",
+      "sha256": "8180966e55daa24799e51106645e93fd5807dde470765ab8b3b38d3f922c867b"
+    },
+    {
+      "path": "pipelines/open-source/prompts/system.md",
+      "sha256": "61bc24a57de14bd6a662cd6b5f98d0cfc57bf47e187fc58a97831bf1f272b4ee"
+    },
+    {
+      "path": "pipelines/open-source/prompts/build.md",
+      "sha256": "6096ab8b698af7a99d8ddaf1534cc95f41844d1d00cdd1fce740123b3146ab6a"
+    },
+    {
+      "path": "pipelines/open-source/prompts/repair.md",
+      "sha256": "8a84e51995736607b3efa6f5b2d76e52692423c2c26b03409afb4afa3c6586d6"
+    },
+    {
+      "path": "pipelines/open-source/models.json",
+      "sha256": "582c3bcd03420379259f8896d72dd3a1be5cff7ecfb3700fe6c9302ae958c83a"
+    },
+    {
+      "path": "metadata/source-inventories/news.csv",
+      "sha256": "258aa8c581b0c944ab140fe6576dd88951b28c4d85a34d44e3df6f20f802235f"
+    },
+    {
+      "path": "metadata/assignments.csv",
+      "sha256": "75aa44ee9046372a60e2b9bafe18f1e0dbb3f7c5bd80c29f49f4c060050bca06"
+    }
+  ],
+  "turns": [
+    {
+      "turn": 1,
+      "label": "plan",
+      "status_line": "CONTINUE",
+      "prose_chars": 2923,
+      "files_written": [],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 1118,
+        "prompt_tokens": 5146,
+        "total_tokens": 6264,
+        "prompt_tokens_details": {
+          "cached_tokens": 541
+        }
+      },
+      "at": "2026-11-18T00:34:39.684Z"
+    },
+    {
+      "turn": 2,
+      "label": "files-2",
+      "status_line": "CONTINUE",
+      "prose_chars": 0,
+      "files_written": [
+        "css/styles.css",
+        "js/main.js",
+        "index.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 10297,
+        "prompt_tokens": 6070,
+        "total_tokens": 16367,
+        "prompt_tokens_details": {
+          "cached_tokens": 5142
+        }
+      },
+      "at": "2026-11-18T00:39:20.697Z"
+    },
+    {
+      "turn": 3,
+      "label": "files-3",
+      "status_line": "CONTINUE",
+      "prose_chars": 0,
+      "files_written": [
+        "404.html",
+        "seattle-news.html",
+        "business.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 4942,
+        "prompt_tokens": 11296,
+        "total_tokens": 16238,
+        "prompt_tokens_details": {
+          "cached_tokens": 6066
+        }
+      },
+      "at": "2026-11-18T00:41:39.932Z"
+    },
+    {
+      "turn": 4,
+      "label": "files-4",
+      "status_line": "CONTINUE",
+      "prose_chars": 0,
+      "files_written": [
+        "sports.html",
+        "nation-world.html",
+        "seattle-i-5-express-lanes-closed.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 5545,
+        "prompt_tokens": 16153,
+        "total_tokens": 21698,
+        "prompt_tokens_details": {
+          "cached_tokens": 11292
+        }
+      },
+      "at": "2026-11-18T00:44:17.819Z"
+    },
+    {
+      "turn": 5,
+      "label": "files-5",
+      "status_line": "CONTINUE",
+      "prose_chars": 0,
+      "files_written": [
+        "subscribe-signup-offers-subsource-voluntary.html",
+        "help.html",
+        "newsroom-staff.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 4420,
+        "prompt_tokens": 21714,
+        "total_tokens": 26134,
+        "prompt_tokens_details": {
+          "cached_tokens": 16149
+        }
+      },
+      "at": "2026-11-18T00:46:22.111Z"
+    },
+    {
+      "turn": 6,
+      "label": "files-6",
+      "status_line": "COMPLETE",
+      "prose_chars": 0,
+      "files_written": [
+        "README.md",
+        "fidelity-notes.md",
+        "component-inventory.json",
+        "generation-metadata.json"
+      ],
+      "files_rejected": [
+        {
+          "path": "rss-feeds.html",
+          "reason": "remote dependency: href=\"https://example.com/rss/local-news.xml\"; remote dependency: href=\"https://example.com/rss/business.xml\"; remote dependency: href=\"https://example.com/rss/sports.xml\"; remote dependency: href=\"https://example.com/rss/nation-world.xml\"; remote dependency: href=\"https://example.com/rss/opinion.xml\""
+        }
+      ],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 6772,
+        "prompt_tokens": 26001,
+        "total_tokens": 32773,
+        "prompt_tokens_details": {
+          "cached_tokens": 21710
+        }
+      },
+      "at": "2026-11-18T00:49:34.905Z"
+    },
+    {
+      "turn": 7,
+      "label": "files-7",
+      "status_line": "COMPLETE",
+      "prose_chars": 0,
+      "files_written": [
+        "rss-feeds.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 1192,
+        "prompt_tokens": 32765,
+        "total_tokens": 33957,
+        "prompt_tokens_details": {
+          "cached_tokens": 25997
+        }
+      },
+      "at": "2026-11-18T00:50:11.634Z"
+    },
+    {
+      "turn": 8,
+      "label": "repair-1",
+      "status_line": "CONTINUE",
+      "prose_chars": 0,
+      "files_written": [
+        "index.html",
+        "business.html",
+        "nation-world.html",
+        "assets/placeholder-1.svg",
+        "assets/placeholder-2.svg",
+        "assets/placeholder-3.svg",
+        "assets/placeholder-4.svg",
+        "assets/placeholder-5.svg",
+        "assets/placeholder-6.svg",
+        "assets/placeholder-7.svg",
+        "assets/placeholder-8.svg"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 9218,
+        "prompt_tokens": 35782,
+        "total_tokens": 45000,
+        "prompt_tokens_details": {
+          "cached_tokens": 35778
+        }
+      },
+      "at": "2026-11-18T01:04:42.150Z"
+    },
+    {
+      "turn": 9,
+      "label": "repair-1-cont-1",
+      "status_line": "CONTINUE",
+      "prose_chars": 0,
+      "files_written": [
+        "404.html",
+        "seattle-news.html",
+        "sports.html",
+        "rss-feeds.html",
+        "seattle-i-5-express-lanes-closed.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 10350,
+        "prompt_tokens": 43233,
+        "total_tokens": 53583,
+        "prompt_tokens_details": {
+          "cached_tokens": 35778
+        }
+      },
+      "at": "2026-11-18T01:09:36.947Z"
+    },
+    {
+      "turn": 10,
+      "label": "repair-1-cont-2",
+      "status_line": "CONTINUE",
+      "prose_chars": 0,
+      "files_written": [
+        "404.html",
+        "assets/placeholder-9.svg",
+        "assets/placeholder-10.svg",
+        "assets/placeholder-11.svg",
+        "assets/placeholder-12.svg",
+        "assets/placeholder-13.svg",
+        "assets/placeholder-14.svg",
+        "assets/placeholder-15.svg",
+        "assets/placeholder-16.svg",
+        "assets/placeholder-17.svg",
+        "assets/placeholder-18.svg",
+        "assets/placeholder-19.svg",
+        "assets/placeholder-20.svg",
+        "assets/placeholder-21.svg",
+        "assets/placeholder-22.svg",
+        "assets/placeholder-23.svg",
+        "assets/placeholder-24.svg",
+        "assets/placeholder-25.svg",
+        "assets/placeholder-26.svg",
+        "assets/placeholder-27.svg",
+        "assets/placeholder-28.svg",
+        "assets/placeholder-29.svg",
+        "assets/placeholder-30.svg",
+        "assets/placeholder-31.svg",
+        "assets/placeholder-32.svg",
+        "assets/placeholder-33.svg",
+        "assets/placeholder-34.svg",
+        "assets/placeholder-35.svg",
+        "assets/placeholder-36.svg",
+        "assets/placeholder-37.svg",
+        "assets/placeholder-38.svg",
+        "assets/placeholder-39.svg",
+        "assets/placeholder-40.svg",
+        "assets/placeholder-41.svg",
+        "assets/placeholder-42.svg",
+        "assets/placeholder-staff-1.svg",
+        "assets/placeholder-staff-2.svg",
+        "assets/placeholder-staff-3.svg",
+        "assets/placeholder-staff-4.svg",
+        "assets/placeholder-staff-5.svg",
+        "assets/placeholder-staff-6.svg",
+        "assets/placeholder-staff-7.svg",
+        "assets/placeholder-staff-8.svg"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 6047,
+        "prompt_tokens": 50859,
+        "total_tokens": 56906,
+        "prompt_tokens_details": {
+          "cached_tokens": 43229
+        }
+      },
+      "at": "2026-11-18T01:12:35.757Z"
+    },
+    {
+      "turn": 11,
+      "label": "repair-1-cont-3",
+      "status_line": "COMPLETE",
+      "prose_chars": 341,
+      "files_written": [
+        "fidelity-notes.md"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 2283,
+        "prompt_tokens": 56894,
+        "total_tokens": 59177,
+        "prompt_tokens_details": {
+          "cached_tokens": 50855
+        }
+      },
+      "at": "2026-11-18T01:14:00.702Z"
+    }
+  ],
+  "rejected_files": [
+    {
+      "turn": 6,
+      "path": "rss-feeds.html",
+      "reason": "remote dependency: href=\"https://example.com/rss/local-news.xml\"; remote dependency: href=\"https://example.com/rss/business.xml\"; remote dependency: href=\"https://example.com/rss/sports.xml\"; remote dependency: href=\"https://example.com/rss/nation-world.xml\"; remote dependency: href=\"https://example.com/rss/opinion.xml\""
+    }
+  ],
+  "qc_runs": [
+    {
+      "started_at": "2026-11-18T00:50:11.676Z",
+      "completed_at": "2026-11-18T00:50:15.970Z",
+      "exit_code": 1,
+      "executed": true,
+      "passed": false,
+      "outcome": "fail",
+      "failures": [
+        "placeholder href=\"#\" in business.html",
+        "placeholder href=\"#\" in business.html",
+        "placeholder href=\"#\" in business.html",
+        "placeholder href=\"#\" in business.html",
+        "placeholder href=\"#\" in business.html",
+        "placeholder href=\"#\" in business.html",
+        "placeholder href=\"#\" in business.html",
+        "placeholder href=\"#\" in business.html",
+        "broken asset in business.html: assets/placeholder-17.svg",
+        "broken asset in business.html: assets/placeholder-18.svg",
+        "broken asset in business.html: assets/placeholder-19.svg",
+        "broken asset in business.html: assets/placeholder-20.svg",
+        "broken asset in business.html: assets/placeholder-21.svg",
+        "broken asset in business.html: assets/placeholder-22.svg",
+        "broken asset in business.html: assets/placeholder-23.svg",
+        "broken asset in business.html: assets/placeholder-24.svg",
+        "placeholder href=\"#\" in index.html",
+        "placeholder href=\"#\" in index.html",
+        "placeholder href=\"#\" in index.html",
+        "placeholder href=\"#\" in index.html",
+        "placeholder href=\"#\" in index.html",
+        "placeholder href=\"#\" in index.html",
+        "placeholder href=\"#\" in index.html",
+        "placeholder href=\"#\" in index.html",
+        "broken asset in index.html: assets/placeholder-1.svg",
+        "broken asset in index.html: assets/placeholder-2.svg",
+        "broken asset in index.html: assets/placeholder-3.svg",
+        "broken asset in index.html: assets/placeholder-4.svg",
+        "broken asset in index.html: assets/placeholder-5.svg",
+        "broken asset in index.html: assets/placeholder-6.svg",
+        "broken asset in index.html: assets/placeholder-7.svg",
+        "broken asset in index.html: assets/placeholder-8.svg",
+        "placeholder href=\"#\" in nation-world.html",
+        "placeholder href=\"#\" in nation-world.html",
+        "placeholder href=\"#\" in nation-world.html",
+        "placeholder href=\"#\" in nation-world.html",
+        "placeholder href=\"#\" in nation-world.html",
+        "placeholder href=\"#\" in nation-world.html",
+        "placeholder href=\"#\" in nation-world.html",
+        "placeholder href=\"#\" in nation-world.html",
+        "broken asset in nation-world.html: assets/placeholder-33.svg",
+        "broken asset in nation-world.html: assets/placeholder-34.svg",
+        "broken asset in nation-world.html: assets/placeholder-35.svg",
+        "broken asset in nation-world.html: assets/placeholder-36.svg",
+        "broken asset in nation-world.html: assets/placeholder-37.svg",
+        "broken asset in nation-world.html: assets/placeholder-38.svg",
+        "broken asset in nation-world.html: assets/placeholder-39.svg",
+        "broken asset in nation-world.html: assets/placeholder-40.svg",
+        "broken asset in newsroom-staff.html: assets/placeholder-staff-1.svg",
+        "broken asset in newsroom-staff.html: assets/placeholder-staff-2.svg",
+        "broken asset in newsroom-staff.html: assets/placeholder-staff-3.svg",
+        "broken asset in newsroom-staff.html: assets/placeholder-staff-4.svg",
+        "broken asset in newsroom-staff.html: assets/placeholder-staff-5.svg",
+        "broken asset in newsroom-staff.html: assets/placeholder-staff-6.svg",
+        "broken asset in newsroom-staff.html: assets/placeholder-staff-7.svg",
+        "broken asset in newsroom-staff.html: assets/placeholder-staff-8.svg",
+        "placeholder href=\"#\" in rss-feeds.html",
+        "placeholder href=\"#\" in rss-feeds.html",
+        "placeholder href=\"#\" in rss-feeds.html",
+        "placeholder href=\"#\" in rss-feeds.html",
+        "placeholder href=\"#\" in rss-feeds.html",
+        "placeholder href=\"#\" in seattle-i-5-express-lanes-closed.html",
+        "placeholder href=\"#\" in seattle-i-5-express-lanes-closed.html",
+        "broken asset in seattle-i-5-express-lanes-closed.html: assets/placeholder-41.svg",
+        "broken asset in seattle-i-5-express-lanes-closed.html: assets/placeholder-42.svg",
+        "placeholder href=\"#\" in seattle-news.html",
+        "placeholder href=\"#\" in seattle-news.html",
+        "placeholder href=\"#\" in seattle-news.html",
+        "placeholder href=\"#\" in seattle-news.html",
+        "placeholder href=\"#\" in seattle-news.html",
+        "placeholder href=\"#\" in seattle-news.html",
+        "placeholder href=\"#\" in seattle-news.html",
+        "placeholder href=\"#\" in seattle-news.html",
+        "broken asset in seattle-news.html: assets/placeholder-9.svg",
+        "broken asset in seattle-news.html: assets/placeholder-10.svg",
+        "broken asset in seattle-news.html: assets/placeholder-11.svg",
+        "broken asset in seattle-news.html: assets/placeholder-12.svg",
+        "broken asset in seattle-news.html: assets/placeholder-13.svg",
+        "broken asset in seattle-news.html: assets/placeholder-14.svg",
+        "broken asset in seattle-news.html: assets/placeholder-15.svg",
+        "broken asset in seattle-news.html: assets/placeholder-16.svg",
+        "placeholder href=\"#\" in sports.html",
+        "placeholder href=\"#\" in sports.html",
+        "placeholder href=\"#\" in sports.html",
+        "placeholder href=\"#\" in sports.html",
+        "placeholder href=\"#\" in sports.html",
+        "placeholder href=\"#\" in sports.html",
+        "placeholder href=\"#\" in sports.html",
+        "placeholder href=\"#\" in sports.html",
+        "broken asset in sports.html: assets/placeholder-25.svg",
+        "broken asset in sports.html: assets/placeholder-26.svg",
+        "broken asset in sports.html: assets/placeholder-27.svg",
+        "broken asset in sports.html: assets/placeholder-28.svg",
+        "broken asset in sports.html: assets/placeholder-29.svg",
+        "broken asset in sports.html: assets/placeholder-30.svg",
+        "broken asset in sports.html: assets/placeholder-31.svg",
+        "broken asset in sports.html: assets/placeholder-32.svg",
+        "axe heading-order (moderate) @1280 404.html: 1 node(s) e.g. div:nth-child(1) > h3",
+        "failed request @1280 business.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-17.svg",
+        "console error @1280 business.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @1280 business.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-18.svg",
+        "console error @1280 business.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @1280 business.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-19.svg",
+        "console error @1280 business.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @1280 business.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-20.svg",
+        "console error @1280 business.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @1280 business.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-21.svg",
+        "console error @1280 business.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @1280 business.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-22.svg",
+        "console error @1280 business.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @1280 business.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-23.svg",
+        "console error @1280 business.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @1280 business.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-24.svg",
+        "console error @1280 business.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "axe aria-required-parent (critical) @1280 business.html: 2 node(s) e.g. button[aria-controls=\"tab-biz-latest\"]",
+        "failed request @1280 index.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-1.svg",
+        "console error @1280 index.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @1280 index.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-2.svg",
+        "console error @1280 index.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @1280 index.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-3.svg",
+        "console error @1280 index.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @1280 index.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-4.svg",
+        "console error @1280 index.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @1280 index.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-5.svg",
+        "console error @1280 index.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @1280 index.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-6.svg",
+        "console error @1280 index.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @1280 index.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-7.svg",
+        "console error @1280 index.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @1280 index.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-8.svg",
+        "console error @1280 index.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "axe aria-required-parent (critical) @1280 index.html: 2 node(s) e.g. button[aria-controls=\"tab-latest\"]",
+        "axe page-has-heading-one (moderate) @1280 index.html: 1 node(s) e.g. html",
+        "failed request @1280 nation-world.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-33.svg",
+        "console error @1280 nation-world.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @1280 nation-world.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-34.svg",
+        "console error @1280 nation-world.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @1280 nation-world.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-35.svg",
+        "console error @1280 nation-world.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @1280 nation-world.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-36.svg",
+        "console error @1280 nation-world.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @1280 nation-world.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-37.svg",
+        "console error @1280 nation-world.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @1280 nation-world.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-38.svg",
+        "console error @1280 nation-world.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @1280 nation-world.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-39.svg",
+        "console error @1280 nation-world.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @1280 nation-world.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-40.svg",
+        "console error @1280 nation-world.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "axe aria-required-parent (critical) @1280 nation-world.html: 2 node(s) e.g. button[aria-controls=\"tab-nw-latest\"]",
+        "failed request @1280 newsroom-staff.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-staff-1.svg",
+        "console error @1280 newsroom-staff.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @1280 newsroom-staff.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-staff-2.svg",
+        "console error @1280 newsroom-staff.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @1280 newsroom-staff.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-staff-3.svg",
+        "console error @1280 newsroom-staff.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @1280 newsroom-staff.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-staff-4.svg",
+        "console error @1280 newsroom-staff.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @1280 newsroom-staff.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-staff-5.svg",
+        "console error @1280 newsroom-staff.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @1280 newsroom-staff.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-staff-6.svg",
+        "console error @1280 newsroom-staff.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @1280 newsroom-staff.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-staff-7.svg",
+        "console error @1280 newsroom-staff.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @1280 newsroom-staff.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-staff-8.svg",
+        "console error @1280 newsroom-staff.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @1280 seattle-i-5-express-lanes-closed.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-41.svg",
+        "console error @1280 seattle-i-5-express-lanes-closed.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @1280 seattle-i-5-express-lanes-closed.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-42.svg",
+        "console error @1280 seattle-i-5-express-lanes-closed.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @1280 seattle-news.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-9.svg",
+        "console error @1280 seattle-news.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @1280 seattle-news.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-10.svg",
+        "console error @1280 seattle-news.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @1280 seattle-news.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-11.svg",
+        "console error @1280 seattle-news.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @1280 seattle-news.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-12.svg",
+        "console error @1280 seattle-news.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @1280 seattle-news.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-13.svg",
+        "console error @1280 seattle-news.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @1280 seattle-news.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-14.svg",
+        "console error @1280 seattle-news.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @1280 seattle-news.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-15.svg",
+        "console error @1280 seattle-news.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @1280 seattle-news.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-16.svg",
+        "console error @1280 seattle-news.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "axe aria-required-parent (critical) @1280 seattle-news.html: 2 node(s) e.g. button[aria-controls=\"tab-sn-latest\"]",
+        "failed request @1280 sports.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-25.svg",
+        "console error @1280 sports.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @1280 sports.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-26.svg",
+        "console error @1280 sports.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @1280 sports.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-27.svg",
+        "console error @1280 sports.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @1280 sports.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-28.svg",
+        "console error @1280 sports.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @1280 sports.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-29.svg",
+        "console error @1280 sports.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @1280 sports.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-30.svg",
+        "console error @1280 sports.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @1280 sports.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-31.svg",
+        "console error @1280 sports.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @1280 sports.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-32.svg",
+        "console error @1280 sports.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "axe aria-required-parent (critical) @1280 sports.html: 2 node(s) e.g. button[aria-controls=\"tab-sports-latest\"]",
+        "axe heading-order (moderate) @375 404.html: 1 node(s) e.g. div:nth-child(1) > h3",
+        "failed request @375 business.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-17.svg",
+        "console error @375 business.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @375 business.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-18.svg",
+        "console error @375 business.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @375 business.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-19.svg",
+        "console error @375 business.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @375 business.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-20.svg",
+        "console error @375 business.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @375 business.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-21.svg",
+        "console error @375 business.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @375 business.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-22.svg",
+        "console error @375 business.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @375 business.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-23.svg",
+        "console error @375 business.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @375 business.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-24.svg",
+        "console error @375 business.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "axe aria-required-parent (critical) @375 business.html: 2 node(s) e.g. button[aria-controls=\"tab-biz-latest\"]",
+        "failed request @375 index.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-1.svg",
+        "console error @375 index.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @375 index.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-2.svg",
+        "console error @375 index.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @375 index.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-3.svg",
+        "console error @375 index.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @375 index.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-4.svg",
+        "console error @375 index.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @375 index.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-5.svg",
+        "console error @375 index.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @375 index.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-6.svg",
+        "console error @375 index.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @375 index.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-7.svg",
+        "console error @375 index.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @375 index.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-8.svg",
+        "console error @375 index.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "axe aria-required-parent (critical) @375 index.html: 2 node(s) e.g. button[aria-controls=\"tab-latest\"]",
+        "axe page-has-heading-one (moderate) @375 index.html: 1 node(s) e.g. html",
+        "failed request @375 nation-world.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-33.svg",
+        "console error @375 nation-world.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @375 nation-world.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-34.svg",
+        "console error @375 nation-world.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @375 nation-world.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-35.svg",
+        "console error @375 nation-world.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @375 nation-world.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-36.svg",
+        "console error @375 nation-world.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @375 nation-world.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-37.svg",
+        "console error @375 nation-world.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @375 nation-world.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-38.svg",
+        "console error @375 nation-world.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @375 nation-world.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-39.svg",
+        "console error @375 nation-world.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @375 nation-world.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-40.svg",
+        "console error @375 nation-world.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "axe aria-required-parent (critical) @375 nation-world.html: 2 node(s) e.g. button[aria-controls=\"tab-nw-latest\"]",
+        "failed request @375 newsroom-staff.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-staff-1.svg",
+        "console error @375 newsroom-staff.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @375 newsroom-staff.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-staff-2.svg",
+        "console error @375 newsroom-staff.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @375 newsroom-staff.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-staff-3.svg",
+        "console error @375 newsroom-staff.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @375 newsroom-staff.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-staff-4.svg",
+        "console error @375 newsroom-staff.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @375 newsroom-staff.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-staff-5.svg",
+        "console error @375 newsroom-staff.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @375 newsroom-staff.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-staff-6.svg",
+        "console error @375 newsroom-staff.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @375 newsroom-staff.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-staff-7.svg",
+        "console error @375 newsroom-staff.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @375 newsroom-staff.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-staff-8.svg",
+        "console error @375 newsroom-staff.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @375 seattle-i-5-express-lanes-closed.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-41.svg",
+        "console error @375 seattle-i-5-express-lanes-closed.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @375 seattle-i-5-express-lanes-closed.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-42.svg",
+        "console error @375 seattle-i-5-express-lanes-closed.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @375 seattle-news.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-9.svg",
+        "console error @375 seattle-news.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @375 seattle-news.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-10.svg",
+        "console error @375 seattle-news.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @375 seattle-news.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-11.svg",
+        "console error @375 seattle-news.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @375 seattle-news.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-12.svg",
+        "console error @375 seattle-news.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @375 seattle-news.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-13.svg",
+        "console error @375 seattle-news.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @375 seattle-news.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-14.svg",
+        "console error @375 seattle-news.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @375 seattle-news.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-15.svg",
+        "console error @375 seattle-news.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @375 seattle-news.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-16.svg",
+        "console error @375 seattle-news.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "axe aria-required-parent (critical) @375 seattle-news.html: 2 node(s) e.g. button[aria-controls=\"tab-sn-latest\"]",
+        "failed request @375 sports.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-25.svg",
+        "console error @375 sports.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @375 sports.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-26.svg",
+        "console error @375 sports.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @375 sports.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-27.svg",
+        "console error @375 sports.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @375 sports.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-28.svg",
+        "console error @375 sports.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @375 sports.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-29.svg",
+        "console error @375 sports.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @375 sports.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-30.svg",
+        "console error @375 sports.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @375 sports.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-31.svg",
+        "console error @375 sports.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @375 sports.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-32.svg",
+        "console error @375 sports.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "axe aria-required-parent (critical) @375 sports.html: 2 node(s) e.g. button[aria-controls=\"tab-sports-latest\"]"
+      ],
+      "failure_count": 311,
+      "warnings": [],
+      "axe": {
+        "heading-order": 2,
+        "aria-required-parent": 20,
+        "page-has-heading-one": 2
+      },
+      "pages": 11,
+      "files": 17,
+      "qc_tool_sha256": "e9be905d19e7181e30d8291bcb1511d4469bdc9e36c20c0efe21e2d3fcf54513",
+      "report": "qc-initial-2026-11-18T00-50-11-676Z.json",
+      "log": "qc-initial-2026-11-18T00-50-11-676Z.log",
+      "stdout_tail": "FAIL broken asset in sports.html: assets/placeholder-32.svg\nFAIL axe heading-order (moderate) @1280 404.html: 1 node(s) e.g. div:nth-child(1) > h3\nFAIL failed request @1280 business.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-17.svg\nFAIL console error @1280 business.html: Failed to load resource: net::ERR_FILE_NOT_FOUND\nFAIL failed request @1280 business.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-18.svg\nFAIL failed request @1280 business.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-19.svg\nFAIL failed request @1280 business.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-20.svg\nFAIL failed request @1280 business.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-21.svg\nFAIL failed request @1280 business.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-22.svg\nFAIL failed request @1280 business.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-23.svg\nFAIL failed request @1280 business.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-24.svg\nFAIL axe aria-required-parent (critical) @1280 business.html: 2 node(s) e.g. button[aria-controls=\"tab-biz-latest\"]\nFAIL failed request @1280 index.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-1.svg\nFAIL console error @1280 index.html: Failed to load resource: net::ERR_FILE_NOT_FOUND\nFAIL failed request @1280 index.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-2.svg\nFAIL failed request @1280 index.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-3.svg\nFAIL failed request @1280 index.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-4.svg\nFAIL failed request @1280 index.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-5.svg\nFAIL failed request @1280 index.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-6.svg\nFAIL failed request @1280 index.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-7.svg\nFAIL failed request @1280 index.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-8.svg\nFAIL axe aria-required-parent (critical) @1280 index.html: 2 node(s) e.g. button[aria-controls=\"tab-latest\"]\nFAIL axe page-has-heading-one (moderate) @1280 index.html: 1 node(s) e.g. html\nFAIL failed request @1280 nation-world.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08/assets/placeholder-33.svg\n",
+      "note": null
+    },
+    {
+      "started_at": "2026-11-18T01:14:00.717Z",
+      "completed_at": "2026-11-18T01:14:05.350Z",
+      "exit_code": 1,
+      "executed": true,
+      "passed": false,
+      "outcome": "fail",
+      "failures": [
+        "axe aria-required-parent (critical) @1280 business.html: 2 node(s) e.g. button[aria-controls=\"tab-biz-latest\"]",
+        "axe aria-required-parent (critical) @1280 index.html: 2 node(s) e.g. button[aria-controls=\"tab-latest\"]",
+        "axe page-has-heading-one (moderate) @1280 index.html: 1 node(s) e.g. html",
+        "axe aria-required-parent (critical) @1280 nation-world.html: 2 node(s) e.g. button[aria-controls=\"tab-nw-latest\"]",
+        "axe aria-required-parent (critical) @1280 seattle-news.html: 2 node(s) e.g. button[aria-controls=\"tab-sn-latest\"]",
+        "axe aria-required-parent (critical) @1280 sports.html: 2 node(s) e.g. button[aria-controls=\"tab-sports-latest\"]",
+        "axe aria-required-parent (critical) @375 business.html: 2 node(s) e.g. button[aria-controls=\"tab-biz-latest\"]",
+        "axe aria-required-parent (critical) @375 index.html: 2 node(s) e.g. button[aria-controls=\"tab-latest\"]",
+        "axe page-has-heading-one (moderate) @375 index.html: 1 node(s) e.g. html",
+        "axe aria-required-parent (critical) @375 nation-world.html: 2 node(s) e.g. button[aria-controls=\"tab-nw-latest\"]",
+        "axe aria-required-parent (critical) @375 seattle-news.html: 2 node(s) e.g. button[aria-controls=\"tab-sn-latest\"]",
+        "axe aria-required-parent (critical) @375 sports.html: 2 node(s) e.g. button[aria-controls=\"tab-sports-latest\"]"
+      ],
+      "failure_count": 12,
+      "warnings": [],
+      "axe": {
+        "aria-required-parent": 20,
+        "page-has-heading-one": 2
+      },
+      "pages": 11,
+      "files": 67,
+      "qc_tool_sha256": "e9be905d19e7181e30d8291bcb1511d4469bdc9e36c20c0efe21e2d3fcf54513",
+      "report": "qc-repair-1-2026-11-18T01-14-00-717Z.json",
+      "log": "qc-repair-1-2026-11-18T01-14-00-717Z.log",
+      "stdout_tail": "QC /Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/news/open-source/NEWS-R08\npages=11 files=67 failures=12 warnings=0\nFAIL axe aria-required-parent (critical) @1280 business.html: 2 node(s) e.g. button[aria-controls=\"tab-biz-latest\"]\nFAIL axe aria-required-parent (critical) @1280 index.html: 2 node(s) e.g. button[aria-controls=\"tab-latest\"]\nFAIL axe page-has-heading-one (moderate) @1280 index.html: 1 node(s) e.g. html\nFAIL axe aria-required-parent (critical) @1280 nation-world.html: 2 node(s) e.g. button[aria-controls=\"tab-nw-latest\"]\nFAIL axe aria-required-parent (critical) @1280 seattle-news.html: 2 node(s) e.g. button[aria-controls=\"tab-sn-latest\"]\nFAIL axe aria-required-parent (critical) @1280 sports.html: 2 node(s) e.g. button[aria-controls=\"tab-sports-latest\"]\nFAIL axe aria-required-parent (critical) @375 business.html: 2 node(s) e.g. button[aria-controls=\"tab-biz-latest\"]\nFAIL axe aria-required-parent (critical) @375 index.html: 2 node(s) e.g. button[aria-controls=\"tab-latest\"]\nFAIL axe page-has-heading-one (moderate) @375 index.html: 1 node(s) e.g. html\nFAIL axe aria-required-parent (critical) @375 nation-world.html: 2 node(s) e.g. button[aria-controls=\"tab-nw-latest\"]\nFAIL axe aria-required-parent (critical) @375 seattle-news.html: 2 node(s) e.g. button[aria-controls=\"tab-sn-latest\"]\nFAIL axe aria-required-parent (critical) @375 sports.html: 2 node(s) e.g. button[aria-controls=\"tab-sports-latest\"]\n",
+      "note": null
+    }
+  ],
+  "repair_rounds": [
+    {
+      "round": 1,
+      "before": {
+        "outcome": "fail",
+        "failures": 311
+      },
+      "after": {
+        "outcome": "fail",
+        "failures": 12
+      },
+      "files_changed": [
+        "fidelity-notes.md"
+      ],
+      "at": "2026-11-18T01:14:05.350Z"
+    }
+  ],
+  "retries": [],
+  "human_edits": [],
+  "usage": {
+    "prompt_tokens": 305913,
+    "completion_tokens": 62184,
+    "total_tokens": 368097,
+    "requests": 11,
+    "retries": 2
+  },
+  "errors": [
+    "Network error: fetch failed"
+  ],
+  "outputs": {
+    "site": "news/open-source/NEWS-R08",
+    "transcript": "pipelines/open-source/runs/2026-11-18T00-34-04-689Z-build-NEWS-R08/transcript.json"
+  },
+  "delivered": {
+    "files": [
+      "404.html",
+      "README.md",
+      "business.html",
+      "component-inventory.json",
+      "css/styles.css",
+      "fidelity-notes.md",
+      "generation-metadata.json",
+      "help.html",
+      "index.html",
+      "js/main.js",
+      "nation-world.html",
+      "newsroom-staff.html",
+      "rss-feeds.html",
+      "seattle-i-5-express-lanes-closed.html",
+      "seattle-news.html",
+      "sports.html",
+      "subscribe-signup-offers-subsource-voluntary.html"
+    ],
+    "file_count": 17,
+    "bytes": 96645,
+    "pages_in_map": 10,
+    "missing_required": [],
+    "model_claimed_complete": true,
+    "delivered_complete": true,
+    "turns_used": 7,
+    "turn_budget": 28
+  },
+  "initial_artifact": "pipelines/open-source/runs/2026-11-18T00-34-04-689Z-build-NEWS-R08/initial"
+}

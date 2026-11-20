@@ -1,12 +1,18 @@
 # Websites: replica dataset
 
-Static replicas of real websites, built as accessibility and usability test sites. Every category has 10 replicas, split by model group (`MODEL_ALLOCATION.md` §2):
+Static replicas of real websites, built as accessibility and usability test sites. Every category has 6 replicas, split by model group (`MODEL_ALLOCATION.md` §2):
 
 | Slots | Model group | Directory |
 |---|---|---|
-| 01–03 | Claude | `<category>/claude/` |
-| 04–06 | Codex | `<category>/codex/` |
-| 07–10 | Open-source | `<category>/open-source/` |
+| 01–02 | Claude | `<category>/claude/` |
+| 03–04 | Codex | `<category>/codex/` |
+| 05–06 | Open-weight | `<category>/open-source/` |
+
+**Amended 2026-11-19 (v2.0).** The dataset was reduced from 10 to 6 replicas per
+category. The former slots 03, 06, 08 and 09 were retired across every category,
+their source IDs suffixed `-R`, and the replicas moved to `archive/` at the
+repository root. Surviving slots were renumbered 01–06 and every reference was
+rewritten. See `metadata/change-log.md` and `archive/README.md`.
 
 Read `Rules.md` (generation protocol) and `MODEL_ALLOCATION.md` (allocation and provenance) before generating anything. They govern every model group.
 
@@ -16,7 +22,7 @@ Read `Rules.md` (generation protocol) and `MODEL_ALLOCATION.md` (allocation and 
 Websites/
 ├── Rules.md, MODEL_ALLOCATION.md    the two protocols
 ├── metadata/
-│   ├── assignments.csv              one row per slot: every category, all 10 slots
+│   ├── assignments.csv              one row per slot: 6 active + 4 retired per category
 │   ├── change-log.md                assignment, source and model changes
 │   └── source-inventories/          approved references, per category
 ├── <category>/<model-group>/<ID>/   one independent site per slot
@@ -51,4 +57,4 @@ The slot-to-model mapping must be declared before generation (`scripts/declare-m
 
 ## Codex configuration
 
-The Codex preparation pipeline lives in [pipelines/codex/README.md](pipelines/codex/README.md). It covers slots 04–06 in all twelve categories (36 sites), with validated configuration, per-category source inventories, exact task snapshots and shared-QC evidence capture. Setup does not start generation or confer source approval. Portfolio and restaurant were added to its queue on 2026-11-13. Portfolio slots 04–06 were already delivered and their directories were renamed that day to `PORT-04`/`PORT-05`/`PORT-06` for `MODEL_ALLOCATION.md` §5; restaurant slots 04–06 are unbuilt and unapproved. See [source inventory format](metadata/source-inventories/README.md) for coordinated reference records.
+The Codex preparation pipeline lives in [pipelines/codex/README.md](pipelines/codex/README.md). It covers slots 04–06 in all twelve categories (36 sites), with validated configuration, per-category source inventories, exact task snapshots and shared-QC evidence capture. Setup does not start generation or confer source approval. Portfolio and restaurant were added to its queue on 2026-11-13. Portfolio slots 04–06 were already delivered and their directories were renamed that day to `PORT-03`/`PORT-04`/`PORT-R06` for `MODEL_ALLOCATION.md` §5; restaurant slots 04–06 are unbuilt and unapproved. See [source inventory format](metadata/source-inventories/README.md) for coordinated reference records.

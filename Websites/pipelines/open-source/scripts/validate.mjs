@@ -2,7 +2,7 @@
 import {loadSetup, validateSetup, validateModels, buildReadiness, cliArgs, SLOTS, slotOf} from './lib.mjs';
 try {
   const {positional, flags} = cliArgs(process.argv.slice(2), {ready: 'value', models: 'boolean', 'skip-keys': 'boolean'});
-  if (positional.length) throw new Error('Usage: node validate.mjs [--models] [--ready UNI-07 [--skip-keys]]');
+  if (positional.length) throw new Error('Usage: node validate.mjs [--models] [--ready UNI-05 [--skip-keys]]');
   const setup = loadSetup();
   const errors = validateSetup(setup);
   const notes = [];

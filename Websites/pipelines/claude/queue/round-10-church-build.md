@@ -20,7 +20,7 @@ un-rebuilt targets to a shared stand-in or `not-replicated` landing page.
 
 Why this is fixed rather than left to the agent: in round 01 the three builders chose
 independently, and UNI-01 sent 428 of 862 links and UNI-02 920 of 1689 links to a single stand-in
-page while UNI-03 pruned and sent none. Roughly half of all links in two replicas resolved to one
+page while UNI-R03 pruned and sent none. Roughly half of all links in two replicas resolved to one
 page, which makes link-graph, navigation-depth and link-density measures reflect that choice rather
 than the replica or the model. Both approaches satisfy `Rules.md` §5 (no `href="#"`, no dead
 controls) and both pass QC, so this is a comparability decision, not a compliance one.

@@ -114,8 +114,8 @@ Rejected candidates:
   - The AccuWeather temperature and the Most Popular list are live data and must be replaced with static samples.
   - Navigation was extracted from the `/` page; I didn't verify each dropdown link individually beyond the 14 pages above.
 
-### NEWS-03
-- **source_id:** NEWS-03
+### NEWS-R03
+- **source_id:** NEWS-R03
 - **category/subcategory:** news / public broadcaster
 - **source_name:** NPR
 - **official_url:** https://www.npr.org/

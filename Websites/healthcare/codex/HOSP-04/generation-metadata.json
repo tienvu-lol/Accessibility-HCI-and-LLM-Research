@@ -2,23 +2,24 @@
   "allocation_protocol": "WEB-REPLICA-ALLOCATION-V1.0",
   "generation_protocol": "WEB-REPLICA-V1.0",
   "category": "healthcare",
-  "slot": 4,
+  "slot": 5,
   "source_id": "HOSP-04",
   "model_group": "codex",
   "model_id": "gpt-6.1-sol",
   "model_version": null,
-  "model_provider_or_runtime": "OpenAI collaboration worker (gpt-6.1-sol), orchestrated in Codex",
-  "generation_mode": "isolated local snapshot; single worker; no cross-site code reuse",
+  "model_provider_or_runtime": "OpenAI collaboration worker (gpt-6.1-sol), orchestrated in Codex; runtime declared in task, version not exposed",
+  "generation_mode": "isolated local static snapshot; original code authored by assigned worker",
   "operator": "Samhith Varma",
-  "approved_source_url": "https://www.dukehealth.org/",
+  "approved_source_url": "https://www.evergreenhealth.com/",
   "source_verified_at": "2026-11-12T00:52:42Z",
-  "source_verification_method": "Live web search and web text extraction; direct Python urllib HTTPS GET, status/title/HTML parsing; HTTP-only",
+  "source_verification_method": "Live web search plus web open/click text extraction (not browser rendering); direct urllib homepage GET returned 403",
+  "source_verification_limitations": "Provisional reservation pending coordinator. Direct homepage HTTP 403; web-tool text pages readable with crawl labels today to three days ago, without origin status. No rendered/interaction tests. Primary-care provider listing timed out; no provider profile verified. No appointment inquiry form observed.",
   "source_approved_at": "2026-11-12",
   "approval_reference": "metadata/change-log.md \u00a7 2026-11-12 \u2014 Codex Phase A approval (slots 04\u201306)",
-  "generation_started_at": "2026-11-13T15:51:43.836626+00:00",
-  "generation_completed_at": "2026-11-13T15:52:57.521984+00:00",
+  "generation_started_at": "2026-11-13T15:48:47Z",
+  "generation_completed_at": "2026-11-13T15:53:54.332026Z",
   "rules_revision": "04b1c3e38b76f2aff3aef869d67370bb4532cd8f9ab5e22ac8276f26cbb859bf",
-  "category_prompt_revision": "37567f6a4198f7539b11964980cf814a7b8c0732f926dfe9aa6f86849dd2277c",
+  "category_prompt_revision": "843ea7d8d1cc7d01385643f848408dea32997985422496d98e8f108bbc09a333",
   "protocol_snapshots": [
     {
       "path": "Rules.md",
@@ -49,10 +50,9 @@
       "sha256": "a10fbf398eb226807cb7391e6756fcd1a192a6ed246292ecdda77c24c6e35362"
     }
   ],
-  "prompt_or_transcript_reference": "pipelines/codex/runs/2026-11-13T15-47-56-447Z-build-HOSP-04/task.md",
+  "prompt_or_transcript_reference": "pipelines/codex/runs/2026-11-13T15-47-56-558Z-build-HOSP-04/task.md",
   "human_edits": [],
   "cross_model_edits": [],
-  "generation_budget": null,
   "active_allocation": [
     "01",
     "02",
@@ -67,7 +67,20 @@
     "09",
     "10"
   ],
-  "isolation_note": "Dirty parent checkout; coordinator authorized isolated snapshot instead of worktree. No commits, pushes or publication.",
+  "tool_access": [
+    "exec_command",
+    "Python standard library for authoring/static audit",
+    "Node for JS checks",
+    "shared qc.js browser attempt"
+  ],
+  "generation_budget": null,
+  "retries": [
+    {
+      "type": "provenance correction",
+      "at": "2026-11-13T15:53:54.332026Z",
+      "detail": "Corrected generation_started_at to first tool-recorded UTC time before generation (15:48:47Z), replacing unsubstantiated initial 15:48:03Z. No site code corrections or shared-QC retries."
+    }
+  ],
   "validation_summary": {
     "technology": "pass",
     "completeness": "pass",
@@ -77,22 +90,12 @@
     "traceability": "pass",
     "scope": "pass"
   },
-  "validation_details": {
-    "technology": "Static file/source review: HTML/CSS/vanilla JS, relative local assets, no dependencies or network APIs.",
-    "completeness": "10 HTML and all required artifacts; parser link/asset checks.",
-    "structure": "Source-text hierarchy and parser instrumentation checks passed; visual fidelity unverified.",
-    "interaction": "10 production pure-function assertions passed; DOM/browser interactions not tested.",
-    "accessibility": "Static labels, H1, alt, skip target and button types reviewed; keyboard, contrast rendering, reflow, screen reader untested.",
-    "traceability": "Approved source map, local records, actual component instances and provenance recorded.",
-    "scope": "Nine approved mapped pages plus required 404; added nonclinical checklist disclosed."
-  },
-  "qc": {
-    "exit_code": 2,
-    "status": "blocked",
-    "log": "pipelines/codex/runs/2026-11-13T15-47-56-447Z-build-HOSP-04/qc-initial.log",
-    "report_created": false,
-    "reason": "Chromium launch failed; no browser installed/retried/bypassed"
-  },
-  "corrections_reference": "pipelines/codex/runs/2026-11-13T15-47-56-447Z-build-HOSP-04/corrections.json",
-  "tests_reference": "pipelines/codex/runs/2026-11-13T15-47-56-447Z-build-HOSP-04/logic-tests.json"
+  "qc_evidence": {
+    "shared_qc_exit_code": 2,
+    "shared_qc_attempts": 1,
+    "browser": "blocked at Chromium launch; no axe result",
+    "raw_log": "pipelines/codex/runs/2026-11-13T15-47-56-558Z-build-HOSP-04/qc-initial.log",
+    "static": "pipelines/codex/runs/2026-11-13T15-47-56-558Z-build-HOSP-04/static-check.json",
+    "logic": "pipelines/codex/runs/2026-11-13T15-47-56-558Z-build-HOSP-04/logic-check.json"
+  }
 }

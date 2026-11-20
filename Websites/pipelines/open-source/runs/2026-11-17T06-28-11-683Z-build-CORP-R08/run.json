@@ -1,0 +1,545 @@
+{
+  "run_id": "2026-11-17T06-28-11-683Z-build-CORP-R08",
+  "phase": "build",
+  "target": "CORP-R08",
+  "category": "company",
+  "slot": 8,
+  "model_group": "open-source",
+  "model": {
+    "model_id": "unsloth/NVIDIA-Nemotron-3-Super-120B-A12B-GGUF",
+    "model_version": "MXFP4_MOE",
+    "model_provider_or_runtime": "vt-arc-falcon-llamacpp (OpenAI-compatible chat completions at http://localhost:8081/v1)",
+    "weights_url": "https://huggingface.co/unsloth/NVIDIA-Nemotron-3-Super-120B-A12B-GGUF",
+    "license": "nvidia-nemotron-open-model-license",
+    "open_weights": true,
+    "eligibility_note": "Open weights. Licence is the NVIDIA Nemotron Open Model License (HF tag nvidia-nemotron-open-model-license), as published on huggingface.co/unsloth/NVIDIA-Nemotron-3-Super-120B-A12B-GGUF and on the base model card nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-BF16, both read 2026-11-17 by the orchestrator. This is a vendor open-model licence, NOT an OSI-approved open-source licence: this slot is open-weight but should not be described as open-source without checking the licence text against the study's definition. Quantisation MXFP4_MOE. Served self-hosted via llama.cpp on VT ARC Falcon node fal052:50413 over an SSH tunnel on localhost:8081; no third-party inference provider.",
+    "params": {
+      "temperature": 0.3,
+      "max_tokens": 32000
+    }
+  },
+  "operator": "Samhith Varma Yallamraju",
+  "status": "completed",
+  "prepared_at": "2026-11-17T06:28:11.690Z",
+  "generation_started_at": "2026-11-17T06:28:11.690Z",
+  "generation_completed_at": "2026-11-17T06:42:06.282Z",
+  "tool_access": "chat-completions API only: no browsing, no shell, no filesystem. The orchestrator wrote every file and ran every check.",
+  "budget": {
+    "max_build_turns": 28,
+    "max_repair_rounds": 3,
+    "max_tokens_per_request": 32000,
+    "temperature": 0.3
+  },
+  "approved_source": {
+    "source_name": "First Horizon Bank",
+    "source_url": "https://www.firsthorizon.com/",
+    "verified_at": "2026-11-17",
+    "verification_method": "HTTP GET by the orchestrator",
+    "verification_result": "verified",
+    "evidence_reference": "pipelines/open-source/research/evidence/CORP-R08-http-2026-11-17.json",
+    "complexity": "medium",
+    "stack_clues": "unknown",
+    "limitations": "Login page (personal/login) returns 200 but is behind authentication and was excluded; some deeper product detail pages were not requested; verification date not provided in evidence.",
+    "approved_at": "2026-11-17",
+    "approved_by": "Samhith Varma Yallamraju",
+    "approval_reference": "Project lead approval of all slot-08 sources given 2026-11-17 in the Claude Code orchestration session; see research/CORP-R08.md and research/proposals/CORP-rows.json"
+  },
+  "approved_page_map": [
+    {
+      "url": "https://www.firsthorizon.com/",
+      "title": "First Horizon Bank - A Trusted Choice for Financial Services",
+      "local_file": "index.html"
+    },
+    {
+      "url": "https://www.firsthorizon.com/first-horizon-corporation",
+      "title": "First Horizon Corporation",
+      "local_file": "about.html"
+    },
+    {
+      "url": "https://www.firsthorizon.com/learning-center",
+      "title": "Learning Center - First Horizon Bank",
+      "local_file": "learning.html"
+    },
+    {
+      "url": "https://www.firsthorizon.com/personal/support/contact-us",
+      "title": "Find a Bank or ATM - First Horizon Bank",
+      "local_file": "contact.html"
+    },
+    {
+      "url": "https://www.firsthorizon.com/personal/support",
+      "title": "Support - First Horizon Bank",
+      "local_file": "support.html"
+    },
+    {
+      "url": "https://www.firsthorizon.com/personal/checking-and-savings",
+      "title": "Banking With First Horizon Bank - First Horizon Bank",
+      "local_file": "checking.html"
+    },
+    {
+      "url": "https://www.firsthorizon.com/personal/personal-loans",
+      "title": "Borrowing, lending and credit solutions - First Horizon Bank",
+      "local_file": "loans.html"
+    },
+    {
+      "url": "https://www.firsthorizon.com/personal/digital-banking",
+      "title": "Online and Digital Banking - First Horizon Bank",
+      "local_file": "digital.html"
+    },
+    {
+      "url": "https://www.firsthorizon.com/personal/support/calculators",
+      "title": "Money Management Calculators - First Horizon Bank",
+      "local_file": "calculators.html"
+    },
+    {
+      "url": "https://www.firsthorizon.com/first-horizon-corporation/Careers",
+      "title": "Careers – First Horizon",
+      "local_file": "careers.html"
+    }
+  ],
+  "protocol_snapshots": [
+    {
+      "path": "Rules.md",
+      "sha256": "04b1c3e38b76f2aff3aef869d67370bb4532cd8f9ab5e22ac8276f26cbb859bf"
+    },
+    {
+      "path": "MODEL_ALLOCATION.md",
+      "sha256": "7e9487530a6e80b35af48d0691951dafc2fffea39798c81a3c49203909148d30"
+    },
+    {
+      "path": "pipelines/open-source/config.json",
+      "sha256": "e5c7666dbdc7c302e54c0c94c946dcd01d64992b89a56df7ce1ee272dd488edf"
+    },
+    {
+      "path": "pipelines/open-source/categories.json",
+      "sha256": "8180966e55daa24799e51106645e93fd5807dde470765ab8b3b38d3f922c867b"
+    },
+    {
+      "path": "pipelines/open-source/prompts/system.md",
+      "sha256": "61bc24a57de14bd6a662cd6b5f98d0cfc57bf47e187fc58a97831bf1f272b4ee"
+    },
+    {
+      "path": "pipelines/open-source/prompts/build.md",
+      "sha256": "6096ab8b698af7a99d8ddaf1534cc95f41844d1d00cdd1fce740123b3146ab6a"
+    },
+    {
+      "path": "pipelines/open-source/prompts/repair.md",
+      "sha256": "8a84e51995736607b3efa6f5b2d76e52692423c2c26b03409afb4afa3c6586d6"
+    },
+    {
+      "path": "pipelines/open-source/models.json",
+      "sha256": "f02e4efcab2732e1736a96e02459eef895400d01c2888b63c7cded93435f36c4"
+    },
+    {
+      "path": "metadata/source-inventories/company.csv",
+      "sha256": "065394ce000e013f5420538f94a76589ab5109c2397b7281119c4c894b64d74d"
+    },
+    {
+      "path": "metadata/assignments.csv",
+      "sha256": "75aa44ee9046372a60e2b9bafe18f1e0dbb3f7c5bd80c29f49f4c060050bca06"
+    }
+  ],
+  "turns": [
+    {
+      "turn": 1,
+      "label": "plan",
+      "status_line": "CONTINUE",
+      "prose_chars": 3475,
+      "files_written": [],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 1371,
+        "prompt_tokens": 5149,
+        "total_tokens": 6520,
+        "prompt_tokens_details": {
+          "cached_tokens": 541
+        }
+      },
+      "at": "2026-11-17T06:28:40.715Z"
+    },
+    {
+      "turn": 2,
+      "label": "files-2",
+      "status_line": "CONTINUE",
+      "prose_chars": 0,
+      "files_written": [
+        "css/styles.css",
+        "js/main.js",
+        "index.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 3412,
+        "prompt_tokens": 6150,
+        "total_tokens": 9562,
+        "prompt_tokens_details": {
+          "cached_tokens": 5145
+        }
+      },
+      "at": "2026-11-17T06:29:47.778Z"
+    },
+    {
+      "turn": 3,
+      "label": "files-3",
+      "status_line": "CONTINUE",
+      "prose_chars": 0,
+      "files_written": [
+        "about.html",
+        "learning.html",
+        "contact.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 4042,
+        "prompt_tokens": 7794,
+        "total_tokens": 11836,
+        "prompt_tokens_details": {
+          "cached_tokens": 6146
+        }
+      },
+      "at": "2026-11-17T06:31:07.275Z"
+    },
+    {
+      "turn": 4,
+      "label": "files-4",
+      "status_line": "CONTINUE",
+      "prose_chars": 0,
+      "files_written": [
+        "support.html",
+        "checking.html",
+        "loans.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 3436,
+        "prompt_tokens": 11761,
+        "total_tokens": 15197,
+        "prompt_tokens_details": {
+          "cached_tokens": 7790
+        }
+      },
+      "at": "2026-11-17T06:32:16.087Z"
+    },
+    {
+      "turn": 5,
+      "label": "files-5",
+      "status_line": "CONTINUE",
+      "prose_chars": 0,
+      "files_written": [
+        "digital.html",
+        "calculators.html",
+        "careers.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 3970,
+        "prompt_tokens": 15002,
+        "total_tokens": 18972,
+        "prompt_tokens_details": {
+          "cached_tokens": 11757
+        }
+      },
+      "at": "2026-11-17T06:33:35.143Z"
+    },
+    {
+      "turn": 6,
+      "label": "files-6",
+      "status_line": "COMPLETE",
+      "prose_chars": 0,
+      "files_written": [
+        "404.html",
+        "README.md",
+        "fidelity-notes.md",
+        "component-inventory.json",
+        "generation-metadata.json"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 7075,
+        "prompt_tokens": 18979,
+        "total_tokens": 26054,
+        "prompt_tokens_details": {
+          "cached_tokens": 14998
+        }
+      },
+      "at": "2026-11-17T06:35:55.428Z"
+    },
+    {
+      "turn": 7,
+      "label": "repair-1",
+      "status_line": "COMPLETE",
+      "prose_chars": 605,
+      "files_written": [
+        "css/styles.css",
+        "index.html",
+        "about.html",
+        "learning.html",
+        "checking.html",
+        "loans.html",
+        "digital.html",
+        "careers.html",
+        "fidelity-notes.md"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 9921,
+        "prompt_tokens": 27951,
+        "total_tokens": 37872,
+        "prompt_tokens_details": {
+          "cached_tokens": 18975
+        }
+      },
+      "at": "2026-11-17T06:39:19.122Z"
+    },
+    {
+      "turn": 8,
+      "label": "repair-2",
+      "status_line": "COMPLETE",
+      "prose_chars": 221,
+      "files_written": [
+        "calculators.html",
+        "contact.html",
+        "support.html",
+        "fidelity-notes.md"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 7766,
+        "prompt_tokens": 38146,
+        "total_tokens": 45912,
+        "prompt_tokens_details": {
+          "cached_tokens": 27947
+        }
+      },
+      "at": "2026-11-17T06:42:01.578Z"
+    }
+  ],
+  "rejected_files": [],
+  "qc_runs": [
+    {
+      "started_at": "2026-11-17T06:35:55.439Z",
+      "completed_at": "2026-11-17T06:35:59.936Z",
+      "exit_code": 1,
+      "executed": true,
+      "passed": false,
+      "outcome": "fail",
+      "failures": [
+        "axe color-contrast (serious) @1280 404.html: 8 node(s) e.g. li:nth-child(1) > a[href=\"index.html\"]",
+        "axe color-contrast (serious) @1280 about.html: 8 node(s) e.g. li:nth-child(1) > a[href=\"index.html\"]",
+        "axe region (moderate) @1280 about.html: 1 node(s) e.g. .hero",
+        "axe color-contrast (serious) @1280 calculators.html: 9 node(s) e.g. li:nth-child(1) > a[href=\"index.html\"]",
+        "axe region (moderate) @1280 calculators.html: 1 node(s) e.g. .hero",
+        "axe color-contrast (serious) @1280 careers.html: 8 node(s) e.g. li:nth-child(1) > a[href=\"index.html\"]",
+        "axe region (moderate) @1280 careers.html: 1 node(s) e.g. .hero",
+        "axe color-contrast (serious) @1280 checking.html: 8 node(s) e.g. li:nth-child(1) > a[href=\"index.html\"]",
+        "axe region (moderate) @1280 checking.html: 1 node(s) e.g. .hero",
+        "axe color-contrast (serious) @1280 contact.html: 8 node(s) e.g. li:nth-child(1) > a[href=\"index.html\"]",
+        "axe region (moderate) @1280 contact.html: 1 node(s) e.g. .hero",
+        "axe color-contrast (serious) @1280 digital.html: 8 node(s) e.g. li:nth-child(1) > a[href=\"index.html\"]",
+        "axe region (moderate) @1280 digital.html: 1 node(s) e.g. .hero",
+        "axe color-contrast (serious) @1280 index.html: 8 node(s) e.g. li:nth-child(1) > a[href=\"index.html\"]",
+        "axe region (moderate) @1280 index.html: 1 node(s) e.g. .hero",
+        "axe color-contrast (serious) @1280 learning.html: 8 node(s) e.g. li:nth-child(1) > a[href=\"index.html\"]",
+        "axe region (moderate) @1280 learning.html: 1 node(s) e.g. .hero",
+        "axe color-contrast (serious) @1280 loans.html: 8 node(s) e.g. li:nth-child(1) > a[href=\"index.html\"]",
+        "axe region (moderate) @1280 loans.html: 1 node(s) e.g. .hero",
+        "axe color-contrast (serious) @1280 support.html: 8 node(s) e.g. li:nth-child(1) > a[href=\"index.html\"]",
+        "axe region (moderate) @1280 support.html: 1 node(s) e.g. .hero",
+        "axe color-contrast (serious) @375 404.html: 8 node(s) e.g. li:nth-child(1) > a[href=\"index.html\"]",
+        "axe color-contrast (serious) @375 about.html: 8 node(s) e.g. li:nth-child(1) > a[href=\"index.html\"]",
+        "axe region (moderate) @375 about.html: 1 node(s) e.g. .hero",
+        "axe color-contrast (serious) @375 calculators.html: 9 node(s) e.g. li:nth-child(1) > a[href=\"index.html\"]",
+        "axe region (moderate) @375 calculators.html: 1 node(s) e.g. .hero",
+        "axe color-contrast (serious) @375 careers.html: 8 node(s) e.g. li:nth-child(1) > a[href=\"index.html\"]",
+        "axe region (moderate) @375 careers.html: 1 node(s) e.g. .hero",
+        "axe color-contrast (serious) @375 checking.html: 8 node(s) e.g. li:nth-child(1) > a[href=\"index.html\"]",
+        "axe region (moderate) @375 checking.html: 1 node(s) e.g. .hero",
+        "axe color-contrast (serious) @375 contact.html: 8 node(s) e.g. li:nth-child(1) > a[href=\"index.html\"]",
+        "axe region (moderate) @375 contact.html: 1 node(s) e.g. .hero",
+        "axe color-contrast (serious) @375 digital.html: 8 node(s) e.g. li:nth-child(1) > a[href=\"index.html\"]",
+        "axe region (moderate) @375 digital.html: 1 node(s) e.g. .hero",
+        "axe color-contrast (serious) @375 index.html: 8 node(s) e.g. li:nth-child(1) > a[href=\"index.html\"]",
+        "axe region (moderate) @375 index.html: 1 node(s) e.g. .hero",
+        "axe color-contrast (serious) @375 learning.html: 8 node(s) e.g. li:nth-child(1) > a[href=\"index.html\"]",
+        "axe region (moderate) @375 learning.html: 1 node(s) e.g. .hero",
+        "axe color-contrast (serious) @375 loans.html: 8 node(s) e.g. li:nth-child(1) > a[href=\"index.html\"]",
+        "axe region (moderate) @375 loans.html: 1 node(s) e.g. .hero",
+        "axe color-contrast (serious) @375 support.html: 8 node(s) e.g. li:nth-child(1) > a[href=\"index.html\"]",
+        "axe region (moderate) @375 support.html: 1 node(s) e.g. .hero"
+      ],
+      "failure_count": 42,
+      "warnings": [],
+      "axe": {
+        "color-contrast": 178,
+        "region": 20
+      },
+      "pages": 11,
+      "files": 17,
+      "qc_tool_sha256": "e9be905d19e7181e30d8291bcb1511d4469bdc9e36c20c0efe21e2d3fcf54513",
+      "report": "qc-initial-2026-11-17T06-35-55-439Z.json",
+      "log": "qc-initial-2026-11-17T06-35-55-439Z.log",
+      "stdout_tail": "FAIL axe region (moderate) @1280 loans.html: 1 node(s) e.g. .hero\nFAIL axe color-contrast (serious) @1280 support.html: 8 node(s) e.g. li:nth-child(1) > a[href=\"index.html\"]\nFAIL axe region (moderate) @1280 support.html: 1 node(s) e.g. .hero\nFAIL axe color-contrast (serious) @375 404.html: 8 node(s) e.g. li:nth-child(1) > a[href=\"index.html\"]\nFAIL axe color-contrast (serious) @375 about.html: 8 node(s) e.g. li:nth-child(1) > a[href=\"index.html\"]\nFAIL axe region (moderate) @375 about.html: 1 node(s) e.g. .hero\nFAIL axe color-contrast (serious) @375 calculators.html: 9 node(s) e.g. li:nth-child(1) > a[href=\"index.html\"]\nFAIL axe region (moderate) @375 calculators.html: 1 node(s) e.g. .hero\nFAIL axe color-contrast (serious) @375 careers.html: 8 node(s) e.g. li:nth-child(1) > a[href=\"index.html\"]\nFAIL axe region (moderate) @375 careers.html: 1 node(s) e.g. .hero\nFAIL axe color-contrast (serious) @375 checking.html: 8 node(s) e.g. li:nth-child(1) > a[href=\"index.html\"]\nFAIL axe region (moderate) @375 checking.html: 1 node(s) e.g. .hero\nFAIL axe color-contrast (serious) @375 contact.html: 8 node(s) e.g. li:nth-child(1) > a[href=\"index.html\"]\nFAIL axe region (moderate) @375 contact.html: 1 node(s) e.g. .hero\nFAIL axe color-contrast (serious) @375 digital.html: 8 node(s) e.g. li:nth-child(1) > a[href=\"index.html\"]\nFAIL axe region (moderate) @375 digital.html: 1 node(s) e.g. .hero\nFAIL axe color-contrast (serious) @375 index.html: 8 node(s) e.g. li:nth-child(1) > a[href=\"index.html\"]\nFAIL axe region (moderate) @375 index.html: 1 node(s) e.g. .hero\nFAIL axe color-contrast (serious) @375 learning.html: 8 node(s) e.g. li:nth-child(1) > a[href=\"index.html\"]\nFAIL axe region (moderate) @375 learning.html: 1 node(s) e.g. .hero\nFAIL axe color-contrast (serious) @375 loans.html: 8 node(s) e.g. li:nth-child(1) > a[href=\"index.html\"]\nFAIL axe region (moderate) @375 loans.html: 1 node(s) e.g. .hero\nFAIL axe color-contrast (serious) @375 support.html: 8 node(s) e.g. li:nth-child(1) > a[href=\"index.html\"]\nFAIL axe region (moderate) @375 support.html: 1 node(s) e.g. .hero\n",
+      "note": null
+    },
+    {
+      "started_at": "2026-11-17T06:39:19.124Z",
+      "completed_at": "2026-11-17T06:39:23.234Z",
+      "exit_code": 1,
+      "executed": true,
+      "passed": false,
+      "outcome": "fail",
+      "failures": [
+        "axe region (moderate) @1280 calculators.html: 1 node(s) e.g. .hero",
+        "axe region (moderate) @1280 contact.html: 1 node(s) e.g. .hero",
+        "axe region (moderate) @1280 support.html: 1 node(s) e.g. .hero",
+        "axe region (moderate) @375 calculators.html: 1 node(s) e.g. .hero",
+        "axe region (moderate) @375 contact.html: 1 node(s) e.g. .hero",
+        "axe region (moderate) @375 support.html: 1 node(s) e.g. .hero"
+      ],
+      "failure_count": 6,
+      "warnings": [],
+      "axe": {
+        "region": 6
+      },
+      "pages": 11,
+      "files": 17,
+      "qc_tool_sha256": "e9be905d19e7181e30d8291bcb1511d4469bdc9e36c20c0efe21e2d3fcf54513",
+      "report": "qc-repair-1-2026-11-17T06-39-19-124Z.json",
+      "log": "qc-repair-1-2026-11-17T06-39-19-124Z.log",
+      "stdout_tail": "QC /Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/company/open-source/CORP-R08\npages=11 files=17 failures=6 warnings=0\nFAIL axe region (moderate) @1280 calculators.html: 1 node(s) e.g. .hero\nFAIL axe region (moderate) @1280 contact.html: 1 node(s) e.g. .hero\nFAIL axe region (moderate) @1280 support.html: 1 node(s) e.g. .hero\nFAIL axe region (moderate) @375 calculators.html: 1 node(s) e.g. .hero\nFAIL axe region (moderate) @375 contact.html: 1 node(s) e.g. .hero\nFAIL axe region (moderate) @375 support.html: 1 node(s) e.g. .hero\n",
+      "note": null
+    },
+    {
+      "started_at": "2026-11-17T06:42:01.580Z",
+      "completed_at": "2026-11-17T06:42:06.281Z",
+      "exit_code": 0,
+      "executed": true,
+      "passed": true,
+      "outcome": "pass",
+      "failures": [],
+      "failure_count": 0,
+      "warnings": [],
+      "axe": {},
+      "pages": 11,
+      "files": 17,
+      "qc_tool_sha256": "e9be905d19e7181e30d8291bcb1511d4469bdc9e36c20c0efe21e2d3fcf54513",
+      "report": "qc-repair-2-2026-11-17T06-42-01-580Z.json",
+      "log": "qc-repair-2-2026-11-17T06-42-01-580Z.log",
+      "stdout_tail": "QC /Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/company/open-source/CORP-R08\npages=11 files=17 failures=0 warnings=0\n",
+      "note": null
+    }
+  ],
+  "repair_rounds": [
+    {
+      "round": 1,
+      "before": {
+        "outcome": "fail",
+        "failures": 42
+      },
+      "after": {
+        "outcome": "fail",
+        "failures": 6
+      },
+      "files_changed": [
+        "css/styles.css",
+        "index.html",
+        "about.html",
+        "learning.html",
+        "checking.html",
+        "loans.html",
+        "digital.html",
+        "careers.html",
+        "fidelity-notes.md"
+      ],
+      "at": "2026-11-17T06:39:23.234Z"
+    },
+    {
+      "round": 2,
+      "before": {
+        "outcome": "fail",
+        "failures": 6
+      },
+      "after": {
+        "outcome": "pass",
+        "failures": 0
+      },
+      "files_changed": [
+        "calculators.html",
+        "contact.html",
+        "support.html",
+        "fidelity-notes.md"
+      ],
+      "at": "2026-11-17T06:42:06.281Z"
+    }
+  ],
+  "retries": [],
+  "human_edits": [
+    {
+      "by": "orchestrator script",
+      "at": "2026-11-17T06:42:06.283Z",
+      "what": "Wrote the model's emitted files, normalized generation-metadata.json provenance fields, and set validation_summary from the recorded QC run. No site markup, style or script was authored or edited by hand."
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 130932,
+    "completion_tokens": 40993,
+    "total_tokens": 171925,
+    "requests": 8,
+    "retries": 0
+  },
+  "errors": [],
+  "outputs": {
+    "site": "company/open-source/CORP-R08",
+    "transcript": "pipelines/open-source/runs/2026-11-17T06-28-11-683Z-build-CORP-R08/transcript.json"
+  },
+  "delivered": {
+    "files": [
+      "404.html",
+      "README.md",
+      "about.html",
+      "calculators.html",
+      "careers.html",
+      "checking.html",
+      "component-inventory.json",
+      "contact.html",
+      "css/styles.css",
+      "digital.html",
+      "fidelity-notes.md",
+      "generation-metadata.json",
+      "index.html",
+      "js/main.js",
+      "learning.html",
+      "loans.html",
+      "support.html"
+    ],
+    "file_count": 17,
+    "bytes": 70379,
+    "pages_in_map": 10,
+    "missing_required": [],
+    "model_claimed_complete": true,
+    "delivered_complete": true,
+    "turns_used": 6,
+    "turn_budget": 28
+  },
+  "initial_artifact": "pipelines/open-source/runs/2026-11-17T06-28-11-683Z-build-CORP-R08/initial",
+  "provenance": {
+    "wrote": true,
+    "modelEmittedValidMetadata": true
+  },
+  "acceptance": "not accepted: a QC result is not acceptance, and interaction review plus human acceptance happen outside this script"
+}

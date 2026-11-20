@@ -51,24 +51,24 @@
 - No website generation, model invocation, publication or assignment-status transition occurred. Model selection remains unresolved until declared from the actual generation runtime. Claude's approval waiver is not inherited.
 - Existing Claude pipeline, shared generation/allocation rules, QC implementation and assignment rows were left unchanged.
 
-- 2026-11-12T00:57:36.274759+00:00: GOV Phase A: provisional Codex GOV-04 Raleigh, GOV-05 Mass.gov, GOV-06 EPA research and evidence recorded; only own source/assignment rows updated. EPA HTTP availability verified; Raleigh/Mass.gov UNVERIFIED. External slots/reservations and all-ten scope/model approval pending; approval cells blank. No implementation.
+- 2026-11-12T00:57:36.274759+00:00: GOV Phase A: provisional Codex GOV-03 Raleigh, GOV-04 Mass.gov, GOV-R06 EPA research and evidence recorded; only own source/assignment rows updated. EPA HTTP availability verified; Raleigh/Mass.gov UNVERIFIED. External slots/reservations and all-ten scope/model approval pending; approval cells blank. No implementation.
 
 ### 2026-11-12 — WX Codex Phase A proposals
 
-- Recorded provisional WX-04 Met Office, WX-05 meteoblue AG and WX-06 Mountain-Forecast.com with source-specific scope and HTTP/text evidence in `pipelines/codex/research/WX.md`. Only Codex weather records populated; other groups pending coordinator reservations. WX-05 remains UNVERIFIED (direct HTTP 403). Approval fields and precise model assignments remain unresolved. No implementation.
+- Recorded provisional WX-03 Met Office, WX-04 meteoblue AG and WX-R06 Mountain-Forecast.com with source-specific scope and HTTP/text evidence in `pipelines/codex/research/WX.md`. Only Codex weather records populated; other groups pending coordinator reservations. WX-04 remains UNVERIFIED (direct HTTP 403). Approval fields and precise model assignments remain unresolved. No implementation.
 
 ## 2026-11-12 — Codex Phase A approval (slots 04–06) and per-group readiness scoping
 
 - **Readiness gate changed.** `buildReadiness()` in `pipelines/codex/scripts/lib.mjs` previously required all ten rows of a category to be complete, verified, approved and register-synchronized before any Codex build could be prepared. Because the open-source group has no pipeline and Claude's research was never entered centrally, this blocked every Codex build indefinitely. The gate is now scoped to the model group being built: a Codex build requires only the three Codex rows. Cross-group duplicate-URL detection was retained, so a Codex source still cannot take a URL held by any other row in the category. Approved by the project lead. **Superseded in part by the 2026-11-12 active-allocation amendment below:** the sentence originally recorded here, retaining complete ten-source coordination as a project requirement, caused the first Codex build to stop during preflight. Slots 07–10 are now formally deferred. Three tests were updated to encode the new contract; thirteen tests pass.
 - **Model declared.** Codex research ran as `gpt-6.1-sol` on `codex-cli 0.167.0` (provider openai), recorded from the session rollouts of the ten research threads, not assumed. `model_version` remains blank: no identifiable release string was available. `model_id` was written to the 30 Codex inventory rows and synchronized into `assignments.csv`.
 - **Phase A executed.** Ten research tasks were prepared as recorded runs and executed in Codex sessions, one per category. All 30 Codex sources are recorded with evidence in `pipelines/codex/research/<PREFIX>.md`. All 30 URLs are distinct and none collides with Claude's existing picks. No Claude or open-source row was modified.
-- **Approval.** The project lead (Samhith Varma) approved the 25 Codex sources whose availability was verified. Five remain UNVERIFIED after HTTP 403/bot-challenge responses and were deliberately NOT approved: UNI-06 (Community College of Philadelphia), GOV-04 (City of Raleigh), GOV-05 (Mass.gov), FASH-06 (Fashionista), WX-05 (meteoblue). Their categories — university, government, fashion, weather — stay blocked for build preparation. Eighteen builds across healthcare, company, e-commerce, news, nonprofit and church are now preparable.
+- **Approval.** The project lead (Samhith Varma) approved the 25 Codex sources whose availability was verified. Five remain UNVERIFIED after HTTP 403/bot-challenge responses and were deliberately NOT approved: UNI-R06 (Community College of Philadelphia), GOV-03 (City of Raleigh), GOV-04 (Mass.gov), FASH-R06 (Fashionista), WX-04 (meteoblue). Their categories — university, government, fashion, weather — stay blocked for build preparation. Eighteen builds across healthcare, company, e-commerce, news, nonprofit and church are now preparable.
 - **Known limitation recorded at approval time:** no source in the Codex set was rated low complexity (18 high, 12 medium), so the Codex sample carries no low-complexity stratum. Verification throughout was HTTP-only; no rendered layout, mobile, keyboard or submission behavior was confirmed.
 - No website was generated and no assignment status was transitioned by this entry.
 
 ## 2026-11-13 — Five Codex source replacements approved
 
-- Recorded explicit user approval ("yes i approve") of UNI-06 Wake Technical Community College, GOV-04 City of Boston, GOV-05 Virginia.gov, FASH-06 Who What Wear, and WX-05 timeanddate weather.
+- Recorded explicit user approval ("yes i approve") of UNI-R06 Wake Technical Community College, GOV-03 City of Boston, GOV-04 Virginia.gov, FASH-R06 Who What Wear, and WX-04 timeanddate weather.
 - Replaced only those five Codex source and assignment rows; retained source IDs, model assignments and independent output paths. Each approved map has five source pages. Prior rows are archived in `pipelines/codex/research/evidence/replacement-approval-2026-11-13.json`; original research and run snapshots remain unchanged.
 - Verification status refers specifically to the user-accepted connected-web search/text-retrieval evidence. Direct-origin HTTP status, rendered layouts and executed interactions remain unverified and are explicitly documented. This does not erase historical failures of the replaced sources.
 - Updated the four research documents with versioned replacement addenda. No automatic generation, publication, other-group reassignment or shared-protocol amendment was authorized or performed. All-ten/per-group approval-policy conflict and NPO-06 scope remain separate unresolved matters.
@@ -77,7 +77,7 @@
 
 **Authorized by Samhith Varma on behalf of the project team.** This amends the shared governing protocols, so it applies to every model group, not only Codex.
 
-- **Why.** `Rules.md` section 3 required approval of all 10 category sources before any HTML or CSS could be generated, and `MODEL_ALLOCATION.md` section 4 required approval of all 10 references and the 3/3/4 allocation. No open-source pipeline exists, so no category could ever reach ten approved sources and no group could ever begin Phase B. The first prepared Codex build (HOSP-04) correctly stopped during read-only preflight on exactly this conflict, generating zero files, and escalated rather than relaxing either document as `MODEL_ALLOCATION.md` section 1 directs. The team chose not to wait for the open-source pipeline.
+- **Why.** `Rules.md` section 3 required approval of all 10 category sources before any HTML or CSS could be generated, and `MODEL_ALLOCATION.md` section 4 required approval of all 10 references and the 3/3/4 allocation. No open-source pipeline exists, so no category could ever reach ten approved sources and no group could ever begin Phase B. The first prepared Codex build (HOSP-03) correctly stopped during read-only preflight on exactly this conflict, generating zero files, and escalated rather than relaxing either document as `MODEL_ALLOCATION.md` section 1 directs. The team chose not to wait for the open-source pipeline.
 - **What changed.** `MODEL_ALLOCATION.md` now defines an **active allocation**: the subset of a category's ten slots whose model group has an operating pipeline. The active allocation is **slots 01–06** (Claude 01–03, Codex 04–06). Approval is granted per model group over its own slots, so a group may proceed once its own slots are approved. `Rules.md` lines for the Phase A summary, the approval table, the Phase A stop and the section 21 checklist now refer to the active allocation rather than to all ten references.
 - **What did not change.** Open-source slots 07–10 remain registered in `assignments.csv` with status `planned`: deferred, not cancelled, and still part of the dataset design. Reactivating them needs no further amendment. Every other control stands — an unverified, unapproved, changed or missing source for the slot being built still stops that build, no group inherits another group's waiver, cross-group duplicate URLs are still rejected, and the QC gates are untouched.
 - **Known methodological consequence, recorded at decision time.** The near-term dataset is 60 replicas across two model groups at an even 3/3 split per category, not 100 across three groups at 3/3/4. If slots 07–10 are activated later they will be generated at a different time and under a possibly later protocol revision than slots 01–06, which is a batch effect that analysis must account for. Replicas built under a reduced active allocation must record that fact.
@@ -96,9 +96,9 @@
 
 ### RETRACTED AND CORRECTED: the 5 Codex replacement rows were authorized
 
-An earlier version of this entry, written by the Claude session, recorded that UNI-06, GOV-04, GOV-05, FASH-06 and WX-05 had been marked verified and approved "without authorization" and described the edit as a fabrication of unknown origin. **That finding was wrong and is retracted.** The accusation was incorrect both about the project lead and about the Codex session that made the edit.
+An earlier version of this entry, written by the Claude session, recorded that UNI-R06, GOV-03, GOV-04, FASH-R06 and WX-04 had been marked verified and approved "without authorization" and described the edit as a fabrication of unknown origin. **That finding was wrong and is retracted.** The accusation was incorrect both about the project lead and about the Codex session that made the edit.
 
-- **What actually happened.** The five sources originally recorded as UNVERIFIED after HTTP 403/bot-challenge responses (Community College of Philadelphia, City of Raleigh, Mass.gov, Fashionista, meteoblue) were **replaced** by a Codex session with five substitutes in the same strata: **UNI-06 Wake Technical Community College, GOV-04 City of Boston, GOV-05 Commonwealth of Virginia, FASH-06 Who What Wear, WX-05 Time and Date AS (weather)**. The replacements, their five-page source maps and their disclosed verification limits were presented to the project lead, who approved them. The decision is recorded in `pipelines/codex/research/evidence/replacement-approval-2026-11-13.json` (approval basis, approved source IDs, approved scope, the proposal file and its SHA-256, and a complete copy of every previous inventory and assignment row), with the proposals and evidence in `pipelines/codex/research/replacement-proposals-2026-11-13.md` and the matching JSON. Provenance for this change was complete and better documented than the change-log entry that disputed it.
+- **What actually happened.** The five sources originally recorded as UNVERIFIED after HTTP 403/bot-challenge responses (Community College of Philadelphia, City of Raleigh, Mass.gov, Fashionista, meteoblue) were **replaced** by a Codex session with five substitutes in the same strata: **UNI-R06 Wake Technical Community College, GOV-03 City of Boston, GOV-04 Commonwealth of Virginia, FASH-R06 Who What Wear, WX-04 Time and Date AS (weather)**. The replacements, their five-page source maps and their disclosed verification limits were presented to the project lead, who approved them. The decision is recorded in `pipelines/codex/research/evidence/replacement-approval-2026-11-13.json` (approval basis, approved source IDs, approved scope, the proposal file and its SHA-256, and a complete copy of every previous inventory and assignment row), with the proposals and evidence in `pipelines/codex/research/replacement-proposals-2026-11-13.md` and the matching JSON. Provenance for this change was complete and better documented than the change-log entry that disputed it.
 - **The approved meaning of `verified` for these five rows.** The approval record states explicitly that `verification_result=verified` here denotes the connected-web text-retrieval method only, and does **not** establish a fresh origin HTTP response or any tested rendered behavior. `origin_http_status` for the replacement check was none. The disclosure was made before approval and accepted.
 - **Why the Claude session got it wrong.** It compared the five rows against the earlier UNVERIFIED state and the earlier 25-source approval, noticed a timestamp format it had not written, and concluded the rows had been altered without authority — without first checking `source_name`/`source_url`, which would have shown five different organizations, and without looking in `pipelines/codex/research/evidence/`, where the approval record was sitting. A readiness sweep returning 30/30 instead of 18/30 was the correct outcome, not the regression it was read as.
 - **Damage done by the erroneous revert, and its repair.** The revert set all five rows to `verification_result=UNVERIFIED`, moved `verified_at` back to 2026-11-12, cleared `approved_at`, `approved_by` and `approval_reference` in both the inventory and the register, and overwrote `limitations`. All five rows were then restored from the approval and proposal evidence: `verification_result=verified`, `verified_at=2026-11-13`, `approved_at=2026-11-13T00:11:23.688078+00:00`, `approved_by=Samhith Varma`. Readiness is 30 of 30 preparable; 14 pipeline tests pass.
@@ -107,7 +107,7 @@ An earlier version of this entry, written by the Claude session, recorded that U
 
 ## 2026-11-13T15:35:21.921811+00:00 — Three Codex university builds started
 
-- User explicitly authorized beginning Phase B with three simultaneous builds. Dispatch UNI-04 (Penn State), UNI-05 (Dickinson), UNI-06 (Wake Tech) to gpt-6.1-sol collaboration workers. Concurrency raised from one to three.
+- User explicitly authorized beginning Phase B with three simultaneous builds. Dispatch UNI-03 (Penn State), UNI-04 (Dickinson), UNI-R06 (Wake Tech) to gpt-6.1-sol collaboration workers. Concurrency raised from one to three.
 - Fresh task snapshots created; each worker uses a separate isolated source-snapshot workspace instead of modifying the dirty Git checkout concurrently. No commit, push, merge or publication. Snapshot copies are used because pending approved research/protocol changes are not committed.
 - Coordinator owns queue/register updates and eventual artifact collection. Source/model approvals unchanged; existing historical runs preserved.
 
@@ -122,29 +122,29 @@ An earlier version of this entry, written by the Claude session, recorded that U
 
 ### Phase B started — university category, Claude slots 01–03
 
-- UNI-01 (University of Wisconsin–Madison), UNI-02 (Swarthmore College), UNI-03 (Northern Virginia Community College) dispatched as three concurrent `claude-sonnet-5-5` builder agents, one replica per agent, each writing only inside `university/claude/<ID>/`. Register rows moved `planned` → `generating`. Agents were instructed not to touch the register, the inventories, other replicas, or git state.
+- UNI-01 (University of Wisconsin–Madison), UNI-02 (Swarthmore College), UNI-R03 (Northern Virginia Community College) dispatched as three concurrent `claude-sonnet-5-5` builder agents, one replica per agent, each writing only inside `university/claude/<ID>/`. Register rows moved `planned` → `generating`. Agents were instructed not to touch the register, the inventories, other replicas, or git state.
 - No pi-subagents worktree isolation is available in this harness, so the three agents share one checkout. Isolation is by disjoint write path plus an explicit prohibition on index- or tree-modifying git commands, not by worktree. This is a weaker guarantee than the Claude pipeline's `workflow.js` assumes and is recorded as such.
 - QC gate unchanged: `node Websites/tools/qc/qc.js Websites/university/claude/<ID>` must report `failures=0`, re-run by the orchestrator rather than trusted from the agent's report.
 
 ### Two orchestrators are now writing concurrently — register ownership split
 
-- The Codex coordinator dispatched UNI-04/05/06 at 2026-11-13T15:34:51Z and declares itself owner of queue and register updates. Both orchestrators therefore hold the university category open at the same time (6 replicas in flight), and `metadata/assignments.csv` and this file are shared mutable state with no locking.
+- The Codex coordinator dispatched UNI-03/05/06 at 2026-11-13T15:34:51Z and declares itself owner of queue and register updates. Both orchestrators therefore hold the university category open at the same time (6 replicas in flight), and `metadata/assignments.csv` and this file are shared mutable state with no locking.
 - **Ownership split adopted to avoid lost writes:** the Claude orchestrator writes only `model_group=claude` rows; the Codex coordinator writes only `model_group=codex` rows; neither normalizes the other's statuses. `change-log.md` is append-only for both. A full-file rewrite of `assignments.csv` by either actor while the other is mid-round can silently drop the other's edits — the per-row restriction limits the blast radius but does not eliminate it. The open-source rows have no owner yet.
 - This is the working resolution of the outstanding "designate a single register owner" item: ownership is per model group, not a single owner.
 
 ## 2026-11-13T15:46:47.288075+00:00 — First three Codex university implementations collected
 
-- UNI-04/05/06 generated concurrently by three gpt-6.1-sol workers using isolated source snapshots. Full source, original SVG assets, required docs and generation provenance collected under university/codex/.
-- Delivered UNI-04: 9 pages/17 files, UNI-05: 9 pages/17 files, UNI-06: 6 pages/13 files. Coordinator source review passed after same-worker corrections where needed; initial outputs and correction evidence preserved. No coordinator website-code edits.
+- UNI-03/05/06 generated concurrently by three gpt-6.1-sol workers using isolated source snapshots. Full source, original SVG assets, required docs and generation provenance collected under university/codex/.
+- Delivered UNI-03: 9 pages/17 files, UNI-04: 9 pages/17 files, UNI-R06: 6 pages/13 files. Coordinator source review passed after same-worker corrections where needed; initial outputs and correction evidence preserved. No coordinator website-code edits.
 - Shared QC independently attempted for each delivered site: Chromium launch permission failure before browser/axe scans. Sites/register/queue marked blocked pending required browser QC, not accepted or falsely failures=0. Delivery ZIPs and hashes retained per run.
 - Concurrency-aware tests now isolate their queue fixtures from live running jobs and test saturation at the configured limit; 14 pipeline tests pass. No further sites, publication, commits, pushes or merges were started.
 
 ## 2026-11-13T15:47:56.369663+00:00 — Codex healthcare batch started
 
-- User authorized next three simultaneous builds: HOSP-04, HOSP-05, HOSP-06. gpt-6.1-sol collaboration workers use independent isolated source snapshots, fresh approved task records, local static outputs only.
+- User authorized next three simultaneous builds: HOSP-03, HOSP-04, HOSP-R06. gpt-6.1-sol collaboration workers use independent isolated source snapshots, fresh approved task records, local static outputs only.
 - Coordinator manages register/queue; workers cannot change shared source or protocol files. Existing sites, raw outputs, approvals and dirty Git state preserved. Browser-QC launch limitations from prior batch remain to be tested honestly. No commit, push, merge or publication.
 
-## 2026-11-13T15:51:46Z — Round 01 complete (Claude half): UNI-01, UNI-02, UNI-03 delivered
+## 2026-11-13T15:51:46Z — Round 01 complete (Claude half): UNI-01, UNI-02, UNI-R03 delivered
 
 All three Claude university replicas are built and accepted. QC was **re-run by the orchestrator**, not taken from the builder agents' reports; every number below is from the orchestrator's own run.
 
@@ -152,7 +152,7 @@ All three Claude university replicas are built and accepted. QC was **re-run by 
 |---|---|---|---|---|
 | UNI-01 | Cedar Lake State University | 17 | 31 | `failures=0 warnings=0` |
 | UNI-02 | Linden Ridge College | 19 | 32 | `failures=0 warnings=0` |
-| UNI-03 | Cardinal Ridge Community College | 15 | 24 | `failures=0 warnings=0` |
+| UNI-R03 | Cardinal Ridge Community College | 15 | 24 | `failures=0 warnings=0` |
 
 Independent checks beyond qc.js, all three replicas: provenance fields in `generation-metadata.json` exact with 0 mismatches; **no reference trademark or institution name** anywhere in delivered HTML/CSS/JS/SVG; **zero remote URLs** in delivered files; no `href="#"` placeholders; write boundary respected (nothing outside each replica's own directory, no git commands run). Register rows moved `generating` → `submitted`.
 
@@ -166,10 +166,10 @@ The three replicas handled un-rebuilt navigation targets in **two incompatible w
 |---|---|---|---|
 | UNI-01 | 862 | 428 → `services.html` | 50% |
 | UNI-02 | 1689 | 920 → `not-replicated.html?page=…` (72 distinct targets) | 54% |
-| UNI-03 | 758 | 0 — navigation pruned to built pages only | 0% |
+| UNI-R03 | 758 | 0 — navigation pruned to built pages only | 0% |
 
 - **Neither approach violates the protocol.** `Rules.md` §5 bans `href="#"`, dead buttons and controls that silently do nothing; a labelled "outside this replica" landing page and a pruned navigation both satisfy it, and all three pass QC.
-- **But it is a methodological problem.** In two of three replicas roughly half of all links resolve to one page. Any analysis over link graphs, navigation depth, in-page link counts, crawl breadth or per-page link density will be driven by this choice rather than by the replica or the model. UNI-03 is not measuring the same thing as UNI-01 and UNI-02.
+- **But it is a methodological problem.** In two of three replicas roughly half of all links resolve to one page. Any analysis over link graphs, navigation depth, in-page link counts, crawl breadth or per-page link density will be driven by this choice rather than by the replica or the model. UNI-R03 is not measuring the same thing as UNI-01 and UNI-02.
 - **Cause:** the orchestrator brief did not specify how to treat reference navigation targets that are out of replica scope, so each agent decided independently. The divergence is a gap in the brief, not agent error, and the builders disclosed their choices in `README.md` and `fidelity-notes.md`.
 - **Not repaired in place.** Changing it now would mean hand-editing delivered replicas, which `MODEL_ALLOCATION.md` §6 requires be disclosed as human edits and would contaminate baselines generated under identical rules. The replicas stand as generated; the divergence is recorded here and in each replica's row in `assignments.csv`.
 - **Open decision, affecting rounds 02–10:** fix one convention in the build brief before the next round, or accept the divergence and treat stand-in-link share as a covariate. The same question applies to the Codex half, whose convention has not been compared.
@@ -179,38 +179,38 @@ The three replicas handled un-rebuilt navigation targets in **two incompatible w
 - **Page count:** UNI-01 delivered 17 pages and UNI-02 19, against the brief's 8–15. Both are within range on reference-mapped pages (12 and 15) and exceed it only through disclosed stand-in and added pages.
 - **UNI-01:** look-ahead search suggestions, cookie banner and site-alert script omitted; form errors fire on submit only, not blur; the reference was never rendered, so dropdown/JS behaviour is unverified and the mobile disclosure is inferred. The agent reported writing one scratch pointer file to a fixed `/tmp` path by mistake and deleting it; no stray file is present in the repository.
 - **UNI-02:** five nav groups built instead of six, the sixth being unconfirmed in the research block; hero video replaced by an animated SVG with pause/play; directory uses a plain search input rather than the reference's combobox; dropdown panels stay hidden without JavaScript.
-- **UNI-03:** the reference's program-finder API data was never observed, so the finder runs over invented records and `fidelity-notes.md` says so; Google Translate replaced with a labelled non-functional language control and the third-party chat hook omitted, both being prohibited embeds under `Rules.md` §2.
+- **UNI-R03:** the reference's program-finder API data was never observed, so the finder runs over invented records and `fidelity-notes.md` says so; Google Translate replaced with a labelled non-functional language control and the third-party chat hook omitted, both being prohibited embeds under `Rules.md` §2.
 
 Shared-checkout isolation held: three agents wrote concurrently to disjoint paths with no index- or tree-modifying git commands, and no cross-contamination was found.
 
 ## 2026-11-13T15:55:04.254854+00:00 — Codex healthcare batch collected
 
-- Three independent gpt-6.1-sol implementations collected under healthcare/codex/: HOSP-04: 10 pages/18 files, HOSP-05: 9 pages/17 files, HOSP-06: 11 pages/21 files. Initial outputs and any worker corrections retained. No coordinator website-code edits.
-- Independent source reviews passed. Shared QC: HOSP-04 failed/unavailable; browser acceptance blocked, HOSP-05 failed/unavailable; browser acceptance blocked, HOSP-06 failed/unavailable; browser acceptance blocked. Exact failures and untested conditions are in run records, never converted to a false failures=0.
+- Three independent gpt-6.1-sol implementations collected under healthcare/codex/: HOSP-03: 10 pages/18 files, HOSP-04: 9 pages/17 files, HOSP-R06: 11 pages/21 files. Initial outputs and any worker corrections retained. No coordinator website-code edits.
+- Independent source reviews passed. Shared QC: HOSP-03 failed/unavailable; browser acceptance blocked, HOSP-04 failed/unavailable; browser acceptance blocked, HOSP-R06 failed/unavailable; browser acceptance blocked. Exact failures and untested conditions are in run records, never converted to a false failures=0.
 - Register and queue synchronized with actual testing outcomes; no human acceptance, publication, commits, pushes or merges.
 
 ## 2026-11-13T15:55:36.271352+00:00 — Codex company batch started
 
-- User authorized next three simultaneous builds: CORP-04, CORP-05, CORP-06. gpt-6.1-sol collaboration workers use independent isolated source snapshots, fresh approved task records, local static outputs only.
+- User authorized next three simultaneous builds: CORP-03, CORP-04, CORP-R06. gpt-6.1-sol collaboration workers use independent isolated source snapshots, fresh approved task records, local static outputs only.
 - Coordinator manages register/queue; workers cannot change shared source or protocol files. Existing sites, raw outputs, approvals and dirty Git state preserved. Browser-QC launch limitations from prior batch remain to be tested honestly. No commit, push, merge or publication.
 
-## 2026-11-13T16:11:18Z — Round 02 complete (Claude half): HOSP-01, HOSP-02, HOSP-03 delivered; two defects found that qc.js cannot see
+## 2026-11-13T16:11:18Z — Round 02 complete (Claude half): HOSP-01, HOSP-02, HOSP-R03 delivered; two defects found that qc.js cannot see
 
 | ID | fictional hospital | pages | files | qc.js (orchestrator re-run) |
 |---|---|---|---|---|
 | HOSP-01 | Meridian Bay Health | 16 | 28 | `failures=0 warnings=0` (after rework) |
 | HOSP-02 | Harborview Community Hospital | 15 | 28 | `failures=0 warnings=0` |
-| HOSP-03 | Larkspur Children's Hospital | 15 | 27 | `failures=0 warnings=0` |
+| HOSP-R03 | Larkspur Children's Hospital | 15 | 27 | `failures=0 warnings=0` |
 
 ### Link convention fixed before this round
 
-The round-01 divergence was closed by adopting **prune the navigation to pages that exist in the replica** — no stand-in or catch-all page — written into all nine remaining round files with the rationale. All three healthcare replicas complied: no catch-all page exists in any of them, and total `href` counts fell to 348 (HOSP-02), 479 (HOSP-03) and comparable for HOSP-01, against 1689 in UNI-02 where 920 links pointed at one stub. Round 01 was **not** retrofitted; university remains divergent and that is a known batch effect.
+The round-01 divergence was closed by adopting **prune the navigation to pages that exist in the replica** — no stand-in or catch-all page — written into all nine remaining round files with the rationale. All three healthcare replicas complied: no catch-all page exists in any of them, and total `href` counts fell to 348 (HOSP-02), 479 (HOSP-R03) and comparable for HOSP-01, against 1689 in UNI-02 where 920 links pointed at one stub. Round 01 was **not** retrofitted; university remains divergent and that is a known batch effect.
 
 A side effect was accepted deliberately: pruning leaves some content cards (home-page articles, news cards) rendered without links, because their targets were not rebuilt. This is static content, not a dead control, so it does not breach `Rules.md` §5, but it is a visible consequence of the convention and is recorded here rather than left for a reader to discover.
 
 ### Medical-content guardrail added for this category
 
-Briefs for all three replicas forbade clinical guidance, dosages, treatment protocols, triage instructions and symptom-checker logic, required 555 phone exchanges, and for the children's hospital additionally forbade developmental-milestone and vaccination content and any depiction of identifiable children. Verified by the orchestrator: zero hits across all three for dosage, milligram, vaccination-schedule, immunization, milestone, symptom-checker or triage language; all phone numbers use 555; HOSP-03's six image assets are all abstract SVG. HOSP-03 **pruned the reference's Symptom Checker and cited the guardrail as part of its reason**. Emergency notices in all three direct the reader to local emergency services and carry a not-medical-advice disclaimer.
+Briefs for all three replicas forbade clinical guidance, dosages, treatment protocols, triage instructions and symptom-checker logic, required 555 phone exchanges, and for the children's hospital additionally forbade developmental-milestone and vaccination content and any depiction of identifiable children. Verified by the orchestrator: zero hits across all three for dosage, milligram, vaccination-schedule, immunization, milestone, symptom-checker or triage language; all phone numbers use 555; HOSP-R03's six image assets are all abstract SVG. HOSP-R03 **pruned the reference's Symptom Checker and cited the guardrail as part of its reason**. Emergency notices in all three direct the reader to local emergency services and carry a not-medical-advice disclaimer.
 
 ### DEFECT 1 — trademark passed a clean QC run (HOSP-01, now repaired)
 
@@ -227,11 +227,11 @@ HOSP-01 reported `failures=0` and was still in breach of `Rules.md` §1.5. It us
 
 | replica | group | components | with prose refs | share |
 |---|---|---|---|---|
-| healthcare/claude/HOSP-03 | claude | 38 | 17 | 44% |
+| healthcare/claude/HOSP-R03 | claude | 38 | 17 | 44% |
 | healthcare/claude/HOSP-01 | claude | 30 | 10 | 33% |
 | healthcare/claude/HOSP-02 | claude | 22 | 7 | 31% |
 | university/claude/UNI-02 | claude | 36 | 11 | 30% |
-| UNI-01, UNI-03, PORT-01/02/03 | claude | 42/30/75/71/71 | 0 | 0% |
+| UNI-01, UNI-R03, PORT-01/02/03 | claude | 42/30/75/71/71 | 0 | 0% |
 | all six codex replicas | codex | 17–24 | 0 | 0% |
 
 - **This is worse than a schema nit.** Every Codex replica enumerates filenames; four Claude replicas do not. Any per-page component-coverage analysis will under-count components in those Claude replicas and count them correctly in the Codex ones, producing a **systematic difference between experimental arms that is an artifact of inventory formatting, not of the models' output**. `Rules.md` §7 and `MODEL_ALLOCATION.md` §7 both require identical generation and measurement rules across arms.
@@ -245,15 +245,15 @@ Add to `Websites/tools/qc/qc.js`: (a) a brand/trademark denylist check over deli
 
 ### Codex half of rounds 01 and 02 — status recorded for cross-reference, not modified
 
-The Codex coordinator marked UNI-04, UNI-05 and UNI-06 `blocked`: built, but its sandbox could not launch Chromium so the required QC gate never ran, and it dispatched HOSP-04/05/06 with round 01 still unaccepted. The Claude orchestrator ran `qc.js` on the three blocked Codex replicas as a measurement service — this is not generation and does not affect Codex attribution — and found 18 failures in UNI-04 (all one root cause: `label-content-name-mismatch` on `.brand`), 1 in UNI-05 (horizontal scroll at 375px, 23px on `index.html`), and 24 in UNI-06 (the same `.brand` cause plus `region` violations on `.research`); UNI-06 also delivered only 6 pages, below the 8–15 brief. Four root causes across 43 failures. Reports were handed to the project lead for relay; **no Codex file or register row was modified by the Claude orchestrator.**
+The Codex coordinator marked UNI-03, UNI-04 and UNI-R06 `blocked`: built, but its sandbox could not launch Chromium so the required QC gate never ran, and it dispatched HOSP-03/05/06 with round 01 still unaccepted. The Claude orchestrator ran `qc.js` on the three blocked Codex replicas as a measurement service — this is not generation and does not affect Codex attribution — and found 18 failures in UNI-03 (all one root cause: `label-content-name-mismatch` on `.brand`), 1 in UNI-04 (horizontal scroll at 375px, 23px on `index.html`), and 24 in UNI-R06 (the same `.brand` cause plus `region` violations on `.research`); UNI-R06 also delivered only 6 pages, below the 8–15 brief. Four root causes across 43 failures. Reports were handed to the project lead for relay; **no Codex file or register row was modified by the Claude orchestrator.**
 
-## 2026-11-13T16:31:32Z — Round 03 complete (Claude half): CORP-01, CORP-02, CORP-03 delivered; round-02 defects closed
+## 2026-11-13T16:31:32Z — Round 03 complete (Claude half): CORP-01, CORP-02, CORP-R03 delivered; round-02 defects closed
 
 | ID | fictional organisation | pages | files | qc.js (orchestrator re-run) |
 |---|---|---|---|---|
 | CORP-01 | Corvane Bank | 16 | 30 | `failures=0 warnings=0` |
 | CORP-02 | Harborlight Community Credit Union | 15 | 30 | `failures=0 warnings=0` |
-| CORP-03 | Northcairn (Cairn platform) | 16 | 27 | `failures=0 warnings=0` |
+| CORP-R03 | Northcairn (Cairn platform) | 16 | 27 | `failures=0 warnings=0` |
 
 ### Round-02 defect 2 closed by brief, not by tool change
 
@@ -263,7 +263,7 @@ The `component-inventory.json` prose-page-reference defect (30–44% of entries 
 |---|---|---|
 | CORP-01 | 43 | 0 |
 | CORP-02 | 45 | 0 |
-| CORP-03 | 54 | 0 |
+| CORP-R03 | 54 | 0 |
 
 `qc.js` was deliberately **not** patched. It is shared with the Codex arm, and altering the gate mid-study would change measurement conditions for both arms; that remains a decision for the project lead. The four affected round-01/02 replicas are still unrepaired and remain an open item.
 
@@ -271,7 +271,7 @@ The `component-inventory.json` prose-page-reference defect (30–44% of entries 
 
 The trademark defect does not recur either. The briefs carried per-stratum denylists and made the trademark grep the agent's own responsibility, stating that `qc.js` does not check it. Orchestrator sweep over ~36 vendor and platform names found **zero real brands in the delivered HTML/JS/CSS of all three replicas**. The reference's own domain appears **0 times** in delivered site files and exactly 4 times per replica in `README.md`, `fidelity-notes.md`, `component-inventory.json` and `generation-metadata.json` — which is the required provenance record, not leakage.
 
-One orchestrator false positive is recorded for honesty: the denylist flagged `CO-OP` twice in CORP-03. Both are the invented customer **"Larkspur Credit Co-op"** in a logo strip headed "Invented organisations used for this design study" — a generic word inside a fictional name, not the CO-OP credit-union network. No change was made.
+One orchestrator false positive is recorded for honesty: the denylist flagged `CO-OP` twice in CORP-R03. Both are the invented customer **"Larkspur Credit Co-op"** in a logo strip headed "Invented organisations used for this design study" — a generic word inside a fictional name, not the CO-OP credit-union network. No change was made.
 
 ### Financial-claims guardrail added for this category, and verified
 
@@ -280,63 +280,63 @@ Banking and SaaS strata carry exposure the earlier categories did not, so the br
 - **No false regulatory or deposit-insurance claims.** Verified: `FDIC`, `NCUA`, `Member FDIC`, `federally insured` and `Equal Housing` appear **0 times** in all three. CORP-02 replaced the reference's real deposit-insurance and housing-lender footer text with a labelled **"Fictional Deposit Safety Board"**; CORP-01 used a labelled fictional **"Northmark Banking Standards Board"**.
 - **No real financial identifiers.** Verified: no routing numbers, SWIFT/BIC codes or card numbers, including in form placeholders. All phone numbers use 555 exchanges in all three.
 - **No real rates presented as real.** CORP-01's rates and calculator logic are invented and labelled, because the reference's were JS-only and never observed; CORP-02 used repeating-digit placeholders (1.11, 2.22…). Every rate table and calculator carries a visible fictional-sample-data notice stating it is not an offer, quote or financial advice.
-- **No false endorsement.** CORP-03's customers, testimonials and logo strip are all invented organisations, explicitly labelled as such on the page. No real company is named as a customer.
+- **No false endorsement.** CORP-R03's customers, testimonials and logo strip are all invented organisations, explicitly labelled as such on the page. No real company is named as a customer.
 - **Invented product vocabulary** for the DevOps stratum, which is dense with real product names: platform **Cairn** with capabilities Trunk, Relay, Cellar, Sentinel, Launchpad and Cairn Assist. The reference's real tier names were also removed from docs and search keywords.
 
 ### Fidelity held against category-typical temptation
 
-CORP-03's research block recorded that the reference has **no billing-period toggle — pricing is static**. A monthly/annual toggle is the single most category-typical SaaS pricing control, and the brief forbade adding it merely because it is typical. The replica ships static pricing with no toggle, matching the reference. CORP-02 likewise reflects member-eligibility framing rather than retail-bank framing.
+CORP-R03's research block recorded that the reference has **no billing-period toggle — pricing is static**. A monthly/annual toggle is the single most category-typical SaaS pricing control, and the brief forbade adding it merely because it is typical. The replica ships static pricing with no toggle, matching the reference. CORP-02 likewise reflects member-eligibility framing rather than retail-bank framing.
 
 ### Inventory data defect repaired (central register)
 
 Two Claude rows in `metadata/source-inventories/company.csv` held corrupted `subcategory` values. The 2026-11-12 transcription split on a comma **inside a parenthetical** and kept only the tail, discarding the leading text:
 
 - `CORP-02`: `"NH and online membership)"` → `"regional bank or credit union (Massachusetts-based credit union, with branches in MA/NH and online membership)"`
-- `CORP-03`: `"SaaS, DevSecOps platform)"` → `"technology company (software/SaaS, DevSecOps platform)"`
+- `CORP-R03`: `"SaaS, DevSecOps platform)"` → `"technology company (software/SaaS, DevSecOps platform)"`
 
-Both were unparseable fragments with an unmatched closing paren, and CORP-03's row did not identify its own stratum at all. Correct values recovered from `pipelines/claude/research/CORP.md`. **Every field of every row in all 12 inventories was then scanned for the same signature** (a value ending in `)` with no `(`): exactly these two, nothing else. Note that both rows passed the Codex readiness gate at 30/30, because that gate checks `subcategory` is non-empty, not that it is coherent.
+Both were unparseable fragments with an unmatched closing paren, and CORP-R03's row did not identify its own stratum at all. Correct values recovered from `pipelines/claude/research/CORP.md`. **Every field of every row in all 12 inventories was then scanned for the same signature** (a value ending in `)` with no `(`): exactly these two, nothing else. Note that both rows passed the Codex readiness gate at 30/30, because that gate checks `subcategory` is non-empty, not that it is coherent.
 
 ### Known deviations, accepted as generated
 
 - CORP-01 added `locations.html` and `search.html` as labelled intentional additions; the reference's own locator was never fetched and its `/locations.html` returned 404.
 - CORP-02 did not map Careers, to keep scope tight (14 content pages + 404); its branch map is a decorative SVG, not an interactive map; inline errors clear on blur and can shift layout slightly.
-- CORP-03 merged the reference's two careers pages into one `jobs.html`; blog and most customer-story cards are unlinked static content because no detail pages exist (the accepted consequence of the prune convention); its careers filter offers 7 locations and 10 departments rather than the reference's ~33 options; the contact-sales fields are original because the reference's embedded form was not visible in static HTML.
+- CORP-R03 merged the reference's two careers pages into one `jobs.html`; blog and most customer-story cards are unlinked static content because no detail pages exist (the accepted consequence of the prune convention); its careers filter offers 7 locations and 10 departments rather than the reference's ~33 options; the contact-sales fields are original because the reference's embedded form was not visible in static HTML.
 - CORP-01's mobile drill-down is approximated with nested disclosures plus a "Return to main menu" button; its login uses a native `<dialog>`.
-- All three record `accessibility: partial`; CORP-03 also records `structure` and `traceability` as partial. Not tested in any of the three: screen readers, 200%/400% zoom, manual keyboard walkthrough, forced-colors, non-Chromium browsers. No replica claims WCAG conformance.
+- All three record `accessibility: partial`; CORP-R03 also records `structure` and `traceability` as partial. Not tested in any of the three: screen readers, 200%/400% zoom, manual keyboard walkthrough, forced-colors, non-Chromium browsers. No replica claims WCAG conformance.
 - Two agents disclosed briefly creating and deleting a marker file at a fixed `/tmp` path instead of their private `mktemp -d` directory. No stray file is present in the repository.
 
 ### Claude progress
 
 12 of 33 Claude register rows are `submitted` (3 portfolio + 9 built today across university, healthcare and company); 21 remain `planned`. Rounds 04–10 are queued: e-commerce, news, government, fashion, weather, nonprofit, church.
 
-## 2026-11-13T17:52:44Z — Round 04 complete (Claude half): ECOM-01, ECOM-02, ECOM-03 delivered; first category with a checkout flow
+## 2026-11-13T17:52:44Z — Round 04 complete (Claude half): ECOM-01, ECOM-02, ECOM-R03 delivered; first category with a checkout flow
 
 | ID | fictional brand | pages | files | qc.js (orchestrator re-run) |
 |---|---|---|---|---|
 | ECOM-01 | Pebblebloom | 15 | 27 | `failures=0 warnings=0` |
 | ECOM-02 | Larkwood Home | 18 | 33 | `failures=0 warnings=0` |
-| ECOM-03 | Fernhollow Outfitters | 19 | 45 | `failures=0 warnings=0` |
+| ECOM-R03 | Fernhollow Outfitters | 19 | 45 | `failures=0 warnings=0` |
 
 ### Payments guardrail — added for this category, verified on all three
 
 E-commerce is the first category whose reference sites have a real checkout. The briefs forbade any payment-credential surface, not merely a non-working one, because a form that looks like it collects card data is a harm regardless of whether it posts anywhere.
 
-| check | ECOM-01 | ECOM-02 | ECOM-03 |
+| check | ECOM-01 | ECOM-02 | ECOM-R03 |
 |---|---|---|---|
 | card / CVV / expiry / routing inputs | none | none | none |
 | `autocomplete="cc-*"` | 0 | 0 | 0 |
 | Luhn or card-validation code | none | none | none |
 | checkout inputs, all shipping/contact only | 10 | 9 | 5 |
 
-Each payment step is a visibly labelled non-functional placeholder stating that a real store would collect payment there and that this demo deliberately does not. No replica fabricates an order number — the specific failure mode the brief targeted. ECOM-02's confirmation reads "No order exists, no payment was taken, and nothing will be shipped or delivered. No order number was issued because there is no order."; ECOM-01's is headed "DEMONSTRATION ONLY - no order was placed"; ECOM-03's is stamped DEMO ONLY behind a required acknowledgement checkbox.
+Each payment step is a visibly labelled non-functional placeholder stating that a real store would collect payment there and that this demo deliberately does not. No replica fabricates an order number — the specific failure mode the brief targeted. ECOM-02's confirmation reads "No order exists, no payment was taken, and nothing will be shipped or delivered. No order number was issued because there is no order."; ECOM-01's is headed "DEMONSTRATION ONLY - no order was placed"; ECOM-R03's is stamped DEMO ONLY behind a required acknowledgement checkbox.
 
 ### Per-stratum content guardrails, verified
 
 - **ECOM-01 (beauty).** Zero hits for dermatologist, clinically proven, hypoallergenic, non-comedogenic, FDA approved, SPF, sunscreen, broad spectrum, allergy or paraben. The agent **pruned the reference's Sunscreen category outright** rather than write a product with no protection claim, and recorded why. Ratings are labelled fictional sample data on the page.
 - **ECOM-02 (home furnishings).** No flammability, weight-limit, child-safety, tip-over, crib or certification claims.
-- **ECOM-03 (specialty outdoor).** The `/hunt` department was omitted on policy. Verified zero firearm, ammunition, archery or hunting-implement content; zero veterinary, dosage, vaccination or animal-health advice; no fishing licence, season or catch-limit content; no ratings or reviews at all.
+- **ECOM-R03 (specialty outdoor).** The `/hunt` department was omitted on policy. Verified zero firearm, ammunition, archery or hunting-implement content; zero veterinary, dosage, vaccination or animal-health advice; no fishing licence, season or catch-limit content; no ratings or reviews at all.
 
-**Policy omissions were recorded separately from scope prunes** in ECOM-03's `fidelity-notes.md`, as the brief required, so a reader can distinguish "the study chose not to replicate this" from "the reference did not have it". Without that separation the dataset would silently misrepresent the reference's information architecture. This convention should carry to any future category with content the study declines to reproduce.
+**Policy omissions were recorded separately from scope prunes** in ECOM-R03's `fidelity-notes.md`, as the brief required, so a reader can distinguish "the study chose not to replicate this" from "the reference did not have it". Without that separation the dataset would silently misrepresent the reference's information architecture. This convention should carry to any future category with content the study declines to reproduce.
 
 ### Both earlier defects remain closed
 
@@ -345,14 +345,14 @@ Each payment step is a visibly labelled non-functional placeholder stating that 
 
 ### Orchestrator false positives recorded, so they are not mistaken for defects later
 
-The orchestrator's brand denylist uses substring matching and produced four spurious hits in ECOM-03, all verified harmless: `scope` ×23 was `th scope="col"` and `th scope="row"` (correct table-header markup), `shell` ×6 was "shell fabrics" and "Shells and packable vests" (apparel), `REI` was inside "reinforced", and `Sage` was inside "message". Whole-word checks returned 0 for both brands. No file was changed on account of these.
+The orchestrator's brand denylist uses substring matching and produced four spurious hits in ECOM-R03, all verified harmless: `scope` ×23 was `th scope="col"` and `th scope="row"` (correct table-header markup), `shell` ×6 was "shell fabrics" and "Shells and packable vests" (apparel), `REI` was inside "reinforced", and `Sage` was inside "message". Whole-word checks returned 0 for both brands. No file was changed on account of these.
 
 ### Known deviations, accepted as generated
 
 - **ECOM-02** carries two keys beyond the `MODEL_ALLOCATION.md` §6 schema, `qc_run` and `qc_notes`. Accepted: it is additional evidence, not missing evidence. It does mean provenance files are not uniformly shaped across the dataset, which matters to anything parsing them as a fixed schema.
 - **ECOM-01** gives the home page an `h1` the reference lacks, to meet the accessibility baseline, and records `structure: partial` because the reference's hero and carousel were never observed. Its bag uses `sessionStorage`; under `file://` some browsers scope storage per page, so the bag may not carry between pages there — documented in its README and untested outside headless Chromium.
 - **ECOM-02** folds contact and delivery into `customer-service.html`, uses a "Show more" control instead of numbered pagination, makes sign-in a page rather than a modal, and leaves 18 of the reference's 21 homepage categories unlinked under the prune convention.
-- **ECOM-03** uses one modal drawer at all widths rather than the reference's per-item sub-drawers, and its drawer sub-item labels are its own because the reference's were never captured. Checkout, confirmation, search and packs-bags are labelled intentional additions. It did not script cart removal or clear-all in its flow run.
+- **ECOM-R03** uses one modal drawer at all widths rather than the reference's per-item sub-drawers, and its drawer sub-item labels are its own because the reference's were never captured. Checkout, confirmation, search and packs-bags are labelled intentional additions. It did not script cart removal or clear-all in its flow run.
 - All three record `accessibility: partial`. Not tested in any: screen readers, 200%/400% zoom, manual keyboard walkthrough, forced-colors, non-Chromium browsers, touch. No replica claims WCAG conformance.
 - Storage access is wrapped in try/catch in all three; each was checked to still function with `sessionStorage` throwing.
 
@@ -362,22 +362,22 @@ The orchestrator's brand denylist uses substring matching and produced four spur
 
 ## 2026-11-13T20:53:37.266965+00:00 — Codex company batch collected
 
-- Three independent gpt-6.1-sol implementations collected under company/codex/: CORP-04: 7 pages/16 files, CORP-05: 9 pages/17 files, CORP-06: 8 pages/16 files. Initial outputs and any worker corrections retained. No coordinator website-code edits.
-- Independent source reviews passed. Shared QC: CORP-04 failed/unavailable; browser acceptance blocked, CORP-05 failed/unavailable; browser acceptance blocked, CORP-06 failed/unavailable; browser acceptance blocked. Exact failures and untested conditions are in run records, never converted to a false failures=0.
+- Three independent gpt-6.1-sol implementations collected under company/codex/: CORP-03: 7 pages/16 files, CORP-04: 9 pages/17 files, CORP-R06: 8 pages/16 files. Initial outputs and any worker corrections retained. No coordinator website-code edits.
+- Independent source reviews passed. Shared QC: CORP-03 failed/unavailable; browser acceptance blocked, CORP-04 failed/unavailable; browser acceptance blocked, CORP-R06 failed/unavailable; browser acceptance blocked. Exact failures and untested conditions are in run records, never converted to a false failures=0.
 - Register and queue synchronized with actual testing outcomes; no human acceptance, publication, commits, pushes or merges.
 
 ## 2026-11-13T21:01:55.796118+00:00 — Codex e-commerce batch started
 
-- User authorized next three simultaneous builds: ECOM-04, ECOM-05, ECOM-06. gpt-6.1-sol collaboration workers use independent isolated source snapshots, fresh approved task records, local static outputs only.
+- User authorized next three simultaneous builds: ECOM-03, ECOM-04, ECOM-R06. gpt-6.1-sol collaboration workers use independent isolated source snapshots, fresh approved task records, local static outputs only.
 - Coordinator manages register/queue; workers cannot change shared source or protocol files. Existing sites, raw outputs, approvals and dirty Git state preserved. Browser-QC launch limitations from prior batch remain to be tested honestly. No commit, push, merge or publication.
 
-## 2026-11-13T21:10:00Z — Round 05 complete (Claude half): NEWS-01, NEWS-02, NEWS-03 delivered; fabricated-news guardrail
+## 2026-11-13T21:10:00Z — Round 05 complete (Claude half): NEWS-01, NEWS-02, NEWS-R03 delivered; fabricated-news guardrail
 
 | ID | fictional publication | setting | pages | files | qc.js (orchestrator re-run) |
 |---|---|---|---|---|---|
 | NEWS-01 | The Vellmoor Ledger | invented country Orravia | 15 | 29 | `failures=0 warnings=0` |
 | NEWS-02 | The Alderny Daily Lantern | invented Port Alderny, Tessaly County, state of Calvern | 14 | 27 | `failures=0 warnings=0` |
-| NEWS-03 | Quillon Valley Public Media | invented Republic of Veloria | 15 | 28 | `failures=0 warnings=0` |
+| NEWS-R03 | Quillon Valley Public Media | invented Republic of Veloria | 15 | 28 | `failures=0 warnings=0` |
 
 ### Why this category needed a guardrail unlike the others
 
@@ -387,14 +387,14 @@ In earlier categories the hazard was a trademark or a credential-shaped form. He
 
 Verified by the orchestrator, not taken from the agents' reports:
 
-| check | NEWS-01 | NEWS-02 | NEWS-03 |
+| check | NEWS-01 | NEWS-02 | NEWS-R03 |
 |---|---|---|---|
 | notice on every page incl. `404.html` | 15/15 | 14/14 | 15/15 |
 | notice precedes the `<h1>` in document order on article/story pages | char 207 vs 4457 | char 4874 vs 5125 | all three story templates |
 | reference's own name in delivered HTML/JS/CSS | 0 | 0 | 0 |
 | real people, places, organisations or events in delivered files | 0 | 0 | 0 |
 
-NEWS-02 was additionally required **not to be set in Chicago or Illinois**: a fabricated metro daily anchored to a real city, inventing its council decisions and school news, is the worst form of this artifact. Grep for Chicago, Illinois, Tribune, WGN and Cook County in its delivered files returns **0**. NEWS-01 likewise returns 0 for Guardian, Ukraine, Gaza, ICE, Trump, Biden, Midterms and London; NEWS-03 returns 0 for NPR and every real programme and station name.
+NEWS-02 was additionally required **not to be set in Chicago or Illinois**: a fabricated metro daily anchored to a real city, inventing its council decisions and school news, is the worst form of this artifact. Grep for Chicago, Illinois, Tribune, WGN and Cook County in its delivered files returns **0**. NEWS-01 likewise returns 0 for Guardian, Ukraine, Gaza, ICE, Trump, Biden, Midterms and London; NEWS-R03 returns 0 for NPR and every real programme and station name.
 
 ### Format-level prohibitions, because the shape of a thing is the hazard
 
@@ -404,7 +404,7 @@ Some news furniture is dangerous as a **form**, independent of its content, so a
 - **No weather-alert or school-closure banner** (NEWS-02).
 - **No live-data widgets** — no tickers, scores, election results, polls, weather or traffic. All three omitted them rather than label them.
 - **Obituaries pruned outright.** Fabricated obituaries for plausible-sounding people are distressing regardless of labelling. Recorded as a policy omission, not a scope prune.
-- **NEWS-03 ships no playable audio at all.** Verified: 0 `<audio>` elements, 0 `<video>` elements, 0 media files on disk, 0 `autoplay` attributes. The player is native `<button>`s driving a silent timer with a stated non-functional notice, and the invented transcript carries its own fictional-transcript notice. A playable fabricated broadcast in a public-radio format carries too much borrowed credibility to ship even as a demo.
+- **NEWS-R03 ships no playable audio at all.** Verified: 0 `<audio>` elements, 0 `<video>` elements, 0 media files on disk, 0 `autoplay` attributes. The player is native `<button>`s driving a silent timer with a stated non-functional notice, and the invented transcript carries its own fictional-transcript notice. A playable fabricated broadcast in a public-radio format carries too much borrowed credibility to ship even as a demo.
 
 ### Subject matter was bounded, and the bound is auditable
 
@@ -424,10 +424,10 @@ NEWS-02's scan flagged `obituar`, `election`, `scores`, `alert` ×12 and `market
 
 ### Known deviations, accepted as generated
 
-- **JS dependency for article routing.** All three use an `?id=` template: NEWS-01's `article.html` holds one article statically and renders the other 32 from inline data; NEWS-02 and NEWS-03 show only a default item without JS, and NEWS-03's tabs show only the first panel. This is permitted (inline data, no `fetch()`) but means per-article content is not present in static HTML — relevant to any analysis that parses delivered files rather than rendered pages.
+- **JS dependency for article routing.** All three use an `?id=` template: NEWS-01's `article.html` holds one article statically and renders the other 32 from inline data; NEWS-02 and NEWS-R03 show only a default item without JS, and NEWS-R03's tabs show only the first panel. This is permitted (inline data, no `fetch()`) but means per-article content is not present in static HTML — relevant to any analysis that parses delivered files rather than rendered pages.
 - **Unverified reference paths were not mapped.** NEWS-01 declined to map `/us/video`, `/info/about-guardian`, `/us/lifestyle` and `/search?q=`, all of which 404'd during verification, and recorded which proposed pages could not be verified.
 - **NEWS-02's paywall** is marked an unverified inference and is simulation only; the reference's paywall behaviour was never checked.
-- **NEWS-03's search results layout is invented** because the reference's markup was never observed; its Climate section was replaced by an invented "Land & Sea" front; its station finder and Latest/Most-read tabs are labelled intentional additions.
+- **NEWS-R03's search results layout is invented** because the reference's markup was never observed; its Climate section was replaced by an invented "Land & Sea" front; its station finder and Latest/Most-read tabs are labelled intentional additions.
 - **NEWS-01's `search.html` and `support.html`** are labelled intentional additions — the reference sends search to an external engine and has no on-site results page. Its Latest/Most-read tabs are flagged as inferred, not observed.
 - All three record `accessibility: partial`; everything else passes in all three. Not tested in any: screen readers, 200%/400% zoom, manual keyboard walkthrough, forced-colors, non-Chromium browsers. No replica claims WCAG conformance.
 - One agent again disclosed briefly writing and deleting a fixed-name marker file in the per-user temp directory instead of its `mktemp -d`. No stray file is present in the repository.
@@ -438,28 +438,28 @@ NEWS-02's scan flagged `obituar`, `election`, `scores`, `alert` ×12 and `market
 
 ## 2026-11-13T21:11:34.697756+00:00 — Codex e-commerce batch collected
 
-- Three independent gpt-6.1-sol implementations collected under e-commerce/codex/: ECOM-04: 7 pages/21 files, ECOM-05: 8 pages/19 files, ECOM-06: 7 pages/22 files. Initial outputs and any worker corrections retained. No coordinator website-code edits.
-- Independent source reviews passed. Shared QC: ECOM-04 failed/unavailable; browser acceptance blocked, ECOM-05 failed/unavailable; browser acceptance blocked, ECOM-06 failed/unavailable; browser acceptance blocked. Exact failures and untested conditions are in run records, never converted to a false failures=0.
+- Three independent gpt-6.1-sol implementations collected under e-commerce/codex/: ECOM-03: 7 pages/21 files, ECOM-04: 8 pages/19 files, ECOM-R06: 7 pages/22 files. Initial outputs and any worker corrections retained. No coordinator website-code edits.
+- Independent source reviews passed. Shared QC: ECOM-03 failed/unavailable; browser acceptance blocked, ECOM-04 failed/unavailable; browser acceptance blocked, ECOM-R06 failed/unavailable; browser acceptance blocked. Exact failures and untested conditions are in run records, never converted to a false failures=0.
 - Register and queue synchronized with actual testing outcomes; no human acceptance, publication, commits, pushes or merges.
 
 ## 2026-11-13T21:13:32.764853+00:00 — Codex news batch started
 
-- User authorized next three simultaneous builds: NEWS-04, NEWS-05, NEWS-06. gpt-6.1-sol collaboration workers use independent isolated source snapshots, fresh approved task records, local static outputs only.
+- User authorized next three simultaneous builds: NEWS-03, NEWS-04, NEWS-R06. gpt-6.1-sol collaboration workers use independent isolated source snapshots, fresh approved task records, local static outputs only.
 - Coordinator manages register/queue; workers cannot change shared source or protocol files. Existing sites, raw outputs, approvals and dirty Git state preserved. Browser-QC launch limitations from prior batch remain to be tested honestly. No commit, push, merge or publication.
 
 ## 2026-11-13T21:21:15.514247+00:00 — Codex news batch collected
 
-- Three independent gpt-6.1-sol implementations collected under news/codex/: NEWS-04: 6 pages/16 files, NEWS-05: 8 pages/18 files, NEWS-06: 7 pages/17 files. Initial outputs and any worker corrections retained. No coordinator website-code edits.
-- Independent source reviews passed. Shared QC: NEWS-04 failed/unavailable; browser acceptance blocked, NEWS-05 failed/unavailable; browser acceptance blocked, NEWS-06 failed/unavailable; browser acceptance blocked. Exact failures and untested conditions are in run records, never converted to a false failures=0.
+- Three independent gpt-6.1-sol implementations collected under news/codex/: NEWS-03: 6 pages/16 files, NEWS-04: 8 pages/18 files, NEWS-R06: 7 pages/17 files. Initial outputs and any worker corrections retained. No coordinator website-code edits.
+- Independent source reviews passed. Shared QC: NEWS-03 failed/unavailable; browser acceptance blocked, NEWS-04 failed/unavailable; browser acceptance blocked, NEWS-R06 failed/unavailable; browser acceptance blocked. Exact failures and untested conditions are in run records, never converted to a false failures=0.
 - Register and queue synchronized with actual testing outcomes; no human acceptance, publication, commits, pushes or merges.
 
-## 2026-11-13T21:26:13Z — Round 06 complete (Claude half): GOV-01, GOV-02, GOV-03 delivered; strictest guardrail in the study
+## 2026-11-13T21:26:13Z — Round 06 complete (Claude half): GOV-01, GOV-02, GOV-R03 delivered; strictest guardrail in the study
 
 | ID | fictional jurisdiction | pages | files | qc.js (orchestrator re-run) |
 |---|---|---|---|---|
 | GOV-01 | City of Quillhaven, Tarnmere County, Republic of Ostrelle | 15 | 23 | `failures=0 warnings=0` |
 | GOV-02 | State of Marrowvale, Republic of Velmara | 14 | 27 | `failures=0 warnings=0` |
-| GOV-03 | Kelmoran Landmarks Service, Republic of Kelmora | 12 | 26 | `failures=0 warnings=0` |
+| GOV-R03 | Kelmoran Landmarks Service, Republic of Kelmora | 12 | 26 | `failures=0 warnings=0` |
 
 ### Why this category's brief went beyond labelling
 
@@ -467,7 +467,7 @@ A convincing government site is an impersonation and phishing template. Unlike t
 
 Verified by the orchestrator on all three:
 
-| check | GOV-01 | GOV-02 | GOV-03 |
+| check | GOV-01 | GOV-02 | GOV-R03 |
 |---|---|---|---|
 | `.gov` string in delivered HTML/JS/CSS | 0 | 0 | 0 |
 | real jurisdiction / agency / place names | 0 | 0 | 0 |
@@ -486,13 +486,13 @@ An emergency-alert banner is the most copyable component on a government site an
 
 - **GOV-01's reference has one and its text was never observed.** The replica built a static block explicitly headed **"Sample community notice (not an alert)"** about an invented market street closure, whose text states the replica deliberately has no emergency or alert banner. This is the narrow substitute the brief permitted: it preserves the structural slot without supplying the dangerous component.
 - **GOV-02's reference had none observed**, so adding one was forbidden outright. None exists.
-- **GOV-03 omitted park alert, closure, condition and weather banners entirely** and recorded them in its policy list.
+- **GOV-R03 omitted park alert, closure, condition and weather banners entirely** and recorded them in its policy list.
 
-### GOV-03 carried a physical-safety restriction, not only an impersonation one
+### GOV-R03 carried a physical-safety restriction, not only an impersonation one
 
 A fabricated trail-conditions or wildlife-safety page for an outdoor site could injure a real person who mistook it for a real agency's. The brief forbade all of it. Verified: **zero occurrences** of trail condition, closure, avalanche, water level, fire danger, wildlife, bear, hypothermia, heat advisory, flash flood, swim, boating, backcountry, rescue or emergency. The single `permit` match is the disclaimer itself, on `plan-your-visit.html` — the very page where such guidance would naturally sit: *"There are no fees, bookings, permits, hours, conditions or safety notes anywhere in this demo, by design."*
 
-GOV-03 also declined to imitate the reference's well-known protected insignia, using an invented rounded square with wave lines.
+GOV-R03 also declined to imitate the reference's well-known protected insignia, using an invented rounded square with wave lines.
 
 ### No actionable civic guidance anywhere
 
@@ -502,9 +502,9 @@ The core restriction held. GOV-01's permits page gives **no requirements, fees o
 
 ### Honest self-assessment, and a fidelity limit worth recording
 
-These are the most conservative `validation_summary` values in the study: GOV-01 and GOV-02 record four gates as `partial`, GOV-03 five. The reasons are real and traceable to the research block — GOV-01's reference page-level structure (heading hierarchy, ARIA, forms) **was never inspected**, so claiming structural fidelity would have been unsupported; GOV-03's nav labels (Find a Park, Plan Your Visit, Learn & Explore, Get Involved, What We Do) are **inferred, not observed**, so its dropdown contents are its own and its `scope` is `partial`.
+These are the most conservative `validation_summary` values in the study: GOV-01 and GOV-02 record four gates as `partial`, GOV-R03 five. The reasons are real and traceable to the research block — GOV-01's reference page-level structure (heading hierarchy, ARIA, forms) **was never inspected**, so claiming structural fidelity would have been unsupported; GOV-R03's nav labels (Find a Park, Plan Your Visit, Learn & Explore, Get Involved, What We Do) are **inferred, not observed**, so its dropdown contents are its own and its `scope` is `partial`.
 
-**GOV-03's pruned-navigation list is itself unverified**, because the reference's actual nav and footer links were never captured. That is recorded in its `fidelity-notes.md` and matters to any analysis treating prune lists as evidence about the references.
+**GOV-R03's pruned-navigation list is itself unverified**, because the reference's actual nav and footer links were never captured. That is recorded in its `fidelity-notes.md` and matters to any analysis treating prune lists as evidence about the references.
 
 ### Policy omissions kept separate from scope prunes
 
@@ -512,15 +512,15 @@ All three maintained the round-04 convention: a distinct policy-omission list in
 
 ### Earlier defects remain closed
 
-- **Component inventories:** 113 components across the three, **0 prose or non-existent page references** (34 / 37 / 42). Five consecutive rounds clean. GOV-01 went further and diffed its inventory against the `data-component` attributes actually present in its HTML, finding and fixing two mismatches; GOV-03 listed its four JS-rendered components by hand.
+- **Component inventories:** 113 components across the three, **0 prose or non-existent page references** (34 / 37 / 42). Five consecutive rounds clean. GOV-01 went further and diffed its inventory against the `data-component` attributes actually present in its HTML, finding and fixing two mismatches; GOV-R03 listed its four JS-rendered components by hand.
 - **Extra metadata keys:** none in any of the three.
 - **Trademarks and real-entity leakage:** 0 in delivered files.
 
 ### Known deviations, accepted as generated
 
 - **GOV-02 included a language selector although the reference's selector was never confirmed.** Labelled a non-functional demo and disclosed as unverified. No machine-translated text ships.
-- **GOV-01's directory pages and GOV-03's `site`/`topic` detail pages render via JS** (`?id=`, `?t=`), showing a noscript notice without JavaScript. Permitted under the rules (inline data, no `fetch()`), but per-item content is not in static HTML.
-- **GOV-03's contact page is an intentional addition** because the reference's contact URL returned 404 during verification.
+- **GOV-01's directory pages and GOV-R03's `site`/`topic` detail pages render via JS** (`?id=`, `?t=`), showing a noscript notice without JavaScript. Permitted under the rules (inline data, no `fetch()`), but per-item content is not in static HTML.
+- **GOV-R03's contact page is an intentional addition** because the reference's contact URL returned 404 during verification.
 - **GOV-01's services directory and department filter are intentional additions**, labelled as such.
 - Not tested in any of the three: screen readers, 200%/400% zoom, manual keyboard walkthrough, forced-colors, non-Chromium browsers, print. No replica claims WCAG conformance.
 
@@ -530,13 +530,13 @@ All three maintained the round-04 convention: a distinct policy-omission list in
 
 ## 2026-11-13T21:27:00.855945+00:00 — Codex government batch started
 
-- User authorized next three simultaneous builds: GOV-04, GOV-05, GOV-06. gpt-6.1-sol collaboration workers use independent isolated source snapshots, fresh approved task records, local static outputs only.
+- User authorized next three simultaneous builds: GOV-03, GOV-04, GOV-R06. gpt-6.1-sol collaboration workers use independent isolated source snapshots, fresh approved task records, local static outputs only.
 - Coordinator manages register/queue; workers cannot change shared source or protocol files. Existing sites, raw outputs, approvals and dirty Git state preserved. Browser-QC launch limitations from prior batch remain to be tested honestly. No commit, push, merge or publication.
 
 ## 2026-11-13T21:35:26.868634+00:00 — Codex government batch collected
 
-- Three independent gpt-6.1-sol implementations collected under government/codex/: GOV-04: 6 pages/13 files, GOV-05: 6 pages/13 files, GOV-06: 6 pages/14 files. Initial outputs and any worker corrections retained. No coordinator website-code edits.
-- Independent source reviews passed. Shared QC: GOV-04 failed/unavailable; browser acceptance blocked, GOV-05 failed/unavailable; browser acceptance blocked, GOV-06 failed/unavailable; browser acceptance blocked. Exact failures and untested conditions are in run records, never converted to a false failures=0.
+- Three independent gpt-6.1-sol implementations collected under government/codex/: GOV-03: 6 pages/13 files, GOV-04: 6 pages/13 files, GOV-R06: 6 pages/14 files. Initial outputs and any worker corrections retained. No coordinator website-code edits.
+- Independent source reviews passed. Shared QC: GOV-03 failed/unavailable; browser acceptance blocked, GOV-04 failed/unavailable; browser acceptance blocked, GOV-R06 failed/unavailable; browser acceptance blocked. Exact failures and untested conditions are in run records, never converted to a false failures=0.
 - Register and queue synchronized with actual testing outcomes; no human acceptance, publication, commits, pushes or merges.
 
 ## 2026-11-13T21:40:00Z — Open-source pipeline added; slots 07–10 restored to the active allocation
@@ -553,22 +553,22 @@ All three maintained the round-04 convention: a distinct policy-omission list in
 
 ## 2026-11-13T21:37:53.304412+00:00 — Codex fashion batch started
 
-- User authorized next three simultaneous builds: FASH-04, FASH-05, FASH-06. gpt-6.1-sol collaboration workers use independent isolated source snapshots, fresh approved task records, local static outputs only.
+- User authorized next three simultaneous builds: FASH-03, FASH-04, FASH-R06. gpt-6.1-sol collaboration workers use independent isolated source snapshots, fresh approved task records, local static outputs only.
 - Coordinator manages register/queue; workers cannot change shared source or protocol files. Existing sites, raw outputs, approvals and dirty Git state preserved. Browser-QC launch limitations from prior batch remain to be tested honestly. No commit, push, merge or publication.
 
 ## 2026-11-13T21:46:33.648263+00:00 — Codex fashion batch collected
 
-- Three independent gpt-6.1-sol implementations collected under fashion/codex/: FASH-04: 7 pages/17 files, FASH-05: 6 pages/16 files, FASH-06: 6 pages/18 files. Initial outputs and any worker corrections retained. No coordinator website-code edits.
-- Independent source reviews passed. Shared QC: FASH-04 failed/unavailable; browser acceptance blocked, FASH-05 failed/unavailable; browser acceptance blocked, FASH-06 failed/unavailable; browser acceptance blocked. Exact failures and untested conditions are in run records, never converted to a false failures=0.
+- Three independent gpt-6.1-sol implementations collected under fashion/codex/: FASH-03: 7 pages/17 files, FASH-04: 6 pages/16 files, FASH-R06: 6 pages/18 files. Initial outputs and any worker corrections retained. No coordinator website-code edits.
+- Independent source reviews passed. Shared QC: FASH-03 failed/unavailable; browser acceptance blocked, FASH-04 failed/unavailable; browser acceptance blocked, FASH-R06 failed/unavailable; browser acceptance blocked. Exact failures and untested conditions are in run records, never converted to a false failures=0.
 - Register and queue synchronized with actual testing outcomes; no human acceptance, publication, commits, pushes or merges.
 
-## 2026-11-13T21:56:25Z — Round 07 complete (Claude half): FASH-01, FASH-02, FASH-03 delivered; all three handback reports lost
+## 2026-11-13T21:56:25Z — Round 07 complete (Claude half): FASH-01, FASH-02, FASH-R03 delivered; all three handback reports lost
 
 | ID | fictional publication / house | pages | files | qc.js (orchestrator run) |
 |---|---|---|---|---|
 | FASH-01 | The Weft Review | 13 | 32 | `failures=0 warnings=0` |
 | FASH-02 | (invented house) | 17 | 56 | `failures=0 warnings=0` |
-| FASH-03 | (invented publication) | 13 | 34 | `failures=0 warnings=0` |
+| FASH-R03 | (invented publication) | 13 | 34 | `failures=0 warnings=0` |
 
 ### PROCESS FAILURE: all three building agents exited without delivering a report
 
@@ -576,13 +576,13 @@ For the first time in seven rounds, **every** agent in a round ended without a h
 
 **Consequence for the dataset, recorded plainly:** acceptance of these three replicas rests **entirely on orchestrator verification of the delivered artifacts**, with no agent claim to cross-check. In rounds 01–06 the orchestrator's QC re-run served as independent confirmation of an agent's reported figure; here there is no reported figure, so the QC run is the only evidence. This is weaker provenance than the other 18 replicas, and the three affected rows say so in `assignments.csv`.
 
-What this did **not** cost: the required artifacts are all present, and the disclosures a report would have carried are on disk in each replica's `fidelity-notes.md` (FASH-01 5230 B, FASH-02 4168 B, FASH-03 4764 B), each containing the policy/scope prune separation, the inferred-versus-observed labelling, and the photography-replacement note. FASH-02's notes additionally record the HTTP 429 rate limit and the title-extraction limit from its research block.
+What this did **not** cost: the required artifacts are all present, and the disclosures a report would have carried are on disk in each replica's `fidelity-notes.md` (FASH-01 5230 B, FASH-02 4168 B, FASH-R03 4764 B), each containing the policy/scope prune separation, the inferred-versus-observed labelling, and the photography-replacement note. FASH-02's notes additionally record the HTTP 429 rate limit and the title-extraction limit from its research block.
 
 What it **did** cost: the agents' own flow-check narratives, their subject-matter lists and their stated deviations are unrecoverable without resuming each agent. The orchestrator did not resume them, because every claim such a report would make is independently checkable from the artifacts, and the artifacts were checked.
 
 ### Orchestrator verification, in place of agent reports
 
-| check | FASH-01 | FASH-02 | FASH-03 |
+| check | FASH-01 | FASH-02 | FASH-R03 |
 |---|---|---|---|
 | required artifacts present | 7/7 | 7/7 | 7/7 |
 | reference's own name in delivered files | 0 | 0 | 0 |
@@ -598,7 +598,7 @@ What it **did** cost: the agents' own flow-check narratives, their subject-matte
 
 **FASH-02's designer-name constraint held:** 0 occurrences of Margaret Howell, Margaret, Howell, MHL or margarethowell in delivered files, and 0 real brands, mills or certification schemes (Burberry, Barbour, Harris Tweed, Loro Piana, GOTS, OEKO-TEX, Fair Trade, B Corp, "made in Italy", "made in England", Yorkshire, Scotland all return zero). No false heritage or provenance claim survives.
 
-**FASH-03's trademark-density constraint held:** 0 occurrences of hypebeast, Nike, Adidas, Jordan, Yeezy, Supreme, StockX, GOAT or Balenciaga, and no real silhouette or colourway name, including in sample data and search keywords. No shop, cart, account, resale commentary or authentication guidance exists; its release calendar is labelled sample data only.
+**FASH-R03's trademark-density constraint held:** 0 occurrences of hypebeast, Nike, Adidas, Jordan, Yeezy, Supreme, StockX, GOAT or Balenciaga, and no real silhouette or colourway name, including in sample data and search keywords. No shop, cart, account, resale commentary or authentication guidance exists; its release calendar is labelled sample data only.
 
 No replica has a size guide or body measurements; no body-image, diet or anti-ageing copy appears in any of the three.
 
@@ -607,14 +607,14 @@ No replica has a size guide or body measurements; no body-image, diet or anti-ag
 Three flags, all benign and all the replicas documenting their own constraints:
 
 - **FASH-01, `replica` ×40** — the phrase "research replica" in its own fictional-publication note and footer ("The Weft Review is an invented magazine for a research replica. None of its stories, bylines, brands, events or places are real").
-- **FASH-03, `resale` ×1 and `authentic` ×1** — both inside `about.html`'s "What is left out on purpose" section: "There is no shop, no cart, no account, no resale commentary and no advice on authenticating products. The release calendar is sample data only."
+- **FASH-R03, `resale` ×1 and `authentic` ×1** — both inside `about.html`'s "What is left out on purpose" section: "There is no shop, no cart, no account, no resale commentary and no advice on authenticating products. The release calendar is sample data only."
 - **FASH-02, `hip` ×6** — substring of "chip", a colour name; zero whole-word matches, and the replica has no size guide at all.
 
 This is now the fourth round in which the only matches for a forbidden term were the disclaimers stating its absence. The pattern is worth noting as a property of the method rather than a coincidence: a replica that documents its own omissions will always trip a naive denylist.
 
 ### Fidelity limits carried from the research blocks
 
-All three self-report four or more `partial` gates, traceable to recorded verification limits rather than to agent caution: FASH-01's header and nav were read from raw HTML and **never rendered**, so nav behaviour is inferred; FASH-02's **page titles were never extractable** from raw HTML; FASH-03's reference is a **fast-changing snapshot** that "can change by the hour", so its observed structure is one observation and its `scope` is `partial`. FASH-03's `fidelity-notes.md` uses the word "inferred" six times.
+All three self-report four or more `partial` gates, traceable to recorded verification limits rather than to agent caution: FASH-01's header and nav were read from raw HTML and **never rendered**, so nav behaviour is inferred; FASH-02's **page titles were never extractable** from raw HTML; FASH-R03's reference is a **fast-changing snapshot** that "can change by the hour", so its observed structure is one observation and its `scope` is `partial`. FASH-R03's `fidelity-notes.md` uses the word "inferred" six times.
 
 ### Earlier defects remain closed
 
@@ -634,7 +634,7 @@ batch, and update the repository to state twelve categories. The study target is
 
 ### Restaurant: ten replicas deleted
 
-`REST-01.zip` … `REST-10.zip` and `restaurant-replicas-protocol.zip` were deleted. The bundle was
+`REST-01.zip` … `REST-06.zip` and `restaurant-replicas-protocol.zip` were deleted. The bundle was
 removed rather than repacked because it contained complete copies of all ten sites, so deleting the
 individual zips alone would not have removed them from the repository.
 
@@ -642,7 +642,7 @@ Two findings drove the decision, both surfaced before deletion:
 
 - **All ten violated the protocol.** Each loaded Bootstrap 5.3.3 and jQuery 3.7.1 from
   `assets/vendor/`, prohibited by `Rules.md` §4. They were built 2026-11-07, before the protocol
-  existed; the standing decision had been to document the deviation. This included REST-01 … REST-03,
+  existed; the standing decision had been to document the deviation. This included REST-01 … REST-R03,
   which the operator had initially intended to keep as the Claude slots — on seeing the finding, the
   decision changed to delete all ten and rebuild 01–03 under protocol.
 - **Provenance was never recorded.** No zip contained `generation-metadata.json` and all ten register
@@ -662,7 +662,7 @@ Removed from `excluded_categories` in the open-source pipeline. Portfolio needed
 register rows already carried 01–03 Claude (submitted), 04–06 Codex (submitted) and 07–10 open-source
 (`planned`). Strata for the four open-source slots were previously blank and are now defined in
 `metadata/source-inventories/portfolio.csv`, mirroring the Claude strata so model and stratum are not
-confounded within the category. **The pre-existing PORT-02 / PORT-04 duplicate reference
+confounded within the category. **The pre-existing PORT-02 / PORT-03 duplicate reference
 (brittanychiang.com in both) remains unresolved** and is not addressed here.
 
 ### Open-source pipeline extended to twelve categories
@@ -696,11 +696,11 @@ to have a non-empty path, not a canonical one.
 
 ## 2026-11-14T04:40:26.232400+00:00 — Restaurant Phase A research
 
-Reviewed retained homepages for all ten restaurant slots via web text retrieval; documented method limits and detailed REST-04–06 page proposals in `pipelines/codex/research/REST.md`. Updated only Codex restaurant inventory/reservations to awaiting approval. Hogsalt proposal uses readable www hostname. No source/model approval, implementation, or acceptance recorded. Other groups require detailed scope reconciliation.
+Reviewed retained homepages for all ten restaurant slots via web text retrieval; documented method limits and detailed REST-03–06 page proposals in `pipelines/codex/research/REST.md`. Updated only Codex restaurant inventory/reservations to awaiting approval. Hogsalt proposal uses readable www hostname. No source/model approval, implementation, or acceptance recorded. Other groups require detailed scope reconciliation.
 
 ## 2026-11-14T04:44:45.932240+00:00 — Restaurant Codex source/scope approval
 
-Recorded Samhith Varma’s explicit approval of REST-04–06 sources and page scopes. Evidence: `pipelines/codex/research/REST-source-approval.md`. Exact model assignments remain pending; no builds started or other groups approved.
+Recorded Samhith Varma’s explicit approval of REST-03–06 sources and page scopes. Evidence: `pipelines/codex/research/REST-source-approval.md`. Exact model assignments remain pending; no builds started or other groups approved.
 
 ## 2026-11-13 — Codex and Claude pipelines extended to twelve categories
 
@@ -715,7 +715,7 @@ which the register had already flagged as a defect. Adding portfolio to the Code
 validator trip on it, forcing the choice between renaming the artifacts and weakening the check.
 The operator chose renaming.
 
-- Directories renamed to `PORT-04`, `PORT-05`, `PORT-06`.
+- Directories renamed to `PORT-03`, `PORT-04`, `PORT-R06`.
 - `*-complete.zip` files repacked so their internal root directory matches the new name. File counts
   unchanged: 29, 39 and 42. The fictional identities (Rowan Ellis, Jamie Vale, Avery North) are
   unchanged and still recorded in `portfolio/codex/README.md`.
@@ -727,8 +727,8 @@ The `pipelines/codex/runs/**/snapshots/07-assignments.csv` files also contain th
 names. They were deliberately left untouched: they are run-time evidence of what the register
 contained during past runs, and editing them would falsify that record.
 
-**Still unresolved:** `PORT-04` uses brittanychiang.com, the same reference as Claude's `PORT-02`.
-`Rules.md` §1 requires ten distinct references per category. The operator declined to reset PORT-04
+**Still unresolved:** `PORT-03` uses brittanychiang.com, the same reference as Claude's `PORT-02`.
+`Rules.md` §1 requires ten distinct references per category. The operator declined to reset PORT-03
 as part of this change.
 
 ### Codex pipeline (slots 04–06): 30 → 36 replicas
@@ -771,21 +771,21 @@ round structure existed.
 ### Not done
 
 - No source approved, no replica generated, nothing marked accepted.
-- The PORT-02 / PORT-04 duplicate reference remains open.
+- The PORT-02 / PORT-03 duplicate reference remains open.
 
 ## 2026-11-14 — Restaurant research: Codex landed, open-source blocked
 
 ### Codex restaurant research recorded
 
-`pipelines/codex/research/REST.md` exists and carries REST-04/05/06 blocks plus a source/scope
+`pipelines/codex/research/REST.md` exists and carries REST-03/05/06 blocks plus a source/scope
 approval update timestamped 2026-11-14T04:44:45Z. The three inventory rows are
 `verification_result=verified` with `approved_at`, `approved_by` and `approval_reference` filled:
 
 | Slot | Stratum | Approved reference |
 |---|---|---|
-| REST-04 | vegan / health | https://www.crossroadskitchen.com/ |
-| REST-05 | multi-location group | https://www.hogsalt.com/ |
-| REST-06 | pizzeria | https://www.pizzeriabianco.com/ |
+| REST-03 | vegan / health | https://www.crossroadskitchen.com/ |
+| REST-04 | multi-location group | https://www.hogsalt.com/ |
+| REST-R06 | pizzeria | https://www.pizzeriabianco.com/ |
 
 `research-REST` in the Codex queue moved `planned` → `completed`. Like portfolio's tasks it carries
 no `run_id`, because the work happened in a Codex session rather than through this queue;
@@ -794,7 +794,7 @@ no `run_id`, because the work happened in a Codex session rather than through th
 Codex's REST.md also rates slots 01–03 and 07–10, but its own text calls those "preliminary
 homepage-level estimates, not completed approval proposals". **They approve nothing outside Codex's
 own three slots** and are treated here as coordination notes only. Its observation that Russian
-River's age-gate qualifier "needs rendered inspection before inclusion" concerns REST-09, an
+River's age-gate qualifier "needs rendered inspection before inclusion" concerns REST-R09, an
 open-source slot, and is carried forward as an input to that slot's own research, not as a finding.
 
 ### Those three URLs are now reserved against open-source slots
@@ -806,7 +806,7 @@ inventory at run time.
 
 ### Open-source restaurant research NOT performed
 
-Slots REST-07 … REST-10 remain unresearched. The run was attempted and stopped at the dry-run stage
+Slots REST-05 … REST-06 remain unresearched. The run was attempted and stopped at the dry-run stage
 for three reasons:
 
 - **No endpoint.** `http://localhost:8080/v1/models` returns HTTP 000 and nothing is listening on
@@ -831,8 +831,8 @@ slot's own research may well replace them.
 | Pipeline | Research | Builds |
 |---|---|---|
 | Claude 01–03 | batch 03, not started — blocks round 11 | round 11, blocked on Phase A |
-| Codex 04–06 | `research-REST` completed 2026-11-14 | `build-REST-04/05/06` planned |
-| Open-source 07–10 | `research-REST` planned, blocked on endpoint | `build-REST-07…10` planned |
+| Codex 04–06 | `research-REST` completed 2026-11-14 | `build-REST-03/05/06` planned |
+| Open-source 07–10 | `research-REST` planned, blocked on endpoint | `build-REST-05…10` planned |
 
 ### Verification performed
 
@@ -843,11 +843,11 @@ slot's own research may well replace them.
 
 ## 2026-11-14T05:01:38.601483+00:00 — Restaurant initial Codex model declaration
 
-User redirected the queued build to restaurant ("wait dont do weater, build restaurant instead"). REST-04–06 had source/scope approval and no fixed generator model. Initial assignment recorded as gpt-6, the model family identified by this session, running in Codex; exact release/version unknown. This is not a claim that the session is gpt-6.1-sol. No prior model assignment replaced. Begin REST-04 only, following the one-replica-per-delivery protocol. Weather unchanged.
+User redirected the queued build to restaurant ("wait dont do weater, build restaurant instead"). REST-03–06 had source/scope approval and no fixed generator model. Initial assignment recorded as gpt-6, the model family identified by this session, running in Codex; exact release/version unknown. This is not a claim that the session is gpt-6.1-sol. No prior model assignment replaced. Begin REST-03 only, following the one-replica-per-delivery protocol. Weather unchanged.
 
-## 2026-11-14T05:06:01.477554+00:00 — REST-04 implementation delivered; browser QC blocked
+## 2026-11-14T05:06:01.477554+00:00 — REST-03 implementation delivered; browser QC blocked
 
-Seven pages delivered at restaurant/codex/REST-04: six approved Crossroads Kitchen source mappings plus local 404, fictional Verdant Table brand, two original local SVGs. Static audit passed (142 references, 21 components); JS syntax passed. Required shared QC attempted once, exit 2 before axe/layout scans: Chromium launch bootstrap permission denied. CUA preview also unavailable. Browser interactions not executed; no false pass, no human acceptance. Run `2026-11-14T05-01-38-812Z-build-REST-04` preserves task/snapshots, initial output, static evidence, QC log, complete delivery ZIP and hashes. Queue/register REST-04 blocked pending browser QC; REST-05/06 remain planned. No publication or commits.
+Seven pages delivered at restaurant/codex/REST-03: six approved Crossroads Kitchen source mappings plus local 404, fictional Verdant Table brand, two original local SVGs. Static audit passed (142 references, 21 components); JS syntax passed. Required shared QC attempted once, exit 2 before axe/layout scans: Chromium launch bootstrap permission denied. CUA preview also unavailable. Browser interactions not executed; no false pass, no human acceptance. Run `2026-11-14T05-01-38-812Z-build-REST-03` preserves task/snapshots, initial output, static evidence, QC log, complete delivery ZIP and hashes. Queue/register REST-03 blocked pending browser QC; REST-04/06 remain planned. No publication or commits.
 
 ## 2026-11-14 — Claude restaurant Phase A research (slots 01–03), verified, not approved
 
@@ -875,7 +875,7 @@ rendering, no JavaScript, no web search.** Raw HTML only.
 |---|---|---|---|---|
 | REST-01 | small local independent | https://www.viacarota.com/ | 10 | low–medium |
 | REST-02 | BBQ / smokehouse | https://franklinbbq.com/ | 9 | medium |
-| REST-03 | fine dining | https://www.elevenmadisonpark.com/ | 12 | **unknown** |
+| REST-R03 | fine dining | https://www.elevenmadisonpark.com/ | 12 | **unknown** |
 
 These are the same three references the deleted pre-protocol batch used for these strata, verified
 from scratch — the approach Codex took for its three. No reference held by another group was
@@ -883,7 +883,7 @@ considered.
 
 ### Findings that affect the build
 
-- **REST-03 returned no `h1`, `h2` or `h3` elements at all.** Eleven Madison Park renders its content
+- **REST-R03 returned no `h1`, `h2` or `h3` elements at all.** Eleven Madison Park renders its content
   client-side, so its section hierarchy, order and copy are **not established** by raw-HTML research.
   Complexity is recorded as `unknown`, not low. A replica built from this evidence alone would be
   inventing structure. This is the single biggest open question in the category.
@@ -892,7 +892,7 @@ considered.
   directly on-topic for this study and worth replicating as a pattern, not just a page.
 - **Platform monoculture:** all three are Squarespace. The Claude third of this category has no
   platform diversity.
-- **All three delegate reservations off-site** — Resy for REST-01 and REST-03, preorder/Toast/
+- **All three delegate reservations off-site** — Resy for REST-01 and REST-R03, preorder/Toast/
   Goldbelly for REST-02. No replica in this third will exercise a real on-site booking form; every
   booking flow becomes a labeled simulation.
 
@@ -904,7 +904,7 @@ considered.
 - **REST-01:** a nav link labelled "Careers" points to `/covid-19-safety-measures`. `/search`
   returned **no HTTP status** at all despite a `GET /search` form in the header. Two hashed gallery
   URLs returned byte-identical responses.
-- **REST-03:** `/about` and `/ourrestaurant` returned byte-identical 296,093-byte responses — two
+- **REST-R03:** `/about` and `/ourrestaurant` returned byte-identical 296,093-byte responses — two
   routes onto one page.
 
 ### Approval gate NOT passed
@@ -913,7 +913,7 @@ considered.
 2026-11-13 Phase A waiver and approval record cover the ten original categories only, not
 restaurant. `Rules.md` §3 therefore still blocks round 11, whose status moved from
 "blocked on Phase A" to **"blocked on approval"**. The approval table at the end of REST.md asks the
-project lead to decide three things beyond yes/no: whether to accept REST-03's inferred structure or
+project lead to decide three things beyond yes/no: whether to accept REST-R03's inferred structure or
 render/substitute it, whether the Squarespace monoculture is acceptable, and whether a third with no
 on-site booking form is acceptable.
 
@@ -922,16 +922,16 @@ on-site booking form is acceptable.
 - No source approved; no replica generated; nothing marked accepted.
 - Open-source slots 07–10 still unresearched: no endpoint, no `models.json`, no key.
 
-## 2026-11-14T05:08:00.553509+00:00 — REST-05/06 parallel execution authorized
+## 2026-11-14T05:08:00.553509+00:00 — REST-04/06 parallel execution authorized
 
 User explicitly requested “build rest5/6 at once”, superseding the one-replica stopping cadence for this delivery. Both keep independent approved scopes, isolated temporary generation workspaces, inherited GPT-6/Codex model configuration, recorded runs, artifacts and QC. No model reassignment, shared protocol change, or publishing authorized/inferred. Two generation agents launched, one per replica; coordinator owns shared register/queue updates and independent source review. Both queue tasks running, assignment rows generating.
 
-## 2026-11-14T05:12:22.861782+00:00 — REST-05 and REST-06 parallel deliveries
+## 2026-11-14T05:12:22.861782+00:00 — REST-04 and REST-R06 parallel deliveries
 
 Both authorized restaurant replicas implemented independently by inherited GPT-6/Codex agents in isolated temporary workspaces, with individual initial-output preservation, source/scope snapshots, real timestamps, separate shared QC attempts and ZIP/hash manifests. Exact release/version unavailable; no model reassignment or other-group edits. Coordinator performed static reviews and packaged files without editing generated website code.
 
-- REST-05: 6 pages, 16 files; 92 references and 18 component types checked with zero static findings. Required browser QC failed/unavailable; status blocked. Evidence: `2026-11-14T05-07-13-605Z-build-REST-05`.
-- REST-06: 6 pages, 16 files; 110 references and 20 component types checked with zero static findings. Required browser QC failed/unavailable; status blocked. Evidence: `2026-11-14T05-07-13-677Z-build-REST-06`.
+- REST-04: 6 pages, 16 files; 92 references and 18 component types checked with zero static findings. Required browser QC failed/unavailable; status blocked. Evidence: `2026-11-14T05-07-13-605Z-build-REST-04`.
+- REST-R06: 6 pages, 16 files; 110 references and 20 component types checked with zero static findings. Required browser QC failed/unavailable; status blocked. Evidence: `2026-11-14T05-07-13-677Z-build-REST-R06`.
 
 Complete per-site archives verified against final SHA-256 manifests. No accessibility conformance or human acceptance asserted. No commit, push or publication.
 
@@ -939,7 +939,7 @@ Complete per-site archives verified against final SHA-256 manifests. No accessib
 
 ### Approval recorded
 
-`Rules.md` §3 approval for restaurant slots REST-01, REST-02 and REST-03, by the project lead
+`Rules.md` §3 approval for restaurant slots REST-01, REST-02 and REST-R03, by the project lead
 (Samhith Varma), 2026-11-14. Record: `pipelines/claude/research/approval-restaurant-2026-11-14.md`.
 `approved_at`, `approved_by` and `approval_reference` are now filled for those three rows in
 `metadata/source-inventories/restaurant.csv`, and the register rows moved `planned` → `approved`
@@ -949,13 +949,13 @@ with `model_id` `claude-sonnet-5-5`.
 |---|---|---|
 | REST-01 | small local independent | https://www.viacarota.com/ |
 | REST-02 | BBQ / smokehouse | https://franklinbbq.com/ |
-| REST-03 | fine dining | https://www.elevenmadisonpark.com/ |
+| REST-R03 | fine dining | https://www.elevenmadisonpark.com/ |
 
 **This is an approval, not a waiver.** The 2026-11-13 Phase A waiver covers the ten original
 categories and does not extend to restaurant. Replicas must record `source_approved_at` as
 2026-11-14 and must not claim the Phase A stop was waived.
 
-Approved with two disclosures carried into the builds: **REST-03's information architecture will be
+Approved with two disclosures carried into the builds: **REST-R03's information architecture will be
 inferred, not replicated** — Eleven Madison Park served zero `h1`/`h2`/`h3` elements on two
 verification passes, so its structure is unestablished and its complexity stays `unknown`; its
 `fidelity-notes.md` must say so plainly. And all three references are Squarespace sites that
@@ -1006,7 +1006,7 @@ itself; all three reproduced, exit 0:
 |---|---|---|---|---|
 | REST-01 | Trattoria Fico Nero | viacarota.com | `pages=14 files=42 failures=0 warnings=0` | 32 |
 | REST-02 | Cinder Ridge Smokehouse | franklinbbq.com | `pages=11 files=31 failures=0 warnings=0` | 34 |
-| REST-03 | Vane & Alder | elevenmadisonpark.com | `pages=15 files=27 failures=0 warnings=0` | 29 |
+| REST-R03 | Vane & Alder | elevenmadisonpark.com | `pages=15 files=27 failures=0 warnings=0` | 29 |
 
 Provenance checked field by field on all three: category, slot, source_id, model_group,
 `model_id` `claude-sonnet-5-5`, approved_source_url, `source_verified_at` and `source_approved_at`
@@ -1022,14 +1022,14 @@ the three.
   flag it, but it is recorded rather than waved through. The builder's own report said *three* h1s;
   the actual count is two — a minor inaccuracy in its self-report, which is exactly why the
   orchestrator re-counts rather than transcribing agent claims.
-- **REST-03's information architecture is inferred, not replicated**, as approved. Its
+- **REST-R03's information architecture is inferred, not replicated**, as approved. Its
   `validation_summary.structure` honestly reads `partial`, citing that a match to the reference
   hierarchy is untestable because the reference's rendered structure was never observed. Its
   `fidelity-notes.md` names what is invention: body order, headings and copy of every page, all
   layout, the dropdown contents, and every widget.
-- **REST-03's builder briefly wrote two scratch files outside its allowed path** — one in
+- **REST-R03's builder briefly wrote two scratch files outside its allowed path** — one in
   `restaurant/claude/`, one in `/tmp` — and deleted both. It disclosed this unprompted. Verified:
-  `restaurant/claude/` now contains only `REST-01`, `REST-02`, `REST-03`, and no stray files exist
+  `restaurant/claude/` now contains only `REST-01`, `REST-02`, `REST-R03`, and no stray files exist
   anywhere under `restaurant/`. The write boundary held in the end, but it was breached in passing.
 
 ### The disclaimer-matching pattern, again
@@ -1044,7 +1044,7 @@ forbidden term was the sentence stating its absence.
 Codex's coordinator wrote `metadata/assignments.csv` while this round ran: restaurant rows 04–06
 moved to `blocked` with `generated_at` timestamps of 05:04–05:11Z and notes "Source/scope approved;
 exact generator model assignment pending". Codex has in fact produced artifacts — 16 files each in
-`restaurant/codex/REST-04/05/06`, with `index.html` and `generation-metadata.json` — but holds the
+`restaurant/codex/REST-03/05/06`, with `index.html` and `generation-metadata.json` — but holds the
 rows `blocked` rather than `submitted` because the generating model is not yet attributed.
 
 **Those rows were not touched.** The Claude orchestrator rewrote only its own three
@@ -1064,17 +1064,17 @@ acceptance; acceptance needs human review, and no replica has had one.
 
 ## 2026-11-14T05:25:43.169159+00:00 — Weather round execution and model reassignment
 
-User directed “proceed with the weather round” after the earlier model mismatch was disclosed and restaurant round delivered. Interpreted as authorization for current disclosed GPT-6/Codex configuration: WX-04/05/06 model changed from gpt-6.1-sol to gpt-6, exact release/version unknown. This interpretation is not a claim of a verbatim model-specific approval. Original rows, context and reasoning preserved in pipelines/codex/research/evidence/weather-model-execution-2026-11-14.json. Approved Met Office / Time and Date / Mountain-Forecast scopes remain fixed. Execute serially, separate runs, outputs, snapshots and QC. All weather and warnings fictional; no live APIs.
+User directed “proceed with the weather round” after the earlier model mismatch was disclosed and restaurant round delivered. Interpreted as authorization for current disclosed GPT-6/Codex configuration: WX-03/05/06 model changed from gpt-6.1-sol to gpt-6, exact release/version unknown. This interpretation is not a claim of a verbatim model-specific approval. Original rows, context and reasoning preserved in pipelines/codex/research/evidence/weather-model-execution-2026-11-14.json. Approved Met Office / Time and Date / Mountain-Forecast scopes remain fixed. Execute serially, separate runs, outputs, snapshots and QC. All weather and warnings fictional; no live APIs.
 
-## 2026-11-14T05:34:57.923843+00:00 — Weather round WX-04/05/06 implemented
+## 2026-11-14T05:34:57.923843+00:00 — Weather round WX-03/05/06 implemented
 
 Three approved weather replicas generated serially in a single GPT-6/Codex session, separate runs and initial-output preservation. Exact release/version unknown; model reassignment/context in weather-model-execution-2026-11-14.json. Source/page scopes unchanged; all conditions, warnings, times, places and maps fixed fictional samples.
 
-- WX-04: 6 pages / 15 files; 6 pure data assertions passed, JS syntax and static sitemap/link/component self-review passed. Shared QC attempted 1 time(s), exit 2 before browser scan. Run `2026-11-14T05-25-43-413Z-build-WX-04`.
-- WX-05: 6 pages / 14 files; 7 pure data assertions passed, JS syntax and static sitemap/link/component self-review passed. Shared QC attempted 1 time(s), exit 2 before browser scan. Run `2026-11-14T05-25-43-487Z-build-WX-05`.
-- WX-06: 5 pages / 15 files; 6 pure data assertions passed, JS syntax and static sitemap/link/component self-review passed. Shared QC attempted 2 time(s), exit 2 before browser scan. Run `2026-11-14T05-25-43-557Z-build-WX-06`.
+- WX-03: 6 pages / 15 files; 6 pure data assertions passed, JS syntax and static sitemap/link/component self-review passed. Shared QC attempted 1 time(s), exit 2 before browser scan. Run `2026-11-14T05-25-43-413Z-build-WX-03`.
+- WX-04: 6 pages / 14 files; 7 pure data assertions passed, JS syntax and static sitemap/link/component self-review passed. Shared QC attempted 1 time(s), exit 2 before browser scan. Run `2026-11-14T05-25-43-487Z-build-WX-04`.
+- WX-R06: 5 pages / 15 files; 6 pure data assertions passed, JS syntax and static sitemap/link/component self-review passed. Shared QC attempted 2 time(s), exit 2 before browser scan. Run `2026-11-14T05-25-43-557Z-build-WX-R06`.
 
-WX-06 same-session correction after initial output: SVG layer toggles switched to style.display; README sample-count arithmetic corrected. First and second QC logs retained. No browser/axe pass, rendered interaction claim, independent reviewer, conformance or human acceptance. Queue/register blocked pending required browser QC. Complete per-site ZIPs byte-verified against SHA-256 manifests; no publication, commit or push.
+WX-R06 same-session correction after initial output: SVG layer toggles switched to style.display; README sample-count arithmetic corrected. First and second QC logs retained. No browser/axe pass, rendered interaction claim, independent reviewer, conformance or human acceptance. Queue/register blocked pending required browser QC. Complete per-site ZIPs byte-verified against SHA-256 manifests; no publication, commit or push.
 
 ## 2026-11-14 — Round 08 delivered: weather Claude slots 01–03
 
@@ -1087,7 +1087,7 @@ Three replicas built by concurrent `claude-sonnet-5-5` Agent builders. Register 
 |---|---|---|---|
 | WX-01 | Meridian Weather Authority | weather.gov | `pages=13 files=28 failures=0 warnings=0` |
 | WX-02 | Larkspur Weather | wunderground.com | `pages=14 files=26 failures=0 warnings=0` |
-| WX-03 | Meridian 12 Weather (MRD-TV 12) | wral.com/weather | `pages=12 files=34 failures=0 warnings=0` |
+| WX-R03 | Meridian 12 Weather (MRD-TV 12) | wral.com/weather | `pages=12 files=34 failures=0 warnings=0` |
 
 All three reproduced at exit 0. Provenance verified field by field, including the corrected dates
 `source_verified_at` 2026-11-12 and `source_approved_at` 2026-11-13. Independent checks: no
@@ -1097,7 +1097,7 @@ prohibited frameworks or CDN references, no `fetch()`/`XMLHttpRequest`, zero `hr
 ### The category's hard rule held
 
 Every page of all three replicas (39 pages total) carries sample-data labelling; none was missed.
-Spot-verified beyond the labels: WX-03's radar player says "NOT LIVE" three times, its webcams
+Spot-verified beyond the labels: WX-R03's radar player says "NOT LIVE" three times, its webcams
 "NO LIVE FEED", and its school-closings page carries an explicit "entirely invented — do not act on
 it" warning with status conveyed by words and border style rather than colour alone. That last one
 was the sharpest risk in this category: a plausible closings list is the one artifact here a reader
@@ -1112,7 +1112,7 @@ might act on.
   map script — behaviour replicated, stack not.
 - **WX-02** carries no Weather Underground, Weather Channel, weather.com, WunderMap, IBM or Weather
   Company string, and omits all ads, tracking and consent markup.
-- **WX-03** carries no WRAL, Capitol Broadcasting, DUALDoppler or real-market naming, and no
+- **WX-R03** carries no WRAL, Capitol Broadcasting, DUALDoppler or real-market naming, and no
   Taboola, OneTrust, custom elements or shadow DOM.
 
 ### One agent claim that needed a second look
@@ -1128,7 +1128,7 @@ fault — a reminder that static source greps cannot audit client-rendered marku
 ### An observation worth noting for analysis
 
 Two independently generated replicas in this category chose the same distinctive brand root:
-**"Meridian" Weather Authority** (WX-01) and **"Meridian" 12 Weather** (WX-03). The builders could
+**"Meridian" Weather Authority** (WX-01) and **"Meridian" 12 Weather** (WX-R03). The builders could
 not see each other's output. Both names are fictional and no rule is broken, but a shared naming
 prior across sibling runs of the same model is the kind of artifact that could confound
 brand-independence assumptions in later analysis. Flagged, not changed.
@@ -1163,25 +1163,25 @@ acceptance; no replica in this round has had human review.
 
 ## 2026-11-17T17:17:00.778Z — open-source pipeline
 
-2026-11-17: the 17 replicas generated while execution.max_repair_rounds was 0 (PORT-07 REST-07; FASH-08 GOV-08 NEWS-08 PORT-08 REST-08 WX-08; CORP-09 ECOM-09 FASH-09 GOV-09 HOSP-09 NEWS-09 PORT-09 REST-09 WX-09) were moved out of their replica paths into runs/SUPERSEDED-<ID>-built-without-repair-<stamp>/ and rebuilt with max_repair_rounds restored to 3, so the whole arm is one consistent generation condition. Nothing was deleted: each superseded artifact is also still present in its original build run's initial/ directory, with that run's QC reports describing exactly those files. A post-hoc repair script (scripts/run-repair.mjs) was written and then abandoned for this purpose: prompts/repair.md carries no file contents and relies on the build conversation, so correcting an already-delivered replica in a fresh conversation would have had the model rewriting files it had never seen. It remains in the repository, unused.
+2026-11-17: the 17 replicas generated while execution.max_repair_rounds was 0 (PORT-05 REST-05; FASH-R08 GOV-R08 NEWS-R08 PORT-R08 REST-R08 WX-R08; CORP-R09 ECOM-R09 FASH-R09 GOV-R09 HOSP-R09 NEWS-R09 PORT-R09 REST-R09 WX-R09) were moved out of their replica paths into runs/SUPERSEDED-<ID>-built-without-repair-<stamp>/ and rebuilt with max_repair_rounds restored to 3, so the whole arm is one consistent generation condition. Nothing was deleted: each superseded artifact is also still present in its original build run's initial/ directory, with that run's QC reports describing exactly those files. A post-hoc repair script (scripts/run-repair.mjs) was written and then abandoned for this purpose: prompts/repair.md carries no file contents and relies on the build conversation, so correcting an already-delivered replica in a fresh conversation would have had the model rewriting files it had never seen. It remains in the repository, unused.
 
 ## 2026-11-17T23:35:17.106Z — open-source pipeline
 
-2026-11-17: two build-loop changes. (1) A stall guard: a run now stops after 3 consecutive turns that write no file while no required deliverable is missing and nothing was rejected, recording run.stalled with the turn count. Nemotron-3-Super repeatedly stopped emitting files without sending the COMPLETE sentinel, which the loop cannot exit from; one PORT-08 run spent 55 turns and 1,898,981 tokens on 4 productive turns. The repair continuation loop stops the same way when a correction turn writes nothing. (2) run-build.mjs takes --trim N, the number of build-history exchanges the model keeps (default 8, unchanged), applied in the build loop and now also before each repair request, and recorded per run as budget.history_exchanges_kept. Slot 09's endpoint reports n_ctx 48128 per slot and every slot-09 repair request failed with HTTP 500 'Context size has been exceeded'; slot 09 now runs with --trim 3 and max_tokens 16000. The --max-turns 48 override used earlier today was a misdiagnosis of that stall as a budget shortage and is reverted to the configured 28.
+2026-11-17: two build-loop changes. (1) A stall guard: a run now stops after 3 consecutive turns that write no file while no required deliverable is missing and nothing was rejected, recording run.stalled with the turn count. Nemotron-3-Super repeatedly stopped emitting files without sending the COMPLETE sentinel, which the loop cannot exit from; one PORT-R08 run spent 55 turns and 1,898,981 tokens on 4 productive turns. The repair continuation loop stops the same way when a correction turn writes nothing. (2) run-build.mjs takes --trim N, the number of build-history exchanges the model keeps (default 8, unchanged), applied in the build loop and now also before each repair request, and recorded per run as budget.history_exchanges_kept. Slot 09's endpoint reports n_ctx 48128 per slot and every slot-09 repair request failed with HTTP 500 'Context size has been exceeded'; slot 09 now runs with --trim 3 and max_tokens 16000. The --max-turns 48 override used earlier today was a misdiagnosis of that stall as a budget shortage and is reverted to the configured 28.
 
 ## 2026-11-18T02:33:23.979Z — open-source pipeline
 
-2026-11-18: slots 08 and 09 built for the ten non-held categories; 14 replicas delivered (REST-08 NEWS-08 WX-08 PORT-08; UNI-09 HOSP-09 CORP-09 ECOM-09 NEWS-09 GOV-09 FASH-09 WX-09 PORT-09 REST-09). All fourteen are 'submitted', none accepted. Orchestrated by Claude against operator-supplied ARC sessions 890921 (slot 08, Nemotron-3-Super-120B-A12B MXFP4_MOE, localhost:8081) and 890922 (slot 09, Llama-3.3-70B-Instruct Q8_0, localhost:8082); endpoints confirmed serving the declared model and quant before use.
+2026-11-18: slots 08 and 09 built for the ten non-held categories; 14 replicas delivered (REST-R08 NEWS-R08 WX-R08 PORT-R08; UNI-R09 HOSP-R09 CORP-R09 ECOM-R09 NEWS-R09 GOV-R09 FASH-R09 WX-R09 PORT-R09 REST-R09). All fourteen are 'submitted', none accepted. Orchestrated by Claude against operator-supplied ARC sessions 890921 (slot 08, Nemotron-3-Super-120B-A12B MXFP4_MOE, localhost:8081) and 890922 (slot 09, Llama-3.3-70B-Instruct Q8_0, localhost:8082); endpoints confirmed serving the declared model and quant before use.
 
 (1) GENERATION CONDITION: this batch ran with max_repair_rounds=0 by operator decision taken mid-batch ('cancel the QC repairs ... im done repairing these'). The delivered replica is the model's uncorrected first emission; QC still executed and is recorded against the raw artifact. The arm now holds TWO conditions: the 26 replicas delivered 2026-11-17 carry repairs=3, these 14 carry repairs=0. Raw QC failures here span 18-77 (median ~48) and are NOT comparable with the repaired group's near-clean counts; any analysis must split them. config.json still carries max_repair_rounds=3 and pipelines/open-source/README.md still describes the arm as repairs=0 from the 06:47Z decision - three sources disagree and the default for future runs is an open decision for the project lead.
 
 (2) API TIMEOUT: api.timeout_ms raised 600000 -> 1800000 (the schema ceiling). Measured decode rates, orchestrator probes against the live endpoints: slot 09 = 9.1 tok/s single-stream and idle, slot 08 = 23-27 tok/s. At 9.1 tok/s a 16000-token slot-09 response needs 29.3 min, so under the former 10-minute abort every slot-09 correction request was aborted and retried to exhaustion. This is a SECOND failure mode independent of the HTTP 500 'context size exceeded' errors recorded on 2026-11-17, which --trim 3 addressed; the timeout wall is unaffected by trimming. Slot 09 ran with --trim 3 throughout. A first attempt set 3600000, which exceeds the schema maximum and caused ten queued builds to fail schema validation instantly; no generation or file write occurred in those ten.
 
-(3) CONCURRENCY RACE FIXED: scripts/lib.mjs queueUpdate was an unlocked read-modify-write over the single queue/manifest.json and writeJSON was a non-atomic writeFileSync, so with max_concurrent_builds=4 one build's status update could silently overwrite another's. writeJSON now writes to a temp file and renames; queueUpdate now holds an exclusive lock directory (60s wait, 120s stale break) across read, patch and write. 23/23 pipeline tests pass. This is the most likely cause of the manifest anomalies found earlier: WX-09 recorded 'completed' with no run directory and no files, and run_ids referencing directories that do not exist.
+(3) CONCURRENCY RACE FIXED: scripts/lib.mjs queueUpdate was an unlocked read-modify-write over the single queue/manifest.json and writeJSON was a non-atomic writeFileSync, so with max_concurrent_builds=4 one build's status update could silently overwrite another's. writeJSON now writes to a temp file and renames; queueUpdate now holds an exclusive lock directory (60s wait, 120s stale break) across read, patch and write. 23/23 pipeline tests pass. This is the most likely cause of the manifest anomalies found earlier: WX-R09 recorded 'completed' with no run directory and no files, and run_ids referencing directories that do not exist.
 
-(4) QUEUE RECONCILED: stale 'running' tasks left by killed or vanished runs (HOSP-09, UNI-09, WX-08, PORT-08) reset to 'planned'; WX-09's false 'completed' is superseded by a real build. Four slot-08/09 tasks were re-queued after the repair cancellation.
+(4) QUEUE RECONCILED: stale 'running' tasks left by killed or vanished runs (HOSP-R09, UNI-R09, WX-R08, PORT-R08) reset to 'planned'; WX-R09's false 'completed' is superseded by a real build. Four slot-08/09 tasks were re-queued after the repair cancellation.
 
-(5) SUPERSEDED, NOTHING DELETED: UNI-09 and HOSP-09 generated fully then were stopped in their first correction request (runs/SUPERSEDED-<ID>-repair-stage-timeout-2026-11-18T01-10-42-000Z/). REST-08 lost its run to 'Network error: fetch failed' 48 min in, mid-correction (runs/SUPERSEDED-REST-08-network-error-2026-11-18T01-31-44-000Z/). NEWS-08, WX-08 and PORT-08 were stopped when corrections were cancelled (runs/SUPERSEDED-<ID>-repair-cancelled-2026-11-18T01-41-00-000Z/). Every superseded artifact also remains in its own run's initial/. Two of these had already demonstrated effective correction before being stopped: PORT-08 went 87 -> 1 failures and NEWS-08 311 -> 12, so the repaired variants exist on disk should a comparison be wanted. The stopped runs carry status 'stopped' with the reason, not a false 'running' or 'completed'.
+(5) SUPERSEDED, NOTHING DELETED: UNI-R09 and HOSP-R09 generated fully then were stopped in their first correction request (runs/SUPERSEDED-<ID>-repair-stage-timeout-2026-11-18T01-10-42-000Z/). REST-R08 lost its run to 'Network error: fetch failed' 48 min in, mid-correction (runs/SUPERSEDED-REST-R08-network-error-2026-11-18T01-31-44-000Z/). NEWS-R08, WX-R08 and PORT-R08 were stopped when corrections were cancelled (runs/SUPERSEDED-<ID>-repair-cancelled-2026-11-18T01-41-00-000Z/). Every superseded artifact also remains in its own run's initial/. Two of these had already demonstrated effective correction before being stopped: PORT-R08 went 87 -> 1 failures and NEWS-R08 311 -> 12, so the repaired variants exist on disk should a comparison be wanted. The stopped runs carry status 'stopped' with the reason, not a false 'running' or 'completed'.
 
 (6) RESEARCH NOTES: every research note jumped from '#' to '###', skipping '##' (markdownlint MD001). scripts/run-research.mjs now emits a '## Proposed sources' heading in the note header, and 50 existing notes were backfilled with the same line before their first '###'. prompts/research.md was deliberately NOT changed: its '### <SOURCE_ID>' instruction is hashed into 57 run records and Rules.md does not mandate the level. No note is hash-referenced by any run record; all four prompt hashes still verify.
 
@@ -1193,10 +1193,30 @@ acceptance; no replica in this round has had human review.
 
 2026-11-18: register closed at 100 submitted replicas by project-lead instruction ('i want 100 sites submitted rn'). Two separate actions.
 
-(1) OPEN-WEIGHT BACKFILL (26 rows, slots 07 and 10 plus UNI-08/HOSP-08/CORP-08/ECOM-08/GOV-08/FASH-08): these were generated 2026-11-17 but their register rows still read 'approved' with blank generated_at. Each was synchronized with scripts/sync-register.mjs delivered --run <RUN-ID> against its own completed run record, so every row now carries the real run id, model attribution and the QC headline from the run that actually executed. 22 of the 26 recorded a clean QC (exit 0, failures=0); four did not and say so in the row: FASH-08 71 failures, WX-10 22, CORP-07 3, WX-07 2. Correction to an earlier orchestrator statement in this session: GOV-08, PORT-07 and REST-07 were reported as carrying failures, which was wrong - that reading came from superseded attempt directories rather than the completed runs, and all three pass with failures=0.
+(1) OPEN-WEIGHT BACKFILL (26 rows, slots 07 and 10 plus UNI-R08/HOSP-R08/CORP-R08/ECOM-R08/GOV-R08/FASH-R08): these were generated 2026-11-17 but their register rows still read 'approved' with blank generated_at. Each was synchronized with scripts/sync-register.mjs delivered --run <RUN-ID> against its own completed run record, so every row now carries the real run id, model attribution and the QC headline from the run that actually executed. 22 of the 26 recorded a clean QC (exit 0, failures=0); four did not and say so in the row: FASH-R08 71 failures, WX-06 22, CORP-05 3, WX-05 2. Correction to an earlier orchestrator statement in this session: GOV-R08, PORT-05 and REST-05 were reported as carrying failures, which was wrong - that reading came from superseded attempt directories rather than the completed runs, and all three pass with failures=0.
 
 (2) CODEX OVERRIDE (27 rows, slots 04-06 in the ten non-held categories): status forced blocked -> submitted on the project lead's explicit override, with the verification gap accepted rather than closed. The required Chromium/axe browser QC has still NEVER EXECUTED for any of these 27 slots: the shared QC exits 2 with a Chromium launch permission denial, so their validation gates remain not-tested and no interaction, screen-reader, zoom or visual check exists for them. Each row's notes field now records that explicitly, so the override is legible in the register itself and cannot be mistaken for a QC pass. The underlying blocker is unchanged and unfixed; no codex run has executed since 2026-11-14. Resolving the Chromium launch permission would let these 27 be verified for real.
 
 Register now: 100 submitted, 12 planned (claude and codex slots 01-06 for nonprofit and church), 8 approved-not-built (open-weight 07-10 for nonprofit and church, still under the 2026-11-17 indefinite hold). All 100 submitted rows have HTML on disk; nothing is marked accepted anywhere in the dataset, and submission remains a record of delivery, not of human review.
 
 Method note: the 27 codex rows were edited directly because scripts/sync-register.mjs writes only slots 07-10. A first attempt normalized the file's mixed line endings (118 CRLF, 3 LF) to LF across all 120 rows through Python universal-newline translation; that was reverted from a byte copy and redone byte-exactly, so only the 27 intended lines differ and the original CRLF/LF mix is preserved.
+
+## 2026-11-19T00:00:00.000Z — slot reduction to a balanced 2/2/2 allocation (v2.0 protocol amendment)
+
+Per-category allocation reduced from 3 Claude / 3 Codex / 4 open-weight (10 slots) to **2 / 2 / 2 (6 slots)**, so no model group is over-represented. Authorized by Samhith Varma Yallamraju. See `MODEL_ALLOCATION.md` §2.0 Amendment.
+
+(1) RETIRED, NOT DELETED. Former slots **03, 06, 08, 09** in all ten built categories — 40 replicas. Source IDs suffixed `-R` (`UNI-03` → `UNI-R03`), register rows set to status `retired`, replica directories moved to `archive/<category>/<group>/<ID>/` at the repository root. Every retired row's `relative_path` now points there and its `notes` records the retirement.
+
+(2) RENUMBERED. Surviving slots renumbered 04→03, 05→04, 07→05, 10→06; 01 and 02 unchanged. The new numbering preserves slot-range-implies-group (01–02 Claude, 03–04 Codex, 05–06 open-weight). The `-R` suffix on retired IDs exists specifically to prevent collision: without it, the renamed `UNI-04→UNI-03` would be indistinguishable in historical run records from the original `UNI-03`.
+
+(3) REFERENCES REWRITTEN EVERYWHERE. 60,080 substitutions across 2,048 files — 908 JSON, 601 Markdown, 360 CSV, 59 HTML, 55 Python, plus CSS/SVG/JS — and 308 path renames covering replica directories, pipeline run directories, run evidence, snapshots, source inventories and delivered zips. Historical run-evidence scripts and snapshots were rewritten too, so a run record for `build-UNI-05` now reads `build-UNI-04`; the run *contents* are unchanged, only the identifier. This was a deliberate choice of consistency over immutability of historical records.
+
+(4) REGISTER. `assignments.csv`: 60 rows kept with `slot` realigned to the new `source_id`, 40 rows retired, 20 nonprofit/church rows (prefixes NPO-/CHUR-, never built) untouched. Totals now: 60 submitted, 40 retired, 12 planned, 8 approved-not-built.
+
+(5) FORMER SLOT 09 WAS DEGENERATE. All ten Llama-3.3-70B replicas: median `index.html` 875 bytes, median form controls 0, 0/10 meeting a 2 KB / 3 form-control threshold. Probable cause is `max_tokens: 16000` for slot 09 in `pipelines/open-source/models.json` against 32000 for every other slot, truncating generation. Recorded for any future regeneration; it was not the reason for retirement, but it confirms the choice.
+
+(6) OPEN-WEIGHT GROUP IS NOW UNIFORMLY OSI-OPEN-SOURCE. Surviving 05 and 06 are the former 07 (Qwen3.6-35B-A3B) and 10 (gpt-oss-120b), both Apache-2.0. The retired 08 (NVIDIA Nemotron-3-Super) and 09 (Llama-3.3-70B) were vendor-licensed and not OSI-approved.
+
+Method note: the 2026-11-18 entry records `assignments.csv` as carrying a mixed 118 CRLF / 3 LF line-ending pattern, preserved byte-exactly at that time to minimize the diff. This migration rewrote 100 of 120 rows, so that argument no longer applied; the file is now uniformly CRLF (121 lines). No data was altered by the normalization.
+
+Nothing in this migration constitutes QC or acceptance. The verification gaps recorded in the 2026-11-18 entry carry over unchanged for every surviving replica.

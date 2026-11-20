@@ -2,7 +2,7 @@
 
 **Status:** done 2026-11-14 — all three delivered, orchestrator-verified qc.js failures=0
 **Category:** `restaurant`
-**IDs:** REST-01, REST-02, REST-03
+**IDs:** REST-01, REST-02, REST-R03
 **Model group:** claude (`claude-sonnet-5-5`) · **Codex orchestrator covers slots 04–06 of the same category in parallel.**
 
 ## This round cannot launch yet
@@ -14,14 +14,14 @@ returned HTTP 200 and are transcribed into the inventory with
 
 What is missing is **approval**:
 
-- `approved_at`, `approved_by` and `approval_reference` are empty for REST-01, REST-02 and REST-03
+- `approved_at`, `approved_by` and `approval_reference` are empty for REST-01, REST-02 and REST-R03
   in `Websites/metadata/source-inventories/restaurant.csv`, so `Rules.md` section 3 blocks every
   build in this round.
 - The 2026-11-13 approval record and Phase A waiver cover the ten original categories only, **not**
   restaurant.
 
 The approval table at the end of `research/REST.md` lists three decisions the project lead should
-make alongside yes/no: REST-03 (Eleven Madison Park) returned **no server-rendered headings at
+make alongside yes/no: REST-R03 (Eleven Madison Park) returned **no server-rendered headings at
 all**, so its structure would be inferred rather than replicated; all three references are
 Squarespace sites, giving this third no platform diversity; and all three delegate reservations
 off-site, so no replica here exercises a real on-site booking form.
@@ -66,7 +66,7 @@ Three concurrent builder agents, one per replica, each writing **only** inside
 
 Where pi-subagents and git worktrees are available:
 ```
-subagent({ workflow: "Websites/pipelines/claude/workflow.js", cwd: "<repo root>", async: true, worktree: true, args: { phase: "build", prefixes: ['REST-01', 'REST-02', 'REST-03'] } })
+subagent({ workflow: "Websites/pipelines/claude/workflow.js", cwd: "<repo root>", async: true, worktree: true, args: { phase: "build", prefixes: ['REST-01', 'REST-02', 'REST-R03'] } })
 ```
 Where they are not (plain Claude Code session): launch three `Agent` builders on
 `claude-sonnet-5-5` with the Phase B brief from `workflow.js` (the `builds` block), substituting

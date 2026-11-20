@@ -2,48 +2,75 @@
   "allocation_protocol": "WEB-REPLICA-ALLOCATION-V1.0",
   "generation_protocol": "WEB-REPLICA-V1.0",
   "category": "e-commerce",
-  "slot": 4,
+  "slot": 5,
   "source_id": "ECOM-04",
   "model_group": "codex",
   "model_id": "gpt-6.1-sol",
   "model_version": null,
   "model_provider_or_runtime": "OpenAI collaboration worker (gpt-6.1-sol), orchestrated in Codex",
-  "generation_mode": "isolated filesystem snapshot; local-only HTML CSS vanilla JS; no CLI generation",
+  "generation_mode": "isolated filesystem snapshot, local static generation",
   "operator": "Samhith Varma",
-  "approved_source_url": "https://www.allbirds.com/",
-  "source_verified_at": "2026-11-12T00:52:36.949760+00:00",
+  "approved_source_url": "https://www.worldmarket.com/",
+  "source_verified_at": "2026-11-12T00:52:37.323742+00:00",
   "source_verification_method": "Live search + web text extraction of home; HTTP GET urllib for page scope; HTTP-only, no rendering/JS",
   "source_approved_at": "2026-11-12",
   "approval_reference": "metadata/change-log.md \u00a7 2026-11-12 \u2014 Codex Phase A approval (slots 04\u201306)",
-  "generation_started_at": "2026-11-13T21:04:23Z",
-  "generation_completed_at": "2026-11-13T21:08:17.542041+00:00",
+  "generation_started_at": "2026-11-13T21:04:33.223050+00:00",
+  "generation_completed_at": "2026-11-13T21:08:08.702396+00:00",
   "rules_revision": "04b1c3e38b76f2aff3aef869d67370bb4532cd8f9ab5e22ac8276f26cbb859bf",
-  "allocation_revision": "dba261a89763c22a6c41fc6b066593345aef7871121cef52ff7b73ff88cce3cd",
   "category_prompt_revision": "37567f6a4198f7539b11964980cf814a7b8c0732f926dfe9aa6f86849dd2277c",
-  "prompt_or_transcript_reference": {
-    "task": "pipelines/codex/runs/2026-11-13T21-01-55-869Z-build-ECOM-04/task.md",
-    "sha256": "89c50e173fab595c9cfb0f48fbe1e0f79d0736d89a78d87805aa5e38e0aced66",
-    "parent_instruction": "ECOM-04 collaborative worker handoff in current transcript; assigned actual model gpt-6.1-sol"
-  },
+  "protocol_snapshots": [
+    {
+      "path": "Rules.md",
+      "sha256": "04b1c3e38b76f2aff3aef869d67370bb4532cd8f9ab5e22ac8276f26cbb859bf"
+    },
+    {
+      "path": "MODEL_ALLOCATION.md",
+      "sha256": "dba261a89763c22a6c41fc6b066593345aef7871121cef52ff7b73ff88cce3cd"
+    },
+    {
+      "path": "pipelines/codex/config.json",
+      "sha256": "b16751854f14ec50f9e8e8726e4ab0c064503f1ebdea6d71ba7e1faf85ed6d95"
+    },
+    {
+      "path": "pipelines/codex/categories.json",
+      "sha256": "843ea7d8d1cc7d01385643f848408dea32997985422496d98e8f108bbc09a333"
+    },
+    {
+      "path": "pipelines/codex/prompts/build.md",
+      "sha256": "37567f6a4198f7539b11964980cf814a7b8c0732f926dfe9aa6f86849dd2277c"
+    },
+    {
+      "path": "metadata/source-inventories/e-commerce.csv",
+      "sha256": "92c04a7ae1f63822938936f19d915135bfd90238df7a5d7c4845321fa22db520"
+    },
+    {
+      "path": "metadata/assignments.csv",
+      "sha256": "f1022dd15c076a2bbe4d8e86883174a4f2318bc6133ea120ff6dca2aa8101b74"
+    }
+  ],
+  "prompt_or_transcript_reference": "pipelines/codex/runs/2026-11-13T21-01-55-959Z-build-ECOM-04/task.md",
+  "task_sha256": "50f0b61cb465897fa0ec287264f4caee88b0ce915ac897ef0331da0442ebdac7",
   "human_edits": [],
-  "active_allocation": {
-    "active": [
-      "01",
-      "02",
-      "03",
-      "04",
-      "05",
-      "06"
-    ],
-    "deferred": [
-      "07",
-      "08",
-      "09",
-      "10"
-    ],
-    "approved_scope": "Codex 04\u201306 approved 2026-11-12; no inherited waiver"
-  },
-  "source_evidence": "pipelines/codex/research/ECOM.md + evidence/ECOM-http-2026-11-12.json",
+  "cross_model_edits": [],
+  "active_allocation": "01\u201306; deferred 07\u201310",
+  "generation_budget": null,
+  "tools": [
+    "exec_command",
+    "Python standard library authoring",
+    "Node actual JS tests",
+    "shared qc.js"
+  ],
+  "retries": [
+    {
+      "scope": "test harness only",
+      "reason": "Initial harness path ascended one directory too far; corrected and reran; site unchanged."
+    },
+    {
+      "scope": "QC invocation discovery",
+      "reason": "An initial --help invocation was unsupported and exited 1 before evaluating any site. The actual site QC invocation occurred once and exited 2."
+    }
+  ],
   "validation_summary": {
     "technology": "pass",
     "completeness": "pass",
@@ -53,49 +80,17 @@
     "traceability": "pass",
     "scope": "pass"
   },
-  "budget": null,
-  "corrections": [
-    {
-      "reason": "Static source review found component CSS class missing on generated regions. Added class matching data-component; initial archive preserved.",
-      "timestamp": "2026-11-13T21:06:53.804517+00:00"
-    },
-    {
-      "timestamp": "2026-11-13T21:08:17.542041+00:00",
-      "reason": "Added instrumentation to 7 native details instances after static source review; no semantic/behavior change."
-    }
-  ],
-  "retries": [
-    {
-      "action": "Invoked qc.js --help expecting usage; tool treats --help as a directory and exited 1 ENOENT before site scanning. Then read source usage and ran once against site. No QC report was emitted on usage attempt."
-    }
-  ],
-  "limitations": [
-    "HTTP-only source evidence; source rendering and interaction fidelity unverified",
-    "Browser verification pending shared QC",
-    "Source cart content uncertain; local cart is explicitly inferred simulation"
-  ],
-  "initial_artifact": "initial-generated-artifact.tar.gz (HTML/CSS/JS/assets before documentation and correction)",
-  "tools": [
-    "exec_command: filesystem, Python artifact authoring, Node source tests and external shared QC"
-  ],
-  "cross_model_edits": [],
   "validation_details": {
-    "static": "Separate HTMLParser audit: 7 pages / 21 files, no broken local references, one H1 per page, semantic region metadata, explicit button types, alt and skip/main checked. Structure is source markup mapping only, not rendered fidelity.",
-    "javascript": "16 actual-main.js tests passed in Node VM using explicit mock DOM/location/storage. Not a browser interaction test.",
     "shared_qc": {
       "exit_code": 2,
-      "runs": 1,
-      "result": "Chromium MachPortRendezvous Permission denied. Browser/axe not executed; qc-report.json not emitted.",
-      "log": "Websites/pipelines/codex/runs/2026-11-13T21-01-55-869Z-build-ECOM-04/qc.log"
+      "result": "blocked at Chromium launch; no browser/axe result",
+      "evidence": "qc.log; qc-exit.txt",
+      "reinstalled_or_bypassed": false
     },
-    "not_tested": [
-      "Browser interaction states and keyboard",
-      "axe/accessibility",
-      "screen reader",
-      "375px/1280px rendered reflow and contrast",
-      "zoom",
-      "cross-page file:// persistence",
-      "rendered source fidelity"
-    ]
+    "source_audit": "pass; source-audit.json",
+    "javascript_tests": "10 passed; actual delivered JS logic and explicitly mocked DOM handlers; interaction-tests.json",
+    "interaction_gate": "not-tested in real browser; Node checks supplement only",
+    "accessibility_gate": "not-tested: no axe, keyboard, screen reader, zoom or rendered reflow checks",
+    "first_output": "own run first-output directory preserved before QC; site implementation unchanged afterward except completion documentation/metadata"
   }
 }

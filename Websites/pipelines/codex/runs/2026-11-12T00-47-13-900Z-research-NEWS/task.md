@@ -43,56 +43,56 @@ Populate or propose only the three assigned Codex source records. Do not fill ap
       },
       {
         "slot": 3,
-        "source_id": "NEWS-03",
+        "source_id": "NEWS-R03",
         "model_group": "claude",
         "stratum": "public broadcaster or nonprofit newsroom",
         "authority": "coordination proposal; reconcile with shared inventory"
       },
       {
         "slot": 4,
-        "source_id": "NEWS-04",
+        "source_id": "NEWS-03",
         "model_group": "codex",
         "stratum": "national daily newspaper",
         "authority": "codex assignment"
       },
       {
         "slot": 5,
-        "source_id": "NEWS-05",
+        "source_id": "NEWS-04",
         "model_group": "codex",
         "stratum": "local/regional newsroom",
         "authority": "codex assignment"
       },
       {
         "slot": 6,
-        "source_id": "NEWS-06",
+        "source_id": "NEWS-R06",
         "model_group": "codex",
         "stratum": "public broadcaster or nonprofit newsroom",
         "authority": "codex assignment"
       },
       {
         "slot": 7,
-        "source_id": "NEWS-07",
+        "source_id": "NEWS-05",
         "model_group": "open-source",
         "stratum": "national daily newspaper",
         "authority": "coordination proposal; reconcile with shared inventory"
       },
       {
         "slot": 8,
-        "source_id": "NEWS-08",
+        "source_id": "NEWS-R08",
         "model_group": "open-source",
         "stratum": "local/regional newsroom",
         "authority": "coordination proposal; reconcile with shared inventory"
       },
       {
         "slot": 9,
-        "source_id": "NEWS-09",
+        "source_id": "NEWS-R09",
         "model_group": "open-source",
         "stratum": "public broadcaster or nonprofit newsroom",
         "authority": "coordination proposal; reconcile with shared inventory"
       },
       {
         "slot": 10,
-        "source_id": "NEWS-10",
+        "source_id": "NEWS-06",
         "model_group": "open-source",
         "stratum": "additional distinct national daily newspaper (complexity-matched reserve)",
         "authority": "coordination proposal; reconcile with shared inventory"
@@ -178,7 +178,7 @@ Populate or propose only the three assigned Codex source records. Do not fill ap
     {
       "category": "news",
       "slot": "03",
-      "source_id": "NEWS-03",
+      "source_id": "NEWS-R03",
       "model_group": "claude",
       "model_id": "",
       "model_version": "",
@@ -202,7 +202,7 @@ Populate or propose only the three assigned Codex source records. Do not fill ap
     {
       "category": "news",
       "slot": "04",
-      "source_id": "NEWS-04",
+      "source_id": "NEWS-03",
       "model_group": "codex",
       "model_id": "",
       "model_version": "",
@@ -226,7 +226,7 @@ Populate or propose only the three assigned Codex source records. Do not fill ap
     {
       "category": "news",
       "slot": "05",
-      "source_id": "NEWS-05",
+      "source_id": "NEWS-04",
       "model_group": "codex",
       "model_id": "",
       "model_version": "",
@@ -250,7 +250,7 @@ Populate or propose only the three assigned Codex source records. Do not fill ap
     {
       "category": "news",
       "slot": "06",
-      "source_id": "NEWS-06",
+      "source_id": "NEWS-R06",
       "model_group": "codex",
       "model_id": "",
       "model_version": "",
@@ -274,7 +274,7 @@ Populate or propose only the three assigned Codex source records. Do not fill ap
     {
       "category": "news",
       "slot": "07",
-      "source_id": "NEWS-07",
+      "source_id": "NEWS-05",
       "model_group": "open-source",
       "model_id": "",
       "model_version": "",
@@ -298,7 +298,7 @@ Populate or propose only the three assigned Codex source records. Do not fill ap
     {
       "category": "news",
       "slot": "08",
-      "source_id": "NEWS-08",
+      "source_id": "NEWS-R08",
       "model_group": "open-source",
       "model_id": "",
       "model_version": "",
@@ -322,7 +322,7 @@ Populate or propose only the three assigned Codex source records. Do not fill ap
     {
       "category": "news",
       "slot": "09",
-      "source_id": "NEWS-09",
+      "source_id": "NEWS-R09",
       "model_group": "open-source",
       "model_id": "",
       "model_version": "",
@@ -346,7 +346,7 @@ Populate or propose only the three assigned Codex source records. Do not fill ap
     {
       "category": "news",
       "slot": "10",
-      "source_id": "NEWS-10",
+      "source_id": "NEWS-06",
       "model_group": "open-source",
       "model_id": "",
       "model_version": "",

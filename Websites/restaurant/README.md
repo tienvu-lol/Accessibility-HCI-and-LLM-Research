@@ -5,7 +5,7 @@ This category currently contains **no replicas**. All ten slots are registered i
 
 ## What was removed and why
 
-On 2026-11-13 the pre-protocol batch of ten sites (`REST-01.zip` … `REST-10.zip`) and the
+On 2026-11-13 the pre-protocol batch of ten sites (`REST-01.zip` … `REST-06.zip`) and the
 `restaurant-replicas-protocol.zip` bundle were deleted at the operator's instruction.
 
 Two reasons, both recorded at the time:
@@ -33,14 +33,14 @@ The category follows the standard 3 Claude / 3 Codex / 4 open-source split of
 |---|---|---|---|
 | 01 | REST-01 | Claude | small local independent |
 | 02 | REST-02 | Claude | BBQ / smokehouse |
-| 03 | REST-03 | Claude | fine dining |
-| 04 | REST-04 | Codex | vegan / health |
-| 05 | REST-05 | Codex | multi-location group |
-| 06 | REST-06 | Codex | pizzeria |
-| 07 | REST-07 | Open-source | fast-casual chain |
-| 08 | REST-08 | Open-source | ethnic (Xi'an Chinese) |
-| 09 | REST-09 | Open-source | brewery (age gate) |
-| 10 | REST-10 | Open-source | cafe / bakery |
+| 03 | REST-R03 | Claude | fine dining |
+| 04 | REST-03 | Codex | vegan / health |
+| 05 | REST-04 | Codex | multi-location group |
+| 06 | REST-R06 | Codex | pizzeria |
+| 07 | REST-05 | Open-source | fast-casual chain |
+| 08 | REST-R08 | Open-source | ethnic (Xi'an Chinese) |
+| 09 | REST-R09 | Open-source | brewery (age gate) |
+| 10 | REST-06 | Open-source | cafe / bakery |
 
 The strata are carried over from the deleted batch and are recorded in
 `metadata/source-inventories/restaurant.csv`. The source names that batch used are retained in

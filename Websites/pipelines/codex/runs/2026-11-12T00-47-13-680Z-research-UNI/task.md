@@ -43,56 +43,56 @@ Populate or propose only the three assigned Codex source records. Do not fill ap
       },
       {
         "slot": 3,
-        "source_id": "UNI-03",
+        "source_id": "UNI-R03",
         "model_group": "claude",
         "stratum": "community college",
         "authority": "coordination proposal; reconcile with shared inventory"
       },
       {
         "slot": 4,
-        "source_id": "UNI-04",
+        "source_id": "UNI-03",
         "model_group": "codex",
         "stratum": "large public research university",
         "authority": "codex assignment"
       },
       {
         "slot": 5,
-        "source_id": "UNI-05",
+        "source_id": "UNI-04",
         "model_group": "codex",
         "stratum": "small private liberal-arts college",
         "authority": "codex assignment"
       },
       {
         "slot": 6,
-        "source_id": "UNI-06",
+        "source_id": "UNI-R06",
         "model_group": "codex",
         "stratum": "community college",
         "authority": "codex assignment"
       },
       {
         "slot": 7,
-        "source_id": "UNI-07",
+        "source_id": "UNI-05",
         "model_group": "open-source",
         "stratum": "large public research university",
         "authority": "coordination proposal; reconcile with shared inventory"
       },
       {
         "slot": 8,
-        "source_id": "UNI-08",
+        "source_id": "UNI-R08",
         "model_group": "open-source",
         "stratum": "small private liberal-arts college",
         "authority": "coordination proposal; reconcile with shared inventory"
       },
       {
         "slot": 9,
-        "source_id": "UNI-09",
+        "source_id": "UNI-R09",
         "model_group": "open-source",
         "stratum": "community college",
         "authority": "coordination proposal; reconcile with shared inventory"
       },
       {
         "slot": 10,
-        "source_id": "UNI-10",
+        "source_id": "UNI-06",
         "model_group": "open-source",
         "stratum": "additional distinct large public research university (complexity-matched reserve)",
         "authority": "coordination proposal; reconcile with shared inventory"
@@ -179,7 +179,7 @@ Populate or propose only the three assigned Codex source records. Do not fill ap
     {
       "category": "university",
       "slot": "03",
-      "source_id": "UNI-03",
+      "source_id": "UNI-R03",
       "model_group": "claude",
       "model_id": "",
       "model_version": "",
@@ -203,7 +203,7 @@ Populate or propose only the three assigned Codex source records. Do not fill ap
     {
       "category": "university",
       "slot": "04",
-      "source_id": "UNI-04",
+      "source_id": "UNI-03",
       "model_group": "codex",
       "model_id": "",
       "model_version": "",
@@ -227,7 +227,7 @@ Populate or propose only the three assigned Codex source records. Do not fill ap
     {
       "category": "university",
       "slot": "05",
-      "source_id": "UNI-05",
+      "source_id": "UNI-04",
       "model_group": "codex",
       "model_id": "",
       "model_version": "",
@@ -251,7 +251,7 @@ Populate or propose only the three assigned Codex source records. Do not fill ap
     {
       "category": "university",
       "slot": "06",
-      "source_id": "UNI-06",
+      "source_id": "UNI-R06",
       "model_group": "codex",
       "model_id": "",
       "model_version": "",
@@ -275,7 +275,7 @@ Populate or propose only the three assigned Codex source records. Do not fill ap
     {
       "category": "university",
       "slot": "07",
-      "source_id": "UNI-07",
+      "source_id": "UNI-05",
       "model_group": "open-source",
       "model_id": "",
       "model_version": "",
@@ -299,7 +299,7 @@ Populate or propose only the three assigned Codex source records. Do not fill ap
     {
       "category": "university",
       "slot": "08",
-      "source_id": "UNI-08",
+      "source_id": "UNI-R08",
       "model_group": "open-source",
       "model_id": "",
       "model_version": "",
@@ -323,7 +323,7 @@ Populate or propose only the three assigned Codex source records. Do not fill ap
     {
       "category": "university",
       "slot": "09",
-      "source_id": "UNI-09",
+      "source_id": "UNI-R09",
       "model_group": "open-source",
       "model_id": "",
       "model_version": "",
@@ -347,7 +347,7 @@ Populate or propose only the three assigned Codex source records. Do not fill ap
     {
       "category": "university",
       "slot": "10",
-      "source_id": "UNI-10",
+      "source_id": "UNI-06",
       "model_group": "open-source",
       "model_id": "",
       "model_version": "",

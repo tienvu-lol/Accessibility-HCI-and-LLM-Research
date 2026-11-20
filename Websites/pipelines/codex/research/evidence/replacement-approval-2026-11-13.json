@@ -3,11 +3,11 @@
   "approval_basis": "User response in this conversation: \"yes i approve\", responding to the five-source replacement table and its disclosed web-retrieval verification limits.",
   "approved_by": "Samhith Varma",
   "approved_source_ids": [
-    "FASH-06",
+    "FASH-R06",
+    "GOV-03",
     "GOV-04",
-    "GOV-05",
-    "UNI-06",
-    "WX-05"
+    "UNI-R06",
+    "WX-04"
   ],
   "proposal_file": "pipelines/codex/research/evidence/replacement-proposals-2026-11-13.json",
   "proposal_sha256": "7903d1da0d43f9139fce819470a905268ac27fefc9546e3f01fb1cab172eb10f",
@@ -20,13 +20,13 @@
   ],
   "previous_rows": [
     {
-      "source_id": "UNI-06",
+      "source_id": "UNI-R06",
       "inventory_path": "metadata/source-inventories/university.csv",
       "inventory_sha256_before": "9483b5f3c7c2bf4532ec893d519d4434030e4c4fb09ee0da93a95fb458d57eea",
       "previous_inventory_row": {
         "category": "university",
         "slot": "06",
-        "source_id": "UNI-06",
+        "source_id": "UNI-R06",
         "model_group": "codex",
         "model_id": "gpt-6.1-sol",
         "model_version": "",
@@ -50,7 +50,7 @@
       "previous_assignment_row": {
         "category": "university",
         "slot": "06",
-        "source_id": "UNI-06",
+        "source_id": "UNI-R06",
         "source_name": "",
         "source_url": "https://www.ccp.edu/",
         "model_group": "codex",
@@ -59,20 +59,20 @@
         "status": "planned",
         "approved_at": "",
         "generated_at": "",
-        "relative_path": "university/codex/UNI-06",
+        "relative_path": "university/codex/UNI-R06",
         "reviewer": "",
         "notes": ""
       },
       "new_source_url": "https://www.waketech.edu/"
     },
     {
-      "source_id": "GOV-04",
+      "source_id": "GOV-03",
       "inventory_path": "metadata/source-inventories/government.csv",
       "inventory_sha256_before": "4970df725b4d575d81c0ced4c72a23b526e9ac3d51f082ccaec9033dafb66e7c",
       "previous_inventory_row": {
         "category": "government",
         "slot": "04",
-        "source_id": "GOV-04",
+        "source_id": "GOV-03",
         "model_group": "codex",
         "model_id": "gpt-6.1-sol",
         "model_version": "",
@@ -96,7 +96,7 @@
       "previous_assignment_row": {
         "category": "government",
         "slot": "04",
-        "source_id": "GOV-04",
+        "source_id": "GOV-03",
         "source_name": "City of Raleigh",
         "source_url": "https://raleighnc.gov/",
         "model_group": "codex",
@@ -105,20 +105,20 @@
         "status": "awaiting-approval",
         "approved_at": "",
         "generated_at": "",
-        "relative_path": "government/codex/GOV-04",
+        "relative_path": "government/codex/GOV-03",
         "reviewer": "",
         "notes": "Provisional research; reservations, all-ten scope/model approval and exact model TBD. See pipelines/codex/research/GOV.md."
       },
       "new_source_url": "https://www.boston.gov/"
     },
     {
-      "source_id": "GOV-05",
+      "source_id": "GOV-04",
       "inventory_path": "metadata/source-inventories/government.csv",
       "inventory_sha256_before": "4970df725b4d575d81c0ced4c72a23b526e9ac3d51f082ccaec9033dafb66e7c",
       "previous_inventory_row": {
         "category": "government",
         "slot": "05",
-        "source_id": "GOV-05",
+        "source_id": "GOV-04",
         "model_group": "codex",
         "model_id": "gpt-6.1-sol",
         "model_version": "",
@@ -142,7 +142,7 @@
       "previous_assignment_row": {
         "category": "government",
         "slot": "05",
-        "source_id": "GOV-05",
+        "source_id": "GOV-04",
         "source_name": "Commonwealth of Massachusetts — Mass.gov",
         "source_url": "https://www.mass.gov/",
         "model_group": "codex",
@@ -151,20 +151,20 @@
         "status": "awaiting-approval",
         "approved_at": "",
         "generated_at": "",
-        "relative_path": "government/codex/GOV-05",
+        "relative_path": "government/codex/GOV-04",
         "reviewer": "",
         "notes": "Provisional research; reservations, all-ten scope/model approval and exact model TBD. See pipelines/codex/research/GOV.md."
       },
       "new_source_url": "https://www.virginia.gov/"
     },
     {
-      "source_id": "FASH-06",
+      "source_id": "FASH-R06",
       "inventory_path": "metadata/source-inventories/fashion.csv",
       "inventory_sha256_before": "2ebc2c7682383e530f8b0d7c5859cca636db1972fb5e5deaac098f68750a896f",
       "previous_inventory_row": {
         "category": "fashion",
         "slot": "06",
-        "source_id": "FASH-06",
+        "source_id": "FASH-R06",
         "model_group": "codex",
         "model_id": "gpt-6.1-sol",
         "model_version": "",
@@ -188,7 +188,7 @@
       "previous_assignment_row": {
         "category": "fashion",
         "slot": "06",
-        "source_id": "FASH-06",
+        "source_id": "FASH-R06",
         "source_name": "",
         "source_url": "https://fashionista.com/",
         "model_group": "codex",
@@ -197,20 +197,20 @@
         "status": "planned",
         "approved_at": "",
         "generated_at": "",
-        "relative_path": "fashion/codex/FASH-06",
+        "relative_path": "fashion/codex/FASH-R06",
         "reviewer": "",
         "notes": ""
       },
       "new_source_url": "https://www.whowhatwear.com/"
     },
     {
-      "source_id": "WX-05",
+      "source_id": "WX-04",
       "inventory_path": "metadata/source-inventories/weather.csv",
       "inventory_sha256_before": "a30ce07fd472c6e5a9fb6a3267eb39ce49c56802dfaed1b4d577c6f6bea0aa1e",
       "previous_inventory_row": {
         "category": "weather",
         "slot": "05",
-        "source_id": "WX-05",
+        "source_id": "WX-04",
         "model_group": "codex",
         "model_id": "gpt-6.1-sol",
         "model_version": "",
@@ -234,7 +234,7 @@
       "previous_assignment_row": {
         "category": "weather",
         "slot": "05",
-        "source_id": "WX-05",
+        "source_id": "WX-04",
         "source_name": "meteoblue AG",
         "source_url": "https://www.meteoblue.com/",
         "model_group": "codex",
@@ -243,7 +243,7 @@
         "status": "researching",
         "approved_at": "",
         "generated_at": "",
-        "relative_path": "weather/codex/WX-05",
+        "relative_path": "weather/codex/WX-04",
         "reviewer": "",
         "notes": "Provisional Phase A candidate; reservations, complete ten-source scope/model approval pending. See pipelines/codex/research/WX.md. Direct HTTP blocked; availability UNVERIFIED."
       },

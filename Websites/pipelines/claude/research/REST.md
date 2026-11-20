@@ -1,6 +1,6 @@
 # REST — Phase A restaurant source research (Claude slots 01–03)
 
-**Group:** claude · **Slots:** REST-01, REST-02, REST-03 · **Date:** 2026-11-14
+**Group:** claude · **Slots:** REST-01, REST-02, REST-R03 · **Date:** 2026-11-14
 **Status:** researched and verified; **NOT approved**. `Rules.md` section 3 blocks every build in
 round 11 until the project lead approves the table at the end of this file.
 
@@ -155,8 +155,8 @@ conscious choice rather than a surprise at build time.
   - Menu dish content appears to be image-led — only 4 images and no text list of items was visible
     in raw HTML beyond the hours and preorder notes.
 
-### REST-03
-- **source_id:** REST-03
+### REST-R03
+- **source_id:** REST-R03
 - **category/subcategory:** Restaurant & Food Service / fine dining
 - **source_name:** Eleven Madison Park
 - **official_url:** https://www.elevenmadisonpark.com/
@@ -219,7 +219,7 @@ conscious choice rather than a surprise at build time.
 |---|---|---|---|---|---|---|
 | REST-01 | small local independent | https://www.viacarota.com/ | 2026-11-14, HTTP 200 | 10 | low–medium | `/search` returned no status; menu is an image plus a `/text` alternative |
 | REST-02 | BBQ / smokehouse | https://franklinbbq.com/ | 2026-11-14, HTTP 200 | 9 | medium | nav link `/private-events` is a 404; two pages share one title |
-| REST-03 | fine dining | https://www.elevenmadisonpark.com/ | 2026-11-14, HTTP 200 | 12 | unknown | **no server-rendered headings at all**; structure not established |
+| REST-R03 | fine dining | https://www.elevenmadisonpark.com/ | 2026-11-14, HTTP 200 | 12 | unknown | **no server-rendered headings at all**; structure not established |
 
 **No cell above is an approval.** `approved_at`, `approved_by` and `approval_reference` are empty in
 `metadata/source-inventories/restaurant.csv` for slots 01–03, and the 2026-11-13 Phase A waiver and
@@ -227,7 +227,7 @@ approval record cover the ten original categories only — not restaurant.
 
 **What approval would need to decide, beyond yes/no:**
 
-1. **REST-03's missing structure.** Approving it as-is means its replica's page hierarchy is largely
+1. **REST-R03's missing structure.** Approving it as-is means its replica's page hierarchy is largely
    inferred, which weakens it as a fidelity baseline. The alternatives are to render the page first,
    or to substitute a fine-dining reference that serves real HTML.
 2. **Platform monoculture.** All three are Squarespace. If platform diversity matters to the study,

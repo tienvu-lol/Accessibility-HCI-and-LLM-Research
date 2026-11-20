@@ -43,56 +43,56 @@ Populate or propose only the three assigned Codex source records. Do not fill ap
       },
       {
         "slot": 3,
-        "source_id": "CORP-03",
+        "source_id": "CORP-R03",
         "model_group": "claude",
         "stratum": "technology/software company",
         "authority": "coordination proposal; reconcile with shared inventory"
       },
       {
         "slot": 4,
-        "source_id": "CORP-04",
+        "source_id": "CORP-03",
         "model_group": "codex",
         "stratum": "national retail bank",
         "authority": "codex assignment"
       },
       {
         "slot": 5,
-        "source_id": "CORP-05",
+        "source_id": "CORP-04",
         "model_group": "codex",
         "stratum": "regional bank or credit union",
         "authority": "codex assignment"
       },
       {
         "slot": 6,
-        "source_id": "CORP-06",
+        "source_id": "CORP-R06",
         "model_group": "codex",
         "stratum": "technology/software company",
         "authority": "codex assignment"
       },
       {
         "slot": 7,
-        "source_id": "CORP-07",
+        "source_id": "CORP-05",
         "model_group": "open-source",
         "stratum": "national retail bank",
         "authority": "coordination proposal; reconcile with shared inventory"
       },
       {
         "slot": 8,
-        "source_id": "CORP-08",
+        "source_id": "CORP-R08",
         "model_group": "open-source",
         "stratum": "regional bank or credit union",
         "authority": "coordination proposal; reconcile with shared inventory"
       },
       {
         "slot": 9,
-        "source_id": "CORP-09",
+        "source_id": "CORP-R09",
         "model_group": "open-source",
         "stratum": "technology/software company",
         "authority": "coordination proposal; reconcile with shared inventory"
       },
       {
         "slot": 10,
-        "source_id": "CORP-10",
+        "source_id": "CORP-06",
         "model_group": "open-source",
         "stratum": "additional distinct national retail bank (complexity-matched reserve)",
         "authority": "coordination proposal; reconcile with shared inventory"
@@ -177,7 +177,7 @@ Populate or propose only the three assigned Codex source records. Do not fill ap
     {
       "category": "company",
       "slot": "03",
-      "source_id": "CORP-03",
+      "source_id": "CORP-R03",
       "model_group": "claude",
       "model_id": "",
       "model_version": "",
@@ -201,7 +201,7 @@ Populate or propose only the three assigned Codex source records. Do not fill ap
     {
       "category": "company",
       "slot": "04",
-      "source_id": "CORP-04",
+      "source_id": "CORP-03",
       "model_group": "codex",
       "model_id": "",
       "model_version": "",
@@ -225,7 +225,7 @@ Populate or propose only the three assigned Codex source records. Do not fill ap
     {
       "category": "company",
       "slot": "05",
-      "source_id": "CORP-05",
+      "source_id": "CORP-04",
       "model_group": "codex",
       "model_id": "",
       "model_version": "",
@@ -249,7 +249,7 @@ Populate or propose only the three assigned Codex source records. Do not fill ap
     {
       "category": "company",
       "slot": "06",
-      "source_id": "CORP-06",
+      "source_id": "CORP-R06",
       "model_group": "codex",
       "model_id": "",
       "model_version": "",
@@ -273,7 +273,7 @@ Populate or propose only the three assigned Codex source records. Do not fill ap
     {
       "category": "company",
       "slot": "07",
-      "source_id": "CORP-07",
+      "source_id": "CORP-05",
       "model_group": "open-source",
       "model_id": "",
       "model_version": "",
@@ -297,7 +297,7 @@ Populate or propose only the three assigned Codex source records. Do not fill ap
     {
       "category": "company",
       "slot": "08",
-      "source_id": "CORP-08",
+      "source_id": "CORP-R08",
       "model_group": "open-source",
       "model_id": "",
       "model_version": "",
@@ -321,7 +321,7 @@ Populate or propose only the three assigned Codex source records. Do not fill ap
     {
       "category": "company",
       "slot": "09",
-      "source_id": "CORP-09",
+      "source_id": "CORP-R09",
       "model_group": "open-source",
       "model_id": "",
       "model_version": "",
@@ -345,7 +345,7 @@ Populate or propose only the three assigned Codex source records. Do not fill ap
     {
       "category": "company",
       "slot": "10",
-      "source_id": "CORP-10",
+      "source_id": "CORP-06",
       "model_group": "open-source",
       "model_id": "",
       "model_version": "",

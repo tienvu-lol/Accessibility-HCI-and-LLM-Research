@@ -2,7 +2,7 @@
 
 **Status:** in progress 2026-11-13
 **Category:** `university`
-**IDs:** UNI-01, UNI-02, UNI-03
+**IDs:** UNI-01, UNI-02, UNI-R03
 **Model group:** claude (`claude-sonnet-5-5`) · **Codex orchestrator covers slots 04–06 of the same category in parallel.**
 
 ## Before launching
@@ -18,7 +18,7 @@ Three concurrent builder agents, one per replica, each writing **only** inside `
 
 Where pi-subagents and git worktrees are available:
 ```
-subagent({ workflow: "Websites/pipelines/claude/workflow.js", cwd: "<repo root>", async: true, worktree: true, args: { phase: "build", prefixes: ['UNI-01', 'UNI-02', 'UNI-03'] } })
+subagent({ workflow: "Websites/pipelines/claude/workflow.js", cwd: "<repo root>", async: true, worktree: true, args: { phase: "build", prefixes: ['UNI-01', 'UNI-02', 'UNI-R03'] } })
 ```
 Where they are not (plain Claude Code session): launch three `Agent` builders on `claude-sonnet-5-5` with the Phase B brief from `workflow.js` (the `builds` block), substituting this category's stratum and hints. Isolation is then by disjoint write path only — forbid every index- or tree-modifying git command and require scratch files in a private `mktemp -d`.
 

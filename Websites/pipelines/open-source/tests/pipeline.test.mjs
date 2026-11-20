@@ -124,17 +124,17 @@ test('slot drift, a wrong relative path and a short inventory are all rejected',
   try {
     const regFile = path.join(root, 'metadata/assignments.csv');
     const broken = editCSVRecords(fs.readFileSync(regFile, 'utf8'), {
-      match: r => r.source_id === 'UNI-07',
+      match: r => r.source_id === 'UNI-05',
       update: r => ({...r, model_group: 'codex'}),
     });
     fs.writeFileSync(regFile, broken.text);
-    assert.ok(validateSetup(loadSetup(root)).some(e => /UNI-07/.test(e)));
+    assert.ok(validateSetup(loadSetup(root)).some(e => /UNI-05/.test(e)));
     const fixed = editCSVRecords(fs.readFileSync(regFile, 'utf8'), {
-      match: r => r.source_id === 'UNI-07',
-      update: r => ({...r, model_group: 'open-source', relative_path: 'university/codex/UNI-07'}),
+      match: r => r.source_id === 'UNI-05',
+      update: r => ({...r, model_group: 'open-source', relative_path: 'university/codex/UNI-05'}),
     });
     fs.writeFileSync(regFile, fixed.text);
-    assert.ok(validateSetup(loadSetup(root)).some(e => /UNI-07/.test(e)));
+    assert.ok(validateSetup(loadSetup(root)).some(e => /UNI-05/.test(e)));
   } finally { cleanup(root); }
 });
 
@@ -160,13 +160,13 @@ test('build readiness blocks an unapproved, unverified or unsynchronized source'
   declareFixtureModels(root, {baseUrl: 'http://127.0.0.1:1/v1', keyEnv: 'OS_FIXTURE_KEY'});
   process.env.OS_FIXTURE_KEY = 'fixture-key-value';
   try {
-    const blocked = buildReadiness(loadSetup(root), 'UNI-07');
+    const blocked = buildReadiness(loadSetup(root), 'UNI-05');
     // Readiness is slot-scoped since 2026-11-16, so this reports the target slot's own defects
     // rather than one per open-source row; the point of the test is that it still blocks.
     assert.ok(blocked.length >= 1);
     assert.ok(blocked.some(e => /missing source_url|missing source_name/.test(e)));
+    assert.ok(buildReadiness(loadSetup(root), 'UNI-R03').some(e => /must be an allocated open-source ID/.test(e)));
     assert.ok(buildReadiness(loadSetup(root), 'UNI-03').some(e => /must be an allocated open-source ID/.test(e)));
-    assert.ok(buildReadiness(loadSetup(root), 'UNI-04').some(e => /must be an allocated open-source ID/.test(e)));
   } finally { cleanup(root); delete process.env.OS_FIXTURE_KEY; }
 });
 
@@ -176,37 +176,37 @@ test('readiness passes on a complete category and then catches each individual d
   process.env.OS_FIXTURE_KEY = 'fixture-key-value';
   const invFile = path.join(root, 'metadata/source-inventories/university.csv');
   const original = fs.readFileSync(invFile, 'utf8');
-  const mutate = update => fs.writeFileSync(invFile, editCSVRecords(original, {match: r => r.source_id === 'UNI-07', update}).text);
+  const mutate = update => fs.writeFileSync(invFile, editCSVRecords(original, {match: r => r.source_id === 'UNI-05', update}).text);
   try {
-    assert.deepEqual(buildReadiness(loadSetup(root), 'UNI-07'), []);
+    assert.deepEqual(buildReadiness(loadSetup(root), 'UNI-05'), []);
 
     mutate(r => ({...r, verification_result: 'UNVERIFIED'}));
-    assert.ok(buildReadiness(loadSetup(root), 'UNI-07').some(e => /not verified/.test(e)));
+    assert.ok(buildReadiness(loadSetup(root), 'UNI-05').some(e => /not verified/.test(e)));
 
     mutate(r => ({...r, approved_by: ''}));
-    assert.ok(buildReadiness(loadSetup(root), 'UNI-07').some(e => /missing approved_by/.test(e)));
+    assert.ok(buildReadiness(loadSetup(root), 'UNI-05').some(e => /missing approved_by/.test(e)));
 
     mutate(r => ({...r, source_url: 'https://fixture-uni-08.example/'}));
-    assert.ok(buildReadiness(loadSetup(root), 'UNI-07').some(e => /duplicate reference URL/.test(e)));
+    assert.ok(buildReadiness(loadSetup(root), 'UNI-05').some(e => /duplicate reference URL/.test(e)));
 
     mutate(r => ({...r, model_id: 'someone-else/Other-Model'}));
-    assert.ok(buildReadiness(loadSetup(root), 'UNI-07').some(e => /not synchronized|differs from the approved assignment/.test(e)));
+    assert.ok(buildReadiness(loadSetup(root), 'UNI-05').some(e => /not synchronized|differs from the approved assignment/.test(e)));
 
     mutate(r => ({...r, source_pages: JSON.stringify([{url: 'https://fixture-uni-07.example/a', title: 'a', local_file: 'a.html'}])}));
-    assert.ok(buildReadiness(loadSetup(root), 'UNI-07').some(e => /requires index.html|below the configured minimum/.test(e)));
+    assert.ok(buildReadiness(loadSetup(root), 'UNI-05').some(e => /requires index.html|below the configured minimum/.test(e)));
 
     mutate(r => ({...r, key_interactions: JSON.stringify([{name: 'nav', evidence: 'guessed'}])}));
-    assert.ok(buildReadiness(loadSetup(root), 'UNI-07').some(e => /observed\/inferred/.test(e)));
+    assert.ok(buildReadiness(loadSetup(root), 'UNI-05').some(e => /observed\/inferred/.test(e)));
 
     mutate(r => ({...r, evidence_reference: 'pipelines/open-source/research/evidence/does-not-exist.json'}));
-    assert.ok(buildReadiness(loadSetup(root), 'UNI-07').some(e => /missing evidence file/.test(e)));
+    assert.ok(buildReadiness(loadSetup(root), 'UNI-05').some(e => /missing evidence file/.test(e)));
   } finally { fs.writeFileSync(invFile, original); cleanup(root); delete process.env.OS_FIXTURE_KEY; }
 });
 
 test('reserved URLs mark other groups\' references as off limits', () => {
   const held = reservedUrls([
     {slot: '01', source_id: 'UNI-01', model_group: 'claude', source_url: 'https://www.wisc.edu/'},
-    {slot: '07', source_id: 'UNI-07', model_group: 'open-source', source_url: ''},
+    {slot: '07', source_id: 'UNI-05', model_group: 'open-source', source_url: ''},
   ]);
   assert.equal(held.get('https://wisc.edu').ours, false);
   assert.equal(held.size, 1);
@@ -235,7 +235,7 @@ test('credentials are redacted from anything written to disk', () => {
 });
 
 test('CLI argument parsing rejects unknown, repeated and valueless options', () => {
-  assert.deepEqual(cliArgs(['UNI-07', '--operator', 'me'], {operator: 'value'}), {positional: ['UNI-07'], flags: {operator: 'me'}});
+  assert.deepEqual(cliArgs(['UNI-05', '--operator', 'me'], {operator: 'value'}), {positional: ['UNI-05'], flags: {operator: 'me'}});
   assert.throws(() => cliArgs(['--nope'], {operator: 'value'}), /Unknown/);
   assert.throws(() => cliArgs(['--operator', 'a', '--operator', 'b'], {operator: 'value'}), /repeated/);
   assert.throws(() => cliArgs(['--operator'], {operator: 'value'}), /Missing value/);
@@ -246,18 +246,18 @@ test('slot helpers keep the 3/3/4 allocation straight', () => {
   assert.equal(expectedGroup(6), 'codex');
   assert.equal(expectedGroup(7), 'open-source');
   assert.equal(expectedGroup(10), 'open-source');
-  assert.equal(slotOf('HOSP-09'), 9);
+  assert.equal(slotOf('HOSP-R09'), 9);
 });
 
 const page = heading => `<!doctype html><html lang="en"><head><meta charset="utf-8"><title>${heading}</title><link rel="stylesheet" href="css/styles.css"></head><body><a href="#main-content">Skip to content</a><header data-section="global-header" data-component="site-header"><nav aria-label="Primary" data-section="global-navigation" data-component="primary-nav"><a href="index.html">Home</a></nav></header><main id="main-content" data-section="main-content" data-component="page-main"><h1>${heading}</h1></main><footer data-section="global-footer" data-component="site-footer"><p>Fictional fixture</p></footer><script src="js/main.js"></script></body></html>`;
 
 test('end to end: one replica is generated, bounded, provenanced and never accepted', async t => {
   const root = makeFixture({approveOpenSource: true, pages: 6});
-  const site = path.join(root, 'university/open-source/UNI-07');
+  const site = path.join(root, 'university/open-source/UNI-05');
   const docs = {
-    'README.md': '# UNI-07 fixture replica\n\nSource verified by HTTP GET only. QC: not run in this fixture.\n',
+    'README.md': '# UNI-05 fixture replica\n\nSource verified by HTTP GET only. QC: not run in this fixture.\n',
     'fidelity-notes.md': '# Fidelity\n\nReplicated: nav. Simulated: search. Unverified: nothing rendered.\n',
-    'component-inventory.json': JSON.stringify({protocol_version: '1.0', replica_id: 'UNI-07', category: 'university',
+    'component-inventory.json': JSON.stringify({protocol_version: '1.0', replica_id: 'UNI-05', category: 'university',
       source_url: 'https://fixture-uni-07.example/', components: [{id: 'primary-nav', selector: "[data-component='primary-nav']",
       pages: ['index.html'], behavior: ['desktop navigation'], keyboard: ['Tab'], status: 'implemented', validation: 'not-tested'}]}, null, 2),
     'generation-metadata.json': JSON.stringify({category: 'university', slot: 99, source_id: 'WRONG-ID',
@@ -284,7 +284,7 @@ test('end to end: one replica is generated, bounded, provenanced and never accep
   declareFixtureModels(root, {baseUrl: mock.baseUrl, keyEnv: 'OS_E2E_KEY'});
   process.env.OS_E2E_KEY = 'fixture-key-value';
   try {
-    const result = await runBuild({id: 'UNI-07', operator: 'fixture operator', root, noQC: true, repairs: 0, maxTurns: 6});
+    const result = await runBuild({id: 'UNI-05', operator: 'fixture operator', root, noQC: true, repairs: 0, maxTurns: 6});
 
     assert.equal(result.status, 'completed');
     assert.equal(result.delivered.missing_required.length, 0, `missing: ${result.delivered.missing_required}`);
@@ -311,7 +311,7 @@ test('end to end: one replica is generated, bounded, provenanced and never accep
 
     // Provenance is normalized from recorded fact, not from what the model claimed.
     const meta = readJSON(path.join(site, 'generation-metadata.json'));
-    assert.equal(meta.source_id, 'UNI-07');
+    assert.equal(meta.source_id, 'UNI-05');
     assert.equal(meta.slot, 7);
     assert.equal(meta.model_group, 'open-source');
     assert.equal(meta.model_id, 'fixture-org/Fixture-Model');
@@ -329,8 +329,8 @@ test('end to end: one replica is generated, bounded, provenanced and never accep
 
     // The queue moved, and a rerun over an existing site is refused.
     const queue = readJSON(path.join(root, 'pipelines/open-source/queue/manifest.json'));
-    assert.equal(queue.tasks.find(x => x.id === 'build-UNI-07').status, 'completed');
-    await assert.rejects(() => runBuild({id: 'UNI-07', operator: 'fixture operator', root, noQC: true}), /already has files/);
+    assert.equal(queue.tasks.find(x => x.id === 'build-UNI-05').status, 'completed');
+    await assert.rejects(() => runBuild({id: 'UNI-05', operator: 'fixture operator', root, noQC: true}), /already has files/);
   } finally {
     await mock.close();
     delete process.env.OS_E2E_KEY;
@@ -342,9 +342,9 @@ test('a build is refused without an operator, on another group\'s slot, and with
   const root = makeFixture({approveOpenSource: true, pages: 2});
   declareFixtureModels(root, {baseUrl: 'http://127.0.0.1:1/v1', keyEnv: 'OS_MISSING_KEY'});
   try {
-    await assert.rejects(() => runBuild({id: 'UNI-07', operator: '', root}), /--operator is required/);
-    await assert.rejects(() => runBuild({id: 'UNI-04', operator: 'me', root}), /allocated open-source ID/);
-    await assert.rejects(() => runBuild({id: 'UNI-07', operator: 'me', root}), /OS_MISSING_KEY is not set/);
+    await assert.rejects(() => runBuild({id: 'UNI-05', operator: '', root}), /--operator is required/);
+    await assert.rejects(() => runBuild({id: 'UNI-03', operator: 'me', root}), /allocated open-source ID/);
+    await assert.rejects(() => runBuild({id: 'UNI-05', operator: 'me', root}), /OS_MISSING_KEY is not set/);
   } finally { cleanup(root); }
 });
 
@@ -379,16 +379,16 @@ test('a partial declaration is enough for the slot in hand and noted for the res
     assert.ok(validateModels(loadSetup(root)).some(e => /slot 08: not declared/.test(e)));
 
     // A build of the declared slot is not blocked by the undeclared ones.
-    assert.deepEqual(buildReadiness(loadSetup(root), 'UNI-07'), []);
-    assert.ok(buildReadiness(loadSetup(root), 'UNI-08').some(e => /slot 08: not declared/.test(e)));
+    assert.deepEqual(buildReadiness(loadSetup(root), 'UNI-05'), []);
+    assert.ok(buildReadiness(loadSetup(root), 'UNI-R08').some(e => /slot 08: not declared/.test(e)));
   } finally { cleanup(root); delete process.env.OS_PARTIAL_KEY; }
 });
 
 test('a single-slot research run treats the other three slots as reserved', () => {
   const rows = [
     {slot: '01', source_id: 'UNI-01', model_group: 'claude', source_url: 'https://www.wisc.edu/'},
-    {slot: '07', source_id: 'UNI-07', model_group: 'open-source', source_url: ''},
-    {slot: '08', source_id: 'UNI-08', model_group: 'open-source', source_url: 'https://www.ufl.edu/'},
+    {slot: '07', source_id: 'UNI-05', model_group: 'open-source', source_url: ''},
+    {slot: '08', source_id: 'UNI-R08', model_group: 'open-source', source_url: 'https://www.ufl.edu/'},
   ];
   const single = reservedUrls(rows, [7]);
   assert.equal(single.get('https://ufl.edu').ours, false, 'slot 08 is off limits during a slot-07 run');

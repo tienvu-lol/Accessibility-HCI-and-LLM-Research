@@ -4,7 +4,7 @@
   "reason": "Slot 08 rows. verified_at values that were \"unknown\", empty, or an ISO timestamp with the method string appended were reset to the HTTP evidence date. Empty limitations fields were filled with an orchestrator-authored note, explicitly labelled as such, stating what the evidence shows: which mapped pages lacked a successful fetch, and the standing caveat that all evidence is HTTP-fetched markup with no rendered view. Exotic whitespace (U+202F, U+00A0) was replaced with ordinary spaces. No source URL, page URL, title, page map or verification_result was altered. The same values were mirrored into the inventory CSV with the pipeline CSV editor, so every other row keeps its exact bytes.",
   "corrections": [
     {
-      "source_id": "HOSP-08",
+      "source_id": "HOSP-R08",
       "fields": {
         "verified_at": {
           "model_emitted": "",
@@ -14,7 +14,7 @@
       }
     },
     {
-      "source_id": "CORP-08",
+      "source_id": "CORP-R08",
       "fields": {
         "verified_at": {
           "model_emitted": "",
@@ -24,7 +24,7 @@
       }
     },
     {
-      "source_id": "ECOM-08",
+      "source_id": "ECOM-R08",
       "fields": {
         "verified_at": {
           "model_emitted": "",
@@ -34,7 +34,7 @@
       }
     },
     {
-      "source_id": "NEWS-08",
+      "source_id": "NEWS-R08",
       "fields": {
         "verified_at": {
           "model_emitted": "",
@@ -44,7 +44,7 @@
       }
     },
     {
-      "source_id": "GOV-08",
+      "source_id": "GOV-R08",
       "fields": {
         "verified_at": {
           "model_emitted": "",
@@ -54,7 +54,7 @@
       }
     },
     {
-      "source_id": "FASH-08",
+      "source_id": "FASH-R08",
       "fields": {
         "verified_at": {
           "model_emitted": "",
@@ -64,7 +64,7 @@
       }
     },
     {
-      "source_id": "WX-08",
+      "source_id": "WX-R08",
       "fields": {
         "verified_at": {
           "model_emitted": "date not provided in evidence",
@@ -84,7 +84,7 @@
       }
     },
     {
-      "source_id": "PORT-08",
+      "source_id": "PORT-R08",
       "fields": {
         "verified_at": {
           "model_emitted": "",
@@ -94,7 +94,7 @@
       }
     },
     {
-      "source_id": "REST-08",
+      "source_id": "REST-R08",
       "fields": {
         "verified_at": {
           "model_emitted": "",

@@ -1,0 +1,464 @@
+{
+  "run_id": "2026-11-18T02-07-26-665Z-build-NEWS-R09",
+  "phase": "build",
+  "target": "NEWS-R09",
+  "category": "news",
+  "slot": 9,
+  "model_group": "open-source",
+  "model": {
+    "model_id": "unsloth/Llama-3.3-70B-Instruct-GGUF",
+    "model_version": "Q8_0",
+    "model_provider_or_runtime": "vt-arc-falcon-llamacpp (OpenAI-compatible chat completions at http://localhost:8082/v1)",
+    "weights_url": "https://huggingface.co/unsloth/Llama-3.3-70B-Instruct-GGUF",
+    "license": "llama3.3-community",
+    "open_weights": true,
+    "eligibility_note": "Open weights. Licence is the Llama 3.3 Community License Agreement (HF licence tag llama3.3), read 2026-11-17 by the orchestrator on the quant repo and the Meta Llama 3.3 model card. A custom community licence with acceptable-use and scale conditions, NOT OSI-approved: this slot is open-weight, not open-source. Quantisation Q8_0. Served self-hosted via llama.cpp on VT ARC Falcon over an SSH tunnel on localhost:8082; serving history, same model and quant: fal034:42003 (2026-11-17, twelve slot-09 research runs and one build), fal052:49161 (2026-11-17, current). max_tokens is 16000 for this slot, not the 32000 used by slots 07, 08 and 10: this server reports n_ctx 48128 per slot, so a 32000-token output cap left only about 16000 tokens for the prompt, and every slot-09 build failed at the correction stage, where the conversation carries the build history plus the QC failure list. Recorded as a deliberate per-slot difference in generation parameters.",
+    "params": {
+      "temperature": 0.3,
+      "max_tokens": 16000
+    }
+  },
+  "operator": "Samhith Varma Yallamraju",
+  "status": "completed",
+  "prepared_at": "2026-11-18T02:07:26.669Z",
+  "generation_started_at": "2026-11-18T02:07:26.669Z",
+  "generation_completed_at": "2026-11-18T02:20:03.618Z",
+  "tool_access": "chat-completions API only: no browsing, no shell, no filesystem. The orchestrator wrote every file and ran every check.",
+  "budget": {
+    "max_build_turns": 28,
+    "max_repair_rounds": 0,
+    "max_tokens_per_request": 16000,
+    "temperature": 0.3,
+    "history_exchanges_kept": 3
+  },
+  "approved_source": {
+    "source_name": "PBS NewsHour",
+    "source_url": "https://www.pbs.org/newshour/",
+    "verified_at": "2026-11-17",
+    "verification_method": "HTTP GET",
+    "verification_result": "verified",
+    "evidence_reference": "pipelines/open-source/research/evidence/NEWS-R09-http-2026-11-17.json",
+    "complexity": "medium",
+    "stack_clues": "unknown",
+    "limitations": "https://www.pbs.org/newshour/presspass/ (status: unknown, reason: not fetched), https://www.pbs.org/newshour/elections-2026/results (status: unknown, reason: not fetched)",
+    "approved_at": "2026-11-17",
+    "approved_by": "Samhith Varma Yallamraju",
+    "approval_reference": "Project lead approval of all slot-09 sources given 2026-11-17 in the Claude Code orchestration session; see research/NEWS-R09.md"
+  },
+  "approved_page_map": [
+    {
+      "url": "https://www.pbs.org/newshour/",
+      "title": "PBS News: News, Analysis, Top Headlines, Live Coverage",
+      "local_file": "index.html"
+    },
+    {
+      "url": "https://www.pbs.org/newshour/show/november-16-2026-pbs-news-hour-full-episode",
+      "title": "November 16, 2026 - PBS News Hour full episode | PBS News",
+      "local_file": "full-episode.html"
+    },
+    {
+      "url": "https://www.pbs.org/newshour/video",
+      "title": "Video | PBS News",
+      "local_file": "video.html"
+    },
+    {
+      "url": "https://www.pbs.org/newshour/podcasts",
+      "title": "Podcasts | PBS News",
+      "local_file": "podcasts.html"
+    },
+    {
+      "url": "https://www.pbs.org/newshour/newsletters",
+      "title": "Newsletters | PBS News",
+      "local_file": "newsletters.html"
+    },
+    {
+      "url": "https://www.pbs.org/newshour/latest",
+      "title": "The Latest | PBS News",
+      "local_file": "latest.html"
+    },
+    {
+      "url": "https://www.pbs.org/newshour/politics",
+      "title": "Politics | PBS News",
+      "local_file": "politics.html"
+    },
+    {
+      "url": "https://www.pbs.org/newshour/arts",
+      "title": "Arts | PBS News",
+      "local_file": "arts.html"
+    },
+    {
+      "url": "https://www.pbs.org/newshour/nation",
+      "title": "Nation | PBS News",
+      "local_file": "nation.html"
+    },
+    {
+      "url": "https://www.pbs.org/newshour/world",
+      "title": "World | PBS News",
+      "local_file": "world.html"
+    },
+    {
+      "url": "https://www.pbs.org/newshour/health",
+      "title": "Health | PBS News",
+      "local_file": "health.html"
+    },
+    {
+      "url": "https://www.pbs.org/newshour/education",
+      "title": "Education | PBS News",
+      "local_file": "education.html"
+    },
+    {
+      "url": "https://www.pbs.org/newshour/about",
+      "title": "About Us | PBS News",
+      "local_file": "about.html"
+    }
+  ],
+  "protocol_snapshots": [
+    {
+      "path": "Rules.md",
+      "sha256": "04b1c3e38b76f2aff3aef869d67370bb4532cd8f9ab5e22ac8276f26cbb859bf"
+    },
+    {
+      "path": "MODEL_ALLOCATION.md",
+      "sha256": "7e9487530a6e80b35af48d0691951dafc2fffea39798c81a3c49203909148d30"
+    },
+    {
+      "path": "pipelines/open-source/config.json",
+      "sha256": "8c24eaf19a0efcde9dcf52301b49880c7f6330a2a407ae046d52a574085653e2"
+    },
+    {
+      "path": "pipelines/open-source/categories.json",
+      "sha256": "8180966e55daa24799e51106645e93fd5807dde470765ab8b3b38d3f922c867b"
+    },
+    {
+      "path": "pipelines/open-source/prompts/system.md",
+      "sha256": "61bc24a57de14bd6a662cd6b5f98d0cfc57bf47e187fc58a97831bf1f272b4ee"
+    },
+    {
+      "path": "pipelines/open-source/prompts/build.md",
+      "sha256": "6096ab8b698af7a99d8ddaf1534cc95f41844d1d00cdd1fce740123b3146ab6a"
+    },
+    {
+      "path": "pipelines/open-source/prompts/repair.md",
+      "sha256": "8a84e51995736607b3efa6f5b2d76e52692423c2c26b03409afb4afa3c6586d6"
+    },
+    {
+      "path": "pipelines/open-source/models.json",
+      "sha256": "582c3bcd03420379259f8896d72dd3a1be5cff7ecfb3700fe6c9302ae958c83a"
+    },
+    {
+      "path": "metadata/source-inventories/news.csv",
+      "sha256": "258aa8c581b0c944ab140fe6576dd88951b28c4d85a34d44e3df6f20f802235f"
+    },
+    {
+      "path": "metadata/assignments.csv",
+      "sha256": "75aa44ee9046372a60e2b9bafe18f1e0dbb3f7c5bd80c29f49f4c060050bca06"
+    }
+  ],
+  "turns": [
+    {
+      "turn": 1,
+      "label": "plan",
+      "status_line": "CONTINUE",
+      "prose_chars": 1828,
+      "files_written": [],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 466,
+        "prompt_tokens": 4731,
+        "total_tokens": 5197,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "at": "2026-11-18T02:08:27.146Z"
+    },
+    {
+      "turn": 2,
+      "label": "files-2",
+      "status_line": "CONTINUE",
+      "prose_chars": 15,
+      "files_written": [
+        "css/styles.css",
+        "js/main.js",
+        "index.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 621,
+        "prompt_tokens": 5354,
+        "total_tokens": 5975,
+        "prompt_tokens_details": {
+          "cached_tokens": 5196
+        }
+      },
+      "at": "2026-11-18T02:09:43.768Z"
+    },
+    {
+      "turn": 3,
+      "label": "files-3",
+      "status_line": "CONTINUE",
+      "prose_chars": 20,
+      "files_written": [
+        "404.html",
+        "full-episode.html",
+        "video.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 846,
+        "prompt_tokens": 6135,
+        "total_tokens": 6981,
+        "prompt_tokens_details": {
+          "cached_tokens": 5974
+        }
+      },
+      "at": "2026-11-18T02:11:31.717Z"
+    },
+    {
+      "turn": 4,
+      "label": "files-4",
+      "status_line": "CONTINUE",
+      "prose_chars": 20,
+      "files_written": [
+        "podcasts.html",
+        "newsletters.html",
+        "latest.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 968,
+        "prompt_tokens": 7139,
+        "total_tokens": 8107,
+        "prompt_tokens_details": {
+          "cached_tokens": 6980
+        }
+      },
+      "at": "2026-11-18T02:13:33.976Z"
+    },
+    {
+      "turn": 5,
+      "label": "files-5",
+      "status_line": "CONTINUE",
+      "prose_chars": 20,
+      "files_written": [
+        "politics.html",
+        "arts.html",
+        "nation.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 982,
+        "prompt_tokens": 3619,
+        "total_tokens": 4601,
+        "prompt_tokens_details": {
+          "cached_tokens": 560
+        }
+      },
+      "at": "2026-11-18T02:15:39.633Z"
+    },
+    {
+      "turn": 6,
+      "label": "files-6",
+      "status_line": "CONTINUE",
+      "prose_chars": 20,
+      "files_written": [
+        "world.html",
+        "health.html",
+        "education.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 982,
+        "prompt_tokens": 3972,
+        "total_tokens": 4954,
+        "prompt_tokens_details": {
+          "cached_tokens": 563
+        }
+      },
+      "at": "2026-11-18T02:17:45.534Z"
+    },
+    {
+      "turn": 7,
+      "label": "files-7",
+      "status_line": "CONTINUE",
+      "prose_chars": 20,
+      "files_written": [
+        "about.html",
+        "README.md",
+        "fidelity-notes.md"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 518,
+        "prompt_tokens": 4094,
+        "total_tokens": 4612,
+        "prompt_tokens_details": {
+          "cached_tokens": 563
+        }
+      },
+      "at": "2026-11-18T02:18:56.777Z"
+    },
+    {
+      "turn": 8,
+      "label": "files-8",
+      "status_line": "COMPLETE",
+      "prose_chars": 20,
+      "files_written": [
+        "component-inventory.json",
+        "generation-metadata.json"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 473,
+        "prompt_tokens": 3628,
+        "total_tokens": 4101,
+        "prompt_tokens_details": {
+          "cached_tokens": 563
+        }
+      },
+      "at": "2026-11-18T02:19:58.909Z"
+    }
+  ],
+  "rejected_files": [],
+  "qc_runs": [
+    {
+      "started_at": "2026-11-18T02:19:58.928Z",
+      "completed_at": "2026-11-18T02:20:03.617Z",
+      "exit_code": 1,
+      "executed": true,
+      "passed": false,
+      "outcome": "fail",
+      "failures": [
+        "no skip link to #main-content in 404.html",
+        "no data-section/data-component metadata in 404.html",
+        "no skip link to #main-content in about.html",
+        "no data-section/data-component metadata in about.html",
+        "no skip link to #main-content in arts.html",
+        "no data-section/data-component metadata in arts.html",
+        "no skip link to #main-content in education.html",
+        "no data-section/data-component metadata in education.html",
+        "no skip link to #main-content in full-episode.html",
+        "no data-section/data-component metadata in full-episode.html",
+        "no skip link to #main-content in health.html",
+        "no data-section/data-component metadata in health.html",
+        "no skip link to #main-content in index.html",
+        "no data-section/data-component metadata in index.html",
+        "no skip link to #main-content in latest.html",
+        "no data-section/data-component metadata in latest.html",
+        "no skip link to #main-content in nation.html",
+        "no data-section/data-component metadata in nation.html",
+        "no skip link to #main-content in newsletters.html",
+        "no data-section/data-component metadata in newsletters.html",
+        "no skip link to #main-content in podcasts.html",
+        "no data-section/data-component metadata in podcasts.html",
+        "no skip link to #main-content in politics.html",
+        "no data-section/data-component metadata in politics.html",
+        "no skip link to #main-content in video.html",
+        "no data-section/data-component metadata in video.html",
+        "no skip link to #main-content in world.html",
+        "no data-section/data-component metadata in world.html",
+        "axe target-size (serious) @375 404.html: 3 node(s) e.g. a[href$=\"full-episode.html\"]",
+        "axe target-size (serious) @375 about.html: 3 node(s) e.g. a[href$=\"full-episode.html\"]",
+        "axe target-size (serious) @375 arts.html: 3 node(s) e.g. a[href$=\"full-episode.html\"]",
+        "axe target-size (serious) @375 education.html: 3 node(s) e.g. a[href$=\"full-episode.html\"]",
+        "axe target-size (serious) @375 full-episode.html: 3 node(s) e.g. a[href$=\"full-episode.html\"]",
+        "axe target-size (serious) @375 health.html: 3 node(s) e.g. a[href$=\"full-episode.html\"]",
+        "axe target-size (serious) @375 index.html: 3 node(s) e.g. a[href$=\"full-episode.html\"]",
+        "axe target-size (serious) @375 latest.html: 3 node(s) e.g. a[href$=\"full-episode.html\"]",
+        "axe target-size (serious) @375 nation.html: 3 node(s) e.g. a[href$=\"full-episode.html\"]",
+        "axe target-size (serious) @375 newsletters.html: 3 node(s) e.g. a[href$=\"full-episode.html\"]",
+        "axe target-size (serious) @375 podcasts.html: 3 node(s) e.g. a[href$=\"full-episode.html\"]",
+        "axe target-size (serious) @375 politics.html: 3 node(s) e.g. a[href$=\"full-episode.html\"]",
+        "axe target-size (serious) @375 video.html: 3 node(s) e.g. a[href$=\"full-episode.html\"]",
+        "axe target-size (serious) @375 world.html: 3 node(s) e.g. a[href$=\"full-episode.html\"]"
+      ],
+      "failure_count": 42,
+      "warnings": [],
+      "axe": {
+        "target-size": 42
+      },
+      "pages": 14,
+      "files": 20,
+      "qc_tool_sha256": "e9be905d19e7181e30d8291bcb1511d4469bdc9e36c20c0efe21e2d3fcf54513",
+      "report": "qc-initial-2026-11-18T02-19-58-928Z.json",
+      "log": "qc-initial-2026-11-18T02-19-58-928Z.log",
+      "stdout_tail": "FAIL no skip link to #main-content in newsletters.html\nFAIL no data-section/data-component metadata in newsletters.html\nFAIL no skip link to #main-content in podcasts.html\nFAIL no data-section/data-component metadata in podcasts.html\nFAIL no skip link to #main-content in politics.html\nFAIL no data-section/data-component metadata in politics.html\nFAIL no skip link to #main-content in video.html\nFAIL no data-section/data-component metadata in video.html\nFAIL no skip link to #main-content in world.html\nFAIL no data-section/data-component metadata in world.html\nFAIL axe target-size (serious) @375 404.html: 3 node(s) e.g. a[href$=\"full-episode.html\"]\nFAIL axe target-size (serious) @375 about.html: 3 node(s) e.g. a[href$=\"full-episode.html\"]\nFAIL axe target-size (serious) @375 arts.html: 3 node(s) e.g. a[href$=\"full-episode.html\"]\nFAIL axe target-size (serious) @375 education.html: 3 node(s) e.g. a[href$=\"full-episode.html\"]\nFAIL axe target-size (serious) @375 full-episode.html: 3 node(s) e.g. a[href$=\"full-episode.html\"]\nFAIL axe target-size (serious) @375 health.html: 3 node(s) e.g. a[href$=\"full-episode.html\"]\nFAIL axe target-size (serious) @375 index.html: 3 node(s) e.g. a[href$=\"full-episode.html\"]\nFAIL axe target-size (serious) @375 latest.html: 3 node(s) e.g. a[href$=\"full-episode.html\"]\nFAIL axe target-size (serious) @375 nation.html: 3 node(s) e.g. a[href$=\"full-episode.html\"]\nFAIL axe target-size (serious) @375 newsletters.html: 3 node(s) e.g. a[href$=\"full-episode.html\"]\nFAIL axe target-size (serious) @375 podcasts.html: 3 node(s) e.g. a[href$=\"full-episode.html\"]\nFAIL axe target-size (serious) @375 politics.html: 3 node(s) e.g. a[href$=\"full-episode.html\"]\nFAIL axe target-size (serious) @375 video.html: 3 node(s) e.g. a[href$=\"full-episode.html\"]\nFAIL axe target-size (serious) @375 world.html: 3 node(s) e.g. a[href$=\"full-episode.html\"]\n",
+      "note": null
+    }
+  ],
+  "repair_rounds": [],
+  "retries": [],
+  "human_edits": [
+    {
+      "by": "orchestrator script",
+      "at": "2026-11-18T02:20:03.619Z",
+      "what": "Wrote the model's emitted files, normalized generation-metadata.json provenance fields, and set validation_summary from the recorded QC run. No site markup, style or script was authored or edited by hand."
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 38672,
+    "completion_tokens": 5856,
+    "total_tokens": 44528,
+    "requests": 8,
+    "retries": 0
+  },
+  "errors": [],
+  "outputs": {
+    "site": "news/open-source/NEWS-R09",
+    "transcript": "pipelines/open-source/runs/2026-11-18T02-07-26-665Z-build-NEWS-R09/transcript.json"
+  },
+  "delivered": {
+    "files": [
+      "404.html",
+      "README.md",
+      "about.html",
+      "arts.html",
+      "component-inventory.json",
+      "css/styles.css",
+      "education.html",
+      "fidelity-notes.md",
+      "full-episode.html",
+      "generation-metadata.json",
+      "health.html",
+      "index.html",
+      "js/main.js",
+      "latest.html",
+      "nation.html",
+      "newsletters.html",
+      "podcasts.html",
+      "politics.html",
+      "video.html",
+      "world.html"
+    ],
+    "file_count": 20,
+    "bytes": 16386,
+    "pages_in_map": 13,
+    "missing_required": [],
+    "model_claimed_complete": true,
+    "delivered_complete": true,
+    "turns_used": 8,
+    "turn_budget": 28
+  },
+  "initial_artifact": "pipelines/open-source/runs/2026-11-18T02-07-26-665Z-build-NEWS-R09/initial",
+  "provenance": {
+    "wrote": true,
+    "modelEmittedValidMetadata": true
+  },
+  "acceptance": "not accepted: a QC result is not acceptance, and interaction review plus human acceptance happen outside this script"
+}

@@ -9,11 +9,11 @@
   "exact_release_version": null,
   "model_identity_limit": "Session identifies GPT-6 family only; not independently authenticated.",
   "prior_rows": {
-    "WX-04": {
+    "WX-03": {
       "Websites/metadata/source-inventories/weather.csv": {
         "category": "weather",
         "slot": "04",
-        "source_id": "WX-04",
+        "source_id": "WX-03",
         "model_group": "codex",
         "model_id": "gpt-6.1-sol",
         "model_version": "",
@@ -37,7 +37,7 @@
       "Websites/metadata/assignments.csv": {
         "category": "weather",
         "slot": "04",
-        "source_id": "WX-04",
+        "source_id": "WX-03",
         "source_name": "Met Office",
         "source_url": "https://www.metoffice.gov.uk/",
         "model_group": "codex",
@@ -46,16 +46,16 @@
         "status": "researching",
         "approved_at": "2026-11-12",
         "generated_at": "",
-        "relative_path": "weather/codex/WX-04",
+        "relative_path": "weather/codex/WX-03",
         "reviewer": "",
         "notes": "Provisional Phase A candidate; reservations, complete ten-source scope/model approval pending. See pipelines/codex/research/WX.md. HTTP availability verified; rendering/interactions unverified."
       }
     },
-    "WX-05": {
+    "WX-04": {
       "Websites/metadata/source-inventories/weather.csv": {
         "category": "weather",
         "slot": "05",
-        "source_id": "WX-05",
+        "source_id": "WX-04",
         "model_group": "codex",
         "model_id": "gpt-6.1-sol",
         "model_version": "",
@@ -79,7 +79,7 @@
       "Websites/metadata/assignments.csv": {
         "category": "weather",
         "slot": "05",
-        "source_id": "WX-05",
+        "source_id": "WX-04",
         "source_name": "Time and Date AS \u2014 weather section",
         "source_url": "https://www.timeanddate.com/weather/",
         "model_group": "codex",
@@ -88,16 +88,16 @@
         "status": "approved",
         "approved_at": "2026-11-13T00:11:23.688078+00:00",
         "generated_at": "",
-        "relative_path": "weather/codex/WX-05",
+        "relative_path": "weather/codex/WX-04",
         "reviewer": "",
         "notes": "Replaced meteoblue; user approved replacement and disclosed web-retrieval limits. Evidence: pipelines/codex/research/evidence/replacement-approval-2026-11-13.json. No generation; shared approval-policy conflict remains unresolved."
       }
     },
-    "WX-06": {
+    "WX-R06": {
       "Websites/metadata/source-inventories/weather.csv": {
         "category": "weather",
         "slot": "06",
-        "source_id": "WX-06",
+        "source_id": "WX-R06",
         "model_group": "codex",
         "model_id": "gpt-6.1-sol",
         "model_version": "",
@@ -121,7 +121,7 @@
       "Websites/metadata/assignments.csv": {
         "category": "weather",
         "slot": "06",
-        "source_id": "WX-06",
+        "source_id": "WX-R06",
         "source_name": "Mountain-Forecast.com",
         "source_url": "https://www.mountain-forecast.com/",
         "model_group": "codex",
@@ -130,7 +130,7 @@
         "status": "researching",
         "approved_at": "2026-11-12",
         "generated_at": "",
-        "relative_path": "weather/codex/WX-06",
+        "relative_path": "weather/codex/WX-R06",
         "reviewer": "",
         "notes": "Provisional Phase A candidate; reservations, complete ten-source scope/model approval pending. See pipelines/codex/research/WX.md. HTTP availability verified; rendering/interactions unverified."
       }

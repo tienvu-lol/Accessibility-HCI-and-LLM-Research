@@ -1,33 +1,36 @@
-# Verification record
+# Verification record — Jamie Vale
 
-## Completed checks
+## Completed
 
-- `node --check assets/app.js`: passed.
-- Parsed all 17 HTML documents using Python’s standard HTML parser.
-- Checked local `href`/`src` targets and referenced local fragments: passed.
-- Checked duplicate IDs per document: passed after correcting a contact-section/input collision.
-- Checked exactly one main landmark per page: passed.
-- Checked explicit button types, image alt attributes, and labels for non-checkbox form fields: passed. Checkboxes use wrapping labels.
-- Checked `data-section` and `data-component` on header, main, footer, and section regions: passed.
-- Computed WCAG relative-luminance contrast for text, heading, accent, and muted tokens against base and surface tokens in both themes: all 16 pairs exceed 4.5:1; minimum 5.17:1.
-- Source reviewed for network calls, form endpoints, remote dependencies, forbidden framework code, and persistent storage: none used.
-- Component inventory generated from delivered HTML rather than a hypothetical list: 42 distinct instrumented component types.
+- JavaScript syntax: `node --check assets/app.js` passed.
+- Parsed all 23 full HTML documents with Python’s standard HTML parser.
+- Checked local `href`/`src` targets, fragment destinations, and page IDs: no missing targets or duplicate IDs.
+- Checked exactly one H1 and one main landmark in each document.
+- Checked image alt attributes and field label associations, including wrapping checkbox labels.
+- Checked explicit button types and initially disabled form-submit controls for no-JS safety.
+- Checked both instrumentation attributes on header/footer/main/section/article/aside/nav/form/dialog/details/fieldset/figure/button/input/select/textarea components.
+- Checked no form endpoints, network submission APIs, or persistent storage in application JavaScript.
+- Calculated 18 foreground/background token contrast combinations across light and dark themes. Minimum checked ratio: **5.37:1**.
+- Generated component inventory from delivered HTML, not a proposed component list.
+- ZIP packaging integrity is checked after documentation is finalized.
 
 ## Not completed
 
-Browser host unavailable. No rendered visual QA, live interaction testing, automated browser test, keyboard traversal, screen-reader run, responsive screenshot comparison, or complete WCAG audit was performed. The HTML parser is not an HTML conformance validator. Syntax and source checks establish a useful baseline but do not prove browser behavior or accessibility compliance.
+The browser access host was unavailable. Native Safari access was also attempted, but computer-use permissions were not granted. No rendered visual QA, browser functional test, screenshot comparison, screen-reader review, actual zoom/reflow test, or full WCAG 2.2 AA audit was completed. Python HTMLParser is not a formal HTML conformance validator. These results establish source-level consistency only.
 
 ## Manual acceptance checklist
 
-1. At 1440px the identity stays visible while the right content scrolls; at 760px or narrower the header stacks and the utility navigation remains usable.
-2. At 320px and 400% zoom, text and controls reflow without page-wide horizontal scrolling; the project table may scroll within its wrapper.
-3. Tab from Skip to content through navigation and each page. Focus should remain visible and logical. Test Explore with Enter, Escape, and outside click.
-4. Search `library`, combine with Interface design, then switch to Creative coding. Confirm matching results, counts, and the empty state. Repeat in Writing.
-5. Open and close every gallery and print modal with a keyboard; verify Escape and focus restoration. Try gallery arrow controls.
-6. Submit each form empty, with an invalid email, and with valid fictional data. Try a short inquiry and a weekend/past booking date. Confirm local success and no network request.
-7. Enter a wrong NDA passcode, then `fieldnotes`. Confirm failure feedback and focus on the revealed case-study heading.
-8. Toggle theme; confirm text and focus contrast. Enable reduced motion and verify animations stop.
-9. Move through all testimonials. Confirm no autoplay and that new text is announced.
-10. Download the text CV and print the résumé page. Test copy email both with and without Clipboard permission.
-11. Verify the New York badge against current time, including DST behavior.
-12. Configure a static host’s error page, visit a missing route, and confirm the 404 recovery links.
+1. Open `index.html` at 1440px, 1024px, 760px, 390px, and 320px. Confirm readable columns, no unintended page-wide overflow, and sensible image crops.
+2. Test 200% and 400% zoom, increased text spacing, dark/light themes, and reduced motion. Inspect actual contrast, target sizes, and focus visibility, including sticky-header obstruction.
+3. Tab through the skip link, header, resources dropdown, mobile menu, content, and footer. Escape should close the active dropdown/mobile menu and restore sensible focus.
+4. Search Work using part of a title, combine it with a category, and try a zero-result query. Repeat on the article listing. Counts should update politely and hidden cards should leave the tab order.
+5. Open each gallery. Test native modal focus containment, caption updates, previous/next buttons, arrow keys, Escape, and return focus.
+6. Enter a wrong NDA passcode, then `openstudio`. Confirm feedback and focus on the first revealed heading. Verify the notes are plainly described as insecure demo content.
+7. Submit empty and invalid forms, then use valid fictional data. Try a too-short inquiry, a past booking date, and a weekend. Confirm local success and no request in browser network tools.
+8. Disable JavaScript. Ordinary content/navigation should remain available, and form-submit controls should stay disabled.
+9. Select each print format. Confirm $20/$35/$60 demo pricing, local success, no payment fields, and reset on reopening.
+10. Cycle all testimonials manually. Confirm no autoplay and useful screen-reader announcements.
+11. Test copy email with and without Clipboard permission. Compare the studio clock to `Australia/Sydney`, including DST.
+12. Download the complete CV and use the résumé print layout. Configure a static host’s 404 document and test a missing route.
+
+Reference-derived architecture and research additions are separated in `FIDELITY.md`.

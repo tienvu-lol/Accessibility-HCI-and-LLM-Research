@@ -2,7 +2,7 @@
   "protocol_version": "1.0",
   "replica_id": "ECOM-04",
   "category": "e-commerce",
-  "source_url": "https://www.allbirds.com/",
+  "source_url": "https://www.worldmarket.com/",
   "components": [
     {
       "id": "site-header",
@@ -10,59 +10,132 @@
       "pages": [
         "404.html",
         "cart.html",
+        "chairs.html",
+        "furniture.html",
         "index.html",
-        "mens.html",
         "returns.html",
         "search.html",
-        "tree-runner.html"
+        "sophie-chair.html"
       ],
       "instances": [
         {
           "page": "404.html",
           "section": "global-header",
-          "tag": "header"
+          "selector": "[data-section=\"global-header\"][data-component=\"site-header\"]"
         },
         {
           "page": "cart.html",
           "section": "global-header",
-          "tag": "header"
+          "selector": "[data-section=\"global-header\"][data-component=\"site-header\"]"
+        },
+        {
+          "page": "chairs.html",
+          "section": "global-header",
+          "selector": "[data-section=\"global-header\"][data-component=\"site-header\"]"
+        },
+        {
+          "page": "furniture.html",
+          "section": "global-header",
+          "selector": "[data-section=\"global-header\"][data-component=\"site-header\"]"
         },
         {
           "page": "index.html",
           "section": "global-header",
-          "tag": "header"
-        },
-        {
-          "page": "mens.html",
-          "section": "global-header",
-          "tag": "header"
+          "selector": "[data-section=\"global-header\"][data-component=\"site-header\"]"
         },
         {
           "page": "returns.html",
           "section": "global-header",
-          "tag": "header"
+          "selector": "[data-section=\"global-header\"][data-component=\"site-header\"]"
         },
         {
           "page": "search.html",
           "section": "global-header",
-          "tag": "header"
+          "selector": "[data-section=\"global-header\"][data-component=\"site-header\"]"
         },
         {
-          "page": "tree-runner.html",
+          "page": "sophie-chair.html",
           "section": "global-header",
-          "tag": "header"
+          "selector": "[data-section=\"global-header\"][data-component=\"site-header\"]"
         }
       ],
       "behavior": [
-        "Semantic content/navigation; native controls where present"
+        "Semantic region or native local control; see README and JS for simulation details"
       ],
       "keyboard": [
-        "Tab / Shift+Tab for links and controls",
-        "Enter to activate; Space for native buttons",
-        "Escape closes mobile navigation"
+        "Tab and native Enter/Space where interactive; Escape closes navigation/dialog"
       ],
       "status": "implemented",
-      "validation": "not-tested"
+      "validation": "source-audited; browser not-tested"
+    },
+    {
+      "id": "search-form",
+      "selector": "[data-component=\"search-form\"]",
+      "pages": [
+        "404.html",
+        "cart.html",
+        "chairs.html",
+        "furniture.html",
+        "index.html",
+        "returns.html",
+        "search.html",
+        "sophie-chair.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "section": "header-search",
+          "selector": "[data-section=\"header-search\"][data-component=\"search-form\"]"
+        },
+        {
+          "page": "cart.html",
+          "section": "header-search",
+          "selector": "[data-section=\"header-search\"][data-component=\"search-form\"]"
+        },
+        {
+          "page": "chairs.html",
+          "section": "header-search",
+          "selector": "[data-section=\"header-search\"][data-component=\"search-form\"]"
+        },
+        {
+          "page": "furniture.html",
+          "section": "header-search",
+          "selector": "[data-section=\"header-search\"][data-component=\"search-form\"]"
+        },
+        {
+          "page": "index.html",
+          "section": "header-search",
+          "selector": "[data-section=\"header-search\"][data-component=\"search-form\"]"
+        },
+        {
+          "page": "returns.html",
+          "section": "header-search",
+          "selector": "[data-section=\"header-search\"][data-component=\"search-form\"]"
+        },
+        {
+          "page": "search.html",
+          "section": "header-search",
+          "selector": "[data-section=\"header-search\"][data-component=\"search-form\"]"
+        },
+        {
+          "page": "search.html",
+          "section": "catalog-search",
+          "selector": "[data-section=\"catalog-search\"][data-component=\"search-form\"]"
+        },
+        {
+          "page": "sophie-chair.html",
+          "section": "header-search",
+          "selector": "[data-section=\"header-search\"][data-component=\"search-form\"]"
+        }
+      ],
+      "behavior": [
+        "Semantic region or native local control; see README and JS for simulation details"
+      ],
+      "keyboard": [
+        "Tab and native Enter/Space where interactive; Escape closes navigation/dialog"
+      ],
+      "status": "implemented",
+      "validation": "source-audited; browser not-tested"
     },
     {
       "id": "primary-nav",
@@ -70,59 +143,63 @@
       "pages": [
         "404.html",
         "cart.html",
+        "chairs.html",
+        "furniture.html",
         "index.html",
-        "mens.html",
         "returns.html",
         "search.html",
-        "tree-runner.html"
+        "sophie-chair.html"
       ],
       "instances": [
         {
           "page": "404.html",
           "section": "global-navigation",
-          "tag": "nav"
+          "selector": "[data-section=\"global-navigation\"][data-component=\"primary-nav\"]"
         },
         {
           "page": "cart.html",
           "section": "global-navigation",
-          "tag": "nav"
+          "selector": "[data-section=\"global-navigation\"][data-component=\"primary-nav\"]"
+        },
+        {
+          "page": "chairs.html",
+          "section": "global-navigation",
+          "selector": "[data-section=\"global-navigation\"][data-component=\"primary-nav\"]"
+        },
+        {
+          "page": "furniture.html",
+          "section": "global-navigation",
+          "selector": "[data-section=\"global-navigation\"][data-component=\"primary-nav\"]"
         },
         {
           "page": "index.html",
           "section": "global-navigation",
-          "tag": "nav"
-        },
-        {
-          "page": "mens.html",
-          "section": "global-navigation",
-          "tag": "nav"
+          "selector": "[data-section=\"global-navigation\"][data-component=\"primary-nav\"]"
         },
         {
           "page": "returns.html",
           "section": "global-navigation",
-          "tag": "nav"
+          "selector": "[data-section=\"global-navigation\"][data-component=\"primary-nav\"]"
         },
         {
           "page": "search.html",
           "section": "global-navigation",
-          "tag": "nav"
+          "selector": "[data-section=\"global-navigation\"][data-component=\"primary-nav\"]"
         },
         {
-          "page": "tree-runner.html",
+          "page": "sophie-chair.html",
           "section": "global-navigation",
-          "tag": "nav"
+          "selector": "[data-section=\"global-navigation\"][data-component=\"primary-nav\"]"
         }
       ],
       "behavior": [
-        "Semantic content/navigation; native controls where present"
+        "Semantic region or native local control; see README and JS for simulation details"
       ],
       "keyboard": [
-        "Tab / Shift+Tab for links and controls",
-        "Enter to activate; Space for native buttons",
-        "Escape closes mobile navigation"
+        "Tab and native Enter/Space where interactive; Escape closes navigation/dialog"
       ],
       "status": "implemented",
-      "validation": "not-tested"
+      "validation": "source-audited; browser not-tested"
     },
     {
       "id": "page-content",
@@ -130,59 +207,92 @@
       "pages": [
         "404.html",
         "cart.html",
+        "chairs.html",
+        "furniture.html",
         "index.html",
-        "mens.html",
         "returns.html",
         "search.html",
-        "tree-runner.html"
+        "sophie-chair.html"
       ],
       "instances": [
         {
           "page": "404.html",
           "section": "main-content",
-          "tag": "main"
+          "selector": "[data-section=\"main-content\"][data-component=\"page-content\"]"
         },
         {
           "page": "cart.html",
           "section": "main-content",
-          "tag": "main"
+          "selector": "[data-section=\"main-content\"][data-component=\"page-content\"]"
+        },
+        {
+          "page": "chairs.html",
+          "section": "main-content",
+          "selector": "[data-section=\"main-content\"][data-component=\"page-content\"]"
+        },
+        {
+          "page": "furniture.html",
+          "section": "main-content",
+          "selector": "[data-section=\"main-content\"][data-component=\"page-content\"]"
         },
         {
           "page": "index.html",
           "section": "main-content",
-          "tag": "main"
-        },
-        {
-          "page": "mens.html",
-          "section": "main-content",
-          "tag": "main"
+          "selector": "[data-section=\"main-content\"][data-component=\"page-content\"]"
         },
         {
           "page": "returns.html",
           "section": "main-content",
-          "tag": "main"
+          "selector": "[data-section=\"main-content\"][data-component=\"page-content\"]"
         },
         {
           "page": "search.html",
           "section": "main-content",
-          "tag": "main"
+          "selector": "[data-section=\"main-content\"][data-component=\"page-content\"]"
         },
         {
-          "page": "tree-runner.html",
+          "page": "sophie-chair.html",
           "section": "main-content",
-          "tag": "main"
+          "selector": "[data-section=\"main-content\"][data-component=\"page-content\"]"
         }
       ],
       "behavior": [
-        "Semantic content/navigation; native controls where present"
+        "Semantic region or native local control; see README and JS for simulation details"
       ],
       "keyboard": [
-        "Tab / Shift+Tab for links and controls",
-        "Enter to activate; Space for native buttons",
-        "Escape closes mobile navigation"
+        "Tab and native Enter/Space where interactive; Escape closes navigation/dialog"
       ],
       "status": "implemented",
-      "validation": "not-tested"
+      "validation": "source-audited; browser not-tested"
+    },
+    {
+      "id": "empty-state",
+      "selector": "[data-component=\"empty-state\"]",
+      "pages": [
+        "404.html",
+        "cart.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "section": "not-found",
+          "selector": "[data-section=\"not-found\"][data-component=\"empty-state\"]"
+        },
+        {
+          "page": "cart.html",
+          "section": "empty-cart",
+          "selector": "[data-section=\"empty-cart\"][data-component=\"empty-state\"]",
+          "dynamic": true
+        }
+      ],
+      "behavior": [
+        "Semantic region or native local control; see README and JS for simulation details"
+      ],
+      "keyboard": [
+        "Tab and native Enter/Space where interactive; Escape closes navigation/dialog"
+      ],
+      "status": "implemented",
+      "validation": "source-audited; browser not-tested"
     },
     {
       "id": "site-footer",
@@ -190,521 +300,702 @@
       "pages": [
         "404.html",
         "cart.html",
+        "chairs.html",
+        "furniture.html",
         "index.html",
-        "mens.html",
         "returns.html",
         "search.html",
-        "tree-runner.html"
+        "sophie-chair.html"
       ],
       "instances": [
         {
           "page": "404.html",
           "section": "global-footer",
-          "tag": "footer"
+          "selector": "[data-section=\"global-footer\"][data-component=\"site-footer\"]"
         },
         {
           "page": "cart.html",
           "section": "global-footer",
-          "tag": "footer"
+          "selector": "[data-section=\"global-footer\"][data-component=\"site-footer\"]"
+        },
+        {
+          "page": "chairs.html",
+          "section": "global-footer",
+          "selector": "[data-section=\"global-footer\"][data-component=\"site-footer\"]"
+        },
+        {
+          "page": "furniture.html",
+          "section": "global-footer",
+          "selector": "[data-section=\"global-footer\"][data-component=\"site-footer\"]"
         },
         {
           "page": "index.html",
           "section": "global-footer",
-          "tag": "footer"
-        },
-        {
-          "page": "mens.html",
-          "section": "global-footer",
-          "tag": "footer"
+          "selector": "[data-section=\"global-footer\"][data-component=\"site-footer\"]"
         },
         {
           "page": "returns.html",
           "section": "global-footer",
-          "tag": "footer"
+          "selector": "[data-section=\"global-footer\"][data-component=\"site-footer\"]"
         },
         {
           "page": "search.html",
           "section": "global-footer",
-          "tag": "footer"
+          "selector": "[data-section=\"global-footer\"][data-component=\"site-footer\"]"
         },
         {
-          "page": "tree-runner.html",
+          "page": "sophie-chair.html",
           "section": "global-footer",
-          "tag": "footer"
+          "selector": "[data-section=\"global-footer\"][data-component=\"site-footer\"]"
         }
       ],
       "behavior": [
-        "Semantic content/navigation; native controls where present"
+        "Semantic region or native local control; see README and JS for simulation details"
       ],
       "keyboard": [
-        "Tab / Shift+Tab for links and controls",
-        "Enter to activate; Space for native buttons",
-        "Escape closes mobile navigation"
+        "Tab and native Enter/Space where interactive; Escape closes navigation/dialog"
       ],
       "status": "implemented",
-      "validation": "not-tested"
+      "validation": "source-audited; browser not-tested"
     },
     {
-      "id": "newsletter-demo",
-      "selector": "[data-component=\"newsletter-demo\"]",
+      "id": "store-dialog",
+      "selector": "[data-component=\"store-dialog\"]",
       "pages": [
         "404.html",
         "cart.html",
+        "chairs.html",
+        "furniture.html",
         "index.html",
-        "mens.html",
         "returns.html",
         "search.html",
-        "tree-runner.html"
+        "sophie-chair.html"
       ],
       "instances": [
         {
           "page": "404.html",
-          "section": "newsletter",
-          "tag": "section"
+          "section": "store-selection",
+          "selector": "[data-section=\"store-selection\"][data-component=\"store-dialog\"]"
         },
         {
           "page": "cart.html",
-          "section": "newsletter",
-          "tag": "section"
+          "section": "store-selection",
+          "selector": "[data-section=\"store-selection\"][data-component=\"store-dialog\"]"
+        },
+        {
+          "page": "chairs.html",
+          "section": "store-selection",
+          "selector": "[data-section=\"store-selection\"][data-component=\"store-dialog\"]"
+        },
+        {
+          "page": "furniture.html",
+          "section": "store-selection",
+          "selector": "[data-section=\"store-selection\"][data-component=\"store-dialog\"]"
         },
         {
           "page": "index.html",
-          "section": "newsletter",
-          "tag": "section"
-        },
-        {
-          "page": "mens.html",
-          "section": "newsletter",
-          "tag": "section"
+          "section": "store-selection",
+          "selector": "[data-section=\"store-selection\"][data-component=\"store-dialog\"]"
         },
         {
           "page": "returns.html",
-          "section": "newsletter",
-          "tag": "section"
+          "section": "store-selection",
+          "selector": "[data-section=\"store-selection\"][data-component=\"store-dialog\"]"
         },
         {
           "page": "search.html",
-          "section": "newsletter",
-          "tag": "section"
+          "section": "store-selection",
+          "selector": "[data-section=\"store-selection\"][data-component=\"store-dialog\"]"
         },
         {
-          "page": "tree-runner.html",
-          "section": "newsletter",
-          "tag": "section"
+          "page": "sophie-chair.html",
+          "section": "store-selection",
+          "selector": "[data-section=\"store-selection\"][data-component=\"store-dialog\"]"
         }
       ],
       "behavior": [
-        "Semantic content/navigation; native controls where present"
+        "Semantic region or native local control; see README and JS for simulation details"
       ],
       "keyboard": [
-        "Tab / Shift+Tab for links and controls",
-        "Enter to activate; Space for native buttons",
-        "Escape closes mobile navigation"
+        "Tab and native Enter/Space where interactive; Escape closes navigation/dialog"
       ],
       "status": "implemented",
-      "validation": "not-tested"
+      "validation": "source-audited; browser not-tested"
     },
     {
-      "id": "cart-layout",
-      "selector": "[data-component=\"cart-layout\"]",
+      "id": "store-search-form",
+      "selector": "[data-component=\"store-search-form\"]",
+      "pages": [
+        "404.html",
+        "cart.html",
+        "chairs.html",
+        "furniture.html",
+        "index.html",
+        "returns.html",
+        "search.html",
+        "sophie-chair.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "section": "store-search",
+          "selector": "[data-section=\"store-search\"][data-component=\"store-search-form\"]"
+        },
+        {
+          "page": "cart.html",
+          "section": "store-search",
+          "selector": "[data-section=\"store-search\"][data-component=\"store-search-form\"]"
+        },
+        {
+          "page": "chairs.html",
+          "section": "store-search",
+          "selector": "[data-section=\"store-search\"][data-component=\"store-search-form\"]"
+        },
+        {
+          "page": "furniture.html",
+          "section": "store-search",
+          "selector": "[data-section=\"store-search\"][data-component=\"store-search-form\"]"
+        },
+        {
+          "page": "index.html",
+          "section": "store-search",
+          "selector": "[data-section=\"store-search\"][data-component=\"store-search-form\"]"
+        },
+        {
+          "page": "returns.html",
+          "section": "store-search",
+          "selector": "[data-section=\"store-search\"][data-component=\"store-search-form\"]"
+        },
+        {
+          "page": "search.html",
+          "section": "store-search",
+          "selector": "[data-section=\"store-search\"][data-component=\"store-search-form\"]"
+        },
+        {
+          "page": "sophie-chair.html",
+          "section": "store-search",
+          "selector": "[data-section=\"store-search\"][data-component=\"store-search-form\"]"
+        }
+      ],
+      "behavior": [
+        "Semantic region or native local control; see README and JS for simulation details"
+      ],
+      "keyboard": [
+        "Tab and native Enter/Space where interactive; Escape closes navigation/dialog"
+      ],
+      "status": "implemented",
+      "validation": "source-audited; browser not-tested"
+    },
+    {
+      "id": "breadcrumbs",
+      "selector": "[data-component=\"breadcrumbs\"]",
+      "pages": [
+        "cart.html",
+        "chairs.html",
+        "furniture.html",
+        "returns.html",
+        "search.html",
+        "sophie-chair.html"
+      ],
+      "instances": [
+        {
+          "page": "cart.html",
+          "section": "breadcrumb",
+          "selector": "[data-section=\"breadcrumb\"][data-component=\"breadcrumbs\"]"
+        },
+        {
+          "page": "chairs.html",
+          "section": "breadcrumb",
+          "selector": "[data-section=\"breadcrumb\"][data-component=\"breadcrumbs\"]"
+        },
+        {
+          "page": "furniture.html",
+          "section": "breadcrumb",
+          "selector": "[data-section=\"breadcrumb\"][data-component=\"breadcrumbs\"]"
+        },
+        {
+          "page": "returns.html",
+          "section": "breadcrumb",
+          "selector": "[data-section=\"breadcrumb\"][data-component=\"breadcrumbs\"]"
+        },
+        {
+          "page": "search.html",
+          "section": "breadcrumb",
+          "selector": "[data-section=\"breadcrumb\"][data-component=\"breadcrumbs\"]"
+        },
+        {
+          "page": "sophie-chair.html",
+          "section": "breadcrumb",
+          "selector": "[data-section=\"breadcrumb\"][data-component=\"breadcrumbs\"]"
+        }
+      ],
+      "behavior": [
+        "Semantic region or native local control; see README and JS for simulation details"
+      ],
+      "keyboard": [
+        "Tab and native Enter/Space where interactive; Escape closes navigation/dialog"
+      ],
+      "status": "implemented",
+      "validation": "source-audited; browser not-tested"
+    },
+    {
+      "id": "cart-panel",
+      "selector": "[data-component=\"cart-panel\"]",
       "pages": [
         "cart.html"
       ],
       "instances": [
         {
           "page": "cart.html",
-          "section": "cart-content",
-          "tag": "section"
+          "section": "cart-items",
+          "selector": "[data-section=\"cart-items\"][data-component=\"cart-panel\"]"
         }
       ],
       "behavior": [
-        "Semantic content/navigation; native controls where present"
+        "Semantic region or native local control; see README and JS for simulation details"
       ],
       "keyboard": [
-        "Tab / Shift+Tab for links and controls",
-        "Enter to activate; Space for native buttons",
-        "Escape closes mobile navigation"
+        "Tab and native Enter/Space where interactive; Escape closes navigation/dialog"
       ],
       "status": "implemented",
-      "validation": "not-tested"
+      "validation": "source-audited; browser not-tested"
     },
     {
-      "id": "order-summary",
-      "selector": "[data-component=\"order-summary\"]",
+      "id": "filter-panel",
+      "selector": "[data-component=\"filter-panel\"]",
       "pages": [
-        "cart.html"
+        "chairs.html",
+        "search.html"
       ],
       "instances": [
         {
-          "page": "cart.html",
-          "section": "cart-summary",
-          "tag": "aside"
+          "page": "chairs.html",
+          "section": "listing-filters",
+          "selector": "[data-section=\"listing-filters\"][data-component=\"filter-panel\"]"
+        },
+        {
+          "page": "search.html",
+          "section": "listing-filters",
+          "selector": "[data-section=\"listing-filters\"][data-component=\"filter-panel\"]"
         }
       ],
       "behavior": [
-        "Semantic content/navigation; native controls where present"
+        "Semantic region or native local control; see README and JS for simulation details"
       ],
       "keyboard": [
-        "Tab / Shift+Tab for links and controls",
-        "Enter to activate; Space for native buttons",
-        "Escape closes mobile navigation"
+        "Tab and native Enter/Space where interactive; Escape closes navigation/dialog"
       ],
       "status": "implemented",
-      "validation": "not-tested"
+      "validation": "source-audited; browser not-tested"
+    },
+    {
+      "id": "product-results",
+      "selector": "[data-component=\"product-results\"]",
+      "pages": [
+        "chairs.html",
+        "search.html"
+      ],
+      "instances": [
+        {
+          "page": "chairs.html",
+          "section": "listing-results",
+          "selector": "[data-section=\"listing-results\"][data-component=\"product-results\"]"
+        },
+        {
+          "page": "search.html",
+          "section": "listing-results",
+          "selector": "[data-section=\"listing-results\"][data-component=\"product-results\"]"
+        }
+      ],
+      "behavior": [
+        "Semantic region or native local control; see README and JS for simulation details"
+      ],
+      "keyboard": [
+        "Tab and native Enter/Space where interactive; Escape closes navigation/dialog"
+      ],
+      "status": "implemented",
+      "validation": "source-audited; browser not-tested"
     },
     {
       "id": "editorial-hero",
       "selector": "[data-component=\"editorial-hero\"]",
       "pages": [
+        "furniture.html",
         "index.html"
       ],
       "instances": [
         {
+          "page": "furniture.html",
+          "section": "furniture-editorial",
+          "selector": "[data-section=\"furniture-editorial\"][data-component=\"editorial-hero\"]"
+        },
+        {
           "page": "index.html",
-          "section": "home-hero",
-          "tag": "section"
+          "section": "seasonal-hero",
+          "selector": "[data-section=\"seasonal-hero\"][data-component=\"editorial-hero\"]"
         }
       ],
       "behavior": [
-        "Semantic content/navigation; native controls where present"
+        "Semantic region or native local control; see README and JS for simulation details"
       ],
       "keyboard": [
-        "Tab / Shift+Tab for links and controls",
-        "Enter to activate; Space for native buttons",
-        "Escape closes mobile navigation"
+        "Tab and native Enter/Space where interactive; Escape closes navigation/dialog"
       ],
       "status": "implemented",
-      "validation": "not-tested"
+      "validation": "source-audited; browser not-tested"
     },
     {
-      "id": "merchandise-grid",
-      "selector": "[data-component=\"merchandise-grid\"]",
+      "id": "category-navigation",
+      "selector": "[data-component=\"category-navigation\"]",
       "pages": [
+        "furniture.html"
+      ],
+      "instances": [
+        {
+          "page": "furniture.html",
+          "section": "furniture-categories",
+          "selector": "[data-section=\"furniture-categories\"][data-component=\"category-navigation\"]"
+        }
+      ],
+      "behavior": [
+        "Semantic region or native local control; see README and JS for simulation details"
+      ],
+      "keyboard": [
+        "Tab and native Enter/Space where interactive; Escape closes navigation/dialog"
+      ],
+      "status": "implemented",
+      "validation": "source-audited; browser not-tested"
+    },
+    {
+      "id": "editorial-band",
+      "selector": "[data-component=\"editorial-band\"]",
+      "pages": [
+        "furniture.html",
         "index.html"
       ],
       "instances": [
         {
-          "page": "index.html",
-          "section": "new-arrivals",
-          "tag": "section"
+          "page": "furniture.html",
+          "section": "furniture-story",
+          "selector": "[data-section=\"furniture-story\"][data-component=\"editorial-band\"]"
         },
         {
           "page": "index.html",
-          "section": "best-sellers",
-          "tag": "section"
+          "section": "seasonal-band",
+          "selector": "[data-section=\"seasonal-band\"][data-component=\"editorial-band\"]"
         }
       ],
       "behavior": [
-        "Semantic content/navigation; native controls where present"
+        "Semantic region or native local control; see README and JS for simulation details"
       ],
       "keyboard": [
-        "Tab / Shift+Tab for links and controls",
-        "Enter to activate; Space for native buttons",
-        "Escape closes mobile navigation"
+        "Tab and native Enter/Space where interactive; Escape closes navigation/dialog"
       ],
       "status": "implemented",
-      "validation": "not-tested"
+      "validation": "source-audited; browser not-tested"
     },
     {
-      "id": "product-card",
-      "selector": "[data-component=\"product-card\"]",
-      "pages": [
-        "index.html",
-        "mens.html",
-        "search.html"
-      ],
-      "instances": [
-        {
-          "page": "index.html",
-          "section": "product-selection",
-          "tag": "article"
-        },
-        {
-          "page": "index.html",
-          "section": "product-selection",
-          "tag": "article"
-        },
-        {
-          "page": "index.html",
-          "section": "product-selection",
-          "tag": "article"
-        },
-        {
-          "page": "index.html",
-          "section": "product-selection",
-          "tag": "article"
-        },
-        {
-          "page": "index.html",
-          "section": "product-selection",
-          "tag": "article"
-        },
-        {
-          "page": "index.html",
-          "section": "product-selection",
-          "tag": "article"
-        },
-        {
-          "page": "index.html",
-          "section": "product-selection",
-          "tag": "article"
-        },
-        {
-          "page": "mens.html",
-          "section": "product-selection",
-          "tag": "article"
-        },
-        {
-          "page": "mens.html",
-          "section": "product-selection",
-          "tag": "article"
-        },
-        {
-          "page": "mens.html",
-          "section": "product-selection",
-          "tag": "article"
-        },
-        {
-          "page": "mens.html",
-          "section": "product-selection",
-          "tag": "article"
-        },
-        {
-          "page": "search.html",
-          "section": "product-selection",
-          "tag": "article"
-        },
-        {
-          "page": "search.html",
-          "section": "product-selection",
-          "tag": "article"
-        },
-        {
-          "page": "search.html",
-          "section": "product-selection",
-          "tag": "article"
-        },
-        {
-          "page": "search.html",
-          "section": "product-selection",
-          "tag": "article"
-        }
-      ],
-      "behavior": [
-        "Semantic content/navigation; native controls where present"
-      ],
-      "keyboard": [
-        "Tab / Shift+Tab for links and controls",
-        "Enter to activate; Space for native buttons",
-        "Escape closes mobile navigation"
-      ],
-      "status": "implemented",
-      "validation": "not-tested",
-      "dynamic_instances": "mens.html and search.html results: 0\u20134 cards rendered from local four-record dataset; home has 7 static card instances."
-    },
-    {
-      "id": "editorial-pair",
-      "selector": "[data-component=\"editorial-pair\"]",
+      "id": "section-heading",
+      "selector": "[data-component=\"section-heading\"]",
       "pages": [
         "index.html"
       ],
       "instances": [
         {
           "page": "index.html",
-          "section": "gender-edit",
-          "tag": "section"
+          "section": "department-intro",
+          "selector": "[data-section=\"department-intro\"][data-component=\"section-heading\"]"
         }
       ],
       "behavior": [
-        "Semantic content/navigation; native controls where present"
+        "Semantic region or native local control; see README and JS for simulation details"
       ],
       "keyboard": [
-        "Tab / Shift+Tab for links and controls",
-        "Enter to activate; Space for native buttons",
-        "Escape closes mobile navigation"
+        "Tab and native Enter/Space where interactive; Escape closes navigation/dialog"
       ],
       "status": "implemented",
-      "validation": "not-tested"
+      "validation": "source-audited; browser not-tested"
     },
     {
-      "id": "material-band",
-      "selector": "[data-component=\"material-band\"]",
+      "id": "department-grid",
+      "selector": "[data-component=\"department-grid\"]",
       "pages": [
         "index.html"
       ],
       "instances": [
         {
           "page": "index.html",
-          "section": "material-story",
-          "tag": "section"
+          "section": "department-bands",
+          "selector": "[data-section=\"department-bands\"][data-component=\"department-grid\"]"
         }
       ],
       "behavior": [
-        "Semantic content/navigation; native controls where present"
+        "Semantic region or native local control; see README and JS for simulation details"
       ],
       "keyboard": [
-        "Tab / Shift+Tab for links and controls",
-        "Enter to activate; Space for native buttons",
-        "Escape closes mobile navigation"
+        "Tab and native Enter/Space where interactive; Escape closes navigation/dialog"
       ],
       "status": "implemented",
-      "validation": "not-tested"
+      "validation": "source-audited; browser not-tested"
     },
     {
-      "id": "catalog-layout",
-      "selector": "[data-component=\"catalog-layout\"]",
+      "id": "department-card",
+      "selector": "[data-component=\"department-card\"]",
       "pages": [
-        "mens.html",
-        "search.html"
+        "index.html"
       ],
       "instances": [
         {
-          "page": "mens.html",
-          "section": "collection-results",
-          "tag": "section"
+          "page": "index.html",
+          "section": "department-furn",
+          "selector": "[data-section=\"department-furn\"][data-component=\"department-card\"]"
         },
         {
-          "page": "search.html",
-          "section": "collection-results",
-          "tag": "section"
+          "page": "index.html",
+          "section": "department-decor",
+          "selector": "[data-section=\"department-decor\"][data-component=\"department-card\"]"
+        },
+        {
+          "page": "index.html",
+          "section": "department-rugs",
+          "selector": "[data-section=\"department-rugs\"][data-component=\"department-card\"]"
+        },
+        {
+          "page": "index.html",
+          "section": "department-table",
+          "selector": "[data-section=\"department-table\"][data-component=\"department-card\"]"
+        },
+        {
+          "page": "index.html",
+          "section": "department-bath",
+          "selector": "[data-section=\"department-bath\"][data-component=\"department-card\"]"
+        },
+        {
+          "page": "index.html",
+          "section": "department-pantry",
+          "selector": "[data-section=\"department-pantry\"][data-component=\"department-card\"]"
         }
       ],
       "behavior": [
-        "Semantic content/navigation; native controls where present"
+        "Semantic region or native local control; see README and JS for simulation details"
       ],
       "keyboard": [
-        "Tab / Shift+Tab for links and controls",
-        "Enter to activate; Space for native buttons",
-        "Escape closes mobile navigation"
+        "Tab and native Enter/Space where interactive; Escape closes navigation/dialog"
       ],
       "status": "implemented",
-      "validation": "not-tested"
+      "validation": "source-audited; browser not-tested"
     },
     {
-      "id": "filter-form",
-      "selector": "[data-component=\"filter-form\"]",
-      "pages": [
-        "mens.html",
-        "search.html"
-      ],
-      "instances": [
-        {
-          "page": "mens.html",
-          "section": "product-filters",
-          "tag": "form"
-        },
-        {
-          "page": "search.html",
-          "section": "product-filters",
-          "tag": "form"
-        }
-      ],
-      "behavior": [
-        "Semantic content/navigation; native controls where present"
-      ],
-      "keyboard": [
-        "Tab / Shift+Tab for links and controls",
-        "Enter to activate; Space for native buttons",
-        "Escape closes mobile navigation"
-      ],
-      "status": "implemented",
-      "validation": "not-tested"
-    },
-    {
-      "id": "help-accordions",
-      "selector": "[data-component=\"help-accordions\"]",
+      "id": "help-nav",
+      "selector": "[data-component=\"help-nav\"]",
       "pages": [
         "returns.html"
       ],
       "instances": [
         {
           "page": "returns.html",
-          "section": "returns-help",
-          "tag": "section"
+          "section": "help-navigation",
+          "selector": "[data-section=\"help-navigation\"][data-component=\"help-nav\"]"
         }
       ],
       "behavior": [
-        "Semantic content/navigation; native controls where present"
+        "Semantic region or native local control; see README and JS for simulation details"
       ],
       "keyboard": [
-        "Tab / Shift+Tab for links and controls",
-        "Enter to activate; Space for native buttons",
-        "Escape closes mobile navigation"
+        "Tab and native Enter/Space where interactive; Escape closes navigation/dialog"
       ],
       "status": "implemented",
-      "validation": "not-tested"
+      "validation": "source-audited; browser not-tested"
+    },
+    {
+      "id": "policy-content",
+      "selector": "[data-component=\"policy-content\"]",
+      "pages": [
+        "returns.html"
+      ],
+      "instances": [
+        {
+          "page": "returns.html",
+          "section": "returns-policy",
+          "selector": "[data-section=\"returns-policy\"][data-component=\"policy-content\"]"
+        }
+      ],
+      "behavior": [
+        "Semantic region or native local control; see README and JS for simulation details"
+      ],
+      "keyboard": [
+        "Tab and native Enter/Space where interactive; Escape closes navigation/dialog"
+      ],
+      "status": "implemented",
+      "validation": "source-audited; browser not-tested"
     },
     {
       "id": "product-detail",
       "selector": "[data-component=\"product-detail\"]",
       "pages": [
-        "tree-runner.html"
+        "sophie-chair.html"
       ],
       "instances": [
         {
-          "page": "tree-runner.html",
+          "page": "sophie-chair.html",
           "section": "product-purchase",
-          "tag": "section"
+          "selector": "[data-section=\"product-purchase\"][data-component=\"product-detail\"]"
         }
       ],
       "behavior": [
-        "Semantic content/navigation; native controls where present"
+        "Semantic region or native local control; see README and JS for simulation details"
       ],
       "keyboard": [
-        "Tab / Shift+Tab for links and controls",
-        "Enter to activate; Space for native buttons",
-        "Escape closes mobile navigation"
+        "Tab and native Enter/Space where interactive; Escape closes navigation/dialog"
       ],
       "status": "implemented",
-      "validation": "not-tested"
+      "validation": "source-audited; browser not-tested"
     },
     {
-      "id": "product-form",
-      "selector": "[data-component=\"product-form\"]",
+      "id": "color-selector",
+      "selector": "[data-component=\"color-selector\"]",
       "pages": [
-        "tree-runner.html"
+        "sophie-chair.html"
       ],
       "instances": [
         {
-          "page": "tree-runner.html",
-          "section": "size-selection",
-          "tag": "form"
+          "page": "sophie-chair.html",
+          "section": "product-color",
+          "selector": "[data-section=\"product-color\"][data-component=\"color-selector\"]"
         }
       ],
       "behavior": [
-        "Semantic content/navigation; native controls where present"
+        "Semantic region or native local control; see README and JS for simulation details"
       ],
       "keyboard": [
-        "Tab / Shift+Tab for links and controls",
-        "Enter to activate; Space for native buttons",
-        "Escape closes mobile navigation"
+        "Tab and native Enter/Space where interactive; Escape closes navigation/dialog"
       ],
       "status": "implemented",
-      "validation": "not-tested"
+      "validation": "source-audited; browser not-tested"
     },
     {
-      "id": "product-accordions",
-      "selector": "[data-component=\"product-accordions\"]",
+      "id": "product-details",
+      "selector": "[data-component=\"product-details\"]",
       "pages": [
-        "tree-runner.html"
+        "sophie-chair.html"
       ],
       "instances": [
         {
-          "page": "tree-runner.html",
+          "page": "sophie-chair.html",
           "section": "product-information",
-          "tag": "section"
+          "selector": "[data-section=\"product-information\"][data-component=\"product-details\"]"
         }
       ],
       "behavior": [
-        "Semantic content/navigation; native controls where present"
+        "Semantic region or native local control; see README and JS for simulation details"
       ],
       "keyboard": [
-        "Tab / Shift+Tab for links and controls",
-        "Enter to activate; Space for native buttons",
-        "Escape closes mobile navigation"
+        "Tab and native Enter/Space where interactive; Escape closes navigation/dialog"
       ],
       "status": "implemented",
-      "validation": "not-tested"
+      "validation": "source-audited; browser not-tested"
+    },
+    {
+      "id": "product-card",
+      "selector": "[data-component=\"product-card\"]",
+      "pages": [
+        "chairs.html",
+        "search.html"
+      ],
+      "instances": [
+        {
+          "page": "chairs.html",
+          "section": "catalog-product",
+          "selector": "[data-section=\"catalog-product\"][data-component=\"product-card\"]",
+          "dynamic": true
+        },
+        {
+          "page": "search.html",
+          "section": "catalog-product",
+          "selector": "[data-section=\"catalog-product\"][data-component=\"product-card\"]",
+          "dynamic": true
+        }
+      ],
+      "behavior": [
+        "Semantic region or native local control; see README and JS for simulation details"
+      ],
+      "keyboard": [
+        "Tab and native Enter/Space where interactive; Escape closes navigation/dialog"
+      ],
+      "status": "implemented",
+      "validation": "source-audited; browser not-tested"
+    },
+    {
+      "id": "store-card",
+      "selector": "[data-component=\"store-card\"]",
+      "pages": [
+        "404.html",
+        "cart.html",
+        "chairs.html",
+        "furniture.html",
+        "index.html",
+        "returns.html",
+        "search.html",
+        "sophie-chair.html"
+      ],
+      "instances": [
+        {
+          "page": "404.html",
+          "section": "store-result",
+          "selector": "[data-section=\"store-result\"][data-component=\"store-card\"]",
+          "dynamic": true
+        },
+        {
+          "page": "cart.html",
+          "section": "store-result",
+          "selector": "[data-section=\"store-result\"][data-component=\"store-card\"]",
+          "dynamic": true
+        },
+        {
+          "page": "chairs.html",
+          "section": "store-result",
+          "selector": "[data-section=\"store-result\"][data-component=\"store-card\"]",
+          "dynamic": true
+        },
+        {
+          "page": "furniture.html",
+          "section": "store-result",
+          "selector": "[data-section=\"store-result\"][data-component=\"store-card\"]",
+          "dynamic": true
+        },
+        {
+          "page": "index.html",
+          "section": "store-result",
+          "selector": "[data-section=\"store-result\"][data-component=\"store-card\"]",
+          "dynamic": true
+        },
+        {
+          "page": "returns.html",
+          "section": "store-result",
+          "selector": "[data-section=\"store-result\"][data-component=\"store-card\"]",
+          "dynamic": true
+        },
+        {
+          "page": "search.html",
+          "section": "store-result",
+          "selector": "[data-section=\"store-result\"][data-component=\"store-card\"]",
+          "dynamic": true
+        },
+        {
+          "page": "sophie-chair.html",
+          "section": "store-result",
+          "selector": "[data-section=\"store-result\"][data-component=\"store-card\"]",
+          "dynamic": true
+        }
+      ],
+      "behavior": [
+        "Semantic region or native local control; see README and JS for simulation details"
+      ],
+      "keyboard": [
+        "Tab and native Enter/Space where interactive; Escape closes navigation/dialog"
+      ],
+      "status": "implemented",
+      "validation": "source-audited; browser not-tested"
     },
     {
       "id": "cart-item",
@@ -715,71 +1006,19 @@
       "instances": [
         {
           "page": "cart.html",
-          "section": "bag-items",
-          "dynamic": "one per local cart row; initially zero"
+          "section": "cart-line",
+          "selector": "[data-section=\"cart-line\"][data-component=\"cart-item\"]",
+          "dynamic": true
         }
       ],
       "behavior": [
-        "Quantity 1\u201320 and removal; local nonpersonal bag persistence with fallback"
+        "Semantic region or native local control; see README and JS for simulation details"
       ],
       "keyboard": [
-        "Tab, Enter, native number-input arrows"
+        "Tab and native Enter/Space where interactive; Escape closes navigation/dialog"
       ],
       "status": "implemented",
-      "validation": "not-tested"
-    },
-    {
-      "id": "accordion",
-      "selector": "[data-component=\"accordion\"]",
-      "pages": [
-        "returns.html",
-        "tree-runner.html"
-      ],
-      "instances": [
-        {
-          "page": "tree-runner.html",
-          "section": "supporting-information",
-          "tag": "details"
-        },
-        {
-          "page": "tree-runner.html",
-          "section": "supporting-information",
-          "tag": "details"
-        },
-        {
-          "page": "tree-runner.html",
-          "section": "supporting-information",
-          "tag": "details"
-        },
-        {
-          "page": "returns.html",
-          "section": "supporting-information",
-          "tag": "details"
-        },
-        {
-          "page": "returns.html",
-          "section": "supporting-information",
-          "tag": "details"
-        },
-        {
-          "page": "returns.html",
-          "section": "supporting-information",
-          "tag": "details"
-        },
-        {
-          "page": "returns.html",
-          "section": "supporting-information",
-          "tag": "details"
-        }
-      ],
-      "behavior": [
-        "Native details/summary expands supporting information"
-      ],
-      "keyboard": [
-        "Tab to summary; Enter/Space toggles"
-      ],
-      "status": "implemented",
-      "validation": "not-tested"
+      "validation": "source-audited; browser not-tested"
     }
   ]
 }

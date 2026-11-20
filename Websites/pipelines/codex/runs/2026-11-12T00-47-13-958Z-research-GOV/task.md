@@ -43,56 +43,56 @@ Populate or propose only the three assigned Codex source records. Do not fill ap
       },
       {
         "slot": 3,
-        "source_id": "GOV-03",
+        "source_id": "GOV-R03",
         "model_group": "claude",
         "stratum": "federal agency",
         "authority": "coordination proposal; reconcile with shared inventory"
       },
       {
         "slot": 4,
-        "source_id": "GOV-04",
+        "source_id": "GOV-03",
         "model_group": "codex",
         "stratum": "municipal government",
         "authority": "codex assignment"
       },
       {
         "slot": 5,
-        "source_id": "GOV-05",
+        "source_id": "GOV-04",
         "model_group": "codex",
         "stratum": "state portal/agency",
         "authority": "codex assignment"
       },
       {
         "slot": 6,
-        "source_id": "GOV-06",
+        "source_id": "GOV-R06",
         "model_group": "codex",
         "stratum": "federal agency",
         "authority": "codex assignment"
       },
       {
         "slot": 7,
-        "source_id": "GOV-07",
+        "source_id": "GOV-05",
         "model_group": "open-source",
         "stratum": "municipal government",
         "authority": "coordination proposal; reconcile with shared inventory"
       },
       {
         "slot": 8,
-        "source_id": "GOV-08",
+        "source_id": "GOV-R08",
         "model_group": "open-source",
         "stratum": "state portal/agency",
         "authority": "coordination proposal; reconcile with shared inventory"
       },
       {
         "slot": 9,
-        "source_id": "GOV-09",
+        "source_id": "GOV-R09",
         "model_group": "open-source",
         "stratum": "federal agency",
         "authority": "coordination proposal; reconcile with shared inventory"
       },
       {
         "slot": 10,
-        "source_id": "GOV-10",
+        "source_id": "GOV-06",
         "model_group": "open-source",
         "stratum": "additional distinct municipal government (complexity-matched reserve)",
         "authority": "coordination proposal; reconcile with shared inventory"
@@ -179,7 +179,7 @@ Populate or propose only the three assigned Codex source records. Do not fill ap
     {
       "category": "government",
       "slot": "03",
-      "source_id": "GOV-03",
+      "source_id": "GOV-R03",
       "model_group": "claude",
       "model_id": "",
       "model_version": "",
@@ -203,7 +203,7 @@ Populate or propose only the three assigned Codex source records. Do not fill ap
     {
       "category": "government",
       "slot": "04",
-      "source_id": "GOV-04",
+      "source_id": "GOV-03",
       "model_group": "codex",
       "model_id": "",
       "model_version": "",
@@ -227,7 +227,7 @@ Populate or propose only the three assigned Codex source records. Do not fill ap
     {
       "category": "government",
       "slot": "05",
-      "source_id": "GOV-05",
+      "source_id": "GOV-04",
       "model_group": "codex",
       "model_id": "",
       "model_version": "",
@@ -251,7 +251,7 @@ Populate or propose only the three assigned Codex source records. Do not fill ap
     {
       "category": "government",
       "slot": "06",
-      "source_id": "GOV-06",
+      "source_id": "GOV-R06",
       "model_group": "codex",
       "model_id": "",
       "model_version": "",
@@ -275,7 +275,7 @@ Populate or propose only the three assigned Codex source records. Do not fill ap
     {
       "category": "government",
       "slot": "07",
-      "source_id": "GOV-07",
+      "source_id": "GOV-05",
       "model_group": "open-source",
       "model_id": "",
       "model_version": "",
@@ -299,7 +299,7 @@ Populate or propose only the three assigned Codex source records. Do not fill ap
     {
       "category": "government",
       "slot": "08",
-      "source_id": "GOV-08",
+      "source_id": "GOV-R08",
       "model_group": "open-source",
       "model_id": "",
       "model_version": "",
@@ -323,7 +323,7 @@ Populate or propose only the three assigned Codex source records. Do not fill ap
     {
       "category": "government",
       "slot": "09",
-      "source_id": "GOV-09",
+      "source_id": "GOV-R09",
       "model_group": "open-source",
       "model_id": "",
       "model_version": "",
@@ -347,7 +347,7 @@ Populate or propose only the three assigned Codex source records. Do not fill ap
     {
       "category": "government",
       "slot": "10",
-      "source_id": "GOV-10",
+      "source_id": "GOV-06",
       "model_group": "open-source",
       "model_id": "",
       "model_version": "",

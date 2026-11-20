@@ -45,14 +45,14 @@ A category is **deliverable at its active scope** when every slot in its active 
 | --- | --- | --- |
 | 01 | REST-01 | Claude |
 | 02 | REST-02 | Claude |
-| 03 | REST-03 | Claude |
-| 04 | REST-04 | Codex |
-| 05 | REST-05 | Codex |
-| 06 | REST-06 | Codex |
-| 07 | REST-07 | Open-weight |
-| 08 | REST-08 | Open-weight |
-| 09 | REST-09 | Open-weight |
-| 10 | REST-10 | Open-weight |
+| 03 | REST-R03 | Claude |
+| 04 | REST-03 | Codex |
+| 05 | REST-04 | Codex |
+| 06 | REST-R06 | Codex |
+| 07 | REST-05 | Open-weight |
+| 08 | REST-R08 | Open-weight |
+| 09 | REST-R09 | Open-weight |
+| 10 | REST-06 | Open-weight |
 
 Use each category's actual approved `source_id` prefix; `REST` is illustrative. Do not duplicate one reference site merely to fill a quota.
 
@@ -75,16 +75,16 @@ repository-root/
 │   ├── claude/
 │   │   ├── REST-01/
 │   │   ├── REST-02/
-│   │   └── REST-03/
+│   │   └── REST-R03/
 │   ├── codex/
+│   │   ├── REST-03/
 │   │   ├── REST-04/
-│   │   ├── REST-05/
-│   │   └── REST-06/
+│   │   └── REST-R06/
 │   └── open-source/
-│       ├── REST-07/
-│       ├── REST-08/
-│       ├── REST-09/
-│       └── REST-10/
+│       ├── REST-05/
+│       ├── REST-R08/
+│       ├── REST-R09/
+│       └── REST-06/
 ├── university/
 │   ├── claude/
 │   ├── codex/

@@ -29,19 +29,19 @@ pre-protocol restaurant batch was deleted on 2026-11-13.
 
 | Round | Category | IDs | Status |
 |---|---|---|---|
-| 01 | university | UNI-01, UNI-02, UNI-03 | done 2026-11-13 |
-| 02 | healthcare | HOSP-01, HOSP-02, HOSP-03 | done 2026-11-13 |
-| 03 | company | CORP-01, CORP-02, CORP-03 | done 2026-11-13 |
-| 04 | e-commerce | ECOM-01, ECOM-02, ECOM-03 | done 2026-11-13 |
-| 05 | news | NEWS-01, NEWS-02, NEWS-03 | done 2026-11-13 |
-| 06 | government | GOV-01, GOV-02, GOV-03 | done 2026-11-13 |
-| 07 | fashion | FASH-01, FASH-02, FASH-03 | done 2026-11-13 |
-| 08 | weather | WX-01, WX-02, WX-03 | done 2026-11-14 |
+| 01 | university | UNI-01, UNI-02, UNI-R03 | done 2026-11-13 |
+| 02 | healthcare | HOSP-01, HOSP-02, HOSP-R03 | done 2026-11-13 |
+| 03 | company | CORP-01, CORP-02, CORP-R03 | done 2026-11-13 |
+| 04 | e-commerce | ECOM-01, ECOM-02, ECOM-R03 | done 2026-11-13 |
+| 05 | news | NEWS-01, NEWS-02, NEWS-R03 | done 2026-11-13 |
+| 06 | government | GOV-01, GOV-02, GOV-R03 | done 2026-11-13 |
+| 07 | fashion | FASH-01, FASH-02, FASH-R03 | done 2026-11-13 |
+| 08 | weather | WX-01, WX-02, WX-R03 | done 2026-11-14 |
 | 09 | nonprofit | NPO-01, NPO-02, NPO-03 | queued |
 | 10 | church | CHUR-01, CHUR-02, CHUR-03 | queued |
-| 11 | restaurant | REST-01, REST-02, REST-03 | done 2026-11-14 |
+| 11 | restaurant | REST-01, REST-02, REST-R03 | done 2026-11-14 |
 
-Portfolio (PORT-01, PORT-02, PORT-03) was delivered 2026-11-10 outside this structure and has no round.
+Portfolio (PORT-01, PORT-02, PORT-R03) was delivered 2026-11-10 outside this structure and has no round.
 
 | Batch | Phase | IDs | Status |
 |---|---|---|---|
@@ -57,7 +57,7 @@ coordinator writes **only** `model_group=codex` rows; neither normalises the oth
 ## History
 
 Build work was previously grouped as batches 03–08: five replicas per batch, packed across category
-boundaries (e.g. batch 03 was `UNI-01, UNI-02, UNI-03, HOSP-01, HOSP-02`). That conflicted with the
+boundaries (e.g. batch 03 was `UNI-01, UNI-02, UNI-R03, HOSP-01, HOSP-02`). That conflicted with the
 agreed one-category-at-a-time, three-replicas-per-orchestrator round structure, so those six files
 were replaced by the ten round files above on 2026-11-13. No replica IDs were added or dropped —
 the same 30 IDs are covered.

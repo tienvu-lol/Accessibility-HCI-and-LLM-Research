@@ -1,0 +1,1722 @@
+{
+  "tool": "pipelines/open-source/scripts/verify-sources.mjs",
+  "run_id": "2026-11-17T05-08-50-005Z-research-UNI-06",
+  "model_group": "open-source",
+  "category": "university",
+  "slots": [
+    10
+  ],
+  "fetched_at": "2026-11-17T05:09:13.466Z",
+  "method": "HTTP GET",
+  "rendered": false,
+  "interactions_tested": false,
+  "user_agent": "Mozilla/5.0 (compatible; accessibility-research-replica-study/1.0)",
+  "rounds": [
+    {
+      "round": 1,
+      "kind": "candidate homepages",
+      "records": [
+        {
+          "url": "https://umich.edu",
+          "fetched_at": "2026-11-17T05:08:55.721Z",
+          "method": "HTTP GET",
+          "ok": false,
+          "status": 403,
+          "final_url": "https://umich.edu/",
+          "redirected": true,
+          "content_type": "text/html; charset=UTF-8",
+          "bytes": 5538,
+          "title": "Just a moment...",
+          "robots": {
+            "allowed": true,
+            "matched": null,
+            "note": "robots.txt read for user-agent *"
+          },
+          "error": null,
+          "links": []
+        },
+        {
+          "url": "https://berkeley.edu",
+          "fetched_at": "2026-11-17T05:08:57.402Z",
+          "method": "HTTP GET",
+          "ok": true,
+          "status": 200,
+          "final_url": "https://www.berkeley.edu/",
+          "redirected": true,
+          "content_type": "text/html; charset=UTF-8",
+          "bytes": 76065,
+          "title": "University of California, Berkeley: Home",
+          "robots": {
+            "allowed": true,
+            "matched": null,
+            "note": "robots.txt read for user-agent *"
+          },
+          "error": null,
+          "links": [
+            {
+              "url": "https://www.berkeley.edu/students/",
+              "text": "Students",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/faculty-staff/",
+              "text": "Faculty & Staff",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/map/",
+              "text": "Map",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/directory/",
+              "text": "Directory",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/",
+              "text": "",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/about/",
+              "text": "About Overview",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/about/by-the-numbers/",
+              "text": "By the numbers",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/about/history-discoveries/",
+              "text": "History & discoveries",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/about/traditions/",
+              "text": "Traditions",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/about/experience-berkeley/",
+              "text": "Experience Berkeley",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/about/leadership/",
+              "text": "Leadership",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/admissions/",
+              "text": "Admissions Overview",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/academics/",
+              "text": "Academics Overview",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/academics/schools-colleges/",
+              "text": "Schools & colleges",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/atoz/dept/",
+              "text": "Academic departments & programs",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/academics/advising-tutoring/",
+              "text": "Advising & tutoring",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/research/",
+              "text": "Research Overview",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/research/museums-and-collections/",
+              "text": "Museums and collections",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/campus-life/",
+              "text": "Campus Life Overview",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/campus-life/events-attractions/",
+              "text": "Events & attractions",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/campus-life/housing-dining/",
+              "text": "Housing & dining",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/campus-life/student-organizations/",
+              "text": "Student organizations",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/campus-life/health-safety/",
+              "text": "Health & safety",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/research-impact/",
+              "text": "Our impacts",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.berkeley.edu/jobs/",
+              "text": "Jobs",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.berkeley.edu/heerf-report/",
+              "text": "HEERF Report",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.berkeley.edu/atoz/",
+              "text": "Websites A-Z",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.berkeley.edu/contact-us/",
+              "text": "Contact Us",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.berkeley.edu/privacy-policy/",
+              "text": "Privacy policy",
+              "in_nav": false
+            }
+          ]
+        },
+        {
+          "url": "https://washington.edu",
+          "fetched_at": "2026-11-17T05:08:59.526Z",
+          "method": "HTTP GET",
+          "ok": true,
+          "status": 200,
+          "final_url": "https://www.washington.edu/",
+          "redirected": true,
+          "content_type": "text/html",
+          "bytes": 63396,
+          "title": "UW Homepage – University of Washington",
+          "robots": {
+            "allowed": true,
+            "matched": null,
+            "note": "robots.txt read for user-agent *"
+          },
+          "error": null,
+          "links": [
+            {
+              "url": "https://www.washington.edu/",
+              "text": "",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.washington.edu/about/academics/",
+              "text": "Prospective students",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.washington.edu/students/",
+              "text": "Current students",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.washington.edu/parents/",
+              "text": "Parents & family",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.washington.edu/facultystaff/",
+              "text": "Faculty & staff",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.washington.edu/alumni/",
+              "text": "Alumni & community",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.washington.edu/about/academics/departments/",
+              "text": "Academic departments",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.washington.edu/admissions/",
+              "text": "Graduate & professional programs",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.washington.edu/calendar/academic/",
+              "text": "Academic calendar",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.washington.edu/financialaid/",
+              "text": "Financial aid",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.washington.edu/about/the-value-of-a-uw-degree/",
+              "text": "Value of a UW degree",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.washington.edu/visit/",
+              "text": "Visit",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.washington.edu/about/",
+              "text": "Campuses",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.washington.edu/about/seattle-campus/",
+              "text": "Seattle",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.washington.edu/about/campus-life/",
+              "text": "Campus life in Seattle",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.washington.edu/about/events-at-the-uw/",
+              "text": "Events at the UW",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.washington.edu/studentlife/",
+              "text": "Student life",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.washington.edu/about/housing/",
+              "text": "Student housing",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.washington.edu/ima/",
+              "text": "Recreation",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.washington.edu/leadership/",
+              "text": "Leadership",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.washington.edu/news-stories/",
+              "text": "UW news & stories",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.washington.edu/research-makes-america/",
+              "text": "Research & impact",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.washington.edu/global/",
+              "text": "Global impact",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.washington.edu/giving/",
+              "text": "Join us",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.washington.edu/newsletter/",
+              "text": "Subscribe to our newsletter",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.washington.edu/jobs/",
+              "text": "Work at the UW",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.washington.edu/accessibility/",
+              "text": "Accessibility",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.washington.edu/contact/",
+              "text": "Contact UW",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.washington.edu/rules/wac/",
+              "text": "Rules Docket",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.washington.edu/online/privacy/",
+              "text": "Privacy",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.washington.edu/online/terms/",
+              "text": "Terms",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.washington.edu/about/arts-and-culture/",
+              "text": "Arts and Culture Discover libraries, museums, public performances and more.",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.washington.edu/partnerwithuw/",
+              "text": "Partner with the UW",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.washington.edu/boundless/uw-bothell-uwave-radio/",
+              "text": "Featured story: The sound of music Meet the UW Bothell electrical engineer, DJ and radio station manager who uses the po",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.washington.edu/news/2026/09/02/how-kids-play-with-ai-toys/",
+              "text": "Curiosity, frustration and antipathy: How kids play with AI toys",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.washington.edu/news/2025/08/26/princeton-review-uw-in-top-10-of-best-value-colleges/",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.washington.edu/news/2026/06/18/rankings-uw-recognized-as-one-of-the-best-universities-in-the-world/",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.washington.edu/calendar/?trumbaEmbed=view%3Devent%26eventid%3D210931249",
+              "text": "Nov. 19 The Fiction Machine",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.washington.edu/giving/how-to-give/",
+              "text": "Ways to give",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.washington.edu/boundless/",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.washington.edu/search/",
+              "text": "Search",
+              "in_nav": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "kind": "interior pages",
+      "records": [
+        {
+          "url": "https://www.berkeley.edu/",
+          "fetched_at": "2026-11-17T05:09:07.543Z",
+          "method": "HTTP GET",
+          "ok": true,
+          "status": 200,
+          "final_url": "https://www.berkeley.edu/",
+          "redirected": false,
+          "content_type": "text/html; charset=UTF-8",
+          "bytes": 76065,
+          "title": "University of California, Berkeley: Home",
+          "robots": {
+            "allowed": true,
+            "matched": null,
+            "note": "robots.txt read for user-agent *"
+          },
+          "error": null,
+          "links": [
+            {
+              "url": "https://www.berkeley.edu/students/",
+              "text": "Students",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/faculty-staff/",
+              "text": "Faculty & Staff",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/map/",
+              "text": "Map",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/directory/",
+              "text": "Directory",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/",
+              "text": "",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/about/",
+              "text": "About Overview",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/about/by-the-numbers/",
+              "text": "By the numbers",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/about/history-discoveries/",
+              "text": "History & discoveries",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/about/traditions/",
+              "text": "Traditions",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/about/experience-berkeley/",
+              "text": "Experience Berkeley",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/about/leadership/",
+              "text": "Leadership",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/admissions/",
+              "text": "Admissions Overview",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/academics/",
+              "text": "Academics Overview",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/academics/schools-colleges/",
+              "text": "Schools & colleges",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/atoz/dept/",
+              "text": "Academic departments & programs",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/academics/advising-tutoring/",
+              "text": "Advising & tutoring",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/research/",
+              "text": "Research Overview",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/research/museums-and-collections/",
+              "text": "Museums and collections",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/campus-life/",
+              "text": "Campus Life Overview",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/campus-life/events-attractions/",
+              "text": "Events & attractions",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/campus-life/housing-dining/",
+              "text": "Housing & dining",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/campus-life/student-organizations/",
+              "text": "Student organizations",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/campus-life/health-safety/",
+              "text": "Health & safety",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/research-impact/",
+              "text": "Our impacts",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.berkeley.edu/jobs/",
+              "text": "Jobs",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.berkeley.edu/heerf-report/",
+              "text": "HEERF Report",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.berkeley.edu/atoz/",
+              "text": "Websites A-Z",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.berkeley.edu/contact-us/",
+              "text": "Contact Us",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.berkeley.edu/privacy-policy/",
+              "text": "Privacy policy",
+              "in_nav": false
+            }
+          ]
+        },
+        {
+          "url": "https://www.berkeley.edu/admissions/",
+          "fetched_at": "2026-11-17T05:09:08.398Z",
+          "method": "HTTP GET",
+          "ok": true,
+          "status": 200,
+          "final_url": "https://www.berkeley.edu/admissions/",
+          "redirected": false,
+          "content_type": "text/html; charset=UTF-8",
+          "bytes": 57079,
+          "title": "Admissions - University of California, Berkeley",
+          "robots": {
+            "allowed": true,
+            "matched": null,
+            "note": "robots.txt read for user-agent *"
+          },
+          "error": null,
+          "links": [
+            {
+              "url": "https://www.berkeley.edu/students/",
+              "text": "Students",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/faculty-staff/",
+              "text": "Faculty & Staff",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/map/",
+              "text": "Map",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/directory/",
+              "text": "Directory",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/",
+              "text": "",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/about/",
+              "text": "About Overview",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/about/by-the-numbers/",
+              "text": "By the numbers",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/about/history-discoveries/",
+              "text": "History & discoveries",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/about/traditions/",
+              "text": "Traditions",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/about/experience-berkeley/",
+              "text": "Experience Berkeley",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/about/leadership/",
+              "text": "Leadership",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/admissions/",
+              "text": "Admissions Overview",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/academics/",
+              "text": "Academics Overview",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/academics/schools-colleges/",
+              "text": "Schools & colleges",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/atoz/dept/",
+              "text": "Academic departments & programs",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/academics/advising-tutoring/",
+              "text": "Advising & tutoring",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/research/",
+              "text": "Research Overview",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/research/museums-and-collections/",
+              "text": "Museums and collections",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/campus-life/",
+              "text": "Campus Life Overview",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/campus-life/events-attractions/",
+              "text": "Events & attractions",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/campus-life/housing-dining/",
+              "text": "Housing & dining",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/campus-life/student-organizations/",
+              "text": "Student organizations",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/campus-life/health-safety/",
+              "text": "Health & safety",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/jobs/",
+              "text": "Jobs",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.berkeley.edu/heerf-report/",
+              "text": "HEERF Report",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.berkeley.edu/atoz/",
+              "text": "Websites A-Z",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.berkeley.edu/contact-us/",
+              "text": "Contact Us",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.berkeley.edu/privacy-policy/",
+              "text": "Privacy policy",
+              "in_nav": false
+            }
+          ]
+        },
+        {
+          "url": "https://www.berkeley.edu/academics/",
+          "fetched_at": "2026-11-17T05:09:09.145Z",
+          "method": "HTTP GET",
+          "ok": true,
+          "status": 200,
+          "final_url": "https://www.berkeley.edu/academics/",
+          "redirected": false,
+          "content_type": "text/html; charset=UTF-8",
+          "bytes": 59184,
+          "title": "Academics - University of California, Berkeley",
+          "robots": {
+            "allowed": true,
+            "matched": null,
+            "note": "robots.txt read for user-agent *"
+          },
+          "error": null,
+          "links": [
+            {
+              "url": "https://www.berkeley.edu/students/",
+              "text": "Students",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/faculty-staff/",
+              "text": "Faculty & Staff",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/map/",
+              "text": "Map",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/directory/",
+              "text": "Directory",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/",
+              "text": "",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/about/",
+              "text": "About Overview",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/about/by-the-numbers/",
+              "text": "By the numbers",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/about/history-discoveries/",
+              "text": "History & discoveries",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/about/traditions/",
+              "text": "Traditions",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/about/experience-berkeley/",
+              "text": "Experience Berkeley",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/about/leadership/",
+              "text": "Leadership",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/admissions/",
+              "text": "Admissions Overview",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/academics/",
+              "text": "Academics Overview",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/academics/schools-colleges/",
+              "text": "Schools & colleges",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/atoz/dept/",
+              "text": "Academic departments & programs",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/academics/advising-tutoring/",
+              "text": "Advising & tutoring",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/research/",
+              "text": "Research Overview",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/research/museums-and-collections/",
+              "text": "Museums and collections",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/campus-life/",
+              "text": "Campus Life Overview",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/campus-life/events-attractions/",
+              "text": "Events & attractions",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/campus-life/housing-dining/",
+              "text": "Housing & dining",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/campus-life/student-organizations/",
+              "text": "Student organizations",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/campus-life/health-safety/",
+              "text": "Health & safety",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/jobs/",
+              "text": "Jobs",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.berkeley.edu/heerf-report/",
+              "text": "HEERF Report",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.berkeley.edu/atoz/",
+              "text": "Websites A-Z",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.berkeley.edu/contact-us/",
+              "text": "Contact Us",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.berkeley.edu/privacy-policy/",
+              "text": "Privacy policy",
+              "in_nav": false
+            }
+          ]
+        },
+        {
+          "url": "https://www.berkeley.edu/academics/schools-colleges/",
+          "fetched_at": "2026-11-17T05:09:10.007Z",
+          "method": "HTTP GET",
+          "ok": true,
+          "status": 200,
+          "final_url": "https://www.berkeley.edu/academics/schools-colleges/",
+          "redirected": false,
+          "content_type": "text/html; charset=UTF-8",
+          "bytes": 60442,
+          "title": "Schools & colleges - University of California, Berkeley",
+          "robots": {
+            "allowed": true,
+            "matched": null,
+            "note": "robots.txt read for user-agent *"
+          },
+          "error": null,
+          "links": [
+            {
+              "url": "https://www.berkeley.edu/students/",
+              "text": "Students",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/faculty-staff/",
+              "text": "Faculty & Staff",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/map/",
+              "text": "Map",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/directory/",
+              "text": "Directory",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/",
+              "text": "",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/about/",
+              "text": "About Overview",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/about/by-the-numbers/",
+              "text": "By the numbers",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/about/history-discoveries/",
+              "text": "History & discoveries",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/about/traditions/",
+              "text": "Traditions",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/about/experience-berkeley/",
+              "text": "Experience Berkeley",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/about/leadership/",
+              "text": "Leadership",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/admissions/",
+              "text": "Admissions Overview",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/academics/",
+              "text": "Academics Overview",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/academics/schools-colleges/",
+              "text": "Schools & colleges",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/atoz/dept/",
+              "text": "Academic departments & programs",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/academics/advising-tutoring/",
+              "text": "Advising & tutoring",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/research/",
+              "text": "Research Overview",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/research/museums-and-collections/",
+              "text": "Museums and collections",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/campus-life/",
+              "text": "Campus Life Overview",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/campus-life/events-attractions/",
+              "text": "Events & attractions",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/campus-life/housing-dining/",
+              "text": "Housing & dining",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/campus-life/student-organizations/",
+              "text": "Student organizations",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/campus-life/health-safety/",
+              "text": "Health & safety",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/jobs/",
+              "text": "Jobs",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.berkeley.edu/heerf-report/",
+              "text": "HEERF Report",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.berkeley.edu/atoz/",
+              "text": "Websites A-Z",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.berkeley.edu/contact-us/",
+              "text": "Contact Us",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.berkeley.edu/privacy-policy/",
+              "text": "Privacy policy",
+              "in_nav": false
+            }
+          ]
+        },
+        {
+          "url": "https://www.berkeley.edu/directory/",
+          "fetched_at": "2026-11-17T05:09:10.757Z",
+          "method": "HTTP GET",
+          "ok": true,
+          "status": 200,
+          "final_url": "https://www.berkeley.edu/directory/",
+          "redirected": false,
+          "content_type": "text/html; charset=UTF-8",
+          "bytes": 54204,
+          "title": "Campus directory - University of California, Berkeley",
+          "robots": {
+            "allowed": true,
+            "matched": null,
+            "note": "robots.txt read for user-agent *"
+          },
+          "error": null,
+          "links": [
+            {
+              "url": "https://www.berkeley.edu/students/",
+              "text": "Students",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/faculty-staff/",
+              "text": "Faculty & Staff",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/map/",
+              "text": "Map",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/directory/",
+              "text": "Directory",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/",
+              "text": "",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/about/",
+              "text": "About Overview",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/about/by-the-numbers/",
+              "text": "By the numbers",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/about/history-discoveries/",
+              "text": "History & discoveries",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/about/traditions/",
+              "text": "Traditions",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/about/experience-berkeley/",
+              "text": "Experience Berkeley",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/about/leadership/",
+              "text": "Leadership",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/admissions/",
+              "text": "Admissions Overview",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/academics/",
+              "text": "Academics Overview",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/academics/schools-colleges/",
+              "text": "Schools & colleges",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/atoz/dept/",
+              "text": "Academic departments & programs",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/academics/advising-tutoring/",
+              "text": "Advising & tutoring",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/research/",
+              "text": "Research Overview",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/research/museums-and-collections/",
+              "text": "Museums and collections",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/campus-life/",
+              "text": "Campus Life Overview",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/campus-life/events-attractions/",
+              "text": "Events & attractions",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/campus-life/housing-dining/",
+              "text": "Housing & dining",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/campus-life/student-organizations/",
+              "text": "Student organizations",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/campus-life/health-safety/",
+              "text": "Health & safety",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/jobs/",
+              "text": "Jobs",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.berkeley.edu/heerf-report/",
+              "text": "HEERF Report",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.berkeley.edu/atoz/",
+              "text": "Websites A-Z",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.berkeley.edu/contact-us/",
+              "text": "Contact Us",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.berkeley.edu/privacy-policy/",
+              "text": "Privacy policy",
+              "in_nav": false
+            }
+          ]
+        },
+        {
+          "url": "https://www.berkeley.edu/research/",
+          "fetched_at": "2026-11-17T05:09:11.613Z",
+          "method": "HTTP GET",
+          "ok": true,
+          "status": 200,
+          "final_url": "https://www.berkeley.edu/research/",
+          "redirected": false,
+          "content_type": "text/html; charset=UTF-8",
+          "bytes": 55870,
+          "title": "Research - University of California, Berkeley",
+          "robots": {
+            "allowed": true,
+            "matched": null,
+            "note": "robots.txt read for user-agent *"
+          },
+          "error": null,
+          "links": [
+            {
+              "url": "https://www.berkeley.edu/students/",
+              "text": "Students",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/faculty-staff/",
+              "text": "Faculty & Staff",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/map/",
+              "text": "Map",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/directory/",
+              "text": "Directory",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/",
+              "text": "",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/about/",
+              "text": "About Overview",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/about/by-the-numbers/",
+              "text": "By the numbers",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/about/history-discoveries/",
+              "text": "History & discoveries",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/about/traditions/",
+              "text": "Traditions",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/about/experience-berkeley/",
+              "text": "Experience Berkeley",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/about/leadership/",
+              "text": "Leadership",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/admissions/",
+              "text": "Admissions Overview",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/academics/",
+              "text": "Academics Overview",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/academics/schools-colleges/",
+              "text": "Schools & colleges",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/atoz/dept/",
+              "text": "Academic departments & programs",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/academics/advising-tutoring/",
+              "text": "Advising & tutoring",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/research/",
+              "text": "Research Overview",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/research/museums-and-collections/",
+              "text": "Museums and collections",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/campus-life/",
+              "text": "Campus Life Overview",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/campus-life/events-attractions/",
+              "text": "Events & attractions",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/campus-life/housing-dining/",
+              "text": "Housing & dining",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/campus-life/student-organizations/",
+              "text": "Student organizations",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/campus-life/health-safety/",
+              "text": "Health & safety",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/jobs/",
+              "text": "Jobs",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.berkeley.edu/heerf-report/",
+              "text": "HEERF Report",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.berkeley.edu/atoz/",
+              "text": "Websites A-Z",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.berkeley.edu/contact-us/",
+              "text": "Contact Us",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.berkeley.edu/privacy-policy/",
+              "text": "Privacy policy",
+              "in_nav": false
+            }
+          ]
+        },
+        {
+          "url": "https://www.berkeley.edu/campus-life/events-attractions/",
+          "fetched_at": "2026-11-17T05:09:12.453Z",
+          "method": "HTTP GET",
+          "ok": true,
+          "status": 200,
+          "final_url": "https://www.berkeley.edu/campus-life/events-attractions/",
+          "redirected": false,
+          "content_type": "text/html; charset=UTF-8",
+          "bytes": 63329,
+          "title": "Events & attractions - University of California, Berkeley",
+          "robots": {
+            "allowed": true,
+            "matched": null,
+            "note": "robots.txt read for user-agent *"
+          },
+          "error": null,
+          "links": [
+            {
+              "url": "https://www.berkeley.edu/students/",
+              "text": "Students",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/faculty-staff/",
+              "text": "Faculty & Staff",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/map/",
+              "text": "Map",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/directory/",
+              "text": "Directory",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/",
+              "text": "",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/about/",
+              "text": "About Overview",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/about/by-the-numbers/",
+              "text": "By the numbers",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/about/history-discoveries/",
+              "text": "History & discoveries",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/about/traditions/",
+              "text": "Traditions",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/about/experience-berkeley/",
+              "text": "Experience Berkeley",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/about/leadership/",
+              "text": "Leadership",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/admissions/",
+              "text": "Admissions Overview",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/academics/",
+              "text": "Academics Overview",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/academics/schools-colleges/",
+              "text": "Schools & colleges",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/atoz/dept/",
+              "text": "Academic departments & programs",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/academics/advising-tutoring/",
+              "text": "Advising & tutoring",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/research/",
+              "text": "Research Overview",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/research/museums-and-collections/",
+              "text": "Museums and collections",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/campus-life/",
+              "text": "Campus Life Overview",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/campus-life/events-attractions/",
+              "text": "Events & attractions",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/campus-life/housing-dining/",
+              "text": "Housing & dining",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/campus-life/student-organizations/",
+              "text": "Student organizations",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/campus-life/health-safety/",
+              "text": "Health & safety",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/jobs/",
+              "text": "Jobs",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.berkeley.edu/heerf-report/",
+              "text": "HEERF Report",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.berkeley.edu/atoz/",
+              "text": "Websites A-Z",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.berkeley.edu/contact-us/",
+              "text": "Contact Us",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.berkeley.edu/privacy-policy/",
+              "text": "Privacy policy",
+              "in_nav": false
+            }
+          ]
+        },
+        {
+          "url": "https://www.berkeley.edu/about/by-the-numbers/",
+          "fetched_at": "2026-11-17T05:09:13.305Z",
+          "method": "HTTP GET",
+          "ok": true,
+          "status": 200,
+          "final_url": "https://www.berkeley.edu/about/by-the-numbers/",
+          "redirected": false,
+          "content_type": "text/html; charset=UTF-8",
+          "bytes": 61950,
+          "title": "By the numbers - University of California, Berkeley",
+          "robots": {
+            "allowed": true,
+            "matched": null,
+            "note": "robots.txt read for user-agent *"
+          },
+          "error": null,
+          "links": [
+            {
+              "url": "https://www.berkeley.edu/students/",
+              "text": "Students",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/faculty-staff/",
+              "text": "Faculty & Staff",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/map/",
+              "text": "Map",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/directory/",
+              "text": "Directory",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/",
+              "text": "",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/about/",
+              "text": "About Overview",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/about/by-the-numbers/",
+              "text": "By the numbers",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/about/history-discoveries/",
+              "text": "History & discoveries",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/about/traditions/",
+              "text": "Traditions",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/about/experience-berkeley/",
+              "text": "Experience Berkeley",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/about/leadership/",
+              "text": "Leadership",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/admissions/",
+              "text": "Admissions Overview",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/academics/",
+              "text": "Academics Overview",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/academics/schools-colleges/",
+              "text": "Schools & colleges",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/atoz/dept/",
+              "text": "Academic departments & programs",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/academics/advising-tutoring/",
+              "text": "Advising & tutoring",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/research/",
+              "text": "Research Overview",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/research/museums-and-collections/",
+              "text": "Museums and collections",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/campus-life/",
+              "text": "Campus Life Overview",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/campus-life/events-attractions/",
+              "text": "Events & attractions",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/campus-life/housing-dining/",
+              "text": "Housing & dining",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/campus-life/student-organizations/",
+              "text": "Student organizations",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/campus-life/health-safety/",
+              "text": "Health & safety",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.berkeley.edu/jobs/",
+              "text": "Jobs",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.berkeley.edu/heerf-report/",
+              "text": "HEERF Report",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.berkeley.edu/atoz/",
+              "text": "Websites A-Z",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.berkeley.edu/contact-us/",
+              "text": "Contact Us",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.berkeley.edu/privacy-policy/",
+              "text": "Privacy policy",
+              "in_nav": false
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

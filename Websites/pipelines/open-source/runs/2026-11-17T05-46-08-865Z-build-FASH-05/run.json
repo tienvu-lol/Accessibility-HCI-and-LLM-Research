@@ -1,0 +1,966 @@
+{
+  "run_id": "2026-11-17T05-46-08-865Z-build-FASH-05",
+  "phase": "build",
+  "target": "FASH-05",
+  "category": "fashion",
+  "slot": 7,
+  "model_group": "open-source",
+  "model": {
+    "model_id": "unsloth/Qwen3.6-35B-A3B-GGUF",
+    "model_version": "Q4_K_M",
+    "model_provider_or_runtime": "vt-arc-falcon-llamacpp (OpenAI-compatible chat completions at http://localhost:8080/v1)",
+    "weights_url": "https://huggingface.co/unsloth/Qwen3.6-35B-A3B-GGUF",
+    "license": "apache-2.0",
+    "open_weights": true,
+    "eligibility_note": "Open weights; license apache-2.0 as published on huggingface.co/unsloth/Qwen3.6-35B-A3B-GGUF and on the Qwen/Qwen3.6-35B-A3B base model card, both read 2026-11-16 by the orchestrator. Quantisation Q4_K_M (listed in that repo as UD-Q4_K_M) as reported by the serving session. Served self-hosted via llama.cpp OpenAI-compatible endpoint on the VT ARC Falcon cluster (OnDemand LLM session, node fal045:34691, reached over an SSH tunnel on localhost:8080); no third-party inference provider. An earlier session on node fal039:39247 served the same model and quant on 2026-11-16 and auto-terminated on idle; the eleven research runs completed that day used it. Thinking/reasoning output is left enabled, as the model ships, by project decision; max_tokens raised to 32000 because reasoning tokens share the completion budget. Apache-2.0 is an OSI-approved licence, so this slot qualifies as open-source as well as open-weight.",
+    "params": {
+      "temperature": 0.3,
+      "max_tokens": 32000
+    }
+  },
+  "operator": "Samhith Varma Yallamraju",
+  "status": "completed",
+  "prepared_at": "2026-11-17T05:46:08.869Z",
+  "generation_started_at": "2026-11-17T05:46:08.869Z",
+  "generation_completed_at": "2026-11-17T06:17:44.629Z",
+  "tool_access": "chat-completions API only: no browsing, no shell, no filesystem. The orchestrator wrote every file and ran every check.",
+  "budget": {
+    "max_build_turns": 28,
+    "max_repair_rounds": 3,
+    "max_tokens_per_request": 32000,
+    "temperature": 0.3
+  },
+  "approved_source": {
+    "source_name": "Vogue",
+    "source_url": "https://www.vogue.com",
+    "verified_at": "2026-11-16",
+    "verification_method": "HTTP GET by the orchestrator",
+    "verification_result": "verified",
+    "evidence_reference": "pipelines/open-source/research/evidence/FASH-05-http-2026-11-16.json",
+    "complexity": "high",
+    "stack_clues": "unknown",
+    "limitations": "Search page blocked by robots.txt.",
+    "approved_at": "2026-11-17",
+    "approved_by": "Samhith Varma Yallamraju",
+    "approval_reference": "Project lead approval given 2026-11-16 in the Claude Code orchestration session for open-source slot 07; see that session transcript and research/FASH-05.md"
+  },
+  "approved_page_map": [
+    {
+      "url": "https://www.vogue.com/",
+      "title": "Vogue: Fashion, Beauty, Celebrity, Fashion Shows | Vogue",
+      "local_file": "index.html"
+    },
+    {
+      "url": "https://www.vogue.com/fashion",
+      "title": "Fashion News and Trends: Designers, Models, Style Guides | Vogue",
+      "local_file": "fashion.html"
+    },
+    {
+      "url": "https://www.vogue.com/fashion-shows",
+      "title": "Fashion Shows: Fashion Week, Runway, Designer Collections | Vogue",
+      "local_file": "fashion-shows.html"
+    },
+    {
+      "url": "https://www.vogue.com/shopping",
+      "title": "Shop Top Fashion, Beauty & Home Products | Vogue",
+      "local_file": "shopping.html"
+    },
+    {
+      "url": "https://www.vogue.com/beauty",
+      "title": "Beauty: Tips and Trends, Beauty Product Reviews | Vogue",
+      "local_file": "beauty.html"
+    },
+    {
+      "url": "https://www.vogue.com/culture",
+      "title": "Culture: News, Reviews and Opinion | Vogue",
+      "local_file": "culture.html"
+    },
+    {
+      "url": "https://www.vogue.com/fashion/trends",
+      "title": "Fashion Trends: What's In For Spring, Summer, Fall, and Winter | Vogue",
+      "local_file": "fashion-trends.html"
+    },
+    {
+      "url": "https://www.vogue.com/slideshow/10-best-dressed-stars-zendaya-mikey-madison-ayo-edebiri",
+      "title": "The Best Dressed Stars of the Week Proved Formal Can Be Fun | Vogue",
+      "local_file": "slideshow-best-dressed-stars.html"
+    },
+    {
+      "url": "https://www.vogue.com/shopping/vogue-shopping-lookbook",
+      "title": "The Editor Lookbook | Vogue",
+      "local_file": "shopping-lookbook.html"
+    },
+    {
+      "url": "https://www.vogue.com/article/faux-fur-trim-robe-coat-trend",
+      "title": "The Data Shows It: The Faux Fur-Trimmed Coat Is the Coat of the Season | Vogue",
+      "local_file": "article-faux-fur-trim-robe-coat-trend.html"
+    },
+    {
+      "url": "https://www.vogue.com/business",
+      "title": "Vogue Business: Fashion Industry Expertise From an Insider's Perspective | Vogue",
+      "local_file": "business.html"
+    }
+  ],
+  "protocol_snapshots": [
+    {
+      "path": "Rules.md",
+      "sha256": "04b1c3e38b76f2aff3aef869d67370bb4532cd8f9ab5e22ac8276f26cbb859bf"
+    },
+    {
+      "path": "MODEL_ALLOCATION.md",
+      "sha256": "7e9487530a6e80b35af48d0691951dafc2fffea39798c81a3c49203909148d30"
+    },
+    {
+      "path": "pipelines/open-source/config.json",
+      "sha256": "e5c7666dbdc7c302e54c0c94c946dcd01d64992b89a56df7ce1ee272dd488edf"
+    },
+    {
+      "path": "pipelines/open-source/categories.json",
+      "sha256": "8180966e55daa24799e51106645e93fd5807dde470765ab8b3b38d3f922c867b"
+    },
+    {
+      "path": "pipelines/open-source/prompts/system.md",
+      "sha256": "61bc24a57de14bd6a662cd6b5f98d0cfc57bf47e187fc58a97831bf1f272b4ee"
+    },
+    {
+      "path": "pipelines/open-source/prompts/build.md",
+      "sha256": "6096ab8b698af7a99d8ddaf1534cc95f41844d1d00cdd1fce740123b3146ab6a"
+    },
+    {
+      "path": "pipelines/open-source/prompts/repair.md",
+      "sha256": "8a84e51995736607b3efa6f5b2d76e52692423c2c26b03409afb4afa3c6586d6"
+    },
+    {
+      "path": "pipelines/open-source/models.json",
+      "sha256": "f02e4efcab2732e1736a96e02459eef895400d01c2888b63c7cded93435f36c4"
+    },
+    {
+      "path": "metadata/source-inventories/fashion.csv",
+      "sha256": "65c8f941dda126b69c3c8df8f20456ad9948abbb60f724977de0de3f1a4a5b95"
+    },
+    {
+      "path": "metadata/assignments.csv",
+      "sha256": "246cb616f46039332d7829ca07e38d5d548cdf3ed024c39ac1c4924ff1af706a"
+    }
+  ],
+  "turns": [
+    {
+      "turn": 1,
+      "label": "plan",
+      "status_line": "CONTINUE",
+      "prose_chars": 2381,
+      "files_written": [],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 1398,
+        "prompt_tokens": 5241,
+        "total_tokens": 6639,
+        "prompt_tokens_details": {
+          "cached_tokens": 539
+        }
+      },
+      "at": "2026-11-17T05:46:19.091Z"
+    },
+    {
+      "turn": 2,
+      "label": "files-2",
+      "status_line": "CONTINUE",
+      "prose_chars": 0,
+      "files_written": [
+        "css/styles.css",
+        "js/main.js",
+        "index.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 6295,
+        "prompt_tokens": 6101,
+        "total_tokens": 12396,
+        "prompt_tokens_details": {
+          "cached_tokens": 5237
+        }
+      },
+      "at": "2026-11-17T05:47:01.937Z"
+    },
+    {
+      "turn": 3,
+      "label": "files-3",
+      "status_line": "CONTINUE",
+      "prose_chars": 0,
+      "files_written": [
+        "fashion.html",
+        "fashion-shows.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 6002,
+        "prompt_tokens": 11798,
+        "total_tokens": 17800,
+        "prompt_tokens_details": {
+          "cached_tokens": 6097
+        }
+      },
+      "at": "2026-11-17T05:47:44.551Z"
+    },
+    {
+      "turn": 4,
+      "label": "files-4",
+      "status_line": "CONTINUE",
+      "prose_chars": 0,
+      "files_written": [
+        "shopping.html",
+        "beauty.html",
+        "culture.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 8921,
+        "prompt_tokens": 16652,
+        "total_tokens": 25573,
+        "prompt_tokens_details": {
+          "cached_tokens": 11794
+        }
+      },
+      "at": "2026-11-17T05:48:48.879Z"
+    },
+    {
+      "turn": 5,
+      "label": "files-5",
+      "status_line": "CONTINUE",
+      "prose_chars": 0,
+      "files_written": [
+        "fashion-trends.html",
+        "slideshow-best-dressed-stars.html",
+        "shopping-lookbook.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 9011,
+        "prompt_tokens": 25186,
+        "total_tokens": 34197,
+        "prompt_tokens_details": {
+          "cached_tokens": 16648
+        }
+      },
+      "at": "2026-11-17T05:49:56.745Z"
+    },
+    {
+      "turn": 6,
+      "label": "files-6",
+      "status_line": "CONTINUE",
+      "prose_chars": 0,
+      "files_written": [
+        "article-faux-fur-trim-robe-coat-trend.html",
+        "business.html",
+        "404.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 5842,
+        "prompt_tokens": 34056,
+        "total_tokens": 39898,
+        "prompt_tokens_details": {
+          "cached_tokens": 34052
+        }
+      },
+      "at": "2026-11-17T05:55:00.389Z"
+    },
+    {
+      "turn": 7,
+      "label": "files-7",
+      "status_line": "CONTINUE",
+      "prose_chars": 0,
+      "files_written": [
+        "README.md",
+        "fidelity-notes.md"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 3152,
+        "prompt_tokens": 40065,
+        "total_tokens": 43217,
+        "prompt_tokens_details": {
+          "cached_tokens": 34052
+        }
+      },
+      "at": "2026-11-17T05:55:25.964Z"
+    },
+    {
+      "turn": 8,
+      "label": "files-8",
+      "status_line": "COMPLETE",
+      "prose_chars": 289,
+      "files_written": [
+        "component-inventory.json",
+        "generation-metadata.json"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 2540,
+        "prompt_tokens": 43381,
+        "total_tokens": 45921,
+        "prompt_tokens_details": {
+          "cached_tokens": 40061
+        }
+      },
+      "at": "2026-11-17T05:55:46.572Z"
+    },
+    {
+      "turn": 9,
+      "label": "repair-1",
+      "status_line": null,
+      "prose_chars": 0,
+      "files_written": [
+        "assets/hero-placeholder.svg",
+        "css/styles.css",
+        "index.html",
+        "fashion.html",
+        "fashion-shows.html",
+        "shopping.html",
+        "beauty.html",
+        "culture.html",
+        "fashion-trends.html",
+        "slideshow-best-dressed-stars.html",
+        "shopping-lookbook.html",
+        "article-faux-fur-trim-robe-coat-trend.html"
+      ],
+      "files_rejected": [],
+      "truncated": true,
+      "finish_reason": "length",
+      "usage": {
+        "completion_tokens": 32000,
+        "prompt_tokens": 49200,
+        "total_tokens": 81200,
+        "prompt_tokens_details": {
+          "cached_tokens": 49196
+        }
+      },
+      "at": "2026-11-17T06:09:30.724Z"
+    },
+    {
+      "turn": 10,
+      "label": "repair-1-cont-1",
+      "status_line": "COMPLETE",
+      "prose_chars": 729,
+      "files_written": [
+        "business.html",
+        "404.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 5871,
+        "prompt_tokens": 80738,
+        "total_tokens": 86609,
+        "prompt_tokens_details": {
+          "cached_tokens": 49196
+        }
+      },
+      "at": "2026-11-17T06:10:30.340Z"
+    },
+    {
+      "turn": 11,
+      "label": "repair-2",
+      "status_line": null,
+      "prose_chars": 0,
+      "files_written": [
+        "index.html",
+        "fashion.html",
+        "fashion-shows.html",
+        "shopping.html",
+        "beauty.html",
+        "culture.html",
+        "fashion-trends.html",
+        "slideshow-best-dressed-stars.html"
+      ],
+      "files_rejected": [],
+      "truncated": true,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 25648,
+        "prompt_tokens": 86493,
+        "total_tokens": 112141,
+        "prompt_tokens_details": {
+          "cached_tokens": 80734
+        }
+      },
+      "at": "2026-11-17T06:14:39.993Z"
+    },
+    {
+      "turn": 12,
+      "label": "repair-2-cont-1",
+      "status_line": "COMPLETE",
+      "prose_chars": 761,
+      "files_written": [
+        "shopping-lookbook.html",
+        "article-faux-fur-trim-robe-coat-trend.html",
+        "business.html",
+        "404.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 11713,
+        "prompt_tokens": 110434,
+        "total_tokens": 122147,
+        "prompt_tokens_details": {
+          "cached_tokens": 86489
+        }
+      },
+      "at": "2026-11-17T06:16:44.241Z"
+    },
+    {
+      "turn": 13,
+      "label": "repair-3",
+      "status_line": "COMPLETE",
+      "prose_chars": 242,
+      "files_written": [
+        "shopping-lookbook.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 4620,
+        "prompt_tokens": 121386,
+        "total_tokens": 126006,
+        "prompt_tokens_details": {
+          "cached_tokens": 110430
+        }
+      },
+      "at": "2026-11-17T06:17:39.816Z"
+    }
+  ],
+  "rejected_files": [],
+  "qc_runs": [
+    {
+      "started_at": "2026-11-17T05:55:46.585Z",
+      "completed_at": "2026-11-17T05:55:51.613Z",
+      "exit_code": 1,
+      "executed": true,
+      "passed": false,
+      "outcome": "fail",
+      "failures": [
+        "placeholder href=\"#\" in 404.html",
+        "placeholder href=\"#\" in 404.html",
+        "placeholder href=\"#\" in 404.html",
+        "placeholder href=\"#\" in 404.html",
+        "placeholder href=\"#\" in 404.html",
+        "placeholder href=\"#\" in 404.html",
+        "placeholder href=\"#\" in 404.html",
+        "placeholder href=\"#\" in article-faux-fur-trim-robe-coat-trend.html",
+        "placeholder href=\"#\" in article-faux-fur-trim-robe-coat-trend.html",
+        "placeholder href=\"#\" in article-faux-fur-trim-robe-coat-trend.html",
+        "placeholder href=\"#\" in article-faux-fur-trim-robe-coat-trend.html",
+        "placeholder href=\"#\" in article-faux-fur-trim-robe-coat-trend.html",
+        "placeholder href=\"#\" in article-faux-fur-trim-robe-coat-trend.html",
+        "placeholder href=\"#\" in article-faux-fur-trim-robe-coat-trend.html",
+        "placeholder href=\"#\" in article-faux-fur-trim-robe-coat-trend.html",
+        "placeholder href=\"#\" in article-faux-fur-trim-robe-coat-trend.html",
+        "placeholder href=\"#\" in article-faux-fur-trim-robe-coat-trend.html",
+        "placeholder href=\"#\" in beauty.html",
+        "placeholder href=\"#\" in beauty.html",
+        "placeholder href=\"#\" in beauty.html",
+        "placeholder href=\"#\" in beauty.html",
+        "placeholder href=\"#\" in beauty.html",
+        "placeholder href=\"#\" in beauty.html",
+        "placeholder href=\"#\" in beauty.html",
+        "placeholder href=\"#\" in beauty.html",
+        "placeholder href=\"#\" in beauty.html",
+        "placeholder href=\"#\" in beauty.html",
+        "placeholder href=\"#\" in beauty.html",
+        "placeholder href=\"#\" in beauty.html",
+        "placeholder href=\"#\" in beauty.html",
+        "placeholder href=\"#\" in beauty.html",
+        "placeholder href=\"#\" in beauty.html",
+        "placeholder href=\"#\" in beauty.html",
+        "placeholder href=\"#\" in business.html",
+        "placeholder href=\"#\" in business.html",
+        "placeholder href=\"#\" in business.html",
+        "placeholder href=\"#\" in business.html",
+        "placeholder href=\"#\" in business.html",
+        "placeholder href=\"#\" in business.html",
+        "placeholder href=\"#\" in business.html",
+        "placeholder href=\"#\" in business.html",
+        "placeholder href=\"#\" in business.html",
+        "placeholder href=\"#\" in business.html",
+        "placeholder href=\"#\" in business.html",
+        "placeholder href=\"#\" in business.html",
+        "placeholder href=\"#\" in business.html",
+        "placeholder href=\"#\" in business.html",
+        "placeholder href=\"#\" in business.html",
+        "placeholder href=\"#\" in business.html",
+        "placeholder href=\"#\" in business.html",
+        "placeholder href=\"#\" in culture.html",
+        "placeholder href=\"#\" in culture.html",
+        "placeholder href=\"#\" in culture.html",
+        "placeholder href=\"#\" in culture.html",
+        "placeholder href=\"#\" in culture.html",
+        "placeholder href=\"#\" in culture.html",
+        "placeholder href=\"#\" in culture.html",
+        "placeholder href=\"#\" in culture.html",
+        "placeholder href=\"#\" in culture.html",
+        "placeholder href=\"#\" in culture.html",
+        "placeholder href=\"#\" in culture.html",
+        "placeholder href=\"#\" in culture.html",
+        "placeholder href=\"#\" in culture.html",
+        "placeholder href=\"#\" in culture.html",
+        "placeholder href=\"#\" in culture.html",
+        "placeholder href=\"#\" in culture.html",
+        "placeholder href=\"#\" in fashion-shows.html",
+        "placeholder href=\"#\" in fashion-shows.html",
+        "placeholder href=\"#\" in fashion-shows.html",
+        "placeholder href=\"#\" in fashion-shows.html",
+        "placeholder href=\"#\" in fashion-shows.html",
+        "placeholder href=\"#\" in fashion-shows.html",
+        "placeholder href=\"#\" in fashion-shows.html",
+        "placeholder href=\"#\" in fashion-trends.html",
+        "placeholder href=\"#\" in fashion-trends.html",
+        "placeholder href=\"#\" in fashion-trends.html",
+        "placeholder href=\"#\" in fashion-trends.html",
+        "placeholder href=\"#\" in fashion-trends.html",
+        "placeholder href=\"#\" in fashion-trends.html",
+        "placeholder href=\"#\" in fashion-trends.html",
+        "placeholder href=\"#\" in fashion-trends.html",
+        "placeholder href=\"#\" in fashion-trends.html",
+        "placeholder href=\"#\" in fashion-trends.html",
+        "placeholder href=\"#\" in fashion-trends.html",
+        "placeholder href=\"#\" in fashion-trends.html",
+        "placeholder href=\"#\" in fashion-trends.html",
+        "placeholder href=\"#\" in fashion-trends.html",
+        "placeholder href=\"#\" in fashion-trends.html",
+        "placeholder href=\"#\" in fashion-trends.html",
+        "placeholder href=\"#\" in fashion-trends.html",
+        "placeholder href=\"#\" in fashion.html",
+        "placeholder href=\"#\" in fashion.html",
+        "placeholder href=\"#\" in fashion.html",
+        "placeholder href=\"#\" in fashion.html",
+        "placeholder href=\"#\" in fashion.html",
+        "placeholder href=\"#\" in fashion.html",
+        "placeholder href=\"#\" in fashion.html",
+        "placeholder href=\"#\" in fashion.html",
+        "placeholder href=\"#\" in fashion.html",
+        "placeholder href=\"#\" in fashion.html",
+        "placeholder href=\"#\" in fashion.html",
+        "placeholder href=\"#\" in fashion.html",
+        "placeholder href=\"#\" in fashion.html",
+        "placeholder href=\"#\" in fashion.html",
+        "placeholder href=\"#\" in fashion.html",
+        "placeholder href=\"#\" in index.html",
+        "placeholder href=\"#\" in index.html",
+        "placeholder href=\"#\" in index.html",
+        "placeholder href=\"#\" in index.html",
+        "placeholder href=\"#\" in index.html",
+        "placeholder href=\"#\" in index.html",
+        "placeholder href=\"#\" in index.html",
+        "placeholder href=\"#\" in shopping-lookbook.html",
+        "placeholder href=\"#\" in shopping-lookbook.html",
+        "placeholder href=\"#\" in shopping-lookbook.html",
+        "placeholder href=\"#\" in shopping-lookbook.html",
+        "placeholder href=\"#\" in shopping-lookbook.html",
+        "placeholder href=\"#\" in shopping-lookbook.html",
+        "placeholder href=\"#\" in shopping-lookbook.html",
+        "placeholder href=\"#\" in shopping-lookbook.html",
+        "placeholder href=\"#\" in shopping-lookbook.html",
+        "placeholder href=\"#\" in shopping-lookbook.html",
+        "placeholder href=\"#\" in shopping-lookbook.html",
+        "placeholder href=\"#\" in shopping-lookbook.html",
+        "placeholder href=\"#\" in shopping-lookbook.html",
+        "placeholder href=\"#\" in shopping-lookbook.html",
+        "placeholder href=\"#\" in shopping-lookbook.html",
+        "placeholder href=\"#\" in shopping-lookbook.html",
+        "placeholder href=\"#\" in shopping-lookbook.html",
+        "placeholder href=\"#\" in shopping.html",
+        "placeholder href=\"#\" in shopping.html",
+        "placeholder href=\"#\" in shopping.html",
+        "placeholder href=\"#\" in shopping.html",
+        "placeholder href=\"#\" in shopping.html",
+        "placeholder href=\"#\" in shopping.html",
+        "placeholder href=\"#\" in shopping.html",
+        "placeholder href=\"#\" in shopping.html",
+        "placeholder href=\"#\" in shopping.html",
+        "placeholder href=\"#\" in shopping.html",
+        "placeholder href=\"#\" in shopping.html",
+        "placeholder href=\"#\" in shopping.html",
+        "placeholder href=\"#\" in shopping.html",
+        "placeholder href=\"#\" in shopping.html",
+        "placeholder href=\"#\" in shopping.html",
+        "placeholder href=\"#\" in shopping.html",
+        "placeholder href=\"#\" in slideshow-best-dressed-stars.html",
+        "placeholder href=\"#\" in slideshow-best-dressed-stars.html",
+        "placeholder href=\"#\" in slideshow-best-dressed-stars.html",
+        "placeholder href=\"#\" in slideshow-best-dressed-stars.html",
+        "placeholder href=\"#\" in slideshow-best-dressed-stars.html",
+        "placeholder href=\"#\" in slideshow-best-dressed-stars.html",
+        "placeholder href=\"#\" in slideshow-best-dressed-stars.html",
+        "placeholder href=\"#\" in slideshow-best-dressed-stars.html",
+        "placeholder href=\"#\" in slideshow-best-dressed-stars.html",
+        "placeholder href=\"#\" in slideshow-best-dressed-stars.html",
+        "broken asset in css/styles.css: assets/hero-placeholder.svg",
+        "axe heading-order (moderate) @1280 404.html: 1 node(s) e.g. div:nth-child(1) > h4",
+        "failed request @1280 beauty.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-05/css/assets/hero-placeholder.svg",
+        "console error @1280 beauty.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "axe heading-order (moderate) @1280 beauty.html: 2 node(s) e.g. article:nth-child(1) > .card-body > h3",
+        "failed request @1280 business.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-05/css/assets/hero-placeholder.svg",
+        "console error @1280 business.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "axe heading-order (moderate) @1280 business.html: 2 node(s) e.g. article:nth-child(1) > .card-body > h3",
+        "failed request @1280 culture.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-05/css/assets/hero-placeholder.svg",
+        "console error @1280 culture.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "axe heading-order (moderate) @1280 culture.html: 2 node(s) e.g. article:nth-child(1) > .card-body > h3",
+        "failed request @1280 fashion-shows.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-05/css/assets/hero-placeholder.svg",
+        "console error @1280 fashion-shows.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @1280 fashion-trends.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-05/css/assets/hero-placeholder.svg",
+        "console error @1280 fashion-trends.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "axe heading-order (moderate) @1280 fashion-trends.html: 2 node(s) e.g. article:nth-child(1) > .card-body > h3",
+        "failed request @1280 fashion.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-05/css/assets/hero-placeholder.svg",
+        "console error @1280 fashion.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "axe heading-order (moderate) @1280 fashion.html: 2 node(s) e.g. article:nth-child(1) > .card-body > h3",
+        "failed request @1280 index.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-05/css/assets/hero-placeholder.svg",
+        "console error @1280 index.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "axe heading-order (moderate) @1280 index.html: 1 node(s) e.g. div:nth-child(1) > h4",
+        "failed request @1280 shopping-lookbook.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-05/css/assets/hero-placeholder.svg",
+        "console error @1280 shopping-lookbook.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @1280 shopping.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-05/css/assets/hero-placeholder.svg",
+        "console error @1280 shopping.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "axe heading-order (moderate) @1280 shopping.html: 2 node(s) e.g. article:nth-child(1) > .card-body > h3",
+        "failed request @1280 slideshow-best-dressed-stars.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-05/css/assets/hero-placeholder.svg",
+        "console error @1280 slideshow-best-dressed-stars.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "axe heading-order (moderate) @1280 slideshow-best-dressed-stars.html: 1 node(s) e.g. .is-active > h3",
+        "axe heading-order (moderate) @375 404.html: 1 node(s) e.g. div:nth-child(1) > h4",
+        "failed request @375 beauty.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-05/css/assets/hero-placeholder.svg",
+        "console error @375 beauty.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "axe heading-order (moderate) @375 beauty.html: 2 node(s) e.g. article:nth-child(1) > .card-body > h3",
+        "failed request @375 business.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-05/css/assets/hero-placeholder.svg",
+        "console error @375 business.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "axe heading-order (moderate) @375 business.html: 2 node(s) e.g. article:nth-child(1) > .card-body > h3",
+        "failed request @375 culture.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-05/css/assets/hero-placeholder.svg",
+        "console error @375 culture.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "axe heading-order (moderate) @375 culture.html: 2 node(s) e.g. article:nth-child(1) > .card-body > h3",
+        "failed request @375 fashion-shows.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-05/css/assets/hero-placeholder.svg",
+        "console error @375 fashion-shows.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @375 fashion-trends.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-05/css/assets/hero-placeholder.svg",
+        "console error @375 fashion-trends.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "axe heading-order (moderate) @375 fashion-trends.html: 2 node(s) e.g. article:nth-child(1) > .card-body > h3",
+        "failed request @375 fashion.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-05/css/assets/hero-placeholder.svg",
+        "console error @375 fashion.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "axe heading-order (moderate) @375 fashion.html: 2 node(s) e.g. article:nth-child(1) > .card-body > h3",
+        "failed request @375 index.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-05/css/assets/hero-placeholder.svg",
+        "console error @375 index.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "axe heading-order (moderate) @375 index.html: 1 node(s) e.g. div:nth-child(1) > h4",
+        "failed request @375 shopping-lookbook.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-05/css/assets/hero-placeholder.svg",
+        "console error @375 shopping-lookbook.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "failed request @375 shopping.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-05/css/assets/hero-placeholder.svg",
+        "console error @375 shopping.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "axe heading-order (moderate) @375 shopping.html: 2 node(s) e.g. article:nth-child(1) > .card-body > h3",
+        "failed request @375 slideshow-best-dressed-stars.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-05/css/assets/hero-placeholder.svg",
+        "console error @375 slideshow-best-dressed-stars.html: Failed to load resource: net::ERR_FILE_NOT_FOUND",
+        "axe heading-order (moderate) @375 slideshow-best-dressed-stars.html: 1 node(s) e.g. .is-active > h3"
+      ],
+      "failure_count": 214,
+      "warnings": [],
+      "axe": {
+        "heading-order": 30
+      },
+      "pages": 12,
+      "files": 18,
+      "qc_tool_sha256": "e9be905d19e7181e30d8291bcb1511d4469bdc9e36c20c0efe21e2d3fcf54513",
+      "report": "qc-initial-2026-11-17T05-55-46-585Z.json",
+      "log": "qc-initial-2026-11-17T05-55-46-585Z.log",
+      "stdout_tail": "FAIL console error @375 business.html: Failed to load resource: net::ERR_FILE_NOT_FOUND\nFAIL axe heading-order (moderate) @375 business.html: 2 node(s) e.g. article:nth-child(1) > .card-body > h3\nFAIL failed request @375 culture.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-05/css/assets/hero-placeholder.svg\nFAIL console error @375 culture.html: Failed to load resource: net::ERR_FILE_NOT_FOUND\nFAIL axe heading-order (moderate) @375 culture.html: 2 node(s) e.g. article:nth-child(1) > .card-body > h3\nFAIL failed request @375 fashion-shows.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-05/css/assets/hero-placeholder.svg\nFAIL console error @375 fashion-shows.html: Failed to load resource: net::ERR_FILE_NOT_FOUND\nFAIL failed request @375 fashion-trends.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-05/css/assets/hero-placeholder.svg\nFAIL console error @375 fashion-trends.html: Failed to load resource: net::ERR_FILE_NOT_FOUND\nFAIL axe heading-order (moderate) @375 fashion-trends.html: 2 node(s) e.g. article:nth-child(1) > .card-body > h3\nFAIL failed request @375 fashion.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-05/css/assets/hero-placeholder.svg\nFAIL console error @375 fashion.html: Failed to load resource: net::ERR_FILE_NOT_FOUND\nFAIL axe heading-order (moderate) @375 fashion.html: 2 node(s) e.g. article:nth-child(1) > .card-body > h3\nFAIL failed request @375 index.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-05/css/assets/hero-placeholder.svg\nFAIL console error @375 index.html: Failed to load resource: net::ERR_FILE_NOT_FOUND\nFAIL axe heading-order (moderate) @375 index.html: 1 node(s) e.g. div:nth-child(1) > h4\nFAIL failed request @375 shopping-lookbook.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-05/css/assets/hero-placeholder.svg\nFAIL console error @375 shopping-lookbook.html: Failed to load resource: net::ERR_FILE_NOT_FOUND\nFAIL failed request @375 shopping.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-05/css/assets/hero-placeholder.svg\nFAIL console error @375 shopping.html: Failed to load resource: net::ERR_FILE_NOT_FOUND\nFAIL axe heading-order (moderate) @375 shopping.html: 2 node(s) e.g. article:nth-child(1) > .card-body > h3\nFAIL failed request @375 slideshow-best-dressed-stars.html: file:///Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My%20Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-05/css/assets/hero-placeholder.svg\nFAIL console error @375 slideshow-best-dressed-stars.html: Failed to load resource: net::ERR_FILE_NOT_FOUND\nFAIL axe heading-order (moderate) @375 slideshow-best-dressed-stars.html: 1 node(s) e.g. .is-active > h3\n",
+      "note": null
+    },
+    {
+      "started_at": "2026-11-17T06:10:30.342Z",
+      "completed_at": "2026-11-17T06:10:35.202Z",
+      "exit_code": 1,
+      "executed": true,
+      "passed": false,
+      "outcome": "fail",
+      "failures": [
+        "placeholder href=\"#\" in 404.html",
+        "placeholder href=\"#\" in 404.html",
+        "placeholder href=\"#\" in 404.html",
+        "placeholder href=\"#\" in 404.html",
+        "placeholder href=\"#\" in 404.html",
+        "placeholder href=\"#\" in 404.html",
+        "placeholder href=\"#\" in 404.html",
+        "placeholder href=\"#\" in article-faux-fur-trim-robe-coat-trend.html",
+        "placeholder href=\"#\" in article-faux-fur-trim-robe-coat-trend.html",
+        "placeholder href=\"#\" in article-faux-fur-trim-robe-coat-trend.html",
+        "placeholder href=\"#\" in article-faux-fur-trim-robe-coat-trend.html",
+        "placeholder href=\"#\" in article-faux-fur-trim-robe-coat-trend.html",
+        "placeholder href=\"#\" in article-faux-fur-trim-robe-coat-trend.html",
+        "placeholder href=\"#\" in article-faux-fur-trim-robe-coat-trend.html",
+        "placeholder href=\"#\" in beauty.html",
+        "placeholder href=\"#\" in beauty.html",
+        "placeholder href=\"#\" in beauty.html",
+        "placeholder href=\"#\" in beauty.html",
+        "placeholder href=\"#\" in beauty.html",
+        "placeholder href=\"#\" in beauty.html",
+        "placeholder href=\"#\" in beauty.html",
+        "placeholder href=\"#\" in business.html",
+        "placeholder href=\"#\" in business.html",
+        "placeholder href=\"#\" in business.html",
+        "placeholder href=\"#\" in business.html",
+        "placeholder href=\"#\" in business.html",
+        "placeholder href=\"#\" in business.html",
+        "placeholder href=\"#\" in business.html",
+        "placeholder href=\"#\" in culture.html",
+        "placeholder href=\"#\" in culture.html",
+        "placeholder href=\"#\" in culture.html",
+        "placeholder href=\"#\" in culture.html",
+        "placeholder href=\"#\" in culture.html",
+        "placeholder href=\"#\" in culture.html",
+        "placeholder href=\"#\" in culture.html",
+        "placeholder href=\"#\" in fashion-shows.html",
+        "placeholder href=\"#\" in fashion-shows.html",
+        "placeholder href=\"#\" in fashion-shows.html",
+        "placeholder href=\"#\" in fashion-shows.html",
+        "placeholder href=\"#\" in fashion-shows.html",
+        "placeholder href=\"#\" in fashion-shows.html",
+        "placeholder href=\"#\" in fashion-shows.html",
+        "placeholder href=\"#\" in fashion-trends.html",
+        "placeholder href=\"#\" in fashion-trends.html",
+        "placeholder href=\"#\" in fashion-trends.html",
+        "placeholder href=\"#\" in fashion-trends.html",
+        "placeholder href=\"#\" in fashion-trends.html",
+        "placeholder href=\"#\" in fashion-trends.html",
+        "placeholder href=\"#\" in fashion-trends.html",
+        "placeholder href=\"#\" in fashion.html",
+        "placeholder href=\"#\" in fashion.html",
+        "placeholder href=\"#\" in fashion.html",
+        "placeholder href=\"#\" in fashion.html",
+        "placeholder href=\"#\" in fashion.html",
+        "placeholder href=\"#\" in fashion.html",
+        "placeholder href=\"#\" in fashion.html",
+        "placeholder href=\"#\" in index.html",
+        "placeholder href=\"#\" in index.html",
+        "placeholder href=\"#\" in index.html",
+        "placeholder href=\"#\" in index.html",
+        "placeholder href=\"#\" in index.html",
+        "placeholder href=\"#\" in index.html",
+        "placeholder href=\"#\" in index.html",
+        "placeholder href=\"#\" in shopping-lookbook.html",
+        "placeholder href=\"#\" in shopping-lookbook.html",
+        "placeholder href=\"#\" in shopping-lookbook.html",
+        "placeholder href=\"#\" in shopping-lookbook.html",
+        "placeholder href=\"#\" in shopping-lookbook.html",
+        "placeholder href=\"#\" in shopping-lookbook.html",
+        "placeholder href=\"#\" in shopping-lookbook.html",
+        "placeholder href=\"#\" in shopping.html",
+        "placeholder href=\"#\" in shopping.html",
+        "placeholder href=\"#\" in shopping.html",
+        "placeholder href=\"#\" in shopping.html",
+        "placeholder href=\"#\" in shopping.html",
+        "placeholder href=\"#\" in shopping.html",
+        "placeholder href=\"#\" in shopping.html",
+        "placeholder href=\"#\" in slideshow-best-dressed-stars.html",
+        "placeholder href=\"#\" in slideshow-best-dressed-stars.html",
+        "placeholder href=\"#\" in slideshow-best-dressed-stars.html",
+        "placeholder href=\"#\" in slideshow-best-dressed-stars.html",
+        "placeholder href=\"#\" in slideshow-best-dressed-stars.html",
+        "placeholder href=\"#\" in slideshow-best-dressed-stars.html",
+        "placeholder href=\"#\" in slideshow-best-dressed-stars.html",
+        "axe heading-order (moderate) @1280 beauty.html: 1 node(s) e.g. article:nth-child(1) > .card-body > .card-title",
+        "axe heading-order (moderate) @1280 business.html: 1 node(s) e.g. article:nth-child(1) > .card-body > .card-title",
+        "axe heading-order (moderate) @1280 culture.html: 1 node(s) e.g. article:nth-child(1) > .card-body > .card-title",
+        "axe heading-order (moderate) @1280 fashion-trends.html: 1 node(s) e.g. article:nth-child(1) > .card-body > .card-title",
+        "axe heading-order (moderate) @1280 fashion.html: 1 node(s) e.g. article:nth-child(1) > .card-body > .card-title",
+        "axe label-content-name-mismatch (serious) @1280 shopping-lookbook.html: 6 node(s) e.g. article:nth-child(1) > .card-body > .newsletter-form",
+        "axe heading-order (moderate) @1280 shopping.html: 1 node(s) e.g. article:nth-child(1) > .card-body > .card-title",
+        "axe label-content-name-mismatch (serious) @1280 shopping.html: 6 node(s) e.g. article:nth-child(1) > .card-body > .newsletter-form",
+        "axe heading-order (moderate) @1280 slideshow-best-dressed-stars.html: 1 node(s) e.g. .is-active > .card-title",
+        "axe heading-order (moderate) @375 beauty.html: 1 node(s) e.g. article:nth-child(1) > .card-body > .card-title",
+        "axe heading-order (moderate) @375 business.html: 1 node(s) e.g. article:nth-child(1) > .card-body > .card-title",
+        "axe heading-order (moderate) @375 culture.html: 1 node(s) e.g. article:nth-child(1) > .card-body > .card-title",
+        "axe heading-order (moderate) @375 fashion-trends.html: 1 node(s) e.g. article:nth-child(1) > .card-body > .card-title",
+        "axe heading-order (moderate) @375 fashion.html: 1 node(s) e.g. article:nth-child(1) > .card-body > .card-title",
+        "axe label-content-name-mismatch (serious) @375 shopping-lookbook.html: 6 node(s) e.g. article:nth-child(1) > .card-body > .newsletter-form",
+        "axe heading-order (moderate) @375 shopping.html: 1 node(s) e.g. article:nth-child(1) > .card-body > .card-title",
+        "axe label-content-name-mismatch (serious) @375 shopping.html: 6 node(s) e.g. article:nth-child(1) > .card-body > .newsletter-form",
+        "axe heading-order (moderate) @375 slideshow-best-dressed-stars.html: 1 node(s) e.g. .is-active > .card-title"
+      ],
+      "failure_count": 102,
+      "warnings": [],
+      "axe": {
+        "heading-order": 14,
+        "label-content-name-mismatch": 24
+      },
+      "pages": 12,
+      "files": 19,
+      "qc_tool_sha256": "e9be905d19e7181e30d8291bcb1511d4469bdc9e36c20c0efe21e2d3fcf54513",
+      "report": "qc-repair-1-2026-11-17T06-10-30-342Z.json",
+      "log": "qc-repair-1-2026-11-17T06-10-30-342Z.log",
+      "stdout_tail": "FAIL placeholder href=\"#\" in fashion-trends.html\nFAIL placeholder href=\"#\" in fashion.html\nFAIL placeholder href=\"#\" in index.html\nFAIL placeholder href=\"#\" in shopping-lookbook.html\nFAIL placeholder href=\"#\" in shopping.html\nFAIL placeholder href=\"#\" in slideshow-best-dressed-stars.html\nFAIL axe heading-order (moderate) @1280 beauty.html: 1 node(s) e.g. article:nth-child(1) > .card-body > .card-title\nFAIL axe heading-order (moderate) @1280 business.html: 1 node(s) e.g. article:nth-child(1) > .card-body > .card-title\nFAIL axe heading-order (moderate) @1280 culture.html: 1 node(s) e.g. article:nth-child(1) > .card-body > .card-title\nFAIL axe heading-order (moderate) @1280 fashion-trends.html: 1 node(s) e.g. article:nth-child(1) > .card-body > .card-title\nFAIL axe heading-order (moderate) @1280 fashion.html: 1 node(s) e.g. article:nth-child(1) > .card-body > .card-title\nFAIL axe label-content-name-mismatch (serious) @1280 shopping-lookbook.html: 6 node(s) e.g. article:nth-child(1) > .card-body > .newsletter-form\nFAIL axe heading-order (moderate) @1280 shopping.html: 1 node(s) e.g. article:nth-child(1) > .card-body > .card-title\nFAIL axe label-content-name-mismatch (serious) @1280 shopping.html: 6 node(s) e.g. article:nth-child(1) > .card-body > .newsletter-form\nFAIL axe heading-order (moderate) @1280 slideshow-best-dressed-stars.html: 1 node(s) e.g. .is-active > .card-title\nFAIL axe heading-order (moderate) @375 beauty.html: 1 node(s) e.g. article:nth-child(1) > .card-body > .card-title\nFAIL axe heading-order (moderate) @375 business.html: 1 node(s) e.g. article:nth-child(1) > .card-body > .card-title\nFAIL axe heading-order (moderate) @375 culture.html: 1 node(s) e.g. article:nth-child(1) > .card-body > .card-title\nFAIL axe heading-order (moderate) @375 fashion-trends.html: 1 node(s) e.g. article:nth-child(1) > .card-body > .card-title\nFAIL axe heading-order (moderate) @375 fashion.html: 1 node(s) e.g. article:nth-child(1) > .card-body > .card-title\nFAIL axe label-content-name-mismatch (serious) @375 shopping-lookbook.html: 6 node(s) e.g. article:nth-child(1) > .card-body > .newsletter-form\nFAIL axe heading-order (moderate) @375 shopping.html: 1 node(s) e.g. article:nth-child(1) > .card-body > .card-title\nFAIL axe label-content-name-mismatch (serious) @375 shopping.html: 6 node(s) e.g. article:nth-child(1) > .card-body > .newsletter-form\nFAIL axe heading-order (moderate) @375 slideshow-best-dressed-stars.html: 1 node(s) e.g. .is-active > .card-title\n",
+      "note": null
+    },
+    {
+      "started_at": "2026-11-17T06:16:44.242Z",
+      "completed_at": "2026-11-17T06:16:48.709Z",
+      "exit_code": 1,
+      "executed": true,
+      "passed": false,
+      "outcome": "fail",
+      "failures": [
+        "axe label-content-name-mismatch (serious) @1280 shopping-lookbook.html: 6 node(s) e.g. article:nth-child(1) > .card-body > .add-to-cart-btn",
+        "axe label-content-name-mismatch (serious) @375 shopping-lookbook.html: 6 node(s) e.g. article:nth-child(1) > .card-body > .add-to-cart-btn"
+      ],
+      "failure_count": 2,
+      "warnings": [],
+      "axe": {
+        "label-content-name-mismatch": 12
+      },
+      "pages": 12,
+      "files": 19,
+      "qc_tool_sha256": "e9be905d19e7181e30d8291bcb1511d4469bdc9e36c20c0efe21e2d3fcf54513",
+      "report": "qc-repair-2-2026-11-17T06-16-44-242Z.json",
+      "log": "qc-repair-2-2026-11-17T06-16-44-242Z.log",
+      "stdout_tail": "QC /Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-05\npages=12 files=19 failures=2 warnings=0\nFAIL axe label-content-name-mismatch (serious) @1280 shopping-lookbook.html: 6 node(s) e.g. article:nth-child(1) > .card-body > .add-to-cart-btn\nFAIL axe label-content-name-mismatch (serious) @375 shopping-lookbook.html: 6 node(s) e.g. article:nth-child(1) > .card-body > .add-to-cart-btn\n",
+      "note": null
+    },
+    {
+      "started_at": "2026-11-17T06:17:39.817Z",
+      "completed_at": "2026-11-17T06:17:44.628Z",
+      "exit_code": 0,
+      "executed": true,
+      "passed": true,
+      "outcome": "pass",
+      "failures": [],
+      "failure_count": 0,
+      "warnings": [],
+      "axe": {},
+      "pages": 12,
+      "files": 19,
+      "qc_tool_sha256": "e9be905d19e7181e30d8291bcb1511d4469bdc9e36c20c0efe21e2d3fcf54513",
+      "report": "qc-repair-3-2026-11-17T06-17-39-817Z.json",
+      "log": "qc-repair-3-2026-11-17T06-17-39-817Z.log",
+      "stdout_tail": "QC /Users/samhithvarma/Library/CloudStorage/GoogleDrive-samhithvarma@vt.edu/My Drive/Research/Accessibility-HCI-and-LLM-Research/Websites/fashion/open-source/FASH-05\npages=12 files=19 failures=0 warnings=0\n",
+      "note": null
+    }
+  ],
+  "repair_rounds": [
+    {
+      "round": 1,
+      "before": {
+        "outcome": "fail",
+        "failures": 214
+      },
+      "after": {
+        "outcome": "fail",
+        "failures": 102
+      },
+      "files_changed": [
+        "business.html",
+        "404.html"
+      ],
+      "at": "2026-11-17T06:10:35.202Z"
+    },
+    {
+      "round": 2,
+      "before": {
+        "outcome": "fail",
+        "failures": 102
+      },
+      "after": {
+        "outcome": "fail",
+        "failures": 2
+      },
+      "files_changed": [
+        "shopping-lookbook.html",
+        "article-faux-fur-trim-robe-coat-trend.html",
+        "business.html",
+        "404.html"
+      ],
+      "at": "2026-11-17T06:16:48.709Z"
+    },
+    {
+      "round": 3,
+      "before": {
+        "outcome": "fail",
+        "failures": 2
+      },
+      "after": {
+        "outcome": "pass",
+        "failures": 0
+      },
+      "files_changed": [
+        "shopping-lookbook.html"
+      ],
+      "at": "2026-11-17T06:17:44.629Z"
+    }
+  ],
+  "retries": [],
+  "human_edits": [
+    {
+      "by": "orchestrator script",
+      "at": "2026-11-17T06:17:44.630Z",
+      "what": "Wrote the model's emitted files, normalized generation-metadata.json provenance fields, and set validation_summary from the recorded QC run. No site markup, style or script was authored or edited by hand."
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 630731,
+    "completion_tokens": 123013,
+    "total_tokens": 753744,
+    "requests": 13,
+    "retries": 3
+  },
+  "errors": [],
+  "outputs": {
+    "site": "fashion/open-source/FASH-05",
+    "transcript": "pipelines/open-source/runs/2026-11-17T05-46-08-865Z-build-FASH-05/transcript.json"
+  },
+  "delivered": {
+    "files": [
+      "404.html",
+      "README.md",
+      "article-faux-fur-trim-robe-coat-trend.html",
+      "beauty.html",
+      "business.html",
+      "component-inventory.json",
+      "css/styles.css",
+      "culture.html",
+      "fashion-shows.html",
+      "fashion-trends.html",
+      "fashion.html",
+      "fidelity-notes.md",
+      "generation-metadata.json",
+      "index.html",
+      "js/main.js",
+      "shopping-lookbook.html",
+      "shopping.html",
+      "slideshow-best-dressed-stars.html"
+    ],
+    "file_count": 18,
+    "bytes": 125752,
+    "pages_in_map": 11,
+    "missing_required": [],
+    "model_claimed_complete": true,
+    "delivered_complete": true,
+    "turns_used": 8,
+    "turn_budget": 28
+  },
+  "initial_artifact": "pipelines/open-source/runs/2026-11-17T05-46-08-865Z-build-FASH-05/initial",
+  "provenance": {
+    "wrote": true,
+    "modelEmittedValidMetadata": true
+  },
+  "acceptance": "not accepted: a QC result is not acceptance, and interaction review plus human acceptance happen outside this script"
+}

@@ -35,7 +35,7 @@ Four case-study pages with a facts sidebar, a masonry gallery, a native `<dialog
 ## Left out
 
 - **The source's real content** — its employers, projects, article list and résumé. Everything here is invented.
-- **An NDA / password-gated project.** Assigned to PORT-05 and PORT-07 in the ten-site plan.
+- **An NDA / password-gated project.** Assigned to PORT-04 and PORT-05 in the ten-site plan.
 - **A shop, booking flow or cart.** Not conventional for this stratum.
 - **Third-party embeds** (GitHub stats, Spotify, Medium). Replaced with plain outbound links.
 - **A blog platform.** Posts are static pages; there is no feed, no comments and no CMS.

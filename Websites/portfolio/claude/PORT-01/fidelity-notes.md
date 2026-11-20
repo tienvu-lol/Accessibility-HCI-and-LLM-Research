@@ -34,9 +34,9 @@
 
 ## Left out
 
-- **A theme toggle.** Deliberate: this replica follows `prefers-color-scheme` only. The light/dark toggle in the brief is assigned to PORT-02, PORT-05 and PORT-07, so the ten-site sample contains both patterns. Recorded here so the absence reads as a decision rather than an omission.
+- **A theme toggle.** Deliberate: this replica follows `prefers-color-scheme` only. The light/dark toggle in the brief is assigned to PORT-02, PORT-04 and PORT-05, so the ten-site sample contains both patterns. Recorded here so the absence reads as a decision rather than an omission.
 - **The source's playful interactive easter eggs** (cursor and canvas toys embedded in the page itself). The replica names such toys in its link lists but does not run them, so the baseline keeps a quiet motion profile.
-- **An NDA / password-gated project.** Assigned to PORT-05 and PORT-07 in the set.
+- **An NDA / password-gated project.** Assigned to PORT-04 and PORT-05 in the set.
 - **A shop, booking flow or cart.** Not conventional for this stratum; assigned to the photographer and illustrator replicas.
 - **Real third-party embeds** (CodePen, GitHub, podcast players). Replaced with plain outbound links.
 

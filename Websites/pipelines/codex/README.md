@@ -1,6 +1,6 @@
 # Codex pipeline — slots 04–06
 
-Thirty-six replicas across twelve categories: university, healthcare, company, e-commerce, news, government, fashion, weather, nonprofit, church, portfolio, restaurant. Claude has slots 01–03, Codex 04–06, open-source 07–10. Portfolio and restaurant joined this pipeline on 2026-11-13. Portfolio slots 04–06 were already delivered before this queue existed and their directories were renamed that day from `01-rowan-ellis`/`02-jamie-vale`/`03-avery-north` to `PORT-04`/`PORT-05`/`PORT-06` for `MODEL_ALLOCATION.md` §5. Restaurant slots 04–06 are unbuilt: its pre-protocol batch was deleted on 2026-11-13.
+Thirty-six replicas across twelve categories: university, healthcare, company, e-commerce, news, government, fashion, weather, nonprofit, church, portfolio, restaurant. Claude has slots 01–03, Codex 04–06, open-source 07–10. Portfolio and restaurant joined this pipeline on 2026-11-13. Portfolio slots 04–06 were already delivered before this queue existed and their directories were renamed that day from `01-rowan-ellis`/`02-jamie-vale`/`03-avery-north` to `PORT-03`/`PORT-04`/`PORT-R06` for `MODEL_ALLOCATION.md` §5. Restaurant slots 04–06 are unbuilt: its pre-protocol batch was deleted on 2026-11-13.
 
 This is a **configuration and task-preparation pipeline**, operated through a Codex session. It does not call an API, invoke an assumed CLI, launch agents, create worktrees, generate sites, or publish automatically. No service credentials or API keys are required. The prepared brief is handed to the generation session explicitly, one replica at a time. This keeps the setup independent of Claude's provider-specific orchestration.
 
@@ -65,8 +65,8 @@ Preparation does not execute the brief or update queue/assignment statuses. Hand
 Replace the uppercase argument values below with the actual recorded model/runtime/operator; they are placeholders, not model recommendations.
 
 ```sh
-node Websites/pipelines/codex/scripts/validate.mjs --ready UNI-04 --model ACTUAL_MODEL_ID --runtime ACTUAL_RUNTIME --operator OPERATOR_NAME
-node Websites/pipelines/codex/scripts/prepare-task.mjs build UNI-04 --model ACTUAL_MODEL_ID --runtime ACTUAL_RUNTIME --operator OPERATOR_NAME --record
+node Websites/pipelines/codex/scripts/validate.mjs --ready UNI-03 --model ACTUAL_MODEL_ID --runtime ACTUAL_RUNTIME --operator OPERATOR_NAME
+node Websites/pipelines/codex/scripts/prepare-task.mjs build UNI-03 --model ACTUAL_MODEL_ID --runtime ACTUAL_RUNTIME --operator OPERATOR_NAME --record
 ```
 
 Optional `--model-version VERSION` records an identifiable release/version. If supplied, it must match the approved inventory. Unknown version may remain null; unknown critical model attribution may not be fabricated. Config-declared values can replace flags.
@@ -97,7 +97,7 @@ npm ci
 Return to the repository root, then record actual shared QC for a generated site and its matching recorded build/repair run:
 
 ```sh
-node Websites/pipelines/codex/scripts/record-qc.mjs UNI-04 --run RUN-ID
+node Websites/pipelines/codex/scripts/record-qc.mjs UNI-03 --run RUN-ID
 ```
 
 This runs the existing `qc.js` with a JSON report path. It retains stdout/stderr and the actual exit status, tool hash and timestamps. A dependency/browser failure is recorded as failure/unavailable, not a pass. The wrapper does not install or change the evaluation environment automatically. The initial setup did not run website QC because no new sites exist.
@@ -105,7 +105,7 @@ This runs the existing `qc.js` with a JSON report path. It retains stdout/stderr
 For a failing report, prepare a separate correction task:
 
 ```sh
-node Websites/pipelines/codex/scripts/prepare-task.mjs repair UNI-04 --model ACTUAL_MODEL_ID --runtime ACTUAL_RUNTIME --operator OPERATOR_NAME --qc runs/RUN-ID/qc-TIMESTAMP.json --record
+node Websites/pipelines/codex/scripts/prepare-task.mjs repair UNI-03 --model ACTUAL_MODEL_ID --runtime ACTUAL_RUNTIME --operator OPERATOR_NAME --qc runs/RUN-ID/qc-TIMESTAMP.json --record
 ```
 
 `--qc` is relative to pipelines/codex, must identify this site and contain actual failures, and is copied into the repair snapshots. This is generation-stage QC correction, distinct from later experimental accessibility repair treatments. Interaction checks, visual fidelity, keyboard review and human acceptance are separate from an initial-page axe pass.

@@ -1,0 +1,4232 @@
+{
+  "tool": "pipelines/open-source/scripts/verify-sources.mjs",
+  "run_id": "2026-11-17T05-06-50-800Z-research-HOSP-R08",
+  "model_group": "open-source",
+  "category": "healthcare",
+  "slots": [
+    8
+  ],
+  "fetched_at": "2026-11-17T05:07:46.601Z",
+  "method": "HTTP GET",
+  "rendered": false,
+  "interactions_tested": false,
+  "user_agent": "Mozilla/5.0 (compatible; accessibility-research-replica-study/1.0)",
+  "rounds": [
+    {
+      "round": 1,
+      "kind": "candidate homepages",
+      "records": [
+        {
+          "url": "https://www.stlukeskc.org",
+          "fetched_at": "2026-11-17T05:07:09.408Z",
+          "method": "HTTP GET",
+          "ok": true,
+          "status": 200,
+          "final_url": "https://www.stlukeskc.org/",
+          "redirected": true,
+          "content_type": "text/html;charset=utf-8",
+          "bytes": 63471,
+          "title": "St Luke's-KC UMC",
+          "robots": {
+            "allowed": true,
+            "matched": null,
+            "note": "robots.txt read for user-agent *"
+          },
+          "error": null,
+          "links": [
+            {
+              "url": "https://www.stlukeskc.org/copy-of-about",
+              "text": "About",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stlukeskc.org/gallery",
+              "text": "Ministries",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stlukeskc.org/contact",
+              "text": "Worship",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stlukeskc.org/events",
+              "text": "Events",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stlukeskc.org/connect",
+              "text": "Connect",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stlukeskc.org/our-partners",
+              "text": "Our Partners",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stlukeskc.org/blog",
+              "text": "Blog",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.stlukeskc.org/",
+              "text": "",
+              "in_nav": false
+            }
+          ]
+        },
+        {
+          "url": "https://www.advocatehealth.com/christmedicalcenter",
+          "fetched_at": "2026-11-17T05:07:11.166Z",
+          "method": "HTTP GET",
+          "ok": false,
+          "status": 404,
+          "final_url": "https://www.advocatehealth.com/christmedicalcenter",
+          "redirected": false,
+          "content_type": "text/html; charset=utf-8",
+          "bytes": 3009,
+          "title": null,
+          "robots": {
+            "allowed": true,
+            "matched": "/",
+            "note": "robots.txt read for user-agent *"
+          },
+          "error": null,
+          "links": []
+        },
+        {
+          "url": "https://www.mercy.com",
+          "fetched_at": "2026-11-17T05:07:12.330Z",
+          "method": "HTTP GET",
+          "ok": true,
+          "status": 200,
+          "final_url": "https://www.mercy.com/",
+          "redirected": true,
+          "content_type": "text/html; charset=utf-8",
+          "bytes": 123273,
+          "title": "Mercy Health | The Highest Quality Care across Ohio & Kentucky",
+          "robots": {
+            "allowed": true,
+            "matched": null,
+            "note": "robots.txt read for user-agent *"
+          },
+          "error": null,
+          "links": [
+            {
+              "url": "https://www.mercy.com/",
+              "text": "",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/get-care-now",
+              "text": "Get Care Now",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/pay-a-bill",
+              "text": "Bill Pay",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/mychart",
+              "text": "MyChart",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/contact-us",
+              "text": "Contact",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/find-a-doctor",
+              "text": "Find a Doctor",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/find-a-doctor?displayValue=Primary%20Care%20Providers&page=1&primary_care=Primary%20Care%20Providers&shuffle_seed=cc2dc033-78de-4d3e-acb9-cb48ed7f5c63&sort=networks%2Cdistance%2Cavailability_soonest%2Crelevance",
+              "text": "Primary Care & Family Medicine",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/find-a-doctor?displayValue=Cardiology&page=1&shuffle_seed=72688184-8bd8-4c7b-998c-be787f587174&sort=networks%2Cdistance%2Cavailability_soonest%2Crelevance&specialty_synonym=Cardiology.%2A",
+              "text": "Cardiology",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/find-a-doctor?displayValue=Neurology&page=1&shuffle_seed=e1722382-5b47-4624-90ed-0d086917ddec&sort=networks%2Cdistance%2Cavailability_soonest%2Crelevance&specialty_synonym=Neurology.%2A",
+              "text": "Neurology",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/find-a-doctor?displayValue=Obstetrics%20and%20Gynecology&page=1&shuffle_seed=72688184-8bd8-4c7b-998c-be787f587174&sort=networks%2Cdistance%2Cavailability_soonest%2Crelevance&specialty_synonym=Obstetrics%20and%20Gynecology.%2A",
+              "text": "OBGYN",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/find-a-doctor?displayValue=Orthopedic&page=1&shuffle_seed=5c2423f3-e4fa-4176-9621-0bb9dc58d6a1&sort=networks%2Cavailability_soonest%2Crelevance&specialties=Orthopedic",
+              "text": "Orthopedics",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services",
+              "text": "Health Care Services",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/primary-care-family-medicine",
+              "text": "Primary Care & Family Medicine",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/orthopedics-sports-medicine-spine",
+              "text": "Orthopedics & Sports Medicine",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/cancer-care-oncology",
+              "text": "Cancer Care & Oncology",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/emergency-urgent-care/specialties/urgent-care",
+              "text": "Urgent Care",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/heart-vascular",
+              "text": "Heart & Vascular Care",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/conditions-and-treatments",
+              "text": "Conditions & Treatments",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/location-map",
+              "text": "Locations",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/locations/hospitals",
+              "text": "Our Hospitals",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/locations/emergency-room",
+              "text": "Emergency Care",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/locations/primary-care-family-medicine",
+              "text": "Primary Care & Family Medicine",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/locations/urgent-care",
+              "text": "Walk-in & Urgent Care",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/locations/specialty-locations",
+              "text": "Specialty Care",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/locations",
+              "text": "All Locations >>",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources",
+              "text": "Patient Resources",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/pay-a-bill/estimate-your-cost",
+              "text": "Pricing",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/accepted-insurance-plans",
+              "text": "Insurance Information",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/financial-assistance",
+              "text": "Financial Assistance",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/hospital-pre-registration",
+              "text": "Hospital Pre-Registration",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/visit-pre-check",
+              "text": "Visit Pre-Check",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/nondiscrimination-and-accessibility-requirements",
+              "text": "Notice of Nondiscrimination",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/medical-record-requests",
+              "text": "Request Medical Records",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/patient-rights",
+              "text": "Patient Rights",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us",
+              "text": "About Us",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/mission",
+              "text": "Mission",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/leadership",
+              "text": "Leadership",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/quality",
+              "text": "Quality",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/careers/graduate-medical-education",
+              "text": "Residency Programs",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/careers",
+              "text": "Careers",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/regions",
+              "text": "Our Regions",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/news-events",
+              "text": "News & Events",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/careers/volunteering",
+              "text": "Volunteering",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/mission/giving-back",
+              "text": "Community Impact",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/website-disclaimer-and-privacy-statement",
+              "text": "Website Information",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/notice-of-privacy-practices",
+              "text": "Privacy Practices",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/corporate-responsibility",
+              "text": "Compliance",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/site-map",
+              "text": "Site Map",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/find-a-doctor?displayValue=Primary%20Care%20Providers&filters=filter%3Dprovider.direct_book_mychart%3Ais_not_null&page=1&primary_care=Primary%20Care%20Providers&shuffle_seed=a3adbc4e-f4b4-441c-9979-ddb93372f6a7&sort=networks%2Cavailability_soonest%2Crelevance",
+              "text": "Schedule Now",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/news-events/events",
+              "text": "events",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/news-events/events/youngstown/2026/november/mobile-mammo-nov-17-08am",
+              "text": "Mobile Mammography Screening Tue, Nov 17, 2026, 8:00 am - 1:45 pm The Joanie Abdu Mobile Mammography Van visits your nei",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/news-events/events/paducah/2026/november/joint-replacement-class-november-17",
+              "text": "Joint Replacement Class (Joint Camp) Tue, Nov 17, 2026, 1:00 pm - 3:00 pm Get the most from your joint replacement surge",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/news-events/events/paducah/2026/november/cancer-port-breast-cancer-support-group",
+              "text": "Cancer Port Breast Cancer Support Group Tue, Nov 17, 2026, 5:00 pm - 6:00 pm The Cancer Port Breast Cancer Support Group",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/news-events/events/mobile-mammography-tol-261118-0000",
+              "text": "Mobile Mammography Wed, Nov 18, 2026 The Mercy Health Mobile Mammography Van provides services for easier access to qual",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/news-events/events/youngstown/2026/november/mobile-mammo-nov-18-08am",
+              "text": "Mobile Mammography Screening Wed, Nov 18, 2026, 8:00 am - 10:30 am The Joanie Abdu Mobile Mammography Van visits your ne",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/news-events/events/youngstown/2026/november/mobile-mammo-nov-18-12pm",
+              "text": "Mobile Mammography Screening Wed, Nov 18, 2026, 12:00 pm - 1:45 pm The Joanie Abdu Mobile Mammography Van visits your ne",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/news-events/events/mobile-mammography-cin-261118-1245",
+              "text": "Mobile Mammography Screening Wed, Nov 18, 2026, 12:45 pm - 3:00 pm Mercy Health Mobile Mammography visits your neighborh",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/news-events/events/mobile-mammography-tol-261119-0000",
+              "text": "Mobile Mammography Thu, Nov 19, 2026 The Mercy Health Mobile Mammography Van provides services for easier access to qual",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/news-events/events/youngstown/2026/november/mobile-mammo-nov-19-08am",
+              "text": "Mobile Mammography Screening Thu, Nov 19, 2026, 8:00 am - 10:30 am The Joanie Abdu Mobile Mammography Van visits your ne",
+              "in_nav": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "kind": "interior pages",
+      "records": [
+        {
+          "url": "https://www.mercy.com/",
+          "fetched_at": "2026-11-17T05:07:36.060Z",
+          "method": "HTTP GET",
+          "ok": true,
+          "status": 200,
+          "final_url": "https://www.mercy.com/",
+          "redirected": false,
+          "content_type": "text/html; charset=utf-8",
+          "bytes": 123273,
+          "title": "Mercy Health | The Highest Quality Care across Ohio & Kentucky",
+          "robots": {
+            "allowed": true,
+            "matched": null,
+            "note": "robots.txt read for user-agent *"
+          },
+          "error": null,
+          "links": [
+            {
+              "url": "https://www.mercy.com/",
+              "text": "",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/get-care-now",
+              "text": "Get Care Now",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/pay-a-bill",
+              "text": "Bill Pay",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/mychart",
+              "text": "MyChart",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/contact-us",
+              "text": "Contact",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/find-a-doctor",
+              "text": "Find a Doctor",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/find-a-doctor?displayValue=Primary%20Care%20Providers&page=1&primary_care=Primary%20Care%20Providers&shuffle_seed=cc2dc033-78de-4d3e-acb9-cb48ed7f5c63&sort=networks%2Cdistance%2Cavailability_soonest%2Crelevance",
+              "text": "Primary Care & Family Medicine",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/find-a-doctor?displayValue=Cardiology&page=1&shuffle_seed=72688184-8bd8-4c7b-998c-be787f587174&sort=networks%2Cdistance%2Cavailability_soonest%2Crelevance&specialty_synonym=Cardiology.%2A",
+              "text": "Cardiology",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/find-a-doctor?displayValue=Neurology&page=1&shuffle_seed=e1722382-5b47-4624-90ed-0d086917ddec&sort=networks%2Cdistance%2Cavailability_soonest%2Crelevance&specialty_synonym=Neurology.%2A",
+              "text": "Neurology",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/find-a-doctor?displayValue=Obstetrics%20and%20Gynecology&page=1&shuffle_seed=72688184-8bd8-4c7b-998c-be787f587174&sort=networks%2Cdistance%2Cavailability_soonest%2Crelevance&specialty_synonym=Obstetrics%20and%20Gynecology.%2A",
+              "text": "OBGYN",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/find-a-doctor?displayValue=Orthopedic&page=1&shuffle_seed=5c2423f3-e4fa-4176-9621-0bb9dc58d6a1&sort=networks%2Cavailability_soonest%2Crelevance&specialties=Orthopedic",
+              "text": "Orthopedics",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services",
+              "text": "Health Care Services",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/primary-care-family-medicine",
+              "text": "Primary Care & Family Medicine",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/orthopedics-sports-medicine-spine",
+              "text": "Orthopedics & Sports Medicine",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/cancer-care-oncology",
+              "text": "Cancer Care & Oncology",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/emergency-urgent-care/specialties/urgent-care",
+              "text": "Urgent Care",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/heart-vascular",
+              "text": "Heart & Vascular Care",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/conditions-and-treatments",
+              "text": "Conditions & Treatments",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/location-map",
+              "text": "Locations",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/locations/hospitals",
+              "text": "Our Hospitals",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/locations/emergency-room",
+              "text": "Emergency Care",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/locations/primary-care-family-medicine",
+              "text": "Primary Care & Family Medicine",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/locations/urgent-care",
+              "text": "Walk-in & Urgent Care",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/locations/specialty-locations",
+              "text": "Specialty Care",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/locations",
+              "text": "All Locations >>",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources",
+              "text": "Patient Resources",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/pay-a-bill/estimate-your-cost",
+              "text": "Pricing",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/accepted-insurance-plans",
+              "text": "Insurance Information",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/financial-assistance",
+              "text": "Financial Assistance",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/hospital-pre-registration",
+              "text": "Hospital Pre-Registration",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/visit-pre-check",
+              "text": "Visit Pre-Check",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/nondiscrimination-and-accessibility-requirements",
+              "text": "Notice of Nondiscrimination",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/medical-record-requests",
+              "text": "Request Medical Records",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/patient-rights",
+              "text": "Patient Rights",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us",
+              "text": "About Us",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/mission",
+              "text": "Mission",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/leadership",
+              "text": "Leadership",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/quality",
+              "text": "Quality",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/careers/graduate-medical-education",
+              "text": "Residency Programs",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/careers",
+              "text": "Careers",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/regions",
+              "text": "Our Regions",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/news-events",
+              "text": "News & Events",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/careers/volunteering",
+              "text": "Volunteering",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/mission/giving-back",
+              "text": "Community Impact",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/website-disclaimer-and-privacy-statement",
+              "text": "Website Information",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/notice-of-privacy-practices",
+              "text": "Privacy Practices",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/corporate-responsibility",
+              "text": "Compliance",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/site-map",
+              "text": "Site Map",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/find-a-doctor?displayValue=Primary%20Care%20Providers&filters=filter%3Dprovider.direct_book_mychart%3Ais_not_null&page=1&primary_care=Primary%20Care%20Providers&shuffle_seed=a3adbc4e-f4b4-441c-9979-ddb93372f6a7&sort=networks%2Cavailability_soonest%2Crelevance",
+              "text": "Schedule Now",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/news-events/events",
+              "text": "events",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/news-events/events/youngstown/2026/november/mobile-mammo-nov-17-08am",
+              "text": "Mobile Mammography Screening Tue, Nov 17, 2026, 8:00 am - 1:45 pm The Joanie Abdu Mobile Mammography Van visits your nei",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/news-events/events/paducah/2026/november/joint-replacement-class-november-17",
+              "text": "Joint Replacement Class (Joint Camp) Tue, Nov 17, 2026, 1:00 pm - 3:00 pm Get the most from your joint replacement surge",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/news-events/events/paducah/2026/november/cancer-port-breast-cancer-support-group",
+              "text": "Cancer Port Breast Cancer Support Group Tue, Nov 17, 2026, 5:00 pm - 6:00 pm The Cancer Port Breast Cancer Support Group",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/news-events/events/mobile-mammography-tol-261118-0000",
+              "text": "Mobile Mammography Wed, Nov 18, 2026 The Mercy Health Mobile Mammography Van provides services for easier access to qual",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/news-events/events/youngstown/2026/november/mobile-mammo-nov-18-08am",
+              "text": "Mobile Mammography Screening Wed, Nov 18, 2026, 8:00 am - 10:30 am The Joanie Abdu Mobile Mammography Van visits your ne",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/news-events/events/youngstown/2026/november/mobile-mammo-nov-18-12pm",
+              "text": "Mobile Mammography Screening Wed, Nov 18, 2026, 12:00 pm - 1:45 pm The Joanie Abdu Mobile Mammography Van visits your ne",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/news-events/events/mobile-mammography-cin-261118-1245",
+              "text": "Mobile Mammography Screening Wed, Nov 18, 2026, 12:45 pm - 3:00 pm Mercy Health Mobile Mammography visits your neighborh",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/news-events/events/mobile-mammography-tol-261119-0000",
+              "text": "Mobile Mammography Thu, Nov 19, 2026 The Mercy Health Mobile Mammography Van provides services for easier access to qual",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/news-events/events/youngstown/2026/november/mobile-mammo-nov-19-08am",
+              "text": "Mobile Mammography Screening Thu, Nov 19, 2026, 8:00 am - 10:30 am The Joanie Abdu Mobile Mammography Van visits your ne",
+              "in_nav": false
+            }
+          ]
+        },
+        {
+          "url": "https://www.mercy.com/get-care-now",
+          "fetched_at": "2026-11-17T05:07:37.171Z",
+          "method": "HTTP GET",
+          "ok": true,
+          "status": 200,
+          "final_url": "https://www.mercy.com/get-care-now",
+          "redirected": false,
+          "content_type": "text/html; charset=utf-8",
+          "bytes": 103648,
+          "title": "Care Where You Need It | Mercy Health",
+          "robots": {
+            "allowed": true,
+            "matched": null,
+            "note": "robots.txt read for user-agent *"
+          },
+          "error": null,
+          "links": [
+            {
+              "url": "https://www.mercy.com/",
+              "text": "",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/get-care-now",
+              "text": "Get Care Now",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/pay-a-bill",
+              "text": "Bill Pay",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/mychart",
+              "text": "MyChart",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/contact-us",
+              "text": "Contact",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/find-a-doctor",
+              "text": "Find a Doctor",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/find-a-doctor?displayValue=Primary%20Care%20Providers&page=1&primary_care=Primary%20Care%20Providers&shuffle_seed=cc2dc033-78de-4d3e-acb9-cb48ed7f5c63&sort=networks%2Cdistance%2Cavailability_soonest%2Crelevance",
+              "text": "Primary Care & Family Medicine",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/find-a-doctor?displayValue=Cardiology&page=1&shuffle_seed=72688184-8bd8-4c7b-998c-be787f587174&sort=networks%2Cdistance%2Cavailability_soonest%2Crelevance&specialty_synonym=Cardiology.%2A",
+              "text": "Cardiology",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/find-a-doctor?displayValue=Neurology&page=1&shuffle_seed=e1722382-5b47-4624-90ed-0d086917ddec&sort=networks%2Cdistance%2Cavailability_soonest%2Crelevance&specialty_synonym=Neurology.%2A",
+              "text": "Neurology",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/find-a-doctor?displayValue=Obstetrics%20and%20Gynecology&page=1&shuffle_seed=72688184-8bd8-4c7b-998c-be787f587174&sort=networks%2Cdistance%2Cavailability_soonest%2Crelevance&specialty_synonym=Obstetrics%20and%20Gynecology.%2A",
+              "text": "OBGYN",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/find-a-doctor?displayValue=Orthopedic&page=1&shuffle_seed=5c2423f3-e4fa-4176-9621-0bb9dc58d6a1&sort=networks%2Cavailability_soonest%2Crelevance&specialties=Orthopedic",
+              "text": "Orthopedics",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services",
+              "text": "Health Care Services",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/primary-care-family-medicine",
+              "text": "Primary Care & Family Medicine",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/orthopedics-sports-medicine-spine",
+              "text": "Orthopedics & Sports Medicine",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/cancer-care-oncology",
+              "text": "Cancer Care & Oncology",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/emergency-urgent-care/specialties/urgent-care",
+              "text": "Urgent Care",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/heart-vascular",
+              "text": "Heart & Vascular Care",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/conditions-and-treatments",
+              "text": "Conditions & Treatments",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/location-map",
+              "text": "Locations",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/locations/hospitals",
+              "text": "Our Hospitals",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/locations/emergency-room",
+              "text": "Emergency Care",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/locations/primary-care-family-medicine",
+              "text": "Primary Care & Family Medicine",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/locations/urgent-care",
+              "text": "Walk-in & Urgent Care",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/locations/specialty-locations",
+              "text": "Specialty Care",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/locations",
+              "text": "All Locations >>",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources",
+              "text": "Patient Resources",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/pay-a-bill/estimate-your-cost",
+              "text": "Pricing",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/accepted-insurance-plans",
+              "text": "Insurance Information",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/financial-assistance",
+              "text": "Financial Assistance",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/hospital-pre-registration",
+              "text": "Hospital Pre-Registration",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/visit-pre-check",
+              "text": "Visit Pre-Check",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/nondiscrimination-and-accessibility-requirements",
+              "text": "Notice of Nondiscrimination",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/medical-record-requests",
+              "text": "Request Medical Records",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/patient-rights",
+              "text": "Patient Rights",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us",
+              "text": "About Us",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/mission",
+              "text": "Mission",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/leadership",
+              "text": "Leadership",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/quality",
+              "text": "Quality",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/careers/graduate-medical-education",
+              "text": "Residency Programs",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/careers",
+              "text": "Careers",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/regions",
+              "text": "Our Regions",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/news-events",
+              "text": "News & Events",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/careers/volunteering",
+              "text": "Volunteering",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/mission/giving-back",
+              "text": "Community Impact",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/website-disclaimer-and-privacy-statement",
+              "text": "Website Information",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/notice-of-privacy-practices",
+              "text": "Privacy Practices",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/corporate-responsibility",
+              "text": "Compliance",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/site-map",
+              "text": "Site Map",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/walk-in-care-services",
+              "text": "Walk-in Primary Care When you’re feeling unwell, our walk-in primary care offers convenient, no-appointment-needed servi",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/location-map?quickFilterIdSelected=64d5edb0-4e0d-467a-b0e6-262d1f94e167",
+              "text": "Urgent Care For non-serious medical issues when your doctor’s office is closed or unavailable, Mercy Health Urgent Care ",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/emergency-urgent-care",
+              "text": "Emergency Care When an emergency strikes, you can trust the care provided at Mercy Health's network of emergency room lo",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/find-a-doctor?displayValue=Primary%20Care%20Providers&page=1&primary_care=Primary%20Care%20Providers&shuffle_seed=cc2dc033-78de-4d3e-acb9-cb48ed7f5c63&sort=networks%2Crelevance",
+              "text": "Establish a new patient relationship",
+              "in_nav": false
+            }
+          ]
+        },
+        {
+          "url": "https://www.mercy.com/pay-a-bill",
+          "fetched_at": "2026-11-17T05:07:37.965Z",
+          "method": "HTTP GET",
+          "ok": true,
+          "status": 200,
+          "final_url": "https://www.mercy.com/pay-a-bill",
+          "redirected": false,
+          "content_type": "text/html; charset=utf-8",
+          "bytes": 110367,
+          "title": "Pay Your Mercy Health Bill | Online Bill Pay | Mercy Health",
+          "robots": {
+            "allowed": true,
+            "matched": null,
+            "note": "robots.txt read for user-agent *"
+          },
+          "error": null,
+          "links": [
+            {
+              "url": "https://www.mercy.com/",
+              "text": "",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/get-care-now",
+              "text": "Get Care Now",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/pay-a-bill",
+              "text": "Bill Pay",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/mychart",
+              "text": "MyChart",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/contact-us",
+              "text": "Contact",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/find-a-doctor",
+              "text": "Find a Doctor",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/find-a-doctor?displayValue=Primary%20Care%20Providers&page=1&primary_care=Primary%20Care%20Providers&shuffle_seed=cc2dc033-78de-4d3e-acb9-cb48ed7f5c63&sort=networks%2Cdistance%2Cavailability_soonest%2Crelevance",
+              "text": "Primary Care & Family Medicine",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/find-a-doctor?displayValue=Cardiology&page=1&shuffle_seed=72688184-8bd8-4c7b-998c-be787f587174&sort=networks%2Cdistance%2Cavailability_soonest%2Crelevance&specialty_synonym=Cardiology.%2A",
+              "text": "Cardiology",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/find-a-doctor?displayValue=Neurology&page=1&shuffle_seed=e1722382-5b47-4624-90ed-0d086917ddec&sort=networks%2Cdistance%2Cavailability_soonest%2Crelevance&specialty_synonym=Neurology.%2A",
+              "text": "Neurology",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/find-a-doctor?displayValue=Obstetrics%20and%20Gynecology&page=1&shuffle_seed=72688184-8bd8-4c7b-998c-be787f587174&sort=networks%2Cdistance%2Cavailability_soonest%2Crelevance&specialty_synonym=Obstetrics%20and%20Gynecology.%2A",
+              "text": "OBGYN",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/find-a-doctor?displayValue=Orthopedic&page=1&shuffle_seed=5c2423f3-e4fa-4176-9621-0bb9dc58d6a1&sort=networks%2Cavailability_soonest%2Crelevance&specialties=Orthopedic",
+              "text": "Orthopedics",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services",
+              "text": "Health Care Services",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/primary-care-family-medicine",
+              "text": "Primary Care & Family Medicine",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/orthopedics-sports-medicine-spine",
+              "text": "Orthopedics & Sports Medicine",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/cancer-care-oncology",
+              "text": "Cancer Care & Oncology",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/emergency-urgent-care/specialties/urgent-care",
+              "text": "Urgent Care",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/heart-vascular",
+              "text": "Heart & Vascular Care",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/conditions-and-treatments",
+              "text": "Conditions & Treatments",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/location-map",
+              "text": "Locations",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/locations/hospitals",
+              "text": "Our Hospitals",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/locations/emergency-room",
+              "text": "Emergency Care",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/locations/primary-care-family-medicine",
+              "text": "Primary Care & Family Medicine",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/locations/urgent-care",
+              "text": "Walk-in & Urgent Care",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/locations/specialty-locations",
+              "text": "Specialty Care",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/locations",
+              "text": "All Locations >>",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources",
+              "text": "Patient Resources",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/pay-a-bill/estimate-your-cost",
+              "text": "Pricing",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/accepted-insurance-plans",
+              "text": "Insurance Information",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/financial-assistance",
+              "text": "Financial Assistance",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/hospital-pre-registration",
+              "text": "Hospital Pre-Registration",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/visit-pre-check",
+              "text": "Visit Pre-Check",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/nondiscrimination-and-accessibility-requirements",
+              "text": "Notice of Nondiscrimination",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/medical-record-requests",
+              "text": "Request Medical Records",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/patient-rights",
+              "text": "Patient Rights",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us",
+              "text": "About Us",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/mission",
+              "text": "Mission",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/leadership",
+              "text": "Leadership",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/quality",
+              "text": "Quality",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/careers/graduate-medical-education",
+              "text": "Residency Programs",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/careers",
+              "text": "Careers",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/regions",
+              "text": "Our Regions",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/news-events",
+              "text": "News & Events",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/careers/volunteering",
+              "text": "Volunteering",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/mission/giving-back",
+              "text": "Community Impact",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/website-disclaimer-and-privacy-statement",
+              "text": "Website Information",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/notice-of-privacy-practices",
+              "text": "Privacy Practices",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/corporate-responsibility",
+              "text": "Compliance",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/site-map",
+              "text": "Site Map",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/pay-a-bill/billing-customer-service",
+              "text": "Pay Your Bill by Mail Pay your bill from a doctor's office, procedure or hospital stay by mail to PO Box 740405 Cincinna",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/pay-a-bill/additional-bill-types",
+              "text": "Additional Bill Types Have a lab visit, urgent care, transportation, or home health care bill? Let us help direct you to",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/pay-a-bill/faq",
+              "text": "Billing and Payment FAQs Find answers to common questions about your bill. Learn more",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/pay-a-bill/request-an-itemized-bill",
+              "text": "Request an Itemized Bill Request an itemized bill from your services to be sent to the individual listed as guarantor on",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/-/media/mercy/patient-resources/pay-a-bill/mercy-health-refunds.pdf?as=1&hash=3E5B4C2956D4C858648E21F235823E2A",
+              "text": "New Patient Refund Process More ways to access your refund. Learn more",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/balance-billing",
+              "text": "Balance Billing Protection Learn about your rights and protections against surprise medical bills for out-of-network ser",
+              "in_nav": false
+            }
+          ]
+        },
+        {
+          "url": "https://www.mercy.com/find-a-doctor",
+          "fetched_at": "2026-11-17T05:07:38.822Z",
+          "method": "HTTP GET",
+          "ok": true,
+          "status": 200,
+          "final_url": "https://www.mercy.com/find-a-doctor",
+          "redirected": false,
+          "content_type": "text/html; charset=utf-8",
+          "bytes": 101258,
+          "title": "Find a Doctor | Physician Search | Mercy Health",
+          "robots": {
+            "allowed": true,
+            "matched": null,
+            "note": "robots.txt read for user-agent *"
+          },
+          "error": null,
+          "links": [
+            {
+              "url": "https://www.mercy.com/",
+              "text": "",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/get-care-now",
+              "text": "Get Care Now",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/pay-a-bill",
+              "text": "Bill Pay",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/mychart",
+              "text": "MyChart",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/contact-us",
+              "text": "Contact",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/find-a-doctor",
+              "text": "Find a Doctor",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/find-a-doctor?displayValue=Primary%20Care%20Providers&page=1&primary_care=Primary%20Care%20Providers&shuffle_seed=cc2dc033-78de-4d3e-acb9-cb48ed7f5c63&sort=networks%2Cdistance%2Cavailability_soonest%2Crelevance",
+              "text": "Primary Care & Family Medicine",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/find-a-doctor?displayValue=Cardiology&page=1&shuffle_seed=72688184-8bd8-4c7b-998c-be787f587174&sort=networks%2Cdistance%2Cavailability_soonest%2Crelevance&specialty_synonym=Cardiology.%2A",
+              "text": "Cardiology",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/find-a-doctor?displayValue=Neurology&page=1&shuffle_seed=e1722382-5b47-4624-90ed-0d086917ddec&sort=networks%2Cdistance%2Cavailability_soonest%2Crelevance&specialty_synonym=Neurology.%2A",
+              "text": "Neurology",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/find-a-doctor?displayValue=Obstetrics%20and%20Gynecology&page=1&shuffle_seed=72688184-8bd8-4c7b-998c-be787f587174&sort=networks%2Cdistance%2Cavailability_soonest%2Crelevance&specialty_synonym=Obstetrics%20and%20Gynecology.%2A",
+              "text": "OBGYN",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/find-a-doctor?displayValue=Orthopedic&page=1&shuffle_seed=5c2423f3-e4fa-4176-9621-0bb9dc58d6a1&sort=networks%2Cavailability_soonest%2Crelevance&specialties=Orthopedic",
+              "text": "Orthopedics",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services",
+              "text": "Health Care Services",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/primary-care-family-medicine",
+              "text": "Primary Care & Family Medicine",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/orthopedics-sports-medicine-spine",
+              "text": "Orthopedics & Sports Medicine",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/cancer-care-oncology",
+              "text": "Cancer Care & Oncology",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/emergency-urgent-care/specialties/urgent-care",
+              "text": "Urgent Care",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/heart-vascular",
+              "text": "Heart & Vascular Care",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/conditions-and-treatments",
+              "text": "Conditions & Treatments",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/location-map",
+              "text": "Locations",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/locations/hospitals",
+              "text": "Our Hospitals",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/locations/emergency-room",
+              "text": "Emergency Care",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/locations/primary-care-family-medicine",
+              "text": "Primary Care & Family Medicine",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/locations/urgent-care",
+              "text": "Walk-in & Urgent Care",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/locations/specialty-locations",
+              "text": "Specialty Care",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/locations",
+              "text": "All Locations >>",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources",
+              "text": "Patient Resources",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/pay-a-bill/estimate-your-cost",
+              "text": "Pricing",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/accepted-insurance-plans",
+              "text": "Insurance Information",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/financial-assistance",
+              "text": "Financial Assistance",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/hospital-pre-registration",
+              "text": "Hospital Pre-Registration",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/visit-pre-check",
+              "text": "Visit Pre-Check",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/nondiscrimination-and-accessibility-requirements",
+              "text": "Notice of Nondiscrimination",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/medical-record-requests",
+              "text": "Request Medical Records",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/patient-rights",
+              "text": "Patient Rights",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us",
+              "text": "About Us",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/mission",
+              "text": "Mission",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/leadership",
+              "text": "Leadership",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/quality",
+              "text": "Quality",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/careers/graduate-medical-education",
+              "text": "Residency Programs",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/careers",
+              "text": "Careers",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/regions",
+              "text": "Our Regions",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/news-events",
+              "text": "News & Events",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/careers/volunteering",
+              "text": "Volunteering",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/mission/giving-back",
+              "text": "Community Impact",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/website-disclaimer-and-privacy-statement",
+              "text": "Website Information",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/notice-of-privacy-practices",
+              "text": "Privacy Practices",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/corporate-responsibility",
+              "text": "Compliance",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/site-map",
+              "text": "Site Map",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/find-a-doctor?displayValue=Gastroenterology&page=1&shuffle_seed=3141605c-a845-4d19-9195-9e2d786655e4&sort=networks%2Cdistance%2Cavailability_soonest%2Crelevance&specialty_synonym=Gastroenterology.%2A",
+              "text": "Gastroenterology",
+              "in_nav": false
+            }
+          ]
+        },
+        {
+          "url": "https://www.mercy.com/find-a-doctor?displayValue=Primary%20Care%20Providers&page=1&primary_care=Primary%20Care%20Providers&shuffle_seed=cc2dc033-78de-4d3e-acb9-cb48ed7f5c63&sort=networks%2Cdistance%2Cavailability_soonest%2Crelevance",
+          "fetched_at": "2026-11-17T05:07:39.612Z",
+          "method": "HTTP GET",
+          "ok": true,
+          "status": 200,
+          "final_url": "https://www.mercy.com/find-a-doctor?displayValue=Primary%20Care%20Providers&page=1&primary_care=Primary%20Care%20Providers&shuffle_seed=cc2dc033-78de-4d3e-acb9-cb48ed7f5c63&sort=networks%2Cdistance%2Cavailability_soonest%2Crelevance",
+          "redirected": false,
+          "content_type": "text/html; charset=utf-8",
+          "bytes": 101258,
+          "title": "Find a Doctor | Physician Search | Mercy Health",
+          "robots": {
+            "allowed": true,
+            "matched": null,
+            "note": "robots.txt read for user-agent *"
+          },
+          "error": null,
+          "links": [
+            {
+              "url": "https://www.mercy.com/",
+              "text": "",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/get-care-now",
+              "text": "Get Care Now",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/pay-a-bill",
+              "text": "Bill Pay",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/mychart",
+              "text": "MyChart",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/contact-us",
+              "text": "Contact",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/find-a-doctor",
+              "text": "Find a Doctor",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/find-a-doctor?displayValue=Primary%20Care%20Providers&page=1&primary_care=Primary%20Care%20Providers&shuffle_seed=cc2dc033-78de-4d3e-acb9-cb48ed7f5c63&sort=networks%2Cdistance%2Cavailability_soonest%2Crelevance",
+              "text": "Primary Care & Family Medicine",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/find-a-doctor?displayValue=Cardiology&page=1&shuffle_seed=72688184-8bd8-4c7b-998c-be787f587174&sort=networks%2Cdistance%2Cavailability_soonest%2Crelevance&specialty_synonym=Cardiology.%2A",
+              "text": "Cardiology",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/find-a-doctor?displayValue=Neurology&page=1&shuffle_seed=e1722382-5b47-4624-90ed-0d086917ddec&sort=networks%2Cdistance%2Cavailability_soonest%2Crelevance&specialty_synonym=Neurology.%2A",
+              "text": "Neurology",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/find-a-doctor?displayValue=Obstetrics%20and%20Gynecology&page=1&shuffle_seed=72688184-8bd8-4c7b-998c-be787f587174&sort=networks%2Cdistance%2Cavailability_soonest%2Crelevance&specialty_synonym=Obstetrics%20and%20Gynecology.%2A",
+              "text": "OBGYN",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/find-a-doctor?displayValue=Orthopedic&page=1&shuffle_seed=5c2423f3-e4fa-4176-9621-0bb9dc58d6a1&sort=networks%2Cavailability_soonest%2Crelevance&specialties=Orthopedic",
+              "text": "Orthopedics",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services",
+              "text": "Health Care Services",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/primary-care-family-medicine",
+              "text": "Primary Care & Family Medicine",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/orthopedics-sports-medicine-spine",
+              "text": "Orthopedics & Sports Medicine",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/cancer-care-oncology",
+              "text": "Cancer Care & Oncology",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/emergency-urgent-care/specialties/urgent-care",
+              "text": "Urgent Care",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/heart-vascular",
+              "text": "Heart & Vascular Care",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/conditions-and-treatments",
+              "text": "Conditions & Treatments",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/location-map",
+              "text": "Locations",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/locations/hospitals",
+              "text": "Our Hospitals",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/locations/emergency-room",
+              "text": "Emergency Care",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/locations/primary-care-family-medicine",
+              "text": "Primary Care & Family Medicine",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/locations/urgent-care",
+              "text": "Walk-in & Urgent Care",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/locations/specialty-locations",
+              "text": "Specialty Care",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/locations",
+              "text": "All Locations >>",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources",
+              "text": "Patient Resources",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/pay-a-bill/estimate-your-cost",
+              "text": "Pricing",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/accepted-insurance-plans",
+              "text": "Insurance Information",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/financial-assistance",
+              "text": "Financial Assistance",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/hospital-pre-registration",
+              "text": "Hospital Pre-Registration",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/visit-pre-check",
+              "text": "Visit Pre-Check",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/nondiscrimination-and-accessibility-requirements",
+              "text": "Notice of Nondiscrimination",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/medical-record-requests",
+              "text": "Request Medical Records",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/patient-rights",
+              "text": "Patient Rights",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us",
+              "text": "About Us",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/mission",
+              "text": "Mission",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/leadership",
+              "text": "Leadership",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/quality",
+              "text": "Quality",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/careers/graduate-medical-education",
+              "text": "Residency Programs",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/careers",
+              "text": "Careers",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/regions",
+              "text": "Our Regions",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/news-events",
+              "text": "News & Events",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/careers/volunteering",
+              "text": "Volunteering",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/mission/giving-back",
+              "text": "Community Impact",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/website-disclaimer-and-privacy-statement",
+              "text": "Website Information",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/notice-of-privacy-practices",
+              "text": "Privacy Practices",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/corporate-responsibility",
+              "text": "Compliance",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/site-map",
+              "text": "Site Map",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/find-a-doctor?displayValue=Gastroenterology&page=1&shuffle_seed=3141605c-a845-4d19-9195-9e2d786655e4&sort=networks%2Cdistance%2Cavailability_soonest%2Crelevance&specialty_synonym=Gastroenterology.%2A",
+              "text": "Gastroenterology",
+              "in_nav": false
+            }
+          ]
+        },
+        {
+          "url": "https://www.mercy.com/health-care-services",
+          "fetched_at": "2026-11-17T05:07:40.380Z",
+          "method": "HTTP GET",
+          "ok": true,
+          "status": 200,
+          "final_url": "https://www.mercy.com/health-care-services",
+          "redirected": false,
+          "content_type": "text/html; charset=utf-8",
+          "bytes": 156121,
+          "title": "Mercy Health Services & Specialties | Ohio & Kentucky Health Care",
+          "robots": {
+            "allowed": true,
+            "matched": null,
+            "note": "robots.txt read for user-agent *"
+          },
+          "error": null,
+          "links": [
+            {
+              "url": "https://www.mercy.com/",
+              "text": "",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/get-care-now",
+              "text": "Get Care Now",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/pay-a-bill",
+              "text": "Bill Pay",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/mychart",
+              "text": "MyChart",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/contact-us",
+              "text": "Contact",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/find-a-doctor",
+              "text": "Find a Doctor",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/find-a-doctor?displayValue=Primary%20Care%20Providers&page=1&primary_care=Primary%20Care%20Providers&shuffle_seed=cc2dc033-78de-4d3e-acb9-cb48ed7f5c63&sort=networks%2Cdistance%2Cavailability_soonest%2Crelevance",
+              "text": "Primary Care & Family Medicine",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/find-a-doctor?displayValue=Cardiology&page=1&shuffle_seed=72688184-8bd8-4c7b-998c-be787f587174&sort=networks%2Cdistance%2Cavailability_soonest%2Crelevance&specialty_synonym=Cardiology.%2A",
+              "text": "Cardiology",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/find-a-doctor?displayValue=Neurology&page=1&shuffle_seed=e1722382-5b47-4624-90ed-0d086917ddec&sort=networks%2Cdistance%2Cavailability_soonest%2Crelevance&specialty_synonym=Neurology.%2A",
+              "text": "Neurology",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/find-a-doctor?displayValue=Obstetrics%20and%20Gynecology&page=1&shuffle_seed=72688184-8bd8-4c7b-998c-be787f587174&sort=networks%2Cdistance%2Cavailability_soonest%2Crelevance&specialty_synonym=Obstetrics%20and%20Gynecology.%2A",
+              "text": "OBGYN",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/find-a-doctor?displayValue=Orthopedic&page=1&shuffle_seed=5c2423f3-e4fa-4176-9621-0bb9dc58d6a1&sort=networks%2Cavailability_soonest%2Crelevance&specialties=Orthopedic",
+              "text": "Orthopedics",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services",
+              "text": "Health Care Services",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/primary-care-family-medicine",
+              "text": "Primary Care & Family Medicine",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/orthopedics-sports-medicine-spine",
+              "text": "Orthopedics & Sports Medicine",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/cancer-care-oncology",
+              "text": "Cancer Care & Oncology",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/emergency-urgent-care/specialties/urgent-care",
+              "text": "Urgent Care",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/heart-vascular",
+              "text": "Heart & Vascular Care",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/conditions-and-treatments",
+              "text": "Conditions & Treatments",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/location-map",
+              "text": "Locations",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/locations/hospitals",
+              "text": "Our Hospitals",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/locations/emergency-room",
+              "text": "Emergency Care",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/locations/primary-care-family-medicine",
+              "text": "Primary Care & Family Medicine",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/locations/urgent-care",
+              "text": "Walk-in & Urgent Care",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/locations/specialty-locations",
+              "text": "Specialty Care",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/locations",
+              "text": "All Locations >>",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources",
+              "text": "Patient Resources",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/pay-a-bill/estimate-your-cost",
+              "text": "Pricing",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/accepted-insurance-plans",
+              "text": "Insurance Information",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/financial-assistance",
+              "text": "Financial Assistance",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/hospital-pre-registration",
+              "text": "Hospital Pre-Registration",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/visit-pre-check",
+              "text": "Visit Pre-Check",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/nondiscrimination-and-accessibility-requirements",
+              "text": "Notice of Nondiscrimination",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/medical-record-requests",
+              "text": "Request Medical Records",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/patient-rights",
+              "text": "Patient Rights",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us",
+              "text": "About Us",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/mission",
+              "text": "Mission",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/leadership",
+              "text": "Leadership",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/quality",
+              "text": "Quality",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/careers/graduate-medical-education",
+              "text": "Residency Programs",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/careers",
+              "text": "Careers",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/regions",
+              "text": "Our Regions",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/news-events",
+              "text": "News & Events",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/careers/volunteering",
+              "text": "Volunteering",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/mission/giving-back",
+              "text": "Community Impact",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/website-disclaimer-and-privacy-statement",
+              "text": "Website Information",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/notice-of-privacy-practices",
+              "text": "Privacy Practices",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/corporate-responsibility",
+              "text": "Compliance",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/site-map",
+              "text": "Site Map",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/allergy-immunology-sinus",
+              "text": "Allergy, Immunology and Sinus",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/anticoagulation-medication-management",
+              "text": "Anticoagulant Medication Management",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/ear-nose-throat-ent/specialties/audiology-hearing",
+              "text": "Audiology and Hearing",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/rheumatology/specialties/autoimmune-disorders",
+              "text": "Autoimmune Diseases and Disorders",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/behavioral-mental-health",
+              "text": "Behavioral and Mental Health Services",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/cancer-care-oncology/specialties/blood-cancer-hematology",
+              "text": "Blood Cancer and Hematology",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/bone-marrow-transplant",
+              "text": "Bone Marrow Transplant",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/cancer-care-oncology/specialties/breast-cancer-treatment",
+              "text": "Breast Cancer Care",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/breast-health",
+              "text": "Breast Health",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/general-surgery/specialties/breast-surgery",
+              "text": "Breast Surgery",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/medical-research-clinical-trials/specialties/cancer-research-trials",
+              "text": "Cancer Research Studies and Clinical Trials",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/heart-vascular/specialties/cardiac-imaging",
+              "text": "Cardiac Imaging",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/heart-vascular/specialties/cardiology-care",
+              "text": "Cardiology and Heart Care",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/heart-vascular/specialties/cardiothoracic-surgery",
+              "text": "Cardiothoracic Surgery",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/heart-vascular/specialties/cardiovascular-surgery",
+              "text": "Cardiovascular Surgery",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/dietetics-clinical-nutrition",
+              "text": "Clinical Nutrition and Dietetics",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/medical-research-clinical-trials",
+              "text": "Clinical Trials and Research",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/colon-rectal-care",
+              "text": "Colon and Rectal Care",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/colon-rectal-care/specialties/colon-cancer",
+              "text": "Colon Cancer",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/dentistry",
+              "text": "Dentistry and Oral Medicine",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/dermatology",
+              "text": "Dermatology and Skin Care",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/endocrinology/specialties/diabetes-management",
+              "text": "Diabetes Care",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/lab/specialties/direct-lab-testing",
+              "text": "Direct Lab Testing",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/ear-nose-throat-ent",
+              "text": "Ear, Nose and Throat (ENT)",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/heart-vascular/specialties/cardiac-electrophysiology",
+              "text": "Electrophysiology (EPS)",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/emergency-urgent-care",
+              "text": "Emergency and Urgent Care",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/endocrinology",
+              "text": "Endocrinology",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/heart-vascular/specialties/extracorporeal-membrane-oxygenation",
+              "text": "Extracorporeal Membrane Oxygenation (ECMO)",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/health-fitness-centers",
+              "text": "Fitness, Health and Wellness Centers",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/orthopedics-sports-medicine-spine/specialties/foot-ankle",
+              "text": "Foot and Ankle Care",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/neurology/specialties/gamma-knife",
+              "text": "Gamma Knife Radiosurgery",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/gastroenterology",
+              "text": "Gastroenterology and Digestive Health",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/general-surgery",
+              "text": "General Surgery",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/geriatrics-senior-services",
+              "text": "Geriatrics and Senior Care Services",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/gynecology-obstetrics-womens-health",
+              "text": "Gynecology, Obstetrics and Women's Health",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/orthopedics-sports-medicine-spine/specialties/hand-wrist-elbow",
+              "text": "Hand, Wrist and Elbow Care",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/orthopedics-sports-medicine-spine/specialties/head-neck-spine",
+              "text": "Head, Neck and Spine Care",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/hepatology",
+              "text": "Hepatology",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/orthopedics-sports-medicine-spine/specialties/hip",
+              "text": "Hip Care",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/home-health-care-services",
+              "text": "Home Health Care Services",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/hospice-palliative-care",
+              "text": "Hospice and Palliative Care",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/hospital-medicine",
+              "text": "Hospital Medicine and In-Hospital Care",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/intensive-care-critical-care",
+              "text": "ICU and Critical Care Services",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/infectious-diseases",
+              "text": "Infectious Diseases",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/rehabilitation-physical-therapy/specialties/inpatient-rehabilitation",
+              "text": "Inpatient Rehabilitation",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/heart-vascular/specialties/interventional-cardiology",
+              "text": "Interventional Cardiology",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/nephrology",
+              "text": "Kidney and Renal Care",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/orthopedics-sports-medicine-spine/specialties/knee-leg",
+              "text": "Knee and Leg Care",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/lab",
+              "text": "Lab Services",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/lifepoint-rehabilitation",
+              "text": "Lifepoint Rehabilitation",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/thoracic-surgery-lung-surgery",
+              "text": "Lung Surgery and Thoracic Surgery",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/maternity-care-birthing-centers",
+              "text": "Maternity Care",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/cancer-care-oncology/specialties/medical-oncology-chemotherapy",
+              "text": "Medical Oncology and Chemotherapy",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/urology/specialties/mens-health",
+              "text": "Men's Health",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/maternity-care-birthing-centers/specialties/neonatal-care",
+              "text": "Neonatal Care and NICU",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/neurology",
+              "text": "Neurosciences",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/neurology/specialties/neurosurgery",
+              "text": "Neurosurgery",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/spinal-care/specialties/non-surgical-spine-care",
+              "text": "Non-Surgical Spine Care",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/occupational-health-services",
+              "text": "Occupational Health Services",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/virtual-visits",
+              "text": "Online Video Visits & Virtual Care",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/ophthalmology-eye-care",
+              "text": "Ophthalmology (Eye Care)",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/oral-maxillofacial-surgery",
+              "text": "Oral and Maxillofacial Surgery",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/pain-management-pain-medicine",
+              "text": "Pain Medicine and Pain Management",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/pediatrics/specialties/pediatric-cardiology",
+              "text": "Pediatric Cardiology",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/pediatrics",
+              "text": "Pediatric Care and Pediatric Surgery",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/plastic-reconstructive-surgery",
+              "text": "Plastic and Reconstructive Surgery",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/orthopedics-sports-medicine-spine/specialties/podiatry",
+              "text": "Podiatry and Foot Care",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/heart-vascular/specialties/preventive-cardiology",
+              "text": "Preventive Cardiology and Heart Care",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/pulmonology",
+              "text": "Pulmonology and Respiratory Care",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/cancer-care-oncology/specialties/radiation-oncology",
+              "text": "Radiation Oncology",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/radiology-imaging",
+              "text": "Radiology and Medical Imaging Services",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/rehabilitation-physical-therapy",
+              "text": "Rehabilitation and Physical Therapy",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/rheumatology",
+              "text": "Rheumatology",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/general-surgery/specialties/robotic-surgery",
+              "text": "Robotic Surgery",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/orthopedics-sports-medicine-spine/specialties/shoulder-upper-arm",
+              "text": "Shoulder and Upper Arm Care",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/cancer-care-oncology/specialties/skin-cancer-treatment",
+              "text": "Skin Cancer",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/sleep-medicine",
+              "text": "Sleep Medicine",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/heart-vascular/specialties/varicose-vein-care",
+              "text": "Spider and Varicose Vein Treatment",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/spinal-care/specialties/spinal-surgery",
+              "text": "Spinal Surgery",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/spinal-care",
+              "text": "Spine Care",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/neurology/specialties/stroke-care",
+              "text": "Stroke Care",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/cancer-care-oncology/specialties/surgical-oncology",
+              "text": "Surgical Oncology",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/retain-research-study",
+              "text": "The RETAIN Initiative",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/endocrinology/specialties/thyroid-care",
+              "text": "Thyroid Care",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/general-surgery/specialties/trauma-surgery",
+              "text": "Trauma Surgery",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/urology",
+              "text": "Urology",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/heart-vascular/specialties/vascular-surgery",
+              "text": "Vascular and Endovascular Surgery",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/heart-vascular/specialties/vascular-care",
+              "text": "Vascular Care",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/walk-in-care-services",
+              "text": "Walk-in Care Services",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/bariatrics-medical-weight-loss",
+              "text": "Weight Loss Services",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/gynecology-obstetrics-womens-health/specialties/womens-health",
+              "text": "Women’s Health",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/wound-care",
+              "text": "Wound Care",
+              "in_nav": false
+            }
+          ]
+        },
+        {
+          "url": "https://www.mercy.com/conditions-and-treatments",
+          "fetched_at": "2026-11-17T05:07:43.493Z",
+          "method": "HTTP GET",
+          "ok": true,
+          "status": 200,
+          "final_url": "https://www.mercy.com/conditions-and-treatments",
+          "redirected": false,
+          "content_type": "text/html; charset=utf-8",
+          "bytes": 650337,
+          "title": "Conditions and Treatments | Mercy Health",
+          "robots": {
+            "allowed": true,
+            "matched": null,
+            "note": "robots.txt read for user-agent *"
+          },
+          "error": null,
+          "links": [
+            {
+              "url": "https://www.mercy.com/",
+              "text": "",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/get-care-now",
+              "text": "Get Care Now",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/pay-a-bill",
+              "text": "Bill Pay",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/mychart",
+              "text": "MyChart",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/contact-us",
+              "text": "Contact",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/find-a-doctor",
+              "text": "Find a Doctor",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/find-a-doctor?displayValue=Primary%20Care%20Providers&page=1&primary_care=Primary%20Care%20Providers&shuffle_seed=cc2dc033-78de-4d3e-acb9-cb48ed7f5c63&sort=networks%2Cdistance%2Cavailability_soonest%2Crelevance",
+              "text": "Primary Care & Family Medicine",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/find-a-doctor?displayValue=Cardiology&page=1&shuffle_seed=72688184-8bd8-4c7b-998c-be787f587174&sort=networks%2Cdistance%2Cavailability_soonest%2Crelevance&specialty_synonym=Cardiology.%2A",
+              "text": "Cardiology",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/find-a-doctor?displayValue=Neurology&page=1&shuffle_seed=e1722382-5b47-4624-90ed-0d086917ddec&sort=networks%2Cdistance%2Cavailability_soonest%2Crelevance&specialty_synonym=Neurology.%2A",
+              "text": "Neurology",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/find-a-doctor?displayValue=Obstetrics%20and%20Gynecology&page=1&shuffle_seed=72688184-8bd8-4c7b-998c-be787f587174&sort=networks%2Cdistance%2Cavailability_soonest%2Crelevance&specialty_synonym=Obstetrics%20and%20Gynecology.%2A",
+              "text": "OBGYN",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/find-a-doctor?displayValue=Orthopedic&page=1&shuffle_seed=5c2423f3-e4fa-4176-9621-0bb9dc58d6a1&sort=networks%2Cavailability_soonest%2Crelevance&specialties=Orthopedic",
+              "text": "Orthopedics",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services",
+              "text": "Health Care Services",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/primary-care-family-medicine",
+              "text": "Primary Care & Family Medicine",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/orthopedics-sports-medicine-spine",
+              "text": "Orthopedics & Sports Medicine",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/cancer-care-oncology",
+              "text": "Cancer Care & Oncology",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/emergency-urgent-care/specialties/urgent-care",
+              "text": "Urgent Care",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/heart-vascular",
+              "text": "Heart & Vascular Care",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/conditions-and-treatments",
+              "text": "Conditions & Treatments",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/location-map",
+              "text": "Locations",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/locations/hospitals",
+              "text": "Our Hospitals",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/locations/emergency-room",
+              "text": "Emergency Care",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/locations/primary-care-family-medicine",
+              "text": "Primary Care & Family Medicine",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/locations/urgent-care",
+              "text": "Walk-in & Urgent Care",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/locations/specialty-locations",
+              "text": "Specialty Care",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/locations",
+              "text": "All Locations >>",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources",
+              "text": "Patient Resources",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/pay-a-bill/estimate-your-cost",
+              "text": "Pricing",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/accepted-insurance-plans",
+              "text": "Insurance Information",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/financial-assistance",
+              "text": "Financial Assistance",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/hospital-pre-registration",
+              "text": "Hospital Pre-Registration",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/visit-pre-check",
+              "text": "Visit Pre-Check",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/nondiscrimination-and-accessibility-requirements",
+              "text": "Notice of Nondiscrimination",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/medical-record-requests",
+              "text": "Request Medical Records",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/patient-rights",
+              "text": "Patient Rights",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us",
+              "text": "About Us",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/mission",
+              "text": "Mission",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/leadership",
+              "text": "Leadership",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/quality",
+              "text": "Quality",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/careers/graduate-medical-education",
+              "text": "Residency Programs",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/careers",
+              "text": "Careers",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/regions",
+              "text": "Our Regions",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/news-events",
+              "text": "News & Events",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/careers/volunteering",
+              "text": "Volunteering",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/mission/giving-back",
+              "text": "Community Impact",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/website-disclaimer-and-privacy-statement",
+              "text": "Website Information",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/notice-of-privacy-practices",
+              "text": "Privacy Practices",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/corporate-responsibility",
+              "text": "Compliance",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/site-map",
+              "text": "Site Map",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/lab/treatments/a1c-testing",
+              "text": "A1C Testing",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/primary-care-family-medicine/conditions/abdominal-pain",
+              "text": "Abdominal Pain",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/orthopedics-sports-medicine-spine/specialties/shoulder-upper-arm/conditions/ac-joint-sprain",
+              "text": "AC Joint Sprain",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/orthopedics-sports-medicine-spine/specialties/foot-ankle/conditions/accessory-navicular-bone",
+              "text": "Accessory Navicular Bone",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/gastroenterology/conditions-treatments-summary",
+              "text": "Achalasia",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/orthopedics-sports-medicine-spine/specialties/foot-ankle/conditions/achilles-tendonitis",
+              "text": "Achilles Tendonitis",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/primary-care-family-medicine/conditions/acid-reflux",
+              "text": "Acid Reflux",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/orthopedics-sports-medicine-spine/specialties/knee-leg/treatments/acl-surgery",
+              "text": "ACL Surgery",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/primary-care-family-medicine/conditions/acne",
+              "text": "Acne",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/neurology/conditions/acoustic-neuroma",
+              "text": "Acoustic Neuroma",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/orthopedics-sports-medicine-spine/specialties/shoulder-upper-arm/treatments/acromioplasty",
+              "text": "Acromioplasty",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/cancer-care-oncology/specialties/skin-cancer-treatment/conditions/actinic-keratoses",
+              "text": "Actinic Keratoses",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/cancer-care-oncology/specialties/blood-cancer-hematology/conditions/acute-lymphocytic-leukemia",
+              "text": "Acute Lymphocytic Leukemia (ALL)",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/cancer-care-oncology/specialties/blood-cancer-hematology/conditions/acute-myeloid-leukemia",
+              "text": "Acute Myeloid Leukemia (AML)",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/behavioral-mental-health/conditions/acute-stress-disorder",
+              "text": "Acute Stress Disorder",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/endocrinology/conditions/addisons-disease",
+              "text": "Addison's Disease",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/primary-care-family-medicine/conditions/adhd-add",
+              "text": "ADHD and ADD",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/behavioral-mental-health/conditions/adjustment-disorder",
+              "text": "Adjustment Disorder",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/breast-health/specialties/breast-cancer-treatment/treatments/adjuvant-chemotherapy",
+              "text": "Adjuvant Chemotherapy",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/cancer-care-oncology/specialties/breast-cancer-treatment/treatments/adjuvant-chemotherapy",
+              "text": "Adjuvant Chemotherapy",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/bariatrics-medical-weight-loss/conditions/adolescent-obesity",
+              "text": "Adolescent Obesity",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/cancer-care-oncology/conditions/adrenal-neoplasm",
+              "text": "Adrenal Neoplasm",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/lab/treatments/albumin-blood-test",
+              "text": "Albumin Blood Test",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/cancer-care-oncology/specialties/oral-laryngeal-thyroid-cancer/treatments/alcohol-ablation",
+              "text": "Alcohol Ablation",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/cancer-care-oncology/specialties/liver-cancer-pancreatic-cancer/treatments/alcohol-ablation-for-liver-cancer",
+              "text": "Alcohol Ablation for Liver Cancer",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/heart-vascular/treatments/alcohol-septal-ablation",
+              "text": "Alcohol Septal Ablation",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/primary-care-family-medicine/conditions/alcoholism",
+              "text": "Alcoholism (Alcohol Use Disorder)",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/orthopedics-sports-medicine-spine/treatments/alterg-anti-gravity-rehabilitation",
+              "text": "AlterG© Anti-gravity Rehabilitation",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/neurology/conditions/alzheimers-disease",
+              "text": "Alzheimer's Disease",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/heart-vascular/treatments/ambulatory-phlebectomy",
+              "text": "Ambulatory Phlebectomy",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/gynecology-obstetrics-womens-health/conditions/amenorrhea",
+              "text": "Amenorrhea",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/cancer-care-oncology/specialties/colorectal-cancer-treatment/conditions/ampullary-mass",
+              "text": "Ampullary Mass",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/neurology/conditions/amyotrophic-lateral-sclerosis",
+              "text": "Amyotrophic Lateral Sclerosis (ALS)",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/colon-rectal-care/conditions/anal-fissure",
+              "text": "Anal Fissure",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/gastroenterology/conditions/anal-fissure",
+              "text": "Anal Fissure",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/colon-rectal-care/conditions/anal-fistula",
+              "text": "Anal Fistula",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/gastroenterology/conditions/anal-fistula",
+              "text": "Anal Fistula",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/lab/treatments/anemia-testing",
+              "text": "Anemia Testing",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/heart-vascular/conditions/angina",
+              "text": "Angina (Chest Pain)",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/heart-vascular/treatments/angiogram",
+              "text": "Angiogram",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/heart-vascular/treatments/angiojet",
+              "text": "Angiojet",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/cancer-care-oncology/conditions/angiomyolipoma",
+              "text": "Angiomyolipoma",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/heart-vascular/treatments/angioplasty",
+              "text": "Angioplasty",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/orthopedics-sports-medicine-spine/specialties/foot-ankle/treatments/arthroplasty-or-ankle-joint-replacement-surgery",
+              "text": "Ankle Replacement",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/orthopedics-sports-medicine-spine/specialties/foot-ankle/conditions/ankle-sprains-strains",
+              "text": "Ankle Sprains or Strains",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/primary-care-family-medicine/treatments/annual-physical",
+              "text": "Annual Physical",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/heart-vascular/treatments/annuloplasty",
+              "text": "Annuloplasty",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/cancer-care-oncology/specialties/colorectal-cancer-treatment/conditions/anorectal-cancer",
+              "text": "Anorectal Cancer",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/behavioral-mental-health/conditions/anorexia-nervosa",
+              "text": "Anorexia Nervosa",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/gastroenterology/treatments/anoscopy",
+              "text": "Anoscopy",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/orthopedics-sports-medicine-spine/specialties/head-neck-spine/treatments/anterior-cervical-discectomy-fusion",
+              "text": "Anterior Cervical Discectomy and Fusion (ACDF)",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/orthopedics-sports-medicine-spine/specialties/knee-leg/conditions/acl-injury",
+              "text": "Anterior Cruciate Ligament (ACL) Injury",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/rheumatology/treatments/antinuclear-antibody-test-ana",
+              "text": "Antinuclear Antibody Test (ANA)",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/behavioral-mental-health/conditions/anxiety-disorders",
+              "text": "Anxiety Disorders",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/primary-care-family-medicine/conditions/anxiety-disorders",
+              "text": "Anxiety Disorders",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/heart-vascular/treatments/aortic-ultrasound",
+              "text": "Aortic Ultrasound",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/heart-vascular/conditions/aortic-valve-regurgitation",
+              "text": "Aortic Valve Regurgitation",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/heart-vascular/treatments/aortic-valve-replacement",
+              "text": "Aortic Valve Replacement",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/heart-vascular/conditions/aortic-valve-stenosis",
+              "text": "Aortic Valve Stenosis (Aortic Stenosis)",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/cancer-care-oncology/specialties/colorectal-cancer-treatment/conditions/appendiceal-cancer",
+              "text": "Appendiceal Cancer",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/heart-vascular/conditions/arrhythmias-irregular-heartbeat",
+              "text": "Arrhythmias and Irregular Heartbeats",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/orthopedics-sports-medicine-spine/specialties/hand-wrist-elbow/conditions/arthritis-elbow",
+              "text": "Arthritis in the Elbow",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/orthopedics-sports-medicine-spine/specialties/foot-ankle/conditions/arthritis-foot-ankle",
+              "text": "Arthritis in the Foot or Ankle",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/orthopedics-sports-medicine-spine/specialties/hand-wrist-elbow/conditions/arthritis-hand",
+              "text": "Arthritis in the Hand",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/orthopedics-sports-medicine-spine/specialties/hip/conditions/hip-arthritis",
+              "text": "Arthritis in the Hip",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/orthopedics-sports-medicine-spine/specialties/knee-leg/conditions/arthritis-knee",
+              "text": "Arthritis in the Knee",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/orthopedics-sports-medicine-spine/specialties/head-neck-spine/conditions/arthritis-spine",
+              "text": "Arthritis in the Spine",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/orthopedics-sports-medicine-spine/specialties/hand-wrist-elbow/conditions/arthritis-wrist",
+              "text": "Arthritis in the Wrist",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/orthopedics-sports-medicine-spine/specialties/foot-ankle/treatments/arthrodesis-of-the-ankle",
+              "text": "Arthrodesis of the Ankle",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/orthopedics-sports-medicine-spine/specialties/hip/treatments/arthrodesis-or-fusion-surgery-for-the-hip",
+              "text": "Arthrodesis/Fusion Surgery for the Hip",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/orthopedics-sports-medicine-spine/specialties/hand-wrist-elbow/treatments/arthrodesis-or-fusion-surgery-for-the-wrist",
+              "text": "Arthrodesis/Fusion Surgery for the Wrist",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/orthopedics-sports-medicine-spine/specialties/hand-wrist-elbow/treatments/arthroplasty-or-joint-replacement-surgery-for-the-lower-arm",
+              "text": "Arthroplasty/Joint Replacement Surgery for the Lower Arm",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/orthopedics-sports-medicine-spine/specialties/foot-ankle/treatments/arthroscopic-debridement",
+              "text": "Arthroscopic Debridement",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/orthopedics-sports-medicine-spine/specialties/hand-wrist-elbow/treatments/arthroscopic-debridement-of-the-hand-and-wrist",
+              "text": "Arthroscopic Debridement of the Hand and Wrist",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/orthopedics-sports-medicine-spine/specialties/hip/treatments/arthroscopic-debridement-of-the-hip",
+              "text": "Arthroscopic Debridement of the Hip",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/orthopedics-sports-medicine-spine/specialties/knee-leg/treatments/knee-arthroscopic-debridement",
+              "text": "Arthroscopic Debridement of the Knee",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/primary-care-family-medicine/conditions/asthma",
+              "text": "Asthma",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/heart-vascular/treatments/atherectomy",
+              "text": "Atherectomy",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/heart-vascular/conditions/atrial-fibrillation",
+              "text": "Atrial Fibrillation (AFib)",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/heart-vascular/conditions/atrial-flutter",
+              "text": "Atrial Flutter",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/heart-vascular/conditions/atrial-septal-defect",
+              "text": "Atrial Septal Defect (ASD)",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/heart-vascular/conditions/atrial-tachycardia",
+              "text": "Atrial Tachycardia (Upper Heart Chamber Arrhythmia)",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/behavioral-mental-health/conditions/attention-deficit-and-hyperactivity-disorder",
+              "text": "Attention Deficit and Hyperactivity Disorder",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/ear-nose-throat-ent/treatments/audiological-evaluation",
+              "text": "Audiological Evaluation",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/behavioral-mental-health/conditions/autism-spectrum-disorder",
+              "text": "Autism Spectrum Disorder",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/heart-vascular/treatments/av-node-ablation",
+              "text": "AV Node Ablation",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/breast-health/specialties/breast-cancer-treatment/treatments/axillary-lymph-node-dissection",
+              "text": "Axillary Lymph Node Dissection (ALND)",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/cancer-care-oncology/specialties/breast-cancer-treatment/treatments/axillary-lymph-node-dissection",
+              "text": "Axillary Lymph Node Dissection (ALND)",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/cancer-care-oncology/specialties/lung-cancer-treatment/treatments/axillary-lymph-node-dissection-lung-cancer",
+              "text": "Axillary Lymph Node Dissection for Lung Cancer",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/orthopedics-sports-medicine-spine/specialties/head-neck-spine/conditions/back-sprain-strain",
+              "text": "Back Sprain or Strain",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/ear-nose-throat-ent/treatments/balance-assessment-test",
+              "text": "Balance Assessment Test",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/ear-nose-throat-ent/conditions/balance-disorder",
+              "text": "Balance Disorders",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/heart-vascular/treatments/balloon-valvotomy",
+              "text": "Balloon Valvotomy",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/cancer-care-oncology/specialties/oral-laryngeal-thyroid-cancer/treatments/barium-swallow",
+              "text": "Barium Swallow",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/cancer-care-oncology/specialties/skin-cancer-treatment/conditions/basal-cell-carcinoma",
+              "text": "Basal Cell Carcinoma (BCC)",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/lab/treatments/basic-metabolic-panel-bmp",
+              "text": "Basic Metabolic Panel (BMP)",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/ear-nose-throat-ent/conditions/benign-paroxysmal-positional-vertigo",
+              "text": "Benign Paroxysmal Positional Vertigo (BPPV)",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/urology/conditions/benign-prostatic-hyperplasia",
+              "text": "Benign Prostatic Hyperplasia (Enlarged Prostate)",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/orthopedics-sports-medicine-spine/specialties/shoulder-upper-arm/conditions/bicep-tear-strain",
+              "text": "Bicep Tear or Strain",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/orthopedics-sports-medicine-spine/specialties/shoulder-upper-arm/treatments/biceps-tendon-surgery",
+              "text": "Biceps Tendon Surgery",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/heart-vascular/conditions/bifascicular-block",
+              "text": "Bifascicular Block",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/cancer-care-oncology/specialties/ovarian-uterine-cervical-cancer/treatments/bilateral-salpingo-oophorectomy",
+              "text": "Bilateral Salpingo-Oophorectomy",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/cancer-care-oncology/specialties/liver-cancer-pancreatic-cancer/treatments/bile-duct-biopsy",
+              "text": "Bile Duct Biopsy",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/gastroenterology/conditions/biliary-dyskinesia",
+              "text": "Biliary Dyskinesia",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/behavioral-mental-health/conditions/binge-eating-disorder",
+              "text": "Binge Eating Disorder",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/cancer-care-oncology/treatments/biopsy",
+              "text": "Biopsy",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/cancer-care-oncology/specialties/liver-cancer-pancreatic-cancer/treatments/pancreas-biopsy",
+              "text": "Biopsy of the Pancreas",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/behavioral-mental-health/conditions/bipolar-disorders",
+              "text": "Bipolar Disorders",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/dermatology/conditions/birthmarks",
+              "text": "Birthmarks",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/urology/conditions/bladder-prolapse",
+              "text": "Bladder Prolapse",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/dermatology/conditions/blisters",
+              "text": "Blisters",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/cancer-care-oncology/specialties/blood-cancer-hematology/conditions/blood-cancer",
+              "text": "Blood Cancer",
+              "in_nav": false
+            }
+          ]
+        },
+        {
+          "url": "https://www.mercy.com/location-map",
+          "fetched_at": "2026-11-17T05:07:44.619Z",
+          "method": "HTTP GET",
+          "ok": true,
+          "status": 200,
+          "final_url": "https://www.mercy.com/location-map",
+          "redirected": false,
+          "content_type": "text/html; charset=utf-8",
+          "bytes": 96831,
+          "title": "Location Map | Mercy Health",
+          "robots": {
+            "allowed": true,
+            "matched": null,
+            "note": "robots.txt read for user-agent *"
+          },
+          "error": null,
+          "links": [
+            {
+              "url": "https://www.mercy.com/",
+              "text": "",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/get-care-now",
+              "text": "Get Care Now",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/pay-a-bill",
+              "text": "Bill Pay",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/mychart",
+              "text": "MyChart",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/contact-us",
+              "text": "Contact",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/find-a-doctor",
+              "text": "Find a Doctor",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/find-a-doctor?displayValue=Primary%20Care%20Providers&page=1&primary_care=Primary%20Care%20Providers&shuffle_seed=cc2dc033-78de-4d3e-acb9-cb48ed7f5c63&sort=networks%2Cdistance%2Cavailability_soonest%2Crelevance",
+              "text": "Primary Care & Family Medicine",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/find-a-doctor?displayValue=Cardiology&page=1&shuffle_seed=72688184-8bd8-4c7b-998c-be787f587174&sort=networks%2Cdistance%2Cavailability_soonest%2Crelevance&specialty_synonym=Cardiology.%2A",
+              "text": "Cardiology",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/find-a-doctor?displayValue=Neurology&page=1&shuffle_seed=e1722382-5b47-4624-90ed-0d086917ddec&sort=networks%2Cdistance%2Cavailability_soonest%2Crelevance&specialty_synonym=Neurology.%2A",
+              "text": "Neurology",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/find-a-doctor?displayValue=Obstetrics%20and%20Gynecology&page=1&shuffle_seed=72688184-8bd8-4c7b-998c-be787f587174&sort=networks%2Cdistance%2Cavailability_soonest%2Crelevance&specialty_synonym=Obstetrics%20and%20Gynecology.%2A",
+              "text": "OBGYN",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/find-a-doctor?displayValue=Orthopedic&page=1&shuffle_seed=5c2423f3-e4fa-4176-9621-0bb9dc58d6a1&sort=networks%2Cavailability_soonest%2Crelevance&specialties=Orthopedic",
+              "text": "Orthopedics",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services",
+              "text": "Health Care Services",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/primary-care-family-medicine",
+              "text": "Primary Care & Family Medicine",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/orthopedics-sports-medicine-spine",
+              "text": "Orthopedics & Sports Medicine",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/cancer-care-oncology",
+              "text": "Cancer Care & Oncology",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/emergency-urgent-care/specialties/urgent-care",
+              "text": "Urgent Care",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/heart-vascular",
+              "text": "Heart & Vascular Care",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/conditions-and-treatments",
+              "text": "Conditions & Treatments",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/location-map",
+              "text": "Locations",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/locations/hospitals",
+              "text": "Our Hospitals",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/locations/emergency-room",
+              "text": "Emergency Care",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/locations/primary-care-family-medicine",
+              "text": "Primary Care & Family Medicine",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/locations/urgent-care",
+              "text": "Walk-in & Urgent Care",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/locations/specialty-locations",
+              "text": "Specialty Care",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/locations",
+              "text": "All Locations >>",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources",
+              "text": "Patient Resources",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/pay-a-bill/estimate-your-cost",
+              "text": "Pricing",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/accepted-insurance-plans",
+              "text": "Insurance Information",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/financial-assistance",
+              "text": "Financial Assistance",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/hospital-pre-registration",
+              "text": "Hospital Pre-Registration",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/visit-pre-check",
+              "text": "Visit Pre-Check",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/nondiscrimination-and-accessibility-requirements",
+              "text": "Notice of Nondiscrimination",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/medical-record-requests",
+              "text": "Request Medical Records",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/patient-rights",
+              "text": "Patient Rights",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us",
+              "text": "About Us",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/mission",
+              "text": "Mission",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/leadership",
+              "text": "Leadership",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/quality",
+              "text": "Quality",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/careers/graduate-medical-education",
+              "text": "Residency Programs",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/careers",
+              "text": "Careers",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/regions",
+              "text": "Our Regions",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/news-events",
+              "text": "News & Events",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/careers/volunteering",
+              "text": "Volunteering",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/mission/giving-back",
+              "text": "Community Impact",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/website-disclaimer-and-privacy-statement",
+              "text": "Website Information",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/notice-of-privacy-practices",
+              "text": "Privacy Practices",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/corporate-responsibility",
+              "text": "Compliance",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/site-map",
+              "text": "Site Map",
+              "in_nav": true
+            }
+          ]
+        },
+        {
+          "url": "https://www.mercy.com/locations/hospitals",
+          "fetched_at": "2026-11-17T05:07:45.404Z",
+          "method": "HTTP GET",
+          "ok": true,
+          "status": 200,
+          "final_url": "https://www.mercy.com/locations/hospitals",
+          "redirected": false,
+          "content_type": "text/html; charset=utf-8",
+          "bytes": 107568,
+          "title": "Mercy Health Hospitals | Hospitals in Ohio and Kentucky",
+          "robots": {
+            "allowed": true,
+            "matched": null,
+            "note": "robots.txt read for user-agent *"
+          },
+          "error": null,
+          "links": [
+            {
+              "url": "https://www.mercy.com/",
+              "text": "",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/get-care-now",
+              "text": "Get Care Now",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/pay-a-bill",
+              "text": "Bill Pay",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/mychart",
+              "text": "MyChart",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/contact-us",
+              "text": "Contact",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/find-a-doctor",
+              "text": "Find a Doctor",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/find-a-doctor?displayValue=Primary%20Care%20Providers&page=1&primary_care=Primary%20Care%20Providers&shuffle_seed=cc2dc033-78de-4d3e-acb9-cb48ed7f5c63&sort=networks%2Cdistance%2Cavailability_soonest%2Crelevance",
+              "text": "Primary Care & Family Medicine",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/find-a-doctor?displayValue=Cardiology&page=1&shuffle_seed=72688184-8bd8-4c7b-998c-be787f587174&sort=networks%2Cdistance%2Cavailability_soonest%2Crelevance&specialty_synonym=Cardiology.%2A",
+              "text": "Cardiology",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/find-a-doctor?displayValue=Neurology&page=1&shuffle_seed=e1722382-5b47-4624-90ed-0d086917ddec&sort=networks%2Cdistance%2Cavailability_soonest%2Crelevance&specialty_synonym=Neurology.%2A",
+              "text": "Neurology",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/find-a-doctor?displayValue=Obstetrics%20and%20Gynecology&page=1&shuffle_seed=72688184-8bd8-4c7b-998c-be787f587174&sort=networks%2Cdistance%2Cavailability_soonest%2Crelevance&specialty_synonym=Obstetrics%20and%20Gynecology.%2A",
+              "text": "OBGYN",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/find-a-doctor?displayValue=Orthopedic&page=1&shuffle_seed=5c2423f3-e4fa-4176-9621-0bb9dc58d6a1&sort=networks%2Cavailability_soonest%2Crelevance&specialties=Orthopedic",
+              "text": "Orthopedics",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services",
+              "text": "Health Care Services",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/primary-care-family-medicine",
+              "text": "Primary Care & Family Medicine",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/orthopedics-sports-medicine-spine",
+              "text": "Orthopedics & Sports Medicine",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/cancer-care-oncology",
+              "text": "Cancer Care & Oncology",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/emergency-urgent-care/specialties/urgent-care",
+              "text": "Urgent Care",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/heart-vascular",
+              "text": "Heart & Vascular Care",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/conditions-and-treatments",
+              "text": "Conditions & Treatments",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/location-map",
+              "text": "Locations",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/locations/hospitals",
+              "text": "Our Hospitals",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/locations/emergency-room",
+              "text": "Emergency Care",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/locations/primary-care-family-medicine",
+              "text": "Primary Care & Family Medicine",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/locations/urgent-care",
+              "text": "Walk-in & Urgent Care",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/locations/specialty-locations",
+              "text": "Specialty Care",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/locations",
+              "text": "All Locations >>",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources",
+              "text": "Patient Resources",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/pay-a-bill/estimate-your-cost",
+              "text": "Pricing",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/accepted-insurance-plans",
+              "text": "Insurance Information",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/financial-assistance",
+              "text": "Financial Assistance",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/hospital-pre-registration",
+              "text": "Hospital Pre-Registration",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/visit-pre-check",
+              "text": "Visit Pre-Check",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/nondiscrimination-and-accessibility-requirements",
+              "text": "Notice of Nondiscrimination",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/medical-record-requests",
+              "text": "Request Medical Records",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/patient-rights",
+              "text": "Patient Rights",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us",
+              "text": "About Us",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/mission",
+              "text": "Mission",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/leadership",
+              "text": "Leadership",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/quality",
+              "text": "Quality",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/careers/graduate-medical-education",
+              "text": "Residency Programs",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/careers",
+              "text": "Careers",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/regions",
+              "text": "Our Regions",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/news-events",
+              "text": "News & Events",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/careers/volunteering",
+              "text": "Volunteering",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/mission/giving-back",
+              "text": "Community Impact",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/website-disclaimer-and-privacy-statement",
+              "text": "Website Information",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/notice-of-privacy-practices",
+              "text": "Privacy Practices",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/corporate-responsibility",
+              "text": "Compliance",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/site-map",
+              "text": "Site Map",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/locations/hospitals/cincinnati",
+              "text": "Cincinnati",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/locations/hospitals/irvine",
+              "text": "Irvine",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/locations/hospitals/lima",
+              "text": "Lima",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/locations/hospitals/lorain",
+              "text": "Lorain",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/locations/hospitals/paducah",
+              "text": "Paducah",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/locations/hospitals/springfield",
+              "text": "Springfield",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/locations/hospitals/toledo",
+              "text": "Toledo",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/locations/hospitals/youngstown",
+              "text": "Youngstown",
+              "in_nav": false
+            }
+          ]
+        },
+        {
+          "url": "https://www.mercy.com/patient-resources",
+          "fetched_at": "2026-11-17T05:07:46.226Z",
+          "method": "HTTP GET",
+          "ok": true,
+          "status": 200,
+          "final_url": "https://www.mercy.com/patient-resources",
+          "redirected": false,
+          "content_type": "text/html; charset=utf-8",
+          "bytes": 110710,
+          "title": "Patient Resources | Mercy Health Patient Information",
+          "robots": {
+            "allowed": true,
+            "matched": null,
+            "note": "robots.txt read for user-agent *"
+          },
+          "error": null,
+          "links": [
+            {
+              "url": "https://www.mercy.com/",
+              "text": "",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/get-care-now",
+              "text": "Get Care Now",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/pay-a-bill",
+              "text": "Bill Pay",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/mychart",
+              "text": "MyChart",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/contact-us",
+              "text": "Contact",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/find-a-doctor",
+              "text": "Find a Doctor",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/find-a-doctor?displayValue=Primary%20Care%20Providers&page=1&primary_care=Primary%20Care%20Providers&shuffle_seed=cc2dc033-78de-4d3e-acb9-cb48ed7f5c63&sort=networks%2Cdistance%2Cavailability_soonest%2Crelevance",
+              "text": "Primary Care & Family Medicine",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/find-a-doctor?displayValue=Cardiology&page=1&shuffle_seed=72688184-8bd8-4c7b-998c-be787f587174&sort=networks%2Cdistance%2Cavailability_soonest%2Crelevance&specialty_synonym=Cardiology.%2A",
+              "text": "Cardiology",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/find-a-doctor?displayValue=Neurology&page=1&shuffle_seed=e1722382-5b47-4624-90ed-0d086917ddec&sort=networks%2Cdistance%2Cavailability_soonest%2Crelevance&specialty_synonym=Neurology.%2A",
+              "text": "Neurology",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/find-a-doctor?displayValue=Obstetrics%20and%20Gynecology&page=1&shuffle_seed=72688184-8bd8-4c7b-998c-be787f587174&sort=networks%2Cdistance%2Cavailability_soonest%2Crelevance&specialty_synonym=Obstetrics%20and%20Gynecology.%2A",
+              "text": "OBGYN",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/find-a-doctor?displayValue=Orthopedic&page=1&shuffle_seed=5c2423f3-e4fa-4176-9621-0bb9dc58d6a1&sort=networks%2Cavailability_soonest%2Crelevance&specialties=Orthopedic",
+              "text": "Orthopedics",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services",
+              "text": "Health Care Services",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/primary-care-family-medicine",
+              "text": "Primary Care & Family Medicine",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/orthopedics-sports-medicine-spine",
+              "text": "Orthopedics & Sports Medicine",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/cancer-care-oncology",
+              "text": "Cancer Care & Oncology",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/emergency-urgent-care/specialties/urgent-care",
+              "text": "Urgent Care",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/health-care-services/heart-vascular",
+              "text": "Heart & Vascular Care",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/conditions-and-treatments",
+              "text": "Conditions & Treatments",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/location-map",
+              "text": "Locations",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/locations/hospitals",
+              "text": "Our Hospitals",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/locations/emergency-room",
+              "text": "Emergency Care",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/locations/primary-care-family-medicine",
+              "text": "Primary Care & Family Medicine",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/locations/urgent-care",
+              "text": "Walk-in & Urgent Care",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/locations/specialty-locations",
+              "text": "Specialty Care",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/locations",
+              "text": "All Locations >>",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources",
+              "text": "Patient Resources",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/pay-a-bill/estimate-your-cost",
+              "text": "Pricing",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/accepted-insurance-plans",
+              "text": "Insurance Information",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/financial-assistance",
+              "text": "Financial Assistance",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/hospital-pre-registration",
+              "text": "Hospital Pre-Registration",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/visit-pre-check",
+              "text": "Visit Pre-Check",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/nondiscrimination-and-accessibility-requirements",
+              "text": "Notice of Nondiscrimination",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/medical-record-requests",
+              "text": "Request Medical Records",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/patient-rights",
+              "text": "Patient Rights",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us",
+              "text": "About Us",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/mission",
+              "text": "Mission",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/leadership",
+              "text": "Leadership",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/quality",
+              "text": "Quality",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/careers/graduate-medical-education",
+              "text": "Residency Programs",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/careers",
+              "text": "Careers",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/regions",
+              "text": "Our Regions",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/news-events",
+              "text": "News & Events",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/careers/volunteering",
+              "text": "Volunteering",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/mission/giving-back",
+              "text": "Community Impact",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/website-disclaimer-and-privacy-statement",
+              "text": "Website Information",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/notice-of-privacy-practices",
+              "text": "Privacy Practices",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/about-us/corporate-responsibility",
+              "text": "Compliance",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/site-map",
+              "text": "Site Map",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/guest-dining",
+              "text": "Guest Dining Information",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/language-interpreter-services",
+              "text": "Language and Interpretation Services",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/advance-care-planning",
+              "text": "Advance Care Planning",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/balance-billing",
+              "text": "Balance Billing Protection",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/chargemaster-faq",
+              "text": "Chargemaster FAQ",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/ratings-reviews",
+              "text": "Ratings and Reviews",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.mercy.com/patient-resources/mercy-health-social-media-community-guidelines",
+              "text": "Mercy Health Social Media Community Guidelines",
+              "in_nav": false
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

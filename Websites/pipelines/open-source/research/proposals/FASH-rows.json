@@ -11,21 +11,21 @@
   "slots_outstanding": [],
   "approval_state": "unapproved: approval cells are left empty for the project lead",
   "runs": [
-    "2026-11-16T21-43-57-698Z-research-FASH-07",
-    "2026-11-17T05-07-14-550Z-research-FASH-09",
-    "2026-11-17T05-14-14-976Z-research-FASH-10",
-    "2026-11-17T05-18-11-014Z-research-FASH-08"
+    "2026-11-16T21-43-57-698Z-research-FASH-05",
+    "2026-11-17T05-07-14-550Z-research-FASH-R09",
+    "2026-11-17T05-14-14-976Z-research-FASH-06",
+    "2026-11-17T05-18-11-014Z-research-FASH-R08"
   ],
   "rows": [
     {
-      "source_id": "FASH-07",
+      "source_id": "FASH-05",
       "subcategory": "fashion magazine",
       "source_name": "Vogue",
       "source_url": "https://www.vogue.com",
       "verified_at": "2026-11-16",
       "verification_method": "HTTP GET by the orchestrator",
       "verification_result": "verified",
-      "evidence_reference": "pipelines/open-source/research/evidence/FASH-07-http-2026-11-16.json",
+      "evidence_reference": "pipelines/open-source/research/evidence/FASH-05-http-2026-11-16.json",
       "source_pages": [
         {
           "url": "https://www.vogue.com/",
@@ -137,14 +137,14 @@
       }
     },
     {
-      "source_id": "FASH-08",
+      "source_id": "FASH-R08",
       "subcategory": "brand editorial/lookbook",
       "source_name": "Refinery29",
       "source_url": "https://www.refinery29.com/en-us",
       "verified_at": "2026-11-17",
       "verification_method": "HTTP GET by the orchestrator",
       "verification_result": "verified",
-      "evidence_reference": "pipelines/open-source/research/evidence/FASH-08-http-2026-11-17.json",
+      "evidence_reference": "pipelines/open-source/research/evidence/FASH-R08-http-2026-11-17.json",
       "source_pages": [
         {
           "url": "https://www.refinery29.com/en-us",
@@ -241,14 +241,14 @@
       }
     },
     {
-      "source_id": "FASH-09",
+      "source_id": "FASH-R09",
       "subcategory": "fashion blog or trend publication",
       "source_name": "The Zoe Report",
       "source_url": "https://www.thezoereport.com",
       "verified_at": "2026-11-17",
       "verification_method": "HTTP GET",
       "verification_result": "verified",
-      "evidence_reference": "pipelines/open-source/research/evidence/FASH-09-http-2026-11-17.json",
+      "evidence_reference": "pipelines/open-source/research/evidence/FASH-R09-http-2026-11-17.json",
       "source_pages": [
         {
           "url": "https://www.thezoereport.com/",
@@ -360,14 +360,14 @@
       }
     },
     {
-      "source_id": "FASH-10",
+      "source_id": "FASH-06",
       "subcategory": "complexity-matched reserve",
       "source_name": "Harper's Bazaar",
       "source_url": "https://www.harpersbazaar.com/",
       "verified_at": "2026-11-17",
       "verification_method": "HTTP GET by the orchestrator",
       "verification_result": "verified",
-      "evidence_reference": "pipelines/open-source/research/evidence/FASH-10-http-2026-11-17.json",
+      "evidence_reference": "pipelines/open-source/research/evidence/FASH-06-http-2026-11-17.json",
       "source_pages": [
         {
           "url": "https://www.harpersbazaar.com/",
@@ -456,8 +456,8 @@
   ],
   "orchestrator_corrections": [
     "2026-11-17: homepage page-map entry renamed to index.html; see CORRECTIONS-2026-11-17-index.json",
-    "2026-11-17: FASH-10 verified_at normalised; see CORRECTIONS-2026-11-17-slot10.json",
-    "2026-11-17: FASH-08 verified_at normalised; see CORRECTIONS-2026-11-17-slot08.json",
+    "2026-11-17: FASH-06 verified_at normalised; see CORRECTIONS-2026-11-17-slot10.json",
+    "2026-11-17: FASH-R08 verified_at normalised; see CORRECTIONS-2026-11-17-slot08.json",
     "2026-11-17: verified_at reset to the HTTP evidence date; see CORRECTIONS-2026-11-17-dates.json"
   ]
 }

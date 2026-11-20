@@ -1,0 +1,121 @@
+category,slot,source_id,source_name,source_url,model_group,model_id,model_version,status,approved_at,generated_at,relative_path,reviewer,notes
+restaurant,01,REST-01,,,,,,submitted,,,restaurant websites/REST-01.zip,,pre-protocol batch; model group not recorded; source URL in restaurant websites/README.md
+restaurant,02,REST-02,,,,,,submitted,,,restaurant websites/REST-02.zip,,pre-protocol batch; model group not recorded; source URL in restaurant websites/README.md
+restaurant,03,REST-R03,,,,,,submitted,,,restaurant websites/REST-R03.zip,,pre-protocol batch; model group not recorded; source URL in restaurant websites/README.md
+restaurant,04,REST-03,,,,,,submitted,,,restaurant websites/REST-03.zip,,pre-protocol batch; model group not recorded; source URL in restaurant websites/README.md
+restaurant,05,REST-04,,,,,,submitted,,,restaurant websites/REST-04.zip,,pre-protocol batch; model group not recorded; source URL in restaurant websites/README.md
+restaurant,06,REST-R06,,,,,,submitted,,,restaurant websites/REST-R06.zip,,pre-protocol batch; model group not recorded; source URL in restaurant websites/README.md
+restaurant,07,REST-05,,,,,,submitted,,,restaurant websites/REST-05.zip,,pre-protocol batch; model group not recorded; source URL in restaurant websites/README.md
+restaurant,08,REST-R08,,,,,,submitted,,,restaurant websites/REST-R08.zip,,pre-protocol batch; model group not recorded; source URL in restaurant websites/README.md
+restaurant,09,REST-R09,,,,,,submitted,,,restaurant websites/REST-R09.zip,,pre-protocol batch; model group not recorded; source URL in restaurant websites/README.md
+restaurant,10,REST-06,,,,,,submitted,,,restaurant websites/REST-06.zip,,pre-protocol batch; model group not recorded; source URL in restaurant websites/README.md
+university,01,UNI-01,University of Wisconsin–Madison,https://www.wisc.edu/,claude,claude-sonnet-5-5,,submitted,2026-11-13,2026-11-13,university/claude/UNI-01,,qc.js re-run by orchestrator 2026-11-13: pages=17 files=31 failures=0 warnings=0. accessibility=partial (axe automated only). Scope deviation: 17 pages vs 8-15 brief (12 reference-mapped + 5 stand-ins). 428 of 862 links target the services.html stand-in.
+university,02,UNI-02,Swarthmore College,https://www.swarthmore.edu/,claude,claude-sonnet-5-5,,submitted,2026-11-13,2026-11-13,university/claude/UNI-02,,qc.js re-run by orchestrator 2026-11-13: pages=19 files=32 failures=0 warnings=0. accessibility=partial (axe automated only). Scope deviation: 19 pages vs 8-15 brief. 920 of 1689 links target the not-replicated.html stand-in (72 distinct targets).
+university,03,UNI-R03,Northern Virginia Community College (NOVA),https://www.nvcc.edu/,claude,claude-sonnet-5-5,,submitted,2026-11-13,2026-11-13,university/claude/UNI-R03,,"qc.js re-run by orchestrator 2026-11-13: pages=15 files=24 failures=0 warnings=0. validation_summary.accessibility=partial (axe automated only; screen readers, 200%/400% zoom and manual keyboard walkthrough not tested)."
+university,04,UNI-03,,https://www.psu.edu/,codex,gpt-6.1-sol,,blocked,2026-11-12,2026-11-13T15:45:45.182332+00:00,university/codex/UNI-03,,Website built (9 pages); source review passed. Required Chromium/axe QC blocked by sandbox launch permission. Evidence pipelines/codex/runs/2026-11-13T15-34-51-696Z-build-UNI-03/. Not accepted; no publication.
+university,05,UNI-04,,https://www.dickinson.edu/,codex,gpt-6.1-sol,,blocked,2026-11-12,2026-11-13T15:43:13.740107+00:00,university/codex/UNI-04,,Website built (9 pages); source review passed. Required Chromium/axe QC blocked by sandbox launch permission. Evidence pipelines/codex/runs/2026-11-13T15-34-51-770Z-build-UNI-04/. Not accepted; no publication.
+university,06,UNI-R06,Wake Technical Community College,https://www.waketech.edu/,codex,gpt-6.1-sol,,blocked,2026-11-13T00:11:23.688078+00:00,2026-11-13T15:42:39.300961+00:00,university/codex/UNI-R06,,Website built (6 pages); source review passed. Required Chromium/axe QC blocked by sandbox launch permission. Evidence pipelines/codex/runs/2026-11-13T15-34-51-838Z-build-UNI-R06/. Not accepted; no publication.
+university,07,UNI-05,,,open-source,,,planned,,,university/open-source/UNI-05,,
+university,08,UNI-R08,,,open-source,,,planned,,,university/open-source/UNI-R08,,
+university,09,UNI-R09,,,open-source,,,planned,,,university/open-source/UNI-R09,,
+university,10,UNI-06,,,open-source,,,planned,,,university/open-source/UNI-06,,
+healthcare,01,HOSP-01,UCSF Health,https://www.ucsfhealth.org/,claude,claude-sonnet-5-5,,generating,2026-11-13,,healthcare/claude/HOSP-01,,
+healthcare,02,HOSP-02,Hoag Hospital (Hoag Health Network),https://www.hoag.org/,claude,claude-sonnet-5-5,,generating,2026-11-13,,healthcare/claude/HOSP-02,,
+healthcare,03,HOSP-R03,Children's Hospital of Philadelphia (CHOP),https://www.chop.edu/,claude,claude-sonnet-5-5,,generating,2026-11-13,,healthcare/claude/HOSP-R03,,
+healthcare,04,HOSP-03,,https://www.dukehealth.org/,codex,gpt-6.1-sol,,blocked,2026-11-12,2026-11-13T15:52:57.521984+00:00,healthcare/codex/HOSP-03,,Built 10 pages; source review passed. built; required browser QC blocked. Evidence pipelines/codex/runs/2026-11-13T15-47-56-447Z-build-HOSP-03/. No publication.
+healthcare,05,HOSP-04,,https://www.evergreenhealth.com/,codex,gpt-6.1-sol,,blocked,2026-11-12,2026-11-13T15:53:54.332026Z,healthcare/codex/HOSP-04,,Built 9 pages; source review passed. built; required browser QC blocked. Evidence pipelines/codex/runs/2026-11-13T15-47-56-558Z-build-HOSP-04/. No publication.
+healthcare,06,HOSP-R06,,https://www.nationwidechildrens.org/,codex,gpt-6.1-sol,,blocked,2026-11-12,2026-11-13T15:54:28.582284+00:00,healthcare/codex/HOSP-R06,,Built 11 pages; source review passed. built; required browser QC blocked. Evidence pipelines/codex/runs/2026-11-13T15-47-56-668Z-build-HOSP-R06/. No publication.
+healthcare,07,HOSP-05,,,open-source,,,planned,,,healthcare/open-source/HOSP-05,,
+healthcare,08,HOSP-R08,,,open-source,,,planned,,,healthcare/open-source/HOSP-R08,,
+healthcare,09,HOSP-R09,,,open-source,,,planned,,,healthcare/open-source/HOSP-R09,,
+healthcare,10,HOSP-06,,,open-source,,,planned,,,healthcare/open-source/HOSP-06,,
+company,01,CORP-01,U.S. Bank (personal banking),https://www.usbank.com/,claude,claude-sonnet-5-5,,planned,2026-11-13,,company/claude/CORP-01,,
+company,02,CORP-02,Digital Federal Credit Union (DCU),https://www.dcu.org/,claude,claude-sonnet-5-5,,planned,2026-11-13,,company/claude/CORP-02,,
+company,03,CORP-R03,GitLab (about.gitlab.com marketing site),https://about.gitlab.com/,claude,claude-sonnet-5-5,,planned,2026-11-13,,company/claude/CORP-R03,,
+company,04,CORP-03,,https://www.chase.com/,codex,gpt-6.1-sol,,planned,2026-11-12,,company/codex/CORP-03,,
+company,05,CORP-04,,https://www.becu.org/,codex,gpt-6.1-sol,,planned,2026-11-12,,company/codex/CORP-04,,
+company,06,CORP-R06,,https://www.atlassian.com/,codex,gpt-6.1-sol,,planned,2026-11-12,,company/codex/CORP-R06,,
+company,07,CORP-05,,,open-source,,,planned,,,company/open-source/CORP-05,,
+company,08,CORP-R08,,,open-source,,,planned,,,company/open-source/CORP-R08,,
+company,09,CORP-R09,,,open-source,,,planned,,,company/open-source/CORP-R09,,
+company,10,CORP-06,,,open-source,,,planned,,,company/open-source/CORP-06,,
+e-commerce,01,ECOM-01,Glossier,https://www.glossier.com/,claude,claude-sonnet-5-5,,planned,2026-11-13,,e-commerce/claude/ECOM-01,,
+e-commerce,02,ECOM-02,IKEA USA,https://www.ikea.com/us/en/,claude,claude-sonnet-5-5,,planned,2026-11-13,,e-commerce/claude/ECOM-02,,
+e-commerce,03,ECOM-R03,Orvis,https://www.orvis.com/,claude,claude-sonnet-5-5,,planned,2026-11-13,,e-commerce/claude/ECOM-R03,,
+e-commerce,04,ECOM-03,,https://www.allbirds.com/,codex,gpt-6.1-sol,,planned,2026-11-12,,e-commerce/codex/ECOM-03,,
+e-commerce,05,ECOM-04,,https://www.worldmarket.com/,codex,gpt-6.1-sol,,planned,2026-11-12,,e-commerce/codex/ECOM-04,,
+e-commerce,06,ECOM-R06,,https://www.adafruit.com/,codex,gpt-6.1-sol,,planned,2026-11-12,,e-commerce/codex/ECOM-R06,,
+e-commerce,07,ECOM-05,,,open-source,,,planned,,,e-commerce/open-source/ECOM-05,,
+e-commerce,08,ECOM-R08,,,open-source,,,planned,,,e-commerce/open-source/ECOM-R08,,
+e-commerce,09,ECOM-R09,,,open-source,,,planned,,,e-commerce/open-source/ECOM-R09,,
+e-commerce,10,ECOM-06,,,open-source,,,planned,,,e-commerce/open-source/ECOM-06,,
+news,01,NEWS-01,The Guardian (US edition),https://www.theguardian.com/us,claude,claude-sonnet-5-5,,planned,2026-11-13,,news/claude/NEWS-01,,
+news,02,NEWS-02,Chicago Tribune,https://www.chicagotribune.com/,claude,claude-sonnet-5-5,,planned,2026-11-13,,news/claude/NEWS-02,,
+news,03,NEWS-R03,NPR,https://www.npr.org/,claude,claude-sonnet-5-5,,planned,2026-11-13,,news/claude/NEWS-R03,,
+news,04,NEWS-03,,https://www.japantimes.co.jp/,codex,gpt-6.1-sol,,planned,2026-11-12,,news/codex/NEWS-03,,
+news,05,NEWS-04,,https://cardinalnews.org/,codex,gpt-6.1-sol,,planned,2026-11-12,,news/codex/NEWS-04,,
+news,06,NEWS-R06,,https://www.propublica.org/,codex,gpt-6.1-sol,,planned,2026-11-12,,news/codex/NEWS-R06,,
+news,07,NEWS-05,,,open-source,,,planned,,,news/open-source/NEWS-05,,
+news,08,NEWS-R08,,,open-source,,,planned,,,news/open-source/NEWS-R08,,
+news,09,NEWS-R09,,,open-source,,,planned,,,news/open-source/NEWS-R09,,
+news,10,NEWS-06,,,open-source,,,planned,,,news/open-source/NEWS-06,,
+government,01,GOV-01,"City of Boise, Idaho",https://www.cityofboise.org/,claude,claude-sonnet-5-5,,planned,2026-11-13,,government/claude/GOV-01,,
+government,02,GOV-02,Texas.gov (the Official Website of the State of Texas),https://www.texas.gov/,claude,claude-sonnet-5-5,,planned,2026-11-13,,government/claude/GOV-02,,
+government,03,GOV-R03,National Park Service (NPS.gov),https://www.nps.gov/,claude,claude-sonnet-5-5,,planned,2026-11-13,,government/claude/GOV-R03,,
+government,04,GOV-03,City of Boston,https://www.boston.gov/,codex,gpt-6.1-sol,,approved,2026-11-13T00:11:23.688078+00:00,,government/codex/GOV-03,,Replaced City of Raleigh; user approved replacement and disclosed web-retrieval limits. Evidence: pipelines/codex/research/evidence/replacement-approval-2026-11-13.json. No generation; shared approval-policy conflict remains unresolved.
+government,05,GOV-04,Commonwealth of Virginia portal,https://www.virginia.gov/,codex,gpt-6.1-sol,,approved,2026-11-13T00:11:23.688078+00:00,,government/codex/GOV-04,,Replaced Mass.gov; user approved replacement and disclosed web-retrieval limits. Evidence: pipelines/codex/research/evidence/replacement-approval-2026-11-13.json. No generation; shared approval-policy conflict remains unresolved.
+government,06,GOV-R06,U.S. Environmental Protection Agency,https://www.epa.gov/,codex,gpt-6.1-sol,,awaiting-approval,2026-11-12,,government/codex/GOV-R06,,"Provisional research; reservations, all-ten scope/model approval and exact model TBD. See pipelines/codex/research/GOV.md."
+government,07,GOV-05,,,open-source,,,planned,,,government/open-source/GOV-05,,
+government,08,GOV-R08,,,open-source,,,planned,,,government/open-source/GOV-R08,,
+government,09,GOV-R09,,,open-source,,,planned,,,government/open-source/GOV-R09,,
+government,10,GOV-06,,,open-source,,,planned,,,government/open-source/GOV-06,,
+fashion,01,FASH-01,W Magazine,https://www.wmagazine.com/,claude,claude-sonnet-5-5,,planned,2026-11-13,,fashion/claude/FASH-01,,
+fashion,02,FASH-02,Margaret Howell (UK site),https://www.margarethowell.co.uk/,claude,claude-sonnet-5-5,,planned,2026-11-13,,fashion/claude/FASH-02,,
+fashion,03,FASH-R03,Hypebeast,https://hypebeast.com/,claude,claude-sonnet-5-5,,planned,2026-11-13,,fashion/claude/FASH-R03,,
+fashion,04,FASH-03,,https://www.anothermag.com/,codex,gpt-6.1-sol,,planned,2026-11-12,,fashion/codex/FASH-03,,
+fashion,05,FASH-04,,https://www.toa.st/,codex,gpt-6.1-sol,,planned,2026-11-12,,fashion/codex/FASH-04,,
+fashion,06,FASH-R06,Who What Wear,https://www.whowhatwear.com/,codex,gpt-6.1-sol,,approved,2026-11-13T00:11:23.688078+00:00,,fashion/codex/FASH-R06,,Replaced Fashionista; user approved replacement and disclosed web-retrieval limits. Evidence: pipelines/codex/research/evidence/replacement-approval-2026-11-13.json. No generation; shared approval-policy conflict remains unresolved.
+fashion,07,FASH-05,,,open-source,,,planned,,,fashion/open-source/FASH-05,,
+fashion,08,FASH-R08,,,open-source,,,planned,,,fashion/open-source/FASH-R08,,
+fashion,09,FASH-R09,,,open-source,,,planned,,,fashion/open-source/FASH-R09,,
+fashion,10,FASH-06,,,open-source,,,planned,,,fashion/open-source/FASH-06,,
+weather,01,WX-01,National Weather Service (NOAA / US Dept. of Commerce),https://www.weather.gov/,claude,claude-sonnet-5-5,,planned,2026-11-13,,weather/claude/WX-01,,
+weather,02,WX-02,"Weather Underground (The Weather Company, an IBM/Francisco Partners business)",https://www.wunderground.com/,claude,claude-sonnet-5-5,,planned,2026-11-13,,weather/claude/WX-02,,
+weather,03,WX-R03,"WRAL Weather (WRAL-TV, Raleigh NC; Capitol Broadcasting)",https://www.wral.com/weather/,claude,claude-sonnet-5-5,,planned,2026-11-13,,weather/claude/WX-R03,,
+weather,04,WX-03,Met Office,https://www.metoffice.gov.uk/,codex,gpt-6.1-sol,,researching,2026-11-12,,weather/codex/WX-03,,"Provisional Phase A candidate; reservations, complete ten-source scope/model approval pending. See pipelines/codex/research/WX.md. HTTP availability verified; rendering/interactions unverified."
+weather,05,WX-04,Time and Date AS — weather section,https://www.timeanddate.com/weather/,codex,gpt-6.1-sol,,approved,2026-11-13T00:11:23.688078+00:00,,weather/codex/WX-04,,Replaced meteoblue; user approved replacement and disclosed web-retrieval limits. Evidence: pipelines/codex/research/evidence/replacement-approval-2026-11-13.json. No generation; shared approval-policy conflict remains unresolved.
+weather,06,WX-R06,Mountain-Forecast.com,https://www.mountain-forecast.com/,codex,gpt-6.1-sol,,researching,2026-11-12,,weather/codex/WX-R06,,"Provisional Phase A candidate; reservations, complete ten-source scope/model approval pending. See pipelines/codex/research/WX.md. HTTP availability verified; rendering/interactions unverified."
+weather,07,WX-05,,,open-source,,,planned,,,weather/open-source/WX-05,,
+weather,08,WX-R08,,,open-source,,,planned,,,weather/open-source/WX-R08,,
+weather,09,WX-R09,,,open-source,,,planned,,,weather/open-source/WX-R09,,
+weather,10,WX-06,,,open-source,,,planned,,,weather/open-source/WX-06,,
+nonprofit,01,NPO-01,International Rescue Committee (IRC),https://www.rescue.org/,claude,claude-sonnet-5-5,,planned,2026-11-13,,nonprofit/claude/NPO-01,,
+nonprofit,02,NPO-02,"Capital Area Food Bank (Washington, DC region). This is a different organization from the excluded AFAC.",https://www.capitalareafoodbank.org/,claude,claude-sonnet-5-5,,planned,2026-11-13,,nonprofit/claude/NPO-02,,
+nonprofit,03,NPO-03,ASPCA (American Society for the Prevention of Cruelty to Animals),https://www.aspca.org/,claude,claude-sonnet-5-5,,planned,2026-11-13,,nonprofit/claude/NPO-03,,
+nonprofit,04,NPO-04,,https://www.care.org/,codex,gpt-6.1-sol,,planned,2026-11-12,,nonprofit/codex/NPO-04,,
+nonprofit,05,NPO-05,,https://afac.org/,codex,gpt-6.1-sol,,planned,2026-11-12,,nonprofit/codex/NPO-05,,
+nonprofit,06,NPO-06,,https://preventcancer.org/,codex,gpt-6.1-sol,,planned,2026-11-12,,nonprofit/codex/NPO-06,,
+nonprofit,07,NPO-07,,,open-source,,,planned,,,nonprofit/open-source/NPO-07,,
+nonprofit,08,NPO-08,,,open-source,,,planned,,,nonprofit/open-source/NPO-08,,
+nonprofit,09,NPO-09,,,open-source,,,planned,,,nonprofit/open-source/NPO-09,,
+nonprofit,10,NPO-10,,,open-source,,,planned,,,nonprofit/open-source/NPO-10,,
+church,01,CHUR-01,North Point Community Church (North Point Ministries),https://northpoint.org/,claude,claude-sonnet-5-5,,planned,2026-11-13,,church/claude/CHUR-01,,
+church,02,CHUR-02,Cathedral of Saint John the Divine (New York),https://www.stjohndivine.org/,claude,claude-sonnet-5-5,,planned,2026-11-13,,church/claude/CHUR-02,,
+church,03,CHUR-03,The Unitarian Universalist Congregation in Westport (CT),https://uuwestport.org/,claude,claude-sonnet-5-5,,planned,2026-11-13,,church/claude/CHUR-03,,
+church,04,CHUR-04,,https://www.life.church/,codex,gpt-6.1-sol,,planned,2026-11-12,,church/codex/CHUR-04,,
+church,05,CHUR-05,,https://www.durhamcathedral.co.uk/,codex,gpt-6.1-sol,,planned,2026-11-12,,church/codex/CHUR-05,,
+church,06,CHUR-06,,https://www.blacksburgpres.org/,codex,gpt-6.1-sol,,planned,2026-11-12,,church/codex/CHUR-06,,
+church,07,CHUR-07,,,open-source,,,planned,,,church/open-source/CHUR-07,,
+church,08,CHUR-08,,,open-source,,,planned,,,church/open-source/CHUR-08,,
+church,09,CHUR-09,,,open-source,,,planned,,,church/open-source/CHUR-09,,
+church,10,CHUR-10,,,open-source,,,planned,,,church/open-source/CHUR-10,,
+portfolio,01,PORT-01,The Curious Creations of Tim Holman,https://tholman.com/,claude,claude-opus-5,,submitted,2026-11-09,2026-11-10,portfolio/claude/PORT-01,,minimal one-page stratum; qc.js failures=0; axe 0 violations in 69 runs
+portfolio,02,PORT-02,Brittany Chiang,https://brittanychiang.com/,claude,claude-opus-5,,submitted,2026-11-09,2026-11-10,portfolio/claude/PORT-02,,software-engineer stratum; qc.js failures=0; UNRESOLVED: same reference as slot 04
+portfolio,03,PORT-R03,Andreas Wannerstedt,https://andreaswannerstedt.se/,claude,claude-opus-5,,submitted,2026-11-09,2026-11-10,portfolio/claude/PORT-R03,,motion/3D stratum; qc.js failures=0; axe 0 violations in 57 runs
+portfolio,04,PORT-03,Brittany Chiang,https://brittanychiang.com/,codex,,,submitted,,,portfolio/codex/01-rowan-ellis,,"directory is named 01-rowan-ellis but Codex owns slots 04-06; UNRESOLVED: same reference as slot 02; source declared in the Codex README, not independently verified"
+portfolio,05,PORT-04,Adham Dannaway,https://www.adhamdannaway.com/,codex,,,submitted,,,portfolio/codex/02-jamie-vale,,"directory is named 02-jamie-vale; source declared in the Codex README, not independently verified"
+portfolio,06,PORT-R06,Alex Strohl,https://www.alexstrohl.com/,codex,,,submitted,,,portfolio/codex/03-avery-north,,"directory is named 03-avery-north; source declared in the Codex README, not independently verified"
+portfolio,07,PORT-05,,,open-source,,,planned,,,portfolio/open-source/PORT-05,,no reference approved yet
+portfolio,08,PORT-R08,,,open-source,,,planned,,,portfolio/open-source/PORT-R08,,no reference approved yet
+portfolio,09,PORT-R09,,,open-source,,,planned,,,portfolio/open-source/PORT-R09,,no reference approved yet
+portfolio,10,PORT-06,,,open-source,,,planned,,,portfolio/open-source/PORT-06,,no reference approved yet

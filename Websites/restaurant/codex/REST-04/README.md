@@ -1,37 +1,36 @@
-# REST-04 — Verdant Table
+# REST-04 — Ember & Elm
 
-Independent static restaurant replica inspired by Crossroads Kitchen. Fictional plant-based brand; original prose, six sample dishes, one four-course sample tasting menu, one fictional location, two original SVG illustrations, two manual gallery slides. No real operational information or bookings.
+Restaurant / multi-location group. Independent static replica inspired by approved Hogsalt scope, with fictional branding, original prose and three original local SVG illustrations.
 
-## Source, approval and attribution
+## Source and approval
 
-Approved source: https://www.crossroadskitchen.com/ . Verified 2026-11-14T04:40:26.232400+00:00 via live web search and web open/click readable-text retrieval, potentially cached/indexed. No new source verification, origin freshness guarantee, rendered source inspection, or executed source interactions in this build. Source/scope approved by Samhith Varma at 2026-11-14T04:44:45.932240+00:00; evidence: `Websites/pipelines/codex/research/REST-source-approval.md`, detailed observations: `REST.md#rest-04` in that directory.
+Approved source: https://www.hogsalt.com/ . Verification: 2026-11-14T04:40:26.232400+00:00, live web search and web open/click readable text retrieval; potentially cached/indexed, no rendered browser or fresh-origin guarantee. Source/scope approved by Samhith Varma at 2026-11-14T04:44:45.932240+00:00. Evidence: `Websites/pipelines/codex/research/REST.md#rest-05` and `REST-source-approval.md`. This build relies on those approved observations and performs no new source verification.
 
-Generator: GPT-6 in Codex; exact release/version unknown. Initial generator assignment resolved from this session after user directed restaurant implementation; see central change log. Not attributed to gpt-6.1-sol. No human edits or other-model generation.
+Generator: GPT-6 in Codex coding agent; exact model release/version not exposed. One isolated generation workspace, no human edits, no other-model generation. User explicitly requested REST-04 and REST-R06 at once; this site retains an independent run and delivery.
 
-## Run locally
+## Run
 
-Open `index.html` in an ordinary browser. Relative links, embedded script data, local CSS and SVG require no server, network, installation, or build. With JavaScript disabled, navigation links, menu anchors and all content remain usable; reservation explanation and an additional artwork link provide fallbacks.
+Open `index.html` directly. All six pages, navigation, local images and script work without network, server, installation or build. With JavaScript disabled, navigation remains expanded and all three homepage images remain visible.
 
-## Complete sitemap and source map
+## Complete sitemap and approved source mapping
 
-| Local file | Approved source |
+| Local page | Source |
 |---|---|
-| `index.html` | https://www.crossroadskitchen.com/ |
-| `los-angeles.html` | https://www.crossroadskitchen.com/los-angeles |
-| `dinner-menu.html` | https://www.crossroadskitchen.com/dinner-menu |
-| `our-story.html` | https://www.crossroadskitchen.com/our-story |
-| `reservations.html` | https://www.crossroadskitchen.com/reservations |
-| `private-dining.html` | https://www.crossroadskitchen.com/private-dining |
-| `404.html` | Intentional local addition |
+| `index.html` | https://www.hogsalt.com/ |
+| `restaurants.html` | https://www.hogsalt.com/restaurants |
+| `restaurant-detail.html` | https://www.hogsalt.com/restaurants-list/maudes-liquor-bar-gdj97 |
+| `about.html` | https://www.hogsalt.com/about |
+| `private-events.html` | https://www.hogsalt.com/private-events |
+| `404.html` | Required intentional local addition |
 
-## Features and simulations
+## Features and sample counts
 
-Nested native navigation disclosures; narrow-screen menu button; Escape dismissal; current-page links and breadcrumbs; categorized menu with anchor navigation and example dietary labels; fictional visit hours; story; manual private-dining illustration gallery with previous/next wraparound and status; native modal reservation handoff with Escape and focus return. Reservation fields were not observed: no custom booking form was added. No ordering, payments, inquiry form, account, map, live hours status, real addresses, or externally hosted widgets.
+Three fictional directory entries (The Amber Room, Cedar House, Harbor Parlour), three city labels, one sparse detailed profile, three private-events directory entries, three manually navigated homepage slides. Shared responsive navigation with expanded state and Escape/focus return. Native mailing-list disclosure explains the excluded external signup; no fields or subscription. Breadcrumbs, current-page links, local next-item route and 404 recovery.
 
-## Validation
+The next restaurant route ends at the second directory entry, because a second detailed restaurant page was not approved. Only the first venue has a detailed profile; other cards explicitly say directory-only. No inferred filters, reservation/menu data, real hours/address, account, checkout, live inquiry, or source media. All venue/city associations are fictional samples.
 
-See `QA.md` for actual pass/fail/not-tested results and run evidence. A WCAG 2.2 AA baseline is a design target, not a conformance claim. Human acceptance, screen-reader, zoom, rendered-source fidelity, and any unavailable browser tests remain unverified. Exact source imagery, typography, layout proportions and responsive behavior were not available from text evidence and are approximated. No private dining transaction occurs.
+## Validation and limitations
 
-## Research artifacts
+See `QA.md` and the independent run evidence for actual results. Source visual fidelity, keyboard/mobile behavior and accessibility are not claimed verified merely from code. WCAG 2.2 AA is a baseline target, not established conformance. Initial output is preserved before QC; final archive includes every delivered file.
 
-`fidelity-notes.md`, `component-inventory.json`, `generation-metadata.json`, `QA.md`. Run: `Websites/pipelines/codex/runs/2026-11-14T05-01-38-812Z-build-REST-04/`, including immutable task and protocol snapshots, raw output, QC evidence and final ZIP/hashes.
+Run: `Websites/pipelines/codex/runs/2026-11-14T05-07-13-605Z-build-REST-04/`.

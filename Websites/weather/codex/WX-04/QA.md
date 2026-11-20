@@ -4,8 +4,8 @@
 
 - PASS — JavaScript syntax via `node --check js/main.js`.
 - PASS — parsed exact approved sitemap, one H1/page, landmarks, skip destination, unique IDs, all relative file/fragment references, required artifacts, JSON attribution and component page coverage. Source/file inspection found HTML/CSS/vanilla JS and local SVG only, no runtime package/server/framework or remote dependency. Evidence `static-audit.json`. This is same-session self-review, not an independent reviewer.
-- PASS — 6 actual pure data-function assertions in Node VM: search ignores surrounding whitespace and case, unknown search yields empty local results, blank search yields no results, cold place/day forecast uses numeric offset, warning empty-day state, warning selection matches numeric radio value. Evidence `logic-tests.json`, reproducible `logic-tests.cjs`. VM uses null DOM selectors: it does not execute DOM controls, native events, rendering or accessibility.
-- BLOCKED / NOT TESTED — shared browser QC actually attempted 1 time(s). Exit 2: Chromium failed to launch with bootstrap_check_in Permission denied (1100). No browser/axe/layout scan completed and no QC JSON result exists. Logs: `qc-2026-11-14T05-29-16-496Z.log`.
+- PASS — 7 actual pure data-function assertions in Node VM: Celsius to Fahrenheit freezing, Celsius to Fahrenheit negative, Celsius remains Celsius, city search normalizes input, unknown city produces no matches, empty city query produces no matches, hourly day offset. Evidence `logic-tests.json`, reproducible `logic-tests.cjs`. VM uses null DOM selectors: it does not execute DOM controls, native events, rendering or accessibility.
+- BLOCKED / NOT TESTED — shared browser QC actually attempted 1 time(s). Exit 2: Chromium failed to launch with bootstrap_check_in Permission denied (1100). No browser/axe/layout scan completed and no QC JSON result exists. Logs: `qc-2026-11-14T05-31-13-117Z.log`.
 
 ## Seven gates
 
@@ -25,4 +25,4 @@ No website-code correction after initial snapshot; QA metadata finalized after c
 
 Screen-reader, zoom, reflow, visual contrast, browser focus, interaction states, table scrolling, 375/1280 layouts and source-rendered fidelity are NOT TESTED. Browser preview service was unavailable earlier in this session and was not retried. Human acceptance pending. All weather, dates, locations, warnings and maps are labeled fictional fixed samples; no external API or planning use.
 
-Run `Websites/pipelines/codex/runs/2026-11-14T05-25-43-413Z-build-WX-04` contains task.md, immutable snapshots, initial-output, actual shared QC logs, static/function-check evidence, handoff, ZIP and final SHA-256 manifest. No independent reviewer, other-model edits, human code edits, publication or commits.
+Run `Websites/pipelines/codex/runs/2026-11-14T05-25-43-487Z-build-WX-04` contains task.md, immutable snapshots, initial-output, actual shared QC logs, static/function-check evidence, handoff, ZIP and final SHA-256 manifest. No independent reviewer, other-model edits, human code edits, publication or commits.

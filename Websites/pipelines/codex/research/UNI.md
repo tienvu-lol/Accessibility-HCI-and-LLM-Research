@@ -1,4 +1,4 @@
-> **Current selection update (2026-11-13 UTC):** The approved replacement addendum at the end of this file supersedes the original proposals for UNI-06. Earlier observations remain historical evidence.
+> **Current selection update (2026-11-13 UTC):** The approved replacement addendum at the end of this file supersedes the original proposals for UNI-R06. Earlier observations remain historical evidence.
 
 # UNI — Phase A source research
 
@@ -16,19 +16,19 @@ Read Rules.md and MODEL_ALLOCATION.md in full, plus the central inventory README
 
 ## Coordination dependency
 
-Central university.csv was blank for all ten slots when read. Claude notes at `pipelines/claude/research/UNI.md` independently name Wisconsin–Madison, Swarthmore and NOVA, with HTTP-only claims dated 2026-11-10. Treat these as reserved-in-notes and avoid them; do not import their verification or approval. An asynchronous request to the coordinator asked to reserve these URLs centrally and identify UNI-07–10 reservations before final selection. No reply was received when this note was prepared. Only Codex 04–06 CSV proposals are populated. assignments.csv reports Claude generating but supplies no source/approval evidence; this is a reconciliation issue, not authorization for Codex. Other-group proposed strata below do not change their approved scope.
+Central university.csv was blank for all ten slots when read. Claude notes at `pipelines/claude/research/UNI.md` independently name Wisconsin–Madison, Swarthmore and NOVA, with HTTP-only claims dated 2026-11-10. Treat these as reserved-in-notes and avoid them; do not import their verification or approval. An asynchronous request to the coordinator asked to reserve these URLs centrally and identify UNI-05–10 reservations before final selection. No reply was received when this note was prepared. Only Codex 04–06 CSV proposals are populated. assignments.csv reports Claude generating but supplies no source/approval evidence; this is a reconciliation issue, not authorization for Codex. Other-group proposed strata below do not change their approved scope.
 
 ## Proposed Codex sources
 
 | ID | Organization | Stratum | Complexity | Availability | Scope |
 |---|---|---|---|---|---|
-| UNI-04 | [The Pennsylvania State University (Penn State)](https://www.psu.edu/) | large public research university | high | verified | 8 source pages + local 404 proposal |
-| UNI-05 | [Dickinson College](https://www.dickinson.edu/) | small private liberal-arts college | high | verified | 8 source pages + local 404 proposal |
-| UNI-06 | [Community College of Philadelphia](https://www.ccp.edu/) | community college | high | UNVERIFIED | 9 source pages + local 404 proposal |
+| UNI-03 | [The Pennsylvania State University (Penn State)](https://www.psu.edu/) | large public research university | high | verified | 8 source pages + local 404 proposal |
+| UNI-04 | [Dickinson College](https://www.dickinson.edu/) | small private liberal-arts college | high | verified | 8 source pages + local 404 proposal |
+| UNI-R06 | [Community College of Philadelphia](https://www.ccp.edu/) | community college | high | UNVERIFIED | 9 source pages + local 404 proposal |
 
-## UNI-04
+## UNI-03
 
-- Source ID: UNI-04; category university; subcategory/stratum: large public research university.
+- Source ID: UNI-03; category university; subcategory/stratum: large public research university.
 - Actual organization: **The Pennsylvania State University (Penn State)**; canonical homepage: https://www.psu.edu/.
 - Attempted verification: 2026-11-12 UTC; HTTP-only GET plus web search/text extraction; result **verified**. Evidence: `evidence/UNI-http-2026-11-12.json` entries keyed by URL; CCP additionally has extraction evidence below.
 
@@ -74,9 +74,9 @@ Central university.csv was blank for all ten slots when read. Claude notes at `p
 - Proposed substitutions/scope decisions: No source replacement selected. If high complexity cannot be matched, coordinator must approve reduced scope or a different public research university; no substitute is verified or reserved.
 - Any later application, student portal, login, tour RSVP or inquiry submission must be explicitly labeled simulation. No live form was submitted. Local inline search data would be a simulation of inferred result behavior, requiring approval; no backend/API replication proposed.
 
-## UNI-05
+## UNI-04
 
-- Source ID: UNI-05; category university; subcategory/stratum: small private liberal-arts college.
+- Source ID: UNI-04; category university; subcategory/stratum: small private liberal-arts college.
 - Actual organization: **Dickinson College**; canonical homepage: https://www.dickinson.edu/.
 - Attempted verification: 2026-11-12 UTC; HTTP-only GET plus web search/text extraction; result **verified**. Evidence: `evidence/UNI-http-2026-11-12.json` entries keyed by URL; CCP additionally has extraction evidence below.
 
@@ -122,9 +122,9 @@ Central university.csv was blank for all ten slots when read. Claude notes at `p
 - Proposed substitutions/scope decisions: No replacement proposed. Directory omitted because no valid directory page was established; adding one later requires evidence and approval.
 - Any later application, student portal, login, tour RSVP or inquiry submission must be explicitly labeled simulation. No live form was submitted. Local inline search data would be a simulation of inferred result behavior, requiring approval; no backend/API replication proposed.
 
-## UNI-06
+## UNI-R06
 
-- Source ID: UNI-06; category university; subcategory/stratum: community college.
+- Source ID: UNI-R06; category university; subcategory/stratum: community college.
 - Actual organization: **Community College of Philadelphia**; canonical homepage: https://www.ccp.edu/.
 - Attempted verification: 2026-11-12 UTC; HTTP-only GET plus web search/text extraction; result **UNVERIFIED**. Evidence: `evidence/UNI-http-2026-11-12.json` entries keyed by URL; CCP additionally has extraction evidence below.
 
@@ -166,7 +166,7 @@ Central university.csv was blank for all ten slots when read. Claude notes at `p
 
 ### Complexity, stack, limitations and substitutions
 
-- **high complexity:** Provisional from web extraction: nested navigation, program keyword/level/interest controls, card/list views, program sections, event facets/pagination and news filters. Comparable to Claude UNI-03 medium-high; runtime/rendering may change assessment.
+- **high complexity:** Provisional from web extraction: nested navigation, program keyword/level/interest controls, card/list views, program sections, event facets/pagination and news filters. Comparable to Claude UNI-R03 medium-high; runtime/rendering may change assessment.
 - Stack clues: unknown: direct HTML blocked. Web extraction exposes a pantheonsite.io tuition-calculator link; hosting/CMS conclusions cannot be established from that alone.
 - Limitations: UNVERIFIED current availability: urllib and curl homepage GETs returned HTTP 403 Just a moment; program listing/detail and missing path also 403. Web tool supplied indexed/extracted text with crawl labels today to four days ago, not a confirmed fresh origin response or render. Browser access host unavailable. Footer/layout and all interactions unverified. All scope provisional; model/version TBD.
 - Proposed substitutions/scope decisions: No replacement authorized or chosen. Montgomery College candidate rejected (200 Request Rejected); www2 certificate hostname mismatch. PVCC candidate had issuer verification failure. Neither is a verified substitute. Coordinator may request a fresh CCP verification or another same-stratum source research pass.
@@ -204,14 +204,14 @@ The shared CSV is the approval source of truth. No whole-category approval is re
 |---|---|---|---|---|
 | UNI-01 | claude | Wisconsin–Madison — https://www.wisc.edu/ (Claude notes only) | Public research per their notes; coordinator reconcile | Central reservation, scope and approval pending; do not overwrite |
 | UNI-02 | claude | Swarthmore — https://www.swarthmore.edu/ (Claude notes only) | Small private liberal arts per their notes | Central reservation, scope and approval pending; do not overwrite |
-| UNI-03 | claude | NOVA — https://www.nvcc.edu/ (Claude notes only) | Community college per their notes | Central reservation, scope and approval pending; do not overwrite |
-| UNI-04 | codex | Penn State — https://www.psu.edu/ | Assigned public research | 8 source pages + 404 proposed; model and approval pending |
-| UNI-05 | codex | Dickinson — https://www.dickinson.edu/ | Assigned small private liberal arts | 8 source pages + 404 proposed; model and approval pending |
-| UNI-06 | codex | CCP — https://www.ccp.edu/ | Assigned community college | 9 source pages + 404 provisional; availability UNVERIFIED; model and approval pending |
-| UNI-07 | open-source | **Pending — unknown reservation** | Public research is coordination proposal only | Source, actual scope, model and approval pending |
-| UNI-08 | open-source | **Pending — unknown reservation** | Small private liberal arts is coordination proposal only | Source, actual scope, model and approval pending |
-| UNI-09 | open-source | **Pending — unknown reservation** | Community college is coordination proposal only | Source, actual scope, model and approval pending |
-| UNI-10 | open-source | **Pending — unknown reservation** | Additional public research reserve is coordination proposal only | Source, actual scope, model and approval pending |
+| UNI-R03 | claude | NOVA — https://www.nvcc.edu/ (Claude notes only) | Community college per their notes | Central reservation, scope and approval pending; do not overwrite |
+| UNI-03 | codex | Penn State — https://www.psu.edu/ | Assigned public research | 8 source pages + 404 proposed; model and approval pending |
+| UNI-04 | codex | Dickinson — https://www.dickinson.edu/ | Assigned small private liberal arts | 8 source pages + 404 proposed; model and approval pending |
+| UNI-R06 | codex | CCP — https://www.ccp.edu/ | Assigned community college | 9 source pages + 404 provisional; availability UNVERIFIED; model and approval pending |
+| UNI-05 | open-source | **Pending — unknown reservation** | Public research is coordination proposal only | Source, actual scope, model and approval pending |
+| UNI-R08 | open-source | **Pending — unknown reservation** | Small private liberal arts is coordination proposal only | Source, actual scope, model and approval pending |
+| UNI-R09 | open-source | **Pending — unknown reservation** | Community college is coordination proposal only | Source, actual scope, model and approval pending |
+| UNI-06 | open-source | **Pending — unknown reservation** | Additional public research reserve is coordination proposal only | Source, actual scope, model and approval pending |
 
 **Stop before implementation.** Coordinator action required: reserve Claude's noted URLs centrally, disclose open-source reservations, reconcile source-specific scope/complexity and exact model mapping, and resolve CCP availability or approve research of a same-stratum substitute. Then obtain project-lead approval for all ten sources, scope and model assignments under Rules.md §3 and MODEL_ALLOCATION.md §4. No approval cells have been filled and no Claude waiver is inherited.
 
@@ -220,7 +220,7 @@ The shared CSV is the approval source of truth. No whole-category approval is re
 
 Approval record: [replacement-approval-2026-11-13.json](evidence/replacement-approval-2026-11-13.json). The user explicitly approved the replacements with the disclosed web-retrieval limitations. No shared-protocol amendment or build execution is inferred.
 
-### UNI-06 current selection — Wake Technical Community College
+### UNI-R06 current selection — Wake Technical Community College
 
 Replaces Community College of Philadelphia. Canonical URL: https://www.waketech.edu/. Stratum: community college. Complexity: high.
 

@@ -109,8 +109,8 @@ Common method for all three: `curl -sSL --max-time 25 -A "Mozilla/5.0" <url>`, t
   - The ER notice text was not seen.
   - The MyChart and On Demand links go off-site (hoagconnect.org / ondemand.hoag.org).
 
-### HOSP-03
-- **source_id:** HOSP-03
+### HOSP-R03
+- **source_id:** HOSP-R03
 - **category/subcategory:** healthcare / children's hospital
 - **source_name:** Children's Hospital of Philadelphia (CHOP)
 - **official_url:** https://www.chop.edu/

@@ -1,0 +1,716 @@
+{
+  "tool": "pipelines/open-source/scripts/verify-sources.mjs",
+  "run_id": "2026-11-17T05-28-44-974Z-research-REST-R08",
+  "model_group": "open-source",
+  "category": "restaurant",
+  "slots": [
+    8
+  ],
+  "fetched_at": "2026-11-17T05:29:22.441Z",
+  "method": "HTTP GET",
+  "rendered": false,
+  "interactions_tested": false,
+  "user_agent": "Mozilla/5.0 (compatible; accessibility-research-replica-study/1.0)",
+  "rounds": [
+    {
+      "round": 1,
+      "kind": "candidate homepages",
+      "records": [
+        {
+          "url": "https://www.xianfoods.com",
+          "fetched_at": "2026-11-17T05:29:00.217Z",
+          "method": "HTTP GET",
+          "ok": true,
+          "status": 200,
+          "final_url": "https://www.xianfoods.com/",
+          "redirected": true,
+          "content_type": "text/html; charset=utf-8",
+          "bytes": 54364,
+          "title": "Xi'an Famous Foods: specialty Chinese restaurants serving Xi'an dishes based on family recipes",
+          "robots": {
+            "allowed": true,
+            "matched": null,
+            "note": "robots.txt read for user-agent *"
+          },
+          "error": null,
+          "links": [
+            {
+              "url": "https://www.xianfoods.com/menu",
+              "text": "Menu",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.xianfoods.com/our-story",
+              "text": "Our Story",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.xianfoods.com/locations",
+              "text": "Locations",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.xianfoods.com/contact",
+              "text": "Contact",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.xianfoods.com/order-acknowledgment",
+              "text": "Pickup/Delivery",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.xianfoods.com/",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.xianfoods.com/press",
+              "text": "Press",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.xianfoods.com/privacy",
+              "text": "privacy policy",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.xianfoods.com/accessibility",
+              "text": "Accessibility",
+              "in_nav": false
+            }
+          ]
+        },
+        {
+          "url": "https://www.xiangkitchen.com",
+          "fetched_at": "2026-11-17T05:29:01.313Z",
+          "method": "HTTP GET",
+          "ok": false,
+          "status": null,
+          "final_url": null,
+          "redirected": null,
+          "content_type": null,
+          "bytes": null,
+          "title": null,
+          "robots": {
+            "allowed": true,
+            "matched": null,
+            "note": "robots.txt unreachable (TypeError); treated as permissive"
+          },
+          "error": "TypeError: fetch failed",
+          "links": []
+        },
+        {
+          "url": "https://www.daxianrestaurant.com",
+          "fetched_at": "2026-11-17T05:29:02.143Z",
+          "method": "HTTP GET",
+          "ok": false,
+          "status": null,
+          "final_url": null,
+          "redirected": null,
+          "content_type": null,
+          "bytes": null,
+          "title": null,
+          "robots": {
+            "allowed": true,
+            "matched": null,
+            "note": "robots.txt unreachable (TypeError); treated as permissive"
+          },
+          "error": "TypeError: fetch failed",
+          "links": []
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "kind": "interior pages",
+      "records": [
+        {
+          "url": "https://www.xianfoods.com",
+          "fetched_at": "2026-11-17T05:29:16.169Z",
+          "method": "HTTP GET",
+          "ok": true,
+          "status": 200,
+          "final_url": "https://www.xianfoods.com/",
+          "redirected": true,
+          "content_type": "text/html; charset=utf-8",
+          "bytes": 54364,
+          "title": "Xi'an Famous Foods: specialty Chinese restaurants serving Xi'an dishes based on family recipes",
+          "robots": {
+            "allowed": true,
+            "matched": null,
+            "note": "robots.txt read for user-agent *"
+          },
+          "error": null,
+          "links": [
+            {
+              "url": "https://www.xianfoods.com/menu",
+              "text": "Menu",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.xianfoods.com/our-story",
+              "text": "Our Story",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.xianfoods.com/locations",
+              "text": "Locations",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.xianfoods.com/contact",
+              "text": "Contact",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.xianfoods.com/order-acknowledgment",
+              "text": "Pickup/Delivery",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.xianfoods.com/",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.xianfoods.com/press",
+              "text": "Press",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.xianfoods.com/privacy",
+              "text": "privacy policy",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.xianfoods.com/accessibility",
+              "text": "Accessibility",
+              "in_nav": false
+            }
+          ]
+        },
+        {
+          "url": "https://www.xianfoods.com/",
+          "fetched_at": "2026-11-17T05:29:16.937Z",
+          "method": "HTTP GET",
+          "ok": true,
+          "status": 200,
+          "final_url": "https://www.xianfoods.com/",
+          "redirected": false,
+          "content_type": "text/html; charset=utf-8",
+          "bytes": 54364,
+          "title": "Xi'an Famous Foods: specialty Chinese restaurants serving Xi'an dishes based on family recipes",
+          "robots": {
+            "allowed": true,
+            "matched": null,
+            "note": "robots.txt read for user-agent *"
+          },
+          "error": null,
+          "links": [
+            {
+              "url": "https://www.xianfoods.com/menu",
+              "text": "Menu",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.xianfoods.com/our-story",
+              "text": "Our Story",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.xianfoods.com/locations",
+              "text": "Locations",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.xianfoods.com/contact",
+              "text": "Contact",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.xianfoods.com/order-acknowledgment",
+              "text": "Pickup/Delivery",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.xianfoods.com/",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.xianfoods.com/press",
+              "text": "Press",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.xianfoods.com/privacy",
+              "text": "privacy policy",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.xianfoods.com/accessibility",
+              "text": "Accessibility",
+              "in_nav": false
+            }
+          ]
+        },
+        {
+          "url": "https://www.xianfoods.com/menu",
+          "fetched_at": "2026-11-17T05:29:17.678Z",
+          "method": "HTTP GET",
+          "ok": true,
+          "status": 200,
+          "final_url": "https://www.xianfoods.com/menu",
+          "redirected": false,
+          "content_type": "text/html; charset=utf-8",
+          "bytes": 110050,
+          "title": "Menu-Xi'an Famous Foods: specialty Chinese restaurants serving Xi'an dishes based on family recipes",
+          "robots": {
+            "allowed": true,
+            "matched": null,
+            "note": "robots.txt read for user-agent *"
+          },
+          "error": null,
+          "links": [
+            {
+              "url": "https://www.xianfoods.com/menu",
+              "text": "Menu",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.xianfoods.com/our-story",
+              "text": "Our Story",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.xianfoods.com/locations",
+              "text": "Locations",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.xianfoods.com/contact",
+              "text": "Contact",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.xianfoods.com/order-acknowledgment",
+              "text": "Pickup/Delivery",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.xianfoods.com/",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.xianfoods.com/press",
+              "text": "Press",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.xianfoods.com/privacy",
+              "text": "privacy policy",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.xianfoods.com/accessibility",
+              "text": "Accessibility",
+              "in_nav": false
+            }
+          ]
+        },
+        {
+          "url": "https://www.xianfoods.com/our-story",
+          "fetched_at": "2026-11-17T05:29:18.441Z",
+          "method": "HTTP GET",
+          "ok": true,
+          "status": 200,
+          "final_url": "https://www.xianfoods.com/our-story",
+          "redirected": false,
+          "content_type": "text/html; charset=utf-8",
+          "bytes": 32622,
+          "title": "Our Story-Xi'an Famous Foods: specialty Chinese restaurants serving Xi'an dishes based on family recipes",
+          "robots": {
+            "allowed": true,
+            "matched": null,
+            "note": "robots.txt read for user-agent *"
+          },
+          "error": null,
+          "links": [
+            {
+              "url": "https://www.xianfoods.com/menu",
+              "text": "Menu",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.xianfoods.com/our-story",
+              "text": "Our Story",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.xianfoods.com/locations",
+              "text": "Locations",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.xianfoods.com/contact",
+              "text": "Contact",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.xianfoods.com/order-acknowledgment",
+              "text": "Pickup/Delivery",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.xianfoods.com/",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.xianfoods.com/press",
+              "text": "Press",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.xianfoods.com/privacy",
+              "text": "privacy policy",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.xianfoods.com/accessibility",
+              "text": "Accessibility",
+              "in_nav": false
+            }
+          ]
+        },
+        {
+          "url": "https://www.xianfoods.com/locations",
+          "fetched_at": "2026-11-17T05:29:19.181Z",
+          "method": "HTTP GET",
+          "ok": true,
+          "status": 200,
+          "final_url": "https://www.xianfoods.com/locations",
+          "redirected": false,
+          "content_type": "text/html; charset=utf-8",
+          "bytes": 50651,
+          "title": "Locations-Xi'an Famous Foods: specialty Chinese restaurants serving Xi'an dishes based on family recipes",
+          "robots": {
+            "allowed": true,
+            "matched": null,
+            "note": "robots.txt read for user-agent *"
+          },
+          "error": null,
+          "links": [
+            {
+              "url": "https://www.xianfoods.com/menu",
+              "text": "Menu",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.xianfoods.com/our-story",
+              "text": "Our Story",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.xianfoods.com/locations",
+              "text": "Locations",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.xianfoods.com/contact",
+              "text": "Contact",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.xianfoods.com/order-acknowledgment",
+              "text": "Pickup/Delivery",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.xianfoods.com/",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.xianfoods.com/press",
+              "text": "Press",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.xianfoods.com/privacy",
+              "text": "privacy policy",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.xianfoods.com/accessibility",
+              "text": "Accessibility",
+              "in_nav": false
+            }
+          ]
+        },
+        {
+          "url": "https://www.xianfoods.com/contact",
+          "fetched_at": "2026-11-17T05:29:20.000Z",
+          "method": "HTTP GET",
+          "ok": true,
+          "status": 200,
+          "final_url": "https://www.xianfoods.com/contact",
+          "redirected": false,
+          "content_type": "text/html; charset=utf-8",
+          "bytes": 39826,
+          "title": "Contact-Xi'an Famous Foods: specialty Chinese restaurants serving Xi'an dishes based on family recipes",
+          "robots": {
+            "allowed": true,
+            "matched": null,
+            "note": "robots.txt read for user-agent *"
+          },
+          "error": null,
+          "links": [
+            {
+              "url": "https://www.xianfoods.com/menu",
+              "text": "Menu",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.xianfoods.com/our-story",
+              "text": "Our Story",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.xianfoods.com/locations",
+              "text": "Locations",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.xianfoods.com/contact",
+              "text": "Contact",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.xianfoods.com/order-acknowledgment",
+              "text": "Pickup/Delivery",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.xianfoods.com/",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.xianfoods.com/press",
+              "text": "Press",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.xianfoods.com/privacy",
+              "text": "privacy policy",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.xianfoods.com/accessibility",
+              "text": "Accessibility",
+              "in_nav": false
+            }
+          ]
+        },
+        {
+          "url": "https://www.xianfoods.com/order-acknowledgment",
+          "fetched_at": "2026-11-17T05:29:20.769Z",
+          "method": "HTTP GET",
+          "ok": true,
+          "status": 200,
+          "final_url": "https://www.xianfoods.com/order-acknowledgment",
+          "redirected": false,
+          "content_type": "text/html; charset=utf-8",
+          "bytes": 18866,
+          "title": "Pickup/Delivery Acknowledgment",
+          "robots": {
+            "allowed": true,
+            "matched": null,
+            "note": "robots.txt read for user-agent *"
+          },
+          "error": null,
+          "links": [
+            {
+              "url": "https://www.xianfoods.com/menu",
+              "text": "Menu",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.xianfoods.com/our-story",
+              "text": "Our Story",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.xianfoods.com/locations",
+              "text": "Locations",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.xianfoods.com/contact",
+              "text": "Contact",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.xianfoods.com/order-acknowledgment",
+              "text": "Pickup/Delivery",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.xianfoods.com/",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.xianfoods.com/press",
+              "text": "Press",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.xianfoods.com/privacy",
+              "text": "privacy policy",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.xianfoods.com/accessibility",
+              "text": "Accessibility",
+              "in_nav": false
+            }
+          ]
+        },
+        {
+          "url": "https://www.xianfoods.com/press",
+          "fetched_at": "2026-11-17T05:29:21.586Z",
+          "method": "HTTP GET",
+          "ok": true,
+          "status": 200,
+          "final_url": "https://www.xianfoods.com/press",
+          "redirected": false,
+          "content_type": "text/html; charset=utf-8",
+          "bytes": 29537,
+          "title": "Press-Xi'an Famous Foods: specialty Chinese restaurants serving Xi'an dishes based on family recipes",
+          "robots": {
+            "allowed": true,
+            "matched": null,
+            "note": "robots.txt read for user-agent *"
+          },
+          "error": null,
+          "links": [
+            {
+              "url": "https://www.xianfoods.com/menu",
+              "text": "Menu",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.xianfoods.com/our-story",
+              "text": "Our Story",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.xianfoods.com/locations",
+              "text": "Locations",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.xianfoods.com/contact",
+              "text": "Contact",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.xianfoods.com/order-acknowledgment",
+              "text": "Pickup/Delivery",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.xianfoods.com/",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.xianfoods.com/press",
+              "text": "Press",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.xianfoods.com/privacy",
+              "text": "privacy policy",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.xianfoods.com/accessibility",
+              "text": "Accessibility",
+              "in_nav": false
+            }
+          ]
+        },
+        {
+          "url": "https://www.xianfoods.com/accessibility",
+          "fetched_at": "2026-11-17T05:29:22.331Z",
+          "method": "HTTP GET",
+          "ok": true,
+          "status": 200,
+          "final_url": "https://www.xianfoods.com/accessibility",
+          "redirected": false,
+          "content_type": "text/html; charset=utf-8",
+          "bytes": 16243,
+          "title": "Accessibility",
+          "robots": {
+            "allowed": true,
+            "matched": null,
+            "note": "robots.txt read for user-agent *"
+          },
+          "error": null,
+          "links": [
+            {
+              "url": "https://www.xianfoods.com/menu",
+              "text": "Menu",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.xianfoods.com/our-story",
+              "text": "Our Story",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.xianfoods.com/locations",
+              "text": "Locations",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.xianfoods.com/contact",
+              "text": "Contact",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.xianfoods.com/order-acknowledgment",
+              "text": "Pickup/Delivery",
+              "in_nav": true
+            },
+            {
+              "url": "https://www.xianfoods.com/",
+              "text": "",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.xianfoods.com/press",
+              "text": "Press",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.xianfoods.com/privacy",
+              "text": "privacy policy",
+              "in_nav": false
+            },
+            {
+              "url": "https://www.xianfoods.com/accessibility",
+              "text": "Accessibility",
+              "in_nav": false
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

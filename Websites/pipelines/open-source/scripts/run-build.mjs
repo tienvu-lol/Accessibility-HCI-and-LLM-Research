@@ -18,7 +18,7 @@ const isMain = meta => process.argv[1] && fileURLToPath(meta.url) === path.resol
 
 const USAGE = `Usage: node run-build.mjs <ID> --operator "name" [options]
 
-  <ID>            an open-source slot, e.g. UNI-07
+  <ID>            an open-source slot, e.g. UNI-05
   --operator      who is running this build; recorded in the provenance (required)
   --dry-run       print the task that would be sent and exit; no API call, no files
   --max-turns N   override config.execution.max_build_turns

@@ -1,26 +1,25 @@
-# ECOM-04 — Fieldkind
+# ECOM-04 — Hearth & Field
+Fictional multi-category home-goods retailer inspired by World Market's approved information architecture. Open index.html directly; all core links and data work locally. No installation or server required.
 
-Fictional single-brand footwear research replica inspired by Allbirds. Actual generation model: gpt-6.1-sol, OpenAI collaboration worker in Codex; exact version unknown. Local-only snapshot isolation; no publishing or transaction service.
+## Source and scope
+Source: https://www.worldmarket.com/. Verified 2026-11-12T00:52:37.323742+00:00 by Live search + web text extraction of home; HTTP GET urllib for page scope; HTTP-only, no rendering/JS. Verification established HTTP/text evidence, not rendered appearance or behavior. Approved 2026-11-12 by Samhith Varma, metadata/change-log.md Phase A approval slots 04–06. Active allocation 01–06; 07–10 deferred. No new live source inspection performed during generation.
 
-Source availability verified 2026-11-12T00:52:36.949760+00:00 using live search/home text extraction and urllib HTTP GET; **no rendered source inspection**. Approval: metadata/change-log.md § 2026-11-12 — Codex Phase A approval (slots 04–06). Research provisional wording predates this later approval. Active allocation 01–06; 07–10 deferred.
+## Complete page mapping
+- `index.html` → https://www.worldmarket.com/
+- `furniture.html` → https://www.worldmarket.com/c/furniture/
+- `chairs.html` → https://www.worldmarket.com/c/furniture/living-room-furniture/chairs/
+- `sophie-chair.html` → https://www.worldmarket.com/p/sophie-upholstered-swivel-chair-112628.html
+- `cart.html` → https://www.worldmarket.com/cart
+- `search.html` → https://www.worldmarket.com/search?q=chair
+- `returns.html` → https://www.worldmarket.com/customer-service/return-policy.html
+- `404.html` → required local fallback (intentional addition).
 
-## Sitemap and source mapping
-- `index.html` ← https://www.allbirds.com/
-- `mens.html` ← https://www.allbirds.com/collections/mens
-- `tree-runner.html` ← https://www.allbirds.com/products/mens-tree-runner-nz-medium-grey
-- `cart.html` ← https://www.allbirds.com/cart
-- `search.html` ← https://www.allbirds.com/search?q=wool
-- `returns.html` ← https://www.allbirds.com/pages/returns-exchanges
-- `404.html`: required intentional local addition; no observed source 404 claimed.
+## Dataset and behavior
+Ten fictional products: four chairs, six cross-department sample finds. Only Marlow has an approved-map detail route (sophie-chair.html). Four product colors and two fictional stores. Department links route to category sections or useful local searches. Search matches product name/type/color; color and price filters combine; sorting changes price order. Native accordions reveal help/product copy. Mobile navigation supports Escape; store dialog uses native modal focus management and returns focus to its opener. Store search matches city/ZIP and selection updates the header for this page only; no location is transmitted or persisted.
 
-Open `index.html` directly in a browser. All core links are relative and data is inline; no install, build, network or server required. `404.html` is a manual local page, not a file-server error interceptor.
+Color selection changes illustration/name. Add-to-bag, quantity 1–20, removal, subtotal, localStorage and persistence are **inferred local simulations**, not verified source behavior. Storage key hf-demo-cart contains only sanitized product/color/quantity records. Storage errors fall back to in-page memory and announce the limitation when saving. No payment/address/customer fields, checkout, accounts or rewards screens. No stock assertions or real transactions.
 
-## Samples and behaviors
-Four fictional shoes with five distinct sample sizes (US men 8–12), four original shoe SVGs and four original editorial SVGs. Only Grove Runner has an approved product-detail page. Other product cards explicitly route to that mapped sample. Search matches name/material/color, size filter restricts supported demo sizes, and sort supports relevance/original order and ascending/descending price. Zero matches has a meaningful empty state; Reset clears controls. Product size selection is required before adding. Native details provide product/help disclosures. Header menu supports Escape and focus return on mobile.
+## Validation
+Eight HTML pages, common CSS/JS and five original SVG assets. Source audit checks page map, local references, one H1, meaningful-region instrumentation and explicit button types. Actual JS pure-function tests exercise search/filter/sort/color/cart validation/math; these are Node tests, not browser interaction tests. Shared QC evidence lives in pipelines/codex/runs/2026-11-13T21-01-55-959Z-build-ECOM-04. Browser/axe execution may be blocked by host permission; see qc.log and validation.json for actual result. No accessibility conformance claim. Keyboard, screen reader, zoom, responsive visual rendering and source fidelity remain not-tested in a browser.
 
-Cart quantity (1–20), remove, subtotal and local persistence are **inferred simulations**, not observed source outcomes. Storage key `fieldkind-demo-bag-v1` contains only fictional product ID, size and quantity. The storage exception fallback retains data within the current page session; file:// storage can vary by browser/page, and cross-page persistence is not guaranteed. No real stock, orders, address, payment, account or personal data. The cart checkout explanation remains on the cart page. Newsletter is visibly unavailable and collects no email.
-
-## Verification
-Shared QC and source-level test evidence are retained in `pipelines/codex/runs/2026-11-13T21-01-55-869Z-build-ECOM-04`. See generation metadata for exact gates and handoff for outcomes. Source-level VM tests use an explicitly mocked DOM/storage and do not establish browser interaction/accessibility success. Rendered source fidelity, real browser keyboard/mobile/reflow, screen reader, zoom, and cross-page file storage remain unverified unless separately evidenced. No conformance claim.
-
-Actual results: shared QC site run exited 2 because Chromium bootstrap MachPortRendezvous permission was denied; no axe/browser checks or QC JSON report were produced. No reinstall/bypass/retry. `qc-status.json` is an explicit blocked-status record, not a shared QC result. Separate source audit passed for 7 pages / 21 files; 16 actual-JS Node VM tests passed. Browser interaction and accessibility gates are not-tested. Initial output archive precedes corrections; corrections are recorded in generation metadata.
+Final outcome: shared QC exited 2 during Chromium launch (host permission block), so no axe/runtime score exists. Ten Node JS tests passed, including explicitly mocked real color/add/menu/dialog/storage-fallback handlers. Full browser interaction and accessibility gates are not-tested. No browser installation or permission bypass attempted. First output is retained in the run evidence; no site code repairs followed it. Test-harness path was corrected once.

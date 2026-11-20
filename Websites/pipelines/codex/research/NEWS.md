@@ -18,13 +18,13 @@ Evidence: [HTTP request log](evidence/NEWS-http-2026-11-12.json). Each record re
 
 | ID | Stratum | Organization / canonical URL | Availability | Complexity | Proposed pages |
 |---|---|---|---|---|---|
-| NEWS-04 | national daily newspaper | [The Japan Times](https://www.japantimes.co.jp/) | HTTP 200; rendered UNVERIFIED | high | 5 mapped pages + local 404 |
-| NEWS-05 | local/regional newsroom | [Cardinal News](https://cardinalnews.org/) | HTTP 200; rendered UNVERIFIED | medium | 7 mapped pages + local 404 |
-| NEWS-06 | public broadcaster or nonprofit newsroom | [ProPublica](https://www.propublica.org/) | HTTP 200; rendered UNVERIFIED | high | 6 mapped pages + local 404 |
+| NEWS-03 | national daily newspaper | [The Japan Times](https://www.japantimes.co.jp/) | HTTP 200; rendered UNVERIFIED | high | 5 mapped pages + local 404 |
+| NEWS-04 | local/regional newsroom | [Cardinal News](https://cardinalnews.org/) | HTTP 200; rendered UNVERIFIED | medium | 7 mapped pages + local 404 |
+| NEWS-R06 | public broadcaster or nonprofit newsroom | [ProPublica](https://www.propublica.org/) | HTTP 200; rendered UNVERIFIED | high | 6 mapped pages + local 404 |
 
-## NEWS-04 — The Japan Times
+## NEWS-03 — The Japan Times
 
-- **Source ID / category / stratum:** NEWS-04 / news / national daily newspaper.
+- **Source ID / category / stratum:** NEWS-03 / news / national daily newspaper.
 - **Actual organization / canonical homepage:** The Japan Times — https://www.japantimes.co.jp/
 - **Verification:** 2026-11-12T00:54:46.018907+00:00; HTTP-only urllib GET. Homepage 200, title `The Japan Times - News On Japan, Business News, Opinion, Sports, Entertainment And More`. Result: availability verified; rendered/interaction verification UNVERIFIED. Evidence: `pipelines/codex/research/evidence/NEWS-http-2026-11-12.json` records keyed by requested_url.
 - **Complexity:** high. Many topic bands, section subcategories, multiple editorial card patterns, search affordances and subscription-related integration markers; scoped to four available interior/home templates plus about. Comparable to Guardian high complexity, but fewer scoped pages.
@@ -62,9 +62,9 @@ Local `404.html` is required by protocol. Invalid-path attempt https://www.japan
 
 **Proposed substitutions / omissions:** No source substitution proposed. Omit blocked search-results screen from current map; a local search-results simulation would be an intentional addition requiring approval. Local 404.html is a protocol-required addition, since source invalid path returns home. Any replacement organization would need same-stratum research, reservation reconciliation and approval first; none is authorized autonomously.
 
-## NEWS-05 — Cardinal News
+## NEWS-04 — Cardinal News
 
-- **Source ID / category / stratum:** NEWS-05 / news / local/regional newsroom.
+- **Source ID / category / stratum:** NEWS-04 / news / local/regional newsroom.
 - **Actual organization / canonical homepage:** Cardinal News — https://cardinalnews.org/
 - **Verification:** 2026-11-12T00:54:46.019250+00:00; HTTP-only urllib GET. Homepage 200, title `Cardinal News | Virginia news, politics, weather and sports`. Result: availability verified; rendered/interaction verification UNVERIFIED. Evidence: `pipelines/codex/research/evidence/NEWS-http-2026-11-12.json` records keyed by requested_url.
 - **Complexity:** medium. Regional homepage groups, politics archive, standard article, search empty state and newsletter form; nested geography/topic navigation adds breadth. Comparable to Tribune medium, though nonprofit funding, free access and geography-specific grouping differ.
@@ -107,9 +107,9 @@ Local `404.html` is required by protocol. Invalid-path attempt https://cardinaln
 
 **Proposed substitutions / omissions:** No source substitution proposed. FAQ serves evidenced free-access/funding information instead of inventing paid-subscription page. Positive local search results would be simulated with fictional data, explicitly distinguished from observed empty state. Any replacement organization would need same-stratum research, reservation reconciliation and approval first; none is authorized autonomously.
 
-## NEWS-06 — ProPublica
+## NEWS-R06 — ProPublica
 
-- **Source ID / category / stratum:** NEWS-06 / news / public broadcaster or nonprofit newsroom.
+- **Source ID / category / stratum:** NEWS-R06 / news / public broadcaster or nonprofit newsroom.
 - **Actual organization / canonical homepage:** ProPublica — https://www.propublica.org/
 - **Verification:** 2026-11-12T00:54:46.019327+00:00; HTTP-only urllib GET. Homepage 200, title `ProPublica — Investigative Journalism and News in the Public Interest`. Result: availability verified; rendered/interaction verification UNVERIFIED. Evidence: `pipelines/codex/research/evidence/NEWS-http-2026-11-12.json` records keyed by requested_url.
 - **Complexity:** high. Large topic/series navigation, differently grouped investigation cards, topic front with impact and series blocks, long article with contributors/republishing/most-read regions, filtered search and multi-newsletter selector. Compared with NPR medium-high notes: categorical high used here; less media-player complexity, more investigation/search structure. Match not yet approved.
@@ -164,13 +164,13 @@ These are proposals or research-note reservations, not a coordinated or approved
 |---|---|---|---|---|---|
 | NEWS-01 | claude | The Guardian US — https://www.theguardian.com/us | Existing Claude notes; high; retain existing scope | Register: claude-sonnet-5-5; release unresolved | Pending central reservation and lead reconciliation |
 | NEWS-02 | claude | Chicago Tribune — https://www.chicagotribune.com/ | Existing Claude notes; medium; retain existing scope | Register: claude-sonnet-5-5; release unresolved | Pending central reservation and lead reconciliation |
-| NEWS-03 | claude | NPR — https://www.npr.org/ | Existing Claude notes; medium-high; retain existing scope | Register: claude-sonnet-5-5; release unresolved | Pending central reservation and lead reconciliation |
-| NEWS-04 | codex | The Japan Times — https://www.japantimes.co.jp/ | Proposed national daily; high; 5 source pages + local 404 | TBD | Provisional; reservation collision check and approval pending |
-| NEWS-05 | codex | Cardinal News — https://cardinalnews.org/ | Proposed local/regional; medium; 7 source pages + local 404 | TBD | Provisional; reservation collision check and approval pending |
-| NEWS-06 | codex | ProPublica — https://www.propublica.org/ | Proposed nonprofit newsroom; high; 6 source pages + local 404 | TBD | Provisional; reservation collision check and approval pending |
-| NEWS-07 | open-source | **Pending** | External scope/stratum pending reconciliation; national-daily stratum is only configuration proposal | TBD | Pending source, evidence, scope and assignment |
-| NEWS-08 | open-source | **Pending** | External scope/stratum pending reconciliation; local/regional is only configuration proposal | TBD | Pending source, evidence, scope and assignment |
-| NEWS-09 | open-source | **Pending** | External scope/stratum pending reconciliation; broadcaster/nonprofit is only configuration proposal | TBD | Pending source, evidence, scope and assignment |
-| NEWS-10 | open-source | **Pending** | External scope/stratum pending reconciliation; additional national daily reserve is only configuration proposal | TBD | Pending source, evidence, scope and assignment |
+| NEWS-R03 | claude | NPR — https://www.npr.org/ | Existing Claude notes; medium-high; retain existing scope | Register: claude-sonnet-5-5; release unresolved | Pending central reservation and lead reconciliation |
+| NEWS-03 | codex | The Japan Times — https://www.japantimes.co.jp/ | Proposed national daily; high; 5 source pages + local 404 | TBD | Provisional; reservation collision check and approval pending |
+| NEWS-04 | codex | Cardinal News — https://cardinalnews.org/ | Proposed local/regional; medium; 7 source pages + local 404 | TBD | Provisional; reservation collision check and approval pending |
+| NEWS-R06 | codex | ProPublica — https://www.propublica.org/ | Proposed nonprofit newsroom; high; 6 source pages + local 404 | TBD | Provisional; reservation collision check and approval pending |
+| NEWS-05 | open-source | **Pending** | External scope/stratum pending reconciliation; national-daily stratum is only configuration proposal | TBD | Pending source, evidence, scope and assignment |
+| NEWS-R08 | open-source | **Pending** | External scope/stratum pending reconciliation; local/regional is only configuration proposal | TBD | Pending source, evidence, scope and assignment |
+| NEWS-R09 | open-source | **Pending** | External scope/stratum pending reconciliation; broadcaster/nonprofit is only configuration proposal | TBD | Pending source, evidence, scope and assignment |
+| NEWS-06 | open-source | **Pending** | External scope/stratum pending reconciliation; additional national daily reserve is only configuration proposal | TBD | Pending source, evidence, scope and assignment |
 
 **Required next action:** coordinator must reserve/import Claude sources with their original evidence, disclose/reserve open-source sources and confirm no collisions before final Codex selection. Then the project lead must approve the complete ten-source inventory, page scopes and exact model assignments. Approval request remains pending that concrete completed inventory; none of the three Codex proposals is authorized for implementation. Stop at Phase A.

@@ -1,0 +1,118 @@
+{
+  "run_id": "2026-11-17T05-07-10-590Z-research-PORT-06",
+  "phase": "research",
+  "target": "PORT",
+  "category": "portfolio",
+  "slots": [
+    10
+  ],
+  "partial_run": true,
+  "evidence_detail": "full",
+  "page_cap": 16,
+  "status": "completed",
+  "started_at": "2026-11-17T05:07:10.593Z",
+  "completed_at": "2026-11-17T05:08:04.379Z",
+  "research_model": {
+    "model_id": "unsloth/gpt-oss-120b-GGUF",
+    "model_version": "F16",
+    "model_provider_or_runtime": "vt-arc-falcon-llamacpp (OpenAI-compatible chat completions at http://localhost:8083/v1)",
+    "weights_url": "https://huggingface.co/unsloth/gpt-oss-120b-GGUF",
+    "license": "apache-2.0",
+    "open_weights": true,
+    "eligibility_note": "Open weights; licence apache-2.0 as published on huggingface.co/unsloth/gpt-oss-120b-GGUF and described on the base model card openai/gpt-oss-120b as a permissive Apache 2.0 licence, both read 2026-11-17 by the orchestrator. Apache-2.0 is OSI-approved, so this slot qualifies as open-source as well as open-weight. Quantisation F16. Served self-hosted via llama.cpp on VT ARC Falcon node fal039:53013 over an SSH tunnel on localhost:8083; no third-party inference provider.",
+    "params": {
+      "temperature": 0.3,
+      "max_tokens": 32000
+    }
+  },
+  "research_model_slot": 10,
+  "attribution_note": "Reference selection for this slot was performed by the declared research model, which may differ from the model that builds it.",
+  "tool_access": "no browsing, no shell: the orchestrator performed every HTTP GET and passed the results in",
+  "protocol_snapshots": [
+    {
+      "path": "Rules.md",
+      "sha256": "04b1c3e38b76f2aff3aef869d67370bb4532cd8f9ab5e22ac8276f26cbb859bf"
+    },
+    {
+      "path": "MODEL_ALLOCATION.md",
+      "sha256": "81f3a5dc01cd370643ad84f39989a2625a03611ab5f5a34b10de5494d9e61a9b"
+    },
+    {
+      "path": "pipelines/open-source/config.json",
+      "sha256": "e5c7666dbdc7c302e54c0c94c946dcd01d64992b89a56df7ce1ee272dd488edf"
+    },
+    {
+      "path": "pipelines/open-source/categories.json",
+      "sha256": "8180966e55daa24799e51106645e93fd5807dde470765ab8b3b38d3f922c867b"
+    },
+    {
+      "path": "pipelines/open-source/prompts/system.md",
+      "sha256": "61bc24a57de14bd6a662cd6b5f98d0cfc57bf47e187fc58a97831bf1f272b4ee"
+    },
+    {
+      "path": "pipelines/open-source/prompts/research.md",
+      "sha256": "8e7d6afdfbd6c7d21eecdac15d73b607e6ad799a3008b64a69c585f71bbbb738"
+    },
+    {
+      "path": "pipelines/open-source/models.json",
+      "sha256": "f02e4efcab2732e1736a96e02459eef895400d01c2888b63c7cded93435f36c4"
+    },
+    {
+      "path": "metadata/source-inventories/portfolio.csv",
+      "sha256": "75139cc91dbe395219e67b9dec3e6d48bdd8f568608bed8197416e66caa0edee"
+    },
+    {
+      "path": "metadata/assignments.csv",
+      "sha256": "3120c4f3db4344d3cd43dbb8798e01ab4f635e457aba122ac7c6d0e94489109c"
+    }
+  ],
+  "exchanges": [
+    {
+      "exchange": 1,
+      "label": "candidates",
+      "proposed": 3,
+      "collisions": []
+    },
+    {
+      "exchange": 2,
+      "label": "selection",
+      "selected": [
+        {
+          "source_id": "PORT-06",
+          "url": "https://kentcdodds.com",
+          "pages": 11
+        }
+      ]
+    }
+  ],
+  "http_rounds": [
+    {
+      "round": 1,
+      "kind": "candidate homepages",
+      "requested": 3,
+      "ok": 3,
+      "at": "2026-11-17T05:07:22.126Z"
+    },
+    {
+      "round": 2,
+      "kind": "proposed interior pages",
+      "requested": 11,
+      "ok": 11,
+      "at": "2026-11-17T05:07:35.960Z"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 21084,
+    "completion_tokens": 3794,
+    "total_tokens": 24878,
+    "requests": 3,
+    "retries": 0
+  },
+  "errors": [],
+  "outputs": {
+    "research_notes": "pipelines/open-source/research/PORT-06.md",
+    "proposed_rows": "pipelines/open-source/research/proposals/PORT-rows.json",
+    "evidence": "pipelines/open-source/research/evidence/PORT-06-http-2026-11-17.json",
+    "transcript": "pipelines/open-source/runs/2026-11-17T05-07-10-590Z-research-PORT-06/transcript.json"
+  }
+}

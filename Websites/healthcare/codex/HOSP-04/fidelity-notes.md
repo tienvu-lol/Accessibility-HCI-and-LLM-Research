@@ -1,13 +1,12 @@
 # Fidelity notes
+Replicated from recorded source evidence: utility header with location setting, portal, search and four main groups; home campaign, care-type cards, quick actions and story band; service listing; Primary Care section navigation and appointment options; provider directory facets; location facets and pagination; medical-center overview; visit-stage navigation; billing resources and grouped footer.
 
-Replicated: nine approved page roles and source-to-local map in README; mega-menu/search affordances; home task links then news, journal and events; treatment overview, expectations, team and FAQ sections; provider directory and profile with locations, biography, reviews, training, research and insurance; location refinement categories; visit and billing resource hierarchy; grouped footer.
+Approximated: green/cream community visual direction, original campus/neighborhood SVGs, typography, grid proportions and content length. No rendered source screenshots existed; exact layout, color, media and menu behavior remain unverified. Home symptom suggestions are omitted because runtime behavior was inferred and medical guidance is excluded. Site search offers service keywords only, not symptom advice.
 
-Approximated: navy/teal academic health hierarchy, illustrated campus, typography, grids, spacing and all responsive geometry. HTTP/text evidence has no screenshots, so these are original visual interpretations, not measured source matches. Original local SVGs replace proprietary photography and branding. All prose and entities are fictional.
+Simulated: six providers, six locations, fixed demo distances, pagination, temporary location choice, native portal notice and billing statement options. Portal and appointment flows cannot book or log in; billing never requests payment/account data. No real health claims, patient stories or operational details.
 
-Simulated: inline provider/location results, search, sorting and portal modal. Actual source effects were untested. Native details approximate inferred FAQ disclosures. Appointment pathways do not submit or book.
+Added: local 404 recovery page required by protocol; statement-choice validation is a local explanation of observed billing pathways, not a copied payment form. Native dialogs and menu Escape support are implementation choices for the inferred controls.
 
-Intentionally added: 404 recovery, accessible local status feedback, visit-resource checklist for nonclinical validation evaluation; no personal data fields.
+Omitted: provider profiles and inquiry form (not approved/verified); geolocation, actual external portal, live results, payments and real contact information. Link labels on non-primary service cards deliberately identify related primary-care resources rather than inventing unapproved detail pages. Location cards link to the one approved sample campus and label it as a sample.
 
-Omitted: real portal, contact/phone operations, accounts, payments, giving, news articles outside mapped scope, video embeds, live map, real reviews, credentials or coverage claims. Failed source location detail remains excluded. Footer policy categories are represented by existing resource pages rather than unapproved screens.
-
-Unverified: rendered source layout and behavior, pixel fidelity, responsive source states, source accessibility, native-browser interactions of this replica until available browser evaluation. Text-only source evidence is retained separately; no new source verification is claimed.
+Unverified: source runtime interactions, exact rendered order, responsive layout, origin status, full accessibility and browser behavior. The generation is original to this replica, with no other-site code reused.

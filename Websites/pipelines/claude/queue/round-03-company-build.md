@@ -2,7 +2,7 @@
 
 **Status:** queued
 **Category:** `company`
-**IDs:** CORP-01, CORP-02, CORP-03
+**IDs:** CORP-01, CORP-02, CORP-R03
 **Model group:** claude (`claude-sonnet-5-5`) · **Codex orchestrator covers slots 04–06 of the same category in parallel.**
 
 ## Before launching
@@ -20,7 +20,7 @@ un-rebuilt targets to a shared stand-in or `not-replicated` landing page.
 
 Why this is fixed rather than left to the agent: in round 01 the three builders chose
 independently, and UNI-01 sent 428 of 862 links and UNI-02 920 of 1689 links to a single stand-in
-page while UNI-03 pruned and sent none. Roughly half of all links in two replicas resolved to one
+page while UNI-R03 pruned and sent none. Roughly half of all links in two replicas resolved to one
 page, which makes link-graph, navigation-depth and link-density measures reflect that choice rather
 than the replica or the model. Both approaches satisfy `Rules.md` §5 (no `href="#"`, no dead
 controls) and both pass QC, so this is a comparability decision, not a compliance one.
@@ -36,7 +36,7 @@ Three concurrent builder agents, one per replica, each writing **only** inside `
 
 Where pi-subagents and git worktrees are available:
 ```
-subagent({ workflow: "Websites/pipelines/claude/workflow.js", cwd: "<repo root>", async: true, worktree: true, args: { phase: "build", prefixes: ['CORP-01', 'CORP-02', 'CORP-03'] } })
+subagent({ workflow: "Websites/pipelines/claude/workflow.js", cwd: "<repo root>", async: true, worktree: true, args: { phase: "build", prefixes: ['CORP-01', 'CORP-02', 'CORP-R03'] } })
 ```
 Where they are not (plain Claude Code session): launch three `Agent` builders on `claude-sonnet-5-5` with the Phase B brief from `workflow.js` (the `builds` block), substituting this category's stratum and hints. Isolation is then by disjoint write path only — forbid every index- or tree-modifying git command and require scratch files in a private `mktemp -d`.
 

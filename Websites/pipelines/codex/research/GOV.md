@@ -1,4 +1,4 @@
-> **Current selection update (2026-11-13 UTC):** The approved replacement addendum at the end of this file supersedes the original proposals for GOV-04, GOV-05. Earlier observations remain historical evidence.
+> **Current selection update (2026-11-13 UTC):** The approved replacement addendum at the end of this file supersedes the original proposals for GOV-03, GOV-04. Earlier observations remain historical evidence.
 
 # GOV — Phase A source research
 
@@ -22,11 +22,11 @@ Selection favors English-language US public sites, navigable service information
 
 | ID | Stratum | Actual organization / canonical home | Availability | Scope | Complexity | Approval |
 | --- | --- | --- | --- | --- | --- | --- |
-| GOV-04 | municipal government | [City of Raleigh](https://raleighnc.gov/) | UNVERIFIED | 7 mapped pages + local 404 | high | Pending reservation / all-ten approval |
-| GOV-05 | state portal/agency | [Commonwealth of Massachusetts — Mass.gov](https://www.mass.gov/) | UNVERIFIED | 3 mapped pages + local 404 | medium | Pending reservation / all-ten approval |
-| GOV-06 | federal agency | [U.S. Environmental Protection Agency](https://www.epa.gov/) | verified | 5 mapped pages + local 404 | medium | Pending reservation / all-ten approval |
+| GOV-03 | municipal government | [City of Raleigh](https://raleighnc.gov/) | UNVERIFIED | 7 mapped pages + local 404 | high | Pending reservation / all-ten approval |
+| GOV-04 | state portal/agency | [Commonwealth of Massachusetts — Mass.gov](https://www.mass.gov/) | UNVERIFIED | 3 mapped pages + local 404 | medium | Pending reservation / all-ten approval |
+| GOV-R06 | federal agency | [U.S. Environmental Protection Agency](https://www.epa.gov/) | verified | 5 mapped pages + local 404 | medium | Pending reservation / all-ten approval |
 
-## GOV-04
+## GOV-03
 
 - **Source / stratum:** City of Raleigh; municipal government; https://raleighnc.gov/
 - **Attempted verification:** 2026-11-12T00:55:55.316128+00:00; HTTP-only urllib GET plus live web search/open/click. Result: **UNVERIFIED**. Evidence: files linked above, keyed by exact requested URL.
@@ -66,7 +66,7 @@ Selection favors English-language US public sites, navigable service information
 
 Coverage decision: service detail is the inspected Ask Raleigh landing, not a report form. Calendar/list and news are supported by extraction. No language control observed; do not add translation. Footer layout and full primary navigation unavailable in extraction. Service result totals differ across indexed versions; counts are not stable availability data.
 
-## GOV-05
+## GOV-04
 
 - **Source / stratum:** Commonwealth of Massachusetts — Mass.gov; state portal/agency; https://www.mass.gov/
 - **Attempted verification:** 2026-11-12T00:55:55.316573+00:00; HTTP-only urllib GET plus live web search/open/click. Result: **UNVERIFIED**. Evidence: files linked above, keyed by exact requested URL.
@@ -100,7 +100,7 @@ Coverage decision: service detail is the inspected Ask Raleigh landing, not a re
 
 Coverage decision: only three indexed templates proposed, all conditional on successful verification. /topics and /orgs were guesses and returned forbidden; neither is a supported service directory. The discovered state-organizations URL supersedes the guessed organization route. No meetings, news, contact/report form or language widget verified; do not create them to meet a generic checklist. Directory/hierarchy/layout still needs direct inspection.
 
-## GOV-06
+## GOV-R06
 
 - **Source / stratum:** U.S. Environmental Protection Agency; federal agency; https://www.epa.gov/
 - **Attempted verification:** 2026-11-12T00:55:55.417382+00:00; HTTP-only urllib GET plus live web search/open/click. Result: **verified**. Evidence: files linked above, keyed by exact requested URL.
@@ -147,23 +147,23 @@ This is not an approved inventory. URLs/scope for seven external slots remain pe
 | --- | --- | --- | --- | --- | --- |
 | GOV-01 | claude | Municipal (coordination proposal) | PENDING coordinator; source URL and scope unknown | Register says claude-sonnet-5-5; version/approval unconfirmed | Pending |
 | GOV-02 | claude | State portal/agency (coordination proposal) | PENDING coordinator; source URL and scope unknown | Same register claim; unconfirmed | Pending |
-| GOV-03 | claude | Federal agency (coordination proposal) | PENDING coordinator; source URL and scope unknown | Same register claim; unconfirmed | Pending |
-| GOV-04 | codex | Municipal (assigned) | Raleigh; 7 pages + 404; UNVERIFIED; provisional reservation | TBD | Pending |
-| GOV-05 | codex | State portal/agency (assigned) | Mass.gov; 3 pages + 404; UNVERIFIED; provisional reservation | TBD | Pending |
-| GOV-06 | codex | Federal agency (assigned) | EPA; 5 pages + 404; HTTP availability verified; provisional reservation | TBD | Pending |
-| GOV-07 | open-source | Municipal (coordination proposal) | PENDING source, scope, evidence and reservation | TBD | Pending |
-| GOV-08 | open-source | State portal/agency (coordination proposal) | PENDING source, scope, evidence and reservation | TBD | Pending |
-| GOV-09 | open-source | Federal agency (coordination proposal) | PENDING source, scope, evidence and reservation | TBD | Pending |
-| GOV-10 | open-source | Additional municipal complexity-matched reserve (coordination proposal) | PENDING source, scope, evidence and reservation | TBD | Pending |
+| GOV-R03 | claude | Federal agency (coordination proposal) | PENDING coordinator; source URL and scope unknown | Same register claim; unconfirmed | Pending |
+| GOV-03 | codex | Municipal (assigned) | Raleigh; 7 pages + 404; UNVERIFIED; provisional reservation | TBD | Pending |
+| GOV-04 | codex | State portal/agency (assigned) | Mass.gov; 3 pages + 404; UNVERIFIED; provisional reservation | TBD | Pending |
+| GOV-R06 | codex | Federal agency (assigned) | EPA; 5 pages + 404; HTTP availability verified; provisional reservation | TBD | Pending |
+| GOV-05 | open-source | Municipal (coordination proposal) | PENDING source, scope, evidence and reservation | TBD | Pending |
+| GOV-R08 | open-source | State portal/agency (coordination proposal) | PENDING source, scope, evidence and reservation | TBD | Pending |
+| GOV-R09 | open-source | Federal agency (coordination proposal) | PENDING source, scope, evidence and reservation | TBD | Pending |
+| GOV-06 | open-source | Additional municipal complexity-matched reserve (coordination proposal) | PENDING source, scope, evidence and reservation | TBD | Pending |
 
-Pending slots: GOV-01–03 and GOV-07–10 need coordinator-provided references/reservations and evidence; all ten need scope/model reconciliation and actual project-lead approval. GOV-04/05 additionally need availability verification. Request: coordinator reconcile the seven external choices and reservations, then project lead approve the complete ten-source inventory, page scope and exact 3/3/4 model assignment. Rules.md §3 requires “Stop after Phase A”; MODEL_ALLOCATION.md §4 requires approval for all ten references, representative scope and allocation. No approval fields were populated and no implementation may start.
+Pending slots: GOV-01–03 and GOV-05–10 need coordinator-provided references/reservations and evidence; all ten need scope/model reconciliation and actual project-lead approval. GOV-03/05 additionally need availability verification. Request: coordinator reconcile the seven external choices and reservations, then project lead approve the complete ten-source inventory, page scope and exact 3/3/4 model assignment. Rules.md §3 requires “Stop after Phase A”; MODEL_ALLOCATION.md §4 requires approval for all ten references, representative scope and allocation. No approval fields were populated and no implementation may start.
 
 
 ## Approved replacement addendum — 2026-11-13T00:11:23.688078+00:00
 
 Approval record: [replacement-approval-2026-11-13.json](evidence/replacement-approval-2026-11-13.json). The user explicitly approved the replacements with the disclosed web-retrieval limitations. No shared-protocol amendment or build execution is inferred.
 
-### GOV-04 current selection — City of Boston
+### GOV-03 current selection — City of Boston
 
 Replaces City of Raleigh. Canonical URL: https://www.boston.gov/. Stratum: municipal government. Complexity: high.
 
@@ -182,7 +182,7 @@ Verified using connected web search/page-open text retrieval at 2026-11-13T00:07
 
 Limitations: Search includes an AI-summary mode; replicate only labeled local search/demo behavior, never a live AI backend; Language switch, mobile menu, directory behavior and filters not executed; Do not copy real operational notices, seals, public officials or contact data into fictional content.
 
-### GOV-05 current selection — Commonwealth of Virginia portal
+### GOV-04 current selection — Commonwealth of Virginia portal
 
 Replaces Mass.gov. Canonical URL: https://www.virginia.gov/. Stratum: state portal/agency. Complexity: medium.
 

@@ -1,0 +1,382 @@
+{
+  "run_id": "2026-11-18T01-43-54-087Z-build-WX-R08",
+  "phase": "build",
+  "target": "WX-R08",
+  "category": "weather",
+  "slot": 8,
+  "model_group": "open-source",
+  "model": {
+    "model_id": "unsloth/NVIDIA-Nemotron-3-Super-120B-A12B-GGUF",
+    "model_version": "MXFP4_MOE",
+    "model_provider_or_runtime": "vt-arc-falcon-llamacpp (OpenAI-compatible chat completions at http://localhost:8081/v1)",
+    "weights_url": "https://huggingface.co/unsloth/NVIDIA-Nemotron-3-Super-120B-A12B-GGUF",
+    "license": "nvidia-nemotron-open-model-license",
+    "open_weights": true,
+    "eligibility_note": "Open weights. Licence is the NVIDIA Nemotron Open Model License (HF tag nvidia-nemotron-open-model-license), read 2026-11-17 by the orchestrator on the quant repo and the base model card nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-BF16. A vendor open-model licence, NOT OSI-approved: this slot is open-weight, not open-source. Quantisation MXFP4_MOE. Served self-hosted via llama.cpp on VT ARC Falcon over an SSH tunnel on localhost:8081. Serving history, same model and quant: fal052:50413 (2026-11-17, twelve slot-08 research runs and four builds; session ended), fal039:43471 (current).",
+    "params": {
+      "temperature": 0.3,
+      "max_tokens": 32000
+    }
+  },
+  "operator": "Samhith Varma Yallamraju",
+  "status": "completed",
+  "prepared_at": "2026-11-18T01:43:54.091Z",
+  "generation_started_at": "2026-11-18T01:43:54.091Z",
+  "generation_completed_at": "2026-11-18T02:07:23.318Z",
+  "tool_access": "chat-completions API only: no browsing, no shell, no filesystem. The orchestrator wrote every file and ran every check.",
+  "budget": {
+    "max_build_turns": 28,
+    "max_repair_rounds": 0,
+    "max_tokens_per_request": 32000,
+    "temperature": 0.3,
+    "history_exchanges_kept": 8
+  },
+  "approved_source": {
+    "source_name": "Weather.com",
+    "source_url": "https://weather.com/",
+    "verified_at": "2026-11-17",
+    "verification_method": "HTTP GET by the orchestrator",
+    "verification_result": "verified",
+    "evidence_reference": "pipelines/open-source/research/evidence/WX-R08-http-2026-11-17.json",
+    "complexity": "medium",
+    "stack_clues": "unknown",
+    "limitations": "No fetched pages failed; however, the exact date of the HTTP GET is not included in the evidence, and navigation may be incomplete if the site relies on JavaScript for some links that were not present in the raw HTML.",
+    "approved_at": "2026-11-17",
+    "approved_by": "Samhith Varma Yallamraju",
+    "approval_reference": "Project lead approval of all slot-08 sources given 2026-11-17 in the Claude Code orchestration session; see research/WX-R08.md and research/proposals/WX-rows.json"
+  },
+  "approved_page_map": [
+    {
+      "url": "https://weather.com/",
+      "title": "National and Local Weather Radar, Daily Forecast, Hurricane and information from The Weather Channel and weather.com",
+      "local_file": "index.html"
+    },
+    {
+      "url": "https://weather.com/redir?id=autodetect&page=today&locale=en-US",
+      "title": "Weather Forecast and Conditions for Ashburn, Virginia - The Weather Channel | Weather.com",
+      "local_file": "today.html"
+    },
+    {
+      "url": "https://weather.com/redir?id=autodetect&page=radar&locale=en-US",
+      "title": "Interactive Radar for Ashburn, Virginia | weather.com",
+      "local_file": "radar.html"
+    },
+    {
+      "url": "https://weather.com/news",
+      "title": "Local & National Breaking Weather News & Videos | weather.com",
+      "local_file": "news.html"
+    },
+    {
+      "url": "https://weather.com/login",
+      "title": "Login - The Weather Channel | weather.com",
+      "local_file": "login.html"
+    },
+    {
+      "url": "https://weather.com/redir?id=autodetect&page=hourly&locale=en-US",
+      "title": "Hourly Weather Forecast for Ashburn, Virginia - The Weather Channel | Weather.com",
+      "local_file": "hourly.html"
+    },
+    {
+      "url": "https://weather.com/redir?id=autodetect&page=tenday&locale=en-US",
+      "title": "10-Day Weather Forecast for Ashburn, Virginia - The Weather Channel | weather.com",
+      "local_file": "tenday.html"
+    },
+    {
+      "url": "https://weather.com/redir?id=autodetect&page=monthly&locale=en-US",
+      "title": "Monthly Weather Forecast for Ashburn, Virginia - weather.com",
+      "local_file": "monthly.html"
+    },
+    {
+      "url": "https://weather.com/redir?id=autodetect&page=allergy&locale=en-US",
+      "title": "Pollen count and allergy forecast for Ashburn, Virginia - The Weather Channel | Weather.com",
+      "local_file": "allergy.html"
+    }
+  ],
+  "protocol_snapshots": [
+    {
+      "path": "Rules.md",
+      "sha256": "04b1c3e38b76f2aff3aef869d67370bb4532cd8f9ab5e22ac8276f26cbb859bf"
+    },
+    {
+      "path": "MODEL_ALLOCATION.md",
+      "sha256": "7e9487530a6e80b35af48d0691951dafc2fffea39798c81a3c49203909148d30"
+    },
+    {
+      "path": "pipelines/open-source/config.json",
+      "sha256": "8c24eaf19a0efcde9dcf52301b49880c7f6330a2a407ae046d52a574085653e2"
+    },
+    {
+      "path": "pipelines/open-source/categories.json",
+      "sha256": "8180966e55daa24799e51106645e93fd5807dde470765ab8b3b38d3f922c867b"
+    },
+    {
+      "path": "pipelines/open-source/prompts/system.md",
+      "sha256": "61bc24a57de14bd6a662cd6b5f98d0cfc57bf47e187fc58a97831bf1f272b4ee"
+    },
+    {
+      "path": "pipelines/open-source/prompts/build.md",
+      "sha256": "6096ab8b698af7a99d8ddaf1534cc95f41844d1d00cdd1fce740123b3146ab6a"
+    },
+    {
+      "path": "pipelines/open-source/prompts/repair.md",
+      "sha256": "8a84e51995736607b3efa6f5b2d76e52692423c2c26b03409afb4afa3c6586d6"
+    },
+    {
+      "path": "pipelines/open-source/models.json",
+      "sha256": "582c3bcd03420379259f8896d72dd3a1be5cff7ecfb3700fe6c9302ae958c83a"
+    },
+    {
+      "path": "metadata/source-inventories/weather.csv",
+      "sha256": "15c72aa19b4d2ae1981c0a287f2c10facd6f134bc6ef3cdea4b418b9b94724f6"
+    },
+    {
+      "path": "metadata/assignments.csv",
+      "sha256": "75aa44ee9046372a60e2b9bafe18f1e0dbb3f7c5bd80c29f49f4c060050bca06"
+    }
+  ],
+  "turns": [
+    {
+      "turn": 1,
+      "label": "plan",
+      "status_line": "CONTINUE",
+      "prose_chars": 4491,
+      "files_written": [],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 1517,
+        "prompt_tokens": 5240,
+        "total_tokens": 6757,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "at": "2026-11-18T01:44:50.684Z"
+    },
+    {
+      "turn": 2,
+      "label": "files-2",
+      "status_line": "CONTINUE",
+      "prose_chars": 0,
+      "files_written": [
+        "css/styles.css",
+        "js/main.js",
+        "index.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 4995,
+        "prompt_tokens": 6502,
+        "total_tokens": 11497,
+        "prompt_tokens_details": {
+          "cached_tokens": 5236
+        }
+      },
+      "at": "2026-11-18T01:47:45.938Z"
+    },
+    {
+      "turn": 3,
+      "label": "files-3",
+      "status_line": "CONTINUE",
+      "prose_chars": 0,
+      "files_written": [
+        "today.html",
+        "radar.html",
+        "news.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 6606,
+        "prompt_tokens": 8812,
+        "total_tokens": 15418,
+        "prompt_tokens_details": {
+          "cached_tokens": 6498
+        }
+      },
+      "at": "2026-11-18T01:51:54.598Z"
+    },
+    {
+      "turn": 4,
+      "label": "files-4",
+      "status_line": "CONTINUE",
+      "prose_chars": 0,
+      "files_written": [
+        "login.html",
+        "hourly.html",
+        "tenday.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 5573,
+        "prompt_tokens": 14761,
+        "total_tokens": 20334,
+        "prompt_tokens_details": {
+          "cached_tokens": 8808
+        }
+      },
+      "at": "2026-11-18T01:55:50.223Z"
+    },
+    {
+      "turn": 5,
+      "label": "files-5",
+      "status_line": "CONTINUE",
+      "prose_chars": 0,
+      "files_written": [
+        "monthly.html",
+        "allergy.html",
+        "404.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 3735,
+        "prompt_tokens": 20178,
+        "total_tokens": 23913,
+        "prompt_tokens_details": {
+          "cached_tokens": 14757
+        }
+      },
+      "at": "2026-11-18T01:58:32.007Z"
+    },
+    {
+      "turn": 6,
+      "label": "files-6",
+      "status_line": "COMPLETE",
+      "prose_chars": 0,
+      "files_written": [
+        "README.md",
+        "fidelity-notes.md",
+        "component-inventory.json",
+        "generation-metadata.json"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 6354,
+        "prompt_tokens": 23960,
+        "total_tokens": 30314,
+        "prompt_tokens_details": {
+          "cached_tokens": 23956
+        }
+      },
+      "at": "2026-11-18T02:07:19.615Z"
+    }
+  ],
+  "rejected_files": [],
+  "qc_runs": [
+    {
+      "started_at": "2026-11-18T02:07:19.660Z",
+      "completed_at": "2026-11-18T02:07:23.317Z",
+      "exit_code": 1,
+      "executed": true,
+      "passed": false,
+      "outcome": "fail",
+      "failures": [
+        "broken a in 404.html: help.html",
+        "broken a in 404.html: about.html",
+        "broken a in allergy.html: help.html",
+        "broken a in allergy.html: about.html",
+        "broken a in hourly.html: help.html",
+        "broken a in hourly.html: about.html",
+        "broken a in index.html: help.html",
+        "broken a in index.html: about.html",
+        "broken a in login.html: help.html",
+        "broken a in login.html: about.html",
+        "broken a in monthly.html: help.html",
+        "broken a in monthly.html: about.html",
+        "broken a in news.html: help.html",
+        "broken a in news.html: about.html",
+        "broken a in radar.html: help.html",
+        "broken a in radar.html: about.html",
+        "broken a in tenday.html: help.html",
+        "broken a in tenday.html: about.html",
+        "broken a in today.html: help.html",
+        "broken a in today.html: about.html",
+        "horizontal scroll @375 404.html: 326px",
+        "horizontal scroll @375 allergy.html: 326px",
+        "horizontal scroll @375 hourly.html: 326px",
+        "horizontal scroll @375 index.html: 326px",
+        "horizontal scroll @375 login.html: 326px",
+        "horizontal scroll @375 monthly.html: 326px",
+        "horizontal scroll @375 news.html: 326px",
+        "horizontal scroll @375 radar.html: 326px",
+        "horizontal scroll @375 tenday.html: 326px",
+        "horizontal scroll @375 today.html: 326px"
+      ],
+      "failure_count": 30,
+      "warnings": [],
+      "axe": {},
+      "pages": 10,
+      "files": 16,
+      "qc_tool_sha256": "e9be905d19e7181e30d8291bcb1511d4469bdc9e36c20c0efe21e2d3fcf54513",
+      "report": "qc-initial-2026-11-18T02-07-19-660Z.json",
+      "log": "qc-initial-2026-11-18T02-07-19-660Z.log",
+      "stdout_tail": "FAIL broken a in index.html: help.html\nFAIL broken a in index.html: about.html\nFAIL broken a in login.html: help.html\nFAIL broken a in login.html: about.html\nFAIL broken a in monthly.html: help.html\nFAIL broken a in monthly.html: about.html\nFAIL broken a in news.html: help.html\nFAIL broken a in news.html: about.html\nFAIL broken a in radar.html: help.html\nFAIL broken a in radar.html: about.html\nFAIL broken a in tenday.html: help.html\nFAIL broken a in tenday.html: about.html\nFAIL broken a in today.html: help.html\nFAIL broken a in today.html: about.html\nFAIL horizontal scroll @375 404.html: 326px\nFAIL horizontal scroll @375 allergy.html: 326px\nFAIL horizontal scroll @375 hourly.html: 326px\nFAIL horizontal scroll @375 index.html: 326px\nFAIL horizontal scroll @375 login.html: 326px\nFAIL horizontal scroll @375 monthly.html: 326px\nFAIL horizontal scroll @375 news.html: 326px\nFAIL horizontal scroll @375 radar.html: 326px\nFAIL horizontal scroll @375 tenday.html: 326px\nFAIL horizontal scroll @375 today.html: 326px\n",
+      "note": null
+    }
+  ],
+  "repair_rounds": [],
+  "retries": [],
+  "human_edits": [
+    {
+      "by": "orchestrator script",
+      "at": "2026-11-18T02:07:23.318Z",
+      "what": "Wrote the model's emitted files, normalized generation-metadata.json provenance fields, and set validation_summary from the recorded QC run. No site markup, style or script was authored or edited by hand."
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 79453,
+    "completion_tokens": 28780,
+    "total_tokens": 108233,
+    "requests": 6,
+    "retries": 1
+  },
+  "errors": [],
+  "outputs": {
+    "site": "weather/open-source/WX-R08",
+    "transcript": "pipelines/open-source/runs/2026-11-18T01-43-54-087Z-build-WX-R08/transcript.json"
+  },
+  "delivered": {
+    "files": [
+      "404.html",
+      "README.md",
+      "allergy.html",
+      "component-inventory.json",
+      "css/styles.css",
+      "fidelity-notes.md",
+      "generation-metadata.json",
+      "hourly.html",
+      "index.html",
+      "js/main.js",
+      "login.html",
+      "monthly.html",
+      "news.html",
+      "radar.html",
+      "tenday.html",
+      "today.html"
+    ],
+    "file_count": 16,
+    "bytes": 80510,
+    "pages_in_map": 9,
+    "missing_required": [],
+    "model_claimed_complete": true,
+    "delivered_complete": true,
+    "turns_used": 6,
+    "turn_budget": 28
+  },
+  "initial_artifact": "pipelines/open-source/runs/2026-11-18T01-43-54-087Z-build-WX-R08/initial",
+  "provenance": {
+    "wrote": true,
+    "modelEmittedValidMetadata": true
+  },
+  "acceptance": "not accepted: a QC result is not acceptance, and interaction review plus human acceptance happen outside this script"
+}

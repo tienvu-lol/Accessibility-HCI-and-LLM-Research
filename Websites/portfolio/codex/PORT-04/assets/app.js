@@ -1,175 +1,188 @@
-/* No network calls, dependencies, persistent form storage, or backend. */
+/* Independent static portfolio enhancements. All demonstration state is page-local. */
 'use strict';
 (() => {
-  const $ = (s, root = document) => root.querySelector(s);
-  const $$ = (s, root = document) => [...root.querySelectorAll(s)];
+  const $ = (selector, root = document) => root.querySelector(selector);
+  const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
   let toastTimer;
-  function announce(message) {
+  function notify(message) {
     $('#toast').textContent = message;
     clearTimeout(toastTimer);
-    toastTimer = setTimeout(() => { $('#toast').textContent = ''; }, 5000);
+    toastTimer = setTimeout(() => { $('#toast').textContent = ''; }, 6000);
   }
-  const themeButton = $('#theme-toggle');
-  function setTheme(light) {
-    document.documentElement.dataset.theme = light ? 'light' : 'dark';
-    themeButton.textContent = light ? 'Dark theme' : 'Light theme';
-    themeButton.setAttribute('aria-pressed', String(light));
-  }
-  themeButton.addEventListener('click', () => setTheme(document.documentElement.dataset.theme !== 'light'));
-  $$('[data-copy-email]').forEach(button => button.addEventListener('click', async () => {
-    try {
-      await navigator.clipboard.writeText('hello@rowan.example');
-      announce('Example email copied: hello@rowan.example');
-    } catch (_) {
-      announce('Clipboard unavailable. Select and copy: hello@rowan.example');
-    }
-  }));
-  function updateClock() {
-    const time = new Intl.DateTimeFormat('en-US', {timeZone:'America/New_York',hour:'numeric',minute:'2-digit',timeZoneName:'short'}).format(new Date());
-    $('#local-time').textContent = `New York · ${time}`;
-  }
-  updateClock(); setInterval(updateClock, 60000);
-  // Escape and outside click dismiss the native details navigation.
-  const menu = $('.more-menu');
-  document.addEventListener('keydown', event => {
-    if (event.key === 'Escape' && menu.open) { menu.open = false; $('summary', menu).focus(); }
+  // Submit controls are initially disabled in HTML: no-JS pages cannot submit data.
+  $$('form button[type="submit"]').forEach(button => { button.disabled = false; });
+  const themeButton = $('[data-theme]');
+  themeButton.addEventListener('click', () => {
+    const dark = document.documentElement.dataset.theme !== 'dark';
+    document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+    themeButton.setAttribute('aria-pressed', String(dark));
+    themeButton.textContent = dark ? 'Light mode' : 'Dark mode';
   });
-  document.addEventListener('click', event => { if (!menu.contains(event.target)) menu.open = false; });
-  if ('IntersectionObserver' in window) {
-    const sections = $$('body[data-page="index"] main > section[id]');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        $$('.section-nav a').forEach(a => {
-          if (a.hash === `#${entry.target.id}`) a.setAttribute('aria-current','location');
-          else a.removeAttribute('aria-current');
-        });
-      });
-    }, {rootMargin:'-10% 0px -55% 0px'});
-    sections.forEach(section => observer.observe(section));
-    if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      const reveals = new IntersectionObserver(entries => entries.forEach(entry => {
-        if (entry.isIntersecting) { entry.target.classList.add('reveal-ready'); reveals.unobserve(entry.target); }
-      }), {threshold:0.05});
-      $$('.project-card,.experience,.writing-card').forEach(item => reveals.observe(item));
+  function clock() {
+    $$('[data-clock]').forEach(el => {
+      const zone = el.dataset.timezone;
+      const value = new Intl.DateTimeFormat('en-US', {timeZone:zone,hour:'numeric',minute:'2-digit',timeZoneName:'short'}).format(new Date());
+      el.textContent = `${zone === 'Australia/Sydney' ? 'Sydney' : 'Montana'} · ${value}`;
+      el.dateTime = new Date().toISOString();
+    });
+  }
+  clock(); setInterval(clock, 60000);
+  $$('[data-copy]').forEach(button => button.addEventListener('click', async () => {
+    try {
+      if (!navigator.clipboard) throw new Error('Clipboard not available');
+      await navigator.clipboard.writeText(button.dataset.copy);
+      notify(`Copied: ${button.dataset.copy}`);
+    } catch (_) { notify(`Select and copy this example address: ${button.dataset.copy}`); }
+  }));
+  const mobileButton = $('.mobile-toggle');
+  const nav = $('#primary-nav');
+  const mobileQuery = matchMedia('(max-width: 760px)');
+  function menuLayout() {
+    mobileButton.hidden = !mobileQuery.matches;
+    nav.hidden = mobileQuery.matches;
+    mobileButton.setAttribute('aria-expanded','false');
+  }
+  menuLayout(); mobileQuery.addEventListener('change', menuLayout);
+  mobileButton.addEventListener('click', () => {
+    nav.hidden = !nav.hidden;
+    mobileButton.setAttribute('aria-expanded', String(!nav.hidden));
+    if (nav.hidden) $$('.nav-more[open]', nav).forEach(detail => { detail.open = false; });
+  });
+  document.addEventListener('keydown', event => {
+    if (event.key !== 'Escape') return;
+    const openMenu = $('.site-header .nav-more[open]');
+    if (openMenu) { openMenu.open = false; $('summary',openMenu).focus(); }
+    else if (mobileQuery.matches && !nav.hidden) {
+      nav.hidden = true; mobileButton.setAttribute('aria-expanded','false'); mobileButton.focus();
     }
-  }
-  if (matchMedia('(pointer: fine)').matches && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    let scheduled = false;
-    document.addEventListener('pointermove', event => {
-      if (scheduled) return;
-      scheduled = true;
-      requestAnimationFrame(() => {
-        document.documentElement.style.setProperty('--pointer-x', `${event.clientX}px`);
-        document.documentElement.style.setProperty('--pointer-y', `${event.clientY}px`);
-        scheduled = false;
-      });
-    }, {passive:true});
-  }
-  $$('[data-filter-for]').forEach(form => {
-    const container = $(`[data-results="${form.dataset.filterFor}"]`);
-    const items = $$('[data-search]', container);
+  });
+  document.addEventListener('click', event => {
+    $$('.nav-more[open]').forEach(detail => { if (!detail.contains(event.target)) detail.open = false; });
+  });
+  $$('[data-filter-panel]').forEach(form => {
+    const results = $('[data-filter-results]');
+    const items = $$('[data-search]',results);
+    const input = $('input[type="search"]',form);
     let category = 'All';
     function filter() {
-      const query = $('input[type=search]', form).value.trim().toLowerCase();
+      const query = input.value.trim().toLocaleLowerCase();
       let count = 0;
       items.forEach(item => {
-        const show = (category === 'All' || item.dataset.category === category) && item.dataset.search.includes(query);
-        item.hidden = !show; if (show) count++;
+        const visible = (category === 'All' || item.dataset.category === category) && item.dataset.search.includes(query);
+        item.hidden = !visible;
+        if (visible) count++;
       });
-      $('.result-count', form).textContent = `${count} of ${items.length} ${form.dataset.filterFor} shown`;
-      container.nextElementSibling.hidden = count !== 0;
+      $('.result-count',form).textContent = `${count} of ${items.length} results shown`;
+      $('[data-empty]').hidden = count !== 0;
     }
     form.addEventListener('submit', event => event.preventDefault());
-    $('input', form).addEventListener('input', filter);
-    $$('[data-filter]', form).forEach(button => button.addEventListener('click', () => {
+    input.addEventListener('input',filter);
+    $$('[data-filter]',form).forEach(button => button.addEventListener('click', () => {
       category = button.dataset.filter;
-      $$('[data-filter]', form).forEach(other => other.setAttribute('aria-pressed', String(other === button)));
+      $$('[data-filter]',form).forEach(other => other.setAttribute('aria-pressed',String(other === button)));
       filter();
     }));
     filter();
   });
-  // Validation uses native accessible constraint validation; all outcomes are local.
-  const dateInput = $('#booking-date');
-  function localISO(date) {
+  function dateString(date) {
     return `${date.getFullYear()}-${String(date.getMonth()+1).padStart(2,'0')}-${String(date.getDate()).padStart(2,'0')}`;
   }
-  if (dateInput) {
+  $$('[data-future-date]').forEach(input => {
     const tomorrow = new Date(); tomorrow.setDate(tomorrow.getDate()+1);
-    dateInput.min = localISO(tomorrow);
-    dateInput.addEventListener('input', () => dateInput.setCustomValidity(''));
-  }
-  $$('[data-demo-form]').forEach(form => {
+    input.min = dateString(tomorrow);
+    input.addEventListener('input', () => input.setCustomValidity(''));
+  });
+  $$('form[data-demo]').forEach(form => {
     form.addEventListener('submit', event => {
       event.preventDefault();
-      const kind = form.dataset.demoForm;
+      const kind = form.dataset.demo;
+      const fields = new FormData(form);
       if (kind === 'booking') {
-        dateInput.setCustomValidity('');
-        const selected = new Date(`${dateInput.value}T12:00:00`);
-        if (selected.getDay() === 0 || selected.getDay() === 6) dateInput.setCustomValidity('Choose a weekday for this demonstration.');
+        const input = $('[data-future-date]',form);
+        input.setCustomValidity('');
+        const selected = new Date(`${input.value}T12:00:00`);
+        if ([0,6].includes(selected.getDay())) input.setCustomValidity('Choose a future weekday, Monday through Friday.');
       }
       if (!form.reportValidity()) return;
-      const status = $('.form-status', form);
-      const messages = {
-        inquiry:'Demo inquiry complete. Nothing was sent or saved. Thank you for trying the form.',
-        newsletter:'Demo subscription complete. No email was sent or stored.',
-        purchase:'Demo order complete. No payment was taken and no order was placed.',
-        booking:`Demo booking selected: ${dateInput?.value || ''} at ${$('#booking-time')?.value || ''} New York time. No appointment was created.`
-      };
-      status.textContent = messages[kind];
+      let message = '';
+      if (kind === 'inquiry') message = 'Demo inquiry complete. Nothing was sent or saved; this is a local success state.';
+      if (kind === 'newsletter') message = 'Demo subscription complete. No email was sent, stored, or subscribed.';
+      if (kind === 'booking') message = `Demo slot: ${fields.get('date')} at ${fields.get('slot')} studio time. No appointment was created.`;
+      if (kind === 'purchase') message = `Demo order complete: ${$('#order-item').textContent}, ${fields.get('format')}. No charge, delivery, or real order.`;
+      $('.form-status',form).textContent = message;
       form.reset();
+      if (kind === 'purchase') updatePrice();
     });
   });
-  $('#nda-form')?.addEventListener('submit', event => {
+  $('[data-nda]')?.addEventListener('submit', event => {
     event.preventDefault();
-    if ($('#passcode').value === 'fieldnotes') {
-      $('#nda-content').hidden = false;
-      $('#nda-form').closest('.gate').hidden = true;
-      const heading = $('#nda-content h2'); heading.tabIndex = -1; heading.focus();
-      announce('Fictional case study revealed. This gate does not provide security.');
-    } else { $('#nda-status').textContent = 'That is not the demo passcode. Enter fieldnotes.'; $('#passcode').focus(); }
+    const form = event.currentTarget;
+    if ($('input',form).value.trim() !== 'openstudio') {
+      $('.form-status',form).textContent = 'Use the demo passcode openstudio. This gate does not secure content.';
+      $('input',form).focus(); return;
+    }
+    const content = $('[data-nda-content]'); content.hidden = false;
+    $('.nda-gate').hidden = true;
+    const heading = $('h2',content); heading.tabIndex = -1; heading.focus();
+    notify('Fictional notes revealed. This is a demonstration gate, not authentication.');
   });
   $$('[data-print]').forEach(button => button.addEventListener('click', () => window.print()));
-  // Native dialogs trap focus and support Escape; return focus to their opener.
-  let dialogOpener;
-  function openDialog(dialog, opener) { dialogOpener = opener; dialog.showModal(); }
+  const openers = new WeakMap();
+  function showDialog(dialog, opener) {
+    if (typeof dialog.showModal !== 'function') { notify('Your browser does not support this dialog. Please use a current browser.'); return; }
+    openers.set(dialog,opener); dialog.showModal();
+  }
   $$('dialog').forEach(dialog => {
-    $('[data-close-dialog]', dialog).addEventListener('click', () => dialog.close());
-    dialog.addEventListener('close', () => dialogOpener?.focus());
+    $('[data-close]',dialog).addEventListener('click', () => dialog.close());
+    dialog.addEventListener('close', () => openers.get(dialog)?.focus());
   });
-  const gallery = $$('[data-lightbox]');
-  let galleryIndex = 0;
-  function showImage(index) {
-    galleryIndex = (index + gallery.length) % gallery.length;
-    const item = gallery[galleryIndex];
-    $('#lightbox-image').src = item.dataset.lightbox;
-    $('#lightbox-image').alt = item.dataset.caption;
-    $('#lightbox-caption').textContent = `${galleryIndex+1} / ${gallery.length} — ${item.dataset.caption}`;
+  let activeImages = [], activeIndex = 0;
+  function displayImage(index) {
+    if (!activeImages.length) return;
+    activeIndex = (index + activeImages.length) % activeImages.length;
+    const button = activeImages[activeIndex];
+    $('#viewer-image').src = button.dataset.image;
+    $('#viewer-image').alt = button.dataset.caption;
+    $('#image-caption').textContent = button.dataset.caption;
+    $('#image-count').textContent = `${activeIndex+1} / ${activeImages.length}`;
   }
-  gallery.forEach((button,index) => button.addEventListener('click', () => { showImage(index); openDialog($('#lightbox'),button); }));
-  $('#gallery-prev')?.addEventListener('click', () => showImage(galleryIndex-1));
-  $('#gallery-next')?.addEventListener('click', () => showImage(galleryIndex+1));
-  $('#lightbox')?.addEventListener('keydown', event => {
-    if (event.key === 'ArrowRight') { event.preventDefault(); showImage(galleryIndex+1); }
-    if (event.key === 'ArrowLeft') { event.preventDefault(); showImage(galleryIndex-1); }
-  });
-  $$('[data-buy]').forEach(button => button.addEventListener('click', () => {
-    $('#purchase-name').textContent = button.dataset.buy;
-    $('.form-status', $('#purchase-dialog')).textContent = '';
-    openDialog($('#purchase-dialog'), button);
+  $$('[data-image]').forEach(button => button.addEventListener('click', () => {
+    const group = button.closest('[data-component="masonry-gallery"]') || document;
+    activeImages = $$('[data-image]',group);
+    displayImage(activeImages.indexOf(button));
+    showDialog($('#image-dialog'),button);
   }));
-  const quotes = [
-    ['“Rowan turns a complicated conversation into a clear next step.”','Morgan Lane · fictional design lead'],
-    ['“The handoff explained why each pattern existed, not just how to use it.”','Alex Reed · fictional engineering lead'],
-    ['“Keyboard interaction was part of the first prototype, which made every later decision easier.”','Sam Rivers · fictional product partner']
-  ];
-  let quoteIndex = 0;
-  function quote(direction) {
-    quoteIndex = (quoteIndex + direction + quotes.length) % quotes.length;
-    $('#quote-slide p').textContent = quotes[quoteIndex][0];
-    $('#quote-slide cite').textContent = quotes[quoteIndex][1];
-    $('#quote-count').textContent = `${quoteIndex+1} / ${quotes.length}`;
+  $('[data-gallery-prev]').addEventListener('click', () => displayImage(activeIndex-1));
+  $('[data-gallery-next]').addEventListener('click', () => displayImage(activeIndex+1));
+  $('#image-dialog').addEventListener('keydown', event => {
+    if (event.key === 'ArrowLeft') { event.preventDefault(); displayImage(activeIndex-1); }
+    if (event.key === 'ArrowRight') { event.preventDefault(); displayImage(activeIndex+1); }
+  });
+  function updatePrice() {
+    const prices = {'Digital study':20,'A4 print':35,'A3 print':60};
+    $('[data-order-total]').textContent = `Demo total: $${prices[$('#order-format').value]}`;
   }
-  $('#quote-prev')?.addEventListener('click', () => quote(-1));
-  $('#quote-next')?.addEventListener('click', () => quote(1));
+  $('#order-format').addEventListener('change',updatePrice);
+  $$('[data-buy]').forEach(button => button.addEventListener('click', () => {
+    const dialog = $('#order-dialog');
+    $('form',dialog).reset(); $('.form-status',dialog).textContent = '';
+    $('#order-item').textContent = button.dataset.buy; updatePrice();
+    showDialog(dialog,button);
+  }));
+  $$('.testimonials').forEach(slider => {
+    const quotes = $$('[data-quote]',slider); let index = 0;
+    function move(direction) {
+      index = (index+direction+quotes.length) % quotes.length;
+      quotes.forEach((quote,i) => { quote.hidden = i !== index; });
+      $('[data-quote-count]',slider).textContent = `${index+1} / ${quotes.length}`;
+    }
+    $('[data-quote-prev]',slider).addEventListener('click', () => move(-1));
+    $('[data-quote-next]',slider).addEventListener('click', () => move(1));
+  });
+  if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const observer = new IntersectionObserver(entries => entries.forEach(entry => {
+      if (entry.isIntersecting) { entry.target.classList.add('reveal-arrived'); observer.unobserve(entry.target); }
+    }), {threshold:.06});
+    $$('.work-card,.photo-work-card,.journal-card,.resource-card').forEach(item => observer.observe(item));
+  }
 })();

@@ -8,7 +8,7 @@ every image is fictional or a placeholder.
 |---|---|---|---|---|---|
 | 01 | PORT-01 | Tobias Quill | https://tholman.com/ | Minimal one-page personal site | 23 |
 | 02 | PORT-02 | Priya Raman | https://brittanychiang.com/ | Software developer / engineer | 19 |
-| 03 | PORT-03 | Juno Salvi | https://andreaswannerstedt.se/ | Motion / 3D designer, gallery-first | 19 |
+| 03 | PORT-R03 | Juno Salvi | https://andreaswannerstedt.se/ | Motion / 3D designer, gallery-first | 19 |
 
 Open `PORT-0x/index.html` in a browser. Each replica runs from `file://`, offline, with no server,
 no build step and no network request. Per-replica detail is in each folder's `README.md`,
@@ -26,21 +26,21 @@ cross-check on the same date.
 `node Websites/tools/qc/qc.js Websites/portfolio/claude/<ID>` — **failures=0, warnings=0** for all
 three, 2026-11-10.
 
-| | PORT-01 | PORT-02 | PORT-03 |
+| | PORT-01 | PORT-02 | PORT-R03 |
 |---|---|---|---|
 | axe-core 4.10.2, 0 violations | 69 runs | 57 runs | 57 runs |
 | Scripted Playwright checks | 93/93 | 91/91 | 98/98 |
 | JavaScript console errors | 0 | 0 | 0 |
 
 Every page is scanned at 1280px light, 375px light and 1280px dark. **Not tested:** manual keyboard
-walkthrough, screen readers, 200%/400% text zoom, real assistive-technology users; and on PORT-03,
+walkthrough, screen readers, 200%/400% text zoom, real assistive-technology users; and on PORT-R03,
 captions and audio description, because no video file is bundled.
 
 ## Deliberate variation across the three
 
 The replicas are built to differ, so the sample is not one site three times.
 
-| | PORT-01 | PORT-02 | PORT-03 |
+| | PORT-01 | PORT-02 | PORT-R03 |
 |---|---|---|---|
 | Layout | Single column, text first, serif | Sticky identity rail + scrolling column, dark first | Full-width gallery grid, big display type |
 | Theme | System setting only | Light/dark toggle, `localStorage`, no flash | System setting only |

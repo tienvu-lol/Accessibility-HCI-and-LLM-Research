@@ -1,0 +1,505 @@
+{
+  "run_id": "2026-11-17T16-44-43-083Z-build-PORT-05",
+  "phase": "build",
+  "target": "PORT-05",
+  "category": "portfolio",
+  "slot": 7,
+  "model_group": "open-source",
+  "model": {
+    "model_id": "unsloth/Qwen3.6-35B-A3B-GGUF",
+    "model_version": "Q4_K_M",
+    "model_provider_or_runtime": "vt-arc-falcon-llamacpp (OpenAI-compatible chat completions at http://localhost:8090/v1)",
+    "weights_url": "https://huggingface.co/unsloth/Qwen3.6-35B-A3B-GGUF",
+    "license": "apache-2.0",
+    "open_weights": true,
+    "eligibility_note": "Open weights; licence apache-2.0 as published on huggingface.co/unsloth/Qwen3.6-35B-A3B-GGUF and on the Qwen/Qwen3.6-35B-A3B base model card, both read 2026-11-16 by the orchestrator. Quantisation Q4_K_M (UD-Q4_K_M) as reported by every serving session. Served self-hosted via llama.cpp on the VT ARC Falcon cluster over an SSH tunnel; no third-party inference provider. Serving history for this slot, same model and quant throughout: fal039:39247 via localhost:8080 (2026-11-16, eleven slot-07 research runs; session auto-terminated on idle), fal045:34691 via localhost:8080 (2026-11-17, nine slot-07 builds; session ended), fal047:45317 via localhost:8080 (2026-11-17, REST-05 build; session ended), fal043:33733 via localhost:8090 (2026-11-17, current; local port changed only because the earlier tunnel still held 8080). Thinking/reasoning output left enabled as the model ships, by project decision; max_tokens 32000 because reasoning shares the completion budget. Apache-2.0 is OSI-approved, so this slot is open-source as well as open-weight.",
+    "params": {
+      "temperature": 0.3,
+      "max_tokens": 32000
+    }
+  },
+  "operator": "Samhith Varma Yallamraju",
+  "status": "completed",
+  "prepared_at": "2026-11-17T16:44:43.087Z",
+  "generation_started_at": "2026-11-17T16:44:43.087Z",
+  "generation_completed_at": "2026-11-17T16:48:24.101Z",
+  "tool_access": "chat-completions API only: no browsing, no shell, no filesystem. The orchestrator wrote every file and ran every check.",
+  "budget": {
+    "max_build_turns": 28,
+    "max_repair_rounds": 0,
+    "max_tokens_per_request": 32000,
+    "temperature": 0.3
+  },
+  "approved_source": {
+    "source_name": "Joshua Atkinson",
+    "source_url": "https://joshuatz.com/",
+    "verified_at": "2026-11-16",
+    "verification_method": "HTTP GET by the orchestrator",
+    "verification_result": "verified",
+    "evidence_reference": "pipelines/open-source/research/evidence/PORT-05-http-2026-11-16.json",
+    "complexity": "medium",
+    "stack_clues": "gatsby, svelte, react, nodejs, typescript tags present",
+    "limitations": "None for the mapped pages.",
+    "approved_at": "2026-11-17",
+    "approved_by": "Samhith Varma Yallamraju",
+    "approval_reference": "Project lead approval given 2026-11-16 in the Claude Code orchestration session for open-source slot 07; see that session transcript and research/PORT-05.md"
+  },
+  "approved_page_map": [
+    {
+      "url": "https://joshuatz.com/",
+      "title": "Home - Joshua Tzucker's Site",
+      "local_file": "index.html"
+    },
+    {
+      "url": "https://joshuatz.com/projects/",
+      "title": "Projects - Joshua Tzucker's Site",
+      "local_file": "projects.html"
+    },
+    {
+      "url": "https://joshuatz.com/projects/applications/",
+      "title": "Projects - applications - Joshua Tzucker's Site",
+      "local_file": "projects-applications.html"
+    },
+    {
+      "url": "https://joshuatz.com/projects/electronics/",
+      "title": "Projects - electronics - Joshua Tzucker's Site",
+      "local_file": "projects-electronics.html"
+    },
+    {
+      "url": "https://joshuatz.com/projects/marketing/",
+      "title": "Projects - marketing - Joshua Tzucker's Site",
+      "local_file": "projects-marketing.html"
+    },
+    {
+      "url": "https://joshuatz.com/projects/other/",
+      "title": "Projects - other - Joshua Tzucker's Site",
+      "local_file": "projects-other.html"
+    },
+    {
+      "url": "https://joshuatz.com/projects/web-stuff/",
+      "title": "Projects - web-stuff - Joshua Tzucker's Site",
+      "local_file": "projects-web-stuff.html"
+    },
+    {
+      "url": "https://joshuatz.com/mini-tools/",
+      "title": "Assorted Mini-Tools - Joshua Tzucker's Site",
+      "local_file": "mini-tools.html"
+    },
+    {
+      "url": "https://joshuatz.com/blog/",
+      "title": "Blog Posts - Joshua Tzucker's Site",
+      "local_file": "blog.html"
+    },
+    {
+      "url": "https://joshuatz.com/projects/applications/git-date-extractor-npm-package-and-cli-tool/",
+      "title": "Git-Date-Extractor NPM Package and CLI Tool",
+      "local_file": "projects-applications-git-date-extractor-npm-package-and-cli-tool.html"
+    },
+    {
+      "url": "https://joshuatz.com/projects/web-stuff/cheatsheets-and-snippets-markdown-powered-gatsby-mini-site/",
+      "title": "Cheatsheets and Snippets - Markdown Powered Gatsby Mini Site",
+      "local_file": "projects-web-stuff-cheatsheets-and-snippets-markdown-powered-gatsby-mini-site.html"
+    },
+    {
+      "url": "https://joshuatz.com/posts/2023/what-makes-svelte-so-great-features-and-comparisons/",
+      "title": "What Makes Svelte So Great - Features and Comparisons",
+      "local_file": "posts-2023-what-makes-svelte-so-great-features-and-comparisons.html"
+    },
+    {
+      "url": "https://joshuatz.com/posts/2023/shell-heredocs-productive-fun-bash-and-beyond/",
+      "title": "Shell Heredocs - for Fun and Profit, in Bash and Beyond",
+      "local_file": "posts-2023-shell-heredocs-productive-fun-bash-and-beyond.html"
+    },
+    {
+      "url": "https://joshuatz.com/all-posts/",
+      "title": "All Posts - Joshua Tzucker's Site",
+      "local_file": "all-posts.html"
+    }
+  ],
+  "protocol_snapshots": [
+    {
+      "path": "Rules.md",
+      "sha256": "04b1c3e38b76f2aff3aef869d67370bb4532cd8f9ab5e22ac8276f26cbb859bf"
+    },
+    {
+      "path": "MODEL_ALLOCATION.md",
+      "sha256": "7e9487530a6e80b35af48d0691951dafc2fffea39798c81a3c49203909148d30"
+    },
+    {
+      "path": "pipelines/open-source/config.json",
+      "sha256": "36ba2cde671cfe89f211cdca7c47c975281615e97cacb8d06ef247be6e4eb4d9"
+    },
+    {
+      "path": "pipelines/open-source/categories.json",
+      "sha256": "8180966e55daa24799e51106645e93fd5807dde470765ab8b3b38d3f922c867b"
+    },
+    {
+      "path": "pipelines/open-source/prompts/system.md",
+      "sha256": "61bc24a57de14bd6a662cd6b5f98d0cfc57bf47e187fc58a97831bf1f272b4ee"
+    },
+    {
+      "path": "pipelines/open-source/prompts/build.md",
+      "sha256": "6096ab8b698af7a99d8ddaf1534cc95f41844d1d00cdd1fce740123b3146ab6a"
+    },
+    {
+      "path": "pipelines/open-source/prompts/repair.md",
+      "sha256": "8a84e51995736607b3efa6f5b2d76e52692423c2c26b03409afb4afa3c6586d6"
+    },
+    {
+      "path": "pipelines/open-source/models.json",
+      "sha256": "c9030eb15c275da3e978e64cf2a9e508788095ad3a9170258f24b9e3dc9db17b"
+    },
+    {
+      "path": "metadata/source-inventories/portfolio.csv",
+      "sha256": "8df029223761f558c1ff5d182c72e199cfce94630f18d47b2b53acde4eef984a"
+    },
+    {
+      "path": "metadata/assignments.csv",
+      "sha256": "75aa44ee9046372a60e2b9bafe18f1e0dbb3f7c5bd80c29f49f4c060050bca06"
+    }
+  ],
+  "turns": [
+    {
+      "turn": 1,
+      "label": "plan",
+      "status_line": "CONTINUE",
+      "prose_chars": 1705,
+      "files_written": [],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 1539,
+        "prompt_tokens": 5429,
+        "total_tokens": 6968,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "at": "2026-11-17T16:44:54.870Z"
+    },
+    {
+      "turn": 2,
+      "label": "files-2",
+      "status_line": "CONTINUE",
+      "prose_chars": 0,
+      "files_written": [
+        "css/styles.css",
+        "js/main.js"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 7963,
+        "prompt_tokens": 6112,
+        "total_tokens": 14075,
+        "prompt_tokens_details": {
+          "cached_tokens": 5425
+        }
+      },
+      "at": "2026-11-17T16:45:49.359Z"
+    },
+    {
+      "turn": 3,
+      "label": "files-3",
+      "status_line": "CONTINUE",
+      "prose_chars": 0,
+      "files_written": [
+        "index.html",
+        "projects.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 2848,
+        "prompt_tokens": 10307,
+        "total_tokens": 13155,
+        "prompt_tokens_details": {
+          "cached_tokens": 6108
+        }
+      },
+      "at": "2026-11-17T16:46:09.756Z"
+    },
+    {
+      "turn": 4,
+      "label": "files-4",
+      "status_line": "CONTINUE",
+      "prose_chars": 0,
+      "files_written": [
+        "projects-applications.html",
+        "projects-electronics.html",
+        "mini-tools.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 3110,
+        "prompt_tokens": 13105,
+        "total_tokens": 16215,
+        "prompt_tokens_details": {
+          "cached_tokens": 10303
+        }
+      },
+      "at": "2026-11-17T16:46:31.912Z"
+    },
+    {
+      "turn": 5,
+      "label": "files-5",
+      "status_line": "CONTINUE",
+      "prose_chars": 0,
+      "files_written": [
+        "projects-marketing.html",
+        "projects-other.html",
+        "projects-web-stuff.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 2972,
+        "prompt_tokens": 15981,
+        "total_tokens": 18953,
+        "prompt_tokens_details": {
+          "cached_tokens": 13101
+        }
+      },
+      "at": "2026-11-17T16:46:53.591Z"
+    },
+    {
+      "turn": 6,
+      "label": "files-6",
+      "status_line": "CONTINUE",
+      "prose_chars": 0,
+      "files_written": [
+        "blog.html",
+        "all-posts.html",
+        "projects-applications-git-date-extractor-npm-package-and-cli-tool.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 3923,
+        "prompt_tokens": 18789,
+        "total_tokens": 22712,
+        "prompt_tokens_details": {
+          "cached_tokens": 15977
+        }
+      },
+      "at": "2026-11-17T16:47:22.219Z"
+    },
+    {
+      "turn": 7,
+      "label": "files-7",
+      "status_line": "CONTINUE",
+      "prose_chars": 0,
+      "files_written": [
+        "projects-web-stuff-cheatsheets-and-snippets-markdown-powered-gatsby-mini-site.html",
+        "posts-2023-what-makes-svelte-so-great-features-and-comparisons.html"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 1939,
+        "prompt_tokens": 22245,
+        "total_tokens": 24184,
+        "prompt_tokens_details": {
+          "cached_tokens": 18785
+        }
+      },
+      "at": "2026-11-17T16:47:36.905Z"
+    },
+    {
+      "turn": 8,
+      "label": "files-8",
+      "status_line": "CONTINUE",
+      "prose_chars": 0,
+      "files_written": [
+        "posts-2023-shell-heredocs-productive-fun-bash-and-beyond.html",
+        "404.html",
+        "README.md"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 2678,
+        "prompt_tokens": 24187,
+        "total_tokens": 26865,
+        "prompt_tokens_details": {
+          "cached_tokens": 22241
+        }
+      },
+      "at": "2026-11-17T16:47:57.068Z"
+    },
+    {
+      "turn": 9,
+      "label": "files-9",
+      "status_line": "COMPLETE",
+      "prose_chars": 423,
+      "files_written": [
+        "fidelity-notes.md",
+        "component-inventory.json",
+        "generation-metadata.json"
+      ],
+      "files_rejected": [],
+      "truncated": false,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 2797,
+        "prompt_tokens": 26987,
+        "total_tokens": 29784,
+        "prompt_tokens_details": {
+          "cached_tokens": 24183
+        }
+      },
+      "at": "2026-11-17T16:48:18.364Z"
+    }
+  ],
+  "rejected_files": [],
+  "qc_runs": [
+    {
+      "started_at": "2026-11-17T16:48:18.384Z",
+      "completed_at": "2026-11-17T16:48:24.100Z",
+      "exit_code": 1,
+      "executed": true,
+      "passed": false,
+      "outcome": "fail",
+      "failures": [
+        "placeholder href=\"#\" in all-posts.html",
+        "placeholder href=\"#\" in all-posts.html",
+        "placeholder href=\"#\" in all-posts.html",
+        "placeholder href=\"#\" in all-posts.html",
+        "placeholder href=\"#\" in all-posts.html",
+        "placeholder href=\"#\" in all-posts.html",
+        "placeholder href=\"#\" in blog.html",
+        "placeholder href=\"#\" in blog.html",
+        "placeholder href=\"#\" in blog.html",
+        "placeholder href=\"#\" in blog.html",
+        "placeholder href=\"#\" in blog.html",
+        "placeholder href=\"#\" in blog.html",
+        "placeholder href=\"#\" in index.html",
+        "placeholder href=\"#\" in mini-tools.html",
+        "placeholder href=\"#\" in mini-tools.html",
+        "placeholder href=\"#\" in mini-tools.html",
+        "placeholder href=\"#\" in mini-tools.html",
+        "placeholder href=\"#\" in mini-tools.html",
+        "placeholder href=\"#\" in mini-tools.html",
+        "placeholder href=\"#\" in projects-applications-git-date-extractor-npm-package-and-cli-tool.html",
+        "placeholder href=\"#\" in projects-applications.html",
+        "placeholder href=\"#\" in projects-electronics.html",
+        "placeholder href=\"#\" in projects-electronics.html",
+        "placeholder href=\"#\" in projects-marketing.html",
+        "placeholder href=\"#\" in projects-marketing.html",
+        "placeholder href=\"#\" in projects-other.html",
+        "placeholder href=\"#\" in projects-other.html",
+        "placeholder href=\"#\" in projects-web-stuff-cheatsheets-and-snippets-markdown-powered-gatsby-mini-site.html",
+        "placeholder href=\"#\" in projects-web-stuff.html",
+        "placeholder href=\"#\" in projects-web-stuff.html",
+        "placeholder href=\"#\" in projects.html",
+        "placeholder href=\"#\" in projects.html",
+        "placeholder href=\"#\" in projects.html",
+        "placeholder href=\"#\" in projects.html",
+        "placeholder href=\"#\" in projects.html",
+        "placeholder href=\"#\" in projects.html",
+        "placeholder href=\"#\" in projects.html",
+        "placeholder href=\"#\" in projects.html",
+        "placeholder href=\"#\" in projects.html",
+        "axe heading-order (moderate) @1280 blog.html: 1 node(s) e.g. article:nth-child(1) > h3",
+        "axe heading-order (moderate) @1280 mini-tools.html: 1 node(s) e.g. article:nth-child(1) > h3",
+        "axe heading-order (moderate) @1280 projects-applications.html: 1 node(s) e.g. article:nth-child(1) > h3",
+        "axe heading-order (moderate) @1280 projects-electronics.html: 1 node(s) e.g. article:nth-child(1) > h3",
+        "axe heading-order (moderate) @1280 projects-marketing.html: 1 node(s) e.g. article:nth-child(1) > h3",
+        "axe heading-order (moderate) @1280 projects-other.html: 1 node(s) e.g. article:nth-child(1) > h3",
+        "axe heading-order (moderate) @1280 projects-web-stuff.html: 1 node(s) e.g. article:nth-child(1) > h3",
+        "axe heading-order (moderate) @1280 projects.html: 1 node(s) e.g. article[data-category=\"applications\"]:nth-child(1) > h3",
+        "axe heading-order (moderate) @375 blog.html: 1 node(s) e.g. article:nth-child(1) > h3",
+        "axe heading-order (moderate) @375 mini-tools.html: 1 node(s) e.g. article:nth-child(1) > h3",
+        "horizontal scroll @375 projects-applications-git-date-extractor-npm-package-and-cli-tool.html: 54px",
+        "axe heading-order (moderate) @375 projects-applications.html: 1 node(s) e.g. article:nth-child(1) > h3",
+        "axe heading-order (moderate) @375 projects-electronics.html: 1 node(s) e.g. article:nth-child(1) > h3",
+        "axe heading-order (moderate) @375 projects-marketing.html: 1 node(s) e.g. article:nth-child(1) > h3",
+        "axe heading-order (moderate) @375 projects-other.html: 1 node(s) e.g. article:nth-child(1) > h3",
+        "horizontal scroll @375 projects-web-stuff-cheatsheets-and-snippets-markdown-powered-gatsby-mini-site.html: 281px",
+        "axe heading-order (moderate) @375 projects-web-stuff.html: 1 node(s) e.g. article:nth-child(1) > h3",
+        "axe heading-order (moderate) @375 projects.html: 1 node(s) e.g. article[data-category=\"applications\"]:nth-child(1) > h3"
+      ],
+      "failure_count": 57,
+      "warnings": [],
+      "axe": {
+        "heading-order": 16
+      },
+      "pages": 15,
+      "files": 21,
+      "qc_tool_sha256": "e9be905d19e7181e30d8291bcb1511d4469bdc9e36c20c0efe21e2d3fcf54513",
+      "report": "qc-initial-2026-11-17T16-48-18-383Z.json",
+      "log": "qc-initial-2026-11-17T16-48-18-383Z.log",
+      "stdout_tail": "FAIL placeholder href=\"#\" in projects-electronics.html\nFAIL placeholder href=\"#\" in projects-marketing.html\nFAIL placeholder href=\"#\" in projects-other.html\nFAIL placeholder href=\"#\" in projects-web-stuff-cheatsheets-and-snippets-markdown-powered-gatsby-mini-site.html\nFAIL placeholder href=\"#\" in projects-web-stuff.html\nFAIL placeholder href=\"#\" in projects.html\nFAIL axe heading-order (moderate) @1280 blog.html: 1 node(s) e.g. article:nth-child(1) > h3\nFAIL axe heading-order (moderate) @1280 mini-tools.html: 1 node(s) e.g. article:nth-child(1) > h3\nFAIL axe heading-order (moderate) @1280 projects-applications.html: 1 node(s) e.g. article:nth-child(1) > h3\nFAIL axe heading-order (moderate) @1280 projects-electronics.html: 1 node(s) e.g. article:nth-child(1) > h3\nFAIL axe heading-order (moderate) @1280 projects-marketing.html: 1 node(s) e.g. article:nth-child(1) > h3\nFAIL axe heading-order (moderate) @1280 projects-other.html: 1 node(s) e.g. article:nth-child(1) > h3\nFAIL axe heading-order (moderate) @1280 projects-web-stuff.html: 1 node(s) e.g. article:nth-child(1) > h3\nFAIL axe heading-order (moderate) @1280 projects.html: 1 node(s) e.g. article[data-category=\"applications\"]:nth-child(1) > h3\nFAIL axe heading-order (moderate) @375 blog.html: 1 node(s) e.g. article:nth-child(1) > h3\nFAIL axe heading-order (moderate) @375 mini-tools.html: 1 node(s) e.g. article:nth-child(1) > h3\nFAIL horizontal scroll @375 projects-applications-git-date-extractor-npm-package-and-cli-tool.html: 54px\nFAIL axe heading-order (moderate) @375 projects-applications.html: 1 node(s) e.g. article:nth-child(1) > h3\nFAIL axe heading-order (moderate) @375 projects-electronics.html: 1 node(s) e.g. article:nth-child(1) > h3\nFAIL axe heading-order (moderate) @375 projects-marketing.html: 1 node(s) e.g. article:nth-child(1) > h3\nFAIL axe heading-order (moderate) @375 projects-other.html: 1 node(s) e.g. article:nth-child(1) > h3\nFAIL horizontal scroll @375 projects-web-stuff-cheatsheets-and-snippets-markdown-powered-gatsby-mini-site.html: 281px\nFAIL axe heading-order (moderate) @375 projects-web-stuff.html: 1 node(s) e.g. article:nth-child(1) > h3\nFAIL axe heading-order (moderate) @375 projects.html: 1 node(s) e.g. article[data-category=\"applications\"]:nth-child(1) > h3\n",
+      "note": null
+    }
+  ],
+  "repair_rounds": [],
+  "retries": [],
+  "human_edits": [
+    {
+      "by": "orchestrator script",
+      "at": "2026-11-17T16:48:24.102Z",
+      "what": "Wrote the model's emitted files, normalized generation-metadata.json provenance fields, and set validation_summary from the recorded QC run. No site markup, style or script was authored or edited by hand."
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 143142,
+    "completion_tokens": 29769,
+    "total_tokens": 172911,
+    "requests": 9,
+    "retries": 0
+  },
+  "errors": [],
+  "outputs": {
+    "site": "portfolio/open-source/PORT-05",
+    "transcript": "pipelines/open-source/runs/2026-11-17T16-44-43-083Z-build-PORT-05/transcript.json"
+  },
+  "delivered": {
+    "files": [
+      "404.html",
+      "README.md",
+      "all-posts.html",
+      "blog.html",
+      "component-inventory.json",
+      "css/styles.css",
+      "fidelity-notes.md",
+      "generation-metadata.json",
+      "index.html",
+      "js/main.js",
+      "mini-tools.html",
+      "posts-2023-shell-heredocs-productive-fun-bash-and-beyond.html",
+      "posts-2023-what-makes-svelte-so-great-features-and-comparisons.html",
+      "projects-applications-git-date-extractor-npm-package-and-cli-tool.html",
+      "projects-applications.html",
+      "projects-electronics.html",
+      "projects-marketing.html",
+      "projects-other.html",
+      "projects-web-stuff-cheatsheets-and-snippets-markdown-powered-gatsby-mini-site.html",
+      "projects-web-stuff.html",
+      "projects.html"
+    ],
+    "file_count": 21,
+    "bytes": 72428,
+    "pages_in_map": 14,
+    "missing_required": [],
+    "model_claimed_complete": true,
+    "delivered_complete": true,
+    "turns_used": 9,
+    "turn_budget": 28
+  },
+  "initial_artifact": "pipelines/open-source/runs/2026-11-17T16-44-43-083Z-build-PORT-05/initial",
+  "provenance": {
+    "wrote": true,
+    "modelEmittedValidMetadata": true
+  },
+  "acceptance": "not accepted: a QC result is not acceptance, and interaction review plus human acceptance happen outside this script"
+}

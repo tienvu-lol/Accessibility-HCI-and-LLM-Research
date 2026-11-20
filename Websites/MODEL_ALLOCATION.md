@@ -8,7 +8,7 @@
 
 This document **supplements, but does not replace, `RULES.md`**. All website-generation tasks must comply with its source verification and approval gate, implementation restrictions, accessibility baseline, HTML instrumentation, required artifacts, quality-control checks, and one-replica-per-delivery workflow. If an allocation or repository convention conflicts with `RULES.md`, stop and escalate the conflict rather than silently relaxing either document.
 
-The allocation is **per category**, not an overall quota across the dataset. The full dataset target for every category is **10 distinct approved reference websites and 10 corresponding replicas**.
+The allocation is **per category**, not an overall quota across the dataset. The full dataset target for every category is **6 distinct approved reference websites and 6 corresponding replicas** (amended 2026-11-19, v2.0; was 10 and 10).
 
 ### Active allocation
 
@@ -24,10 +24,10 @@ A category is **deliverable at its active scope** when every slot in its active 
 
 | Model group | Replicas per category | Assigned slots | Share |
 | --- | ---: | --- | ---: |
-| Claude | 3 | 01–03 | 30% |
-| Codex | 3 | 04–06 | 30% |
-| Open-weight models | 4 | 07–10 | 40% |
-| **Total** | **10** | **01–10** | **100%** |
+| Claude | 2 | 01–02 | 33% |
+| Codex | 2 | 03–04 | 33% |
+| Open-weight models | 2 | 05–06 | 33% |
+| **Total** | **6** | **01–06** | **100%** |
 
 - **Claude** means generation performed by an explicitly recorded Claude model/version.
 - **Codex** means generation performed by an explicitly recorded Codex model/version or coding-agent configuration; log the actual underlying model if identifiable.
@@ -45,16 +45,61 @@ A category is **deliverable at its active scope** when every slot in its active 
 | --- | --- | --- |
 | 01 | REST-01 | Claude |
 | 02 | REST-02 | Claude |
-| 03 | REST-03 | Claude |
-| 04 | REST-04 | Codex |
-| 05 | REST-05 | Codex |
-| 06 | REST-06 | Codex |
-| 07 | REST-07 | Open-weight |
-| 08 | REST-08 | Open-weight |
-| 09 | REST-09 | Open-weight |
-| 10 | REST-10 | Open-weight |
+| 03 | REST-R03 | Claude |
+| 04 | REST-03 | Codex |
+| 05 | REST-04 | Codex |
+| 06 | REST-R06 | Codex |
+| 07 | REST-05 | Open-weight |
+| 08 | REST-R08 | Open-weight |
+| 09 | REST-R09 | Open-weight |
+| 10 | REST-06 | Open-weight |
 
 Use each category's actual approved `source_id` prefix; `REST` is illustrative. Do not duplicate one reference site merely to fill a quota.
+
+## 2.0 Amendment -- slot reduction, 2026-11-19 (v2.0)
+
+**This is a protocol amendment, not a clarification.** The per-category allocation
+changed from 3 Claude / 3 Codex / 4 open-weight (10 slots) to **2 / 2 / 2 (6
+slots)**, giving a balanced allocation in which no model group is over-represented.
+
+Retired across every category: former slots **03, 06, 08, 09**. Their source IDs
+were suffixed `-R` (e.g. `UNI-03` -> `UNI-R03`), their `assignments.csv` rows set to
+status `retired`, and their replica directories moved to `archive/` at the
+repository root. **Nothing was deleted.**
+
+Surviving slots were renumbered and every reference in this repository was
+rewritten -- replica directories, run directories, run evidence, source
+inventories, `assignments.csv` and `change-log.md`:
+
+| Old slot | New slot | Group |
+|---|---|---|
+| 01 | 01 | Claude |
+| 02 | 02 | Claude |
+| 04 | 03 | Codex |
+| 05 | 04 | Codex |
+| 07 | 05 | Open-weight |
+| 10 | 06 | Open-weight |
+
+The new numbering preserves the property that slot range implies model group.
+
+**Open-weight selection.** Surviving slots 05 and 06 are the former 07
+(Qwen3.6-35B-A3B) and 10 (gpt-oss-120b), both **Apache-2.0 and OSI-approved**. The
+retired 08 (NVIDIA Nemotron-3-Super) and 09 (Llama-3.3-70B) were open-weight under
+vendor licences and not OSI-approved, so the open-weight group is now uniformly
+open-source in the OSI sense.
+
+**Note on former slot 09.** All ten Llama-3.3-70B replicas were degenerate --
+median `index.html` 875 bytes, median form controls 0, 0/10 meeting a 2 KB / 3
+form-control threshold. The probable cause is `max_tokens: 16000` for that slot in
+`pipelines/open-source/models.json` against 32000 for every other slot, truncating
+generation. Recorded here because it affects any future regeneration.
+
+This amendment supersedes the "settled 2026-11-17" terminology note below only in
+respect of which slots exist; the open-weight/open-source distinction it draws
+still stands.
+
+**Authorized by Samhith Varma Yallamraju, 2026-11-19. See `metadata/change-log.md`.**
+
 
 ## 3. Required GitHub repository structure
 
@@ -75,16 +120,16 @@ repository-root/
 │   ├── claude/
 │   │   ├── REST-01/
 │   │   ├── REST-02/
-│   │   └── REST-03/
+│   │   └── REST-R03/
 │   ├── codex/
+│   │   ├── REST-03/
 │   │   ├── REST-04/
-│   │   ├── REST-05/
-│   │   └── REST-06/
+│   │   └── REST-R06/
 │   └── open-source/
-│       ├── REST-07/
-│       ├── REST-08/
-│       ├── REST-09/
-│       └── REST-10/
+│       ├── REST-05/
+│       ├── REST-R08/
+│       ├── REST-R09/
+│       └── REST-06/
 ├── university/
 │   ├── claude/
 │   ├── codex/
@@ -199,7 +244,7 @@ Fill values using actual recorded evidence, including the Git commit/revision or
 
 A category is complete only when:
 
-- [ ] Exactly 10 distinct approved references have stable source IDs.
+- [ ] Exactly 6 distinct approved references have stable source IDs.
 - [ ] Exactly 3 complete replicas are under `claude/`.
 - [ ] Exactly 3 complete replicas are under `codex/`.
 - [ ] Exactly 4 complete replicas are under `open-source/`.

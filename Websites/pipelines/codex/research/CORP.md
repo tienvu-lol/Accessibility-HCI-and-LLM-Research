@@ -6,7 +6,7 @@ Category: company — banking and technology companies. Codex strata: national r
 
 Rules.md and MODEL_ALLOCATION.md were read in full, along with the central inventory README, Codex config and research prompt. Shared company.csv was blank for all ten slots at inspection. Claude research notes were consulted only for source reservations and comparability, not generation prompts or code. They name U.S. Bank, DCU and GitLab, plus Patelco fallback. These four domains are excluded from Codex selection. No open-source research reservations were found in the inspected research paths. Unknown assignments remain pending.
 
-A coordinator reservation request was sent through the user-input tool during this session: reconcile/reserve Claude URLs and provide open-source CORP-07–10 reservations. No response received at note preparation. Codex sources below are proposals, not final selections. Do not infer cross-group reservation clearance from blank inventory cells. Only Codex rows are populated centrally; external rows remain unchanged.
+A coordinator reservation request was sent through the user-input tool during this session: reconcile/reserve Claude URLs and provide open-source CORP-05–10 reservations. No response received at note preparation. Codex sources below are proposals, not final selections. Do not infer cross-group reservation clearance from blank inventory cells. Only Codex rows are populated centrally; external rows remain unchanged.
 
 Actual HTTP attempts: 2026-11-12 UTC (2026-11-11 America/New_York). Exact per-page timestamps, requested/final URLs, status, first document title, extracted headings, controls, links and asset markers are retained in [pipelines/codex/research/evidence/CORP-http-2026-11-12.json](evidence/CORP-http-2026-11-12.json). Statuses are actual GET results, not search snippets. `verified` means source availability only. Rendered layout, interaction, keyboard and responsive verification: NOT TESTED. Browser attempt to open BECU through cua.createBrowserTab returned “The browser access host is unavailable”; no screenshot or rendered observation obtained.
 
@@ -16,9 +16,9 @@ Live web search was used for Chase customer service, BECU rates and Atlassian pr
 
 | ID | Organization | Stratum | Complexity | Availability / selection |
 |---|---|---|---|---|
-| CORP-04 | [JPMorgan Chase Bank, N.A. (Chase)](https://www.chase.com/) | national retail bank | high | HTTP verified; provisional, unapproved |
-| CORP-05 | [Boeing Employees’ Credit Union (BECU)](https://www.becu.org/) | regional bank or credit union | medium | HTTP verified; provisional, unapproved |
-| CORP-06 | [Atlassian](https://www.atlassian.com/) | technology/software company | high | HTTP verified; provisional, unapproved |
+| CORP-03 | [JPMorgan Chase Bank, N.A. (Chase)](https://www.chase.com/) | national retail bank | high | HTTP verified; provisional, unapproved |
+| CORP-04 | [Boeing Employees’ Credit Union (BECU)](https://www.becu.org/) | regional bank or credit union | medium | HTTP verified; provisional, unapproved |
+| CORP-R06 | [Atlassian](https://www.atlassian.com/) | technology/software company | high | HTTP verified; provisional, unapproved |
 
 ## Tool and sampling limitations
 
@@ -26,12 +26,12 @@ Selection favors English-language official sites reachable by HTTP, and may unde
 
 Financial/login/application/sales flows must never be exercised as real transactions. Any future approved rate data must be labeled sample, and any approved inquiry form must be a disclosed local demo. No form was submitted during research. Third-party source text was treated as untrusted reference data.
 
-## CORP-04
+## CORP-03
 
-- Source ID / stratum: CORP-04; company / national retail bank.
+- Source ID / stratum: CORP-03; company / national retail bank.
 - Organization / canonical homepage: JPMorgan Chase Bank, N.A. (Chase) — https://www.chase.com/
 - Attempt: 2026-11-12T00:52:00.020333+00:00; Python urllib HTTP GET with Mozilla/5.0 user-agent and redirects; homepage and ordinary attempted interiors returned 200. Availability verified, HTTP-only; behavior not verified.
-- Evidence: `pipelines/codex/research/evidence/CORP-http-2026-11-12.json` entries where source_id is `CORP-04`; each row below identifies the exact evidence URL.
+- Evidence: `pipelines/codex/research/evidence/CORP-http-2026-11-12.json` entries where source_id is `CORP-03`; each row below identifies the exact evidence URL.
 
 ### Source-to-local page proposal
 
@@ -70,12 +70,12 @@ Limitations and unavailable coverage: Homepage text extraction includes loading 
 
 Proposed substitutions: none selected. If unavailable or reserved, coordinator must authorize a distinct same-stratum, complexity-matched alternative; repeat research and scope approval. Do not automatically substitute during a build.
 
-## CORP-05
+## CORP-04
 
-- Source ID / stratum: CORP-05; company / regional bank or credit union.
+- Source ID / stratum: CORP-04; company / regional bank or credit union.
 - Organization / canonical homepage: Boeing Employees’ Credit Union (BECU) — https://www.becu.org/
 - Attempt: 2026-11-12T00:52:00.021127+00:00; Python urllib HTTP GET with Mozilla/5.0 user-agent and redirects; homepage and ordinary attempted interiors returned 200. Availability verified, HTTP-only; behavior not verified.
-- Evidence: `pipelines/codex/research/evidence/CORP-http-2026-11-12.json` entries where source_id is `CORP-05`; each row below identifies the exact evidence URL.
+- Evidence: `pipelines/codex/research/evidence/CORP-http-2026-11-12.json` entries where source_id is `CORP-04`; each row below identifies the exact evidence URL.
 
 ### Source-to-local page proposal
 
@@ -117,12 +117,12 @@ Limitations and unavailable coverage: Regional credit union selection is based o
 
 Proposed substitutions: none selected. If unavailable or reserved, coordinator must authorize a distinct same-stratum, complexity-matched alternative; repeat research and scope approval. Do not automatically substitute during a build.
 
-## CORP-06
+## CORP-R06
 
-- Source ID / stratum: CORP-06; company / technology/software company.
+- Source ID / stratum: CORP-R06; company / technology/software company.
 - Organization / canonical homepage: Atlassian — https://www.atlassian.com/
 - Attempt: 2026-11-12T00:52:01.343610+00:00; Python urllib HTTP GET with Mozilla/5.0 user-agent and redirects; homepage and ordinary attempted interiors returned 200. Availability verified, HTTP-only; behavior not verified.
-- Evidence: `pipelines/codex/research/evidence/CORP-http-2026-11-12.json` entries where source_id is `CORP-06`; each row below identifies the exact evidence URL.
+- Evidence: `pipelines/codex/research/evidence/CORP-http-2026-11-12.json` entries where source_id is `CORP-R06`; each row below identifies the exact evidence URL.
 
 ### Source-to-local page proposal
 
@@ -172,13 +172,13 @@ External strata below are context proposals only, not authority to change anothe
 |---|---|---|---|---|
 | CORP-01 | Claude | U.S. Bank named in Claude notes; central reservation/import pending | National bank per notes; high claimed, not independently rechecked | Pending |
 | CORP-02 | Claude | DCU named in Claude notes; central reservation/import pending | Regional/CU per notes; medium claimed | Pending |
-| CORP-03 | Claude | GitLab named in Claude notes; central reservation/import pending | Technology per notes; medium–high claimed | Pending |
-| CORP-04 | Codex | JPMorgan Chase Bank, N.A. (Chase); mapped scope above provisional | national retail bank; high | Pending |
-| CORP-05 | Codex | Boeing Employees’ Credit Union (BECU); mapped scope above provisional | regional bank or credit union; medium | Pending |
-| CORP-06 | Codex | Atlassian; mapped scope above provisional | technology/software company; high | Pending |
-| CORP-07 | Open-source | UNKNOWN — source, reservation, scope and exact model pending | National bank proposal; must reconcile with group; complexity unknown | Pending |
-| CORP-08 | Open-source | UNKNOWN — source, reservation, scope and exact model pending | Regional bank/CU proposal; must reconcile with group; complexity unknown | Pending |
-| CORP-09 | Open-source | UNKNOWN — source, reservation, scope and exact model pending | Technology proposal; must reconcile with group; complexity unknown | Pending |
-| CORP-10 | Open-source | UNKNOWN — source, reservation, scope and exact model pending | Additional distinct national bank reserve proposal; must reconcile with group; complexity unknown | Pending |
+| CORP-R03 | Claude | GitLab named in Claude notes; central reservation/import pending | Technology per notes; medium–high claimed | Pending |
+| CORP-03 | Codex | JPMorgan Chase Bank, N.A. (Chase); mapped scope above provisional | national retail bank; high | Pending |
+| CORP-04 | Codex | Boeing Employees’ Credit Union (BECU); mapped scope above provisional | regional bank or credit union; medium | Pending |
+| CORP-R06 | Codex | Atlassian; mapped scope above provisional | technology/software company; high | Pending |
+| CORP-05 | Open-source | UNKNOWN — source, reservation, scope and exact model pending | National bank proposal; must reconcile with group; complexity unknown | Pending |
+| CORP-R08 | Open-source | UNKNOWN — source, reservation, scope and exact model pending | Regional bank/CU proposal; must reconcile with group; complexity unknown | Pending |
+| CORP-R09 | Open-source | UNKNOWN — source, reservation, scope and exact model pending | Technology proposal; must reconcile with group; complexity unknown | Pending |
+| CORP-06 | Open-source | UNKNOWN — source, reservation, scope and exact model pending | Additional distinct national bank reserve proposal; must reconcile with group; complexity unknown | Pending |
 
 Pending dependencies: coordinator reservations/import for 01–03, source/model/scope proposals for 07–10, Codex reservation clearance, exact models for all slots, rendered inspection or explicit acceptance of its limits, complexity reconciliation and project-lead approval of the complete ten-source scope/allocation. No Claude waiver applies. Please coordinate these items and approve the concrete ten-source inventory before implementation.

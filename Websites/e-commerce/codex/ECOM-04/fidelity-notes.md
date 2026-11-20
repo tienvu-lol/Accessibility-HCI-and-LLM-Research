@@ -1,19 +1,12 @@
-# Fidelity notes — ECOM-04
+# Fidelity decisions
+Replicated: department-led retail hierarchy, utility/store/search/cart header, home merchandising bands, furniture editorial landing, chair filters/sort, product color/purchase area, empty bag and service footer/help article. All seven mapped pages retained.
 
-## Replicated from observed markup
-Header men/category and search entry, promotional home hero, new-arrival → gender/category → best-seller → material merchandising sequence, product-card collection/search, size controls and sorting, product gallery/purchase/information areas, help/policy footer and newsletter region. Approved six-source mapping is in README. Product sizes are fictional values supporting the observed size affordance, not stock claims.
+Approximated: typography, spacing, imagery and responsive layouts from HTTP region evidence only; no rendered screenshot comparison available. Fictional Hearth & Field branding, Marlow product and all copy/assets are original. Decorative geometric department art and chair-shaped sample placeholders stand in for nonchair catalog products; those cards explicitly identify their limited sample scope. No source campaigns, prices, stock or locale claims are reproduced.
 
-## Approximated
-All layouts, typography, spacing, colors, responsive behavior and image placement are original approximations: HTTP evidence establishes regions/affordances only. Brand Fieldkind, products/copy and eight local SVG illustrations are original. No proprietary logo/media/prose used. The unobserved women branch is not invented; the second gender band openly shares the bounded collection. Local categories/navigation are restricted to mapped pages.
+Simulated: store lookup against two fictional entries; local catalog filtering/sorting; color update; add/quantity/remove/subtotal/browser storage. Observed source markup establishes affordances, not successful mutation. Populated-cart logic and persistence are inferred. No external requests.
 
-## Simulated
-Search/filter/sort operates four inline records. Only Grove Runner is a mapped detail. Add-to-bag, quantity/removal, localStorage and totals are inferred local demonstrations; populated source cart/drawer behavior was not observed. Cart page is a simple bag approximation, not a claim that source dedicated cart content was characterized. Demo checkout is an explanatory message inside that page; no extra screen or transaction fields.
+Added: required 404, demo notices, safety limits and local empty-state feedback. These support evaluation and do not claim source fidelity.
 
-## Intentionally added
-Required 404 page, clear simulation/storage disclosures, error fallback, result counts/empty state, mobile Escape focus return, accessible semantic instrumentation, original illustrative artwork. Return help is fictional explanatory guidance, not source policy. Returns source availability/title only was established.
+Omitted: rewards, account, real store services, checkout/payment, external social/legal destinations and unapproved product screens. Cross-department links remain meaningful via local search/sections within the approved map.
 
-## Omitted
-Live checkout/payment, shipping/account/login, real customer support, newsletter enrollment and external social links. No generic color matrix or unobserved stock availability. No source campaign claims, testimonials, certification or environmental outcomes.
-
-## Unverified
-Source rendering/mobile/keyboard/interaction outcomes, source storage behavior and detailed returns layout. Local browser interaction, assistive technology and responsive QA depend on actual browser test evidence. Mocked source tests are not browser tests. Different assigned reference websites confound model/source difficulty comparisons.
+Unverified: source dropdown expansion, responsive composition, detailed cart behavior, checkout, validation, storage, keyboard/screen-reader behavior and visual match. Native dialog/accordion support depends on a modern browser. Automated/source checks do not replace browser or human review.
