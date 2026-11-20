@@ -57,8 +57,14 @@ function create(ctx, { leaseS = 900 } = {}) {
         String(r[8] ?? '').trim() && Number.isFinite(Number(r[8]))) measured.add(key);
     }
   };
-  const mainstream = () => Object.keys(state.arms).filter((a) => ctx.armKind(a) === 'mainstream');
-  const dispatched = () => Object.keys(state.arms).filter((a) => ctx.armKind(a) === 'mainstream' || state.settings.dispatch_open);
+  // Arms in this run: all configured arms unless settings.arms narrows it (e.g. a live test of A6 and A7 only).
+  // Scope limits what a repair start plans and checks. It does not cancel jobs that are already queued.
+  const armsInScope = () => {
+    const all = Object.keys(state.arms), sel = state.settings.arms;
+    return Array.isArray(sel) ? all.filter((a) => sel.includes(a)) : all;
+  };
+  const mainstream = () => armsInScope().filter((a) => ctx.armKind(a) === 'mainstream');
+  const dispatched = () => armsInScope().filter((a) => ctx.armKind(a) === 'mainstream' || state.settings.dispatch_open);
   // fresh workers that advertise a reachable ARC tunnel for this arm
   const arcWorkers = (arm) => [...workers.values()].filter((w) => w.arcs && w.arcs[arm] && ctx.now() - w.last_seen < ONLINE_MS);
   const siteList = () => state.settings.sites || ctx.siteIds();
@@ -152,7 +158,8 @@ function create(ctx, { leaseS = 900 } = {}) {
     }
     const runSites = new Set(siteList()).size;
     return { repair, open, score, judge, mock: ctx.mock,
-      scope: { sites: runSites, study_sites: sites.length, conditions: state.settings.conditions.length, study_conditions: CONDITIONS.length } };
+      scope: { sites: runSites, study_sites: sites.length, conditions: state.settings.conditions.length, study_conditions: CONDITIONS.length,
+        ...(Array.isArray(state.settings.arms) ? { arms: armsInScope().length, study_arms: Object.keys(state.arms).length } : {}) } };
   }
 
   // ---- which computer ran what
@@ -317,7 +324,11 @@ function create(ctx, { leaseS = 900 } = {}) {
   function start(phase, force) {
     let blockers = [];
     // An unavailable ARC tunnel only blocks its own claims, not the rest of the repair phase.
-    if (phase === 'repair') blockers = mainstream().flatMap((id) => armBlockers(id).map((b) => `${id}: ${b}`));
+    if (phase === 'repair') {
+      blockers = mainstream().flatMap((id) => armBlockers(id).map((b) => `${id}: ${b}`));
+      // a scope of open-source arms only, with dispatch off, would start a run that plans no repair work
+      if (!dispatched().length) blockers.push('no selected arm will be dispatched: select a hosted arm, or turn on open-source dispatch');
+    }
     if (phase === 'judge') {
       blockers = judgeBlockers();
       planJudge();

@@ -140,7 +140,7 @@
     var runLine = '<p class="runline">' + badge(running ? 'active' : paused ? 'attn' : 'pending', running ? 'Running' : paused ? 'Paused' : 'Idle') +
       (run.kind ? ' <span>' + esc(run.kind) + (run.started_at ? ', started ' + esc(ago(run.started_at, S.now)) : '') + '</span>' : ' <span>No phase active. Start a phase below.</span>') + '</p>';
     var p = S.pipeline, scope = p && p.scope;
-    var scopeLine = scope ? '<p class="hint">Progress is for the full study. Selected run: ' + int(scope.sites) + ' of ' + int(scope.study_sites) + ' sites, ' + int(scope.conditions) + ' of ' + int(scope.study_conditions) + ' conditions. Mock runs do not count.</p>' : '';
+    var scopeLine = scope ? '<p class="hint">Progress is for the full study. Selected run: ' + int(scope.sites) + ' of ' + int(scope.study_sites) + ' sites, ' + int(scope.conditions) + ' of ' + int(scope.study_conditions) + ' conditions' + (scope.arms != null ? ', ' + int(scope.arms) + ' of ' + int(scope.study_arms) + ' arms' : '') + '. Mock runs do not count.</p>' : '';
     out.push(panel('ov-run', 'Pipeline', scopeLine + '<ol class="stepper">' + stepHtml + '</ol>' + runLine + ctl + blk +
       '<p class="hint">Retry failed re-queues every failed cell and item. Judge start is refused while repair or imports are incomplete.</p>'));
 
@@ -228,6 +228,8 @@
       '<div><label for="set-judge">Judge model id</label><input id="set-judge" name="judge_model_id" required value="' + esc(s.judge_model_id) + '" spellcheck="false"></div></div>' +
       '<label class="check"><input type="checkbox" name="dispatch_open"' + (s.dispatch_open ? ' checked' : '') + '> Run open-source arms on laptops with an ARC tunnel</label>' +
       '<p class="hint">Off = import their results from ARC runs. On = their jobs go only to workers with a live tunnel for that arm.</p>' +
+      '<fieldset><legend>Arms in this run</legend><div class="checks">' + S.arms.map(function (a) { return '<label class="check"><input type="checkbox" name="arms" value="' + esc(a.id) + '"' + (Array.isArray(s.arms) ? (s.arms.indexOf(a.id) >= 0 ? ' checked' : '') : ' checked') + '> ' + esc(a.id) + ' ' + esc(a.label) + '</label>'; }).join('') + '</div>' +
+      '<p class="hint">Starting a repair plans only the checked arms and only needs keys for the checked hosted arms. Unchecked arms are left alone; jobs already queued stay queued. All checked = the whole study.</p></fieldset>' +
       '<fieldset><legend>Conditions</legend><div class="checks">' + CONDS.map(function (c) { return '<label class="check"><input type="checkbox" name="conditions" value="' + c + '"' + (cond.indexOf(c) >= 0 ? ' checked' : '') + '> ' + c + '</label>'; }).join('') + '</div></fieldset>' +
       '<div><label for="set-sites">Sites</label><textarea id="set-sites" name="sites" rows="3" spellcheck="false" aria-describedby="set-sites-h" placeholder="Leave empty for all 60 sites">' + esc(Array.isArray(s.sites) ? s.sites.join(', ') : '') + '</textarea>' +
       '<p id="set-sites-h" class="hint">Site ids separated by commas or spaces, e.g. UNI-01, GOV-03. Empty means all 60.</p></div>' +
@@ -924,7 +926,9 @@
       if (bad && bad.length) { announce('error', 'Unknown site id: ' + bad.slice(0, 5).join(', ') + '. Use ids like UNI-01.'); return; }
       var conds = fd.getAll('conditions');
       if (!conds.length) { announce('error', 'Pick at least one condition.'); return; }
-      save('Settings', 'PUT', '/api/settings', { budget_usd: +fd.get('budget_usd'), sites: sites, conditions: conds, max_iter: +fd.get('max_iter'), judge_model_id: String(fd.get('judge_model_id')).trim(), dispatch_open: fd.get('dispatch_open') === 'on' }, f);
+      var armIds = fd.getAll('arms');
+      if (!armIds.length) { announce('error', 'Pick at least one arm.'); return; }
+      save('Settings', 'PUT', '/api/settings', { budget_usd: +fd.get('budget_usd'), sites: sites, arms: armIds.length === S.arms.length ? null : armIds, conditions: conds, max_iter: +fd.get('max_iter'), judge_model_id: String(fd.get('judge_model_id')).trim(), dispatch_open: fd.get('dispatch_open') === 'on' }, f);
     } else if (kind === 'budget') {
       save('Budget cap', 'PUT', '/api/settings', { budget_usd: +fd.get('budget_usd') }, f);
     } else if (kind === 'docker') {

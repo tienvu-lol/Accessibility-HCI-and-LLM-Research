@@ -22,7 +22,7 @@ function load(dataDir, cfg) {
   }
   const state = {
     settings: {
-      budget_usd: 200, dispatch_open: false, sites: null, conditions: [...CONDITIONS],
+      budget_usd: 200, dispatch_open: false, sites: null, arms: null, conditions: [...CONDITIONS],
       max_iter: cfg.held_constant.max_iterations || 3, judge_model_id: tbd(cfg.judge && cfg.judge.model_id),
       ...raw.settings,
     },
@@ -56,6 +56,12 @@ function applySettings(ctx, b) {
   if ('sites' in b) {
     if (b.sites !== null && !(Array.isArray(b.sites) && b.sites.length && b.sites.every((x) => known.has(x)))) return 'sites must be null or a list of known site ids';
     s.sites = b.sites;
+  }
+  if ('arms' in b) {
+    // null = every configured arm. A subset limits which arms a repair run plans and which hosted arms must have a key.
+    const ids = Object.keys(ctx.state.arms);
+    if (b.arms !== null && !(Array.isArray(b.arms) && b.arms.length && b.arms.every((x) => ids.includes(x)))) return 'arms must be null or a non-empty list of known arm ids';
+    s.arms = b.arms === null || ids.every((id) => b.arms.includes(id)) ? null : ids.filter((id) => b.arms.includes(id));
   }
   if ('conditions' in b) {
     if (!Array.isArray(b.conditions) || !b.conditions.length || !b.conditions.every((c) => CONDITIONS.includes(c))) return 'bad conditions';
