@@ -14,6 +14,7 @@ const storeLib = require('./lib/store');
 const coordLib = require('./lib/coordinator');
 const importer = require('./lib/importer');
 const sseLib = require('./lib/sse');
+const dockerLib = require('./lib/docker');
 
 const { HttpError, json, readJson, readBody, sendFile, safeJoin } = H;
 const HUMAN_HEADER = ['site_id', 'arm', 'question', 'rater_id', 'verdict', 'note', 'shown_left', 'shown_right', 'ts'];
@@ -60,6 +61,7 @@ function createApp(opts = {}) {
     baselineFile: (site, file) => { try { return fs.readFileSync(path.join(studyDir, 'baseline', site, file), 'utf8'); } catch { return ''; } },
     estimate: () => estimate(),
   };
+  ctx.docker = dockerLib.create({ env, port: Number(env.PORT) || 8080 });
   ctx.coord = coordLib.create(ctx, { leaseS: opts.leaseS });
 
   // ---- per-call token estimate: estimate.json (python), else chars/4 of the slice files
@@ -164,6 +166,26 @@ function createApp(opts = {}) {
       sse.notify();
       return json(res, 200, { ok: true });
     }
+    if (a === 'workers' && b && m === 'PUT') {
+      ctx.coord.setWorkerCtl(decodeURIComponent(b), await body(req));
+      sse.notify();
+      return json(res, 200, { ok: true });
+    }
+    if (a === 'docker' && b === 'workers') {
+      const wrap = async (fn) => { try { return await fn(); } catch (e) { throw new HttpError(400, e.message); } };
+      if (m === 'POST') {
+        const { count, slots } = await body(req);
+        const r = await wrap(() => ctx.docker.start(count, slots));
+        sse.notify();
+        return json(res, r.started.length ? 200 : 502, { ok: r.started.length > 0, ...r });
+      }
+      if (m === 'DELETE') {
+        const r = await wrap(() => ctx.docker.stop(c ? decodeURIComponent(c) : null));
+        sse.notify();
+        return json(res, 200, { ok: true, ...r });
+      }
+      notFound();
+    }
     if (a === 'import' && m === 'POST') {
       const r = await importer.run(ctx, req);
       sse.notify();
@@ -175,6 +197,14 @@ function createApp(opts = {}) {
     if (a === 'results' && m === 'GET') {
       if (!results) return json(res, 501, { error: 'results module not available' });
       return json(res, 200, resultsFor());
+    }
+    if (a === 'export' && m === 'GET' && b === 'runs.tar.gz') { // stored run tree, same layout as Study/runs
+      if (!fs.existsSync(path.join(dataDir, 'runs'))) notFound();
+      res.writeHead(200, { 'Content-Type': 'application/gzip', 'Content-Disposition': 'attachment; filename="runs.tar.gz"', 'Cache-Control': 'no-store' });
+      const tar = spawn('tar', ['-czf', '-', '-C', dataDir, 'runs'], { stdio: ['ignore', 'pipe', 'ignore'] });
+      tar.on('error', () => res.destroy());
+      tar.stdout.pipe(res);
+      return;
     }
     if (a === 'export' && m === 'GET' && b) {
       if (!results) return json(res, 501, { error: 'results module not available' });
@@ -312,9 +342,10 @@ function createApp(opts = {}) {
 
   return {
     server, ctx, sse,
-    listen: (port = Number(env.PORT) || 8080) => new Promise((resolve) => server.listen(port, () => resolve(server.address().port))),
+    listen: (port = Number(env.PORT) || 8080) => new Promise((resolve) => server.listen(port, () => { ctx.docker.watch(() => sse.notify()); resolve(server.address().port); })),
     close: () => new Promise((resolve) => {
       sse.close();
+      ctx.docker.unwatch();
       ctx.state.flush();
       server.close(resolve);
       server.closeAllConnections();

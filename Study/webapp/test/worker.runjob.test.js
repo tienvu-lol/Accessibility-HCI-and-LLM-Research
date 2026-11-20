@@ -39,16 +39,16 @@ test('runScore passes args to score.js, never the worker token, and returns rows
   await assert.rejects(runScore({ ...job, iterations: { 1: { 'x.html': '' } } }, { scoreScript: fake }), /score.js failed/);
 });
 
-test('runJudge mock returns 56 rows, 4 key rows, no api key leak', async () => {
+test('runJudge mock returns 70 rows, 5 key rows, no api key leak', async () => {
   const variants = {};
-  for (const c of ['naive', 'wcag', 'nielsen', 'both']) {
+  for (const c of ['naive', 'wcag', 'nielsen', 'both', 'baseline']) {
     variants[c] = { 'index.html': `<p>${c}</p>`, 'apply.html': '<p>a</p>', 'css/styles.css': 'a{}' };
   }
   const res = await runJudge({ id: 'judge:UNI-01:A1', kind: 'judge', site: 'UNI-01', arm: 'A1', mock: true, seed: 's', variants,
     provider: 'gemini', base_url: null, model_id: 'g', api_key: 'gk-secret', call_id: 'c1' });
   assert.strictEqual(res.status, 'ok', res.error);
-  assert.strictEqual(res.rows.length, 56);
-  assert.strictEqual(res.key_rows.length, 4);
+  assert.strictEqual(res.rows.length, 70);
+  assert.strictEqual(res.key_rows.length, 5);
   assert.strictEqual(res.rows[0][6], 'c1');
   assert.ok(!JSON.stringify(res).includes('gk-secret'));
 });

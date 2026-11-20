@@ -1,0 +1,38 @@
+# Self-hosted stack: dashboard + on-demand worker containers started from the dashboard.
+#   cp .env.example .env   (set APP_PASSWORD and WORKER_TOKEN)
+#   docker compose --profile build build     # builds study-web and study-worker
+#   docker compose up -d web                 # http://localhost:8080
+# The web container mounts the host docker socket, which is root-equivalent on the host: run this on a
+# machine you control, behind HTTPS, with a strong APP_PASSWORD.
+services:
+  web:
+    build: { context: ., dockerfile: webapp/Dockerfile.web }
+    image: study-web
+    ports: ["${BIND_ADDR:-0.0.0.0}:${PORT:-8080}:8080"]  # BIND_ADDR = your Tailscale IP to keep it off other networks
+    environment:
+      APP_PASSWORD: ${APP_PASSWORD:?set APP_PASSWORD}
+      WORKER_TOKEN: ${WORKER_TOKEN:?set WORKER_TOKEN}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      GEMINI_API_KEY: ${GEMINI_API_KEY:-}
+      MOCK_PROVIDERS: ${MOCK_PROVIDERS:-}
+      DOCKER_WORKERS: "1"
+      MACHINE_NAME: ${MACHINE_NAME:-host-laptop}
+      WORKER_IMAGE: study-worker
+      DOCKER_NETWORK: study-net
+      WORKER_WEB_URL: http://web:8080
+    volumes:
+      - data:/data
+      - /var/run/docker.sock:/var/run/docker.sock
+    # the node user must be in the host's docker group (Linux: `stat -c %g /var/run/docker.sock`; Docker Desktop: 0)
+    group_add: ["${DOCKER_GID:-0}"]
+    networks: [study-net]
+    restart: unless-stopped
+  worker:  # build target only; the dashboard starts the containers
+    build: { context: ., dockerfile: webapp/Dockerfile.worker }
+    image: study-worker
+    profiles: ["build"]
+volumes:
+  data:
+networks:
+  study-net: { name: study-net }

@@ -386,15 +386,15 @@ goes on the poster, cite a source -- published figures vary widely.
 
 ### Input
 
-The 4 variants for that (site, arm), **shuffled and relabelled V1-V4**. Record the
+The 5 variants for that (site, arm) (4 repaired conditions + the unrepaired baseline), **shuffled and relabelled V1-V5**. Record the
 mapping in `blinding_key.csv` and never expose it to the judge. Each variant
 supplies its 2 HTML pages + screenshots. Strip any condition markers from HTML and
 filenames.
 
 ### Task
 
-For **each of 14 questions separately**, rank V1-V4 best to worst. **Ties are
-explicitly permitted** -- a judge forced to totally order 4 items never ties while
+For **each of 14 questions separately**, rank V1-V5 best to worst. **Ties are
+explicitly permitted** -- a judge forced to totally order 5 items never ties while
 humans tie 30-50% of the time, and that marginal mismatch caps achievable kappa
 even when the judge is tracking humans perfectly.
 

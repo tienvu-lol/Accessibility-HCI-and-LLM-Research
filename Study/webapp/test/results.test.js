@@ -48,6 +48,8 @@ function smallTree() {
     ['S1', 'A1', 'h1_visibility_of_status', 'naive', 1], ['S1', 'A1', 'h1_visibility_of_status', 'wcag', 3],
     ['S1', 'A1', 'h2_match_real_world', 'naive', 2], ['S1', 'A1', 'h2_match_real_world', 'wcag', 1],
     ['S2', 'A1', 'h1_visibility_of_status', 'naive', 1], ['S2', 'A1', 'h1_visibility_of_status', 'wcag', 1],
+    ['S1', 'A1', 'h1_visibility_of_status', 'baseline', 1], ['S1', 'A1', 'h2_match_real_world', 'baseline', 2],
+    ['S2', 'A1', 'h1_visibility_of_status', 'baseline', 1],
   ]));
   const cell = 'runs/A1/wcag/';
   write(root, cell + 'S1/iter1/status.json', status(1, { usage: { input: 100, output: 50 } }));
@@ -83,6 +85,7 @@ test('results.build: fig3, fig5, fig6, fig4, headline', () => {
   const r = results.build(smallTree(), OPTS);
   const f3 = Object.fromEntries(r.fig3.map((c) => [c.condition, c]));
   close(f3.naive.mean_rank, 4 / 3); close(f3.wcag.mean_rank, 5 / 3);
+  close(f3.baseline.mean_rank, 4 / 3); // baseline is a judged condition row
   assert.equal(f3.wcag.n, 2);
   const f5 = (s, c) => r.fig5.find((x) => x.site === s && x.condition === c);
   assert.deepEqual(f5('S1', 'wcag'), { site: 'S1', arm: 'A1', generator_group: 'claude', condition: 'wcag', wcag_gain: 6, usability_delta: -0.5 });
@@ -99,7 +102,7 @@ test('results.build: fig3, fig5, fig6, fig4, headline', () => {
   assert.deepEqual(r.fig4.cells.map((row) => row.reduce((a, b) => a + b, 0)), [1, 1]);
   assert.equal(r.fig4.cells[0][0], 1);
   assert.deepEqual(r.headline, { pct_sites_gained_wcag_lost_nielsen: 50, n_sites: 2, top_conflict: { criterion: 'color-contrast', heuristic: 'h1_visibility_of_status', count: 1 } });
-  assert.ok(r.notes[0].includes('baseline'));
+  assert.deepEqual(r.notes.filter((n) => /no baseline/.test(n)), []); // caveat removed: baseline is judged
 });
 
 test('results.build: loop behavior', () => {
@@ -146,7 +149,7 @@ test('missing files: well-formed empty structures, no NaN', () => {
     assert.equal(r.gate.warn, false);
     assert.deepEqual(r.headline, { pct_sites_gained_wcag_lost_nielsen: null, n_sites: 0, top_conflict: null });
     assert.deepEqual(r.agreement, { judge_vs_human: null, human_fleiss: null, gate: { threshold: 0.4, pass: null } });
-    assert.ok(r.notes.length >= 1);
+    assert.ok(Array.isArray(r.notes));
     assert.ok(!/NaN|Infinity/.test(JSON.stringify(r)));
   }
   const t = results.tables(root, {});
@@ -174,7 +177,7 @@ test('tables: values, partial ledger line, cost_by_source with pricing', () => {
   assert.equal(t.fig4_conflict_heatmap.columns.length, 11);
   assert.deepEqual(t.cost_by_source.rows, [['A1', 2000000, 500000, 3, 6], ['judge', 10, 5, 1, null]]); // 2M*2 + 0.5M*4
   assert.equal(t.metrics_all.rows.length, 13);
-  assert.equal(t.judge_rankings.rows.length, 6);
+  assert.equal(t.judge_rankings.rows.length, 9);
   assert.ok(toCsv(t.fig5_gain_vs_usability).startsWith('site,arm,generator_group,condition,wcag_gain,usability_delta\r\n'));
 });
 

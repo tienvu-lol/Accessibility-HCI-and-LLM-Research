@@ -88,7 +88,7 @@ Interface: `results.build(dataDir, {sites,conditions}) -> object`, `results.tabl
   agreement:{judge_vs_human:{kappa,n}|null,human_fleiss:{kappa,n_items,raters}|null,gate:{threshold,pass:bool|null}},
   notes:[str] }
 ```
-NOTE (state in the UI): the README judge ranks only the four repaired variants (no baseline), so poster Fig 3's "before vs after Nielsen score" cannot be computed as such; `fig3` shows mean rank by condition and `fig5.usability_delta` uses `naive` as the usability reference. Adding the baseline as a fifth variant to the judge call is a protocol decision for the researchers; do not do it silently.
+NOTE: the judge ranks five blinded variants per (site, arm): the four repaired conditions plus the unrepaired `baseline`. `fig3` includes a `baseline` condition row (mean rank), and `fig5.usability_delta` = rank(baseline) - rank(variant) per heuristic question (positive = repaired page judged better than the original).
 `edit_ratio` = normalized line-diff between consecutive iterations; `regressions` = rules violated after an iteration that were not violated before it.
 
 ## Exports

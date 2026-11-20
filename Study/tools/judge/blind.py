@@ -1,20 +1,21 @@
-"""Blind the 4 condition variants of a (site, arm) as V1-V4 and record the key (C7)."""
+"""Blind the 5 variants (4 repaired conditions + baseline) of a (site, arm) as V1-V5 and record the key (C7)."""
 import csv
 import random
 import re
 from pathlib import Path
 
 CONDITIONS = ["naive", "wcag", "nielsen", "both"]
-LABELS = ["V1", "V2", "V3", "V4"]
+JUDGE_CONDITIONS = CONDITIONS + ["baseline"]
+LABELS = ["V1", "V2", "V3", "V4", "V5"]
 KEY_HEADER = ["site_id", "arm", "label_shown", "condition"]
 
 _COMMENT = re.compile(r"<!--.*?-->|/\*.*?\*/", re.S)
 # "both" is ordinary English, so it is only stripped where it is clearly a marker.
-_NAME_WORDS = re.compile(r"\b(?:wcag|nielsen|naive)\b", re.I)
+_NAME_WORDS = re.compile(r"\b(?:wcag|nielsen|naive|baseline)\b", re.I)
 _MARKER_ATTR = re.compile(
     r"\s(?:data-)?(?:condition|variant|arm)\s*=\s*(?:\"[^\"]*\"|'[^']*'|[^\s>]+)", re.I)
 _BOTH_MARKER = re.compile(r"\b(?:condition|variant)\s*[:=]\s*both\b", re.I)
-_ANY_NAME = re.compile("|".join(CONDITIONS), re.I)
+_ANY_NAME = re.compile("|".join(JUDGE_CONDITIONS), re.I)
 
 
 def strip_markers(html):
@@ -51,7 +52,7 @@ def _final_iter_dir(root):
 
 
 def _shuffle(site, arm, seed):
-    order = list(CONDITIONS)
+    order = list(JUDGE_CONDITIONS)
     random.Random(f"{seed}|{site}|{arm}").shuffle(order)
     return dict(zip(LABELS, order))
 

@@ -7,7 +7,7 @@ import re
 import sys
 from pathlib import Path
 
-LABELS = ["V1", "V2", "V3", "V4"]
+LABELS = ["V1", "V2", "V3", "V4", "V5"]
 QUESTIONS = [
     ("Q1", "h1_visibility_of_status", "Visibility of system status"),
     ("Q2", "h2_match_real_world", "Match between system and the real world"),
@@ -63,7 +63,7 @@ def parse_response(text):
         ranks = {}
         for label in LABELS:
             r = data[qid].get(label)
-            if isinstance(r, bool) or not isinstance(r, int) or not 1 <= r <= 4:
+            if isinstance(r, bool) or not isinstance(r, int) or not 1 <= r <= 5:
                 raise JudgeParseError(f"{qid}/{label}: bad rank {r!r}")
             ranks[label] = r
         out[qid] = ranks
@@ -100,7 +100,7 @@ def append_rows(path, rows):
 
 
 def _mock_complete(prompt):
-    # Deterministic: V1 best ... V4 worst on every question.
+    # Deterministic: V1 best ... V5 worst on every question.
     resp = {qid: {l: i + 1 for i, l in enumerate(LABELS)} for qid, _, _ in QUESTIONS}
     return {"text": json.dumps(resp), "usage": {"input": 0, "output": 0},
             "model_version": "mock", "latency_ms": 0}

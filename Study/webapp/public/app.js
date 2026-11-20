@@ -40,8 +40,9 @@
     var h = Math.floor(m / 60), r = Math.round(m % 60);
     return h ? h + ' h ' + r + ' min' : r + ' min';
   }
+  function ms(v) { return typeof v === 'number' ? v : Date.parse(v); } // server sends epoch ms; demo data sends ISO strings
   function ago(iso, now) {
-    var s = Math.round(((now ? Date.parse(now) : Date.now()) - Date.parse(iso)) / 1000);
+    var s = Math.round(((now ? ms(now) : Date.now()) - ms(iso)) / 1000);
     if (!isFinite(s)) return 'n/a';
     if (s < 5) return 'just now';
     if (s < 90) return s + ' s ago';
@@ -228,6 +229,20 @@
     return tableWrap(armId + ' cell matrix', '<table class="matrix"><thead>' + head + '</thead><tbody>' + body + '</tbody></table>');
   }
 
+  function dockerBody(D) {
+    if (!D.available) return notice('error', 'Docker is not reachable: ' + esc(D.error || 'unknown error'), 'alert');
+    var rows = D.containers.map(function (c) {
+      return '<tr><th scope="row">' + esc(c.name) + '</th><td>' + esc(c.status) + '</td><td><button type="button" class="btn" data-action="docker-stop" data-name="' + esc(c.name) + '">Remove</button></td></tr>';
+    }).join('');
+    return '<form data-form="docker"><div class="fields">' +
+      '<div><label for="dk-count">Containers</label><input id="dk-count" name="count" type="number" min="1" max="' + D.max + '" step="1" required value="1"></div>' +
+      '<div><label for="dk-slots">Slots each</label><input id="dk-slots" name="slots" type="number" min="1" max="16" step="1" required value="4"></div></div>' +
+      '<div class="row"><button type="submit" class="btn btn-primary">Start workers</button> ' +
+      '<button type="button" class="btn btn-danger" data-action="docker-stop" data-name=""' + (D.containers.length ? '' : ' disabled') + '>Remove all</button></div></form>' +
+      '<p class="hint">Image ' + esc(D.image) + '; up to ' + D.max + ' running. Each container connects back to this console as a worker.</p>' +
+      (D.containers.length ? tableWrap('Docker worker containers', '<table class="grid"><thead><tr><th scope="col">Container</th><th scope="col">Status</th><th scope="col">Action</th></tr></thead><tbody>' + rows + '</tbody></table>') :
+        empty('No worker containers', 'Start some above; they appear in Workers below once they connect.'));
+  }
   function runs(S) {
     var out = [];
     out.push(panel('r-legend', 'Cell states',
@@ -238,10 +253,21 @@
       var counters = ['total', 'queued', 'running', 'ok', 'failed', 'truncated', 'imported', 'converged'].map(function (k) { return '<div><dt>' + esc(k) + '</dt><dd>' + int(c[k]) + '</dd></div>'; }).join('');
       out.push(panel('r-' + a.id, a.id + ' \u00b7 ' + a.label, '<dl class="facts compact">' + counters + '</dl>' + matrixGrid(S, a.id)));
     });
+    if (S.docker && S.docker.enabled) out.push(panel('r-docker', 'Docker workers', dockerBody(S.docker), { form: true }));
     out.push(panel('r-workers', 'Workers (' + S.workers.length + ')', S.workers.length ?
-      tableWrap('Workers', '<table class="grid"><thead><tr><th scope="col">Worker</th><th scope="col">Last seen</th><th scope="col">Slots</th><th scope="col">Running</th></tr></thead><tbody>' +
-        S.workers.map(function (w) { var stale = Date.parse(S.now) - Date.parse(w.last_seen) > 60000; return '<tr><th scope="row">' + esc(w.id) + '</th><td>' + esc(ago(w.last_seen, S.now)) + (stale ? ' ' + badge('attn', 'Stale') : '') + '</td><td class="num">' + int(w.slots) + '</td><td class="num">' + int(w.running) + '</td></tr>'; }).join('') + '</tbody></table>') :
-      empty('No workers connected', 'Start worker replicas with WEB_URL and WORKER_TOKEN set. Jobs wait in the queue until one claims them.')));
+      tableWrap('Workers', '<table class="grid"><thead><tr><th scope="col">Worker</th><th scope="col">Machine</th><th scope="col">Status</th><th scope="col">Slots</th><th scope="col">Running</th><th scope="col">Share of compute</th></tr></thead><tbody>' +
+        S.workers.map(function (w) {
+          var online = ms(S.now) - ms(w.last_seen) < 45000;
+          var inf = w.info || {};
+          var status = w.paused ? badge('attn', 'Paused') : online ? badge('done', 'Online') : badge('attn', 'Offline');
+          var lid = 'cap-' + esc(w.id);
+          return '<tr><th scope="row">' + esc(w.id) + '</th><td>' + esc([inf.host, inf.os].filter(Boolean).join(' · ') || 'n/a') + '</td><td>' + status + ' ' + esc(ago(w.last_seen, S.now)) + '</td>' +
+            '<td class="num">' + int(w.slots) + '</td><td class="num">' + int(w.running) + '</td>' +
+            '<td><label class="sr" for="' + lid + '">Slot cap for ' + esc(w.id) + '</label><input id="' + lid + '" type="number" min="0" max="64" step="1" placeholder="no cap" value="' + (w.cap === null ? '' : esc(w.cap)) + '" data-field="cap"> ' +
+            '<button type="button" class="btn" data-action="worker-cap" data-id="' + esc(w.id) + '">Set cap</button> ' +
+            '<button type="button" class="btn" data-action="worker-pause" data-id="' + esc(w.id) + '" data-paused="' + (w.paused ? '0' : '1') + '">' + (w.paused ? 'Resume' : 'Pause') + '</button></td></tr>';
+        }).join('') + '</tbody></table>') + '<p class="hint">Cap = most jobs this machine runs at once (empty = its full slot count). Pause stops it taking new jobs; running ones finish.</p>' :
+      empty('No workers connected', 'Start a worker (agent script or Docker) with WEB_URL and WORKER_TOKEN set. Jobs wait in the queue until one claims them.')));
     return out;
   }
 
@@ -325,7 +351,7 @@
     out.push({ id: 'res-fig2-ctl', html: '<h2 id="res-fig2-ctl-h">Fig 2 condition</h2>' + picker, form: true });
     out.push(chartPanel('res-fig2', 'Fig 2. Violations before vs after', 'fig2', 'fig2_violations', C.fig2Svg(R.fig2, cond), T.fig2_violations, ui));
     out.push(chartPanel('res-fig3', 'Fig 3. Judge mean rank', 'fig3', 'fig3_judge_ranks', C.fig3Svg(R.fig3), T.fig3_judge_ranks, ui,
-      notice('info', '<strong>Caveat.</strong> The judge ranks only the four repaired variants (no baseline), so the poster\u2019s before-vs-after Nielsen score cannot be computed as such. This figure shows mean rank by condition; Fig 5 uses <em>naive</em> as the usability reference.')));
+      notice('info', 'The judge ranks five blinded variants: the four repaired conditions plus the unrepaired <em>baseline</em>. Fig 5 uses the baseline rank as the usability reference.')));
     out.push(chartPanel('res-fig4', 'Fig 4. Criteria vs heuristics conflicts', 'fig4', 'fig4_conflict_heatmap', C.fig4Svg(R.fig4), T.fig4_conflict_heatmap, ui));
     out.push(chartPanel('res-fig5', 'Fig 5. WCAG gain vs usability', 'fig5', 'fig5_gain_vs_usability', C.fig5Svg(R.fig5), T.fig5_gain_vs_usability, ui));
 
@@ -340,7 +366,7 @@
       '<div class="toolbar">' + csvLink('fig6_broke_usability') + '</div>' +
       (fixes.length ? '<p class="hint">Gained on WCAG but lost on a Nielsen heuristic. Worst first. Pages open in sandboxed frames without scripts.</p>' +
         tableWrap('Fixes that broke usability', '<table class="grid"><thead><tr><th scope="col">Site</th><th scope="col">Arm</th><th scope="col">Condition</th><th scope="col" class="num">WCAG gain</th><th scope="col">Worst heuristic</th><th scope="col" class="num">Delta</th><th scope="col">Viewer</th></tr></thead><tbody>' + rows + '</tbody></table>') :
-        empty('No broken fixes found yet', 'Entries appear when a variant improves on WCAG but ranks worse on a Nielsen heuristic than naive.'))));
+        empty('No broken fixes found yet', 'Entries appear when a variant improves on WCAG but ranks worse on a Nielsen heuristic than the original page.'))));
     out.push({ id: 'res-viewer', html: '<h2 id="res-viewer-h">Original vs after</h2>' + viewerHtml(sel), form: true });
 
     var lp = T.loop_behavior;
@@ -581,6 +607,14 @@
     }, function () { announce('error', label + ' not saved: the server did not respond. Try again.'); });
   }
 
+  function dockerCall(method, path, body) {
+    return api(method, path, body).then(function (r) {
+      var d = r.data || {};
+      if (r.ok) announce('ok', d.started ? 'Started ' + d.started.length + ' worker container(s).' : 'Removed ' + (d.removed || []).length + ' container(s).');
+      else announce('error', 'Docker: ' + (d.error || (d.errors && d.errors[0]) || 'HTTP ' + r.status));
+      return poll();
+    });
+  }
   function onSubmit(e) {
     var f = e.target;
     if (f.id === 'login-form') return;
@@ -602,6 +636,8 @@
       var conds = fd.getAll('conditions');
       if (!conds.length) { announce('error', 'Pick at least one condition.'); return; }
       save('Settings', 'PUT', '/api/settings', { budget_usd: +fd.get('budget_usd'), sites: sites, conditions: conds, max_iter: +fd.get('max_iter'), judge_model_id: String(fd.get('judge_model_id')).trim() }, f);
+    } else if (kind === 'docker') {
+      dockerCall('POST', '/api/docker/workers', { count: +fd.get('count'), slots: +fd.get('slots') });
     } else if (kind === 'pricing') {
       var body = {}, i = 0;
       while (fd.has('id-' + i)) {
@@ -619,6 +655,9 @@
     var a = t.dataset.action;
     if (a === 'dismiss') { $('#flash').innerHTML = ''; }
     else if (a === 'run') runAction(t.dataset.arg);
+    else if (a === 'worker-cap') { var cv = t.closest('tr').querySelector('[data-field=cap]').value.trim(); save('Cap for ' + t.dataset.id, 'PUT', '/api/workers/' + encodeURIComponent(t.dataset.id), { cap: cv === '' ? null : +cv }); }
+    else if (a === 'worker-pause') save(t.dataset.paused === '1' ? t.dataset.id + ' paused' : t.dataset.id + ' resumed', 'PUT', '/api/workers/' + encodeURIComponent(t.dataset.id), { paused: t.dataset.paused === '1' });
+    else if (a === 'docker-stop') { var dn = t.dataset.name; if (window.confirm(dn ? 'Remove container ' + dn + '?' : 'Remove every Docker worker container?')) dockerCall('DELETE', '/api/docker/workers' + (dn ? '/' + encodeURIComponent(dn) : '')); }
     else if (a === 'clear-key') { if (window.confirm('Clear the ' + t.dataset.provider + ' key from the server?')) save(t.dataset.provider + ' key cleared', 'DELETE', '/api/keys/' + t.dataset.provider, undefined, t.closest('form')); }
     else if (a === 'save-arm') {
       var row = t.closest('tr');

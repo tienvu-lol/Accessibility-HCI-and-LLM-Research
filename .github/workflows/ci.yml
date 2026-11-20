@@ -1,0 +1,45 @@
+name: ci
+on:
+  push: { branches: [main] }
+  pull_request:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    defaults: { run: { working-directory: Study } }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 24 }
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install pytest
+      - run: npm ci
+      - run: node --test 'webapp/test/*.test.js'
+      - run: python -m pytest -q Study/tools/judge
+        working-directory: .
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker build -f Study/webapp/Dockerfile.web -t study-web Study
+      - run: docker build -f Study/webapp/Dockerfile.worker -t study-worker Study
+  publish-worker:
+    # multi-arch image so Windows/Linux (amd64) and Apple Silicon (arm64) laptops pull the same tag
+    needs: [test, docker]
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    runs-on: ubuntu-latest
+    permissions: { contents: read, packages: write }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: docker/setup-qemu-action@v3
+      - uses: docker/setup-buildx-action@v3
+      - uses: docker/login-action@v3
+        with: { registry: ghcr.io, username: "${{ github.actor }}", password: "${{ secrets.GITHUB_TOKEN }}" }
+      - run: echo "IMAGE=ghcr.io/${GITHUB_REPOSITORY,,}/study-worker" >> "$GITHUB_ENV"
+      - uses: docker/build-push-action@v6
+        with:
+          context: Study
+          file: Study/webapp/Dockerfile.worker
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: ${{ env.IMAGE }}:latest

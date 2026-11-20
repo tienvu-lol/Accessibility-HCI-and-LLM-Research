@@ -288,9 +288,9 @@ test('snapshot carries every contract field', async () => {
     has(st.human, ['built', 'items', 'raters', 'ratings_rows'], 'human');
     assert.equal(st.matrix.A1.naive.length, 60);
     assert.match(st.matrix.A1.naive, /^-{60}$/);
-    for (const p of Object.values(st.pricing)) assert.equal(p.verified, false);
+    for (const p of Object.values(st.pricing)) assert.equal(p.verified, true);
     assert.ok(['claude-opus-5-5', 'claude-sonnet-5-5', 'openai', 'gemini'].every((k) => k in st.pricing));
-    assert.ok(st.warnings.some((w) => /placeholder pricing/.test(w)));
+    assert.ok(!st.warnings.some((w) => /placeholder pricing/.test(w)));
     assert.ok(st.warnings.some((w) => /no gemini key/.test(w)));
   } finally { await s.close(); }
 });

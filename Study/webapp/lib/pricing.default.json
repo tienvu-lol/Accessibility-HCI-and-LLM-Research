@@ -1,6 +1,50 @@
 {
-  "claude-opus-5-5": { "input_per_mtok": 15, "output_per_mtok": 75, "verified": false },
-  "claude-sonnet-5-5": { "input_per_mtok": 3, "output_per_mtok": 15, "verified": false },
-  "openai": { "input_per_mtok": 2.5, "output_per_mtok": 10, "verified": false },
-  "gemini": { "input_per_mtok": 1.25, "output_per_mtok": 5, "verified": false }
+ "claude-opus-5-5": {
+  "input_per_mtok": 4,
+  "output_per_mtok": 20,
+  "verified": true,
+  "source": "https://platform.claude.com/docs/en/about-claude/pricing"
+ },
+ "claude-sonnet-5-5": {
+  "input_per_mtok": 2,
+  "output_per_mtok": 10,
+  "verified": true,
+  "source": "https://platform.claude.com/docs/en/about-claude/pricing"
+ },
+ "gpt-5.6-sol": {
+  "input_per_mtok": 4,
+  "output_per_mtok": 20,
+  "verified": true,
+  "source": "https://platform.openai.com/docs/pricing"
+ },
+ "gpt-5.6-terra": {
+  "input_per_mtok": 2,
+  "output_per_mtok": 12,
+  "verified": true,
+  "source": "https://platform.openai.com/docs/pricing"
+ },
+ "gemini-3.1-pro-preview": {
+  "input_per_mtok": 2,
+  "output_per_mtok": 12,
+  "verified": true,
+  "source": "https://ai.google.dev/gemini-api/docs/pricing"
+ },
+ "openai": {
+  "input_per_mtok": 4,
+  "output_per_mtok": 20,
+  "verified": true,
+  "source": "fallback = gpt-5.6-sol"
+ },
+ "anthropic": {
+  "input_per_mtok": 4,
+  "output_per_mtok": 20,
+  "verified": true,
+  "source": "fallback = claude-opus-5-5"
+ },
+ "gemini": {
+  "input_per_mtok": 2,
+  "output_per_mtok": 12,
+  "verified": true,
+  "source": "fallback = gemini-3.1-pro-preview"
+ }
 }

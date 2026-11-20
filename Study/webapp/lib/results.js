@@ -16,11 +16,6 @@ const DEFAULT_ARMS = ['A1', 'A2', 'A3', 'A4', 'A5', 'A6'];
 const DEFAULT_CONDITIONS = ['naive', 'wcag', 'nielsen', 'both'];
 const KAPPA_GATE = 0.4; // Study/README.md section 7 gate: Fleiss >= 0.40 and Cohen >= 0.40
 const BP = 1280;
-const NOTE_FIG3 = 'The README judge ranks only the four repaired variants (no baseline), so poster Fig 3\'s ' +
-  '"before vs after Nielsen score" cannot be computed as such; fig3 shows mean rank by condition and ' +
-  'fig5.usability_delta uses naive as the usability reference. Adding the baseline as a fifth variant to the ' +
-  'judge call is a protocol decision for the researchers.';
-
 // ---------- input helpers ----------
 function readText(p) {
   try { return fs.readFileSync(p, 'utf8'); } catch { return ''; }
@@ -343,7 +338,7 @@ function computeAgreement(dataDir, siteSet, judge) {
 
 // ---------- build ----------
 function build(dataDir, opts = {}) {
-  try { return buildUnsafe(dataDir, opts || {}); } catch (e) { return { ...emptyResults(), notes: [NOTE_FIG3, 'results error: ' + e.message] }; }
+  try { return buildUnsafe(dataDir, opts || {}); } catch (e) { return { ...emptyResults(), notes: ['results error: ' + e.message] }; }
 }
 
 function emptyResults() {
@@ -353,7 +348,7 @@ function emptyResults() {
     fig2: [], fig3: [], fig4: { criteria: [], heuristics: HEURISTICS, cells: [], basis: '' }, fig5: [], fig6: [], loop: [],
     headline: { pct_sites_gained_wcag_lost_nielsen: null, n_sites: 0, top_conflict: null },
     agreement: { judge_vs_human: null, human_fleiss: null, gate: { threshold: KAPPA_GATE, pass: null } },
-    notes: [NOTE_FIG3],
+    notes: [],
   };
 }
 
@@ -440,15 +435,14 @@ function buildUnsafe(dataDir, opts) {
     const worse = [];
     const deltas = [];
     for (const q of HEURISTICS) {
-      const rn = rankOf(judge.ranks, v.site, v.arm, 'naive', q), rc = rankOf(judge.ranks, v.site, v.arm, v.cond, q);
-      if (rn === null || rc === null) continue;
-      const d = rn - rc;
+      const rb0 = rankOf(judge.ranks, v.site, v.arm, 'baseline', q), rc = rankOf(judge.ranks, v.site, v.arm, v.cond, q);
+      if (rb0 === null || rc === null) continue;
+      const d = rb0 - rc; // positive = repaired page judged better than the original
       deltas.push(d);
       if (d < 0) { worse.push(q); if (worstD === null || d < worstD) { worstD = d; worstH = q; } }
     }
     if (deltas.length) delta = mean(deltas);
     f5.push({ site: v.site, arm: v.arm, generator_group: v.group, condition: v.cond, wcag_gain: gain, usability_delta: delta });
-    if (v.cond === 'naive') continue;
     if (deltas.length) evalSites.add(v.site);
     if (gain > 0 && worse.length) {
       conflictSites.add(v.site);
@@ -478,7 +472,7 @@ function buildUnsafe(dataDir, opts) {
   out.fig4 = {
     criteria, heuristics: HEURISTICS,
     cells: criteria.map((c) => HEURISTICS.map((h) => pairCount.get(c + '|' + h) || 0)),
-    basis: 'Cell = site-variants where the WCAG rule had fewer violating nodes after repair AND the heuristic ranked worse than the same (site, arm) naive variant. Rules from metrics/axe_rules.jsonl at 1280px; judge ranks from verdicts/judge_rankings.csv.',
+    basis: 'Cell = site-variants where the WCAG rule had fewer violating nodes after repair AND the heuristic ranked worse than the same (site, arm) unrepaired baseline page (delta = rank(baseline) - rank(variant); positive = repaired judged better). Rules from metrics/axe_rules.jsonl at 1280px; judge ranks from verdicts/judge_rankings.csv.',
   };
   let top = null;
   for (const [k, count] of pairCount) {

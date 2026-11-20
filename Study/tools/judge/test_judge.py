@@ -9,20 +9,20 @@ from Study.tools.judge import judge
 
 
 def good(tie=False):
-    d = {f"Q{i}": {"V1": 1, "V2": 2, "V3": 3, "V4": 4} for i in range(1, 15)}
+    d = {f"Q{i}": {"V1": 1, "V2": 2, "V3": 3, "V4": 4, "V5": 5} for i in range(1, 15)}
     if tie:
-        d["Q3"] = {"V1": 1, "V2": 1, "V3": 3, "V4": 3}
+        d["Q3"] = {"V1": 1, "V2": 1, "V3": 3, "V4": 3, "V5": 5}
     return d
 
 
-LABELS = {"V1": "both", "V2": "wcag", "V3": "naive", "V4": "nielsen"}
+LABELS = {"V1": "both", "V2": "wcag", "V3": "naive", "V4": "nielsen", "V5": "baseline"}
 VARIANTS = {l: {"index.html": f"<html>{l}</html>"} for l in judge.LABELS}
 
 
 class JudgeTests(unittest.TestCase):
     def test_parser_accepts_ties(self):
         out = judge.parse_response("```json\n" + json.dumps(good(tie=True)) + "\n```")
-        self.assertEqual(out["Q3"], {"V1": 1, "V2": 1, "V3": 3, "V4": 3})
+        self.assertEqual(out["Q3"], {"V1": 1, "V2": 1, "V3": 3, "V4": 3, "V5": 5})
 
     def test_parser_rejects_missing_question(self):
         d = good()
@@ -39,10 +39,10 @@ class JudgeTests(unittest.TestCase):
     def test_unblind_and_row_count(self):
         rows = judge.unblind(judge.parse_response(json.dumps(good())), LABELS,
                              "UNI-01", "A1", "m", "c1")
-        self.assertEqual(len(rows), 56)
+        self.assertEqual(len(rows), 70)
         r = [x for x in rows if x[2] == "h9_error_recovery"]
         self.assertEqual({x[3]: x[4] for x in r},
-                         {"both": 1, "wcag": 2, "naive": 3, "nielsen": 4})
+                         {"both": 1, "wcag": 2, "naive": 3, "nielsen": 4, "baseline": 5})
 
     def test_mock_path_offline(self):
         old = os.environ.get("STUDY_MOCK")
@@ -53,7 +53,7 @@ class JudgeTests(unittest.TestCase):
                 judge.judge_item("UNI-01", "A1", VARIANTS, LABELS, {}, "c1", out)
                 with open(out, newline="") as f:
                     rows = list(csv.DictReader(f))
-                self.assertEqual(len(rows), 56)
+                self.assertEqual(len(rows), 70)
                 self.assertEqual(list(rows[0]), judge.HEADER)
         finally:
             if old is None:

@@ -7,10 +7,10 @@
   var MUTED = '#595959';
   var GRID = '#d9d6d2';
   var ARM_COLORS = { A1: '#861F41', A2: '#E5751F', A3: '#1a1a1a', A4: '#6b6b6b', A5: '#1F6F78', A6: '#3F5FA8' };
-  var COND_COLORS = { naive: '#6b6b6b', wcag: '#E5751F', nielsen: '#1F6F78', both: '#861F41' };
-  var COND_ORDER = ['naive', 'wcag', 'nielsen', 'both'];
+  var COND_COLORS = { naive: '#6b6b6b', wcag: '#E5751F', nielsen: '#1F6F78', both: '#861F41', baseline: '#111111' };
+  var COND_ORDER = ['naive', 'wcag', 'nielsen', 'both', 'baseline'];
   var GROUP_SHAPES = { claude: 'circle', codex: 'square', 'open-source': 'triangle' };
-  var COND_SHAPES = { naive: 'circle', wcag: 'square', nielsen: 'triangle', both: 'diamond' };
+  var COND_SHAPES = { naive: 'circle', wcag: 'square', nielsen: 'triangle', both: 'diamond', baseline: 'circle' };
 
   function esc(v) {
     return String(v == null ? '' : v)
@@ -166,13 +166,13 @@
     var rows = fig3 || [], arms = armsIn(rows);
     var W = 760, H = 118 + arms.length * 46, box = { l: 70, r: W - 30, t: 96, b: H - 44 };
     var title = 'Fig 3. Judge mean rank by condition and arm';
-    return fig3Draw(rows, arms, W, H, box, title, header(W, title, 'Rank 1 is best. Judge ranks only the four repaired variants (no baseline).'));
+    return fig3Draw(rows, arms, W, H, box, title, header(W, title, 'Rank 1 is best. Judge ranks five variants: four repaired conditions plus the baseline.'));
   }
 
   function fig3Draw(rows, arms, W, H, box, title, head) {
-    var rowH = 46, xmap = linear(1, 4, box.l, box.r);
+    var rowH = 46, xmap = linear(1, 5, box.l, box.r);
     var s = head + legend(COND_ORDER.map(function (c) { return { label: c, color: COND_COLORS[c], shape: COND_SHAPES[c] }; }), box.l, 66);
-    [1, 2, 3, 4].forEach(function (v) {
+    [1, 2, 3, 4, 5].forEach(function (v) {
       s += '<line x1="' + round(xmap(v)) + '" x2="' + round(xmap(v)) + '" y1="' + box.t + '" y2="' + box.b + '" stroke="' + GRID + '"/>' + t(xmap(v), box.b + 16, v, { anchor: 'middle', size: 11, fill: MUTED });
     });
     arms.forEach(function (a, i) {
@@ -180,7 +180,7 @@
       s += t(box.l - 10, cy + 4, a, { anchor: 'end', size: 12, weight: 600 }) + '<line x1="' + box.l + '" x2="' + box.r + '" y1="' + cy + '" y2="' + cy + '" stroke="' + GRID + '" stroke-dasharray="2 3"/>';
       rows.filter(function (r) { return r.arm === a && r.mean_rank != null; }).forEach(function (r) {
         var k = Math.max(0, COND_ORDER.indexOf(r.condition));
-        s += marker(COND_SHAPES[r.condition] || 'circle', xmap(r.mean_rank), cy + (k - 1.5) * 7, 5, COND_COLORS[r.condition] || INK, 'stroke="#ffffff" stroke-width="1"');
+        s += marker(COND_SHAPES[r.condition] || 'circle', xmap(r.mean_rank), cy + (k - 2) * 7, 5, COND_COLORS[r.condition] || INK, 'stroke="#ffffff" stroke-width="1"');
       });
     });
     s += t((box.l + box.r) / 2, H - 6, 'Mean judge rank (1 = best, 4 = worst)', { anchor: 'middle', size: 11.5 });
@@ -194,7 +194,7 @@
     var crit = fig4.criteria || [], heur = fig4.heuristics || [], cells = fig4.cells || [];
     var cw = 54, ch = 24, left = 80, top = 96, W = left + cw * Math.max(heur.length, 1) + 24, H = top + ch * Math.max(crit.length, 1) + 64;
     W = Math.max(W, 560);
-    var title = 'Fig 4. WCAG criteria improved vs Nielsen heuristics worse than naive';
+    var title = 'Fig 4. WCAG criteria improved vs Nielsen heuristics worse than baseline';
     var max = 0;
     cells.forEach(function (r) { r.forEach(function (v) { max = Math.max(max, v || 0); }); });
     var s = header(W, title, 'Count of site-variants. Darker = more conflicts; the number is printed in each cell.');
@@ -226,10 +226,10 @@
     var ax = niceTicks(Math.min.apply(null, xs.concat([0])), Math.max.apply(null, xs.concat([1])), 6);
     var ay = niceTicks(Math.min.apply(null, ys.concat([-0.5])), Math.max.apply(null, ys.concat([0.5])), 6);
     var xmap = linear(ax.min, ax.max, box.l, box.r), ymap = linear(ay.min, ay.max, box.b, box.t);
-    var s = header(W, title, 'Gain = violations before minus after. Usability = mean rank gain over naive; above 0 is better than naive.');
+    var s = header(W, title, 'Gain = violations before minus after. Usability = mean rank gain over baseline; above 0 is better than the original page.');
     s += legend(armsIn(pts).map(function (a) { return { label: a, color: ARM_COLORS[a] || INK, shape: 'square' }; }), box.l, 64);
     s += legend(Object.keys(GROUP_SHAPES).map(function (g) { return { label: g, color: '#444444', shape: GROUP_SHAPES[g] }; }), box.l, 82);
-    s += yAxis(box, ay.ticks, ymap, 'Usability delta vs naive');
+    s += yAxis(box, ay.ticks, ymap, 'Usability delta vs baseline');
     ax.ticks.forEach(function (v) { s += t(xmap(v), box.b + 16, v, { anchor: 'middle', size: 11, fill: MUTED }); });
     if (ay.min < 0 && ay.max > 0) s += '<line x1="' + box.l + '" x2="' + box.r + '" y1="' + round(ymap(0)) + '" y2="' + round(ymap(0)) + '" stroke="' + INK + '"/>';
     if (ax.min < 0 && ax.max > 0) s += '<line x1="' + round(xmap(0)) + '" x2="' + round(xmap(0)) + '" y1="' + box.t + '" y2="' + box.b + '" stroke="' + INK + '" stroke-dasharray="3 3"/>';

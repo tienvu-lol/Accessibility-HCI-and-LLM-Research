@@ -81,12 +81,10 @@ function step(s) { console.log('\n== ' + s); }
       return r.status === 200 && r.body.coverage.variants_scored >= 4 * 4 * SITES.length ? r.body : null;
     }, 420000);
 
-    step('judge (explicit start)');
-    const js = await api('POST', '/api/run/start', { phase: 'judge', force: true });
-    assert.strictEqual(js.status, 200, 'start judge: ' + js.text);
+    step('judge (streamed: queued as each site/arm finishes repair, no manual start)');
     await until('judged', async () => {
       const s = (await api('GET', '/api/state')).body;
-      return s.judge.items.total > 0 && s.judge.items.done + s.judge.items.failed === s.judge.items.total ? s : null;
+      return s.judge.items.total === 12 && s.judge.items.done + s.judge.items.failed === s.judge.items.total ? s : null;
     }, 240000);
     st = (await api('GET', '/api/state')).body;
     assert(st.judge.items.done > 0 && st.judge.items.failed === 0, 'judge items: ' + JSON.stringify(st.judge.items));

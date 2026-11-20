@@ -1,0 +1,50 @@
+// Browser test of the dashboard against a RUNNING console (docker compose up -d web) with DOCKER_WORKERS=1.
+//   WEB_URL=http://localhost:8080 APP_PASSWORD=localtest node webapp/e2e-ui.js   (run from Study/)
+const { chromium } = require('playwright');
+const assert = require('node:assert/strict');
+const base = process.env.WEB_URL || 'http://localhost:8080';
+const pw = process.env.APP_PASSWORD;
+const step = (m) => console.log('ok -', m);
+(async () => {
+  const browser = await chromium.launch();
+  const page = await (await browser.newContext()).newPage();
+  const errors = [];
+  page.on('pageerror', (e) => errors.push(e.message));
+  page.on('dialog', (d) => d.accept());
+  await page.goto(`${base}/login.html`);
+  await page.fill('input[type=password]', pw);
+  await page.click('button[type=submit]');
+  await page.waitForURL(`${base}/`, { timeout: 10000 });
+  step('login');
+  for (const v of ['overview', 'keys', 'runs', 'cost', 'results', 'human', 'import']) {
+    await page.goto(`${base}/#${v}`);
+    await page.waitForSelector('#view h2', { timeout: 10000 });
+    step(`view ${v} renders`);
+  }
+  await page.goto(`${base}/#runs`);
+  await page.waitForSelector('#r-docker-h');
+  await page.fill('#dk-count', '2');
+  await page.fill('#dk-slots', '2');
+  await page.click('button:has-text("Start workers")');
+  await page.waitForSelector('text=Started 2 worker container', { timeout: 60000 });
+  step('started 2 containers from the dashboard');
+  await page.waitForFunction(() => document.querySelectorAll('#r-workers tbody tr .badge-done').length >= 2, null, { timeout: 60000 });
+  step('both containers show Online under Workers');
+  const row = page.locator('#r-workers tbody tr').first();
+  await row.locator('input[data-field=cap]').fill('1');
+  await row.locator('button:has-text("Set cap")').click();
+  await page.waitForFunction(() => document.querySelector('#r-workers tbody tr input[data-field=cap]').value === '1');
+  step('slot cap set and shown');
+  await page.locator('#r-workers tbody tr').first().locator('button:has-text("Pause")').click();
+  await page.waitForSelector('#r-workers .badge-attn:has-text("Paused")');
+  step('pause shows Paused badge');
+  await page.locator('#r-workers tbody tr').first().locator('button:has-text("Resume")').click();
+  await page.waitForFunction(() => !document.querySelector('#r-workers').textContent.includes('Paused'));
+  step('resume clears it');
+  await page.click('button:has-text("Remove all")');
+  await page.waitForSelector('text=No worker containers', { timeout: 30000 });
+  step('Remove all clears containers');
+  assert.deepEqual(errors, []);
+  step('no page errors');
+  await browser.close();
+})().catch((e) => { console.error('FAIL', e.message); process.exit(1); });

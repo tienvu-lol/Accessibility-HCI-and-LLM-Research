@@ -51,3 +51,31 @@ docker build -f webapp/Dockerfile.worker -t study-worker .
 node --test --test-reporter=tap webapp/test/worker*.test.js
 ```
 The worker image tag `mcr.microsoft.com/playwright:v<version>-noble` must match the `playwright` version in `Study/package-lock.json`; bump both together.
+
+## 7. Self-hosted: start workers from the dashboard (Docker)
+Railway cannot expose a docker socket, so dashboard-launched containers need a machine you control (a VPS or your own box with Docker).
+```
+cp .env.example .env                       # set APP_PASSWORD and WORKER_TOKEN
+docker compose --profile build build       # builds study-web and study-worker
+docker compose up -d web                   # http://localhost:8080
+```
+In the console open Runs -> Docker workers, pick containers and slots, Start. Containers are labelled `study-worker=1`, join the `study-net` network, connect to `http://web:8080` with the shared token, and show up under Workers. "Remove" / "Remove all" deletes only labelled containers.
+- Enabled by `DOCKER_WORKERS=1` (set in the compose file). `DOCKER_MAX_WORKERS` (default 8) caps running containers; `WORKER_IMAGE` (default `study-worker`); `DOCKER_NETWORK`; `WORKER_WEB_URL` (default `http://host.docker.internal:$PORT`, for running the server directly on the host).
+- Security: mounting `/var/run/docker.sock` is root-equivalent on the host. Use HTTPS, a strong `APP_PASSWORD`, and set `DOCKER_GID` (Linux: `stat -c %g /var/run/docker.sock`).
+- Running `node webapp/server.js` on the host instead works too: set `DOCKER_WORKERS=1` and `WORKER_TOKEN`, build `study-worker` first.
+
+## 8. Railway + laptops (the target setup)
+- Railway runs only `web` (section 1) with a volume. Do not set `DOCKER_WORKERS` there. Skip the Railway `worker` service if laptops do the compute, or keep it for extra capacity.
+- Laptops connect with `agent/start.sh` / `agent/start.ps1` (see `agent/README.md`). Railway's private network (`*.railway.internal`) is only reachable from inside Railway, so laptops use the service's HTTPS domain. It is not open: every worker call needs `WORKER_TOKEN` and the UI needs `APP_PASSWORD`. For a fully non-public link, put the laptops and a self-hosted web on Tailscale instead and use the tailnet URL as `WEB_URL`.
+- Paid calls: set `OPENAI_API_KEY` / `ANTHROPIC_API_KEY` / `GEMINI_API_KEY` as Railway variables (or paste them in Keys & arms), leave `MOCK_PROVIDERS` unset, verify pricing, set `budget_usd`. Keys are attached to jobs by the web service; laptops need none.
+- Split compute in Runs -> Workers: per-machine slot cap and pause.
+- Results to git: `node agent/sync-results.js --commit` (see `agent/README.md`).
+
+## 9. Tailscale (private, no public URL)
+Host the console on one machine and join the others over the tailnet. Traffic is WireGuard-encrypted, so plain `http://` is fine inside it.
+1. Install Tailscale on every machine and sign in to the same tailnet. Check names with `tailscale status`.
+2. Host machine: `cp .env.example .env`, set `APP_PASSWORD` and `WORKER_TOKEN`, set `BIND_ADDR` to `tailscale ip -4` (listen on the tailnet only), then `docker compose --profile build build && docker compose up -d web`.
+3. Other machines: `./agent/start.sh` (or `agent\start.ps1`), console URL `http://<host-machine-name>:8080` (MagicDNS) or `http://<tailnet-ip>:8080`. They need the worker image: `docker login ghcr.io` and pull from CI, or `docker save study-worker | ssh friend docker load`.
+4. The host's own agent can use `http://host.docker.internal:8080`.
+5. Optional HTTPS: `tailscale serve --bg 8080` gives `https://<host>.<tailnet>.ts.net`.
+Railway cannot join a tailnet without extra sidecar setup, so the tailnet route means the web service runs on a machine you own.

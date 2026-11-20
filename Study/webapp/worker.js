@@ -15,6 +15,7 @@ function createWorker(opts = {}) {
   const heartbeatMs = opts.heartbeatMs ?? 60000;
   const retryMs = opts.retryMs ?? 1000; // base of the exponential backoff
   const runners = opts.runners || KINDS;
+  const info = opts.info || { host: process.env.MACHINE_NAME || os.hostname(), os: process.env.HOST_OS || `${os.platform()} ${os.arch()}` };
   const log = opts.log || ((m) => console.log(`[worker ${id}] ${m}`));
   if (!webUrl || !token) throw new Error('WEB_URL and WORKER_TOKEN are required');
 
@@ -84,9 +85,9 @@ function createWorker(opts = {}) {
     while (!stopper.signal.aborted) {
       let jobs = [];
       const free = slots - running.size;
-      if (free > 0) {
-        try {
-          const r = await api('/api/worker/claim', { worker_id: id, kinds: Object.keys(runners), max: free });
+      {
+        try { // free = 0 still polls (max 0) so an all-busy machine stays online
+          const r = await api('/api/worker/claim', { worker_id: id, kinds: Object.keys(runners), max: free, slots, info });
           if (r.status >= 500) throw new Error(`claim ${r.status}`);
           if (r.status >= 400) throw new Error(`claim rejected ${r.status}`);
           jobs = r.body?.jobs || [];

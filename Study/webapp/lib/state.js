@@ -30,6 +30,7 @@ function load(dataDir, cfg) {
     queue: raw.queue || [],
     imported: raw.imported || [],
     imports: raw.imports || [],
+    workerCtl: raw.workerCtl || {},
   };
   let timer = null;
   const flush = () => {
@@ -142,6 +143,7 @@ function snapshot(ctx) {
     intake: proj.intake(agg),
     projection: proj.project(ctx, agg, counts),
     workers: coord.workers(),
+    docker: ctx.docker && ctx.docker.snapshot(),
     pricing: state.pricing,
     warnings: warnings(ctx),
     human: humanSection(ctx),

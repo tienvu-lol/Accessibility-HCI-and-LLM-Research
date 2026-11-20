@@ -131,6 +131,12 @@ function create(ctx, { leaseS = 900 } = {}) {
     const its = store.iterations(arm, c, site);
     return its.length && store.iterFiles(arm, c, site, its[its.length - 1])['index.html'] !== undefined;
   });
+  // Streaming judge: a (site, arm) is queued the moment all its conditions are finished, while other cells still run.
+  function maybeQueueJudge(arm, site) {
+    const ready = state.settings.conditions.length === CONDITIONS.length &&
+      CONDITIONS.every((c) => 'oi'.includes(char(arm, c, site))) && hasVariants(arm, site);
+    if (ready) addJob('judge', arm, null, site);
+  }
   function planJudge() {
     for (const site of siteList()) for (const arm of Object.keys(state.arms)) if (hasVariants(arm, site)) addJob('judge', arm, null, site);
   }
@@ -195,20 +201,29 @@ function create(ctx, { leaseS = 900 } = {}) {
       const its = store.iterations(j.arm, c, j.site);
       variants[c] = store.iterFiles(j.arm, c, j.site, its[its.length - 1]);
     }
+    // 5th, unrepaired variant so the judge can rank repaired pages against the original
+    variants.baseline = Object.fromEntries(ctx.sites.find((x) => x.site_id === j.site).slice_files.map((f) => [f, ctx.baselineFile(j.site, f)]));
     return { ...base, site: j.site, arm: j.arm, seed: parseInt(crypto.createHash('sha1').update(j.id).digest('hex').slice(0, 8), 16),
       variants, provider: 'gemini', base_url: BASE_URL.gemini, model_id: state.settings.judge_model_id, api_key: key,
       call_id: `${j.id}:${crypto.randomBytes(4).toString('hex')}` };
   }
 
-  function claim({ worker_id, kinds, max }) {
+  const runningOn = (id) => [...jobs.values()].filter((j) => j.state === 'running' && j.worker === id).length;
+  const str = (v) => (typeof v === 'string' ? v.slice(0, 64) : undefined);
+  function claim({ worker_id, kinds, max, slots, info }) {
     reap();
     const id = String(worker_id || 'worker').slice(0, 64);
     const want = Array.isArray(kinds) ? kinds : ['repair', 'score', 'judge'];
-    const limit = Math.min(Math.max(Number.isInteger(max) ? max : 1, 1), 50);
-    const w = workers.get(id) || { id, slots: limit };
-    Object.assign(w, { last_seen: ctx.now(), slots: Math.max(w.slots, limit) });
+    let limit = Math.min(Math.max(Number.isInteger(max) ? max : 1, 1), 50);
+    const w = workers.get(id) || { id };
+    Object.assign(w, { last_seen: ctx.now(), slots: Number.isInteger(slots) && slots > 0 ? Math.min(slots, 64) : limit,
+      info: info && typeof info === 'object' ? { host: str(info.host), os: str(info.os) } : w.info });
     workers.set(id, w);
-    if (state.run.phase === 'paused') return [];
+    if (max === 0) return []; // keepalive from a worker with no free slots
+    const ctl = state.workerCtl[id] || {};
+    if (ctl.paused || state.run.phase === 'paused') return [];
+    if (Number.isInteger(ctl.cap)) limit = Math.min(limit, ctl.cap - runningOn(id));
+    if (limit < 1) return [];
 
     const agg = proj.aggregate(ctx, ctx.now());
     const counts = Object.fromEntries(Object.keys(state.arms).map((a) => { const c = armCells(a); return [a, { done: c.ok + c.failed + c.truncated + c.imported }]; }));
@@ -314,6 +329,7 @@ function create(ctx, { leaseS = 900 } = {}) {
         const last = store.lastStatus(j.arm, j.condition, j.site);
         Object.assign(j, { final: 'o', converged: !!(last && last.st.converged) });
         queueScore(j.arm, j.condition, j.site);
+        maybeQueueJudge(j.arm, j.site);
       }
     } else {
       fail(j, b.error);
@@ -328,20 +344,32 @@ function create(ctx, { leaseS = 900 } = {}) {
 
   // ---- imports
   function markImported(cells) {
-    for (const c of cells) { imported.add(c); queueScore(...c.split('/')); }
+    for (const c of cells) { imported.add(c); queueScore(...c.split('/')); const [a, , si] = c.split('/'); maybeQueueJudge(a, si); }
     persist();
   }
 
   function workerList() {
     const t = ctx.now();
-    for (const [id, w] of workers) if (t - w.last_seen > 10 * 60000) workers.delete(id);
-    return [...workers.values()].map((w) => ({ id: w.id, last_seen: w.last_seen, slots: w.slots,
-      running: [...jobs.values()].filter((j) => j.state === 'running' && j.worker === w.id).length }));
+    for (const [id, w] of workers) if (t - w.last_seen > 7 * 24 * 3600000) workers.delete(id); // offline machines stay listed
+    return [...workers.values()].map((w) => ({ id: w.id, last_seen: w.last_seen, slots: w.slots, info: w.info,
+      cap: Number.isInteger((state.workerCtl[w.id] || {}).cap) ? state.workerCtl[w.id].cap : null, paused: !!(state.workerCtl[w.id] || {}).paused,
+      running: runningOn(w.id) }));
+  }
+  // compute split: per-worker slot cap (null = no cap) and pause; persisted so it survives a restart
+  function setWorkerCtl(id, { cap, paused }) {
+    if (!workers.has(id)) throw new HttpError(404, 'unknown worker');
+    if (cap !== undefined && cap !== null && !(Number.isInteger(cap) && cap >= 0 && cap <= 64)) throw new HttpError(400, 'cap must be null or an integer 0-64');
+    if (paused !== undefined && typeof paused !== 'boolean') throw new HttpError(400, 'paused must be boolean');
+    const cur = { ...(state.workerCtl[id] || {}) };
+    if (cap !== undefined) cur.cap = cap;
+    if (paused !== undefined) cur.paused = paused;
+    state.workerCtl[id] = cur;
+    state.save();
   }
 
   persist();
   return { start, pause, resume, retryFailed, claim, heartbeat, release, result, reap, armCells, matrix, judgeItems, armBlockers, judgeBlockers,
-    markImported, addLedger, workers: workerList, runInfo: () => state.run, jobs };
+    markImported, addLedger, workers: workerList, setWorkerCtl, runInfo: () => state.run, jobs };
 }
 
 module.exports = { create };

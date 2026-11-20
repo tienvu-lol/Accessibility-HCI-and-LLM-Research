@@ -191,10 +191,10 @@ test('views render every demo section with unique ids, and survive missing resul
   assert.doesNotThrow(() => App.views.overview(state, null, {}));
 });
 
-test('results view: ceiling banner, fig 3 caveat, export controls, sandboxed viewer', () => {
+test('results view: ceiling banner, fig 3 note, export controls, sandboxed viewer', () => {
   const html = App.views.results(state, results, { cond: 'wcag', open: {}, viewer: results.fig6[0] }).map((s) => s.html).join('\n');
   assert.match(html, /Ceiling check/);
-  assert.match(html, /no baseline/);
+  assert.match(html, /five blinded variants/);
   assert.match(html, /data-action="export-all"/);
   for (const n of ['fig2_violations', 'fig3_judge_ranks', 'fig4_conflict_heatmap', 'fig5_gain_vs_usability', 'fig6_broke_usability', 'loop_behavior']) assert.ok(html.includes(`/api/export/${n}.csv`), n);
   assert.strictEqual((html.match(/data-action="dl-png"/g) || []).length, 4);

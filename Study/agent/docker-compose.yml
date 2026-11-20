@@ -1,0 +1,12 @@
+# Local worker agent: connects this machine to the hosted console and takes jobs. Use start.sh (macOS/Linux) or start.ps1 (Windows).
+services:
+  worker:
+    image: ${WORKER_IMAGE:-ghcr.io/tienvu-lol/accessibility-hci-and-llm-research/study-worker:latest}
+    container_name: study-agent
+    env_file: agent.env
+    environment:
+      HOST_OS: ${HOST_OS:-unknown}
+    shm_size: 1gb
+    init: true
+    restart: unless-stopped
+    extra_hosts: ["host.docker.internal:host-gateway"]  # Linux needs this to reach a web service on the same host

@@ -17,7 +17,7 @@ def make_tree(root):
         for s in SITES:
             w.writerow([s, "index.html;apply.html;css/styles.css"])
     for s in SITES:
-        for cond in blind.CONDITIONS:
+        for cond in blind.JUDGE_CONDITIONS:
             for n in (1, 2):
                 d = root / "runs" / "A1" / cond / s / f"iter{n}"
                 (d / "css").mkdir(parents=True)
@@ -46,7 +46,7 @@ class BlindTest(unittest.TestCase):
         b = self.item("UNI-01", 7, "k2.csv")
         self.assertEqual(a["labels"], b["labels"])
         self.assertEqual(sorted(a["labels"]), blind.LABELS)
-        self.assertEqual(sorted(a["labels"].values()), sorted(blind.CONDITIONS))
+        self.assertEqual(sorted(a["labels"].values()), sorted(blind.JUDGE_CONDITIONS))
 
     def test_different_sites_differ(self):
         maps = {tuple(self.item(s, 7, f"{s}.csv")["labels"].items()) for s in SITES}
@@ -57,7 +57,7 @@ class BlindTest(unittest.TestCase):
         for files in item["variants"].values():
             self.assertEqual(len(files), 3)
             for path, html in files.items():
-                for name in blind.CONDITIONS:
+                for name in blind.JUDGE_CONDITIONS:
                     self.assertNotIn(name, path.lower())
                     self.assertNotIn(name, html.lower())
 
@@ -72,12 +72,13 @@ class BlindTest(unittest.TestCase):
         with open(self.root / "blinding_key.csv", newline="", encoding="utf-8") as f:
             rows = list(csv.reader(f))
         self.assertEqual(rows[0], ["site_id", "arm", "label_shown", "condition"])
-        self.assertEqual(len(rows), 5)
+        self.assertEqual(len(rows), 6)
         self.assertEqual([r[2] for r in rows[1:]], blind.LABELS)
 
     def test_clean_path(self):
         self.assertEqual(blind.clean_path("css/wcag-styles.css"), "css/styles.css")
         self.assertEqual(blind.clean_path("naive/both.html"), "f/f.html")
+        self.assertEqual(blind.clean_path("baseline/baseline.html"), "f/f.html")
 
 
 if __name__ == "__main__":
