@@ -252,3 +252,29 @@ test('performance: 1,512 variants / ~13k metrics rows / 21k judge rows under 500
   assert.equal(r.loop.length, 24);
   assert.ok(ms < 500, `warm build took ${ms.toFixed(0)} ms`);
 });
+
+test('A7 flows through coverage, figures and charts, and arms with no data yet leave no NaN', () => {
+  const root = tmp();
+  const conds = ['naive', 'wcag', 'nielsen', 'both'], s = 'S00', judge = [];
+  const met = [MET_COLS, metRow(s, 'baseline', 'baseline', 0, 'index.html', 1280, 10), metRow(s, 'baseline', 'baseline', 0, 'index.html', 375, 10)];
+  for (const a of ['A1', 'A7']) for (const c of conds) {
+    for (const bp of [1280, 375]) met.push(metRow(s, a, c, 1, 'index.html', bp, 3));
+    write(root, `runs/${a}/${c}/${s}/iter1/status.json`, status(1, { converged: true }));
+    write(root, `runs/${a}/${c}/${s}/iter1/index.html`, 'x');
+    for (const q of results.HEURISTICS) judge.push([s, a, q, c, 1]);
+  }
+  write(root, 'metrics/metrics.csv', met.join('\n') + '\n');
+  write(root, 'verdicts/judge_rankings.csv', judgeRows(judge));
+  const r = results.build(root, { sites: [s] });
+  assert.equal(r.coverage.variants_expected, 7 * 4);   // 7 arms x 4 conditions x 1 site
+  assert.equal(r.coverage.variants_scored, 2 * 4);     // only A1 and A7 have data
+  assert.deepEqual([...new Set(r.fig2.map((x) => x.arm))].sort(), ['A1', 'A7']);
+  const bad = [];
+  (function walk(v, p) {
+    if (typeof v === 'number' && !Number.isFinite(v)) bad.push(p);
+    else if (v && typeof v === 'object') for (const [k, x] of Object.entries(v)) walk(x, p + '.' + k);
+  })(r, 'r');
+  assert.deepEqual(bad, [], 'non-finite numbers in results');
+  const charts = require('../public/charts.js');
+  assert.ok(charts.ARM_COLORS.A7 && !Object.entries(charts.ARM_COLORS).some(([k, c]) => k !== 'A7' && c === charts.ARM_COLORS.A7), 'A7 has its own colour');
+});

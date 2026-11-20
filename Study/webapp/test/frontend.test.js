@@ -20,9 +20,9 @@ test('demo-state.json contains every snapshot field in API.md', () => {
   hasKeys(state.run, ['phase', 'kind', 'started_at'], 'run');
   hasKeys(state.settings, ['budget_usd', 'sites', 'conditions', 'max_iter', 'judge_model_id'], 'settings');
   // three hosted providers plus one key slot per open-source arm
-  assert.deepStrictEqual(Object.keys(state.keys).sort(), ['a5', 'a6', 'anthropic', 'gemini', 'openai']);
+  assert.deepStrictEqual(Object.keys(state.keys).sort(), ['a5', 'a6', 'a7', 'anthropic', 'gemini', 'openai']);
   for (const k of Object.values(state.keys)) hasKeys(k, ['set', 'last4', 'source'], 'key');
-  assert.strictEqual(state.arms.length, 6);
+  assert.strictEqual(state.arms.length, 7);
   for (const a of state.arms) {
     hasKeys(a, ['id', 'label', 'kind', 'provider', 'model_id', 'ready', 'blockers', 'concurrency', 'cells', 'tokens', 'calls', 'cost_usd', 'tokens_per_min'], a.id);
     hasKeys(a.cells, ['total', 'queued', 'running', 'ok', 'failed', 'truncated', 'imported', 'converged'], a.id + '.cells');
@@ -46,7 +46,7 @@ test('demo-state.json contains every snapshot field in API.md', () => {
   }
   for (const u of state.recent_usage) hasKeys(u, ['ts', 'worker', 'arm', 'kind', 'model_id', 'key_id', 'mock', 'input', 'output', 'calls', 'cost_usd'], 'recent_usage');
   hasKeys(state.intake.rolling5m, ['tokens', 'cost_usd'], 'rolling5m');
-  assert.deepStrictEqual(state.intake.sources.map((s) => s.id), ['A1', 'A2', 'A3', 'A4', 'A5', 'A6', 'judge']);
+  assert.deepStrictEqual(state.intake.sources.map((s) => s.id), ['A1', 'A2', 'A3', 'A4', 'A5', 'A6', 'A7', 'judge']);
   for (const s of state.intake.sources) hasKeys(s, ['id', 'input', 'output', 'cost_usd', 'calls', 'tokens_per_min'], 'source');
   for (const p of state.intake.series) hasKeys(p, ['t', 'cum_cost_usd', 'cum_tokens'], 'series');
   hasKeys(state.projection, ['budget_usd', 'spent_usd', 'remaining_usd', 'expected_total_usd', 'over_budget', 'eta_minutes', 'by_arm', 'by_machine', 'by_key', 'mock_calls', 'legacy_calls'], 'projection');
@@ -221,10 +221,10 @@ test('results view: ceiling banner, fig 3 note, export controls, sandboxed viewe
 
 test('keys view never renders a key value and offers a slot per provider and per open arm', () => {
   const html = App.views.keys(state).map((s) => s.html).join('\n');
-  // three hosted providers + one key per open-source arm: A5 and A6 are separate credentials
-  assert.strictEqual((html.match(/data-form="key"/g) || []).length, 5);
-  assert.strictEqual((html.match(/type="password"/g) || []).length, 5);
-  for (const slot of ['openai', 'anthropic', 'gemini', 'a5', 'a6']) {
+  // three hosted providers + one key per open-source arm: A5, A6 and A7 are separate credentials
+  assert.strictEqual((html.match(/data-form="key"/g) || []).length, 6);
+  assert.strictEqual((html.match(/type="password"/g) || []).length, 6);
+  for (const slot of ['openai', 'anthropic', 'gemini', 'a5', 'a6', 'a7']) {
     assert.match(html, new RegExp('data-provider="' + slot + '"'), slot + ' has its own key card');
   }
   assert.ok(!/<input[^>]*type="password"[^>]*value=/.test(html), 'password inputs carry no value');
@@ -271,7 +271,7 @@ test('a phase is Done only when every cell produced output', () => {
 
   // dispatched open arms count as done, not only imported ones
   const dispatched = { ...base, arms: [base.arms[0], { ...base.arms[1], cells: cells({ ok: 6, imported: 4 }) }] };
-  assert.strictEqual(stepOf(dispatched, full, 'Open-source arms (A5, A6)').state[1], 'Done');
+  assert.strictEqual(stepOf(dispatched, full, 'Open-source arms (A5, A6, A7)').state[1], 'Done');
 });
 
 test('runs view: cells carry the machine that ran them, as colour and as text', () => {

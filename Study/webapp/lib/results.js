@@ -12,7 +12,7 @@ const QUESTIONS = [
 ];
 const QID_TO_NAME = Object.fromEntries(QUESTIONS);
 const HEURISTICS = QUESTIONS.map((q) => q[1]).filter((n) => /^h\d+_/.test(n));
-const DEFAULT_ARMS = ['A1', 'A2', 'A3', 'A4', 'A5', 'A6'];
+const DEFAULT_ARMS = ['A1', 'A2', 'A3', 'A4', 'A5', 'A6', 'A7'];
 const DEFAULT_CONDITIONS = ['naive', 'wcag', 'nielsen', 'both'];
 const KAPPA_GATE = 0.4; // Study/README.md section 7 gate: Fleiss >= 0.40 and Cohen >= 0.40
 const BP = 1280;

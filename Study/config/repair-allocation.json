@@ -93,6 +93,21 @@
       "serving": "self-hosted",
       "throughput_note": "720 calls at full depth. Fits a 6h window only if latency <= 2min at 4 concurrent, or <= 4min at 8. Run 5 real repair calls before committing to full depth.",
       "fallback": "depth-nest: depth 1 on all 60 + depth 3 on a stratified 20 = 400 calls"
+    },
+    "A7": {
+      "model": "GLM 4.7 Flash",
+      "model_id": "unsloth/GLM-4.7-Flash-GGUF  (PENDING: confirm exact GGUF repo)",
+      "family": "glm",
+      "provider": "vt-arc-falcon-llamacpp",
+      "base_url": "TBD (SSH tunnel, e.g. http://localhost:8092/v1)",
+      "api_key_env": "A7_API_KEY",
+      "model_version": "Q4_K_M",
+      "concurrency": "MEASURE FIRST - same test as A5/A6: completed calls/min at 4 vs 8 parallel",
+      "quantization": "Q4_K_M",
+      "serving": "self-hosted, THIRD ARC session (own GPU, runs in parallel with A5 and A6)",
+      "selection_note": "Added because the DeepSeek (A5) queue was too slow. GLM is a distinct base family from deepseek and qwen, so it adds no family collision. Reasoning must be disabled to honour held_constant.reasoning.",
+      "throughput_note": "720 calls at full depth. Measure 5 real repair calls before committing.",
+      "fallback": "depth-nest: depth 1 on all 60 + depth 3 on a stratified 20 = 400 calls"
     }
   },
   "judge": {
@@ -113,19 +128,21 @@
     "pending": [
       "A5_API_KEY",
       "A5_BASE_URL",
-      "A6_BASE_URL"
+      "A6_BASE_URL",
+      "A7_API_KEY",
+      "A7_BASE_URL"
     ],
     "note": "A6_API_KEY issued 2026-11-19 (VT ARC session 22336989). Export in the shell; never commit."
   },
   "counts": {
     "sites": 60,
-    "arms": 6,
+    "arms": 7,
     "conditions": 4,
     "max_iterations": 3,
-    "repair_calls_upper_bound": 4320,
-    "repaired_variants": 1440,
-    "variants_evaluated": 1500,
-    "judge_calls": 360,
+    "repair_calls_upper_bound": 5040,
+    "repaired_variants": 1680,
+    "variants_evaluated": 1740,
+    "judge_calls": 420,
     "human_validation_items": 30
   },
   "schedule_risk": {
@@ -136,8 +153,8 @@
       "depth-nest the self-hosted arms",
       "cut to 30 sites"
     ],
-    "parallelism": "A5 and A6 occupy separate ARC sessions with separate GPUs, so they run concurrently; generation wall clock is max(A5, A6, frontier~4h), not the sum.",
-    "start_order": "Launch A5 and A6 first - they are the long pole by 2-3x. A1-A4 finish in ~4h whenever started.",
+    "parallelism": "A5, A6 and A7 occupy separate ARC sessions with separate GPUs, so they run concurrently; generation wall clock is max(A5, A6, A7, frontier~4h), not the sum.",
+    "start_order": "Launch A5, A6 and A7 first - they are the long pole by 2-3x. A1-A4 finish in ~4h whenever started.",
     "session_hygiene": "Both ARC sessions auto-terminate after 1h idle (already observed in models.json). Keepalive ping every ~20 min on each while any other arm is running. Delete both sessions when the run completes.",
     "decision_rule": "After 5 real repair calls per self-hosted arm: calls * latency / concurrency. Over ~8h projected -> depth-nest that arm only; the two arms are independent."
   }

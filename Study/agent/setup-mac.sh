@@ -6,9 +6,9 @@
 # Tailscale's first sign-in does need a GUI click; the script detects that and tells you.
 # Safe to re-run: ARC settings already in agent.env are carried over, never wiped.
 # Safe to re-run. REBUILD=1 rebuilds the image. SKIP_CHECK=1 skips the console preflight.
-# ARC=1 also starts the open-source arms (A5 DeepSeek, A6 Qwen): one SSH-tunnel container and one
-#   worker container per arm. It needs ARC_USER, ARC_HOST, ARC_A5_TARGET, ARC_A6_TARGET, A5_API_KEY,
-#   A6_API_KEY (in the environment or already in agent.env) and a key at arc/ssh/id (or ARC_PASSWORD).
+# ARC=1 also starts the open-source arms (A5 DeepSeek, A6 Qwen, A7 GLM 4.7 Flash): one SSH-tunnel container and one
+#   worker container per arm. It needs ARC_USER, ARC_HOST, ARC_A5_TARGET, ARC_A6_TARGET, ARC_A7_TARGET,
+#   A5_API_KEY, A6_API_KEY, A7_API_KEY (in the environment or already in agent.env) and a key at arc/ssh/id (or ARC_PASSWORD).
 #   Proof that the containers work without ARC: arc/selftest.sh and arc/e2e-open-arms.sh.
 # macOS ships bash 3.2: no mapfile, no ${var,,}, no associative arrays.
 set -euo pipefail
@@ -142,7 +142,7 @@ fi
 # ---------------------------------------------------------------- ARC settings
 # agent.env is rewritten below, so anything already in it that this script does not ask for
 # (the ARC host, targets and llama.cpp keys) has to be carried over or a re-run would wipe it.
-ARC_VARS="ARC_USER ARC_HOST ARC_A5_TARGET ARC_A6_TARGET A5_API_KEY A6_API_KEY ARC_PASSWORD ARC_SSH_OPTS"
+ARC_VARS="ARC_USER ARC_HOST ARC_A5_TARGET ARC_A6_TARGET ARC_A7_TARGET A5_API_KEY A6_API_KEY A7_API_KEY ARC_PASSWORD ARC_SSH_OPTS"
 # arc_val NAME -> the environment's value, else the one already in agent.env, else empty
 arc_val() {
   eval "v=\${$1:-}"
@@ -152,12 +152,12 @@ arc_val() {
 
 if [ "${ARC:-0}" = 1 ]; then
   missing=
-  for v in ARC_USER ARC_HOST ARC_A5_TARGET ARC_A6_TARGET A5_API_KEY A6_API_KEY; do
+  for v in ARC_USER ARC_HOST ARC_A5_TARGET ARC_A6_TARGET ARC_A7_TARGET A5_API_KEY A6_API_KEY A7_API_KEY; do
     [ -n "$(arc_val "$v")" ] || missing="$missing $v"
   done
   [ -z "$missing" ] && say "ARC: all settings present" || die "ARC=1 is missing:$missing
   Set them in the environment or put them in agent/agent.env (see agent/agent.env.example).
-  ARC_A5_TARGET / ARC_A6_TARGET are the node:port of each llama.cpp server, as reachable from the login host."
+  ARC_A5_TARGET / ARC_A6_TARGET / ARC_A7_TARGET are the node:port of each llama.cpp server, as reachable from the login host."
   if [ -z "$(arc_val ARC_PASSWORD)" ] && [ ! -f arc/ssh/id ]; then
     die "no SSH key at agent/arc/ssh/id and no ARC_PASSWORD. Put your ARC private key there (chmod 600);
   the tunnel container mounts it read-only. Interactive 2FA (Duo) cannot be automated."
@@ -187,7 +187,7 @@ fi
 # A healthy worker logs NOTHING: it only prints on job events or "claim failed".
 # So the check is: the container stays up and never logs a failed claim.
 WATCH=study-agent
-[ "${ARC:-0}" = 1 ] && WATCH="study-agent study-agent-a5 study-agent-a6"
+[ "${ARC:-0}" = 1 ] && WATCH="study-agent study-agent-a5 study-agent-a6 study-agent-a7"
 say "Watching the worker container(s) for failed claims (a healthy worker is silent)"
 i=0
 while [ "$i" -lt 5 ]; do
@@ -208,7 +208,7 @@ done
 # An arm is only offered to the console while its tunnel answers, so check that from the worker itself.
 if [ "${ARC:-0}" = 1 ]; then
   say "Checking each ARC tunnel from its worker container"
-  for pair in a5:8091 a6:8090; do
+  for pair in a5:8091 a6:8090 a7:8092; do
     arm=${pair%%:*}; port=${pair##*:}
     ok=0
     for i in 1 2 3 4 5 6 7 8 9 10; do
@@ -225,14 +225,14 @@ if [ "${ARC:-0}" = 1 ]; then
       die "tunnel $arm never answered. Read the log above: a key/2FA refusal means the SSH sign-in failed
   (Duo cannot be automated), 'ExitOnForwardFailure' or a connection refusal means ARC_${arm}_TARGET
   (currently '$(arc_val "ARC_$(printf '%s' "$arm" | tr 'a-z' 'A-Z')_TARGET")') is not serving on that node:port.
-  The agent still takes mainstream jobs; A5/A6 are simply not offered to it until the tunnel is up."
+  The agent still takes mainstream jobs; A5/A6/A7 are simply not offered to it until the tunnel is up."
     fi
   done
 fi
 
 say "Agent '$MACHINE_NAME' is online. It should show under Runs -> Workers as macOS $(uname -m)."
 if [ "${ARC:-0}" = 1 ]; then
-  echo "Open arms: study-agent-a5 and study-agent-a6 are online with live tunnels; turn on"
-  echo "  Keys & arms -> 'Run open-source arms (A5, A6) on laptops with an ARC tunnel' in the console."
+  echo "Open arms: study-agent-a5, -a6 and -a7 are online with live tunnels; turn on"
+  echo "  Keys & arms -> 'Run open-source arms (A5, A6, A7) on laptops with an ARC tunnel' in the console."
 fi
 echo "Logs: docker logs -f study-agent    Stop: ./stop.sh"

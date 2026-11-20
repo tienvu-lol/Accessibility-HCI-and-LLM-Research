@@ -51,3 +51,22 @@ services:
     init: true
     restart: unless-stopped
     depends_on: [arc-a6]
+  arc-a7:
+    profiles: ["arc"]
+    build: { context: arc, dockerfile: Dockerfile.tunnel }
+    image: study-arc-tunnel
+    container_name: study-arc-a7
+    env_file: agent.env
+    environment: { ARM: A7, LOCAL_PORT: "8092" }
+    volumes: ["./arc/ssh:/ssh:ro"]
+    restart: unless-stopped
+  worker-a7:
+    profiles: ["arc"]
+    image: ${WORKER_IMAGE:-ghcr.io/tienvu-lol/accessibility-hci-and-llm-research/study-worker:latest}
+    container_name: study-agent-a7
+    env_file: agent.env
+    environment: { HOST_OS: "${HOST_OS:-unknown}", WORKER_SUFFIX: -a7, WORKER_ARMS: A7, ARC_URLS: "A7=http://arc-a7:8092/v1" }
+    shm_size: 1gb
+    init: true
+    restart: unless-stopped
+    depends_on: [arc-a7]

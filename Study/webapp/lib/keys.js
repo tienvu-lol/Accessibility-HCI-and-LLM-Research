@@ -1,12 +1,12 @@
 // Hosted-provider keys (one per provider, shared by the arms that use it) plus one key per
-// open-source arm: A5 (DeepSeek) and A6 (Qwen) are separate llama.cpp servers with separate
+// open-source arm: A5 (DeepSeek), A6 (Qwen) and A7 (GLM) are separate llama.cpp servers with separate
 // credentials, so they get separate slots and are never interchangeable.
 const PROVIDERS = ['openai', 'anthropic', 'gemini'];
-const ARM_KEYS = ['a5', 'a6'];
+const ARM_KEYS = ['a5', 'a6', 'a7'];
 const SLOTS = [...PROVIDERS, ...ARM_KEYS];
 const ENV = {
   openai: 'OPENAI_API_KEY', anthropic: 'ANTHROPIC_API_KEY', gemini: 'GEMINI_API_KEY',
-  a5: 'A5_API_KEY', a6: 'A6_API_KEY',
+  a5: 'A5_API_KEY', a6: 'A6_API_KEY', a7: 'A7_API_KEY',
 };
 const armSlot = (arm) => (typeof arm === 'string' && ARM_KEYS.includes(arm.toLowerCase()) ? arm.toLowerCase() : null);
 

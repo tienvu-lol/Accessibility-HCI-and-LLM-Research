@@ -4,13 +4,13 @@
 
   var FONT = 'Atkinson Hyperlegible Next, Segoe UI, system-ui, Arial, sans-serif';
   // The published (export) palette: light, print-safe. Exported unchanged as ARM_COLORS / COND_COLORS.
-  var ARM_COLORS = { A1: '#861F41', A2: '#E5751F', A3: '#1a1a1a', A4: '#6b6b6b', A5: '#1F6F78', A6: '#3F5FA8' };
+  var ARM_COLORS = { A1: '#861F41', A2: '#E5751F', A3: '#1a1a1a', A4: '#6b6b6b', A5: '#1F6F78', A6: '#3F5FA8', A7: '#7A4EA3' };
   var COND_COLORS = { naive: '#6b6b6b', wcag: '#E5751F', nielsen: '#1F6F78', both: '#861F41', baseline: '#111111' };
   var THEMES = {
     light: { ink: '#1a1a1a', muted: '#595959', grid: '#d9d6d2', bg: '#ffffff', edge: '#ffffff', arm: ARM_COLORS, cond: COND_COLORS, before: '#8a8a8a', after: '#861F41', group: '#444444', heatA: [255, 255, 255], heatB: [134, 31, 65], spark: '#861F41' },
     // On-screen console cards: the same chart on the dark surface. Every mark is at least 3:1 against #0e1014.
     dark: { ink: '#f7f8f8', muted: '#9e9f9f', grid: '#2a2c30', bg: '#0e1014', edge: '#0e1014',
-      arm: { A1: '#ee8aa8', A2: '#ff7a2e', A3: '#f7f8f8', A4: '#9e9f9f', A5: '#4cc3d0', A6: '#7b9be0' },
+      arm: { A1: '#ee8aa8', A2: '#ff7a2e', A3: '#f7f8f8', A4: '#9e9f9f', A5: '#4cc3d0', A6: '#7b9be0', A7: '#c39be8' },
       cond: { naive: '#9e9f9f', wcag: '#ff7a2e', nielsen: '#4cc3d0', both: '#ee8aa8', baseline: '#f7f8f8' },
       before: '#7c7d7d', after: '#ee8aa8', group: '#c8c9c9', heatA: [23, 23, 24], heatB: [208, 85, 127], spark: '#ee8aa8' }
   };

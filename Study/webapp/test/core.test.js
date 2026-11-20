@@ -273,10 +273,10 @@ test('snapshot carries every contract field', async () => {
     has(st, ['now', 'run', 'settings', 'keys', 'arms', 'judge', 'matrix', 'intake', 'projection', 'workers', 'pricing', 'warnings', 'human', 'imports'], 'state');
     has(st.run, ['phase', 'kind', 'started_at'], 'run');
     has(st.settings, ['budget_usd', 'sites', 'conditions', 'max_iter', 'judge_model_id'], 'settings');
-    assert.equal(st.arms.length, 6);
+    assert.equal(st.arms.length, 7);
     has(st.arms[0], ['id', 'label', 'kind', 'provider', 'model_id', 'ready', 'blockers', 'concurrency', 'cells', 'tokens', 'calls', 'cost_usd', 'tokens_per_min'], 'arm');
     has(st.arms[0].cells, ['total', 'queued', 'running', 'ok', 'failed', 'truncated', 'imported', 'converged'], 'cells');
-    assert.deepEqual(st.arms.map((a) => a.kind), ['mainstream', 'mainstream', 'mainstream', 'mainstream', 'open_source', 'open_source']);
+    assert.deepEqual(st.arms.map((a) => a.kind), ['mainstream', 'mainstream', 'mainstream', 'mainstream', 'open_source', 'open_source', 'open_source']);
     has(st.judge, ['provider', 'model_id', 'ready', 'blockers', 'items', 'tokens', 'cost_usd'], 'judge');
     has(st.judge.items, ['total', 'queued', 'running', 'done', 'failed'], 'judge.items');
     has(st.intake, ['total', 'rolling5m', 'sources', 'series'], 'intake');

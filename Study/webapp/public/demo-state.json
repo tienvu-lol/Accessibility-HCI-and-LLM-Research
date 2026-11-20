@@ -42,6 +42,11 @@
    "set": false,
    "last4": null,
    "source": null
+  },
+  "a7": {
+   "set": false,
+   "last4": null,
+   "source": null
   }
  },
  "arms": [
@@ -208,6 +213,33 @@
    "calls": 0,
    "cost_usd": 0,
    "tokens_per_min": 0
+  },
+  {
+   "id": "A7",
+   "label": "Open-source GLM 4.7 Flash",
+   "kind": "open_source",
+   "provider": null,
+   "model_id": "glm-4.7-flash-demo",
+   "ready": true,
+   "blockers": [],
+   "concurrency": 0,
+   "cells": {
+    "total": 213,
+    "queued": 60,
+    "running": 0,
+    "ok": 0,
+    "failed": 0,
+    "truncated": 0,
+    "imported": 153,
+    "converged": 0
+   },
+   "tokens": {
+    "input": 1499400,
+    "output": 2142000
+   },
+   "calls": 0,
+   "cost_usd": 0,
+   "tokens_per_min": 0
   }
  ],
  "judge": {
@@ -260,6 +292,12 @@
    "both": "iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii"
   },
   "A6": {
+   "naive": "i.iiii.i.i.iiiiiiii.i..i.i.i.iiii.iiiiiiiiiii.iiiii.iiii.iii",
+   "wcag": "iiiiiiii.iiiiiii.ii.iiiiii.iii..i.iiii....i.i.iii.iiiiiiiii.",
+   "nielsen": "ii.iiii.ii..ii.iiiiiiiiii.i..i.i.i.ii.iiii.iiiii..iiiiiii..i",
+   "both": "--.--i-----..iii-i..-.i-iii-.---ii.--.-i.-.-iii-ii.-.i-i---."
+  },
+  "A7": {
    "naive": "i.iiii.i.i.iiiiiiii.i..i.i.i.iiii.iiiiiiiiiii.iiiii.iiii.iii",
    "wcag": "iiiiiiii.iiiiiii.ii.iiiiii.iii..i.iiii....i.i.iii.iiiiiiiii.",
    "nielsen": "ii.iiii.ii..ii.iiiiiiiiii.i..i.i.i.ii.iiii.iiiii..iiiiiii..i",
@@ -319,6 +357,14 @@
    },
    {
     "id": "A6",
+    "input": 1499400,
+    "output": 2142000,
+    "cost_usd": 0,
+    "calls": 0,
+    "tokens_per_min": 0
+   },
+   {
+    "id": "A7",
     "input": 1499400,
     "output": 2142000,
     "cost_usd": 0,
@@ -1072,6 +1118,23 @@
     "baseline_total_usd": 0,
     "variance_usd": 0,
     "variance_pct": null
+   },
+   {
+    "arm": "A7",
+    "calls_total": 0,
+    "calls_done": 0,
+    "avg_in": 8200,
+    "avg_out": 13500,
+    "est_cost_usd": 0,
+    "basis": "self-hosted",
+    "model_id": "glm-4.7-flash-demo",
+    "spent_usd": 0,
+    "est_total_usd": 0,
+    "mock_calls": 0,
+    "legacy_calls": 0,
+    "baseline_total_usd": 0,
+    "variance_usd": 0,
+    "variance_pct": null
    }
   ],
   "baseline": {
@@ -1316,6 +1379,12 @@
    "both": "222222222222222222222222222222222222222222222222222222222222"
   },
   "A6": {
+   "naive": "2-2222-2-2-22222222-2--2-2-2-2222-22222222222-22222-2222-222",
+   "wcag": "22222222-2222222-22-222222-222--2-2222----2-2-222-222222222-",
+   "nielsen": "22-2222-22--22-2222222222-2--2-2-2-22-2222-22222--2222222--2",
+   "both": "-----2-------222-2----2-222-----22-----2----222-22---2-2----"
+  },
+  "A7": {
    "naive": "2-2222-2-2-22222222-2--2-2-2-2222-22222222222-22222-2222-222",
    "wcag": "22222222-2222222-22-222222-222--2-2222----2-2-222-222222222-",
    "nielsen": "22-2222-22--22-2222222222-2--2-2-2-22-2222-22222--2222222--2",

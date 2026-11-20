@@ -102,7 +102,7 @@
     var judgeTotal = Math.max(cov.judge_items_expected || 0, S.judge.items.total || 0);
     var list = [
       { name: 'Setup', done: blockers.length ? 0 : 1, total: 1, unit: '', note: blockers.length ? blockers.length + ' not ready' : 'Keys and arms ready', state: blockers.length ? ['attn', 'Needs attention'] : ['done', 'Done'] },
-      { name: 'Open-source arms (A5, A6)', done: openDone, total: openTotal, bad: openBad, unit: 'cells', active: running && S.run.kind === 'repair' && openDone + openBad < openTotal },
+      { name: 'Open-source arms (A5, A6, A7)', done: openDone, total: openTotal, bad: openBad, unit: 'cells', active: running && S.run.kind === 'repair' && openDone + openBad < openTotal },
       { name: 'Repair', done: mainDone, total: mainTotal, bad: mainBad, unit: 'cells', active: running && S.run.kind === 'repair' },
       { name: 'Score', done: cov.variants_scored || 0, total: cov.variants_expected || 0, unit: 'variants', active: running && S.run.kind === 'score' },
       { name: 'Judge (Gemini)', done: S.judge.items.done, total: judgeTotal, bad: S.judge.items.failed || 0, unit: 'items', active: running && S.run.kind === 'judge' },
@@ -173,8 +173,9 @@
   // One key per open-source arm. They are different llama.cpp servers in different ARC sessions, so
   // the keys are never interchangeable; either one can also be left on the laptop that tunnels to it.
   var ARM_KEYS = [
-    ['a5', 'A5 DeepSeek (llama.cpp on ARC)', 'Its own key, separate from A6. Leave empty to use the A5_API_KEY on the laptop running the A5 tunnel.'],
-    ['a6', 'A6 Qwen (llama.cpp on ARC)', 'Its own key, separate from A5. Leave empty to use the A6_API_KEY on the laptop running the A6 tunnel.']
+    ['a5', 'A5 DeepSeek (llama.cpp on ARC)', 'Its own key, separate from A6 and A7. Leave empty to use the A5_API_KEY on the laptop running the A5 tunnel.'],
+    ['a6', 'A6 Qwen (llama.cpp on ARC)', 'Its own key, separate from A5 and A7. Leave empty to use the A6_API_KEY on the laptop running the A6 tunnel.'],
+    ['a7', 'A7 GLM 4.7 Flash (llama.cpp on ARC)', 'Its own key, separate from A5 and A6. Leave empty to use the A7_API_KEY on the laptop running the A7 tunnel.']
   ];
 
   function keyCard(S, p) {
@@ -193,7 +194,7 @@
     var out = [];
     out.push(panel('k-keys', 'API keys', '<div class="cards">' + PROVIDERS.map(function (p) { return keyCard(S, p); }).join('') + '</div>' +
       '<h3 class="sub-h">Open-source arms</h3>' +
-      '<p class="hint">A5 and A6 are separate self-hosted models with separate credentials. A key set here is sent inside that arm\u2019s jobs and used only by them; with no key here, the arm uses the one on the laptop that holds its tunnel, which never leaves that machine. Spend is attributed per key in Cost.</p>' +
+      '<p class="hint">A5, A6 and A7 are separate self-hosted models with separate credentials. A key set here is sent inside that arm\u2019s jobs and used only by them; with no key here, the arm uses the one on the laptop that holds its tunnel, which never leaves that machine. Spend is attributed per key in Cost.</p>' +
       '<div class="cards">' + ARM_KEYS.map(function (p) { return keyCard(S, p); }).join('') + '</div>', { form: true }));
 
     var rows = S.arms.map(function (a) {
@@ -216,8 +217,8 @@
       '<div class="fields"><div><label for="set-budget">Budget (USD)</label><input id="set-budget" name="budget_usd" type="number" min="0" step="0.01" required value="' + esc(s.budget_usd) + '"></div>' +
       '<div><label for="set-iter">Max iterations</label><input id="set-iter" name="max_iter" type="number" min="1" max="10" step="1" required value="' + esc(s.max_iter) + '"></div>' +
       '<div><label for="set-judge">Judge model id</label><input id="set-judge" name="judge_model_id" required value="' + esc(s.judge_model_id) + '" spellcheck="false"></div></div>' +
-      '<label class="check"><input type="checkbox" name="dispatch_open"' + (s.dispatch_open ? ' checked' : '') + '> Run open-source arms (A5, A6) on laptops with an ARC tunnel</label>' +
-      '<p class="hint">Off = A5/A6 are imported from ARC runs. On = their jobs go only to workers started with <code>start.sh --arc</code> whose tunnel is up.</p>' +
+      '<label class="check"><input type="checkbox" name="dispatch_open"' + (s.dispatch_open ? ' checked' : '') + '> Run open-source arms (A5, A6, A7) on laptops with an ARC tunnel</label>' +
+      '<p class="hint">Off = A5/A6/A7 are imported from ARC runs. On = their jobs go only to workers started with <code>start.sh --arc</code> whose tunnel is up.</p>' +
       '<fieldset><legend>Conditions</legend><div class="checks">' + CONDS.map(function (c) { return '<label class="check"><input type="checkbox" name="conditions" value="' + c + '"' + (cond.indexOf(c) >= 0 ? ' checked' : '') + '> ' + c + '</label>'; }).join('') + '</div></fieldset>' +
       '<div><label for="set-sites">Sites</label><textarea id="set-sites" name="sites" rows="3" spellcheck="false" aria-describedby="set-sites-h" placeholder="Leave empty for all 60 sites">' + esc(Array.isArray(s.sites) ? s.sites.join(', ') : '') + '</textarea>' +
       '<p id="set-sites-h" class="hint">Site ids separated by commas or spaces, e.g. UNI-01, GOV-03. Empty means all 60.</p></div>' +
@@ -377,7 +378,7 @@
         : empty('Nothing recorded yet', 'Rows appear once a worker finishes a job.')) +
       '<h3 class="sub-h">Spend by API key</h3>' +
       (kRows ? tableWrap('Cost by key', '<table class="grid"><thead><tr><th scope="col">Key</th><th scope="col">Arm</th><th scope="col">Model</th><th scope="col" class="num">Calls</th><th scope="col" class="num">Tokens in</th><th scope="col" class="num">Tokens out</th><th scope="col" class="num">Spent</th></tr></thead><tbody>' + kRows + '</tbody></table>') +
-        '<p class="hint">Keys appear as slot plus the last four characters, never the key itself. A5 and A6 have separate keys, so their spend is separate. <code>local:&lt;machine&gt;</code> means the arm used the key held on that laptop.</p>'
+        '<p class="hint">Keys appear as slot plus the last four characters, never the key itself. A5, A6 and A7 have separate keys, so their spend is separate. <code>local:&lt;machine&gt;</code> means the arm used the key held on that laptop.</p>'
         : empty('No key attribution yet', 'Calls finished before this was recorded show under legacy rows instead.'))));
     out.push(panel('c-proj', 'Projection by arm',
       '<p>Expected total <strong>' + usd(P.expected_total_usd) + '</strong> against a budget of ' + usd(P.budget_usd) + '; ETA ' + mins(P.eta_minutes) + '.' +
@@ -506,7 +507,7 @@
     var out = [];
     out.push({
       id: 'i-up', form: true, html: '<h2 id="i-up-h">Import open-source runs</h2>' +
-        '<p class="hint">Upload a gzip\u2019d NDJSON file (<code>.ndjson.gz</code>) of A5/A6 cells from the ARC run. Only open-source arms are accepted.</p>' +
+        '<p class="hint">Upload a gzip\u2019d NDJSON file (<code>.ndjson.gz</code>) of A5/A6/A7 cells from the ARC run. Only open-source arms are accepted.</p>' +
         '<div class="drop" data-drop><label for="imp-file" class="btn btn-primary">Choose file</label><input id="imp-file" type="file" accept=".gz,.ndjson.gz,application/gzip,application/x-gzip" class="sr-file">' +
         '<span class="drop-hint">or drop a file here</span></div>' +
         '<p id="imp-sel" aria-live="polite">' + (f ? 'Selected: <strong>' + esc(f.name) + '</strong> (' + esc((f.size / 1048576).toFixed(2)) + ' MB)' : 'No file selected.') + '</p>' +

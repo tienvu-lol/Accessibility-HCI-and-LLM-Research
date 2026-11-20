@@ -234,9 +234,9 @@ function create(ctx, { leaseS = 900 } = {}) {
       const a = state.arms[j.arm];
       if (ctx.armKind(j.arm) === 'open_source') { // base_url is the claiming worker's own tunnel
         if (!w.arcs || !w.arcs[j.arm]) return null;
-        // Each open arm has its own llama.cpp credential: A5 (DeepSeek) and A6 (Qwen) never share one.
+        // Each open arm has its own llama.cpp credential: A5 (DeepSeek), A6 (Qwen) and A7 (GLM) never share one.
         // The console's key for the arm is used when set; otherwise the key stays on the worker, in its
-        // own A5_API_KEY / A6_API_KEY, and never travels at all.
+        // own A5_API_KEY / A6_API_KEY / A7_API_KEY, and never travels at all.
         const slot = keysLib.armSlot(j.arm);
         const armKey = slot ? ctx.keys.get(slot) : null;
         stamp(j, a.model_id, slot && armKey ? ctx.keys.id(slot) : `local:${w.id}`);
